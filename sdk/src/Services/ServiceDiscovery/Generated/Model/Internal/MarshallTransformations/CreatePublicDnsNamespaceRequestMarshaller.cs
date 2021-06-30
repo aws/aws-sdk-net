@@ -90,6 +90,17 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetProperties())
+                {
+                    context.Writer.WritePropertyName("Properties");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PublicDnsNamespacePropertiesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Properties, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

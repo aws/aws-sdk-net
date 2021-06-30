@@ -30,8 +30,8 @@ namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterInstance operation.
-    /// Deletes the Amazon Route 53 DNS records and health check, if any, that AWS Cloud Map
-    /// created for the specified instance.
+    /// Deletes the Amazon Route 53 DNS records and health check, if any, that Cloud Map created
+    /// for the specified instance.
     /// </summary>
     public partial class DeregisterInstanceRequest : AmazonServiceDiscoveryRequest
     {

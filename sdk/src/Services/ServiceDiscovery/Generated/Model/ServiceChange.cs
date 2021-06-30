@@ -59,7 +59,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property DnsConfig. 
         /// <para>
-        /// Information about the Route 53 DNS records that you want AWS Cloud Map to create when
+        /// Information about the Route 53 DNS records that you want Cloud Map to create when
         /// you register an instance.
         /// </para>
         /// </summary>
@@ -79,7 +79,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property HealthCheckConfig. 
         /// <para>
         ///  <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check.
-        /// If you specify settings for a health check, AWS Cloud Map associates the health check
+        /// If you specify settings for a health check, Cloud Map associates the health check
         /// with the records that you specify in <code>DnsConfig</code>.
         /// </para>
         /// </summary>

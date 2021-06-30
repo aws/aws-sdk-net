@@ -36,14 +36,15 @@ namespace Amazon.ServiceDiscovery.Model
     /// is <code>backend.example.com</code>. You can discover instances that were registered
     /// with a public DNS namespace by using either a <code>DiscoverInstances</code> request
     /// or using DNS. For the current quota on the number of namespaces that you can create
-    /// using the same AWS account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
-    /// Cloud Map Quotas</a>in the <i>AWS Cloud Map Developer Guide</i>.
+    /// using the same account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+    /// Map quotas</a> in the <i>Cloud Map Developer Guide</i>.
     /// </summary>
     public partial class CreatePublicDnsNamespaceRequest : AmazonServiceDiscoveryRequest
     {
         private string _creatorRequestId;
         private string _description;
         private string _name;
+        private PublicDnsNamespaceProperties _properties;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -103,6 +104,24 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Properties. 
+        /// <para>
+        /// Properties for the public DNS namespace.
+        /// </para>
+        /// </summary>
+        public PublicDnsNamespaceProperties Properties
+        {
+            get { return this._properties; }
+            set { this._properties = value; }
+        }
+
+        // Check to see if Properties property is set
+        internal bool IsSetProperties()
+        {
+            return this._properties != null;
         }
 
         /// <summary>

@@ -46,8 +46,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace when you
-        /// create it.
+        /// The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create
+        /// it.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -205,7 +205,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <dl> <dt>HTTP</dt> <dd> 
         /// <para>
-        /// Instances can be discovered only programmatically, using the AWS Cloud Map <code>DiscoverInstances</code>
+        /// Instances can be discovered only programmatically, using the Cloud Map <code>DiscoverInstances</code>
         /// API.
         /// </para>
         ///  </dd> <dt>DNS_PUBLIC</dt> <dd> 

@@ -45,8 +45,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// AWS Cloud Map gets <code>MaxResults</code> services and then filters them based on
-        /// the specified criteria. It's possible that no services in the first <code>MaxResults</code>
+        /// Cloud Map gets <code>MaxResults</code> services and then filters them based on the
+        /// specified criteria. It's possible that no services in the first <code>MaxResults</code>
         /// services matched the specified criteria but that subsequent groups of <code>MaxResults</code>
         /// services do contain services that match the criteria.
         /// </para>

@@ -65,9 +65,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of items that you want AWS Cloud Map to return in the response
-        /// to a <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>,
-        /// AWS Cloud Map returns up to 100 operations.
+        /// The maximum number of items that you want Cloud Map to return in the response to a
+        /// <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>,
+        /// Cloud Map returns up to 100 operations.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -96,8 +96,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// AWS Cloud Map gets <code>MaxResults</code> operations and then filters them based
-        /// on the specified criteria. It's possible that no operations in the first <code>MaxResults</code>
+        /// Cloud Map gets <code>MaxResults</code> operations and then filters them based on the
+        /// specified criteria. It's possible that no operations in the first <code>MaxResults</code>
         /// operations matched the specified criteria but that subsequent groups of <code>MaxResults</code>
         /// operations do contain operations that match the criteria.
         /// </para>

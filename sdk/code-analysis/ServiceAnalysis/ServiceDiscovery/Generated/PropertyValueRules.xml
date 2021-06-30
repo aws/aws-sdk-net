@@ -234,12 +234,48 @@
     <max>1011</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.UpdateHttpNamespaceRequest.Id</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.UpdateHttpNamespaceRequest.UpdaterRequestId</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.UpdateHttpNamespaceResponse.OperationId</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.UpdateInstanceCustomHealthStatusRequest.InstanceId</property>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.UpdateInstanceCustomHealthStatusRequest.ServiceId</property>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.UpdatePrivateDnsNamespaceRequest.Id</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.UpdatePrivateDnsNamespaceRequest.UpdaterRequestId</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.UpdatePrivateDnsNamespaceResponse.OperationId</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.UpdatePublicDnsNamespaceRequest.Id</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.UpdatePublicDnsNamespaceRequest.UpdaterRequestId</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.UpdatePublicDnsNamespaceResponse.OperationId</property>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.UpdateServiceRequest.Id</property>
@@ -292,6 +328,10 @@
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.HttpInstanceSummary.ServiceName</property>
     <pattern>((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.HttpNamespaceChange.Description</property>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.HttpProperties.HttpName</property>
@@ -362,6 +402,14 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.PrivateDnsNamespaceChange.Description</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.PublicDnsNamespaceChange.Description</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.Service.Arn</property>
     <max>255</max>
   </property-value-rule>
@@ -412,6 +460,16 @@
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.ServiceSummary.Name</property>
     <pattern>((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.SOA.TTL</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.SOAChange.TTL</property>
+    <min>0</min>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.Tag.Key</property>

@@ -49,8 +49,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when you
-        /// create it.
+        /// The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you create
+        /// it.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -130,8 +130,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property DnsConfig. 
         /// <para>
-        /// A complex type that contains information about the Route 53 DNS records that you want
-        /// AWS Cloud Map to create when you register an instance.
+        /// A complex type that contains information about the Route 53 DNS records that you want
+        /// Cloud Map to create when you register an instance.
         /// </para>
         /// </summary>
         public DnsConfig DnsConfig
@@ -150,13 +150,13 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property HealthCheckConfig. 
         /// <para>
         ///  <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings
-        /// for an optional health check. If you specify settings for a health check, AWS Cloud
-        /// Map associates the health check with the records that you specify in <code>DnsConfig</code>.
+        /// for an optional health check. If you specify settings for a health check, Cloud Map
+        /// associates the health check with the records that you specify in <code>DnsConfig</code>.
         /// </para>
         ///  
         /// <para>
         /// For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
-        /// Route 53 Pricing</a>.
+        /// Route 53 Pricing</a>.
         /// </para>
         /// </summary>
         public HealthCheckConfig HealthCheckConfig
@@ -198,7 +198,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID that AWS Cloud Map assigned to the service when you created it.
+        /// The ID that Cloud Map assigned to the service when you created it.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]

@@ -45,8 +45,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace when you
-        /// create it.
+        /// The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create
+        /// it.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -121,8 +121,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the namespace. When you create a namespace, AWS Cloud Map automatically
-        /// creates a Route 53 hosted zone that has the same name as the namespace.
+        /// The name of the namespace. When you create a namespace, Cloud Map automatically creates
+        /// a Route 53 hosted zone that has the same name as the namespace.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

@@ -47,8 +47,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when you
-        /// create it.
+        /// The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you create
+        /// it.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -104,7 +104,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property DnsConfig. 
         /// <para>
-        /// Information about the Route 53 DNS records that you want AWS Cloud Map to create when
+        /// Information about the Route 53 DNS records that you want Cloud Map to create when
         /// you register an instance.
         /// </para>
         /// </summary>
@@ -124,7 +124,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property HealthCheckConfig. 
         /// <para>
         ///  <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check.
-        /// If you specify settings for a health check, AWS Cloud Map associates the health check
+        /// If you specify settings for a health check, Cloud Map associates the health check
         /// with the records that you specify in <code>DnsConfig</code>.
         /// </para>
         /// </summary>
@@ -181,7 +181,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID that AWS Cloud Map assigned to the service when you created it.
+        /// The ID that Cloud Map assigned to the service when you created it.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]

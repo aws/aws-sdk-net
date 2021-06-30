@@ -70,6 +70,12 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                     unmarshalledObject.HostedZoneId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SOA", targetDepth))
+                {
+                    var unmarshaller = SOAUnmarshaller.Instance;
+                    unmarshalledObject.SOA = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

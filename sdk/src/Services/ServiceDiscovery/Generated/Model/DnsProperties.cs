@@ -29,17 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
-    /// A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map
-    /// creates when you create a namespace.
+    /// A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates
+    /// when you create a namespace.
     /// </summary>
     public partial class DnsProperties
     {
         private string _hostedZoneId;
+        private SOA _soa;
 
         /// <summary>
         /// Gets and sets the property HostedZoneId. 
         /// <para>
-        /// The ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace.
+        /// The ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
@@ -53,6 +54,24 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetHostedZoneId()
         {
             return this._hostedZoneId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SOA. 
+        /// <para>
+        /// Start of Authority (SOA) record for the hosted zone.
+        /// </para>
+        /// </summary>
+        public SOA SOA
+        {
+            get { return this._soa; }
+            set { this._soa = value; }
+        }
+
+        // Check to see if SOA property is set
+        internal bool IsSetSOA()
+        {
+            return this._soa != null;
         }
 
     }

@@ -591,6 +591,10 @@ namespace Amazon.ServiceDiscovery
         /// </summary>
         public static readonly OperationType REGISTER_INSTANCE = new OperationType("REGISTER_INSTANCE");
         /// <summary>
+        /// Constant UPDATE_NAMESPACE for OperationType
+        /// </summary>
+        public static readonly OperationType UPDATE_NAMESPACE = new OperationType("UPDATE_NAMESPACE");
+        /// <summary>
         /// Constant UPDATE_SERVICE for OperationType
         /// </summary>
         public static readonly OperationType UPDATE_SERVICE = new OperationType("UPDATE_SERVICE");

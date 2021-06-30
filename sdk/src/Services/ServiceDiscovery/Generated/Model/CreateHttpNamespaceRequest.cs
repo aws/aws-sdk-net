@@ -37,8 +37,8 @@ namespace Amazon.ServiceDiscovery.Model
     ///  
     /// <para>
     /// For the current quota on the number of namespaces that you can create using the same
-    /// AWS account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
-    /// Cloud Map quotas</a> in the <i>AWS Cloud Map Developer Guide</i>.
+    /// account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+    /// Map quotas</a> in the <i>Cloud Map Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateHttpNamespaceRequest : AmazonServiceDiscoveryRequest

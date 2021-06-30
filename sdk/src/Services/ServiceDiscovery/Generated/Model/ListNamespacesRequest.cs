@@ -30,8 +30,7 @@ namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
     /// Container for the parameters to the ListNamespaces operation.
-    /// Lists summary information about the namespaces that were created by the current AWS
-    /// account.
+    /// Lists summary information about the namespaces that were created by the current account.
     /// </summary>
     public partial class ListNamespacesRequest : AmazonServiceDiscoveryRequest
     {
@@ -65,9 +64,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of namespaces that you want AWS Cloud Map to return in the response
+        /// The maximum number of namespaces that you want Cloud Map to return in the response
         /// to a <code>ListNamespaces</code> request. If you don't specify a value for <code>MaxResults</code>,
-        /// AWS Cloud Map returns up to 100 namespaces.
+        /// Cloud Map returns up to 100 namespaces.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -96,8 +95,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// AWS Cloud Map gets <code>MaxResults</code> namespaces and then filters them based
-        /// on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code>
+        /// Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the
+        /// specified criteria. It's possible that no namespaces in the first <code>MaxResults</code>
         /// namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code>
         /// namespaces do contain namespaces that match the criteria.
         /// </para>

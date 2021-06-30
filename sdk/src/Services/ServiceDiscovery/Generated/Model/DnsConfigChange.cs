@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
-    /// A complex type that contains information about changes to the Route 53 DNS records
-    /// that AWS Cloud Map creates when you register an instance.
+    /// A complex type that contains information about changes to the Route 53 DNS records
+    /// that Cloud Map creates when you register an instance.
     /// </summary>
     public partial class DnsConfigChange
     {
@@ -39,8 +39,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property DnsRecords. 
         /// <para>
-        /// An array that contains one <code>DnsRecord</code> object for each Route 53 record
-        /// that you want AWS Cloud Map to create when you register an instance.
+        /// An array that contains one <code>DnsRecord</code> object for each Route 53 record
+        /// that you want Cloud Map to create when you register an instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

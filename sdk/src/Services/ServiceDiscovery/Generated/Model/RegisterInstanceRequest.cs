@@ -60,8 +60,8 @@ namespace Amazon.ServiceDiscovery.Model
     /// </para>
     ///  
     /// <para>
-    /// When AWS Cloud Map receives a DNS query for the specified DNS name, it returns the
-    /// applicable value:
+    /// When Cloud Map receives a DNS query for the specified DNS name, it returns the applicable
+    /// value:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -79,8 +79,8 @@ namespace Amazon.ServiceDiscovery.Model
     ///  </li> </ul> 
     /// <para>
     /// For the current quota on the number of instances that you can register using the same
-    /// namespace and using the same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
-    /// Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
+    /// namespace and using the same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+    /// Map quotas</a> in the <i>Cloud Map Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class RegisterInstanceRequest : AmazonServiceDiscoveryRequest
@@ -110,11 +110,11 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> 
         /// <para>
-        /// If you want AWS Cloud Map to create an Amazon Route 53 alias record that routes traffic
+        /// If you want Cloud Map to create an Amazon Route 53 alias record that routes traffic
         /// to an Elastic Load Balancing load balancer, specify the DNS name that's associated
         /// with the load balancer. For information about how to get the DNS name, see "DNSName"
         /// in the topic <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
-        /// in the <i>Route 53 API Reference</i>.
+        /// in the <i>Route 53 API Reference</i>.
         /// </para>
         ///  
         /// <para>
@@ -133,13 +133,13 @@ namespace Amazon.ServiceDiscovery.Model
         ///  </li> <li> 
         /// <para>
         /// If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code>
-        /// settings, AWS Cloud Map will create the Route 53 health check, but it doesn't associate
+        /// settings, Cloud Map will create the Route 53 health check, but it doesn't associate
         /// the health check with the alias record.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Auto naming currently doesn't support creating alias records that route traffic to
-        /// AWS resources other than Elastic Load Balancing load balancers.
+        /// Amazon Web Services resources other than Elastic Load Balancing load balancers.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -164,7 +164,7 @@ namespace Amazon.ServiceDiscovery.Model
         ///  </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> 
         /// <para>
         /// If the service configuration includes a <code>CNAME</code> record, the domain name
-        /// that you want Route 53 to return in response to DNS queries (for example, <code>example.com</code>).
+        /// that you want Route 53 to return in response to DNS queries (for example, <code>example.com</code>).
         /// </para>
         ///  
         /// <para>
@@ -174,7 +174,7 @@ namespace Amazon.ServiceDiscovery.Model
         ///  </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> 
         /// <para>
         /// If the service configuration includes an <code>A</code> record, the IPv4 address that
-        /// you want Route 53 to return in response to DNS queries (for example, <code>192.0.2.44</code>).
+        /// you want Route 53 to return in response to DNS queries (for example, <code>192.0.2.44</code>).
         /// </para>
         ///  
         /// <para>
@@ -186,7 +186,7 @@ namespace Amazon.ServiceDiscovery.Model
         ///  </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> 
         /// <para>
         /// If the service configuration includes an <code>AAAA</code> record, the IPv6 address
-        /// that you want Route 53 to return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
+        /// that you want Route 53 to return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
         /// </para>
         ///  
         /// <para>
@@ -197,18 +197,18 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </dd> <dt>AWS_INSTANCE_PORT</dt> <dd> 
         /// <para>
-        /// If the service includes an <code>SRV</code> record, the value that you want Route 53
-        /// to return for the port.
+        /// If the service includes an <code>SRV</code> record, the value that you want Route
+        /// 53 to return for the port.
         /// </para>
         ///  
         /// <para>
         /// If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that
-        /// you want Route 53 to send requests to. 
+        /// you want Route 53 to send requests to. 
         /// </para>
         ///  
         /// <para>
         /// This value is required if you specified settings for an <code>SRV</code> record or
-        /// a Route 53 health check when you created the service.
+        /// a Route 53 health check when you created the service.
         /// </para>
         ///  </dd> <dt>Custom attributes</dt> <dd> 
         /// <para>
@@ -279,9 +279,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, AWS
-        /// Cloud Map updates the existing DNS records, if any. If there's also an existing health
-        /// check, AWS Cloud Map deletes the old health check and creates a new one. 
+        /// If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, Cloud
+        /// Map updates the existing DNS records, if any. If there's also an existing health check,
+        /// Cloud Map deletes the old health check and creates a new one. 
         /// </para>
         ///  <note> 
         /// <para>

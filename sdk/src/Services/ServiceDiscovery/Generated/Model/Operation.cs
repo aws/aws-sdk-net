@@ -160,7 +160,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </dd> <dt>PENDING</dt> <dd> 
         /// <para>
-        /// AWS Cloud Map is performing the operation.
+        /// Cloud Map is performing the operation.
         /// </para>
         ///  </dd> <dt>SUCCESS</dt> <dd> 
         /// <para>

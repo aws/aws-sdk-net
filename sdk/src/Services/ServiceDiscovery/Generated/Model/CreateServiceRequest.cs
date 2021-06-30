@@ -35,7 +35,7 @@ namespace Amazon.ServiceDiscovery.Model
     ///  <ul> <li> 
     /// <para>
     /// For public and private DNS namespaces, one of the following combinations of DNS records
-    /// in Amazon Route 53:
+    /// in Amazon Route 53:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -64,14 +64,14 @@ namespace Amazon.ServiceDiscovery.Model
     ///  </li> </ul> 
     /// <para>
     /// After you create the service, you can submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
-    /// request, and AWS Cloud Map uses the values in the configuration to create the specified
+    /// request, and Cloud Map uses the values in the configuration to create the specified
     /// entities.
     /// </para>
     ///  
     /// <para>
     /// For the current quota on the number of instances that you can register using the same
-    /// namespace and using the same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
-    /// Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
+    /// namespace and using the same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+    /// Map quotas</a> in the <i>Cloud Map Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateServiceRequest : AmazonServiceDiscoveryRequest
@@ -129,8 +129,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property DnsConfig. 
         /// <para>
-        /// A complex type that contains information about the Amazon Route 53 records that you
-        /// want AWS Cloud Map to create when you register an instance. 
+        /// A complex type that contains information about the Amazon Route 53 records that you
+        /// want Cloud Map to create when you register an instance. 
         /// </para>
         /// </summary>
         public DnsConfig DnsConfig
@@ -149,9 +149,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property HealthCheckConfig. 
         /// <para>
         ///  <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings
-        /// for an optional Route 53 health check. If you specify settings for a health check,
-        /// AWS Cloud Map associates the health check with all the Route 53 DNS records that you
-        /// specify in <code>DnsConfig</code>.
+        /// for an optional Route 53 health check. If you specify settings for a health check,
+        /// Cloud Map associates the health check with all the Route 53 DNS records that you specify
+        /// in <code>DnsConfig</code>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -160,8 +160,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// For information about the charges for health checks, see <a href="http://aws.amazon.com/cloud-map/pricing/">AWS
-        /// Cloud Map Pricing</a>.
+        /// For information about the charges for health checks, see <a href="http://aws.amazon.com/cloud-map/pricing/">Cloud
+        /// Map Pricing</a>.
         /// </para>
         /// </summary>
         public HealthCheckConfig HealthCheckConfig
@@ -211,9 +211,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  
         /// <para>
-        /// If you want AWS Cloud Map to create an <code>SRV</code> record when you register an
-        /// instance and you're using a system that requires a specific <code>SRV</code> format,
-        /// such as <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for <code>Name</code>:
+        /// If you want Cloud Map to create an <code>SRV</code> record when you register an instance
+        /// and you're using a system that requires a specific <code>SRV</code> format, such as
+        /// <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for <code>Name</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -225,9 +225,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When you register an instance, AWS Cloud Map creates an <code>SRV</code> record and
-        /// assigns a name to the record by concatenating the service name and the namespace name
-        /// (for example,
+        /// When you register an instance, Cloud Map creates an <code>SRV</code> record and assigns
+        /// a name to the record by concatenating the service name and the namespace name (for
+        /// example,
         /// </para>
         ///  
         /// <para>

@@ -39,8 +39,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property DnsProperties. 
         /// <para>
-        /// A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map
-        /// creates when you create a namespace.
+        /// A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates
+        /// when you create a namespace.
         /// </para>
         /// </summary>
         public DnsProperties DnsProperties
