@@ -43,7 +43,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        /// The file format of a dataset that is created from an S3 file or folder.
+        /// The file format of a dataset that is created from an Amazon S3 file or folder.
         /// </para>
         /// </summary>
         public InputFormat Format
@@ -111,7 +111,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property PathOptions. 
         /// <para>
-        /// A set of options that defines how DataBrew interprets an S3 path of the dataset.
+        /// A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
         /// </para>
         /// </summary>
         public PathOptions PathOptions

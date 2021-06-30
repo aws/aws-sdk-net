@@ -29,29 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Represents the JSON-specific options that define how input is to be interpreted by
-    /// Glue DataBrew.
+    /// Represents options that specify how and where DataBrew writes the S3 output generated
+    /// by recipe jobs.
     /// </summary>
-    public partial class JsonOptions
+    public partial class S3TableOutputOptions
     {
-        private bool? _multiLine;
+        private S3Location _location;
 
         /// <summary>
-        /// Gets and sets the property MultiLine. 
+        /// Gets and sets the property Location. 
         /// <para>
-        /// A value that specifies whether JSON input contains embedded new line characters.
+        /// Represents an Amazon S3 location (bucket name and object key) where DataBrew can write
+        /// output from a job.
         /// </para>
         /// </summary>
-        public bool MultiLine
+        [AWSProperty(Required=true)]
+        public S3Location Location
         {
-            get { return this._multiLine.GetValueOrDefault(); }
-            set { this._multiLine = value; }
+            get { return this._location; }
+            set { this._location = value; }
         }
 
-        // Check to see if MultiLine property is set
-        internal bool IsSetMultiLine()
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
         {
-            return this._multiLine.HasValue; 
+            return this._location != null;
         }
 
     }

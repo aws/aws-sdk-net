@@ -235,7 +235,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew
+        /// The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew
         /// runs the job.
         /// </para>
         /// </summary>

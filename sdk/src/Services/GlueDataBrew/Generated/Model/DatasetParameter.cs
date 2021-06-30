@@ -30,7 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Represents a dataset paramater that defines type and conditions for a parameter in
-    /// the S3 path of the dataset.
+    /// the Amazon S3 path of the dataset.
     /// </summary>
     public partial class DatasetParameter
     {
@@ -44,7 +44,7 @@ namespace Amazon.GlueDataBrew.Model
         /// Gets and sets the property CreateColumn. 
         /// <para>
         /// Optional boolean value that defines whether the captured value of this parameter should
-        /// be loaded as an additional column in the dataset.
+        /// be used to create a new column in a dataset.
         /// </para>
         /// </summary>
         public bool CreateColumn
@@ -100,7 +100,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the parameter that is used in the dataset's S3 path.
+        /// The name of the parameter that is used in the dataset's Amazon S3 path.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

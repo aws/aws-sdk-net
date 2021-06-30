@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Represents how metadata stored in the AWS Glue Data Catalog is defined in a DataBrew
-    /// dataset.
+    /// Represents how metadata stored in the Glue Data Catalog is defined in a DataBrew dataset.
     /// </summary>
     public partial class DataCatalogInputDefinition
     {
@@ -42,8 +41,8 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property CatalogId. 
         /// <para>
-        /// The unique identifier of the AWS account that holds the Data Catalog that stores the
-        /// data.
+        /// The unique identifier of the Amazon Web Services account that holds the Data Catalog
+        /// that stores the data.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -101,7 +100,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property TempDirectory. 
         /// <para>
-        /// An Amazon location that AWS Glue Data Catalog can use as a temporary directory.
+        /// Represents an Amazon location where DataBrew can store intermediate results.
         /// </para>
         /// </summary>
         public S3Location TempDirectory

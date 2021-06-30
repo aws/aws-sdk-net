@@ -30,11 +30,12 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRecipeJob operation.
-    /// Creates a new job to transform input data, using steps defined in an existing AWS
-    /// Glue DataBrew recipe
+    /// Creates a new job to transform input data, using steps defined in an existing Glue
+    /// DataBrew recipe
     /// </summary>
     public partial class CreateRecipeJobRequest : AmazonGlueDataBrewRequest
     {
+        private List<DataCatalogOutput> _dataCatalogOutputs = new List<DataCatalogOutput>();
         private string _datasetName;
         private string _encryptionKeyArn;
         private EncryptionMode _encryptionMode;
@@ -48,6 +49,26 @@ namespace Amazon.GlueDataBrew.Model
         private string _roleArn;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private int? _timeout;
+
+        /// <summary>
+        /// Gets and sets the property DataCatalogOutputs. 
+        /// <para>
+        /// One or more artifacts that represent the AWS Glue Data Catalog output from running
+        /// the job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<DataCatalogOutput> DataCatalogOutputs
+        {
+            get { return this._dataCatalogOutputs; }
+            set { this._dataCatalogOutputs = value; }
+        }
+
+        // Check to see if DataCatalogOutputs property is set
+        internal bool IsSetDataCatalogOutputs()
+        {
+            return this._dataCatalogOutputs != null && this._dataCatalogOutputs.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property DatasetName. 
@@ -94,7 +115,7 @@ namespace Amazon.GlueDataBrew.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
+        ///  <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -196,7 +217,7 @@ namespace Amazon.GlueDataBrew.Model
         /// One or more artifacts that represent the output from running the job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Min=1)]
         public List<Output> Outputs
         {
             get { return this._outputs; }
@@ -247,8 +268,8 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// to be assumed when DataBrew runs the job.
+        /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
+        /// be assumed when DataBrew runs the job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

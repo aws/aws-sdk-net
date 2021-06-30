@@ -71,7 +71,7 @@ namespace Amazon.GlueDataBrew.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
+        ///  <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -206,8 +206,8 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// to be assumed when DataBrew runs the job.
+        /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
+        /// be assumed when DataBrew runs the job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

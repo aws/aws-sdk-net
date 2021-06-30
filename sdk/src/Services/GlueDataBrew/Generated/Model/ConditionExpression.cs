@@ -53,7 +53,7 @@ namespace Amazon.GlueDataBrew.Model
         /// Gets and sets the property Condition. 
         /// <para>
         /// A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe
-        /// structure</a> in the <i>AWS Glue DataBrew Developer Guide</i>.
+        /// structure</a> in the <i>Glue DataBrew Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

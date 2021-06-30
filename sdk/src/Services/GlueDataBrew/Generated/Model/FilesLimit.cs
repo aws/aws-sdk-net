@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Represents a limit imposed on number of S3 files that should be selected for a dataset
-    /// from a connected S3 path.
+    /// Represents a limit imposed on number of Amazon S3 files that should be selected for
+    /// a dataset from a connected Amazon S3 path.
     /// </summary>
     public partial class FilesLimit
     {
@@ -41,7 +41,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property MaxFiles. 
         /// <para>
-        /// The number of S3 files to select.
+        /// The number of Amazon S3 files to select.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -60,8 +60,9 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Order. 
         /// <para>
-        /// A criteria to use for S3 files sorting before their selection. By default uses DESCENDING
-        /// order, i.e. most recent files are selected first. Anotherpossible value is ASCENDING.
+        /// A criteria to use for Amazon S3 files sorting before their selection. By default uses
+        /// DESCENDING order, i.e. most recent files are selected first. Anotherpossible value
+        /// is ASCENDING.
         /// </para>
         /// </summary>
         public Order Order
@@ -79,8 +80,8 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property OrderedBy. 
         /// <para>
-        /// A criteria to use for S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE
-        /// as a sorting criteria. Currently it's the only allowed value.
+        /// A criteria to use for Amazon S3 files sorting before their selection. By default uses
+        /// LAST_MODIFIED_DATE as a sorting criteria. Currently it's the only allowed value.
         /// </para>
         /// </summary>
         public OrderedBy OrderedBy

@@ -51,7 +51,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The ID of the AWS account that owns the project.
+        /// The ID of the Amazon Web Services account that owns the project.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

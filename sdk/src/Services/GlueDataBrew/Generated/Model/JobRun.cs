@@ -35,6 +35,7 @@ namespace Amazon.GlueDataBrew.Model
     {
         private int? _attempt;
         private DateTime? _completedOn;
+        private List<DataCatalogOutput> _dataCatalogOutputs = new List<DataCatalogOutput>();
         private string _datasetName;
         private string _errorMessage;
         private int? _executionTime;
@@ -83,6 +84,26 @@ namespace Amazon.GlueDataBrew.Model
         internal bool IsSetCompletedOn()
         {
             return this._completedOn.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataCatalogOutputs. 
+        /// <para>
+        /// One or more artifacts that represent the AWS Glue Data Catalog output from running
+        /// the job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<DataCatalogOutput> DataCatalogOutputs
+        {
+            get { return this._dataCatalogOutputs; }
+            set { this._dataCatalogOutputs = value; }
+        }
+
+        // Check to see if DataCatalogOutputs property is set
+        internal bool IsSetDataCatalogOutputs()
+        {
+            return this._dataCatalogOutputs != null && this._dataCatalogOutputs.Count > 0; 
         }
 
         /// <summary>

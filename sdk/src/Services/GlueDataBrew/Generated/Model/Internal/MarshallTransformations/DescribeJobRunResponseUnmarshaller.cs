@@ -63,6 +63,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                     response.CompletedOn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataCatalogOutputs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DataCatalogOutput, DataCatalogOutputUnmarshaller>(DataCatalogOutputUnmarshaller.Instance);
+                    response.DataCatalogOutputs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DatasetName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Represents a set of options that define how DataBrew selects files for a given S3
-    /// path in a dataset.
+    /// Represents a set of options that define how DataBrew selects files for a given Amazon
+    /// S3 path in a dataset.
     /// </summary>
     public partial class PathOptions
     {
@@ -59,8 +59,8 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property LastModifiedDateCondition. 
         /// <para>
-        /// If provided, this structure defines a date range for matching S3 objects based on
-        /// their LastModifiedDate attribute in S3.
+        /// If provided, this structure defines a date range for matching Amazon S3 objects based
+        /// on their LastModifiedDate attribute in Amazon S3.
         /// </para>
         /// </summary>
         public FilterExpression LastModifiedDateCondition
@@ -78,8 +78,8 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// A structure that maps names of parameters used in the S3 path of a dataset to their
-        /// definitions.
+        /// A structure that maps names of parameters used in the Amazon S3 path of a dataset
+        /// to their definitions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

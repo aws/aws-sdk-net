@@ -747,6 +747,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.DatabaseTableOutputOptions.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.DataCatalogInputDefinition.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -758,6 +763,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.DataCatalogInputDefinition.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.DataCatalogOutput.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.DataCatalogOutput.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.DataCatalogOutput.TableName</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>

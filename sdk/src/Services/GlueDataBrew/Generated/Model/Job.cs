@@ -36,6 +36,7 @@ namespace Amazon.GlueDataBrew.Model
         private string _accountId;
         private DateTime? _createDate;
         private string _createdBy;
+        private List<DataCatalogOutput> _dataCatalogOutputs = new List<DataCatalogOutput>();
         private string _datasetName;
         private string _encryptionKeyArn;
         private EncryptionMode _encryptionMode;
@@ -58,7 +59,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The ID of the AWS account that owns the job.
+        /// The ID of the Amazon Web Services account that owns the job.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -111,6 +112,26 @@ namespace Amazon.GlueDataBrew.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DataCatalogOutputs. 
+        /// <para>
+        /// One or more artifacts that represent the AWS Glue Data Catalog output from running
+        /// the job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<DataCatalogOutput> DataCatalogOutputs
+        {
+            get { return this._dataCatalogOutputs; }
+            set { this._dataCatalogOutputs = value; }
+        }
+
+        // Check to see if DataCatalogOutputs property is set
+        internal bool IsSetDataCatalogOutputs()
+        {
+            return this._dataCatalogOutputs != null && this._dataCatalogOutputs.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DatasetName. 
         /// <para>
         /// A dataset that the job is to process.
@@ -157,7 +178,7 @@ namespace Amazon.GlueDataBrew.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
+        ///  <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.
         /// </para>
         ///  </li> <li> 
         /// <para>

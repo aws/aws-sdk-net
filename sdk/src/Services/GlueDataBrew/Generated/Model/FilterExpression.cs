@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Represents a structure for defining parameter conditions.
+    /// Represents a structure for defining parameter conditions. Supported conditions are
+    /// described here: <a href="https://docs-aws.amazon.com/databrew/latest/dg/datasets.multiple-files.html#conditions.for.dynamic.datasets">Supported
+    /// conditions for dynamic datasets</a> in the <i>Glue DataBrew Developer Guide</i>.
     /// </summary>
     public partial class FilterExpression
     {

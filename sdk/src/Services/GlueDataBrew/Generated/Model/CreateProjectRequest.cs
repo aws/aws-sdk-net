@@ -102,8 +102,8 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// to be assumed for this request.
+        /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
+        /// be assumed for this request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

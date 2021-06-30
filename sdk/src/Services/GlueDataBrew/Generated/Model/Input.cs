@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Represents information on how DataBrew can find data, in either the AWS Glue Data
-    /// Catalog or Amazon S3.
+    /// Represents information on how DataBrew can find data, in either the Glue Data Catalog
+    /// or Amazon S3.
     /// </summary>
     public partial class Input
     {
@@ -59,7 +59,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property DataCatalogInputDefinition. 
         /// <para>
-        /// The AWS Glue Data Catalog parameters for the data.
+        /// The Glue Data Catalog parameters for the data.
         /// </para>
         /// </summary>
         public DataCatalogInputDefinition DataCatalogInputDefinition

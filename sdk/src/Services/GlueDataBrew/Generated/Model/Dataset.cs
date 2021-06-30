@@ -50,7 +50,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The ID of the AWS account that owns the dataset.
+        /// The ID of the Amazon Web Services account that owns the dataset.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -105,7 +105,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        /// The file format of a dataset that is created from an S3 file or folder.
+        /// The file format of a dataset that is created from an Amazon S3 file or folder.
         /// </para>
         /// </summary>
         public InputFormat Format
@@ -141,7 +141,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        /// Information on how DataBrew can find the dataset, in either the AWS Glue Data Catalog
+        /// Information on how DataBrew can find the dataset, in either the Glue Data Catalog
         /// or Amazon S3.
         /// </para>
         /// </summary>
@@ -216,7 +216,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property PathOptions. 
         /// <para>
-        /// A set of options that defines how DataBrew interprets an S3 path of the dataset.
+        /// A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
         /// </para>
         /// </summary>
         public PathOptions PathOptions
@@ -253,7 +253,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The location of the data for the dataset, either Amazon S3 or the AWS Glue Data Catalog.
+        /// The location of the data for the dataset, either Amazon S3 or the Glue Data Catalog.
         /// </para>
         /// </summary>
         public Source Source

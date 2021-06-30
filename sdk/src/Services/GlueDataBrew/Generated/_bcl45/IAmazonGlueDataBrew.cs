@@ -31,7 +31,7 @@ namespace Amazon.GlueDataBrew
     /// <summary>
     /// Interface for accessing GlueDataBrew
     ///
-    /// AWS Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies
+    /// Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies
     /// data preparation tasks, targeting data issues that are hard to spot and time-consuming
     /// to fix. DataBrew empowers users of all technical levels to visualize the data and
     /// perform one-click data transformations, with no coding required.
@@ -407,8 +407,8 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Creates a new job to transform input data, using steps defined in an existing AWS
-        /// Glue DataBrew recipe
+        /// Creates a new job to transform input data, using steps defined in an existing Glue
+        /// DataBrew recipe
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRecipeJob service method.</param>
         /// 
@@ -434,8 +434,8 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Creates a new job to transform input data, using steps defined in an existing AWS
-        /// Glue DataBrew recipe
+        /// Creates a new job to transform input data, using steps defined in an existing Glue
+        /// DataBrew recipe
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRecipeJob service method.</param>
         /// <param name="cancellationToken">

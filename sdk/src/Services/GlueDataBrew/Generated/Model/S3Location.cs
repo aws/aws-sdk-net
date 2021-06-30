@@ -40,7 +40,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// The S3 bucket name.
+        /// The Amazon S3 bucket name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=63)]
