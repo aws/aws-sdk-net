@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.62.0",
+    "ProductVersion" : "3.7.63.0",
     "CoreVersion"    : "3.7.0.37",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -14,7 +14,7 @@
             "InPreview"               : false
         },
         "AutoScaling" : {
-            "Version" : "3.7.3.7",
+            "Version" : "3.7.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.37"
@@ -1026,7 +1026,7 @@
             "InPreview"               : false
         },
         "ServiceDiscovery"                : {
-            "Version" : "3.7.2.6",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.37"
@@ -1394,7 +1394,7 @@
             "InPreview"               : false
         },
         "MediaPackageVod"                 : {
-            "Version" : "3.7.1.20",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.37"
@@ -1682,7 +1682,7 @@
             "InPreview"               : false
         },
         "Kendra"                          : {
-            "Version" : "3.7.6.1",
+            "Version" : "3.7.6.2",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.37"
@@ -1874,7 +1874,7 @@
             "InPreview"               : false
         },
         "GlueDataBrew"                    : {
-            "Version" : "3.7.1.32",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.37"
@@ -2138,7 +2138,7 @@
             "InPreview"               : false
         },
         "SSMContacts"                     : {
-            "Version" : "3.7.0.16",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.37"
