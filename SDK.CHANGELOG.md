@@ -1,3 +1,16 @@
+### 3.7.64.0 (2021-07-01 18:14 UTC)
+* EC2 (3.7.14.0)
+	* Adding a new reserved field to support future infrastructure improvements for Amazon EC2 Fleet.
+* SageMaker (3.7.8.0)
+	* SageMaker model registry now supports up to 5 containers and associated environment variables.
+* SQS (3.7.0.37)
+	* Documentation updates for Amazon SQS.
+* Core 3.7.0.38
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.63.0 (2021-06-30 18:13 UTC)
 * AutoScaling (3.7.4.0)
 	* Amazon EC2 Auto Scaling infrastructure improvements and optimizations.
