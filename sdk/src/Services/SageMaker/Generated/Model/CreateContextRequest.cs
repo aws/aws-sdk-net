@@ -56,7 +56,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ContextName. 
         /// <para>
-        /// The name of the context. Must be unique to your account in an AWS Region.
+        /// The name of the context. Must be unique to your account in an Amazon Web Services
+        /// Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=120)]

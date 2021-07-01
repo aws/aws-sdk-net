@@ -44,7 +44,8 @@ namespace Amazon.SageMaker.Model
     /// <para>
     /// When you use SageMaker Studio or the SageMaker Python SDK, all experiments, trials,
     /// and trial components are automatically tracked, logged, and indexed. When you use
-    /// the AWS SDK for Python (Boto), you must use the logging APIs provided by the SDK.
+    /// the Amazon Web Services SDK for Python (Boto), you must use the logging APIs provided
+    /// by the SDK.
     /// </para>
     ///  
     /// <para>
@@ -115,8 +116,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ExperimentName. 
         /// <para>
-        /// The name of the experiment. The name must be unique in your AWS account and is not
-        /// case-sensitive.
+        /// The name of the experiment. The name must be unique in your Amazon Web Services account
+        /// and is not case-sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=120)]

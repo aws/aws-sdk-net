@@ -45,8 +45,8 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// One or more vendors that you select from the AWS Marketplace. Vendors provide expertise
-    /// in specific areas. 
+    /// One or more vendors that you select from the Amazon Web Services Marketplace. Vendors
+    /// provide expertise in specific areas. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -333,9 +333,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property LabelingJobName. 
         /// <para>
         /// The name of the labeling job. This name is used to identify the job in a list of labeling
-        /// jobs. Labeling job names must be unique within an AWS account and region. <code>LabelingJobName</code>
-        /// is not case sensitive. For example, Example-job and example-job are considered the
-        /// same labeling job name by Ground Truth.
+        /// jobs. Labeling job names must be unique within an Amazon Web Services account and
+        /// region. <code>LabelingJobName</code> is not case sensitive. For example, Example-job
+        /// and example-job are considered the same labeling job name by Ground Truth.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -354,8 +354,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property OutputConfig. 
         /// <para>
-        /// The location of the output data and the AWS Key Management Service key ID for the
-        /// key used to encrypt the output data, if any.
+        /// The location of the output data and the Amazon Web Services Key Management Service
+        /// key ID for the key used to encrypt the output data, if any.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -416,7 +416,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// An array of key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+        /// Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

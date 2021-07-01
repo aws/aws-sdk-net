@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the ListModels operation.
-    /// Lists models created with the <a>CreateModel</a> API.
+    /// Lists models created with the <code>CreateModel</code> API.
     /// </summary>
     public partial class ListModelsRequest : AmazonSageMakerRequest
     {

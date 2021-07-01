@@ -41,9 +41,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt
-        /// data on the storage volume after compilation job. If you don't provide a KMS key ID,
-        /// Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.
+        /// The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that
+        /// Amazon SageMaker uses to encrypt data on the storage volume after compilation job.
+        /// If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon
+        /// S3 for your role's account.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -81,10 +82,10 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// AWS IoT Greengrass uses semantic versions for components. Semantic versions follow
-        /// a<i> major.minor.patch</i> number system. For example, version 1.0.0 represents the
-        /// first major release for a component. For more information, see the <a href="https://semver.org/">semantic
-        /// version specification</a>.
+        /// Amazon Web Services IoT Greengrass uses semantic versions for components. Semantic
+        /// versions follow a<i> major.minor.patch</i> number system. For example, version 1.0.0
+        /// represents the first major release for a component. For more information, see the
+        /// <a href="https://semver.org/">semantic version specification</a>.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
@@ -121,8 +122,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property PresetDeploymentType. 
         /// <para>
-        /// The deployment type SageMaker Edge Manager will create. Currently only supports AWS
-        /// IoT Greengrass Version 2 components.
+        /// The deployment type SageMaker Edge Manager will create. Currently only supports Amazon
+        /// Web Services IoT Greengrass Version 2 components.
         /// </para>
         /// </summary>
         public EdgePresetDeploymentType PresetDeploymentType

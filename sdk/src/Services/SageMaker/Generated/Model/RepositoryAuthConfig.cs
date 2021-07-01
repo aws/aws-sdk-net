@@ -42,10 +42,12 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RepositoryCredentialsProviderArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an AWS Lambda function that provides credentials
-        /// to authenticate to the private Docker registry where your model image is hosted. For
-        /// information about how to create an AWS Lambda function, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html">Create
-        /// a Lambda function with the console</a> in the <i>AWS Lambda Developer Guide</i>.
+        /// The Amazon Resource Name (ARN) of an Amazon Web Services Lambda function that provides
+        /// credentials to authenticate to the private Docker registry where your model image
+        /// is hosted. For information about how to create an Amazon Web Services Lambda function,
+        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html">Create
+        /// a Lambda function with the console</a> in the <i>Amazon Web Services Lambda Developer
+        /// Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

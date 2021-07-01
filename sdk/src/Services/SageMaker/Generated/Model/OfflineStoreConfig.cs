@@ -38,8 +38,8 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
-    /// To encrypt an <code>OfflineStore</code> using at rest data encryption, specify AWS
-    /// Key Management Service (KMS) key ID, or <code>KMSKeyId</code>, in <code>S3StorageConfig</code>.
+    /// To encrypt an <code>OfflineStore</code> using at rest data encryption, specify Amazon
+    /// Web Services Key Management Service (KMS) key ID, or <code>KMSKeyId</code>, in <code>S3StorageConfig</code>.
     /// </para>
     /// </summary>
     public partial class OfflineStoreConfig
@@ -70,8 +70,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DisableGlueTableCreation. 
         /// <para>
-        /// Set to <code>True</code> to disable the automatic creation of an AWS Glue table when
-        /// configuring an <code>OfflineStore</code>.
+        /// Set to <code>True</code> to disable the automatic creation of an Amazon Web Services
+        /// Glue table when configuring an <code>OfflineStore</code>.
         /// </para>
         /// </summary>
         public bool DisableGlueTableCreation

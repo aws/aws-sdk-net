@@ -192,7 +192,11 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InferenceImage.
+        /// Gets and sets the property InferenceImage. 
+        /// <para>
+        /// The inference image to use when compiling a model. Specify an image only if the target
+        /// device is a cloud instance.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
         public string InferenceImage

@@ -33,8 +33,8 @@ namespace Amazon.SageMaker.Model
     /// Creates a <code>Domain</code> used by Amazon SageMaker Studio. A domain consists of
     /// an associated Amazon Elastic File System (EFS) volume, a list of authorized users,
     /// and a variety of security, application, policy, and Amazon Virtual Private Cloud (VPC)
-    /// configurations. An AWS account is limited to one domain per region. Users within a
-    /// domain can share notebook files and other artifacts with each other.
+    /// configurations. An Amazon Web Services account is limited to one domain per region.
+    /// Users within a domain can share notebook files and other artifacts with each other.
     /// 
     ///  
     /// <para>
@@ -48,10 +48,10 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
-    /// SageMaker uses the AWS Key Management Service (AWS KMS) to encrypt the EFS volume
-    /// attached to the domain with an AWS managed customer master key (CMK) by default. For
-    /// more control, you can specify a customer managed CMK. For more information, see <a
-    /// href="https://docs.aws.amazon.com/sagemaker/latest/dg/encryption-at-rest.html">Protect
+    /// SageMaker uses the Amazon Web Services Key Management Service (Amazon Web Services
+    /// KMS) to encrypt the EFS volume attached to the domain with an Amazon Web Services
+    /// managed customer master key (CMK) by default. For more control, you can specify a
+    /// customer managed CMK. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/encryption-at-rest.html">Protect
     /// Data at Rest Using Encryption</a>.
     /// </para>
     ///  
@@ -82,7 +82,12 @@ namespace Amazon.SageMaker.Model
     /// train or host models unless your VPC has an interface endpoint to the SageMaker API
     /// and runtime or a NAT gateway and your security groups allow outbound connections.
     /// </para>
-    ///  </li> </ul> 
+    ///  </li> </ul> <important> 
+    /// <para>
+    /// NFS traffic over TCP on port 2049 needs to be allowed in both inbound and outbound
+    /// rules in order to launch a SageMaker Studio app successfully.
+    /// </para>
+    ///  </important> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect
     /// SageMaker Studio Notebooks to Resources in a VPC</a>.
@@ -215,9 +220,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with an AWS
-        /// managed customer master key (CMK) by default. For more control, specify a customer
-        /// managed CMK.
+        /// SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain
+        /// with an Amazon Web Services managed customer master key (CMK) by default. For more
+        /// control, specify a customer managed CMK.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]

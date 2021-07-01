@@ -34,6 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class ModelPackageContainerDefinition
     {
         private string _containerHostname;
+        private Dictionary<string, string> _environment = new Dictionary<string, string>();
         private string _image;
         private string _imageDigest;
         private string _modelDataUrl;
@@ -56,6 +57,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetContainerHostname()
         {
             return this._containerHostname != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Environment. 
+        /// <para>
+        /// The environment variables to set in the Docker container. Each key and value in the
+        /// <code>Environment</code> string to string map can have length of up to 1024. We support
+        /// up to 16 entries in the map.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=16)]
+        public Dictionary<string, string> Environment
+        {
+            get { return this._environment; }
+            set { this._environment = value; }
+        }
+
+        // Check to see if Environment property is set
+        internal bool IsSetEnvironment()
+        {
+            return this._environment != null && this._environment.Count > 0; 
         }
 
         /// <summary>
@@ -134,7 +156,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ProductId. 
         /// <para>
-        /// The AWS Marketplace product ID of the model package.
+        /// The Amazon Web Services Marketplace product ID of the model package.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

@@ -31,14 +31,15 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the CreateWorkforce operation.
     /// Use this operation to create a workforce. This operation will return an error if a
-    /// workforce already exists in the AWS Region that you specify. You can only create one
-    /// workforce in each AWS Region per AWS account.
+    /// workforce already exists in the Amazon Web Services Region that you specify. You can
+    /// only create one workforce in each Amazon Web Services Region per Amazon Web Services
+    /// account.
     /// 
     ///  
     /// <para>
-    /// If you want to create a new workforce in an AWS Region where a workforce already exists,
-    /// use the API operation to delete the existing workforce and then use <code>CreateWorkforce</code>
-    /// to create a new workforce.
+    /// If you want to create a new workforce in an Amazon Web Services Region where a workforce
+    /// already exists, use the API operation to delete the existing workforce and then use
+    /// <code>CreateWorkforce</code> to create a new workforce.
     /// </para>
     ///  
     /// <para>

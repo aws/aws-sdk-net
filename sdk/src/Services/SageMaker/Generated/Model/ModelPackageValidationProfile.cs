@@ -34,8 +34,8 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// The data provided in the validation profile is made available to your buyers on AWS
-    /// Marketplace.
+    /// The data provided in the validation profile is made available to your buyers on Amazon
+    /// Web Services Marketplace.
     /// </para>
     /// </summary>
     public partial class ModelPackageValidationProfile

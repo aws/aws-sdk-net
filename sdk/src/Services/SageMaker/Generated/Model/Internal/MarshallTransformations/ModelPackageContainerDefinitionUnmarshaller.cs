@@ -70,6 +70,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ContainerHostname = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Environment", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Environment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Image", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

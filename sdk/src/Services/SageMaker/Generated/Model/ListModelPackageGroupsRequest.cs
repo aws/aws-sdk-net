@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the ListModelPackageGroups operation.
-    /// Gets a list of the model groups in your AWS account.
+    /// Gets a list of the model groups in your Amazon Web Services account.
     /// </summary>
     public partial class ListModelPackageGroupsRequest : AmazonSageMakerRequest
     {

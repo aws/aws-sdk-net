@@ -45,13 +45,13 @@ namespace Amazon.SageMaker.Model
     ///  <ul> <li> 
     /// <para>
     ///  <code>TransformJobName</code> - Identifies the transform job. The name must be unique
-    /// within an AWS Region in an AWS account.
+    /// within an Amazon Web Services Region in an Amazon Web Services account.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <code>ModelName</code> - Identifies the model to use. <code>ModelName</code> must
-    /// be the name of an existing Amazon SageMaker model in the same AWS Region and AWS account.
-    /// For information on creating a model, see <a>CreateModel</a>.
+    /// be the name of an existing Amazon SageMaker model in the same Amazon Web Services
+    /// Region and Amazon Web Services account. For information on creating a model, see <a>CreateModel</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -266,8 +266,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ModelName. 
         /// <para>
         /// The name of the model that you want to use for the transform job. <code>ModelName</code>
-        /// must be the name of an existing Amazon SageMaker model within an AWS Region in an
-        /// AWS account.
+        /// must be the name of an existing Amazon SageMaker model within an Amazon Web Services
+        /// Region in an Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=63)]
@@ -287,7 +287,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// (Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+        /// Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -325,8 +326,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TransformJobName. 
         /// <para>
-        /// The name of the transform job. The name must be unique within an AWS Region in an
-        /// AWS account. 
+        /// The name of the transform job. The name must be unique within an Amazon Web Services
+        /// Region in an Amazon Web Services account. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

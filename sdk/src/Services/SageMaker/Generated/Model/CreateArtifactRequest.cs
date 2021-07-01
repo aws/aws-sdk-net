@@ -56,7 +56,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ArtifactName. 
         /// <para>
-        /// The name of the artifact. Must be unique to your account in an AWS Region.
+        /// The name of the artifact. Must be unique to your account in an Amazon Web Services
+        /// Region.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=120)]

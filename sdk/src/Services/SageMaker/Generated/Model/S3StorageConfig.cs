@@ -41,8 +41,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS Key Management Service (KMS) key ID of the key used to encrypt any objects
-        /// written into the <code>OfflineStore</code> S3 location.
+        /// The Amazon Web Services Key Management Service (KMS) key ID of the key used to encrypt
+        /// any objects written into the <code>OfflineStore</code> S3 location.
         /// </para>
         ///  
         /// <para>

@@ -30,9 +30,9 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSubscribedWorkteams operation.
-    /// Gets a list of the work teams that you are subscribed to in the AWS Marketplace. The
-    /// list may be empty if no work team satisfies the filter specified in the <code>NameContains</code>
-    /// parameter.
+    /// Gets a list of the work teams that you are subscribed to in the Amazon Web Services
+    /// Marketplace. The list may be empty if no work team satisfies the filter specified
+    /// in the <code>NameContains</code> parameter.
     /// </summary>
     public partial class ListSubscribedWorkteamsRequest : AmazonSageMakerRequest
     {

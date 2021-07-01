@@ -239,8 +239,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property OfflineStoreConfig. 
         /// <para>
         /// The configuration of the <code>OfflineStore</code>, inducing the S3 location of the
-        /// <code>OfflineStore</code>, AWS Glue or AWS Hive data catalogue configurations, and
-        /// the security configuration.
+        /// <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web Services Hive data
+        /// catalogue configurations, and the security configuration.
         /// </para>
         /// </summary>
         public OfflineStoreConfig OfflineStoreConfig

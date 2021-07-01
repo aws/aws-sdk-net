@@ -42,8 +42,8 @@ namespace Amazon.SageMaker.Model
     /// <para>
     /// For an example that calls this method when deploying a model to Amazon SageMaker hosting
     /// services, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
-    /// the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto 3)).</a>
-    /// 
+    /// the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for Python
+    /// (Boto 3)).</a> 
     /// </para>
     ///  <note> 
     /// <para>
@@ -54,7 +54,8 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// The endpoint name must be unique within an AWS Region in your AWS account. 
+    /// The endpoint name must be unique within an Amazon Web Services Region in your Amazon
+    /// Web Services account. 
     /// </para>
     ///  
     /// <para>
@@ -84,12 +85,13 @@ namespace Amazon.SageMaker.Model
     ///  
     /// <para>
     /// If any of the models hosted at this endpoint get model data from an Amazon S3 location,
-    /// Amazon SageMaker uses AWS Security Token Service to download model artifacts from
-    /// the S3 path you provided. AWS STS is activated in your IAM user account by default.
-    /// If you previously deactivated AWS STS for a region, you need to reactivate AWS STS
-    /// for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-    /// and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management
-    /// User Guide</i>.
+    /// Amazon SageMaker uses Amazon Web Services Security Token Service to download model
+    /// artifacts from the S3 path you provided. Amazon Web Services STS is activated in your
+    /// IAM user account by default. If you previously deactivated Amazon Web Services STS
+    /// for a region, you need to reactivate Amazon Web Services STS for that region. For
+    /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+    /// and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the
+    /// <i>Amazon Web Services Identity and Access Management User Guide</i>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -166,9 +168,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EndpointName. 
         /// <para>
-        /// The name of the endpoint.The name must be unique within an AWS Region in your AWS
-        /// account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case
-        /// is preserved and must be matched in .
+        /// The name of the endpoint.The name must be unique within an Amazon Web Services Region
+        /// in your Amazon Web Services account. The name is case-insensitive in <code>CreateEndpoint</code>,
+        /// but the case is preserved and must be matched in .
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=63)]
@@ -187,10 +189,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An array of key-value pairs. You can use tags to categorize your AWS resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// AWS Resources</a>.
+        /// An array of key-value pairs. You can use tags to categorize your Amazon Web Services
+        /// resources in different ways, for example, by purpose, owner, or environment. For more
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web Services Resources</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

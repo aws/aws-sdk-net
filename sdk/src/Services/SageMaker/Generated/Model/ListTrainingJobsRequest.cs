@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
-    /// You can quickly test the API using the following AWS CLI code.
+    /// You can quickly test the API using the following Amazon Web Services CLI code.
     /// </para>
     ///  
     /// <para>

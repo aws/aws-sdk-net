@@ -60,8 +60,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MonitoringScheduleName. 
         /// <para>
-        /// The name of the monitoring schedule. The name must be unique within an AWS Region
-        /// within an AWS account.
+        /// The name of the monitoring schedule. The name must be unique within an Amazon Web
+        /// Services Region within an Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

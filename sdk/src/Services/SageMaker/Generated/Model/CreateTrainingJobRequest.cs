@@ -543,10 +543,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An array of key-value pairs. You can use tags to categorize your AWS resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// AWS Resources</a>.
+        /// An array of key-value pairs. You can use tags to categorize your Amazon Web Services
+        /// resources in different ways, for example, by purpose, owner, or environment. For more
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web Services Resources</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -580,8 +580,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TrainingJobName. 
         /// <para>
-        /// The name of the training job. The name must be unique within an AWS Region in an AWS
-        /// account. 
+        /// The name of the training job. The name must be unique within an Amazon Web Services
+        /// Region in an Amazon Web Services account. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

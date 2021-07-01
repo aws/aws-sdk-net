@@ -36,8 +36,8 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// Data written into the <code>OfflineStore</code> will not be deleted. The AWS Glue
-    /// database and tables that are automatically created for your <code>OfflineStore</code>
+    /// Data written into the <code>OfflineStore</code> will not be deleted. The Amazon Web
+    /// Services Glue database and tables that are automatically created for your <code>OfflineStore</code>
     /// are not deleted. 
     /// </para>
     /// </summary>
@@ -49,7 +49,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property FeatureGroupName. 
         /// <para>
         /// The name of the <code>FeatureGroup</code> you want to delete. The name must be unique
-        /// within an AWS Region in an AWS account. 
+        /// within an Amazon Web Services Region in an Amazon Web Services account. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

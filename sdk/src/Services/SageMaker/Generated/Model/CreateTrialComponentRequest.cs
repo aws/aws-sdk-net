@@ -42,21 +42,14 @@ namespace Amazon.SageMaker.Model
     /// <para>
     /// When you use SageMaker Studio or the SageMaker Python SDK, all experiments, trials,
     /// and trial components are automatically tracked, logged, and indexed. When you use
-    /// the AWS SDK for Python (Boto), you must use the logging APIs provided by the SDK.
+    /// the Amazon Web Services SDK for Python (Boto), you must use the logging APIs provided
+    /// by the SDK.
     /// </para>
     ///  
     /// <para>
     /// You can add tags to a trial component and then use the <a>Search</a> API to search
     /// for the tags.
     /// </para>
-    ///  <note> 
-    /// <para>
-    ///  <code>CreateTrialComponent</code> can only be invoked from within an SageMaker managed
-    /// environment. This includes SageMaker training jobs, processing jobs, transform jobs,
-    /// and SageMaker notebooks. A call to <code>CreateTrialComponent</code> from outside
-    /// one of these environments results in an error.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class CreateTrialComponentRequest : AmazonSageMakerRequest
     {
@@ -255,8 +248,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TrialComponentName. 
         /// <para>
-        /// The name of the component. The name must be unique in your AWS account and is not
-        /// case-sensitive.
+        /// The name of the component. The name must be unique in your Amazon Web Services account
+        /// and is not case-sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=120)]

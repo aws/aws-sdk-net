@@ -247,7 +247,8 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// A list of the tags associated with the monitoring schedlue. For more information,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// AWS resources</a> in the <i>AWS General Reference Guide</i>.
+        /// Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference
+        /// Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

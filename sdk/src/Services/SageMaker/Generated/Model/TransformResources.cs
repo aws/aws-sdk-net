@@ -82,9 +82,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VolumeKmsKeyId. 
         /// <para>
-        /// The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt
-        /// model data on the storage volume attached to the ML compute instance(s) that run the
-        /// batch transform job.
+        /// The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that
+        /// Amazon SageMaker uses to encrypt model data on the storage volume attached to the
+        /// ML compute instance(s) that run the batch transform job.
         /// </para>
         ///  <note> 
         /// <para>

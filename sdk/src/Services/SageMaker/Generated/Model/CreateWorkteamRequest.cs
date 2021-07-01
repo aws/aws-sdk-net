@@ -137,7 +137,8 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
         /// Tag</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-        /// Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User Guide</i>.
+        /// Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost Management
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

@@ -500,7 +500,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The AWS Identity and Access Management (IAM) role configured for the training job.
+        /// The Amazon Web Services Identity and Access Management (IAM) role configured for the
+        /// training job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -651,10 +652,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An array of key-value pairs. You can use tags to categorize your AWS resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// AWS Resources</a>.
+        /// An array of key-value pairs. You can use tags to categorize your Amazon Web Services
+        /// resources in different ways, for example, by purpose, owner, or environment. For more
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web Services Resources</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

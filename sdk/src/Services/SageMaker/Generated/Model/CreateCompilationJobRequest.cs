@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
     /// <para>
     /// If you choose to host your model using Amazon SageMaker hosting services, you can
     /// use the resulting model artifacts as part of the model. You can also use the artifacts
-    /// with AWS IoT Greengrass. In that case, deploy them as an ML resource.
+    /// with Amazon Web Services IoT Greengrass. In that case, deploy them as an ML resource.
     /// </para>
     ///  
     /// <para>
@@ -88,8 +88,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CompilationJobName. 
         /// <para>
-        /// A name for the model compilation job. The name must be unique within the AWS Region
-        /// and within your AWS account. 
+        /// A name for the model compilation job. The name must be unique within the Amazon Web
+        /// Services Region and within your Amazon Web Services account. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -216,10 +216,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An array of key-value pairs. You can use tags to categorize your AWS resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// AWS Resources</a>.
+        /// An array of key-value pairs. You can use tags to categorize your Amazon Web Services
+        /// resources in different ways, for example, by purpose, owner, or environment. For more
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web Services Resources</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

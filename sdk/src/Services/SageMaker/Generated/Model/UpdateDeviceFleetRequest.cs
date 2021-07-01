@@ -81,8 +81,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EnableIotRoleAlias. 
         /// <para>
-        /// Whether to create an AWS IoT Role Alias during device fleet creation. The name of
-        /// the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".
+        /// Whether to create an Amazon Web Services IoT Role Alias during device fleet creation.
+        /// The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".
         /// </para>
         ///  
         /// <para>

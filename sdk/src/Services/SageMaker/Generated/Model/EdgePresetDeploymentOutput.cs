@@ -96,8 +96,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The deployment type created by SageMaker Edge Manager. Currently only supports AWS
-        /// IoT Greengrass Version 2 components.
+        /// The deployment type created by SageMaker Edge Manager. Currently only supports Amazon
+        /// Web Services IoT Greengrass Version 2 components.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

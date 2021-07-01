@@ -72,9 +72,10 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property HyperParameterTuningJobName. 
         /// <para>
         /// The name of the tuning job. This name is the prefix for the names of all training
-        /// jobs that this tuning job launches. The name must be unique within the same AWS account
-        /// and AWS Region. The name must have 1 to 32 characters. Valid characters are a-z, A-Z,
-        /// 0-9, and : + = @ _ % - (hyphen). The name is not case sensitive.
+        /// jobs that this tuning job launches. The name must be unique within the same Amazon
+        /// Web Services account and Amazon Web Services Region. The name must have 1 to 32 characters.
+        /// Valid characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case
+        /// sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -93,10 +94,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An array of key-value pairs. You can use tags to categorize your AWS resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// AWS Resources</a>.
+        /// An array of key-value pairs. You can use tags to categorize your Amazon Web Services
+        /// resources in different ways, for example, by purpose, owner, or environment. For more
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web Services Resources</a>.
         /// </para>
         ///  
         /// <para>

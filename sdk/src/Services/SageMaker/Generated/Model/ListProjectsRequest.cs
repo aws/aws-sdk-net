@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the ListProjects operation.
-    /// Gets a list of the projects in an AWS account.
+    /// Gets a list of the projects in an Amazon Web Services account.
     /// </summary>
     public partial class ListProjectsRequest : AmazonSageMakerRequest
     {

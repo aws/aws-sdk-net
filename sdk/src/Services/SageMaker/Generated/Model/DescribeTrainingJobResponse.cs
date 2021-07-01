@@ -594,8 +594,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The AWS Identity and Access Management (IAM) role configured for the training job.
-        /// 
+        /// The Amazon Web Services Identity and Access Management (IAM) role configured for the
+        /// training job. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

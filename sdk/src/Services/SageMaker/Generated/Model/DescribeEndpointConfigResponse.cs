@@ -115,8 +115,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage
-        /// volume attached to the instance.
+        /// Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing
+        /// it on the ML storage volume attached to the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]

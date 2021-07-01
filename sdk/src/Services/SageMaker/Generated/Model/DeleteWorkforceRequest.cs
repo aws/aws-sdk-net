@@ -34,8 +34,9 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// If you want to create a new workforce in an AWS Region where a workforce already exists,
-    /// use this operation to delete the existing workforce and then use to create a new workforce.
+    /// If you want to create a new workforce in an Amazon Web Services Region where a workforce
+    /// already exists, use this operation to delete the existing workforce and then use to
+    /// create a new workforce.
     /// </para>
     ///  <important> 
     /// <para>

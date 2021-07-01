@@ -63,9 +63,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3KmsKeyId. 
         /// <para>
-        /// When <code>NotebookOutputOption</code> is <code>Allowed</code>, the AWS Key Management
-        /// Service (KMS) encryption key ID used to encrypt the notebook cell output in the Amazon
-        /// S3 bucket.
+        /// When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon Web Services
+        /// Key Management Service (KMS) encryption key ID used to encrypt the notebook cell output
+        /// in the Amazon S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]

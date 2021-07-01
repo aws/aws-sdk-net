@@ -218,8 +218,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) execution
-        /// role for the flow definition.
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management
+        /// (IAM) execution role for the flow definition.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

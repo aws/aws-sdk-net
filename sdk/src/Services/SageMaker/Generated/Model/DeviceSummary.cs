@@ -121,7 +121,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property IotThingName. 
         /// <para>
-        /// The AWS Internet of Things (IoT) object thing name associated with the device..
+        /// The Amazon Web Services Internet of Things (IoT) object thing name associated with
+        /// the device..
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

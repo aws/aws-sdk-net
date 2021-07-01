@@ -194,7 +194,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ServiceCatalogProvisioningDetails. 
         /// <para>
         /// Information used to provision a service catalog product. For information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
-        /// is AWS Service Catalog</a>.
+        /// is Amazon Web Services Service Catalog</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

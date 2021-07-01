@@ -82,9 +82,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt
-        /// the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code>
-        /// can be any of the following formats: 
+        /// The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that
+        /// Amazon SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side
+        /// encryption. The <code>KmsKeyId</code> can be any of the following formats: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -114,7 +114,8 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The KMS key policy must grant permission to the IAM role that you specify in your
         /// <a>CreateModel</a> request. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
-        /// Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
+        /// Service Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]

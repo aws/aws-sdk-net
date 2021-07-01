@@ -32,8 +32,8 @@ namespace Amazon.SageMaker.Model
     /// Container for the parameters to the GetModelPackageGroupPolicy operation.
     /// Gets a resource policy that manages access for a model group. For information about
     /// resource policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
-    /// policies and resource-based policies</a> in the <i>AWS Identity and Access Management
-    /// User Guide.</i>.
+    /// policies and resource-based policies</a> in the <i>Amazon Web Services Identity and
+    /// Access Management User Guide.</i>.
     /// </summary>
     public partial class GetModelPackageGroupPolicyRequest : AmazonSageMakerRequest
     {

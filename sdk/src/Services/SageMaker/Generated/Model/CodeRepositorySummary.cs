@@ -100,8 +100,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property GitConfig. 
         /// <para>
         /// Configuration details for the Git repository, including the URL where it is located
-        /// and the ARN of the AWS Secrets Manager secret that contains the credentials used to
-        /// access the repository.
+        /// and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials
+        /// used to access the repository.
         /// </para>
         /// </summary>
         public GitConfig GitConfig

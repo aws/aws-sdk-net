@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the ListNotebookInstances operation.
     /// Returns a list of the Amazon SageMaker notebook instances in the requester's account
-    /// in an AWS Region.
+    /// in an Amazon Web Services Region.
     /// </summary>
     public partial class ListNotebookInstancesRequest : AmazonSageMakerRequest
     {

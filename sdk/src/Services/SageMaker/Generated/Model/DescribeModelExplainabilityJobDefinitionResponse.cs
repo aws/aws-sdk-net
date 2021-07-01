@@ -86,8 +86,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property JobDefinitionName. 
         /// <para>
-        /// The name of the explainability job definition. The name must be unique within an AWS
-        /// Region in the AWS account.
+        /// The name of the explainability job definition. The name must be unique within an Amazon
+        /// Web Services Region in the Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -212,9 +212,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// that has read permission to the input data location and write permission to the output
-        /// data location in Amazon S3.
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management
+        /// (IAM) role that has read permission to the input data location and write permission
+        /// to the output data location in Amazon S3.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

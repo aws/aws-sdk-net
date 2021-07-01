@@ -40,7 +40,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property JobDefinitionName. 
         /// <para>
         /// The name of the model explainability job definition. The name must be unique within
-        /// an AWS Region in the AWS account.
+        /// an Amazon Web Services Region in the Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

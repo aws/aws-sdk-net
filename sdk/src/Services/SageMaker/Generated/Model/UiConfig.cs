@@ -47,7 +47,7 @@ namespace Amazon.SageMaker.Model
         /// Use this parameter when you are creating a labeling job for 3D point cloud and video
         /// fram labeling jobs. Use your labeling job task type to select one of the following
         /// ARNs and use it with this parameter when you create a labeling job. Replace <code>aws-region</code>
-        /// with the AWS region you are creating your labeling job in.
+        /// with the Amazon Web Services region you are creating your labeling job in.
         /// </para>
         ///  
         /// <para>

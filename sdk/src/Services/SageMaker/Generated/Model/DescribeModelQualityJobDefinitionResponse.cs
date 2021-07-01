@@ -86,8 +86,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property JobDefinitionName. 
         /// <para>
-        /// The name of the quality job definition. The name must be unique within an AWS Region
-        /// in the AWS account.
+        /// The name of the quality job definition. The name must be unique within an Amazon Web
+        /// Services Region in the Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

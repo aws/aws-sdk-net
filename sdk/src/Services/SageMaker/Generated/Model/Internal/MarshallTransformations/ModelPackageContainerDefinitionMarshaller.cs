@@ -51,6 +51,20 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ContainerHostname);
             }
 
+            if(requestObject.IsSetEnvironment())
+            {
+                context.Writer.WritePropertyName("Environment");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectEnvironmentKvp in requestObject.Environment)
+                {
+                    context.Writer.WritePropertyName(requestObjectEnvironmentKvp.Key);
+                    var requestObjectEnvironmentValue = requestObjectEnvironmentKvp.Value;
+
+                        context.Writer.Write(requestObjectEnvironmentValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetImage())
             {
                 context.Writer.WritePropertyName("Image");

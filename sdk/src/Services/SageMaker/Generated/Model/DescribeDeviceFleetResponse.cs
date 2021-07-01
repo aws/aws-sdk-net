@@ -121,7 +121,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property IotRoleAlias. 
         /// <para>
-        /// The Amazon Resource Name (ARN) alias created in AWS Internet of Things (IoT).
+        /// The Amazon Resource Name (ARN) alias created in Amazon Web Services Internet of Things
+        /// (IoT).
         /// </para>
         /// </summary>
         public string IotRoleAlias
@@ -177,7 +178,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that has access to AWS Internet of Things (IoT).
+        /// The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of
+        /// Things (IoT).
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

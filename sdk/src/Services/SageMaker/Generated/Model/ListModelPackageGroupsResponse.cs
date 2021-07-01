@@ -39,7 +39,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelPackageGroupSummaryList. 
         /// <para>
-        /// A list of summaries of the model groups in your AWS account.
+        /// A list of summaries of the model groups in your Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

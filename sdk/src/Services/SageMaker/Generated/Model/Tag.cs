@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// A tag object that consists of a key and an optional value, used to manage metadata
-    /// for Amazon SageMaker AWS resources.
+    /// for Amazon SageMaker Amazon Web Services resources.
     /// 
     ///  
     /// <para>
@@ -41,11 +41,11 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information on adding metadata to your AWS resources with tagging, see <a
-    /// href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-    /// resources</a>. For advice on best practices for managing AWS resources with tagging,
-    /// see <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
-    /// Best Practices: Implement an Effective AWS Resource Tagging Strategy</a>.
+    /// For more information on adding metadata to your Amazon Web Services resources with
+    /// tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+    /// Amazon Web Services resources</a>. For advice on best practices for managing Amazon
+    /// Web Services resources with tagging, see <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
+    /// Best Practices: Implement an Effective Amazon Web Services Resource Tagging Strategy</a>.
     /// </para>
     /// </summary>
     public partial class Tag

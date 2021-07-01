@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Specifies configuration details for a Git repository in your AWS account.
+    /// Specifies configuration details for a Git repository in your Amazon Web Services account.
     /// </summary>
     public partial class GitConfig
     {
@@ -78,9 +78,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SecretArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the
-        /// credentials used to access the git repository. The secret must have a staging label
-        /// of <code>AWSCURRENT</code> and must be in the following format:
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that
+        /// contains the credentials used to access the git repository. The secret must have a
+        /// staging label of <code>AWSCURRENT</code> and must be in the following format:
         /// </para>
         ///  
         /// <para>

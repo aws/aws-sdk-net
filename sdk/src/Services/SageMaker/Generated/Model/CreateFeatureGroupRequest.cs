@@ -40,8 +40,9 @@ namespace Amazon.SageMaker.Model
     /// A <code>FeatureGroup</code> definition is composed of a list of <code>Features</code>,
     /// a <code>RecordIdentifierFeatureName</code>, an <code>EventTimeFeatureName</code> and
     /// configurations for its <code>OnlineStore</code> and <code>OfflineStore</code>. Check
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
-    /// service quotas</a> to see the <code>FeatureGroup</code>s quota for your AWS account.
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">Amazon
+    /// Web Services service quotas</a> to see the <code>FeatureGroup</code>s quota for your
+    /// Amazon Web Services account.
     /// </para>
     ///  <important> 
     /// <para>
@@ -166,8 +167,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FeatureGroupName. 
         /// <para>
-        /// The name of the <code>FeatureGroup</code>. The name must be unique within an AWS Region
-        /// in an AWS account. The name:
+        /// The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon
+        /// Web Services Region in an Amazon Web Services account. The name:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -204,7 +205,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A configuration for an AWS Glue or AWS Hive data cataolgue. 
+        /// A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data cataolgue.
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -236,8 +238,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// You can also include an AWS KMS key ID (<code>KMSKeyId</code>) for at-rest encryption
-        /// of the <code>OnlineStore</code>.
+        /// You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for
+        /// at-rest encryption of the <code>OnlineStore</code>.
         /// </para>
         /// </summary>
         public OnlineStoreConfig OnlineStoreConfig

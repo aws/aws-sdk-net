@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the DescribeSubscribedWorkteam operation.
     /// Gets information about a work team provided by a vendor. It returns details about
-    /// the subscription with a vendor in the AWS Marketplace.
+    /// the subscription with a vendor in the Amazon Web Services Marketplace.
     /// </summary>
     public partial class DescribeSubscribedWorkteamRequest : AmazonSageMakerRequest
     {

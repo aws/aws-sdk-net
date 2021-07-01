@@ -61,8 +61,8 @@ namespace Amazon.SageMaker.Model
         ///  </li> <li> 
         /// <para>
         /// Configuration information, including the URL location of the repository and the ARN
-        /// of the AWS Secrets Manager secret that contains the credentials used to access the
-        /// repository.
+        /// of the Amazon Web Services Secrets Manager secret that contains the credentials used
+        /// to access the repository.
         /// </para>
         ///  </li> </ul>
         /// </summary>

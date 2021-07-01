@@ -50,8 +50,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property AlgorithmName. 
         /// <para>
         /// The name of the algorithm resource to use for the training job. This must be an algorithm
-        /// resource that you created or subscribe to on AWS Marketplace. If you specify a value
-        /// for this parameter, you can't specify a value for <code>TrainingImage</code>.
+        /// resource that you created or subscribe to on Amazon Web Services Marketplace. If you
+        /// specify a value for this parameter, you can't specify a value for <code>TrainingImage</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=170)]

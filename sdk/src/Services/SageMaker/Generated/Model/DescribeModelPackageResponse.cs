@@ -75,7 +75,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CertifyForMarketplace. 
         /// <para>
-        /// Whether the model package is certified for listing on AWS Marketplace.
+        /// Whether the model package is certified for listing on Amazon Web Services Marketplace.
         /// </para>
         /// </summary>
         public bool CertifyForMarketplace

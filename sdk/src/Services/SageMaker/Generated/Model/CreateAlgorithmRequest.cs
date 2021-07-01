@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the CreateAlgorithm operation.
     /// Create a machine learning algorithm that you can use in Amazon SageMaker and list
-    /// in the AWS Marketplace.
+    /// in the Amazon Web Services Marketplace.
     /// </summary>
     public partial class CreateAlgorithmRequest : AmazonSageMakerRequest
     {
@@ -84,7 +84,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CertifyForMarketplace. 
         /// <para>
-        /// Whether to certify the algorithm so that it can be listed in AWS Marketplace.
+        /// Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.
         /// </para>
         /// </summary>
         public bool CertifyForMarketplace
@@ -134,10 +134,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An array of key-value pairs. You can use tags to categorize your AWS resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// AWS Resources</a>.
+        /// An array of key-value pairs. You can use tags to categorize your Amazon Web Services
+        /// resources in different ways, for example, by purpose, owner, or environment. For more
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web Services Resources</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

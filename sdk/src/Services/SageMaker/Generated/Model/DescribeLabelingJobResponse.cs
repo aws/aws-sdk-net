@@ -396,8 +396,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property OutputConfig. 
         /// <para>
-        /// The location of the job's output data and the AWS Key Management Service key ID for
-        /// the key used to encrypt the output data, if any.
+        /// The location of the job's output data and the Amazon Web Services Key Management Service
+        /// key ID for the key used to encrypt the output data, if any.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -455,10 +455,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An array of key-value pairs. You can use tags to categorize your AWS resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// AWS Resources</a>.
+        /// An array of key-value pairs. You can use tags to categorize your Amazon Web Services
+        /// resources in different ways, for example, by purpose, owner, or environment. For more
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web Services Resources</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

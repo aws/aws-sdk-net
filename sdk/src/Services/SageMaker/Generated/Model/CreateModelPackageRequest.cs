@@ -31,15 +31,16 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the CreateModelPackage operation.
     /// Creates a model package that you can use to create Amazon SageMaker models or list
-    /// on AWS Marketplace, or a versioned model that is part of a model group. Buyers can
-    /// subscribe to model packages listed on AWS Marketplace to create models in Amazon SageMaker.
+    /// on Amazon Web Services Marketplace, or a versioned model that is part of a model group.
+    /// Buyers can subscribe to model packages listed on Amazon Web Services Marketplace to
+    /// create models in Amazon SageMaker.
     /// 
     ///  
     /// <para>
     /// To create a model package by specifying a Docker container that contains your inference
     /// code and the Amazon S3 location of your model artifacts, provide values for <code>InferenceSpecification</code>.
     /// To create a model from an algorithm resource that you created or subscribed to in
-    /// AWS Marketplace, provide a value for <code>SourceAlgorithmSpecification</code>.
+    /// Amazon Web Services Marketplace, provide a value for <code>SourceAlgorithmSpecification</code>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -73,7 +74,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CertifyForMarketplace. 
         /// <para>
-        /// Whether to certify the model package for listing on AWS Marketplace.
+        /// Whether to certify the model package for listing on Amazon Web Services Marketplace.
         /// </para>
         ///  
         /// <para>
@@ -296,8 +297,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of key value pairs associated with the model. For more information, see <a
-        /// href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-        /// resources</a> in the <i>AWS General Reference Guide</i>.
+        /// href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+        /// Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

@@ -4883,6 +4883,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("SageMaker")]
+        public void DeleteModelPackageGroup_ConflictExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DeleteModelPackageGroup");
+
+            var request = InstantiateClassGenerator.Execute<DeleteModelPackageGroupRequest>();
+            var marshaller = new DeleteModelPackageGroupRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DeleteModelPackageGroupRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DeleteModelPackageGroupResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SageMaker")]
         public void DeleteModelPackageGroupPolicyMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DeleteModelPackageGroupPolicyRequest>();
@@ -5091,6 +5123,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
             Comparer.CompareObjectToJson<DeleteProjectRequest>(request,jsonRequest);
 
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SageMaker")]
+        public void DeleteProject_ConflictExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DeleteProject");
+
+            var request = InstantiateClassGenerator.Execute<DeleteProjectRequest>();
+            var marshaller = new DeleteProjectRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DeleteProjectRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DeleteProjectResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]

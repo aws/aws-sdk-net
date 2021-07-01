@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Specifies an algorithm that was used to create the model package. The algorithm must
     /// be either an algorithm resource in your Amazon SageMaker account or an algorithm in
-    /// AWS Marketplace that you are subscribed to.
+    /// Amazon Web Services Marketplace that you are subscribed to.
     /// </summary>
     public partial class SourceAlgorithm
     {
@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The name of an algorithm that was used to create the model package. The algorithm
         /// must be either an algorithm resource in your Amazon SageMaker account or an algorithm
-        /// in AWS Marketplace that you are subscribed to.
+        /// in Amazon Web Services Marketplace that you are subscribed to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=170)]

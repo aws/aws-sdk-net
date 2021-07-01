@@ -76,9 +76,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CertifyForMarketplace. 
         /// <para>
-        /// Whether the model package is to be certified to be listed on AWS Marketplace. For
-        /// information about listing model packages on AWS Marketplace, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-mkt-list.html">List
-        /// Your Algorithm or Model Package on AWS Marketplace</a>.
+        /// Whether the model package is to be certified to be listed on Amazon Web Services Marketplace.
+        /// For information about listing model packages on Amazon Web Services Marketplace, see
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-mkt-list.html">List
+        /// Your Algorithm or Model Package on Amazon Web Services Marketplace</a>.
         /// </para>
         /// </summary>
         public bool CertifyForMarketplace
@@ -406,8 +407,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of the tags associated with the model package. For more information, see <a
-        /// href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-        /// resources</a> in the <i>AWS General Reference Guide</i>.
+        /// href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+        /// Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
