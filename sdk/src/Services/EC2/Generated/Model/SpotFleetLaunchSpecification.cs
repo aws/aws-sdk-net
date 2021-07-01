@@ -274,8 +274,8 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The ID of the RAM disk. Some kernels require additional drivers at launch. Check the
         /// kernel requirements for information about whether you need to specify a RAM disk.
-        /// To find kernel requirements, refer to the AWS Resource Center and search for the kernel
-        /// ID.
+        /// To find kernel requirements, refer to the Amazon Web Services Resource Center and
+        /// search for the kernel ID.
         /// </para>
         /// </summary>
         public string RamdiskId

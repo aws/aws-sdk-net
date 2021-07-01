@@ -110,7 +110,8 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance
         /// Marketplace offerings. When this filter is not used, which is the default behavior,
-        /// all offerings from both AWS and the Reserved Instance Marketplace are listed.
+        /// all offerings from both Amazon Web Services and the Reserved Instance Marketplace
+        /// are listed.
         /// </para>
         ///  </li> <li> 
         /// <para>

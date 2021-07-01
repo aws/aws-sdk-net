@@ -40,8 +40,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// Information about the instances that could not be launched by the fleet. Valid only
-        /// when <b>Type</b> is set to <code>instant</code>.
+        /// Information about the instances that could not be launched by the fleet. Supported
+        /// only for fleets of type <code>instant</code>.
         /// </para>
         /// </summary>
         public List<CreateFleetError> Errors
@@ -77,8 +77,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Instances. 
         /// <para>
-        /// Information about the instances that were launched by the fleet. Valid only when <b>Type</b>
-        /// is set to <code>instant</code>.
+        /// Information about the instances that were launched by the fleet. Supported only for
+        /// fleets of type <code>instant</code>.
         /// </para>
         /// </summary>
         public List<CreateFleetInstance> Instances

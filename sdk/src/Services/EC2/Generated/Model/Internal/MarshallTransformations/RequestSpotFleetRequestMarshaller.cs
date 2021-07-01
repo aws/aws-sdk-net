@@ -68,6 +68,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "ClientToken", StringUtils.FromString(publicRequest.SpotFleetRequestConfig.ClientToken));
                     }
+                    if(publicRequest.SpotFleetRequestConfig.IsSetContext())
+                    {
+                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "Context", StringUtils.FromString(publicRequest.SpotFleetRequestConfig.Context));
+                    }
                     if(publicRequest.SpotFleetRequestConfig.IsSetExcessCapacityTerminationPolicy())
                     {
                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "ExcessCapacityTerminationPolicy", StringUtils.FromString(publicRequest.SpotFleetRequestConfig.ExcessCapacityTerminationPolicy));

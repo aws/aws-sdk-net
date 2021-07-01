@@ -66,6 +66,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ClientToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("context", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Context = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("createTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;

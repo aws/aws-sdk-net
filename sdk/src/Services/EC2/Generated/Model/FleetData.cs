@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     {
         private FleetActivityStatus _activityStatus;
         private string _clientToken;
+        private string _context;
         private DateTime? _createTime;
         private List<DescribeFleetError> _errors = new List<DescribeFleetError>();
         private FleetExcessCapacityTerminationPolicy _excessCapacityTerminationPolicy;
@@ -98,6 +99,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Context. 
+        /// <para>
+        /// Reserved.
+        /// </para>
+        /// </summary>
+        public string Context
+        {
+            get { return this._context; }
+            set { this._context = value; }
+        }
+
+        // Check to see if Context property is set
+        internal bool IsSetContext()
+        {
+            return this._context != null;
         }
 
         /// <summary>

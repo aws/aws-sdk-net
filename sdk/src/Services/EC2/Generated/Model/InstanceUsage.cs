@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The ID of the AWS account that is making use of the Capacity Reservation.
+        /// The ID of the account that is making use of the Capacity Reservation.
         /// </para>
         /// </summary>
         public string AccountId
@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UsedInstanceCount. 
         /// <para>
-        /// The number of instances the AWS account currently has in the Capacity Reservation.
+        /// The number of instances the account currently has in the Capacity Reservation.
         /// </para>
         /// </summary>
         public int UsedInstanceCount

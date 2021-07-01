@@ -4520,7 +4520,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs.
-        /// You can create one data feed per AWS account. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
+        /// You can create one data feed per account. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
         /// Instance data feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSpotDatafeedSubscription service method.</param>
@@ -4533,7 +4533,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs.
-        /// You can create one data feed per AWS account. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
+        /// You can create one data feed per account. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
         /// Instance data feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSpotDatafeedSubscription service method.</param>
@@ -8669,7 +8669,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes one or more of your Capacity Reservations. The results describe only the
-        /// Capacity Reservations in the AWS Region that you're currently using.
+        /// Capacity Reservations in the Region that you're currently using.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityReservations service method.</param>
         /// 
@@ -8681,7 +8681,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes one or more of your Capacity Reservations. The results describe only the
-        /// Capacity Reservations in the AWS Region that you're currently using.
+        /// Capacity Reservations in the Region that you're currently using.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityReservations service method.</param>
         /// <param name="cancellationToken">
@@ -16170,9 +16170,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Gets usage information about a Capacity Reservation. If the Capacity Reservation is
-        /// shared, it shows usage information for the Capacity Reservation owner and each AWS
-        /// account that is currently using the shared capacity. If the Capacity Reservation is
-        /// not shared, it shows only the Capacity Reservation owner's usage.
+        /// shared, it shows usage information for the Capacity Reservation owner and each account
+        /// that is currently using the shared capacity. If the Capacity Reservation is not shared,
+        /// it shows only the Capacity Reservation owner's usage.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCapacityReservationUsage service method.</param>
         /// 
@@ -16184,9 +16184,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Gets usage information about a Capacity Reservation. If the Capacity Reservation is
-        /// shared, it shows usage information for the Capacity Reservation owner and each AWS
-        /// account that is currently using the shared capacity. If the Capacity Reservation is
-        /// not shared, it shows only the Capacity Reservation owner's usage.
+        /// shared, it shows usage information for the Capacity Reservation owner and each account
+        /// that is currently using the shared capacity. If the Capacity Reservation is not shared,
+        /// it shows only the Capacity Reservation owner's usage.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCapacityReservationUsage service method.</param>
         /// <param name="cancellationToken">
@@ -17444,17 +17444,17 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies the default credit option for CPU usage of burstable performance instances.
-        /// The default credit option is set at the account level per AWS Region, and is specified
+        /// The default credit option is set at the account level per Region, and is specified
         /// per instance family. All new burstable performance instances in the account launch
         /// using the default credit option.
         /// 
         ///  
         /// <para>
         ///  <code>ModifyDefaultCreditSpecification</code> is an asynchronous operation, which
-        /// works at an AWS Region level and modifies the credit option for each Availability
-        /// Zone. All zones in a Region are updated within five minutes. But if instances are
-        /// launched during this operation, they might not get the new credit option until the
-        /// zone is updated. To verify whether the update has occurred, you can call <code>GetDefaultCreditSpecification</code>
+        /// works at an Region level and modifies the credit option for each Availability Zone.
+        /// All zones in a Region are updated within five minutes. But if instances are launched
+        /// during this operation, they might not get the new credit option until the zone is
+        /// updated. To verify whether the update has occurred, you can call <code>GetDefaultCreditSpecification</code>
         /// and check <code>DefaultCreditSpecification</code> for updates.
         /// </para>
         ///  
@@ -17473,17 +17473,17 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies the default credit option for CPU usage of burstable performance instances.
-        /// The default credit option is set at the account level per AWS Region, and is specified
+        /// The default credit option is set at the account level per Region, and is specified
         /// per instance family. All new burstable performance instances in the account launch
         /// using the default credit option.
         /// 
         ///  
         /// <para>
         ///  <code>ModifyDefaultCreditSpecification</code> is an asynchronous operation, which
-        /// works at an AWS Region level and modifies the credit option for each Availability
-        /// Zone. All zones in a Region are updated within five minutes. But if instances are
-        /// launched during this operation, they might not get the new credit option until the
-        /// zone is updated. To verify whether the update has occurred, you can call <code>GetDefaultCreditSpecification</code>
+        /// works at an Region level and modifies the credit option for each Availability Zone.
+        /// All zones in a Region are updated within five minutes. But if instances are launched
+        /// during this operation, they might not get the new credit option until the zone is
+        /// updated. To verify whether the update has occurred, you can call <code>GetDefaultCreditSpecification</code>
         /// and check <code>DefaultCreditSpecification</code> for updates.
         /// </para>
         ///  
@@ -21943,12 +21943,9 @@ namespace Amazon.EC2
         /// and started. When an instance is stopped, the compute resources are released and you
         /// are not billed for instance usage. However, your root partition Amazon EBS volume
         /// remains and continues to persist your data, and you are charged for Amazon EBS volume
-        /// usage. You can restart your instance at any time. Every time you start your Windows
-        /// instance, Amazon EC2 charges you for a full instance hour. If you stop and restart
-        /// your Windows instance, a new instance hour begins and Amazon EC2 charges you for another
-        /// full instance hour even if you are still within the same 60-minute period when it
-        /// was stopped. Every time you start your Linux instance, Amazon EC2 charges a one-minute
-        /// minimum for instance usage, and thereafter charges per second for instance usage.
+        /// usage. You can restart your instance at any time. Every time you start your instance,
+        /// Amazon EC2 charges a one-minute minimum for instance usage, and thereafter charges
+        /// per second for instance usage.
         /// </para>
         ///  
         /// <para>
@@ -21983,12 +21980,9 @@ namespace Amazon.EC2
         /// and started. When an instance is stopped, the compute resources are released and you
         /// are not billed for instance usage. However, your root partition Amazon EBS volume
         /// remains and continues to persist your data, and you are charged for Amazon EBS volume
-        /// usage. You can restart your instance at any time. Every time you start your Windows
-        /// instance, Amazon EC2 charges you for a full instance hour. If you stop and restart
-        /// your Windows instance, a new instance hour begins and Amazon EC2 charges you for another
-        /// full instance hour even if you are still within the same 60-minute period when it
-        /// was stopped. Every time you start your Linux instance, Amazon EC2 charges a one-minute
-        /// minimum for instance usage, and thereafter charges per second for instance usage.
+        /// usage. You can restart your instance at any time. Every time you start your instance,
+        /// Amazon EC2 charges a one-minute minimum for instance usage, and thereafter charges
+        /// per second for instance usage.
         /// </para>
         ///  
         /// <para>
@@ -22118,12 +22112,9 @@ namespace Amazon.EC2
         /// <para>
         /// We don't charge usage for a stopped instance, or data transfer fees; however, your
         /// root partition Amazon EBS volume remains and continues to persist your data, and you
-        /// are charged for Amazon EBS volume usage. Every time you start your Windows instance,
-        /// Amazon EC2 charges you for a full instance hour. If you stop and restart your Windows
-        /// instance, a new instance hour begins and Amazon EC2 charges you for another full instance
-        /// hour even if you are still within the same 60-minute period when it was stopped. Every
-        /// time you start your Linux instance, Amazon EC2 charges a one-minute minimum for instance
-        /// usage, and thereafter charges per second for instance usage.
+        /// are charged for Amazon EBS volume usage. Every time you start your instance, Amazon
+        /// EC2 charges a one-minute minimum for instance usage, and thereafter charges per second
+        /// for instance usage.
         /// </para>
         ///  
         /// <para>
@@ -22180,12 +22171,9 @@ namespace Amazon.EC2
         /// <para>
         /// We don't charge usage for a stopped instance, or data transfer fees; however, your
         /// root partition Amazon EBS volume remains and continues to persist your data, and you
-        /// are charged for Amazon EBS volume usage. Every time you start your Windows instance,
-        /// Amazon EC2 charges you for a full instance hour. If you stop and restart your Windows
-        /// instance, a new instance hour begins and Amazon EC2 charges you for another full instance
-        /// hour even if you are still within the same 60-minute period when it was stopped. Every
-        /// time you start your Linux instance, Amazon EC2 charges a one-minute minimum for instance
-        /// usage, and thereafter charges per second for instance usage.
+        /// are charged for Amazon EBS volume usage. Every time you start your instance, Amazon
+        /// EC2 charges a one-minute minimum for instance usage, and thereafter charges per second
+        /// for instance usage.
         /// </para>
         ///  
         /// <para>
@@ -22277,6 +22265,57 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
+        /// If you terminate multiple instances across multiple Availability Zones, and one or
+        /// more of the specified instances are enabled for termination protection, the request
+        /// fails with the following results:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The specified instances that are in the same Availability Zone as the protected instance
+        /// are not terminated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The specified instances that are in different Availability Zones, where no other specified
+        /// instances are protected, are successfully terminated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For example, say you have the following instances:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Instance A: <code>us-east-1a</code>; Not protected
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Instance B: <code>us-east-1a</code>; Not protected
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Instance C: <code>us-east-1b</code>; Protected
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Instance D: <code>us-east-1b</code>; not protected
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you attempt to terminate all of these instances in the same request, the request
+        /// reports failure with the following results:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Instance A and Instance B are successfully terminated because none of the specified
+        /// instances in <code>us-east-1a</code> are enabled for termination protection.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Instance C and Instance D fail to terminate because at least one of the specified
+        /// instances in <code>us-east-1b</code> (Instance C) is enabled for termination protection.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// Terminated instances remain visible after termination (for approximately one hour).
         /// </para>
         ///  
@@ -22319,6 +22358,57 @@ namespace Amazon.EC2
         /// single incorrect instance ID), none of the instances are terminated.
         /// </para>
         ///  
+        /// <para>
+        /// If you terminate multiple instances across multiple Availability Zones, and one or
+        /// more of the specified instances are enabled for termination protection, the request
+        /// fails with the following results:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The specified instances that are in the same Availability Zone as the protected instance
+        /// are not terminated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The specified instances that are in different Availability Zones, where no other specified
+        /// instances are protected, are successfully terminated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For example, say you have the following instances:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Instance A: <code>us-east-1a</code>; Not protected
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Instance B: <code>us-east-1a</code>; Not protected
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Instance C: <code>us-east-1b</code>; Protected
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Instance D: <code>us-east-1b</code>; not protected
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you attempt to terminate all of these instances in the same request, the request
+        /// reports failure with the following results:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Instance A and Instance B are successfully terminated because none of the specified
+        /// instances in <code>us-east-1a</code> are enabled for termination protection.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Instance C and Instance D fail to terminate because at least one of the specified
+        /// instances in <code>us-east-1b</code> (Instance C) is enabled for termination protection.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// Terminated instances remain visible after termination (for approximately one hour).
         /// </para>

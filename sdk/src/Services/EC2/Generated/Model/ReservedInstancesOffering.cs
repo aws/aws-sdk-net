@@ -163,7 +163,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Marketplace. 
         /// <para>
         /// Indicates whether the offering is available through the Reserved Instance Marketplace
-        /// (resale) or AWS. If it's a Reserved Instance Marketplace offering, this is <code>true</code>.
+        /// (resale) or Amazon Web Services. If it's a Reserved Instance Marketplace offering,
+        /// this is <code>true</code>.
         /// </para>
         /// </summary>
         public bool Marketplace

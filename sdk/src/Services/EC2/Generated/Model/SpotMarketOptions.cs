@@ -58,8 +58,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// New accounts or accounts with no previous billing history with AWS are not eligible
-        /// for Spot Instances with a defined duration (also known as Spot blocks).
+        /// New accounts or accounts with no previous billing history with Amazon Web Services
+        /// are not eligible for Spot Instances with a defined duration (also known as Spot blocks).
         /// </para>
         /// </summary>
         public int BlockDurationMinutes

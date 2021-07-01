@@ -397,13 +397,14 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EnclaveOptions. 
         /// <para>
-        /// Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information,
-        /// see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">
-        /// What is AWS Nitro Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.
+        /// Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.
+        /// For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">
+        /// What is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
+        /// Enclaves User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// You can't enable AWS Nitro Enclaves and hibernation on the same instance.
+        /// You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.
         /// </para>
         /// </summary>
         public EnclaveOptionsRequest EnclaveOptions
@@ -427,7 +428,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// You can't enable hibernation and AWS Nitro Enclaves on the same instance.
+        /// You can't enable hibernation and Amazon Web Services Nitro Enclaves on the same instance.
         /// </para>
         /// </summary>
         public HibernationOptionsRequest HibernationOptions
@@ -851,8 +852,8 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The ID of the RAM disk to select. Some kernels require additional drivers at launch.
         /// Check the kernel requirements for information about whether you need to specify a
-        /// RAM disk. To find kernel requirements, go to the AWS Resource Center and search for
-        /// the kernel ID.
+        /// RAM disk. To find kernel requirements, go to the Amazon Web Services Resource Center
+        /// and search for the kernel ID.
         /// </para>
         ///  <important> 
         /// <para>

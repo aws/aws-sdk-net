@@ -10167,6 +10167,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType NetworkInsightsAnalysis = new ResourceType("network-insights-analysis");
         /// <summary>
+        /// Constant NetworkInsightsBoundary for ResourceType
+        /// </summary>
+        public static readonly ResourceType NetworkInsightsBoundary = new ResourceType("network-insights-boundary");
+        /// <summary>
         /// Constant NetworkInsightsPath for ResourceType
         /// </summary>
         public static readonly ResourceType NetworkInsightsPath = new ResourceType("network-insights-path");

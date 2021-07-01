@@ -39,8 +39,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The AWS account ID of the instance owner. This is only present if the product code
-        /// is attached to the instance.
+        /// The account ID of the instance owner. This is only present if the product code is
+        /// attached to the instance.
         /// </para>
         /// </summary>
         public string OwnerId

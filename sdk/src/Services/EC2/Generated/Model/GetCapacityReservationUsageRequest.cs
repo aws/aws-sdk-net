@@ -31,9 +31,9 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the GetCapacityReservationUsage operation.
     /// Gets usage information about a Capacity Reservation. If the Capacity Reservation is
-    /// shared, it shows usage information for the Capacity Reservation owner and each AWS
-    /// account that is currently using the shared capacity. If the Capacity Reservation is
-    /// not shared, it shows only the Capacity Reservation owner's usage.
+    /// shared, it shows usage information for the Capacity Reservation owner and each account
+    /// that is currently using the shared capacity. If the Capacity Reservation is not shared,
+    /// it shows only the Capacity Reservation owner's usage.
     /// </summary>
     public partial class GetCapacityReservationUsageRequest : AmazonEC2Request
     {

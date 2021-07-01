@@ -46,6 +46,7 @@ namespace Amazon.EC2.Model
     public partial class CreateFleetRequest : AmazonEC2Request
     {
         private string _clientToken;
+        private string _context;
         private FleetExcessCapacityTerminationPolicy _excessCapacityTerminationPolicy;
         private List<FleetLaunchTemplateConfigRequest> _launchTemplateConfigs = new List<FleetLaunchTemplateConfigRequest>();
         private OnDemandOptionsRequest _onDemandOptions;
@@ -76,6 +77,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Context. 
+        /// <para>
+        /// Reserved.
+        /// </para>
+        /// </summary>
+        public string Context
+        {
+            get { return this._context; }
+            set { this._context = value; }
+        }
+
+        // Check to see if Context property is set
+        internal bool IsSetContext()
+        {
+            return this._context != null;
         }
 
         /// <summary>
@@ -175,11 +194,21 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TagSpecifications. 
         /// <para>
-        /// The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code>
-        /// must be <code>fleet</code>, otherwise the fleet request fails. To tag instances at
-        /// launch, specify the tags in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
-        /// template</a>. For information about tagging after launch, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+        /// The key-value pair for tagging the EC2 Fleet request on creation. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
         /// your resources</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code>
+        /// to tag the fleet or <code>instance</code> to tag the instances at launch.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the fleet type is <code>maintain</code> or <code>request</code>, specify a resource
+        /// type of <code>fleet</code> to tag the fleet. You cannot specify a resource type of
+        /// <code>instance</code>. To tag instances at launch, specify the tags in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+        /// template</a>.
         /// </para>
         /// </summary>
         public List<TagSpecification> TagSpecifications
@@ -234,7 +263,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of request. The default value is <code>maintain</code>.
+        /// The fleet type. The default value is <code>maintain</code>.
         /// </para>
         ///  <ul> <li> 
         /// <para>

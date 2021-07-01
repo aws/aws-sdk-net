@@ -62,6 +62,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
                 }
+                if(publicRequest.IsSetContext())
+                {
+                    request.Parameters.Add("Context", StringUtils.FromString(publicRequest.Context));
+                }
                 if(publicRequest.IsSetExcessCapacityTerminationPolicy())
                 {
                     request.Parameters.Add("ExcessCapacityTerminationPolicy", StringUtils.FromString(publicRequest.ExcessCapacityTerminationPolicy));

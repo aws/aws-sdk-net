@@ -126,8 +126,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EnclaveOptions. 
         /// <para>
-        /// To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>;
-        /// otherwise, set it to <code>false</code>.
+        /// To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter
+        /// to <code>true</code>; otherwise, set it to <code>false</code>.
         /// </para>
         /// </summary>
         public EnclaveOptions EnclaveOptions

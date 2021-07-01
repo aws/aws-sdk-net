@@ -74,11 +74,30 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifySpotFleetRequestRequest : AmazonEC2Request
     {
+        private string _context;
         private ExcessCapacityTerminationPolicy _excessCapacityTerminationPolicy;
         private List<LaunchTemplateConfig> _launchTemplateConfigs = new List<LaunchTemplateConfig>();
         private int? _onDemandTargetCapacity;
         private string _spotFleetRequestId;
         private int? _targetCapacity;
+
+        /// <summary>
+        /// Gets and sets the property Context. 
+        /// <para>
+        /// Reserved.
+        /// </para>
+        /// </summary>
+        public string Context
+        {
+            get { return this._context; }
+            set { this._context = value; }
+        }
+
+        // Check to see if Context property is set
+        internal bool IsSetContext()
+        {
+            return this._context != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ExcessCapacityTerminationPolicy. 

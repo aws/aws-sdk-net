@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     {
         private AllocationStrategy _allocationStrategy;
         private string _clientToken;
+        private string _context;
         private ExcessCapacityTerminationPolicy _excessCapacityTerminationPolicy;
         private double? _fulfilledCapacity;
         private string _iamFleetRole;
@@ -124,6 +125,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Context. 
+        /// <para>
+        /// Reserved.
+        /// </para>
+        /// </summary>
+        public string Context
+        {
+            get { return this._context; }
+            set { this._context = value; }
+        }
+
+        // Check to see if Context property is set
+        internal bool IsSetContext()
+        {
+            return this._context != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ExcessCapacityTerminationPolicy. 
         /// <para>
         /// Indicates whether running Spot Instances should be terminated if you decrease the
@@ -164,8 +183,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IamFleetRole. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
-        /// that grants the Spot Fleet the permission to request, launch, terminate, and tag instances
+        /// The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that
+        /// grants the Spot Fleet the permission to request, launch, terminate, and tag instances
         /// on your behalf. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
         /// Fleet prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>. Spot
         /// Fleet can terminate Spot Instances on your behalf when you cancel its Spot Fleet request
@@ -211,6 +230,16 @@ namespace Amazon.EC2.Model
         /// only when Spot <b>AllocationStrategy</b> is set to <code>lowest-price</code>. Spot
         /// Fleet selects the cheapest Spot pools and evenly allocates your target Spot capacity
         /// across the number of Spot pools that you specify.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that Spot Fleet attempts to draw Spot Instances from the number of pools that
+        /// you specify on a best effort basis. If a pool runs out of Spot capacity before fulfilling
+        /// your target capacity, Spot Fleet will continue to fulfill your request by drawing
+        /// from the next cheapest pool. To ensure that your target capacity is met, you might
+        /// receive Spot Instances from more than the number of pools that you specified. Similarly,
+        /// if most of the pools have no Spot capacity, you might receive your full target capacity
+        /// from fewer than the number of pools that you specified.
         /// </para>
         /// </summary>
         public int InstancePoolsToUseCount
