@@ -160,7 +160,7 @@ namespace Amazon.SQS.Model
         /// <para>
         /// Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
-        /// SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+        /// SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, MessageAttributeValue> MessageAttributes
@@ -179,7 +179,7 @@ namespace Amazon.SQS.Model
         /// Gets and sets the property MessageId. 
         /// <para>
         /// A unique identifier for the message. A <code>MessageId</code>is considered unique
-        /// across all AWS accounts for an extended period of time.
+        /// across all accounts for an extended period of time.
         /// </para>
         /// </summary>
         public string MessageId

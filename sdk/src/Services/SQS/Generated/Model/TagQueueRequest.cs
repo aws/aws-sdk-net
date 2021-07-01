@@ -32,7 +32,7 @@ namespace Amazon.SQS.Model
     /// Container for the parameters to the TagQueue operation.
     /// Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a
     /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
-    /// Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+    /// Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.
     /// 
     ///  
     /// <para>
@@ -57,15 +57,15 @@ namespace Amazon.SQS.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For a full list of tag restrictions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits
-    /// Related to Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+    /// For a full list of tag restrictions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Quotas
+    /// related to queues</a> in the <i>Amazon SQS Developer Guide</i>.
     /// </para>
     ///  <note> 
     /// <para>
     /// Cross-account permissions don't apply to this action. For more information, see <a
     /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-    /// cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue
-    /// Service Developer Guide</i>.
+    /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
+    /// Guide</i>.
     /// </para>
     ///  </note>
     /// </summary>

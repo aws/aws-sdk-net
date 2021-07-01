@@ -38,15 +38,15 @@ namespace Amazon.SQS.Model
     /// When you create a queue, you have full control access rights for the queue. Only you,
     /// the owner of the queue, can grant or deny permissions to the queue. For more information
     /// about these permissions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue">Allow
-    /// Developers to Write Messages to a Shared Queue</a> in the <i>Amazon Simple Queue Service
-    /// Developer Guide</i>.
+    /// Developers to Write Messages to a Shared Queue</a> in the <i>Amazon SQS Developer
+    /// Guide</i>.
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>
     ///  <code>AddPermission</code> generates a policy for you. You can use <code> <a>SetQueueAttributes</a>
     /// </code> to upload your policy. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html">Using
-    /// Custom Policies with the Amazon SQS Access Policy Language</a> in the <i>Amazon Simple
-    /// Queue Service Developer Guide</i>.
+    /// Custom Policies with the Amazon SQS Access Policy Language</a> in the <i>Amazon SQS
+    /// Developer Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -76,8 +76,8 @@ namespace Amazon.SQS.Model
     /// <para>
     /// Cross-account permissions don't apply to this action. For more information, see <a
     /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-    /// cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue
-    /// Service Developer Guide</i>.
+    /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
+    /// Guide</i>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -98,8 +98,8 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to which permissions are added. Queue URLs and names are case-sensitive.</param>
         /// <param name="label">The unique identification of the permission you're setting (for example, <code>AliceSendMessage</code>). Maximum 80 characters. Allowed characters include alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</param>
-        /// <param name="awsAccountIds">The AWS account number of the <a href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a> who is given permission. The principal must have an AWS account, but does not need to be signed up for Amazon SQS. For information about locating the AWS account identification, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your AWS Identifiers</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</param>
-        /// <param name="actions">The action the client wants to allow for the specified principal. Valid values: the name of any action or <code>*</code>. For more information about these actions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</param>
+        /// <param name="awsAccountIds">The account numbers of the <a href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a> who are to receive permission. For information about locating the account identification, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</param>
+        /// <param name="actions">The action the client wants to allow for the specified principal. Valid values: the name of any action or <code>*</code>. For more information about these actions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a> in the <i>Amazon SQS Developer Guide</i>. Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</param>
         public AddPermissionRequest(string queueUrl, string label, List<string> awsAccountIds, List<string> actions)
         {
             _queueUrl = queueUrl;
@@ -118,7 +118,7 @@ namespace Amazon.SQS.Model
         /// <para>
         /// For more information about these actions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview
         /// of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a> in
-        /// the <i>Amazon Simple Queue Service Developer Guide</i>.
+        /// the <i>Amazon SQS Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -144,11 +144,10 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property AWSAccountIds. 
         /// <para>
-        /// The AWS account number of the <a href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a>
-        /// who is given permission. The principal must have an AWS account, but does not need
-        /// to be signed up for Amazon SQS. For information about locating the AWS account identification,
+        /// The account numbers of the <a href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a>
+        /// who are to receive permission. For information about locating the account identification,
         /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your
-        /// AWS Identifiers</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+        /// Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

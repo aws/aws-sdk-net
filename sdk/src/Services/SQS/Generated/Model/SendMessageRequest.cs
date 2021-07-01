@@ -108,7 +108,7 @@ namespace Amazon.SQS.Model
         /// <para>
         /// Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
-        /// SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+        /// SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, MessageAttributeValue> MessageAttributes
@@ -170,7 +170,7 @@ namespace Amazon.SQS.Model
         /// <code>MessageDeduplicationId</code> is sent successfully, any messages sent with the
         /// same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered
         /// during the 5-minute deduplication interval. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">
-        /// Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+        /// Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -235,8 +235,7 @@ namespace Amazon.SQS.Model
         ///  
         /// <para>
         /// For best practices of using <code>MessageDeduplicationId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
-        /// the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service Developer
-        /// Guide</i>.
+        /// the MessageDeduplicationId Property</a> in the <i>Amazon SQS Developer Guide</i>.
         /// </para>
         /// </summary>
         public string MessageDeduplicationId
@@ -284,7 +283,7 @@ namespace Amazon.SQS.Model
         ///  
         /// <para>
         /// For best practices of using <code>MessageGroupId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
-        /// the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+        /// the MessageGroupId Property</a> in the <i>Amazon SQS Developer Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -314,8 +313,8 @@ namespace Amazon.SQS.Model
         ///  <important> <ul> <li> 
         /// <para>
         /// Currently, the only supported message system attribute is <code>AWSTraceHeader</code>.
-        /// Its type must be <code>String</code> and its value must be a correctly formatted AWS
-        /// X-Ray trace header string.
+        /// Its type must be <code>String</code> and its value must be a correctly formatted X-Ray
+        /// trace header string.
         /// </para>
         ///  </li> <li> 
         /// <para>
