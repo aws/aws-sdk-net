@@ -1,3 +1,9 @@
+### 3.7.65.0 (2021-07-02 18:11 UTC)
+* EC2 (3.7.15.0)
+	* This release removes network-insights-boundary
+* ElasticLoadBalancingV2 (3.7.0.37)
+	* Documentation updates for elasticloadbalancingv2
+
 ### 3.7.64.0 (2021-07-01 18:14 UTC)
 * EC2 (3.7.14.0)
 	* Adding a new reserved field to support future infrastructure improvements for Amazon EC2 Fleet.
