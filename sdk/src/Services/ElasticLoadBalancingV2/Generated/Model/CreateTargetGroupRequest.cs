@@ -131,7 +131,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  
         /// <para>
         /// [GRPC protocol version] The path of a custom health check method with the format /package.service/method.
-        /// The default is /AWS.ALB/healthcheck.
+        /// The default is /Amazon Web Services.ALB/healthcheck.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

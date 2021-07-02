@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// You've reached the limit on the number of load balancers for your AWS account.
+    /// You've reached the limit on the number of load balancers for your Amazon Web Services
+    /// account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

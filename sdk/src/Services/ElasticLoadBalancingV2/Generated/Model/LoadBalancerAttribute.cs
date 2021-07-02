@@ -104,8 +104,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load
-        /// balancer to route requests to targets if it is unable to forward the request to AWS
-        /// WAF. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+        /// balancer to route requests to targets if it is unable to forward the request to Amazon
+        /// Web Services WAF. The value is <code>true</code> or <code>false</code>. The default
+        /// is <code>false</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

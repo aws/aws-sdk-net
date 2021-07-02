@@ -100,7 +100,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  
         /// <para>
         /// [GRPC protocol version] The path of a custom health check method with the format /package.service/method.
-        /// The default is /AWS.ALB/healthcheck.
+        /// The default is /Amazon Web Services.ALB/healthcheck.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -137,10 +137,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property HealthCheckProtocol. 
         /// <para>
-        /// The protocol the load balancer uses when performing health checks on targets. The
-        /// TCP protocol is supported for health checks only if the protocol of the target group
-        /// is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not
-        /// supported for health checks.
+        /// The protocol the load balancer uses when performing health checks on targets. For
+        /// Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway
+        /// Load Balancers, the default is TCP. The TCP protocol is not supported for health checks
+        /// if the protocol of the target group is HTTP or HTTPS. It is supported for health checks
+        /// only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE,
+        /// TLS, UDP, and TCP_UDP protocols are not supported for health checks.
         /// </para>
         ///  
         /// <para>

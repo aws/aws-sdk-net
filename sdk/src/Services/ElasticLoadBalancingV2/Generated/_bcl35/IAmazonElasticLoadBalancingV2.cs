@@ -397,7 +397,8 @@ namespace Amazon.ElasticLoadBalancingV2
         /// The specified subnet does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyLoadBalancersException">
-        /// You've reached the limit on the number of load balancers for your AWS account.
+        /// You've reached the limit on the number of load balancers for your Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTagsException">
         /// You've reached the limit on the number of tags per load balancer.
@@ -488,7 +489,8 @@ namespace Amazon.ElasticLoadBalancingV2
         /// You've reached the limit on the number of tags per load balancer.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTargetGroupsException">
-        /// You've reached the limit on the number of target groups for your AWS account.
+        /// You've reached the limit on the number of target groups for your Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTargetsException">
         /// You've reached the limit on the number of targets.
@@ -576,7 +578,8 @@ namespace Amazon.ElasticLoadBalancingV2
         /// You've reached the limit on the number of tags per load balancer.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTargetGroupsException">
-        /// You've reached the limit on the number of target groups for your AWS account.
+        /// You've reached the limit on the number of target groups for your Amazon Web Services
+        /// account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTargetGroup">REST API Reference for CreateTargetGroup Operation</seealso>
         CreateTargetGroupResponse CreateTargetGroup(CreateTargetGroupRequest request);
@@ -874,7 +877,8 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Describes the current Elastic Load Balancing resource limits for your AWS account.
+        /// Describes the current Elastic Load Balancing resource limits for your Amazon Web Services
+        /// account.
         /// 
         ///  
         /// <para>

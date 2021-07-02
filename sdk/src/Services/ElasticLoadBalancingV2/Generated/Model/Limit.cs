@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Information about an Elastic Load Balancing resource limit for your AWS account.
+    /// Information about an Elastic Load Balancing resource limit for your Amazon Web Services
+    /// account.
     /// </summary>
     public partial class Limit
     {

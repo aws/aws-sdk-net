@@ -30,7 +30,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccountLimits operation.
-    /// Describes the current Elastic Load Balancing resource limits for your AWS account.
+    /// Describes the current Elastic Load Balancing resource limits for your Amazon Web Services
+    /// account.
     /// 
     ///  
     /// <para>
