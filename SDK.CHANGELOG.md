@@ -1,3 +1,22 @@
+### 3.7.66.0 (2021-07-06 18:17 UTC)
+* EKS (3.7.5.0)
+	* Adding new error code UnsupportedAddonModification for Addons in EKS
+* Imagebuilder (3.7.2.0)
+	* Adds support for specifying parameters to customize components for recipes. Expands configuration of the Amazon EC2 instances that are used for building and testing images, including the ability to specify commands to run on launch, and more control over installation and removal of the SSM agent.
+* Lambda (3.7.1.0)
+	* Added support for AmazonMQRabbitMQ as an event source. Added support for VIRTUAL_HOST as SourceAccessType for streams event source mappings.
+* Macie2 (3.7.3.8)
+	* Sensitive data findings in Amazon Macie now include enhanced location data for JSON and JSON Lines files
+* Mgn (3.7.1.0)
+	* Bug fix: Remove not supported EBS encryption type "NONE"
+* SimpleNotificationService (3.7.2.8)
+	* Documentation updates for Amazon SNS.
+* Core 3.7.0.39
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.65.0 (2021-07-02 18:11 UTC)
 * EC2 (3.7.15.0)
 	* This release removes network-insights-boundary
