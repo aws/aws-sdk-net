@@ -54,6 +54,10 @@ namespace Amazon.EKS
         /// Constant InternalFailure for AddonIssueCode
         /// </summary>
         public static readonly AddonIssueCode InternalFailure = new AddonIssueCode("InternalFailure");
+        /// <summary>
+        /// Constant UnsupportedAddonModification for AddonIssueCode
+        /// </summary>
+        public static readonly AddonIssueCode UnsupportedAddonModification = new AddonIssueCode("UnsupportedAddonModification");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -446,6 +450,10 @@ namespace Amazon.EKS
         /// Constant Unknown for ErrorCode
         /// </summary>
         public static readonly ErrorCode Unknown = new ErrorCode("Unknown");
+        /// <summary>
+        /// Constant UnsupportedAddonModification for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode UnsupportedAddonModification = new ErrorCode("UnsupportedAddonModification");
         /// <summary>
         /// Constant VpcIdNotFound for ErrorCode
         /// </summary>
