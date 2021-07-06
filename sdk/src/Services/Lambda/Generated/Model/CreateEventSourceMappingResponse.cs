@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// A mapping between an AWS resource and an AWS Lambda function. See <a>CreateEventSourceMapping</a>
+    /// A mapping between an Amazon Web Services resource and an Lambda function. See <a>CreateEventSourceMapping</a>
     /// for details.
     /// </summary>
     public partial class CreateEventSourceMappingResponse : AmazonWebServiceResponse
@@ -79,8 +79,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property BisectBatchOnFunctionError. 
         /// <para>
-        /// (Streams) If the function returns an error, split the batch in two and retry. The
-        /// default value is false.
+        /// (Streams only) If the function returns an error, split the batch in two and retry.
+        /// The default value is false.
         /// </para>
         /// </summary>
         public bool BisectBatchOnFunctionError
@@ -98,7 +98,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property DestinationConfig. 
         /// <para>
-        /// (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+        /// (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
         /// </para>
         /// </summary>
         public DestinationConfig DestinationConfig
@@ -152,7 +152,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionResponseTypes. 
         /// <para>
-        /// (Streams) A list of current response type enums applied to the event source mapping.
+        /// (Streams only) A list of current response type enums applied to the event source mapping.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -189,7 +189,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property LastProcessingResult. 
         /// <para>
-        /// The result of the last AWS Lambda invocation of your Lambda function.
+        /// The result of the last Lambda invocation of your Lambda function.
         /// </para>
         /// </summary>
         public string LastProcessingResult
@@ -227,8 +227,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumRecordAgeInSeconds. 
         /// <para>
-        /// (Streams) Discard records older than the specified age. The default value is infinite
-        /// (-1). When set to infinite (-1), failed records are retried until the record expires.
+        /// (Streams only) Discard records older than the specified age. The default value is
+        /// -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda
+        /// never discards old records. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=604800)]
@@ -247,9 +248,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumRetryAttempts. 
         /// <para>
-        /// (Streams) Discard records after the specified number of retries. The default value
-        /// is infinite (-1). When set to infinite (-1), failed records are retried until the
-        /// record expires.
+        /// (Streams only) Discard records after the specified number of retries. The default
+        /// value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts
+        /// is infinite, Lambda retries failed records until the record expires in the event source.
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=10000)]
@@ -268,8 +269,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ParallelizationFactor. 
         /// <para>
-        /// (Streams) The number of batches to process from each shard concurrently. The default
-        /// value is 1.
+        /// (Streams only) The number of batches to process from each shard concurrently. The
+        /// default value is 1.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -442,8 +443,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property TumblingWindowInSeconds. 
         /// <para>
-        /// (Streams) The duration in seconds of a processing window. The range is between 1 second
-        /// up to 900 seconds.
+        /// (Streams only) The duration in seconds of a processing window. The range is between
+        /// 1 second up to 900 seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=900)]

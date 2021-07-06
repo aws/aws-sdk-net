@@ -52,7 +52,7 @@ namespace Amazon.Lambda.Model
     ///  
     /// <para>
     /// To configure function concurrency, use <a>PutFunctionConcurrency</a>. To grant invoke
-    /// permissions to an account or AWS service, use <a>AddPermission</a>.
+    /// permissions to an account or Amazon Web Services service, use <a>AddPermission</a>.
     /// </para>
     /// </summary>
     public partial class UpdateFunctionConfigurationRequest : AmazonLambdaRequest
@@ -232,9 +232,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property KMSKeyArn. 
         /// <para>
-        /// The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your
-        /// function's environment variables. If it's not provided, AWS Lambda uses a default
-        /// service key.
+        /// The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to
+        /// encrypt your function's environment variables. If it's not provided, Lambda uses a
+        /// default service key.
         /// </para>
         /// </summary>
         public string KMSKeyArn
@@ -294,9 +294,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MemorySize. 
         /// <para>
-        /// The amount of memory available to the function at runtime. Increasing the function's
-        /// memory also increases its CPU allocation. The default value is 128 MB. The value can
-        /// be any multiple of 1 MB.
+        /// The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory
+        /// available to the function</a> at runtime. Increasing the function memory also increases
+        /// its CPU allocation. The default value is 128 MB. The value can be any multiple of
+        /// 1 MB.
         /// </para>
         /// </summary>
         [AWSProperty(Min=128, Max=10240)]
@@ -371,7 +372,9 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property Timeout. 
         /// <para>
         /// The amount of time that Lambda allows a function to run before stopping it. The default
-        /// is 3 seconds. The maximum allowed value is 900 seconds.
+        /// is 3 seconds. The maximum allowed value is 900 seconds. For additional information,
+        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda
+        /// execution environment</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -391,7 +394,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property TracingConfig. 
         /// <para>
         /// Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming
-        /// requests with AWS X-Ray.
+        /// requests with <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.
         /// </para>
         /// </summary>
         public TracingConfig TracingConfig
@@ -409,9 +412,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property VpcConfig. 
         /// <para>
-        /// For network connectivity to AWS resources in a VPC, specify a list of security groups
-        /// and subnets in the VPC. When you connect a function to a VPC, it can only access resources
-        /// and the internet through that VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
+        /// For network connectivity to Amazon Web Services resources in a VPC, specify a list
+        /// of security groups and subnets in the VPC. When you connect a function to a VPC, it
+        /// can only access resources and the internet through that VPC. For more information,
+        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
         /// Settings</a>.
         /// </para>
         /// </summary>

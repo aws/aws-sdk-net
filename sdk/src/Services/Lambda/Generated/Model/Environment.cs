@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// A function's environment variable settings.
+    /// A function's environment variable settings. You can use environment variables to adjust
+    /// your function's behavior without updating code. An environment variable is a pair
+    /// of strings that are stored in a function's version-specific configuration.
     /// </summary>
     public partial class Environment
     {
@@ -38,7 +40,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Variables. 
         /// <para>
-        /// Environment variable key-value pairs.
+        /// Environment variable key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">Using
+        /// Lambda environment variables</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Variables

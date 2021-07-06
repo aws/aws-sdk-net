@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// AWS Lambda was throttled by Amazon EC2 during Lambda function initialization using
-    /// the execution role provided for the Lambda function.
+    /// Lambda was throttled by Amazon EC2 during Lambda function initialization using the
+    /// execution role provided for the Lambda function.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -68,6 +68,11 @@ namespace Amazon.Lambda.Model
         ///  <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used
         /// for SASL SCRAM-512 authentication of your Self-Managed Apache Kafka brokers.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>VIRTUAL_HOST</code> - The name of the virtual host in your RabbitMQ broker.
+        /// Lambda will use this host as the event source.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public SourceAccessType Type

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Details about a Code signing configuration.
+    /// Details about a <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html">Code
+    /// signing configuration</a>.
     /// </summary>
     public partial class CodeSigningConfig
     {

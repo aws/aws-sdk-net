@@ -100,7 +100,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The maximum number of versions to return.
+        /// The maximum number of versions to return. Note that <code>ListVersionsByFunction</code>
+        /// returns a maximum of 50 items in each response, even if you set the number higher.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]

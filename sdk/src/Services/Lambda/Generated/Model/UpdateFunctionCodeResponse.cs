@@ -141,7 +141,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Environment. 
         /// <para>
-        /// The function's environment variables.
+        /// The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
+        /// variables</a>.
         /// </para>
         /// </summary>
         public EnvironmentResponse Environment
@@ -159,7 +160,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FileSystemConfigs. 
         /// <para>
-        /// Connection settings for an Amazon EFS file system.
+        /// Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
+        /// EFS file system</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1)]
@@ -586,7 +588,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property TracingConfig. 
         /// <para>
-        /// The function's AWS X-Ray tracing configuration.
+        /// The function's X-Ray tracing configuration.
         /// </para>
         /// </summary>
         public TracingConfigResponse TracingConfig

@@ -767,6 +767,10 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly SourceAccessType SASL_SCRAM_512_AUTH = new SourceAccessType("SASL_SCRAM_512_AUTH");
         /// <summary>
+        /// Constant VIRTUAL_HOST for SourceAccessType
+        /// </summary>
+        public static readonly SourceAccessType VIRTUAL_HOST = new SourceAccessType("VIRTUAL_HOST");
+        /// <summary>
         /// Constant VPC_SECURITY_GROUP for SourceAccessType
         /// </summary>
         public static readonly SourceAccessType VPC_SECURITY_GROUP = new SourceAccessType("VPC_SECURITY_GROUP");

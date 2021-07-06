@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The function's AWS X-Ray tracing configuration. To sample and record incoming requests,
-    /// set <code>Mode</code> to <code>Active</code>.
+    /// The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>
+    /// tracing configuration. To sample and record incoming requests, set <code>Mode</code>
+    /// to <code>Active</code>.
     /// </summary>
     public partial class TracingConfig
     {

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// AWS Lambda could not unzip the deployment package.
+    /// Lambda could not unzip the deployment package.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -30,10 +30,10 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the AddLayerVersionPermission operation.
-    /// Adds permissions to the resource-based policy of a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-    /// Lambda layer</a>. Use this action to grant layer usage permission to other accounts.
-    /// You can grant permission to a single account, all AWS accounts, or all accounts in
-    /// an organization.
+    /// Adds permissions to the resource-based policy of a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+    /// layer</a>. Use this action to grant layer usage permission to other accounts. You
+    /// can grant permission to a single account, all accounts in an organization, or all
+    /// Amazon Web Services accounts. 
     /// 
     ///  
     /// <para>
@@ -57,7 +57,7 @@ namespace Amazon.Lambda.Model
         /// The API action that grants access to the layer. For example, <code>lambda:GetLayerVersion</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=22)]
         public string Action
         {
             get { return this._action; }
@@ -96,6 +96,7 @@ namespace Amazon.Lambda.Model
         /// specified organization.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=34)]
         public string OrganizationId
         {
             get { return this._organizationId; }
@@ -111,7 +112,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Principal. 
         /// <para>
-        /// An account ID, or <code>*</code> to grant permission to all AWS accounts.
+        /// An account ID, or <code>*</code> to grant layer usage permission to all accounts in
+        /// an organization, or all Amazon Web Services accounts (if <code>organizationId</code>
+        /// is not specified). For the last case, make sure that you really do want all Amazon
+        /// Web Services accounts to have usage permission to this layer. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

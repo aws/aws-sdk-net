@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// AWS Lambda was not able to create an elastic network interface in the VPC, specified
-    /// as part of Lambda function configuration, because the limit for network interfaces
-    /// has been reached.
+    /// Lambda was not able to create an elastic network interface in the VPC, specified as
+    /// part of Lambda function configuration, because the limit for network interfaces has
+    /// been reached.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

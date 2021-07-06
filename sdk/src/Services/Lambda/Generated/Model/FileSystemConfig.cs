@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Details about the connection between a Lambda function and an Amazon EFS file system.
+    /// Details about the connection between a Lambda function and an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
+    /// EFS file system</a>.
     /// </summary>
     public partial class FileSystemConfig
     {

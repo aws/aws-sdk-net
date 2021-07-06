@@ -30,8 +30,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the PublishLayerVersion operation.
-    /// Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-    /// Lambda layer</a> from a ZIP archive. Each time you call <code>PublishLayerVersion</code>
+    /// Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+    /// layer</a> from a ZIP archive. Each time you call <code>PublishLayerVersion</code>
     /// with the same layer name, a new version is created.
     /// 
     ///  

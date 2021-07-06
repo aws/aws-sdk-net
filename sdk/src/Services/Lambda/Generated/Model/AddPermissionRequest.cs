@@ -30,20 +30,20 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the AddPermission operation.
-    /// Grants an AWS service or another account permission to use a function. You can apply
-    /// the policy at the function level, or specify a qualifier to restrict access to a single
-    /// version or alias. If you use a qualifier, the invoker must use the full Amazon Resource
-    /// Name (ARN) of that version or alias to invoke the function.
+    /// Grants an Amazon Web Services service or another account permission to use a function.
+    /// You can apply the policy at the function level, or specify a qualifier to restrict
+    /// access to a single version or alias. If you use a qualifier, the invoker must use
+    /// the full Amazon Resource Name (ARN) of that version or alias to invoke the function.
     /// 
     ///  
     /// <para>
     /// To grant permission to another account, specify the account ID as the <code>Principal</code>.
-    /// For AWS services, the principal is a domain-style identifier defined by the service,
-    /// like <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>. For AWS services,
-    /// you can also specify the ARN of the associated resource as the <code>SourceArn</code>.
-    /// If you grant permission to a service principal without specifying the source, other
-    /// accounts could potentially configure resources in their account to invoke your Lambda
-    /// function.
+    /// For Amazon Web Services services, the principal is a domain-style identifier defined
+    /// by the service, like <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>.
+    /// For Amazon Web Services services, you can also specify the ARN of the associated resource
+    /// as the <code>SourceArn</code>. If you grant permission to a service principal without
+    /// specifying the source, other accounts could potentially configure resources in their
+    /// account to invoke your Lambda function.
     /// </para>
     ///  
     /// <para>
@@ -146,9 +146,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Principal. 
         /// <para>
-        /// The AWS service or account that invokes the function. If you specify a service, use
-        /// <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function
-        /// through that service.
+        /// The Amazon Web Services service or account that invokes the function. If you specify
+        /// a service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who can
+        /// invoke the function through that service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -211,6 +211,7 @@ namespace Amazon.Lambda.Model
         /// another account.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=12)]
         public string SourceAccount
         {
             get { return this._sourceAccount; }
@@ -226,8 +227,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property SourceArn. 
         /// <para>
-        /// For AWS services, the ARN of the AWS resource that invokes the function. For example,
-        /// an Amazon S3 bucket or Amazon SNS topic.
+        /// For Amazon Web Services services, the ARN of the Amazon Web Services resource that
+        /// invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic.
         /// </para>
         /// </summary>
         public string SourceArn

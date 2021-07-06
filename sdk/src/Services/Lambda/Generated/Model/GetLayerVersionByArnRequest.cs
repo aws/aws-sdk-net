@@ -30,8 +30,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the GetLayerVersionByArn operation.
-    /// Returns information about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-    /// Lambda layer</a>, with a link to download the layer archive that's valid for 10 minutes.
+    /// Returns information about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+    /// layer</a>, with a link to download the layer archive that's valid for 10 minutes.
     /// </summary>
     public partial class GetLayerVersionByArnRequest : AmazonLambdaRequest
     {

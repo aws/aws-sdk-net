@@ -30,42 +30,44 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEventSourceMapping operation.
-    /// Creates a mapping between an event source and an AWS Lambda function. Lambda reads
-    /// items from the event source and triggers the function.
+    /// Creates a mapping between an event source and an Lambda function. Lambda reads items
+    /// from the event source and triggers the function.
     /// 
     ///  
     /// <para>
-    /// For details about each event source type, see the following topics.
+    /// For details about each event source type, see the following topics. In particular,
+    /// each of the topics describes the required and optional parameters for the specific
+    /// event source. 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html">Using AWS Lambda
-    /// with Amazon DynamoDB</a> 
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-dynamodb-eventsourcemapping">
+    /// Configuring a Dynamo DB stream as an event source</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html">Using AWS
-    /// Lambda with Amazon Kinesis</a> 
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html#services-kinesis-eventsourcemapping">
+    /// Configuring a Kinesis stream as an event source</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS Lambda
-    /// with Amazon SQS</a> 
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-eventsource">
+    /// Configuring an SQS queue as an event source</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html">Using AWS Lambda
-    /// with Amazon MQ</a> 
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html#services-mq-eventsourcemapping">
+    /// Configuring an MQ broker as an event source</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS Lambda
-    /// with Amazon MSK</a> 
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html"> Configuring
+    /// MSK as an event source</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html">Using AWS
-    /// Lambda with Self-Managed Apache Kafka</a> 
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Configuring
+    /// Self-Managed Apache Kafka as an event source</a> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -165,7 +167,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property BisectBatchOnFunctionError. 
         /// <para>
-        /// (Streams) If the function returns an error, split the batch in two and retry.
+        /// (Streams only) If the function returns an error, split the batch in two and retry.
         /// </para>
         /// </summary>
         public bool BisectBatchOnFunctionError
@@ -183,7 +185,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property DestinationConfig. 
         /// <para>
-        /// (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+        /// (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
         /// </para>
         /// </summary>
         public DestinationConfig DestinationConfig
@@ -296,7 +298,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionResponseTypes. 
         /// <para>
-        /// (Streams) A list of current response type enums applied to the event source mapping.
+        /// (Streams only) A list of current response type enums applied to the event source mapping.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -335,8 +337,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumRecordAgeInSeconds. 
         /// <para>
-        /// (Streams) Discard records older than the specified age. The default value is infinite
-        /// (-1).
+        /// (Streams only) Discard records older than the specified age. The default value is
+        /// infinite (-1).
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=604800)]
@@ -355,9 +357,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumRetryAttempts. 
         /// <para>
-        /// (Streams) Discard records after the specified number of retries. The default value
-        /// is infinite (-1). When set to infinite (-1), failed records will be retried until
-        /// the record expires.
+        /// (Streams only) Discard records after the specified number of retries. The default
+        /// value is infinite (-1). When set to infinite (-1), failed records will be retried
+        /// until the record expires.
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=10000)]
@@ -376,7 +378,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ParallelizationFactor. 
         /// <para>
-        /// (Streams) The number of batches to process from each shard concurrently.
+        /// (Streams only) The number of batches to process from each shard concurrently.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -510,8 +512,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property TumblingWindowInSeconds. 
         /// <para>
-        /// (Streams) The duration in seconds of a processing window. The range is between 1 second
-        /// up to 900 seconds.
+        /// (Streams only) The duration in seconds of a processing window. The range is between
+        /// 1 second up to 900 seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=900)]

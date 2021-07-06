@@ -31,7 +31,7 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Container for the parameters to the GetAccountSettings operation.
     /// Retrieves details about your account's <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a>
-    /// and usage in an AWS Region.
+    /// and usage in an Amazon Web Services Region.
     /// </summary>
     public partial class GetAccountSettingsRequest : AmazonLambdaRequest
     {

@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// A ZIP archive that contains the contents of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-    /// Lambda layer</a>. You can specify either an Amazon S3 location, or upload a layer
-    /// archive directly.
+    /// A ZIP archive that contains the contents of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+    /// layer</a>. You can specify either an Amazon S3 location, or upload a layer archive
+    /// directly.
     /// </summary>
     public partial class LayerVersionContentInput
     {
@@ -100,8 +100,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ZipFile. 
         /// <para>
-        /// The base64-encoded contents of the layer archive. AWS SDK and AWS CLI clients handle
-        /// the encoding for you.
+        /// The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon
+        /// Web Services CLI clients handle the encoding for you.
         /// </para>
         /// </summary>
         public MemoryStream ZipFile

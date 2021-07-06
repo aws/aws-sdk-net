@@ -30,7 +30,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateEventSourceMapping operation.
-    /// Updates an event source mapping. You can change the function that AWS Lambda invokes,
+    /// Updates an event source mapping. You can change the function that Lambda invokes,
     /// or pause invocation and resume later from the same location.
     /// 
     ///  
@@ -126,7 +126,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property BisectBatchOnFunctionError. 
         /// <para>
-        /// (Streams) If the function returns an error, split the batch in two and retry.
+        /// (Streams only) If the function returns an error, split the batch in two and retry.
         /// </para>
         /// </summary>
         public bool BisectBatchOnFunctionError
@@ -144,7 +144,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property DestinationConfig. 
         /// <para>
-        /// (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+        /// (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
         /// </para>
         /// </summary>
         public DestinationConfig DestinationConfig
@@ -222,7 +222,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionResponseTypes. 
         /// <para>
-        /// (Streams) A list of current response type enums applied to the event source mapping.
+        /// (Streams only) A list of current response type enums applied to the event source mapping.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -261,8 +261,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumRecordAgeInSeconds. 
         /// <para>
-        /// (Streams) Discard records older than the specified age. The default value is infinite
-        /// (-1).
+        /// (Streams only) Discard records older than the specified age. The default value is
+        /// infinite (-1).
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=604800)]
@@ -281,9 +281,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumRetryAttempts. 
         /// <para>
-        /// (Streams) Discard records after the specified number of retries. The default value
-        /// is infinite (-1). When set to infinite (-1), failed records will be retried until
-        /// the record expires.
+        /// (Streams only) Discard records after the specified number of retries. The default
+        /// value is infinite (-1). When set to infinite (-1), failed records will be retried
+        /// until the record expires.
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=10000)]
@@ -302,7 +302,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ParallelizationFactor. 
         /// <para>
-        /// (Streams) The number of batches to process from each shard concurrently.
+        /// (Streams only) The number of batches to process from each shard concurrently.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -341,8 +341,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property TumblingWindowInSeconds. 
         /// <para>
-        /// (Streams) The duration in seconds of a processing window. The range is between 1 second
-        /// up to 900 seconds.
+        /// (Streams only) The duration in seconds of a processing window. The range is between
+        /// 1 second up to 900 seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=900)]

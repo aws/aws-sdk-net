@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The AWS Lambda service encountered an internal error.
+    /// The Lambda service encountered an internal error.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

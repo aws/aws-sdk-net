@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The function's AWS X-Ray tracing configuration.
+    /// The function's X-Ray tracing configuration.
     /// </summary>
     public partial class TracingConfigResponse
     {

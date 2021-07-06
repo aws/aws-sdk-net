@@ -61,8 +61,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property CodeSizeZipped. 
         /// <para>
-        /// The maximum size of a deployment package when it's uploaded directly to AWS Lambda.
-        /// Use Amazon S3 for larger files.
+        /// The maximum size of a deployment package when it's uploaded directly to Lambda. Use
+        /// Amazon S3 for larger files.
         /// </para>
         /// </summary>
         public long CodeSizeZipped

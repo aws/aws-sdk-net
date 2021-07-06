@@ -33,9 +33,23 @@ namespace Amazon.Lambda.Model
     /// Creates a Lambda function. To create a function, you need a <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html">deployment
     /// package</a> and an <a href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
     /// role</a>. The deployment package is a .zip file archive or container image that contains
-    /// your function code. The execution role grants the function permission to use AWS services,
-    /// such as Amazon CloudWatch Logs for log streaming and AWS X-Ray for request tracing.
+    /// your function code. The execution role grants the function permission to use Amazon
+    /// Web Services services, such as Amazon CloudWatch Logs for log streaming and X-Ray
+    /// for request tracing.
     /// 
+    ///  
+    /// <para>
+    /// You set the package type to <code>Image</code> if the deployment package is a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
+    /// image</a>. For a container image, the code property must include the URI of a container
+    /// image in the Amazon ECR registry. You do not need to specify the handler and runtime
+    /// properties. 
+    /// </para>
+    ///  
+    /// <para>
+    /// You set the package type to <code>Zip</code> if the deployment package is a <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
+    /// file archive</a>. For a .zip file archive, the code property specifies the location
+    /// of the .zip file. You must also specify the handler and runtime properties.
+    /// </para>
     ///  
     /// <para>
     /// When you create a function, Lambda provisions an instance of the function and its
@@ -74,14 +88,14 @@ namespace Amazon.Lambda.Model
     /// </para>
     ///  
     /// <para>
-    /// If another account or an AWS service invokes your function, use <a>AddPermission</a>
+    /// If another account or an Amazon Web Services service invokes your function, use <a>AddPermission</a>
     /// to grant permission by creating a resource-based IAM policy. You can grant permissions
     /// at the function level, on a version, or on an alias.
     /// </para>
     ///  
     /// <para>
     /// To invoke your function directly, use <a>Invoke</a>. To invoke your function in response
-    /// to events in other AWS services, create an event source mapping (<a>CreateEventSourceMapping</a>),
+    /// to events in other Amazon Web Services services, create an event source mapping (<a>CreateEventSourceMapping</a>),
     /// or configure a function trigger in the other service. For more information, see <a
     /// href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking
     /// Functions</a>.
@@ -289,8 +303,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ImageConfig. 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container
-        /// image configuration values</a> that override the values in the container image Dockerfile.
+        /// Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration
+        /// values</a> that override the values in the container image Dockerfile.
         /// </para>
         /// </summary>
         public ImageConfig ImageConfig
@@ -308,9 +322,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property KMSKeyArn. 
         /// <para>
-        /// The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your
-        /// function's environment variables. If it's not provided, AWS Lambda uses a default
-        /// service key.
+        /// The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to
+        /// encrypt your function's environment variables. If it's not provided, Lambda uses a
+        /// default service key.
         /// </para>
         /// </summary>
         public string KMSKeyArn
@@ -348,9 +362,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MemorySize. 
         /// <para>
-        /// The amount of memory available to the function at runtime. Increasing the function's
-        /// memory also increases its CPU allocation. The default value is 128 MB. The value can
-        /// be any multiple of 1 MB.
+        /// The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory
+        /// available to the function</a> at runtime. Increasing the function memory also increases
+        /// its CPU allocation. The default value is 128 MB. The value can be any multiple of
+        /// 1 MB.
         /// </para>
         /// </summary>
         [AWSProperty(Min=128, Max=10240)]
@@ -463,7 +478,9 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property Timeout. 
         /// <para>
         /// The amount of time that Lambda allows a function to run before stopping it. The default
-        /// is 3 seconds. The maximum allowed value is 900 seconds.
+        /// is 3 seconds. The maximum allowed value is 900 seconds. For additional information,
+        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda
+        /// execution environment</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -483,7 +500,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property TracingConfig. 
         /// <para>
         /// Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming
-        /// requests with AWS X-Ray.
+        /// requests with <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.
         /// </para>
         /// </summary>
         public TracingConfig TracingConfig
@@ -501,9 +518,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property VpcConfig. 
         /// <para>
-        /// For network connectivity to AWS resources in a VPC, specify a list of security groups
-        /// and subnets in the VPC. When you connect a function to a VPC, it can only access resources
-        /// and the internet through that VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
+        /// For network connectivity to Amazon Web Services resources in a VPC, specify a list
+        /// of security groups and subnets in the VPC. When you connect a function to a VPC, it
+        /// can only access resources and the internet through that VPC. For more information,
+        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
         /// Settings</a>.
         /// </para>
         /// </summary>
