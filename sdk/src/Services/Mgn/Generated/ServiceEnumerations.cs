@@ -1032,10 +1032,6 @@ namespace Amazon.Mgn
         /// Constant DEFAULT for ReplicationConfigurationEbsEncryption
         /// </summary>
         public static readonly ReplicationConfigurationEbsEncryption DEFAULT = new ReplicationConfigurationEbsEncryption("DEFAULT");
-        /// <summary>
-        /// Constant NONE for ReplicationConfigurationEbsEncryption
-        /// </summary>
-        public static readonly ReplicationConfigurationEbsEncryption NONE = new ReplicationConfigurationEbsEncryption("NONE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

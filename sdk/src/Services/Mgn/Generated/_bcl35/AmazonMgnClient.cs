@@ -315,6 +315,9 @@ namespace Amazon.Mgn
         /// <param name="request">Container for the necessary parameters to execute the CreateReplicationConfigurationTemplate service method.</param>
         /// 
         /// <returns>The response from the CreateReplicationConfigurationTemplate service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Unitialized account exception.
         /// </exception>
@@ -1755,6 +1758,9 @@ namespace Amazon.Mgn
         /// <param name="request">Container for the necessary parameters to execute the UpdateReplicationConfiguration service method.</param>
         /// 
         /// <returns>The response from the UpdateReplicationConfiguration service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ConflictException">
         /// The request could not be completed due to a conflict with the current state of the
         /// target resource.
@@ -1822,6 +1828,9 @@ namespace Amazon.Mgn
         /// <param name="request">Container for the necessary parameters to execute the UpdateReplicationConfigurationTemplate service method.</param>
         /// 
         /// <returns>The response from the UpdateReplicationConfigurationTemplate service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
         /// </exception>
