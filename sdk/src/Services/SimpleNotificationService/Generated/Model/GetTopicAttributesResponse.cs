@@ -51,7 +51,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Owner</code> – The AWS account ID of the topic's owner.
+        ///  <code>Owner</code> – The account ID of the topic's owner.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -86,10 +86,10 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK)
-        /// for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
+        ///  <code>KmsMasterKeyId</code> - The ID of an Amazon Web Services managed customer master
+        /// key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
         /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
-        /// in the <i>AWS Key Management Service API Reference</i>.
+        /// in the <i>Key Management Service API Reference</i>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

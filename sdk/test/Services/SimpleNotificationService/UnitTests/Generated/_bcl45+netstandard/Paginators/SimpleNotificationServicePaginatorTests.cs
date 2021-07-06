@@ -120,6 +120,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("SimpleNotificationService")]
+        public void ListPhoneNumbersOptedOutTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListPhoneNumbersOptedOutRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListPhoneNumbersOptedOutResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListPhoneNumbersOptedOutResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListPhoneNumbersOptedOut(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListPhoneNumbersOptedOut(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SimpleNotificationService")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListPhoneNumbersOptedOutTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListPhoneNumbersOptedOutRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListPhoneNumbersOptedOutResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListPhoneNumbersOptedOut(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListPhoneNumbersOptedOut(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SimpleNotificationService")]
         public void ListPlatformApplicationsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListPlatformApplicationsRequest>();

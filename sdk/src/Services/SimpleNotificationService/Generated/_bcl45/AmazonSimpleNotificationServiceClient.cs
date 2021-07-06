@@ -282,11 +282,11 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Adds a statement to a topic's access control policy, granting access for the specified
-        /// AWS accounts to the specified actions.
+        /// accounts to the specified actions.
         /// </summary>
         /// <param name="topicArn">The ARN of the topic whose access control policy you wish to modify.</param>
         /// <param name="label">A unique identifier for the new policy statement.</param>
-        /// <param name="awsAccountId">The AWS account IDs of the users (principals) who will be given access to the specified actions. The users must have AWS accounts, but do not need to be signed up for this service.</param>
+        /// <param name="awsAccountId">The account IDs of the users (principals) who will be given access to the specified actions. The users must have account, but do not need to be signed up for this service.</param>
         /// <param name="actionName">The action you want to allow for the specified principal(s). Valid values: Any Amazon SNS action name, for example <code>Publish</code>.</param>
         /// 
         /// <returns>The response from the AddPermission service method, as returned by SimpleNotificationService.</returns>
@@ -316,7 +316,7 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Adds a statement to a topic's access control policy, granting access for the specified
-        /// AWS accounts to the specified actions.
+        /// accounts to the specified actions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddPermission service method.</param>
         /// 
@@ -346,11 +346,11 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Adds a statement to a topic's access control policy, granting access for the specified
-        /// AWS accounts to the specified actions.
+        /// accounts to the specified actions.
         /// </summary>
         /// <param name="topicArn">The ARN of the topic whose access control policy you wish to modify.</param>
         /// <param name="label">A unique identifier for the new policy statement.</param>
-        /// <param name="awsAccountId">The AWS account IDs of the users (principals) who will be given access to the specified actions. The users must have AWS accounts, but do not need to be signed up for this service.</param>
+        /// <param name="awsAccountId">The account IDs of the users (principals) who will be given access to the specified actions. The users must have account, but do not need to be signed up for this service.</param>
         /// <param name="actionName">The action you want to allow for the specified principal(s). Valid values: Any Amazon SNS action name, for example <code>Publish</code>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -383,7 +383,7 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Adds a statement to a topic's access control policy, granting access for the specified
-        /// AWS accounts to the specified actions.
+        /// accounts to the specified actions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddPermission service method.</param>
         /// <param name="cancellationToken">
@@ -510,15 +510,16 @@ namespace Amazon.SimpleNotificationService
         /// </summary>
         /// <param name="topicArn">The ARN of the topic for which you wish to confirm a subscription.</param>
         /// <param name="token">Short-lived token sent to an endpoint during the <code>Subscribe</code> action.</param>
-        /// <param name="authenticateOnUnsubscribe">Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an AWS signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires AWS authentication. </param>
+        /// <param name="authenticateOnUnsubscribe">Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an Amazon Web Services signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires Amazon Web Services authentication. </param>
         /// 
         /// <returns>The response from the ConfirmSubscription service method, as returned by SimpleNotificationService.</returns>
         /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
-        /// Indicates that the number of filter polices in your AWS account exceeds the limit.
-        /// To add more filter polices, submit an SNS Limit Increase case in the AWS Support Center.
+        /// Indicates that the number of filter polices in your account exceeds the limit. To
+        /// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services
+        /// Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -558,8 +559,9 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
-        /// Indicates that the number of filter polices in your AWS account exceeds the limit.
-        /// To add more filter polices, submit an SNS Limit Increase case in the AWS Support Center.
+        /// Indicates that the number of filter polices in your account exceeds the limit. To
+        /// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services
+        /// Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -597,8 +599,9 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
-        /// Indicates that the number of filter polices in your AWS account exceeds the limit.
-        /// To add more filter polices, submit an SNS Limit Increase case in the AWS Support Center.
+        /// Indicates that the number of filter polices in your account exceeds the limit. To
+        /// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services
+        /// Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -632,7 +635,7 @@ namespace Amazon.SimpleNotificationService
         /// </summary>
         /// <param name="topicArn">The ARN of the topic for which you wish to confirm a subscription.</param>
         /// <param name="token">Short-lived token sent to an endpoint during the <code>Subscribe</code> action.</param>
-        /// <param name="authenticateOnUnsubscribe">Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an AWS signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires AWS authentication. </param>
+        /// <param name="authenticateOnUnsubscribe">Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an Amazon Web Services signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires Amazon Web Services authentication. </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -642,8 +645,9 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
-        /// Indicates that the number of filter polices in your AWS account exceeds the limit.
-        /// To add more filter polices, submit an SNS Limit Increase case in the AWS Support Center.
+        /// Indicates that the number of filter polices in your account exceeds the limit. To
+        /// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services
+        /// Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -686,8 +690,9 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
-        /// Indicates that the number of filter polices in your AWS account exceeds the limit.
-        /// To add more filter polices, submit an SNS Limit Increase case in the AWS Support Center.
+        /// Indicates that the number of filter polices in your account exceeds the limit. To
+        /// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services
+        /// Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -728,8 +733,9 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
-        /// Indicates that the number of filter polices in your AWS account exceeds the limit.
-        /// To add more filter polices, submit an SNS Limit Increase case in the AWS Support Center.
+        /// Indicates that the number of filter polices in your account exceeds the limit. To
+        /// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services
+        /// Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -1005,12 +1011,12 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Adds a destination phone number to an AWS account in the SMS sandbox and sends a one-time
+        /// Adds a destination phone number to an account in the SMS sandbox and sends a one-time
         /// password (OTP) to that phone number.
         /// 
         ///  
         /// <para>
-        /// When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS
+        /// When you start using Amazon SNS to send SMS messages, your account is in the <i>SMS
         /// sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS
         /// features without risking your reputation as an SMS sender. While your account is in
         /// the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
@@ -1033,7 +1039,7 @@ namespace Amazon.SimpleNotificationService
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.OptedOutException">
         /// Indicates that the specified phone number opted out of receiving SMS messages from
-        /// your AWS account. You can't send SMS messages to phone numbers that opt out.
+        /// your account. You can't send SMS messages to phone numbers that opt out.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.ThrottledException">
         /// Indicates that the rate at which requests have been submitted for this action exceeds
@@ -1054,12 +1060,12 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Adds a destination phone number to an AWS account in the SMS sandbox and sends a one-time
+        /// Adds a destination phone number to an account in the SMS sandbox and sends a one-time
         /// password (OTP) to that phone number.
         /// 
         ///  
         /// <para>
-        /// When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS
+        /// When you start using Amazon SNS to send SMS messages, your account is in the <i>SMS
         /// sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS
         /// features without risking your reputation as an SMS sender. While your account is in
         /// the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
@@ -1085,7 +1091,7 @@ namespace Amazon.SimpleNotificationService
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.OptedOutException">
         /// Indicates that the specified phone number opted out of receiving SMS messages from
-        /// your AWS account. You can't send SMS messages to phone numbers that opt out.
+        /// your account. You can't send SMS messages to phone numbers that opt out.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.ThrottledException">
         /// Indicates that the rate at which requests have been submitted for this action exceeds
@@ -1112,7 +1118,8 @@ namespace Amazon.SimpleNotificationService
         /// <summary>
         /// Creates a topic to which notifications can be published. Users can create at most
         /// 100,000 standard topics (at most 1,000 FIFO topics). For more information, see <a
-        /// href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This action is idempotent,
+        /// href="https://docs.aws.amazon.com/sns/latest/dg/sns-create-topic.html">Creating an
+        /// Amazon SNS topic</a> in the <i>Amazon SNS Developer Guide</i>. This action is idempotent,
         /// so if the requester already owns a topic with the specified name, that topic's ARN
         /// is returned without creating a new topic.
         /// </summary>
@@ -1162,7 +1169,8 @@ namespace Amazon.SimpleNotificationService
         /// <summary>
         /// Creates a topic to which notifications can be published. Users can create at most
         /// 100,000 standard topics (at most 1,000 FIFO topics). For more information, see <a
-        /// href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This action is idempotent,
+        /// href="https://docs.aws.amazon.com/sns/latest/dg/sns-create-topic.html">Creating an
+        /// Amazon SNS topic</a> in the <i>Amazon SNS Developer Guide</i>. This action is idempotent,
         /// so if the requester already owns a topic with the specified name, that topic's ARN
         /// is returned without creating a new topic.
         /// </summary>
@@ -1214,7 +1222,8 @@ namespace Amazon.SimpleNotificationService
         /// <summary>
         /// Creates a topic to which notifications can be published. Users can create at most
         /// 100,000 standard topics (at most 1,000 FIFO topics). For more information, see <a
-        /// href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This action is idempotent,
+        /// href="https://docs.aws.amazon.com/sns/latest/dg/sns-create-topic.html">Creating an
+        /// Amazon SNS topic</a> in the <i>Amazon SNS Developer Guide</i>. This action is idempotent,
         /// so if the requester already owns a topic with the specified name, that topic's ARN
         /// is returned without creating a new topic.
         /// </summary>
@@ -1267,7 +1276,8 @@ namespace Amazon.SimpleNotificationService
         /// <summary>
         /// Creates a topic to which notifications can be published. Users can create at most
         /// 100,000 standard topics (at most 1,000 FIFO topics). For more information, see <a
-        /// href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This action is idempotent,
+        /// href="https://docs.aws.amazon.com/sns/latest/dg/sns-create-topic.html">Creating an
+        /// Amazon SNS topic</a> in the <i>Amazon SNS Developer Guide</i>. This action is idempotent,
         /// so if the requester already owns a topic with the specified name, that topic's ARN
         /// is returned without creating a new topic.
         /// </summary>
@@ -1462,11 +1472,11 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Deletes an AWS account's verified or pending phone number from the SMS sandbox.
+        /// Deletes an account's verified or pending phone number from the SMS sandbox.
         /// 
         ///  
         /// <para>
-        /// When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS
+        /// When you start using Amazon SNS to send SMS messages, your account is in the <i>SMS
         /// sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS
         /// features without risking your reputation as an SMS sender. While your account is in
         /// the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
@@ -1509,11 +1519,11 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Deletes an AWS account's verified or pending phone number from the SMS sandbox.
+        /// Deletes an account's verified or pending phone number from the SMS sandbox.
         /// 
         ///  
         /// <para>
-        /// When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS
+        /// When you start using Amazon SNS to send SMS messages, your account is in the <i>SMS
         /// sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS
         /// features without risking your reputation as an SMS sender. While your account is in
         /// the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
@@ -1960,11 +1970,11 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Retrieves the SMS sandbox status for the calling AWS account in the target AWS Region.
+        /// Retrieves the SMS sandbox status for the calling account in the target Region.
         /// 
         ///  
         /// <para>
-        /// When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS
+        /// When you start using Amazon SNS to send SMS messages, your account is in the <i>SMS
         /// sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS
         /// features without risking your reputation as an SMS sender. While your account is in
         /// the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
@@ -1998,11 +2008,11 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Retrieves the SMS sandbox status for the calling AWS account in the target AWS Region.
+        /// Retrieves the SMS sandbox status for the calling account in the target Region.
         /// 
         ///  
         /// <para>
-        /// When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS
+        /// When you start using Amazon SNS to send SMS messages, your account is in the <i>SMS
         /// sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS
         /// features without risking your reputation as an SMS sender. While your account is in
         /// the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
@@ -2396,8 +2406,8 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Lists the calling AWS account's dedicated origination numbers and their metadata.
-        /// For more information about origination numbers, see <a href="https://docs.aws.amazon.com/sns/latest/dg/channels-sms-originating-identities-origination-numbers.html">Origination
+        /// Lists the calling account's dedicated origination numbers and their metadata. For
+        /// more information about origination numbers, see <a href="https://docs.aws.amazon.com/sns/latest/dg/channels-sms-originating-identities-origination-numbers.html">Origination
         /// numbers</a> in the <i>Amazon SNS Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOriginationNumbers service method.</param>
@@ -2431,8 +2441,8 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Lists the calling AWS account's dedicated origination numbers and their metadata.
-        /// For more information about origination numbers, see <a href="https://docs.aws.amazon.com/sns/latest/dg/channels-sms-originating-identities-origination-numbers.html">Origination
+        /// Lists the calling account's dedicated origination numbers and their metadata. For
+        /// more information about origination numbers, see <a href="https://docs.aws.amazon.com/sns/latest/dg/channels-sms-originating-identities-origination-numbers.html">Origination
         /// numbers</a> in the <i>Amazon SNS Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOriginationNumbers service method.</param>
@@ -2717,12 +2727,12 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Lists the calling AWS account's current verified and pending destination phone numbers
+        /// Lists the calling account's current verified and pending destination phone numbers
         /// in the SMS sandbox.
         /// 
         ///  
         /// <para>
-        /// When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS
+        /// When you start using Amazon SNS to send SMS messages, your account is in the <i>SMS
         /// sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS
         /// features without risking your reputation as an SMS sender. While your account is in
         /// the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
@@ -2762,12 +2772,12 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Lists the calling AWS account's current verified and pending destination phone numbers
+        /// Lists the calling account's current verified and pending destination phone numbers
         /// in the SMS sandbox.
         /// 
         ///  
         /// <para>
-        /// When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS
+        /// When you start using Amazon SNS to send SMS messages, your account is in the <i>SMS
         /// sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS
         /// features without risking your reputation as an SMS sender. While your account is in
         /// the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
@@ -3633,7 +3643,7 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         ///  <important> 
         /// <para>
-        /// You can publish messages only to topics and endpoints in the same AWS Region.
+        /// You can publish messages only to topics and endpoints in the same Region.
         /// </para>
         ///  </important>
         /// </summary>
@@ -3669,19 +3679,19 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
         /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>Key Management Service
         /// Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSNotFoundException">
         /// The request was rejected because the specified entity or resource can't be found.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSOptInRequiredException">
-        /// The AWS access key ID needs a subscription for the service.
+        /// The Amazon Web Services access key ID needs a subscription for the service.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSThrottlingException">
         /// The request was denied due to request throttling. For more information about throttling,
         /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
-        /// in the <i>AWS Key Management Service Developer Guide.</i>
+        /// in the <i>Key Management Service Developer Guide.</i>
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
@@ -3728,7 +3738,7 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         ///  <important> 
         /// <para>
-        /// You can publish messages only to topics and endpoints in the same AWS Region.
+        /// You can publish messages only to topics and endpoints in the same Region.
         /// </para>
         ///  </important>
         /// </summary>
@@ -3765,19 +3775,19 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
         /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>Key Management Service
         /// Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSNotFoundException">
         /// The request was rejected because the specified entity or resource can't be found.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSOptInRequiredException">
-        /// The AWS access key ID needs a subscription for the service.
+        /// The Amazon Web Services access key ID needs a subscription for the service.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSThrottlingException">
         /// The request was denied due to request throttling. For more information about throttling,
         /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
-        /// in the <i>AWS Key Management Service Developer Guide.</i>
+        /// in the <i>Key Management Service Developer Guide.</i>
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
@@ -3825,7 +3835,7 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         ///  <important> 
         /// <para>
-        /// You can publish messages only to topics and endpoints in the same AWS Region.
+        /// You can publish messages only to topics and endpoints in the same Region.
         /// </para>
         ///  </important>
         /// </summary>
@@ -3860,19 +3870,19 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
         /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>Key Management Service
         /// Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSNotFoundException">
         /// The request was rejected because the specified entity or resource can't be found.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSOptInRequiredException">
-        /// The AWS access key ID needs a subscription for the service.
+        /// The Amazon Web Services access key ID needs a subscription for the service.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSThrottlingException">
         /// The request was denied due to request throttling. For more information about throttling,
         /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
-        /// in the <i>AWS Key Management Service Developer Guide.</i>
+        /// in the <i>Key Management Service Developer Guide.</i>
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
@@ -3920,7 +3930,7 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         ///  <important> 
         /// <para>
-        /// You can publish messages only to topics and endpoints in the same AWS Region.
+        /// You can publish messages only to topics and endpoints in the same Region.
         /// </para>
         ///  </important>
         /// </summary>
@@ -3959,19 +3969,19 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
         /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>Key Management Service
         /// Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSNotFoundException">
         /// The request was rejected because the specified entity or resource can't be found.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSOptInRequiredException">
-        /// The AWS access key ID needs a subscription for the service.
+        /// The Amazon Web Services access key ID needs a subscription for the service.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSThrottlingException">
         /// The request was denied due to request throttling. For more information about throttling,
         /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
-        /// in the <i>AWS Key Management Service Developer Guide.</i>
+        /// in the <i>Key Management Service Developer Guide.</i>
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
@@ -4018,7 +4028,7 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         ///  <important> 
         /// <para>
-        /// You can publish messages only to topics and endpoints in the same AWS Region.
+        /// You can publish messages only to topics and endpoints in the same Region.
         /// </para>
         ///  </important>
         /// </summary>
@@ -4058,19 +4068,19 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
         /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>Key Management Service
         /// Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSNotFoundException">
         /// The request was rejected because the specified entity or resource can't be found.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSOptInRequiredException">
-        /// The AWS access key ID needs a subscription for the service.
+        /// The Amazon Web Services access key ID needs a subscription for the service.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSThrottlingException">
         /// The request was denied due to request throttling. For more information about throttling,
         /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
-        /// in the <i>AWS Key Management Service Developer Guide.</i>
+        /// in the <i>Key Management Service Developer Guide.</i>
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
@@ -4118,7 +4128,7 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         ///  <important> 
         /// <para>
-        /// You can publish messages only to topics and endpoints in the same AWS Region.
+        /// You can publish messages only to topics and endpoints in the same Region.
         /// </para>
         ///  </important>
         /// </summary>
@@ -4156,19 +4166,19 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
         /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>Key Management Service
         /// Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSNotFoundException">
         /// The request was rejected because the specified entity or resource can't be found.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSOptInRequiredException">
-        /// The AWS access key ID needs a subscription for the service.
+        /// The Amazon Web Services access key ID needs a subscription for the service.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSThrottlingException">
         /// The request was denied due to request throttling. For more information about throttling,
         /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
-        /// in the <i>AWS Key Management Service Developer Guide.</i>
+        /// in the <i>Key Management Service Developer Guide.</i>
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
@@ -4572,8 +4582,9 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
-        /// Indicates that the number of filter polices in your AWS account exceeds the limit.
-        /// To add more filter polices, submit an SNS Limit Increase case in the AWS Support Center.
+        /// Indicates that the number of filter polices in your account exceeds the limit. To
+        /// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services
+        /// Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -4605,8 +4616,9 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
-        /// Indicates that the number of filter polices in your AWS account exceeds the limit.
-        /// To add more filter polices, submit an SNS Limit Increase case in the AWS Support Center.
+        /// Indicates that the number of filter polices in your account exceeds the limit. To
+        /// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services
+        /// Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -4643,8 +4655,9 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
-        /// Indicates that the number of filter polices in your AWS account exceeds the limit.
-        /// To add more filter polices, submit an SNS Limit Increase case in the AWS Support Center.
+        /// Indicates that the number of filter polices in your account exceeds the limit. To
+        /// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services
+        /// Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -4679,8 +4692,9 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
-        /// Indicates that the number of filter polices in your AWS account exceeds the limit.
-        /// To add more filter polices, submit an SNS Limit Increase case in the AWS Support Center.
+        /// Indicates that the number of filter polices in your account exceeds the limit. To
+        /// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services
+        /// Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -4710,7 +4724,7 @@ namespace Amazon.SimpleNotificationService
         /// Allows a topic owner to set an attribute of the topic to a new value.
         /// </summary>
         /// <param name="topicArn">The ARN of the topic to modify.</param>
-        /// <param name="attributeName">A map of attributes with their corresponding values. The following lists the names, descriptions, and values of the special request parameters that the <code>SetTopicAttributes</code> action uses: <ul> <li>  <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints. </li> <li>  <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions. </li> <li>  <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can publish or subscribe to the topic. </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>AWS Key Management Service API Reference</i>.  </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>: <ul> <li>  <code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics. <ul> <li> By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you create a FIFO topic and this attribute is <code>false</code>, you must specify a value for the <code>MessageDeduplicationId</code> parameter for the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action.  </li> <li> When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message). (Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action. </li> </ul> </li> </ul></param>
+        /// <param name="attributeName">A map of attributes with their corresponding values. The following lists the names, descriptions, and values of the special request parameters that the <code>SetTopicAttributes</code> action uses: <ul> <li>  <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints. </li> <li>  <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions. </li> <li>  <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can publish or subscribe to the topic. </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.  </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>: <ul> <li>  <code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics. <ul> <li> By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you create a FIFO topic and this attribute is <code>false</code>, you must specify a value for the <code>MessageDeduplicationId</code> parameter for the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action.  </li> <li> When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message). (Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action. </li> </ul> </li> </ul></param>
         /// <param name="attributeValue">The new value for the attribute.</param>
         /// 
         /// <returns>The response from the SetTopicAttributes service method, as returned by SimpleNotificationService.</returns>
@@ -4778,7 +4792,7 @@ namespace Amazon.SimpleNotificationService
         /// Allows a topic owner to set an attribute of the topic to a new value.
         /// </summary>
         /// <param name="topicArn">The ARN of the topic to modify.</param>
-        /// <param name="attributeName">A map of attributes with their corresponding values. The following lists the names, descriptions, and values of the special request parameters that the <code>SetTopicAttributes</code> action uses: <ul> <li>  <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints. </li> <li>  <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions. </li> <li>  <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can publish or subscribe to the topic. </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>AWS Key Management Service API Reference</i>.  </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>: <ul> <li>  <code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics. <ul> <li> By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you create a FIFO topic and this attribute is <code>false</code>, you must specify a value for the <code>MessageDeduplicationId</code> parameter for the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action.  </li> <li> When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message). (Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action. </li> </ul> </li> </ul></param>
+        /// <param name="attributeName">A map of attributes with their corresponding values. The following lists the names, descriptions, and values of the special request parameters that the <code>SetTopicAttributes</code> action uses: <ul> <li>  <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints. </li> <li>  <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions. </li> <li>  <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can publish or subscribe to the topic. </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.  </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>: <ul> <li>  <code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics. <ul> <li> By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you create a FIFO topic and this attribute is <code>false</code>, you must specify a value for the <code>MessageDeduplicationId</code> parameter for the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action.  </li> <li> When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message). (Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action. </li> </ul> </li> </ul></param>
         /// <param name="attributeValue">The new value for the attribute.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -4854,8 +4868,8 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Subscribes an endpoint to an Amazon SNS topic. If the endpoint type is HTTP/S or email,
-        /// or if the endpoint and the topic are not in the same AWS account, the endpoint owner
-        /// must run the <code>ConfirmSubscription</code> action to confirm the subscription.
+        /// or if the endpoint and the topic are not in the same account, the endpoint owner must
+        /// run the <code>ConfirmSubscription</code> action to confirm the subscription.
         /// 
         ///  
         /// <para>
@@ -4868,16 +4882,17 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         /// </summary>
         /// <param name="topicArn">The ARN of the topic you want to subscribe to.</param>
-        /// <param name="protocol">The protocol that you want to use. Supported protocols include: <ul> <li>  <code>http</code> – delivery of JSON-encoded message via HTTP POST </li> <li>  <code>https</code> – delivery of JSON-encoded message via HTTPS POST </li> <li>  <code>email</code> – delivery of message via SMTP </li> <li>  <code>email-json</code> – delivery of JSON-encoded message via SMTP </li> <li>  <code>sms</code> – delivery of message via SMS </li> <li>  <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue </li> <li>  <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device </li> <li>  <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function </li> <li>  <code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream. </li> </ul></param>
-        /// <param name="endpoint">The endpoint that you want to receive notifications. Endpoints vary by protocol: <ul> <li> For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>. </li> <li> For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>. </li> <li> For the <code>email</code> protocol, the endpoint is an email address. </li> <li> For the <code>email-json</code> protocol, the endpoint is an email address. </li> <li> For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device. </li> <li> For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue. </li> <li> For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device. </li> <li> For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function. </li> <li> For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream. </li> </ul></param>
+        /// <param name="protocol">The protocol that you want to use. Supported protocols include: <ul> <li>  <code>http</code> – delivery of JSON-encoded message via HTTP POST </li> <li>  <code>https</code> – delivery of JSON-encoded message via HTTPS POST </li> <li>  <code>email</code> – delivery of message via SMTP </li> <li>  <code>email-json</code> – delivery of JSON-encoded message via SMTP </li> <li>  <code>sms</code> – delivery of message via SMS </li> <li>  <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue </li> <li>  <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device </li> <li>  <code>lambda</code> – delivery of JSON-encoded message to an Lambda function </li> <li>  <code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream. </li> </ul></param>
+        /// <param name="endpoint">The endpoint that you want to receive notifications. Endpoints vary by protocol: <ul> <li> For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>. </li> <li> For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>. </li> <li> For the <code>email</code> protocol, the endpoint is an email address. </li> <li> For the <code>email-json</code> protocol, the endpoint is an email address. </li> <li> For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device. </li> <li> For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue. </li> <li> For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device. </li> <li> For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function. </li> <li> For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream. </li> </ul></param>
         /// 
         /// <returns>The response from the Subscribe service method, as returned by SimpleNotificationService.</returns>
         /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
-        /// Indicates that the number of filter polices in your AWS account exceeds the limit.
-        /// To add more filter polices, submit an SNS Limit Increase case in the AWS Support Center.
+        /// Indicates that the number of filter polices in your account exceeds the limit. To
+        /// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services
+        /// Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -4908,8 +4923,8 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Subscribes an endpoint to an Amazon SNS topic. If the endpoint type is HTTP/S or email,
-        /// or if the endpoint and the topic are not in the same AWS account, the endpoint owner
-        /// must run the <code>ConfirmSubscription</code> action to confirm the subscription.
+        /// or if the endpoint and the topic are not in the same account, the endpoint owner must
+        /// run the <code>ConfirmSubscription</code> action to confirm the subscription.
         /// 
         ///  
         /// <para>
@@ -4928,8 +4943,9 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
-        /// Indicates that the number of filter polices in your AWS account exceeds the limit.
-        /// To add more filter polices, submit an SNS Limit Increase case in the AWS Support Center.
+        /// Indicates that the number of filter polices in your account exceeds the limit. To
+        /// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services
+        /// Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -4960,8 +4976,8 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Subscribes an endpoint to an Amazon SNS topic. If the endpoint type is HTTP/S or email,
-        /// or if the endpoint and the topic are not in the same AWS account, the endpoint owner
-        /// must run the <code>ConfirmSubscription</code> action to confirm the subscription.
+        /// or if the endpoint and the topic are not in the same account, the endpoint owner must
+        /// run the <code>ConfirmSubscription</code> action to confirm the subscription.
         /// 
         ///  
         /// <para>
@@ -4974,8 +4990,8 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         /// </summary>
         /// <param name="topicArn">The ARN of the topic you want to subscribe to.</param>
-        /// <param name="protocol">The protocol that you want to use. Supported protocols include: <ul> <li>  <code>http</code> – delivery of JSON-encoded message via HTTP POST </li> <li>  <code>https</code> – delivery of JSON-encoded message via HTTPS POST </li> <li>  <code>email</code> – delivery of message via SMTP </li> <li>  <code>email-json</code> – delivery of JSON-encoded message via SMTP </li> <li>  <code>sms</code> – delivery of message via SMS </li> <li>  <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue </li> <li>  <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device </li> <li>  <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function </li> <li>  <code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream. </li> </ul></param>
-        /// <param name="endpoint">The endpoint that you want to receive notifications. Endpoints vary by protocol: <ul> <li> For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>. </li> <li> For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>. </li> <li> For the <code>email</code> protocol, the endpoint is an email address. </li> <li> For the <code>email-json</code> protocol, the endpoint is an email address. </li> <li> For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device. </li> <li> For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue. </li> <li> For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device. </li> <li> For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function. </li> <li> For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream. </li> </ul></param>
+        /// <param name="protocol">The protocol that you want to use. Supported protocols include: <ul> <li>  <code>http</code> – delivery of JSON-encoded message via HTTP POST </li> <li>  <code>https</code> – delivery of JSON-encoded message via HTTPS POST </li> <li>  <code>email</code> – delivery of message via SMTP </li> <li>  <code>email-json</code> – delivery of JSON-encoded message via SMTP </li> <li>  <code>sms</code> – delivery of message via SMS </li> <li>  <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue </li> <li>  <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device </li> <li>  <code>lambda</code> – delivery of JSON-encoded message to an Lambda function </li> <li>  <code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream. </li> </ul></param>
+        /// <param name="endpoint">The endpoint that you want to receive notifications. Endpoints vary by protocol: <ul> <li> For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>. </li> <li> For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>. </li> <li> For the <code>email</code> protocol, the endpoint is an email address. </li> <li> For the <code>email-json</code> protocol, the endpoint is an email address. </li> <li> For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device. </li> <li> For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue. </li> <li> For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device. </li> <li> For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function. </li> <li> For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream. </li> </ul></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -4985,8 +5001,9 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
-        /// Indicates that the number of filter polices in your AWS account exceeds the limit.
-        /// To add more filter polices, submit an SNS Limit Increase case in the AWS Support Center.
+        /// Indicates that the number of filter polices in your account exceeds the limit. To
+        /// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services
+        /// Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -5017,8 +5034,8 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Subscribes an endpoint to an Amazon SNS topic. If the endpoint type is HTTP/S or email,
-        /// or if the endpoint and the topic are not in the same AWS account, the endpoint owner
-        /// must run the <code>ConfirmSubscription</code> action to confirm the subscription.
+        /// or if the endpoint and the topic are not in the same account, the endpoint owner must
+        /// run the <code>ConfirmSubscription</code> action to confirm the subscription.
         /// 
         ///  
         /// <para>
@@ -5040,8 +5057,9 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
-        /// Indicates that the number of filter polices in your AWS account exceeds the limit.
-        /// To add more filter polices, submit an SNS Limit Increase case in the AWS Support Center.
+        /// Indicates that the number of filter polices in your account exceeds the limit. To
+        /// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services
+        /// Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -5101,7 +5119,7 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Tagging actions are limited to 10 TPS per AWS account, per AWS region. If your application
+        /// Tagging actions are limited to 10 TPS per account, per Region. If your application
         /// requires a higher throughput, file a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical
         /// support request</a>.
         /// </para>
@@ -5172,7 +5190,7 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Tagging actions are limited to 10 TPS per AWS account, per AWS region. If your application
+        /// Tagging actions are limited to 10 TPS per account, per Region. If your application
         /// requires a higher throughput, file a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical
         /// support request</a>.
         /// </para>
@@ -5225,11 +5243,11 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Deletes a subscription. If the subscription requires authentication for deletion,
-        /// only the owner of the subscription or the topic's owner can unsubscribe, and an AWS
-        /// signature is required. If the <code>Unsubscribe</code> call does not require authentication
-        /// and the requester is not the subscription owner, a final cancellation message is delivered
-        /// to the endpoint, so that the endpoint owner can easily resubscribe to the topic if
-        /// the <code>Unsubscribe</code> request was unintended.
+        /// only the owner of the subscription or the topic's owner can unsubscribe, and an Amazon
+        /// Web Services signature is required. If the <code>Unsubscribe</code> call does not
+        /// require authentication and the requester is not the subscription owner, a final cancellation
+        /// message is delivered to the endpoint, so that the endpoint owner can easily resubscribe
+        /// to the topic if the <code>Unsubscribe</code> request was unintended.
         /// 
         ///  
         /// <para>
@@ -5266,11 +5284,11 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Deletes a subscription. If the subscription requires authentication for deletion,
-        /// only the owner of the subscription or the topic's owner can unsubscribe, and an AWS
-        /// signature is required. If the <code>Unsubscribe</code> call does not require authentication
-        /// and the requester is not the subscription owner, a final cancellation message is delivered
-        /// to the endpoint, so that the endpoint owner can easily resubscribe to the topic if
-        /// the <code>Unsubscribe</code> request was unintended.
+        /// only the owner of the subscription or the topic's owner can unsubscribe, and an Amazon
+        /// Web Services signature is required. If the <code>Unsubscribe</code> call does not
+        /// require authentication and the requester is not the subscription owner, a final cancellation
+        /// message is delivered to the endpoint, so that the endpoint owner can easily resubscribe
+        /// to the topic if the <code>Unsubscribe</code> request was unintended.
         /// 
         ///  
         /// <para>
@@ -5309,11 +5327,11 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Deletes a subscription. If the subscription requires authentication for deletion,
-        /// only the owner of the subscription or the topic's owner can unsubscribe, and an AWS
-        /// signature is required. If the <code>Unsubscribe</code> call does not require authentication
-        /// and the requester is not the subscription owner, a final cancellation message is delivered
-        /// to the endpoint, so that the endpoint owner can easily resubscribe to the topic if
-        /// the <code>Unsubscribe</code> request was unintended.
+        /// only the owner of the subscription or the topic's owner can unsubscribe, and an Amazon
+        /// Web Services signature is required. If the <code>Unsubscribe</code> call does not
+        /// require authentication and the requester is not the subscription owner, a final cancellation
+        /// message is delivered to the endpoint, so that the endpoint owner can easily resubscribe
+        /// to the topic if the <code>Unsubscribe</code> request was unintended.
         /// 
         ///  
         /// <para>
@@ -5353,11 +5371,11 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Deletes a subscription. If the subscription requires authentication for deletion,
-        /// only the owner of the subscription or the topic's owner can unsubscribe, and an AWS
-        /// signature is required. If the <code>Unsubscribe</code> call does not require authentication
-        /// and the requester is not the subscription owner, a final cancellation message is delivered
-        /// to the endpoint, so that the endpoint owner can easily resubscribe to the topic if
-        /// the <code>Unsubscribe</code> request was unintended.
+        /// only the owner of the subscription or the topic's owner can unsubscribe, and an Amazon
+        /// Web Services signature is required. If the <code>Unsubscribe</code> call does not
+        /// require authentication and the requester is not the subscription owner, a final cancellation
+        /// message is delivered to the endpoint, so that the endpoint owner can easily resubscribe
+        /// to the topic if the <code>Unsubscribe</code> request was unintended.
         /// 
         ///  
         /// <para>
@@ -5494,11 +5512,11 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Verifies a destination phone number with a one-time password (OTP) for the calling
-        /// AWS account.
+        /// account.
         /// 
         ///  
         /// <para>
-        /// When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS
+        /// When you start using Amazon SNS to send SMS messages, your account is in the <i>SMS
         /// sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS
         /// features without risking your reputation as an SMS sender. While your account is in
         /// the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
@@ -5542,11 +5560,11 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Verifies a destination phone number with a one-time password (OTP) for the calling
-        /// AWS account.
+        /// account.
         /// 
         ///  
         /// <para>
-        /// When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS
+        /// When you start using Amazon SNS to send SMS messages, your account is in the <i>SMS
         /// sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS
         /// features without risking your reputation as an SMS sender. While your account is in
         /// the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send

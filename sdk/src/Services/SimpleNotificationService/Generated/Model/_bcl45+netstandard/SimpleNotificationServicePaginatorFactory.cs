@@ -52,6 +52,14 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
+        /// Paginator for ListPhoneNumbersOptedOut operation
+        ///</summary>
+        public IListPhoneNumbersOptedOutPaginator ListPhoneNumbersOptedOut(ListPhoneNumbersOptedOutRequest request) 
+        {
+            return new ListPhoneNumbersOptedOutPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPlatformApplications operation
         ///</summary>
         public IListPlatformApplicationsPaginator ListPlatformApplications(ListPlatformApplicationsRequest request) 

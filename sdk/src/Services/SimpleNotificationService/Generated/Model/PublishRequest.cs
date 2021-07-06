@@ -58,7 +58,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// You can publish messages only to topics and endpoints in the same AWS Region.
+    /// You can publish messages only to topics and endpoints in the same Region.
     /// </para>
     ///  </important>
     /// </summary>

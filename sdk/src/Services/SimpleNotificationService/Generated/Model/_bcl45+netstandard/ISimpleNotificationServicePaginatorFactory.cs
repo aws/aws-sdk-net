@@ -36,6 +36,11 @@ namespace Amazon.SimpleNotificationService.Model
         IListOriginationNumbersPaginator ListOriginationNumbers(ListOriginationNumbersRequest request);
 
         /// <summary>
+        /// Paginator for ListPhoneNumbersOptedOut operation
+        ///</summary>
+        IListPhoneNumbersOptedOutPaginator ListPhoneNumbersOptedOut(ListPhoneNumbersOptedOutRequest request);
+
+        /// <summary>
         /// Paginator for ListPlatformApplications operation
         ///</summary>
         IListPlatformApplicationsPaginator ListPlatformApplications(ListPlatformApplicationsRequest request);

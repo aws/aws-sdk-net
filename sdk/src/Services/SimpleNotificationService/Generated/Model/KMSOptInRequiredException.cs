@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// The AWS access key ID needs a subscription for the service.
+    /// The Amazon Web Services access key ID needs a subscription for the service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -160,7 +160,7 @@ namespace Amazon.SimpleNotificationService.Model
         ///  </li> </ul> 
         /// <para>
         /// To receive the report, the bucket must have a policy that allows the Amazon SNS service
-        /// principle to perform the <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code>
+        /// principal to perform the <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code>
         /// actions.
         /// </para>
         ///  

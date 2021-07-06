@@ -63,7 +63,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="topicArn">The ARN of the topic for which you wish to confirm a subscription.</param>
         /// <param name="token">Short-lived token sent to an endpoint during the <code>Subscribe</code> action.</param>
-        /// <param name="authenticateOnUnsubscribe">Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an AWS signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires AWS authentication. </param>
+        /// <param name="authenticateOnUnsubscribe">Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an Amazon Web Services signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires Amazon Web Services authentication. </param>
         public ConfirmSubscriptionRequest(string topicArn, string token, string authenticateOnUnsubscribe)
         {
             _topicArn = topicArn;
@@ -75,9 +75,9 @@ namespace Amazon.SimpleNotificationService.Model
         /// Gets and sets the property AuthenticateOnUnsubscribe. 
         /// <para>
         /// Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter
-        /// is <code>true</code> and the request has an AWS signature, then only the topic owner
-        /// and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires
-        /// AWS authentication. 
+        /// is <code>true</code> and the request has an Amazon Web Services signature, then only
+        /// the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe
+        /// action requires Amazon Web Services authentication. 
         /// </para>
         /// </summary>
         public string AuthenticateOnUnsubscribe
