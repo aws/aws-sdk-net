@@ -83,8 +83,8 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// ACCOUNT_ID - A string that represents the unique identifier for the AWS account that
-        /// owns the bucket.
+        /// ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services
+        /// account that owns the bucket.
         /// </para>
         /// </li> <li>
         /// <para>

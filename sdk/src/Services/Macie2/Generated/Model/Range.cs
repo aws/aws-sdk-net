@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides details about the location of an occurrence of sensitive data in a Microsoft
-    /// Word document or non-binary text file.
+    /// Specifies the location of an occurrence of sensitive data in a non-binary text file,
+    /// such as an HTML, TXT, or XML file.
     /// </summary>
     public partial class Range
     {
@@ -78,7 +78,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property StartColumn. 
         /// <para>
-        /// The column number for the column that contains the data, if the file contains structured
+        /// The number of characters, with spaces and starting from 1, from the beginning of the
+        /// first line that contains the sensitive data (start) to the beginning of the sensitive
         /// data.
         /// </para>
         /// </summary>

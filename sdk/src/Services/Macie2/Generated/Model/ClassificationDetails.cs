@@ -99,7 +99,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Result. 
         /// <para>
-        /// The status and other details for the finding.
+        /// The status and other details of the finding.
         /// </para>
         /// </summary>
         public ClassificationResult Result

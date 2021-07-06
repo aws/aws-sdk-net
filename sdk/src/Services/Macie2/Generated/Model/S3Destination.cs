@@ -79,9 +79,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer
-        /// master key (CMK) to use for encryption of the results. This must be the ARN of an
-        /// existing CMK that's in the same AWS Region as the bucket.
+        /// The Amazon Resource Name (ARN) of the Key Management Service (KMS) customer master
+        /// key (CMK) to use for encryption of the results. This must be the ARN of an existing
+        /// CMK that's in the same Amazon Web Services Region as the bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

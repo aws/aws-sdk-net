@@ -42,7 +42,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID for the account that sent the invitation.
+        /// The Amazon Web Services account ID for the account that sent the invitation.
         /// </para>
         /// </summary>
         public string AccountId

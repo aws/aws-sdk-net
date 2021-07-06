@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about an S3 bucket that a finding applies to.
+    /// Provides information about the S3 bucket that a finding applies to.
     /// </summary>
     public partial class S3Bucket
     {
@@ -156,7 +156,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The display name and AWS account ID for the user who owns the bucket.
+        /// The display name and Amazon Web Services account ID for the user who owns the bucket.
         /// </para>
         /// </summary>
         public S3BucketOwner Owner

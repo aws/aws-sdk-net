@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about an AWS Identity and Access Management (IAM) user who performed
+    /// Provides information about an Identity and Access Management (IAM) user who performed
     /// an action on an affected resource.
     /// </summary>
     public partial class IamUser
@@ -42,8 +42,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The unique identifier for the AWS account that's associated with the IAM user who
-        /// performed the action.
+        /// The unique identifier for the Amazon Web Services account that's associated with the
+        /// IAM user who performed the action.
         /// </para>
         /// </summary>
         public string AccountId

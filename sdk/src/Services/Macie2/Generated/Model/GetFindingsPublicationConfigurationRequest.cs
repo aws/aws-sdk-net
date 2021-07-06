@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetFindingsPublicationConfiguration operation.
-    /// Retrieves the configuration settings for publishing findings to AWS Security Hub.
+    /// Retrieves the configuration settings for publishing findings to Security Hub.
     /// </summary>
     public partial class GetFindingsPublicationConfigurationRequest : AmazonMacie2Request
     {

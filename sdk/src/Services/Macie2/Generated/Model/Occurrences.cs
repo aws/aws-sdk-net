@@ -45,8 +45,11 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Cells. 
         /// <para>
         /// An array of objects, one for each occurrence of sensitive data in a Microsoft Excel
-        /// workbook, CSV file, or TSV file. Each object specifies the cell or field that contains
-        /// the data. This value is null for all other types of files.
+        /// workbook, CSV file, or TSV file. This value is null for all other types of files.
+        /// </para>
+        /// 
+        /// <para>
+        /// Each Cell object specifies a cell or field that contains the sensitive data.
         /// </para>
         /// </summary>
         public List<Cell> Cells
@@ -64,17 +67,18 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property LineRanges. 
         /// <para>
-        /// An array of objects, one for each occurrence of sensitive data in a Microsoft Word
-        /// document or non-binary text file, such as an HTML, JSON, TXT, or XML file. Each object
-        /// specifies the line that contains the data, and the position of the data on that line.
+        /// An array of objects, one for each occurrence of sensitive data in a non-binary text
+        /// file, such as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive
+        /// range of lines that contains the sensitive data, and the position of the data on the
+        /// specified line or lines.
         /// </para>
         ///  
         /// <para>
         /// This value is often null for file types that are supported by Cell, Page, or Record
-        /// objects. Exceptions are the locations of data in: unstructured sections of an otherwise
-        /// structured file, such as a comment in a file; a malformed file that Amazon Macie analyzes
-        /// as plain text; and, a CSV or TSV file that has any column names that contain sensitive
-        /// data.
+        /// objects. Exceptions are the location of sensitive data in: unstructured sections of
+        /// an otherwise structured file, such as a comment in a file; a malformed file that Amazon
+        /// Macie analyzes as plain text; and, a CSV or TSV file that has any column names that
+        /// contain sensitive data.
         /// </para>
         /// </summary>
         public List<Range> LineRanges
@@ -111,8 +115,11 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Pages. 
         /// <para>
         /// An array of objects, one for each occurrence of sensitive data in an Adobe Portable
-        /// Document Format file. Each object specifies the page that contains the data. This
-        /// value is null for all other types of files.
+        /// Document Format file. This value is null for all other types of files.
+        /// </para>
+        /// 
+        /// <para>
+        /// Each Page object specifies a page that contains the sensitive data.
         /// </para>
         /// </summary>
         public List<Page> Pages
@@ -131,9 +138,16 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Records. 
         /// <para>
         /// An array of objects, one for each occurrence of sensitive data in an Apache Avro object
-        /// container or Apache Parquet file. Each object specifies the record index and the path
-        /// to the field in the record that contains the data. This value is null for all other
-        /// types of files.
+        /// container, Apache Parquet file, JSON file, or JSON Lines file. This value is null
+        /// for all other types of files.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an Avro object container or Parquet file, each Record object specifies a record
+        /// index and the path to a field in a record that contains the sensitive data. For a
+        /// JSON or JSON Lines file, each Record object specifies the path to a field or array
+        /// that contains the sensitive data. For a JSON Lines file, it also specifies the index
+        /// of the line that contains the data.
         /// </para>
         /// </summary>
         public List<Record> Records

@@ -39,8 +39,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property S3Bucket. 
         /// <para>
-        /// An array of objects, one for each S3 bucket that the finding applies to. Each object
-        /// provides a set of metadata about an affected S3 bucket.
+        /// The details of the S3 bucket that the finding applies to.
         /// </para>
         /// </summary>
         public S3Bucket S3Bucket
@@ -58,8 +57,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property S3Object. 
         /// <para>
-        /// An array of objects, one for each S3 object that the finding applies to. Each object
-        /// provides a set of metadata about an affected S3 object.
+        /// The details of the S3 object that the finding applies to.
         /// </para>
         /// </summary>
         public S3Object S3Object

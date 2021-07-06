@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Provides information about the delegated Amazon Macie administrator account for an
-    /// AWS organization.
+    /// Amazon Web Services organization.
     /// </summary>
     public partial class AdminAccount
     {
@@ -40,7 +40,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID for the account.
+        /// The Amazon Web Services account ID for the account.
         /// </para>
         /// </summary>
         public string AccountId

@@ -62,7 +62,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property FindingPublishingFrequency. 
         /// <para>
         /// The frequency with which Macie publishes updates to policy findings for the account.
-        /// This includes publishing updates to AWS Security Hub and Amazon EventBridge (formerly
+        /// This includes publishing updates to Security Hub and Amazon EventBridge (formerly
         /// called Amazon CloudWatch Events).
         /// </para>
         /// </summary>
@@ -82,7 +82,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property ServiceRole. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor
-        /// and analyze data in AWS resources for the account.
+        /// and analyze data in Amazon Web Services resources for the account.
         /// </para>
         /// </summary>
         public string ServiceRole

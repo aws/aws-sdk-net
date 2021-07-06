@@ -39,8 +39,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// An array that lists AWS account IDs, one for each account that sent an invitation
-        /// to decline.
+        /// An array that lists Amazon Web Services account IDs, one for each account that sent
+        /// an invitation to decline.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

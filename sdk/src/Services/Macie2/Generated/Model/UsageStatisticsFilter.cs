@@ -89,19 +89,19 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// accountId - The unique identifier for an AWS account.
+        /// accountId - The unique identifier for an Amazon Web Services account.
         /// </para>
-        /// </li></ul> <ul><li>
+        /// </li> <li>
         /// <para>
         /// freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when
         /// the free trial started for an account.
         /// </para>
-        /// </li></ul> <ul><li>
+        /// </li> <li>
         /// <para>
         /// serviceLimit - A Boolean (true or false) value that indicates whether an account has
         /// reached its monthly quota.
         /// </para>
-        /// </li></ul> <ul><li>
+        /// </li> <li>
         /// <para>
         /// total - A string that represents the current estimated cost for an account.
         /// </para>

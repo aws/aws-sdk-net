@@ -42,8 +42,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property KmsMasterKeyId. 
         /// <para>
-        /// The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management
-        /// Service (AWS KMS) customer master key (CMK) that's used by default to encrypt objects
+        /// The Amazon Resource Name (ARN) or unique identifier (key ID) for the Key Management
+        /// Service (KMS) customer master key (CMK) that's used by default to encrypt objects
         /// that are added to the bucket. This value is null if the bucket uses an Amazon S3 managed
         /// key to encrypt new objects or the bucket doesn't encrypt new objects by default.
         /// </para>
@@ -73,9 +73,9 @@ namespace Amazon.Macie2.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// aws:kms - New objects are encrypted with an AWS KMS CMK, specified by the kmsMasterKeyId
-        /// property, and use AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS
-        /// KMS encryption (SSE-KMS).
+        /// aws:kms - New objects are encrypted with an KMS CMK, specified by the kmsMasterKeyId
+        /// property, and use Amazon Web Services managed KMS encryption (AWS-KMS) or customer
+        /// managed KMS encryption (SSE-KMS).
         /// </para>
         /// </li> <li>
         /// <para>

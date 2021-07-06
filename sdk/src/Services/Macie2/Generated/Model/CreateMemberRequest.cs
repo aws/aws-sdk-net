@@ -40,7 +40,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Account. 
         /// <para>
-        /// The details for the account to associate with the administrator account.
+        /// The details of the account to associate with the administrator account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

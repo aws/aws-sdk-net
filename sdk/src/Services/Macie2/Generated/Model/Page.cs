@@ -77,7 +77,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property PageNumber. 
         /// <para>
-        /// The page number of the page that contains the data.
+        /// The page number of the page that contains the sensitive data.
         /// </para>
         /// </summary>
         public long PageNumber

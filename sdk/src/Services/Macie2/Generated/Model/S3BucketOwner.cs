@@ -57,7 +57,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The AWS account ID for the user who owns the bucket.
+        /// The Amazon Web Services account ID for the user who owns the bucket.
         /// </para>
         /// </summary>
         public string Id

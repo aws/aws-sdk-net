@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateOrganizationConfiguration operation.
-    /// Updates the Amazon Macie configuration settings for an AWS organization.
+    /// Updates the Amazon Macie configuration settings for an Amazon Web Services organization.
     /// </summary>
     public partial class UpdateOrganizationConfigurationRequest : AmazonMacie2Request
     {
@@ -40,7 +40,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property AutoEnable. 
         /// <para>
         /// Specifies whether to enable Amazon Macie automatically for each account, when the
-        /// account is added to the AWS organization.
+        /// account is added to the Amazon Web Services organization.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

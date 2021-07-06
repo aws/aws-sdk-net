@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides statistical data and other information about an AWS resource that Amazon
-    /// Macie monitors and analyzes.
+    /// Provides statistical data and other information about an Amazon Web Services resource
+    /// that Amazon Macie monitors and analyzes.
     /// </summary>
     public partial class MatchingResource
     {

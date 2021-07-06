@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about an S3 object that a finding applies to.
+    /// Provides information about the S3 object that a finding applies to.
     /// </summary>
     public partial class S3Object
     {

@@ -59,7 +59,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The unique identifier for the AWS account that owns the bucket.
+        /// The unique identifier for the Amazon Web Services account that owns the bucket.
         /// </para>
         /// </summary>
         public string AccountId
@@ -310,7 +310,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS Region that hosts the bucket.
+        /// The Amazon Web Services Region that hosts the bucket.
         /// </para>
         /// </summary>
         public string Region
@@ -329,7 +329,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property ReplicationDetails. 
         /// <para>
         /// Specifies whether the bucket is configured to replicate one or more objects to buckets
-        /// for other AWS accounts and, if so, which accounts.
+        /// for other Amazon Web Services accounts and, if so, which accounts.
         /// </para>
         /// </summary>
         public ReplicationDetails ReplicationDetails
@@ -366,21 +366,22 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property SharedAccess.  
         /// <para>
-        /// Specifies whether the bucket is shared with another AWS account. Possible values are:
+        /// Specifies whether the bucket is shared with another Amazon Web Services account. Possible
+        /// values are:
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// EXTERNAL - The bucket is shared with an AWS account that isn't part of the same Amazon
-        /// Macie organization.
+        /// EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part
+        /// of the same Amazon Macie organization.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon
-        /// Macie organization.
+        /// INTERNAL - The bucket is shared with an Amazon Web Services account that's part of
+        /// the same Amazon Macie organization.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// NOT_SHARED - The bucket isn't shared with other AWS accounts.
+        /// NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
         /// </para>
         /// </li> <li>
         /// <para>

@@ -42,9 +42,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property CellReference. 
         /// <para>
-        /// The location of the cell, as an absolute cell reference, that contains the data. For
-        /// example, Sheet2!C5 for cell C5 on Sheet2 in a Microsoft Excel workbook. This value
-        /// is null for CSV and TSV files.
+        /// The location of the cell, as an absolute cell reference, that contains the sensitive
+        /// data, for example Sheet2!C5 for cell C5 on Sheet2 in a Microsoft Excel workbook. This
+        /// value is null for CSV and TSV files.
         /// </para>
         /// </summary>
         public string CellReference
@@ -62,9 +62,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Column. 
         /// <para>
-        /// The column number of the column that contains the data. For a Microsoft Excel workbook,
-        /// this value correlates to the alphabetical character(s) for a column identifier. For
-        /// example, 1 for column A, 2 for column B, and so on.
+        /// The column number of the column that contains the sensitive data. For a Microsoft
+        /// Excel workbook, this value correlates to the alphabetical character(s) for a column
+        /// identifier, for example: 1 for column A, 2 for column B, and so on.
         /// </para>
         /// </summary>
         public long Column
@@ -82,8 +82,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property ColumnName. 
         /// <para>
-        /// The name of the column that contains the data, if available. This value is also null
-        /// if Amazon Macie detects sensitive data in the name of any column in the file.
+        /// The name of the column that contains the sensitive data, if available.
         /// </para>
         /// </summary>
         public string ColumnName
@@ -101,7 +100,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Row. 
         /// <para>
-        /// The row number of the row that contains the data.
+        /// The row number of the row that contains the sensitive data.
         /// </para>
         /// </summary>
         public long Row

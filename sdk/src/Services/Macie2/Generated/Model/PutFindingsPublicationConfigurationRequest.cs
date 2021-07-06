@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the PutFindingsPublicationConfiguration operation.
-    /// Updates the configuration settings for publishing findings to AWS Security Hub.
+    /// Updates the configuration settings for publishing findings to Security Hub.
     /// </summary>
     public partial class PutFindingsPublicationConfigurationRequest : AmazonMacie2Request
     {
@@ -58,8 +58,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property SecurityHubConfiguration. 
         /// <para>
-        /// The configuration settings that determine which findings to publish to AWS Security
-        /// Hub.
+        /// The configuration settings that determine which findings to publish to Security Hub.
         /// </para>
         /// </summary>
         public SecurityHubConfiguration SecurityHubConfiguration

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Specifies details for an account to associate with an Amazon Macie administrator account.
+    /// Specifies the details of an account to associate with an Amazon Macie administrator
+    /// account.
     /// </summary>
     public partial class AccountDetail
     {
@@ -39,7 +40,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID for the account.
+        /// The Amazon Web Services account ID for the account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

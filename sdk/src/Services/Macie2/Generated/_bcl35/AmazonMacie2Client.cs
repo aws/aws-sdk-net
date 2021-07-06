@@ -1462,7 +1462,7 @@ namespace Amazon.Macie2
         #region  DescribeOrganizationConfiguration
 
         /// <summary>
-        /// Retrieves the Amazon Macie configuration settings for an AWS organization.
+        /// Retrieves the Amazon Macie configuration settings for an Amazon Web Services organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationConfiguration service method.</param>
         /// 
@@ -1624,8 +1624,8 @@ namespace Amazon.Macie2
         #region  DisableOrganizationAdminAccount
 
         /// <summary>
-        /// Disables an account as the delegated Amazon Macie administrator account for an AWS
-        /// organization.
+        /// Disables an account as the delegated Amazon Macie administrator account for an Amazon
+        /// Web Services organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationAdminAccount service method.</param>
         /// 
@@ -2032,8 +2032,8 @@ namespace Amazon.Macie2
         #region  EnableOrganizationAdminAccount
 
         /// <summary>
-        /// Designates an account as the delegated Amazon Macie administrator account for an AWS
-        /// organization.
+        /// Designates an account as the delegated Amazon Macie administrator account for an Amazon
+        /// Web Services organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableOrganizationAdminAccount service method.</param>
         /// 
@@ -2601,7 +2601,7 @@ namespace Amazon.Macie2
         #region  GetFindingsPublicationConfiguration
 
         /// <summary>
-        /// Retrieves the configuration settings for publishing findings to AWS Security Hub.
+        /// Retrieves the configuration settings for publishing findings to Security Hub.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindingsPublicationConfiguration service method.</param>
         /// 
@@ -3742,7 +3742,7 @@ namespace Amazon.Macie2
 
         /// <summary>
         /// Retrieves information about the delegated Amazon Macie administrator account for an
-        /// AWS organization.
+        /// Amazon Web Services organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrganizationAdminAccounts service method.</param>
         /// 
@@ -3959,7 +3959,7 @@ namespace Amazon.Macie2
         #region  PutFindingsPublicationConfiguration
 
         /// <summary>
-        /// Updates the configuration settings for publishing findings to AWS Security Hub.
+        /// Updates the configuration settings for publishing findings to Security Hub.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutFindingsPublicationConfiguration service method.</param>
         /// 
@@ -4040,8 +4040,8 @@ namespace Amazon.Macie2
         #region  SearchResources
 
         /// <summary>
-        /// Retrieves (queries) statistical data and other information about AWS resources that
-        /// Amazon Macie monitors and analyzes.
+        /// Retrieves (queries) statistical data and other information about Amazon Web Services
+        /// resources that Amazon Macie monitors and analyzes.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchResources service method.</param>
         /// 
@@ -4638,7 +4638,7 @@ namespace Amazon.Macie2
         #region  UpdateOrganizationConfiguration
 
         /// <summary>
-        /// Updates the Amazon Macie configuration settings for an AWS organization.
+        /// Updates the Amazon Macie configuration settings for an Amazon Web Services organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateOrganizationConfiguration service method.</param>
         /// 

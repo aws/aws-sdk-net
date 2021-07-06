@@ -64,7 +64,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property JobImminentExpirationHealthEventArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Health event that Amazon Macie sent to notify
+        /// The Amazon Resource Name (ARN) of the Health event that Amazon Macie sent to notify
         /// you of the job or job run's pending expiration and cancellation. This value is null
         /// if a job has been paused for less than 23 days.
         /// </para>

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Specifies a property- or tag-based filter condition for including or excluding AWS
-    /// resources from the query results.
+    /// Specifies a property- or tag-based filter condition for including or excluding Amazon
+    /// Web Services resources from the query results.
     /// </summary>
     public partial class SearchResourcesCriteria
     {

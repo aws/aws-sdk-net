@@ -46,7 +46,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID for the account.
+        /// The Amazon Web Services account ID for the account.
         /// </para>
         /// </summary>
         public string AccountId
@@ -64,7 +64,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AdministratorAccountId. 
         /// <para>
-        /// The AWS account ID for the administrator account.
+        /// The Amazon Web Services account ID for the administrator account.
         /// </para>
         /// </summary>
         public string AdministratorAccountId
@@ -138,9 +138,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property MasterAccountId. 
         /// <para>
-        /// (Deprecated) The AWS account ID for the administrator account. This property has been
-        /// replaced by the administratorAccountId property and is retained only for backward
-        /// compatibility.
+        /// (Deprecated) The Amazon Web Services account ID for the administrator account. This
+        /// property has been replaced by the administratorAccountId property and is retained
+        /// only for backward compatibility.
         /// </para>
         /// </summary>
         public string MasterAccountId

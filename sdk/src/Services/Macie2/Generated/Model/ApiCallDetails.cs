@@ -60,7 +60,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property ApiServiceName. 
         /// <para>
-        /// The URL of the AWS service that provides the operation, for example: s3.amazonaws.com.
+        /// The URL of the Amazon Web Service that provides the operation, for example: s3.amazonaws.com.
         /// </para>
         /// </summary>
         public string ApiServiceName

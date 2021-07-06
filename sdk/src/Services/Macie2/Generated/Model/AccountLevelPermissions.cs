@@ -39,7 +39,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property BlockPublicAccess. 
         /// <para>
-        /// The block public access settings for the AWS account that owns the bucket.
+        /// The block public access settings for the Amazon Web Services account that owns the
+        /// bucket.
         /// </para>
         /// </summary>
         public BlockPublicAccess BlockPublicAccess

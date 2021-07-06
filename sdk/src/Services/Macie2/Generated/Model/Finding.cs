@@ -55,8 +55,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The unique identifier for the AWS account that the finding applies to. This is typically
-        /// the account that owns the affected resource.
+        /// The unique identifier for the Amazon Web Services account that the finding applies
+        /// to. This is typically the account that owns the affected resource.
         /// </para>
         /// </summary>
         public string AccountId
@@ -74,7 +74,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Archived. 
         /// <para>
-        /// Specifies whether the finding is archived.
+        /// Specifies whether the finding is archived (suppressed).
         /// </para>
         /// </summary>
         public bool Archived
@@ -204,7 +204,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Partition. 
         /// <para>
-        /// The AWS partition that Amazon Macie created the finding in.
+        /// The Amazon Web Services partition that Amazon Macie created the finding in.
         /// </para>
         /// </summary>
         public string Partition
@@ -240,7 +240,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS Region that Amazon Macie created the finding in.
+        /// The Amazon Web Services Region that Amazon Macie created the finding in.
         /// </para>
         /// </summary>
         public string Region

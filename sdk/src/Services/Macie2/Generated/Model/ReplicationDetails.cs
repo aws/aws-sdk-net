@@ -30,7 +30,8 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Provides information about settings that define whether one or more objects in an
-    /// S3 bucket are replicated to S3 buckets for other AWS accounts and, if so, which accounts.
+    /// S3 bucket are replicated to S3 buckets for other Amazon Web Services accounts and,
+    /// if so, which accounts.
     /// </summary>
     public partial class ReplicationDetails
     {
@@ -61,7 +62,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property ReplicatedExternally. 
         /// <para>
         /// Specifies whether the bucket is configured to replicate one or more objects to an
-        /// AWS account that isn't part of the same Amazon Macie organization.
+        /// Amazon Web Services account that isn't part of the same Amazon Macie organization.
         /// </para>
         /// </summary>
         public bool ReplicatedExternally
@@ -79,8 +80,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property ReplicationAccounts. 
         /// <para>
-        /// An array of AWS account IDs, one for each AWS account that the bucket is configured
-        /// to replicate one or more objects to.
+        /// An array of Amazon Web Services account IDs, one for each Amazon Web Services account
+        /// that the bucket is configured to replicate one or more objects to.
         /// </para>
         /// </summary>
         public List<string> ReplicationAccounts

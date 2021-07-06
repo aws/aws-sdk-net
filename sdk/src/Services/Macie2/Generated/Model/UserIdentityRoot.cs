@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about an AWS account and entity that performed an action on an
-    /// affected resource. The action was performed using the credentials for your AWS account.
+    /// Provides information about an Amazon Web Services account and entity that performed
+    /// an action on an affected resource. The action was performed using the credentials
+    /// for your Amazon Web Services account.
     /// </summary>
     public partial class UserIdentityRoot
     {
@@ -41,7 +42,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The unique identifier for the AWS account.
+        /// The unique identifier for the Amazon Web Services account.
         /// </para>
         /// </summary>
         public string AccountId

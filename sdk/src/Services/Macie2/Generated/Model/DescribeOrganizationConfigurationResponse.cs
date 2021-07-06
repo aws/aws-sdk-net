@@ -40,7 +40,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property AutoEnable. 
         /// <para>
         /// Specifies whether Amazon Macie is enabled automatically for accounts that are added
-        /// to the AWS organization.
+        /// to the Amazon Web Services organization.
         /// </para>
         /// </summary>
         public bool AutoEnable
@@ -59,7 +59,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property MaxAccountLimitReached. 
         /// <para>
         /// Specifies whether the maximum number of Amazon Macie member accounts are part of the
-        /// AWS organization.
+        /// Amazon Web Services organization.
         /// </para>
         /// </summary>
         public bool MaxAccountLimitReached

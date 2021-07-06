@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Specifies a property-based filter condition that determines which AWS resources are
-    /// included or excluded from the query results.
+    /// Specifies a property-based filter condition that determines which Amazon Web Services
+    /// resources are included or excluded from the query results.
     /// </summary>
     public partial class SearchResourcesSimpleCriterion
     {
@@ -83,8 +83,8 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// ACCOUNT_ID - A string that represents the unique identifier for the AWS account that
-        /// owns the resource.
+        /// ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services
+        /// account that owns the resource.
         /// </para>
         /// </li> <li>
         /// <para>

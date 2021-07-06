@@ -38,7 +38,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property SecurityHubConfiguration. 
         /// <para>
-        /// The configuration settings that determine which findings are published to AWS Security
+        /// The configuration settings that determine which findings are published to Security
         /// Hub.
         /// </para>
         /// </summary>

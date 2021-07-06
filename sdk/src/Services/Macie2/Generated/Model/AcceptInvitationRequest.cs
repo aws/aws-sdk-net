@@ -41,7 +41,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AdministratorAccountId. 
         /// <para>
-        /// The AWS account ID for the account that sent the invitation.
+        /// The Amazon Web Services account ID for the account that sent the invitation.
         /// </para>
         /// </summary>
         public string AdministratorAccountId
@@ -78,9 +78,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property MasterAccount. 
         /// <para>
-        /// (Deprecated) The AWS account ID for the account that sent the invitation. This property
-        /// has been replaced by the administratorAccountId property and is retained only for
-        /// backward compatibility.
+        /// (Deprecated) The Amazon Web Services account ID for the account that sent the invitation.
+        /// This property has been replaced by the administratorAccountId property and is retained
+        /// only for backward compatibility.
         /// </para>
         /// </summary>
         public string MasterAccount

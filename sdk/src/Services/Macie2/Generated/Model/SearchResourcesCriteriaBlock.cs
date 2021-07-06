@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Specifies property- and tag-based conditions that define filter criteria for including
-    /// or excluding AWS resources from the query results.
+    /// or excluding Amazon Web Services resources from the query results.
     /// </summary>
     public partial class SearchResourcesCriteriaBlock
     {

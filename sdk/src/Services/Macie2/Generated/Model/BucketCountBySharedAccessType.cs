@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Provides information about the number of S3 buckets that are or aren't shared with
-    /// other AWS accounts.
+    /// other Amazon Web Services accounts.
     /// </summary>
     public partial class BucketCountBySharedAccessType
     {
@@ -42,8 +42,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property External. 
         /// <para>
-        /// The total number of buckets that are shared with an AWS account that isn't part of
-        /// the same Amazon Macie organization.
+        /// The total number of buckets that are shared with an Amazon Web Services account that
+        /// isn't part of the same Amazon Macie organization.
         /// </para>
         /// </summary>
         public long External
@@ -61,8 +61,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Internal. 
         /// <para>
-        /// The total number of buckets that are shared with an AWS account that's part of the
-        /// same Amazon Macie organization.
+        /// The total number of buckets that are shared with an Amazon Web Services account that's
+        /// part of the same Amazon Macie organization.
         /// </para>
         /// </summary>
         public long Internal
@@ -80,7 +80,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property NotShared. 
         /// <para>
-        /// The total number of buckets that aren't shared with other AWS accounts.
+        /// The total number of buckets that aren't shared with other Amazon Web Services accounts.
         /// </para>
         /// </summary>
         public long NotShared
@@ -99,8 +99,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Unknown. 
         /// <para>
         /// The total number of buckets that Amazon Macie wasn't able to evaluate shared access
-        /// settings for. Macie can't determine whether these buckets are shared with other AWS
-        /// accounts.
+        /// settings for. Macie can't determine whether these buckets are shared with other Amazon
+        /// Web Services accounts.
         /// </para>
         /// </summary>
         public long Unknown

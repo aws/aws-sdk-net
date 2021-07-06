@@ -31,7 +31,7 @@ namespace Amazon.Macie2.Model
     /// <summary>
     /// Provides information about an identity that performed an action on an affected resource
     /// by using temporary security credentials. The credentials were obtained using the GetFederationToken
-    /// operation of the AWS Security Token Service (AWS STS) API.
+    /// operation of the Security Token Service (STS) API.
     /// </summary>
     public partial class FederatedUser
     {
@@ -44,7 +44,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AccessKeyId. 
         /// <para>
-        /// The AWS access key ID that identifies the credentials.
+        /// The Amazon Web Services access key ID that identifies the credentials.
         /// </para>
         /// </summary>
         public string AccessKeyId
@@ -62,8 +62,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The unique identifier for the AWS account that owns the entity that was used to get
-        /// the credentials.
+        /// The unique identifier for the Amazon Web Services account that owns the entity that
+        /// was used to get the credentials.
         /// </para>
         /// </summary>
         public string AccountId

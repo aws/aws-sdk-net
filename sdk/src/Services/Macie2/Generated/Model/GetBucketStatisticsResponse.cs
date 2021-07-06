@@ -126,7 +126,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property BucketCountBySharedAccessType. 
         /// <para>
-        /// The total number of buckets that are or aren't shared with another AWS account.
+        /// The total number of buckets that are or aren't shared with another Amazon Web Services
+        /// account.
         /// </para>
         /// </summary>
         public BucketCountBySharedAccessType BucketCountBySharedAccessType

@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Specifies the location of an occurrence of sensitive data in an Apache Avro object
-    /// container or Apache Parquet file.
+    /// container, Apache Parquet file, JSON file, or JSON Lines file.
     /// </summary>
     public partial class Record
     {
@@ -40,16 +40,19 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property JsonPath. 
         /// <para>
-        /// The path, as a JSONPath expression, to the field in the record that contains the data.
-        /// If Amazon Macie detects sensitive data in the name of any element in the path, Macie
-        /// omits this field.
+        /// The path, as a JSONPath expression, to the sensitive data. For an Avro object container
+        /// or Parquet file, this is the path to the field in the record (recordIndex) that contains
+        /// the data. For a JSON or JSON Lines file, this is the path to the field or array that
+        /// contains the data. If the data is a value in an array, the path also indicates which
+        /// value contains the data.
         /// </para>
         ///  
         /// <para>
-        /// If the name of an element exceeds 20 characters, Macie truncates the name by removing
-        /// characters from the beginning of the name. If the resulting full path exceeds 250
-        /// characters, Macie also truncates the path, starting with the first element in the
-        /// path, until the path contains 250 or fewer characters.
+        /// If Amazon Macie detects sensitive data in the name of any element in the path, Macie
+        /// omits this field. If the name of an element exceeds 20 characters, Macie truncates
+        /// the name by removing characters from the beginning of the name. If the resulting full
+        /// path exceeds 250 characters, Macie also truncates the path, starting with the first
+        /// element in the path, until the path contains 250 or fewer characters.
         /// </para>
         /// </summary>
         public string JsonPath
@@ -67,7 +70,10 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property RecordIndex. 
         /// <para>
-        /// The record index, starting from 0, for the record that contains the data.
+        /// For an Avro object container or Parquet file, the record index, starting from 0, for
+        /// the record that contains the sensitive data. For a JSON Lines file, the line index,
+        /// starting from 0, for the line that contains the sensitive data. This value is always
+        /// 0 for JSON files.
         /// </para>
         /// </summary>
         public long RecordIndex
