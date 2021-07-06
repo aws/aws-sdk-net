@@ -35,6 +35,7 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class CreateImageRecipeRequest : AmazonImagebuilderRequest
     {
+        private AdditionalInstanceConfiguration _additionalInstanceConfiguration;
         private List<InstanceBlockDeviceMapping> _blockDeviceMappings = new List<InstanceBlockDeviceMapping>();
         private string _clientToken;
         private List<ComponentConfiguration> _components = new List<ComponentConfiguration>();
@@ -44,6 +45,24 @@ namespace Amazon.Imagebuilder.Model
         private string _semanticVersion;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _workingDirectory;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalInstanceConfiguration. 
+        /// <para>
+        /// Specify additional settings and launch scripts for your build instances.
+        /// </para>
+        /// </summary>
+        public AdditionalInstanceConfiguration AdditionalInstanceConfiguration
+        {
+            get { return this._additionalInstanceConfiguration; }
+            set { this._additionalInstanceConfiguration = value; }
+        }
+
+        // Check to see if AdditionalInstanceConfiguration property is set
+        internal bool IsSetAdditionalInstanceConfiguration()
+        {
+            return this._additionalInstanceConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BlockDeviceMappings. 
@@ -203,7 +222,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property WorkingDirectory. 
         /// <para>
-        /// The working directory to be used during build and test workflows.
+        /// The working directory used during build and test workflows.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

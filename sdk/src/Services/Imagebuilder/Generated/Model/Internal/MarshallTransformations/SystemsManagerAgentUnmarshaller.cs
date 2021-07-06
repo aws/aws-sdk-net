@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ComponentConfiguration Object
+    /// Response Unmarshaller for SystemsManagerAgent Object
     /// </summary>  
-    public class ComponentConfigurationUnmarshaller : IUnmarshaller<ComponentConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ComponentConfiguration, JsonUnmarshallerContext>
+    public class SystemsManagerAgentUnmarshaller : IUnmarshaller<SystemsManagerAgent, XmlUnmarshallerContext>, IUnmarshaller<SystemsManagerAgent, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ComponentConfiguration IUnmarshaller<ComponentConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SystemsManagerAgent IUnmarshaller<SystemsManagerAgent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ComponentConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public SystemsManagerAgent Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ComponentConfiguration unmarshalledObject = new ComponentConfiguration();
+            SystemsManagerAgent unmarshalledObject = new SystemsManagerAgent();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("componentArn", targetDepth))
+                if (context.TestExpression("uninstallAfterBuild", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComponentArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("parameters", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ComponentParameter, ComponentParameterUnmarshaller>(ComponentParameterUnmarshaller.Instance);
-                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UninstallAfterBuild = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         }
 
 
-        private static ComponentConfigurationUnmarshaller _instance = new ComponentConfigurationUnmarshaller();        
+        private static SystemsManagerAgentUnmarshaller _instance = new SystemsManagerAgentUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ComponentConfigurationUnmarshaller Instance
+        public static SystemsManagerAgentUnmarshaller Instance
         {
             get
             {

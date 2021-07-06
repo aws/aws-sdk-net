@@ -39,7 +39,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Amis. 
         /// <para>
-        /// The EC2 AMIs created by this image.
+        /// The Amazon EC2 AMIs created by this image.
         /// </para>
         /// </summary>
         public List<Ami> Amis

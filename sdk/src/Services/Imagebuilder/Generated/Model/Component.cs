@@ -42,6 +42,7 @@ namespace Amazon.Imagebuilder.Model
         private string _kmsKeyId;
         private string _name;
         private string _owner;
+        private List<ComponentParameterDetail> _parameters = new List<ComponentParameterDetail>();
         private Platform _platform;
         private List<string> _supportedOsVersions = new List<string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -212,6 +213,24 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetOwner()
         {
             return this._owner != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// Contains parameter details for each of the parameters that are defined for the component.
+        /// </para>
+        /// </summary>
+        public List<ComponentParameterDetail> Parameters
+        {
+            get { return this._parameters; }
+            set { this._parameters = value; }
+        }
+
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
+        {
+            return this._parameters != null && this._parameters.Count > 0; 
         }
 
         /// <summary>

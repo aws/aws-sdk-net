@@ -38,10 +38,10 @@ namespace Amazon.Imagebuilder
     /// <summary>
     /// Implementation for accessing Imagebuilder
     ///
-    /// EC2 Image Builder is a fully managed AWS service that makes it easier to automate
-    /// the creation, management, and deployment of customized, secure, and up-to-date "golden"
-    /// server images that are pre-installed and pre-configured with software and settings
-    /// to meet specific IT standards.
+    /// EC2 Image Builder is a fully managed Amazon Web Services service that makes it easier
+    /// to automate the creation, management, and deployment of customized, secure, and up-to-date
+    /// "golden" server images that are pre-installed and pre-configured with software and
+    /// settings to meet specific IT standards.
     /// </summary>
     public partial class AmazonImagebuilderClient : AmazonServiceClient, IAmazonImagebuilder
     {
@@ -2194,7 +2194,7 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// List the Packages that are associated with an Image Build Version, as determined by
-        /// AWS Systems Manager Inventory at build time.
+        /// Amazon EC2 Systems Manager Inventory at build time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImagePackages service method.</param>
         /// <param name="cancellationToken">

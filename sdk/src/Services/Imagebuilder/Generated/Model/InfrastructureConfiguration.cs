@@ -162,7 +162,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property KeyPair. 
         /// <para>
-        /// The EC2 key pair of the infrastructure configuration.
+        /// The Amazon EC2 key pair of the infrastructure configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ComponentConfiguration Marshaller
+    /// SystemsManagerAgent Marshaller
     /// </summary>       
-    public class ComponentConfigurationMarshaller : IRequestMarshaller<ComponentConfiguration, JsonMarshallerContext> 
+    public class SystemsManagerAgentMarshaller : IRequestMarshaller<SystemsManagerAgent, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ComponentConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(SystemsManagerAgent requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetComponentArn())
+            if(requestObject.IsSetUninstallAfterBuild())
             {
-                context.Writer.WritePropertyName("componentArn");
-                context.Writer.Write(requestObject.ComponentArn);
-            }
-
-            if(requestObject.IsSetParameters())
-            {
-                context.Writer.WritePropertyName("parameters");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectParametersListValue in requestObject.Parameters)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ComponentParameterMarshaller.Instance;
-                    marshaller.Marshall(requestObjectParametersListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("uninstallAfterBuild");
+                context.Writer.Write(requestObject.UninstallAfterBuild);
             }
 
         }
@@ -72,7 +56,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static ComponentConfigurationMarshaller Instance = new ComponentConfigurationMarshaller();
+        public readonly static SystemsManagerAgentMarshaller Instance = new SystemsManagerAgentMarshaller();
 
     }
 }

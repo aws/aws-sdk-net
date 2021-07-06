@@ -150,7 +150,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DockerfileTemplateUri. 
         /// <para>
-        /// The S3 URI for the Dockerfile that will be used to build your container image.
+        /// The Amazon S3 URI for the Dockerfile that will be used to build your container image.
         /// </para>
         /// </summary>
         public string DockerfileTemplateUri

@@ -118,6 +118,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.Owner = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("parameters", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ComponentParameterDetail, ComponentParameterDetailUnmarshaller>(ComponentParameterDetailUnmarshaller.Instance);
+                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("platform", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

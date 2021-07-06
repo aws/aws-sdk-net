@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ComponentConfiguration Marshaller
+    /// AdditionalInstanceConfiguration Marshaller
     /// </summary>       
-    public class ComponentConfigurationMarshaller : IRequestMarshaller<ComponentConfiguration, JsonMarshallerContext> 
+    public class AdditionalInstanceConfigurationMarshaller : IRequestMarshaller<AdditionalInstanceConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,23 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ComponentConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(AdditionalInstanceConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetComponentArn())
+            if(requestObject.IsSetSystemsManagerAgent())
             {
-                context.Writer.WritePropertyName("componentArn");
-                context.Writer.Write(requestObject.ComponentArn);
+                context.Writer.WritePropertyName("systemsManagerAgent");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SystemsManagerAgentMarshaller.Instance;
+                marshaller.Marshall(requestObject.SystemsManagerAgent, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetParameters())
+            if(requestObject.IsSetUserDataOverride())
             {
-                context.Writer.WritePropertyName("parameters");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectParametersListValue in requestObject.Parameters)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ComponentParameterMarshaller.Instance;
-                    marshaller.Marshall(requestObjectParametersListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("userDataOverride");
+                context.Writer.Write(requestObject.UserDataOverride);
             }
 
         }
@@ -72,7 +67,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static ComponentConfigurationMarshaller Instance = new ComponentConfigurationMarshaller();
+        public readonly static AdditionalInstanceConfigurationMarshaller Instance = new AdditionalInstanceConfigurationMarshaller();
 
     }
 }

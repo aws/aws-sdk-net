@@ -29,40 +29,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// Details of an Amazon EC2 AMI.
+    /// Defines a parameter that is used to provide configuration details for the component.
     /// </summary>
-    public partial class Ami
+    public partial class ComponentParameterDetail
     {
-        private string _accountId;
+        private List<string> _defaultValue = new List<string>();
         private string _description;
-        private string _image;
         private string _name;
-        private string _region;
-        private ImageState _state;
+        private string _type;
 
         /// <summary>
-        /// Gets and sets the property AccountId. 
+        /// Gets and sets the property DefaultValue. 
         /// <para>
-        /// The account ID of the owner of the AMI.
+        /// The default value of this parameter if no input is provided.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
-        public string AccountId
+        public List<string> DefaultValue
         {
-            get { return this._accountId; }
-            set { this._accountId = value; }
+            get { return this._defaultValue; }
+            set { this._defaultValue = value; }
         }
 
-        // Check to see if AccountId property is set
-        internal bool IsSetAccountId()
+        // Check to see if DefaultValue property is set
+        internal bool IsSetDefaultValue()
         {
-            return this._accountId != null;
+            return this._defaultValue != null && this._defaultValue.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the Amazon EC2 AMI. Minimum and maximum length are in characters.
+        /// Describes this parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -79,31 +76,12 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Image. 
-        /// <para>
-        /// The AMI ID of the Amazon EC2 AMI.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
-        public string Image
-        {
-            get { return this._image; }
-            set { this._image = value; }
-        }
-
-        // Check to see if Image property is set
-        internal bool IsSetImage()
-        {
-            return this._image != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Amazon EC2 AMI.
+        /// The name of this input parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -117,37 +95,22 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Region. 
+        /// Gets and sets the property Type. 
         /// <para>
-        /// The Region of the Amazon EC2 AMI.
+        /// The type of input this parameter provides. The currently supported value is "string".
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
-        public string Region
+        [AWSProperty(Required=true, Min=1, Max=20)]
+        public string Type
         {
-            get { return this._region; }
-            set { this._region = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
-        // Check to see if Region property is set
-        internal bool IsSetRegion()
+        // Check to see if Type property is set
+        internal bool IsSetType()
         {
-            return this._region != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property State.
-        /// </summary>
-        public ImageState State
-        {
-            get { return this._state; }
-            set { this._state = value; }
-        }
-
-        // Check to see if State property is set
-        internal bool IsSetState()
-        {
-            return this._state != null;
+            return this._type != null;
         }
 
     }

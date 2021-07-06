@@ -29,50 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// Configuration details of the component.
+    /// Contains a key/value pair that sets the named component parameter.
     /// </summary>
-    public partial class ComponentConfiguration
+    public partial class ComponentParameter
     {
-        private string _componentArn;
-        private List<ComponentParameter> _parameters = new List<ComponentParameter>();
+        private string _name;
+        private List<string> _value = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property ComponentArn. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the component.
+        /// The name of the component parameter to set.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// Sets the value for the named component parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string ComponentArn
+        public List<string> Value
         {
-            get { return this._componentArn; }
-            set { this._componentArn = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
-        // Check to see if ComponentArn property is set
-        internal bool IsSetComponentArn()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._componentArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Parameters. 
-        /// <para>
-        /// A group of parameter settings that are used to configure the component for a specific
-        /// recipe.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1)]
-        public List<ComponentParameter> Parameters
-        {
-            get { return this._parameters; }
-            set { this._parameters = value; }
-        }
-
-        // Check to see if Parameters property is set
-        internal bool IsSetParameters()
-        {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._value != null && this._value.Count > 0; 
         }
 
     }

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ComponentConfiguration Marshaller
+    /// ComponentParameter Marshaller
     /// </summary>       
-    public class ComponentConfigurationMarshaller : IRequestMarshaller<ComponentConfiguration, JsonMarshallerContext> 
+    public class ComponentParameterMarshaller : IRequestMarshaller<ComponentParameter, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,26 +43,21 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ComponentConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ComponentParameter requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetComponentArn())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("componentArn");
-                context.Writer.Write(requestObject.ComponentArn);
+                context.Writer.WritePropertyName("name");
+                context.Writer.Write(requestObject.Name);
             }
 
-            if(requestObject.IsSetParameters())
+            if(requestObject.IsSetValue())
             {
-                context.Writer.WritePropertyName("parameters");
+                context.Writer.WritePropertyName("value");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectParametersListValue in requestObject.Parameters)
+                foreach(var requestObjectValueListValue in requestObject.Value)
                 {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ComponentParameterMarshaller.Instance;
-                    marshaller.Marshall(requestObjectParametersListValue, context);
-
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.Write(requestObjectValueListValue);
                 }
                 context.Writer.WriteArrayEnd();
             }
@@ -72,7 +67,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static ComponentConfigurationMarshaller Instance = new ComponentConfigurationMarshaller();
+        public readonly static ComponentParameterMarshaller Instance = new ComponentParameterMarshaller();
 
     }
 }

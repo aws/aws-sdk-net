@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// Identifies an EC2 launch template to use for a specific account.
+    /// Identifies an Amazon EC2 launch template to use for a specific account.
     /// </summary>
     public partial class LaunchTemplateConfiguration
     {
@@ -58,7 +58,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateId. 
         /// <para>
-        /// Identifies the EC2 launch template to use.
+        /// Identifies the Amazon EC2 launch template to use.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -77,8 +77,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property SetDefaultVersion. 
         /// <para>
-        /// Set the specified EC2 launch template as the default launch template for the specified
-        /// account.
+        /// Set the specified Amazon EC2 launch template as the default launch template for the
+        /// specified account.
         /// </para>
         /// </summary>
         public bool SetDefaultVersion

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// The infrastructure used when building EC2 AMIs.
+    /// The infrastructure used when building Amazon EC2 AMIs.
     /// </summary>
     public partial class InfrastructureConfigurationSummary
     {

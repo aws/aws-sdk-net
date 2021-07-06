@@ -33,6 +33,7 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class ImageRecipe
     {
+        private AdditionalInstanceConfiguration _additionalInstanceConfiguration;
         private string _arn;
         private List<InstanceBlockDeviceMapping> _blockDeviceMappings = new List<InstanceBlockDeviceMapping>();
         private List<ComponentConfiguration> _components = new List<ComponentConfiguration>();
@@ -46,6 +47,27 @@ namespace Amazon.Imagebuilder.Model
         private ImageType _type;
         private string _version;
         private string _workingDirectory;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalInstanceConfiguration. 
+        /// <para>
+        /// Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances
+        /// to build and test your image configuration. Instance configuration adds a layer of
+        /// control over those instances. You can define settings and add scripts to run when
+        /// an instance is launched from your AMI.
+        /// </para>
+        /// </summary>
+        public AdditionalInstanceConfiguration AdditionalInstanceConfiguration
+        {
+            get { return this._additionalInstanceConfiguration; }
+            set { this._additionalInstanceConfiguration = value; }
+        }
+
+        // Check to see if AdditionalInstanceConfiguration property is set
+        internal bool IsSetAdditionalInstanceConfiguration()
+        {
+            return this._additionalInstanceConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 

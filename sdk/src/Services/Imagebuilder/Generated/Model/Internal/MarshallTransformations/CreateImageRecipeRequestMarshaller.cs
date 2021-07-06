@@ -65,6 +65,17 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAdditionalInstanceConfiguration())
+                {
+                    context.Writer.WritePropertyName("additionalInstanceConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AdditionalInstanceConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AdditionalInstanceConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetBlockDeviceMappings())
                 {
                     context.Writer.WritePropertyName("blockDeviceMappings");

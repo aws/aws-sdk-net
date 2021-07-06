@@ -101,8 +101,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property LaunchPermission. 
         /// <para>
-        ///  Launch permissions can be used to configure which AWS accounts can use the AMI to
-        /// launch instances.
+        ///  Launch permissions can be used to configure which accounts can use the AMI to launch
+        /// instances.
         /// </para>
         /// </summary>
         public LaunchPermissionConfiguration LaunchPermission

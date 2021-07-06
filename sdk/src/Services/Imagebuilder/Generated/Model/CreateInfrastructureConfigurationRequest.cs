@@ -90,7 +90,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property InstanceProfileName. 
         /// <para>
-        /// The instance profile to associate with the instance used to customize your EC2 AMI.
+        /// The instance profile to associate with the instance used to customize your Amazon
+        /// EC2 AMI.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -205,7 +206,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// The security group IDs to associate with the instance used to customize your EC2 AMI.
+        /// The security group IDs to associate with the instance used to customize your Amazon
+        /// EC2 AMI.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -241,7 +243,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The subnet ID in which to place the instance used to customize your EC2 AMI.
+        /// The subnet ID in which to place the instance used to customize your Amazon EC2 AMI.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
