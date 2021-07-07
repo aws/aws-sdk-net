@@ -29,52 +29,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A streaming distribution list.
+    /// A list of aliases (also called CNAMEs) and the CloudFront distributions and Amazon
+    /// Web Services accounts that they are associated with. In the list, the distribution
+    /// and account IDs are partially hidden, which allows you to identify the distributions
+    /// and accounts that you own, but helps to protect the information of ones that you don’t
+    /// own.
     /// </summary>
-    public partial class StreamingDistributionList
+    public partial class ConflictingAliasesList
     {
-        private bool? _isTruncated;
-        private List<StreamingDistributionSummary> _items = new List<StreamingDistributionSummary>();
-        private string _marker;
+        private List<ConflictingAlias> _items = new List<ConflictingAlias>();
         private int? _maxItems;
         private string _nextMarker;
         private int? _quantity;
 
         /// <summary>
-        /// Empty constructor used to set  properties independently even when a simple constructor is available
-        /// </summary>
-        public StreamingDistributionList() { }
-
-        /// <summary>
-        /// Gets and sets the property IsTruncated. 
-        /// <para>
-        /// A flag that indicates whether more streaming distributions remain to be listed. If
-        /// your results were truncated, you can make a follow-up pagination request using the
-        /// <code>Marker</code> request parameter to retrieve more distributions in the list.
-        /// 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public bool IsTruncated
-        {
-            get { return this._isTruncated.GetValueOrDefault(); }
-            set { this._isTruncated = value; }
-        }
-
-        // Check to see if IsTruncated property is set
-        internal bool IsSetIsTruncated()
-        {
-            return this._isTruncated.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// A complex type that contains one <code>StreamingDistributionSummary</code> element
-        /// for each distribution that was created by the current account.
+        /// Contains the conflicting aliases in the list.
         /// </para>
         /// </summary>
-        public List<StreamingDistributionSummary> Items
+        public List<ConflictingAlias> Items
         {
             get { return this._items; }
             set { this._items = value; }
@@ -87,31 +61,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Marker. 
-        /// <para>
-        /// The value you provided for the <code>Marker</code> request parameter. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string Marker
-        {
-            get { return this._marker; }
-            set { this._marker = value; }
-        }
-
-        // Check to see if Marker property is set
-        internal bool IsSetMarker()
-        {
-            return this._marker != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The value you provided for the <code>MaxItems</code> request parameter. 
+        /// The maximum number of conflicting aliases requested.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public int MaxItems
         {
             get { return this._maxItems.GetValueOrDefault(); }
@@ -127,9 +81,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// If <code>IsTruncated</code> is <code>true</code>, this element is present and contains
-        /// the value you can use for the <code>Marker</code> request parameter to continue listing
-        /// your RTMP distributions where they left off. 
+        /// If there are more items in the list than are in this response, this element is present.
+        /// It contains the value that you should use in the <code>Marker</code> field of a subsequent
+        /// request to continue listing conflicting aliases where you left off.
         /// </para>
         /// </summary>
         public string NextMarker
@@ -147,10 +101,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
-        /// The number of streaming distributions that were created by the current account. 
+        /// The number of conflicting aliases returned in the response.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public int Quantity
         {
             get { return this._quantity.GetValueOrDefault(); }

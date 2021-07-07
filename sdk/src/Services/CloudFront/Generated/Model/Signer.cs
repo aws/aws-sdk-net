@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A list of AWS accounts and the active CloudFront key pairs in each account that CloudFront
+    /// A list of accounts and the active CloudFront key pairs in each account that CloudFront
     /// can use to verify the signatures of signed URLs and signed cookies.
     /// </summary>
     public partial class Signer
@@ -45,10 +45,10 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property AwsAccountNumber. 
         /// <para>
-        /// An AWS account number that contains active CloudFront key pairs that CloudFront can
-        /// use to verify the signatures of signed URLs and signed cookies. If the AWS account
-        /// that owns the key pairs is the same account that owns the CloudFront distribution,
-        /// the value of this field is <code>self</code>.
+        /// An account number that contains active CloudFront key pairs that CloudFront can use
+        /// to verify the signatures of signed URLs and signed cookies. If the account that owns
+        /// the key pairs is the same account that owns the CloudFront distribution, the value
+        /// of this field is <code>self</code>.
         /// </para>
         /// </summary>
         public string AwsAccountNumber

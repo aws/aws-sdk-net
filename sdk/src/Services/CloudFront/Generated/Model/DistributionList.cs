@@ -70,7 +70,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Items. 
         /// <para>
         /// A complex type that contains one <code>DistributionSummary</code> element for each
-        /// distribution that was created by the current AWS account.
+        /// distribution that was created by the current account.
         /// </para>
         /// </summary>
         public List<DistributionSummary> Items
@@ -146,7 +146,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
-        /// The number of distributions that were created by the current AWS account. 
+        /// The number of distributions that were created by the current account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

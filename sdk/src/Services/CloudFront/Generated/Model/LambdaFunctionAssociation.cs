@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that contains a Lambda function association.
+    /// A complex type that contains a Lambda@Edge function association.
     /// </summary>
     public partial class LambdaFunctionAssociation
     {
@@ -40,8 +40,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        /// Specifies the event type that triggers a Lambda function invocation. You can specify
-        /// the following values:
+        /// Specifies the event type that triggers a Lambda@Edge function invocation. You can
+        /// specify the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -90,8 +90,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property IncludeBody. 
         /// <para>
-        /// A flag that allows a Lambda function to have read access to the body content. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing
+        /// A flag that allows a Lambda@Edge function to have read access to the body content.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing
         /// the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront
         /// Developer Guide.
         /// </para>
@@ -111,8 +111,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property LambdaFunctionARN. 
         /// <para>
-        /// The ARN of the Lambda function. You must specify the ARN of a function version; you
-        /// can't specify a Lambda alias or $LATEST.
+        /// The ARN of the Lambda@Edge function. You must specify the ARN of a function version;
+        /// you can't specify an alias or $LATEST.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

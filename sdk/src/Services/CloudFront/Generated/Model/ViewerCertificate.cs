@@ -60,7 +60,7 @@ namespace Amazon.CloudFront.Model
     /// <para>
     /// To accept HTTPS connections from all viewers, including those that don’t support SNI,
     /// set <code>SSLSupportMethod</code> to <code>vip</code>. This is not recommended, and
-    /// results in additional monthly charges from CloudFront. 
+    /// results in additional monthly charges from CloudFront.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -71,10 +71,10 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The location of the SSL/TLS certificate, <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
-    /// Certificate Manager (ACM)</a> (recommended) or <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
-    /// Identity and Access Management (AWS IAM)</a>. You specify the location by setting
-    /// a value in one of the following fields (not both):
+    /// The location of the SSL/TLS certificate, <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate
+    /// Manager (ACM)</a> (recommended) or <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity
+    /// and Access Management (IAM)</a>. You specify the location by setting a value in one
+    /// of the following fields (not both):
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -112,14 +112,14 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property ACMCertificateArn. 
         /// <para>
         /// If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and
-        /// the SSL/TLS certificate is stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
-        /// Certificate Manager (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM certificate.
+        /// the SSL/TLS certificate is stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate
+        /// Manager (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM certificate.
         /// CloudFront only supports ACM certificates in the US East (N. Virginia) Region (<code>us-east-1</code>).
         /// </para>
         ///  
         /// <para>
         /// If you specify an ACM certificate ARN, you must also specify values for <code>MinimumProtocolVersion</code>
-        /// and <code>SSLSupportMethod</code>. 
+        /// and <code>SSLSupportMethod</code>.
         /// </para>
         /// </summary>
         public string ACMCertificateArn
@@ -240,8 +240,8 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property IAMCertificateId. 
         /// <para>
         /// If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and
-        /// the SSL/TLS certificate is stored in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
-        /// Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM certificate.
+        /// the SSL/TLS certificate is stored in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity
+        /// and Access Management (IAM)</a>, provide the ID of the IAM certificate.
         /// </para>
         ///  
         /// <para>
@@ -290,7 +290,7 @@ namespace Amazon.CloudFront.Model
         ///  </note> 
         /// <para>
         /// When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>),
-        /// you must specify <code>TLSv1</code> or higher. 
+        /// you must specify <code>TLSv1</code> or higher.
         /// </para>
         ///  
         /// <para>
@@ -335,8 +335,8 @@ namespace Amazon.CloudFront.Model
         /// <para>
         ///  <code>static-ip</code> - Do not specify this value unless your distribution has been
         /// enabled for this feature by the CloudFront team. If you have a use case that requires
-        /// static IP addresses for a distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS
-        /// Support Center</a>.
+        /// static IP addresses for a distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon
+        /// Web Services Support Center</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

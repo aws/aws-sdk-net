@@ -29,21 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that specifies a list of Lambda functions associations for a cache
+    /// A complex type that specifies a list of Lambda@Edge functions associations for a cache
     /// behavior.
     /// 
     ///  
     /// <para>
-    /// If you want to invoke one or more Lambda functions triggered by requests that match
-    /// the <code>PathPattern</code> of the cache behavior, specify the applicable values
+    /// If you want to invoke one or more Lambda@Edge functions triggered by requests that
+    /// match the <code>PathPattern</code> of the cache behavior, specify the applicable values
     /// for <code>Quantity</code> and <code>Items</code>. Note that there can be up to 4 <code>LambdaFunctionAssociation</code>
     /// items in this list (one for each possible value of <code>EventType</code>) and each
-    /// <code>EventType</code> can be associated with the Lambda function only once.
+    /// <code>EventType</code> can be associated with only one function.
     /// </para>
     ///  
     /// <para>
-    /// If you don't want to invoke any Lambda functions for the requests that match <code>PathPattern</code>,
-    /// specify <code>0</code> for <code>Quantity</code> and omit <code>Items</code>. 
+    /// If you don't want to invoke any Lambda@Edge functions for the requests that match
+    /// <code>PathPattern</code>, specify <code>0</code> for <code>Quantity</code> and omit
+    /// <code>Items</code>. 
     /// </para>
     /// </summary>
     public partial class LambdaFunctionAssociations
@@ -74,7 +75,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
-        /// The number of Lambda function associations for this cache behavior.
+        /// The number of Lambda@Edge function associations for this cache behavior.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

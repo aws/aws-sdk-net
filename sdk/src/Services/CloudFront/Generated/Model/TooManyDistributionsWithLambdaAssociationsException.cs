@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Processing your request would cause the maximum number of distributions with Lambda
+    /// Processing your request would cause the maximum number of distributions with Lambda@Edge
     /// function associations per owner to be exceeded.
     /// </summary>
     #if !NETSTANDARD

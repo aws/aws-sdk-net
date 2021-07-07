@@ -73,7 +73,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Items. 
         /// <para>
         /// A complex type that contains one <code>InvalidationSummary</code> element for each
-        /// invalidation batch created by the current AWS account.
+        /// invalidation batch created by the current account.
         /// </para>
         /// </summary>
         public List<InvalidationSummary> Items
@@ -149,7 +149,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
-        /// The number of invalidation batches that were created by the current AWS account. 
+        /// The number of invalidation batches that were created by the current account. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

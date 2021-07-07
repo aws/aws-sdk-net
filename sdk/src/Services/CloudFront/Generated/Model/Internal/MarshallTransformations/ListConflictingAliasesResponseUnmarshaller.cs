@@ -33,9 +33,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TestFunction operation
+    /// Response Unmarshaller for ListConflictingAliases operation
     /// </summary>  
-    public class TestFunctionResponseUnmarshaller : XmlResponseUnmarshaller
+    public class ListConflictingAliasesResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,13 +44,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            TestFunctionResponse response = new TestFunctionResponse();
+            ListConflictingAliasesResponse response = new ListConflictingAliasesResponse();
             UnmarshallResult(context,response);
             
             return response;
         }        
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, TestFunctionResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, ListConflictingAliasesResponse response)
         {
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
@@ -59,10 +59,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("TestResult", targetDepth))
+                    if (context.TestExpression("ConflictingAliasesList", targetDepth))
                     {
-                        var unmarshaller = TestResultUnmarshaller.Instance;
-                        response.TestResult = unmarshaller.Unmarshall(context);
+                        var unmarshaller = ConflictingAliasesListUnmarshaller.Instance;
+                        response.ConflictingAliasesList = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -98,29 +98,17 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     return InvalidArgumentExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidIfMatchVersion"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchDistribution"))
                 {
-                    return InvalidIfMatchVersionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchFunctionExists"))
-                {
-                    return NoSuchFunctionExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("TestFunctionFailed"))
-                {
-                    return TestFunctionFailedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperation"))
-                {
-                    return UnsupportedOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return NoSuchDistributionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static TestFunctionResponseUnmarshaller _instance = new TestFunctionResponseUnmarshaller();        
+        private static ListConflictingAliasesResponseUnmarshaller _instance = new ListConflictingAliasesResponseUnmarshaller();        
 
-        internal static TestFunctionResponseUnmarshaller GetInstance()
+        internal static ListConflictingAliasesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -128,7 +116,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TestFunctionResponseUnmarshaller Instance
+        public static ListConflictingAliasesResponseUnmarshaller Instance
         {
             get
             {

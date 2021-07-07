@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Your request contains more Lambda function associations than are allowed per distribution.
+    /// Your request contains more Lambda@Edge function associations than are allowed per
+    /// distribution.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

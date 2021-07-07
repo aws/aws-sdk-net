@@ -29,29 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The response to a request to list the distributions that are associated with a specified
-    /// WAF web ACL.
+    /// This is the response object from the ListConflictingAliases operation.
     /// </summary>
-    public partial class ListDistributionsByWebACLIdResponse : AmazonWebServiceResponse
+    public partial class ListConflictingAliasesResponse : AmazonWebServiceResponse
     {
-        private DistributionList _distributionList;
+        private ConflictingAliasesList _conflictingAliasesList;
 
         /// <summary>
-        /// Gets and sets the property DistributionList. 
+        /// Gets and sets the property ConflictingAliasesList. 
         /// <para>
-        /// The <code>DistributionList</code> type. 
+        /// A list of conflicting aliases.
         /// </para>
         /// </summary>
-        public DistributionList DistributionList
+        public ConflictingAliasesList ConflictingAliasesList
         {
-            get { return this._distributionList; }
-            set { this._distributionList = value; }
+            get { return this._conflictingAliasesList; }
+            set { this._conflictingAliasesList = value; }
         }
 
-        // Check to see if DistributionList property is set
-        internal bool IsSetDistributionList()
+        // Check to see if ConflictingAliasesList property is set
+        internal bool IsSetConflictingAliasesList()
         {
-            return this._distributionList != null;
+            return this._conflictingAliasesList != null;
         }
 
     }

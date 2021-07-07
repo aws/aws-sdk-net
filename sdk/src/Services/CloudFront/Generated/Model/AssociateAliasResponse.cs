@@ -29,30 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The response to a request to list the distributions that are associated with a specified
-    /// WAF web ACL.
+    /// This is the response object from the AssociateAlias operation.
     /// </summary>
-    public partial class ListDistributionsByWebACLIdResponse : AmazonWebServiceResponse
+    public partial class AssociateAliasResponse : AmazonWebServiceResponse
     {
-        private DistributionList _distributionList;
-
-        /// <summary>
-        /// Gets and sets the property DistributionList. 
-        /// <para>
-        /// The <code>DistributionList</code> type. 
-        /// </para>
-        /// </summary>
-        public DistributionList DistributionList
-        {
-            get { return this._distributionList; }
-            set { this._distributionList = value; }
-        }
-
-        // Check to see if DistributionList property is set
-        internal bool IsSetDistributionList()
-        {
-            return this._distributionList != null;
-        }
 
     }
 }

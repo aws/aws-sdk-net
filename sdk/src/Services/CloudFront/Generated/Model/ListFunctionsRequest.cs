@@ -30,7 +30,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the ListFunctions operation.
-    /// Gets a list of all CloudFront functions in your AWS account.
+    /// Gets a list of all CloudFront functions in your account.
     /// 
     ///  
     /// <para>

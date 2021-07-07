@@ -40,8 +40,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
-        /// that CloudFront can use to send real-time log data to your Kinesis data stream.
+        /// The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that
+        /// CloudFront can use to send real-time log data to your Kinesis data stream.
         /// </para>
         ///  
         /// <para>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// You have reached the maximum number of key groups for this AWS account. For more information,
+    /// You have reached the maximum number of key groups for this account. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
     /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
     /// </summary>

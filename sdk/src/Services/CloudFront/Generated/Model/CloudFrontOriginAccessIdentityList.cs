@@ -76,7 +76,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Items. 
         /// <para>
         /// A complex type that contains one <code>CloudFrontOriginAccessIdentitySummary</code>
-        /// element for each origin access identity that was created by the current AWS account.
+        /// element for each origin access identity that was created by the current account.
         /// </para>
         /// </summary>
         public List<CloudFrontOriginAccessIdentitySummary> Items
@@ -157,7 +157,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Quantity. 
         /// <para>
         /// The number of CloudFront origin access identities that were created by the current
-        /// AWS account. 
+        /// account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

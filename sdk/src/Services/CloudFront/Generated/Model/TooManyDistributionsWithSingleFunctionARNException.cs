@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The maximum number of distributions have been associated with the specified Lambda
+    /// The maximum number of distributions have been associated with the specified Lambda@Edge
     /// function.
     /// </summary>
     #if !NETSTANDARD

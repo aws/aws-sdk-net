@@ -17,6 +17,18 @@
     <max>40960</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFront.Model.ListConflictingAliasesRequest.Alias</property>
+    <max>253</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFront.Model.ListConflictingAliasesRequest.DistributionId</property>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFront.Model.ListConflictingAliasesRequest.MaxItems</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFront.Model.ListTagsForResourceRequest.Resource</property>
     <pattern>arn:aws(-cn)?:cloudfront::[0-9]+:.*</pattern>
   </property-value-rule>

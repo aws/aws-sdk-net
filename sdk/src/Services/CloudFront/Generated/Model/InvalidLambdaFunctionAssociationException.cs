@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The specified Lambda function association is invalid.
+    /// The specified Lambda@Edge function association is invalid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

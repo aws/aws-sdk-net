@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The specified real-time log configuration belongs to a different AWS account.
+    /// The specified real-time log configuration belongs to a different account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

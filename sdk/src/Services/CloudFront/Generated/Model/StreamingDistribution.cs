@@ -50,16 +50,16 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ActiveTrustedSigners. 
         /// <para>
-        /// A complex type that lists the AWS accounts, if any, that you included in the <code>TrustedSigners</code>
+        /// A complex type that lists the accounts, if any, that you included in the <code>TrustedSigners</code>
         /// complex type for this distribution. These are the accounts that you want to allow
         /// to create signed URLs for private content.
         /// </para>
         ///  
         /// <para>
-        /// The <code>Signer</code> complex type lists the AWS account number of the trusted signer
-        /// or <code>self</code> if the signer is the AWS account that created the distribution.
-        /// The <code>Signer</code> element also includes the IDs of any active CloudFront key
-        /// pairs that are associated with the trusted signer's AWS account. If no <code>KeyPairId</code>
+        /// The <code>Signer</code> complex type lists the account number of the trusted signer
+        /// or <code>self</code> if the signer is the account that created the distribution. The
+        /// <code>Signer</code> element also includes the IDs of any active CloudFront key pairs
+        /// that are associated with the trusted signer's account. If no <code>KeyPairId</code>
         /// element appears for a <code>Signer</code>, that signer can't create signed URLs.
         /// </para>
         ///  
@@ -86,7 +86,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property ARN. 
         /// <para>
         /// The ARN (Amazon Resource Name) for the distribution. For example: <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
-        /// where <code>123456789012</code> is your AWS account ID.
+        /// where <code>123456789012</code> is your account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

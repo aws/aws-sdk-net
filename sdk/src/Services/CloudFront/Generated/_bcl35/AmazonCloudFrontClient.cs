@@ -243,6 +243,93 @@ namespace Amazon.CloudFront
         #endregion
 
 
+        #region  AssociateAlias
+
+        /// <summary>
+        /// Associates an alias (also known as a CNAME or an alternate domain name) with a CloudFront
+        /// distribution.
+        /// 
+        ///  
+        /// <para>
+        /// With this operation you can move an alias that’s already in use on a CloudFront distribution
+        /// to a different distribution in one step. This prevents the downtime that could occur
+        /// if you first remove the alias from one distribution and then separately add the alias
+        /// to another distribution.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation to associate an alias with a distribution, you provide the alias
+        /// and the ID of the target distribution for the alias. For more information, including
+        /// how to set up the target distribution, prerequisites that you must complete, and other
+        /// restrictions, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
+        /// an alternate domain name to a different distribution</a> in the <i>Amazon CloudFront
+        /// Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateAlias service method.</param>
+        /// 
+        /// <returns>The response from the AssociateAlias service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateAlias">REST API Reference for AssociateAlias Operation</seealso>
+        public virtual AssociateAliasResponse AssociateAlias(AssociateAliasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateAliasResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateAliasResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateAlias operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateAlias
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateAlias">REST API Reference for AssociateAlias Operation</seealso>
+        public virtual IAsyncResult BeginAssociateAlias(AssociateAliasRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateAliasResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateAlias.</param>
+        /// 
+        /// <returns>Returns a  AssociateAliasResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateAlias">REST API Reference for AssociateAlias Operation</seealso>
+        public virtual AssociateAliasResponse EndAssociateAlias(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateAliasResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateCachePolicy
 
         /// <summary>
@@ -295,8 +382,8 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCachePoliciesException">
-        /// You have reached the maximum number of cache policies for this AWS account. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// You have reached the maximum number of cache policies for this account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCookiesInCachePolicyException">
@@ -502,7 +589,7 @@ namespace Amazon.CloudFront
         /// The headers specified are not valid for an Amazon S3 origin.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
-        /// The specified Lambda function association is invalid.
+        /// The specified Lambda@Edge function association is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
         /// The location code specified is not valid.
@@ -548,8 +635,8 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
         /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
-        /// version of AWS WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-        /// To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
         /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
@@ -571,7 +658,7 @@ namespace Amazon.CloudFront
         /// The real-time log configuration does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
-        /// The specified real-time log configuration belongs to a different AWS account.
+        /// The specified real-time log configuration belongs to a different account.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
         /// You cannot create more cache behaviors for the distribution.
@@ -615,11 +702,11 @@ namespace Amazon.CloudFront
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithLambdaAssociationsException">
-        /// Processing your request would cause the maximum number of distributions with Lambda
+        /// Processing your request would cause the maximum number of distributions with Lambda@Edge
         /// function associations per owner to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithSingleFunctionARNException">
-        /// The maximum number of distributions have been associated with the specified Lambda
+        /// The maximum number of distributions have been associated with the specified Lambda@Edge
         /// function.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionAssociationsException">
@@ -636,7 +723,8 @@ namespace Amazon.CloudFront
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
-        /// Your request contains more Lambda function associations than are allowed per distribution.
+        /// Your request contains more Lambda@Edge function associations than are allowed per
+        /// distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyOriginCustomHeadersException">
         /// Your request contains too many origin custom headers.
@@ -755,7 +843,7 @@ namespace Amazon.CloudFront
         /// The headers specified are not valid for an Amazon S3 origin.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
-        /// The specified Lambda function association is invalid.
+        /// The specified Lambda@Edge function association is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
         /// The location code specified is not valid.
@@ -804,8 +892,8 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
         /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
-        /// version of AWS WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-        /// To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
         /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
@@ -827,7 +915,7 @@ namespace Amazon.CloudFront
         /// The real-time log configuration does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
-        /// The specified real-time log configuration belongs to a different AWS account.
+        /// The specified real-time log configuration belongs to a different account.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
         /// You cannot create more cache behaviors for the distribution.
@@ -871,11 +959,11 @@ namespace Amazon.CloudFront
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithLambdaAssociationsException">
-        /// Processing your request would cause the maximum number of distributions with Lambda
+        /// Processing your request would cause the maximum number of distributions with Lambda@Edge
         /// function associations per owner to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithSingleFunctionARNException">
-        /// The maximum number of distributions have been associated with the specified Lambda
+        /// The maximum number of distributions have been associated with the specified Lambda@Edge
         /// function.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionAssociationsException">
@@ -892,7 +980,8 @@ namespace Amazon.CloudFront
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
-        /// Your request contains more Lambda function associations than are allowed per distribution.
+        /// Your request contains more Lambda@Edge function associations than are allowed per
+        /// distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyOriginCustomHeadersException">
         /// Your request contains too many origin custom headers.
@@ -1146,7 +1235,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the CreateFunction service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.FunctionAlreadyExistsException">
-        /// A function with the same name already exists in this AWS account. To create a function,
+        /// A function with the same name already exists in this account. To create a function,
         /// you must provide a unique name. To update an existing function, use <code>UpdateFunction</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.FunctionSizeLimitExceededException">
@@ -1157,9 +1246,12 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionsException">
-        /// You have reached the maximum number of CloudFront functions for this AWS account.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// You have reached the maximum number of CloudFront functions for this account. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
         public virtual CreateFunctionResponse CreateFunction(CreateFunctionRequest request)
@@ -1313,7 +1405,7 @@ namespace Amazon.CloudFront
         /// an existing key group, use <code>UpdateKeyGroup</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsException">
-        /// You have reached the maximum number of key groups for this AWS account. For more information,
+        /// You have reached the maximum number of key groups for this account. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
@@ -1505,8 +1597,8 @@ namespace Amazon.CloudFront
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyOriginRequestPoliciesException">
-        /// You have reached the maximum number of origin request policies for this AWS account.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// You have reached the maximum number of origin request policies for this account. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringsInOriginRequestPolicyException">
@@ -1656,7 +1748,7 @@ namespace Amazon.CloudFront
         /// name. To modify an existing real-time log configuration, use <code>UpdateRealtimeLogConfig</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyRealtimeLogConfigsException">
-        /// You have reached the maximum number of real-time log configurations for this AWS account.
+        /// You have reached the maximum number of real-time log configurations for this account.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
@@ -2345,6 +2437,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         public virtual DeleteFunctionResponse DeleteFunction(DeleteFunctionRequest request)
         {
@@ -2997,6 +3092,9 @@ namespace Amazon.CloudFront
         /// <returns>The response from the DescribeFunction service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
         /// The function does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeFunction">REST API Reference for DescribeFunction Operation</seealso>
         public virtual DescribeFunctionResponse DescribeFunction(DescribeFunctionRequest request)
@@ -3754,6 +3852,9 @@ namespace Amazon.CloudFront
         /// <returns>The response from the GetFunction service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
         /// The function does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         public virtual GetFunctionResponse GetFunction(GetFunctionRequest request)
@@ -4556,8 +4657,8 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// You can optionally apply a filter to return only the managed policies created by AWS,
-        /// or only the custom policies created in your AWS account.
+        /// You can optionally apply a filter to return only the managed policies created by Amazon
+        /// Web Services, or only the custom policies created in your account.
         /// </para>
         ///  
         /// <para>
@@ -4693,6 +4794,99 @@ namespace Amazon.CloudFront
         public virtual ListCloudFrontOriginAccessIdentitiesResponse EndListCloudFrontOriginAccessIdentities(IAsyncResult asyncResult)
         {
             return EndInvoke<ListCloudFrontOriginAccessIdentitiesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListConflictingAliases
+
+        /// <summary>
+        /// Gets a list of aliases (also called CNAMEs or alternate domain names) that conflict
+        /// or overlap with the provided alias, and the associated CloudFront distributions and
+        /// Amazon Web Services accounts for each conflicting alias. In the returned list, the
+        /// distribution and account IDs are partially hidden, which allows you to identify the
+        /// distributions and accounts that you own, but helps to protect the information of ones
+        /// that you don’t own.
+        /// 
+        ///  
+        /// <para>
+        /// Use this operation to find aliases that are in use in CloudFront that conflict or
+        /// overlap with the provided alias. For example, if you provide <code>www.example.com</code>
+        /// as input, the returned list can include <code>www.example.com</code> and the overlapping
+        /// wildcard alternate domain name (<code>*.example.com</code>), if they exist. If you
+        /// provide <code>*.example.com</code> as input, the returned list can include <code>*.example.com</code>
+        /// and any alternate domain names covered by that wildcard (for example, <code>www.example.com</code>,
+        /// <code>test.example.com</code>, <code>dev.example.com</code>, and so on), if they exist.
+        /// </para>
+        ///  
+        /// <para>
+        /// To list conflicting aliases, you provide the alias to search and the ID of a distribution
+        /// in your account that has an attached SSL/TLS certificate that includes the provided
+        /// alias. For more information, including how to set up the distribution and certificate,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
+        /// an alternate domain name to a different distribution</a> in the <i>Amazon CloudFront
+        /// Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
+        /// response as the <code>Marker</code> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConflictingAliases service method.</param>
+        /// 
+        /// <returns>The response from the ListConflictingAliases service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConflictingAliases">REST API Reference for ListConflictingAliases Operation</seealso>
+        public virtual ListConflictingAliasesResponse ListConflictingAliases(ListConflictingAliasesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConflictingAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConflictingAliasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListConflictingAliasesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConflictingAliases operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConflictingAliases operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConflictingAliases
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConflictingAliases">REST API Reference for ListConflictingAliases Operation</seealso>
+        public virtual IAsyncResult BeginListConflictingAliases(ListConflictingAliasesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConflictingAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConflictingAliasesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConflictingAliases operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConflictingAliases.</param>
+        /// 
+        /// <returns>Returns a  ListConflictingAliasesResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConflictingAliases">REST API Reference for ListConflictingAliases Operation</seealso>
+        public virtual ListConflictingAliasesResponse EndListConflictingAliases(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListConflictingAliasesResponse>(asyncResult);
         }
 
         #endregion
@@ -5060,7 +5254,7 @@ namespace Amazon.CloudFront
         #region  ListDistributionsByWebACLId
 
         /// <summary>
-        /// List the distributions that are associated with a specified AWS WAF web ACL.
+        /// List the distributions that are associated with a specified WAF web ACL.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByWebACLId service method.</param>
         /// 
@@ -5070,8 +5264,8 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
         /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
-        /// version of AWS WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-        /// To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
         public virtual ListDistributionsByWebACLIdResponse ListDistributionsByWebACLId(ListDistributionsByWebACLIdRequest request)
@@ -5238,7 +5432,7 @@ namespace Amazon.CloudFront
         #region  ListFunctions
 
         /// <summary>
-        /// Gets a list of all CloudFront functions in your AWS account.
+        /// Gets a list of all CloudFront functions in your account.
         /// 
         ///  
         /// <para>
@@ -5259,6 +5453,9 @@ namespace Amazon.CloudFront
         /// <returns>The response from the ListFunctions service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         public virtual ListFunctionsResponse ListFunctions(ListFunctionsRequest request)
@@ -5442,8 +5639,8 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// You can optionally apply a filter to return only the managed policies created by AWS,
-        /// or only the custom policies created in your AWS account.
+        /// You can optionally apply a filter to return only the managed policies created by Amazon
+        /// Web Services, or only the custom policies created in your account.
         /// </para>
         ///  
         /// <para>
@@ -5811,6 +6008,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublishFunction">REST API Reference for PublishFunction Operation</seealso>
         public virtual PublishFunctionResponse PublishFunction(PublishFunctionRequest request)
         {
@@ -5959,6 +6159,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TestFunctionFailedException">
         /// The CloudFront function failed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TestFunction">REST API Reference for TestFunction Operation</seealso>
         public virtual TestFunctionResponse TestFunction(TestFunctionRequest request)
@@ -6413,7 +6616,7 @@ namespace Amazon.CloudFront
         /// The <code>If-Match</code> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
-        /// The specified Lambda function association is invalid.
+        /// The specified Lambda@Edge function association is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
         /// The location code specified is not valid.
@@ -6452,8 +6655,8 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
         /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
-        /// version of AWS WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-        /// To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
         /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
@@ -6481,7 +6684,7 @@ namespace Amazon.CloudFront
         /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
-        /// The specified real-time log configuration belongs to a different AWS account.
+        /// The specified real-time log configuration belongs to a different account.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
         /// You cannot create more cache behaviors for the distribution.
@@ -6521,11 +6724,11 @@ namespace Amazon.CloudFront
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithLambdaAssociationsException">
-        /// Processing your request would cause the maximum number of distributions with Lambda
+        /// Processing your request would cause the maximum number of distributions with Lambda@Edge
         /// function associations per owner to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithSingleFunctionARNException">
-        /// The maximum number of distributions have been associated with the specified Lambda
+        /// The maximum number of distributions have been associated with the specified Lambda@Edge
         /// function.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionAssociationsException">
@@ -6542,7 +6745,8 @@ namespace Amazon.CloudFront
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
-        /// Your request contains more Lambda function associations than are allowed per distribution.
+        /// Your request contains more Lambda@Edge function associations than are allowed per
+        /// distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyOriginCustomHeadersException">
         /// Your request contains too many origin custom headers.
@@ -6824,6 +7028,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFunction">REST API Reference for UpdateFunction Operation</seealso>
         public virtual UpdateFunctionResponse UpdateFunction(UpdateFunctionRequest request)

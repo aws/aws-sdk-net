@@ -326,9 +326,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// If you're using an Amazon Route 53 alias resource record set to route traffic to your
-        /// CloudFront distribution, you need to create a second alias resource record set when
-        /// both of the following are true:
+        /// If you're using an Route 53 Amazon Web Services Integration alias resource record
+        /// set to route traffic to your CloudFront distribution, you need to create a second
+        /// alias resource record set when both of the following are true:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -342,13 +342,14 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
         /// Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in
-        /// the <i>Amazon Route 53 Developer Guide</i>.
+        /// the <i>Route 53 Amazon Web Services Integration Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If you created a CNAME resource record set, either with Amazon Route 53 or with another
-        /// DNS service, you don't need to make any changes. A CNAME record will route traffic
-        /// to your distribution regardless of the IP address format of the viewer request.
+        /// If you created a CNAME resource record set, either with Route 53 Amazon Web Services
+        /// Integration or with another DNS service, you don't need to make any changes. A CNAME
+        /// record will route traffic to your distribution regardless of the IP address format
+        /// of the viewer request.
         /// </para>
         /// </summary>
         public bool IsIPV6Enabled
@@ -499,21 +500,21 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property WebACLId. 
         /// <para>
-        /// A unique identifier that specifies the AWS WAF web ACL, if any, to associate with
-        /// this distribution. To specify a web ACL created using the latest version of AWS WAF,
-        /// use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-        /// To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// A unique identifier that specifies the WAF web ACL, if any, to associate with this
+        /// distribution. To specify a web ACL created using the latest version of WAF, use the
+        /// ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
         /// </para>
         ///  
         /// <para>
-        /// AWS WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests
+        /// WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests
         /// that are forwarded to CloudFront, and lets you control access to your content. Based
         /// on conditions that you specify, such as the IP addresses that requests originate from
         /// or the values of query strings, CloudFront responds to requests either with the requested
         /// content or with an HTTP 403 status code (Forbidden). You can also configure CloudFront
         /// to return a custom error page when a request is blocked. For more information about
-        /// AWS WAF, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">AWS
-        /// WAF Developer Guide</a>. 
+        /// WAF, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
+        /// Developer Guide</a>. 
         /// </para>
         /// </summary>
         public string WebACLId

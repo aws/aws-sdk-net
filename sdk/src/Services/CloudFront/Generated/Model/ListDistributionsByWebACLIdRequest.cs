@@ -30,7 +30,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDistributionsByWebACLId operation.
-    /// List the distributions that are associated with a specified AWS WAF web ACL.
+    /// List the distributions that are associated with a specified WAF web ACL.
     /// </summary>
     public partial class ListDistributionsByWebACLIdRequest : AmazonCloudFrontRequest
     {
@@ -83,9 +83,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property WebACLId. 
         /// <para>
-        /// The ID of the AWS WAF web ACL that you want to list the associated distributions.
-        /// If you specify "null" for the ID, the request returns a list of the distributions
-        /// that aren't associated with a web ACL. 
+        /// The ID of the WAF web ACL that you want to list the associated distributions. If you
+        /// specify "null" for the ID, the request returns a list of the distributions that aren't
+        /// associated with a web ACL.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

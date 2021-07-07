@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// You have reached the maximum number of real-time log configurations for this AWS account.
+    /// You have reached the maximum number of real-time log configurations for this account.
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
     /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
     /// </summary>

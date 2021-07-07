@@ -93,9 +93,8 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// CloudFront automatically adds this field to the response if you’ve configured a cache
         /// behavior in this distribution to serve private content using trusted signers. This
-        /// field contains a list of AWS account IDs and the active CloudFront key pairs in each
-        /// account that CloudFront can use to verify the signatures of signed URLs or signed
-        /// cookies.
+        /// field contains a list of account IDs and the active CloudFront key pairs in each account
+        /// that CloudFront can use to verify the signatures of signed URLs or signed cookies.
         /// </para>
         /// </summary>
         public ActiveTrustedSigners ActiveTrustedSigners
@@ -113,15 +112,16 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property AliasICPRecordals. 
         /// <para>
-        /// AWS services in China customers must file for an Internet Content Provider (ICP) recordal
-        /// if they want to serve content publicly on an alternate domain name, also known as
-        /// a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal
-        /// status for CNAMEs associated with distributions.
+        /// Amazon Web Services services in China customers must file for an Internet Content
+        /// Provider (ICP) recordal if they want to serve content publicly on an alternate domain
+        /// name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides
+        /// the ICP recordal status for CNAMEs associated with distributions.
         /// </para>
         ///  
         /// <para>
         /// For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
-        /// Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in China</i>.
+        /// Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services
+        /// services in China</i>.
         /// </para>
         /// </summary>
         public List<AliasICPRecordal> AliasICPRecordals
@@ -140,7 +140,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property ARN. 
         /// <para>
         /// The ARN (Amazon Resource Name) for the distribution. For example: <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
-        /// where <code>123456789012</code> is your AWS account ID.
+        /// where <code>123456789012</code> is your account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

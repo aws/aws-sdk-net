@@ -58,8 +58,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of origin request policy, either <code>managed</code> (created by AWS) or
-        /// <code>custom</code> (created in this AWS account).
+        /// The type of origin request policy, either <code>managed</code> (created by Amazon
+        /// Web Services) or <code>custom</code> (created in this account).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
