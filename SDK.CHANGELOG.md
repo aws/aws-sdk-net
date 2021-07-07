@@ -1,3 +1,13 @@
+### 3.7.67.1 (2021-07-07 20:56 UTC)
+* DynamoDBv2 (3.7.0.39)
+	* Rework locks building DynamoDB table caches
+* S3 (3.7.1.10)
+	* Generate S3 region enumeration
+* Core 3.7.0.40
+	* Fixed an issue where ProfileAWSRegion should consider AWSProfileName from config as well.
+Rework locks building region cache information
+	* All services packages updated to require new Core
+
 ### 3.7.67.0 (2021-07-07 18:16 UTC)
 * Chime (3.7.7.0)
 	* Releasing new APIs for AWS Chime MediaCapturePipeline
