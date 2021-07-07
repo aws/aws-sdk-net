@@ -102,4 +102,20 @@ namespace Amazon.Runtime
         /// </summary>
         Adaptive
     }
+
+    /// <summary>
+    /// EC2MetadataServiceEndpointMode determines the internet protocol version
+    /// to be used for communicating with the EC2 Instance Metadata Service
+    /// </summary>
+    public enum EC2MetadataServiceEndpointMode
+    {
+        /// <summary>
+        /// Internet Protocol version 4
+        /// </summary>
+        IPv4,
+        /// <summary>
+        /// Internet Protocol version 6
+        /// </summary>
+        IPv6
+    }
 }

@@ -697,11 +697,20 @@ namespace AWSSDK.UnitTests
                     AWSConfigs.AWSProfilesLocation = sharedFixture.CredentialsFilePath;
                 }
 
-                // reset before use to ensure the new credentialProfileChains are used.
-                FallbackCredentialsFactory.Reset();
-                FallbackRegionFactory.Reset();
-                FallbackEndpointDiscoveryEnabledFactory.Reset();
-                FallbackInternalConfigurationFactory.Reset();
+                try
+                {
+                    // reset before use to ensure the new credentialProfileChains are used.
+                    FallbackCredentialsFactory.Reset();
+                    FallbackRegionFactory.Reset();
+                    FallbackEndpointDiscoveryEnabledFactory.Reset();
+                    FallbackInternalConfigurationFactory.Reset();
+                }
+                catch (Exception ex)
+                {   // If any exceptions happen during the intial resets, perhaps due to invalid config
+                    // dispose right away to reset back to the initial configuration
+                    Dispose();
+                    throw ex;
+                }
             }
 
             public void Dispose()

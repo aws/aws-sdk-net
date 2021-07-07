@@ -52,6 +52,8 @@ namespace Amazon.Runtime.CredentialManagement
         private const string SsoRegion = "sso_region";
         private const string SsoRoleName = "sso_role_name";
         private const string SsoStartUrl = "sso_start_url";
+        private const string EC2MetadataServiceEndpointField = "ec2_metadata_service_endpoint";
+        private const string EC2MetadataServiceEndpointModeField = "ec2_metadata_service_endpoint_mode";
         private readonly Logger _logger = Logger.GetLogger(typeof(SharedCredentialsFile));
 
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
@@ -69,6 +71,8 @@ namespace Amazon.Runtime.CredentialManagement
             SsoRegion,
             SsoRoleName,
             SsoStartUrl,
+            EC2MetadataServiceEndpointField,
+            EC2MetadataServiceEndpointModeField
         };
 
         /// <summary>
@@ -267,6 +271,12 @@ namespace Amazon.Runtime.CredentialManagement
 
             if (profile.MaxAttempts != null)
                 reservedProperties[MaxAttemptsField] = profile.MaxAttempts.ToString().ToLowerInvariant();
+
+            if (profile.EC2MetadataServiceEndpoint != null)
+                reservedProperties[EC2MetadataServiceEndpointField] = profile.EC2MetadataServiceEndpoint.ToString().ToLowerInvariant();
+
+            if (profile.EC2MetadataServiceEndpointMode != null)
+                reservedProperties[EC2MetadataServiceEndpointModeField] = profile.EC2MetadataServiceEndpointMode.ToString().ToLowerInvariant();
 
             var profileDictionary = PropertyMapping.CombineProfileParts(
                 profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);
@@ -510,6 +520,41 @@ namespace Amazon.Runtime.CredentialManagement
                     maxAttempts = maxAttemptsTemp;
                 }
 
+                string ec2MetadataServiceEndpoint;
+                if (reservedProperties.TryGetValue(EC2MetadataServiceEndpointField, out ec2MetadataServiceEndpoint))
+                {
+                    if (!Uri.IsWellFormedUriString(ec2MetadataServiceEndpoint, UriKind.Absolute))
+                    {
+                        throw new AmazonClientException($"Invalid value {ec2MetadataServiceEndpoint} for {EC2MetadataServiceEndpointField} in profile {profileName}. A well-formed Uri is expected.");
+                    }
+                }
+
+                EC2MetadataServiceEndpointMode? ec2MetadataServiceEndpointMode = null;
+                if (reservedProperties.TryGetValue(EC2MetadataServiceEndpointModeField, out var ec2MetadataServiceEndpointModeString))
+                {
+#if BCL35
+                    try
+                    {
+                        ec2MetadataServiceEndpointMode = (EC2MetadataServiceEndpointMode)Enum.Parse(typeof(EC2MetadataServiceEndpointMode), ec2MetadataServiceEndpointModeString, true);
+                    }
+                    catch (Exception)
+                    {
+                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string IPv4 or IPV6 is expected.", ec2MetadataServiceEndpointModeString, EC2MetadataServiceEndpointModeField, profileName);
+                        profile = null;
+                        return false;
+                    }
+#else
+                    if (!Enum.TryParse<EC2MetadataServiceEndpointMode>(ec2MetadataServiceEndpointModeString, true, out var ec2MetadataServiceEndpointModeTemp))
+                    {
+                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string IPv4 or IPV6 is expected.", ec2MetadataServiceEndpointModeString, EC2MetadataServiceEndpointModeField, profileName);
+                        profile = null;
+                        return false;
+                    }
+                    ec2MetadataServiceEndpointMode = ec2MetadataServiceEndpointModeTemp;
+#endif
+                }
+
+
                 profile = new CredentialProfile(profileName, profileOptions)
                 {
                     UniqueKey = toolkitArtifactGuid,
@@ -521,7 +566,9 @@ namespace Amazon.Runtime.CredentialManagement
                     S3UseArnRegion = s3UseArnRegion,
                     S3RegionalEndpoint = s3RegionalEndpoint,
                     RetryMode = requestRetryMode,
-                    MaxAttempts = maxAttempts
+                    MaxAttempts = maxAttempts,
+                    EC2MetadataServiceEndpoint = ec2MetadataServiceEndpoint,
+                    EC2MetadataServiceEndpointMode = ec2MetadataServiceEndpointMode
                 };
 
                 if (!IsSupportedProfileType(profile.ProfileType))

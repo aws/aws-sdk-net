@@ -1,21 +1,16 @@
-﻿/*******************************************************************************
+﻿/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
  *
- * http://aws.amazon.com/apache2.0
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
  *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
+ *  http://aws.amazon.com/apache2.0
  *
- *  AWS SDK for .NET
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
 
 using System;
@@ -30,6 +25,7 @@ using ThirdParty.Json.LitJson;
 using System.Globalization;
 using Amazon.Runtime.Internal.Util;
 using AWSSDK.Runtime.Internal.Util;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Util
 {
@@ -54,14 +50,24 @@ namespace Amazon.Util
     /// </remarks>
     public static class EC2InstanceMetadata
     {
+        [Obsolete("EC2_METADATA_SVC is obsolete, refer to ServiceEndpoint instead to respect environment and profile overrides.")]
+        public static readonly string EC2_METADATA_SVC = "http://169.254.169.254";
+
+        [Obsolete("EC2_METADATA_ROOT is obsolete, refer to EC2MetadataRoot instead to respect environment and profile overrides.")]
+        public static readonly string EC2_METADATA_ROOT = EC2_METADATA_SVC + LATEST + "/meta-data";
+
+        [Obsolete("EC2_USERDATA_ROOT is obsolete, refer to EC2UserDataRoot instead to respect environment and profile overrides.")]
+        public static readonly string EC2_USERDATA_ROOT = EC2_METADATA_SVC + LATEST + "/user-data";
+
+        [Obsolete("EC2_DYNAMICDATA_ROOT is obsolete, refer to EC2DynamicDataRoot instead to respect environment and profile overrides.")]
+        public static readonly string EC2_DYNAMICDATA_ROOT = EC2_METADATA_SVC + LATEST + "/dynamic";
+
+        [Obsolete("EC2_APITOKEN_URL is obsolete, refer to EC2ApiTokenUrl instead to respect environment and profile overrides.")]
+        public static readonly string EC2_APITOKEN_URL = EC2_METADATA_SVC + LATEST + "/api/token";
+
         public static readonly string
-            EC2_METADATA_SVC = "http://169.254.169.254",
             LATEST = "/latest",
-            EC2_METADATA_ROOT = EC2_METADATA_SVC + LATEST + "/meta-data",
-            EC2_USERDATA_ROOT = EC2_METADATA_SVC + LATEST + "/user-data",
-            EC2_DYNAMICDATA_ROOT = EC2_METADATA_SVC + LATEST + "/dynamic",
-            AWS_EC2_METADATA_DISABLED = "AWS_EC2_METADATA_DISABLED",
-            EC2_APITOKEN_URL = EC2_METADATA_SVC + LATEST + "/api/token";
+            AWS_EC2_METADATA_DISABLED = "AWS_EC2_METADATA_DISABLED";
 
         private static int
             DEFAULT_RETRIES = 3,
@@ -77,6 +83,54 @@ namespace Amazon.Util
         private static readonly TimeSpan metadataLockTimeout = TimeSpan.FromMilliseconds(5000);
 
         /// <summary>
+        /// Base endpoint of the instance metadata service. Returns the endpoint configured first 
+        /// via environment variable AWS_EC2_METADATA_SERVICE_ENDPOINT then the current profile's 
+        /// ec2_metadata_service_endpoint value. If a specific endpoint is not configured, it selects a pre-determined
+        /// endpoint based on environment variable AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE then the 
+        /// current profile's ec2_metadata_service_endpoint_mode setting.
+        /// </summary>
+        public static string ServiceEndpoint
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(FallbackInternalConfigurationFactory.EC2MetadataServiceEndpoint))
+                {
+                    return FallbackInternalConfigurationFactory.EC2MetadataServiceEndpoint;
+                }
+                else if (FallbackInternalConfigurationFactory.EC2MetadataServiceEndpointMode == EC2MetadataServiceEndpointMode.IPv6)
+                {
+                    return "http://[fd00:ec2::254]";
+                }
+                else // either explicit IPv4 or default behavior
+                {
+                    return "http://169.254.169.254";
+                }
+            }
+        }
+
+        /// <summary>
+        /// Root URI to retrieve instance metadata
+        /// </summary>
+        public static string EC2MetadataRoot => ServiceEndpoint + LATEST + "/meta-data";
+
+        /// <summary>
+        /// Root URI to retrieve instance user data
+        /// </summary>
+        public static string EC2UserDataRoot => ServiceEndpoint + LATEST + "/user-data";
+
+        /// <summary>
+        /// Root URI to retrieve dynamic instance data
+        /// </summary>
+        public static string EC2DynamicDataRoot => ServiceEndpoint + LATEST + "/dynamic";
+
+        /// <summary>
+        /// URI to retrieve the IMDS API token
+        /// </summary>
+        public static string EC2ApiTokenUrl => ServiceEndpoint + LATEST + "/api/token";
+
+        /// <summary>
+        /// Returns whether requesting the EC2 Instance Metadata Service is 
+        /// enabled via the AWS_EC2_METADATA_DISABLED environment variable.
         /// </summary>
         public static bool IsIMDSEnabled
         {
@@ -391,7 +445,7 @@ namespace Amazon.Util
         {
             get
             {
-                return GetData(EC2_USERDATA_ROOT);
+                return GetData(EC2UserDataRoot);
             }
         }
 
@@ -403,7 +457,7 @@ namespace Amazon.Util
         {
             get
             {
-                return GetData(EC2_DYNAMICDATA_ROOT + "/fws/instance-monitoring");
+                return GetData(EC2DynamicDataRoot + "/fws/instance-monitoring");
             }
         }
 
@@ -415,7 +469,7 @@ namespace Amazon.Util
         {
             get
             {
-                return GetData(EC2_DYNAMICDATA_ROOT + "/instance-identity/document");
+                return GetData(EC2DynamicDataRoot + "/instance-identity/document");
             }
         }
 
@@ -426,7 +480,7 @@ namespace Amazon.Util
         {
             get
             {
-                return GetData(EC2_DYNAMICDATA_ROOT + "/instance-identity/signature");
+                return GetData(EC2DynamicDataRoot + "/instance-identity/signature");
             }
         }
 
@@ -437,7 +491,7 @@ namespace Amazon.Util
         {
             get
             {
-                return GetData(EC2_DYNAMICDATA_ROOT + "/instance-identity/pkcs7");
+                return GetData(EC2DynamicDataRoot + "/instance-identity/pkcs7");
             }
         }
 
@@ -595,7 +649,7 @@ namespace Amazon.Util
 
                 try
                 {
-                    var uriForToken = new Uri(EC2_APITOKEN_URL);
+                    var uriForToken = new Uri(EC2ApiTokenUrl);
 
                     var headers = new Dictionary<string, string>();
                     headers.Add(HeaderKeys.XAwsEc2MetadataTokenTtlSeconds, DEFAULT_APITOKEN_TTL.ToString(CultureInfo.InvariantCulture));
@@ -681,9 +735,9 @@ namespace Amazon.Util
 
                 // if we are given a relative path, we assume the data we need exists under the
                 // main metadata root
-                var uri = relativeOrAbsolutePath.StartsWith(EC2_METADATA_SVC, StringComparison.Ordinal)
+                var uri = relativeOrAbsolutePath.StartsWith(ServiceEndpoint, StringComparison.Ordinal)
                             ? new Uri(relativeOrAbsolutePath)
-                            : new Uri(EC2_METADATA_ROOT + relativeOrAbsolutePath);
+                            : new Uri(EC2MetadataRoot + relativeOrAbsolutePath);
                 
                 var content = AWSSDKUtils.ExecuteHttpRequest(uri, "GET", null, TimeSpan.FromSeconds(5), Proxy, headers);
                 using (var stream = new StringReader(content))

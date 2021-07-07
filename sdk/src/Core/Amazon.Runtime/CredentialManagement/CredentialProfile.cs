@@ -83,6 +83,16 @@ namespace Amazon.Runtime.CredentialManagement
         public int? MaxAttempts { get; set; }
 
         /// <summary>
+        /// Endpoint of the EC2 Instance Metadata Service
+        /// </summary>
+        public string EC2MetadataServiceEndpoint { get; set; }
+
+        /// <summary>
+        /// Internet protocol version to be used for communicating with the EC2 Instance Metadata Service
+        /// </summary>
+        public EC2MetadataServiceEndpointMode? EC2MetadataServiceEndpointMode { get; set; }
+
+        /// <summary>
         /// An optional dictionary of name-value pairs stored with the CredentialProfile
         /// </summary>
         internal Dictionary<string, string> Properties

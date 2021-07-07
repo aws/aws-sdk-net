@@ -1,4 +1,5 @@
-﻿using Amazon.Util;
+﻿using Amazon.Runtime.Internal;
+using Amazon.Util;
 using AWSSDK_DotNet.CommonTest.Utils;
 using AWSSDK_DotNet35.UnitTests.TestTools;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -14,6 +15,7 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
     public class EC2InstanceMetadataTests
     {
         private FieldInfo nullTokenField = null;
+        private const string endpointEnvVar = "AWS_EC2_METADATA_SERVICE_ENDPOINT";
 
         [TestInitialize]
         public void Init()
@@ -41,10 +43,10 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
                 servlet.StatusCode = 404;
 
                 var metadataType = typeof(EC2InstanceMetadata);
-                var currentEMSValue = GetField(metadataType, "EC2_METADATA_SVC");
+                var currentEMSValue = Environment.GetEnvironmentVariable(endpointEnvVar);
 
-                Action setEMSAction = () => SetEC2InstanceMetadataFields(metadataType, servlet.ServiceURL);
-                Action resetEMSAction = () => SetEC2InstanceMetadataFields(metadataType, currentEMSValue);
+                Action setEMSAction = () => SetEC2InstanceMetadataEndpoint(servlet.ServiceURL);
+                Action resetEMSAction = () => SetEC2InstanceMetadataEndpoint(currentEMSValue);
 
                 using (new DisposableSwitch(setEMSAction, resetEMSAction))
                 {
@@ -56,8 +58,8 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
 
                         object value;
 
-                        // make and exception for IsIMDSEnabled property
-                        if (pi != null && !pi.Name.Equals("IsIMDSEnabled"))
+                        // make and exception for IsIMDSEnabled property or the IMDS endpoint and URI helpers
+                        if (pi != null && !pi.Name.Equals("IsIMDSEnabled") && !pi.Name.Equals("ServiceEndpoint") && !pi.Name.StartsWith("EC2"))
                         {
                             value = pi.GetValue(null);
                             // all properties should return null on non-EC2 instances
@@ -314,11 +316,10 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
 
         private static IDictionary<string, IAMSecurityCredentialMetadata> GetSecurityCredentials(MultipleResponseServlet servlet)
         {
-            var metadataType = typeof(EC2InstanceMetadata);
-            var currentEMSValue = GetField(metadataType, "EC2_METADATA_SVC");
+            var currentEMSValue = Environment.GetEnvironmentVariable(endpointEnvVar);
 
-            Action setEMSAction = () => SetEC2InstanceMetadataFields(metadataType, servlet.ServiceURL);
-            Action resetEMSAction = () => SetEC2InstanceMetadataFields(metadataType, currentEMSValue);
+            Action setEMSAction = () => SetEC2InstanceMetadataEndpoint(servlet.ServiceURL);
+            Action resetEMSAction = () => SetEC2InstanceMetadataEndpoint(currentEMSValue);
 
             using (new DisposableSwitch(setEMSAction, resetEMSAction))
             {
@@ -327,34 +328,10 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
             }
         }
 
-        /*
-            public static readonly string
-            EC2_METADATA_SVC = "http://169.254.169.254",
-            LATEST = "/latest",
-            EC2_METADATA_ROOT = EC2_METADATA_SVC + LATEST + "/meta-data",
-            EC2_USERDATA_ROOT = EC2_METADATA_SVC + LATEST + "/user-data",
-            EC2_DYNAMICDATA_ROOT = EC2_METADATA_SVC + LATEST + "/dynamic",
-            EC2_APITOKEN_URL = EC2_METADATA_SVC + LATEST + "/api/token";
-        */
-
-        private static void SetEC2InstanceMetadataFields(Type metadataType, string address)
+        private static void SetEC2InstanceMetadataEndpoint(string address)
         {
-            var latest = Amazon.Util.EC2InstanceMetadata.LATEST;
-            SetField(metadataType, "EC2_METADATA_SVC", address);
-            SetField(metadataType, "EC2_METADATA_ROOT", address + latest + "/meta-data");
-            SetField(metadataType, "EC2_USERDATA_ROOT", address + latest + "/user-data");
-            SetField(metadataType, "EC2_DYNAMICDATA_ROOT", address + latest + "/dynamic");
-            SetField(metadataType, "EC2_APITOKEN_URL", address + latest + "/api/token");
-        }
-        private static string GetField(Type metadataType, string fieldName)
-        {
-            var fi = metadataType.GetField(fieldName, BindingFlags.Public | BindingFlags.Static);
-            return fi.GetValue(null) as string;
-        }
-        private static void SetField(Type metadataType, string fieldName, string fieldValue)
-        {
-            var fi = metadataType.GetField(fieldName, BindingFlags.Public | BindingFlags.Static);
-            fi.SetValue(null, fieldValue);
+            Environment.SetEnvironmentVariable("AWS_EC2_METADATA_SERVICE_ENDPOINT", address);
+            FallbackInternalConfigurationFactory.Reset();
         }
 
         private static FieldInfo ResetUseNullToken()

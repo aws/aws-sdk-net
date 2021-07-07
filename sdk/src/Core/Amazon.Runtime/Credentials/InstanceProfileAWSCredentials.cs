@@ -205,7 +205,7 @@ namespace Amazon.Runtime
         #region Private members
 
         private static string[] AliasSeparators = new string[] { "<br/>" };
-        private static string Server = "http://169.254.169.254";
+        private static string Server = EC2InstanceMetadata.ServiceEndpoint;
         private static string RolesPath = "/latest/meta-data/iam/security-credentials/";
         private static string InfoPath = "/latest/meta-data/iam/info";
 
