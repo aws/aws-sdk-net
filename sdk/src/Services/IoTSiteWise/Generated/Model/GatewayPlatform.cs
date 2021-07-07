@@ -38,7 +38,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Greengrass. 
         /// <para>
-        /// A gateway that runs on AWS IoT Greengrass.
+        /// A gateway that runs on IoT Greengrass.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

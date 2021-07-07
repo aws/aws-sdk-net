@@ -31,8 +31,8 @@ namespace Amazon.IoTSiteWise.Model
     /// <summary>
     /// Container for the parameters to the DeleteAccessPolicy operation.
     /// Deletes an access policy that grants the specified identity access to the specified
-    /// AWS IoT SiteWise Monitor resource. You can use this operation to revoke access to
-    /// an AWS IoT SiteWise Monitor resource.
+    /// IoT SiteWise Monitor resource. You can use this operation to revoke access to an IoT
+    /// SiteWise Monitor resource.
     /// </summary>
     public partial class DeleteAccessPolicyRequest : AmazonIoTSiteWiseRequest
     {

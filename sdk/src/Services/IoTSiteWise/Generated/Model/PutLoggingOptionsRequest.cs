@@ -30,7 +30,7 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the PutLoggingOptions operation.
-    /// Sets logging options for AWS IoT SiteWise.
+    /// Sets logging options for IoT SiteWise.
     /// </summary>
     public partial class PutLoggingOptionsRequest : AmazonIoTSiteWiseRequest
     {

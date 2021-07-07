@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains information about an AWS Identity and Access Management (IAM) user.
+    /// Contains information about an Identity and Access Management user.
     /// </summary>
     public partial class IAMUserIdentity
     {

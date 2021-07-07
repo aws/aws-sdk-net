@@ -79,7 +79,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The key ARN of the customer managed customer master key (CMK) used for AWS KMS encryption
+        /// The key ARN of the customer managed customer master key (CMK) used for KMS encryption
         /// if you use <code>KMS_BASED_ENCRYPTION</code>.
         /// </para>
         /// </summary>

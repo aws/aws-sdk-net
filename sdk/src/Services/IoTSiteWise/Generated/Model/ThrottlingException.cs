@@ -30,13 +30,13 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Your request exceeded a rate limit. For example, you might have exceeded the number
-    /// of AWS IoT SiteWise assets that can be created per second, the allowed number of messages
+    /// of IoT SiteWise assets that can be created per second, the allowed number of messages
     /// per second, and so on.
     /// 
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-    /// in the <i>AWS IoT SiteWise User Guide</i>.
+    /// in the <i>IoT SiteWise User Guide</i>.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

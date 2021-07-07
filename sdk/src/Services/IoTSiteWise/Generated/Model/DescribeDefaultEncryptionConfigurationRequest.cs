@@ -30,9 +30,10 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDefaultEncryptionConfiguration operation.
-    /// Retrieves information about the default encryption configuration for the AWS account
-    /// in the default or specified region. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key
-    /// management</a> in the <i>AWS IoT SiteWise User Guide</i>.
+    /// Retrieves information about the default encryption configuration for the Amazon Web
+    /// Services account in the default or specified Region. For more information, see <a
+    /// href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key
+    /// management</a> in the <i>IoT SiteWise User Guide</i>.
     /// </summary>
     public partial class DescribeDefaultEncryptionConfigurationRequest : AmazonIoTSiteWiseRequest
     {

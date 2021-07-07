@@ -44,7 +44,7 @@ namespace Amazon.IoTSiteWise.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#metrics">Metrics</a>
-    /// in the <i>AWS IoT SiteWise User Guide</i>.
+    /// in the <i>IoT SiteWise User Guide</i>.
     /// </para>
     /// </summary>
     public partial class Metric
@@ -63,7 +63,7 @@ namespace Amazon.IoTSiteWise.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-        /// in the <i>AWS IoT SiteWise User Guide</i>.
+        /// in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
@@ -101,8 +101,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Window. 
         /// <para>
-        /// The window (time interval) over which AWS IoT SiteWise computes the metric's aggregation
-        /// expression. AWS IoT SiteWise computes one data point per <code>window</code>.
+        /// The window (time interval) over which IoT SiteWise computes the metric's aggregation
+        /// expression. IoT SiteWise computes one data point per <code>window</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

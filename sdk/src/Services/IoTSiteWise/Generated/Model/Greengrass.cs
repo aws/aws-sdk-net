@@ -29,11 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains details for a gateway that runs on AWS IoT Greengrass. To create a gateway
-    /// that runs on AWS IoT Greengrass, you must add the IoT SiteWise connector to a Greengrass
-    /// group and deploy it. Your Greengrass group must also have permissions to upload data
-    /// to AWS IoT SiteWise. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting
-    /// data using a gateway</a> in the <i>AWS IoT SiteWise User Guide</i>.
+    /// Contains details for a gateway that runs on IoT Greengrass. To create a gateway that
+    /// runs on IoT Greengrass, you must add the IoT SiteWise connector to a Greengrass group
+    /// and deploy it. Your Greengrass group must also have permissions to upload data to
+    /// IoT SiteWise. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting
+    /// data using a gateway</a> in the <i>IoT SiteWise User Guide</i>.
     /// </summary>
     public partial class Greengrass
     {
@@ -46,7 +46,7 @@ namespace Amazon.IoTSiteWise.Model
         /// of the Greengrass group. For more information about how to find a group's ARN, see
         /// <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a>
         /// and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a>
-        /// in the <i>AWS IoT Greengrass API Reference</i>.
+        /// in the <i>IoT Greengrass API Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]

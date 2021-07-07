@@ -31,8 +31,8 @@ namespace Amazon.IoTSiteWise.Model
     /// <summary>
     /// Container for the parameters to the CreateGateway operation.
     /// Creates a gateway, which is a virtual or edge device that delivers industrial data
-    /// streams from local servers to AWS IoT SiteWise. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting
-    /// data using a gateway</a> in the <i>AWS IoT SiteWise User Guide</i>.
+    /// streams from local servers to IoT SiteWise. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting
+    /// data using a gateway</a> in the <i>IoT SiteWise User Guide</i>.
     /// </summary>
     public partial class CreateGatewayRequest : AmazonIoTSiteWiseRequest
     {
@@ -83,7 +83,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <para>
         /// A list of key-value pairs that contain metadata for the gateway. For more information,
         /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-        /// your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

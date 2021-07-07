@@ -43,7 +43,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <para>
         /// The JSON document that defines the gateway capability's configuration. For more information,
         /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring
-        /// data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=104857600)]

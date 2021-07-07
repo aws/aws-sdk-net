@@ -1611,6 +1611,18 @@
     <pattern>[^\u0000-\u001F\u007F]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.CustomerManagedS3Storage.RoleArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.CustomerManagedS3Storage.S3ResourceArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.DashboardSummary.Description</property>
     <min>1</min>
     <max>2048</max>

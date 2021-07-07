@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// AWS IoT SiteWise can't process your request right now. Try again later.
+    /// IoT SiteWise can't process your request right now. Try again later.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -31,7 +31,7 @@ namespace Amazon.IoTSiteWise.Model
     /// <summary>
     /// You've reached the limit for the number of tags allowed for a resource. For more information,
     /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
-    /// naming limits and requirements</a> in the <i>AWS General Reference</i>.
+    /// naming limits and requirements</a> in the <i>Amazon Web Services General Reference</i>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

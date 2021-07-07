@@ -30,7 +30,7 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLoggingOptions operation.
-    /// Retrieves the current AWS IoT SiteWise logging options.
+    /// Retrieves the current IoT SiteWise logging options.
     /// </summary>
     public partial class DescribeLoggingOptionsRequest : AmazonIoTSiteWiseRequest
     {

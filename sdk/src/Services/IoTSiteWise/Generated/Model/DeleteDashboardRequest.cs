@@ -30,7 +30,7 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDashboard operation.
-    /// Deletes a dashboard from AWS IoT SiteWise Monitor.
+    /// Deletes a dashboard from IoT SiteWise Monitor.
     /// </summary>
     public partial class DeleteDashboardRequest : AmazonIoTSiteWiseRequest
     {

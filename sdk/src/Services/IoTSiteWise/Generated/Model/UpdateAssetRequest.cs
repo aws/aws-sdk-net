@@ -31,7 +31,7 @@ namespace Amazon.IoTSiteWise.Model
     /// <summary>
     /// Container for the parameters to the UpdateAsset operation.
     /// Updates an asset's name. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating
-    /// assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+    /// assets and models</a> in the <i>IoT SiteWise User Guide</i>.
     /// </summary>
     public partial class UpdateAssetRequest : AmazonIoTSiteWiseRequest
     {

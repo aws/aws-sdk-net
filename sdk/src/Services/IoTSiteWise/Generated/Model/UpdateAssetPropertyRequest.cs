@@ -90,10 +90,10 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property PropertyAlias. 
         /// <para>
-        /// The property alias that identifies the property, such as an OPC-UA server data stream
-        /// path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-        /// industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// The alias that identifies the property, such as an OPC-UA server data stream path
+        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
+        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
+        /// industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -136,9 +136,9 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property PropertyNotificationState. 
         /// <para>
         /// The MQTT notification state (enabled or disabled) for this asset property. When the
-        /// notification state is enabled, AWS IoT SiteWise publishes property value updates to
-        /// a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-        /// with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// notification state is enabled, IoT SiteWise publishes property value updates to a
+        /// unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
+        /// with other services</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         ///  
         /// <para>

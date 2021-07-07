@@ -38,7 +38,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The AWS SSO ID of the group.
+        /// The Amazon Web Services SSO ID of the group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

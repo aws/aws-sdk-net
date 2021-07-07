@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains an image that is uploaded to AWS IoT SiteWise and available at a URL.
+    /// Contains an image that is uploaded to IoT SiteWise and available at a URL.
     /// </summary>
     public partial class ImageLocation
     {

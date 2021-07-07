@@ -41,16 +41,16 @@ namespace Amazon.IoTSiteWise.Model
         /// <para>
         /// The time interval for the tumbling window. Note that <code>w</code> represents weeks,
         /// <code>d</code> represents days, <code>h</code> represents hours, and <code>m</code>
-        /// represents minutes. AWS IoT SiteWise computes the <code>1w</code> interval the end
-        /// of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of
-        /// each day at midnight (UTC), the <code>1h</code> interval at the end of each hour,
-        /// and so on. 
+        /// represents minutes. IoT SiteWise computes the <code>1w</code> interval the end of
+        /// Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each
+        /// day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so
+        /// on. 
         /// </para>
         ///  
         /// <para>
-        /// When AWS IoT SiteWise aggregates data points for metric computations, the start of
-        /// each interval is exclusive and the end of each interval is inclusive. AWS IoT SiteWise
-        /// places the computed data point at the end of the interval.
+        /// When IoT SiteWise aggregates data points for metric computations, the start of each
+        /// interval is exclusive and the end of each interval is inclusive. IoT SiteWise places
+        /// the computed data point at the end of the interval.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=3)]

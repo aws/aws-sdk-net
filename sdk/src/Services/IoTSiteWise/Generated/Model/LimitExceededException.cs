@@ -36,7 +36,7 @@ namespace Amazon.IoTSiteWise.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-    /// in the <i>AWS IoT SiteWise User Guide</i>.
+    /// in the <i>IoT SiteWise User Guide</i>.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

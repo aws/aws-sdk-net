@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains AWS IoT SiteWise Monitor error details.
+    /// Contains IoT SiteWise Monitor error details.
     /// </summary>
     public partial class MonitorErrorDetails
     {

@@ -33,7 +33,7 @@ namespace Amazon.IoTSiteWise.Model
     /// Updates an asset model and all of the assets that were created from the model. Each
     /// asset created from the model inherits the updated asset model's property and hierarchy
     /// definitions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating
-    /// assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+    /// assets and models</a> in the <i>IoT SiteWise User Guide</i>.
     /// 
     ///  <important> 
     /// <para>
@@ -43,10 +43,10 @@ namespace Amazon.IoTSiteWise.Model
     /// </para>
     ///  
     /// <para>
-    /// If you remove a property from an asset model, AWS IoT SiteWise deletes all previous
-    /// data for that property. If you remove a hierarchy definition from an asset model,
-    /// AWS IoT SiteWise disassociates every asset associated with that hierarchy. You can't
-    /// change the type or data type of an existing property.
+    /// If you remove a property from an asset model, IoT SiteWise deletes all previous data
+    /// for that property. If you remove a hierarchy definition from an asset model, IoT SiteWise
+    /// disassociates every asset associated with that hierarchy. You can't change the type
+    /// or data type of an existing property.
     /// </para>
     ///  </important>
     /// </summary>
@@ -106,13 +106,13 @@ namespace Amazon.IoTSiteWise.Model
         /// The updated hierarchy definitions of the asset model. Each hierarchy specifies an
         /// asset model whose assets can be children of any other assets created from this asset
         /// model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-        /// hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// hierarchies</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// You can specify up to 10 hierarchies per asset model. For more information, see <a
         /// href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-        /// in the <i>AWS IoT SiteWise User Guide</i>.
+        /// in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
         public List<AssetModelHierarchy> AssetModelHierarchies
@@ -170,13 +170,13 @@ namespace Amazon.IoTSiteWise.Model
         /// <para>
         /// The updated property definitions of the asset model. For more information, see <a
         /// href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset
-        /// properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// properties</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// You can specify up to 200 properties per asset model. For more information, see <a
         /// href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-        /// in the <i>AWS IoT SiteWise User Guide</i>.
+        /// in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
         public List<AssetModelProperty> AssetModelProperties

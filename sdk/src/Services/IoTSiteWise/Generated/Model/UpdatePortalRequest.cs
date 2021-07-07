@@ -30,7 +30,7 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePortal operation.
-    /// Updates an AWS IoT SiteWise Monitor portal.
+    /// Updates an IoT SiteWise Monitor portal.
     /// </summary>
     public partial class UpdatePortalRequest : AmazonIoTSiteWiseRequest
     {
@@ -47,10 +47,10 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Alarms. 
         /// <para>
-        /// Contains the configuration information of an alarm created in an AWS IoT SiteWise
-        /// Monitor portal. You can use the alarm to monitor an asset property and get notified
-        /// when the asset property value is outside a specified range. For more information,
-        /// see .
+        /// Contains the configuration information of an alarm created in an IoT SiteWise Monitor
+        /// portal. You can use the alarm to monitor an asset property and get notified when the
+        /// asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring
+        /// with alarms</a> in the <i>IoT SiteWise Application Guide</i>.
         /// </para>
         /// </summary>
         public Alarms Alarms
@@ -107,7 +107,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property PortalContactEmail. 
         /// <para>
-        /// The AWS administrator's contact email address.
+        /// The Amazon Web Services administrator's contact email address.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -199,9 +199,9 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-        /// of a service role that allows the portal's users to access your AWS IoT SiteWise resources
+        /// of a service role that allows the portal's users to access your IoT SiteWise resources
         /// on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using
-        /// service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]

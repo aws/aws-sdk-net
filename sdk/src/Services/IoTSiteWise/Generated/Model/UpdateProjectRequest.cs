@@ -30,7 +30,7 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateProject operation.
-    /// Updates an AWS IoT SiteWise Monitor project.
+    /// Updates an IoT SiteWise Monitor project.
     /// </summary>
     public partial class UpdateProjectRequest : AmazonIoTSiteWiseRequest
     {

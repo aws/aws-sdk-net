@@ -30,7 +30,7 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchDisassociateProjectAssets operation.
-    /// Disassociates a group (batch) of assets from an AWS IoT SiteWise Monitor project.
+    /// Disassociates a group (batch) of assets from an IoT SiteWise Monitor project.
     /// </summary>
     public partial class BatchDisassociateProjectAssetsRequest : AmazonIoTSiteWiseRequest
     {

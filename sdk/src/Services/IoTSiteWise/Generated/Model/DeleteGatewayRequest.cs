@@ -30,7 +30,7 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteGateway operation.
-    /// Deletes a gateway from AWS IoT SiteWise. When you delete a gateway, some of the gateway's
+    /// Deletes a gateway from IoT SiteWise. When you delete a gateway, some of the gateway's
     /// files remain in your gateway's file system.
     /// </summary>
     public partial class DeleteGatewayRequest : AmazonIoTSiteWiseRequest

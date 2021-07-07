@@ -30,7 +30,7 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDashboards operation.
-    /// Retrieves a paginated list of dashboards for an AWS IoT SiteWise Monitor project.
+    /// Retrieves a paginated list of dashboards for an IoT SiteWise Monitor project.
     /// </summary>
     public partial class ListDashboardsRequest : AmazonIoTSiteWiseRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to be returned per paginated request.
+        /// The maximum number of results to return for each paginated request.
         /// </para>
         ///  
         /// <para>

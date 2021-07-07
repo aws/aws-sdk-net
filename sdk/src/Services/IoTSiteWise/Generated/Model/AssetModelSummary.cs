@@ -107,7 +107,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the asset model (used with AWS IoT SiteWise APIs).
+        /// The ID of the asset model (used with IoT SiteWise APIs).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

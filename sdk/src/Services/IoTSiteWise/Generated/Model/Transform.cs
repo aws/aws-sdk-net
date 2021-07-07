@@ -38,7 +38,7 @@ namespace Amazon.IoTSiteWise.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#transforms">Transforms</a>
-    /// in the <i>AWS IoT SiteWise User Guide</i>.
+    /// in the <i>IoT SiteWise User Guide</i>.
     /// </para>
     /// </summary>
     public partial class Transform
@@ -56,7 +56,7 @@ namespace Amazon.IoTSiteWise.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-        /// in the <i>AWS IoT SiteWise User Guide</i>.
+        /// in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

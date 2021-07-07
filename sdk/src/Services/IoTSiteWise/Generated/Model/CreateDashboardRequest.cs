@@ -30,7 +30,7 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDashboard operation.
-    /// Creates a dashboard in an AWS IoT SiteWise Monitor project.
+    /// Creates a dashboard in an IoT SiteWise Monitor project.
     /// </summary>
     public partial class CreateDashboardRequest : AmazonIoTSiteWiseRequest
     {
@@ -66,7 +66,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <para>
         /// The dashboard definition specified in a JSON literal. For detailed information, see
         /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-        /// dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=204800)]
@@ -144,7 +144,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <para>
         /// A list of key-value pairs that contain metadata for the dashboard. For more information,
         /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-        /// your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

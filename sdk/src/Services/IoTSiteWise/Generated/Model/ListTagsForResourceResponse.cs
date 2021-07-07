@@ -40,7 +40,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <para>
         /// The list of key-value pairs that contain metadata for the resource. For more information,
         /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-        /// your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

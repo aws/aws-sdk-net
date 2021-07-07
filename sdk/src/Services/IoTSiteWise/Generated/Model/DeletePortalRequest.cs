@@ -30,7 +30,7 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePortal operation.
-    /// Deletes a portal from AWS IoT SiteWise Monitor.
+    /// Deletes a portal from IoT SiteWise Monitor.
     /// </summary>
     public partial class DeletePortalRequest : AmazonIoTSiteWiseRequest
     {

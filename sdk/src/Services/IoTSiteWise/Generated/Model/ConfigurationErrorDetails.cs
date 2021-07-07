@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains the details of an AWS IoT SiteWise configuration error.
+    /// Contains the details of an IoT SiteWise configuration error.
     /// </summary>
     public partial class ConfigurationErrorDetails
     {

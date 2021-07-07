@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains the configuration information of an alarm created in an AWS IoT SiteWise
-    /// Monitor portal. You can use the alarm to monitor an asset property and get notified
-    /// when the asset property value is outside a specified range. For more information,
-    /// see .
+    /// Contains the configuration information of an alarm created in an IoT SiteWise Monitor
+    /// portal. You can use the alarm to monitor an asset property and get notified when the
+    /// asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring
+    /// with alarms</a> in the <i>IoT SiteWise Application Guide</i>.
     /// </summary>
     public partial class Alarms
     {
@@ -43,8 +43,8 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property AlarmRoleArn. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-        /// of the IAM role that allows the alarm to perform actions and access AWS resources,
-        /// including AWS IoT Events.
+        /// of the IAM role that allows the alarm to perform actions and access Amazon Web Services
+        /// resources and services, such as IoT Events.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]
@@ -64,9 +64,9 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property NotificationLambdaArn. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-        /// of the AWS Lambda function that manages alarm notifications. For more information,
-        /// see <a href="https://docs.aws.amazon.com/">Managing alarm notifications</a> in the
-        /// <i>AWS IoT Events Developer Guide</i>.
+        /// of the Lambda function that manages alarm notifications. For more information, see
+        /// <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing
+        /// alarm notifications</a> in the <i>IoT Events Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]

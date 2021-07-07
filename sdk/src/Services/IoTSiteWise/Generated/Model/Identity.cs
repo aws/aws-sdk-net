@@ -29,13 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains an identity that can access an AWS IoT SiteWise Monitor resource.
+    /// Contains an identity that can access an IoT SiteWise Monitor resource.
     /// 
     ///  <note> 
     /// <para>
-    /// Currently, you can't use AWS APIs to retrieve AWS SSO identity IDs. You can find the
-    /// AWS SSO identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">AWS
-    /// SSO console</a>.
+    /// Currently, you can't use Amazon Web Services APIs to retrieve Amazon Web Services
+    /// SSO identity IDs. You can find the Amazon Web Services SSO identity IDs in the URL
+    /// of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">Amazon
+    /// Web Services SSO console</a>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -49,7 +50,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Group. 
         /// <para>
-        /// An AWS SSO group identity.
+        /// An Amazon Web Services SSO group identity.
         /// </para>
         /// </summary>
         public GroupIdentity Group
@@ -103,7 +104,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property User. 
         /// <para>
-        /// An AWS SSO user identity.
+        /// An Amazon Web Services SSO user identity.
         /// </para>
         /// </summary>
         public UserIdentity User

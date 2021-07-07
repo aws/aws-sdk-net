@@ -31,7 +31,7 @@ namespace Amazon.IoTSiteWise.Model
     /// <summary>
     /// Container for the parameters to the CreateAsset operation.
     /// Creates an asset from an existing asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating
-    /// assets</a> in the <i>AWS IoT SiteWise User Guide</i>.
+    /// assets</a> in the <i>IoT SiteWise User Guide</i>.
     /// </summary>
     public partial class CreateAssetRequest : AmazonIoTSiteWiseRequest
     {
@@ -103,7 +103,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <para>
         /// A list of key-value pairs that contain metadata for the asset. For more information,
         /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-        /// your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

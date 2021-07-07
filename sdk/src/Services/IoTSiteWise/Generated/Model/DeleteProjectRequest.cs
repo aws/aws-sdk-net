@@ -30,7 +30,7 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteProject operation.
-    /// Deletes a project from AWS IoT SiteWise Monitor.
+    /// Deletes a project from IoT SiteWise Monitor.
     /// </summary>
     public partial class DeleteProjectRequest : AmazonIoTSiteWiseRequest
     {

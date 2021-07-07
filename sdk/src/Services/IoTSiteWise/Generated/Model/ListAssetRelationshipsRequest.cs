@@ -63,7 +63,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to be returned per paginated request.
+        /// The maximum number of results to return for each paginated request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=250)]

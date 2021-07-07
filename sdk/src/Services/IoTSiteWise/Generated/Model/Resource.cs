@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains an AWS IoT SiteWise Monitor resource ID for a portal or project.
+    /// Contains an IoT SiteWise Monitor resource ID for a portal or project.
     /// </summary>
     public partial class Resource
     {

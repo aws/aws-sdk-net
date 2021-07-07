@@ -64,7 +64,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property GatewayId. 
         /// <para>
-        /// The ID of the gateway device. You can use this ID when you call other AWS IoT SiteWise
+        /// The ID of the gateway device. You can use this ID when you call other IoT SiteWise
         /// APIs.
         /// </para>
         /// </summary>

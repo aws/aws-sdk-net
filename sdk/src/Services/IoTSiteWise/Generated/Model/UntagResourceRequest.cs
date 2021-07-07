@@ -30,7 +30,7 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes a tag from an AWS IoT SiteWise resource.
+    /// Removes a tag from an IoT SiteWise resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonIoTSiteWiseRequest
     {

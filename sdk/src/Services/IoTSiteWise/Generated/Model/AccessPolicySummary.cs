@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains an access policy that defines an identity's access to an AWS IoT SiteWise
-    /// Monitor resource.
+    /// Contains an access policy that defines an identity's access to an IoT SiteWise Monitor
+    /// resource.
     /// </summary>
     public partial class AccessPolicySummary
     {
@@ -81,7 +81,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Identity. 
         /// <para>
-        /// The identity (an AWS SSO user, an AWS SSO group, or an IAM user).
+        /// The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or
+        /// an IAM user).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -138,7 +139,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The AWS IoT SiteWise Monitor resource (a portal or project).
+        /// The IoT SiteWise Monitor resource (a portal or project).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

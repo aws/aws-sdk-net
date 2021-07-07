@@ -84,7 +84,7 @@ namespace Amazon.IoTSiteWise.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-        /// hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// hierarchies</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -103,7 +103,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to be returned per paginated request.
+        /// The maximum number of results to return for each paginated request.
         /// </para>
         ///  
         /// <para>

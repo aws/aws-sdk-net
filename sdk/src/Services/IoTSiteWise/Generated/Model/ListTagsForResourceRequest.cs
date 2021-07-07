@@ -30,7 +30,7 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Retrieves the list of tags for an AWS IoT SiteWise resource.
+    /// Retrieves the list of tags for an IoT SiteWise resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonIoTSiteWiseRequest
     {

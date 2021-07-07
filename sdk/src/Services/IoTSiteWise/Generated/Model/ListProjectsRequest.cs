@@ -30,7 +30,7 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the ListProjects operation.
-    /// Retrieves a paginated list of projects for an AWS IoT SiteWise Monitor portal.
+    /// Retrieves a paginated list of projects for an IoT SiteWise Monitor portal.
     /// </summary>
     public partial class ListProjectsRequest : AmazonIoTSiteWiseRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to be returned per paginated request.
+        /// The maximum number of results to return for each paginated request.
         /// </para>
         ///  
         /// <para>

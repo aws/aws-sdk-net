@@ -30,9 +30,9 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAccessPolicy operation.
-    /// Creates an access policy that grants the specified identity (AWS SSO user, AWS SSO
-    /// group, or IAM user) access to the specified AWS IoT SiteWise Monitor portal or project
-    /// resource.
+    /// Creates an access policy that grants the specified identity (Amazon Web Services SSO
+    /// user, Amazon Web Services SSO group, or IAM user) access to the specified IoT SiteWise
+    /// Monitor portal or project resource.
     /// </summary>
     public partial class CreateAccessPolicyRequest : AmazonIoTSiteWiseRequest
     {
@@ -45,8 +45,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AccessPolicyIdentity. 
         /// <para>
-        /// The identity for this access policy. Choose an AWS SSO user, an AWS SSO group, or
-        /// an IAM user.
+        /// The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon
+        /// Web Services SSO group, or an IAM user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -85,8 +85,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AccessPolicyResource. 
         /// <para>
-        /// The AWS IoT SiteWise Monitor resource for this access policy. Choose either a portal
-        /// or a project.
+        /// The IoT SiteWise Monitor resource for this access policy. Choose either a portal or
+        /// a project.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -127,7 +127,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <para>
         /// A list of key-value pairs that contain metadata for the access policy. For more information,
         /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-        /// your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

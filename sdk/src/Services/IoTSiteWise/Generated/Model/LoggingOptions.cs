@@ -38,7 +38,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Level. 
         /// <para>
-        /// The AWS IoT SiteWise logging verbosity level.
+        /// The IoT SiteWise logging verbosity level.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
