@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// AWS credentials for API authentication.
+    /// Amazon Web Services credentials for API authentication.
     /// </summary>
     public partial class Credentials
     {

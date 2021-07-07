@@ -30,7 +30,8 @@ namespace Amazon.SecurityToken.Model
 {
     /// <summary>
     /// Contains the response to a successful <a>GetFederationToken</a> request, including
-    /// temporary AWS credentials that can be used to make AWS requests.
+    /// temporary Amazon Web Services credentials that can be used to make Amazon Web Services
+    /// requests.
     /// </summary>
     public partial class GetFederationTokenResponse : AmazonWebServiceResponse
     {

@@ -30,7 +30,7 @@ namespace Amazon.SecurityToken.Model
 {
     /// <summary>
     /// Contains the response to a successful <a>AssumeRole</a> request, including temporary
-    /// AWS credentials that can be used to make AWS requests.
+    /// Amazon Web Services credentials that can be used to make Amazon Web Services requests.
     /// </summary>
     public partial class AssumeRoleResponse : AmazonWebServiceResponse
     {
@@ -117,9 +117,9 @@ namespace Amazon.SecurityToken.Model
         /// <para>
         /// You can require users to specify a source identity when they assume a role. You do
         /// this by using the <code>sts:SourceIdentity</code> condition key in a role trust policy.
-        /// You can use source identity information in AWS CloudTrail logs to determine who took
-        /// actions with a role. You can use the <code>aws:SourceIdentity</code> condition key
-        /// to further control access to AWS resources based on the value of source identity.
+        /// You can use source identity information in CloudTrail logs to determine who took actions
+        /// with a role. You can use the <code>aws:SourceIdentity</code> condition key to further
+        /// control access to Amazon Web Services resources based on the value of source identity.
         /// For more information about using source identity, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
         /// and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
         /// </para>

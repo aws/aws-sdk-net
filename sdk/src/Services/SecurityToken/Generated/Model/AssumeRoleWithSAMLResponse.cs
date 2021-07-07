@@ -30,7 +30,8 @@ namespace Amazon.SecurityToken.Model
 {
     /// <summary>
     /// Contains the response to a successful <a>AssumeRoleWithSAML</a> request, including
-    /// temporary AWS credentials that can be used to make AWS requests.
+    /// temporary Amazon Web Services credentials that can be used to make Amazon Web Services
+    /// requests.
     /// </summary>
     public partial class AssumeRoleWithSAMLResponse : AmazonWebServiceResponse
     {
@@ -135,7 +136,7 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The AWS account ID.
+        /// The Amazon Web Services account ID.
         /// </para>
         ///  </li> <li> 
         /// <para>

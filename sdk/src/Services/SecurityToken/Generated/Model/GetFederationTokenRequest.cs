@@ -39,7 +39,7 @@ namespace Amazon.SecurityToken.Model
     /// in a server-based application. For a comparison of <code>GetFederationToken</code>
     /// with the other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
     /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-    /// the AWS STS API operations</a> in the <i>IAM User Guide</i>.
+    /// the STS API operations</a> in the <i>IAM User Guide</i>.
     /// 
     ///  <note> 
     /// <para>
@@ -53,10 +53,10 @@ namespace Amazon.SecurityToken.Model
     ///  </note> 
     /// <para>
     /// You can also call <code>GetFederationToken</code> using the security credentials of
-    /// an AWS account root user, but we do not recommend it. Instead, we recommend that you
-    /// create an IAM user for the purpose of the proxy application. Then attach a policy
-    /// to the IAM user that limits federated users to only the actions and resources that
-    /// they need to access. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">IAM
+    /// an Amazon Web Services account root user, but we do not recommend it. Instead, we
+    /// recommend that you create an IAM user for the purpose of the proxy application. Then
+    /// attach a policy to the IAM user that limits federated users to only the actions and
+    /// resources that they need to access. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">IAM
     /// Best Practices</a> in the <i>IAM User Guide</i>. 
     /// </para>
     ///  
@@ -67,8 +67,9 @@ namespace Amazon.SecurityToken.Model
     /// <para>
     /// The temporary credentials are valid for the specified duration, from 900 seconds (15
     /// minutes) up to a maximum of 129,600 seconds (36 hours). The default session duration
-    /// is 43,200 seconds (12 hours). Temporary credentials that are obtained by using AWS
-    /// account root user credentials have a maximum duration of 3,600 seconds (1 hour).
+    /// is 43,200 seconds (12 hours). Temporary credentials that are obtained by using Amazon
+    /// Web Services account root user credentials have a maximum duration of 3,600 seconds
+    /// (1 hour).
     /// </para>
     ///  
     /// <para>
@@ -77,11 +78,11 @@ namespace Amazon.SecurityToken.Model
     ///  
     /// <para>
     /// You can use the temporary credentials created by <code>GetFederationToken</code> in
-    /// any AWS service except the following:
+    /// any Amazon Web Services service except the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You cannot call any IAM operations using the AWS CLI or the AWS API. 
+    /// You cannot call any IAM operations using the CLI or the Amazon Web Services API. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -137,10 +138,10 @@ namespace Amazon.SecurityToken.Model
     ///  </note> 
     /// <para>
     /// You can also call <code>GetFederationToken</code> using the security credentials of
-    /// an AWS account root user, but we do not recommend it. Instead, we recommend that you
-    /// create an IAM user for the purpose of the proxy application. Then attach a policy
-    /// to the IAM user that limits federated users to only the actions and resources that
-    /// they need to access. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">IAM
+    /// an Amazon Web Services account root user, but we do not recommend it. Instead, we
+    /// recommend that you create an IAM user for the purpose of the proxy application. Then
+    /// attach a policy to the IAM user that limits federated users to only the actions and
+    /// resources that they need to access. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">IAM
     /// Best Practices</a> in the <i>IAM User Guide</i>. 
     /// </para>
     ///  
@@ -151,8 +152,9 @@ namespace Amazon.SecurityToken.Model
     /// <para>
     /// The temporary credentials are valid for the specified duration, from 900 seconds (15
     /// minutes) up to a maximum of 129,600 seconds (36 hours). The default session duration
-    /// is 43,200 seconds (12 hours). Temporary credentials that are obtained by using AWS
-    /// account root user credentials have a maximum duration of 3,600 seconds (1 hour).
+    /// is 43,200 seconds (12 hours). Temporary credentials that are obtained by using Amazon
+    /// Web Services account root user credentials have a maximum duration of 3,600 seconds
+    /// (1 hour).
     /// </para>
     ///  
     /// <para>
@@ -161,11 +163,11 @@ namespace Amazon.SecurityToken.Model
     ///  
     /// <para>
     /// You can use the temporary credentials created by <code>GetFederationToken</code> in
-    /// any AWS service except the following:
+    /// any Amazon Web Services service except the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You cannot call any IAM operations using the AWS CLI or the AWS API. 
+    /// You cannot call any IAM operations using the CLI or the Amazon Web Services API. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -253,10 +255,10 @@ namespace Amazon.SecurityToken.Model
         /// <para>
         /// The duration, in seconds, that the session should last. Acceptable durations for federation
         /// sessions range from 900 seconds (15 minutes) to 129,600 seconds (36 hours), with 43,200
-        /// seconds (12 hours) as the default. Sessions obtained using AWS account root user credentials
-        /// are restricted to a maximum of 3,600 seconds (one hour). If the specified duration
-        /// is longer than one hour, the session obtained by using root user credentials defaults
-        /// to one hour.
+        /// seconds (12 hours) as the default. Sessions obtained using Amazon Web Services account
+        /// root user credentials are restricted to a maximum of 3,600 seconds (one hour). If
+        /// the specified duration is longer than one hour, the session obtained by using root
+        /// user credentials defaults to one hour.
         /// </para>
         /// </summary>
         [AWSProperty(Min=900, Max=129600)]
@@ -342,9 +344,9 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// An AWS conversion compresses the passed session policies and session tags into a packed
-        /// binary format that has a separate limit. Your request can fail for this limit even
-        /// if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
+        /// An Amazon Web Services conversion compresses the passed session policies and session
+        /// tags into a packed binary format that has a separate limit. Your request can fail
+        /// for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
         /// response element indicates by percentage how close the policies and tags for your
         /// request are to the upper size limit. 
         /// </para>
@@ -378,7 +380,8 @@ namespace Amazon.SecurityToken.Model
         /// managed session policies. The plaintext that you use for both inline and managed session
         /// policies can't exceed 2,048 characters. You can provide up to 10 managed policy ARNs.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the Amazon
+        /// Web Services General Reference.
         /// </para>
         ///  
         /// <para>
@@ -404,9 +407,9 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// An AWS conversion compresses the passed session policies and session tags into a packed
-        /// binary format that has a separate limit. Your request can fail for this limit even
-        /// if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
+        /// An Amazon Web Services conversion compresses the passed session policies and session
+        /// tags into a packed binary format that has a separate limit. Your request can fail
+        /// for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
         /// response element indicates by percentage how close the policies and tags for your
         /// request are to the upper size limit. 
         /// </para>
@@ -440,9 +443,9 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// An AWS conversion compresses the passed session policies and session tags into a packed
-        /// binary format that has a separate limit. Your request can fail for this limit even
-        /// if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
+        /// An Amazon Web Services conversion compresses the passed session policies and session
+        /// tags into a packed binary format that has a separate limit. Your request can fail
+        /// for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
         /// response element indicates by percentage how close the policies and tags for your
         /// request are to the upper size limit. 
         /// </para>

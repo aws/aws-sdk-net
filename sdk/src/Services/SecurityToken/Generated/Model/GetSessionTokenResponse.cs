@@ -30,7 +30,7 @@ namespace Amazon.SecurityToken.Model
 {
     /// <summary>
     /// Contains the response to a successful <a>GetSessionToken</a> request, including temporary
-    /// AWS credentials that can be used to make AWS requests.
+    /// Amazon Web Services credentials that can be used to make Amazon Web Services requests.
     /// </summary>
     public partial class GetSessionTokenResponse : AmazonWebServiceResponse
     {

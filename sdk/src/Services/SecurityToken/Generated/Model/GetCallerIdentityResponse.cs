@@ -41,7 +41,8 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property Account. 
         /// <para>
-        /// The AWS account ID number of the account that owns or contains the calling entity.
+        /// The Amazon Web Services account ID number of the account that owns or contains the
+        /// calling entity.
         /// </para>
         /// </summary>
         public string Account
@@ -59,7 +60,7 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The AWS ARN associated with the calling entity.
+        /// The Amazon Web Services ARN associated with the calling entity.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

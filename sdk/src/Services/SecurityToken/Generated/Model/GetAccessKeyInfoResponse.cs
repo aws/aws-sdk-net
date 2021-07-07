@@ -38,7 +38,7 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property Account. 
         /// <para>
-        /// The number used to identify the AWS account.
+        /// The number used to identify the Amazon Web Services account.
         /// </para>
         /// </summary>
         public string Account

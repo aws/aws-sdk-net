@@ -30,7 +30,8 @@ namespace Amazon.SecurityToken.Model
 {
     /// <summary>
     /// A document that contains additional information about the authorization status of
-    /// a request from an encoded message that is returned in response to an AWS request.
+    /// a request from an encoded message that is returned in response to an Amazon Web Services
+    /// request.
     /// </summary>
     public partial class DecodeAuthorizationMessageResponse : AmazonWebServiceResponse
     {
