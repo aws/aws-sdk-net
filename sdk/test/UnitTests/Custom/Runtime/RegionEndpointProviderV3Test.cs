@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Amazon;
 
 namespace AWSSDK.UnitTests
 {
@@ -204,6 +205,54 @@ namespace AWSSDK.UnitTests
                 var endpoint = regionEndpoint.GetEndpointForService("s3-control", true);
                 Assert.AreEqual(endpoint.Hostname, "s3-control-fips.dualstack.xx-east-1.amazonaws.com");
             }
+        }
+
+        [DataTestMethod]
+        [DataRow("us-east-1", "US East (Virginia)")]
+        [DataRow("us-east-1-regional", "US East (Virginia) regional")]
+        [DataRow("us-east-2", "US East (Ohio)")]
+        [DataRow("us-west-1", "US West (N. California)")]
+        [DataRow("us-west-2", "US West (Oregon)")]
+        [DataRow("eu-north-1", "EU North (Stockholm)")]
+        [DataRow("eu-south-1", "Europe (Milan)")]
+        [DataRow("ap-east-1", "Asia Pacific (Hong Kong)")]
+        [DataRow("sa-east-1", "South America (Sao Paulo)")]
+        [DataRow("us-gov-east-1", "US GovCloud East (Virginia)")]
+        [DataRow("cn-north-1", "China (Beijing)")]
+        [DataRow("ca-central-1", "Canada (Central)")]
+        [DataRow("me-south-1", "Middle East (Bahrain)")]
+        [DataRow("af-south-1", "Africa (Cape Town)")]
+        [DataRow("xx-xxxx-9", "Unknown")]
+        [DataRow("xx-xxxx-xxx-6", "Unknown")]
+        [DataRow("xx-xxxx-10", "Unknown")]
+        [DataRow("US-EAST-1", "US East (Virginia)")]
+        [DataRow("us-west-rack2", "Unknown")]
+        public void TestValidRegionFormat(string regionName, string displayName)
+        {
+            var regionEndpoint = RegionEndpoint.GetBySystemName(regionName);
+            if(string.Equals("Unknown", displayName))
+            {
+                Assert.AreEqual("Unknown", regionEndpoint.DisplayName);
+            }
+            else
+            {
+                Assert.AreNotEqual("Unknown", regionEndpoint.DisplayName);
+            }
+        }
+
+        [DataTestMethod]
+        [DataRow("www.amazon.com")]
+        [DataRow("Invalid Region")]
+        [DataRow("US East 1")]
+        [DataRow("us-east-")]
+        [DataRow(".")]
+        [DataRow("%/.asdf/")]
+        public void TestInvalidRegionFormat(string regionName)
+        {
+            Assert.ThrowsException<ArgumentException>(() =>
+            {
+                RegionEndpoint.GetBySystemName(regionName);
+            });
         }
     }
 }

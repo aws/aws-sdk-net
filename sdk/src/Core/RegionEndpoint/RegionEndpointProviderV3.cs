@@ -25,6 +25,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Threading;
 using ThirdParty.Json.LitJson;
 
 namespace Amazon.Internal
@@ -302,7 +303,7 @@ namespace Amazon.Internal
         }
     }
 
-    public class RegionEndpointProviderV3 : IRegionEndpointProvider
+    public class RegionEndpointProviderV3 : IRegionEndpointProvider, IDisposable
     {
 #if NETSTANDARD
         private const string ENDPOINT_JSON_RESOURCE = "Core.endpoints.json";
@@ -313,7 +314,10 @@ namespace Amazon.Internal
 
         private JsonData _root;
         private Dictionary<string, IRegionEndpoint> _regionEndpointMap = new Dictionary<string, IRegionEndpoint>();
-        private object _regionEndpointMapLock = new object();
+        private Dictionary<string, IRegionEndpoint> _nonStandardRegionNameToObjectMap = new Dictionary<string, IRegionEndpoint>();
+
+
+        private ReaderWriterLockSlim _readerWriterLock = new ReaderWriterLockSlim();
 
         public RegionEndpointProviderV3()
         {
@@ -350,37 +354,48 @@ namespace Amazon.Internal
             return Amazon.Util.Internal.TypeFactory.GetTypeInfo(typeof(RegionEndpointProviderV3)).Assembly.GetManifestResourceStream(ENDPOINT_JSON_RESOURCE);
         }
 
-        private object _allRegionEndpointsLock = new object();
         private IEnumerable<IRegionEndpoint> _allRegionEndpoints;
         public IEnumerable<IRegionEndpoint> AllRegionEndpoints
         {
             get
             {
-                lock (_allRegionEndpointsLock)
-                lock (_regionEndpointMapLock)
+                if (_allRegionEndpoints == null)
                 {
-                    if (_allRegionEndpoints == null)
+                    try
                     {
-                        JsonData partitions = _root["partitions"];
-                        List<IRegionEndpoint> endpoints = new List<IRegionEndpoint>();
-                        foreach (JsonData partition in partitions)
-                        {
-                            JsonData regions = partition["regions"];
-                            foreach (string regionName in regions.PropertyNames)
-                            {
-                                IRegionEndpoint endpoint;
-                                if (!_regionEndpointMap.TryGetValue(regionName, out endpoint))
-                                {
-                                    endpoint = new RegionEndpointV3(regionName, (string)regions[regionName]["description"], partition, partition["services"]);
-                                    _regionEndpointMap.Add(regionName, endpoint);
-                                }
-                                endpoints.Add(endpoint);
-                            }
-                        }
+                        _readerWriterLock.EnterWriteLock();
 
-                        _allRegionEndpoints = endpoints;
+                        if (_allRegionEndpoints == null)
+                        {
+                            JsonData partitions = _root["partitions"];
+                            List<IRegionEndpoint> endpoints = new List<IRegionEndpoint>();
+                            foreach (JsonData partition in partitions)
+                            {
+                                JsonData regions = partition["regions"];
+                                foreach (string regionName in regions.PropertyNames)
+                                {
+                                    IRegionEndpoint endpoint;
+                                    if (!_regionEndpointMap.TryGetValue(regionName, out endpoint))
+                                    {
+                                        endpoint = new RegionEndpointV3(regionName, (string)regions[regionName]["description"], partition, partition["services"]);
+                                        _regionEndpointMap.Add(regionName, endpoint);
+                                    }
+                                    endpoints.Add(endpoint);
+                                }
+                            }
+
+                            _allRegionEndpoints = endpoints;
+                        }
+                    }
+                    finally
+                    {
+                        if(_readerWriterLock.IsWriteLockHeld)
+                        {
+                            _readerWriterLock.ExitWriteLock();
+                        }
                     }
                 }
+
                 return _allRegionEndpoints;
             }
         }
@@ -391,22 +406,34 @@ namespace Amazon.Internal
         {
             get
             {
-                lock (_allRegionRegexLock)
-                lock (_regionEndpointMapLock)
+                if (_allRegionRegex == null)
                 {
-                    if (_allRegionRegex == null)
+                    try
                     {
-                        JsonData partitions = _root["partitions"];
-                        var allRegionRegex = new List<string>();
-                        foreach (JsonData partition in partitions)
-                        {
-                            var regionRegex = (string)partition["regionRegex"];
-                            allRegionRegex.Add(regionRegex);
-                        }
+                        _readerWriterLock.EnterWriteLock();
 
-                        _allRegionRegex = allRegionRegex;
+                        if (_allRegionRegex == null)
+                        {
+                            JsonData partitions = _root["partitions"];
+                            var allRegionRegex = new List<string>();
+                            foreach (JsonData partition in partitions)
+                            {
+                                var regionRegex = (string)partition["regionRegex"];
+                                allRegionRegex.Add(regionRegex);
+                            }
+
+                            _allRegionRegex = allRegionRegex;
+                        }
+                    }
+                    finally
+                    {
+                        if (_readerWriterLock.IsWriteLockHeld)
+                        {
+                            _readerWriterLock.ExitWriteLock();
+                        }
                     }
                 }
+
                 return _allRegionRegex;
             }
         }
@@ -463,26 +490,52 @@ namespace Amazon.Internal
         {
             try
             {
-                lock (_regionEndpointMapLock)
+                try
                 {
+                    _readerWriterLock.EnterReadLock();
+                    
                     IRegionEndpoint endpoint;
                     if (_regionEndpointMap.TryGetValue(regionName, out endpoint))
                     {
                         return endpoint;
                     }
-                    else
+                }
+                finally
+                {
+                    if (_readerWriterLock.IsReadLockHeld)
                     {
-                        JsonData partitions = _root["partitions"];
-                        foreach (JsonData partition in partitions)
+                        _readerWriterLock.ExitReadLock();
+                    }
+                }
+
+                try
+                {
+                    _readerWriterLock.EnterWriteLock();
+
+                    IRegionEndpoint endpoint;
+                    // Check again to see if region is in cache in case another thread got the write lock before and filled the cache.
+                    if (_regionEndpointMap.TryGetValue(regionName, out endpoint))
+                    {
+                        return endpoint;
+                    }
+
+                    JsonData partitions = _root["partitions"];
+                    foreach (JsonData partition in partitions)
+                    {
+                        string description;
+                        if (IsRegionInPartition(regionName, partition, out description))
                         {
-                            string description;
-                            if (IsRegionInPartition(regionName, partition, out description))
-                            {
-                                endpoint = new RegionEndpointV3(regionName, description, partition, partition["services"]);
-                                _regionEndpointMap.Add(regionName, endpoint);
-                                return endpoint;
-                            }
+                            endpoint = new RegionEndpointV3(regionName, description, partition, partition["services"]);
+                            _regionEndpointMap.Add(regionName, endpoint);
+                            return endpoint;
                         }
+                    }
+                }
+                finally
+                {
+                    if (_readerWriterLock.IsWriteLockHeld)
+                    {
+                        _readerWriterLock.ExitWriteLock();
                     }
                 }
             }
@@ -500,31 +553,98 @@ namespace Amazon.Internal
         /// </summary>
         private IRegionEndpoint GetNonstandardRegionEndpoint(string regionName)
         {
-            // default to "aws" partition
-            JsonData partitionData = _root["partitions"][0];
-            string regionDescription = GetUnknownRegionDescription(regionName);
-            JsonData servicesData = _emptyDictionaryJsonData;
-            
-            foreach (JsonData partition in _root["partitions"])
+            try
             {
-                JsonData partitionServices = partition["services"];
-                foreach (string service in partitionServices.PropertyNames)
+                _readerWriterLock.EnterReadLock();
+                
+                IRegionEndpoint regionEndpoint;
+                if (_nonStandardRegionNameToObjectMap.TryGetValue(regionName, out regionEndpoint))
                 {
-                    if(partitionServices[service]!=null&& partitionServices[service].Count>0)
-                    {
-                        JsonData serviceData = partitionServices[service];
-                        if (serviceData != null && serviceData["endpoints"][regionName] != null)
-                        {
-                            partitionData = partition;
-                            servicesData = partitionServices;
-                            break;
-                        }
-                    }
+                    return regionEndpoint;
+                }
+            }
+            finally
+            {
+                if (_readerWriterLock.IsReadLockHeld)
+                {
+                    _readerWriterLock.ExitReadLock();
                 }
             }
 
-            return new RegionEndpointV3(regionName, regionDescription, partitionData, servicesData);
+            try
+            {
+                _readerWriterLock.EnterWriteLock();
+                
+                IRegionEndpoint regionEndpoint;
+                // Check again to see if region is in cache in case another thread got the write lock before and filled the cache.
+                if (_nonStandardRegionNameToObjectMap.TryGetValue(regionName, out regionEndpoint))
+                {
+                    return regionEndpoint;
+                }
+
+                // default to "aws" partition
+                JsonData partitionData = _root["partitions"][0];
+                string regionDescription = GetUnknownRegionDescription(regionName);
+                JsonData servicesData = _emptyDictionaryJsonData;
+                bool foundContainingPartition = false;
+
+                const string validRegionRegexStr = @"^[a-zA-Z0-9]([a-zA-Z0-9\-]*[a-zA-Z0-9])?$";
+                var match = Regex.Match(regionName, validRegionRegexStr, RegexOptions.Compiled);
+
+                foreach (JsonData partition in _root["partitions"])
+                {
+                    JsonData partitionServices = partition["services"];
+                    foreach (string service in partitionServices.PropertyNames)
+                    {
+                        if (partitionServices[service] != null && partitionServices[service].Count > 0)
+                        {
+                            JsonData serviceData = partitionServices[service];
+                            if (serviceData != null && serviceData["endpoints"][regionName] != null)
+                            {
+                                partitionData = partition;
+                                servicesData = partitionServices;
+                                foundContainingPartition = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+                if (!foundContainingPartition && !match.Success)
+                {
+                    throw new ArgumentException("Invalid region endpoint provided");
+                }
+                regionEndpoint = new RegionEndpointV3(regionName, regionDescription, partitionData, servicesData);
+                _nonStandardRegionNameToObjectMap.Add(regionName, regionEndpoint);
+                return regionEndpoint;
+            }
+            finally
+            {
+                if (_readerWriterLock.IsWriteLockHeld)
+                {
+                    _readerWriterLock.ExitWriteLock();
+                }
+            }
         }
         private static JsonData _emptyDictionaryJsonData = JsonMapper.ToObject("{}");
+        private bool disposedValue;
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                    _readerWriterLock.Dispose();
+                }
+
+                disposedValue = true;
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
+        }
     }
 }

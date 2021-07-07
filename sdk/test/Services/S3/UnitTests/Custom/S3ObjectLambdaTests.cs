@@ -67,8 +67,8 @@ namespace AWSSDK.UnitTests
         [DataRow("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner", "us-west-2", S3ConfigFlags.Accelerate, "Invalid configuration S3ObjectLambda access points do not support accelerate")]
         [DataRow("arn:aws-us-gov:s3-object-lambda:us-gov-west-1:123456789012:accesspoint/mybanner", "fips-us-gov-east-1", S3ConfigFlags.None, "Invalid configuration, cross region S3ObjectLambda access point ARN")]
         [DataRow("arn:aws-us-gov:s3-object-lambda:us-gov-west-1:123456789012:accesspoint/mybanner", "fips-us-gov-east-1", S3ConfigFlags.ArnRegion, "Invalid configuration, FIPS region does not match ARN region")]
-        [DataRow("arn:aws-us-gov:s3:fips-us-gov-west-1:123456789012:accesspoint/myendpoint", "", S3ConfigFlags.None, "Invalid ARN, FIPS region not allowed in ARN")]
-        [DataRow("arn:aws-us-gov:s3:us-gov-west-1-fips:123456789012:accesspoint/myendpoint", "", S3ConfigFlags.None, "Invalid ARN, FIPS region not allowed in ARN")]
+        [DataRow("arn:aws-us-gov:s3:fips-us-gov-west-1:123456789012:accesspoint/myendpoint", "", S3ConfigFlags.None, "Invalid region endpoint provided")]
+        [DataRow("arn:aws-us-gov:s3:us-gov-west-1-fips:123456789012:accesspoint/myendpoint", "", S3ConfigFlags.None, "Invalid region endpoint provided")]
         public void InvalidConfigurationTests(string arnString, string region, S3ConfigFlags flags, string expectedErrorMessage)
         {
             Exception exception = null;
@@ -92,7 +92,14 @@ namespace AWSSDK.UnitTests
             }
 
             Assert.IsNotNull(exception, "Expected exception, but got result " + result?.Endpoint);
-            Assert.IsInstanceOfType(exception, typeof(AmazonClientException), "AmazonClientException expected");
+            if(region == string.Empty)
+            {
+                Assert.IsInstanceOfType(exception, typeof(ArgumentException), "ArgumentException expected");
+            }
+            else
+            {
+                Assert.IsInstanceOfType(exception, typeof(AmazonClientException), "AmazonClientException expected");
+            }
             Assert.AreEqual(expectedErrorMessage, exception.Message);
         }
 
