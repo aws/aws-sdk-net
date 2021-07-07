@@ -31,6 +31,76 @@ namespace Amazon.MQ.Model
     /// <summary>
     /// Container for the parameters to the CreateBroker operation.
     /// Creates a broker. Note: This API is asynchronous.
+    /// 
+    ///  
+    /// <para>
+    /// To create a broker, you must either use the AmazonMQFullAccess IAM policy or include
+    /// the following EC2 permissions in your IAM policy.
+    /// </para>
+    ///  <ul><li>
+    /// <para>
+    /// ec2:CreateNetworkInterface
+    /// </para>
+    ///  
+    /// <para>
+    /// This permission is required to allow Amazon MQ to create an elastic network interface
+    /// (ENI) on behalf of your account.
+    /// </para>
+    /// </li> <li>
+    /// <para>
+    /// ec2:CreateNetworkInterfacePermission
+    /// </para>
+    ///  
+    /// <para>
+    /// This permission is required to attach the ENI to the broker instance.
+    /// </para>
+    /// </li> <li>
+    /// <para>
+    /// ec2:DeleteNetworkInterface
+    /// </para>
+    /// </li> <li>
+    /// <para>
+    /// ec2:DeleteNetworkInterfacePermission
+    /// </para>
+    /// </li> <li>
+    /// <para>
+    /// ec2:DetachNetworkInterface
+    /// </para>
+    /// </li> <li>
+    /// <para>
+    /// ec2:DescribeInternetGateways
+    /// </para>
+    /// </li> <li>
+    /// <para>
+    /// ec2:DescribeNetworkInterfaces
+    /// </para>
+    /// </li> <li>
+    /// <para>
+    /// ec2:DescribeNetworkInterfacePermissions
+    /// </para>
+    /// </li> <li>
+    /// <para>
+    /// ec2:DescribeRouteTables
+    /// </para>
+    /// </li> <li>
+    /// <para>
+    /// ec2:DescribeSecurityGroups
+    /// </para>
+    /// </li> <li>
+    /// <para>
+    /// ec2:DescribeSubnets
+    /// </para>
+    /// </li> <li>
+    /// <para>
+    /// ec2:DescribeVpcs
+    /// </para>
+    /// </li></ul> 
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/amazon-mq-setting-up.html#create-iam-user">Create
+    /// an IAM User and Get Your AWS Credentials</a> and <a href="https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/connecting-to-amazon-mq.html#never-modify-delete-elastic-network-interface">Never
+    /// Modify or Delete the Amazon MQ Elastic Network Interface</a> in the <i>Amazon MQ Developer
+    /// Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateBrokerRequest : AmazonMQRequest
     {
@@ -55,8 +125,10 @@ namespace Amazon.MQ.Model
         private List<User> _users = new List<User>();
 
         /// <summary>
-        /// Gets and sets the property AuthenticationStrategy. The authentication strategy used
-        /// to secure the broker.
+        /// Gets and sets the property AuthenticationStrategy. 
+        /// <para>
+        /// Optional. The authentication strategy used to secure the broker. The default is SIMPLE.
+        /// </para>
         /// </summary>
         public AuthenticationStrategy AuthenticationStrategy
         {
@@ -71,11 +143,15 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AutoMinorVersionUpgrade. Required. Enables automatic upgrades
-        /// to new minor versions for brokers, as Apache releases the versions. The automatic
-        /// upgrades occur during the maintenance window of the broker or after a manual broker
-        /// reboot.
+        /// Gets and sets the property AutoMinorVersionUpgrade. 
+        /// <para>
+        /// Enables automatic upgrades to new minor versions for brokers, as new versions are
+        /// released and supported by Amazon MQ. Automatic upgrades occur during the scheduled
+        /// maintenance window of the broker or after a manual broker reboot. Set to true by default,
+        /// if no value is specified.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool AutoMinorVersionUpgrade
         {
             get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
@@ -89,11 +165,14 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BrokerName. Required. The name of the broker. This value
-        /// must be unique in your AWS account, 1-50 characters long, must contain only letters,
-        /// numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard
-        /// characters, or special characters.
+        /// Gets and sets the property BrokerName. 
+        /// <para>
+        /// Required. The broker's name. This value must be unique in your AWS account, 1-50 characters
+        /// long, must contain only letters, numbers, dashes, and underscores, and must not contain
+        /// white spaces, brackets, wildcard characters, or special characters.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BrokerName
         {
             get { return this._brokerName; }
@@ -107,7 +186,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Configuration. A list of information about the configuration.
+        /// Gets and sets the property Configuration. 
+        /// <para>
+        /// A list of information about the configuration.
+        /// </para>
         /// </summary>
         public ConfigurationId Configuration
         {
@@ -122,10 +204,13 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreatorRequestId. The unique ID that the requester receives
-        /// for the created broker. Amazon MQ passes your ID with the API action. Note: We recommend
-        /// using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit
-        /// the creatorRequestId if your application doesn't require idempotency.
+        /// Gets and sets the property CreatorRequestId. 
+        /// <para>
+        /// The unique ID that the requester receives for the created broker. Amazon MQ passes
+        /// your ID with the API action. Note: We recommend using a Universally Unique Identifier
+        /// (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application
+        /// doesn't require idempotency.
+        /// </para>
         /// </summary>
         public string CreatorRequestId
         {
@@ -140,8 +225,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeploymentMode. Required. The deployment mode of the broker.
+        /// Gets and sets the property DeploymentMode. 
+        /// <para>
+        /// Required. The broker's deployment mode.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DeploymentMode DeploymentMode
         {
             get { return this._deploymentMode; }
@@ -155,7 +244,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EncryptionOptions. Encryption options for the broker.
+        /// Gets and sets the property EncryptionOptions. 
+        /// <para>
+        /// Encryption options for the broker. Does not apply to RabbitMQ brokers.
+        /// </para>
         /// </summary>
         public EncryptionOptions EncryptionOptions
         {
@@ -170,9 +262,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EngineType. Required. The type of broker engine. Note:
-        /// Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+        /// Gets and sets the property EngineType. 
+        /// <para>
+        /// Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EngineType EngineType
         {
             get { return this._engineType; }
@@ -186,9 +281,14 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EngineVersion. Required. The version of the broker engine.
-        /// For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        /// Required. The broker engine's version. For a list of supported engine versions, see
+        /// <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported
+        /// engines</a>.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EngineVersion
         {
             get { return this._engineVersion; }
@@ -202,8 +302,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HostInstanceType. Required. The broker's instance type.
+        /// Gets and sets the property HostInstanceType. 
+        /// <para>
+        /// Required. The broker's instance type.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string HostInstanceType
         {
             get { return this._hostInstanceType; }
@@ -217,8 +321,11 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LdapServerMetadata. The metadata of the LDAP server used
-        /// to authenticate and authorize connections to the broker.
+        /// Gets and sets the property LdapServerMetadata. 
+        /// <para>
+        /// Optional. The metadata of the LDAP server used to authenticate and authorize connections
+        /// to the broker. Does not apply to RabbitMQ brokers.
+        /// </para>
         /// </summary>
         public LdapServerMetadataInput LdapServerMetadata
         {
@@ -233,7 +340,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Logs. Enables Amazon CloudWatch logging for brokers.
+        /// Gets and sets the property Logs. 
+        /// <para>
+        /// Enables Amazon CloudWatch logging for brokers.
+        /// </para>
         /// </summary>
         public Logs Logs
         {
@@ -248,8 +358,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaintenanceWindowStartTime. The parameters that determine
-        /// the WeeklyStartTime.
+        /// Gets and sets the property MaintenanceWindowStartTime. 
+        /// <para>
+        /// The parameters that determine the WeeklyStartTime.
+        /// </para>
         /// </summary>
         public WeeklyStartTime MaintenanceWindowStartTime
         {
@@ -264,9 +376,13 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PubliclyAccessible. Required. Enables connections from
-        /// applications outside of the VPC that hosts the broker's subnets.
+        /// Gets and sets the property PubliclyAccessible. 
+        /// <para>
+        /// Enables connections from applications outside of the VPC that hosts the broker's subnets.
+        /// Set to false by default, if no value is provided.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool PubliclyAccessible
         {
             get { return this._publiclyAccessible.GetValueOrDefault(); }
@@ -280,8 +396,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SecurityGroups. The list of security groups (1 minimum,
-        /// 5 maximum) that authorizes connections to brokers.
+        /// Gets and sets the property SecurityGroups. 
+        /// <para>
+        /// The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
+        /// </para>
         /// </summary>
         public List<string> SecurityGroups
         {
@@ -296,7 +414,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StorageType. The broker's storage type.
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// The broker's storage type.
+        /// </para>
         /// </summary>
         public BrokerStorageType StorageType
         {
@@ -311,12 +432,25 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SubnetIds. The list of groups that define which subnets
-        /// and IP ranges the broker can use from different Availability Zones. A SINGLE_INSTANCE
+        /// Gets and sets the property SubnetIds. 
+        /// <para>
+        /// The list of groups that define which subnets and IP ranges the broker can use from
+        /// different Availability Zones. If you specify more than one subnet, the subnets must
+        /// be in different Availability Zones. Amazon MQ will not be able to create VPC endpoints
+        /// for your broker with multiple subnets in the same Availability Zone. A SINGLE_INSTANCE
         /// deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ
-        /// deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ)
-        /// has no subnet requirements when deployed with public accessibility, deployment without
-        /// public accessibility requires at least one subnet.
+        /// Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon
+        /// MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility.
+        /// Deployment without public accessibility requires at least one subnet.
+        /// </para>
+        ///  <important>
+        /// <para>
+        /// If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared
+        /// VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong
+        /// must be owned by your AWS account. Amazon MQ will not be able to create VPC endpoints
+        /// in VPCs that are not owned by your AWS account.
+        /// </para>
+        /// </important>
         /// </summary>
         public List<string> SubnetIds
         {
@@ -331,7 +465,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. Create tags when creating the broker.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Create tags when creating the broker.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
         {
@@ -346,13 +483,22 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Users. Required. The list of broker users (persons or applications)
-        /// who can access queues and topics. For RabbitMQ brokers, one and only one administrative
+        /// Gets and sets the property Users. 
+        /// <para>
+        /// Required. The list of broker users (persons or applications) who can access queues
+        /// and topics. This value can contain only alphanumeric characters, dashes, periods,
+        /// underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+        /// </para>
+        ///  <important><title>Amazon MQ for RabbitMQ</title> 
+        /// <para>
+        /// When you create an Amazon MQ for RabbitMQ broker, one and only one administrative
         /// user is accepted and created when a broker is first provisioned. All subsequent broker
         /// users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ
-        /// Web Console. This value can contain only alphanumeric characters, dashes, periods,
-        /// underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+        /// web console.
+        /// </para>
+        /// </important>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<User> Users
         {
             get { return this._users; }

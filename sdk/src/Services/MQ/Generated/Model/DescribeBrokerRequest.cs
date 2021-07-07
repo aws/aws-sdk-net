@@ -37,10 +37,10 @@ namespace Amazon.MQ.Model
         private string _brokerId;
 
         /// <summary>
-        /// Gets and sets the property BrokerId. The name of the broker. This value must be unique
-        /// in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes,
-        /// and underscores, and must not contain whitespaces, brackets, wildcard characters,
-        /// or special characters.
+        /// Gets and sets the property BrokerId. 
+        /// <para>
+        /// The unique ID that Amazon MQ generates for the broker.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string BrokerId

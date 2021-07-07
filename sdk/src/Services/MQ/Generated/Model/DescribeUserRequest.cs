@@ -38,8 +38,10 @@ namespace Amazon.MQ.Model
         private string _username;
 
         /// <summary>
-        /// Gets and sets the property BrokerId. The unique ID that Amazon MQ generates for the
-        /// broker.
+        /// Gets and sets the property BrokerId. 
+        /// <para>
+        /// The unique ID that Amazon MQ generates for the broker.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string BrokerId
@@ -55,9 +57,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Username. The username of the ActiveMQ user. This value
-        /// can contain only alphanumeric characters, dashes, periods, underscores, and tildes
-        /// (- . _ ~). This value must be 2-100 characters long.
+        /// Gets and sets the property Username. 
+        /// <para>
+        /// The username of the ActiveMQ user. This value can contain only alphanumeric characters,
+        /// dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
+        /// long.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Username

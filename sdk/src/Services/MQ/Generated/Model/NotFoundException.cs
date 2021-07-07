@@ -124,7 +124,10 @@ namespace Amazon.MQ.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property ErrorAttribute. The attribute which caused the error.
+        /// Gets and sets the property ErrorAttribute. 
+        /// <para>
+        /// The attribute which caused the error.
+        /// </para>
         /// </summary>
         public string ErrorAttribute
         {

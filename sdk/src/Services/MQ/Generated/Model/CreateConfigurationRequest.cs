@@ -42,8 +42,11 @@ namespace Amazon.MQ.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property AuthenticationStrategy. The authentication strategy associated
-        /// with the configuration.
+        /// Gets and sets the property AuthenticationStrategy. 
+        /// <para>
+        /// Optional. The authentication strategy associated with the configuration. The default
+        /// is SIMPLE.
+        /// </para>
         /// </summary>
         public AuthenticationStrategy AuthenticationStrategy
         {
@@ -58,9 +61,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EngineType. Required. The type of broker engine. Note:
-        /// Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+        /// Gets and sets the property EngineType. 
+        /// <para>
+        /// Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EngineType EngineType
         {
             get { return this._engineType; }
@@ -74,9 +80,14 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EngineVersion. Required. The version of the broker engine.
-        /// For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        /// Required. The broker engine's version. For a list of supported engine versions, see
+        /// <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported
+        /// engines</a>.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EngineVersion
         {
             get { return this._engineVersion; }
@@ -90,10 +101,14 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. Required. The name of the configuration. This value
-        /// can contain only alphanumeric characters, dashes, periods, underscores, and tildes
-        /// (- . _ ~). This value must be 1-150 characters long.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Required. The name of the configuration. This value can contain only alphanumeric
+        /// characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be
+        /// 1-150 characters long.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -107,7 +122,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. Create tags when creating the configuration.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Create tags when creating the configuration.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
         {

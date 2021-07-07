@@ -99,6 +99,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     response.Logs = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("maintenanceWindowStartTime", targetDepth))
+                {
+                    var unmarshaller = WeeklyStartTimeUnmarshaller.Instance;
+                    response.MaintenanceWindowStartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("securityGroups", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

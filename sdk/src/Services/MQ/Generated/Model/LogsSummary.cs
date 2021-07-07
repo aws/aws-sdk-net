@@ -41,8 +41,11 @@ namespace Amazon.MQ.Model
         private PendingLogs _pending;
 
         /// <summary>
-        /// Gets and sets the property Audit. Enables audit logging. Every user management action
-        /// made using JMX or the ActiveMQ Web Console is logged.
+        /// Gets and sets the property Audit. 
+        /// <para>
+        /// Enables audit logging. Every user management action made using JMX or the ActiveMQ
+        /// Web Console is logged.
+        /// </para>
         /// </summary>
         public bool Audit
         {
@@ -57,8 +60,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AuditLogGroup. The location of the CloudWatch Logs log
-        /// group where audit logs are sent.
+        /// Gets and sets the property AuditLogGroup. 
+        /// <para>
+        /// The location of the CloudWatch Logs log group where audit logs are sent.
+        /// </para>
         /// </summary>
         public string AuditLogGroup
         {
@@ -73,8 +78,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property General. Enables general logging.
+        /// Gets and sets the property General. 
+        /// <para>
+        /// Enables general logging.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool General
         {
             get { return this._general.GetValueOrDefault(); }
@@ -88,9 +97,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GeneralLogGroup. The location of the CloudWatch Logs log
-        /// group where general logs are sent.
+        /// Gets and sets the property GeneralLogGroup. 
+        /// <para>
+        /// The location of the CloudWatch Logs log group where general logs are sent.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string GeneralLogGroup
         {
             get { return this._generalLogGroup; }
@@ -104,8 +116,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Pending. The list of information about logs pending to
-        /// be deployed for the specified broker.
+        /// Gets and sets the property Pending. 
+        /// <para>
+        /// The list of information about logs pending to be deployed for the specified broker.
+        /// </para>
         /// </summary>
         public PendingLogs Pending
         {

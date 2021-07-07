@@ -37,8 +37,11 @@ namespace Amazon.MQ.Model
         private bool? _general;
 
         /// <summary>
-        /// Gets and sets the property Audit. Enables audit logging. Every user management action
-        /// made using JMX or the ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.
+        /// Gets and sets the property Audit. 
+        /// <para>
+        /// Enables audit logging. Every user management action made using JMX or the ActiveMQ
+        /// Web Console is logged. Does not apply to RabbitMQ brokers.
+        /// </para>
         /// </summary>
         public bool Audit
         {
@@ -53,7 +56,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property General. Enables general logging.
+        /// Gets and sets the property General. 
+        /// <para>
+        /// Enables general logging.
+        /// </para>
         /// </summary>
         public bool General
         {

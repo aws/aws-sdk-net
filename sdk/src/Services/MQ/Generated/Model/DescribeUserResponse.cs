@@ -40,8 +40,10 @@ namespace Amazon.MQ.Model
         private string _username;
 
         /// <summary>
-        /// Gets and sets the property BrokerId. Required. The unique ID that Amazon MQ generates
-        /// for the broker.
+        /// Gets and sets the property BrokerId. 
+        /// <para>
+        /// Required. The unique ID that Amazon MQ generates for the broker.
+        /// </para>
         /// </summary>
         public string BrokerId
         {
@@ -56,8 +58,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ConsoleAccess. Enables access to the the ActiveMQ Web Console
-        /// for the ActiveMQ user.
+        /// Gets and sets the property ConsoleAccess. 
+        /// <para>
+        /// Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+        /// </para>
         /// </summary>
         public bool ConsoleAccess
         {
@@ -72,9 +76,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Groups. The list of groups (20 maximum) to which the ActiveMQ
-        /// user belongs. This value can contain only alphanumeric characters, dashes, periods,
-        /// underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+        /// Gets and sets the property Groups. 
+        /// <para>
+        /// The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can
+        /// contain only alphanumeric characters, dashes, periods, underscores, and tildes (-
+        /// . _ ~). This value must be 2-100 characters long.
+        /// </para>
         /// </summary>
         public List<string> Groups
         {
@@ -89,8 +96,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Pending. The status of the changes pending for the ActiveMQ
-        /// user.
+        /// Gets and sets the property Pending. 
+        /// <para>
+        /// The status of the changes pending for the ActiveMQ user.
+        /// </para>
         /// </summary>
         public UserPendingChanges Pending
         {
@@ -105,9 +114,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Username. Required. The username of the ActiveMQ user.
-        /// This value can contain only alphanumeric characters, dashes, periods, underscores,
-        /// and tildes (- . _ ~). This value must be 2-100 characters long.
+        /// Gets and sets the property Username. 
+        /// <para>
+        /// Required. The username of the ActiveMQ user. This value can contain only alphanumeric
+        /// characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be
+        /// 2-100 characters long.
+        /// </para>
         /// </summary>
         public string Username
         {

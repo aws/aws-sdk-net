@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MQ.Model
 {
     /// <summary>
-    /// The Amazon Resource Name (ARN) of the broker.
+    /// Returns information about all brokers.
     /// </summary>
     public partial class BrokerSummary
     {
@@ -43,7 +43,10 @@ namespace Amazon.MQ.Model
         private string _hostInstanceType;
 
         /// <summary>
-        /// Gets and sets the property BrokerArn. The Amazon Resource Name (ARN) of the broker.
+        /// Gets and sets the property BrokerArn. 
+        /// <para>
+        /// The broker's Amazon Resource Name (ARN).
+        /// </para>
         /// </summary>
         public string BrokerArn
         {
@@ -58,8 +61,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BrokerId. The unique ID that Amazon MQ generates for the
-        /// broker.
+        /// Gets and sets the property BrokerId. 
+        /// <para>
+        /// The unique ID that Amazon MQ generates for the broker.
+        /// </para>
         /// </summary>
         public string BrokerId
         {
@@ -74,10 +79,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BrokerName. The name of the broker. This value must be
-        /// unique in your AWS account, 1-50 characters long, must contain only letters, numbers,
-        /// dashes, and underscores, and must not contain whitespaces, brackets, wildcard characters,
-        /// or special characters.
+        /// Gets and sets the property BrokerName. 
+        /// <para>
+        /// The broker's name. This value is unique in your AWS account, 1-50 characters long,
+        /// and containing only letters, numbers, dashes, and underscores, and must not contain
+        /// white spaces, brackets, wildcard characters, or special characters.
+        /// </para>
         /// </summary>
         public string BrokerName
         {
@@ -92,7 +99,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BrokerState. The status of the broker.
+        /// Gets and sets the property BrokerState. 
+        /// <para>
+        /// The broker's status.
+        /// </para>
         /// </summary>
         public BrokerState BrokerState
         {
@@ -107,7 +117,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Created. The time when the broker was created.
+        /// Gets and sets the property Created. 
+        /// <para>
+        /// The time when the broker was created.
+        /// </para>
         /// </summary>
         public DateTime Created
         {
@@ -122,8 +135,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeploymentMode. Required. The deployment mode of the broker.
+        /// Gets and sets the property DeploymentMode. 
+        /// <para>
+        /// The broker's deployment mode.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DeploymentMode DeploymentMode
         {
             get { return this._deploymentMode; }
@@ -137,8 +154,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EngineType. Required. The type of broker engine.
+        /// Gets and sets the property EngineType. 
+        /// <para>
+        /// The type of broker engine.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EngineType EngineType
         {
             get { return this._engineType; }
@@ -152,7 +173,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HostInstanceType. The broker's instance type.
+        /// Gets and sets the property HostInstanceType. 
+        /// <para>
+        /// The broker's instance type.
+        /// </para>
         /// </summary>
         public string HostInstanceType
         {

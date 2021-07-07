@@ -39,8 +39,10 @@ namespace Amazon.MQ.Model
         private List<UserSummary> _users = new List<UserSummary>();
 
         /// <summary>
-        /// Gets and sets the property BrokerId. Required. The unique ID that Amazon MQ generates
-        /// for the broker.
+        /// Gets and sets the property BrokerId. 
+        /// <para>
+        /// Required. The unique ID that Amazon MQ generates for the broker.
+        /// </para>
         /// </summary>
         public string BrokerId
         {
@@ -55,9 +57,11 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. Required. The maximum number of ActiveMQ users
-        /// that can be returned per page (20 by default). This value must be an integer from
-        /// 5 to 100.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// Required. The maximum number of ActiveMQ users that can be returned per page (20 by
+        /// default). This value must be an integer from 5 to 100.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=100)]
         public int MaxResults
@@ -73,8 +77,11 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. The token that specifies the next page of results
-        /// Amazon MQ should return. To request the first page, leave nextToken empty.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token that specifies the next page of results Amazon MQ should return. To request
+        /// the first page, leave nextToken empty.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -89,8 +96,11 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Users. Required. The list of all ActiveMQ usernames for
-        /// the specified broker.
+        /// Gets and sets the property Users. 
+        /// <para>
+        /// Required. The list of all ActiveMQ usernames for the specified broker. Does not apply
+        /// to RabbitMQ brokers.
+        /// </para>
         /// </summary>
         public List<UserSummary> Users
         {

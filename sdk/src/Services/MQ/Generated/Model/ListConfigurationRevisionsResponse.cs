@@ -39,8 +39,10 @@ namespace Amazon.MQ.Model
         private List<ConfigurationRevision> _revisions = new List<ConfigurationRevision>();
 
         /// <summary>
-        /// Gets and sets the property ConfigurationId. The unique ID that Amazon MQ generates
-        /// for the configuration.
+        /// Gets and sets the property ConfigurationId. 
+        /// <para>
+        /// The unique ID that Amazon MQ generates for the configuration.
+        /// </para>
         /// </summary>
         public string ConfigurationId
         {
@@ -55,9 +57,11 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. The maximum number of configuration revisions
-        /// that can be returned per page (20 by default). This value must be an integer from
-        /// 5 to 100.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of configuration revisions that can be returned per page (20 by
+        /// default). This value must be an integer from 5 to 100.
+        /// </para>
         /// </summary>
         public int MaxResults
         {
@@ -72,8 +76,11 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. The token that specifies the next page of results
-        /// Amazon MQ should return. To request the first page, leave nextToken empty.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token that specifies the next page of results Amazon MQ should return. To request
+        /// the first page, leave nextToken empty.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -88,8 +95,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Revisions. The list of all revisions for the specified
-        /// configuration.
+        /// Gets and sets the property Revisions. 
+        /// <para>
+        /// The list of all revisions for the specified configuration.
+        /// </para>
         /// </summary>
         public List<ConfigurationRevision> Revisions
         {

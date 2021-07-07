@@ -41,8 +41,10 @@ namespace Amazon.MQ.Model
         private string _username;
 
         /// <summary>
-        /// Gets and sets the property BrokerId. The unique ID that Amazon MQ generates for the
-        /// broker.
+        /// Gets and sets the property BrokerId. 
+        /// <para>
+        /// The unique ID that Amazon MQ generates for the broker.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string BrokerId
@@ -58,8 +60,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ConsoleAccess. Enables access to the the ActiveMQ Web Console
-        /// for the ActiveMQ user.
+        /// Gets and sets the property ConsoleAccess. 
+        /// <para>
+        /// Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+        /// </para>
         /// </summary>
         public bool ConsoleAccess
         {
@@ -74,9 +78,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Groups. The list of groups (20 maximum) to which the ActiveMQ
-        /// user belongs. This value can contain only alphanumeric characters, dashes, periods,
-        /// underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+        /// Gets and sets the property Groups. 
+        /// <para>
+        /// The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can
+        /// contain only alphanumeric characters, dashes, periods, underscores, and tildes (-
+        /// . _ ~). This value must be 2-100 characters long.
+        /// </para>
         /// </summary>
         public List<string> Groups
         {
@@ -91,9 +98,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Password. The password of the user. This value must be
-        /// at least 12 characters long, must contain at least 4 unique characters, and must not
-        /// contain commas.
+        /// Gets and sets the property Password. 
+        /// <para>
+        /// The password of the user. This value must be at least 12 characters long, must contain
+        /// at least 4 unique characters, and must not contain commas, colons, or equal signs
+        /// (,:=).
+        /// </para>
         /// </summary>
         public string Password
         {
@@ -108,9 +118,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Username. Required. The username of the ActiveMQ user.
-        /// This value can contain only alphanumeric characters, dashes, periods, underscores,
-        /// and tildes (- . _ ~). This value must be 2-100 characters long.
+        /// Gets and sets the property Username. 
+        /// <para>
+        /// The username of the ActiveMQ user. This value can contain only alphanumeric characters,
+        /// dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
+        /// long.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Username

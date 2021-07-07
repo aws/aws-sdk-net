@@ -37,8 +37,10 @@ namespace Amazon.MQ.Model
         private string _configurationId;
 
         /// <summary>
-        /// Gets and sets the property ConfigurationId. The unique ID that Amazon MQ generates
-        /// for the configuration.
+        /// Gets and sets the property ConfigurationId. 
+        /// <para>
+        /// The unique ID that Amazon MQ generates for the configuration.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ConfigurationId

@@ -41,7 +41,10 @@ namespace Amazon.MQ.Model
         private List<SanitizationWarning> _warnings = new List<SanitizationWarning>();
 
         /// <summary>
-        /// Gets and sets the property Arn. Required. The Amazon Resource Name (ARN) of the configuration.
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// Required. The Amazon Resource Name (ARN) of the configuration.
+        /// </para>
         /// </summary>
         public string Arn
         {
@@ -56,7 +59,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Created. Required. The date and time of the configuration.
+        /// Gets and sets the property Created. 
+        /// <para>
+        /// Required. The date and time of the configuration.
+        /// </para>
         /// </summary>
         public DateTime Created
         {
@@ -71,8 +77,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. Required. The unique ID that Amazon MQ generates for
-        /// the configuration.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// Required. The unique ID that Amazon MQ generates for the configuration.
+        /// </para>
         /// </summary>
         public string Id
         {
@@ -87,7 +95,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LatestRevision. The latest revision of the configuration.
+        /// Gets and sets the property LatestRevision. 
+        /// <para>
+        /// The latest revision of the configuration.
+        /// </para>
         /// </summary>
         public ConfigurationRevision LatestRevision
         {
@@ -102,9 +113,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. Required. The name of the configuration. This value
-        /// can contain only alphanumeric characters, dashes, periods, underscores, and tildes
-        /// (- . _ ~). This value must be 1-150 characters long.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Required. The name of the configuration. This value can contain only alphanumeric
+        /// characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be
+        /// 1-150 characters long.
+        /// </para>
         /// </summary>
         public string Name
         {
@@ -119,8 +133,11 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Warnings. The list of the first 20 warnings about the configuration
-        /// XML elements or attributes that were sanitized.
+        /// Gets and sets the property Warnings. 
+        /// <para>
+        /// The list of the first 20 warnings about the configuration XML elements or attributes
+        /// that were sanitized.
+        /// </para>
         /// </summary>
         public List<SanitizationWarning> Warnings
         {

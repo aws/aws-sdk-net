@@ -39,8 +39,10 @@ namespace Amazon.MQ.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property BrokerId. The unique ID that Amazon MQ generates for the
-        /// broker.
+        /// Gets and sets the property BrokerId. 
+        /// <para>
+        /// The unique ID that Amazon MQ generates for the broker.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string BrokerId
@@ -56,8 +58,11 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. The maximum number of ActiveMQ users that can
-        /// be returned per page (20 by default). This value must be an integer from 5 to 100.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of brokers that Amazon MQ can return per page (20 by default).
+        /// This value must be an integer from 5 to 100.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public int MaxResults
@@ -73,8 +78,11 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. The token that specifies the next page of results
-        /// Amazon MQ should return. To request the first page, leave nextToken empty.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token that specifies the next page of results Amazon MQ should return. To request
+        /// the first page, leave nextToken empty.
+        /// </para>
         /// </summary>
         public string NextToken
         {

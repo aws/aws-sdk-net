@@ -37,7 +37,10 @@ namespace Amazon.MQ.Model
         private List<EngineVersion> _engineVersions = new List<EngineVersion>();
 
         /// <summary>
-        /// Gets and sets the property EngineType. The type of broker engine.
+        /// Gets and sets the property EngineType. 
+        /// <para>
+        /// The broker's engine type.
+        /// </para>
         /// </summary>
         public EngineType EngineType
         {
@@ -52,7 +55,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EngineVersions. The list of engine versions.
+        /// Gets and sets the property EngineVersions. 
+        /// <para>
+        /// The list of engine versions.
+        /// </para>
         /// </summary>
         public List<EngineVersion> EngineVersions
         {

@@ -41,7 +41,10 @@ namespace Amazon.MQ.Model
         private List<string> _supportedEngineVersions = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property AvailabilityZones. The list of available az.
+        /// Gets and sets the property AvailabilityZones. 
+        /// <para>
+        /// The list of available az.
+        /// </para>
         /// </summary>
         public List<AvailabilityZone> AvailabilityZones
         {
@@ -56,7 +59,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EngineType. The type of broker engine.
+        /// Gets and sets the property EngineType. 
+        /// <para>
+        /// The broker's engine type.
+        /// </para>
         /// </summary>
         public EngineType EngineType
         {
@@ -71,7 +77,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HostInstanceType. The type of broker instance.
+        /// Gets and sets the property HostInstanceType. 
+        /// <para>
+        /// The broker's instance type.
+        /// </para>
         /// </summary>
         public string HostInstanceType
         {
@@ -86,7 +95,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StorageType. The broker's storage type.
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// The broker's storage type.
+        /// </para>
         /// </summary>
         public BrokerStorageType StorageType
         {
@@ -101,8 +113,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SupportedDeploymentModes. The list of supported deployment
-        /// modes.
+        /// Gets and sets the property SupportedDeploymentModes. 
+        /// <para>
+        /// The list of supported deployment modes.
+        /// </para>
         /// </summary>
         public List<string> SupportedDeploymentModes
         {
@@ -117,7 +131,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SupportedEngineVersions. The list of supported engine versions.
+        /// Gets and sets the property SupportedEngineVersions. 
+        /// <para>
+        /// The list of supported engine versions.
+        /// </para>
         /// </summary>
         public List<string> SupportedEngineVersions
         {

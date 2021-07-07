@@ -63,8 +63,10 @@ namespace Amazon.MQ.Model
         private List<UserSummary> _users = new List<UserSummary>();
 
         /// <summary>
-        /// Gets and sets the property AuthenticationStrategy. The authentication strategy used
-        /// to secure the broker.
+        /// Gets and sets the property AuthenticationStrategy. 
+        /// <para>
+        /// The authentication strategy used to secure the broker. The default is SIMPLE.
+        /// </para>
         /// </summary>
         public AuthenticationStrategy AuthenticationStrategy
         {
@@ -79,10 +81,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AutoMinorVersionUpgrade. Required. Enables automatic upgrades
-        /// to new minor versions for brokers, as Apache releases the versions. The automatic
-        /// upgrades occur during the maintenance window of the broker or after a manual broker
-        /// reboot.
+        /// Gets and sets the property AutoMinorVersionUpgrade. 
+        /// <para>
+        /// Enables automatic upgrades to new minor versions for brokers, as new versions are
+        /// released and supported by Amazon MQ. Automatic upgrades occur during the scheduled
+        /// maintenance window of the broker or after a manual broker reboot.
+        /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
         {
@@ -97,7 +101,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BrokerArn. The Amazon Resource Name (ARN) of the broker.
+        /// Gets and sets the property BrokerArn. 
+        /// <para>
+        /// The broker's Amazon Resource Name (ARN).
+        /// </para>
         /// </summary>
         public string BrokerArn
         {
@@ -112,8 +119,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BrokerId. The unique ID that Amazon MQ generates for the
-        /// broker.
+        /// Gets and sets the property BrokerId. 
+        /// <para>
+        /// The unique ID that Amazon MQ generates for the broker.
+        /// </para>
         /// </summary>
         public string BrokerId
         {
@@ -128,8 +137,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BrokerInstances. A list of information about allocated
-        /// brokers.
+        /// Gets and sets the property BrokerInstances. 
+        /// <para>
+        /// A list of information about allocated brokers.
+        /// </para>
         /// </summary>
         public List<BrokerInstance> BrokerInstances
         {
@@ -144,10 +155,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BrokerName. The name of the broker. This value must be
-        /// unique in your AWS account, 1-50 characters long, must contain only letters, numbers,
-        /// dashes, and underscores, and must not contain whitespaces, brackets, wildcard characters,
-        /// or special characters.
+        /// Gets and sets the property BrokerName. 
+        /// <para>
+        /// The broker's name. This value must be unique in your AWS account, 1-50 characters
+        /// long, must contain only letters, numbers, dashes, and underscores, and must not contain
+        /// white spaces, brackets, wildcard characters, or special characters.
+        /// </para>
         /// </summary>
         public string BrokerName
         {
@@ -162,7 +175,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BrokerState. The status of the broker.
+        /// Gets and sets the property BrokerState. 
+        /// <para>
+        /// The broker's status.
+        /// </para>
         /// </summary>
         public BrokerState BrokerState
         {
@@ -177,8 +193,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Configurations. The list of all revisions for the specified
-        /// configuration.
+        /// Gets and sets the property Configurations. 
+        /// <para>
+        /// The list of all revisions for the specified configuration.
+        /// </para>
         /// </summary>
         public Configurations Configurations
         {
@@ -193,7 +211,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Created. The time when the broker was created.
+        /// Gets and sets the property Created. 
+        /// <para>
+        /// The time when the broker was created.
+        /// </para>
         /// </summary>
         public DateTime Created
         {
@@ -208,7 +229,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeploymentMode. Required. The deployment mode of the broker.
+        /// Gets and sets the property DeploymentMode. 
+        /// <para>
+        /// The broker's deployment mode.
+        /// </para>
         /// </summary>
         public DeploymentMode DeploymentMode
         {
@@ -223,7 +247,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EncryptionOptions. Encryption options for the broker.
+        /// Gets and sets the property EncryptionOptions. 
+        /// <para>
+        /// Encryption options for the broker. Does not apply to RabbitMQ brokers.
+        /// </para>
         /// </summary>
         public EncryptionOptions EncryptionOptions
         {
@@ -238,8 +265,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EngineType. Required. The type of broker engine. Note:
-        /// Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+        /// Gets and sets the property EngineType. 
+        /// <para>
+        /// The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+        /// </para>
         /// </summary>
         public EngineType EngineType
         {
@@ -254,8 +283,11 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EngineVersion. The version of the broker engine. For a
-        /// list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        /// The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported
+        /// engines</a>.
+        /// </para>
         /// </summary>
         public string EngineVersion
         {
@@ -270,7 +302,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HostInstanceType. The broker's instance type.
+        /// Gets and sets the property HostInstanceType. 
+        /// <para>
+        /// The broker's instance type.
+        /// </para>
         /// </summary>
         public string HostInstanceType
         {
@@ -285,8 +320,11 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LdapServerMetadata. The metadata of the LDAP server used
-        /// to authenticate and authorize connections to the broker.
+        /// Gets and sets the property LdapServerMetadata. 
+        /// <para>
+        /// The metadata of the LDAP server used to authenticate and authorize connections to
+        /// the broker.
+        /// </para>
         /// </summary>
         public LdapServerMetadataOutput LdapServerMetadata
         {
@@ -301,8 +339,11 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Logs. The list of information about logs currently enabled
-        /// and pending to be deployed for the specified broker.
+        /// Gets and sets the property Logs. 
+        /// <para>
+        /// The list of information about logs currently enabled and pending to be deployed for
+        /// the specified broker.
+        /// </para>
         /// </summary>
         public LogsSummary Logs
         {
@@ -317,8 +358,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaintenanceWindowStartTime. The parameters that determine
-        /// the WeeklyStartTime.
+        /// Gets and sets the property MaintenanceWindowStartTime. 
+        /// <para>
+        /// The parameters that determine the WeeklyStartTime.
+        /// </para>
         /// </summary>
         public WeeklyStartTime MaintenanceWindowStartTime
         {
@@ -333,8 +376,11 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PendingAuthenticationStrategy. The authentication strategy
-        /// that will be applied when the broker is rebooted.
+        /// Gets and sets the property PendingAuthenticationStrategy. 
+        /// <para>
+        /// The authentication strategy that will be applied when the broker is rebooted. The
+        /// default is SIMPLE.
+        /// </para>
         /// </summary>
         public AuthenticationStrategy PendingAuthenticationStrategy
         {
@@ -349,8 +395,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PendingEngineVersion. The version of the broker engine
-        /// to upgrade to. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+        /// Gets and sets the property PendingEngineVersion. 
+        /// <para>
+        /// The broker engine version to upgrade to. For a list of supported engine versions,
+        /// see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported
+        /// engines</a>.
+        /// </para>
         /// </summary>
         public string PendingEngineVersion
         {
@@ -365,8 +415,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PendingHostInstanceType. The host instance type of the
-        /// broker to upgrade to. For a list of supported instance types, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+        /// Gets and sets the property PendingHostInstanceType. 
+        /// <para>
+        /// The broker's host instance type to upgrade to. For a list of supported instance types,
+        /// see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker
+        /// instance types</a>.
+        /// </para>
         /// </summary>
         public string PendingHostInstanceType
         {
@@ -381,9 +435,11 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PendingLdapServerMetadata. The metadata of the LDAP server
-        /// that will be used to authenticate and authorize connections to the broker once it
-        /// is rebooted.
+        /// Gets and sets the property PendingLdapServerMetadata. 
+        /// <para>
+        /// The metadata of the LDAP server that will be used to authenticate and authorize connections
+        /// to the broker after it is rebooted.
+        /// </para>
         /// </summary>
         public LdapServerMetadataOutput PendingLdapServerMetadata
         {
@@ -398,8 +454,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PendingSecurityGroups. The list of pending security groups
-        /// to authorize connections to brokers.
+        /// Gets and sets the property PendingSecurityGroups. 
+        /// <para>
+        /// The list of pending security groups to authorize connections to brokers.
+        /// </para>
         /// </summary>
         public List<string> PendingSecurityGroups
         {
@@ -414,8 +472,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PubliclyAccessible. Required. Enables connections from
-        /// applications outside of the VPC that hosts the broker's subnets.
+        /// Gets and sets the property PubliclyAccessible. 
+        /// <para>
+        /// Enables connections from applications outside of the VPC that hosts the broker's subnets.
+        /// </para>
         /// </summary>
         public bool PubliclyAccessible
         {
@@ -430,8 +490,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SecurityGroups. The list of security groups (1 minimum,
-        /// 5 maximum) that authorizes connections to brokers.
+        /// Gets and sets the property SecurityGroups. 
+        /// <para>
+        /// The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
+        /// </para>
         /// </summary>
         public List<string> SecurityGroups
         {
@@ -446,7 +508,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StorageType. The broker's storage type.
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// The broker's storage type.
+        /// </para>
         /// </summary>
         public BrokerStorageType StorageType
         {
@@ -461,12 +526,11 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SubnetIds. The list of groups that define which subnets
-        /// and IP ranges the broker can use from different Availability Zones. A SINGLE_INSTANCE
-        /// deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ
-        /// deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ)
-        /// has no subnet requirements when deployed with public accessibility, deployment without
-        /// public accessibility requires at least one subnet.
+        /// Gets and sets the property SubnetIds. 
+        /// <para>
+        /// The list of groups that define which subnets and IP ranges the broker can use from
+        /// different Availability Zones.
+        /// </para>
         /// </summary>
         public List<string> SubnetIds
         {
@@ -481,7 +545,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. The list of all tags associated with this broker.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The list of all tags associated with this broker.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
         {
@@ -496,8 +563,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Users. The list of all broker usernames for the specified
-        /// broker.
+        /// Gets and sets the property Users. 
+        /// <para>
+        /// The list of all broker usernames for the specified broker.
+        /// </para>
         /// </summary>
         public List<UserSummary> Users
         {

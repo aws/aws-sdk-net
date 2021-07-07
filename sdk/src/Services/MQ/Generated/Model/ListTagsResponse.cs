@@ -36,7 +36,10 @@ namespace Amazon.MQ.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Tags. The key-value pair for the resource tag.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The key-value pair for the resource tag.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
         {

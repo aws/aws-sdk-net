@@ -38,9 +38,12 @@ namespace Amazon.MQ.Model
         private int? _revision;
 
         /// <summary>
-        /// Gets and sets the property Created. Required. The date and time of the configuration
-        /// revision.
+        /// Gets and sets the property Created. 
+        /// <para>
+        /// Required. The date and time of the configuration revision.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime Created
         {
             get { return this._created.GetValueOrDefault(); }
@@ -54,7 +57,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description. The description of the configuration revision.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the configuration revision.
+        /// </para>
         /// </summary>
         public string Description
         {
@@ -69,8 +75,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Revision. Required. The revision number of the configuration.
+        /// Gets and sets the property Revision. 
+        /// <para>
+        /// Required. The revision number of the configuration.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Revision
         {
             get { return this._revision.GetValueOrDefault(); }

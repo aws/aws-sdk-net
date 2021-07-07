@@ -125,6 +125,17 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetMaintenanceWindowStartTime())
+                {
+                    context.Writer.WritePropertyName("maintenanceWindowStartTime");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WeeklyStartTimeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MaintenanceWindowStartTime, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSecurityGroups())
                 {
                     context.Writer.WritePropertyName("securityGroups");

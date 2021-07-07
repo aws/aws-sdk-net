@@ -37,8 +37,10 @@ namespace Amazon.MQ.Model
         private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. The Amazon Resource Name (ARN) of the resource
-        /// tag.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the resource tag.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceArn

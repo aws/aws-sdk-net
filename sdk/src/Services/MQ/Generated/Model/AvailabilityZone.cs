@@ -36,7 +36,10 @@ namespace Amazon.MQ.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property Name. Id for the availability zone.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Id for the availability zone.
+        /// </para>
         /// </summary>
         public string Name
         {

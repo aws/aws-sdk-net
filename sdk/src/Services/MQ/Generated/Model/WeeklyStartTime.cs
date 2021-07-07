@@ -39,8 +39,12 @@ namespace Amazon.MQ.Model
         private string _timeZone;
 
         /// <summary>
-        /// Gets and sets the property DayOfWeek. Required. The day of the week.
+        /// Gets and sets the property DayOfWeek. 
+        /// <para>
+        /// Required. The day of the week.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DayOfWeek DayOfWeek
         {
             get { return this._dayOfWeek; }
@@ -54,8 +58,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimeOfDay. Required. The time, in 24-hour format.
+        /// Gets and sets the property TimeOfDay. 
+        /// <para>
+        /// Required. The time, in 24-hour format.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TimeOfDay
         {
             get { return this._timeOfDay; }
@@ -69,8 +77,11 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimeZone. The time zone, UTC by default, in either the
-        /// Country/City format, or the UTC offset format.
+        /// Gets and sets the property TimeZone. 
+        /// <para>
+        /// The time zone, UTC by default, in either the Country/City format, or the UTC offset
+        /// format.
+        /// </para>
         /// </summary>
         public string TimeZone
         {

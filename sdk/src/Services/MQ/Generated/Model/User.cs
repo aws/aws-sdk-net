@@ -29,7 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MQ.Model
 {
     /// <summary>
-    /// A user associated with the broker.
+    /// A user associated with the broker. For RabbitMQ brokers, one and only one administrative
+    /// user is accepted and created when a broker is first provisioned. All subsequent broker
+    /// users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ
+    /// web console.
     /// </summary>
     public partial class User
     {
@@ -39,8 +42,11 @@ namespace Amazon.MQ.Model
         private string _username;
 
         /// <summary>
-        /// Gets and sets the property ConsoleAccess. Enables access to the ActiveMQ Web Console
-        /// for the ActiveMQ user (Does not apply to RabbitMQ brokers).
+        /// Gets and sets the property ConsoleAccess. 
+        /// <para>
+        /// Enables access to the ActiveMQ Web Console for the ActiveMQ user. Does not apply to
+        /// RabbitMQ brokers.
+        /// </para>
         /// </summary>
         public bool ConsoleAccess
         {
@@ -55,9 +61,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Groups. The list of groups (20 maximum) to which the ActiveMQ
-        /// user belongs. This value can contain only alphanumeric characters, dashes, periods,
-        /// underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+        /// Gets and sets the property Groups. 
+        /// <para>
+        /// The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can
+        /// contain only alphanumeric characters, dashes, periods, underscores, and tildes (-
+        /// . _ ~). This value must be 2-100 characters long. Does not apply to RabbitMQ brokers.
+        /// </para>
         /// </summary>
         public List<string> Groups
         {
@@ -72,10 +81,14 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Password. Required. The password of the broker user. This
-        /// value must be at least 12 characters long, must contain at least 4 unique characters,
-        /// and must not contain commas.
+        /// Gets and sets the property Password. 
+        /// <para>
+        /// Required. The password of the user. This value must be at least 12 characters long,
+        /// must contain at least 4 unique characters, and must not contain commas, colons, or
+        /// equal signs (,:=).
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Password
         {
             get { return this._password; }
@@ -89,10 +102,21 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Username. Required. The username of the broker user. This
-        /// value can contain only alphanumeric characters, dashes, periods, underscores, and
-        /// tildes (- . _ ~). This value must be 2-100 characters long.
+        /// Gets and sets the property Username. 
+        /// <para>
+        /// important><title>Amazon MQ for ActiveMQ</title> <para>For ActiveMQ brokers, this value
+        /// can contain only alphanumeric characters, dashes, periods, underscores, and tildes
+        /// (- . _ ~). This value must be 2-100 characters long.
+        /// </para>
+        /// /important> <important><title>Amazon MQ for RabbitMQ</title> 
+        /// <para>
+        /// For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes,
+        /// periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon
+        /// MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.
+        /// </para>
+        /// </important></para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Username
         {
             get { return this._username; }

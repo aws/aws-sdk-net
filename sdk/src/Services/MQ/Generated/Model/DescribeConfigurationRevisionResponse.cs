@@ -39,8 +39,10 @@ namespace Amazon.MQ.Model
         private string _description;
 
         /// <summary>
-        /// Gets and sets the property ConfigurationId. Required. The unique ID that Amazon MQ
-        /// generates for the configuration.
+        /// Gets and sets the property ConfigurationId. 
+        /// <para>
+        /// Required. The unique ID that Amazon MQ generates for the configuration.
+        /// </para>
         /// </summary>
         public string ConfigurationId
         {
@@ -55,7 +57,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Created. Required. The date and time of the configuration.
+        /// Gets and sets the property Created. 
+        /// <para>
+        /// Required. The date and time of the configuration.
+        /// </para>
         /// </summary>
         public DateTime Created
         {
@@ -70,7 +75,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Data. Required. The base64-encoded XML configuration.
+        /// Gets and sets the property Data. 
+        /// <para>
+        /// Required. The base64-encoded XML configuration.
+        /// </para>
         /// </summary>
         public string Data
         {
@@ -85,7 +93,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description. The description of the configuration.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the configuration.
+        /// </para>
         /// </summary>
         public string Description
         {

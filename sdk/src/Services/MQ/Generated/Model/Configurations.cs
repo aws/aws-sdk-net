@@ -38,7 +38,10 @@ namespace Amazon.MQ.Model
         private ConfigurationId _pending;
 
         /// <summary>
-        /// Gets and sets the property Current. The current configuration of the broker.
+        /// Gets and sets the property Current. 
+        /// <para>
+        /// The broker's current configuration.
+        /// </para>
         /// </summary>
         public ConfigurationId Current
         {
@@ -53,7 +56,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property History. The history of configurations applied to the broker.
+        /// Gets and sets the property History. 
+        /// <para>
+        /// The history of configurations applied to the broker.
+        /// </para>
         /// </summary>
         public List<ConfigurationId> History
         {
@@ -68,7 +74,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Pending. The pending configuration of the broker.
+        /// Gets and sets the property Pending. 
+        /// <para>
+        /// The broker's pending configuration.
+        /// </para>
         /// </summary>
         public ConfigurationId Pending
         {

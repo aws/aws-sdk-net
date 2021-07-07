@@ -38,7 +38,10 @@ namespace Amazon.MQ.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property BrokerEngineTypes. List of available engine types and versions.
+        /// Gets and sets the property BrokerEngineTypes. 
+        /// <para>
+        /// List of available engine types and versions.
+        /// </para>
         /// </summary>
         public List<BrokerEngineType> BrokerEngineTypes
         {
@@ -53,9 +56,11 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. Required. The maximum number of engine types
-        /// that can be returned per page (20 by default). This value must be an integer from
-        /// 5 to 100.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// Required. The maximum number of engine types that can be returned per page (20 by
+        /// default). This value must be an integer from 5 to 100.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=100)]
         public int MaxResults
@@ -71,8 +76,11 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. The token that specifies the next page of results
-        /// Amazon MQ should return. To request the first page, leave nextToken empty.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token that specifies the next page of results Amazon MQ should return. To request
+        /// the first page, leave nextToken empty.
+        /// </para>
         /// </summary>
         public string NextToken
         {

@@ -36,7 +36,10 @@ namespace Amazon.MQ.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property Name. Id for the version.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Id for the version.
+        /// </para>
         /// </summary>
         public string Name
         {

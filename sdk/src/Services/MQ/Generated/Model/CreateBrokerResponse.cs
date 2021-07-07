@@ -37,7 +37,10 @@ namespace Amazon.MQ.Model
         private string _brokerId;
 
         /// <summary>
-        /// Gets and sets the property BrokerArn. The Amazon Resource Name (ARN) of the broker.
+        /// Gets and sets the property BrokerArn. 
+        /// <para>
+        /// The broker's Amazon Resource Name (ARN).
+        /// </para>
         /// </summary>
         public string BrokerArn
         {
@@ -52,8 +55,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BrokerId. The unique ID that Amazon MQ generates for the
-        /// broker.
+        /// Gets and sets the property BrokerId. 
+        /// <para>
+        /// The unique ID that Amazon MQ generates for the broker.
+        /// </para>
         /// </summary>
         public string BrokerId
         {

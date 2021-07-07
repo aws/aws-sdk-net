@@ -276,6 +276,76 @@ namespace Amazon.MQ
 
         /// <summary>
         /// Creates a broker. Note: This API is asynchronous.
+        /// 
+        ///  
+        /// <para>
+        /// To create a broker, you must either use the AmazonMQFullAccess IAM policy or include
+        /// the following EC2 permissions in your IAM policy.
+        /// </para>
+        ///  <ul><li>
+        /// <para>
+        /// ec2:CreateNetworkInterface
+        /// </para>
+        ///  
+        /// <para>
+        /// This permission is required to allow Amazon MQ to create an elastic network interface
+        /// (ENI) on behalf of your account.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// ec2:CreateNetworkInterfacePermission
+        /// </para>
+        ///  
+        /// <para>
+        /// This permission is required to attach the ENI to the broker instance.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// ec2:DeleteNetworkInterface
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// ec2:DeleteNetworkInterfacePermission
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// ec2:DetachNetworkInterface
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// ec2:DescribeInternetGateways
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// ec2:DescribeNetworkInterfaces
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// ec2:DescribeNetworkInterfacePermissions
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// ec2:DescribeRouteTables
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// ec2:DescribeSecurityGroups
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// ec2:DescribeSubnets
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// ec2:DescribeVpcs
+        /// </para>
+        /// </li></ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/amazon-mq-setting-up.html#create-iam-user">Create
+        /// an IAM User and Get Your AWS Credentials</a> and <a href="https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/connecting-to-amazon-mq.html#never-modify-delete-elastic-network-interface">Never
+        /// Modify or Delete the Amazon MQ Elastic Network Interface</a> in the <i>Amazon MQ Developer
+        /// Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBroker service method.</param>
         /// <param name="cancellationToken">

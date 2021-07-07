@@ -38,7 +38,10 @@ namespace Amazon.MQ.Model
         private string _ipAddress;
 
         /// <summary>
-        /// Gets and sets the property ConsoleURL. The URL of the broker's Web Console.
+        /// Gets and sets the property ConsoleURL. 
+        /// <para>
+        /// The brokers web console URL.
+        /// </para>
         /// </summary>
         public string ConsoleURL
         {
@@ -53,7 +56,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Endpoints. The broker's wire-level protocol endpoints.
+        /// Gets and sets the property Endpoints. 
+        /// <para>
+        /// The broker's wire-level protocol endpoints.
+        /// </para>
         /// </summary>
         public List<string> Endpoints
         {
@@ -68,8 +74,11 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IpAddress. The IP address of the Elastic Network Interface
-        /// (ENI) attached to the broker. Does not apply to RabbitMQ brokers
+        /// Gets and sets the property IpAddress. 
+        /// <para>
+        /// The IP address of the Elastic Network Interface (ENI) attached to the broker. Does
+        /// not apply to RabbitMQ brokers.
+        /// </para>
         /// </summary>
         public string IpAddress
         {

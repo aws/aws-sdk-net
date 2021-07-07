@@ -38,8 +38,10 @@ namespace Amazon.MQ.Model
         private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. The Amazon Resource Name (ARN) of the resource
-        /// tag.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the resource tag.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceArn
@@ -55,7 +57,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys. An array of tag keys to delete
+        /// Gets and sets the property TagKeys. 
+        /// <para>
+        /// An array of tag keys to delete
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> TagKeys

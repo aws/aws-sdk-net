@@ -29,8 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MQ.Model
 {
     /// <summary>
-    /// The metadata of the LDAP server used to authenticate and authorize connections to
-    /// the broker.
+    /// Optional. The metadata of the LDAP server used to authenticate and authorize connections
+    /// to the broker.
+    /// 
+    ///  <important>
+    /// <para>
+    /// Does not apply to RabbitMQ brokers.
+    /// </para>
+    /// </important>
     /// </summary>
     public partial class LdapServerMetadataInput
     {
@@ -47,9 +53,13 @@ namespace Amazon.MQ.Model
         private bool? _userSearchSubtree;
 
         /// <summary>
-        /// Gets and sets the property Hosts. Fully qualified domain name of the LDAP server.
-        /// Optional failover server.
+        /// Gets and sets the property Hosts. 
+        /// <para>
+        /// Specifies the location of the LDAP server such as AWS Directory Service for Microsoft
+        /// Active Directory . Optional failover server.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Hosts
         {
             get { return this._hosts; }
@@ -63,9 +73,14 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleBase. Fully qualified name of the directory to search
-        /// for a user’s groups.
+        /// Gets and sets the property RoleBase. 
+        /// <para>
+        /// The distinguished name of the node in the directory information tree (DIT) to search
+        /// for roles or groups. For example, ou=group, ou=corp, dc=corp,                  dc=example,
+        /// dc=com.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleBase
         {
             get { return this._roleBase; }
@@ -79,8 +94,11 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleName. Specifies the LDAP attribute that identifies
-        /// the group name attribute in the object returned from the group membership query.
+        /// Gets and sets the property RoleName. 
+        /// <para>
+        /// Specifies the LDAP attribute that identifies the group name attribute in the object
+        /// returned from the group membership query.
+        /// </para>
         /// </summary>
         public string RoleName
         {
@@ -95,8 +113,18 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleSearchMatching. The search criteria for groups.
+        /// Gets and sets the property RoleSearchMatching. 
+        /// <para>
+        /// The LDAP search filter used to find roles within the roleBase. The distinguished name
+        /// of the user matched by userSearchMatching is substituted into the {0} placeholder
+        /// in the search filter. The client's username is substituted into the {1} placeholder.
+        /// For example, if you set this option to (member=uid={1})for the user janedoe, the search
+        /// filter becomes (member=uid=janedoe) after string substitution. It matches all role
+        /// entries that have a member attribute equal to uid=janedoe under the subtree selected
+        /// by the roleBase.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleSearchMatching
         {
             get { return this._roleSearchMatching; }
@@ -110,8 +138,11 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleSearchSubtree. The directory search scope for the role.
-        /// If set to true, scope is to search the entire sub-tree.
+        /// Gets and sets the property RoleSearchSubtree. 
+        /// <para>
+        /// The directory search scope for the role. If set to true, scope is to search the entire
+        /// subtree.
+        /// </para>
         /// </summary>
         public bool RoleSearchSubtree
         {
@@ -126,8 +157,14 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServiceAccountPassword. Service account password.
+        /// Gets and sets the property ServiceAccountPassword. 
+        /// <para>
+        /// Service account password. A service account is an account in your LDAP server that
+        /// has access to initiate a connection. For example, cn=admin,dc=corp, dc=example,  
+        ///                dc=com.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServiceAccountPassword
         {
             get { return this._serviceAccountPassword; }
@@ -141,8 +178,14 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServiceAccountUsername. Service account username.
+        /// Gets and sets the property ServiceAccountUsername. 
+        /// <para>
+        /// Service account username. A service account is an account in your LDAP server that
+        /// has access to initiate a connection. For example, cn=admin,dc=corp, dc=example,  
+        ///                dc=com.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServiceAccountUsername
         {
             get { return this._serviceAccountUsername; }
@@ -156,9 +199,16 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserBase. Fully qualified name of the directory where you
-        /// want to search for users.
+        /// Gets and sets the property UserBase. 
+        /// <para>
+        /// Select a particular subtree of the directory information tree (DIT) to search for
+        /// user entries. The subtree is specified by a DN, which specifies the base node of the
+        /// subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp,       
+        ///           dc=example, dc=com, the search for user entries is restricted to the subtree
+        /// beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UserBase
         {
             get { return this._userBase; }
@@ -172,8 +222,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserRoleName. Specifies the name of the LDAP attribute
-        /// for the user group membership.
+        /// Gets and sets the property UserRoleName. 
+        /// <para>
+        /// Specifies the name of the LDAP attribute for the user group membership.
+        /// </para>
         /// </summary>
         public string UserRoleName
         {
@@ -188,8 +240,16 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserSearchMatching. The search criteria for users.
+        /// Gets and sets the property UserSearchMatching. 
+        /// <para>
+        /// The LDAP search filter used to find users within the userBase. The client's username
+        /// is substituted into the {0} placeholder in the search filter. For example, if this
+        /// option is set to (uid={0}) and the received username is janedoe, the search filter
+        /// becomes (uid=janedoe) after string substitution. It will result in matching an entry
+        /// like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example,                  dc=com.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UserSearchMatching
         {
             get { return this._userSearchMatching; }
@@ -203,8 +263,11 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserSearchSubtree. The directory search scope for the user.
-        /// If set to true, scope is to search the entire sub-tree.
+        /// Gets and sets the property UserSearchSubtree. 
+        /// <para>
+        /// The directory search scope for the user. If set to true, scope is to search the entire
+        /// subtree.
+        /// </para>
         /// </summary>
         public bool UserSearchSubtree
         {

@@ -38,8 +38,10 @@ namespace Amazon.MQ.Model
         private string _configurationRevision;
 
         /// <summary>
-        /// Gets and sets the property ConfigurationId. The unique ID that Amazon MQ generates
-        /// for the configuration.
+        /// Gets and sets the property ConfigurationId. 
+        /// <para>
+        /// The unique ID that Amazon MQ generates for the configuration.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ConfigurationId
@@ -55,7 +57,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ConfigurationRevision. The revision of the configuration.
+        /// Gets and sets the property ConfigurationRevision. 
+        /// <para>
+        /// The revision of the configuration.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ConfigurationRevision

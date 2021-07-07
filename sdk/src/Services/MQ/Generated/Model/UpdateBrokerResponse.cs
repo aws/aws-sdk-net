@@ -41,11 +41,14 @@ namespace Amazon.MQ.Model
         private string _hostInstanceType;
         private LdapServerMetadataOutput _ldapServerMetadata;
         private Logs _logs;
+        private WeeklyStartTime _maintenanceWindowStartTime;
         private List<string> _securityGroups = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property AuthenticationStrategy. The authentication strategy used
-        /// to secure the broker.
+        /// Gets and sets the property AuthenticationStrategy. 
+        /// <para>
+        /// Optional. The authentication strategy used to secure the broker. The default is SIMPLE.
+        /// </para>
         /// </summary>
         public AuthenticationStrategy AuthenticationStrategy
         {
@@ -60,8 +63,11 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AutoMinorVersionUpgrade. The new value of automatic upgrades
-        /// to new minor version for brokers.
+        /// Gets and sets the property AutoMinorVersionUpgrade. 
+        /// <para>
+        /// The new boolean value that specifies whether broker engines automatically upgrade
+        /// to new minor versions as new versions are released and supported by Amazon MQ.
+        /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
         {
@@ -76,8 +82,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BrokerId. Required. The unique ID that Amazon MQ generates
-        /// for the broker.
+        /// Gets and sets the property BrokerId. 
+        /// <para>
+        /// Required. The unique ID that Amazon MQ generates for the broker.
+        /// </para>
         /// </summary>
         public string BrokerId
         {
@@ -92,7 +100,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Configuration. The ID of the updated configuration.
+        /// Gets and sets the property Configuration. 
+        /// <para>
+        /// The ID of the updated configuration.
+        /// </para>
         /// </summary>
         public ConfigurationId Configuration
         {
@@ -107,8 +118,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EngineVersion. The version of the broker engine to upgrade
-        /// to. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        /// The broker engine version to upgrade to. For a list of supported engine versions,
+        /// see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported
+        /// engines</a>.
+        /// </para>
         /// </summary>
         public string EngineVersion
         {
@@ -123,8 +138,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HostInstanceType. The host instance type of the broker
-        /// to upgrade to. For a list of supported instance types, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+        /// Gets and sets the property HostInstanceType. 
+        /// <para>
+        /// The broker's host instance type to upgrade to. For a list of supported instance types,
+        /// see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker
+        /// instance types</a>.
+        /// </para>
         /// </summary>
         public string HostInstanceType
         {
@@ -139,8 +158,11 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LdapServerMetadata. The metadata of the LDAP server used
-        /// to authenticate and authorize connections to the broker.
+        /// Gets and sets the property LdapServerMetadata. 
+        /// <para>
+        /// Optional. The metadata of the LDAP server used to authenticate and authorize connections
+        /// to the broker. Does not apply to RabbitMQ brokers.
+        /// </para>
         /// </summary>
         public LdapServerMetadataOutput LdapServerMetadata
         {
@@ -155,8 +177,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Logs. The list of information about logs to be enabled
-        /// for the specified broker.
+        /// Gets and sets the property Logs. 
+        /// <para>
+        /// The list of information about logs to be enabled for the specified broker.
+        /// </para>
         /// </summary>
         public Logs Logs
         {
@@ -171,8 +195,29 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SecurityGroups. The list of security groups (1 minimum,
-        /// 5 maximum) that authorizes connections to brokers.
+        /// Gets and sets the property MaintenanceWindowStartTime. 
+        /// <para>
+        /// The parameters that determine the WeeklyStartTime.
+        /// </para>
+        /// </summary>
+        public WeeklyStartTime MaintenanceWindowStartTime
+        {
+            get { return this._maintenanceWindowStartTime; }
+            set { this._maintenanceWindowStartTime = value; }
+        }
+
+        // Check to see if MaintenanceWindowStartTime property is set
+        internal bool IsSetMaintenanceWindowStartTime()
+        {
+            return this._maintenanceWindowStartTime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroups. 
+        /// <para>
+        /// The list of security groups (1 minimum, 5 maximum) that authorizes connections to
+        /// brokers.
+        /// </para>
         /// </summary>
         public List<string> SecurityGroups
         {

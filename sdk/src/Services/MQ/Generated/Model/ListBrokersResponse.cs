@@ -37,7 +37,10 @@ namespace Amazon.MQ.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property BrokerSummaries. A list of information about all brokers.
+        /// Gets and sets the property BrokerSummaries. 
+        /// <para>
+        /// A list of information about all brokers.
+        /// </para>
         /// </summary>
         public List<BrokerSummary> BrokerSummaries
         {
@@ -52,8 +55,11 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. The token that specifies the next page of results
-        /// Amazon MQ should return. To request the first page, leave nextToken empty.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token that specifies the next page of results Amazon MQ should return. To request
+        /// the first page, leave nextToken empty.
+        /// </para>
         /// </summary>
         public string NextToken
         {

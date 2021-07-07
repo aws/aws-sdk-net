@@ -39,8 +39,10 @@ namespace Amazon.MQ.Model
         private string _description;
 
         /// <summary>
-        /// Gets and sets the property ConfigurationId. The unique ID that Amazon MQ generates
-        /// for the configuration.
+        /// Gets and sets the property ConfigurationId. 
+        /// <para>
+        /// The unique ID that Amazon MQ generates for the configuration.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ConfigurationId
@@ -56,8 +58,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Data. Required. The base64-encoded XML configuration.
+        /// Gets and sets the property Data. 
+        /// <para>
+        /// Required. The base64-encoded XML configuration.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Data
         {
             get { return this._data; }
@@ -71,7 +77,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description. The description of the configuration.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the configuration.
+        /// </para>
         /// </summary>
         public string Description
         {

@@ -38,8 +38,10 @@ namespace Amazon.MQ.Model
         private SanitizationWarningReason _reason;
 
         /// <summary>
-        /// Gets and sets the property AttributeName. The name of the XML attribute that has been
-        /// sanitized.
+        /// Gets and sets the property AttributeName. 
+        /// <para>
+        /// The name of the XML attribute that has been sanitized.
+        /// </para>
         /// </summary>
         public string AttributeName
         {
@@ -54,8 +56,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ElementName. The name of the XML element that has been
-        /// sanitized.
+        /// Gets and sets the property ElementName. 
+        /// <para>
+        /// The name of the XML element that has been sanitized.
+        /// </para>
         /// </summary>
         public string ElementName
         {
@@ -70,9 +74,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Reason. Required. The reason for which the XML elements
-        /// or attributes were sanitized.
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// Required. The reason for which the XML elements or attributes were sanitized.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SanitizationWarningReason Reason
         {
             get { return this._reason; }

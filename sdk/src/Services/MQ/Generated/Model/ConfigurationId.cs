@@ -29,8 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MQ.Model
 {
     /// <summary>
-    /// A list of information about the configuration. <important>Does not apply to RabbitMQ
-    /// brokers.</important>
+    /// A list of information about the configuration.
+    /// 
+    ///  <important>
+    /// <para>
+    /// Does not apply to RabbitMQ brokers.
+    /// </para>
+    /// </important>
     /// </summary>
     public partial class ConfigurationId
     {
@@ -38,9 +43,12 @@ namespace Amazon.MQ.Model
         private int? _revision;
 
         /// <summary>
-        /// Gets and sets the property Id. Required. The unique ID that Amazon MQ generates for
-        /// the configuration.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// Required. The unique ID that Amazon MQ generates for the configuration.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -54,7 +62,10 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Revision. The revision number of the configuration.
+        /// Gets and sets the property Revision. 
+        /// <para>
+        /// The revision number of the configuration.
+        /// </para>
         /// </summary>
         public int Revision
         {
