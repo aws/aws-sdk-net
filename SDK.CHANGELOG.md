@@ -1,3 +1,21 @@
+### 3.7.67.0 (2021-07-07 18:16 UTC)
+* Chime (3.7.7.0)
+	* Releasing new APIs for AWS Chime MediaCapturePipeline
+* CloudFront (3.7.3.0)
+	* Amazon CloudFront now provides two new APIs, ListConflictingAliases and AssociateAlias, that help locate and move Alternate Domain Names (CNAMEs) if you encounter the CNAMEAlreadyExists error code.
+* EC2 (3.7.16.0)
+	* This release adds resource ids and tagging support for VPC security group rules.
+* IdentityManagement (3.7.2.16)
+	* Documentation updates for AWS Identity and Access Management (IAM).
+* IoTSiteWise (3.7.3.0)
+	* This release add storage configuration APIs for AWS IoT SiteWise.
+* MQ (3.7.1.0)
+	* adds support for modifying the maintenance window for brokers.
+* SecurityToken (3.7.1.27)
+	* Documentation updates for AWS Security Token Service.
+* StorageGateway (3.7.2.0)
+	* Adding support for oplocks for SMB file shares,  S3 Access Point and S3 Private Link for all file shares and IP address support for file system associations
+
 ### 3.7.66.0 (2021-07-06 18:17 UTC)
 * EKS (3.7.5.0)
 	* Adding new error code UnsupportedAddonModification for Addons in EKS
