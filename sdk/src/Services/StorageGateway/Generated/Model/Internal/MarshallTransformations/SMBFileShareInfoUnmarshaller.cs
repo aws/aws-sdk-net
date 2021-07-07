@@ -88,6 +88,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.Authentication = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BucketRegion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BucketRegion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CacheAttributes", targetDepth))
                 {
                     var unmarshaller = CacheAttributesUnmarshaller.Instance;
@@ -178,6 +184,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.ObjectACL = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OplocksEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.OplocksEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Path", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -218,6 +230,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ValidUserList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VPCEndpointDNSName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VPCEndpointDNSName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

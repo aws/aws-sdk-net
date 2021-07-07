@@ -29,31 +29,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeNFSFileShares operation.
-    /// Gets a description for one or more Network File System (NFS) file shares from an S3
-    /// File Gateway. This operation is only supported for S3 File Gateways.
+    /// Specifies network configuration information for the gateway associated with the Amazon
+    /// FSx file system.
     /// </summary>
-    public partial class DescribeNFSFileSharesRequest : AmazonStorageGatewayRequest
+    public partial class EndpointNetworkConfiguration
     {
-        private List<string> _fileShareARNList = new List<string>();
+        private List<string> _ipAddresses = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property FileShareARNList. 
+        /// Gets and sets the property IpAddresses. 
         /// <para>
-        /// An array containing the Amazon Resource Name (ARN) of each file share to be described.
+        /// A list of gateway IP addresses on which the associated Amazon FSx file system is available.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If multiple file systems are associated with this gateway, this field is required.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
-        public List<string> FileShareARNList
+        [AWSProperty(Min=0, Max=1)]
+        public List<string> IpAddresses
         {
-            get { return this._fileShareARNList; }
-            set { this._fileShareARNList = value; }
+            get { return this._ipAddresses; }
+            set { this._ipAddresses = value; }
         }
 
-        // Check to see if FileShareARNList property is set
-        internal bool IsSetFileShareARNList()
+        // Check to see if IpAddresses property is set
+        internal bool IsSetIpAddresses()
         {
-            return this._fileShareARNList != null && this._fileShareARNList.Count > 0; 
+            return this._ipAddresses != null && this._ipAddresses.Count > 0; 
         }
 
     }

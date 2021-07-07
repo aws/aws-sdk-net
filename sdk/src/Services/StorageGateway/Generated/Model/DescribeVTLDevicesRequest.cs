@@ -31,7 +31,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the DescribeVTLDevices operation.
     /// Returns a description of virtual tape library (VTL) devices for the specified tape
-    /// gateway. In the response, AWS Storage Gateway returns VTL device information.
+    /// gateway. In the response, Storage Gateway returns VTL device information.
     /// 
     ///  
     /// <para>

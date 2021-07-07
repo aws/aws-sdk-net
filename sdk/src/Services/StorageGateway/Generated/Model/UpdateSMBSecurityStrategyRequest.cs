@@ -73,7 +73,7 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// ClientSpecified: if you use this option, requests are established based on what is
         /// negotiated by the client. This option is recommended when you want to maximize compatibility
-        /// across different clients in your environment.
+        /// across different clients in your environment. Supported only in S3 File Gateway.
         /// </para>
         ///  
         /// <para>

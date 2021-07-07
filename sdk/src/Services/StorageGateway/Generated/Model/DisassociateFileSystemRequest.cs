@@ -32,7 +32,7 @@ namespace Amazon.StorageGateway.Model
     /// Container for the parameters to the DisassociateFileSystem operation.
     /// Disassociates an Amazon FSx file system from the specified gateway. After the disassociation
     /// process finishes, the gateway can no longer access the Amazon FSx file system. This
-    /// operation is only supported in the Amazon FSx file gateway type.
+    /// operation is only supported in the FSx File Gateway type.
     /// </summary>
     public partial class DisassociateFileSystemRequest : AmazonStorageGatewayRequest
     {

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// The refresh cache information for the file share.
+    /// The refresh cache information for the file share or FSx file systems.
     /// </summary>
     public partial class CacheAttributes
     {
@@ -45,7 +45,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: 300 to 2,592,000 seconds (5 minutes to 30 days)
+        /// Valid Values:0, 300 to 2,592,000 seconds (5 minutes to 30 days)
         /// </para>
         /// </summary>
         public int CacheStaleTimeoutInSeconds

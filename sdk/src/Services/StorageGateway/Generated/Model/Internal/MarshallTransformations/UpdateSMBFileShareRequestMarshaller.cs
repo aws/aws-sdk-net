@@ -166,6 +166,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ObjectACL);
                 }
 
+                if(publicRequest.IsSetOplocksEnabled())
+                {
+                    context.Writer.WritePropertyName("OplocksEnabled");
+                    context.Writer.Write(publicRequest.OplocksEnabled);
+                }
+
                 if(publicRequest.IsSetReadOnly())
                 {
                     context.Writer.WritePropertyName("ReadOnly");

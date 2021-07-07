@@ -67,6 +67,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBucketRegion())
+                {
+                    context.Writer.WritePropertyName("BucketRegion");
+                    context.Writer.Write(publicRequest.BucketRegion);
+                }
+
                 if(publicRequest.IsSetCacheAttributes())
                 {
                     context.Writer.WritePropertyName("CacheAttributes");
@@ -198,6 +204,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetVPCEndpointDNSName())
+                {
+                    context.Writer.WritePropertyName("VPCEndpointDNSName");
+                    context.Writer.Write(publicRequest.VPCEndpointDNSName);
                 }
 
         

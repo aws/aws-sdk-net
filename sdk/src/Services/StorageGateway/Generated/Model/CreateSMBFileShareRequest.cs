@@ -30,19 +30,19 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSMBFileShare operation.
-    /// Creates a Server Message Block (SMB) file share on an existing file gateway. In Storage
-    /// Gateway, a file share is a file system mount point backed by Amazon S3 cloud storage.
-    /// Storage Gateway exposes file shares using an SMB interface. This operation is only
-    /// supported for file gateways.
+    /// Creates a Server Message Block (SMB) file share on an existing S3 File Gateway. In
+    /// Storage Gateway, a file share is a file system mount point backed by Amazon S3 cloud
+    /// storage. Storage Gateway exposes file shares using an SMB interface. This operation
+    /// is only supported for S3 File Gateways.
     /// 
     ///  <important> 
     /// <para>
-    /// File gateways require AWS Security Token Service (AWS STS) to be activated to enable
-    /// you to create a file share. Make sure that AWS STS is activated in the AWS Region
-    /// you are creating your file gateway in. If AWS STS is not activated in this AWS Region,
-    /// activate it. For information about how to activate AWS STS, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-    /// and deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management
-    /// User Guide</i>.
+    /// S3 File Gateways require Security Token Service (STS) to be activated to enable you
+    /// to create a file share. Make sure that STS is activated in the Region you are creating
+    /// your S3 File Gateway in. If STS is not activated in this Region, activate it. For
+    /// information about how to activate STS, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+    /// and deactivating STS in an Region</a> in the <i>Identity and Access Management User
+    /// Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -56,6 +56,7 @@ namespace Amazon.StorageGateway.Model
         private List<string> _adminUserList = new List<string>();
         private string _auditDestinationARN;
         private string _authentication;
+        private string _bucketRegion;
         private CacheAttributes _cacheAttributes;
         private CaseSensitivity _caseSensitivity;
         private string _clientToken;
@@ -69,12 +70,14 @@ namespace Amazon.StorageGateway.Model
         private string _locationARN;
         private string _notificationPolicy;
         private ObjectACL _objectACL;
+        private bool? _oplocksEnabled;
         private bool? _readOnly;
         private bool? _requesterPays;
         private string _role;
         private bool? _smbaclEnabled;
         private List<Tag> _tags = new List<Tag>();
         private List<string> _validUserList = new List<string>();
+        private string _vpcEndpointDNSName;
 
         /// <summary>
         /// Gets and sets the property AccessBasedEnumeration. 
@@ -166,6 +169,32 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BucketRegion. 
+        /// <para>
+        /// Specifies the Region of the S3 bucket where the SMB file share stores files.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is required for SMB file shares that connect to Amazon S3 through a
+        /// VPC endpoint, a VPC access point, or an access point alias that points to a VPC access
+        /// point.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=25)]
+        public string BucketRegion
+        {
+            get { return this._bucketRegion; }
+            set { this._bucketRegion = value; }
+        }
+
+        // Check to see if BucketRegion property is set
+        internal bool IsSetBucketRegion()
+        {
+            return this._bucketRegion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CacheAttributes. 
         /// <para>
         /// Specifies refresh cache information for the file share.
@@ -206,7 +235,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique string value that you supply that is used by file gateway to ensure idempotent
+        /// A unique string value that you supply that is used by S3 File Gateway to ensure idempotent
         /// file share creation.
         /// </para>
         /// </summary>
@@ -226,8 +255,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property DefaultStorageClass. 
         /// <para>
-        /// The default storage class for objects put into an Amazon S3 bucket by the file gateway.
-        /// The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.
+        /// The default storage class for objects put into an Amazon S3 bucket by the S3 File
+        /// Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.
         /// </para>
         ///  
         /// <para>
@@ -275,7 +304,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayARN. 
         /// <para>
-        /// The ARN of the file gateway on which you want to create a file share.
+        /// The ARN of the S3 File Gateway on which you want to create a file share.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=50, Max=500)]
@@ -340,8 +369,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSEncrypted. 
         /// <para>
-        /// Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS
-        /// KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.
+        /// Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
+        /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.
         /// </para>
         ///  
         /// <para>
@@ -387,6 +416,23 @@ namespace Amazon.StorageGateway.Model
         /// The ARN of the backend storage used for storing file data. A prefix name can be added
         /// to the S3 bucket name. It must end with a "/".
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can specify a bucket attached to an access point using a complete ARN that includes
+        /// the bucket region as shown:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i>
+        /// </code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a bucket attached to an access point, the bucket policy must be configured
+        /// to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating
+        /// access control to access points</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=16, Max=1400)]
         public string LocationARN
@@ -450,7 +496,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property ObjectACL. 
         /// <para>
         /// A value that sets the access control list (ACL) permission for objects in the S3 bucket
-        /// that a file gateway puts objects into. The default value is <code>private</code>.
+        /// that a S3 File Gateway puts objects into. The default value is <code>private</code>.
         /// </para>
         /// </summary>
         public ObjectACL ObjectACL
@@ -463,6 +509,33 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetObjectACL()
         {
             return this._objectACL != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OplocksEnabled. 
+        /// <para>
+        /// Specifies whether opportunistic locking is enabled for the SMB file share.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Enabling opportunistic locking on case-sensitive shares is not recommended for workloads
+        /// that involve access to files with the same name in different case.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Valid Values: <code>true</code> | <code>false</code> 
+        /// </para>
+        /// </summary>
+        public bool OplocksEnabled
+        {
+            get { return this._oplocksEnabled.GetValueOrDefault(); }
+            set { this._oplocksEnabled = value; }
+        }
+
+        // Check to see if OplocksEnabled property is set
+        internal bool IsSetOplocksEnabled()
+        {
+            return this._oplocksEnabled.HasValue; 
         }
 
         /// <summary>
@@ -522,7 +595,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// The ARN of the AWS Identity and Access Management (IAM) role that a file gateway assumes
+        /// The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes
         /// when it accesses the underlying storage.
         /// </para>
         /// </summary>
@@ -549,7 +622,7 @@ namespace Amazon.StorageGateway.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using
-        /// Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>AWS Storage
+        /// Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>Storage
         /// Gateway User Guide</i>.
         /// </para>
         ///  
@@ -616,6 +689,33 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetValidUserList()
         {
             return this._validUserList != null && this._validUserList.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VPCEndpointDNSName. 
+        /// <para>
+        /// Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect
+        /// to Amazon S3.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is required for SMB file shares that connect to Amazon S3 through a
+        /// VPC endpoint, a VPC access point, or an access point alias that points to a VPC access
+        /// point.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string VPCEndpointDNSName
+        {
+            get { return this._vpcEndpointDNSName; }
+            set { this._vpcEndpointDNSName = value; }
+        }
+
+        // Check to see if VPCEndpointDNSName property is set
+        internal bool IsSetVPCEndpointDNSName()
+        {
+            return this._vpcEndpointDNSName != null;
         }
 
     }

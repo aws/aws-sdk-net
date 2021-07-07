@@ -30,7 +30,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSMBFileShareVisibility operation.
-    /// Controls whether the shares on a gateway are visible in a net view or browse list.
+    /// Controls whether the shares on an S3 File Gateway are visible in a net view or browse
+    /// list. The operation is only supported for S3 File Gateways.
     /// </summary>
     public partial class UpdateSMBFileShareVisibilityRequest : AmazonStorageGatewayRequest
     {

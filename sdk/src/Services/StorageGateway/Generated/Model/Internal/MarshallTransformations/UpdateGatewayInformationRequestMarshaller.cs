@@ -79,6 +79,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.GatewayARN);
                 }
 
+                if(publicRequest.IsSetGatewayCapacity())
+                {
+                    context.Writer.WritePropertyName("GatewayCapacity");
+                    context.Writer.Write(publicRequest.GatewayCapacity);
+                }
+
                 if(publicRequest.IsSetGatewayName())
                 {
                     context.Writer.WritePropertyName("GatewayName");

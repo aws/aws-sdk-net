@@ -30,8 +30,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// The Windows file permissions and ownership information assigned, by default, to native
-    /// S3 objects when file gateway discovers them in S3 buckets. This operation is only
-    /// supported for file gateways.
+    /// S3 objects when S3 File Gateway discovers them in S3 buckets. This operation is only
+    /// supported for S3 File Gateways.
     /// </summary>
     public partial class SMBFileShareInfo
     {
@@ -39,6 +39,7 @@ namespace Amazon.StorageGateway.Model
         private List<string> _adminUserList = new List<string>();
         private string _auditDestinationARN;
         private string _authentication;
+        private string _bucketRegion;
         private CacheAttributes _cacheAttributes;
         private CaseSensitivity _caseSensitivity;
         private string _defaultStorageClass;
@@ -54,6 +55,7 @@ namespace Amazon.StorageGateway.Model
         private string _locationARN;
         private string _notificationPolicy;
         private ObjectACL _objectACL;
+        private bool? _oplocksEnabled;
         private string _path;
         private bool? _readOnly;
         private bool? _requesterPays;
@@ -61,6 +63,7 @@ namespace Amazon.StorageGateway.Model
         private bool? _smbaclEnabled;
         private List<Tag> _tags = new List<Tag>();
         private List<string> _validUserList = new List<string>();
+        private string _vpcEndpointDNSName;
 
         /// <summary>
         /// Gets and sets the property AccessBasedEnumeration. 
@@ -138,6 +141,32 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BucketRegion. 
+        /// <para>
+        /// Specifies the Region of the S3 bucket where the SMB file share stores files.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is required for SMB file shares that connect to Amazon S3 through a
+        /// VPC endpoint, a VPC access point, or an access point alias that points to a VPC access
+        /// point.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=25)]
+        public string BucketRegion
+        {
+            get { return this._bucketRegion; }
+            set { this._bucketRegion = value; }
+        }
+
+        // Check to see if BucketRegion property is set
+        internal bool IsSetBucketRegion()
+        {
+            return this._bucketRegion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CacheAttributes. 
         /// <para>
         /// Refresh cache information for the file share.
@@ -178,8 +207,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property DefaultStorageClass. 
         /// <para>
-        /// The default storage class for objects put into an Amazon S3 bucket by the file gateway.
-        /// The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.
+        /// The default storage class for objects put into an Amazon S3 bucket by the S3 File
+        /// Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.
         /// </para>
         ///  
         /// <para>
@@ -337,8 +366,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSEncrypted. 
         /// <para>
-        /// Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS
-        /// KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.
+        /// Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
+        /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.
         /// </para>
         ///  
         /// <para>
@@ -450,6 +479,33 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OplocksEnabled. 
+        /// <para>
+        /// Specifies whether opportunistic locking is enabled for the SMB file share.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Enabling opportunistic locking on case-sensitive shares is not recommended for workloads
+        /// that involve access to files with the same name in different case.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Valid Values: <code>true</code> | <code>false</code> 
+        /// </para>
+        /// </summary>
+        public bool OplocksEnabled
+        {
+            get { return this._oplocksEnabled.GetValueOrDefault(); }
+            set { this._oplocksEnabled = value; }
+        }
+
+        // Check to see if OplocksEnabled property is set
+        internal bool IsSetOplocksEnabled()
+        {
+            return this._oplocksEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
         /// The file share path used by the SMB client to identify the mount point.
@@ -547,7 +603,7 @@ namespace Amazon.StorageGateway.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using
-        /// Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>AWS Storage
+        /// Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>Storage
         /// Gateway User Guide</i>.
         /// </para>
         /// </summary>
@@ -603,6 +659,33 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetValidUserList()
         {
             return this._validUserList != null && this._validUserList.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VPCEndpointDNSName. 
+        /// <para>
+        /// Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect
+        /// to Amazon S3.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is required for SMB file shares that connect to Amazon S3 through a
+        /// VPC endpoint, a VPC access point, or an access point alias that points to a VPC access
+        /// point.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string VPCEndpointDNSName
+        {
+            get { return this._vpcEndpointDNSName; }
+            set { this._vpcEndpointDNSName = value; }
+        }
+
+        // Check to see if VPCEndpointDNSName property is set
+        internal bool IsSetVPCEndpointDNSName()
+        {
+            return this._vpcEndpointDNSName != null;
         }
 
     }

@@ -31,8 +31,8 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the ListFileSystemAssociations operation.
     /// Gets a list of <code>FileSystemAssociationSummary</code> objects. Each object contains
-    /// a summary of a file system association. This operation is only supported for Amazon
-    /// FSx file gateways.
+    /// a summary of a file system association. This operation is only supported for FSx File
+    /// Gateways.
     /// </summary>
     public partial class ListFileSystemAssociationsRequest : AmazonStorageGatewayRequest
     {

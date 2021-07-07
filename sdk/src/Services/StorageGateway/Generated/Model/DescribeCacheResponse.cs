@@ -63,7 +63,8 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property CacheDirtyPercentage. 
         /// <para>
         /// The file share's contribution to the overall percentage of the gateway's cache that
-        /// has not been persisted to AWS. The sample is taken at the end of the reporting period.
+        /// has not been persisted to Amazon Web Services. The sample is taken at the end of the
+        /// reporting period.
         /// </para>
         /// </summary>
         public double CacheDirtyPercentage

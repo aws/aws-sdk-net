@@ -58,7 +58,7 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// The unique Amazon Resource Name (ARN) that represents the gateway to associate the
         /// virtual tape with. Use the <a>ListGateways</a> operation to return a list of gateways
-        /// for your account and AWS Region.
+        /// for your account and Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=50, Max=500)]
@@ -77,8 +77,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSEncrypted. 
         /// <para>
-        /// Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS
-        /// KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.
+        /// Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
+        /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.
         /// </para>
         ///  
         /// <para>

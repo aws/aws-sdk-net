@@ -31,7 +31,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the UpdateSMBFileShare operation.
     /// Updates a Server Message Block (SMB) file share. This operation is only supported
-    /// for file gateways.
+    /// for S3 File Gateways.
     /// 
     ///  <note> 
     /// <para>
@@ -39,12 +39,12 @@ namespace Amazon.StorageGateway.Model
     /// </para>
     ///  </note> <important> 
     /// <para>
-    /// File gateways require AWS Security Token Service (AWS STS) to be activated to enable
-    /// you to create a file share. Make sure that AWS STS is activated in the AWS Region
-    /// you are creating your file gateway in. If AWS STS is not activated in this AWS Region,
-    /// activate it. For information about how to activate AWS STS, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-    /// and deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management
-    /// User Guide</i>.
+    /// File gateways require Security Token Service (STS) to be activated to enable you to
+    /// create a file share. Make sure that STS is activated in the Region you are creating
+    /// your file gateway in. If STS is not activated in this Region, activate it. For information
+    /// about how to activate STS, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+    /// and deactivating STS in an Region</a> in the <i>Identity and Access Management User
+    /// Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -68,6 +68,7 @@ namespace Amazon.StorageGateway.Model
         private string _kmsKey;
         private string _notificationPolicy;
         private ObjectACL _objectACL;
+        private bool? _oplocksEnabled;
         private bool? _readOnly;
         private bool? _requesterPays;
         private bool? _smbaclEnabled;
@@ -173,8 +174,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property DefaultStorageClass. 
         /// <para>
-        /// The default storage class for objects put into an Amazon S3 bucket by the file gateway.
-        /// The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.
+        /// The default storage class for objects put into an Amazon S3 bucket by the S3 File
+        /// Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.
         /// </para>
         ///  
         /// <para>
@@ -287,8 +288,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSEncrypted. 
         /// <para>
-        /// Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS
-        /// KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.
+        /// Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
+        /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.
         /// </para>
         ///  
         /// <para>
@@ -377,7 +378,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property ObjectACL. 
         /// <para>
         /// A value that sets the access control list (ACL) permission for objects in the S3 bucket
-        /// that a file gateway puts objects into. The default value is <code>private</code>.
+        /// that a S3 File Gateway puts objects into. The default value is <code>private</code>.
         /// </para>
         /// </summary>
         public ObjectACL ObjectACL
@@ -390,6 +391,33 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetObjectACL()
         {
             return this._objectACL != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OplocksEnabled. 
+        /// <para>
+        /// Specifies whether opportunistic locking is enabled for the SMB file share.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Enabling opportunistic locking on case-sensitive shares is not recommended for workloads
+        /// that involve access to files with the same name in different case.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Valid Values: <code>true</code> | <code>false</code> 
+        /// </para>
+        /// </summary>
+        public bool OplocksEnabled
+        {
+            get { return this._oplocksEnabled.GetValueOrDefault(); }
+            set { this._oplocksEnabled = value; }
+        }
+
+        // Check to see if OplocksEnabled property is set
+        internal bool IsSetOplocksEnabled()
+        {
+            return this._oplocksEnabled.HasValue; 
         }
 
         /// <summary>
@@ -456,7 +484,7 @@ namespace Amazon.StorageGateway.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using
-        /// Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>AWS Storage
+        /// Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>Storage
         /// Gateway User Guide</i>.
         /// </para>
         ///  

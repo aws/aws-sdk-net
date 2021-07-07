@@ -39,6 +39,7 @@ namespace Amazon.StorageGateway.Model
         private string _ec2InstanceRegion;
         private string _endpointType;
         private string _gatewayARN;
+        private GatewayCapacity _gatewayCapacity;
         private string _gatewayId;
         private string _gatewayName;
         private List<NetworkInterface> _gatewayNetworkInterfaces = new List<NetworkInterface>();
@@ -49,6 +50,7 @@ namespace Amazon.StorageGateway.Model
         private string _lastSoftwareUpdate;
         private string _nextUpdateAvailabilityDate;
         private string _softwareUpdatesEndDate;
+        private List<string> _supportedGatewayCapacities = new List<string>();
         private List<Tag> _tags = new List<Tag>();
         private string _vpcEndpoint;
 
@@ -113,7 +115,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property Ec2InstanceRegion. 
         /// <para>
-        /// The AWS Region where the Amazon EC2 instance is located.
+        /// The Region where the Amazon EC2 instance is located.
         /// </para>
         /// </summary>
         public string Ec2InstanceRegion
@@ -165,6 +167,24 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetGatewayARN()
         {
             return this._gatewayARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GatewayCapacity. 
+        /// <para>
+        /// Specifies the size of the gateway's metadata cache.
+        /// </para>
+        /// </summary>
+        public GatewayCapacity GatewayCapacity
+        {
+            get { return this._gatewayCapacity; }
+            set { this._gatewayCapacity = value; }
+        }
+
+        // Check to see if GatewayCapacity property is set
+        internal bool IsSetGatewayCapacity()
+        {
+            return this._gatewayCapacity != null;
         }
 
         /// <summary>
@@ -357,6 +377,25 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetSoftwareUpdatesEndDate()
         {
             return this._softwareUpdatesEndDate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedGatewayCapacities. 
+        /// <para>
+        /// A list of the metadata cache sizes that the gateway can support based on its current
+        /// hardware specifications.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedGatewayCapacities
+        {
+            get { return this._supportedGatewayCapacities; }
+            set { this._supportedGatewayCapacities = value; }
+        }
+
+        // Check to see if SupportedGatewayCapacities property is set
+        internal bool IsSetSupportedGatewayCapacities()
+        {
+            return this._supportedGatewayCapacities != null && this._supportedGatewayCapacities.Count > 0; 
         }
 
         /// <summary>

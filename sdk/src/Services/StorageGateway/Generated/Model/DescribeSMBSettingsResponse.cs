@@ -113,7 +113,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property FileSharesVisible. 
         /// <para>
-        /// The shares on this gateway appear when listing shares.
+        /// The shares on this gateway appear when listing shares. Only supported for S3 File
+        /// Gateways. 
         /// </para>
         /// </summary>
         public bool FileSharesVisible
@@ -148,7 +149,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property SMBGuestPasswordSet. 
         /// <para>
         /// This value is <code>true</code> if a password for the guest user <code>smbguest</code>
-        /// is set, otherwise <code>false</code>.
+        /// is set, otherwise <code>false</code>. Only supported for S3 File Gateways.
         /// </para>
         ///  
         /// <para>
@@ -176,7 +177,8 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         ///  <code>ClientSpecified</code>: If you use this option, requests are established based
         /// on what is negotiated by the client. This option is recommended when you want to maximize
-        /// compatibility across different clients in your environment.
+        /// compatibility across different clients in your environment. Only supported for S3
+        /// File Gateways.
         /// </para>
         ///  </li> <li> 
         /// <para>

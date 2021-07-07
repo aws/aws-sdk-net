@@ -40,7 +40,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property FileShareInfoList. 
         /// <para>
-        /// An array of information about the file gateway's file shares.
+        /// An array of information about the S3 File Gateway's file shares.
         /// </para>
         /// </summary>
         public List<FileShareInfo> FileShareInfoList

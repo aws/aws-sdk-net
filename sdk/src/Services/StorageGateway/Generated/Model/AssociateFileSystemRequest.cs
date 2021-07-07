@@ -30,16 +30,16 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateFileSystem operation.
-    /// Associate an Amazon FSx file system with the Amazon FSx file gateway. After the association
+    /// Associate an Amazon FSx file system with the FSx File Gateway. After the association
     /// process is complete, the file shares on the Amazon FSx file system are available for
-    /// access through the gateway. This operation only supports the Amazon FSx file gateway
-    /// type.
+    /// access through the gateway. This operation only supports the FSx File Gateway type.
     /// </summary>
     public partial class AssociateFileSystemRequest : AmazonStorageGatewayRequest
     {
         private string _auditDestinationARN;
         private CacheAttributes _cacheAttributes;
         private string _clientToken;
+        private EndpointNetworkConfiguration _endpointNetworkConfiguration;
         private string _gatewayARN;
         private string _locationARN;
         private string _password;
@@ -83,8 +83,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique string value that you supply that is used by the file gateway to ensure idempotent
-        /// file system association creation.
+        /// A unique string value that you supply that is used by the FSx File Gateway to ensure
+        /// idempotent file system association creation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=100)]
@@ -98,6 +98,31 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointNetworkConfiguration. 
+        /// <para>
+        /// Specifies the network configuration information for the gateway associated with the
+        /// Amazon FSx file system.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code>
+        /// field is required.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public EndpointNetworkConfiguration EndpointNetworkConfiguration
+        {
+            get { return this._endpointNetworkConfiguration; }
+            set { this._endpointNetworkConfiguration = value; }
+        }
+
+        // Check to see if EndpointNetworkConfiguration property is set
+        internal bool IsSetEndpointNetworkConfiguration()
+        {
+            return this._endpointNetworkConfiguration != null;
         }
 
         /// <summary>
@@ -120,7 +145,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property LocationARN. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the
-        /// Amazon FSx file gateway.
+        /// FSx File Gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=8, Max=512)]

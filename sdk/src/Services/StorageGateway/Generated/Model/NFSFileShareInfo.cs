@@ -30,11 +30,12 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// The Unix file permissions and ownership information assigned, by default, to native
-    /// S3 objects when file gateway discovers them in S3 buckets. This operation is only
-    /// supported in file gateways.
+    /// S3 objects when an S3 File Gateway discovers them in S3 buckets. This operation is
+    /// only supported in S3 File Gateways.
     /// </summary>
     public partial class NFSFileShareInfo
     {
+        private string _bucketRegion;
         private CacheAttributes _cacheAttributes;
         private List<string> _clientList = new List<string>();
         private string _defaultStorageClass;
@@ -56,6 +57,33 @@ namespace Amazon.StorageGateway.Model
         private string _role;
         private string _squash;
         private List<Tag> _tags = new List<Tag>();
+        private string _vpcEndpointDNSName;
+
+        /// <summary>
+        /// Gets and sets the property BucketRegion. 
+        /// <para>
+        /// Specifies the Region of the S3 bucket where the NFS file share stores files.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is required for NFS file shares that connect to Amazon S3 through a
+        /// VPC endpoint, a VPC access point, or an access point alias that points to a VPC access
+        /// point.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=25)]
+        public string BucketRegion
+        {
+            get { return this._bucketRegion; }
+            set { this._bucketRegion = value; }
+        }
+
+        // Check to see if BucketRegion property is set
+        internal bool IsSetBucketRegion()
+        {
+            return this._bucketRegion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CacheAttributes. 
@@ -94,8 +122,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property DefaultStorageClass. 
         /// <para>
-        /// The default storage class for objects put into an Amazon S3 bucket by the file gateway.
-        /// The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.
+        /// The default storage class for objects put into an Amazon S3 bucket by the S3 File
+        /// Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.
         /// </para>
         ///  
         /// <para>
@@ -231,8 +259,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSEncrypted. 
         /// <para>
-        /// Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS
-        /// KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.
+        /// Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
+        /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.
         /// </para>
         ///  
         /// <para>
@@ -477,6 +505,33 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VPCEndpointDNSName. 
+        /// <para>
+        /// Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect
+        /// to Amazon S3.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is required for NFS file shares that connect to Amazon S3 through a
+        /// VPC endpoint, a VPC access point, or an access point alias that points to a VPC access
+        /// point.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string VPCEndpointDNSName
+        {
+            get { return this._vpcEndpointDNSName; }
+            set { this._vpcEndpointDNSName = value; }
+        }
+
+        // Check to see if VPCEndpointDNSName property is set
+        internal bool IsSetVPCEndpointDNSName()
+        {
+            return this._vpcEndpointDNSName != null;
         }
 
     }

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Describes a file share.
+    /// Describes a file share. Only supported S3 File Gateway.
     /// </summary>
     public partial class FileShareInfo
     {

@@ -249,6 +249,11 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.BucketRegion</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.ClientToken</property>
     <min>5</min>
     <max>100</max>
@@ -297,6 +302,12 @@
     <max>15</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.VPCEndpointDNSName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-]*[A-Za-z0-9])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateNFSFileShareResponse.FileShareARN</property>
     <min>50</min>
     <max>500</max>
@@ -309,6 +320,11 @@
     <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.Authentication</property>
     <min>5</min>
     <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.BucketRegion</property>
+    <min>1</min>
+    <max>25</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.ClientToken</property>
@@ -352,6 +368,12 @@
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::([0-9]+):role/(\S+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.VPCEndpointDNSName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-]*[A-Za-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateSMBFileShareResponse.FileShareARN</property>
@@ -1845,6 +1867,11 @@
     <max>4294967294</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.NFSFileShareInfo.BucketRegion</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.NFSFileShareInfo.DefaultStorageClass</property>
     <min>5</min>
     <max>50</max>
@@ -1903,6 +1930,12 @@
     <max>15</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.NFSFileShareInfo.VPCEndpointDNSName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-]*[A-Za-z0-9])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.PoolInfo.PoolARN</property>
     <min>50</min>
     <max>500</max>
@@ -1926,6 +1959,11 @@
     <property>Amazon.StorageGateway.Model.SMBFileShareInfo.Authentication</property>
     <min>5</min>
     <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.SMBFileShareInfo.BucketRegion</property>
+    <min>1</min>
+    <max>25</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.SMBFileShareInfo.DefaultStorageClass</property>
@@ -1979,6 +2017,12 @@
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::([0-9]+):role/(\S+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.SMBFileShareInfo.VPCEndpointDNSName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-]*[A-Za-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.StorediSCSIVolume.KMSKey</property>

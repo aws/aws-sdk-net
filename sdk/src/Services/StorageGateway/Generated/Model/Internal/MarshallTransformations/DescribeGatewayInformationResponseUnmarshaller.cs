@@ -87,6 +87,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     response.GatewayARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GatewayCapacity", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.GatewayCapacity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GatewayId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -145,6 +151,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SoftwareUpdatesEndDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SupportedGatewayCapacities", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.SupportedGatewayCapacities = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Tags", targetDepth))

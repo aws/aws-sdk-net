@@ -31,7 +31,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the ActivateGateway operation.
     /// Activates the gateway you previously deployed on your host. In the activation process,
-    /// you specify information such as the AWS Region that you want to use for storing snapshots
+    /// you specify information such as the Region that you want to use for storing snapshots
     /// or tapes, the time zone for scheduled snapshots the gateway snapshot schedule window,
     /// an activation key, and a name for your gateway. The activation process also associates
     /// your gateway with your account. For more information, see <a>UpdateGatewayInformation</a>.
@@ -66,7 +66,7 @@ namespace Amazon.StorageGateway.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting
-        /// activation key</a> in the <i>AWS Storage Gateway User Guide</i>.
+        /// activation key</a> in the <i>Storage Gateway User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
@@ -104,16 +104,17 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayRegion. 
         /// <para>
-        /// A value that indicates the AWS Region where you want to store your data. The gateway
-        /// AWS Region specified must be the same AWS Region as the AWS Region in your <code>Host</code>
-        /// header in the request. For more information about available AWS Regions and endpoints
-        /// for AWS Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS
-        /// Storage Gateway endpoints and quotas</a> in the <i>AWS General Reference</i>.
+        /// A value that indicates the Region where you want to store your data. The gateway Region
+        /// specified must be the same Region as the Region in your <code>Host</code> header in
+        /// the request. For more information about available Regions and endpoints for Storage
+        /// Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage
+        /// Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS
-        /// Storage Gateway endpoints and quotas</a> in the <i>AWS General Reference</i>. 
+        /// Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">
+        /// Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=25)]
@@ -162,7 +163,7 @@ namespace Amazon.StorageGateway.Model
         ///  
         /// <para>
         /// Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code>
-        /// 
+        /// | <code>FILE_FSX_SMB|</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=20)]

@@ -46,6 +46,7 @@ namespace Amazon.StorageGateway.Model
     {
         private string _cloudWatchLogGroupARN;
         private string _gatewayARN;
+        private GatewayCapacity _gatewayCapacity;
         private string _gatewayName;
         private string _gatewayTimezone;
 
@@ -88,6 +89,24 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetGatewayARN()
         {
             return this._gatewayARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GatewayCapacity. 
+        /// <para>
+        /// Specifies the size of the gateway's metadata cache.
+        /// </para>
+        /// </summary>
+        public GatewayCapacity GatewayCapacity
+        {
+            get { return this._gatewayCapacity; }
+            set { this._gatewayCapacity = value; }
+        }
+
+        // Check to see if GatewayCapacity property is set
+        internal bool IsSetGatewayCapacity()
+        {
+            return this._gatewayCapacity != null;
         }
 
         /// <summary>

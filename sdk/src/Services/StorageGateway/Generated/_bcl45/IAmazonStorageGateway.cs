@@ -31,56 +31,55 @@ namespace Amazon.StorageGateway
     /// <summary>
     /// Interface for accessing StorageGateway
     ///
-    /// AWS Storage Gateway Service 
+    /// Storage Gateway Service 
     /// <para>
-    /// AWS Storage Gateway is the service that connects an on-premises software appliance
-    /// with cloud-based storage to provide seamless and secure integration between an organization's
-    /// on-premises IT environment and the AWS storage infrastructure. The service enables
-    /// you to securely upload data to the AWS Cloud for cost effective backup and rapid disaster
-    /// recovery.
+    /// Storage Gateway is the service that connects an on-premises software appliance with
+    /// cloud-based storage to provide seamless and secure integration between an organization's
+    /// on-premises IT environment and the Amazon Web Services storage infrastructure. The
+    /// service enables you to securely upload data to the Cloud for cost effective backup
+    /// and rapid disaster recovery.
     /// </para>
     ///  
     /// <para>
-    /// Use the following links to get started using the <i>AWS Storage Gateway Service API
-    /// Reference</i>:
+    /// Use the following links to get started using the <i>Storage Gateway Service API Reference</i>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders">AWS
-    /// Storage Gateway required request headers</a>: Describes the required headers that
-    /// you must send with every POST request to AWS Storage Gateway.
+    ///  <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders">Storage
+    /// Gateway required request headers</a>: Describes the required headers that you must
+    /// send with every POST request to Storage Gateway.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests">Signing
-    /// requests</a>: AWS Storage Gateway requires that you authenticate every request you
-    /// send; this topic describes how sign such a request.
+    /// requests</a>: Storage Gateway requires that you authenticate every request you send;
+    /// this topic describes how sign such a request.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses">Error
-    /// responses</a>: Provides reference information about AWS Storage Gateway errors.
+    /// responses</a>: Provides reference information about Storage Gateway errors.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html">Operations
-    /// in AWS Storage Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway
-    /// operations, their request parameters, response elements, possible errors, and examples
-    /// of requests and responses.
+    /// in Storage Gateway</a>: Contains detailed descriptions of all Storage Gateway operations,
+    /// their request parameters, response elements, possible errors, and examples of requests
+    /// and responses.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway
-    /// endpoints and quotas</a>: Provides a list of each AWS Region and the endpoints available
-    /// for use with AWS Storage Gateway.
+    ///  <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">Storage Gateway endpoints
+    /// and quotas</a>: Provides a list of each Region and the endpoints available for use
+    /// with Storage Gateway.
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
-    /// AWS Storage Gateway resource IDs are in uppercase. When you use these resource IDs
-    /// with the Amazon EC2 API, EC2 expects resource IDs in lowercase. You must change your
-    /// resource ID to lowercase to use it with the EC2 API. For example, in Storage Gateway
-    /// the ID for a volume might be <code>vol-AA22BB012345DAF670</code>. When you use this
-    /// ID with the EC2 API, you must change it to <code>vol-aa22bb012345daf670</code>. Otherwise,
+    /// Storage Gateway resource IDs are in uppercase. When you use these resource IDs with
+    /// the Amazon EC2 API, EC2 expects resource IDs in lowercase. You must change your resource
+    /// ID to lowercase to use it with the EC2 API. For example, in Storage Gateway the ID
+    /// for a volume might be <code>vol-AA22BB012345DAF670</code>. When you use this ID with
+    /// the EC2 API, you must change it to <code>vol-aa22bb012345daf670</code>. Otherwise,
     /// the EC2 API might not behave as expected.
     /// </para>
     ///  </note> <important> 
@@ -108,7 +107,7 @@ namespace Amazon.StorageGateway
     ///  
     /// <para>
     /// For more information, see <a href="http://forums.aws.amazon.com/ann.jspa?annID=3557">Announcement:
-    /// Heads-up – Longer AWS Storage Gateway volume and snapshot IDs coming in 2016</a>.
+    /// Heads-up – Longer Storage Gateway volume and snapshot IDs coming in 2016</a>.
     /// </para>
     ///  </important>
     /// </summary>
@@ -126,7 +125,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Activates the gateway you previously deployed on your host. In the activation process,
-        /// you specify information such as the AWS Region that you want to use for storing snapshots
+        /// you specify information such as the Region that you want to use for storing snapshots
         /// or tapes, the time zone for scheduled snapshots the gateway snapshot schedule window,
         /// an activation key, and a name for your gateway. The activation process also associates
         /// your gateway with your account. For more information, see <a>UpdateGatewayInformation</a>.
@@ -155,7 +154,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Activates the gateway you previously deployed on your host. In the activation process,
-        /// you specify information such as the AWS Region that you want to use for storing snapshots
+        /// you specify information such as the Region that you want to use for storing snapshots
         /// or tapes, the time zone for scheduled snapshots the gateway snapshot schedule window,
         /// an activation key, and a name for your gateway. The activation process also associates
         /// your gateway with your account. For more information, see <a>UpdateGatewayInformation</a>.
@@ -191,7 +190,7 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Configures one or more gateway local disks as cache for a gateway. This operation
         /// is only supported in the cached volume, tape, and file gateway type (see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">How
-        /// AWS Storage Gateway works (architecture)</a>.
+        /// Storage Gateway works (architecture)</a>.
         /// 
         ///  
         /// <para>
@@ -218,7 +217,7 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Configures one or more gateway local disks as cache for a gateway. This operation
         /// is only supported in the cached volume, tape, and file gateway type (see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">How
-        /// AWS Storage Gateway works (architecture)</a>.
+        /// Storage Gateway works (architecture)</a>.
         /// 
         ///  
         /// <para>
@@ -252,7 +251,7 @@ namespace Amazon.StorageGateway
         /// Adds one or more tags to the specified resource. You use tags to add metadata to resources,
         /// which you can use to categorize these resources. For example, you can categorize resources
         /// by purpose, owner, environment, or team. Each tag consists of a key and a value, which
-        /// you define. You can add tags to the following AWS Storage Gateway resources:
+        /// you define. You can add tags to the following Storage Gateway resources:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -269,6 +268,10 @@ namespace Amazon.StorageGateway
         ///  </li> <li> 
         /// <para>
         /// NFS and SMB file shares
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// File System associations
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -296,7 +299,7 @@ namespace Amazon.StorageGateway
         /// Adds one or more tags to the specified resource. You use tags to add metadata to resources,
         /// which you can use to categorize these resources. For example, you can categorize resources
         /// by purpose, owner, environment, or team. Each tag consists of a key and a value, which
-        /// you define. You can add tags to the following AWS Storage Gateway resources:
+        /// you define. You can add tags to the following Storage Gateway resources:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -313,6 +316,10 @@ namespace Amazon.StorageGateway
         ///  </li> <li> 
         /// <para>
         /// NFS and SMB file shares
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// File System associations
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -537,10 +544,9 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Associate an Amazon FSx file system with the Amazon FSx file gateway. After the association
+        /// Associate an Amazon FSx file system with the FSx File Gateway. After the association
         /// process is complete, the file shares on the Amazon FSx file system are available for
-        /// access through the gateway. This operation only supports the Amazon FSx file gateway
-        /// type.
+        /// access through the gateway. This operation only supports the FSx File Gateway type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateFileSystem service method.</param>
         /// 
@@ -559,10 +565,9 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Associate an Amazon FSx file system with the Amazon FSx file gateway. After the association
+        /// Associate an Amazon FSx file system with the FSx File Gateway. After the association
         /// process is complete, the file shares on the Amazon FSx file system are available for
-        /// access through the gateway. This operation only supports the Amazon FSx file gateway
-        /// type.
+        /// access through the gateway. This operation only supports the FSx File Gateway type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateFileSystem service method.</param>
         /// <param name="cancellationToken">
@@ -821,23 +826,23 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Creates a Network File System (NFS) file share on an existing file gateway. In Storage
-        /// Gateway, a file share is a file system mount point backed by Amazon S3 cloud storage.
-        /// Storage Gateway exposes file shares using an NFS interface. This operation is only
-        /// supported for file gateways.
+        /// Creates a Network File System (NFS) file share on an existing S3 File Gateway. In
+        /// Storage Gateway, a file share is a file system mount point backed by Amazon S3 cloud
+        /// storage. Storage Gateway exposes file shares using an NFS interface. This operation
+        /// is only supported for S3 File Gateways.
         /// 
         ///  <important> 
         /// <para>
-        /// File gateway requires AWS Security Token Service (AWS STS) to be activated to enable
-        /// you to create a file share. Make sure AWS STS is activated in the AWS Region you are
-        /// creating your file gateway in. If AWS STS is not activated in the AWS Region, activate
-        /// it. For information about how to activate AWS STS, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-        /// and deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management
-        /// User Guide</i>.
+        /// S3 File gateway requires Security Token Service (STS) to be activated to enable you
+        /// to create a file share. Make sure STS is activated in the Region you are creating
+        /// your S3 File Gateway in. If STS is not activated in the Region, activate it. For information
+        /// about how to activate STS, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and deactivating STS in an Region</a> in the <i>Identity and Access Management User
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// File gateway does not support creating hard or symbolic links on a file share.
+        /// S3 File Gateways do not support creating hard or symbolic links on a file share.
         /// </para>
         ///  </important>
         /// </summary>
@@ -858,23 +863,23 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Creates a Network File System (NFS) file share on an existing file gateway. In Storage
-        /// Gateway, a file share is a file system mount point backed by Amazon S3 cloud storage.
-        /// Storage Gateway exposes file shares using an NFS interface. This operation is only
-        /// supported for file gateways.
+        /// Creates a Network File System (NFS) file share on an existing S3 File Gateway. In
+        /// Storage Gateway, a file share is a file system mount point backed by Amazon S3 cloud
+        /// storage. Storage Gateway exposes file shares using an NFS interface. This operation
+        /// is only supported for S3 File Gateways.
         /// 
         ///  <important> 
         /// <para>
-        /// File gateway requires AWS Security Token Service (AWS STS) to be activated to enable
-        /// you to create a file share. Make sure AWS STS is activated in the AWS Region you are
-        /// creating your file gateway in. If AWS STS is not activated in the AWS Region, activate
-        /// it. For information about how to activate AWS STS, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-        /// and deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management
-        /// User Guide</i>.
+        /// S3 File gateway requires Security Token Service (STS) to be activated to enable you
+        /// to create a file share. Make sure STS is activated in the Region you are creating
+        /// your S3 File Gateway in. If STS is not activated in the Region, activate it. For information
+        /// about how to activate STS, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and deactivating STS in an Region</a> in the <i>Identity and Access Management User
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// File gateway does not support creating hard or symbolic links on a file share.
+        /// S3 File Gateways do not support creating hard or symbolic links on a file share.
         /// </para>
         ///  </important>
         /// </summary>
@@ -901,19 +906,19 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Creates a Server Message Block (SMB) file share on an existing file gateway. In Storage
-        /// Gateway, a file share is a file system mount point backed by Amazon S3 cloud storage.
-        /// Storage Gateway exposes file shares using an SMB interface. This operation is only
-        /// supported for file gateways.
+        /// Creates a Server Message Block (SMB) file share on an existing S3 File Gateway. In
+        /// Storage Gateway, a file share is a file system mount point backed by Amazon S3 cloud
+        /// storage. Storage Gateway exposes file shares using an SMB interface. This operation
+        /// is only supported for S3 File Gateways.
         /// 
         ///  <important> 
         /// <para>
-        /// File gateways require AWS Security Token Service (AWS STS) to be activated to enable
-        /// you to create a file share. Make sure that AWS STS is activated in the AWS Region
-        /// you are creating your file gateway in. If AWS STS is not activated in this AWS Region,
-        /// activate it. For information about how to activate AWS STS, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-        /// and deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management
-        /// User Guide</i>.
+        /// S3 File Gateways require Security Token Service (STS) to be activated to enable you
+        /// to create a file share. Make sure that STS is activated in the Region you are creating
+        /// your S3 File Gateway in. If STS is not activated in this Region, activate it. For
+        /// information about how to activate STS, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and deactivating STS in an Region</a> in the <i>Identity and Access Management User
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -938,19 +943,19 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Creates a Server Message Block (SMB) file share on an existing file gateway. In Storage
-        /// Gateway, a file share is a file system mount point backed by Amazon S3 cloud storage.
-        /// Storage Gateway exposes file shares using an SMB interface. This operation is only
-        /// supported for file gateways.
+        /// Creates a Server Message Block (SMB) file share on an existing S3 File Gateway. In
+        /// Storage Gateway, a file share is a file system mount point backed by Amazon S3 cloud
+        /// storage. Storage Gateway exposes file shares using an SMB interface. This operation
+        /// is only supported for S3 File Gateways.
         /// 
         ///  <important> 
         /// <para>
-        /// File gateways require AWS Security Token Service (AWS STS) to be activated to enable
-        /// you to create a file share. Make sure that AWS STS is activated in the AWS Region
-        /// you are creating your file gateway in. If AWS STS is not activated in this AWS Region,
-        /// activate it. For information about how to activate AWS STS, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-        /// and deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management
-        /// User Guide</i>.
+        /// S3 File Gateways require Security Token Service (STS) to be activated to enable you
+        /// to create a file share. Make sure that STS is activated in the Region you are creating
+        /// your S3 File Gateway in. If STS is not activated in this Region, activate it. For
+        /// information about how to activate STS, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and deactivating STS in an Region</a> in the <i>Identity and Access Management User
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -985,23 +990,22 @@ namespace Amazon.StorageGateway
         /// 
         ///  
         /// <para>
-        /// AWS Storage Gateway provides the ability to back up point-in-time snapshots of your
-        /// data to Amazon Simple Storage (Amazon S3) for durable off-site recovery, and also
-        /// import the data to an Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute
-        /// Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad hoc
-        /// basis. This API enables you to take an ad hoc snapshot. For more information, see
-        /// <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot">Editing
+        /// Storage Gateway provides the ability to back up point-in-time snapshots of your data
+        /// to Amazon Simple Storage (Amazon S3) for durable off-site recovery, and also import
+        /// the data to an Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud
+        /// (EC2). You can take snapshots of your gateway volume on a scheduled or ad hoc basis.
+        /// This API enables you to take an ad hoc snapshot. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot">Editing
         /// a snapshot schedule</a>.
         /// </para>
         ///  
         /// <para>
         /// In the <code>CreateSnapshot</code> request, you identify the volume by providing its
         /// Amazon Resource Name (ARN). You must also provide description for the snapshot. When
-        /// AWS Storage Gateway takes the snapshot of specified volume, the snapshot and description
-        /// appears in the AWS Storage Gateway console. In response, AWS Storage Gateway returns
-        /// you a snapshot ID. You can use this snapshot ID to check the snapshot progress or
-        /// later use it when you want to create a volume from a snapshot. This operation is only
-        /// supported in stored and cached volume gateway type.
+        /// Storage Gateway takes the snapshot of specified volume, the snapshot and description
+        /// appears in the Storage Gateway console. In response, Storage Gateway returns you a
+        /// snapshot ID. You can use this snapshot ID to check the snapshot progress or later
+        /// use it when you want to create a volume from a snapshot. This operation is only supported
+        /// in stored and cached volume gateway type.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1043,23 +1047,22 @@ namespace Amazon.StorageGateway
         /// 
         ///  
         /// <para>
-        /// AWS Storage Gateway provides the ability to back up point-in-time snapshots of your
-        /// data to Amazon Simple Storage (Amazon S3) for durable off-site recovery, and also
-        /// import the data to an Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute
-        /// Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad hoc
-        /// basis. This API enables you to take an ad hoc snapshot. For more information, see
-        /// <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot">Editing
+        /// Storage Gateway provides the ability to back up point-in-time snapshots of your data
+        /// to Amazon Simple Storage (Amazon S3) for durable off-site recovery, and also import
+        /// the data to an Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud
+        /// (EC2). You can take snapshots of your gateway volume on a scheduled or ad hoc basis.
+        /// This API enables you to take an ad hoc snapshot. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot">Editing
         /// a snapshot schedule</a>.
         /// </para>
         ///  
         /// <para>
         /// In the <code>CreateSnapshot</code> request, you identify the volume by providing its
         /// Amazon Resource Name (ARN). You must also provide description for the snapshot. When
-        /// AWS Storage Gateway takes the snapshot of specified volume, the snapshot and description
-        /// appears in the AWS Storage Gateway console. In response, AWS Storage Gateway returns
-        /// you a snapshot ID. You can use this snapshot ID to check the snapshot progress or
-        /// later use it when you want to create a volume from a snapshot. This operation is only
-        /// supported in stored and cached volume gateway type.
+        /// Storage Gateway takes the snapshot of specified volume, the snapshot and description
+        /// appears in the Storage Gateway console. In response, Storage Gateway returns you a
+        /// snapshot ID. You can use this snapshot ID to check the snapshot progress or later
+        /// use it when you want to create a volume from a snapshot. This operation is only supported
+        /// in stored and cached volume gateway type.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1117,7 +1120,7 @@ namespace Amazon.StorageGateway
         /// In the <code>CreateSnapshotFromVolumeRecoveryPoint</code> request, you identify the
         /// volume by providing its Amazon Resource Name (ARN). You must also provide a description
         /// for the snapshot. When the gateway takes a snapshot of the specified volume, the snapshot
-        /// and its description appear in the AWS Storage Gateway console. In response, the gateway
+        /// and its description appear in the Storage Gateway console. In response, the gateway
         /// returns you a snapshot ID. You can use this snapshot ID to check the snapshot progress
         /// or later use it when you want to create a volume from a snapshot.
         /// </para>
@@ -1165,7 +1168,7 @@ namespace Amazon.StorageGateway
         /// In the <code>CreateSnapshotFromVolumeRecoveryPoint</code> request, you identify the
         /// volume by providing its Amazon Resource Name (ARN). You must also provide a description
         /// for the snapshot. When the gateway takes a snapshot of the specified volume, the snapshot
-        /// and its description appear in the AWS Storage Gateway console. In response, the gateway
+        /// and its description appear in the Storage Gateway console. In response, the gateway
         /// returns you a snapshot ID. You can use this snapshot ID to check the snapshot progress
         /// or later use it when you want to create a volume from a snapshot.
         /// </para>
@@ -1599,8 +1602,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Deletes a file share from a file gateway. This operation is only supported for file
-        /// gateways.
+        /// Deletes a file share from an S3 File Gateway. This operation is only supported for
+        /// S3 File Gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFileShare service method.</param>
         /// 
@@ -1619,8 +1622,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Deletes a file share from a file gateway. This operation is only supported for file
-        /// gateways.
+        /// Deletes a file share from an S3 File Gateway. This operation is only supported for
+        /// S3 File Gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFileShare service method.</param>
         /// <param name="cancellationToken">
@@ -1662,8 +1665,8 @@ namespace Amazon.StorageGateway
         /// Amazon EBS snapshots persist and you will continue to be billed for these snapshots. You
         /// can choose to remove all remaining Amazon EBS snapshots by canceling your Amazon EC2
         /// subscription.  If you prefer not to cancel your Amazon EC2 subscription, you can delete
-        /// your snapshots using the Amazon EC2 console. For more information, see the <a href="http://aws.amazon.com/storagegateway">AWS
-        /// Storage Gateway detail page</a>.
+        /// your snapshots using the Amazon EC2 console. For more information, see the <a href="http://aws.amazon.com/storagegateway">Storage
+        /// Gateway detail page</a>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1701,8 +1704,8 @@ namespace Amazon.StorageGateway
         /// Amazon EBS snapshots persist and you will continue to be billed for these snapshots. You
         /// can choose to remove all remaining Amazon EBS snapshots by canceling your Amazon EC2
         /// subscription.  If you prefer not to cancel your Amazon EC2 subscription, you can delete
-        /// your snapshots using the Amazon EC2 console. For more information, see the <a href="http://aws.amazon.com/storagegateway">AWS
-        /// Storage Gateway detail page</a>.
+        /// your snapshots using the Amazon EC2 console. For more information, see the <a href="http://aws.amazon.com/storagegateway">Storage
+        /// Gateway detail page</a>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -2297,8 +2300,7 @@ namespace Amazon.StorageGateway
         ///  
         /// <para>
         /// The list of gateway volumes in the request must be from one gateway. In the response,
-        /// AWS Storage Gateway returns volume information sorted by volume Amazon Resource Name
-        /// (ARN).
+        /// Storage Gateway returns volume information sorted by volume Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCachediSCSIVolumes service method.</param>
@@ -2324,8 +2326,7 @@ namespace Amazon.StorageGateway
         ///  
         /// <para>
         /// The list of gateway volumes in the request must be from one gateway. In the response,
-        /// AWS Storage Gateway returns volume information sorted by volume Amazon Resource Name
-        /// (ARN).
+        /// Storage Gateway returns volume information sorted by volume Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCachediSCSIVolumes service method.</param>
@@ -2400,7 +2401,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Gets the file system association information. This operation is only supported for
-        /// Amazon FSx file gateways.
+        /// FSx File Gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFileSystemAssociations service method.</param>
         /// 
@@ -2420,7 +2421,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Gets the file system association information. This operation is only supported for
-        /// Amazon FSx file gateways.
+        /// FSx File Gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFileSystemAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -2539,8 +2540,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Gets a description for one or more Network File System (NFS) file shares from a file
-        /// gateway. This operation is only supported for file gateways.
+        /// Gets a description for one or more Network File System (NFS) file shares from an S3
+        /// File Gateway. This operation is only supported for S3 File Gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeNFSFileShares service method.</param>
         /// 
@@ -2559,8 +2560,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Gets a description for one or more Network File System (NFS) file shares from a file
-        /// gateway. This operation is only supported for file gateways.
+        /// Gets a description for one or more Network File System (NFS) file shares from an S3
+        /// File Gateway. This operation is only supported for S3 File Gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeNFSFileShares service method.</param>
         /// <param name="cancellationToken">
@@ -2585,8 +2586,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Gets a description for one or more Server Message Block (SMB) file shares from a file
-        /// gateway. This operation is only supported for file gateways.
+        /// Gets a description for one or more Server Message Block (SMB) file shares from a S3
+        /// File Gateway. This operation is only supported for S3 File Gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSMBFileShares service method.</param>
         /// 
@@ -2605,8 +2606,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Gets a description for one or more Server Message Block (SMB) file shares from a file
-        /// gateway. This operation is only supported for file gateways.
+        /// Gets a description for one or more Server Message Block (SMB) file shares from a S3
+        /// File Gateway. This operation is only supported for S3 File Gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSMBFileShares service method.</param>
         /// <param name="cancellationToken">
@@ -2726,7 +2727,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Returns the description of the gateway volumes specified in the request. The list
-        /// of gateway volumes in the request must be from one gateway. In the response, AWS Storage
+        /// of gateway volumes in the request must be from one gateway. In the response, Storage
         /// Gateway returns volume information sorted by volume ARNs. This operation is only supported
         /// in stored volume gateway type.
         /// </summary>
@@ -2748,7 +2749,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Returns the description of the gateway volumes specified in the request. The list
-        /// of gateway volumes in the request must be from one gateway. In the response, AWS Storage
+        /// of gateway volumes in the request must be from one gateway. In the response, Storage
         /// Gateway returns volume information sorted by volume ARNs. This operation is only supported
         /// in stored volume gateway type.
         /// </summary>
@@ -2780,8 +2781,8 @@ namespace Amazon.StorageGateway
         /// 
         ///  
         /// <para>
-        /// If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a
-        /// description of all virtual tapes found in the VTS associated with your account.
+        /// If a specific <code>TapeARN</code> is not specified, Storage Gateway returns a description
+        /// of all virtual tapes found in the VTS associated with your account.
         /// </para>
         /// </summary>
         /// 
@@ -2804,8 +2805,8 @@ namespace Amazon.StorageGateway
         /// 
         ///  
         /// <para>
-        /// If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a
-        /// description of all virtual tapes found in the VTS associated with your account.
+        /// If a specific <code>TapeARN</code> is not specified, Storage Gateway returns a description
+        /// of all virtual tapes found in the VTS associated with your account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTapeArchives service method.</param>
@@ -2829,8 +2830,8 @@ namespace Amazon.StorageGateway
         /// 
         ///  
         /// <para>
-        /// If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a
-        /// description of all virtual tapes found in the VTS associated with your account.
+        /// If a specific <code>TapeARN</code> is not specified, Storage Gateway returns a description
+        /// of all virtual tapes found in the VTS associated with your account.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -2857,8 +2858,8 @@ namespace Amazon.StorageGateway
         /// 
         ///  
         /// <para>
-        /// If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a
-        /// description of all virtual tapes found in the VTS associated with your account.
+        /// If a specific <code>TapeARN</code> is not specified, Storage Gateway returns a description
+        /// of all virtual tapes found in the VTS associated with your account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTapeArchives service method.</param>
@@ -3055,7 +3056,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Returns a description of virtual tape library (VTL) devices for the specified tape
-        /// gateway. In the response, AWS Storage Gateway returns VTL device information.
+        /// gateway. In the response, Storage Gateway returns VTL device information.
         /// 
         ///  
         /// <para>
@@ -3080,7 +3081,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Returns a description of virtual tape library (VTL) devices for the specified tape
-        /// gateway. In the response, AWS Storage Gateway returns VTL device information.
+        /// gateway. In the response, Storage Gateway returns VTL device information.
         /// 
         ///  
         /// <para>
@@ -3304,7 +3305,7 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Disassociates an Amazon FSx file system from the specified gateway. After the disassociation
         /// process finishes, the gateway can no longer access the Amazon FSx file system. This
-        /// operation is only supported in the Amazon FSx file gateway type.
+        /// operation is only supported in the FSx File Gateway type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateFileSystem service method.</param>
         /// 
@@ -3325,7 +3326,7 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Disassociates an Amazon FSx file system from the specified gateway. After the disassociation
         /// process finishes, the gateway can no longer access the Amazon FSx file system. This
-        /// operation is only supported in the Amazon FSx file gateway type.
+        /// operation is only supported in the FSx File Gateway type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateFileSystem service method.</param>
         /// <param name="cancellationToken">
@@ -3452,9 +3453,9 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Gets a list of the file shares for a specific file gateway, or the list of file shares
-        /// that belong to the calling user account. This operation is only supported for file
-        /// gateways.
+        /// Gets a list of the file shares for a specific S3 File Gateway, or the list of file
+        /// shares that belong to the calling user account. This operation is only supported for
+        /// S3 File Gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFileShares service method.</param>
         /// 
@@ -3473,9 +3474,9 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Gets a list of the file shares for a specific file gateway, or the list of file shares
-        /// that belong to the calling user account. This operation is only supported for file
-        /// gateways.
+        /// Gets a list of the file shares for a specific S3 File Gateway, or the list of file
+        /// shares that belong to the calling user account. This operation is only supported for
+        /// S3 File Gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFileShares service method.</param>
         /// <param name="cancellationToken">
@@ -3501,8 +3502,8 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Gets a list of <code>FileSystemAssociationSummary</code> objects. Each object contains
-        /// a summary of a file system association. This operation is only supported for Amazon
-        /// FSx file gateways.
+        /// a summary of a file system association. This operation is only supported for FSx File
+        /// Gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFileSystemAssociations service method.</param>
         /// 
@@ -3522,8 +3523,8 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Gets a list of <code>FileSystemAssociationSummary</code> objects. Each object contains
-        /// a summary of a file system association. This operation is only supported for Amazon
-        /// FSx file gateways.
+        /// a summary of a file system association. This operation is only supported for FSx File
+        /// Gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFileSystemAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -3548,8 +3549,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Lists gateways owned by an AWS account in an AWS Region specified in the request.
-        /// The returned list is ordered by gateway Amazon Resource Name (ARN).
+        /// Lists gateways owned by an account in an Region specified in the request. The returned
+        /// list is ordered by gateway Amazon Resource Name (ARN).
         /// 
         ///  
         /// <para>
@@ -3579,8 +3580,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Lists gateways owned by an AWS account in an AWS Region specified in the request.
-        /// The returned list is ordered by gateway Amazon Resource Name (ARN).
+        /// Lists gateways owned by an account in an Region specified in the request. The returned
+        /// list is ordered by gateway Amazon Resource Name (ARN).
         /// 
         ///  
         /// <para>
@@ -3611,8 +3612,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Lists gateways owned by an AWS account in an AWS Region specified in the request.
-        /// The returned list is ordered by gateway Amazon Resource Name (ARN).
+        /// Lists gateways owned by an account in an Region specified in the request. The returned
+        /// list is ordered by gateway Amazon Resource Name (ARN).
         /// 
         ///  
         /// <para>
@@ -3646,8 +3647,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Lists gateways owned by an AWS account in an AWS Region specified in the request.
-        /// The returned list is ordered by gateway Amazon Resource Name (ARN).
+        /// Lists gateways owned by an account in an Region specified in the request. The returned
+        /// list is ordered by gateway Amazon Resource Name (ARN).
         /// 
         ///  
         /// <para>
@@ -4118,18 +4119,18 @@ namespace Amazon.StorageGateway
         /// 
         ///  
         /// <para>
-        /// AWS Storage Gateway can send a notification through Amazon CloudWatch Events when
-        /// all files written to your file share up to that point in time have been uploaded to
-        /// Amazon S3. These files include files written to the file share up to the time that
-        /// you make a request for notification. When the upload is done, Storage Gateway sends
-        /// you notification through an Amazon CloudWatch Event. You can configure CloudWatch
-        /// Events to send the notification through event targets such as Amazon SNS or AWS Lambda
-        /// function. This operation is only supported for file gateways.
+        /// Storage Gateway can send a notification through Amazon CloudWatch Events when all
+        /// files written to your file share up to that point in time have been uploaded to Amazon
+        /// S3. These files include files written to the file share up to the time that you make
+        /// a request for notification. When the upload is done, Storage Gateway sends you notification
+        /// through an Amazon CloudWatch Event. You can configure CloudWatch Events to send the
+        /// notification through event targets such as Amazon SNS or Lambda function. This operation
+        /// is only supported for S3 File Gateways.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-upload-notification">Getting
-        /// file upload notification</a> in the <i>AWS Storage Gateway User Guide</i>.
+        /// file upload notification</a> in the <i>Storage Gateway User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the NotifyWhenUploaded service method.</param>
@@ -4154,18 +4155,18 @@ namespace Amazon.StorageGateway
         /// 
         ///  
         /// <para>
-        /// AWS Storage Gateway can send a notification through Amazon CloudWatch Events when
-        /// all files written to your file share up to that point in time have been uploaded to
-        /// Amazon S3. These files include files written to the file share up to the time that
-        /// you make a request for notification. When the upload is done, Storage Gateway sends
-        /// you notification through an Amazon CloudWatch Event. You can configure CloudWatch
-        /// Events to send the notification through event targets such as Amazon SNS or AWS Lambda
-        /// function. This operation is only supported for file gateways.
+        /// Storage Gateway can send a notification through Amazon CloudWatch Events when all
+        /// files written to your file share up to that point in time have been uploaded to Amazon
+        /// S3. These files include files written to the file share up to the time that you make
+        /// a request for notification. When the upload is done, Storage Gateway sends you notification
+        /// through an Amazon CloudWatch Event. You can configure CloudWatch Events to send the
+        /// notification through event targets such as Amazon SNS or Lambda function. This operation
+        /// is only supported for S3 File Gateways.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-upload-notification">Getting
-        /// file upload notification</a> in the <i>AWS Storage Gateway User Guide</i>.
+        /// file upload notification</a> in the <i>Storage Gateway User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the NotifyWhenUploaded service method.</param>
@@ -4194,13 +4195,17 @@ namespace Amazon.StorageGateway
         /// Refreshes the cached inventory of objects for the specified file share. This operation
         /// finds objects in the Amazon S3 bucket that were added, removed, or replaced since
         /// the gateway last listed the bucket's contents and cached the results. This operation
-        /// does not import files into the file gateway cache storage. It only updates the cached
-        /// inventory to reflect changes in the inventory of the objects in the S3 bucket. This
-        /// operation is only supported in the file gateway type. You can subscribe to be notified
-        /// through an Amazon CloudWatch event when your <code>RefreshCache</code> operation completes.
-        /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
-        /// notified about file operations</a> in the <i>AWS Storage Gateway User Guide</i>.
+        /// does not import files into the S3 File Gateway cache storage. It only updates the
+        /// cached inventory to reflect changes in the inventory of the objects in the S3 bucket.
+        /// This operation is only supported in the S3 File Gateway types.
         /// 
+        ///  
+        /// <para>
+        /// You can subscribe to be notified through an Amazon CloudWatch event when your <code>RefreshCache</code>
+        /// operation completes. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
+        /// notified about file operations</a> in the <i>Storage Gateway User Guide</i>. This
+        /// operation is Only supported for S3 File Gateways.
+        /// </para>
         ///  
         /// <para>
         /// When this API is called, it only initiates the refresh operation. When the API call
@@ -4215,7 +4220,7 @@ namespace Amazon.StorageGateway
         /// Throttle limit: This API is asynchronous, so the gateway will accept no more than
         /// two refreshes at any time. We recommend using the refresh-complete CloudWatch event
         /// notification before issuing additional requests. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
-        /// notified about file operations</a> in the <i>AWS Storage Gateway User Guide</i>.
+        /// notified about file operations</a> in the <i>Storage Gateway User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -4226,7 +4231,7 @@ namespace Amazon.StorageGateway
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
-        /// notified about file operations</a> in the <i>AWS Storage Gateway User Guide</i>.
+        /// notified about file operations</a> in the <i>Storage Gateway User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RefreshCache service method.</param>
@@ -4249,13 +4254,17 @@ namespace Amazon.StorageGateway
         /// Refreshes the cached inventory of objects for the specified file share. This operation
         /// finds objects in the Amazon S3 bucket that were added, removed, or replaced since
         /// the gateway last listed the bucket's contents and cached the results. This operation
-        /// does not import files into the file gateway cache storage. It only updates the cached
-        /// inventory to reflect changes in the inventory of the objects in the S3 bucket. This
-        /// operation is only supported in the file gateway type. You can subscribe to be notified
-        /// through an Amazon CloudWatch event when your <code>RefreshCache</code> operation completes.
-        /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
-        /// notified about file operations</a> in the <i>AWS Storage Gateway User Guide</i>.
+        /// does not import files into the S3 File Gateway cache storage. It only updates the
+        /// cached inventory to reflect changes in the inventory of the objects in the S3 bucket.
+        /// This operation is only supported in the S3 File Gateway types.
         /// 
+        ///  
+        /// <para>
+        /// You can subscribe to be notified through an Amazon CloudWatch event when your <code>RefreshCache</code>
+        /// operation completes. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
+        /// notified about file operations</a> in the <i>Storage Gateway User Guide</i>. This
+        /// operation is Only supported for S3 File Gateways.
+        /// </para>
         ///  
         /// <para>
         /// When this API is called, it only initiates the refresh operation. When the API call
@@ -4270,7 +4279,7 @@ namespace Amazon.StorageGateway
         /// Throttle limit: This API is asynchronous, so the gateway will accept no more than
         /// two refreshes at any time. We recommend using the refresh-complete CloudWatch event
         /// notification before issuing additional requests. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
-        /// notified about file operations</a> in the <i>AWS Storage Gateway User Guide</i>.
+        /// notified about file operations</a> in the <i>Storage Gateway User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -4281,7 +4290,7 @@ namespace Amazon.StorageGateway
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
-        /// notified about file operations</a> in the <i>AWS Storage Gateway User Guide</i>.
+        /// notified about file operations</a> in the <i>Storage Gateway User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RefreshCache service method.</param>
@@ -4686,6 +4695,7 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Sets the password for the guest user <code>smbguest</code>. The <code>smbguest</code>
         /// user is the user when the authentication method for the file share is set to <code>GuestAccess</code>.
+        /// This operation only supported for S3 File Gateways
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetSMBGuestPassword service method.</param>
         /// 
@@ -4706,6 +4716,7 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Sets the password for the guest user <code>smbguest</code>. The <code>smbguest</code>
         /// user is the user when the authentication method for the file share is set to <code>GuestAccess</code>.
+        /// This operation only supported for S3 File Gateways
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetSMBGuestPassword service method.</param>
         /// <param name="cancellationToken">
@@ -5230,8 +5241,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Updates a file system association. This operation is only supported in the Amazon
-        /// FSx file gateway type.
+        /// Updates a file system association. This operation is only supported in the FSx File
+        /// Gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFileSystemAssociation service method.</param>
         /// 
@@ -5250,8 +5261,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Updates a file system association. This operation is only supported in the Amazon
-        /// FSx file gateway type.
+        /// Updates a file system association. This operation is only supported in the FSx File
+        /// Gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFileSystemAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -5467,7 +5478,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Updates a Network File System (NFS) file share. This operation is only supported in
-        /// the file gateway type.
+        /// S3 File Gateways.
         /// 
         ///  <note> 
         /// <para>
@@ -5517,7 +5528,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Updates a Network File System (NFS) file share. This operation is only supported in
-        /// the file gateway type.
+        /// S3 File Gateways.
         /// 
         ///  <note> 
         /// <para>
@@ -5573,7 +5584,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Updates a Server Message Block (SMB) file share. This operation is only supported
-        /// for file gateways.
+        /// for S3 File Gateways.
         /// 
         ///  <note> 
         /// <para>
@@ -5581,12 +5592,12 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  </note> <important> 
         /// <para>
-        /// File gateways require AWS Security Token Service (AWS STS) to be activated to enable
-        /// you to create a file share. Make sure that AWS STS is activated in the AWS Region
-        /// you are creating your file gateway in. If AWS STS is not activated in this AWS Region,
-        /// activate it. For information about how to activate AWS STS, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-        /// and deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management
-        /// User Guide</i>.
+        /// File gateways require Security Token Service (STS) to be activated to enable you to
+        /// create a file share. Make sure that STS is activated in the Region you are creating
+        /// your file gateway in. If STS is not activated in this Region, activate it. For information
+        /// about how to activate STS, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and deactivating STS in an Region</a> in the <i>Identity and Access Management User
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -5612,7 +5623,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Updates a Server Message Block (SMB) file share. This operation is only supported
-        /// for file gateways.
+        /// for S3 File Gateways.
         /// 
         ///  <note> 
         /// <para>
@@ -5620,12 +5631,12 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  </note> <important> 
         /// <para>
-        /// File gateways require AWS Security Token Service (AWS STS) to be activated to enable
-        /// you to create a file share. Make sure that AWS STS is activated in the AWS Region
-        /// you are creating your file gateway in. If AWS STS is not activated in this AWS Region,
-        /// activate it. For information about how to activate AWS STS, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-        /// and deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management
-        /// User Guide</i>.
+        /// File gateways require Security Token Service (STS) to be activated to enable you to
+        /// create a file share. Make sure that STS is activated in the Region you are creating
+        /// your file gateway in. If STS is not activated in this Region, activate it. For information
+        /// about how to activate STS, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and deactivating STS in an Region</a> in the <i>Identity and Access Management User
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -5656,7 +5667,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Controls whether the shares on a gateway are visible in a net view or browse list.
+        /// Controls whether the shares on an S3 File Gateway are visible in a net view or browse
+        /// list. The operation is only supported for S3 File Gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSMBFileShareVisibility service method.</param>
         /// 
@@ -5675,7 +5687,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Controls whether the shares on a gateway are visible in a net view or browse list.
+        /// Controls whether the shares on an S3 File Gateway are visible in a net view or browse
+        /// list. The operation is only supported for S3 File Gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSMBFileShareVisibility service method.</param>
         /// <param name="cancellationToken">

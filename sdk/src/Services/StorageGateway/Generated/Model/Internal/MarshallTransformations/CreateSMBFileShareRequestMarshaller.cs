@@ -96,6 +96,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Authentication);
                 }
 
+                if(publicRequest.IsSetBucketRegion())
+                {
+                    context.Writer.WritePropertyName("BucketRegion");
+                    context.Writer.Write(publicRequest.BucketRegion);
+                }
+
                 if(publicRequest.IsSetCacheAttributes())
                 {
                     context.Writer.WritePropertyName("CacheAttributes");
@@ -184,6 +190,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ObjectACL);
                 }
 
+                if(publicRequest.IsSetOplocksEnabled())
+                {
+                    context.Writer.WritePropertyName("OplocksEnabled");
+                    context.Writer.Write(publicRequest.OplocksEnabled);
+                }
+
                 if(publicRequest.IsSetReadOnly())
                 {
                     context.Writer.WritePropertyName("ReadOnly");
@@ -233,6 +245,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                             context.Writer.Write(publicRequestValidUserListListValue);
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetVPCEndpointDNSName())
+                {
+                    context.Writer.WritePropertyName("VPCEndpointDNSName");
+                    context.Writer.Write(publicRequest.VPCEndpointDNSName);
                 }
 
         

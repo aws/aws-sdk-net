@@ -36,6 +36,7 @@ namespace Amazon.StorageGateway.Model
     {
         private string _auditDestinationARN;
         private CacheAttributes _cacheAttributes;
+        private EndpointNetworkConfiguration _endpointNetworkConfiguration;
         private string _fileSystemAssociationARN;
         private string _fileSystemAssociationStatus;
         private string _gatewayARN;
@@ -77,6 +78,31 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EndpointNetworkConfiguration. 
+        /// <para>
+        /// Specifies network configuration information for the gateway associated with the Amazon
+        /// FSx file system.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code>
+        /// field is required.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public EndpointNetworkConfiguration EndpointNetworkConfiguration
+        {
+            get { return this._endpointNetworkConfiguration; }
+            set { this._endpointNetworkConfiguration = value; }
+        }
+
+        // Check to see if EndpointNetworkConfiguration property is set
+        internal bool IsSetEndpointNetworkConfiguration()
+        {
+            return this._endpointNetworkConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FileSystemAssociationARN. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the file system association.
@@ -99,8 +125,8 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property FileSystemAssociationStatus. 
         /// <para>
         /// The status of the file system association. Valid Values: <code>AVAILABLE</code> |
-        /// <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code>
-        /// | <code>UPDATING</code> | <code>UNAVAILABLE</code> 
+        /// <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code>
+        /// | <code>ERROR</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=50)]

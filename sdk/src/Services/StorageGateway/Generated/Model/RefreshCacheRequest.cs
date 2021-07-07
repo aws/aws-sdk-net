@@ -33,13 +33,17 @@ namespace Amazon.StorageGateway.Model
     /// Refreshes the cached inventory of objects for the specified file share. This operation
     /// finds objects in the Amazon S3 bucket that were added, removed, or replaced since
     /// the gateway last listed the bucket's contents and cached the results. This operation
-    /// does not import files into the file gateway cache storage. It only updates the cached
-    /// inventory to reflect changes in the inventory of the objects in the S3 bucket. This
-    /// operation is only supported in the file gateway type. You can subscribe to be notified
-    /// through an Amazon CloudWatch event when your <code>RefreshCache</code> operation completes.
-    /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
-    /// notified about file operations</a> in the <i>AWS Storage Gateway User Guide</i>.
+    /// does not import files into the S3 File Gateway cache storage. It only updates the
+    /// cached inventory to reflect changes in the inventory of the objects in the S3 bucket.
+    /// This operation is only supported in the S3 File Gateway types.
     /// 
+    ///  
+    /// <para>
+    /// You can subscribe to be notified through an Amazon CloudWatch event when your <code>RefreshCache</code>
+    /// operation completes. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
+    /// notified about file operations</a> in the <i>Storage Gateway User Guide</i>. This
+    /// operation is Only supported for S3 File Gateways.
+    /// </para>
     ///  
     /// <para>
     /// When this API is called, it only initiates the refresh operation. When the API call
@@ -54,7 +58,7 @@ namespace Amazon.StorageGateway.Model
     /// Throttle limit: This API is asynchronous, so the gateway will accept no more than
     /// two refreshes at any time. We recommend using the refresh-complete CloudWatch event
     /// notification before issuing additional requests. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
-    /// notified about file operations</a> in the <i>AWS Storage Gateway User Guide</i>.
+    /// notified about file operations</a> in the <i>Storage Gateway User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -65,7 +69,7 @@ namespace Amazon.StorageGateway.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
-    /// notified about file operations</a> in the <i>AWS Storage Gateway User Guide</i>.
+    /// notified about file operations</a> in the <i>Storage Gateway User Guide</i>.
     /// </para>
     /// </summary>
     public partial class RefreshCacheRequest : AmazonStorageGatewayRequest

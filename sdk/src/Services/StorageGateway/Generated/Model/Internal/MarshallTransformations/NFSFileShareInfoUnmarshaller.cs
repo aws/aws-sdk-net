@@ -64,6 +64,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("BucketRegion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BucketRegion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CacheAttributes", targetDepth))
                 {
                     var unmarshaller = CacheAttributesUnmarshaller.Instance;
@@ -188,6 +194,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VPCEndpointDNSName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VPCEndpointDNSName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

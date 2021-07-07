@@ -90,6 +90,17 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ClientToken);
                 }
 
+                if(publicRequest.IsSetEndpointNetworkConfiguration())
+                {
+                    context.Writer.WritePropertyName("EndpointNetworkConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EndpointNetworkConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EndpointNetworkConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetGatewayARN())
                 {
                     context.Writer.WritePropertyName("GatewayARN");

@@ -31,7 +31,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the DescribeFileSystemAssociations operation.
     /// Gets the file system association information. This operation is only supported for
-    /// Amazon FSx file gateways.
+    /// FSx File Gateways.
     /// </summary>
     public partial class DescribeFileSystemAssociationsRequest : AmazonStorageGatewayRequest
     {

@@ -76,6 +76,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.CacheAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EndpointNetworkConfiguration", targetDepth))
+                {
+                    var unmarshaller = EndpointNetworkConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.EndpointNetworkConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FileSystemAssociationARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

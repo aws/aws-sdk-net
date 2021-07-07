@@ -539,6 +539,60 @@ namespace Amazon.StorageGateway
 
 
     /// <summary>
+    /// Constants used for properties of type GatewayCapacity.
+    /// </summary>
+    public class GatewayCapacity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Large for GatewayCapacity
+        /// </summary>
+        public static readonly GatewayCapacity Large = new GatewayCapacity("Large");
+        /// <summary>
+        /// Constant Medium for GatewayCapacity
+        /// </summary>
+        public static readonly GatewayCapacity Medium = new GatewayCapacity("Medium");
+        /// <summary>
+        /// Constant Small for GatewayCapacity
+        /// </summary>
+        public static readonly GatewayCapacity Small = new GatewayCapacity("Small");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GatewayCapacity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GatewayCapacity FindValue(string value)
+        {
+            return FindValue<GatewayCapacity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GatewayCapacity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HostEnvironment.
     /// </summary>
     public class HostEnvironment : ConstantClass

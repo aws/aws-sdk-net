@@ -33,7 +33,7 @@ namespace Amazon.StorageGateway.Model
     /// Adds one or more tags to the specified resource. You use tags to add metadata to resources,
     /// which you can use to categorize these resources. For example, you can categorize resources
     /// by purpose, owner, environment, or team. Each tag consists of a key and a value, which
-    /// you define. You can add tags to the following AWS Storage Gateway resources:
+    /// you define. You can add tags to the following Storage Gateway resources:
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -50,6 +50,10 @@ namespace Amazon.StorageGateway.Model
     ///  </li> <li> 
     /// <para>
     /// NFS and SMB file shares
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// File System associations
     /// </para>
     ///  </li> </ul> 
     /// <para>

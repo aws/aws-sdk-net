@@ -31,7 +31,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the UpdateNFSFileShare operation.
     /// Updates a Network File System (NFS) file share. This operation is only supported in
-    /// the file gateway type.
+    /// S3 File Gateways.
     /// 
     ///  <note> 
     /// <para>
@@ -101,8 +101,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property ClientList. 
         /// <para>
-        /// The list of clients that are allowed to access the file gateway. The list must contain
-        /// either valid IP addresses or valid CIDR blocks.
+        /// The list of clients that are allowed to access the S3 File Gateway. The list must
+        /// contain either valid IP addresses or valid CIDR blocks.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -121,8 +121,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property DefaultStorageClass. 
         /// <para>
-        /// The default storage class for objects put into an Amazon S3 bucket by the file gateway.
-        /// The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.
+        /// The default storage class for objects put into an Amazon S3 bucket by the S3 File
+        /// Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.
         /// </para>
         ///  
         /// <para>
@@ -213,8 +213,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSEncrypted. 
         /// <para>
-        /// Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS
-        /// KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.
+        /// Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
+        /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.
         /// </para>
         ///  
         /// <para>
@@ -321,7 +321,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property ObjectACL. 
         /// <para>
         /// A value that sets the access control list (ACL) permission for objects in the S3 bucket
-        /// that a file gateway puts objects into. The default value is <code>private</code>.
+        /// that a S3 File Gateway puts objects into. The default value is <code>private</code>.
         /// </para>
         /// </summary>
         public ObjectACL ObjectACL

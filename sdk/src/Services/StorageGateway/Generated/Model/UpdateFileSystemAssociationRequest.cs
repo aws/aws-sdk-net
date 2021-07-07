@@ -30,8 +30,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFileSystemAssociation operation.
-    /// Updates a file system association. This operation is only supported in the Amazon
-    /// FSx file gateway type.
+    /// Updates a file system association. This operation is only supported in the FSx File
+    /// Gateways.
     /// </summary>
     public partial class UpdateFileSystemAssociationRequest : AmazonStorageGatewayRequest
     {

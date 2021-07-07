@@ -65,7 +65,7 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to delete
         /// is associated with. Use the <a>ListGateways</a> operation to return a list of gateways
-        /// for your account and AWS Region.
+        /// for your account and Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=50, Max=500)]

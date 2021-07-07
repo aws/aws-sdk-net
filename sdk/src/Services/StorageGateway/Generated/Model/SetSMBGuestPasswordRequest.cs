@@ -32,6 +32,7 @@ namespace Amazon.StorageGateway.Model
     /// Container for the parameters to the SetSMBGuestPassword operation.
     /// Sets the password for the guest user <code>smbguest</code>. The <code>smbguest</code>
     /// user is the user when the authentication method for the file share is set to <code>GuestAccess</code>.
+    /// This operation only supported for S3 File Gateways
     /// </summary>
     public partial class SetSMBGuestPasswordRequest : AmazonStorageGatewayRequest
     {
@@ -41,7 +42,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the file gateway the SMB file share is associated
+        /// The Amazon Resource Name (ARN) of the S3 File Gateway the SMB file share is associated
         /// with.
         /// </para>
         /// </summary>

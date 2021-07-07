@@ -40,7 +40,7 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// The unique Amazon Resource Name (ARN) that represents the custom tape pool. Use the
         /// <a>ListTapePools</a> operation to return a list of tape pools for your account and
-        /// AWS Region.
+        /// Region.
         /// </para>
         /// </summary>
         [AWSProperty(Min=50, Max=500)]

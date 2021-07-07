@@ -81,8 +81,8 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property FileSystemAssociationStatus. 
         /// <para>
         /// The status of the file share. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code>
-        /// | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code>
-        /// | <code>UPDATING</code> | <code>UNAVAILABLE</code> 
+        /// | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=50)]
