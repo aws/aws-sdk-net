@@ -1417,8 +1417,8 @@ namespace ServiceClientGenerator
 
             var srcFilesRoot = Path.Combine(options.SdkRootFolder, "src");
             var coreFilesRoot = Path.Combine(srcFilesRoot, "core");
-            var generatedFileRoot = Path.Combine(srcFilesRoot, "Services", "S3", "Custom");
-            const string fileName = "S3Enumerations.generated.cs";
+            var generatedFileRoot = Path.Combine(srcFilesRoot, "Services", "S3", "Generated");
+            const string fileName = "S3Enumerations.cs";
 
             var endpoints = ExtractEndpoints(options, ConstructEndpointName, ConvertS3RegionCode);
 
