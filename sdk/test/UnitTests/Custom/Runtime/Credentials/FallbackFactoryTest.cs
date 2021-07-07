@@ -58,6 +58,10 @@ namespace AWSSDK.UnitTests
             .AppendLine("[processCredential]")
             .AppendLine("region=us-west-1")
             .AppendLine($"credential_process = {ProcessAWSCredentialsTest.Executable} {ProcessAWSCredentialsTest.ArgumentsBasic} {ProcessAWSCredentialsTest.ValidVersionNumber}")
+            .AppendLine("[awsConfigsAwsProfileName]")
+            .AppendLine("region=eu-north-1")
+            .AppendLine("aws_access_key_id=awsprofilename_aws_access_key_id")
+            .AppendLine("aws_secret_access_key=awsprofilename_aws_secret_access_key")
             .AppendLine("[retries]")
             .AppendLine("max_attempts=100")
             .AppendLine("retry_mode=standard")            
@@ -135,6 +139,20 @@ namespace AWSSDK.UnitTests
                 
                 var region = FallbackRegionFactory.GetRegionEndpoint(false);
                 Assert.AreEqual(RegionEndpoint.USWest1, region);
+            }
+        }
+
+        [TestMethod]
+        public void TestAwsConfigsAwsProfileNameProfile()
+        {
+            using (new FallbackFactoryTestFixture(ProfileText, "awsConfigsAwsProfileName", null, true))
+            {
+                var creds = FallbackCredentialsFactory.GetCredentials();
+                Assert.AreEqual("awsprofilename_aws_access_key_id", creds.GetCredentials().AccessKey);
+                Assert.AreEqual("awsprofilename_aws_secret_access_key", creds.GetCredentials().SecretKey);
+
+                var region = FallbackRegionFactory.GetRegionEndpoint(false);
+                Assert.AreEqual(RegionEndpoint.EUNorth1, region);
             }
         }
 
@@ -633,11 +651,15 @@ namespace AWSSDK.UnitTests
             private readonly CredentialProfileStoreChain originalEndpointDiscoveryEnabledChain;
             private readonly CredentialProfileStoreChain originalConfigurationChain;
 
-            private readonly string originalAWSProfileValue;            
-            
+            private readonly string originalAWSProfileValue;
+
+            private readonly string originalAwsconfigAwsProfileName;
+            private readonly string originalAwsconfigAwsProfilesLocation;
+
+
             private readonly Dictionary<string, string> originalEnvironmentVariables = new Dictionary<string, string>();
 
-            public FallbackFactoryTestFixture(string sharedCredsFileContent, string awsProfileValue, Dictionary<string, string> newEnvironmentVariables = null)
+            public FallbackFactoryTestFixture(string sharedCredsFileContent, string awsProfileValue, Dictionary<string, string> newEnvironmentVariables = null, bool setAwsConfigsProfileValue = false)
             {
                 sharedFixture = new SharedCredentialsFileTestFixture(sharedCredsFileContent);
                 netSdkFixture = new NetSDKCredentialsFileTestFixture();
@@ -655,8 +677,8 @@ namespace AWSSDK.UnitTests
                 ReflectionHelpers.Invoke(typeof(FallbackInternalConfigurationFactory), "_credentialProfileChain", new CredentialProfileStoreChain(sharedFixture.CredentialsFilePath));
 
                 originalAWSProfileValue = Environment.GetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE);
-                Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, awsProfileValue);
-                                                
+                if (!setAwsConfigsProfileValue) Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, awsProfileValue);
+
                 if (newEnvironmentVariables != null)
                 {
                     foreach (var envVariable in newEnvironmentVariables)
@@ -665,6 +687,14 @@ namespace AWSSDK.UnitTests
                         Environment.SetEnvironmentVariable(envVariable.Key, envVariable.Value);
                         originalEnvironmentVariables.Add(envVariable.Key, originalValue);
                     }
+                }
+
+                originalAwsconfigAwsProfileName = AWSConfigs.AWSProfileName;
+                originalAwsconfigAwsProfilesLocation = AWSConfigs.AWSProfilesLocation;
+                if (setAwsConfigsProfileValue)
+                {
+                    AWSConfigs.AWSProfileName = awsProfileValue;
+                    AWSConfigs.AWSProfilesLocation = sharedFixture.CredentialsFilePath;
                 }
 
                 // reset before use to ensure the new credentialProfileChains are used.
@@ -681,7 +711,10 @@ namespace AWSSDK.UnitTests
                     Environment.SetEnvironmentVariable(envVariable.Key, envVariable.Value);
                 }
 
-                Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, originalAWSProfileValue);                
+                Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, originalAWSProfileValue);
+
+                AWSConfigs.AWSProfileName = originalAwsconfigAwsProfileName;
+                AWSConfigs.AWSProfilesLocation = originalAwsconfigAwsProfilesLocation;
 
                 ReflectionHelpers.Invoke(typeof(FallbackRegionFactory), "credentialProfileChain", originalRegionChain);
                 ReflectionHelpers.Invoke(typeof(FallbackCredentialsFactory), "credentialProfileChain", originalCredsChain);
