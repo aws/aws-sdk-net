@@ -41,8 +41,8 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// You can create service-specific credentials for AWS CodeCommit and Amazon Keyspaces
-    /// (for Apache Cassandra).
+    /// You can create service-specific credentials for CodeCommit and Amazon Keyspaces (for
+    /// Apache Cassandra).
     /// </para>
     ///  
     /// <para>
@@ -51,8 +51,8 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// For more information about service-specific credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_ssh-keys.html">Using
-    /// IAM with AWS CodeCommit: Git credentials, SSH keys, and AWS access keys</a> in the
-    /// <i>IAM User Guide</i>.
+    /// IAM with CodeCommit: Git credentials, SSH keys, and Amazon Web Services access keys</a>
+    /// in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateServiceSpecificCredentialRequest : AmazonIdentityManagementServiceRequest
@@ -63,8 +63,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The name of the AWS service that is to be associated with the credentials. The service
-        /// you specify here is the only service that can be accessed using these credentials.
+        /// The name of the Amazon Web Services service that is to be associated with the credentials.
+        /// The service you specify here is the only service that can be accessed using these
+        /// credentials.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

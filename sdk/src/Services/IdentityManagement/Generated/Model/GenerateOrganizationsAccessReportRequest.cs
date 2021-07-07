@@ -30,17 +30,17 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GenerateOrganizationsAccessReport operation.
-    /// Generates a report for service last accessed data for AWS Organizations. You can generate
+    /// Generates a report for service last accessed data for Organizations. You can generate
     /// a report for any entities (organization root, organizational unit, or account) or
     /// policies in your organization.
     /// 
     ///  
     /// <para>
-    /// To call this operation, you must be signed in using your AWS Organizations management
+    /// To call this operation, you must be signed in using your Organizations management
     /// account credentials. You can use your long-term IAM user or root user credentials,
     /// or temporary credentials from assuming an IAM role. SCPs must be enabled for your
-    /// organization root. You must have the required IAM and AWS Organizations permissions.
-    /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Refining
+    /// organization root. You must have the required IAM and Organizations permissions. For
+    /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Refining
     /// permissions using service last accessed data</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
@@ -52,8 +52,8 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// You can generate a service last accessed data report for a policy by specifying an
-    /// entity's path and an optional AWS Organizations policy ID. This data includes a list
-    /// of services that are allowed by the specified SCP.
+    /// entity's path and an optional Organizations policy ID. This data includes a list of
+    /// services that are allowed by the specified SCP.
     /// </para>
     ///  
     /// <para>
@@ -65,13 +65,13 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// The data includes all attempts to access AWS, not just the successful ones. This includes
-    /// all attempts that were made using the AWS Management Console, the AWS API through
-    /// any of the SDKs, or any of the command line tools. An unexpected entry in the service
-    /// last accessed data does not mean that an account has been compromised, because the
-    /// request might have been denied. Refer to your CloudTrail logs as the authoritative
-    /// source for information about all API calls and whether they were successful or denied
-    /// access. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
+    /// The data includes all attempts to access Amazon Web Services, not just the successful
+    /// ones. This includes all attempts that were made using the Management Console, the
+    /// Amazon Web Services API through any of the SDKs, or any of the command line tools.
+    /// An unexpected entry in the service last accessed data does not mean that an account
+    /// has been compromised, because the request might have been denied. Refer to your CloudTrail
+    /// logs as the authoritative source for information about all API calls and whether they
+    /// were successful or denied access. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
     /// IAM events with CloudTrail</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  </important> 
@@ -85,8 +85,8 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// To generate a service last accessed data report for entities, specify an entity path
-    /// without specifying the optional AWS Organizations policy ID. The type of entity that
-    /// you specify determines the data returned in the report.
+    /// without specifying the optional Organizations policy ID. The type of entity that you
+    /// specify determines the data returned in the report.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -106,8 +106,9 @@ namespace Amazon.IdentityManagement.Model
     ///  </li> <li> 
     /// <para>
     ///  <b>management account</b> – When you specify the management account, the resulting
-    /// report lists all AWS services, because the management account is not limited by SCPs.
-    /// For each service, the report includes data for only the management account.
+    /// report lists all Amazon Web Services services, because the management account is not
+    /// limited by SCPs. For each service, the report includes data for only the management
+    /// account.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -118,8 +119,8 @@ namespace Amazon.IdentityManagement.Model
     ///  </li> </ul> 
     /// <para>
     /// To generate a service last accessed data report for policies, specify an entity path
-    /// and the optional AWS Organizations policy ID. The type of entity that you specify
-    /// determines the data returned for each service.
+    /// and the optional Organizations policy ID. The type of entity that you specify determines
+    /// the data returned for each service.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -143,9 +144,9 @@ namespace Amazon.IdentityManagement.Model
     ///  </li> <li> 
     /// <para>
     ///  <b>management account</b> – When you specify the management account, the resulting
-    /// report lists all AWS services, because the management account is not limited by SCPs.
-    /// If you specify a policy ID in the CLI or API, the policy is ignored. For each service,
-    /// the report includes data for only the management account.
+    /// report lists all Amazon Web Services services, because the management account is not
+    /// limited by SCPs. If you specify a policy ID in the CLI or API, the policy is ignored.
+    /// For each service, the report includes data for only the management account.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -179,9 +180,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property EntityPath. 
         /// <para>
-        /// The path of the AWS Organizations entity (root, OU, or account). You can build an
-        /// entity path using the known structure of your organization. For example, assume that
-        /// your account ID is <code>123456789012</code> and its parent OU ID is <code>ou-rge0-awsabcde</code>.
+        /// The path of the Organizations entity (root, OU, or account). You can build an entity
+        /// path using the known structure of your organization. For example, assume that your
+        /// account ID is <code>123456789012</code> and its parent OU ID is <code>ou-rge0-awsabcde</code>.
         /// The organization root ID is <code>r-f6g7h8i9j0example</code> and your organization
         /// ID is <code>o-a1b2c3d4e5</code>. Your entity path is <code>o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-rge0-awsabcde/123456789012</code>.
         /// </para>
@@ -202,13 +203,13 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property OrganizationsPolicyId. 
         /// <para>
-        /// The identifier of the AWS Organizations service control policy (SCP). This parameter
-        /// is optional.
+        /// The identifier of the Organizations service control policy (SCP). This parameter is
+        /// optional.
         /// </para>
         ///  
         /// <para>
         /// This ID is used to generate information about when an account principal that is limited
-        /// by the SCP attempted to access an AWS service.
+        /// by the SCP attempted to access an Amazon Web Services service.
         /// </para>
         /// </summary>
         public string OrganizationsPolicyId

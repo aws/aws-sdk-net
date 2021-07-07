@@ -36,7 +36,7 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  <note> 
     /// <para>
-    /// For certificates in a Region supported by AWS Certificate Manager (ACM), we recommend
+    /// For certificates in a Region supported by Certificate Manager (ACM), we recommend
     /// that you don't use IAM server certificates. Instead, use ACM to provision, manage,
     /// and deploy your server certificates. For more information about IAM server certificates,
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
@@ -74,16 +74,17 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// (Optional) Use this only when paginating results to indicate the maximum number of
-        /// items that you want in the response. If additional items exist beyond the maximum
-        /// that you specify, the <code>IsTruncated</code> response element is <code>true</code>.
+        /// Use this only when paginating results to indicate the maximum number of items you
+        /// want in the response. If additional items exist beyond the maximum you specify, the
+        /// <code>IsTruncated</code> response element is <code>true</code>.
         /// </para>
         ///  
         /// <para>
-        /// If you do not include this parameter, it defaults to 100. Note that IAM might return
-        /// fewer results, even when more results are available. In that case, the <code>IsTruncated</code>
-        /// response element returns <code>true</code>, and <code>Marker</code> contains a value
-        /// to include in the subsequent call that tells the service where to continue from.
+        /// If you do not include this parameter, the number of items defaults to 100. Note that
+        /// IAM might return fewer results, even when there are more results available. In that
+        /// case, the <code>IsTruncated</code> response element returns <code>true</code>, and
+        /// <code>Marker</code> contains a value to include in the subsequent call that tells
+        /// the service where to continue from.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -106,9 +107,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex
-        /// pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: =,.@-
+        /// This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
+        /// pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

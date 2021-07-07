@@ -31,10 +31,10 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the SimulatePrincipalPolicy operation.
     /// Simulate how a set of IAM policies attached to an IAM entity works with a list of
-    /// API operations and AWS resources to determine the policies' effective permissions.
-    /// The entity can be an IAM user, group, or role. If you specify a user, then the simulation
-    /// also includes all of the policies that are attached to groups that the user belongs
-    /// to. You can simulate resources that don't exist in your account.
+    /// API operations and Amazon Web Services resources to determine the policies' effective
+    /// permissions. The entity can be an IAM user, group, or role. If you specify a user,
+    /// then the simulation also includes all of the policies that are attached to groups
+    /// that the user belongs to. You can simulate resources that don't exist in your account.
     /// 
     ///  
     /// <para>
@@ -60,8 +60,8 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// Context keys are variables maintained by AWS and its services that provide details
-    /// about the context of an API query request. You can use the <code>Condition</code>
+    /// Context keys are variables maintained by Amazon Web Services and its services that
+    /// provide details about the context of an API query request. You can use the <code>Condition</code>
     /// element of an IAM policy to evaluate context keys. To get the list of context keys
     /// that the policies require for correct simulation, use <a>GetContextKeysForPrincipalPolicy</a>.
     /// </para>
@@ -138,7 +138,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -240,6 +240,13 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
+        /// The maximum length of the policy document that you can pass in this operation, including
+        /// whitespace, is listed below. To view the maximum character counts of a managed policy
+        /// with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+        /// and STS character quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
         /// parameter is a string of characters consisting of the following:
         /// </para>
@@ -323,8 +330,15 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
+        /// The maximum length of the policy document that you can pass in this operation, including
+        /// whitespace, is listed below. To view the maximum character counts of a managed policy
+        /// with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+        /// and STS character quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -343,12 +357,12 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceArns. 
         /// <para>
-        /// A list of ARNs of AWS resources to include in the simulation. If this parameter is
-        /// not provided, then the value defaults to <code>*</code> (all resources). Each API
-        /// in the <code>ActionNames</code> parameter is evaluated for each resource in this list.
-        /// The simulation determines the access result (allowed or denied) of each combination
-        /// and reports it in the response. You can simulate resources that don't exist in your
-        /// account.
+        /// A list of ARNs of Amazon Web Services resources to include in the simulation. If this
+        /// parameter is not provided, then the value defaults to <code>*</code> (all resources).
+        /// Each API in the <code>ActionNames</code> parameter is evaluated for each resource
+        /// in this list. The simulation determines the access result (allowed or denied) of each
+        /// combination and reports it in the response. You can simulate resources that don't
+        /// exist in your account.
         /// </para>
         ///  
         /// <para>
@@ -359,7 +373,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
         public List<string> ResourceArns
@@ -460,10 +474,10 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceOwner. 
         /// <para>
-        /// An AWS account ID that specifies the owner of any simulated resource that does not
-        /// identify its owner in the resource ARN. Examples of resource ARNs include an S3 bucket
-        /// or object. If <code>ResourceOwner</code> is specified, it is also used as the account
-        /// owner of any <code>ResourcePolicy</code> included in the simulation. If the <code>ResourceOwner</code>
+        /// An account ID that specifies the owner of any simulated resource that does not identify
+        /// its owner in the resource ARN. Examples of resource ARNs include an S3 bucket or object.
+        /// If <code>ResourceOwner</code> is specified, it is also used as the account owner of
+        /// any <code>ResourcePolicy</code> included in the simulation. If the <code>ResourceOwner</code>
         /// parameter is not specified, then the owner of the resources and the resource policy
         /// defaults to the account of the identity provided in <code>CallerArn</code>. This parameter
         /// is required only if you specify a resource-based policy and account that owns the
@@ -489,6 +503,13 @@ namespace Amazon.IdentityManagement.Model
         /// A resource-based policy to include in the simulation provided as a string. Each resource
         /// in the simulation is treated as if it had this policy attached. You can include only
         /// one resource-based policy in a simulation.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum length of the policy document that you can pass in this operation, including
+        /// whitespace, is listed below. To view the maximum character counts of a managed policy
+        /// with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+        /// and STS character quotas</a>.
         /// </para>
         ///  
         /// <para>

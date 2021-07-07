@@ -30,7 +30,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// The request was rejected because it attempted to create resources beyond the current
-    /// AWS account limits. The error message describes the limit exceeded.
+    /// Amazon Web Services account limits. The error message describes the limit exceeded.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

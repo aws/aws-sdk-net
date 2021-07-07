@@ -30,9 +30,9 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAccountAliases operation.
-    /// Lists the account alias associated with the AWS account (Note: you can have only one).
-    /// For information about using an AWS account alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-    /// an alias for your AWS account ID</a> in the <i>IAM User Guide</i>.
+    /// Lists the account alias associated with the account (Note: you can have only one).
+    /// For information about using an account alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
+    /// an alias for your account ID</a> in the <i>IAM User Guide</i>.
     /// </summary>
     public partial class ListAccountAliasesRequest : AmazonIdentityManagementServiceRequest
     {

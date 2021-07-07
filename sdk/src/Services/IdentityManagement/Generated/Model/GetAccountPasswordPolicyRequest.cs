@@ -30,7 +30,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAccountPasswordPolicy operation.
-    /// Retrieves the password policy for the AWS account. This tells you the complexity requirements
+    /// Retrieves the password policy for the account. This tells you the complexity requirements
     /// and mandatory rotation periods for the IAM user passwords in your account. For more
     /// information about using a password policy, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
     /// an IAM password policy</a>.

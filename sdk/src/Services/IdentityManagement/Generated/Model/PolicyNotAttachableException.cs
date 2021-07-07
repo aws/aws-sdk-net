@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// The request failed because AWS service role policies can only be attached to the service-linked
-    /// role for that service.
+    /// The request failed because Amazon Web Services service role policies can only be attached
+    /// to the service-linked role for that service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -47,8 +47,8 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates
-        /// formatted in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation
+        /// You must provide policies in JSON format in IAM. However, for CloudFormation templates
+        /// formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation
         /// always converts a YAML policy to JSON format before submitting it to IAM.
         /// </para>
         ///  

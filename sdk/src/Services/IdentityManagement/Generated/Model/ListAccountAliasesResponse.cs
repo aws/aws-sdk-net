@@ -40,7 +40,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property AccountAliases. 
         /// <para>
-        /// A list of aliases associated with the account. AWS supports only one alias per account.
+        /// A list of aliases associated with the account. Amazon Web Services supports only one
+        /// alias per account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

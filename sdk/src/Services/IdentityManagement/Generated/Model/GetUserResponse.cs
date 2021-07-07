@@ -54,11 +54,11 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// You can use password last used information to identify unused credentials for deletion.
-        /// For example, you might delete users who did not sign in to AWS in the last 90 days.
-        /// In cases like this, we recommend that you adjust your evaluation window to include
-        /// dates after May 23, 2018. Alternatively, if your users use access keys to access AWS
-        /// programmatically you can refer to access key last used information because it is accurate
-        /// for all dates. 
+        /// For example, you might delete users who did not sign in to Amazon Web Services in
+        /// the last 90 days. In cases like this, we recommend that you adjust your evaluation
+        /// window to include dates after May 23, 2018. Alternatively, if your users use access
+        /// keys to access Amazon Web Services programmatically you can refer to access key last
+        /// used information because it is accurate for all dates. 
         /// </para>
         ///  </important>
         /// </summary>

@@ -31,8 +31,8 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ListUsers operation.
     /// Lists the IAM users that have the specified path prefix. If no path prefix is specified,
-    /// the operation returns all users in the AWS account. If there are none, the operation
-    /// returns an empty list.
+    /// the operation returns all users in the account. If there are none, the operation returns
+    /// an empty list.
     /// 
     ///  <note> 
     /// <para>

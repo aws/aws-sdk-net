@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains information about the last time an AWS access key was used since IAM began
-    /// tracking this information on April 22, 2015.
+    /// Contains information about the last time an Amazon Web Services access key was used
+    /// since IAM began tracking this information on April 22, 2015.
     /// 
     ///  
     /// <para>
@@ -80,7 +80,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS Region where this access key was most recently used. The value for this field
+        /// The Region where this access key was most recently used. The value for this field
         /// is "N/A" in the following situations:
         /// </para>
         ///  <ul> <li> 
@@ -97,7 +97,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about AWS Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+        /// For more information about Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
         /// and endpoints</a> in the Amazon Web Services General Reference.
         /// </para>
         /// </summary>
@@ -117,8 +117,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The name of the AWS service with which this access key was most recently used. The
-        /// value of this field is "N/A" in the following situations:
+        /// The name of the Amazon Web Services service with which this access key was most recently
+        /// used. The value of this field is "N/A" in the following situations:
         /// </para>
         ///  <ul> <li> 
         /// <para>

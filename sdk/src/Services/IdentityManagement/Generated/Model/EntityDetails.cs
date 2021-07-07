@@ -30,7 +30,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// An object that contains details about when the IAM entities (users or roles) were
-    /// last used in an attempt to access the specified AWS service.
+    /// last used in an attempt to access the specified Amazon Web Services service.
     /// 
     ///  
     /// <para>
@@ -67,8 +67,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property LastAuthenticated. 
         /// <para>
         /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
-        /// format</a>, when the authenticated entity last attempted to access AWS. AWS does not
-        /// report unauthenticated requests.
+        /// format</a>, when the authenticated entity last attempted to access Amazon Web Services.
+        /// Amazon Web Services does not report unauthenticated requests.
         /// </para>
         ///  
         /// <para>

@@ -36,9 +36,9 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// If the <code>UserName</code> is not specified, the user name is determined implicitly
-    /// based on the AWS access key ID used to sign the request. This operation works for
-    /// access keys under the AWS account. Consequently, you can use this operation to manage
-    /// AWS account root user credentials even if the AWS account has no associated users.
+    /// based on the Amazon Web Services access key ID used to sign the request. This operation
+    /// works for access keys under the account. Consequently, you can use this operation
+    /// to manage account root user credentials even if the account has no associated users.
     /// </para>
     ///  
     /// <para>
@@ -61,7 +61,7 @@ namespace Amazon.IdentityManagement.Model
         /// Instantiates UpdateAccessKeyRequest with the parameterized properties
         /// </summary>
         /// <param name="accessKeyId">The access key ID of the secret access key you want to update. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</param>
-        /// <param name="status"> The status you want to assign to the secret access key. <code>Active</code> means that the key can be used for programmatic calls to AWS, while <code>Inactive</code> means that the key cannot be used.</param>
+        /// <param name="status"> The status you want to assign to the secret access key. <code>Active</code> means that the key can be used for programmatic calls to Amazon Web Services, while <code>Inactive</code> means that the key cannot be used.</param>
         public UpdateAccessKeyRequest(string accessKeyId, StatusType status)
         {
             _accessKeyId = accessKeyId;
@@ -97,7 +97,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Status. 
         /// <para>
         ///  The status you want to assign to the secret access key. <code>Active</code> means
-        /// that the key can be used for programmatic calls to AWS, while <code>Inactive</code>
+        /// that the key can be used for programmatic calls to Amazon Web Services, while <code>Inactive</code>
         /// means that the key cannot be used.
         /// </para>
         /// </summary>

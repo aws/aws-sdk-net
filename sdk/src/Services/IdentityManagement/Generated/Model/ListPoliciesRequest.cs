@@ -30,15 +30,16 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPolicies operation.
-    /// Lists all the managed policies that are available in your AWS account, including your
-    /// own customer-defined managed policies and all AWS managed policies.
+    /// Lists all the managed policies that are available in your account, including your
+    /// own customer-defined managed policies and all Amazon Web Services managed policies.
     /// 
     ///  
     /// <para>
     /// You can filter the list of policies that is returned using the optional <code>OnlyAttached</code>,
     /// <code>Scope</code>, and <code>PathPrefix</code> parameters. For example, to list only
-    /// the customer managed policies in your AWS account, set <code>Scope</code> to <code>Local</code>.
-    /// To list only AWS managed policies, set <code>Scope</code> to <code>AWS</code>.
+    /// the customer managed policies in your Amazon Web Services account, set <code>Scope</code>
+    /// to <code>Local</code>. To list only Amazon Web Services managed policies, set <code>Scope</code>
+    /// to <code>AWS</code>.
     /// </para>
     ///  
     /// <para>
@@ -201,8 +202,8 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// To list only AWS managed policies, set <code>Scope</code> to <code>AWS</code>. To
-        /// list only the customer managed policies in your AWS account, set <code>Scope</code>
+        /// To list only Amazon Web Services managed policies, set <code>Scope</code> to <code>AWS</code>.
+        /// To list only the customer managed policies in your account, set <code>Scope</code>
         /// to <code>Local</code>.
         /// </para>
         ///  

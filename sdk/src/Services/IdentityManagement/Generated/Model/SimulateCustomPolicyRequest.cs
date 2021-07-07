@@ -31,8 +31,8 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the SimulateCustomPolicy operation.
     /// Simulate how a set of IAM policies and optionally a resource-based policy works with
-    /// a list of API operations and AWS resources to determine the policies' effective permissions.
-    /// The policies are provided as strings.
+    /// a list of API operations and Amazon Web Services resources to determine the policies'
+    /// effective permissions. The policies are provided as strings.
     /// 
     ///  
     /// <para>
@@ -47,10 +47,10 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// Context keys are variables that are maintained by AWS and its services and which provide
-    /// details about the context of an API query request. You can use the <code>Condition</code>
-    /// element of an IAM policy to evaluate context keys. To get the list of context keys
-    /// that the policies require for correct simulation, use <a>GetContextKeysForCustomPolicy</a>.
+    /// Context keys are variables that are maintained by Amazon Web Services and its services
+    /// and which provide details about the context of an API query request. You can use the
+    /// <code>Condition</code> element of an IAM policy to evaluate context keys. To get the
+    /// list of context keys that the policies require for correct simulation, use <a>GetContextKeysForCustomPolicy</a>.
     /// </para>
     ///  
     /// <para>
@@ -209,6 +209,13 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
+        /// The maximum length of the policy document that you can pass in this operation, including
+        /// whitespace, is listed below. To view the maximum character counts of a managed policy
+        /// with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+        /// and STS character quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
         /// parameter is a string of characters consisting of the following:
         /// </para>
@@ -255,6 +262,13 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
+        /// The maximum length of the policy document that you can pass in this operation, including
+        /// whitespace, is listed below. To view the maximum character counts of a managed policy
+        /// with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+        /// and STS character quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
         /// parameter is a string of characters consisting of the following:
         /// </para>
@@ -291,12 +305,12 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceArns. 
         /// <para>
-        /// A list of ARNs of AWS resources to include in the simulation. If this parameter is
-        /// not provided, then the value defaults to <code>*</code> (all resources). Each API
-        /// in the <code>ActionNames</code> parameter is evaluated for each resource in this list.
-        /// The simulation determines the access result (allowed or denied) of each combination
-        /// and reports it in the response. You can simulate resources that don't exist in your
-        /// account.
+        /// A list of ARNs of Amazon Web Services resources to include in the simulation. If this
+        /// parameter is not provided, then the value defaults to <code>*</code> (all resources).
+        /// Each API in the <code>ActionNames</code> parameter is evaluated for each resource
+        /// in this list. The simulation determines the access result (allowed or denied) of each
+        /// combination and reports it in the response. You can simulate resources that don't
+        /// exist in your account.
         /// </para>
         ///  
         /// <para>
@@ -312,7 +326,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
         public List<string> ResourceArns
@@ -413,7 +427,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceOwner. 
         /// <para>
-        /// An ARN representing the AWS account ID that specifies the owner of any simulated resource
+        /// An ARN representing the account ID that specifies the owner of any simulated resource
         /// that does not identify its owner in the resource ARN. Examples of resource ARNs include
         /// an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also used
         /// as the account owner of any <code>ResourcePolicy</code> included in the simulation.
@@ -449,6 +463,13 @@ namespace Amazon.IdentityManagement.Model
         /// A resource-based policy to include in the simulation provided as a string. Each resource
         /// in the simulation is treated as if it had this policy attached. You can include only
         /// one resource-based policy in a simulation.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum length of the policy document that you can pass in this operation, including
+        /// whitespace, is listed below. To view the maximum character counts of a managed policy
+        /// with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+        /// and STS character quotas</a>.
         /// </para>
         ///  
         /// <para>

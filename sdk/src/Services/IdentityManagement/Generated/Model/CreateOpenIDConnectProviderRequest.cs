@@ -36,16 +36,16 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// The OIDC provider that you create with this operation can be used as a principal in
-    /// a role's trust policy. Such a policy establishes a trust relationship between AWS
-    /// and the OIDC provider.
+    /// a role's trust policy. Such a policy establishes a trust relationship between Amazon
+    /// Web Services and the OIDC provider.
     /// </para>
     ///  
     /// <para>
     /// If you are using an OIDC identity provider from Google, Facebook, or Amazon Cognito,
     /// you don't need to create a separate IAM identity provider. These OIDC identity providers
-    /// are already built-in to AWS and are available for your use. Instead, you can move
-    /// directly to creating new roles using your identity provider. To learn more, see <a
-    /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_oidc.html">Creating
+    /// are already built-in to Amazon Web Services and are available for your use. Instead,
+    /// you can move directly to creating new roles using your identity provider. To learn
+    /// more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_oidc.html">Creating
     /// a role for web identity or OpenID connect federation</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
@@ -59,7 +59,7 @@ namespace Amazon.IdentityManagement.Model
     ///  </li> <li> 
     /// <para>
     /// A list of client IDs (also known as audiences) that identify the application or applications
-    /// that are allowed to authenticate using the OIDC provider
+    /// allowed to authenticate using the OIDC provider
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -67,7 +67,8 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// You get all of this information from the OIDC IdP that you want to use to access AWS.
+    /// You get all of this information from the OIDC IdP that you want to use to access Amazon
+    /// Web Services.
     /// </para>
     ///  <note> 
     /// <para>
@@ -195,9 +196,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// You cannot register the same provider multiple times in a single AWS account. If you
-        /// try to submit a URL that has already been used for an OpenID Connect provider in the
-        /// AWS account, you will get an error.
+        /// You cannot register the same provider multiple times in a single account. If you try
+        /// to submit a URL that has already been used for an OpenID Connect provider in the account,
+        /// you will get an error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

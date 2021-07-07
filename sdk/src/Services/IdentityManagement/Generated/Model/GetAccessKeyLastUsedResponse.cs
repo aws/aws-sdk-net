@@ -59,7 +59,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The name of the AWS IAM user that owns this access key.
+        /// The name of the IAM user that owns this access key.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

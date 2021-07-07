@@ -122,9 +122,9 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property ServiceUserName. 
         /// <para>
         /// The generated user name for the service-specific credential. This value is generated
-        /// by combining the IAM user's name combined with the ID number of the AWS account, as
-        /// in <code>jane-at-123456789012</code>, for example. This value cannot be configured
-        /// by the user.
+        /// by combining the IAM user's name combined with the ID number of the Amazon Web Services
+        /// account, as in <code>jane-at-123456789012</code>, for example. This value cannot be
+        /// configured by the user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=17, Max=200)]

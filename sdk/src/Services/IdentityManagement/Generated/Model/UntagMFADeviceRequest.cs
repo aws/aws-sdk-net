@@ -47,9 +47,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex
-        /// pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: =,.@-
+        /// This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
+        /// pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=9, Max=256)]

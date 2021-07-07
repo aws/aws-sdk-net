@@ -30,7 +30,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAccountPasswordPolicy operation.
-    /// Updates the password policy settings for the AWS account.
+    /// Updates the password policy settings for the account.
     /// 
     ///  <note> <ul> <li> 
     /// <para>
@@ -62,8 +62,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property AllowUsersToChangePassword. 
         /// <para>
-        ///  Allows all IAM users in your account to use the AWS Management Console to change
-        /// their own passwords. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
+        ///  Allows all IAM users in your account to use the Management Console to change their
+        /// own passwords. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
         /// IAM users change their own passwords</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  

@@ -30,7 +30,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePolicy operation.
-    /// Creates a new managed policy for your AWS account.
+    /// Creates a new managed policy for your account.
     /// 
     ///  
     /// <para>
@@ -129,9 +129,16 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates
-        /// formatted in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation
+        /// You must provide policies in JSON format in IAM. However, for CloudFormation templates
+        /// formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation
         /// always converts a YAML policy to JSON format before submitting it to IAM.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum length of the policy document that you can pass in this operation, including
+        /// whitespace, is listed below. To view the maximum character counts of a managed policy
+        /// with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+        /// and STS character quotas</a>.
         /// </para>
         ///  
         /// <para>

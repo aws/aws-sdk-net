@@ -30,7 +30,8 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ResyncMFADevice operation.
-    /// Synchronizes the specified MFA device with its IAM resource object on the AWS servers.
+    /// Synchronizes the specified MFA device with its IAM resource object on the Amazon Web
+    /// Services servers.
     /// 
     ///  
     /// <para>

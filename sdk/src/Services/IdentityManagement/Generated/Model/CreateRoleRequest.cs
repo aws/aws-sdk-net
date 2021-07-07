@@ -30,8 +30,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRole operation.
-    /// Creates a new role for your AWS account. For more information about roles, see <a
-    /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM
+    /// Creates a new role for your account. For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM
     /// roles</a>. For information about quotas for role names and the number of roles you
     /// can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
     /// and STS quotas</a> in the <i>IAM User Guide</i>.
@@ -55,9 +54,9 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// In IAM, you must provide a JSON policy that has been converted to a string. However,
-        /// for AWS CloudFormation templates formatted in YAML, you can provide the policy in
-        /// JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
-        /// before submitting it to IAM.
+        /// for CloudFormation templates formatted in YAML, you can provide the policy in JSON
+        /// or YAML format. CloudFormation always converts a YAML policy to JSON format before
+        /// submitting it to IAM.
         /// </para>
         ///  
         /// <para>
@@ -125,7 +124,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Anyone who assumes the role from the AWS CLI or API can use the <code>DurationSeconds</code>
+        /// Anyone who assumes the role from the or API can use the <code>DurationSeconds</code>
         /// API parameter or the <code>duration-seconds</code> CLI parameter to request a longer
         /// session. The <code>MaxSessionDuration</code> setting determines the maximum duration
         /// that can be requested using the <code>DurationSeconds</code> parameter. If users don't

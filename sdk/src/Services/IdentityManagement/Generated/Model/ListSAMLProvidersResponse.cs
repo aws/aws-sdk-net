@@ -38,7 +38,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property SAMLProviderList. 
         /// <para>
-        /// The list of SAML provider resource objects defined in IAM for this AWS account.
+        /// The list of SAML provider resource objects defined in IAM for this Amazon Web Services
+        /// account.
         /// </para>
         /// </summary>
         public List<SAMLProviderListEntry> SAMLProviderList

@@ -38,7 +38,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property OpenIDConnectProviderList. 
         /// <para>
-        /// The list of IAM OIDC provider resource objects defined in the AWS account.
+        /// The list of IAM OIDC provider resource objects defined in the account.
         /// </para>
         /// </summary>
         public List<OpenIDConnectProviderListEntry> OpenIDConnectProviderList

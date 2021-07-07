@@ -51,7 +51,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates LoginProfile with the parameterized properties
         /// </summary>
-        /// <param name="userName">The name of the user, which can be used for signing in to the AWS Management Console.</param>
+        /// <param name="userName">The name of the user, which can be used for signing in to the Management Console.</param>
         /// <param name="createDate">The date when the password for the user was created.</param>
         public LoginProfile(string userName, DateTime createDate)
         {
@@ -99,7 +99,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The name of the user, which can be used for signing in to the AWS Management Console.
+        /// The name of the user, which can be used for signing in to the Management Console.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

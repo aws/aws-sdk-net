@@ -41,10 +41,10 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
-    /// based on the AWS access key ID used to sign the request for this operation. This operation
-    /// works for access keys under the AWS account. Consequently, you can use this operation
-    /// to manage AWS account root user credentials even if the AWS account has no associated
-    /// users.
+    /// based on the Amazon Web Services access key ID used to sign the request for this operation.
+    /// This operation works for access keys under the account. Consequently, you can use
+    /// this operation to manage account root user credentials even if the account has no
+    /// associated users.
     /// </para>
     /// </summary>
     public partial class ListSigningCertificatesRequest : AmazonIdentityManagementServiceRequest

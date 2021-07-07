@@ -37,9 +37,9 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// The SSH public key affected by this operation is used only for authenticating the
-    /// associated IAM user to an AWS CodeCommit repository. For more information about using
-    /// SSH keys to authenticate to an AWS CodeCommit repository, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set
-    /// up AWS CodeCommit for SSH connections</a> in the <i>AWS CodeCommit User Guide</i>.
+    /// associated IAM user to an CodeCommit repository. For more information about using
+    /// SSH keys to authenticate to an CodeCommit repository, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set
+    /// up CodeCommit for SSH connections</a> in the <i>CodeCommit User Guide</i>.
     /// </para>
     /// </summary>
     public partial class UpdateSSHPublicKeyRequest : AmazonIdentityManagementServiceRequest
@@ -77,7 +77,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The status to assign to the SSH public key. <code>Active</code> means that the key
-        /// can be used for authentication with an AWS CodeCommit repository. <code>Inactive</code>
+        /// can be used for authentication with an CodeCommit repository. <code>Inactive</code>
         /// means that the key cannot be used.
         /// </para>
         /// </summary>

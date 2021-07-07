@@ -30,7 +30,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUser operation.
-    /// Creates a new IAM user for your AWS account.
+    /// Creates a new IAM user for your account.
     /// 
     ///  
     /// <para>

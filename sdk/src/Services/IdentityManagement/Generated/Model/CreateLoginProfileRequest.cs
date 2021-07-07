@@ -31,13 +31,13 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the CreateLoginProfile operation.
     /// Creates a password for the specified IAM user. A password allows an IAM user to access
-    /// AWS services through the AWS Management Console.
+    /// Amazon Web Services services through the Management Console.
     /// 
     ///  
     /// <para>
-    /// You can use the AWS CLI, the AWS API, or the <b>Users</b> page in the IAM console
-    /// to create a password for any IAM user. Use <a>ChangePassword</a> to update your own
-    /// existing password in the <b>My Security Credentials</b> page in the AWS Management
+    /// You can use the CLI, the Amazon Web Services API, or the <b>Users</b> page in the
+    /// IAM console to create a password for any IAM user. Use <a>ChangePassword</a> to update
+    /// your own existing password in the <b>My Security Credentials</b> page in the Management
     /// Console.
     /// </para>
     ///  
@@ -61,7 +61,7 @@ namespace Amazon.IdentityManagement.Model
         /// Instantiates CreateLoginProfileRequest with the parameterized properties
         /// </summary>
         /// <param name="userName">The name of the IAM user to create a password for. The user must already exist. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</param>
-        /// <param name="password">The new password for the user. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of characters. That string can include almost any printable ASCII character from the space (<code>\u0020</code>) through the end of the ASCII character range (<code>\u00FF</code>). You can also include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) characters. Any of these characters are valid in a password. However, many tools, such as the AWS Management Console, might restrict the ability to type certain characters because they have special meaning within that tool.</param>
+        /// <param name="password">The new password for the user. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of characters. That string can include almost any printable ASCII character from the space (<code>\u0020</code>) through the end of the ASCII character range (<code>\u00FF</code>). You can also include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) characters. Any of these characters are valid in a password. However, many tools, such as the Management Console, might restrict the ability to type certain characters because they have special meaning within that tool.</param>
         public CreateLoginProfileRequest(string userName, string password)
         {
             _userName = userName;
@@ -81,7 +81,7 @@ namespace Amazon.IdentityManagement.Model
         /// character range (<code>\u00FF</code>). You can also include the tab (<code>\u0009</code>),
         /// line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) characters.
         /// Any of these characters are valid in a password. However, many tools, such as the
-        /// AWS Management Console, might restrict the ability to type certain characters because
+        /// Management Console, might restrict the ability to type certain characters because
         /// they have special meaning within that tool.
         /// </para>
         /// </summary>

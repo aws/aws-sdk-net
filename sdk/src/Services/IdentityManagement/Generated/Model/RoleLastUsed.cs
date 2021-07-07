@@ -75,7 +75,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The name of the AWS Region in which the role was last used.
+        /// The name of the Region in which the role was last used.
         /// </para>
         /// </summary>
         public string Region

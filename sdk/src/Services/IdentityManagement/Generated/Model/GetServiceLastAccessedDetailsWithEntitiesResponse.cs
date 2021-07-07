@@ -46,7 +46,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// An <code>EntityDetailsList</code> object that contains details about when an IAM entity
         /// (user or role) used group or policy permissions in an attempt to access the specified
-        /// AWS service.
+        /// Amazon Web Services service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

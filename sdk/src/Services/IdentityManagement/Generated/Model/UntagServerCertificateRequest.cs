@@ -36,7 +36,7 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  <note> 
     /// <para>
-    /// For certificates in a Region supported by AWS Certificate Manager (ACM), we recommend
+    /// For certificates in a Region supported by Certificate Manager (ACM), we recommend
     /// that you don't use IAM server certificates. Instead, use ACM to provision, manage,
     /// and deploy your server certificates. For more information about IAM server certificates,
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
@@ -56,9 +56,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex
-        /// pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: =,.@-
+        /// This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
+        /// pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

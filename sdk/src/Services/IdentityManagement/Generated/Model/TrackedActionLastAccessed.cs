@@ -83,7 +83,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property LastAccessedRegion. 
         /// <para>
         /// The Region from which the authenticated entity (user or role) last attempted to access
-        /// the tracked action. AWS does not report unauthenticated requests.
+        /// the tracked action. Amazon Web Services does not report unauthenticated requests.
         /// </para>
         ///  
         /// <para>
@@ -109,7 +109,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when an authenticated entity most recently attempted to access the tracked
-        /// service. AWS does not report unauthenticated requests.
+        /// service. Amazon Web Services does not report unauthenticated requests.
         /// </para>
         ///  
         /// <para>

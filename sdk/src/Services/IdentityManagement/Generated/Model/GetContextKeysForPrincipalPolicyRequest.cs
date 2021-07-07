@@ -49,10 +49,10 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// Context keys are variables maintained by AWS and its services that provide details
-    /// about the context of an API query request. Context keys can be evaluated by testing
-    /// against a value in an IAM policy. Use <a>GetContextKeysForPrincipalPolicy</a> to understand
-    /// what key names and values you must supply when you call <a>SimulatePrincipalPolicy</a>.
+    /// Context keys are variables maintained by Amazon Web Services and its services that
+    /// provide details about the context of an API query request. Context keys can be evaluated
+    /// by testing against a value in an IAM policy. Use <a>GetContextKeysForPrincipalPolicy</a>
+    /// to understand what key names and values you must supply when you call <a>SimulatePrincipalPolicy</a>.
     /// </para>
     /// </summary>
     public partial class GetContextKeysForPrincipalPolicyRequest : AmazonIdentityManagementServiceRequest
@@ -114,7 +114,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

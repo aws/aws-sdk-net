@@ -61,8 +61,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property CreateDate. 
         /// <para>
-        /// The date and time when the IAM OIDC provider resource object was created in the AWS
-        /// account.
+        /// The date and time when the IAM OIDC provider resource object was created in the account.
         /// </para>
         /// </summary>
         public DateTime CreateDate

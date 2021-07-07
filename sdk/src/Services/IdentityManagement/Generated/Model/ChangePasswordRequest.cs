@@ -31,15 +31,15 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ChangePassword operation.
     /// Changes the password of the IAM user who is calling this operation. This operation
-    /// can be performed using the AWS CLI, the AWS API, or the <b>My Security Credentials</b>
-    /// page in the AWS Management Console. The AWS account root user password is not affected
-    /// by this operation.
+    /// can be performed using the CLI, the Amazon Web Services API, or the <b>My Security
+    /// Credentials</b> page in the Management Console. The account root user password is
+    /// not affected by this operation.
     /// 
     ///  
     /// <para>
-    /// Use <a>UpdateLoginProfile</a> to use the AWS CLI, the AWS API, or the <b>Users</b>
-    /// page in the IAM console to change the password for any IAM user. For more information
-    /// about modifying passwords, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
+    /// Use <a>UpdateLoginProfile</a> to use the CLI, the Amazon Web Services API, or the
+    /// <b>Users</b> page in the IAM console to change the password for any IAM user. For
+    /// more information about modifying passwords, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
     /// passwords</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
@@ -51,7 +51,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property NewPassword. 
         /// <para>
-        /// The new password. The new password must conform to the AWS account's password policy,
+        /// The new password. The new password must conform to the account's password policy,
         /// if one exists.
         /// </para>
         ///  
@@ -62,7 +62,7 @@ namespace Amazon.IdentityManagement.Model
         /// character range (<code>\u00FF</code>). You can also include the tab (<code>\u0009</code>),
         /// line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) characters.
         /// Any of these characters are valid in a password. However, many tools, such as the
-        /// AWS Management Console, might restrict the ability to type certain characters because
+        /// Management Console, might restrict the ability to type certain characters because
         /// they have special meaning within that tool.
         /// </para>
         /// </summary>

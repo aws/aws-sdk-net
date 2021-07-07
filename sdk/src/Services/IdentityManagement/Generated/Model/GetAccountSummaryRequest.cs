@@ -30,7 +30,8 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAccountSummary operation.
-    /// Retrieves information about IAM entity usage and IAM quotas in the AWS account.
+    /// Retrieves information about IAM entity usage and IAM quotas in the Amazon Web Services
+    /// account.
     /// 
     ///  
     /// <para>

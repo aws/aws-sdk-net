@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains information about an AWS access key.
+    /// Contains information about an Amazon Web Services access key.
     /// 
     ///  
     /// <para>

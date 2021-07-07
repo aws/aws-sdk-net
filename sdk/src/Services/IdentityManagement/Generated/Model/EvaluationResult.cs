@@ -103,16 +103,17 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// When you make a cross-account request, AWS evaluates the request in the trusting account
-        /// and the trusted account. The request is allowed only if both evaluations return <code>true</code>.
-        /// For more information about how policies are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating
+        /// When you make a cross-account request, Amazon Web Services evaluates the request in
+        /// the trusting account and the trusted account. The request is allowed only if both
+        /// evaluations return <code>true</code>. For more information about how policies are
+        /// evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating
         /// policies within a single account</a>.
         /// </para>
         ///  
         /// <para>
-        /// If an AWS Organizations SCP included in the evaluation denies access, the simulation
-        /// ends. In this case, policy evaluation does not proceed any further and this parameter
-        /// is not returned.
+        /// If an Organizations SCP included in the evaluation denies access, the simulation ends.
+        /// In this case, policy evaluation does not proceed any further and this parameter is
+        /// not returned.
         /// </para>
         /// </summary>
         public Dictionary<string, string> EvalDecisionDetails

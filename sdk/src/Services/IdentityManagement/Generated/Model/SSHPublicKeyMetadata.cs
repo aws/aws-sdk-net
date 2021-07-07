@@ -66,8 +66,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the SSH public key. <code>Active</code> means that the key can be used
-        /// for authentication with an AWS CodeCommit repository. <code>Inactive</code> means
-        /// that the key cannot be used.
+        /// for authentication with an CodeCommit repository. <code>Inactive</code> means that
+        /// the key cannot be used.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

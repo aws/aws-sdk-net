@@ -37,9 +37,9 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
-    /// based on the AWS access key ID used to sign the request. This operation works for
-    /// access keys under the AWS account. Consequently, you can use this operation to manage
-    /// AWS account root user credentials even if the AWS account has no associated users.
+    /// based on the Amazon Web Services access key ID used to sign the request. This operation
+    /// works for access keys under the account. Consequently, you can use this operation
+    /// to manage account root user credentials even if the account has no associated users.
     /// </para>
     /// </summary>
     public partial class UpdateSigningCertificateRequest : AmazonIdentityManagementServiceRequest
@@ -57,7 +57,7 @@ namespace Amazon.IdentityManagement.Model
         /// Instantiates UpdateSigningCertificateRequest with the parameterized properties
         /// </summary>
         /// <param name="certificateId">The ID of the signing certificate you want to update. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</param>
-        /// <param name="status"> The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for programmatic calls to AWS <code>Inactive</code> means that the certificate cannot be used.</param>
+        /// <param name="status"> The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for programmatic calls to Amazon Web Services <code>Inactive</code> means that the certificate cannot be used.</param>
         public UpdateSigningCertificateRequest(string certificateId, StatusType status)
         {
             _certificateId = certificateId;
@@ -93,8 +93,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Status. 
         /// <para>
         ///  The status you want to assign to the certificate. <code>Active</code> means that
-        /// the certificate can be used for programmatic calls to AWS <code>Inactive</code> means
-        /// that the certificate cannot be used.
+        /// the certificate can be used for programmatic calls to Amazon Web Services <code>Inactive</code>
+        /// means that the certificate cannot be used.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
