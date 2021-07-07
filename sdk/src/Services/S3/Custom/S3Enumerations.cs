@@ -265,122 +265,147 @@ namespace Amazon.S3
         /// Specifies that the S3 Bucket should use US locality.
         /// This is the default value.
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the USEast1 constant")]
         public static readonly S3Region US = new S3Region("");
-        /// <summary>
-        /// Specifies that the S3 Bucket should use US-EAST-2 locality.
-        /// </summary>
-        public static readonly S3Region USE2 = new S3Region("us-east-2");
         /// <summary>
         /// Specifies that the S3 Bucket should use EU locality which defaults to EU-WEST-1
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the EUWest1 constant")]
         public static readonly S3Region EU = new S3Region("EU");
+        /// <summary>
+        /// Specifies that the S3 Bucket should use US-EAST-2 locality.
+        /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the USEast2 constant")]
+        public static readonly S3Region USE2 = new S3Region("us-east-2");
         /// <summary>
         /// Specifies that the S3 Bucket should use the EU-NORTH-1 locality.
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the EUNorth1 constant")]
         public static readonly S3Region EUN1 = new S3Region("eu-north-1");
         /// <summary>
         /// Specifies that the S3 Bucket should use the EU-WEST-1 locality.
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the EUWest1 constant")]
         public static readonly S3Region EUW1 = new S3Region("eu-west-1");
         /// <summary>
         /// Specifies that the S3 Bucket should use the EU-WEST-2 locality.
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the EUWest2 constant")]
         public static readonly S3Region EUW2 = new S3Region("eu-west-2");
         /// <summary>
         /// Specifies that the S3 Bucket should use the EU-WEST-3 locality.
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the EUWest3 constant")]
         public static readonly S3Region EUW3 = new S3Region("eu-west-3");
         /// <summary>
         /// Specifies that the S3 Bucket should use the EU-CENTRAL-1 locality.
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the EUCentral1 constant")]
         public static readonly S3Region EUC1 = new S3Region("eu-central-1");
         /// <summary>
         /// Specifies that the S3 Bucket should use the EU-SOUTH-1 locality.
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the EUSouth1 constant")]
         public static readonly S3Region EUS1 = new S3Region("eu-south-1");
         /// <summary>
         /// Specifies that the S3 Bucket should use US-WEST-1 locality.
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the USWest1 constant")]
         public static readonly S3Region USW1 = new S3Region("us-west-1");
         /// <summary>
         /// Specifies that the S3 Bucket should use US-WEST-2 locality.
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the USWest2 constant")]
         public static readonly S3Region USW2 = new S3Region("us-west-2");
-		/// <summary>
+        /// <summary>
         /// Specifies that the S3 Bucket should use US-GOV-EAST-1 locality.
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the USGovCloudEast1 constant")]
         public static readonly S3Region GOVE1 = new S3Region("us-gov-east-1");
         /// <summary>
         /// Specifies that the S3 Bucket should use US-GOV-WEST-1 locality.
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the USGovCloudWest1 constant")]
         public static readonly S3Region GOVW1 = new S3Region("us-gov-west-1");
         /// <summary>
         /// Specifies that the S3 Bucket should use the AP-EAST-1 locality.
         /// </summary>
-        public static readonly S3Region APE1 = new S3Region("ap-east-1"); 
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the APEast1 constant")]
+        public static readonly S3Region APE1 = new S3Region("ap-east-1");
         /// <summary>
         /// Specifies that the S3 Bucket should use the AP-SOUTHEAST-1 locality.
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the APSoutheast1 constant")]
         public static readonly S3Region APS1 = new S3Region("ap-southeast-1");
         /// <summary>
         /// Specifies that the S3 Bucket should use the AP-SOUTHEAST-2 locality.
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the APSoutheast2 constant")]
         public static readonly S3Region APS2 = new S3Region("ap-southeast-2");
         /// <summary>
         /// Specifies that the S3 Bucket should use the AP-NORTHEAST-1 locality.
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the APNortheast1 constant")]
         public static readonly S3Region APN1 = new S3Region("ap-northeast-1");
         /// <summary>
         /// Specifies that the S3 Bucket should use the AP-NORTHEAST-2 locality.
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the APNortheast2 constant")]
         public static readonly S3Region APN2 = new S3Region("ap-northeast-2");
         /// <summary>
         /// Specifies that the S3 Bucket should use the AP-NORTHEAST-3 locality.
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the APNortheast3 constant")]
         public static readonly S3Region APN3 = new S3Region("ap-northeast-3");
         /// <summary>
         /// Specifies that the S3 Bucket should use the AP-SOUTH-1 locality.
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the APSouth1 constant")]
         public static readonly S3Region APS3 = new S3Region("ap-south-1");
         /// <summary>
         /// Specifies that the S3 Bucket should use the SA-EAST-1 locality.
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the SAEast1 constant")]
         public static readonly S3Region SAE1 = new S3Region("sa-east-1");
         /// <summary>
         /// Specifies that the S3 Bucket should use CN-NORTH-1 locality.
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the CNNorth1 constant")]
         public static readonly S3Region CN1 = new S3Region("cn-north-1");
         /// <summary>
         /// Specifies that the S3 Bucket should use CN-NORTHWEST-1 locality.
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the CNNorthWest1 constant")]
         public static readonly S3Region CNW1 = new S3Region("cn-northwest-1");
         /// <summary>
         /// Specifies that the S3 Bucket should use CA-CENTRAL-1 locality.
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the CACentral1 constant")]
         public static readonly S3Region CAN1 = new S3Region("ca-central-1");
         /// <summary>
         /// Specifies that the S3 Bucket should use ME-SOUTH-1 locality.
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the MESouth1 constant")]
         public static readonly S3Region MES1 = new S3Region("me-south-1");
         /// <summary>
         /// Specifies that the S3 Bucket should use AF-SOUTH-1 locality.
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the AFSouth1 constant")]
         public static readonly S3Region AFS1 = new S3Region("af-south-1");
-
         /// <summary>
         /// Specifies that the S3 Bucket should use US-WEST-1 locality.
         /// </summary>
-        [Obsolete("This constant is obsolete. Usags of this property should be migrated to the USW1 constant")]
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the USWest1 constant")]
         public static readonly S3Region SFO = new S3Region("us-west-1");
         /// <summary>
         /// Specifies that the S3 Bucket should use CN-NORTH-1 locality.
         /// </summary>
-        [Obsolete("This constant is obsolete. Usags of this property should be migrated to the CN1 constant")]
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the CNNorth1 constant")]
         public static readonly S3Region CN = new S3Region("cn-north-1");
         /// <summary>
         /// Specifies that the S3 Bucket should use US-GOV-WEST-1 locality.
         /// </summary>
-        [Obsolete("This constant is obsolete. Usags of this property should be migrated to the GOVW1 constant")]
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the USGovCloudWest1 constant")]
         public static readonly S3Region GOV = new S3Region("us-gov-west-1");
 
         /// <summary>

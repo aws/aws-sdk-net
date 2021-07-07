@@ -82,5 +82,6 @@ namespace ServiceClientGeneratorTests
         {
             Assert.Equal(GeneratorDriver.ConstructEndpointName(regionCode), expectedName);
         }
+
     }
 }

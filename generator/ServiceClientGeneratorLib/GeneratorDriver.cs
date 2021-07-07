@@ -1346,7 +1346,7 @@ namespace ServiceClientGenerator
             return name;
         }
 
-        public static List<EndpointConstant> ExtractEndpoints(GeneratorOptions options)
+        public static List<EndpointConstant> ExtractEndpoints(GeneratorOptions options, Func<string, string> nameConverter, Func<string, string> codeConverter = null)
         {
             var coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "core");
             var endpointsJsonFile = Path.Combine(coreFilesRoot, "endpoints.json");
@@ -1360,7 +1360,13 @@ namespace ServiceClientGenerator
                 foreach (var regionCode in regions.PropertyNames)
                 {
                     var regionName = regions[regionCode]["description"].ToString();
-                    endpoints.Add(new EndpointConstant { Name = ConstructEndpointName(regionCode), RegionCode = regionCode, RegionName = regionName });
+                    endpoints.Add(new EndpointConstant
+                    { 
+                        Name = nameConverter(regionCode), 
+                        RegionCode = regionCode, 
+                        ConvertedRegionCode = codeConverter == null ? regionCode : codeConverter(regionCode), 
+                        RegionName = regionName 
+                    });
                 }
             }
 
@@ -1375,7 +1381,7 @@ namespace ServiceClientGenerator
             var endpointsFilesRoot = Path.Combine(coreFilesRoot, "RegionEndpoint");
             const string fileName = "RegionEndpoint.generated.cs";
 
-            var endpoints = ExtractEndpoints(options);
+            var endpoints = ExtractEndpoints(options, ConstructEndpointName);
 
             var generator = new EndpointsGenerator
             {
@@ -1387,6 +1393,45 @@ namespace ServiceClientGenerator
             generator.Initialize();
             var text = generator.TransformText();
             WriteFile(endpointsFilesRoot, null, fileName, text);
+        }
+        
+        /// <summary>
+        /// Converts region code to maintain backward compatibility with S3
+        /// </summary>
+        public static string ConvertS3RegionCode(string regionCode)
+        {
+            switch (regionCode)
+            {
+                case "us-east-1":
+                    return "";
+                case "eu-west-1":
+                    return "EU";
+                default:
+                    return regionCode;
+            }
+        }
+
+        public static void GenerateS3Enumerations(GeneratorOptions options)
+        {
+            Console.WriteLine("Generating S3 enumerations constants...");
+
+            var srcFilesRoot = Path.Combine(options.SdkRootFolder, "src");
+            var coreFilesRoot = Path.Combine(srcFilesRoot, "core");
+            var generatedFileRoot = Path.Combine(srcFilesRoot, "Services", "S3", "Generated");
+            const string fileName = "S3Enumerations.cs";
+
+            var endpoints = ExtractEndpoints(options, ConstructEndpointName, ConvertS3RegionCode);
+
+            var generator = new S3EnumerationsGenerator()
+            {
+                Session = new Dictionary<string, object>
+                {
+                    ["endpoints"] = endpoints
+                }
+            };
+            generator.Initialize();
+            var text = generator.TransformText();
+            WriteFile(generatedFileRoot, null, fileName, text);
         }
     }
 }
