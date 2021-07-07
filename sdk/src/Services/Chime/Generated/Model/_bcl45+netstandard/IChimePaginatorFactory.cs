@@ -91,6 +91,11 @@ namespace Amazon.Chime.Model
         IListChannelsModeratedByAppInstanceUserPaginator ListChannelsModeratedByAppInstanceUser(ListChannelsModeratedByAppInstanceUserRequest request);
 
         /// <summary>
+        /// Paginator for ListMediaCapturePipelines operation
+        ///</summary>
+        IListMediaCapturePipelinesPaginator ListMediaCapturePipelines(ListMediaCapturePipelinesRequest request);
+
+        /// <summary>
         /// Paginator for ListMeetings operation
         ///</summary>
         IListMeetingsPaginator ListMeetings(ListMeetingsRequest request);

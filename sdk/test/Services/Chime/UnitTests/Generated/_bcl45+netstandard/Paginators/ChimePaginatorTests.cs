@@ -549,6 +549,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Chime")]
+        public void ListMediaCapturePipelinesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListMediaCapturePipelinesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListMediaCapturePipelinesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListMediaCapturePipelinesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListMediaCapturePipelines(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListMediaCapturePipelines(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Chime")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListMediaCapturePipelinesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListMediaCapturePipelinesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListMediaCapturePipelinesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListMediaCapturePipelines(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListMediaCapturePipelines(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Chime")]
         public void ListMeetingsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListMeetingsRequest>();

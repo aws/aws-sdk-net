@@ -855,6 +855,160 @@ namespace Amazon.Chime
 
 
     /// <summary>
+    /// Constants used for properties of type MediaPipelineSinkType.
+    /// </summary>
+    public class MediaPipelineSinkType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant S3Bucket for MediaPipelineSinkType
+        /// </summary>
+        public static readonly MediaPipelineSinkType S3Bucket = new MediaPipelineSinkType("S3Bucket");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MediaPipelineSinkType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MediaPipelineSinkType FindValue(string value)
+        {
+            return FindValue<MediaPipelineSinkType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MediaPipelineSinkType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MediaPipelineSourceType.
+    /// </summary>
+    public class MediaPipelineSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ChimeSdkMeeting for MediaPipelineSourceType
+        /// </summary>
+        public static readonly MediaPipelineSourceType ChimeSdkMeeting = new MediaPipelineSourceType("ChimeSdkMeeting");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MediaPipelineSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MediaPipelineSourceType FindValue(string value)
+        {
+            return FindValue<MediaPipelineSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MediaPipelineSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MediaPipelineStatus.
+    /// </summary>
+    public class MediaPipelineStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failed for MediaPipelineStatus
+        /// </summary>
+        public static readonly MediaPipelineStatus Failed = new MediaPipelineStatus("Failed");
+        /// <summary>
+        /// Constant Initializing for MediaPipelineStatus
+        /// </summary>
+        public static readonly MediaPipelineStatus Initializing = new MediaPipelineStatus("Initializing");
+        /// <summary>
+        /// Constant InProgress for MediaPipelineStatus
+        /// </summary>
+        public static readonly MediaPipelineStatus InProgress = new MediaPipelineStatus("InProgress");
+        /// <summary>
+        /// Constant Stopped for MediaPipelineStatus
+        /// </summary>
+        public static readonly MediaPipelineStatus Stopped = new MediaPipelineStatus("Stopped");
+        /// <summary>
+        /// Constant Stopping for MediaPipelineStatus
+        /// </summary>
+        public static readonly MediaPipelineStatus Stopping = new MediaPipelineStatus("Stopping");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MediaPipelineStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MediaPipelineStatus FindValue(string value)
+        {
+            return FindValue<MediaPipelineStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MediaPipelineStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MemberType.
     /// </summary>
     public class MemberType : ConstantClass

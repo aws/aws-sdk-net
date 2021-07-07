@@ -2153,6 +2153,81 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  CreateMediaCapturePipeline
+
+        /// <summary>
+        /// Creates a media capture pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMediaCapturePipeline service method.</param>
+        /// 
+        /// <returns>The response from the CreateMediaCapturePipeline service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMediaCapturePipeline">REST API Reference for CreateMediaCapturePipeline Operation</seealso>
+        public virtual CreateMediaCapturePipelineResponse CreateMediaCapturePipeline(CreateMediaCapturePipelineRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMediaCapturePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMediaCapturePipelineResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMediaCapturePipelineResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMediaCapturePipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMediaCapturePipeline operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMediaCapturePipeline
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMediaCapturePipeline">REST API Reference for CreateMediaCapturePipeline Operation</seealso>
+        public virtual IAsyncResult BeginCreateMediaCapturePipeline(CreateMediaCapturePipelineRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMediaCapturePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMediaCapturePipelineResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMediaCapturePipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMediaCapturePipeline.</param>
+        /// 
+        /// <returns>Returns a  CreateMediaCapturePipelineResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMediaCapturePipeline">REST API Reference for CreateMediaCapturePipeline Operation</seealso>
+        public virtual CreateMediaCapturePipelineResponse EndCreateMediaCapturePipeline(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateMediaCapturePipelineResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateMeeting
 
         /// <summary>
@@ -4146,6 +4221,81 @@ namespace Amazon.Chime
         public virtual DeleteEventsConfigurationResponse EndDeleteEventsConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteEventsConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteMediaCapturePipeline
+
+        /// <summary>
+        /// Deletes the media capture pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMediaCapturePipeline service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMediaCapturePipeline service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteMediaCapturePipeline">REST API Reference for DeleteMediaCapturePipeline Operation</seealso>
+        public virtual DeleteMediaCapturePipelineResponse DeleteMediaCapturePipeline(DeleteMediaCapturePipelineRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMediaCapturePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMediaCapturePipelineResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMediaCapturePipelineResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMediaCapturePipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMediaCapturePipeline operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMediaCapturePipeline
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteMediaCapturePipeline">REST API Reference for DeleteMediaCapturePipeline Operation</seealso>
+        public virtual IAsyncResult BeginDeleteMediaCapturePipeline(DeleteMediaCapturePipelineRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMediaCapturePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMediaCapturePipelineResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMediaCapturePipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMediaCapturePipeline.</param>
+        /// 
+        /// <returns>Returns a  DeleteMediaCapturePipelineResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteMediaCapturePipeline">REST API Reference for DeleteMediaCapturePipeline Operation</seealso>
+        public virtual DeleteMediaCapturePipelineResponse EndDeleteMediaCapturePipeline(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteMediaCapturePipelineResponse>(asyncResult);
         }
 
         #endregion
@@ -7009,6 +7159,81 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  GetMediaCapturePipeline
+
+        /// <summary>
+        /// Gets an existing media capture pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMediaCapturePipeline service method.</param>
+        /// 
+        /// <returns>The response from the GetMediaCapturePipeline service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMediaCapturePipeline">REST API Reference for GetMediaCapturePipeline Operation</seealso>
+        public virtual GetMediaCapturePipelineResponse GetMediaCapturePipeline(GetMediaCapturePipelineRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMediaCapturePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMediaCapturePipelineResponseUnmarshaller.Instance;
+
+            return Invoke<GetMediaCapturePipelineResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMediaCapturePipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMediaCapturePipeline operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMediaCapturePipeline
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMediaCapturePipeline">REST API Reference for GetMediaCapturePipeline Operation</seealso>
+        public virtual IAsyncResult BeginGetMediaCapturePipeline(GetMediaCapturePipelineRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMediaCapturePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMediaCapturePipelineResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMediaCapturePipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMediaCapturePipeline.</param>
+        /// 
+        /// <returns>Returns a  GetMediaCapturePipelineResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMediaCapturePipeline">REST API Reference for GetMediaCapturePipeline Operation</seealso>
+        public virtual GetMediaCapturePipelineResponse EndGetMediaCapturePipeline(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMediaCapturePipelineResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetMeeting
 
         /// <summary>
@@ -9843,6 +10068,78 @@ namespace Amazon.Chime
         public virtual ListChannelsModeratedByAppInstanceUserResponse EndListChannelsModeratedByAppInstanceUser(IAsyncResult asyncResult)
         {
             return EndInvoke<ListChannelsModeratedByAppInstanceUserResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListMediaCapturePipelines
+
+        /// <summary>
+        /// Returns a list of media capture pipelines.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMediaCapturePipelines service method.</param>
+        /// 
+        /// <returns>The response from the ListMediaCapturePipelines service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMediaCapturePipelines">REST API Reference for ListMediaCapturePipelines Operation</seealso>
+        public virtual ListMediaCapturePipelinesResponse ListMediaCapturePipelines(ListMediaCapturePipelinesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMediaCapturePipelinesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMediaCapturePipelinesResponseUnmarshaller.Instance;
+
+            return Invoke<ListMediaCapturePipelinesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMediaCapturePipelines operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMediaCapturePipelines operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMediaCapturePipelines
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMediaCapturePipelines">REST API Reference for ListMediaCapturePipelines Operation</seealso>
+        public virtual IAsyncResult BeginListMediaCapturePipelines(ListMediaCapturePipelinesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMediaCapturePipelinesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMediaCapturePipelinesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMediaCapturePipelines operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMediaCapturePipelines.</param>
+        /// 
+        /// <returns>Returns a  ListMediaCapturePipelinesResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMediaCapturePipelines">REST API Reference for ListMediaCapturePipelines Operation</seealso>
+        public virtual ListMediaCapturePipelinesResponse EndListMediaCapturePipelines(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListMediaCapturePipelinesResponse>(asyncResult);
         }
 
         #endregion

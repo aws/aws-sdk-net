@@ -140,6 +140,14 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
+        /// Paginator for ListMediaCapturePipelines operation
+        ///</summary>
+        public IListMediaCapturePipelinesPaginator ListMediaCapturePipelines(ListMediaCapturePipelinesRequest request) 
+        {
+            return new ListMediaCapturePipelinesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMeetings operation
         ///</summary>
         public IListMeetingsPaginator ListMeetings(ListMeetingsRequest request) 
