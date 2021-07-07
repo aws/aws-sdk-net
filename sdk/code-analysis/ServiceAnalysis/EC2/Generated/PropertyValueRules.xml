@@ -292,6 +292,11 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeSecurityGroupRulesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeSecurityGroupsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>

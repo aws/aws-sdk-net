@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AuthorizeSecurityGroupIngress operation
+    /// Response Unmarshaller for DescribeSecurityGroupRules operation
     /// </summary>  
-    public class AuthorizeSecurityGroupIngressResponseUnmarshaller : EC2ResponseUnmarshaller
+    public class DescribeSecurityGroupRulesResponseUnmarshaller : EC2ResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            AuthorizeSecurityGroupIngressResponse response = new AuthorizeSecurityGroupIngressResponse();
+            DescribeSecurityGroupRulesResponse response = new DescribeSecurityGroupRulesResponse();
 
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
@@ -55,10 +55,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("return", targetDepth))
+                    if (context.TestExpression("nextToken", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        response.Return = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.NextToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("securityGroupRuleSet/item", targetDepth))
@@ -86,9 +86,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static AuthorizeSecurityGroupIngressResponseUnmarshaller _instance = new AuthorizeSecurityGroupIngressResponseUnmarshaller();        
+        private static DescribeSecurityGroupRulesResponseUnmarshaller _instance = new DescribeSecurityGroupRulesResponseUnmarshaller();        
 
-        internal static AuthorizeSecurityGroupIngressResponseUnmarshaller GetInstance()
+        internal static DescribeSecurityGroupRulesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AuthorizeSecurityGroupIngressResponseUnmarshaller Instance
+        public static DescribeSecurityGroupRulesResponseUnmarshaller Instance
         {
             get
             {

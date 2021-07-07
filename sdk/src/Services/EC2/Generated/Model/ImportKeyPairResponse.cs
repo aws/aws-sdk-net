@@ -59,7 +59,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property KeyName. 
         /// <para>
-        /// The key pair name you provided.
+        /// The key pair name that you provided.
         /// </para>
         /// </summary>
         public string KeyName

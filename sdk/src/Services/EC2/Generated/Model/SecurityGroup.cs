@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a security group
+    /// Describes a security group.
     /// </summary>
     public partial class SecurityGroup
     {
@@ -135,7 +135,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The AWS account ID of the owner of the security group.
+        /// The Amazon Web Services account ID of the owner of the security group.
         /// </para>
         /// </summary>
         public string OwnerId

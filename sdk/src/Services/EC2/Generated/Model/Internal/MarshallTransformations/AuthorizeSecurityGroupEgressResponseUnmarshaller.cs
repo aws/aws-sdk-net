@@ -55,6 +55,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("return", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        response.Return = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("securityGroupRuleSet/item", targetDepth))
+                    {
+                        var unmarshaller = SecurityGroupRuleUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.SecurityGroupRules.Add(item);
+                        continue;
+                    }
                 } 
             }
 

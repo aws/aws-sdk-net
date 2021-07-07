@@ -29,38 +29,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the AuthorizeSecurityGroupEgress operation.
+    /// Container for the parameters to the ModifySecurityGroupRules operation.
+    /// Modifies the rules of a security group.
     /// </summary>
-    public partial class AuthorizeSecurityGroupEgressResponse : AmazonWebServiceResponse
+    public partial class ModifySecurityGroupRulesRequest : AmazonEC2Request
     {
-        private bool? _return;
-        private List<SecurityGroupRule> _securityGroupRules = new List<SecurityGroupRule>();
+        private string _groupId;
+        private List<SecurityGroupRuleUpdate> _securityGroupRules = new List<SecurityGroupRuleUpdate>();
 
         /// <summary>
-        /// Gets and sets the property Return. 
+        /// Gets and sets the property GroupId. 
         /// <para>
-        /// Returns <code>true</code> if the request succeeds; otherwise, returns an error.
+        /// The ID of the security group.
         /// </para>
         /// </summary>
-        public bool Return
+        [AWSProperty(Required=true)]
+        public string GroupId
         {
-            get { return this._return.GetValueOrDefault(); }
-            set { this._return = value; }
+            get { return this._groupId; }
+            set { this._groupId = value; }
         }
 
-        // Check to see if Return property is set
-        internal bool IsSetReturn()
+        // Check to see if GroupId property is set
+        internal bool IsSetGroupId()
         {
-            return this._return.HasValue; 
+            return this._groupId != null;
         }
 
         /// <summary>
         /// Gets and sets the property SecurityGroupRules. 
         /// <para>
-        /// Information about the outbound (egress) security group rules that were added.
+        /// Information about the security group properties to update.
         /// </para>
         /// </summary>
-        public List<SecurityGroupRule> SecurityGroupRules
+        [AWSProperty(Required=true)]
+        public List<SecurityGroupRuleUpdate> SecurityGroupRules
         {
             get { return this._securityGroupRules; }
             set { this._securityGroupRules = value; }

@@ -30,13 +30,14 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AuthorizeSecurityGroupEgress operation.
-    /// [VPC only] Adds the specified egress rules to a security group for use with a VPC.
+    /// [VPC only] Adds the specified outbound (egress) rules to a security group for use
+    /// with a VPC.
     /// 
     ///  
     /// <para>
     /// An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 CIDR
-    /// address ranges, or to the instances associated with the specified destination security
-    /// groups.
+    /// address ranges, or to the instances that are associated with the specified destination
+    /// security groups.
     /// </para>
     ///  
     /// <para>
@@ -52,14 +53,15 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about VPC security group limits, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
-    /// VPC Limits</a>.
+    /// For information about VPC security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
+    /// VPC quotas</a>.
     /// </para>
     /// </summary>
     public partial class AuthorizeSecurityGroupEgressRequest : AmazonEC2Request
     {
         private string _groupId;
         private List<IpPermission> _ipPermissions = new List<IpPermission>();
+        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
 
         /// <summary>
         /// Gets and sets the property GroupId. 
@@ -97,6 +99,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpPermissions()
         {
             return this._ipPermissions != null && this._ipPermissions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags applied to the security group rule.
+        /// </para>
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
         }
 
     }

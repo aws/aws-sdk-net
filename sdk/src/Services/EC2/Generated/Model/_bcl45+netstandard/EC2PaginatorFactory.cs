@@ -484,6 +484,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeSecurityGroupRules operation
+        ///</summary>
+        public IDescribeSecurityGroupRulesPaginator DescribeSecurityGroupRules(DescribeSecurityGroupRulesRequest request) 
+        {
+            return new DescribeSecurityGroupRulesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeSecurityGroups operation
         ///</summary>
         public IDescribeSecurityGroupsPaginator DescribeSecurityGroups(DescribeSecurityGroupsRequest request) 

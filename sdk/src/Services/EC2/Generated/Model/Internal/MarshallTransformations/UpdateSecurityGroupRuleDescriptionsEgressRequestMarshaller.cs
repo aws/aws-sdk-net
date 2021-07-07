@@ -170,6 +170,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetSecurityGroupRuleDescriptions())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.SecurityGroupRuleDescriptions)
+                    {
+                        if(publicRequestlistValue.IsSetDescription())
+                        {
+                            request.Parameters.Add("SecurityGroupRuleDescription" + "." + publicRequestlistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValue.Description));
+                        }
+                        if(publicRequestlistValue.IsSetSecurityGroupRuleId())
+                        {
+                            request.Parameters.Add("SecurityGroupRuleDescription" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRuleId", StringUtils.FromString(publicRequestlistValue.SecurityGroupRuleId));
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
             }
             return request;
         }

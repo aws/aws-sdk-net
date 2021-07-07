@@ -168,7 +168,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserIdGroupPairs. 
         /// <para>
-        /// The security group and AWS account ID pairs.
+        /// The security group and Amazon Web Services account ID pairs.
         /// </para>
         /// </summary>
         public List<UserIdGroupPair> UserIdGroupPairs

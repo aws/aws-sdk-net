@@ -29,35 +29,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the AuthorizeSecurityGroupEgress operation.
+    /// This is the response object from the DescribeSecurityGroupRules operation.
     /// </summary>
-    public partial class AuthorizeSecurityGroupEgressResponse : AmazonWebServiceResponse
+    public partial class DescribeSecurityGroupRulesResponse : AmazonWebServiceResponse
     {
-        private bool? _return;
+        private string _nextToken;
         private List<SecurityGroupRule> _securityGroupRules = new List<SecurityGroupRule>();
 
         /// <summary>
-        /// Gets and sets the property Return. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// Returns <code>true</code> if the request succeeds; otherwise, returns an error.
+        /// The token to use to retrieve the next page of results. This value is <code>null</code>
+        /// when there are no more results to return. 
         /// </para>
         /// </summary>
-        public bool Return
+        public string NextToken
         {
-            get { return this._return.GetValueOrDefault(); }
-            set { this._return = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Return property is set
-        internal bool IsSetReturn()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._return.HasValue; 
+            return this._nextToken != null;
         }
 
         /// <summary>
         /// Gets and sets the property SecurityGroupRules. 
         /// <para>
-        /// Information about the outbound (egress) security group rules that were added.
+        /// Information about security group rules.
         /// </para>
         /// </summary>
         public List<SecurityGroupRule> SecurityGroupRules

@@ -102,8 +102,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>egress.ip-permission.user-id</code> - The ID of an AWS account that has been
-        /// referenced in an outbound security group rule.
+        ///  <code>egress.ip-permission.user-id</code> - The ID of an Amazon Web Services account
+        /// that has been referenced in an outbound security group rule.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -156,12 +156,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ip-permission.user-id</code> - The ID of an AWS account that has been referenced
-        /// in an inbound security group rule.
+        ///  <code>ip-permission.user-id</code> - The ID of an Amazon Web Services account that
+        /// has been referenced in an inbound security group rule.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>owner-id</code> - The AWS account ID of the owner of the security group.
+        ///  <code>owner-id</code> - The Amazon Web Services account ID of the owner of the security
+        /// group.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -201,7 +202,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: Describes all your security groups.
+        /// Default: Describes all of your security groups.
         /// </para>
         /// </summary>
         public List<string> GroupIds
@@ -226,7 +227,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: Describes all your security groups.
+        /// Default: Describes all of your security groups.
         /// </para>
         /// </summary>
         public List<string> GroupNames

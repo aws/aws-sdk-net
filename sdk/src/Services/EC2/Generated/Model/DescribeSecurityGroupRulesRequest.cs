@@ -29,42 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeKeyPairs operation.
-    /// Describes the specified key pairs or all of your key pairs.
-    /// 
-    ///  
-    /// <para>
-    /// For more information about key pairs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-    /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-    /// </para>
+    /// Container for the parameters to the DescribeSecurityGroupRules operation.
+    /// Describes one or more of your security group rules.
     /// </summary>
-    public partial class DescribeKeyPairsRequest : AmazonEC2Request
+    public partial class DescribeSecurityGroupRulesRequest : AmazonEC2Request
     {
         private List<Filter> _filters = new List<Filter>();
-        private List<string> _keyNames = new List<string>();
-        private List<string> _keyPairIds = new List<string>();
+        private int? _maxResults;
+        private string _nextToken;
+        private List<string> _securityGroupRuleIds = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The filters.
+        /// One or more filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>key-pair-id</code> - The ID of the key pair.
+        ///  <code>group-id</code> - The ID of the security group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>fingerprint</code> - The fingerprint of the key pair.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>key-name</code> - The name of the key pair.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter
-        /// to find all resources assigned a tag with a specific key, regardless of the tag value.
+        ///  <code>security-group-rule-id</code> - The ID of the security group rule.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -89,43 +75,61 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KeyNames. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The key pair names.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: Describes all of your key pairs.
+        /// The maximum number of results to return in a single call. To retrieve the remaining
+        /// results, make another request with the returned <code>NextToken</code> value. This
+        /// value can be between 5 and 1000. If this parameter is not specified, then all results
+        /// are returned.
         /// </para>
         /// </summary>
-        public List<string> KeyNames
+        [AWSProperty(Min=5, Max=1000)]
+        public int MaxResults
         {
-            get { return this._keyNames; }
-            set { this._keyNames = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if KeyNames property is set
-        internal bool IsSetKeyNames()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._keyNames != null && this._keyNames.Count > 0; 
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property KeyPairIds. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The IDs of the key pairs.
+        /// The token for the next page of results.
         /// </para>
         /// </summary>
-        public List<string> KeyPairIds
+        public string NextToken
         {
-            get { return this._keyPairIds; }
-            set { this._keyPairIds = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if KeyPairIds property is set
-        internal bool IsSetKeyPairIds()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._keyPairIds != null && this._keyPairIds.Count > 0; 
+            return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroupRuleIds. 
+        /// <para>
+        /// The IDs of the security group rules.
+        /// </para>
+        /// </summary>
+        public List<string> SecurityGroupRuleIds
+        {
+            get { return this._securityGroupRuleIds; }
+            set { this._securityGroupRuleIds = value; }
+        }
+
+        // Check to see if SecurityGroupRuleIds property is set
+        internal bool IsSetSecurityGroupRuleIds()
+        {
+            return this._securityGroupRuleIds != null && this._securityGroupRuleIds.Count > 0; 
         }
 
     }

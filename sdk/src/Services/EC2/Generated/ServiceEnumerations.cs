@@ -10191,6 +10191,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType SecurityGroup = new ResourceType("security-group");
         /// <summary>
+        /// Constant SecurityGroupRule for ResourceType
+        /// </summary>
+        public static readonly ResourceType SecurityGroupRule = new ResourceType("security-group-rule");
+        /// <summary>
         /// Constant Snapshot for ResourceType
         /// </summary>
         public static readonly ResourceType Snapshot = new ResourceType("snapshot");

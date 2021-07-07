@@ -29,40 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a security group and Amazon Web Services account ID pair.
+    /// Describes the security group that is referenced in the security group rule.
     /// </summary>
-    public partial class UserIdGroupPair
+    public partial class ReferencedSecurityGroup
     {
-        private string _description;
         private string _groupId;
-        private string _groupName;
         private string _peeringStatus;
         private string _userId;
         private string _vpcId;
         private string _vpcPeeringConnectionId;
-
-        /// <summary>
-        /// Gets and sets the property Description. 
-        /// <para>
-        /// A description for the security group rule that references this user ID group pair.
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9,
-        /// spaces, and ._-:/()#,@[]+=;{}!$*
-        /// </para>
-        /// </summary>
-        public string Description
-        {
-            get { return this._description; }
-            set { this._description = value; }
-        }
-
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
-        {
-            return this._description != null;
-        }
 
         /// <summary>
         /// Gets and sets the property GroupId. 
@@ -80,31 +55,6 @@ namespace Amazon.EC2.Model
         internal bool IsSetGroupId()
         {
             return this._groupId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property GroupName. 
-        /// <para>
-        /// The name of the security group. In a request, use this parameter for a security group
-        /// in EC2-Classic or a default VPC only. For a security group in a nondefault VPC, use
-        /// the security group ID. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For a referenced security group in another VPC, this value is not returned if the
-        /// referenced security group is deleted.
-        /// </para>
-        /// </summary>
-        public string GroupName
-        {
-            get { return this._groupName; }
-            set { this._groupName = value; }
-        }
-
-        // Check to see if GroupName property is set
-        internal bool IsSetGroupName()
-        {
-            return this._groupName != null;
         }
 
         /// <summary>
@@ -128,18 +78,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The ID of an Amazon Web Services account.
-        /// </para>
-        ///  
-        /// <para>
-        /// For a referenced security group in another VPC, the account ID of the referenced security
-        /// group is returned in the response. If the referenced security group is deleted, this
-        /// value is not returned.
-        /// </para>
-        ///  
-        /// <para>
-        /// [EC2-Classic] Required when adding or removing rules that reference a security group
-        /// in another Amazon Web Services account.
+        /// The account ID.
         /// </para>
         /// </summary>
         public string UserId
@@ -157,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The ID of the VPC for the referenced security group, if applicable.
+        /// The ID of the VPC.
         /// </para>
         /// </summary>
         public string VpcId
@@ -175,7 +114,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpcPeeringConnectionId. 
         /// <para>
-        /// The ID of the VPC peering connection, if applicable.
+        /// The ID of the VPC peering connection.
         /// </para>
         /// </summary>
         public string VpcPeeringConnectionId

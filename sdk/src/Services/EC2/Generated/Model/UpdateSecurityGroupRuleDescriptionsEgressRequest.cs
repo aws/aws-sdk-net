@@ -32,20 +32,15 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the UpdateSecurityGroupRuleDescriptionsEgress operation.
     /// [VPC only] Updates the description of an egress (outbound) security group rule. You
     /// can replace an existing description, or add a description to a rule that did not have
-    /// one previously.
-    /// 
-    ///  
-    /// <para>
-    /// You specify the description as part of the IP permissions structure. You can remove
-    /// a description for a security group rule by omitting the description parameter in the
-    /// request.
-    /// </para>
+    /// one previously. You can remove a description for a security group rule by omitting
+    /// the description parameter in the request.
     /// </summary>
     public partial class UpdateSecurityGroupRuleDescriptionsEgressRequest : AmazonEC2Request
     {
         private string _groupId;
         private string _groupName;
         private List<IpPermission> _ipPermissions = new List<IpPermission>();
+        private List<SecurityGroupRuleDescription> _securityGroupRuleDescriptions = new List<SecurityGroupRuleDescription>();
 
         /// <summary>
         /// Gets and sets the property GroupId. 
@@ -89,10 +84,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IpPermissions. 
         /// <para>
-        /// The IP permissions for the security group rule.
+        /// The IP permissions for the security group rule. You must specify either the IP permissions
+        /// or the description.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<IpPermission> IpPermissions
         {
             get { return this._ipPermissions; }
@@ -103,6 +98,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpPermissions()
         {
             return this._ipPermissions != null && this._ipPermissions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroupRuleDescriptions. 
+        /// <para>
+        /// The description for the egress security group rules. You must specify either the description
+        /// or the IP permissions.
+        /// </para>
+        /// </summary>
+        public List<SecurityGroupRuleDescription> SecurityGroupRuleDescriptions
+        {
+            get { return this._securityGroupRuleDescriptions; }
+            set { this._securityGroupRuleDescriptions = value; }
+        }
+
+        // Check to see if SecurityGroupRuleDescriptions property is set
+        internal bool IsSetSecurityGroupRuleDescriptions()
+        {
+            return this._securityGroupRuleDescriptions != null && this._securityGroupRuleDescriptions.Count > 0; 
         }
 
     }

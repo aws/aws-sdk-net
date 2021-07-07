@@ -29,12 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the AuthorizeSecurityGroupEgress operation.
+    /// This is the response object from the ModifySecurityGroupRules operation.
     /// </summary>
-    public partial class AuthorizeSecurityGroupEgressResponse : AmazonWebServiceResponse
+    public partial class ModifySecurityGroupRulesResponse : AmazonWebServiceResponse
     {
         private bool? _return;
-        private List<SecurityGroupRule> _securityGroupRules = new List<SecurityGroupRule>();
 
         /// <summary>
         /// Gets and sets the property Return. 
@@ -52,24 +51,6 @@ namespace Amazon.EC2.Model
         internal bool IsSetReturn()
         {
             return this._return.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property SecurityGroupRules. 
-        /// <para>
-        /// Information about the outbound (egress) security group rules that were added.
-        /// </para>
-        /// </summary>
-        public List<SecurityGroupRule> SecurityGroupRules
-        {
-            get { return this._securityGroupRules; }
-            set { this._securityGroupRules = value; }
-        }
-
-        // Check to see if SecurityGroupRules property is set
-        internal bool IsSetSecurityGroupRules()
-        {
-            return this._securityGroupRules != null && this._securityGroupRules.Count > 0; 
         }
 
     }

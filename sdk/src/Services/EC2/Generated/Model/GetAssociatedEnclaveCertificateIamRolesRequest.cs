@@ -30,11 +30,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAssociatedEnclaveCertificateIamRoles operation.
-    /// Returns the IAM roles that are associated with the specified AWS Certificate Manager
-    /// (ACM) certificate. It also returns the name of the Amazon S3 bucket and the Amazon
-    /// S3 object key where the certificate, certificate chain, and encrypted private key
-    /// bundle are stored, and the ARN of the AWS Key Management Service (KMS) customer master
-    /// key (CMK) that's used to encrypt the private key.
+    /// Returns the IAM roles that are associated with the specified ACM (ACM) certificate.
+    /// It also returns the name of the Amazon S3 bucket and the Amazon S3 object key where
+    /// the certificate, certificate chain, and encrypted private key bundle are stored, and
+    /// the ARN of the KMS key that's used to encrypt the private key.
     /// </summary>
     public partial class GetAssociatedEnclaveCertificateIamRolesRequest : AmazonEC2Request
     {

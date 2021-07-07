@@ -742,6 +742,11 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = AuthorizeSecurityGroupEgressResponseUnmarshaller.Instance.Unmarshall(context)
+                as AuthorizeSecurityGroupEgressResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         
@@ -761,6 +766,11 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = AuthorizeSecurityGroupIngressResponseUnmarshaller.Instance.Unmarshall(context)
+                as AuthorizeSecurityGroupIngressResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         
@@ -5799,6 +5809,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeSecurityGroupRulesMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeSecurityGroupRules");
+
+            var request = InstantiateClassGenerator.Execute<DescribeSecurityGroupRulesRequest>();
+            var marshaller = new DescribeSecurityGroupRulesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeSecurityGroupRulesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeSecurityGroupRulesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeSecurityGroupsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeSecurityGroups");
@@ -8821,6 +8855,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = ModifyReservedInstancesResponseUnmarshaller.Instance.Unmarshall(context)
                 as ModifyReservedInstancesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void ModifySecurityGroupRulesMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifySecurityGroupRules");
+
+            var request = InstantiateClassGenerator.Execute<ModifySecurityGroupRulesRequest>();
+            var marshaller = new ModifySecurityGroupRulesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifySecurityGroupRulesResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifySecurityGroupRulesResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

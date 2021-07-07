@@ -1343,27 +1343,27 @@ namespace Amazon.EC2
         #region  AssociateEnclaveCertificateIamRole
 
         /// <summary>
-        /// Associates an AWS Identity and Access Management (IAM) role with an AWS Certificate
-        /// Manager (ACM) certificate. This enables the certificate to be used by the ACM for
-        /// Nitro Enclaves application inside an enclave. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html">AWS
-        /// Certificate Manager for Nitro Enclaves</a> in the <i>AWS Nitro Enclaves User Guide</i>.
+        /// Associates an Identity and Access Management (IAM) role with an Certificate Manager
+        /// (ACM) certificate. This enables the certificate to be used by the ACM for Nitro Enclaves
+        /// application inside an enclave. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html">Certificate
+        /// Manager for Nitro Enclaves</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.
         /// 
         ///  
         /// <para>
         /// When the IAM role is associated with the ACM certificate, the certificate, certificate
         /// chain, and encrypted private key are placed in an Amazon S3 bucket that only the associated
-        /// IAM role can access. The private key of the certificate is encrypted with an AWS-managed
-        /// KMS customer master (CMK) that has an attached attestation-based CMK policy.
+        /// IAM role can access. The private key of the certificate is encrypted with an Amazon
+        /// Web Services managed key that has an attached attestation-based key policy.
         /// </para>
         ///  
         /// <para>
         /// To enable the IAM role to access the Amazon S3 object, you must grant it permission
         /// to call <code>s3:GetObject</code> on the Amazon S3 bucket returned by the command.
-        /// To enable the IAM role to access the AWS KMS CMK, you must grant it permission to
-        /// call <code>kms:Decrypt</code> on the AWS KMS CMK returned by the command. For more
-        /// information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy">
+        /// To enable the IAM role to access the KMS key, you must grant it permission to call
+        /// <code>kms:Decrypt</code> on the KMS key returned by the command. For more information,
+        /// see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy">
         /// Grant the role permission to access the certificate and encryption key</a> in the
-        /// <i>AWS Nitro Enclaves User Guide</i>.
+        /// <i>Amazon Web Services Nitro Enclaves User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateEnclaveCertificateIamRole service method.</param>
@@ -2237,13 +2237,14 @@ namespace Amazon.EC2
         #region  AuthorizeSecurityGroupEgress
 
         /// <summary>
-        /// [VPC only] Adds the specified egress rules to a security group for use with a VPC.
+        /// [VPC only] Adds the specified outbound (egress) rules to a security group for use
+        /// with a VPC.
         /// 
         ///  
         /// <para>
         /// An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 CIDR
-        /// address ranges, or to the instances associated with the specified destination security
-        /// groups.
+        /// address ranges, or to the instances that are associated with the specified destination
+        /// security groups.
         /// </para>
         ///  
         /// <para>
@@ -2259,8 +2260,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about VPC security group limits, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
-        /// VPC Limits</a>.
+        /// For information about VPC security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
+        /// VPC quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeSecurityGroupEgress service method.</param>
@@ -2315,12 +2316,12 @@ namespace Amazon.EC2
         #region  AuthorizeSecurityGroupIngress
 
         /// <summary>
-        /// Adds the specified ingress rules to a security group.
+        /// Adds the specified inbound (ingress) rules to a security group.
         /// 
         ///  
         /// <para>
         /// An inbound rule permits instances to receive traffic from the specified IPv4 or IPv6
-        /// CIDR address ranges, or from the instances associated with the specified destination
+        /// CIDR address range, or from the instances that are associated with the specified destination
         /// security groups.
         /// </para>
         ///  
@@ -2336,8 +2337,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about VPC security group limits, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
-        /// VPC Limits</a>.
+        /// For more information about VPC security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
+        /// VPC quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeSecurityGroupIngress service method.</param>
@@ -16235,6 +16236,60 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeSecurityGroupRules
+
+        /// <summary>
+        /// Describes one or more of your security group rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroupRules service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSecurityGroupRules service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupRules">REST API Reference for DescribeSecurityGroupRules Operation</seealso>
+        public virtual DescribeSecurityGroupRulesResponse DescribeSecurityGroupRules(DescribeSecurityGroupRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSecurityGroupRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSecurityGroupRulesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSecurityGroupRulesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSecurityGroupRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroupRules operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSecurityGroupRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupRules">REST API Reference for DescribeSecurityGroupRules Operation</seealso>
+        public virtual IAsyncResult BeginDescribeSecurityGroupRules(DescribeSecurityGroupRulesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSecurityGroupRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSecurityGroupRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSecurityGroupRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSecurityGroupRules.</param>
+        /// 
+        /// <returns>Returns a  DescribeSecurityGroupRulesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupRules">REST API Reference for DescribeSecurityGroupRules Operation</seealso>
+        public virtual DescribeSecurityGroupRulesResponse EndDescribeSecurityGroupRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeSecurityGroupRulesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeSecurityGroups
 
         /// <summary>
@@ -20045,12 +20100,11 @@ namespace Amazon.EC2
         #region  DisassociateEnclaveCertificateIamRole
 
         /// <summary>
-        /// Disassociates an IAM role from an AWS Certificate Manager (ACM) certificate. Disassociating
+        /// Disassociates an IAM role from an Certificate Manager (ACM) certificate. Disassociating
         /// an IAM role from an ACM certificate removes the Amazon S3 object that contains the
         /// certificate, certificate chain, and encrypted private key from the Amazon S3 bucket.
-        /// It also revokes the IAM role's permission to use the AWS Key Management Service (KMS)
-        /// customer master key (CMK) used to encrypt the private key. This effectively revokes
-        /// the role's permission to use the certificate.
+        /// It also revokes the IAM role's permission to use the KMS key used to encrypt the private
+        /// key. This effectively revokes the role's permission to use the certificate.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateEnclaveCertificateIamRole service method.</param>
         /// 
@@ -21287,11 +21341,10 @@ namespace Amazon.EC2
         #region  GetAssociatedEnclaveCertificateIamRoles
 
         /// <summary>
-        /// Returns the IAM roles that are associated with the specified AWS Certificate Manager
-        /// (ACM) certificate. It also returns the name of the Amazon S3 bucket and the Amazon
-        /// S3 object key where the certificate, certificate chain, and encrypted private key
-        /// bundle are stored, and the ARN of the AWS Key Management Service (KMS) customer master
-        /// key (CMK) that's used to encrypt the private key.
+        /// Returns the IAM roles that are associated with the specified ACM (ACM) certificate.
+        /// It also returns the name of the Amazon S3 bucket and the Amazon S3 object key where
+        /// the certificate, certificate chain, and encrypted private key bundle are stored, and
+        /// the ARN of the KMS key that's used to encrypt the private key.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAssociatedEnclaveCertificateIamRoles service method.</param>
         /// 
@@ -22854,10 +22907,10 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Imports the public key from an RSA key pair that you created with a third-party tool.
-        /// Compare this with <a>CreateKeyPair</a>, in which AWS creates the key pair and gives
-        /// the keys to you (AWS keeps a copy of the public key). With ImportKeyPair, you create
-        /// the key pair and give AWS just the public key. The private key is never transferred
-        /// between you and AWS.
+        /// Compare this with <a>CreateKeyPair</a>, in which Amazon Web Services creates the key
+        /// pair and gives the keys to you (Amazon Web Services keeps a copy of the public key).
+        /// With ImportKeyPair, you create the key pair and give Amazon Web Services just the
+        /// public key. The private key is never transferred between you and Amazon Web Services.
         /// 
         ///  
         /// <para>
@@ -24496,6 +24549,60 @@ namespace Amazon.EC2
         public virtual ModifyReservedInstancesResponse EndModifyReservedInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyReservedInstancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifySecurityGroupRules
+
+        /// <summary>
+        /// Modifies the rules of a security group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifySecurityGroupRules service method.</param>
+        /// 
+        /// <returns>The response from the ModifySecurityGroupRules service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySecurityGroupRules">REST API Reference for ModifySecurityGroupRules Operation</seealso>
+        public virtual ModifySecurityGroupRulesResponse ModifySecurityGroupRules(ModifySecurityGroupRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifySecurityGroupRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifySecurityGroupRulesResponseUnmarshaller.Instance;
+
+            return Invoke<ModifySecurityGroupRulesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifySecurityGroupRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifySecurityGroupRules operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifySecurityGroupRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySecurityGroupRules">REST API Reference for ModifySecurityGroupRules Operation</seealso>
+        public virtual IAsyncResult BeginModifySecurityGroupRules(ModifySecurityGroupRulesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifySecurityGroupRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifySecurityGroupRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifySecurityGroupRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifySecurityGroupRules.</param>
+        /// 
+        /// <returns>Returns a  ModifySecurityGroupRulesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySecurityGroupRules">REST API Reference for ModifySecurityGroupRules Operation</seealso>
+        public virtual ModifySecurityGroupRulesResponse EndModifySecurityGroupRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifySecurityGroupRulesResponse>(asyncResult);
         }
 
         #endregion
@@ -28321,29 +28428,29 @@ namespace Amazon.EC2
         #region  RevokeSecurityGroupEgress
 
         /// <summary>
-        /// [VPC only] Removes the specified egress rules from a security group for EC2-VPC. This
-        /// action does not apply to security groups for use in EC2-Classic. To remove a rule,
-        /// the values that you specify (for example, ports) must match the existing rule's values
-        /// exactly.
+        /// [VPC only] Removes the specified outbound (egress) rules from a security group for
+        /// EC2-VPC. This action does not apply to security groups for use in EC2-Classic.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        /// [Default VPC] If the values you specify do not match the existing rule's values, no
-        /// error is returned, and the output describes the security group rules that were not
-        /// revoked. 
+        /// You can specify rules using either rule IDs or security group rule properties. If
+        /// you use rule properties, the values that you specify (for example, ports) must match
+        /// the existing rule's values exactly. Each rule has a protocol, from and to ports, and
+        /// destination (CIDR range, security group, or prefix list). For the TCP and UDP protocols,
+        /// you must also specify the destination port or range of ports. For the ICMP protocol,
+        /// you must also specify the ICMP type and code. If the security group rule has a description,
+        /// you do not need to specify the description to revoke the rule.
         /// </para>
         ///  
         /// <para>
-        /// AWS recommends that you use <a>DescribeSecurityGroups</a> to verify that the rule
-        /// has been removed.
+        /// [Default VPC] If the values you specify do not match the existing rule's values, no
+        /// error is returned, and the output describes the security group rules that were not
+        /// revoked.
         /// </para>
-        ///  </note> 
+        ///  
         /// <para>
-        /// Each rule consists of the protocol and the IPv4 or IPv6 CIDR range or source security
-        /// group. For the TCP and UDP protocols, you must also specify the destination port or
-        /// range of ports. For the ICMP protocol, you must also specify the ICMP type and code.
-        /// If the security group rule has a description, you do not have to specify the description
-        /// to revoke the rule.
+        /// Amazon Web Services recommends that you describe the security group to verify that
+        /// the rules were removed.
         /// </para>
         ///  
         /// <para>
@@ -28403,27 +28510,28 @@ namespace Amazon.EC2
         #region  RevokeSecurityGroupIngress
 
         /// <summary>
-        /// Removes the specified ingress rules from a security group. To remove a rule, the values
-        /// that you specify (for example, ports) must match the existing rule's values exactly.
+        /// Removes the specified inbound (ingress) rules from a security group.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        /// [EC2-Classic , default VPC] If the values you specify do not match the existing rule's
-        /// values, no error is returned, and the output describes the security group rules that
-        /// were not revoked. 
+        /// You can specify rules using either rule IDs or security group rule properties. If
+        /// you use rule properties, the values that you specify (for example, ports) must match
+        /// the existing rule's values exactly. Each rule has a protocol, from and to ports, and
+        /// source (CIDR range, security group, or prefix list). For the TCP and UDP protocols,
+        /// you must also specify the destination port or range of ports. For the ICMP protocol,
+        /// you must also specify the ICMP type and code. If the security group rule has a description,
+        /// you do not need to specify the description to revoke the rule.
         /// </para>
         ///  
         /// <para>
-        /// AWS recommends that you use <a>DescribeSecurityGroups</a> to verify that the rule
-        /// has been removed.
+        /// [EC2-Classic, default VPC] If the values you specify do not match the existing rule's
+        /// values, no error is returned, and the output describes the security group rules that
+        /// were not revoked.
         /// </para>
-        ///  </note> 
+        ///  
         /// <para>
-        /// Each rule consists of the protocol and the CIDR range or source security group. For
-        /// the TCP and UDP protocols, you must also specify the destination port or range of
-        /// ports. For the ICMP protocol, you must also specify the ICMP type and code. If the
-        /// security group rule has a description, you do not have to specify the description
-        /// to revoke the rule.
+        /// Amazon Web Services recommends that you describe the security group to verify that
+        /// the rules were removed.
         /// </para>
         ///  
         /// <para>
@@ -29586,14 +29694,8 @@ namespace Amazon.EC2
         /// <summary>
         /// [VPC only] Updates the description of an egress (outbound) security group rule. You
         /// can replace an existing description, or add a description to a rule that did not have
-        /// one previously.
-        /// 
-        ///  
-        /// <para>
-        /// You specify the description as part of the IP permissions structure. You can remove
-        /// a description for a security group rule by omitting the description parameter in the
-        /// request.
-        /// </para>
+        /// one previously. You can remove a description for a security group rule by omitting
+        /// the description parameter in the request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSecurityGroupRuleDescriptionsEgress service method.</param>
         /// 
@@ -29649,13 +29751,8 @@ namespace Amazon.EC2
         /// <summary>
         /// Updates the description of an ingress (inbound) security group rule. You can replace
         /// an existing description, or add a description to a rule that did not have one previously.
-        /// 
-        ///  
-        /// <para>
-        /// You specify the description as part of the IP permissions structure. You can remove
-        /// a description for a security group rule by omitting the description parameter in the
-        /// request.
-        /// </para>
+        /// You can remove a description for a security group rule by omitting the description
+        /// parameter in the request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSecurityGroupRuleDescriptionsIngress service method.</param>
         /// 

@@ -306,6 +306,11 @@ namespace Amazon.EC2.Model
         IDescribeScheduledInstancesPaginator DescribeScheduledInstances(DescribeScheduledInstancesRequest request);
 
         /// <summary>
+        /// Paginator for DescribeSecurityGroupRules operation
+        ///</summary>
+        IDescribeSecurityGroupRulesPaginator DescribeSecurityGroupRules(DescribeSecurityGroupRulesRequest request);
+
+        /// <summary>
         /// Paginator for DescribeSecurityGroups operation
         ///</summary>
         IDescribeSecurityGroupsPaginator DescribeSecurityGroups(DescribeSecurityGroupsRequest request);

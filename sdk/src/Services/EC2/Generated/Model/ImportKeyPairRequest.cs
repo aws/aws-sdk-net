@@ -31,10 +31,10 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the ImportKeyPair operation.
     /// Imports the public key from an RSA key pair that you created with a third-party tool.
-    /// Compare this with <a>CreateKeyPair</a>, in which AWS creates the key pair and gives
-    /// the keys to you (AWS keeps a copy of the public key). With ImportKeyPair, you create
-    /// the key pair and give AWS just the public key. The private key is never transferred
-    /// between you and AWS.
+    /// Compare this with <a>CreateKeyPair</a>, in which Amazon Web Services creates the key
+    /// pair and gives the keys to you (Amazon Web Services keeps a copy of the public key).
+    /// With ImportKeyPair, you create the key pair and give Amazon Web Services just the
+    /// public key. The private key is never transferred between you and Amazon Web Services.
     /// 
     ///  
     /// <para>

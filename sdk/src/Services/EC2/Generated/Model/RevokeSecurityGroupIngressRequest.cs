@@ -30,27 +30,28 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the RevokeSecurityGroupIngress operation.
-    /// Removes the specified ingress rules from a security group. To remove a rule, the values
-    /// that you specify (for example, ports) must match the existing rule's values exactly.
+    /// Removes the specified inbound (ingress) rules from a security group.
     /// 
-    ///  <note> 
+    ///  
     /// <para>
-    /// [EC2-Classic , default VPC] If the values you specify do not match the existing rule's
-    /// values, no error is returned, and the output describes the security group rules that
-    /// were not revoked. 
+    /// You can specify rules using either rule IDs or security group rule properties. If
+    /// you use rule properties, the values that you specify (for example, ports) must match
+    /// the existing rule's values exactly. Each rule has a protocol, from and to ports, and
+    /// source (CIDR range, security group, or prefix list). For the TCP and UDP protocols,
+    /// you must also specify the destination port or range of ports. For the ICMP protocol,
+    /// you must also specify the ICMP type and code. If the security group rule has a description,
+    /// you do not need to specify the description to revoke the rule.
     /// </para>
     ///  
     /// <para>
-    /// AWS recommends that you use <a>DescribeSecurityGroups</a> to verify that the rule
-    /// has been removed.
+    /// [EC2-Classic, default VPC] If the values you specify do not match the existing rule's
+    /// values, no error is returned, and the output describes the security group rules that
+    /// were not revoked.
     /// </para>
-    ///  </note> 
+    ///  
     /// <para>
-    /// Each rule consists of the protocol and the CIDR range or source security group. For
-    /// the TCP and UDP protocols, you must also specify the destination port or range of
-    /// ports. For the ICMP protocol, you must also specify the ICMP type and code. If the
-    /// security group rule has a description, you do not have to specify the description
-    /// to revoke the rule.
+    /// Amazon Web Services recommends that you describe the security group to verify that
+    /// the rules were removed.
     /// </para>
     ///  
     /// <para>
@@ -63,6 +64,7 @@ namespace Amazon.EC2.Model
         private string _groupId;
         private string _groupName;
         private List<IpPermission> _ipPermissions = new List<IpPermission>();
+        private List<string> _securityGroupRuleIds = new List<string>();
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -136,6 +138,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpPermissions()
         {
             return this._ipPermissions != null && this._ipPermissions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroupRuleIds. 
+        /// <para>
+        /// The IDs of the security group rules.
+        /// </para>
+        /// </summary>
+        public List<string> SecurityGroupRuleIds
+        {
+            get { return this._securityGroupRuleIds; }
+            set { this._securityGroupRuleIds = value; }
+        }
+
+        // Check to see if SecurityGroupRuleIds property is set
+        internal bool IsSetSecurityGroupRuleIds()
+        {
+            return this._securityGroupRuleIds != null && this._securityGroupRuleIds.Count > 0; 
         }
 
     }
