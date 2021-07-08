@@ -10,6 +10,11 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaTailor.Model.ListAlertsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaTailor.Model.ListChannelsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>

@@ -44,6 +44,14 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
+        /// Paginator for ListAlerts operation
+        ///</summary>
+        public IListAlertsPaginator ListAlerts(ListAlertsRequest request) 
+        {
+            return new ListAlertsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListChannels operation
         ///</summary>
         public IListChannelsPaginator ListChannels(ListChannelsRequest request) 

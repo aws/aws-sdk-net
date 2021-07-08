@@ -1168,6 +1168,60 @@ namespace Amazon.MediaTailor
 
         #endregion
         
+        #region  ListAlerts
+
+        /// <summary>
+        /// Returns a list of alerts for the given resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAlerts service method.</param>
+        /// 
+        /// <returns>The response from the ListAlerts service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListAlerts">REST API Reference for ListAlerts Operation</seealso>
+        public virtual ListAlertsResponse ListAlerts(ListAlertsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAlertsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAlertsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAlertsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAlerts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAlerts operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAlerts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListAlerts">REST API Reference for ListAlerts Operation</seealso>
+        public virtual IAsyncResult BeginListAlerts(ListAlertsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAlertsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAlertsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAlerts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAlerts.</param>
+        /// 
+        /// <returns>Returns a  ListAlertsResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListAlerts">REST API Reference for ListAlerts Operation</seealso>
+        public virtual ListAlertsResponse EndListAlerts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAlertsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListChannels
 
         /// <summary>

@@ -531,6 +531,34 @@ namespace Amazon.MediaTailor
 
         #endregion
         
+        #region  ListAlerts
+
+
+        /// <summary>
+        /// Returns a list of alerts for the given resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAlerts service method.</param>
+        /// 
+        /// <returns>The response from the ListAlerts service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListAlerts">REST API Reference for ListAlerts Operation</seealso>
+        ListAlertsResponse ListAlerts(ListAlertsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of alerts for the given resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAlerts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAlerts service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListAlerts">REST API Reference for ListAlerts Operation</seealso>
+        Task<ListAlertsResponse> ListAlertsAsync(ListAlertsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListChannels
 
 

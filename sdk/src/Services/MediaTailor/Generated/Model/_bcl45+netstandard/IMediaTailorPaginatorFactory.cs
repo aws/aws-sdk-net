@@ -31,6 +31,11 @@ namespace Amazon.MediaTailor.Model
         IGetChannelSchedulePaginator GetChannelSchedule(GetChannelScheduleRequest request);
 
         /// <summary>
+        /// Paginator for ListAlerts operation
+        ///</summary>
+        IListAlertsPaginator ListAlerts(ListAlertsRequest request);
+
+        /// <summary>
         /// Paginator for ListChannels operation
         ///</summary>
         IListChannelsPaginator ListChannels(ListChannelsRequest request);

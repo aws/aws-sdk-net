@@ -964,6 +964,47 @@ namespace Amazon.MediaTailor
 
         #endregion
         
+        #region  ListAlerts
+
+
+        /// <summary>
+        /// Returns a list of alerts for the given resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAlerts service method.</param>
+        /// 
+        /// <returns>The response from the ListAlerts service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListAlerts">REST API Reference for ListAlerts Operation</seealso>
+        public virtual ListAlertsResponse ListAlerts(ListAlertsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAlertsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAlertsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAlertsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of alerts for the given resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAlerts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAlerts service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListAlerts">REST API Reference for ListAlerts Operation</seealso>
+        public virtual Task<ListAlertsResponse> ListAlertsAsync(ListAlertsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAlertsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAlertsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAlertsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListChannels
 
 
