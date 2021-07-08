@@ -47,12 +47,6 @@ namespace Amazon.DevOpsGuru.Model
         public IPaginatedEnumerable<CloudFormationHealth> CloudFormation => 
             new PaginatedResultKeyResponse<DescribeResourceCollectionHealthResponse, CloudFormationHealth>(this, (i) => i.CloudFormation);
 
-        /// <summary>
-        /// Enumerable containing all of the Service
-        /// </summary>
-        public IPaginatedEnumerable<ServiceHealth> Service => 
-            new PaginatedResultKeyResponse<DescribeResourceCollectionHealthResponse, ServiceHealth>(this, (i) => i.Service);
-
         internal DescribeResourceCollectionHealthPaginator(IAmazonDevOpsGuru client, DescribeResourceCollectionHealthRequest request)
         {
             this._client = client;

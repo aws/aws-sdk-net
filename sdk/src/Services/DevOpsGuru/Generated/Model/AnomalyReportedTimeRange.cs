@@ -29,50 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// A time range that specifies when the observed unusual behavior in an anomaly started
-    /// and ended. This is different from <code>AnomalyReportedTimeRange</code>, which specifies
-    /// the time range when DevOps Guru opens and then closes an anomaly.
+    /// A time range that specifies when DevOps Guru opens and then closes an anomaly. This
+    /// is different from <code>AnomalyTimeRange</code>, which specifies the time range when
+    /// DevOps Guru actually observes the anomalous behavior.
     /// </summary>
-    public partial class AnomalyTimeRange
+    public partial class AnomalyReportedTimeRange
     {
-        private DateTime? _endTime;
-        private DateTime? _startTime;
+        private DateTime? _closeTime;
+        private DateTime? _openTime;
 
         /// <summary>
-        /// Gets and sets the property EndTime. 
+        /// Gets and sets the property CloseTime. 
         /// <para>
-        ///  The time when the anomalous behavior ended. 
+        ///  The time when an anomaly is closed. 
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime CloseTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
-            set { this._endTime = value; }
+            get { return this._closeTime.GetValueOrDefault(); }
+            set { this._closeTime = value; }
         }
 
-        // Check to see if EndTime property is set
-        internal bool IsSetEndTime()
+        // Check to see if CloseTime property is set
+        internal bool IsSetCloseTime()
         {
-            return this._endTime.HasValue; 
+            return this._closeTime.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property StartTime. 
+        /// Gets and sets the property OpenTime. 
         /// <para>
-        ///  The time when the anomalous behavior started. 
+        ///  The time when an anomaly is opened. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartTime
+        public DateTime OpenTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
-            set { this._startTime = value; }
+            get { return this._openTime.GetValueOrDefault(); }
+            set { this._openTime = value; }
         }
 
-        // Check to see if StartTime property is set
-        internal bool IsSetStartTime()
+        // Check to see if OpenTime property is set
+        internal bool IsSetOpenTime()
         {
-            return this._startTime.HasValue; 
+            return this._openTime.HasValue; 
         }
 
     }

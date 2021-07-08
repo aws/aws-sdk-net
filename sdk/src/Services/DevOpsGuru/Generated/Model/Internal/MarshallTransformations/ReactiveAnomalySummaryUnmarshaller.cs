@@ -64,6 +64,12 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AnomalyReportedTimeRange", targetDepth))
+                {
+                    var unmarshaller = AnomalyReportedTimeRangeUnmarshaller.Instance;
+                    unmarshalledObject.AnomalyReportedTimeRange = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AnomalyTimeRange", targetDepth))
                 {
                     var unmarshaller = AnomalyTimeRangeUnmarshaller.Instance;

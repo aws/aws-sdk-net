@@ -33,6 +33,7 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class ProactiveAnomaly
     {
+        private AnomalyReportedTimeRange _anomalyReportedTimeRange;
         private AnomalyTimeRange _anomalyTimeRange;
         private string _associatedInsightId;
         private string _id;
@@ -43,6 +44,25 @@ namespace Amazon.DevOpsGuru.Model
         private AnomalySourceDetails _sourceDetails;
         private AnomalyStatus _status;
         private DateTime? _updateTime;
+
+        /// <summary>
+        /// Gets and sets the property AnomalyReportedTimeRange. 
+        /// <para>
+        ///  A <code>AnomalyReportedTimeRange</code> object that specifies the time range between
+        /// when the anomaly is opened and the time when it is closed. 
+        /// </para>
+        /// </summary>
+        public AnomalyReportedTimeRange AnomalyReportedTimeRange
+        {
+            get { return this._anomalyReportedTimeRange; }
+            set { this._anomalyReportedTimeRange = value; }
+        }
+
+        // Check to see if AnomalyReportedTimeRange property is set
+        internal bool IsSetAnomalyReportedTimeRange()
+        {
+            return this._anomalyReportedTimeRange != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AnomalyTimeRange.
