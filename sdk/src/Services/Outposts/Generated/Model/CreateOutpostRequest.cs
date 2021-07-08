@@ -31,6 +31,11 @@ namespace Amazon.Outposts.Model
     /// <summary>
     /// Container for the parameters to the CreateOutpost operation.
     /// Creates an Outpost.
+    /// 
+    ///  
+    /// <para>
+    /// You can specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.
+    /// </para>
     /// </summary>
     public partial class CreateOutpostRequest : AmazonOutpostsRequest
     {

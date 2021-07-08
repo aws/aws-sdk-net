@@ -59,6 +59,15 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetAvailabilityZoneFilter())
+                request.ParameterCollection.Add("AvailabilityZoneFilter", publicRequest.AvailabilityZoneFilter);
+            
+            if (publicRequest.IsSetAvailabilityZoneIdFilter())
+                request.ParameterCollection.Add("AvailabilityZoneIdFilter", publicRequest.AvailabilityZoneIdFilter);
+            
+            if (publicRequest.IsSetLifeCycleStatusFilter())
+                request.ParameterCollection.Add("LifeCycleStatusFilter", publicRequest.LifeCycleStatusFilter);
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

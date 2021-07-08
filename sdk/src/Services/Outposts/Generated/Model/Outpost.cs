@@ -96,6 +96,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property LifeCycleStatus.
         /// </summary>
+        [AWSProperty(Min=1, Max=20)]
         public string LifeCycleStatus
         {
             get { return this._lifeCycleStatus; }
