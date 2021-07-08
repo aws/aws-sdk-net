@@ -1,3 +1,22 @@
+### 3.7.68.0 (2021-07-08 18:22 UTC)
+* DevOpsGuru (3.7.2.0)
+	* Add AnomalyReportedTimeRange field to include open and close time of anomalies.
+* EKS (3.7.6.0)
+	* Added waiters for EKS FargateProfiles.
+* FMS (3.7.2.0)
+	* AWS Firewall Manager now supports route table monitoring, and provides remediation action recommendations to security administrators for AWS Network Firewall policies with misconfigured routes.
+* MediaTailor (3.7.3.0)
+	* Add ListAlerts for Channel, Program, Source Location, and VOD Source to return alerts for resources.
+* Outposts (3.7.2.0)
+	* Added property filters for listOutposts
+* SSMContacts (3.7.1.4)
+	* Updated description for CreateContactChannel contactId.
+* Core 3.7.0.41
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.67.1 (2021-07-07 20:56 UTC)
 * DynamoDBv2 (3.7.0.39)
 	* Rework locks building DynamoDB table caches
