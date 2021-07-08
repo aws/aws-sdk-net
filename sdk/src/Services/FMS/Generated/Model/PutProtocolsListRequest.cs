@@ -30,7 +30,7 @@ namespace Amazon.FMS.Model
 {
     /// <summary>
     /// Container for the parameters to the PutProtocolsList operation.
-    /// Creates an AWS Firewall Manager protocols list.
+    /// Creates an Firewall Manager protocols list.
     /// </summary>
     public partial class PutProtocolsListRequest : AmazonFMSRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ProtocolsList. 
         /// <para>
-        /// The details of the AWS Firewall Manager protocols list to be created.
+        /// The details of the Firewall Manager protocols list to be created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

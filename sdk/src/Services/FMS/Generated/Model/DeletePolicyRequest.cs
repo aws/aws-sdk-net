@@ -30,7 +30,7 @@ namespace Amazon.FMS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePolicy operation.
-    /// Permanently deletes an AWS Firewall Manager policy.
+    /// Permanently deletes an Firewall Manager policy.
     /// </summary>
     public partial class DeletePolicyRequest : AmazonFMSRequest
     {
@@ -44,11 +44,11 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  
         /// <para>
-        /// For AWS WAF and Shield Advanced policies, the cleanup does the following:
+        /// For WAF and Shield Advanced policies, the cleanup does the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Deletes rule groups created by AWS Firewall Manager
+        /// Deletes rule groups created by Firewall Manager
         /// </para>
         ///  </li> <li> 
         /// <para>

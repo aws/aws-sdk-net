@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// An individual AWS Firewall Manager application.
+    /// An individual Firewall Manager application.
     /// </summary>
     public partial class App
     {

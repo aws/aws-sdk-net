@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// An AWS Firewall Manager policy.
+    /// An Firewall Manager policy.
     /// </summary>
     public partial class Policy
     {
@@ -48,15 +48,15 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ExcludeMap. 
         /// <para>
-        /// Specifies the AWS account IDs and AWS Organizations organizational units (OUs) to
-        /// exclude from the policy. Specifying an OU is the equivalent of specifying all accounts
-        /// in the OU and in any of its child OUs, including any child OUs and accounts that are
-        /// added at a later time.
+        /// Specifies the Amazon Web Services account IDs and Organizations organizational units
+        /// (OUs) to exclude from the policy. Specifying an OU is the equivalent of specifying
+        /// all accounts in the OU and in any of its child OUs, including any child OUs and accounts
+        /// that are added at a later time.
         /// </para>
         ///  
         /// <para>
         /// You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>,
-        /// AWS Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>,
+        /// Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>,
         /// and does not evaluate any <code>ExcludeMap</code> specifications. If you do not specify
         /// an <code>IncludeMap</code>, then Firewall Manager applies the policy to all accounts
         /// except for those specified by the <code>ExcludeMap</code>.
@@ -119,15 +119,15 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property IncludeMap. 
         /// <para>
-        /// Specifies the AWS account IDs and AWS Organizations organizational units (OUs) to
-        /// include in the policy. Specifying an OU is the equivalent of specifying all accounts
-        /// in the OU and in any of its child OUs, including any child OUs and accounts that are
-        /// added at a later time.
+        /// Specifies the Amazon Web Services account IDs and Organizations organizational units
+        /// (OUs) to include in the policy. Specifying an OU is the equivalent of specifying all
+        /// accounts in the OU and in any of its child OUs, including any child OUs and accounts
+        /// that are added at a later time.
         /// </para>
         ///  
         /// <para>
         /// You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>,
-        /// AWS Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>,
+        /// Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>,
         /// and does not evaluate any <code>ExcludeMap</code> specifications. If you do not specify
         /// an <code>IncludeMap</code>, then Firewall Manager applies the policy to all accounts
         /// except for those specified by the <code>ExcludeMap</code>.
@@ -169,7 +169,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property PolicyId. 
         /// <para>
-        /// The ID of the AWS Firewall Manager policy.
+        /// The ID of the Firewall Manager policy.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -188,7 +188,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// The name of the AWS Firewall Manager policy.
+        /// The name of the Firewall Manager policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -268,14 +268,20 @@ namespace Amazon.FMS.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The type of resource protected by or in scope of the policy. This is in the format
-        /// shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-        /// Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>
+        /// shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+        /// Web Services Resource Types Reference</a>. To apply this policy to multiple resource
+        /// types, specify a resource type of <code>ResourceTypeList</code> and then specify the
+        /// resource types in a <code>ResourceTypeList</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For WAF and Shield Advanced, example resource types include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>
         /// and <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
         /// valid values are <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>.
         /// For a security group content audit policy, valid values are <code>AWS::EC2::SecurityGroup</code>,
         /// <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>. For
         /// a security group usage audit policy, the value is <code>AWS::EC2::SecurityGroup</code>.
-        /// For an AWS Network Firewall policy, the value is <code>AWS::EC2::VPC</code>.
+        /// For an Network Firewall policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -294,7 +300,8 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ResourceTypeList. 
         /// <para>
-        /// An array of <code>ResourceType</code>.
+        /// An array of <code>ResourceType</code> objects. Use this only to specify multiple resource
+        /// types. To specify a single resource type, use <code>ResourceType</code>.
         /// </para>
         /// </summary>
         public List<string> ResourceTypeList

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// Violation details for AWS Network Firewall for an Availability Zone that's missing
-    /// the expected Firewall Manager managed subnet.
+    /// Violation detail for Network Firewall for an Availability Zone that's missing the
+    /// expected Firewall Manager managed subnet.
     /// </summary>
     public partial class NetworkFirewallMissingSubnetViolation
     {
@@ -80,7 +80,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ViolationTarget. 
         /// <para>
-        /// The ID of the AWS Network Firewall or VPC resource that's in violation.
+        /// The ID of the Network Firewall or VPC resource that's in violation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

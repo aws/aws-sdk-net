@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// Describes the noncompliant resources in a member account for a specific AWS Firewall
-    /// Manager policy. A maximum of 100 entries are displayed. If more than 100 resources
-    /// are noncompliant, <code>EvaluationLimitExceeded</code> is set to <code>True</code>.
+    /// Describes the noncompliant resources in a member account for a specific Firewall Manager
+    /// policy. A maximum of 100 entries are displayed. If more than 100 resources are noncompliant,
+    /// <code>EvaluationLimitExceeded</code> is set to <code>True</code>.
     /// </summary>
     public partial class PolicyComplianceDetail
     {
@@ -46,7 +46,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property EvaluationLimitExceeded. 
         /// <para>
-        /// Indicates if over 100 resources are noncompliant with the AWS Firewall Manager policy.
+        /// Indicates if over 100 resources are noncompliant with the Firewall Manager policy.
         /// </para>
         /// </summary>
         public bool EvaluationLimitExceeded
@@ -83,9 +83,8 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property IssueInfoMap. 
         /// <para>
-        /// Details about problems with dependent services, such as AWS WAF or AWS Config, that
-        /// are causing a resource to be noncompliant. The details include the name of the dependent
-        /// service and the error message received that indicates the problem with the service.
+        /// Details about problems with dependent services, such as WAF or Config, and the error
+        /// message received that indicates the problem with the service.
         /// </para>
         /// </summary>
         public Dictionary<string, string> IssueInfoMap
@@ -103,7 +102,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property MemberAccount. 
         /// <para>
-        /// The AWS account ID.
+        /// The Amazon Web Services account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -122,7 +121,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property PolicyId. 
         /// <para>
-        /// The ID of the AWS Firewall Manager policy.
+        /// The ID of the Firewall Manager policy.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -141,7 +140,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property PolicyOwner. 
         /// <para>
-        /// The AWS account that created the AWS Firewall Manager policy.
+        /// The Amazon Web Services account that created the Firewall Manager policy.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -160,8 +159,8 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property Violators. 
         /// <para>
-        /// An array of resources that aren't protected by the AWS WAF or Shield Advanced policy
-        /// or that aren't in compliance with the security group policy.
+        /// An array of resources that aren't protected by the WAF or Shield Advanced policy or
+        /// that aren't in compliance with the security group policy.
         /// </para>
         /// </summary>
         public List<ComplianceViolator> Violators

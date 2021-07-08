@@ -30,7 +30,7 @@ namespace Amazon.FMS.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateAdminAccount operation.
-    /// Disassociates the account that has been set as the AWS Firewall Manager administrator
+    /// Disassociates the account that has been set as the Firewall Manager administrator
     /// account. To set a different account as the administrator account, you must submit
     /// an <code>AssociateAdminAccount</code> request.
     /// </summary>

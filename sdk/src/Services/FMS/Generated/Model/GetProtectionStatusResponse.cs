@@ -41,7 +41,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property AdminAccountId. 
         /// <para>
-        /// The ID of the AWS Firewall administrator account for this policy.
+        /// The ID of the Firewall Manager administrator account for this policy.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -110,10 +110,10 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  
         /// <para>
-        /// AWS SDKs provide auto-pagination that identify <code>NextToken</code> in a response
-        /// and make subsequent request calls automatically on your behalf. However, this feature
-        /// is not supported by <code>GetProtectionStatus</code>. You must submit subsequent requests
-        /// with <code>NextToken</code> using your own processes. 
+        /// Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code>
+        /// in a response and make subsequent request calls automatically on your behalf. However,
+        /// this feature is not supported by <code>GetProtectionStatus</code>. You must submit
+        /// subsequent requests with <code>NextToken</code> using your own processes. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]

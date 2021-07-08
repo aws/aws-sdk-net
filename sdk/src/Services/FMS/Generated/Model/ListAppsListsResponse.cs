@@ -58,7 +58,7 @@ namespace Amazon.FMS.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If you specify a value for <code>MaxResults</code> in your list request, and you have
-        /// more objects than the maximum, AWS Firewall Manager returns this token in the response.
+        /// more objects than the maximum, Firewall Manager returns this token in the response.
         /// You can use this token in subsequent requests to retrieve the next batch of objects.
         /// </para>
         /// </summary>

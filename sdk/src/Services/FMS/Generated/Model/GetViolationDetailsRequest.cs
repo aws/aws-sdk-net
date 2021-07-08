@@ -30,8 +30,8 @@ namespace Amazon.FMS.Model
 {
     /// <summary>
     /// Container for the parameters to the GetViolationDetails operation.
-    /// Retrieves violations for a resource based on the specified AWS Firewall Manager policy
-    /// and AWS account.
+    /// Retrieves violations for a resource based on the specified Firewall Manager policy
+    /// and Amazon Web Services account.
     /// </summary>
     public partial class GetViolationDetailsRequest : AmazonFMSRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property MemberAccount. 
         /// <para>
-        /// The AWS account ID that you want the details for.
+        /// The Amazon Web Services account ID that you want the details for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
@@ -62,7 +62,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property PolicyId. 
         /// <para>
-        /// The ID of the AWS Firewall Manager policy that you want the details for. This currently
+        /// The ID of the Firewall Manager policy that you want the details for. This currently
         /// only supports security group content audit policies.
         /// </para>
         /// </summary>
@@ -101,8 +101,8 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-        /// Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>,
+        /// The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+        /// Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>,
         /// <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>,
         /// and <code>AWS::EC2::Subnet</code>. 
         /// </para>

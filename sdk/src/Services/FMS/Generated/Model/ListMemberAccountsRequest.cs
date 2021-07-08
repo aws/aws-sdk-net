@@ -31,12 +31,12 @@ namespace Amazon.FMS.Model
     /// <summary>
     /// Container for the parameters to the ListMemberAccounts operation.
     /// Returns a <code>MemberAccounts</code> object that lists the member accounts in the
-    /// administrator's AWS organization.
+    /// administrator's Amazon Web Services organization.
     /// 
     ///  
     /// <para>
     /// The <code>ListMemberAccounts</code> must be submitted by the account that is set as
-    /// the AWS Firewall Manager administrator.
+    /// the Firewall Manager administrator.
     /// </para>
     /// </summary>
     public partial class ListMemberAccountsRequest : AmazonFMSRequest
@@ -47,7 +47,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Specifies the number of member account IDs that you want AWS Firewall Manager to return
+        /// Specifies the number of member account IDs that you want Firewall Manager to return
         /// for this request. If you have more IDs than the number that you specify for <code>MaxResults</code>,
         /// the response includes a <code>NextToken</code> value that you can use to get another
         /// batch of member account IDs.
@@ -70,7 +70,7 @@ namespace Amazon.FMS.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If you specify a value for <code>MaxResults</code> and you have more account IDs than
-        /// the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns
+        /// the number that you specify for <code>MaxResults</code>, Firewall Manager returns
         /// a <code>NextToken</code> value in the response that allows you to list another group
         /// of IDs. For the second and subsequent <code>ListMemberAccountsRequest</code> requests,
         /// specify the value of <code>NextToken</code> from the previous response to get information

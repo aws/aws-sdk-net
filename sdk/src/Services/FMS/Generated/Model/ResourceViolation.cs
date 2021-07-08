@@ -39,15 +39,22 @@ namespace Amazon.FMS.Model
         private DnsDuplicateRuleGroupViolation _dnsDuplicateRuleGroupViolation;
         private DnsRuleGroupLimitExceededViolation _dnsRuleGroupLimitExceededViolation;
         private DnsRuleGroupPriorityConflictViolation _dnsRuleGroupPriorityConflictViolation;
+        private NetworkFirewallBlackHoleRouteDetectedViolation _networkFirewallBlackHoleRouteDetectedViolation;
+        private NetworkFirewallInternetTrafficNotInspectedViolation _networkFirewallInternetTrafficNotInspectedViolation;
+        private NetworkFirewallInvalidRouteConfigurationViolation _networkFirewallInvalidRouteConfigurationViolation;
+        private NetworkFirewallMissingExpectedRoutesViolation _networkFirewallMissingExpectedRoutesViolation;
         private NetworkFirewallMissingExpectedRTViolation _networkFirewallMissingExpectedRTViolation;
         private NetworkFirewallMissingFirewallViolation _networkFirewallMissingFirewallViolation;
         private NetworkFirewallMissingSubnetViolation _networkFirewallMissingSubnetViolation;
         private NetworkFirewallPolicyModifiedViolation _networkFirewallPolicyModifiedViolation;
+        private NetworkFirewallUnexpectedFirewallRoutesViolation _networkFirewallUnexpectedFirewallRoutesViolation;
+        private NetworkFirewallUnexpectedGatewayRoutesViolation _networkFirewallUnexpectedGatewayRoutesViolation;
+        private PossibleRemediationActions _possibleRemediationActions;
 
         /// <summary>
         /// Gets and sets the property AwsEc2InstanceViolation. 
         /// <para>
-        /// Violation details for an EC2 instance.
+        /// Violation detail for an EC2 instance.
         /// </para>
         /// </summary>
         public AwsEc2InstanceViolation AwsEc2InstanceViolation
@@ -65,7 +72,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property AwsEc2NetworkInterfaceViolation. 
         /// <para>
-        /// Violation details for network interface.
+        /// Violation detail for a network interface.
         /// </para>
         /// </summary>
         public AwsEc2NetworkInterfaceViolation AwsEc2NetworkInterfaceViolation
@@ -83,7 +90,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property AwsVPCSecurityGroupViolation. 
         /// <para>
-        /// Violation details for security groups.
+        /// Violation detail for security groups.
         /// </para>
         /// </summary>
         public AwsVPCSecurityGroupViolation AwsVPCSecurityGroupViolation
@@ -121,7 +128,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property DnsRuleGroupLimitExceededViolation. 
         /// <para>
-        /// Violation details for a DNS Firewall policy that indicates that the VPC reached the
+        /// Violation detail for a DNS Firewall policy that indicates that the VPC reached the
         /// limit for associated DNS Firewall rule groups. Firewall Manager tried to associate
         /// another rule group with the VPC and failed. 
         /// </para>
@@ -156,6 +163,75 @@ namespace Amazon.FMS.Model
         internal bool IsSetDnsRuleGroupPriorityConflictViolation()
         {
             return this._dnsRuleGroupPriorityConflictViolation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkFirewallBlackHoleRouteDetectedViolation.
+        /// </summary>
+        public NetworkFirewallBlackHoleRouteDetectedViolation NetworkFirewallBlackHoleRouteDetectedViolation
+        {
+            get { return this._networkFirewallBlackHoleRouteDetectedViolation; }
+            set { this._networkFirewallBlackHoleRouteDetectedViolation = value; }
+        }
+
+        // Check to see if NetworkFirewallBlackHoleRouteDetectedViolation property is set
+        internal bool IsSetNetworkFirewallBlackHoleRouteDetectedViolation()
+        {
+            return this._networkFirewallBlackHoleRouteDetectedViolation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkFirewallInternetTrafficNotInspectedViolation. 
+        /// <para>
+        /// Violation detail for the subnet for which internet traffic hasn't been inspected.
+        /// </para>
+        /// </summary>
+        public NetworkFirewallInternetTrafficNotInspectedViolation NetworkFirewallInternetTrafficNotInspectedViolation
+        {
+            get { return this._networkFirewallInternetTrafficNotInspectedViolation; }
+            set { this._networkFirewallInternetTrafficNotInspectedViolation = value; }
+        }
+
+        // Check to see if NetworkFirewallInternetTrafficNotInspectedViolation property is set
+        internal bool IsSetNetworkFirewallInternetTrafficNotInspectedViolation()
+        {
+            return this._networkFirewallInternetTrafficNotInspectedViolation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkFirewallInvalidRouteConfigurationViolation. 
+        /// <para>
+        /// The route configuration is invalid.
+        /// </para>
+        /// </summary>
+        public NetworkFirewallInvalidRouteConfigurationViolation NetworkFirewallInvalidRouteConfigurationViolation
+        {
+            get { return this._networkFirewallInvalidRouteConfigurationViolation; }
+            set { this._networkFirewallInvalidRouteConfigurationViolation = value; }
+        }
+
+        // Check to see if NetworkFirewallInvalidRouteConfigurationViolation property is set
+        internal bool IsSetNetworkFirewallInvalidRouteConfigurationViolation()
+        {
+            return this._networkFirewallInvalidRouteConfigurationViolation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkFirewallMissingExpectedRoutesViolation. 
+        /// <para>
+        /// Expected routes are missing from Network Firewall.
+        /// </para>
+        /// </summary>
+        public NetworkFirewallMissingExpectedRoutesViolation NetworkFirewallMissingExpectedRoutesViolation
+        {
+            get { return this._networkFirewallMissingExpectedRoutesViolation; }
+            set { this._networkFirewallMissingExpectedRoutesViolation = value; }
+        }
+
+        // Check to see if NetworkFirewallMissingExpectedRoutesViolation property is set
+        internal bool IsSetNetworkFirewallMissingExpectedRoutesViolation()
+        {
+            return this._networkFirewallMissingExpectedRoutesViolation != null;
         }
 
         /// <summary>
@@ -234,6 +310,61 @@ namespace Amazon.FMS.Model
         internal bool IsSetNetworkFirewallPolicyModifiedViolation()
         {
             return this._networkFirewallPolicyModifiedViolation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkFirewallUnexpectedFirewallRoutesViolation. 
+        /// <para>
+        /// There's an unexpected firewall route.
+        /// </para>
+        /// </summary>
+        public NetworkFirewallUnexpectedFirewallRoutesViolation NetworkFirewallUnexpectedFirewallRoutesViolation
+        {
+            get { return this._networkFirewallUnexpectedFirewallRoutesViolation; }
+            set { this._networkFirewallUnexpectedFirewallRoutesViolation = value; }
+        }
+
+        // Check to see if NetworkFirewallUnexpectedFirewallRoutesViolation property is set
+        internal bool IsSetNetworkFirewallUnexpectedFirewallRoutesViolation()
+        {
+            return this._networkFirewallUnexpectedFirewallRoutesViolation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkFirewallUnexpectedGatewayRoutesViolation. 
+        /// <para>
+        /// There's an unexpected gateway route.
+        /// </para>
+        /// </summary>
+        public NetworkFirewallUnexpectedGatewayRoutesViolation NetworkFirewallUnexpectedGatewayRoutesViolation
+        {
+            get { return this._networkFirewallUnexpectedGatewayRoutesViolation; }
+            set { this._networkFirewallUnexpectedGatewayRoutesViolation = value; }
+        }
+
+        // Check to see if NetworkFirewallUnexpectedGatewayRoutesViolation property is set
+        internal bool IsSetNetworkFirewallUnexpectedGatewayRoutesViolation()
+        {
+            return this._networkFirewallUnexpectedGatewayRoutesViolation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PossibleRemediationActions. 
+        /// <para>
+        /// A list of possible remediation action lists. Each individual possible remediation
+        /// action is a list of individual remediation actions.
+        /// </para>
+        /// </summary>
+        public PossibleRemediationActions PossibleRemediationActions
+        {
+            get { return this._possibleRemediationActions; }
+            set { this._possibleRemediationActions = value; }
+        }
+
+        // Check to see if PossibleRemediationActions property is set
+        internal bool IsSetPossibleRemediationActions()
+        {
+            return this._possibleRemediationActions != null;
         }
 
     }

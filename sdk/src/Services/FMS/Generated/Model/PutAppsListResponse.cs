@@ -39,7 +39,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property AppsList. 
         /// <para>
-        /// The details of the AWS Firewall Manager applications list.
+        /// The details of the Firewall Manager applications list.
         /// </para>
         /// </summary>
         public AppsListData AppsList

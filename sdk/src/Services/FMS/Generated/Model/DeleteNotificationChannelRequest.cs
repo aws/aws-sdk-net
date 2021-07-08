@@ -30,8 +30,8 @@ namespace Amazon.FMS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteNotificationChannel operation.
-    /// Deletes an AWS Firewall Manager association with the IAM role and the Amazon Simple
-    /// Notification Service (SNS) topic that is used to record AWS Firewall Manager SNS logs.
+    /// Deletes an Firewall Manager association with the IAM role and the Amazon Simple Notification
+    /// Service (SNS) topic that is used to record Firewall Manager SNS logs.
     /// </summary>
     public partial class DeleteNotificationChannelRequest : AmazonFMSRequest
     {

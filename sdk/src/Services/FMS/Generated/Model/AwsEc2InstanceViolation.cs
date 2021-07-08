@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// Violations for an EC2 instance resource.
+    /// Violation detail for an EC2 instance resource.
     /// </summary>
     public partial class AwsEc2InstanceViolation
     {
@@ -39,7 +39,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property AwsEc2NetworkInterfaceViolations. 
         /// <para>
-        /// Violations for network interfaces associated with the EC2 instance.
+        /// Violation detail for network interfaces associated with the EC2 instance.
         /// </para>
         /// </summary>
         public List<AwsEc2NetworkInterfaceViolation> AwsEc2NetworkInterfaceViolations

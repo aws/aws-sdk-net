@@ -30,7 +30,7 @@ namespace Amazon.FMS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAppsList operation.
-    /// Permanently deletes an AWS Firewall Manager applications list.
+    /// Permanently deletes an Firewall Manager applications list.
     /// </summary>
     public partial class DeleteAppsListRequest : AmazonFMSRequest
     {

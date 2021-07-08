@@ -100,6 +100,30 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                     unmarshalledObject.DnsRuleGroupPriorityConflictViolation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NetworkFirewallBlackHoleRouteDetectedViolation", targetDepth))
+                {
+                    var unmarshaller = NetworkFirewallBlackHoleRouteDetectedViolationUnmarshaller.Instance;
+                    unmarshalledObject.NetworkFirewallBlackHoleRouteDetectedViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NetworkFirewallInternetTrafficNotInspectedViolation", targetDepth))
+                {
+                    var unmarshaller = NetworkFirewallInternetTrafficNotInspectedViolationUnmarshaller.Instance;
+                    unmarshalledObject.NetworkFirewallInternetTrafficNotInspectedViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NetworkFirewallInvalidRouteConfigurationViolation", targetDepth))
+                {
+                    var unmarshaller = NetworkFirewallInvalidRouteConfigurationViolationUnmarshaller.Instance;
+                    unmarshalledObject.NetworkFirewallInvalidRouteConfigurationViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NetworkFirewallMissingExpectedRoutesViolation", targetDepth))
+                {
+                    var unmarshaller = NetworkFirewallMissingExpectedRoutesViolationUnmarshaller.Instance;
+                    unmarshalledObject.NetworkFirewallMissingExpectedRoutesViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NetworkFirewallMissingExpectedRTViolation", targetDepth))
                 {
                     var unmarshaller = NetworkFirewallMissingExpectedRTViolationUnmarshaller.Instance;
@@ -122,6 +146,24 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NetworkFirewallPolicyModifiedViolationUnmarshaller.Instance;
                     unmarshalledObject.NetworkFirewallPolicyModifiedViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NetworkFirewallUnexpectedFirewallRoutesViolation", targetDepth))
+                {
+                    var unmarshaller = NetworkFirewallUnexpectedFirewallRoutesViolationUnmarshaller.Instance;
+                    unmarshalledObject.NetworkFirewallUnexpectedFirewallRoutesViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NetworkFirewallUnexpectedGatewayRoutesViolation", targetDepth))
+                {
+                    var unmarshaller = NetworkFirewallUnexpectedGatewayRoutesViolationUnmarshaller.Instance;
+                    unmarshalledObject.NetworkFirewallUnexpectedGatewayRoutesViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PossibleRemediationActions", targetDepth))
+                {
+                    var unmarshaller = PossibleRemediationActionsUnmarshaller.Instance;
+                    unmarshalledObject.PossibleRemediationActions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

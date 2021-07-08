@@ -30,7 +30,7 @@ namespace Amazon.FMS.Model
 {
     /// <summary>
     /// Container for the parameters to the PutPolicy operation.
-    /// Creates an AWS Firewall Manager policy.
+    /// Creates an Firewall Manager policy.
     /// 
     ///  
     /// <para>
@@ -38,12 +38,12 @@ namespace Amazon.FMS.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// An AWS WAF policy (type WAFV2), which defines rule groups to run first in the corresponding
-    /// AWS WAF web ACL and rule groups to run last in the web ACL.
+    /// An WAF policy (type WAFV2), which defines rule groups to run first in the corresponding
+    /// WAF web ACL and rule groups to run last in the web ACL.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// An AWS WAF Classic policy (type WAF), which defines a rule group. 
+    /// An WAF Classic policy (type WAF), which defines a rule group. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -52,13 +52,18 @@ namespace Amazon.FMS.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A security group policy, which manages VPC security groups across your AWS organization.
-    /// 
+    /// A security group policy, which manages VPC security groups across your Amazon Web
+    /// Services organization. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// An AWS Network Firewall policy, which provides firewall rules to filter network traffic
+    /// An Network Firewall policy, which provides firewall rules to filter network traffic
     /// in specified Amazon VPCs.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A DNS Firewall policy, which provides Route 53 Resolver DNS Firewall rules to filter
+    /// DNS queries for specified VPCs.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -80,7 +85,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// The details of the AWS Firewall Manager policy to be created.
+        /// The details of the Firewall Manager policy to be created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -99,7 +104,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property TagList. 
         /// <para>
-        /// The tags to add to the AWS resource.
+        /// The tags to add to the Amazon Web Services resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

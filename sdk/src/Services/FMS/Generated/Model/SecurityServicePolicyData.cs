@@ -44,6 +44,15 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// Example: <code>DNS_FIREWALL</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Example: <code>NETWORK_FIREWALL</code> 
         /// </para>
         ///  
@@ -86,6 +95,17 @@ namespace Amazon.FMS.Model
         ///  <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,
         /// \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"</code>
         /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Example: Shared VPCs. Apply the preceding policy to resources in shared VPCs as well
+        /// as to those in VPCs that the account owns 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,
+        /// \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\"
+        /// sg-000e55995d61a06bd\"}]}"</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -132,10 +152,10 @@ namespace Amazon.FMS.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The service that the policy is using to protect the resources. This specifies the
-        /// type of policy that is created, either an AWS WAF policy, a Shield Advanced policy,
-        /// or a security group policy. For security group policies, Firewall Manager supports
-        /// one security group for each common policy and for each content audit policy. This
-        /// is an adjustable limit that you can increase by contacting AWS Support.
+        /// type of policy that is created, either an WAF policy, a Shield Advanced policy, or
+        /// a security group policy. For security group policies, Firewall Manager supports one
+        /// security group for each common policy and for each content audit policy. This is an
+        /// adjustable limit that you can increase by contacting Amazon Web Services Support.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -39,7 +39,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property SnsRoleName. 
         /// <para>
-        /// The IAM role that is used by AWS Firewall Manager to record activity to SNS.
+        /// The IAM role that is used by Firewall Manager to record activity to SNS.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -58,7 +58,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property SnsTopicArn. 
         /// <para>
-        /// The SNS topic that records AWS Firewall Manager activity. 
+        /// The SNS topic that records Firewall Manager activity. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

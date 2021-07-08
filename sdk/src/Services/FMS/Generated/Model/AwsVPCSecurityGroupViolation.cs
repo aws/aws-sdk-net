@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// Details of the rule violation in a security group when compared to the master security
-    /// group of the AWS Firewall Manager policy.
+    /// Violation detail for the rule violation in a security group when compared to the primary
+    /// security group of the Firewall Manager policy.
     /// </summary>
     public partial class AwsVPCSecurityGroupViolation
     {
@@ -42,7 +42,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property PartialMatches. 
         /// <para>
-        /// List of rules specified in the security group of the AWS Firewall Manager policy that
+        /// List of rules specified in the security group of the Firewall Manager policy that
         /// partially match the <code>ViolationTarget</code> rule.
         /// </para>
         /// </summary>

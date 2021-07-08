@@ -36,6 +36,14 @@ namespace Amazon.FMS.Model
         }
 
         /// <summary>
+        /// Paginator for ListAppsLists operation
+        ///</summary>
+        public IListAppsListsPaginator ListAppsLists(ListAppsListsRequest request) 
+        {
+            return new ListAppsListsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListComplianceStatus operation
         ///</summary>
         public IListComplianceStatusPaginator ListComplianceStatus(ListComplianceStatusRequest request) 
@@ -57,6 +65,14 @@ namespace Amazon.FMS.Model
         public IListPoliciesPaginator ListPolicies(ListPoliciesRequest request) 
         {
             return new ListPoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListProtocolsLists operation
+        ///</summary>
+        public IListProtocolsListsPaginator ListProtocolsLists(ListProtocolsListsRequest request) 
+        {
+            return new ListProtocolsListsPaginator(this.client, request);
         }
     }
 }

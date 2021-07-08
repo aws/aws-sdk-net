@@ -42,7 +42,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ComplianceStatus. 
         /// <para>
-        /// Describes an AWS account's compliance with the AWS Firewall Manager policy.
+        /// Describes an Amazon Web Services account's compliance with the Firewall Manager policy.
         /// </para>
         /// </summary>
         public PolicyComplianceStatusType ComplianceStatus
@@ -60,7 +60,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property EvaluationLimitExceeded. 
         /// <para>
-        /// Indicates that over 100 resources are noncompliant with the AWS Firewall Manager policy.
+        /// Indicates that over 100 resources are noncompliant with the Firewall Manager policy.
         /// </para>
         /// </summary>
         public bool EvaluationLimitExceeded
@@ -78,8 +78,8 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ViolatorCount. 
         /// <para>
-        /// The number of resources that are noncompliant with the specified policy. For AWS WAF
-        /// and Shield Advanced policies, a resource is considered noncompliant if it is not associated
+        /// The number of resources that are noncompliant with the specified policy. For WAF and
+        /// Shield Advanced policies, a resource is considered noncompliant if it is not associated
         /// with the policy. For security group policies, a resource is considered noncompliant
         /// if it doesn't comply with the rules of the policy and remediation is disabled or not
         /// possible.

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// Details of the AWS Firewall Manager policy.
+    /// Details of the Firewall Manager policy.
     /// </summary>
     public partial class PolicySummary
     {
@@ -119,14 +119,15 @@ namespace Amazon.FMS.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The type of resource protected by or in scope of the policy. This is in the format
-        /// shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-        /// Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>
-        /// and <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
-        /// valid values are <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>.
-        /// For a security group content audit policy, valid values are <code>AWS::EC2::SecurityGroup</code>,
-        /// <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>. For
-        /// a security group usage audit policy, the value is <code>AWS::EC2::SecurityGroup</code>.
-        /// For an AWS Network Firewall policy, the value is <code>AWS::EC2::VPC</code>.
+        /// shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+        /// Web Services Resource Types Reference</a>. For WAF and Shield Advanced, examples include
+        /// <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>.
+        /// For a security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code>
+        /// and <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid
+        /// values are <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
+        /// and <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the
+        /// value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS
+        /// Firewall policy, the value is <code>AWS::EC2::VPC</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -146,8 +147,8 @@ namespace Amazon.FMS.Model
         /// Gets and sets the property SecurityServiceType. 
         /// <para>
         /// The service that the policy is using to protect the resources. This specifies the
-        /// type of policy that is created, either an AWS WAF policy, a Shield Advanced policy,
-        /// or a security group policy.
+        /// type of policy that is created, either an WAF policy, a Shield Advanced policy, or
+        /// a security group policy.
         /// </para>
         /// </summary>
         public SecurityServiceType SecurityServiceType

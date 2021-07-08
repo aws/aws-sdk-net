@@ -30,7 +30,7 @@ namespace Amazon.FMS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Retrieves the list of tags for the specified AWS resource.
+    /// Retrieves the list of tags for the specified Amazon Web Services resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonFMSRequest
     {
@@ -39,9 +39,9 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource to return tags for. The AWS Firewall
-        /// Manager resources that support tagging are policies, applications lists, and protocols
-        /// lists. 
+        /// The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager
+        /// resources that support tagging are policies, applications lists, and protocols lists.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

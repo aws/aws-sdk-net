@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// An AWS Firewall Manager applications list.
+    /// An Firewall Manager applications list.
     /// </summary>
     public partial class AppsListData
     {
@@ -44,7 +44,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property AppsList. 
         /// <para>
-        /// An array of applications in the AWS Firewall Manager applications list.
+        /// An array of applications in the Firewall Manager applications list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +63,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property CreateTime. 
         /// <para>
-        /// The time that the AWS Firewall Manager applications list was created.
+        /// The time that the Firewall Manager applications list was created.
         /// </para>
         /// </summary>
         public DateTime CreateTime
@@ -81,7 +81,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property LastUpdateTime. 
         /// <para>
-        /// The time that the AWS Firewall Manager applications list was last updated.
+        /// The time that the Firewall Manager applications list was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdateTime
@@ -99,7 +99,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ListId. 
         /// <para>
-        /// The ID of the AWS Firewall Manager applications list.
+        /// The ID of the Firewall Manager applications list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -118,7 +118,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ListName. 
         /// <para>
-        /// The name of the AWS Firewall Manager applications list.
+        /// The name of the Firewall Manager applications list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

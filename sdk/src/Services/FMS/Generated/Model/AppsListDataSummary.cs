@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// Details of the AWS Firewall Manager applications list.
+    /// Details of the Firewall Manager applications list.
     /// </summary>
     public partial class AppsListDataSummary
     {
@@ -41,7 +41,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property AppsList. 
         /// <para>
-        /// An array of <code>App</code> objects in the AWS Firewall Manager applications list.
+        /// An array of <code>App</code> objects in the Firewall Manager applications list.
         /// </para>
         /// </summary>
         public List<App> AppsList

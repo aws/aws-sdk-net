@@ -30,7 +30,7 @@ namespace Amazon.FMS.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPolicy operation.
-    /// Returns information about the specified AWS Firewall Manager policy.
+    /// Returns information about the specified Firewall Manager policy.
     /// </summary>
     public partial class GetPolicyRequest : AmazonFMSRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property PolicyId. 
         /// <para>
-        /// The ID of the AWS Firewall Manager policy that you want the details for.
+        /// The ID of the Firewall Manager policy that you want the details for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

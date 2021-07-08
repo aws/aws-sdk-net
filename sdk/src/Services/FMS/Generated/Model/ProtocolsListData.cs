@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// An AWS Firewall Manager protocols list.
+    /// An Firewall Manager protocols list.
     /// </summary>
     public partial class ProtocolsListData
     {
@@ -44,7 +44,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property CreateTime. 
         /// <para>
-        /// The time that the AWS Firewall Manager protocols list was created.
+        /// The time that the Firewall Manager protocols list was created.
         /// </para>
         /// </summary>
         public DateTime CreateTime
@@ -62,7 +62,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property LastUpdateTime. 
         /// <para>
-        /// The time that the AWS Firewall Manager protocols list was last updated.
+        /// The time that the Firewall Manager protocols list was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdateTime
@@ -80,7 +80,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ListId. 
         /// <para>
-        /// The ID of the AWS Firewall Manager protocols list.
+        /// The ID of the Firewall Manager protocols list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -99,7 +99,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ListName. 
         /// <para>
-        /// The name of the AWS Firewall Manager protocols list.
+        /// The name of the Firewall Manager protocols list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -157,7 +157,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ProtocolsList. 
         /// <para>
-        /// An array of protocols in the AWS Firewall Manager protocols list.
+        /// An array of protocols in the Firewall Manager protocols list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// Violation details for AWS Network Firewall for a subnet that's not associated to the
-    /// expected Firewall Manager managed route table.
+    /// Violation detail for Network Firewall for a subnet that's not associated to the expected
+    /// Firewall Manager managed route table.
     /// </summary>
     public partial class NetworkFirewallMissingExpectedRTViolation
     {
@@ -101,7 +101,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ViolationTarget. 
         /// <para>
-        /// The ID of the AWS Network Firewall or VPC resource that's in violation.
+        /// The ID of the Network Firewall or VPC resource that's in violation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

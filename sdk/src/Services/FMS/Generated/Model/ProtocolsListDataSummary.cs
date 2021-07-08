@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// Details of the AWS Firewall Manager protocols list.
+    /// Details of the Firewall Manager protocols list.
     /// </summary>
     public partial class ProtocolsListDataSummary
     {
@@ -98,7 +98,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ProtocolsList. 
         /// <para>
-        /// An array of protocols in the AWS Firewall Manager protocols list.
+        /// An array of protocols in the Firewall Manager protocols list.
         /// </para>
         /// </summary>
         public List<string> ProtocolsList

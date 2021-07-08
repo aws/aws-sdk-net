@@ -195,6 +195,60 @@ namespace Amazon.FMS
 
 
     /// <summary>
+    /// Constants used for properties of type DestinationType.
+    /// </summary>
+    public class DestinationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IPV4 for DestinationType
+        /// </summary>
+        public static readonly DestinationType IPV4 = new DestinationType("IPV4");
+        /// <summary>
+        /// Constant IPV6 for DestinationType
+        /// </summary>
+        public static readonly DestinationType IPV6 = new DestinationType("IPV6");
+        /// <summary>
+        /// Constant PREFIX_LIST for DestinationType
+        /// </summary>
+        public static readonly DestinationType PREFIX_LIST = new DestinationType("PREFIX_LIST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DestinationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DestinationType FindValue(string value)
+        {
+            return FindValue<DestinationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DestinationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PolicyComplianceStatusType.
     /// </summary>
     public class PolicyComplianceStatusType : ConstantClass
@@ -369,15 +423,121 @@ namespace Amazon.FMS
 
 
     /// <summary>
+    /// Constants used for properties of type TargetType.
+    /// </summary>
+    public class TargetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CARRIER_GATEWAY for TargetType
+        /// </summary>
+        public static readonly TargetType CARRIER_GATEWAY = new TargetType("CARRIER_GATEWAY");
+        /// <summary>
+        /// Constant EGRESS_ONLY_INTERNET_GATEWAY for TargetType
+        /// </summary>
+        public static readonly TargetType EGRESS_ONLY_INTERNET_GATEWAY = new TargetType("EGRESS_ONLY_INTERNET_GATEWAY");
+        /// <summary>
+        /// Constant GATEWAY for TargetType
+        /// </summary>
+        public static readonly TargetType GATEWAY = new TargetType("GATEWAY");
+        /// <summary>
+        /// Constant INSTANCE for TargetType
+        /// </summary>
+        public static readonly TargetType INSTANCE = new TargetType("INSTANCE");
+        /// <summary>
+        /// Constant LOCAL_GATEWAY for TargetType
+        /// </summary>
+        public static readonly TargetType LOCAL_GATEWAY = new TargetType("LOCAL_GATEWAY");
+        /// <summary>
+        /// Constant NAT_GATEWAY for TargetType
+        /// </summary>
+        public static readonly TargetType NAT_GATEWAY = new TargetType("NAT_GATEWAY");
+        /// <summary>
+        /// Constant NETWORK_INTERFACE for TargetType
+        /// </summary>
+        public static readonly TargetType NETWORK_INTERFACE = new TargetType("NETWORK_INTERFACE");
+        /// <summary>
+        /// Constant TRANSIT_GATEWAY for TargetType
+        /// </summary>
+        public static readonly TargetType TRANSIT_GATEWAY = new TargetType("TRANSIT_GATEWAY");
+        /// <summary>
+        /// Constant VPC_ENDPOINT for TargetType
+        /// </summary>
+        public static readonly TargetType VPC_ENDPOINT = new TargetType("VPC_ENDPOINT");
+        /// <summary>
+        /// Constant VPC_PEERING_CONNECTION for TargetType
+        /// </summary>
+        public static readonly TargetType VPC_PEERING_CONNECTION = new TargetType("VPC_PEERING_CONNECTION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetType FindValue(string value)
+        {
+            return FindValue<TargetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ViolationReason.
     /// </summary>
     public class ViolationReason : ConstantClass
     {
 
         /// <summary>
+        /// Constant BLACK_HOLE_ROUTE_DETECTED for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason BLACK_HOLE_ROUTE_DETECTED = new ViolationReason("BLACK_HOLE_ROUTE_DETECTED");
+        /// <summary>
+        /// Constant BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET = new ViolationReason("BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET");
+        /// <summary>
+        /// Constant FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE = new ViolationReason("FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE");
+        /// <summary>
         /// Constant FMS_CREATED_SECURITY_GROUP_EDITED for ViolationReason
         /// </summary>
         public static readonly ViolationReason FMS_CREATED_SECURITY_GROUP_EDITED = new ViolationReason("FMS_CREATED_SECURITY_GROUP_EDITED");
+        /// <summary>
+        /// Constant INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE = new ViolationReason("INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE");
+        /// <summary>
+        /// Constant INTERNET_TRAFFIC_NOT_INSPECTED for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason INTERNET_TRAFFIC_NOT_INSPECTED = new ViolationReason("INTERNET_TRAFFIC_NOT_INSPECTED");
+        /// <summary>
+        /// Constant INVALID_ROUTE_CONFIGURATION for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason INVALID_ROUTE_CONFIGURATION = new ViolationReason("INVALID_ROUTE_CONFIGURATION");
         /// <summary>
         /// Constant MISSING_EXPECTED_ROUTE_TABLE for ViolationReason
         /// </summary>
@@ -390,6 +550,10 @@ namespace Amazon.FMS
         /// Constant MISSING_FIREWALL_SUBNET_IN_AZ for ViolationReason
         /// </summary>
         public static readonly ViolationReason MISSING_FIREWALL_SUBNET_IN_AZ = new ViolationReason("MISSING_FIREWALL_SUBNET_IN_AZ");
+        /// <summary>
+        /// Constant MISSING_TARGET_GATEWAY for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason MISSING_TARGET_GATEWAY = new ViolationReason("MISSING_TARGET_GATEWAY");
         /// <summary>
         /// Constant NETWORK_FIREWALL_POLICY_MODIFIED for ViolationReason
         /// </summary>
@@ -430,6 +594,18 @@ namespace Amazon.FMS
         /// Constant SECURITY_GROUP_UNUSED for ViolationReason
         /// </summary>
         public static readonly ViolationReason SECURITY_GROUP_UNUSED = new ViolationReason("SECURITY_GROUP_UNUSED");
+        /// <summary>
+        /// Constant TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY = new ViolationReason("TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY");
+        /// <summary>
+        /// Constant UNEXPECTED_FIREWALL_ROUTES for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason UNEXPECTED_FIREWALL_ROUTES = new ViolationReason("UNEXPECTED_FIREWALL_ROUTES");
+        /// <summary>
+        /// Constant UNEXPECTED_TARGET_GATEWAY_ROUTES for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason UNEXPECTED_TARGET_GATEWAY_ROUTES = new ViolationReason("UNEXPECTED_TARGET_GATEWAY_ROUTES");
         /// <summary>
         /// Constant WEB_ACL_MISSING_RULE_GROUP for ViolationReason
         /// </summary>

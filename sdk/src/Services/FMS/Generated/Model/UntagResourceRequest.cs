@@ -30,7 +30,7 @@ namespace Amazon.FMS.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes one or more tags from an AWS resource.
+    /// Removes one or more tags from an Amazon Web Services resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonFMSRequest
     {
@@ -40,9 +40,9 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource to return tags for. The AWS Firewall
-        /// Manager resources that support tagging are policies, applications lists, and protocols
-        /// lists. 
+        /// The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager
+        /// resources that support tagging are policies, applications lists, and protocols lists.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// The definition of the AWS Network Firewall firewall policy.
+    /// The definition of the Network Firewall firewall policy.
     /// </summary>
     public partial class NetworkFirewallPolicyDescription
     {

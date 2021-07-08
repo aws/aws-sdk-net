@@ -61,7 +61,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ViolationTarget. 
         /// <para>
-        /// The ID of the VPC. 
+        /// Information about the VPC ID. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

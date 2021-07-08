@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// AWS Network Firewall stateful rule group, used in a <a>NetworkFirewallPolicyDescription</a>.
+    /// Network Firewall stateful rule group, used in a <a>NetworkFirewallPolicyDescription</a>.
     /// </summary>
     public partial class StatefulRuleGroup
     {

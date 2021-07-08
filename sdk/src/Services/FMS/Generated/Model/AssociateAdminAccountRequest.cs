@@ -30,16 +30,14 @@ namespace Amazon.FMS.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateAdminAccount operation.
-    /// Sets the AWS Firewall Manager administrator account. AWS Firewall Manager must be
-    /// associated with the master account of your AWS organization or associated with a member
-    /// account that has the appropriate permissions. If the account ID that you submit is
-    /// not an AWS Organizations master account, AWS Firewall Manager will set the appropriate
-    /// permissions for the given member account.
+    /// Sets the Firewall Manager administrator account. The account must be a member of the
+    /// organization in Organizations whose resources you want to protect. Firewall Manager
+    /// sets the permissions that allow the account to administer your Firewall Manager policies.
     /// 
     ///  
     /// <para>
-    /// The account that you associate with AWS Firewall Manager is called the AWS Firewall
-    /// Manager administrator account. 
+    /// The account that you associate with Firewall Manager is called the Firewall Manager
+    /// administrator account. 
     /// </para>
     /// </summary>
     public partial class AssociateAdminAccountRequest : AmazonFMSRequest
@@ -49,11 +47,10 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property AdminAccount. 
         /// <para>
-        /// The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager
-        /// administrator account. This can be an AWS Organizations master account or a member
-        /// account. For more information about AWS Organizations and master accounts, see <a
-        /// href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
-        /// the AWS Accounts in Your Organization</a>. 
+        /// The Amazon Web Services account ID to associate with Firewall Manager as the Firewall
+        /// Manager administrator account. This must be an Organizations member account. For more
+        /// information about Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
+        /// the Amazon Web Services Accounts in Your Organization</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

@@ -30,7 +30,7 @@ namespace Amazon.FMS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteProtocolsList operation.
-    /// Permanently deletes an AWS Firewall Manager protocols list.
+    /// Permanently deletes an Firewall Manager protocols list.
     /// </summary>
     public partial class DeleteProtocolsListRequest : AmazonFMSRequest
     {

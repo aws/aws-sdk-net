@@ -31,8 +31,8 @@ namespace Amazon.FMS.Model
     /// <summary>
     /// Indicates whether the account is compliant with the specified policy. An account is
     /// considered noncompliant if it includes resources that are not protected by the policy,
-    /// for AWS WAF and Shield Advanced policies, or that are noncompliant with the policy,
-    /// for security group policies.
+    /// for WAF and Shield Advanced policies, or that are noncompliant with the policy, for
+    /// security group policies.
     /// </summary>
     public partial class PolicyComplianceStatus
     {
@@ -65,9 +65,8 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property IssueInfoMap. 
         /// <para>
-        /// Details about problems with dependent services, such as AWS WAF or AWS Config, that
-        /// are causing a resource to be noncompliant. The details include the name of the dependent
-        /// service and the error message received that indicates the problem with the service.
+        /// Details about problems with dependent services, such as WAF or Config, and the error
+        /// message received that indicates the problem with the service.
         /// </para>
         /// </summary>
         public Dictionary<string, string> IssueInfoMap
@@ -122,7 +121,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property PolicyId. 
         /// <para>
-        /// The ID of the AWS Firewall Manager policy.
+        /// The ID of the Firewall Manager policy.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -141,7 +140,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// The name of the AWS Firewall Manager policy.
+        /// The name of the Firewall Manager policy.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -160,7 +159,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property PolicyOwner. 
         /// <para>
-        /// The AWS account that created the AWS Firewall Manager policy.
+        /// The Amazon Web Services account that created the Firewall Manager policy.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

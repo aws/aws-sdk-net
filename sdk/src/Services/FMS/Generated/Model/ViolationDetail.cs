@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// Violations for a resource based on the specified AWS Firewall Manager policy and AWS
-    /// account.
+    /// Violations for a resource based on the specified Firewall Manager policy and Amazon
+    /// Web Services account.
     /// </summary>
     public partial class ViolationDetail
     {
@@ -45,7 +45,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property MemberAccount. 
         /// <para>
-        /// The AWS account that the violation details were requested for.
+        /// The Amazon Web Services account that the violation details were requested for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
@@ -64,8 +64,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property PolicyId. 
         /// <para>
-        /// The ID of the AWS Firewall Manager policy that the violation details were requested
-        /// for.
+        /// The ID of the Firewall Manager policy that the violation details were requested for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

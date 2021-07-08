@@ -39,7 +39,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ProtocolsList. 
         /// <para>
-        /// The details of the AWS Firewall Manager protocols list.
+        /// The details of the Firewall Manager protocols list.
         /// </para>
         /// </summary>
         public ProtocolsListData ProtocolsList

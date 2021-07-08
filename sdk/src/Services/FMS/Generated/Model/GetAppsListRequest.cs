@@ -30,7 +30,7 @@ namespace Amazon.FMS.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAppsList operation.
-    /// Returns information about the specified AWS Firewall Manager applications list.
+    /// Returns information about the specified Firewall Manager applications list.
     /// </summary>
     public partial class GetAppsListRequest : AmazonFMSRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property DefaultList. 
         /// <para>
-        /// Specifies whether the list to retrieve is a default list owned by AWS Firewall Manager.
+        /// Specifies whether the list to retrieve is a default list owned by Firewall Manager.
         /// </para>
         /// </summary>
         public bool DefaultList
@@ -58,7 +58,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ListId. 
         /// <para>
-        /// The ID of the AWS Firewall Manager applications list that you want the details for.
+        /// The ID of the Firewall Manager applications list that you want the details for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

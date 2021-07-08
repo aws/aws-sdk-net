@@ -31,16 +31,33 @@ namespace Amazon.FMS.Model
     /// <summary>
     /// Container for the parameters to the GetComplianceDetail operation.
     /// Returns detailed compliance information about the specified member account. Details
-    /// include resources that are in and out of compliance with the specified policy. Resources
-    /// are considered noncompliant for AWS WAF and Shield Advanced policies if the specified
-    /// policy has not been applied to them. Resources are considered noncompliant for security
-    /// group policies if they are in scope of the policy, they violate one or more of the
-    /// policy rules, and remediation is disabled or not possible. Resources are considered
-    /// noncompliant for Network Firewall policies if a firewall is missing in the VPC, if
-    /// the firewall endpoint isn't set up in an expected Availability Zone and subnet, if
-    /// a subnet created by the Firewall Manager doesn't have the expected route table, and
-    /// for modifications to a firewall policy that violate the Firewall Manager policy's
-    /// rules.
+    /// include resources that are in and out of compliance with the specified policy. 
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// Resources are considered noncompliant for WAF and Shield Advanced policies if the
+    /// specified policy has not been applied to them.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Resources are considered noncompliant for security group policies if they are in scope
+    /// of the policy, they violate one or more of the policy rules, and remediation is disabled
+    /// or not possible.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Resources are considered noncompliant for Network Firewall policies if a firewall
+    /// is missing in the VPC, if the firewall endpoint isn't set up in an expected Availability
+    /// Zone and subnet, if a subnet created by the Firewall Manager doesn't have the expected
+    /// route table, and for modifications to a firewall policy that violate the Firewall
+    /// Manager policy's rules.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Resources are considered noncompliant for DNS Firewall policies if a DNS Firewall
+    /// rule group is missing from the rule group associations for the VPC. 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetComplianceDetailRequest : AmazonFMSRequest
     {
@@ -50,7 +67,8 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property MemberAccount. 
         /// <para>
-        /// The AWS account that owns the resources that you want to get the details for.
+        /// The Amazon Web Services account that owns the resources that you want to get the details
+        /// for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

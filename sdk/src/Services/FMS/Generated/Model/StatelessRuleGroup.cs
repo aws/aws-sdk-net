@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// AWS Network Firewall stateless rule group, used in a <a>NetworkFirewallPolicyDescription</a>.
+    /// Network Firewall stateless rule group, used in a <a>NetworkFirewallPolicyDescription</a>.
     /// </summary>
     public partial class StatelessRuleGroup
     {
@@ -40,8 +40,8 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        /// The priority of the rule group. AWS Network Firewall evaluates the stateless rule
-        /// groups in a firewall policy starting from the lowest priority setting. 
+        /// The priority of the rule group. Network Firewall evaluates the stateless rule groups
+        /// in a firewall policy starting from the lowest priority setting. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]

@@ -30,7 +30,7 @@ namespace Amazon.FMS.Model
 {
     /// <summary>
     /// Container for the parameters to the PutAppsList operation.
-    /// Creates an AWS Firewall Manager applications list.
+    /// Creates an Firewall Manager applications list.
     /// </summary>
     public partial class PutAppsListRequest : AmazonFMSRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property AppsList. 
         /// <para>
-        /// The details of the AWS Firewall Manager applications list to be created.
+        /// The details of the Firewall Manager applications list to be created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// Violations for network interfaces associated with an EC2 instance.
+    /// Violation detail for network interfaces associated with an EC2 instance.
     /// </summary>
     public partial class AwsEc2NetworkInterfaceViolation
     {
@@ -39,8 +39,8 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ViolatingSecurityGroups. 
         /// <para>
-        /// List of security groups that violate the rules specified in the master security group
-        /// of the AWS Firewall Manager policy.
+        /// List of security groups that violate the rules specified in the primary security group
+        /// of the Firewall Manager policy.
         /// </para>
         /// </summary>
         public List<string> ViolatingSecurityGroups

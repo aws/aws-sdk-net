@@ -30,15 +30,15 @@ namespace Amazon.FMS.Model
 {
     /// <summary>
     /// Container for the parameters to the PutNotificationChannel operation.
-    /// Designates the IAM role and Amazon Simple Notification Service (SNS) topic that AWS
-    /// Firewall Manager uses to record SNS logs.
+    /// Designates the IAM role and Amazon Simple Notification Service (SNS) topic that Firewall
+    /// Manager uses to record SNS logs.
     /// 
     ///  
     /// <para>
     /// To perform this action outside of the console, you must configure the SNS topic to
     /// allow the Firewall Manager role <code>AWSServiceRoleForFMS</code> to publish SNS logs.
     /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall
-    /// Manager required permissions for API actions</a> in the <i>AWS Firewall Manager Developer
+    /// Manager required permissions for API actions</a> in the <i>Firewall Manager Developer
     /// Guide</i>.
     /// </para>
     /// </summary>
@@ -50,8 +50,8 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property SnsRoleName. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record AWS
-        /// Firewall Manager activity. 
+        /// The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall
+        /// Manager activity. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
@@ -70,8 +70,8 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property SnsTopicArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the SNS topic that collects notifications from AWS
-        /// Firewall Manager.
+        /// The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall
+        /// Manager.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

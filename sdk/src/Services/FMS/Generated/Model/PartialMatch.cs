@@ -40,7 +40,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property Reference. 
         /// <para>
-        /// The reference rule from the master security group of the AWS Firewall Manager policy.
+        /// The reference rule from the primary security group of the Firewall Manager policy.
         /// </para>
         /// </summary>
         public string Reference
