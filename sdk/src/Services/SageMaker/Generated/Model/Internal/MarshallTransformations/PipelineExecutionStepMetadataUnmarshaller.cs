@@ -106,6 +106,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.TransformJob = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TuningJob", targetDepth))
+                {
+                    var unmarshaller = TuningJobStepMetaDataUnmarshaller.Instance;
+                    unmarshalledObject.TuningJob = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         private RegisterModelStepMetadata _registerModel;
         private TrainingJobStepMetadata _trainingJob;
         private TransformJobStepMetadata _transformJob;
+        private TuningJobStepMetaData _tuningJob;
 
         /// <summary>
         /// Gets and sets the property Callback.
@@ -162,6 +163,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTransformJob()
         {
             return this._transformJob != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TuningJob. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the tuning job that was run by this step execution.
+        /// </para>
+        /// </summary>
+        public TuningJobStepMetaData TuningJob
+        {
+            get { return this._tuningJob; }
+            set { this._tuningJob = value; }
+        }
+
+        // Check to see if TuningJob property is set
+        internal bool IsSetTuningJob()
+        {
+            return this._tuningJob != null;
         }
 
     }
