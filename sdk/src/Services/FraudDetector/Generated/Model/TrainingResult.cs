@@ -35,6 +35,7 @@ namespace Amazon.FraudDetector.Model
     {
         private DataValidationMetrics _dataValidationMetrics;
         private TrainingMetrics _trainingMetrics;
+        private VariableImportanceMetrics _variableImportanceMetrics;
 
         /// <summary>
         /// Gets and sets the property DataValidationMetrics. 
@@ -70,6 +71,24 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetTrainingMetrics()
         {
             return this._trainingMetrics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VariableImportanceMetrics. 
+        /// <para>
+        /// The variable importance metrics.
+        /// </para>
+        /// </summary>
+        public VariableImportanceMetrics VariableImportanceMetrics
+        {
+            get { return this._variableImportanceMetrics; }
+            set { this._variableImportanceMetrics = value; }
+        }
+
+        // Check to see if VariableImportanceMetrics property is set
+        internal bool IsSetVariableImportanceMetrics()
+        {
+            return this._variableImportanceMetrics != null;
         }
 
     }

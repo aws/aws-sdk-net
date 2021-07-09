@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TrainingResult Object
+    /// Response Unmarshaller for LogitMetric Object
     /// </summary>  
-    public class TrainingResultUnmarshaller : IUnmarshaller<TrainingResult, XmlUnmarshallerContext>, IUnmarshaller<TrainingResult, JsonUnmarshallerContext>
+    public class LogitMetricUnmarshaller : IUnmarshaller<LogitMetric, XmlUnmarshallerContext>, IUnmarshaller<LogitMetric, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TrainingResult IUnmarshaller<TrainingResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LogitMetric IUnmarshaller<LogitMetric, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public TrainingResult Unmarshall(JsonUnmarshallerContext context)
+        public LogitMetric Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TrainingResult unmarshalledObject = new TrainingResult();
+            LogitMetric unmarshalledObject = new LogitMetric();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("dataValidationMetrics", targetDepth))
+                if (context.TestExpression("variableImportance", targetDepth))
                 {
-                    var unmarshaller = DataValidationMetricsUnmarshaller.Instance;
-                    unmarshalledObject.DataValidationMetrics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.VariableImportance = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("trainingMetrics", targetDepth))
+                if (context.TestExpression("variableName", targetDepth))
                 {
-                    var unmarshaller = TrainingMetricsUnmarshaller.Instance;
-                    unmarshalledObject.TrainingMetrics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VariableName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("variableImportanceMetrics", targetDepth))
+                if (context.TestExpression("variableType", targetDepth))
                 {
-                    var unmarshaller = VariableImportanceMetricsUnmarshaller.Instance;
-                    unmarshalledObject.VariableImportanceMetrics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VariableType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         }
 
 
-        private static TrainingResultUnmarshaller _instance = new TrainingResultUnmarshaller();        
+        private static LogitMetricUnmarshaller _instance = new LogitMetricUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TrainingResultUnmarshaller Instance
+        public static LogitMetricUnmarshaller Instance
         {
             get
             {

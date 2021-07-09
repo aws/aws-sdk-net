@@ -230,6 +230,9 @@ namespace Amazon.FraudDetector
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
         /// An exception indicating a specified value is not allowed.
         /// </exception>
@@ -254,6 +257,9 @@ namespace Amazon.FraudDetector
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
         /// An exception indicating a specified value is not allowed.
