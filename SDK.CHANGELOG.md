@@ -1,3 +1,16 @@
+### 3.7.69.0 (2021-07-09 19:21 UTC)
+* FraudDetector (3.7.2.0)
+	* This release adds support for ML Explainability to display model variable importance value in Amazon Fraud Detector.
+* MediaConvert (3.7.4.0)
+	* MediaConvert now supports color, style and position information passthrough from 608 and Teletext to SRT and WebVTT subtitles. MediaConvert now also supports Automatic QVBR quality levels for QVBR RateControlMode.
+* SageMaker (3.7.9.0)
+	* Releasing new APIs related to Tuning steps in model building pipelines.
+* Core 3.7.0.42
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.68.0 (2021-07-08 18:22 UTC)
 * DevOpsGuru (3.7.2.0)
 	* Add AnomalyReportedTimeRange field to include open and close time of anomalies.

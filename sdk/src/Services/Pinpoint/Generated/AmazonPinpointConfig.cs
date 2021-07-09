@@ -32,7 +32,7 @@ namespace Amazon.Pinpoint
     public partial class AmazonPinpointConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.36");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.37");
 
         private string _userAgent = UserAgentString;
 
