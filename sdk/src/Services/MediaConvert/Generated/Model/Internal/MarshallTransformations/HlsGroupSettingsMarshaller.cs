@@ -224,6 +224,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.StreamInfResolution);
             }
 
+            if(requestObject.IsSetTargetDurationCompatibilityMode())
+            {
+                context.Writer.WritePropertyName("targetDurationCompatibilityMode");
+                context.Writer.Write(requestObject.TargetDurationCompatibilityMode);
+            }
+
             if(requestObject.IsSetTimedMetadataId3Frame())
             {
                 context.Writer.WritePropertyName("timedMetadataId3Frame");

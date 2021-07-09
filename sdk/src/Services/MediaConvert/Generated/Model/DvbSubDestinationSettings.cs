@@ -192,7 +192,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FontColor. Specifies the color of the burned-in captions.
+        /// Gets and sets the property FontColor. Specifies the color of the DVB-SUB captions.
         /// This option is not valid for source captions that are STL, 608/embedded or teletext.
         /// These source settings are already pre-defined by the caption stream. All burn-in and
         /// DVB-Sub font settings must match.

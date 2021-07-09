@@ -106,6 +106,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSrtDestinationSettings())
+            {
+                context.Writer.WritePropertyName("srtDestinationSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SrtDestinationSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.SrtDestinationSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTeletextDestinationSettings())
             {
                 context.Writer.WritePropertyName("teletextDestinationSettings");

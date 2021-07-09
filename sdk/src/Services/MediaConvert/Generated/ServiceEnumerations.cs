@@ -3663,6 +3663,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type CmafTargetDurationCompatibilityMode.
+    /// </summary>
+    public class CmafTargetDurationCompatibilityMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LEGACY for CmafTargetDurationCompatibilityMode
+        /// </summary>
+        public static readonly CmafTargetDurationCompatibilityMode LEGACY = new CmafTargetDurationCompatibilityMode("LEGACY");
+        /// <summary>
+        /// Constant SPEC_COMPLIANT for CmafTargetDurationCompatibilityMode
+        /// </summary>
+        public static readonly CmafTargetDurationCompatibilityMode SPEC_COMPLIANT = new CmafTargetDurationCompatibilityMode("SPEC_COMPLIANT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafTargetDurationCompatibilityMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafTargetDurationCompatibilityMode FindValue(string value)
+        {
+            return FindValue<CmafTargetDurationCompatibilityMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafTargetDurationCompatibilityMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CmafWriteDASHManifest.
     /// </summary>
     public class CmafWriteDASHManifest : ConstantClass
@@ -11083,6 +11133,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type HlsTargetDurationCompatibilityMode.
+    /// </summary>
+    public class HlsTargetDurationCompatibilityMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LEGACY for HlsTargetDurationCompatibilityMode
+        /// </summary>
+        public static readonly HlsTargetDurationCompatibilityMode LEGACY = new HlsTargetDurationCompatibilityMode("LEGACY");
+        /// <summary>
+        /// Constant SPEC_COMPLIANT for HlsTargetDurationCompatibilityMode
+        /// </summary>
+        public static readonly HlsTargetDurationCompatibilityMode SPEC_COMPLIANT = new HlsTargetDurationCompatibilityMode("SPEC_COMPLIANT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HlsTargetDurationCompatibilityMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HlsTargetDurationCompatibilityMode FindValue(string value)
+        {
+            return FindValue<HlsTargetDurationCompatibilityMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HlsTargetDurationCompatibilityMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HlsTimedMetadataId3Frame.
     /// </summary>
     public class HlsTimedMetadataId3Frame : ConstantClass
@@ -17118,6 +17218,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SimulateReservedQueue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SrtStylePassthrough.
+    /// </summary>
+    public class SrtStylePassthrough : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for SrtStylePassthrough
+        /// </summary>
+        public static readonly SrtStylePassthrough DISABLED = new SrtStylePassthrough("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for SrtStylePassthrough
+        /// </summary>
+        public static readonly SrtStylePassthrough ENABLED = new SrtStylePassthrough("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SrtStylePassthrough(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SrtStylePassthrough FindValue(string value)
+        {
+            return FindValue<SrtStylePassthrough>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SrtStylePassthrough(string value)
         {
             return FindValue(value);
         }

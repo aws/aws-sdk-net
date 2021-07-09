@@ -100,6 +100,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.SccDestinationSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("srtDestinationSettings", targetDepth))
+                {
+                    var unmarshaller = SrtDestinationSettingsUnmarshaller.Instance;
+                    unmarshalledObject.SrtDestinationSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("teletextDestinationSettings", targetDepth))
                 {
                     var unmarshaller = TeletextDestinationSettingsUnmarshaller.Instance;

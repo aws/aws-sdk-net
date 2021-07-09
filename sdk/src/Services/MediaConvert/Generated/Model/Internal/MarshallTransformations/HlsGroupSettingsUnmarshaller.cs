@@ -208,6 +208,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.StreamInfResolution = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("targetDurationCompatibilityMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetDurationCompatibilityMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("timedMetadataId3Frame", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

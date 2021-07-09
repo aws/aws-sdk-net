@@ -43,6 +43,7 @@ namespace Amazon.MediaConvert.Model
         private EmbeddedDestinationSettings _embeddedDestinationSettings;
         private ImscDestinationSettings _imscDestinationSettings;
         private SccDestinationSettings _sccDestinationSettings;
+        private SrtDestinationSettings _srtDestinationSettings;
         private TeletextDestinationSettings _teletextDestinationSettings;
         private TtmlDestinationSettings _ttmlDestinationSettings;
         private WebvttDestinationSettings _webvttDestinationSettings;
@@ -164,6 +165,21 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetSccDestinationSettings()
         {
             return this._sccDestinationSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SrtDestinationSettings. SRT Destination Settings
+        /// </summary>
+        public SrtDestinationSettings SrtDestinationSettings
+        {
+            get { return this._srtDestinationSettings; }
+            set { this._srtDestinationSettings = value; }
+        }
+
+        // Check to see if SrtDestinationSettings property is set
+        internal bool IsSetSrtDestinationSettings()
+        {
+            return this._srtDestinationSettings != null;
         }
 
         /// <summary>
