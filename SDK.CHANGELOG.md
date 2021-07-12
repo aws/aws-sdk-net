@@ -1,3 +1,14 @@
+### 3.7.70.0 (2021-07-12 18:12 UTC)
+* EKS (3.7.6.2)
+	* Documentation updates for Wesley to support the parallel node upgrade feature.
+* Kendra (3.7.7.0)
+	* Amazon Kendra now supports Principal Store
+* Core 3.7.0.43
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.69.0 (2021-07-09 19:21 UTC)
 * FraudDetector (3.7.2.0)
 	* This release adds support for ML Explainability to display model variable importance value in Amazon Fraud Detector.
