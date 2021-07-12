@@ -182,10 +182,11 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property SecretArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager. The credentials
-        /// should be a user/password pair. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
+        /// should be a user/password pair. If you use SharePoint Sever, you also need to provide
+        /// the sever domain name as part of the credentials. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
         /// a Microsoft SharePoint Data Source</a>. For more information about AWS Secrets Manager,
         /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-        /// What Is AWS Secrets Manager </a> in the <i>AWS Secrets Manager</i> user guide.
+        /// What Is AWS Secrets Manager </a> in the <i>Secrets Manager </i> user guide.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1284)]

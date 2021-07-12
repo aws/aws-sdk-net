@@ -45,10 +45,43 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UserContext requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDataSourceGroups())
+            {
+                context.Writer.WritePropertyName("DataSourceGroups");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectDataSourceGroupsListValue in requestObject.DataSourceGroups)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DataSourceGroupMarshaller.Instance;
+                    marshaller.Marshall(requestObjectDataSourceGroupsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetGroups())
+            {
+                context.Writer.WritePropertyName("Groups");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectGroupsListValue in requestObject.Groups)
+                {
+                        context.Writer.Write(requestObjectGroupsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetToken())
             {
                 context.Writer.WritePropertyName("Token");
                 context.Writer.Write(requestObject.Token);
+            }
+
+            if(requestObject.IsSetUserId())
+            {
+                context.Writer.WritePropertyName("UserId");
+                context.Writer.Write(requestObject.UserId);
             }
 
         }

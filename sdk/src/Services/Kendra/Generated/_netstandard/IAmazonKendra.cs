@@ -53,8 +53,8 @@ namespace Amazon.Kendra
         ///  
         /// <para>
         /// The documents are deleted asynchronously. You can see the progress of the deletion
-        /// by using AWS CloudWatch. Any error messages related to the processing of the batch
-        /// are sent to you CloudWatch log.
+        /// by using Amazon Web Services CloudWatch. Any error messages related to the processing
+        /// of the batch are sent to you CloudWatch log.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteDocument service method.</param>
@@ -154,8 +154,8 @@ namespace Amazon.Kendra
         ///  
         /// <para>
         /// The documents are indexed asynchronously. You can see the progress of the batch using
-        /// AWS CloudWatch. Any error messages related to processing the batch are sent to your
-        /// AWS CloudWatch log.
+        /// Amazon Web Services CloudWatch. Any error messages related to processing the batch
+        /// are sent to your Amazon Web Services CloudWatch log.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchPutDocument service method.</param>
@@ -585,6 +585,58 @@ namespace Amazon.Kendra
 
         #endregion
                 
+        #region  DeletePrincipalMapping
+
+
+
+        /// <summary>
+        /// Deletes a group so that all users and sub groups that belong to the group can no longer
+        /// access documents only available to that group.
+        /// 
+        ///  
+        /// <para>
+        /// For example, after deleting the group "Summer Interns", all interns who belonged to
+        /// that group no longer see intern-only documents in their search results.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to delete or replace users or sub groups of a group, you need to use the
+        /// <code>PutPrincipalMapping</code> operation. For example, if a user in the group "Engineering"
+        /// leaves the engineering team and another user takes their place, you provide an updated
+        /// list of users or sub groups that belong to the "Engineering" group when calling <code>PutPrincipalMapping</code>.
+        /// You can update your internal list of users or sub groups and input this list when
+        /// calling <code>PutPrincipalMapping</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePrincipalMapping service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePrincipalMapping service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeletePrincipalMapping">REST API Reference for DeletePrincipalMapping Operation</seealso>
+        Task<DeletePrincipalMappingResponse> DeletePrincipalMappingAsync(DeletePrincipalMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteQuerySuggestionsBlockList
 
 
@@ -759,6 +811,43 @@ namespace Amazon.Kendra
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeIndex">REST API Reference for DescribeIndex Operation</seealso>
         Task<DescribeIndexResponse> DescribeIndexAsync(DescribeIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribePrincipalMapping
+
+
+
+        /// <summary>
+        /// Describes the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping
+        /// users to their groups. This includes information on the status of actions currently
+        /// processing or yet to be processed, when actions were last updated, when actions were
+        /// received by Amazon Kendra, the latest action that should process and apply after other
+        /// actions, and useful error messages if an action could not be processed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePrincipalMapping service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePrincipalMapping service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribePrincipalMapping">REST API Reference for DescribePrincipalMapping Operation</seealso>
+        Task<DescribePrincipalMappingResponse> DescribePrincipalMappingAsync(DescribePrincipalMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1012,6 +1101,43 @@ namespace Amazon.Kendra
 
         #endregion
                 
+        #region  ListGroupsOlderThanOrderingId
+
+
+
+        /// <summary>
+        /// Provides a list of groups that are mapped to users before a given ordering or timestamp
+        /// identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGroupsOlderThanOrderingId service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListGroupsOlderThanOrderingId service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListGroupsOlderThanOrderingId">REST API Reference for ListGroupsOlderThanOrderingId Operation</seealso>
+        Task<ListGroupsOlderThanOrderingIdResponse> ListGroupsOlderThanOrderingIdAsync(ListGroupsOlderThanOrderingIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListIndices
 
 
@@ -1145,6 +1271,62 @@ namespace Amazon.Kendra
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListThesauri">REST API Reference for ListThesauri Operation</seealso>
         Task<ListThesauriResponse> ListThesauriAsync(ListThesauriRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutPrincipalMapping
+
+
+
+        /// <summary>
+        /// Maps users to their groups. You can also map sub groups to groups. For example, the
+        /// group "Company Intellectual Property Teams" includes sub groups "Research" and "Engineering".
+        /// These sub groups include their own list of users or people who work in these teams.
+        /// Only users who work in research and engineering, and therefore belong in the intellectual
+        /// property group, can see top-secret company documents in their search results. 
+        /// 
+        ///  
+        /// <para>
+        /// You map users to their groups when you want to filter search results for different
+        /// users based on their group’s access to documents. For more information on filtering
+        /// search results for different users, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering
+        /// on user context</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If more than five <code>PUT</code> actions for a group are currently processing, a
+        /// validation exception is thrown.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPrincipalMapping service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutPrincipalMapping service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/PutPrincipalMapping">REST API Reference for PutPrincipalMapping Operation</seealso>
+        Task<PutPrincipalMappingResponse> PutPrincipalMappingAsync(PutPrincipalMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

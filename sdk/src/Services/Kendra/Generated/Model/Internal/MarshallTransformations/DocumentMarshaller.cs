@@ -89,6 +89,22 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ContentType);
             }
 
+            if(requestObject.IsSetHierarchicalAccessControlList())
+            {
+                context.Writer.WritePropertyName("HierarchicalAccessControlList");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectHierarchicalAccessControlListListValue in requestObject.HierarchicalAccessControlList)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = HierarchicalPrincipalMarshaller.Instance;
+                    marshaller.Marshall(requestObjectHierarchicalAccessControlListListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");

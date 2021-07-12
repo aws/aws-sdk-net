@@ -34,6 +34,7 @@ namespace Amazon.Kendra.Model
     public partial class Principal
     {
         private ReadAccessType _access;
+        private string _dataSourceId;
         private string _name;
         private PrincipalType _type;
 
@@ -54,6 +55,25 @@ namespace Amazon.Kendra.Model
         internal bool IsSetAccess()
         {
             return this._access != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataSourceId. 
+        /// <para>
+        /// The identifier of the data source the principal should access documents from.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string DataSourceId
+        {
+            get { return this._dataSourceId; }
+            set { this._dataSourceId = value; }
+        }
+
+        // Check to see if DataSourceId property is set
+        internal bool IsSetDataSourceId()
+        {
+            return this._dataSourceId != null;
         }
 
         /// <summary>

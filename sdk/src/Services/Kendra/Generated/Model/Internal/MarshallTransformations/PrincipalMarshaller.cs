@@ -51,6 +51,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Access);
             }
 
+            if(requestObject.IsSetDataSourceId())
+            {
+                context.Writer.WritePropertyName("DataSourceId");
+                context.Writer.Write(requestObject.DataSourceId);
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");

@@ -230,6 +230,29 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.DeletePrincipalMappingRequest.DataSourceId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DeletePrincipalMappingRequest.GroupId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DeletePrincipalMappingRequest.IndexId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DeletePrincipalMappingRequest.OrderingId</property>
+    <min>0</min>
+    <max>32535158400000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.DeleteQuerySuggestionsBlockListRequest.Id</property>
     <min>36</min>
     <max>36</max>
@@ -384,6 +407,42 @@
     <min>1</min>
     <max>1284</max>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DescribePrincipalMappingRequest.DataSourceId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DescribePrincipalMappingRequest.GroupId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DescribePrincipalMappingRequest.IndexId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DescribePrincipalMappingResponse.DataSourceId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DescribePrincipalMappingResponse.GroupId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DescribePrincipalMappingResponse.IndexId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.DescribeQuerySuggestionsBlockListRequest.Id</property>
@@ -582,6 +641,38 @@
     <max>800</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.ListGroupsOlderThanOrderingIdRequest.DataSourceId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ListGroupsOlderThanOrderingIdRequest.IndexId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ListGroupsOlderThanOrderingIdRequest.MaxResults</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ListGroupsOlderThanOrderingIdRequest.NextToken</property>
+    <min>1</min>
+    <max>800</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ListGroupsOlderThanOrderingIdRequest.OrderingId</property>
+    <min>0</min>
+    <max>32535158400000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ListGroupsOlderThanOrderingIdResponse.NextToken</property>
+    <min>1</min>
+    <max>800</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.ListIndicesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -642,6 +733,35 @@
     <property>Amazon.Kendra.Model.ListThesauriResponse.NextToken</property>
     <min>1</min>
     <max>800</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.PutPrincipalMappingRequest.DataSourceId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.PutPrincipalMappingRequest.GroupId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.PutPrincipalMappingRequest.IndexId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.PutPrincipalMappingRequest.OrderingId</property>
+    <min>0</min>
+    <max>32535158400000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.PutPrincipalMappingRequest.RoleArn</property>
+    <min>1</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.QueryRequest.IndexId</property>
@@ -1034,6 +1154,18 @@
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.DataSourceGroup.DataSourceId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DataSourceGroup.GroupId</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.DataSourceSummary.Id</property>
     <min>1</min>
     <max>100</max>
@@ -1182,6 +1314,28 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.GroupOrderingIdSummary.FailureReason</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.GroupOrderingIdSummary.OrderingId</property>
+    <min>0</min>
+    <max>32535158400000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.GroupSummary.GroupId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.GroupSummary.OrderingId</property>
+    <min>0</min>
+    <max>32535158400000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.IndexConfigurationSummary.Id</property>
     <min>36</min>
     <max>36</max>
@@ -1240,6 +1394,24 @@
     <pattern>^\P{C}*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.MemberGroup.DataSourceId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.MemberGroup.GroupId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.MemberUser.UserId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.OneDriveConfiguration.SecretArn</property>
     <min>1</min>
     <max>1284</max>
@@ -1250,6 +1422,12 @@
     <min>1</min>
     <max>256</max>
     <pattern>^([a-zA-Z0-9]+(-[a-zA-Z0-9]+)*\.)+[a-z]{2,}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.Principal.DataSourceId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.Principal.Name</property>
@@ -1542,6 +1720,12 @@
     <property>Amazon.Kendra.Model.UserContext.Token</property>
     <min>1</min>
     <max>100000</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.UserContext.UserId</property>
+    <min>1</min>
+    <max>200</max>
     <pattern>^\P{C}*$</pattern>
   </property-value-rule>
   <property-value-rule>

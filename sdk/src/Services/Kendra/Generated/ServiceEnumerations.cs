@@ -1373,6 +1373,68 @@ namespace Amazon.Kendra
 
 
     /// <summary>
+    /// Constants used for properties of type PrincipalMappingStatus.
+    /// </summary>
+    public class PrincipalMappingStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETED for PrincipalMappingStatus
+        /// </summary>
+        public static readonly PrincipalMappingStatus DELETED = new PrincipalMappingStatus("DELETED");
+        /// <summary>
+        /// Constant DELETING for PrincipalMappingStatus
+        /// </summary>
+        public static readonly PrincipalMappingStatus DELETING = new PrincipalMappingStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for PrincipalMappingStatus
+        /// </summary>
+        public static readonly PrincipalMappingStatus FAILED = new PrincipalMappingStatus("FAILED");
+        /// <summary>
+        /// Constant PROCESSING for PrincipalMappingStatus
+        /// </summary>
+        public static readonly PrincipalMappingStatus PROCESSING = new PrincipalMappingStatus("PROCESSING");
+        /// <summary>
+        /// Constant SUCCEEDED for PrincipalMappingStatus
+        /// </summary>
+        public static readonly PrincipalMappingStatus SUCCEEDED = new PrincipalMappingStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PrincipalMappingStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PrincipalMappingStatus FindValue(string value)
+        {
+            return FindValue<PrincipalMappingStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PrincipalMappingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PrincipalType.
     /// </summary>
     public class PrincipalType : ConstantClass

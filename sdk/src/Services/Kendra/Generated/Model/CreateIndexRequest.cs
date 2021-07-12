@@ -106,11 +106,6 @@ namespace Amazon.Kendra.Model
         /// The <code>Edition</code> parameter is optional. If you don't supply a value, the default
         /// is <code>ENTERPRISE_EDITION</code>.
         /// </para>
-        ///  
-        /// <para>
-        /// For more information on quota limits for enterprise and developer editions, see <a
-        /// href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
-        /// </para>
         /// </summary>
         public IndexEdition Edition
         {
@@ -146,9 +141,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions
-        /// to access your Amazon CloudWatch logs and metrics. This is also the role used when
-        /// you use the <code>BatchPutDocument</code> operation to index documents from an Amazon
+        /// An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to
+        /// access your Amazon CloudWatch logs and metrics. This is also the role used when you
+        /// use the <code>BatchPutDocument</code> operation to index documents from an Amazon
         /// S3 bucket.
         /// </para>
         /// </summary>
@@ -168,7 +163,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ServerSideEncryptionConfiguration. 
         /// <para>
-        /// The identifier of the AWS KMS customer managed key (CMK) to use to encrypt data indexed
+        /// The identifier of the KMScustomer managed key (CMK) to use to encrypt data indexed
         /// by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.
         /// </para>
         /// </summary>

@@ -111,8 +111,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property SecretArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Secret Manager secret that contains the
-        /// user name and password required to connect to the ServiceNow instance.
+        /// The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user
+        /// name and password required to connect to the ServiceNow instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1284)]

@@ -40,9 +40,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property S3Prefix. 
         /// <para>
-        /// A prefix used to filter metadata configuration files in the AWS S3 bucket. The S3
-        /// bucket might contain multiple metadata files. Use <code>S3Prefix</code> to include
-        /// only the desired metadata files.
+        /// A prefix used to filter metadata configuration files in the Amazon Web Services S3
+        /// bucket. The S3 bucket might contain multiple metadata files. Use <code>S3Prefix</code>
+        /// to include only the desired metadata files.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

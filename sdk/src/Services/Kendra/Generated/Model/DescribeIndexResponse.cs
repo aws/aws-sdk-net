@@ -245,8 +245,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ServerSideEncryptionConfiguration. 
         /// <para>
-        /// The identifier of the AWS KMS customer master key (CMK) used to encrypt your data.
-        /// Amazon Kendra doesn't support asymmetric CMKs.
+        /// The identifier of the KMScustomer master key (CMK) used to encrypt your data. Amazon
+        /// Kendra doesn't support asymmetric CMKs.
         /// </para>
         /// </summary>
         public ServerSideEncryptionConfiguration ServerSideEncryptionConfiguration

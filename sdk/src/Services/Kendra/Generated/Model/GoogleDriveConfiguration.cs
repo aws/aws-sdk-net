@@ -181,7 +181,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property SecretArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a AWS Secrets Manager secret that contains the credentials
+        /// The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the credentials
         /// required to connect to Google Drive. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using
         /// a Google Workspace Drive data source</a>.
         /// </para>

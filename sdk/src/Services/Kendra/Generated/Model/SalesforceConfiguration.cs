@@ -155,9 +155,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property SecretArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains the
-        /// key/value pairs required to connect to your Salesforce instance. The secret must contain
-        /// a JSON structure with the following keys:
+        /// The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the key/value
+        /// pairs required to connect to your Salesforce instance. The secret must contain a JSON
+        /// structure with the following keys:
         /// </para>
         ///  <ul> <li> 
         /// <para>

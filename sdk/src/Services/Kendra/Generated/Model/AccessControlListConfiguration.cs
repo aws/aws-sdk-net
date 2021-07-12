@@ -40,7 +40,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property KeyPath. 
         /// <para>
-        /// Path to the AWS S3 bucket that contains the ACL files.
+        /// Path to the Amazon Web Services S3 bucket that contains the ACL files.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

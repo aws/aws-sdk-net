@@ -37,6 +37,7 @@ namespace Amazon.Kendra.Model
         private List<DocumentAttribute> _attributes = new List<DocumentAttribute>();
         private MemoryStream _blob;
         private ContentType _contentType;
+        private List<HierarchicalPrincipal> _hierarchicalAccessControlList = new List<HierarchicalPrincipal>();
         private string _id;
         private S3Path _s3Path;
         private string _title;
@@ -44,7 +45,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property AccessControlList. 
         /// <para>
-        /// Information to use for user context filtering.
+        /// Information on user and group access rights, which is used for user context filtering.
         /// </para>
         /// </summary>
         public List<Principal> AccessControlList
@@ -87,9 +88,9 @@ namespace Amazon.Kendra.Model
         ///  
         /// <para>
         /// Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code
-        /// might not need to encode the document file bytes if you're using an AWS SDK to call
-        /// Amazon Kendra operations. If you are calling the Amazon Kendra endpoint directly using
-        /// REST, you must base64 encode the contents before sending.
+        /// might not need to encode the document file bytes if you're using an Amazon Web Services
+        /// SDK to call Amazon Kendra operations. If you are calling the Amazon Kendra endpoint
+        /// directly using REST, you must base64 encode the contents before sending.
         /// </para>
         /// </summary>
         public MemoryStream Blob
@@ -120,6 +121,26 @@ namespace Amazon.Kendra.Model
         internal bool IsSetContentType()
         {
             return this._contentType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HierarchicalAccessControlList. 
+        /// <para>
+        /// The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a>
+        /// lists that define the hierarchy for which documents users should have access to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=30)]
+        public List<HierarchicalPrincipal> HierarchicalAccessControlList
+        {
+            get { return this._hierarchicalAccessControlList; }
+            set { this._hierarchicalAccessControlList = value; }
+        }
+
+        // Check to see if HierarchicalAccessControlList property is set
+        internal bool IsSetHierarchicalAccessControlList()
+        {
+            return this._hierarchicalAccessControlList != null && this._hierarchicalAccessControlList.Count > 0; 
         }
 
         /// <summary>

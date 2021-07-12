@@ -104,7 +104,7 @@ namespace Amazon.Kendra.Model
         /// should be a user/password pair. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using
         /// a Database Data Source</a>. For more information about AWS Secrets Manager, see <a
         /// href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What
-        /// Is AWS Secrets Manager </a> in the <i>AWS Secrets Manager</i> user guide.
+        /// Is AWS Secrets Manager </a> in the <i> Secrets Manager </i> user guide.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1284)]
