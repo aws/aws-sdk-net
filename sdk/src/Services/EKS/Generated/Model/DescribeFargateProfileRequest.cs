@@ -30,7 +30,7 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFargateProfile operation.
-    /// Returns descriptive information about an AWS Fargate profile.
+    /// Returns descriptive information about an Fargate profile.
     /// </summary>
     public partial class DescribeFargateProfileRequest : AmazonEKSRequest
     {

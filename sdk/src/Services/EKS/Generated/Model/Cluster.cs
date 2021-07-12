@@ -277,7 +277,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes
-        /// control plane to make calls to AWS API operations on your behalf.
+        /// control plane to make calls to Amazon Web Services API operations on your behalf.
         /// </para>
         /// </summary>
         public string RoleArn

@@ -158,7 +158,10 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdateConfig.
+        /// Gets and sets the property UpdateConfig. 
+        /// <para>
+        /// The node group update configuration.
+        /// </para>
         /// </summary>
         public NodegroupUpdateConfig UpdateConfig
         {

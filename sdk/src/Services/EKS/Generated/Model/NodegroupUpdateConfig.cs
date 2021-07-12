@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// 
+    /// The node group update configuration.
     /// </summary>
     public partial class NodegroupUpdateConfig
     {
@@ -37,7 +37,12 @@ namespace Amazon.EKS.Model
         private int? _maxUnavailablePercentage;
 
         /// <summary>
-        /// Gets and sets the property MaxUnavailable.
+        /// Gets and sets the property MaxUnavailable. 
+        /// <para>
+        /// The maximum number of nodes unavailable at once during a version update. Nodes will
+        /// be updated in parallel. This value or <code>maxUnavailablePercentage</code> is required
+        /// to have a value.The maximum number is 100.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public int MaxUnavailable
@@ -53,7 +58,12 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxUnavailablePercentage.
+        /// Gets and sets the property MaxUnavailablePercentage. 
+        /// <para>
+        /// The maximum percentage of nodes unavailable during a version update. This percentage
+        /// of nodes will be updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code>
+        /// is required to have a value.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public int MaxUnavailablePercentage

@@ -83,8 +83,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property MinSize. 
         /// <para>
-        /// The minimum number of nodes that the managed node group can scale in to. This number
-        /// must be greater than zero.
+        /// The minimum number of nodes that the managed node group can scale in to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

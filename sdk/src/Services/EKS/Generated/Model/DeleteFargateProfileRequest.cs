@@ -30,7 +30,7 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteFargateProfile operation.
-    /// Deletes an AWS Fargate profile.
+    /// Deletes an Fargate profile.
     /// 
     ///  
     /// <para>

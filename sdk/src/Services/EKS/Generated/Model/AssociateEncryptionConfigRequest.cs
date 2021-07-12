@@ -36,7 +36,7 @@ namespace Amazon.EKS.Model
     /// <para>
     /// You can use this API to enable encryption on existing clusters which do not have encryption
     /// already enabled. This allows you to implement a defense-in-depth security strategy
-    /// without migrating applications to new EKS clusters.
+    /// without migrating applications to new Amazon EKS clusters.
     /// </para>
     /// </summary>
     public partial class AssociateEncryptionConfigRequest : AmazonEKSRequest

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// An object representing an AWS Fargate profile.
+    /// An object representing an Fargate profile.
     /// </summary>
     public partial class FargateProfile
     {

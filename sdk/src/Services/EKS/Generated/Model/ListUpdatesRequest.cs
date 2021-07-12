@@ -31,7 +31,7 @@ namespace Amazon.EKS.Model
     /// <summary>
     /// Container for the parameters to the ListUpdates operation.
     /// Lists the updates associated with an Amazon EKS cluster or managed node group in your
-    /// AWS account, in the specified Region.
+    /// Amazon Web Services account, in the specified Region.
     /// </summary>
     public partial class ListUpdatesRequest : AmazonEKSRequest
     {

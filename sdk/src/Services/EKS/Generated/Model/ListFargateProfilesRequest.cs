@@ -30,8 +30,8 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListFargateProfiles operation.
-    /// Lists the AWS Fargate profiles associated with the specified cluster in your AWS account
-    /// in the specified Region.
+    /// Lists the Fargate profiles associated with the specified cluster in your Amazon Web
+    /// Services account in the specified Region.
     /// </summary>
     public partial class ListFargateProfilesRequest : AmazonEKSRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ClusterName. 
         /// <para>
-        /// The name of the Amazon EKS cluster that you would like to listFargate profiles in.
+        /// The name of the Amazon EKS cluster that you would like to list Fargate profiles in.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

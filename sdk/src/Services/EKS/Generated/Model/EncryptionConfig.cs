@@ -39,7 +39,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Provider. 
         /// <para>
-        /// AWS Key Management Service (AWS KMS) key. Either the ARN or the alias can be used.
+        /// Key Management Service (KMS) key. Either the ARN or the alias can be used.
         /// </para>
         /// </summary>
         public Provider Provider

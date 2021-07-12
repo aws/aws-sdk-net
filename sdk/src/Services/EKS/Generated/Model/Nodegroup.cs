@@ -291,8 +291,8 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property NodeRole. 
         /// <para>
         /// The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code>
-        /// daemon makes calls to AWS APIs on your behalf. Nodes receive permissions for these
-        /// API calls through an IAM instance profile and associated policies.
+        /// daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions
+        /// for these API calls through an IAM instance profile and associated policies.
         /// </para>
         /// </summary>
         public string NodeRole
@@ -449,7 +449,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property Taints. 
         /// <para>
         /// The Kubernetes taints to be applied to the nodes in the node group when they are created.
-        /// Effect is one of <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>.
+        /// Effect is one of <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>.
         /// Kubernetes taints can be used together with tolerations to control how workloads are
         /// scheduled to your nodes.
         /// </para>
@@ -467,7 +467,10 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdateConfig.
+        /// Gets and sets the property UpdateConfig. 
+        /// <para>
+        /// The node group update configuration.
+        /// </para>
         /// </summary>
         public NodegroupUpdateConfig UpdateConfig
         {

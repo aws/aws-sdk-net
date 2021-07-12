@@ -36,9 +36,9 @@ namespace Amazon.EKS.Model
     /// <para>
     /// The Amazon EKS control plane consists of control plane instances that run the Kubernetes
     /// software, such as <code>etcd</code> and the API server. The control plane runs in
-    /// an account managed by AWS, and the Kubernetes API is exposed via the Amazon EKS API
-    /// server endpoint. Each Amazon EKS cluster control plane is single-tenant and unique
-    /// and runs on its own set of Amazon EC2 instances.
+    /// an account managed by Amazon Web Services, and the Kubernetes API is exposed via the
+    /// Amazon EKS API server endpoint. Each Amazon EKS cluster control plane is single-tenant
+    /// and unique and runs on its own set of Amazon EC2 instances.
     /// </para>
     ///  
     /// <para>
@@ -50,9 +50,9 @@ namespace Amazon.EKS.Model
     /// </para>
     ///  
     /// <para>
-    /// Amazon EKS nodes run in your AWS account and connect to your cluster's control plane
-    /// via the Kubernetes API server endpoint and a certificate file that is created for
-    /// your cluster.
+    /// Amazon EKS nodes run in your Amazon Web Services account and connect to your cluster's
+    /// control plane via the Kubernetes API server endpoint and a certificate file that is
+    /// created for your cluster.
     /// </para>
     ///  
     /// <para>
@@ -137,13 +137,13 @@ namespace Amazon.EKS.Model
         /// Enable or disable exporting the Kubernetes control plane logs for your cluster to
         /// CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch
         /// Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
-        /// EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+        /// EKS Cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// </para>
         ///  <note> 
         /// <para>
         /// CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported
-        /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon
-        /// CloudWatch Pricing</a>.
+        /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch
+        /// Pricing</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -207,8 +207,8 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes
-        /// control plane to make calls to AWS API operations on your behalf. For more information,
-        /// see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
+        /// control plane to make calls to Amazon Web Services API operations on your behalf.
+        /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
         /// EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// </para>
         /// </summary>

@@ -44,15 +44,15 @@ namespace Amazon.EKS.Model
     ///  <note> 
     /// <para>
     /// CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported
-    /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon
-    /// CloudWatch Pricing</a>.
+    /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch
+    /// Pricing</a>.
     /// </para>
     ///  </note> 
     /// <para>
     /// You can also use this API operation to enable or disable public and private access
     /// to your cluster's Kubernetes API server endpoint. By default, public access is enabled,
     /// and private access is disabled. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-    /// EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+    /// EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
     /// 
     /// </para>
     ///  <important> 
@@ -99,13 +99,13 @@ namespace Amazon.EKS.Model
         /// Enable or disable exporting the Kubernetes control plane logs for your cluster to
         /// CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch
         /// Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
-        /// EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+        /// EKS cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// </para>
         ///  <note> 
         /// <para>
         /// CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported
-        /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon
-        /// CloudWatch Pricing</a>.
+        /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch
+        /// Pricing</a>.
         /// </para>
         ///  </note>
         /// </summary>

@@ -36,9 +36,10 @@ namespace Amazon.EKS
     /// Implementation for accessing EKS
     ///
     /// Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that makes it
-    /// easy for you to run Kubernetes on AWS without needing to stand up or maintain your
-    /// own Kubernetes control plane. Kubernetes is an open-source system for automating the
-    /// deployment, scaling, and management of containerized applications. 
+    /// easy for you to run Kubernetes on Amazon Web Services without needing to stand up
+    /// or maintain your own Kubernetes control plane. Kubernetes is an open-source system
+    /// for automating the deployment, scaling, and management of containerized applications.
+    /// 
     /// 
     ///  
     /// <para>
@@ -259,7 +260,7 @@ namespace Amazon.EKS
         /// <para>
         /// You can use this API to enable encryption on existing clusters which do not have encryption
         /// already enabled. This allows you to implement a defense-in-depth security strategy
-        /// without migrating applications to new EKS clusters.
+        /// without migrating applications to new Amazon EKS clusters.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateEncryptionConfig service method.</param>
@@ -517,9 +518,9 @@ namespace Amazon.EKS
         /// <para>
         /// The Amazon EKS control plane consists of control plane instances that run the Kubernetes
         /// software, such as <code>etcd</code> and the API server. The control plane runs in
-        /// an account managed by AWS, and the Kubernetes API is exposed via the Amazon EKS API
-        /// server endpoint. Each Amazon EKS cluster control plane is single-tenant and unique
-        /// and runs on its own set of Amazon EC2 instances.
+        /// an account managed by Amazon Web Services, and the Kubernetes API is exposed via the
+        /// Amazon EKS API server endpoint. Each Amazon EKS cluster control plane is single-tenant
+        /// and unique and runs on its own set of Amazon EC2 instances.
         /// </para>
         ///  
         /// <para>
@@ -531,9 +532,9 @@ namespace Amazon.EKS
         /// </para>
         ///  
         /// <para>
-        /// Amazon EKS nodes run in your AWS account and connect to your cluster's control plane
-        /// via the Kubernetes API server endpoint and a certificate file that is created for
-        /// your cluster.
+        /// Amazon EKS nodes run in your Amazon Web Services account and connect to your cluster's
+        /// control plane via the Kubernetes API server endpoint and a certificate file that is
+        /// created for your cluster.
         /// </para>
         ///  
         /// <para>
@@ -621,8 +622,8 @@ namespace Amazon.EKS
         #region  CreateFargateProfile
 
         /// <summary>
-        /// Creates an AWS Fargate profile for your Amazon EKS cluster. You must have at least
-        /// one Fargate profile in a cluster to be able to run pods on Fargate.
+        /// Creates an Fargate profile for your Amazon EKS cluster. You must have at least one
+        /// Fargate profile in a cluster to be able to run pods on Fargate.
         /// 
         ///  
         /// <para>
@@ -660,8 +661,8 @@ namespace Amazon.EKS
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html">AWS
-        /// Fargate Profile</a> in the <i>Amazon EKS User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html">Fargate
+        /// Profile</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFargateProfile service method.</param>
@@ -749,9 +750,9 @@ namespace Amazon.EKS
         ///  
         /// <para>
         /// An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated
-        /// Amazon EC2 instances that are managed by AWS for an Amazon EKS cluster. Each node
-        /// group uses a version of the Amazon EKS optimized Amazon Linux 2 AMI. For more information,
-        /// see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
+        /// Amazon EC2 instances that are managed by Amazon Web Services for an Amazon EKS cluster.
+        /// Each node group uses a version of the Amazon EKS optimized Amazon Linux 2 AMI. For
+        /// more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
         /// Node Groups</a> in the <i>Amazon EKS User Guide</i>. 
         /// </para>
         /// </summary>
@@ -998,7 +999,7 @@ namespace Amazon.EKS
         #region  DeleteFargateProfile
 
         /// <summary>
-        /// Deletes an AWS Fargate profile.
+        /// Deletes an Fargate profile.
         /// 
         ///  
         /// <para>
@@ -1381,7 +1382,7 @@ namespace Amazon.EKS
         #region  DescribeFargateProfile
 
         /// <summary>
-        /// Returns descriptive information about an AWS Fargate profile.
+        /// Returns descriptive information about an Fargate profile.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFargateProfile service method.</param>
         /// 
@@ -1677,7 +1678,8 @@ namespace Amazon.EKS
         /// <summary>
         /// Disassociates an identity provider configuration from a cluster. If you disassociate
         /// an identity provider from your cluster, users included in the provider can no longer
-        /// access the cluster. However, you can still access the cluster with AWS IAM users.
+        /// access the cluster. However, you can still access the cluster with Amazon Web Services
+        /// IAM users.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateIdentityProviderConfig service method.</param>
         /// 
@@ -1828,7 +1830,8 @@ namespace Amazon.EKS
         #region  ListClusters
 
         /// <summary>
-        /// Lists the Amazon EKS clusters in your AWS account in the specified Region.
+        /// Lists the Amazon EKS clusters in your Amazon Web Services account in the specified
+        /// Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListClusters service method.</param>
         /// 
@@ -1896,8 +1899,8 @@ namespace Amazon.EKS
         #region  ListFargateProfiles
 
         /// <summary>
-        /// Lists the AWS Fargate profiles associated with the specified cluster in your AWS account
-        /// in the specified Region.
+        /// Lists the Fargate profiles associated with the specified cluster in your Amazon Web
+        /// Services account in the specified Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFargateProfiles service method.</param>
         /// 
@@ -2041,7 +2044,8 @@ namespace Amazon.EKS
 
         /// <summary>
         /// Lists the Amazon EKS managed node groups associated with the specified cluster in
-        /// your AWS account in the specified Region. Self-managed node groups are not listed.
+        /// your Amazon Web Services account in the specified Region. Self-managed node groups
+        /// are not listed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNodegroups service method.</param>
         /// 
@@ -2177,7 +2181,7 @@ namespace Amazon.EKS
 
         /// <summary>
         /// Lists the updates associated with an Amazon EKS cluster or managed node group in your
-        /// AWS account, in the specified Region.
+        /// Amazon Web Services account, in the specified Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUpdates service method.</param>
         /// 
@@ -2468,15 +2472,15 @@ namespace Amazon.EKS
         ///  <note> 
         /// <para>
         /// CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported
-        /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon
-        /// CloudWatch Pricing</a>.
+        /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch
+        /// Pricing</a>.
         /// </para>
         ///  </note> 
         /// <para>
         /// You can also use this API operation to enable or disable public and private access
         /// to your cluster's Kubernetes API server endpoint. By default, public access is enabled,
         /// and private access is disabled. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-        /// EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+        /// EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// 
         /// </para>
         ///  <important> 

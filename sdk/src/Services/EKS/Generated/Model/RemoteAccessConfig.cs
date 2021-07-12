@@ -41,7 +41,8 @@ namespace Amazon.EKS.Model
         /// <para>
         /// The Amazon EC2 SSH key that provides access for SSH communication with the nodes in
         /// the managed node group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-        /// EC2 Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+        /// EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User
+        /// Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
         public string Ec2SshKey
