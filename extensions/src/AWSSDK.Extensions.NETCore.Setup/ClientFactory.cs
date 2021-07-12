@@ -16,6 +16,7 @@ using System;
 using System.Reflection;
 using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
+
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -78,6 +79,12 @@ namespace Amazon.Extensions.NETCore.Setup
         internal static IAmazonService CreateServiceClient(ILogger logger, Type serviceInterfaceType, AWSOptions options)
         {
             var credentials = CreateCredentials(logger, options);
+
+            if (!string.IsNullOrEmpty(options.SessionRoleArn))
+            {
+                credentials = new AssumeRoleAWSCredentials(credentials, options.SessionRoleArn, options.SessionName);
+            }
+
             var config = CreateConfig(serviceInterfaceType, options);
             var client = CreateClient(serviceInterfaceType, credentials, config);
             return client as IAmazonService;
