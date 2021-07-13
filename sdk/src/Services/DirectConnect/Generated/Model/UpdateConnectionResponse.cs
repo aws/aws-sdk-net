@@ -29,12 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// Information about an AWS Direct Connect connection.
+    /// Information about an Direct Connect connection.
     /// </summary>
     public partial class UpdateConnectionResponse : AmazonWebServiceResponse
     {
         private string _awsDevice;
         private string _awsDeviceV2;
+        private string _awsLogicalDeviceId;
         private string _bandwidth;
         private string _connectionId;
         private string _connectionName;
@@ -89,6 +90,24 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetAwsDeviceV2()
         {
             return this._awsDeviceV2 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsLogicalDeviceId. 
+        /// <para>
+        /// The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+        /// </para>
+        /// </summary>
+        public string AwsLogicalDeviceId
+        {
+            get { return this._awsLogicalDeviceId; }
+            set { this._awsLogicalDeviceId = value; }
+        }
+
+        // Check to see if AwsLogicalDeviceId property is set
+        internal bool IsSetAwsLogicalDeviceId()
+        {
+            return this._awsLogicalDeviceId != null;
         }
 
         /// <summary>
@@ -357,7 +376,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        /// The ID of the AWS account that owns the connection.
+        /// The ID of the account that owns the connection.
         /// </para>
         /// </summary>
         public string OwnerAccount
@@ -375,7 +394,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property PartnerName. 
         /// <para>
-        /// The name of the AWS Direct Connect service provider associated with the connection.
+        /// The name of the Direct Connect service provider associated with the connection.
         /// </para>
         /// </summary>
         public string PartnerName
@@ -434,7 +453,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS Region where the connection is located.
+        /// The Region where the connection is located.
         /// </para>
         /// </summary>
         public string Region

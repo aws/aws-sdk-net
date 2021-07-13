@@ -31,8 +31,8 @@ namespace Amazon.DirectConnect.Model
     /// <summary>
     /// Container for the parameters to the CreatePublicVirtualInterface operation.
     /// Creates a public virtual interface. A virtual interface is the VLAN that transports
-    /// AWS Direct Connect traffic. A public virtual interface supports sending traffic to
-    /// public services of AWS such as Amazon S3.
+    /// Direct Connect traffic. A public virtual interface supports sending traffic to public
+    /// services of Amazon Web Services such as Amazon S3.
     /// 
     ///  
     /// <para>

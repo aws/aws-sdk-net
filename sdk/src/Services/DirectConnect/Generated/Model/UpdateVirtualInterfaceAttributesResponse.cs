@@ -39,6 +39,7 @@ namespace Amazon.DirectConnect.Model
         private int? _asn;
         private string _authKey;
         private string _awsDeviceV2;
+        private string _awsLogicalDeviceId;
         private List<BGPPeer> _bgpPeers = new List<BGPPeer>();
         private string _connectionId;
         private string _customerAddress;
@@ -169,6 +170,24 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetAwsDeviceV2()
         {
             return this._awsDeviceV2 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsLogicalDeviceId. 
+        /// <para>
+        /// The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+        /// </para>
+        /// </summary>
+        public string AwsLogicalDeviceId
+        {
+            get { return this._awsLogicalDeviceId; }
+            set { this._awsLogicalDeviceId = value; }
+        }
+
+        // Check to see if AwsLogicalDeviceId property is set
+        internal bool IsSetAwsLogicalDeviceId()
+        {
+            return this._awsLogicalDeviceId != null;
         }
 
         /// <summary>
@@ -319,7 +338,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        /// The ID of the AWS account that owns the virtual interface.
+        /// The ID of the account that owns the virtual interface.
         /// </para>
         /// </summary>
         public string OwnerAccount
@@ -337,7 +356,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS Region where the virtual interface is located.
+        /// The Region where the virtual interface is located.
         /// </para>
         /// </summary>
         public string Region
@@ -355,8 +374,8 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property RouteFilterPrefixes. 
         /// <para>
-        /// The routes to be advertised to the AWS network in this Region. Applies to public virtual
-        /// interfaces.
+        /// The routes to be advertised to the Amazon Web Services network in this Region. Applies
+        /// to public virtual interfaces.
         /// </para>
         /// </summary>
         public List<RouteFilterPrefix> RouteFilterPrefixes

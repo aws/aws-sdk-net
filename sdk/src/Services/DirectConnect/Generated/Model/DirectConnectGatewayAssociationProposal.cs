@@ -81,7 +81,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property DirectConnectGatewayOwnerAccount. 
         /// <para>
-        /// The ID of the AWS account that owns the Direct Connect gateway.
+        /// The ID of the account that owns the Direct Connect gateway.
         /// </para>
         /// </summary>
         public string DirectConnectGatewayOwnerAccount

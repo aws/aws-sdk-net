@@ -100,6 +100,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsDeviceV2 = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("awsLogicalDeviceId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AwsLogicalDeviceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("bgpPeers", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<BGPPeer, BGPPeerUnmarshaller>(BGPPeerUnmarshaller.Instance);

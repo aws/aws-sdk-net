@@ -35,7 +35,7 @@ namespace Amazon.DirectConnect.Model
     ///  
     /// <para>
     /// You must create a BGP peer for the corresponding address family (IPv4/IPv6) in order
-    /// to access AWS resources that also use that address family.
+    /// to access Amazon Web Services resources that also use that address family.
     /// </para>
     ///  
     /// <para>

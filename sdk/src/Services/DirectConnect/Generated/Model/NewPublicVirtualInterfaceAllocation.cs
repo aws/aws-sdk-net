@@ -142,8 +142,8 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property RouteFilterPrefixes. 
         /// <para>
-        /// The routes to be advertised to the AWS network in this Region. Applies to public virtual
-        /// interfaces.
+        /// The routes to be advertised to the Amazon Web Services network in this Region. Applies
+        /// to public virtual interfaces.
         /// </para>
         /// </summary>
         public List<RouteFilterPrefix> RouteFilterPrefixes

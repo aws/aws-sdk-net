@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// Information about an AWS Direct Connect location.
+    /// Information about an Direct Connect location.
     /// </summary>
     public partial class Location
     {
@@ -134,7 +134,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS Region for the location.
+        /// The Region for the location.
         /// </para>
         /// </summary>
         public string Region

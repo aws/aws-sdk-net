@@ -38,6 +38,7 @@ namespace Amazon.DirectConnect.Model
         private int? _asn;
         private string _authKey;
         private string _awsDeviceV2;
+        private string _awsLogicalDeviceId;
         private string _bgpPeerId;
         private BGPPeerState _bgpPeerState;
         private BGPStatus _bgpStatus;
@@ -132,6 +133,21 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetAwsDeviceV2()
         {
             return this._awsDeviceV2 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsLogicalDeviceId.
+        /// </summary>
+        public string AwsLogicalDeviceId
+        {
+            get { return this._awsLogicalDeviceId; }
+            set { this._awsLogicalDeviceId = value; }
+        }
+
+        // Check to see if AwsLogicalDeviceId property is set
+        internal bool IsSetAwsLogicalDeviceId()
+        {
+            return this._awsLogicalDeviceId != null;
         }
 
         /// <summary>

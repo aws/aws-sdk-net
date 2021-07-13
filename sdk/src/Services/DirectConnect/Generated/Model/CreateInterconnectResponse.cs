@@ -35,6 +35,7 @@ namespace Amazon.DirectConnect.Model
     {
         private string _awsDevice;
         private string _awsDeviceV2;
+        private string _awsLogicalDeviceId;
         private string _bandwidth;
         private HasLogicalRedundancy _hasLogicalRedundancy;
         private string _interconnectId;
@@ -82,6 +83,24 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetAwsDeviceV2()
         {
             return this._awsDeviceV2 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsLogicalDeviceId. 
+        /// <para>
+        /// The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+        /// </para>
+        /// </summary>
+        public string AwsLogicalDeviceId
+        {
+            get { return this._awsLogicalDeviceId; }
+            set { this._awsLogicalDeviceId = value; }
+        }
+
+        // Check to see if AwsLogicalDeviceId property is set
+        internal bool IsSetAwsLogicalDeviceId()
+        {
+            return this._awsLogicalDeviceId != null;
         }
 
         /// <summary>
@@ -299,7 +318,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS Region where the connection is located.
+        /// The Region where the connection is located.
         /// </para>
         /// </summary>
         public string Region

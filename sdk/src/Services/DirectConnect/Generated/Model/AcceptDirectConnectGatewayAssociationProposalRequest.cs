@@ -43,7 +43,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AssociatedGatewayOwnerAccount. 
         /// <para>
-        /// The ID of the AWS account that owns the virtual private gateway or transit gateway.
+        /// The ID of the account that owns the virtual private gateway or transit gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -86,7 +86,7 @@ namespace Amazon.DirectConnect.Model
         ///  
         /// <para>
         /// For information about how to set the prefixes, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
-        /// Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
+        /// Prefixes</a> in the <i>Direct Connect User Guide</i>.
         /// </para>
         /// </summary>
         public List<RouteFilterPrefix> OverrideAllowedPrefixesToDirectConnectGateway

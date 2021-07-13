@@ -30,7 +30,7 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateConnection operation.
-    /// Updates the AWS Direct Connect dedicated connection configuration.
+    /// Updates the Direct Connect dedicated connection configuration.
     /// 
     ///  
     /// <para>

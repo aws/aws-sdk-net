@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// Information about a tag associated with an AWS Direct Connect resource.
+    /// Information about a tag associated with an Direct Connect resource.
     /// </summary>
     public partial class ResourceTag
     {

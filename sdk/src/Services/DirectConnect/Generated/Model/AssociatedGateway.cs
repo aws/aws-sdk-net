@@ -59,7 +59,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        /// The ID of the AWS account that owns the associated virtual private gateway or transit
+        /// The ID of the account that owns the associated virtual private gateway or transit
         /// gateway.
         /// </para>
         /// </summary>

@@ -43,7 +43,7 @@ namespace Amazon.DirectConnect.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// Intended for use by AWS Direct Connect Partners only.
+    /// Intended for use by Direct Connect Partners only.
     /// </para>
     ///  </note>
     /// </summary>
@@ -59,9 +59,9 @@ namespace Amazon.DirectConnect.Model
         /// Gets and sets the property Bandwidth. 
         /// <para>
         /// The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps,
-        /// 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those AWS
-        /// Direct Connect Partners who have met specific requirements are allowed to create a
-        /// 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.
+        /// 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct
+        /// Connect Partners who have met specific requirements are allowed to create a 1Gbps,
+        /// 2Gbps, 5Gbps or 10Gbps hosted connection.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -118,7 +118,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        /// The ID of the AWS account of the customer for whom the connection will be provisioned.
+        /// The ID of the account of the customer for whom the connection will be provisioned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

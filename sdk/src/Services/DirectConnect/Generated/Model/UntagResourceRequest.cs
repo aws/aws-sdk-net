@@ -30,7 +30,7 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes one or more tags from the specified AWS Direct Connect resource.
+    /// Removes one or more tags from the specified Direct Connect resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonDirectConnectRequest
     {

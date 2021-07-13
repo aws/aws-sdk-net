@@ -158,7 +158,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property DirectConnectGatewayOwnerAccount. 
         /// <para>
-        /// The ID of the AWS account that owns the associated gateway.
+        /// The ID of the account that owns the associated gateway.
         /// </para>
         /// </summary>
         public string DirectConnectGatewayOwnerAccount
@@ -212,7 +212,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property VirtualGatewayOwnerAccount. 
         /// <para>
-        /// The ID of the AWS account that owns the virtual private gateway.
+        /// The ID of the account that owns the virtual private gateway.
         /// </para>
         /// </summary>
         public string VirtualGatewayOwnerAccount
@@ -230,7 +230,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property VirtualGatewayRegion. 
         /// <para>
-        /// The AWS Region where the virtual private gateway is located.
+        /// The Region where the virtual private gateway is located.
         /// </para>
         /// </summary>
         public string VirtualGatewayRegion

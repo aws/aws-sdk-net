@@ -51,7 +51,7 @@ namespace Amazon.DirectConnect.Model
     /// </para>
     ///  
     /// <para>
-    /// AWS assigns this value to each connection which is part of the LAG.
+    /// Amazon Web Services assigns this value to each connection which is part of the LAG.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -79,7 +79,7 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         ///  
         /// <para>
-        /// AWS applies the value to all connections which are part of the LAG.
+        /// Amazon Web Services applies the value to all connections which are part of the LAG.
         /// </para>
         /// </summary>
         public string EncryptionMode

@@ -30,8 +30,8 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds the specified tags to the specified AWS Direct Connect resource. Each resource
-    /// can have a maximum of 50 tags.
+    /// Adds the specified tags to the specified Direct Connect resource. Each resource can
+    /// have a maximum of 50 tags.
     /// 
     ///  
     /// <para>

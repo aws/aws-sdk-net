@@ -30,7 +30,7 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTags operation.
-    /// Describes the tags associated with the specified AWS Direct Connect resources.
+    /// Describes the tags associated with the specified Direct Connect resources.
     /// </summary>
     public partial class DescribeTagsRequest : AmazonDirectConnectRequest
     {

@@ -30,7 +30,7 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the AllocatePrivateVirtualInterface operation.
-    /// Provisions a private virtual interface to be owned by the specified AWS account.
+    /// Provisions a private virtual interface to be owned by the specified account.
     /// 
     ///  
     /// <para>
@@ -86,7 +86,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        /// The ID of the AWS account that owns the virtual private interface.
+        /// The ID of the account that owns the virtual private interface.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

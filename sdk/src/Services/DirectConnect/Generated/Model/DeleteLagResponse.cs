@@ -36,6 +36,7 @@ namespace Amazon.DirectConnect.Model
         private bool? _allowsHostedConnections;
         private string _awsDevice;
         private string _awsDeviceV2;
+        private string _awsLogicalDeviceId;
         private List<Connection> _connections = new List<Connection>();
         private string _connectionsBandwidth;
         private string _encryptionMode;
@@ -75,7 +76,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AwsDevice. 
         /// <para>
-        /// The AWS Direct Connect endpoint that hosts the LAG.
+        /// The Direct Connect endpoint that hosts the LAG.
         /// </para>
         /// </summary>
         public string AwsDevice
@@ -93,7 +94,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AwsDeviceV2. 
         /// <para>
-        /// The AWS Direct Connect endpoint that hosts the LAG.
+        /// The Direct Connect endpoint that hosts the LAG.
         /// </para>
         /// </summary>
         public string AwsDeviceV2
@@ -106,6 +107,24 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetAwsDeviceV2()
         {
             return this._awsDeviceV2 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsLogicalDeviceId. 
+        /// <para>
+        /// The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+        /// </para>
+        /// </summary>
+        public string AwsLogicalDeviceId
+        {
+            get { return this._awsLogicalDeviceId; }
+            set { this._awsLogicalDeviceId = value; }
+        }
+
+        // Check to see if AwsLogicalDeviceId property is set
+        internal bool IsSetAwsLogicalDeviceId()
+        {
+            return this._awsLogicalDeviceId != null;
         }
 
         /// <summary>
@@ -384,7 +403,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        /// The ID of the AWS account that owns the LAG.
+        /// The ID of the account that owns the LAG.
         /// </para>
         /// </summary>
         public string OwnerAccount
@@ -420,7 +439,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS Region where the connection is located.
+        /// The Region where the connection is located.
         /// </para>
         /// </summary>
         public string Region

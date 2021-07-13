@@ -30,7 +30,7 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the ConfirmTransitVirtualInterface operation.
-    /// Accepts ownership of a transit virtual interface created by another AWS account.
+    /// Accepts ownership of a transit virtual interface created by another account.
     /// 
     ///  
     /// <para>

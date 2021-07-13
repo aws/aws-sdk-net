@@ -30,12 +30,12 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVirtualGateways operation.
-    /// Lists the virtual private gateways owned by the AWS account.
+    /// Lists the virtual private gateways owned by the account.
     /// 
     ///  
     /// <para>
-    /// You can create one or more AWS Direct Connect private virtual interfaces linked to
-    /// a virtual private gateway.
+    /// You can create one or more Direct Connect private virtual interfaces linked to a virtual
+    /// private gateway.
     /// </para>
     /// </summary>
     public partial class DescribeVirtualGatewaysRequest : AmazonDirectConnectRequest
