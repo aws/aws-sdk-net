@@ -38,23 +38,4 @@
             </example>
         </value>
     </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Pricing.IAmazonPricing.GetProducts(Amazon.Pricing.Model.GetProductsRequest)" />
-            <member name="M:Amazon.Pricing.AmazonPricingClient.GetProducts(Amazon.Pricing.Model.GetProductsRequest)" />
-            <member name="T:Amazon.Pricing.Model.GetProductsRequest" />
-            <member name="T:Amazon.Pricing.Model.GetProductsResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This operation returns a list of products that match the given criteria.
-                </para>
-                <code
-                    title="To retrieve a list of products"
-                    source=".\AWSSDKDocSamples\Pricing\Pricing.GeneratedSamples.cs"
-                    region="to-retrieve-available products" />
-            </example>
-        </value>
-    </doc>
 </docs>

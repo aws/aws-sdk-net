@@ -57,7 +57,7 @@ namespace Amazon.Pricing.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// The code for the AWS service.
+        /// The code for the Amazon Web Services service.
         /// </para>
         /// </summary>
         public string ServiceCode

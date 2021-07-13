@@ -47,35 +47,6 @@ namespace AWSSDKDocSamples.Amazon.Pricing.Generated
             #endregion
         }
 
-        public void PricingGetProducts()
-        {
-            #region to-retrieve-available products
-
-            var response = client.GetProducts(new GetProductsRequest 
-            {
-                Filters = new List<Filter> {
-                    new Filter {
-                        Field = "ServiceCode",
-                        Type = "TERM_MATCH",
-                        Value = "AmazonEC2"
-                    },
-                    new Filter {
-                        Field = "volumeType",
-                        Type = "TERM_MATCH",
-                        Value = "Provisioned IOPS"
-                    }
-                },
-                FormatVersion = "aws_v1",
-                MaxResults = 1
-            });
-
-            string formatVersion = response.FormatVersion;
-            string nextToken = response.NextToken;
-            List<string> priceList = response.PriceList;
-
-            #endregion
-        }
-
         
         # region ISample Members
         public virtual void Run()
