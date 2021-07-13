@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Information about a Resource Data Sync configuration, including its current status
+    /// Information about a resource data sync configuration, including its current status
     /// and last successful sync.
     /// </summary>
     public partial class ResourceDataSyncItem
@@ -174,7 +174,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SyncName. 
         /// <para>
-        /// The name of the Resource Data Sync.
+        /// The name of the resource data sync.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -214,7 +214,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>,
         /// then the resource data sync synchronizes data to an S3 bucket. If the <code>SyncType</code>
         /// is <code>SyncFromSource</code> then the resource data sync synchronizes data from
-        /// AWS Organizations or from multiple AWS Regions.
+        /// Organizations or from multiple Regions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

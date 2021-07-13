@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The specified execution ID does not exist. Verify the ID number and try again.
+    /// The specified execution ID doesn't exist. Verify the ID number and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

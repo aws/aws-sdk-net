@@ -54,7 +54,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CloudWatchOutputConfig. 
         /// <para>
-        /// CloudWatch Logs information where Systems Manager sent the command output.
+        /// Amazon CloudWatch Logs information where Systems Manager sent the command output.
         /// </para>
         /// </summary>
         public CloudWatchOutputConfig CloudWatchOutputConfig
@@ -128,7 +128,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentVersion. 
         /// <para>
-        /// The SSM document version used in the request.
+        /// The Systems Manager document (SSM document) version used in the request.
         /// </para>
         /// </summary>
         public string DocumentVersion
@@ -166,7 +166,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The date and time the plugin finished running. Date and time are written in ISO 8601
         /// format. For example, June 7, 2017 is represented as 2017-06-7. The following sample
-        /// AWS CLI command uses the <code>InvokedAfter</code> filter.
+        /// Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.
         /// </para>
         ///  
         /// <para>
@@ -175,7 +175,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// If the plugin has not started to run, the string is empty.
+        /// If the plugin hasn't started to run, the string is empty.
         /// </para>
         /// </summary>
         public string ExecutionEndDateTime
@@ -195,7 +195,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The date and time the plugin started running. Date and time are written in ISO 8601
         /// format. For example, June 7, 2017 is represented as 2017-06-7. The following sample
-        /// AWS CLI command uses the <code>InvokedBefore</code> filter.
+        /// Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.
         /// </para>
         ///  
         /// <para>
@@ -204,7 +204,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// If the plugin has not started to run, the string is empty.
+        /// If the plugin hasn't started to run, the string is empty.
         /// </para>
         /// </summary>
         public string ExecutionStartDateTime
@@ -263,7 +263,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ResponseCode. 
         /// <para>
         /// The error level response code for the plugin script. If the response code is <code>-1</code>,
-        /// then the command has not started running on the instance, or it was not received by
+        /// then the command hasn't started running on the instance, or it wasn't received by
         /// the instance.
         /// </para>
         /// </summary>
@@ -283,7 +283,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property StandardErrorContent. 
         /// <para>
         /// The first 8,000 characters written by the plugin to <code>stderr</code>. If the command
-        /// has not finished running, then this string is empty.
+        /// hasn't finished running, then this string is empty.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8000)]
@@ -303,7 +303,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property StandardErrorUrl. 
         /// <para>
         /// The URL for the complete text written by the plugin to <code>stderr</code>. If the
-        /// command has not finished running, then this string is empty.
+        /// command hasn't finished running, then this string is empty.
         /// </para>
         /// </summary>
         public string StandardErrorUrl
@@ -322,7 +322,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property StandardOutputContent. 
         /// <para>
         /// The first 24,000 characters written by the plugin to <code>stdout</code>. If the command
-        /// has not finished running, if <code>ExecutionStatus</code> is neither Succeeded nor
+        /// hasn't finished running, if <code>ExecutionStatus</code> is neither Succeeded nor
         /// Failed, then this string is empty.
         /// </para>
         /// </summary>
@@ -343,7 +343,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property StandardOutputUrl. 
         /// <para>
         /// The URL for the complete text written by the plugin to <code>stdout</code> in Amazon
-        /// Simple Storage Service (Amazon S3). If an S3 bucket was not specified, then this string
+        /// Simple Storage Service (Amazon S3). If an S3 bucket wasn't specified, then this string
         /// is empty.
         /// </para>
         /// </summary>
@@ -385,22 +385,22 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// from error and concurrency control parameters. <code>StatusDetails</code> can show
         /// different results than <code>Status</code>. For more information about these statuses,
         /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-        /// command statuses</a> in the <i>AWS Systems Manager User Guide</i>. <code>StatusDetails</code>
-        /// can be one of the following values:
+        /// command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+        /// <code>StatusDetails</code> can be one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Pending: The command has not been sent to the instance.
+        /// Pending: The command hasn't been sent to the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In Progress: The command has been sent to the instance but has not reached a terminal
+        /// In Progress: The command has been sent to the instance but hasn't reached a terminal
         /// state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Delayed: The system attempted to send the command to the target, but the target was
-        /// not available. The instance might not be available because of network issues, because
+        /// Delayed: The system attempted to send the command to the target, but the target wasn't
+        /// available. The instance might not be available because of network issues, because
         /// the instance was stopped, or for similar reasons. The system will try to send the
         /// command again.
         /// </para>
@@ -410,22 +410,22 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Delivery Timed Out: The command was not delivered to the instance before the delivery
-        /// timeout expired. Delivery timeouts do not count against the parent command's <code>MaxErrors</code>
+        /// Delivery Timed Out: The command wasn't delivered to the instance before the delivery
+        /// timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code>
         /// limit, but they do contribute to whether the parent command status is Success or Incomplete.
         /// This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Execution Timed Out: The command started to run on the instance, but the execution
-        /// was not complete before the timeout expired. Execution timeouts count against the
-        /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.
+        /// wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code>
+        /// limit of the parent command. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Failed: The command wasn't run successfully on the instance. For a plugin, this indicates
-        /// that the result code was not zero. For a command invocation, this indicates that the
-        /// result code for one or more plugins was not zero. Invocation failures count against
+        /// that the result code wasn't zero. For a command invocation, this indicates that the
+        /// result code for one or more plugins wasn't zero. Invocation failures count against
         /// the <code>MaxErrors</code> limit of the parent command. This is a terminal state.
         /// </para>
         ///  </li> <li> 

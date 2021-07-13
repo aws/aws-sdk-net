@@ -76,8 +76,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TotalCount. 
         /// <para>
-        /// The total number of items to delete. This count does not change during the delete
-        /// operation.
+        /// The total number of items to delete. This count doesn't change during the delete operation.
         /// </para>
         /// </summary>
         public int TotalCount

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// One or more aggregators for viewing counts of OpsItems using different dimensions
-    /// such as <code>Source</code>, <code>CreatedTime</code>, or <code>Source and CreatedTime</code>,
+    /// One or more aggregators for viewing counts of OpsData using different dimensions such
+    /// as <code>Source</code>, <code>CreatedTime</code>, or <code>Source and CreatedTime</code>,
     /// to name a few.
     /// </summary>
     public partial class OpsAggregator
@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Aggregators. 
         /// <para>
-        /// A nested aggregator for viewing counts of OpsItems.
+        /// A nested aggregator for viewing counts of OpsData.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=12)]
@@ -64,7 +64,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AggregatorType. 
         /// <para>
-        /// Either a Range or Count aggregator for limiting an OpsItem summary.
+        /// Either a <code>Range</code> or <code>Count</code> aggregator for limiting an OpsData
+        /// summary.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
@@ -83,7 +84,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
-        /// The name of an OpsItem attribute on which to limit the count of OpsItems.
+        /// The name of an OpsData attribute on which to limit the count of OpsData.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -121,7 +122,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TypeName. 
         /// <para>
-        /// The data type name to use for viewing counts of OpsItems.
+        /// The data type name to use for viewing counts of OpsData.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

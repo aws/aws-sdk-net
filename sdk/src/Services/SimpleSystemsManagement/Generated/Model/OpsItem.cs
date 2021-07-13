@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
-    /// remediate operational issues impacting the performance and health of their AWS resources.
-    /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
-    /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+    /// Operations engineers and IT professionals use Amazon Web Services Systems Manager
+    /// OpsCenter to view, investigate, and remediate operational issues impacting the performance
+    /// and health of their Amazon Web Services resources. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
+    /// in the <i>Amazon Web Services Systems Manager User Guide</i>.
     /// </summary>
     public partial class OpsItem
     {
@@ -118,7 +118,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        /// The ARN of the AWS account that created the OpsItem.
+        /// The ARN of the account that created the OpsItem.
         /// </para>
         /// </summary>
         public string CreatedBy
@@ -173,7 +173,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property LastModifiedBy. 
         /// <para>
-        /// The ARN of the AWS account that last updated the OpsItem.
+        /// The ARN of the account that last updated the OpsItem.
         /// </para>
         /// </summary>
         public string LastModifiedBy
@@ -209,8 +209,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Notifications. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this
-        /// OpsItem is edited or changed.
+        /// The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS)
+        /// topic where notifications are sent when this OpsItem is edited or changed.
         /// </para>
         /// </summary>
         public List<OpsItemNotification> Notifications
@@ -235,25 +235,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// Operational data keys <i>can't</i> begin with the following: amazon, aws, amzn, ssm,
-        /// /amazon, /aws, /amzn, /ssm.
+        /// Operational data keys <i>can't</i> begin with the following: <code>amazon</code>,
+        /// <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>,
+        /// <code>/amzn</code>, <code>/ssm</code>.
         /// </para>
         ///  </important> 
         /// <para>
         /// You can choose to make the data searchable by other users in the account or you can
         /// restrict search access. Searchable data means that all users with access to the OpsItem
-        /// Overview page (as provided by the <a>DescribeOpsItems</a> API action) can view and
-        /// search on the specified data. Operational data that is not searchable is only viewable
+        /// Overview page (as provided by the <a>DescribeOpsItems</a> API operation) can view
+        /// and search on the specified data. Operational data that isn't searchable is only viewable
         /// by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a> API
-        /// action).
+        /// operation).
         /// </para>
         ///  
         /// <para>
         /// Use the <code>/aws/resources</code> key in OperationalData to specify a related resource
         /// in the request. Use the <code>/aws/automations</code> key in OperationalData to associate
-        /// an Automation runbook with the OpsItem. To view AWS CLI example commands that use
-        /// these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-        /// OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands
+        /// that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+        /// OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, OpsItemDataValue> OperationalData
@@ -426,7 +427,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or
         /// <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing
-        /// OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         public OpsItemStatus Status

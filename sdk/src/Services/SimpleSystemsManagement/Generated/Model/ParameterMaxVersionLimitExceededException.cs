@@ -32,8 +32,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// Parameter Store retains the 100 most recently created versions of a parameter. After
     /// this number of versions has been created, Parameter Store deletes the oldest version
     /// when a new one is created. However, if the oldest version has a <i>label</i> attached
-    /// to it, Parameter Store will not delete the version and instead presents this error
-    /// message:
+    /// to it, Parameter Store won't delete the version and instead presents this error message:
     /// 
     ///  
     /// <para>
@@ -50,7 +49,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// from the oldest version of the parameter to a newer one for use in your operations.
     /// For information about moving parameter labels, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-console-move">Move
     /// a parameter label (console)</a> or <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-cli-move">Move
-    /// a parameter label (CLI)</a> in the <i>AWS Systems Manager User Guide</i>. 
+    /// a parameter label (CLI)</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+    /// 
     /// </para>
     /// </summary>
     #if !NETSTANDARD

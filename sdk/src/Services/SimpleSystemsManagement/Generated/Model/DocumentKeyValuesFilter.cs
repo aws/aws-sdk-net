@@ -37,44 +37,44 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// You can also use AWS-provided keys, some of which have specific allowed values. These
-    /// keys and their associated values are as follows:
+    /// You can also use Amazon Web Services-provided keys, some of which have specific allowed
+    /// values. These keys and their associated values are as follows:
     /// </para>
     ///  <dl> <dt>DocumentType</dt> <dd> <ul> <li> 
     /// <para>
-    /// ApplicationConfiguration
+    ///  <code>ApplicationConfiguration</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// ApplicationConfigurationSchema
+    ///  <code>ApplicationConfigurationSchema</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Automation
+    ///  <code>Automation</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// ChangeCalendar
+    ///  <code>ChangeCalendar</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Command
+    ///  <code>Command</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// DeploymentStrategy
+    ///  <code>DeploymentStrategy</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Package
+    ///  <code>Package</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Policy
+    ///  <code>Policy</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Session
+    ///  <code>Session</code> 
     /// </para>
     ///  </li> </ul> </dd> <dt>Owner</dt> <dd> 
     /// <para>
@@ -83,38 +83,38 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Amazon
+    ///  <code>Amazon</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Private
+    ///  <code>Private</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Public
+    ///  <code>Public</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Self
+    ///  <code>Self</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// ThirdParty
+    ///  <code>ThirdParty</code> 
     /// </para>
     ///  </li> </ul> </dd> <dt>PlatformTypes</dt> <dd> <ul> <li> 
     /// <para>
-    /// Linux
+    ///  <code>Linux</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Windows
+    ///  <code>Windows</code> 
     /// </para>
     ///  </li> </ul> </dd> </dl> 
     /// <para>
-    ///  <code>Name</code> is another AWS-provided key. If you use <code>Name</code> as a
-    /// key, you can use a name prefix to return a list of documents. For example, in the
-    /// AWS CLI, to return a list of all documents that begin with <code>Te</code>, run the
-    /// following command:
+    ///  <code>Name</code> is another Amazon Web Services-provided key. If you use <code>Name</code>
+    /// as a key, you can use a name prefix to return a list of documents. For example, in
+    /// the Amazon Web Services CLI, to return a list of all documents that begin with <code>Te</code>,
+    /// run the following command:
     /// </para>
     ///  
     /// <para>
@@ -122,9 +122,10 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// You can also use the <code>TargetType</code> AWS-provided key. For a list of valid
-    /// resource type values that can be used with this key, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-    /// resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+    /// You can also use the <code>TargetType</code> Amazon Web Services-provided key. For
+    /// a list of valid resource type values that can be used with this key, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+    /// Web Services resource and property types reference</a> in the <i>CloudFormation User
+    /// Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -134,12 +135,12 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// To specify a custom key and value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.
+    /// To specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.
     /// </para>
     ///  
     /// <para>
-    /// For example, if you created a key called region and are using the AWS CLI to call
-    /// the <code>list-documents</code> command: 
+    /// For example, if you created a key called region and are using the Amazon Web Services
+    /// CLI to call the <code>list-documents</code> command: 
     /// </para>
     ///  
     /// <para>

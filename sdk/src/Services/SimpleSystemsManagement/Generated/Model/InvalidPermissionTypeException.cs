@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The permission type is not supported. <i>Share</i> is the only supported permission
+    /// The permission type isn't supported. <i>Share</i> is the only supported permission
     /// type.
     /// </summary>
     #if !NETSTANDARD

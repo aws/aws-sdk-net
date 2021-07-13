@@ -99,8 +99,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StatusDetails. 
         /// <para>
-        /// The details explaining the status of the task execution. Only available for certain
-        /// status values.
+        /// The details explaining the status of the task execution. Not available for all status
+        /// values.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=250)]
@@ -119,7 +119,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskArn. 
         /// <para>
-        /// The ARN of the task that ran.
+        /// The Amazon Resource Name (ARN) of the task that ran.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]

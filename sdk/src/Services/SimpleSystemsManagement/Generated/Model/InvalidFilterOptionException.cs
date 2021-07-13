@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The specified filter option is not valid. Valid options are Equals and BeginsWith.
+    /// The specified filter option isn't valid. Valid options are Equals and BeginsWith.
     /// For Path filter, valid options are Recursive and OneLevel.
     /// </summary>
     #if !NETSTANDARD

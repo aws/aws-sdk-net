@@ -42,7 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property DeletionId. 
         /// <para>
         /// Specify the delete inventory ID for which you want information. This ID was returned
-        /// by the <code>DeleteInventory</code> action.
+        /// by the <code>DeleteInventory</code> operation.
         /// </para>
         /// </summary>
         public string DeletionId

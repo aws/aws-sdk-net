@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The document does not support the platform type of the given instance ID(s). For example,
+    /// The document doesn't support the platform type of the given instance ID(s). For example,
     /// you sent an document for a Windows instance to a Linux instance.
     /// </summary>
     #if !NETSTANDARD

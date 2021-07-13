@@ -29,10 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The EffectivePatch structure defines metadata about a patch along with the approval
-    /// state of the patch in a particular patch baseline. The approval state includes information
-    /// about whether the patch is currently approved, due to be approved by a rule, explicitly
-    /// approved, or explicitly rejected and the date the patch was or will be approved.
+    /// The <code>EffectivePatch</code> structure defines metadata about a patch along with
+    /// the approval state of the patch in a particular patch baseline. The approval state
+    /// includes information about whether the patch is currently approved, due to be approved
+    /// by a rule, explicitly approved, or explicitly rejected and the date the patch was
+    /// or will be approved.
     /// </summary>
     public partial class EffectivePatch
     {

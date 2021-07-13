@@ -32,7 +32,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// The role name can't contain invalid characters. Also verify that you specified an
     /// IAM role for notifications that includes the required trust policy. For information
     /// about configuring the IAM role for Run Command notifications, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring
-    /// Amazon SNS Notifications for Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
+    /// Amazon SNS Notifications for Run Command</a> in the <i>Amazon Web Services Systems
+    /// Manager User Guide</i>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

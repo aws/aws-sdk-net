@@ -40,10 +40,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DeletionId. 
         /// <para>
-        /// Every <code>DeleteInventory</code> action is assigned a unique ID. This option returns
-        /// a unique ID. You can use this ID to query the status of a delete operation. This option
-        /// is useful for ensuring that a delete operation has completed before you begin other
-        /// actions. 
+        /// Every <code>DeleteInventory</code> operation is assigned a unique ID. This option
+        /// returns a unique ID. You can use this ID to query the status of a delete operation.
+        /// This option is useful for ensuring that a delete operation has completed before you
+        /// begin other operations. 
         /// </para>
         /// </summary>
         public string DeletionId
@@ -63,7 +63,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// A summary of the delete operation. For more information about this summary, see <a
         /// href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete-summary">Deleting
-        /// custom inventory</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// custom inventory</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         public InventoryDeletionSummary DeletionSummary

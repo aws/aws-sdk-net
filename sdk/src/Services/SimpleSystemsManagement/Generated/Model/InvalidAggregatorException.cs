@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The specified aggregator is not valid for inventory groups. Verify that the aggregator
+    /// The specified aggregator isn't valid for inventory groups. Verify that the aggregator
     /// uses a valid inventory type such as <code>AWS:Application</code> or <code>AWS:InstanceInformation</code>.
     /// </summary>
     #if !NETSTANDARD

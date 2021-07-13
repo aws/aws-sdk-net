@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDocument operation.
-    /// Describes the specified Systems Manager document.
+    /// Describes the specified Amazon Web Services Systems Manager document (SSM document).
     /// </summary>
     public partial class DescribeDocumentRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -46,7 +46,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates DescribeDocumentRequest with the parameterized properties
         /// </summary>
-        /// <param name="name">The name of the Systems Manager document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         public DescribeDocumentRequest(string name)
         {
             _name = name;
@@ -74,7 +74,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Systems Manager document.
+        /// The name of the SSM document.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -95,7 +95,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// An optional field specifying the version of the artifact associated with the document.
         /// For example, "Release 12, Update 6". This value is unique across all versions of a
-        /// document, and cannot be changed.
+        /// document, and can't be changed.
         /// </para>
         /// </summary>
         public string VersionName

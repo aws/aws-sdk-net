@@ -29,8 +29,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Defines a filter used in <a>DescribeInstancePatchStatesForPatchGroup</a> used to scope
+    /// Defines a filter used in <a>DescribeInstancePatchStatesForPatchGroup</a> to scope
     /// down the information returned by the API.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Example</b>: To filter for all instances in a patch group having more than three
+    /// patches with a <code>FailedCount</code> status, use the following for the filter:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Value for <code>Key</code>: <code>FailedCount</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Value for <code>Type</code>: <code>GreaterThan</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Value for <code>Values</code>: <code>3</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class InstancePatchStateFilter
     {
@@ -41,9 +60,41 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key for the filter. Supported values are FailedCount, InstalledCount, InstalledOtherCount,
-        /// MissingCount and NotApplicableCount.
+        /// The key for the filter. Supported values include the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>InstalledCount</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>InstalledOtherCount</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>InstalledPendingRebootCount</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>InstalledRejectedCount</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MissingCount</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FailedCount</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UnreportedNotApplicableCount</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NotApplicableCount</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
         public string Key
@@ -61,8 +112,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of comparison that should be performed for the value: Equal, NotEqual, LessThan
-        /// or GreaterThan.
+        /// The type of comparison that should be performed for the value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,7 +131,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The value for the filter, must be an integer greater than or equal to 0.
+        /// The value for the filter. Must be an integer greater than or equal to 0.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]

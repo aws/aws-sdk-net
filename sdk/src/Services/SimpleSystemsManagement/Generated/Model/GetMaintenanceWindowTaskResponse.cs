@@ -70,15 +70,16 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property LoggingInfo. 
         /// <para>
-        /// The location in Amazon S3 where the task results are logged.
+        /// The location in Amazon Simple Storage Service (Amazon S3) where the task results are
+        /// logged.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
-        /// logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code>
-        /// options in the <code>TaskInvocationParameters</code> structure. For information about
-        /// how Systems Manager handles these options for the supported maintenance window task
-        /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+        ///  <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage
+        /// Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code>
+        /// and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code>
+        /// structure. For information about how Amazon Web Services Systems Manager handles these
+        /// options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -101,10 +102,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// For maintenance window tasks without a target specified, you cannot supply a value
+        /// For maintenance window tasks without a target specified, you can't supply a value
         /// for this option. Instead, the system inserts a placeholder value of <code>1</code>,
-        /// which may be reported in the response to this command. This value does not affect
-        /// the running of your task and can be ignored.
+        /// which may be reported in the response to this command. This value doesn't affect the
+        /// running of your task and can be ignored.
         /// </para>
         ///  </note>
         /// </summary>
@@ -128,10 +129,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// For maintenance window tasks without a target specified, you cannot supply a value
+        /// For maintenance window tasks without a target specified, you can't supply a value
         /// for this option. Instead, the system inserts a placeholder value of <code>1</code>,
-        /// which may be reported in the response to this command. This value does not affect
-        /// the running of your task and can be ignored.
+        /// which may be reported in the response to this command. This value doesn't affect the
+        /// running of your task and can be ignored.
         /// </para>
         ///  </note>
         /// </summary>
@@ -190,8 +191,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
-        /// The ARN of the IAM service role to use to publish Amazon Simple Notification Service
-        /// (Amazon SNS) notifications for maintenance window Run Command tasks.
+        /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service
+        /// role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
+        /// for maintenance window Run Command tasks.
         /// </para>
         /// </summary>
         public string ServiceRoleArn
@@ -228,10 +230,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskArn. 
         /// <para>
-        /// The resource that the task used during execution. For RUN_COMMAND and AUTOMATION task
-        /// types, the TaskArn is the Systems Manager Document name/ARN. For LAMBDA tasks, the
-        /// value is the function name/ARN. For STEP_FUNCTIONS tasks, the value is the state machine
-        /// ARN.
+        /// The resource that the task used during execution. For <code>RUN_COMMAND</code> and
+        /// <code>AUTOMATION</code> task types, the value of <code>TaskArn</code> is the SSM document
+        /// name/ARN. For <code>LAMBDA</code> tasks, the value is the function name/ARN. For <code>STEP_FUNCTIONS</code>
+        /// tasks, the value is the state machine ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]

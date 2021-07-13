@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The version of the document schema is not supported.
+    /// The version of the document schema isn't supported.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

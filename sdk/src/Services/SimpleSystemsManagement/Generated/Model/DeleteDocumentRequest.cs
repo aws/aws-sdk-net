@@ -30,7 +30,8 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDocument operation.
-    /// Deletes the Systems Manager document and all instance associations to the document.
+    /// Deletes the Amazon Web Services Systems Manager document (SSM document) and all instance
+    /// associations to the document.
     /// 
     ///  
     /// <para>
@@ -84,7 +85,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Some SSM document types require that you specify a <code>Force</code> flag before
         /// you can delete the document. For example, you must specify a <code>Force</code> flag
         /// to delete a document of type <code>ApplicationConfigurationSchema</code>. You can
-        /// restrict access to the <code>Force</code> flag in an AWS Identity and Access Management
+        /// restrict access to the <code>Force</code> flag in an Identity and Access Management
         /// (IAM) policy.
         /// </para>
         /// </summary>

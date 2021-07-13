@@ -82,8 +82,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OwnerInformation. 
         /// <para>
-        /// A user-provided value that will be included in any CloudWatch events that are raised
-        /// while running tasks for these targets in this maintenance window.
+        /// A user-provided value that will be included in any Amazon CloudWatch Events events
+        /// that are raised while running tasks for these targets in this maintenance window.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

@@ -60,7 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The parameter name of which you want to delete one or more labels.
+        /// The name of the parameter from which you want to delete one or more labels.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -80,7 +80,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ParameterVersion. 
         /// <para>
         /// The specific version of the parameter which you want to delete one or more labels
-        /// from. If it is not present, the call will fail.
+        /// from. If it isn't present, the call will fail.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

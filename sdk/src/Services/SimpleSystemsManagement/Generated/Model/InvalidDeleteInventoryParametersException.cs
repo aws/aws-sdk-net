@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// One or more of the parameters specified for the delete operation is not valid. Verify
+    /// One or more of the parameters specified for the delete operation isn't valid. Verify
     /// all parameters and try again.
     /// </summary>
     #if !NETSTANDARD

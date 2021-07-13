@@ -32,9 +32,9 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// Container for the parameters to the ListCommandInvocations operation.
     /// An invocation is copy of a command sent to a specific instance. A command can apply
     /// to one or more instances. A command invocation applies to one instance. For example,
-    /// if a user runs SendCommand against three instances, then a command invocation is created
-    /// for each requested instance ID. ListCommandInvocations provide status about command
-    /// execution.
+    /// if a user runs <code>SendCommand</code> against three instances, then a command invocation
+    /// is created for each requested instance ID. <code>ListCommandInvocations</code> provide
+    /// status about command execution.
     /// </summary>
     public partial class ListCommandInvocationsRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -82,7 +82,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Details. 
         /// <para>
         /// (Optional) If set this returns the response of the command executions and any command
-        /// output. The default value is 'false'. 
+        /// output. The default value is <code>false</code>. 
         /// </para>
         /// </summary>
         public bool Details

@@ -70,7 +70,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2020-12-31</code>.
+        /// Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -109,7 +109,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// For instances identified by the approval rule filters, enables a patch baseline to
         /// apply non-security updates available in the specified repository. The default value
-        /// is 'false'. Applies to Linux instances only.
+        /// is <code>false</code>. Applies to Linux instances only.
         /// </para>
         /// </summary>
         public bool EnableNonSecurity

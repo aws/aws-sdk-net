@@ -29,7 +29,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Filter used in the request. Supported filter keys are Name and Enabled.
+    /// Filter used in the request. Supported filter keys depend on the API operation that
+    /// includes the filter. API operations that use <code>MaintenanceWindowFilter&gt;</code>
+    /// include the following:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeMaintenanceWindowExecutions</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeMaintenanceWindowExecutionTaskInvocations</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeMaintenanceWindowExecutionTasks</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeMaintenanceWindows</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeMaintenanceWindowTargets</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeMaintenanceWindowTasks</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class MaintenanceWindowFilter
     {

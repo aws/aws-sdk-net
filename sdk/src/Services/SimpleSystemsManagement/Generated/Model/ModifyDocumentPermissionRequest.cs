@@ -30,9 +30,10 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyDocumentPermission operation.
-    /// Shares a Systems Manager document publicly or privately. If you share a document privately,
-    /// you must specify the AWS user account IDs for those people who can use the document.
-    /// If you share a document publicly, you must specify <i>All</i> as the account ID.
+    /// Shares a Amazon Web Services Systems Manager document (SSM document)publicly or privately.
+    /// If you share a document privately, you must specify the Amazon Web Services user account
+    /// IDs for those people who can use the document. If you share a document publicly, you
+    /// must specify <i>All</i> as the account ID.
     /// </summary>
     public partial class ModifyDocumentPermissionRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -45,8 +46,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AccountIdsToAdd. 
         /// <para>
-        /// The AWS user accounts that should have access to the document. The account IDs can
-        /// either be a group of account IDs or <i>All</i>.
+        /// The Amazon Web Services user accounts that should have access to the document. The
+        /// account IDs can either be a group of account IDs or <i>All</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=20)]
@@ -65,10 +66,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AccountIdsToRemove. 
         /// <para>
-        /// The AWS user accounts that should no longer have access to the document. The AWS user
-        /// account can either be a group of account IDs or <i>All</i>. This action has a higher
-        /// priority than <i>AccountIdsToAdd</i>. If you specify an account ID to add and the
-        /// same ID to remove, the system removes access to the document.
+        /// The Amazon Web Services user accounts that should no longer have access to the document.
+        /// The Amazon Web Services user account can either be a group of account IDs or <i>All</i>.
+        /// This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify an account
+        /// ID to add and the same ID to remove, the system removes access to the document.
         /// </para>
         /// </summary>
         [AWSProperty(Max=20)]
@@ -125,7 +126,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SharedDocumentVersion. 
         /// <para>
-        /// (Optional) The version of the document to share. If it's not specified, the system
+        /// (Optional) The version of the document to share. If it isn't specified, the system
         /// choose the <code>Default</code> version to share.
         /// </para>
         /// </summary>

@@ -45,7 +45,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Classification. 
         /// <para>
-        /// The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).
+        /// The classification of the patch, such as <code>SecurityUpdates</code>, <code>Updates</code>,
+        /// and <code>CriticalUpdates</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -83,8 +84,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstalledTime. 
         /// <para>
-        /// The date/time the patch was installed on the instance. Note that not all operating
-        /// systems provide this level of information.
+        /// The date/time the patch was installed on the instance. Not all operating systems provide
+        /// this level of information.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -122,7 +123,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
-        /// The severity of the patch (for example, Critical, Important, Moderate).
+        /// The severity of the patchsuch as <code>Critical</code>, <code>Important</code>, and
+        /// <code>Moderate</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -146,7 +148,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         /// For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
-        /// patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

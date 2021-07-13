@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The specified document does not exist.
+    /// The specified SSM document doesn't exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

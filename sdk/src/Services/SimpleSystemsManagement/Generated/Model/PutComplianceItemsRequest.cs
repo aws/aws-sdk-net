@@ -31,7 +31,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the PutComplianceItems operation.
     /// Registers a compliance type and other compliance details on a designated resource.
-    /// This action lets you register custom compliance details with a resource. This call
+    /// This operation lets you register custom compliance details with a resource. This call
     /// overwrites existing compliance information on the resource, so you must provide a
     /// full list of compliance items each time that you send the request.
     /// 
@@ -72,7 +72,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// DocumentName: A SSM document name. For example, AWS-RunPatchBaseline.
+    /// DocumentName: An SSM document name. For example, <code>AWS-RunPatchBaseline</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>

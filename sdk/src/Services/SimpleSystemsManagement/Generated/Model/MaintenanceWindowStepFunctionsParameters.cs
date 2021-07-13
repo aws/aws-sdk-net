@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The parameters for a STEP_FUNCTIONS task.
+    /// The parameters for a <code>STEP_FUNCTIONS</code> task.
     /// 
     ///  
     /// <para>
@@ -38,11 +38,11 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  <note> 
     /// <para>
-    ///  <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
-    /// logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code>
-    /// options in the <code>TaskInvocationParameters</code> structure. For information about
-    /// how Systems Manager handles these options for the supported maintenance window task
-    /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+    ///  <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage
+    /// Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code>
+    /// and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code>
+    /// structure. For information about how Amazon Web Services Systems Manager handles these
+    /// options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
     /// </para>
     ///  
     /// <para>
@@ -66,7 +66,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        /// The inputs for the STEP_FUNCTIONS task.
+        /// The inputs for the <code>STEP_FUNCTIONS</code> task.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]
@@ -85,7 +85,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the STEP_FUNCTIONS task.
+        /// The name of the <code>STEP_FUNCTIONS</code> task.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=80)]

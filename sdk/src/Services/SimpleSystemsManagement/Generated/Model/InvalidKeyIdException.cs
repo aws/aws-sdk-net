@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The query key ID is not valid.
+    /// The query key ID isn't valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

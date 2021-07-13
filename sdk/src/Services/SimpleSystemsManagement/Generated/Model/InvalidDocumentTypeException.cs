@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The document type is not valid. Valid document types are described in the <code>DocumentType</code>
+    /// The SSM document type isn't valid. Valid document types are described in the <code>DocumentType</code>
     /// property.
     /// </summary>
     #if !NETSTANDARD

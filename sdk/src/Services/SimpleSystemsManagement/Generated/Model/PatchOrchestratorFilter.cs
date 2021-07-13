@@ -29,7 +29,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Defines a filter used in Patch Manager APIs.
+    /// Defines a filter used in Patch Manager APIs. Supported filter keys depend on the API
+    /// operation that includes the filter. Patch Manager API operations that use <code>PatchOrchestratorFilter</code>
+    /// include the following:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeAvailablePatches</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeInstancePatches</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribePatchBaselines</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribePatchGroups</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class PatchOrchestratorFilter
     {

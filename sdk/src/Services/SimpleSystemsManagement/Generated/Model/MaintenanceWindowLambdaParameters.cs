@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The parameters for a LAMBDA task type.
+    /// The parameters for a <code>LAMBDA</code> task type.
     /// 
     ///  
     /// <para>
@@ -38,11 +38,11 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  <note> 
     /// <para>
-    ///  <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
-    /// logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code>
-    /// options in the <code>TaskInvocationParameters</code> structure. For information about
-    /// how Systems Manager handles these options for the supported maintenance window task
-    /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+    ///  <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage
+    /// Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code>
+    /// and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code>
+    /// structure. For information about how Amazon Web Services Systems Manager handles these
+    /// options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
     /// </para>
     ///  
     /// <para>
@@ -107,10 +107,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Qualifier. 
         /// <para>
-        /// (Optional) Specify a Lambda function version or alias name. If you specify a function
-        /// version, the action uses the qualified function ARN to invoke a specific Lambda function.
-        /// If you specify an alias name, the action uses the alias ARN to invoke the Lambda function
-        /// version to which the alias points.
+        /// (Optional) Specify an Lambda function version or alias name. If you specify a function
+        /// version, the operation uses the qualified function Amazon Resource Name (ARN) to invoke
+        /// a specific Lambda function. If you specify an alias name, the operation uses the alias
+        /// ARN to invoke the Lambda function version to which the alias points.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

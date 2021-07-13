@@ -70,14 +70,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  <ul> <li> 
         /// <para>
         ///  <b>InvokedAfter</b>: Specify a timestamp to limit your results. For example, specify
-        /// <code>2018-07-07T00:00:00Z</code> to see a list of command executions occurring July
-        /// 7, 2018, and later.
+        /// <code>2021-07-07T00:00:00Z</code> to see a list of command executions occurring July
+        /// 7, 2021, and later.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>InvokedBefore</b>: Specify a timestamp to limit your results. For example, specify
-        /// <code>2018-07-07T00:00:00Z</code> to see a list of command executions from before
-        /// July 7, 2018.
+        /// <code>2021-07-07T00:00:00Z</code> to see a list of command executions from before
+        /// July 7, 2021.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -114,10 +114,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <b>DocumentName</b>: Specify name of the SSM document for which you want to see command
-        /// execution results. For example, specify <code>AWS-RunPatchBaseline</code> to see command
-        /// executions that used this SSM document to perform security patching operations on
-        /// instances. 
+        ///  <b>DocumentName</b>: Specify name of the Amazon Web Services Systems Manager document
+        /// (SSM document) for which you want to see command execution results. For example, specify
+        /// <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM document
+        /// to perform security patching operations on instances. 
         /// </para>
         ///  </li> <li> 
         /// <para>

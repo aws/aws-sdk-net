@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The calendar entry contained in the specified Systems Manager document is not supported.
+    /// The calendar entry contained in the specified SSM document isn't supported.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

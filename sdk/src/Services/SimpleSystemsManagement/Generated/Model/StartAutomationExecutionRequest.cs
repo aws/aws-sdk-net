@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the StartAutomationExecution operation.
-    /// Initiates execution of an Automation document.
+    /// Initiates execution of an Automation runbook.
     /// </summary>
     public partial class StartAutomationExecutionRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -70,10 +70,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentName. 
         /// <para>
-        /// The name of the Systems Manager document to run. This can be a public document or
-        /// a custom document. To run a shared document belonging to another account, specify
-        /// the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
-        /// shared SSM documents</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// The name of the SSM document to run. This can be a public document or a custom document.
+        /// To run a shared document belonging to another account, specify the document ARN. For
+        /// more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
+        /// shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -92,7 +92,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentVersion. 
         /// <para>
-        /// The version of the Automation document to use for this execution.
+        /// The version of the Automation runbook to use for this execution.
         /// </para>
         /// </summary>
         public string DocumentVersion
@@ -111,7 +111,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property MaxConcurrency. 
         /// <para>
         /// The maximum number of targets allowed to run this task in parallel. You can specify
-        /// a number, such as 10, or a percentage, such as 10%. The default value is 10.
+        /// a number, such as 10, or a percentage, such as 10%. The default value is <code>10</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
@@ -183,7 +183,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Parameters. 
         /// <para>
         /// A key-value map of execution parameters, which match the declared parameters in the
-        /// Automation document.
+        /// Automation runbook.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -206,7 +206,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// tags for an automation. Tags enable you to categorize a resource in different ways,
         /// such as by purpose, owner, or environment. For example, you might want to tag an automation
         /// to identify an environment or operating system. In this case, you could specify the
-        /// following key name/value pairs:
+        /// following key-value pairs:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -218,7 +218,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// To add tags to an existing patch baseline, use the <a>AddTagsToResource</a> action.
+        /// To add tags to an existing patch baseline, use the <a>AddTagsToResource</a> operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -238,11 +238,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TargetLocations. 
         /// <para>
-        /// A location is a combination of AWS Regions and/or AWS accounts where you want to run
-        /// the Automation. Use this action to start an Automation in multiple Regions and multiple
-        /// accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-        /// Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS Systems
-        /// Manager User Guide</i>. 
+        /// A location is a combination of Regions and/or accounts where you want to run the automation.
+        /// Use this operation to start an automation in multiple Regions and multiple accounts.
+        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
+        /// Automation workflows in multiple Regions and accounts</a> in the <i>Amazon Web Services
+        /// Systems Manager User Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -262,7 +262,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property TargetMaps. 
         /// <para>
         /// A key-value mapping of document parameters to target resources. Both Targets and TargetMaps
-        /// cannot be specified together.
+        /// can't be specified together.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]

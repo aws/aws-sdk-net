@@ -31,27 +31,26 @@ namespace Amazon.SimpleSystemsManagement
     /// <summary>
     /// Interface for accessing SimpleSystemsManagement
     ///
-    /// AWS Systems Manager 
-    /// <para>
-    /// AWS Systems Manager is a collection of capabilities that helps you automate management
-    /// tasks such as collecting system inventory, applying operating system (OS) patches,
-    /// automating the creation of Amazon Machine Images (AMIs), and configuring operating
-    /// systems (OSs) and applications at scale. Systems Manager lets you remotely and securely
-    /// manage the configuration of your managed instances. A <i>managed instance</i> is any
-    /// Amazon Elastic Compute Cloud instance (EC2 instance), or any on-premises server or
-    /// virtual machine (VM) in your hybrid environment that has been configured for Systems
-    /// Manager.
-    /// </para>
+    /// Amazon Web Services Systems Manager is a collection of capabilities that helps you
+    /// automate management tasks such as collecting system inventory, applying operating
+    /// system (OS) patches, automating the creation of Amazon Machine Images (AMIs), and
+    /// configuring operating systems (OSs) and applications at scale. Systems Manager lets
+    /// you remotely and securely manage the configuration of your managed instances. A <i>managed
+    /// instance</i> is any Amazon Elastic Compute Cloud instance (EC2 instance), or any on-premises
+    /// server or virtual machine (VM) in your hybrid environment that has been configured
+    /// for Systems Manager.
+    /// 
     ///  
     /// <para>
-    /// This reference is intended to be used with the <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/">AWS
-    /// Systems Manager User Guide</a>.
+    /// This reference is intended to be used with the <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon
+    /// Web Services Systems Manager User Guide</a>.
     /// </para>
     ///  
     /// <para>
     /// To get started, verify prerequisites and configure managed instances. For more information,
     /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting
-    /// up AWS Systems Manager</a> in the <i>AWS Systems Manager User Guide</i>.
+    /// up Amazon Web Services Systems Manager</a> in the <i>Amazon Web Services Systems Manager
+    /// User Guide</i>.
     /// </para>
     ///  <p class="title"> <b>Related resources</b> 
     /// </para>
@@ -62,21 +61,21 @@ namespace Amazon.SimpleSystemsManagement
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For information about other API actions you can perform on EC2 instances, see the
+    /// For information about other API operations you can perform on EC2 instances, see the
     /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For information about AWS AppConfig, a capability of Systems Manager, see the <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/">AWS
-    /// AppConfig User Guide</a> and the <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/">AWS
-    /// AppConfig API Reference</a>.
+    /// For information about AppConfig, a capability of Systems Manager, see the <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/">AppConfig
+    /// User Guide</a> and the <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/">AppConfig
+    /// API Reference</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For information about AWS Incident Manager, a capability of Systems Manager, see the
-    /// <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/">AWS Incident
-    /// Manager User Guide</a> and the <a href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">AWS
-    /// Incident Manager API Reference</a>.
+    /// For information about Incident Manager, a capability of Systems Manager, see the <a
+    /// href="https://docs.aws.amazon.com/incident-manager/latest/userguide/">Incident Manager
+    /// User Guide</a> and the <a href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">Incident
+    /// Manager API Reference</a>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -99,12 +98,35 @@ namespace Amazon.SimpleSystemsManagement
         /// in different ways, for example, by purpose, owner, or environment. Each tag consists
         /// of a key and an optional value, both of which you define. For example, you could define
         /// a set of tags for your account's managed instances that helps you track each instance's
-        /// owner and stack level. For example: Key=Owner and Value=DbAdmin, SysAdmin, or Dev.
-        /// Or Key=Stack and Value=Production, Pre-Production, or Test.
+        /// owner and stack level. For example:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// Each resource can have a maximum of 50 tags. 
+        ///  <code>Key=Owner,Value=DbAdmin</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Key=Owner,Value=SysAdmin</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Key=Owner,Value=Dev</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Key=Stack,Value=Production</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Key=Stack,Value=Pre-Production</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Key=Stack,Value=Test</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Each resource can have a maximum of 50 tags.
         /// </para>
         ///  
         /// <para>
@@ -115,7 +137,8 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// For more information about using tags with EC2 instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+        /// For more information about using tags with Amazon Elastic Compute Cloud (Amazon EC2)
+        /// instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
         /// your Amazon EC2 resources</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -126,10 +149,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
-        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// The resource ID isn't valid. Verify that you entered the correct ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceTypeException">
-        /// The resource type is not valid. For example, if you are attempting to tag an instance,
+        /// The resource type isn't valid. For example, if you are attempting to tag an instance,
         /// the instance must be a registered, managed instance.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyTagsErrorException">
@@ -151,12 +174,35 @@ namespace Amazon.SimpleSystemsManagement
         /// in different ways, for example, by purpose, owner, or environment. Each tag consists
         /// of a key and an optional value, both of which you define. For example, you could define
         /// a set of tags for your account's managed instances that helps you track each instance's
-        /// owner and stack level. For example: Key=Owner and Value=DbAdmin, SysAdmin, or Dev.
-        /// Or Key=Stack and Value=Production, Pre-Production, or Test.
+        /// owner and stack level. For example:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// Each resource can have a maximum of 50 tags. 
+        ///  <code>Key=Owner,Value=DbAdmin</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Key=Owner,Value=SysAdmin</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Key=Owner,Value=Dev</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Key=Stack,Value=Production</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Key=Stack,Value=Pre-Production</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Key=Stack,Value=Test</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Each resource can have a maximum of 50 tags.
         /// </para>
         ///  
         /// <para>
@@ -167,7 +213,8 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// For more information about using tags with EC2 instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+        /// For more information about using tags with Amazon Elastic Compute Cloud (Amazon EC2)
+        /// instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
         /// your Amazon EC2 resources</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -181,10 +228,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
-        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// The resource ID isn't valid. Verify that you entered the correct ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceTypeException">
-        /// The resource type is not valid. For example, if you are attempting to tag an instance,
+        /// The resource type isn't valid. For example, if you are attempting to tag an instance,
         /// the instance must be a registered, managed instance.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyTagsErrorException">
@@ -205,7 +252,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Associates a related resource to a Systems Manager OpsCenter OpsItem. For example,
         /// you can associate an Incident Manager incident or analysis with an OpsItem. Incident
-        /// Manager is a capability of AWS Systems Manager.
+        /// Manager is a capability of Amazon Web Services Systems Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateOpsItemRelatedItem service method.</param>
         /// 
@@ -236,7 +283,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Associates a related resource to a Systems Manager OpsCenter OpsItem. For example,
         /// you can associate an Incident Manager incident or analysis with an OpsItem. Incident
-        /// Manager is a capability of AWS Systems Manager.
+        /// Manager is a capability of Amazon Web Services Systems Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateOpsItemRelatedItem service method.</param>
         /// <param name="cancellationToken">
@@ -278,34 +325,37 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the CancelCommand service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
-        /// You cannot specify an instance ID in more than one association.
+        /// You can't specify an instance ID in more than one association.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// The specified command ID is not valid. Verify the ID and try again.
+        /// The specified command ID isn't valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand">REST API Reference for CancelCommand Operation</seealso>
         CancelCommandResponse CancelCommand(string commandId);
@@ -319,34 +369,37 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the CancelCommand service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
-        /// You cannot specify an instance ID in more than one association.
+        /// You can't specify an instance ID in more than one association.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// The specified command ID is not valid. Verify the ID and try again.
+        /// The specified command ID isn't valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand">REST API Reference for CancelCommand Operation</seealso>
         CancelCommandResponse CancelCommand(string commandId, List<string> instanceIds);
@@ -359,34 +412,37 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the CancelCommand service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
-        /// You cannot specify an instance ID in more than one association.
+        /// You can't specify an instance ID in more than one association.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// The specified command ID is not valid. Verify the ID and try again.
+        /// The specified command ID isn't valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand">REST API Reference for CancelCommand Operation</seealso>
         CancelCommandResponse CancelCommand(CancelCommandRequest request);
@@ -403,34 +459,37 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the CancelCommand service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
-        /// You cannot specify an instance ID in more than one association.
+        /// You can't specify an instance ID in more than one association.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// The specified command ID is not valid. Verify the ID and try again.
+        /// The specified command ID isn't valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand">REST API Reference for CancelCommand Operation</seealso>
         Task<CancelCommandResponse> CancelCommandAsync(string commandId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -447,34 +506,37 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the CancelCommand service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
-        /// You cannot specify an instance ID in more than one association.
+        /// You can't specify an instance ID in more than one association.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// The specified command ID is not valid. Verify the ID and try again.
+        /// The specified command ID isn't valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand">REST API Reference for CancelCommand Operation</seealso>
         Task<CancelCommandResponse> CancelCommandAsync(string commandId, List<string> instanceIds, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -491,34 +553,37 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the CancelCommand service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
-        /// You cannot specify an instance ID in more than one association.
+        /// You can't specify an instance ID in more than one association.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// The specified command ID is not valid. Verify the ID and try again.
+        /// The specified command ID isn't valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand">REST API Reference for CancelCommand Operation</seealso>
         Task<CancelCommandResponse> CancelCommandAsync(CancelCommandRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -530,20 +595,21 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Stops a maintenance window execution that is already in progress and cancels any tasks
-        /// in the window that have not already starting running. (Tasks already in progress will
-        /// continue to completion.)
+        /// in the window that haven't already starting running. Tasks already in progress will
+        /// continue to completion.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelMaintenanceWindowExecution service method.</param>
         /// 
         /// <returns>The response from the CancelMaintenanceWindowExecution service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -556,8 +622,8 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Stops a maintenance window execution that is already in progress and cancels any tasks
-        /// in the window that have not already starting running. (Tasks already in progress will
-        /// continue to completion.)
+        /// in the window that haven't already starting running. Tasks already in progress will
+        /// continue to completion.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelMaintenanceWindowExecution service method.</param>
         /// <param name="cancellationToken">
@@ -567,12 +633,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the CancelMaintenanceWindowExecution service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -588,18 +655,19 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Generates an activation code and activation ID you can use to register your on-premises
-        /// server or virtual machine (VM) with Systems Manager. Registering these machines with
-        /// Systems Manager makes it possible to manage them using Systems Manager capabilities.
-        /// You use the activation code and ID when installing SSM Agent on machines in your hybrid
-        /// environment. For more information about requirements for managing on-premises instances
-        /// and VMs using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-        /// up AWS Systems Manager for hybrid environments</a> in the <i>AWS Systems Manager User
-        /// Guide</i>. 
+        /// server or virtual machine (VM) with Amazon Web Services Systems Manager. Registering
+        /// these machines with Systems Manager makes it possible to manage them using Systems
+        /// Manager capabilities. You use the activation code and ID when installing SSM Agent
+        /// on machines in your hybrid environment. For more information about requirements for
+        /// managing on-premises instances and VMs using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
+        /// up Amazon Web Services Systems Manager for hybrid environments</a> in the <i>Amazon
+        /// Web Services Systems Manager User Guide</i>. 
         /// 
         ///  <note> 
         /// <para>
-        /// On-premises servers or VMs that are registered with Systems Manager and EC2 instances
-        /// that you manage with Systems Manager are all called <i>managed instances</i>.
+        /// On-premises servers or VMs that are registered with Systems Manager and Amazon Elastic
+        /// Compute Cloud (Amazon EC2) instances that you manage with Systems Manager are all
+        /// called <i>managed instances</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -616,18 +684,19 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Generates an activation code and activation ID you can use to register your on-premises
-        /// server or virtual machine (VM) with Systems Manager. Registering these machines with
-        /// Systems Manager makes it possible to manage them using Systems Manager capabilities.
-        /// You use the activation code and ID when installing SSM Agent on machines in your hybrid
-        /// environment. For more information about requirements for managing on-premises instances
-        /// and VMs using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-        /// up AWS Systems Manager for hybrid environments</a> in the <i>AWS Systems Manager User
-        /// Guide</i>. 
+        /// server or virtual machine (VM) with Amazon Web Services Systems Manager. Registering
+        /// these machines with Systems Manager makes it possible to manage them using Systems
+        /// Manager capabilities. You use the activation code and ID when installing SSM Agent
+        /// on machines in your hybrid environment. For more information about requirements for
+        /// managing on-premises instances and VMs using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
+        /// up Amazon Web Services Systems Manager for hybrid environments</a> in the <i>Amazon
+        /// Web Services Systems Manager User Guide</i>. 
         /// 
         ///  <note> 
         /// <para>
-        /// On-premises servers or VMs that are registered with Systems Manager and EC2 instances
-        /// that you manage with Systems Manager are all called <i>managed instances</i>.
+        /// On-premises servers or VMs that are registered with Systems Manager and Amazon Elastic
+        /// Compute Cloud (Amazon EC2) instances that you manage with Systems Manager are all
+        /// called <i>managed instances</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -653,15 +722,16 @@ namespace Amazon.SimpleSystemsManagement
         /// For example, an association can specify that anti-virus software must be installed
         /// and running on your instances, or that certain ports must be closed. For static targets,
         /// the association specifies a schedule for when the configuration is reapplied. For
-        /// dynamic targets, such as an AWS Resource Group or an AWS Autoscaling Group, State
-        /// Manager applies the configuration when new instances are added to the group. The association
+        /// dynamic targets, such as an Amazon Web Services resource group or an Amazon Web Services
+        /// autoscaling group, State Manager, a capability of Amazon Web Services Systems Manager
+        /// applies the configuration when new instances are added to the group. The association
         /// also specifies actions to take when applying the configuration. For example, an association
-        /// for anti-virus software might run once a day. If the software is not installed, then
-        /// State Manager installs it. If the software is installed, but the service is not running,
+        /// for anti-virus software might run once a day. If the software isn't installed, then
+        /// State Manager installs it. If the software is installed, but the service isn't running,
         /// then the association might instruct State Manager to start the service.
         /// </summary>
-        /// <param name="instanceId">The instance ID. <note>  <code>InstanceId</code> has been deprecated. To specify an instance ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with SSM documents that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you cannot use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter. </note></param>
-        /// <param name="name">The name of the SSM document that contains the configuration information for the instance. You can specify Command or Automation documents. You can specify AWS-predefined documents, documents you created, or a document that is shared with you from another account. For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM document ARN, in the following format:  <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>  For example:  <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>  For AWS-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</param>
+        /// <param name="instanceId">The instance ID. <note>  <code>InstanceId</code> has been deprecated. To specify an instance ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter. </note></param>
+        /// <param name="name">The name of the SSM Command document or Automation runbook that contains the configuration information for the instance. You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another account. For Systems Manager documents (SSM documents) that are shared with you from other accounts, you must specify the complete SSM document ARN, in the following format:  <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>  For example:  <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>  For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</param>
         /// 
         /// <returns>The response from the CreateAssociation service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationAlreadyExistsException">
@@ -674,48 +744,52 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOutputLocationException">
-        /// The output location is not valid or does not exist.
+        /// The output location isn't valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
-        /// You must specify values for all required parameters in the Systems Manager document.
-        /// You can only supply values to parameters defined in the Systems Manager document.
+        /// You must specify values for all required parameters in the Amazon Web Services Systems
+        /// Manager document (SSM document). You can only supply values to parameters defined
+        /// in the SSM document.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidScheduleException">
         /// The schedule is invalid. Verify your cron or rate expression and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
-        /// The target is not valid or does not exist. It might not be configured for Systems
-        /// Manager or you might not have permission to perform the operation.
+        /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
+        /// or you might not have permission to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
-        /// The document does not support the platform type of the given instance ID(s). For example,
+        /// The document doesn't support the platform type of the given instance ID(s). For example,
         /// you sent an document for a Windows instance to a Linux instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">REST API Reference for CreateAssociation Operation</seealso>
@@ -726,11 +800,12 @@ namespace Amazon.SimpleSystemsManagement
         /// For example, an association can specify that anti-virus software must be installed
         /// and running on your instances, or that certain ports must be closed. For static targets,
         /// the association specifies a schedule for when the configuration is reapplied. For
-        /// dynamic targets, such as an AWS Resource Group or an AWS Autoscaling Group, State
-        /// Manager applies the configuration when new instances are added to the group. The association
+        /// dynamic targets, such as an Amazon Web Services resource group or an Amazon Web Services
+        /// autoscaling group, State Manager, a capability of Amazon Web Services Systems Manager
+        /// applies the configuration when new instances are added to the group. The association
         /// also specifies actions to take when applying the configuration. For example, an association
-        /// for anti-virus software might run once a day. If the software is not installed, then
-        /// State Manager installs it. If the software is installed, but the service is not running,
+        /// for anti-virus software might run once a day. If the software isn't installed, then
+        /// State Manager installs it. If the software is installed, but the service isn't running,
         /// then the association might instruct State Manager to start the service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssociation service method.</param>
@@ -746,48 +821,52 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOutputLocationException">
-        /// The output location is not valid or does not exist.
+        /// The output location isn't valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
-        /// You must specify values for all required parameters in the Systems Manager document.
-        /// You can only supply values to parameters defined in the Systems Manager document.
+        /// You must specify values for all required parameters in the Amazon Web Services Systems
+        /// Manager document (SSM document). You can only supply values to parameters defined
+        /// in the SSM document.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidScheduleException">
         /// The schedule is invalid. Verify your cron or rate expression and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
-        /// The target is not valid or does not exist. It might not be configured for Systems
-        /// Manager or you might not have permission to perform the operation.
+        /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
+        /// or you might not have permission to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
-        /// The document does not support the platform type of the given instance ID(s). For example,
+        /// The document doesn't support the platform type of the given instance ID(s). For example,
         /// you sent an document for a Windows instance to a Linux instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">REST API Reference for CreateAssociation Operation</seealso>
@@ -799,15 +878,16 @@ namespace Amazon.SimpleSystemsManagement
         /// For example, an association can specify that anti-virus software must be installed
         /// and running on your instances, or that certain ports must be closed. For static targets,
         /// the association specifies a schedule for when the configuration is reapplied. For
-        /// dynamic targets, such as an AWS Resource Group or an AWS Autoscaling Group, State
-        /// Manager applies the configuration when new instances are added to the group. The association
+        /// dynamic targets, such as an Amazon Web Services resource group or an Amazon Web Services
+        /// autoscaling group, State Manager, a capability of Amazon Web Services Systems Manager
+        /// applies the configuration when new instances are added to the group. The association
         /// also specifies actions to take when applying the configuration. For example, an association
-        /// for anti-virus software might run once a day. If the software is not installed, then
-        /// State Manager installs it. If the software is installed, but the service is not running,
+        /// for anti-virus software might run once a day. If the software isn't installed, then
+        /// State Manager installs it. If the software is installed, but the service isn't running,
         /// then the association might instruct State Manager to start the service.
         /// </summary>
-        /// <param name="instanceId">The instance ID. <note>  <code>InstanceId</code> has been deprecated. To specify an instance ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with SSM documents that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you cannot use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter. </note></param>
-        /// <param name="name">The name of the SSM document that contains the configuration information for the instance. You can specify Command or Automation documents. You can specify AWS-predefined documents, documents you created, or a document that is shared with you from another account. For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM document ARN, in the following format:  <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>  For example:  <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>  For AWS-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</param>
+        /// <param name="instanceId">The instance ID. <note>  <code>InstanceId</code> has been deprecated. To specify an instance ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter. </note></param>
+        /// <param name="name">The name of the SSM Command document or Automation runbook that contains the configuration information for the instance. You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another account. For Systems Manager documents (SSM documents) that are shared with you from other accounts, you must specify the complete SSM document ARN, in the following format:  <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>  For example:  <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>  For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -823,48 +903,52 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOutputLocationException">
-        /// The output location is not valid or does not exist.
+        /// The output location isn't valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
-        /// You must specify values for all required parameters in the Systems Manager document.
-        /// You can only supply values to parameters defined in the Systems Manager document.
+        /// You must specify values for all required parameters in the Amazon Web Services Systems
+        /// Manager document (SSM document). You can only supply values to parameters defined
+        /// in the SSM document.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidScheduleException">
         /// The schedule is invalid. Verify your cron or rate expression and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
-        /// The target is not valid or does not exist. It might not be configured for Systems
-        /// Manager or you might not have permission to perform the operation.
+        /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
+        /// or you might not have permission to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
-        /// The document does not support the platform type of the given instance ID(s). For example,
+        /// The document doesn't support the platform type of the given instance ID(s). For example,
         /// you sent an document for a Windows instance to a Linux instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">REST API Reference for CreateAssociation Operation</seealso>
@@ -876,11 +960,12 @@ namespace Amazon.SimpleSystemsManagement
         /// For example, an association can specify that anti-virus software must be installed
         /// and running on your instances, or that certain ports must be closed. For static targets,
         /// the association specifies a schedule for when the configuration is reapplied. For
-        /// dynamic targets, such as an AWS Resource Group or an AWS Autoscaling Group, State
-        /// Manager applies the configuration when new instances are added to the group. The association
+        /// dynamic targets, such as an Amazon Web Services resource group or an Amazon Web Services
+        /// autoscaling group, State Manager, a capability of Amazon Web Services Systems Manager
+        /// applies the configuration when new instances are added to the group. The association
         /// also specifies actions to take when applying the configuration. For example, an association
-        /// for anti-virus software might run once a day. If the software is not installed, then
-        /// State Manager installs it. If the software is installed, but the service is not running,
+        /// for anti-virus software might run once a day. If the software isn't installed, then
+        /// State Manager installs it. If the software is installed, but the service isn't running,
         /// then the association might instruct State Manager to start the service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssociation service method.</param>
@@ -899,48 +984,52 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOutputLocationException">
-        /// The output location is not valid or does not exist.
+        /// The output location isn't valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
-        /// You must specify values for all required parameters in the Systems Manager document.
-        /// You can only supply values to parameters defined in the Systems Manager document.
+        /// You must specify values for all required parameters in the Amazon Web Services Systems
+        /// Manager document (SSM document). You can only supply values to parameters defined
+        /// in the SSM document.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidScheduleException">
         /// The schedule is invalid. Verify your cron or rate expression and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
-        /// The target is not valid or does not exist. It might not be configured for Systems
-        /// Manager or you might not have permission to perform the operation.
+        /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
+        /// or you might not have permission to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
-        /// The document does not support the platform type of the given instance ID(s). For example,
+        /// The document doesn't support the platform type of the given instance ID(s). For example,
         /// you sent an document for a Windows instance to a Linux instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">REST API Reference for CreateAssociation Operation</seealso>
@@ -952,14 +1041,14 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Associates the specified Systems Manager document with the specified instances or
-        /// targets.
+        /// Associates the specified Amazon Web Services Systems Manager document (SSM document)
+        /// with the specified instances or targets.
         /// 
         ///  
         /// <para>
         /// When you associate a document with one or more instances using instance IDs or tags,
-        /// SSM Agent running on the instance processes the document and configures the instance
-        /// as specified.
+        /// Amazon Web Services Systems Manager Agent (SSM Agent) running on the instance processes
+        /// the document and configures the instance as specified.
         /// </para>
         ///  
         /// <para>
@@ -974,54 +1063,58 @@ namespace Amazon.SimpleSystemsManagement
         /// You can have at most 2,000 active associations.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
-        /// You cannot specify an instance ID in more than one association.
+        /// You can't specify an instance ID in more than one association.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOutputLocationException">
-        /// The output location is not valid or does not exist.
+        /// The output location isn't valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
-        /// You must specify values for all required parameters in the Systems Manager document.
-        /// You can only supply values to parameters defined in the Systems Manager document.
+        /// You must specify values for all required parameters in the Amazon Web Services Systems
+        /// Manager document (SSM document). You can only supply values to parameters defined
+        /// in the SSM document.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidScheduleException">
         /// The schedule is invalid. Verify your cron or rate expression and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
-        /// The target is not valid or does not exist. It might not be configured for Systems
-        /// Manager or you might not have permission to perform the operation.
+        /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
+        /// or you might not have permission to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
-        /// The document does not support the platform type of the given instance ID(s). For example,
+        /// The document doesn't support the platform type of the given instance ID(s). For example,
         /// you sent an document for a Windows instance to a Linux instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">REST API Reference for CreateAssociationBatch Operation</seealso>
@@ -1030,14 +1123,14 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Associates the specified Systems Manager document with the specified instances or
-        /// targets.
+        /// Associates the specified Amazon Web Services Systems Manager document (SSM document)
+        /// with the specified instances or targets.
         /// 
         ///  
         /// <para>
         /// When you associate a document with one or more instances using instance IDs or tags,
-        /// SSM Agent running on the instance processes the document and configures the instance
-        /// as specified.
+        /// Amazon Web Services Systems Manager Agent (SSM Agent) running on the instance processes
+        /// the document and configures the instance as specified.
         /// </para>
         ///  
         /// <para>
@@ -1055,54 +1148,58 @@ namespace Amazon.SimpleSystemsManagement
         /// You can have at most 2,000 active associations.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
-        /// You cannot specify an instance ID in more than one association.
+        /// You can't specify an instance ID in more than one association.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOutputLocationException">
-        /// The output location is not valid or does not exist.
+        /// The output location isn't valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
-        /// You must specify values for all required parameters in the Systems Manager document.
-        /// You can only supply values to parameters defined in the Systems Manager document.
+        /// You must specify values for all required parameters in the Amazon Web Services Systems
+        /// Manager document (SSM document). You can only supply values to parameters defined
+        /// in the SSM document.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidScheduleException">
         /// The schedule is invalid. Verify your cron or rate expression and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
-        /// The target is not valid or does not exist. It might not be configured for Systems
-        /// Manager or you might not have permission to perform the operation.
+        /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
+        /// or you might not have permission to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
-        /// The document does not support the platform type of the given instance ID(s). For example,
+        /// The document doesn't support the platform type of the given instance ID(s). For example,
         /// you sent an document for a Windows instance to a Linux instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">REST API Reference for CreateAssociationBatch Operation</seealso>
@@ -1114,30 +1211,31 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Creates a Systems Manager (SSM) document. An SSM document defines the actions that
-        /// Systems Manager performs on your managed instances. For more information about SSM
-        /// documents, including information about supported schemas, features, and syntax, see
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">AWS
-        /// Systems Manager Documents</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// Creates a Amazon Web Services Systems Manager (SSM document). An SSM document defines
+        /// the actions that Systems Manager performs on your managed instances. For more information
+        /// about SSM documents, including information about supported schemas, features, and
+        /// syntax, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">Amazon
+        /// Web Services Systems Manager Documents</a> in the <i>Amazon Web Services Systems Manager
+        /// User Guide</i>.
         /// </summary>
-        /// <param name="content">The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command. For examples, see the following topics in the <i>AWS Systems Manager User Guide</i>. <ul> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (AWS API)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (AWS CLI)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a>  </li> </ul></param>
-        /// <param name="name">A name for the Systems Manager document. <important> You can't use the following strings as document name prefixes. These are reserved by AWS for use as document name prefixes: <ul> <li>  <code>aws-</code>  </li> <li>  <code>amazon</code>  </li> <li>  <code>amzn</code>  </li> </ul> </important></param>
+        /// <param name="content">The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command. For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>. <ul> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a>  </li> </ul></param>
+        /// <param name="name">A name for the SSM document. <important> You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes: <ul> <li>  <code>aws-</code>  </li> <li>  <code>amazon</code>  </li> <li>  <code>amzn</code>  </li> </ul> </important></param>
         /// 
         /// <returns>The response from the CreateDocument service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentAlreadyExistsException">
         /// The specified document already exists.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentLimitExceededException">
-        /// You can have at most 500 active Systems Manager documents.
+        /// You can have at most 500 active SSM documents.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentContentException">
-        /// The content for the document is not valid.
+        /// The content for the document isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentSchemaVersionException">
-        /// The version of the document schema is not supported.
+        /// The version of the document schema isn't supported.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of a document is 64 KB.
@@ -1146,11 +1244,12 @@ namespace Amazon.SimpleSystemsManagement
         CreateDocumentResponse CreateDocument(string content, string name);
 
         /// <summary>
-        /// Creates a Systems Manager (SSM) document. An SSM document defines the actions that
-        /// Systems Manager performs on your managed instances. For more information about SSM
-        /// documents, including information about supported schemas, features, and syntax, see
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">AWS
-        /// Systems Manager Documents</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// Creates a Amazon Web Services Systems Manager (SSM document). An SSM document defines
+        /// the actions that Systems Manager performs on your managed instances. For more information
+        /// about SSM documents, including information about supported schemas, features, and
+        /// syntax, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">Amazon
+        /// Web Services Systems Manager Documents</a> in the <i>Amazon Web Services Systems Manager
+        /// User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDocument service method.</param>
         /// 
@@ -1159,16 +1258,16 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified document already exists.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentLimitExceededException">
-        /// You can have at most 500 active Systems Manager documents.
+        /// You can have at most 500 active SSM documents.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentContentException">
-        /// The content for the document is not valid.
+        /// The content for the document isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentSchemaVersionException">
-        /// The version of the document schema is not supported.
+        /// The version of the document schema isn't supported.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of a document is 64 KB.
@@ -1178,14 +1277,15 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Creates a Systems Manager (SSM) document. An SSM document defines the actions that
-        /// Systems Manager performs on your managed instances. For more information about SSM
-        /// documents, including information about supported schemas, features, and syntax, see
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">AWS
-        /// Systems Manager Documents</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// Creates a Amazon Web Services Systems Manager (SSM document). An SSM document defines
+        /// the actions that Systems Manager performs on your managed instances. For more information
+        /// about SSM documents, including information about supported schemas, features, and
+        /// syntax, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">Amazon
+        /// Web Services Systems Manager Documents</a> in the <i>Amazon Web Services Systems Manager
+        /// User Guide</i>.
         /// </summary>
-        /// <param name="content">The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command. For examples, see the following topics in the <i>AWS Systems Manager User Guide</i>. <ul> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (AWS API)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (AWS CLI)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a>  </li> </ul></param>
-        /// <param name="name">A name for the Systems Manager document. <important> You can't use the following strings as document name prefixes. These are reserved by AWS for use as document name prefixes: <ul> <li>  <code>aws-</code>  </li> <li>  <code>amazon</code>  </li> <li>  <code>amzn</code>  </li> </ul> </important></param>
+        /// <param name="content">The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command. For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>. <ul> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a>  </li> </ul></param>
+        /// <param name="name">A name for the SSM document. <important> You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes: <ul> <li>  <code>aws-</code>  </li> <li>  <code>amazon</code>  </li> <li>  <code>amzn</code>  </li> </ul> </important></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1195,16 +1295,16 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified document already exists.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentLimitExceededException">
-        /// You can have at most 500 active Systems Manager documents.
+        /// You can have at most 500 active SSM documents.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentContentException">
-        /// The content for the document is not valid.
+        /// The content for the document isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentSchemaVersionException">
-        /// The version of the document schema is not supported.
+        /// The version of the document schema isn't supported.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of a document is 64 KB.
@@ -1214,11 +1314,12 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Creates a Systems Manager (SSM) document. An SSM document defines the actions that
-        /// Systems Manager performs on your managed instances. For more information about SSM
-        /// documents, including information about supported schemas, features, and syntax, see
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">AWS
-        /// Systems Manager Documents</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// Creates a Amazon Web Services Systems Manager (SSM document). An SSM document defines
+        /// the actions that Systems Manager performs on your managed instances. For more information
+        /// about SSM documents, including information about supported schemas, features, and
+        /// syntax, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">Amazon
+        /// Web Services Systems Manager Documents</a> in the <i>Amazon Web Services Systems Manager
+        /// User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDocument service method.</param>
         /// <param name="cancellationToken">
@@ -1230,16 +1331,16 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified document already exists.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentLimitExceededException">
-        /// You can have at most 500 active Systems Manager documents.
+        /// You can have at most 500 active SSM documents.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentContentException">
-        /// The content for the document is not valid.
+        /// The content for the document isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentSchemaVersionException">
-        /// The version of the document schema is not supported.
+        /// The version of the document schema isn't supported.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of a document is 64 KB.
@@ -1282,8 +1383,8 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow">REST API Reference for CreateMaintenanceWindow Operation</seealso>
@@ -1324,8 +1425,8 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow">REST API Reference for CreateMaintenanceWindow Operation</seealso>
@@ -1337,16 +1438,17 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Creates a new OpsItem. You must have permission in AWS Identity and Access Management
+        /// Creates a new OpsItem. You must have permission in Identity and Access Management
         /// (IAM) to create a new OpsItem. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-        /// started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
-        /// remediate operational issues impacting the performance and health of their AWS resources.
-        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
-        /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. 
+        /// Operations engineers and IT professionals use Amazon Web Services Systems Manager
+        /// OpsCenter to view, investigate, and remediate operational issues impacting the performance
+        /// and health of their Amazon Web Services resources. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon
+        /// Web Services Systems Manager OpsCenter</a> in the <i>Amazon Web Services Systems Manager
+        /// User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOpsItem service method.</param>
@@ -1373,16 +1475,17 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Creates a new OpsItem. You must have permission in AWS Identity and Access Management
+        /// Creates a new OpsItem. You must have permission in Identity and Access Management
         /// (IAM) to create a new OpsItem. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-        /// started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
-        /// remediate operational issues impacting the performance and health of their AWS resources.
-        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
-        /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. 
+        /// Operations engineers and IT professionals use Amazon Web Services Systems Manager
+        /// OpsCenter to view, investigate, and remediate operational issues impacting the performance
+        /// and health of their Amazon Web Services resources. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon
+        /// Web Services Systems Manager OpsCenter</a> in the <i>Amazon Web Services Systems Manager
+        /// User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOpsItem service method.</param>
@@ -1415,9 +1518,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// If you create a new application in Application Manager, Systems Manager calls this
-        /// API action to specify information about the new application, including the application
-        /// type.
+        /// If you create a new application in Application Manager, Amazon Web Services Systems
+        /// Manager calls this API operation to specify information about the new application,
+        /// including the application type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOpsMetadata service method.</param>
         /// 
@@ -1445,9 +1548,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// If you create a new application in Application Manager, Systems Manager calls this
-        /// API action to specify information about the new application, including the application
-        /// type.
+        /// If you create a new application in Application Manager, Amazon Web Services Systems
+        /// Manager calls this API operation to specify information about the new application,
+        /// including the application type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOpsMetadata service method.</param>
         /// <param name="cancellationToken">
@@ -1485,8 +1588,8 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  <note> 
         /// <para>
-        /// For information about valid key and value pairs in <code>PatchFilters</code> for each
-        /// supported operating system type, see <a href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.
+        /// For information about valid key-value pairs in <code>PatchFilters</code> for each
+        /// supported operating system type, see <a>PatchFilter</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1506,8 +1609,8 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline">REST API Reference for CreatePatchBaseline Operation</seealso>
@@ -1520,8 +1623,8 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  <note> 
         /// <para>
-        /// For information about valid key and value pairs in <code>PatchFilters</code> for each
-        /// supported operating system type, see <a href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.
+        /// For information about valid key-value pairs in <code>PatchFilters</code> for each
+        /// supported operating system type, see <a>PatchFilter</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1544,8 +1647,8 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline">REST API Reference for CreatePatchBaseline Operation</seealso>
@@ -1558,25 +1661,26 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// A resource data sync helps you view data from multiple sources in a single location.
-        /// Systems Manager offers two types of resource data sync: <code>SyncToDestination</code>
+        /// Amazon Web Services Systems Manager offers two types of resource data sync: <code>SyncToDestination</code>
         /// and <code>SyncFromSource</code>.
         /// 
         ///  
         /// <para>
         /// You can configure Systems Manager Inventory to use the <code>SyncToDestination</code>
-        /// type to synchronize Inventory data from multiple AWS Regions to a single S3 bucket.
-        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
-        /// Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// type to synchronize Inventory data from multiple Regions to a single Amazon Simple
+        /// Storage Service (Amazon S3) bucket. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
+        /// resource data sync for Inventory</a> in the <i>Amazon Web Services Systems Manager
+        /// User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// You can configure Systems Manager Explorer to use the <code>SyncFromSource</code>
         /// type to synchronize operational work items (OpsItems) and operational data (OpsData)
-        /// from multiple AWS Regions to a single S3 bucket. This type can synchronize OpsItems
-        /// and OpsData from multiple AWS accounts and Regions or <code>EntireOrganization</code>
-        /// by using AWS Organizations. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting
+        /// from multiple Regions to a single Amazon S3 bucket. This type can synchronize OpsItems
+        /// and OpsData from multiple accounts and Regions or <code>EntireOrganization</code>
+        /// by using Organizations. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting
         /// up Systems Manager Explorer to display data from multiple accounts and Regions</a>
-        /// in the <i>AWS Systems Manager User Guide</i>.
+        /// in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1586,7 +1690,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  <note> 
         /// <para>
-        /// By default, data is not encrypted in Amazon S3. We strongly recommend that you enable
+        /// By default, data isn't encrypted in Amazon S3. We strongly recommend that you enable
         /// encryption in Amazon S3 to ensure secure data storage. We also recommend that you
         /// secure access to the Amazon S3 bucket by creating a restrictive bucket policy. 
         /// </para>
@@ -1614,25 +1718,26 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// A resource data sync helps you view data from multiple sources in a single location.
-        /// Systems Manager offers two types of resource data sync: <code>SyncToDestination</code>
+        /// Amazon Web Services Systems Manager offers two types of resource data sync: <code>SyncToDestination</code>
         /// and <code>SyncFromSource</code>.
         /// 
         ///  
         /// <para>
         /// You can configure Systems Manager Inventory to use the <code>SyncToDestination</code>
-        /// type to synchronize Inventory data from multiple AWS Regions to a single S3 bucket.
-        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
-        /// Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// type to synchronize Inventory data from multiple Regions to a single Amazon Simple
+        /// Storage Service (Amazon S3) bucket. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
+        /// resource data sync for Inventory</a> in the <i>Amazon Web Services Systems Manager
+        /// User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// You can configure Systems Manager Explorer to use the <code>SyncFromSource</code>
         /// type to synchronize operational work items (OpsItems) and operational data (OpsData)
-        /// from multiple AWS Regions to a single S3 bucket. This type can synchronize OpsItems
-        /// and OpsData from multiple AWS accounts and Regions or <code>EntireOrganization</code>
-        /// by using AWS Organizations. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting
+        /// from multiple Regions to a single Amazon S3 bucket. This type can synchronize OpsItems
+        /// and OpsData from multiple accounts and Regions or <code>EntireOrganization</code>
+        /// by using Organizations. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting
         /// up Systems Manager Explorer to display data from multiple accounts and Regions</a>
-        /// in the <i>AWS Systems Manager User Guide</i>.
+        /// in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1642,7 +1747,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  <note> 
         /// <para>
-        /// By default, data is not encrypted in Amazon S3. We strongly recommend that you enable
+        /// By default, data isn't encrypted in Amazon S3. We strongly recommend that you enable
         /// encryption in Amazon S3 to ensure secure data storage. We also recommend that you
         /// secure access to the Amazon S3 bucket by creating a restrictive bucket policy. 
         /// </para>
@@ -1675,9 +1780,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Deletes an activation. You are not required to delete an activation. If you delete
+        /// Deletes an activation. You aren't required to delete an activation. If you delete
         /// an activation, you can no longer use it to register additional managed instances.
-        /// Deleting an activation does not de-register managed instances. You must manually de-register
+        /// Deleting an activation doesn't de-register managed instances. You must manually de-register
         /// managed instances.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteActivation service method.</param>
@@ -1687,11 +1792,11 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidActivationException">
-        /// The activation is not valid. The activation might have been deleted, or the ActivationId
-        /// and the ActivationCode do not match.
+        /// The activation isn't valid. The activation might have been deleted, or the ActivationId
+        /// and the ActivationCode don't match.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidActivationIdException">
-        /// The activation ID is not valid. Verify the you entered the correct ActivationId or
+        /// The activation ID isn't valid. Verify the you entered the correct ActivationId or
         /// ActivationCode and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
@@ -1703,9 +1808,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Deletes an activation. You are not required to delete an activation. If you delete
+        /// Deletes an activation. You aren't required to delete an activation. If you delete
         /// an activation, you can no longer use it to register additional managed instances.
-        /// Deleting an activation does not de-register managed instances. You must manually de-register
+        /// Deleting an activation doesn't de-register managed instances. You must manually de-register
         /// managed instances.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteActivation service method.</param>
@@ -1718,11 +1823,11 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidActivationException">
-        /// The activation is not valid. The activation might have been deleted, or the ActivationId
-        /// and the ActivationCode do not match.
+        /// The activation isn't valid. The activation might have been deleted, or the ActivationId
+        /// and the ActivationCode don't match.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidActivationIdException">
-        /// The activation ID is not valid. Verify the you entered the correct ActivationId or
+        /// The activation ID isn't valid. Verify the you entered the correct ActivationId or
         /// ActivationCode and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
@@ -1737,49 +1842,53 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Disassociates the specified Systems Manager document from the specified instance.
+        /// Disassociates the specified Amazon Web Services Systems Manager document (SSM document)
+        /// from the specified instance.
         /// 
         ///  
         /// <para>
-        /// When you disassociate a document from an instance, it does not change the configuration
+        /// When you disassociate a document from an instance, it doesn't change the configuration
         /// of the instance. To change the configuration state of an instance after you disassociate
         /// a document, you must create a new document with the desired configuration and associate
         /// it with the instance.
         /// </para>
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
-        /// <param name="name">The name of the Systems Manager document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         /// 
         /// <returns>The response from the DeleteAssociation service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
-        /// The specified association does not exist.
+        /// The specified association doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
@@ -1788,11 +1897,12 @@ namespace Amazon.SimpleSystemsManagement
         DeleteAssociationResponse DeleteAssociation(string instanceId, string name);
 
         /// <summary>
-        /// Disassociates the specified Systems Manager document from the specified instance.
+        /// Disassociates the specified Amazon Web Services Systems Manager document (SSM document)
+        /// from the specified instance.
         /// 
         ///  
         /// <para>
-        /// When you disassociate a document from an instance, it does not change the configuration
+        /// When you disassociate a document from an instance, it doesn't change the configuration
         /// of the instance. To change the configuration state of an instance after you disassociate
         /// a document, you must create a new document with the desired configuration and associate
         /// it with the instance.
@@ -1802,34 +1912,37 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the DeleteAssociation service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
-        /// The specified association does not exist.
+        /// The specified association doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
@@ -1839,52 +1952,56 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Disassociates the specified Systems Manager document from the specified instance.
+        /// Disassociates the specified Amazon Web Services Systems Manager document (SSM document)
+        /// from the specified instance.
         /// 
         ///  
         /// <para>
-        /// When you disassociate a document from an instance, it does not change the configuration
+        /// When you disassociate a document from an instance, it doesn't change the configuration
         /// of the instance. To change the configuration state of an instance after you disassociate
         /// a document, you must create a new document with the desired configuration and associate
         /// it with the instance.
         /// </para>
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
-        /// <param name="name">The name of the Systems Manager document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the DeleteAssociation service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
-        /// The specified association does not exist.
+        /// The specified association doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
@@ -1894,11 +2011,12 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Disassociates the specified Systems Manager document from the specified instance.
+        /// Disassociates the specified Amazon Web Services Systems Manager document (SSM document)
+        /// from the specified instance.
         /// 
         ///  
         /// <para>
-        /// When you disassociate a document from an instance, it does not change the configuration
+        /// When you disassociate a document from an instance, it doesn't change the configuration
         /// of the instance. To change the configuration state of an instance after you disassociate
         /// a document, you must create a new document with the desired configuration and associate
         /// it with the instance.
@@ -1911,34 +2029,37 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the DeleteAssociation service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
-        /// The specified association does not exist.
+        /// The specified association doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
@@ -1952,7 +2073,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Deletes the Systems Manager document and all instance associations to the document.
+        /// Deletes the Amazon Web Services Systems Manager document (SSM document) and all instance
+        /// associations to the document.
         /// 
         ///  
         /// <para>
@@ -1970,7 +2092,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentOperationException">
         /// You attempted to delete a document while it is still shared. You must stop sharing
@@ -1980,7 +2102,8 @@ namespace Amazon.SimpleSystemsManagement
         DeleteDocumentResponse DeleteDocument(string name);
 
         /// <summary>
-        /// Deletes the Systems Manager document and all instance associations to the document.
+        /// Deletes the Amazon Web Services Systems Manager document (SSM document) and all instance
+        /// associations to the document.
         /// 
         ///  
         /// <para>
@@ -1998,7 +2121,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentOperationException">
         /// You attempted to delete a document while it is still shared. You must stop sharing
@@ -2009,7 +2132,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Deletes the Systems Manager document and all instance associations to the document.
+        /// Deletes the Amazon Web Services Systems Manager document (SSM document) and all instance
+        /// associations to the document.
         /// 
         ///  
         /// <para>
@@ -2030,7 +2154,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentOperationException">
         /// You attempted to delete a document while it is still shared. You must stop sharing
@@ -2041,7 +2165,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Deletes the Systems Manager document and all instance associations to the document.
+        /// Deletes the Amazon Web Services Systems Manager document (SSM document) and all instance
+        /// associations to the document.
         /// 
         ///  
         /// <para>
@@ -2062,7 +2187,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentOperationException">
         /// You attempted to delete a document while it is still shared. You must stop sharing
@@ -2088,17 +2213,17 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDeleteInventoryParametersException">
-        /// One or more of the parameters specified for the delete operation is not valid. Verify
+        /// One or more of the parameters specified for the delete operation isn't valid. Verify
         /// all parameters and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInventoryRequestException">
-        /// The request is not valid.
+        /// The request isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOptionException">
-        /// The delete inventory option specified is not valid. Verify the option and try again.
+        /// The delete inventory option specified isn't valid. Verify the option and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
-        /// The parameter type name is not valid.
+        /// The parameter type name isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteInventory">REST API Reference for DeleteInventory Operation</seealso>
         DeleteInventoryResponse DeleteInventory(DeleteInventoryRequest request);
@@ -2120,17 +2245,17 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDeleteInventoryParametersException">
-        /// One or more of the parameters specified for the delete operation is not valid. Verify
+        /// One or more of the parameters specified for the delete operation isn't valid. Verify
         /// all parameters and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInventoryRequestException">
-        /// The request is not valid.
+        /// The request isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOptionException">
-        /// The delete inventory option specified is not valid. Verify the option and try again.
+        /// The delete inventory option specified isn't valid. Verify the option and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
-        /// The parameter type name is not valid.
+        /// The parameter type name isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteInventory">REST API Reference for DeleteInventory Operation</seealso>
         Task<DeleteInventoryResponse> DeleteInventoryAsync(DeleteInventoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2187,7 +2312,7 @@ namespace Amazon.SimpleSystemsManagement
         /// One of the arguments passed is invalid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataNotFoundException">
-        /// The OpsMetadata object does not exist.
+        /// The OpsMetadata object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteOpsMetadata">REST API Reference for DeleteOpsMetadata Operation</seealso>
         DeleteOpsMetadataResponse DeleteOpsMetadata(DeleteOpsMetadataRequest request);
@@ -2210,7 +2335,7 @@ namespace Amazon.SimpleSystemsManagement
         /// One of the arguments passed is invalid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataNotFoundException">
-        /// The OpsMetadata object does not exist.
+        /// The OpsMetadata object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteOpsMetadata">REST API Reference for DeleteOpsMetadata Operation</seealso>
         Task<DeleteOpsMetadataResponse> DeleteOpsMetadataAsync(DeleteOpsMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2230,7 +2355,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
-        /// The parameter could not be found. Verify the name and try again.
+        /// The parameter couldn't be found. Verify the name and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameter">REST API Reference for DeleteParameter Operation</seealso>
         DeleteParameterResponse DeleteParameter(DeleteParameterRequest request);
@@ -2250,7 +2375,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
-        /// The parameter could not be found. Verify the name and try again.
+        /// The parameter couldn't be found. Verify the name and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameter">REST API Reference for DeleteParameter Operation</seealso>
         Task<DeleteParameterResponse> DeleteParameterAsync(DeleteParameterRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2337,9 +2462,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Deletes a Resource Data Sync configuration. After the configuration is deleted, changes
+        /// Deletes a resource data sync configuration. After the configuration is deleted, changes
         /// to data on managed instances are no longer synced to or from the target. Deleting
-        /// a sync configuration does not delete data.
+        /// a sync configuration doesn't delete data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourceDataSync service method.</param>
         /// 
@@ -2351,7 +2476,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified sync configuration is invalid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncNotFoundException">
-        /// The specified sync name was not found.
+        /// The specified sync name wasn't found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourceDataSync">REST API Reference for DeleteResourceDataSync Operation</seealso>
         DeleteResourceDataSyncResponse DeleteResourceDataSync(DeleteResourceDataSyncRequest request);
@@ -2359,9 +2484,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Deletes a Resource Data Sync configuration. After the configuration is deleted, changes
+        /// Deletes a resource data sync configuration. After the configuration is deleted, changes
         /// to data on managed instances are no longer synced to or from the target. Deleting
-        /// a sync configuration does not delete data.
+        /// a sync configuration doesn't delete data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourceDataSync service method.</param>
         /// <param name="cancellationToken">
@@ -2376,7 +2501,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified sync configuration is invalid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncNotFoundException">
-        /// The specified sync name was not found.
+        /// The specified sync name wasn't found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourceDataSync">REST API Reference for DeleteResourceDataSync Operation</seealso>
         Task<DeleteResourceDataSyncResponse> DeleteResourceDataSyncAsync(DeleteResourceDataSyncRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2400,23 +2525,26 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">REST API Reference for DeregisterManagedInstance Operation</seealso>
         DeregisterManagedInstanceResponse DeregisterManagedInstance(DeregisterManagedInstanceRequest request);
@@ -2440,23 +2568,26 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">REST API Reference for DeregisterManagedInstance Operation</seealso>
         Task<DeregisterManagedInstanceResponse> DeregisterManagedInstanceAsync(DeregisterManagedInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2476,7 +2607,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
-        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// The resource ID isn't valid. Verify that you entered the correct ID and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterPatchBaselineForPatchGroup">REST API Reference for DeregisterPatchBaselineForPatchGroup Operation</seealso>
         DeregisterPatchBaselineForPatchGroupResponse DeregisterPatchBaselineForPatchGroup(DeregisterPatchBaselineForPatchGroupRequest request);
@@ -2496,7 +2627,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
-        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// The resource ID isn't valid. Verify that you entered the correct ID and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterPatchBaselineForPatchGroup">REST API Reference for DeregisterPatchBaselineForPatchGroup Operation</seealso>
         Task<DeregisterPatchBaselineForPatchGroupResponse> DeregisterPatchBaselineForPatchGroupAsync(DeregisterPatchBaselineForPatchGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2514,12 +2645,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the DeregisterTargetFromMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -2545,12 +2677,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the DeregisterTargetFromMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -2576,12 +2709,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the DeregisterTaskFromMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -2603,12 +2737,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the DeregisterTaskFromMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -2624,8 +2759,9 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Describes details about the activation, such as the date and time the activation was
-        /// created, its expiration date, the IAM role assigned to the instances in the activation,
-        /// and the number of instances registered by using this activation.
+        /// created, its expiration date, the Identity and Access Management (IAM) role assigned
+        /// to the instances in the activation, and the number of instances registered by using
+        /// this activation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeActivations service method.</param>
         /// 
@@ -2634,10 +2770,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify the you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations">REST API Reference for DescribeActivations Operation</seealso>
         DescribeActivationsResponse DescribeActivations(DescribeActivationsRequest request);
@@ -2646,8 +2782,9 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Describes details about the activation, such as the date and time the activation was
-        /// created, its expiration date, the IAM role assigned to the instances in the activation,
-        /// and the number of instances registered by using this activation.
+        /// created, its expiration date, the Identity and Access Management (IAM) role assigned
+        /// to the instances in the activation, and the number of instances registered by using
+        /// this activation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeActivations service method.</param>
         /// <param name="cancellationToken">
@@ -2659,10 +2796,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify the you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations">REST API Reference for DescribeActivations Operation</seealso>
         Task<DescribeActivationsResponse> DescribeActivationsAsync(DescribeActivationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2676,47 +2813,51 @@ namespace Amazon.SimpleSystemsManagement
         /// Describes the association for the specified target or instance. If you created the
         /// association by using the <code>Targets</code> parameter, then you must retrieve the
         /// association by using the association ID. If you created the association by specifying
-        /// an instance ID and a Systems Manager document, then you retrieve the association by
-        /// specifying the document name and the instance ID.
+        /// an instance ID and an Amazon Web Services Systems Manager document (SSM document),
+        /// then you retrieve the association by specifying the document name and the instance
+        /// ID.
         /// </summary>
         /// <param name="instanceId">The instance ID.</param>
-        /// <param name="name">The name of the Systems Manager document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         /// 
         /// <returns>The response from the DescribeAssociation service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
-        /// The specified association does not exist.
+        /// The specified association doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAssociationVersionException">
-        /// The version you specified is not valid. Use ListAssociationVersions to view all versions
+        /// The version you specified isn't valid. Use ListAssociationVersions to view all versions
         /// of an association according to the association ID. Or, use the <code>$LATEST</code>
         /// parameter to view the latest version of the association.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">REST API Reference for DescribeAssociation Operation</seealso>
         DescribeAssociationResponse DescribeAssociation(string instanceId, string name);
@@ -2725,46 +2866,50 @@ namespace Amazon.SimpleSystemsManagement
         /// Describes the association for the specified target or instance. If you created the
         /// association by using the <code>Targets</code> parameter, then you must retrieve the
         /// association by using the association ID. If you created the association by specifying
-        /// an instance ID and a Systems Manager document, then you retrieve the association by
-        /// specifying the document name and the instance ID.
+        /// an instance ID and an Amazon Web Services Systems Manager document (SSM document),
+        /// then you retrieve the association by specifying the document name and the instance
+        /// ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAssociation service method.</param>
         /// 
         /// <returns>The response from the DescribeAssociation service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
-        /// The specified association does not exist.
+        /// The specified association doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAssociationVersionException">
-        /// The version you specified is not valid. Use ListAssociationVersions to view all versions
+        /// The version you specified isn't valid. Use ListAssociationVersions to view all versions
         /// of an association according to the association ID. Or, use the <code>$LATEST</code>
         /// parameter to view the latest version of the association.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">REST API Reference for DescribeAssociation Operation</seealso>
         DescribeAssociationResponse DescribeAssociation(DescribeAssociationRequest request);
@@ -2774,50 +2919,54 @@ namespace Amazon.SimpleSystemsManagement
         /// Describes the association for the specified target or instance. If you created the
         /// association by using the <code>Targets</code> parameter, then you must retrieve the
         /// association by using the association ID. If you created the association by specifying
-        /// an instance ID and a Systems Manager document, then you retrieve the association by
-        /// specifying the document name and the instance ID.
+        /// an instance ID and an Amazon Web Services Systems Manager document (SSM document),
+        /// then you retrieve the association by specifying the document name and the instance
+        /// ID.
         /// </summary>
         /// <param name="instanceId">The instance ID.</param>
-        /// <param name="name">The name of the Systems Manager document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the DescribeAssociation service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
-        /// The specified association does not exist.
+        /// The specified association doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAssociationVersionException">
-        /// The version you specified is not valid. Use ListAssociationVersions to view all versions
+        /// The version you specified isn't valid. Use ListAssociationVersions to view all versions
         /// of an association according to the association ID. Or, use the <code>$LATEST</code>
         /// parameter to view the latest version of the association.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">REST API Reference for DescribeAssociation Operation</seealso>
         Task<DescribeAssociationResponse> DescribeAssociationAsync(string instanceId, string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -2827,8 +2976,9 @@ namespace Amazon.SimpleSystemsManagement
         /// Describes the association for the specified target or instance. If you created the
         /// association by using the <code>Targets</code> parameter, then you must retrieve the
         /// association by using the association ID. If you created the association by specifying
-        /// an instance ID and a Systems Manager document, then you retrieve the association by
-        /// specifying the document name and the instance ID.
+        /// an instance ID and an Amazon Web Services Systems Manager document (SSM document),
+        /// then you retrieve the association by specifying the document name and the instance
+        /// ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -2837,39 +2987,42 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the DescribeAssociation service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
-        /// The specified association does not exist.
+        /// The specified association doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAssociationVersionException">
-        /// The version you specified is not valid. Use ListAssociationVersions to view all versions
+        /// The version you specified isn't valid. Use ListAssociationVersions to view all versions
         /// of an association according to the association ID. Or, use the <code>$LATEST</code>
         /// parameter to view the latest version of the association.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">REST API Reference for DescribeAssociation Operation</seealso>
         Task<DescribeAssociationResponse> DescribeAssociationAsync(DescribeAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2880,19 +3033,19 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Use this API action to view all executions for a specific association ID.
+        /// Views all executions for a specific association ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAssociationExecutions service method.</param>
         /// 
         /// <returns>The response from the DescribeAssociationExecutions service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
-        /// The specified association does not exist.
+        /// The specified association doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutions">REST API Reference for DescribeAssociationExecutions Operation</seealso>
         DescribeAssociationExecutionsResponse DescribeAssociationExecutions(DescribeAssociationExecutionsRequest request);
@@ -2900,7 +3053,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Use this API action to view all executions for a specific association ID.
+        /// Views all executions for a specific association ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAssociationExecutions service method.</param>
         /// <param name="cancellationToken">
@@ -2909,13 +3062,13 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the DescribeAssociationExecutions service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
-        /// The specified association does not exist.
+        /// The specified association doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutions">REST API Reference for DescribeAssociationExecutions Operation</seealso>
         Task<DescribeAssociationExecutionsResponse> DescribeAssociationExecutionsAsync(DescribeAssociationExecutionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2926,22 +3079,22 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Use this API action to view information about a specific execution of a specific association.
+        /// Views information about a specific execution of a specific association.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAssociationExecutionTargets service method.</param>
         /// 
         /// <returns>The response from the DescribeAssociationExecutionTargets service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
-        /// The specified association does not exist.
+        /// The specified association doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationExecutionDoesNotExistException">
-        /// The specified execution ID does not exist. Verify the ID number and try again.
+        /// The specified execution ID doesn't exist. Verify the ID number and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutionTargets">REST API Reference for DescribeAssociationExecutionTargets Operation</seealso>
         DescribeAssociationExecutionTargetsResponse DescribeAssociationExecutionTargets(DescribeAssociationExecutionTargetsRequest request);
@@ -2949,7 +3102,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Use this API action to view information about a specific execution of a specific association.
+        /// Views information about a specific execution of a specific association.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAssociationExecutionTargets service method.</param>
         /// <param name="cancellationToken">
@@ -2958,16 +3111,16 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the DescribeAssociationExecutionTargets service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
-        /// The specified association does not exist.
+        /// The specified association doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationExecutionDoesNotExistException">
-        /// The specified execution ID does not exist. Verify the ID number and try again.
+        /// The specified execution ID doesn't exist. Verify the ID number and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutionTargets">REST API Reference for DescribeAssociationExecutionTargets Operation</seealso>
         Task<DescribeAssociationExecutionTargetsResponse> DescribeAssociationExecutionTargetsAsync(DescribeAssociationExecutionTargetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2987,13 +3140,13 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterValueException">
-        /// The filter value is not valid. Verify the value and try again.
+        /// The filter value isn't valid. Verify the value and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationExecutions">REST API Reference for DescribeAutomationExecutions Operation</seealso>
         DescribeAutomationExecutionsResponse DescribeAutomationExecutions(DescribeAutomationExecutionsRequest request);
@@ -3013,13 +3166,13 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterValueException">
-        /// The filter value is not valid. Verify the value and try again.
+        /// The filter value isn't valid. Verify the value and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationExecutions">REST API Reference for DescribeAutomationExecutions Operation</seealso>
         Task<DescribeAutomationExecutionsResponse> DescribeAutomationExecutionsAsync(DescribeAutomationExecutionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3043,13 +3196,13 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterValueException">
-        /// The filter value is not valid. Verify the value and try again.
+        /// The filter value isn't valid. Verify the value and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationStepExecutions">REST API Reference for DescribeAutomationStepExecutions Operation</seealso>
         DescribeAutomationStepExecutionsResponse DescribeAutomationStepExecutions(DescribeAutomationStepExecutionsRequest request);
@@ -3073,13 +3226,13 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterValueException">
-        /// The filter value is not valid. Verify the value and try again.
+        /// The filter value isn't valid. Verify the value and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationStepExecutions">REST API Reference for DescribeAutomationStepExecutions Operation</seealso>
         Task<DescribeAutomationStepExecutionsResponse> DescribeAutomationStepExecutionsAsync(DescribeAutomationStepExecutionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3124,25 +3277,25 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Describes the specified Systems Manager document.
+        /// Describes the specified Amazon Web Services Systems Manager document (SSM document).
         /// </summary>
-        /// <param name="name">The name of the Systems Manager document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         /// 
         /// <returns>The response from the DescribeDocument service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument">REST API Reference for DescribeDocument Operation</seealso>
         DescribeDocumentResponse DescribeDocument(string name);
 
         /// <summary>
-        /// Describes the specified Systems Manager document.
+        /// Describes the specified Amazon Web Services Systems Manager document (SSM document).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDocument service method.</param>
         /// 
@@ -3151,19 +3304,19 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument">REST API Reference for DescribeDocument Operation</seealso>
         DescribeDocumentResponse DescribeDocument(DescribeDocumentRequest request);
 
 
         /// <summary>
-        /// Describes the specified Systems Manager document.
+        /// Describes the specified Amazon Web Services Systems Manager document (SSM document).
         /// </summary>
-        /// <param name="name">The name of the Systems Manager document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -3173,17 +3326,17 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument">REST API Reference for DescribeDocument Operation</seealso>
         Task<DescribeDocumentResponse> DescribeDocumentAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
         /// <summary>
-        /// Describes the specified Systems Manager document.
+        /// Describes the specified Amazon Web Services Systems Manager document (SSM document).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDocument service method.</param>
         /// <param name="cancellationToken">
@@ -3195,10 +3348,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument">REST API Reference for DescribeDocument Operation</seealso>
         Task<DescribeDocumentResponse> DescribeDocumentAsync(DescribeDocumentRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3209,9 +3362,10 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Describes the permissions for a Systems Manager document. If you created the document,
-        /// you are the owner. If a document is shared, it can either be shared privately (by
-        /// specifying a user's AWS account ID) or publicly (<i>All</i>).
+        /// Describes the permissions for a Amazon Web Services Systems Manager document (SSM
+        /// document). If you created the document, you are the owner. If a document is shared,
+        /// it can either be shared privately (by specifying a user's account ID) or publicly
+        /// (<i>All</i>).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDocumentPermission service method.</param>
         /// 
@@ -3220,17 +3374,17 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentOperationException">
         /// You attempted to delete a document while it is still shared. You must stop sharing
         /// the document before you can delete it.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidPermissionTypeException">
-        /// The permission type is not supported. <i>Share</i> is the only supported permission
+        /// The permission type isn't supported. <i>Share</i> is the only supported permission
         /// type.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission">REST API Reference for DescribeDocumentPermission Operation</seealso>
@@ -3239,9 +3393,10 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Describes the permissions for a Systems Manager document. If you created the document,
-        /// you are the owner. If a document is shared, it can either be shared privately (by
-        /// specifying a user's AWS account ID) or publicly (<i>All</i>).
+        /// Describes the permissions for a Amazon Web Services Systems Manager document (SSM
+        /// document). If you created the document, you are the owner. If a document is shared,
+        /// it can either be shared privately (by specifying a user's account ID) or publicly
+        /// (<i>All</i>).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDocumentPermission service method.</param>
         /// <param name="cancellationToken">
@@ -3253,17 +3408,17 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentOperationException">
         /// You attempted to delete a document while it is still shared. You must stop sharing
         /// the document before you can delete it.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidPermissionTypeException">
-        /// The permission type is not supported. <i>Share</i> is the only supported permission
+        /// The permission type isn't supported. <i>Share</i> is the only supported permission
         /// type.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission">REST API Reference for DescribeDocumentPermission Operation</seealso>
@@ -3286,26 +3441,29 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectiveInstanceAssociations">REST API Reference for DescribeEffectiveInstanceAssociations Operation</seealso>
         DescribeEffectiveInstanceAssociationsResponse DescribeEffectiveInstanceAssociations(DescribeEffectiveInstanceAssociationsRequest request);
@@ -3327,26 +3485,29 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectiveInstanceAssociations">REST API Reference for DescribeEffectiveInstanceAssociations Operation</seealso>
         Task<DescribeEffectiveInstanceAssociationsResponse> DescribeEffectiveInstanceAssociationsAsync(DescribeEffectiveInstanceAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3358,29 +3519,30 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Retrieves the current effective patches (the patch and the approval state) for the
-        /// specified patch baseline. Note that this API applies only to Windows patch baselines.
+        /// specified patch baseline. Applies to patch baselines for Windows only.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEffectivePatchesForPatchBaseline service method.</param>
         /// 
         /// <returns>The response from the DescribeEffectivePatchesForPatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
-        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// The resource ID isn't valid. Verify that you entered the correct ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedOperatingSystemException">
-        /// The operating systems you specified is not supported, or the operation is not supported
+        /// The operating systems you specified isn't supported, or the operation isn't supported
         /// for the operating system.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline">REST API Reference for DescribeEffectivePatchesForPatchBaseline Operation</seealso>
@@ -3390,7 +3552,7 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Retrieves the current effective patches (the patch and the approval state) for the
-        /// specified patch baseline. Note that this API applies only to Windows patch baselines.
+        /// specified patch baseline. Applies to patch baselines for Windows only.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEffectivePatchesForPatchBaseline service method.</param>
         /// <param name="cancellationToken">
@@ -3400,22 +3562,23 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the DescribeEffectivePatchesForPatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
-        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// The resource ID isn't valid. Verify that you entered the correct ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedOperatingSystemException">
-        /// The operating systems you specified is not supported, or the operation is not supported
+        /// The operating systems you specified isn't supported, or the operation isn't supported
         /// for the operating system.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline">REST API Reference for DescribeEffectivePatchesForPatchBaseline Operation</seealso>
@@ -3438,26 +3601,29 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceAssociationsStatus">REST API Reference for DescribeInstanceAssociationsStatus Operation</seealso>
         DescribeInstanceAssociationsStatusResponse DescribeInstanceAssociationsStatus(DescribeInstanceAssociationsStatusRequest request);
@@ -3479,26 +3645,29 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceAssociationsStatus">REST API Reference for DescribeInstanceAssociationsStatus Operation</seealso>
         Task<DescribeInstanceAssociationsStatusResponse> DescribeInstanceAssociationsStatusAsync(DescribeInstanceAssociationsStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3516,14 +3685,14 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// If you specify one or more instance IDs, it returns information for those instances.
-        /// If you do not specify instance IDs, it returns information for all your instances.
-        /// If you specify an instance ID that is not valid or an instance that you do not own,
+        /// If you don't specify instance IDs, it returns information for all your instances.
+        /// If you specify an instance ID that isn't valid or an instance that you don't own,
         /// you receive an error.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The IamRole field for this API action is the Amazon Identity and Access Management
-        /// (IAM) role assigned to on-premises instances. This call does not return the IAM role
+        /// The <code>IamRole</code> field for this API operation is the Identity and Access Management
+        /// (IAM) role assigned to on-premises instances. This call doesn't return the IAM role
         /// for EC2 instances.
         /// </para>
         ///  </note>
@@ -3534,34 +3703,37 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceInformationFilterValueException">
-        /// The specified filter value is not valid.
+        /// The specified filter value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">REST API Reference for DescribeInstanceInformation Operation</seealso>
         DescribeInstanceInformationResponse DescribeInstanceInformation();
@@ -3575,14 +3747,14 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// If you specify one or more instance IDs, it returns information for those instances.
-        /// If you do not specify instance IDs, it returns information for all your instances.
-        /// If you specify an instance ID that is not valid or an instance that you do not own,
+        /// If you don't specify instance IDs, it returns information for all your instances.
+        /// If you specify an instance ID that isn't valid or an instance that you don't own,
         /// you receive an error.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The IamRole field for this API action is the Amazon Identity and Access Management
-        /// (IAM) role assigned to on-premises instances. This call does not return the IAM role
+        /// The <code>IamRole</code> field for this API operation is the Identity and Access Management
+        /// (IAM) role assigned to on-premises instances. This call doesn't return the IAM role
         /// for EC2 instances.
         /// </para>
         ///  </note>
@@ -3594,34 +3766,37 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceInformationFilterValueException">
-        /// The specified filter value is not valid.
+        /// The specified filter value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">REST API Reference for DescribeInstanceInformation Operation</seealso>
         DescribeInstanceInformationResponse DescribeInstanceInformation(DescribeInstanceInformationRequest request);
@@ -3635,14 +3810,14 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// If you specify one or more instance IDs, it returns information for those instances.
-        /// If you do not specify instance IDs, it returns information for all your instances.
-        /// If you specify an instance ID that is not valid or an instance that you do not own,
+        /// If you don't specify instance IDs, it returns information for all your instances.
+        /// If you specify an instance ID that isn't valid or an instance that you don't own,
         /// you receive an error.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The IamRole field for this API action is the Amazon Identity and Access Management
-        /// (IAM) role assigned to on-premises instances. This call does not return the IAM role
+        /// The <code>IamRole</code> field for this API operation is the Identity and Access Management
+        /// (IAM) role assigned to on-premises instances. This call doesn't return the IAM role
         /// for EC2 instances.
         /// </para>
         ///  </note>
@@ -3656,34 +3831,37 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceInformationFilterValueException">
-        /// The specified filter value is not valid.
+        /// The specified filter value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">REST API Reference for DescribeInstanceInformation Operation</seealso>
         Task<DescribeInstanceInformationResponse> DescribeInstanceInformationAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -3698,14 +3876,14 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// If you specify one or more instance IDs, it returns information for those instances.
-        /// If you do not specify instance IDs, it returns information for all your instances.
-        /// If you specify an instance ID that is not valid or an instance that you do not own,
+        /// If you don't specify instance IDs, it returns information for all your instances.
+        /// If you specify an instance ID that isn't valid or an instance that you don't own,
         /// you receive an error.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The IamRole field for this API action is the Amazon Identity and Access Management
-        /// (IAM) role assigned to on-premises instances. This call does not return the IAM role
+        /// The <code>IamRole</code> field for this API operation is the Identity and Access Management
+        /// (IAM) role assigned to on-premises instances. This call doesn't return the IAM role
         /// for EC2 instances.
         /// </para>
         ///  </note>
@@ -3720,34 +3898,37 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceInformationFilterValueException">
-        /// The specified filter value is not valid.
+        /// The specified filter value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">REST API Reference for DescribeInstanceInformation Operation</seealso>
         Task<DescribeInstanceInformationResponse> DescribeInstanceInformationAsync(DescribeInstanceInformationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3768,31 +3949,34 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify the you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatches">REST API Reference for DescribeInstancePatches Operation</seealso>
         DescribeInstancePatchesResponse DescribeInstancePatches(DescribeInstancePatchesRequest request);
@@ -3813,31 +3997,34 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify the you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatches">REST API Reference for DescribeInstancePatches Operation</seealso>
         Task<DescribeInstancePatchesResponse> DescribeInstancePatchesAsync(DescribeInstancePatchesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3857,7 +4044,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStates">REST API Reference for DescribeInstancePatchStates Operation</seealso>
         DescribeInstancePatchStatesResponse DescribeInstancePatchStates(DescribeInstancePatchStatesRequest request);
@@ -3877,7 +4064,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStates">REST API Reference for DescribeInstancePatchStates Operation</seealso>
         Task<DescribeInstancePatchStatesResponse> DescribeInstancePatchStatesAsync(DescribeInstancePatchStatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3897,10 +4084,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify the you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStatesForPatchGroup">REST API Reference for DescribeInstancePatchStatesForPatchGroup Operation</seealso>
         DescribeInstancePatchStatesForPatchGroupResponse DescribeInstancePatchStatesForPatchGroup(DescribeInstancePatchStatesForPatchGroupRequest request);
@@ -3920,10 +4107,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify the you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStatesForPatchGroup">REST API Reference for DescribeInstancePatchStatesForPatchGroup Operation</seealso>
         Task<DescribeInstancePatchStatesForPatchGroupResponse> DescribeInstancePatchStatesForPatchGroupAsync(DescribeInstancePatchStatesForPatchGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3943,11 +4130,11 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDeletionIdException">
-        /// The ID specified for the delete operation does not exist or is not valid. Verify the
+        /// The ID specified for the delete operation doesn't exist or isn't valid. Verify the
         /// ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInventoryDeletions">REST API Reference for DescribeInventoryDeletions Operation</seealso>
         DescribeInventoryDeletionsResponse DescribeInventoryDeletions(DescribeInventoryDeletionsRequest request);
@@ -3967,11 +4154,11 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDeletionIdException">
-        /// The ID specified for the delete operation does not exist or is not valid. Verify the
+        /// The ID specified for the delete operation doesn't exist or isn't valid. Verify the
         /// ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInventoryDeletions">REST API Reference for DescribeInventoryDeletions Operation</seealso>
         Task<DescribeInventoryDeletionsResponse> DescribeInventoryDeletionsAsync(DescribeInventoryDeletionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4028,12 +4215,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the DescribeMaintenanceWindowExecutionTaskInvocations service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -4056,12 +4244,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the DescribeMaintenanceWindowExecutionTaskInvocations service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -4083,12 +4272,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the DescribeMaintenanceWindowExecutionTasks service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -4110,12 +4300,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the DescribeMaintenanceWindowExecutionTasks service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -4130,7 +4321,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Retrieves the maintenance windows in an AWS account.
+        /// Retrieves the maintenance windows in an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindows service method.</param>
         /// 
@@ -4144,7 +4335,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Retrieves the maintenance windows in an AWS account.
+        /// Retrieves the maintenance windows in an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindows service method.</param>
         /// <param name="cancellationToken">
@@ -4171,12 +4362,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the DescribeMaintenanceWindowSchedule service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -4198,12 +4390,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the DescribeMaintenanceWindowSchedule service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -4261,12 +4454,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the DescribeMaintenanceWindowTargets service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -4288,12 +4482,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the DescribeMaintenanceWindowTargets service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -4312,10 +4507,10 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  <note> 
         /// <para>
-        /// For maintenance window tasks without a specified target, you cannot supply values
-        /// for <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system
+        /// For maintenance window tasks without a specified target, you can't supply values for
+        /// <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system
         /// inserts a placeholder value of <code>1</code>, which may be reported in the response
-        /// to this command. These values do not affect the running of your task and can be ignored.
+        /// to this command. These values don't affect the running of your task and can be ignored.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4324,12 +4519,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the DescribeMaintenanceWindowTasks service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -4345,10 +4541,10 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  <note> 
         /// <para>
-        /// For maintenance window tasks without a specified target, you cannot supply values
-        /// for <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system
+        /// For maintenance window tasks without a specified target, you can't supply values for
+        /// <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system
         /// inserts a placeholder value of <code>1</code>, which may be reported in the response
-        /// to this command. These values do not affect the running of your task and can be ignored.
+        /// to this command. These values don't affect the running of your task and can be ignored.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4360,12 +4556,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the DescribeMaintenanceWindowTasks service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -4380,16 +4577,16 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Query a set of OpsItems. You must have permission in AWS Identity and Access Management
+        /// Query a set of OpsItems. You must have permission in Identity and Access Management
         /// (IAM) to query a list of OpsItems. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-        /// started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
-        /// remediate operational issues impacting the performance and health of their AWS resources.
-        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
-        /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. 
+        /// Operations engineers and IT professionals use Amazon Web Services Systems Manager
+        /// OpsCenter to view, investigate, and remediate operational issues impacting the performance
+        /// and health of their Amazon Web Services resources. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
+        /// in the <i>Amazon Web Services Systems Manager User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOpsItems service method.</param>
@@ -4404,16 +4601,16 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Query a set of OpsItems. You must have permission in AWS Identity and Access Management
+        /// Query a set of OpsItems. You must have permission in Identity and Access Management
         /// (IAM) to query a list of OpsItems. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-        /// started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
-        /// remediate operational issues impacting the performance and health of their AWS resources.
-        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
-        /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. 
+        /// Operations engineers and IT professionals use Amazon Web Services Systems Manager
+        /// OpsCenter to view, investigate, and remediate operational issues impacting the performance
+        /// and health of their Amazon Web Services resources. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
+        /// in the <i>Amazon Web Services Systems Manager User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOpsItems service method.</param>
@@ -4436,7 +4633,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Get information about a parameter.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
         /// Request results are returned on a best-effort basis. If you specify <code>MaxResults</code>
         /// in the request, the response includes information up to the limit specified. The number
@@ -4446,7 +4643,6 @@ namespace Amazon.SimpleSystemsManagement
         /// You can specify the <code>NextToken</code> in a subsequent call to get the next set
         /// of results.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeParameters service method.</param>
         /// 
@@ -4455,17 +4651,17 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterOptionException">
-        /// The specified filter option is not valid. Valid options are Equals and BeginsWith.
+        /// The specified filter option isn't valid. Valid options are Equals and BeginsWith.
         /// For Path filter, valid options are Recursive and OneLevel.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterValueException">
-        /// The filter value is not valid. Verify the value and try again.
+        /// The filter value isn't valid. Verify the value and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">REST API Reference for DescribeParameters Operation</seealso>
         DescribeParametersResponse DescribeParameters(DescribeParametersRequest request);
@@ -4475,7 +4671,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Get information about a parameter.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
         /// Request results are returned on a best-effort basis. If you specify <code>MaxResults</code>
         /// in the request, the response includes information up to the limit specified. The number
@@ -4485,7 +4681,6 @@ namespace Amazon.SimpleSystemsManagement
         /// You can specify the <code>NextToken</code> in a subsequent call to get the next set
         /// of results.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeParameters service method.</param>
         /// <param name="cancellationToken">
@@ -4497,17 +4692,17 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterOptionException">
-        /// The specified filter option is not valid. Valid options are Equals and BeginsWith.
+        /// The specified filter option isn't valid. Valid options are Equals and BeginsWith.
         /// For Path filter, valid options are Recursive and OneLevel.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterValueException">
-        /// The filter value is not valid. Verify the value and try again.
+        /// The filter value isn't valid. Verify the value and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">REST API Reference for DescribeParameters Operation</seealso>
         Task<DescribeParametersResponse> DescribeParametersAsync(DescribeParametersRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4518,7 +4713,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Lists the patch baselines in your AWS account.
+        /// Lists the patch baselines in your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePatchBaselines service method.</param>
         /// 
@@ -4532,7 +4727,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Lists the patch baselines in your AWS account.
+        /// Lists the patch baselines in your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePatchBaselines service method.</param>
         /// <param name="cancellationToken">
@@ -4586,7 +4781,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Returns high-level aggregated patch compliance state for a patch group.
+        /// Returns high-level aggregated patch compliance state information for a patch group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePatchGroupState service method.</param>
         /// 
@@ -4595,7 +4790,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroupState">REST API Reference for DescribePatchGroupState Operation</seealso>
         DescribePatchGroupStateResponse DescribePatchGroupState(DescribePatchGroupStateRequest request);
@@ -4603,7 +4798,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Returns high-level aggregated patch compliance state for a patch group.
+        /// Returns high-level aggregated patch compliance state information for a patch group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePatchGroupState service method.</param>
         /// <param name="cancellationToken">
@@ -4615,7 +4810,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroupState">REST API Reference for DescribePatchGroupState Operation</seealso>
         Task<DescribePatchGroupStateResponse> DescribePatchGroupStateAsync(DescribePatchGroupStateRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4628,7 +4823,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Lists the properties of available patches organized by product, product family, classification,
         /// severity, and other properties of available patches. You can use the reported properties
-        /// in the filters you specify in requests for actions such as <a>CreatePatchBaseline</a>,
+        /// in the filters you specify in requests for operations such as <a>CreatePatchBaseline</a>,
         /// <a>UpdatePatchBaseline</a>, <a>DescribeAvailablePatches</a>, and <a>DescribePatchBaselines</a>.
         /// 
         ///  
@@ -4638,43 +4833,50 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  <dl> <dt>AMAZON_LINUX</dt> <dd> 
         /// <para>
-        /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+        /// Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code>
+        /// 
         /// </para>
         ///  </dd> <dt>AMAZON_LINUX_2</dt> <dd> 
         /// <para>
-        /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+        /// Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code>
+        /// 
         /// </para>
         ///  </dd> <dt>CENTOS</dt> <dd> 
         /// <para>
-        /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+        /// Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code>
+        /// 
         /// </para>
         ///  </dd> <dt>DEBIAN</dt> <dd> 
         /// <para>
-        /// Valid properties: PRODUCT, PRIORITY
+        /// Valid properties: <code>PRODUCT</code> | <code>PRIORITY</code> 
         /// </para>
         ///  </dd> <dt>MACOS</dt> <dd> 
         /// <para>
-        /// Valid properties: PRODUCT, CLASSIFICATION
+        /// Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> 
         /// </para>
         ///  </dd> <dt>ORACLE_LINUX</dt> <dd> 
         /// <para>
-        /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+        /// Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code>
+        /// 
         /// </para>
         ///  </dd> <dt>REDHAT_ENTERPRISE_LINUX</dt> <dd> 
         /// <para>
-        /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+        /// Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code>
+        /// 
         /// </para>
         ///  </dd> <dt>SUSE</dt> <dd> 
         /// <para>
-        /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+        /// Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code>
+        /// 
         /// </para>
         ///  </dd> <dt>UBUNTU</dt> <dd> 
         /// <para>
-        /// Valid properties: PRODUCT, PRIORITY
+        /// Valid properties: <code>PRODUCT</code> | <code>PRIORITY</code> 
         /// </para>
         ///  </dd> <dt>WINDOWS</dt> <dd> 
         /// <para>
-        /// Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY
+        /// Valid properties: <code>PRODUCT</code> | <code>PRODUCT_FAMILY</code> | <code>CLASSIFICATION</code>
+        /// | <code>MSRC_SEVERITY</code> 
         /// </para>
         ///  </dd> </dl>
         /// </summary>
@@ -4692,7 +4894,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Lists the properties of available patches organized by product, product family, classification,
         /// severity, and other properties of available patches. You can use the reported properties
-        /// in the filters you specify in requests for actions such as <a>CreatePatchBaseline</a>,
+        /// in the filters you specify in requests for operations such as <a>CreatePatchBaseline</a>,
         /// <a>UpdatePatchBaseline</a>, <a>DescribeAvailablePatches</a>, and <a>DescribePatchBaselines</a>.
         /// 
         ///  
@@ -4702,43 +4904,50 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  <dl> <dt>AMAZON_LINUX</dt> <dd> 
         /// <para>
-        /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+        /// Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code>
+        /// 
         /// </para>
         ///  </dd> <dt>AMAZON_LINUX_2</dt> <dd> 
         /// <para>
-        /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+        /// Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code>
+        /// 
         /// </para>
         ///  </dd> <dt>CENTOS</dt> <dd> 
         /// <para>
-        /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+        /// Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code>
+        /// 
         /// </para>
         ///  </dd> <dt>DEBIAN</dt> <dd> 
         /// <para>
-        /// Valid properties: PRODUCT, PRIORITY
+        /// Valid properties: <code>PRODUCT</code> | <code>PRIORITY</code> 
         /// </para>
         ///  </dd> <dt>MACOS</dt> <dd> 
         /// <para>
-        /// Valid properties: PRODUCT, CLASSIFICATION
+        /// Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> 
         /// </para>
         ///  </dd> <dt>ORACLE_LINUX</dt> <dd> 
         /// <para>
-        /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+        /// Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code>
+        /// 
         /// </para>
         ///  </dd> <dt>REDHAT_ENTERPRISE_LINUX</dt> <dd> 
         /// <para>
-        /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+        /// Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code>
+        /// 
         /// </para>
         ///  </dd> <dt>SUSE</dt> <dd> 
         /// <para>
-        /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+        /// Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code>
+        /// 
         /// </para>
         ///  </dd> <dt>UBUNTU</dt> <dd> 
         /// <para>
-        /// Valid properties: PRODUCT, PRIORITY
+        /// Valid properties: <code>PRODUCT</code> | <code>PRIORITY</code> 
         /// </para>
         ///  </dd> <dt>WINDOWS</dt> <dd> 
         /// <para>
-        /// Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY
+        /// Valid properties: <code>PRODUCT</code> | <code>PRODUCT_FAMILY</code> | <code>CLASSIFICATION</code>
+        /// | <code>MSRC_SEVERITY</code> 
         /// </para>
         ///  </dd> </dl>
         /// </summary>
@@ -4770,10 +4979,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
         DescribeSessionsResponse DescribeSessions(DescribeSessionsRequest request);
@@ -4794,10 +5003,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
         Task<DescribeSessionsResponse> DescribeSessionsAsync(DescribeSessionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4809,8 +5018,8 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Deletes the association between an OpsItem and a related resource. For example, this
-        /// API action can delete an Incident Manager incident from an OpsItem. Incident Manager
-        /// is a capability of AWS Systems Manager.
+        /// API operation can delete an Incident Manager incident from an OpsItem. Incident Manager
+        /// is a capability of Amazon Web Services Systems Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateOpsItemRelatedItem service method.</param>
         /// 
@@ -4826,7 +5035,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified OpsItem ID doesn't exist. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemRelatedItemAssociationNotFoundException">
-        /// The association was not found using the parameters you specified in the call. Verify
+        /// The association wasn't found using the parameters you specified in the call. Verify
         /// the information and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DisassociateOpsItemRelatedItem">REST API Reference for DisassociateOpsItemRelatedItem Operation</seealso>
@@ -4836,8 +5045,8 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Deletes the association between an OpsItem and a related resource. For example, this
-        /// API action can delete an Incident Manager incident from an OpsItem. Incident Manager
-        /// is a capability of AWS Systems Manager.
+        /// API operation can delete an Incident Manager incident from an OpsItem. Incident Manager
+        /// is a capability of Amazon Web Services Systems Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateOpsItemRelatedItem service method.</param>
         /// <param name="cancellationToken">
@@ -4856,7 +5065,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified OpsItem ID doesn't exist. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemRelatedItemAssociationNotFoundException">
-        /// The association was not found using the parameters you specified in the call. Verify
+        /// The association wasn't found using the parameters you specified in the call. Verify
         /// the information and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DisassociateOpsItemRelatedItem">REST API Reference for DisassociateOpsItemRelatedItem Operation</seealso>
@@ -4910,11 +5119,11 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Gets the state of the AWS Systems Manager Change Calendar at an optional, specified
-        /// time. If you specify a time, <code>GetCalendarState</code> returns the state of the
-        /// calendar at a specific time, and returns the next time that the Change Calendar state
-        /// will transition. If you do not specify a time, <code>GetCalendarState</code> assumes
-        /// the current time. Change Calendar entries have two possible states: <code>OPEN</code>
+        /// Gets the state of a Amazon Web Services Systems Manager change calendar at the current
+        /// time or a specified time. If you specify a time, <code>GetCalendarState</code> returns
+        /// the state of the calendar at that specific time, and returns the next time that the
+        /// change calendar state will transition. If you don't specify a time, <code>GetCalendarState</code>
+        /// uses the current time. Change Calendar entries have two possible states: <code>OPEN</code>
         /// or <code>CLOSED</code>.
         /// 
         ///  
@@ -4925,8 +5134,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// For more information about Systems Manager Change Calendar, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS
-        /// Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// For more information about Change Calendar, a capability of Amazon Web Services Systems
+        /// Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">Amazon
+        /// Web Services Systems Manager Change Calendar</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCalendarState service method.</param>
@@ -4936,14 +5147,14 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentTypeException">
-        /// The document type is not valid. Valid document types are described in the <code>DocumentType</code>
+        /// The SSM document type isn't valid. Valid document types are described in the <code>DocumentType</code>
         /// property.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedCalendarException">
-        /// The calendar entry contained in the specified Systems Manager document is not supported.
+        /// The calendar entry contained in the specified SSM document isn't supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCalendarState">REST API Reference for GetCalendarState Operation</seealso>
         GetCalendarStateResponse GetCalendarState(GetCalendarStateRequest request);
@@ -4951,11 +5162,11 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Gets the state of the AWS Systems Manager Change Calendar at an optional, specified
-        /// time. If you specify a time, <code>GetCalendarState</code> returns the state of the
-        /// calendar at a specific time, and returns the next time that the Change Calendar state
-        /// will transition. If you do not specify a time, <code>GetCalendarState</code> assumes
-        /// the current time. Change Calendar entries have two possible states: <code>OPEN</code>
+        /// Gets the state of a Amazon Web Services Systems Manager change calendar at the current
+        /// time or a specified time. If you specify a time, <code>GetCalendarState</code> returns
+        /// the state of the calendar at that specific time, and returns the next time that the
+        /// change calendar state will transition. If you don't specify a time, <code>GetCalendarState</code>
+        /// uses the current time. Change Calendar entries have two possible states: <code>OPEN</code>
         /// or <code>CLOSED</code>.
         /// 
         ///  
@@ -4966,8 +5177,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// For more information about Systems Manager Change Calendar, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS
-        /// Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// For more information about Change Calendar, a capability of Amazon Web Services Systems
+        /// Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">Amazon
+        /// Web Services Systems Manager Change Calendar</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCalendarState service method.</param>
@@ -4980,14 +5193,14 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentTypeException">
-        /// The document type is not valid. Valid document types are described in the <code>DocumentType</code>
+        /// The SSM document type isn't valid. Valid document types are described in the <code>DocumentType</code>
         /// property.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedCalendarException">
-        /// The calendar entry contained in the specified Systems Manager document is not supported.
+        /// The calendar entry contained in the specified SSM document isn't supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCalendarState">REST API Reference for GetCalendarState Operation</seealso>
         Task<GetCalendarStateResponse> GetCalendarStateAsync(GetCalendarStateRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -5014,34 +5227,37 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// The specified command ID is not valid. Verify the ID and try again.
+        /// The specified command ID isn't valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidPluginNameException">
-        /// The plugin name is not valid.
+        /// The plugin name isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvocationDoesNotExistException">
-        /// The command ID and instance ID you specified did not match any invocations. Verify
+        /// The command ID and instance ID you specified didn't match any invocations. Verify
         /// the command ID and the instance ID and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">REST API Reference for GetCommandInvocation Operation</seealso>
@@ -5069,34 +5285,37 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// The specified command ID is not valid. Verify the ID and try again.
+        /// The specified command ID isn't valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidPluginNameException">
-        /// The plugin name is not valid.
+        /// The plugin name isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvocationDoesNotExistException">
-        /// The command ID and instance ID you specified did not match any invocations. Verify
+        /// The command ID and instance ID you specified didn't match any invocations. Verify
         /// the command ID and the instance ID and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">REST API Reference for GetCommandInvocation Operation</seealso>
@@ -5144,13 +5363,13 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Retrieves the default patch baseline. Note that Systems Manager supports creating
-        /// multiple default patch baselines. For example, you can create a default patch baseline
-        /// for each operating system.
+        /// Retrieves the default patch baseline. Amazon Web Services Systems Manager supports
+        /// creating multiple default patch baselines. For example, you can create a default patch
+        /// baseline for each operating system.
         /// 
         ///  
         /// <para>
-        /// If you do not specify an operating system value, the default patch baseline for Windows
+        /// If you don't specify an operating system value, the default patch baseline for Windows
         /// is returned.
         /// </para>
         /// </summary>
@@ -5166,13 +5385,13 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Retrieves the default patch baseline. Note that Systems Manager supports creating
-        /// multiple default patch baselines. For example, you can create a default patch baseline
-        /// for each operating system.
+        /// Retrieves the default patch baseline. Amazon Web Services Systems Manager supports
+        /// creating multiple default patch baselines. For example, you can create a default patch
+        /// baseline for each operating system.
         /// 
         ///  
         /// <para>
-        /// If you do not specify an operating system value, the default patch baseline for Windows
+        /// If you don't specify an operating system value, the default patch baseline for Windows
         /// is returned.
         /// </para>
         /// </summary>
@@ -5195,7 +5414,20 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Retrieves the current snapshot for the patch baseline the instance uses. This API
-        /// is primarily used by the AWS-RunPatchBaseline Systems Manager document.
+        /// is primarily used by the <code>AWS-RunPatchBaseline</code> Systems Manager document
+        /// (SSM document).
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you run the command locally, such as with the Command Line Interface (CLI), the
+        /// system attempts to use your local AWS credentials and the operation fails. To avoid
+        /// this, you can run the command in the Amazon Web Services Systems Manager console.
+        /// Use Run Command, a capability of Amazon Web Services Systems Manager, with an SSM
+        /// document that enables you to target an instance with a script or command. For example,
+        /// run the command using the <code>AWS-RunShellScript</code> document or the <code>AWS-RunPowerShellScript</code>
+        /// document.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDeployablePatchSnapshotForInstance service method.</param>
         /// 
@@ -5204,13 +5436,15 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedFeatureRequiredException">
-        /// Microsoft application patching is only available on EC2 instances and advanced instances.
-        /// To patch Microsoft applications on on-premises servers and VMs, you must enable advanced
-        /// instances. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html">Using
-        /// the advanced-instances tier</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// Patching for applications released by Microsoft is only available on EC2 instances
+        /// and advanced instances. To patch applications released by Microsoft on on-premises
+        /// servers and VMs, you must enable advanced instances. For more information, see <a
+        /// href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html">Enabling
+        /// the advanced-instances tier</a> in the <i>Amazon Web Services Systems Manager User
+        /// Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedOperatingSystemException">
-        /// The operating systems you specified is not supported, or the operation is not supported
+        /// The operating systems you specified isn't supported, or the operation isn't supported
         /// for the operating system.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance">REST API Reference for GetDeployablePatchSnapshotForInstance Operation</seealso>
@@ -5220,7 +5454,20 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Retrieves the current snapshot for the patch baseline the instance uses. This API
-        /// is primarily used by the AWS-RunPatchBaseline Systems Manager document.
+        /// is primarily used by the <code>AWS-RunPatchBaseline</code> Systems Manager document
+        /// (SSM document).
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you run the command locally, such as with the Command Line Interface (CLI), the
+        /// system attempts to use your local AWS credentials and the operation fails. To avoid
+        /// this, you can run the command in the Amazon Web Services Systems Manager console.
+        /// Use Run Command, a capability of Amazon Web Services Systems Manager, with an SSM
+        /// document that enables you to target an instance with a script or command. For example,
+        /// run the command using the <code>AWS-RunShellScript</code> document or the <code>AWS-RunPowerShellScript</code>
+        /// document.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDeployablePatchSnapshotForInstance service method.</param>
         /// <param name="cancellationToken">
@@ -5232,13 +5479,15 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedFeatureRequiredException">
-        /// Microsoft application patching is only available on EC2 instances and advanced instances.
-        /// To patch Microsoft applications on on-premises servers and VMs, you must enable advanced
-        /// instances. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html">Using
-        /// the advanced-instances tier</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// Patching for applications released by Microsoft is only available on EC2 instances
+        /// and advanced instances. To patch applications released by Microsoft on on-premises
+        /// servers and VMs, you must enable advanced instances. For more information, see <a
+        /// href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html">Enabling
+        /// the advanced-instances tier</a> in the <i>Amazon Web Services Systems Manager User
+        /// Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedOperatingSystemException">
-        /// The operating systems you specified is not supported, or the operation is not supported
+        /// The operating systems you specified isn't supported, or the operation isn't supported
         /// for the operating system.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance">REST API Reference for GetDeployablePatchSnapshotForInstance Operation</seealso>
@@ -5250,25 +5499,27 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Gets the contents of the specified Systems Manager document.
+        /// Gets the contents of the specified Amazon Web Services Systems Manager document (SSM
+        /// document).
         /// </summary>
-        /// <param name="name">The name of the Systems Manager document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         /// 
         /// <returns>The response from the GetDocument service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">REST API Reference for GetDocument Operation</seealso>
         GetDocumentResponse GetDocument(string name);
 
         /// <summary>
-        /// Gets the contents of the specified Systems Manager document.
+        /// Gets the contents of the specified Amazon Web Services Systems Manager document (SSM
+        /// document).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDocument service method.</param>
         /// 
@@ -5277,19 +5528,20 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">REST API Reference for GetDocument Operation</seealso>
         GetDocumentResponse GetDocument(GetDocumentRequest request);
 
 
         /// <summary>
-        /// Gets the contents of the specified Systems Manager document.
+        /// Gets the contents of the specified Amazon Web Services Systems Manager document (SSM
+        /// document).
         /// </summary>
-        /// <param name="name">The name of the Systems Manager document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -5299,17 +5551,18 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">REST API Reference for GetDocument Operation</seealso>
         Task<GetDocumentResponse> GetDocumentAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
         /// <summary>
-        /// Gets the contents of the specified Systems Manager document.
+        /// Gets the contents of the specified Amazon Web Services Systems Manager document (SSM
+        /// document).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDocument service method.</param>
         /// <param name="cancellationToken">
@@ -5321,10 +5574,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">REST API Reference for GetDocument Operation</seealso>
         Task<GetDocumentResponse> GetDocumentAsync(GetDocumentRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -5344,23 +5597,23 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAggregatorException">
-        /// The specified aggregator is not valid for inventory groups. Verify that the aggregator
+        /// The specified aggregator isn't valid for inventory groups. Verify that the aggregator
         /// uses a valid inventory type such as <code>AWS:Application</code> or <code>AWS:InstanceInformation</code>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify the you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInventoryGroupException">
-        /// The specified inventory group is not valid.
+        /// The specified inventory group isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResultAttributeException">
-        /// The specified inventory item result attribute is not valid.
+        /// The specified inventory item result attribute isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
-        /// The parameter type name is not valid.
+        /// The parameter type name isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventory">REST API Reference for GetInventory Operation</seealso>
         GetInventoryResponse GetInventory(GetInventoryRequest request);
@@ -5380,23 +5633,23 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAggregatorException">
-        /// The specified aggregator is not valid for inventory groups. Verify that the aggregator
+        /// The specified aggregator isn't valid for inventory groups. Verify that the aggregator
         /// uses a valid inventory type such as <code>AWS:Application</code> or <code>AWS:InstanceInformation</code>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify the you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInventoryGroupException">
-        /// The specified inventory group is not valid.
+        /// The specified inventory group isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResultAttributeException">
-        /// The specified inventory item result attribute is not valid.
+        /// The specified inventory item result attribute isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
-        /// The parameter type name is not valid.
+        /// The parameter type name isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventory">REST API Reference for GetInventory Operation</seealso>
         Task<GetInventoryResponse> GetInventoryAsync(GetInventoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -5417,10 +5670,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
-        /// The parameter type name is not valid.
+        /// The parameter type name isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventorySchema">REST API Reference for GetInventorySchema Operation</seealso>
         GetInventorySchemaResponse GetInventorySchema(GetInventorySchemaRequest request);
@@ -5441,10 +5694,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
-        /// The parameter type name is not valid.
+        /// The parameter type name isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventorySchema">REST API Reference for GetInventorySchema Operation</seealso>
         Task<GetInventorySchemaResponse> GetInventorySchemaAsync(GetInventorySchemaRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -5462,12 +5715,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the GetMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -5489,12 +5743,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the GetMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -5516,12 +5771,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the GetMaintenanceWindowExecution service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -5543,12 +5799,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the GetMaintenanceWindowExecution service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -5570,12 +5827,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the GetMaintenanceWindowExecutionTask service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -5597,12 +5855,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the GetMaintenanceWindowExecutionTask service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -5624,12 +5883,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the GetMaintenanceWindowExecutionTaskInvocation service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -5651,12 +5911,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the GetMaintenanceWindowExecutionTaskInvocation service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -5675,10 +5936,10 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  <note> 
         /// <para>
-        /// For maintenance window tasks without a specified target, you cannot supply values
-        /// for <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system
+        /// For maintenance window tasks without a specified target, you can't supply values for
+        /// <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system
         /// inserts a placeholder value of <code>1</code>, which may be reported in the response
-        /// to this command. These values do not affect the running of your task and can be ignored.
+        /// to this command. These values don't affect the running of your task and can be ignored.
         /// </para>
         ///  </note>
         /// </summary>
@@ -5687,12 +5948,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the GetMaintenanceWindowTask service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -5708,10 +5970,10 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  <note> 
         /// <para>
-        /// For maintenance window tasks without a specified target, you cannot supply values
-        /// for <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system
+        /// For maintenance window tasks without a specified target, you can't supply values for
+        /// <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system
         /// inserts a placeholder value of <code>1</code>, which may be reported in the response
-        /// to this command. These values do not affect the running of your task and can be ignored.
+        /// to this command. These values don't affect the running of your task and can be ignored.
         /// </para>
         ///  </note>
         /// </summary>
@@ -5723,12 +5985,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the GetMaintenanceWindowTask service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -5743,17 +6006,17 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Get information about an OpsItem by using the ID. You must have permission in AWS
-        /// Identity and Access Management (IAM) to view information about an OpsItem. For more
-        /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-        /// started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// Get information about an OpsItem by using the ID. You must have permission in Identity
+        /// and Access Management (IAM) to view information about an OpsItem. For more information,
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+        /// started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
-        /// remediate operational issues impacting the performance and health of their AWS resources.
-        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
-        /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. 
+        /// Operations engineers and IT professionals use Amazon Web Services Systems Manager
+        /// OpsCenter to view, investigate, and remediate operational issues impacting the performance
+        /// and health of their Amazon Web Services resources. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
+        /// in the <i>Amazon Web Services Systems Manager User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOpsItem service method.</param>
@@ -5771,17 +6034,17 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Get information about an OpsItem by using the ID. You must have permission in AWS
-        /// Identity and Access Management (IAM) to view information about an OpsItem. For more
-        /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-        /// started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// Get information about an OpsItem by using the ID. You must have permission in Identity
+        /// and Access Management (IAM) to view information about an OpsItem. For more information,
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+        /// started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
-        /// remediate operational issues impacting the performance and health of their AWS resources.
-        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
-        /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. 
+        /// Operations engineers and IT professionals use Amazon Web Services Systems Manager
+        /// OpsCenter to view, investigate, and remediate operational issues impacting the performance
+        /// and health of their Amazon Web Services resources. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
+        /// in the <i>Amazon Web Services Systems Manager User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOpsItem service method.</param>
@@ -5817,7 +6080,7 @@ namespace Amazon.SimpleSystemsManagement
         /// One of the arguments passed is invalid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataNotFoundException">
-        /// The OpsMetadata object does not exist.
+        /// The OpsMetadata object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsMetadata">REST API Reference for GetOpsMetadata Operation</seealso>
         GetOpsMetadataResponse GetOpsMetadata(GetOpsMetadataRequest request);
@@ -5840,7 +6103,7 @@ namespace Amazon.SimpleSystemsManagement
         /// One of the arguments passed is invalid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataNotFoundException">
-        /// The OpsMetadata object does not exist.
+        /// The OpsMetadata object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsMetadata">REST API Reference for GetOpsMetadata Operation</seealso>
         Task<GetOpsMetadataResponse> GetOpsMetadataAsync(GetOpsMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -5851,7 +6114,11 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// View a summary of OpsItems based on specified filters and aggregators.
+        /// View a summary of operations metadata (OpsData) based on specified filters and aggregators.
+        /// OpsData can include information about Amazon Web Services Systems Manager OpsCenter
+        /// operational workitems (OpsItems) as well as information about any Amazon Web Services
+        /// resource or service configured to report OpsData to Amazon Web Services Systems Manager
+        /// Explorer.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOpsSummary service method.</param>
         /// 
@@ -5860,20 +6127,20 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAggregatorException">
-        /// The specified aggregator is not valid for inventory groups. Verify that the aggregator
+        /// The specified aggregator isn't valid for inventory groups. Verify that the aggregator
         /// uses a valid inventory type such as <code>AWS:Application</code> or <code>AWS:InstanceInformation</code>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify the you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
-        /// The parameter type name is not valid.
+        /// The parameter type name isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncNotFoundException">
-        /// The specified sync name was not found.
+        /// The specified sync name wasn't found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsSummary">REST API Reference for GetOpsSummary Operation</seealso>
         GetOpsSummaryResponse GetOpsSummary(GetOpsSummaryRequest request);
@@ -5881,7 +6148,11 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// View a summary of OpsItems based on specified filters and aggregators.
+        /// View a summary of operations metadata (OpsData) based on specified filters and aggregators.
+        /// OpsData can include information about Amazon Web Services Systems Manager OpsCenter
+        /// operational workitems (OpsItems) as well as information about any Amazon Web Services
+        /// resource or service configured to report OpsData to Amazon Web Services Systems Manager
+        /// Explorer.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOpsSummary service method.</param>
         /// <param name="cancellationToken">
@@ -5893,20 +6164,20 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAggregatorException">
-        /// The specified aggregator is not valid for inventory groups. Verify that the aggregator
+        /// The specified aggregator isn't valid for inventory groups. Verify that the aggregator
         /// uses a valid inventory type such as <code>AWS:Application</code> or <code>AWS:InstanceInformation</code>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify the you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
-        /// The parameter type name is not valid.
+        /// The parameter type name isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncNotFoundException">
-        /// The specified sync name was not found.
+        /// The specified sync name wasn't found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsSummary">REST API Reference for GetOpsSummary Operation</seealso>
         Task<GetOpsSummaryResponse> GetOpsSummaryAsync(GetOpsSummaryRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -5918,7 +6189,7 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Get information about a parameter by using the parameter name. Don't confuse this
-        /// API action with the <a>GetParameters</a> API action.
+        /// API operation with the <a>GetParameters</a> API operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParameter service method.</param>
         /// 
@@ -5927,13 +6198,13 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidKeyIdException">
-        /// The query key ID is not valid.
+        /// The query key ID isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
-        /// The parameter could not be found. Verify the name and try again.
+        /// The parameter couldn't be found. Verify the name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterVersionNotFoundException">
-        /// The specified parameter version was not found. Verify the parameter name and version,
+        /// The specified parameter version wasn't found. Verify the parameter name and version,
         /// and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameter">REST API Reference for GetParameter Operation</seealso>
@@ -5943,7 +6214,7 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Get information about a parameter by using the parameter name. Don't confuse this
-        /// API action with the <a>GetParameters</a> API action.
+        /// API operation with the <a>GetParameters</a> API operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParameter service method.</param>
         /// <param name="cancellationToken">
@@ -5955,13 +6226,13 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidKeyIdException">
-        /// The query key ID is not valid.
+        /// The query key ID isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
-        /// The parameter could not be found. Verify the name and try again.
+        /// The parameter couldn't be found. Verify the name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterVersionNotFoundException">
-        /// The specified parameter version was not found. Verify the parameter name and version,
+        /// The specified parameter version wasn't found. Verify the parameter name and version,
         /// and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameter">REST API Reference for GetParameter Operation</seealso>
@@ -5982,13 +6253,13 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidKeyIdException">
-        /// The query key ID is not valid.
+        /// The query key ID isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
-        /// The parameter could not be found. Verify the name and try again.
+        /// The parameter couldn't be found. Verify the name and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory">REST API Reference for GetParameterHistory Operation</seealso>
         GetParameterHistoryResponse GetParameterHistory(GetParameterHistoryRequest request);
@@ -6008,13 +6279,13 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidKeyIdException">
-        /// The query key ID is not valid.
+        /// The query key ID isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
-        /// The parameter could not be found. Verify the name and try again.
+        /// The parameter couldn't be found. Verify the name and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory">REST API Reference for GetParameterHistory Operation</seealso>
         Task<GetParameterHistoryResponse> GetParameterHistoryAsync(GetParameterHistoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -6025,8 +6296,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Get details of a parameter. Don't confuse this API action with the <a>GetParameter</a>
-        /// API action.
+        /// Get details of a parameter. Don't confuse this API operation with the <a>GetParameter</a>
+        /// API operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParameters service method.</param>
         /// 
@@ -6035,7 +6306,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidKeyIdException">
-        /// The query key ID is not valid.
+        /// The query key ID isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">REST API Reference for GetParameters Operation</seealso>
         GetParametersResponse GetParameters(GetParametersRequest request);
@@ -6043,8 +6314,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Get details of a parameter. Don't confuse this API action with the <a>GetParameter</a>
-        /// API action.
+        /// Get details of a parameter. Don't confuse this API operation with the <a>GetParameter</a>
+        /// API operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParameters service method.</param>
         /// <param name="cancellationToken">
@@ -6056,7 +6327,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidKeyIdException">
-        /// The query key ID is not valid.
+        /// The query key ID isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">REST API Reference for GetParameters Operation</seealso>
         Task<GetParametersResponse> GetParametersAsync(GetParametersRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -6069,7 +6340,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Retrieve information about one or more parameters in a specific hierarchy. 
         /// 
-        ///  <note> 
+        ///  
         /// <para>
         /// Request results are returned on a best-effort basis. If you specify <code>MaxResults</code>
         /// in the request, the response includes information up to the limit specified. The number
@@ -6079,7 +6350,6 @@ namespace Amazon.SimpleSystemsManagement
         /// You can specify the <code>NextToken</code> in a subsequent call to get the next set
         /// of results.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParametersByPath service method.</param>
         /// 
@@ -6088,20 +6358,20 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterOptionException">
-        /// The specified filter option is not valid. Valid options are Equals and BeginsWith.
+        /// The specified filter option isn't valid. Valid options are Equals and BeginsWith.
         /// For Path filter, valid options are Recursive and OneLevel.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterValueException">
-        /// The filter value is not valid. Verify the value and try again.
+        /// The filter value isn't valid. Verify the value and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidKeyIdException">
-        /// The query key ID is not valid.
+        /// The query key ID isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">REST API Reference for GetParametersByPath Operation</seealso>
         GetParametersByPathResponse GetParametersByPath(GetParametersByPathRequest request);
@@ -6111,7 +6381,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Retrieve information about one or more parameters in a specific hierarchy. 
         /// 
-        ///  <note> 
+        ///  
         /// <para>
         /// Request results are returned on a best-effort basis. If you specify <code>MaxResults</code>
         /// in the request, the response includes information up to the limit specified. The number
@@ -6121,7 +6391,6 @@ namespace Amazon.SimpleSystemsManagement
         /// You can specify the <code>NextToken</code> in a subsequent call to get the next set
         /// of results.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParametersByPath service method.</param>
         /// <param name="cancellationToken">
@@ -6133,20 +6402,20 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterOptionException">
-        /// The specified filter option is not valid. Valid options are Equals and BeginsWith.
+        /// The specified filter option isn't valid. Valid options are Equals and BeginsWith.
         /// For Path filter, valid options are Recursive and OneLevel.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterValueException">
-        /// The filter value is not valid. Verify the value and try again.
+        /// The filter value isn't valid. Verify the value and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidKeyIdException">
-        /// The query key ID is not valid.
+        /// The query key ID isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">REST API Reference for GetParametersByPath Operation</seealso>
         Task<GetParametersByPathResponse> GetParametersByPathAsync(GetParametersByPathRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -6164,19 +6433,20 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the GetPatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
-        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// The resource ID isn't valid. Verify that you entered the correct ID and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaseline">REST API Reference for GetPatchBaseline Operation</seealso>
         GetPatchBaselineResponse GetPatchBaseline(GetPatchBaselineRequest request);
@@ -6194,19 +6464,20 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the GetPatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
-        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// The resource ID isn't valid. Verify that you entered the correct ID and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaseline">REST API Reference for GetPatchBaseline Operation</seealso>
         Task<GetPatchBaselineResponse> GetPatchBaselineAsync(GetPatchBaselineRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -6251,21 +6522,23 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// <code>ServiceSetting</code> is an account-level setting for an AWS service. This
-        /// setting defines how a user interacts with or uses a service or a feature of a service.
-        /// For example, if an AWS service charges money to the account based on feature or service
-        /// usage, then the AWS service team might create a default setting of "false". This means
-        /// the user can't use this feature unless they change the setting to "true" and intentionally
+        /// <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services
+        /// service. This setting defines how a user interacts with or uses a service or a feature
+        /// of a service. For example, if an Amazon Web Services service charges money to the
+        /// account based on feature or service usage, then the Amazon Web Services service team
+        /// might create a default setting of <code>false</code>. This means the user can't use
+        /// this feature unless they change the setting to <code>true</code> and intentionally
         /// opt in for a paid feature.
         /// 
         ///  
         /// <para>
-        /// Services map a <code>SettingId</code> object to a setting value. AWS services teams
-        /// define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>,
-        /// but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code>
-        /// permission for the setting. Use the <a>UpdateServiceSetting</a> API action to change
-        /// the default setting. Or use the <a>ResetServiceSetting</a> to change the value back
-        /// to the original value defined by the AWS service team.
+        /// Services map a <code>SettingId</code> object to a setting value. Amazon Web Services
+        /// services teams define the default value for a <code>SettingId</code>. You can't create
+        /// a new <code>SettingId</code>, but you can overwrite the default value if you have
+        /// the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <a>UpdateServiceSetting</a>
+        /// API operation to change the default setting. Or use the <a>ResetServiceSetting</a>
+        /// to change the value back to the original value defined by the Amazon Web Services
+        /// service team.
         /// </para>
         ///  
         /// <para>
@@ -6279,8 +6552,8 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ServiceSettingNotFoundException">
-        /// The specified service setting was not found. Either the service name or the setting
-        /// has not been provisioned by the AWS service team.
+        /// The specified service setting wasn't found. Either the service name or the setting
+        /// hasn't been provisioned by the Amazon Web Services service team.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetServiceSetting">REST API Reference for GetServiceSetting Operation</seealso>
         GetServiceSettingResponse GetServiceSetting(GetServiceSettingRequest request);
@@ -6288,21 +6561,23 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// <code>ServiceSetting</code> is an account-level setting for an AWS service. This
-        /// setting defines how a user interacts with or uses a service or a feature of a service.
-        /// For example, if an AWS service charges money to the account based on feature or service
-        /// usage, then the AWS service team might create a default setting of "false". This means
-        /// the user can't use this feature unless they change the setting to "true" and intentionally
+        /// <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services
+        /// service. This setting defines how a user interacts with or uses a service or a feature
+        /// of a service. For example, if an Amazon Web Services service charges money to the
+        /// account based on feature or service usage, then the Amazon Web Services service team
+        /// might create a default setting of <code>false</code>. This means the user can't use
+        /// this feature unless they change the setting to <code>true</code> and intentionally
         /// opt in for a paid feature.
         /// 
         ///  
         /// <para>
-        /// Services map a <code>SettingId</code> object to a setting value. AWS services teams
-        /// define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>,
-        /// but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code>
-        /// permission for the setting. Use the <a>UpdateServiceSetting</a> API action to change
-        /// the default setting. Or use the <a>ResetServiceSetting</a> to change the value back
-        /// to the original value defined by the AWS service team.
+        /// Services map a <code>SettingId</code> object to a setting value. Amazon Web Services
+        /// services teams define the default value for a <code>SettingId</code>. You can't create
+        /// a new <code>SettingId</code>, but you can overwrite the default value if you have
+        /// the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <a>UpdateServiceSetting</a>
+        /// API operation to change the default setting. Or use the <a>ResetServiceSetting</a>
+        /// to change the value back to the original value defined by the Amazon Web Services
+        /// service team.
         /// </para>
         ///  
         /// <para>
@@ -6319,8 +6594,8 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ServiceSettingNotFoundException">
-        /// The specified service setting was not found. Either the service name or the setting
-        /// has not been provisioned by the AWS service team.
+        /// The specified service setting wasn't found. Either the service name or the setting
+        /// hasn't been provisioned by the Amazon Web Services service team.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetServiceSetting">REST API Reference for GetServiceSetting Operation</seealso>
         Task<GetServiceSettingResponse> GetServiceSettingAsync(GetServiceSettingRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -6332,9 +6607,9 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// A parameter label is a user-defined alias to help you manage different versions of
-        /// a parameter. When you modify a parameter, Systems Manager automatically saves a new
-        /// version and increments the version number by one. A label can help you remember the
-        /// purpose of a parameter when there are multiple versions. 
+        /// a parameter. When you modify a parameter, Amazon Web Services Systems Manager automatically
+        /// saves a new version and increments the version number by one. A label can help you
+        /// remember the purpose of a parameter when there are multiple versions. 
         /// 
         ///  
         /// <para>
@@ -6375,9 +6650,9 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Labels can't begin with a number, "aws," or "ssm" (not case sensitive). If a label
-        /// fails to meet these requirements, then the label is not associated with a parameter
-        /// and the system displays it in the list of InvalidLabels.
+        /// Labels can't begin with a number, "<code>aws</code>" or "<code>ssm</code>" (not case
+        /// sensitive). If a label fails to meet these requirements, then the label isn't associated
+        /// with a parameter and the system displays it in the list of InvalidLabels.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6388,13 +6663,13 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
-        /// The parameter could not be found. Verify the name and try again.
+        /// The parameter couldn't be found. Verify the name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterVersionLabelLimitExceededException">
         /// A parameter version can have a maximum of ten labels.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterVersionNotFoundException">
-        /// The specified parameter version was not found. Verify the parameter name and version,
+        /// The specified parameter version wasn't found. Verify the parameter name and version,
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
@@ -6407,9 +6682,9 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// A parameter label is a user-defined alias to help you manage different versions of
-        /// a parameter. When you modify a parameter, Systems Manager automatically saves a new
-        /// version and increments the version number by one. A label can help you remember the
-        /// purpose of a parameter when there are multiple versions. 
+        /// a parameter. When you modify a parameter, Amazon Web Services Systems Manager automatically
+        /// saves a new version and increments the version number by one. A label can help you
+        /// remember the purpose of a parameter when there are multiple versions. 
         /// 
         ///  
         /// <para>
@@ -6450,9 +6725,9 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Labels can't begin with a number, "aws," or "ssm" (not case sensitive). If a label
-        /// fails to meet these requirements, then the label is not associated with a parameter
-        /// and the system displays it in the list of InvalidLabels.
+        /// Labels can't begin with a number, "<code>aws</code>" or "<code>ssm</code>" (not case
+        /// sensitive). If a label fails to meet these requirements, then the label isn't associated
+        /// with a parameter and the system displays it in the list of InvalidLabels.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6466,13 +6741,13 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
-        /// The parameter could not be found. Verify the name and try again.
+        /// The parameter couldn't be found. Verify the name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterVersionLabelLimitExceededException">
         /// A parameter version can have a maximum of ten labels.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterVersionNotFoundException">
-        /// The specified parameter version was not found. Verify the parameter name and version,
+        /// The specified parameter version wasn't found. Verify the parameter name and version,
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
@@ -6487,9 +6762,10 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Returns all State Manager associations in the current AWS account and Region. You
-        /// can limit the results to a specific State Manager association document or instance
-        /// by specifying a filter.
+        /// Returns all State Manager associations in the current account and Region. You can
+        /// limit the results to a specific State Manager association document or instance by
+        /// specifying a filter. State Manager is a capability of Amazon Web Services Systems
+        /// Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssociations service method.</param>
         /// 
@@ -6498,7 +6774,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
         ListAssociationsResponse ListAssociations(ListAssociationsRequest request);
@@ -6506,9 +6782,10 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Returns all State Manager associations in the current AWS account and Region. You
-        /// can limit the results to a specific State Manager association document or instance
-        /// by specifying a filter.
+        /// Returns all State Manager associations in the current account and Region. You can
+        /// limit the results to a specific State Manager association document or instance by
+        /// specifying a filter. State Manager is a capability of Amazon Web Services Systems
+        /// Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -6520,7 +6797,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
         Task<ListAssociationsResponse> ListAssociationsAsync(ListAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -6537,13 +6814,13 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the ListAssociationVersions service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
-        /// The specified association does not exist.
+        /// The specified association doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociationVersions">REST API Reference for ListAssociationVersions Operation</seealso>
         ListAssociationVersionsResponse ListAssociationVersions(ListAssociationVersionsRequest request);
@@ -6560,13 +6837,13 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the ListAssociationVersions service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
-        /// The specified association does not exist.
+        /// The specified association doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociationVersions">REST API Reference for ListAssociationVersions Operation</seealso>
         Task<ListAssociationVersionsResponse> ListAssociationVersionsAsync(ListAssociationVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -6579,9 +6856,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// An invocation is copy of a command sent to a specific instance. A command can apply
         /// to one or more instances. A command invocation applies to one instance. For example,
-        /// if a user runs SendCommand against three instances, then a command invocation is created
-        /// for each requested instance ID. ListCommandInvocations provide status about command
-        /// execution.
+        /// if a user runs <code>SendCommand</code> against three instances, then a command invocation
+        /// is created for each requested instance ID. <code>ListCommandInvocations</code> provide
+        /// status about command execution.
         /// </summary>
         /// 
         /// <returns>The response from the ListCommandInvocations service method, as returned by SimpleSystemsManagement.</returns>
@@ -6589,34 +6866,37 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// The specified command ID is not valid. Verify the ID and try again.
+        /// The specified command ID isn't valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">REST API Reference for ListCommandInvocations Operation</seealso>
         ListCommandInvocationsResponse ListCommandInvocations();
@@ -6625,9 +6905,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// An invocation is copy of a command sent to a specific instance. A command can apply
         /// to one or more instances. A command invocation applies to one instance. For example,
-        /// if a user runs SendCommand against three instances, then a command invocation is created
-        /// for each requested instance ID. ListCommandInvocations provide status about command
-        /// execution.
+        /// if a user runs <code>SendCommand</code> against three instances, then a command invocation
+        /// is created for each requested instance ID. <code>ListCommandInvocations</code> provide
+        /// status about command execution.
         /// </summary>
         /// <param name="commandId">(Optional) The invocations for a specific command ID.</param>
         /// 
@@ -6636,34 +6916,37 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// The specified command ID is not valid. Verify the ID and try again.
+        /// The specified command ID isn't valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">REST API Reference for ListCommandInvocations Operation</seealso>
         ListCommandInvocationsResponse ListCommandInvocations(string commandId);
@@ -6671,9 +6954,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// An invocation is copy of a command sent to a specific instance. A command can apply
         /// to one or more instances. A command invocation applies to one instance. For example,
-        /// if a user runs SendCommand against three instances, then a command invocation is created
-        /// for each requested instance ID. ListCommandInvocations provide status about command
-        /// execution.
+        /// if a user runs <code>SendCommand</code> against three instances, then a command invocation
+        /// is created for each requested instance ID. <code>ListCommandInvocations</code> provide
+        /// status about command execution.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCommandInvocations service method.</param>
         /// 
@@ -6682,34 +6965,37 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// The specified command ID is not valid. Verify the ID and try again.
+        /// The specified command ID isn't valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">REST API Reference for ListCommandInvocations Operation</seealso>
         ListCommandInvocationsResponse ListCommandInvocations(ListCommandInvocationsRequest request);
@@ -6718,9 +7004,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// An invocation is copy of a command sent to a specific instance. A command can apply
         /// to one or more instances. A command invocation applies to one instance. For example,
-        /// if a user runs SendCommand against three instances, then a command invocation is created
-        /// for each requested instance ID. ListCommandInvocations provide status about command
-        /// execution.
+        /// if a user runs <code>SendCommand</code> against three instances, then a command invocation
+        /// is created for each requested instance ID. <code>ListCommandInvocations</code> provide
+        /// status about command execution.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -6731,34 +7017,37 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// The specified command ID is not valid. Verify the ID and try again.
+        /// The specified command ID isn't valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">REST API Reference for ListCommandInvocations Operation</seealso>
         Task<ListCommandInvocationsResponse> ListCommandInvocationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -6767,9 +7056,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// An invocation is copy of a command sent to a specific instance. A command can apply
         /// to one or more instances. A command invocation applies to one instance. For example,
-        /// if a user runs SendCommand against three instances, then a command invocation is created
-        /// for each requested instance ID. ListCommandInvocations provide status about command
-        /// execution.
+        /// if a user runs <code>SendCommand</code> against three instances, then a command invocation
+        /// is created for each requested instance ID. <code>ListCommandInvocations</code> provide
+        /// status about command execution.
         /// </summary>
         /// <param name="commandId">(Optional) The invocations for a specific command ID.</param>
         /// <param name="cancellationToken">
@@ -6781,34 +7070,37 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// The specified command ID is not valid. Verify the ID and try again.
+        /// The specified command ID isn't valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">REST API Reference for ListCommandInvocations Operation</seealso>
         Task<ListCommandInvocationsResponse> ListCommandInvocationsAsync(string commandId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -6817,9 +7109,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// An invocation is copy of a command sent to a specific instance. A command can apply
         /// to one or more instances. A command invocation applies to one instance. For example,
-        /// if a user runs SendCommand against three instances, then a command invocation is created
-        /// for each requested instance ID. ListCommandInvocations provide status about command
-        /// execution.
+        /// if a user runs <code>SendCommand</code> against three instances, then a command invocation
+        /// is created for each requested instance ID. <code>ListCommandInvocations</code> provide
+        /// status about command execution.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCommandInvocations service method.</param>
         /// <param name="cancellationToken">
@@ -6831,34 +7123,37 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// The specified command ID is not valid. Verify the ID and try again.
+        /// The specified command ID isn't valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">REST API Reference for ListCommandInvocations Operation</seealso>
         Task<ListCommandInvocationsResponse> ListCommandInvocationsAsync(ListCommandInvocationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -6869,7 +7164,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Lists the commands requested by users of the AWS account.
+        /// Lists the commands requested by users of the account.
         /// </summary>
         /// 
         /// <returns>The response from the ListCommands service method, as returned by SimpleSystemsManagement.</returns>
@@ -6877,41 +7172,44 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// The specified command ID is not valid. Verify the ID and try again.
+        /// The specified command ID isn't valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">REST API Reference for ListCommands Operation</seealso>
         ListCommandsResponse ListCommands();
 
 
         /// <summary>
-        /// Lists the commands requested by users of the AWS account.
+        /// Lists the commands requested by users of the account.
         /// </summary>
         /// <param name="commandId">(Optional) If provided, lists only the specified command.</param>
         /// 
@@ -6920,40 +7218,43 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// The specified command ID is not valid. Verify the ID and try again.
+        /// The specified command ID isn't valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">REST API Reference for ListCommands Operation</seealso>
         ListCommandsResponse ListCommands(string commandId);
 
         /// <summary>
-        /// Lists the commands requested by users of the AWS account.
+        /// Lists the commands requested by users of the account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCommands service method.</param>
         /// 
@@ -6962,41 +7263,44 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// The specified command ID is not valid. Verify the ID and try again.
+        /// The specified command ID isn't valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">REST API Reference for ListCommands Operation</seealso>
         ListCommandsResponse ListCommands(ListCommandsRequest request);
 
 
         /// <summary>
-        /// Lists the commands requested by users of the AWS account.
+        /// Lists the commands requested by users of the account.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -7007,41 +7311,44 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// The specified command ID is not valid. Verify the ID and try again.
+        /// The specified command ID isn't valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">REST API Reference for ListCommands Operation</seealso>
         Task<ListCommandsResponse> ListCommandsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
         /// <summary>
-        /// Lists the commands requested by users of the AWS account.
+        /// Lists the commands requested by users of the account.
         /// </summary>
         /// <param name="commandId">(Optional) If provided, lists only the specified command.</param>
         /// <param name="cancellationToken">
@@ -7053,41 +7360,44 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// The specified command ID is not valid. Verify the ID and try again.
+        /// The specified command ID isn't valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">REST API Reference for ListCommands Operation</seealso>
         Task<ListCommandsResponse> ListCommandsAsync(string commandId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
         /// <summary>
-        /// Lists the commands requested by users of the AWS account.
+        /// Lists the commands requested by users of the account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCommands service method.</param>
         /// <param name="cancellationToken">
@@ -7099,34 +7409,37 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// The specified command ID is not valid. Verify the ID and try again.
+        /// The specified command ID isn't valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">REST API Reference for ListCommands Operation</seealso>
         Task<ListCommandsResponse> ListCommandsAsync(ListCommandsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -7137,7 +7450,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// For a specified resource ID, this API action returns a list of compliance statuses
+        /// For a specified resource ID, this API operation returns a list of compliance statuses
         /// for different resource types. Currently, you can only specify one resource ID per
         /// call. List results depend on the criteria specified in the filter.
         /// </summary>
@@ -7148,16 +7461,16 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify the you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
-        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// The resource ID isn't valid. Verify that you entered the correct ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceTypeException">
-        /// The resource type is not valid. For example, if you are attempting to tag an instance,
+        /// The resource type isn't valid. For example, if you are attempting to tag an instance,
         /// the instance must be a registered, managed instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceItems">REST API Reference for ListComplianceItems Operation</seealso>
@@ -7166,7 +7479,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// For a specified resource ID, this API action returns a list of compliance statuses
+        /// For a specified resource ID, this API operation returns a list of compliance statuses
         /// for different resource types. Currently, you can only specify one resource ID per
         /// call. List results depend on the criteria specified in the filter.
         /// </summary>
@@ -7180,16 +7493,16 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify the you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
-        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// The resource ID isn't valid. Verify that you entered the correct ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceTypeException">
-        /// The resource type is not valid. For example, if you are attempting to tag an instance,
+        /// The resource type isn't valid. For example, if you are attempting to tag an instance,
         /// the instance must be a registered, managed instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceItems">REST API Reference for ListComplianceItems Operation</seealso>
@@ -7212,10 +7525,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify the you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceSummaries">REST API Reference for ListComplianceSummaries Operation</seealso>
         ListComplianceSummariesResponse ListComplianceSummaries(ListComplianceSummariesRequest request);
@@ -7237,10 +7550,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify the you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceSummaries">REST API Reference for ListComplianceSummaries Operation</seealso>
         Task<ListComplianceSummariesResponse> ListComplianceSummariesAsync(ListComplianceSummariesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -7260,13 +7573,13 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentMetadataHistory">REST API Reference for ListDocumentMetadataHistory Operation</seealso>
         ListDocumentMetadataHistoryResponse ListDocumentMetadataHistory(ListDocumentMetadataHistoryRequest request);
@@ -7286,13 +7599,13 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentMetadataHistory">REST API Reference for ListDocumentMetadataHistory Operation</seealso>
         Task<ListDocumentMetadataHistoryResponse> ListDocumentMetadataHistoryAsync(ListDocumentMetadataHistoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -7303,8 +7616,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Returns all Systems Manager (SSM) documents in the current AWS account and Region.
-        /// You can limit the results of this request by using a filter.
+        /// Returns all Systems Manager (SSM) documents in the current account and Region. You
+        /// can limit the results of this request by using a filter.
         /// </summary>
         /// 
         /// <returns>The response from the ListDocuments service method, as returned by SimpleSystemsManagement.</returns>
@@ -7312,18 +7625,18 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">REST API Reference for ListDocuments Operation</seealso>
         ListDocumentsResponse ListDocuments();
 
 
         /// <summary>
-        /// Returns all Systems Manager (SSM) documents in the current AWS account and Region.
-        /// You can limit the results of this request by using a filter.
+        /// Returns all Systems Manager (SSM) documents in the current account and Region. You
+        /// can limit the results of this request by using a filter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDocuments service method.</param>
         /// 
@@ -7332,18 +7645,18 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">REST API Reference for ListDocuments Operation</seealso>
         ListDocumentsResponse ListDocuments(ListDocumentsRequest request);
 
 
         /// <summary>
-        /// Returns all Systems Manager (SSM) documents in the current AWS account and Region.
-        /// You can limit the results of this request by using a filter.
+        /// Returns all Systems Manager (SSM) documents in the current account and Region. You
+        /// can limit the results of this request by using a filter.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -7354,10 +7667,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">REST API Reference for ListDocuments Operation</seealso>
         Task<ListDocumentsResponse> ListDocumentsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -7365,8 +7678,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Returns all Systems Manager (SSM) documents in the current AWS account and Region.
-        /// You can limit the results of this request by using a filter.
+        /// Returns all Systems Manager (SSM) documents in the current account and Region. You
+        /// can limit the results of this request by using a filter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDocuments service method.</param>
         /// <param name="cancellationToken">
@@ -7378,10 +7691,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
-        /// The specified key is not valid.
+        /// The specified key isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">REST API Reference for ListDocuments Operation</seealso>
         Task<ListDocumentsResponse> ListDocumentsAsync(ListDocumentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -7401,10 +7714,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentVersions">REST API Reference for ListDocumentVersions Operation</seealso>
         ListDocumentVersionsResponse ListDocumentVersions(ListDocumentVersionsRequest request);
@@ -7424,10 +7737,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentVersions">REST API Reference for ListDocumentVersions Operation</seealso>
         Task<ListDocumentVersionsResponse> ListDocumentVersionsAsync(ListDocumentVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -7447,34 +7760,37 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify the you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
-        /// The parameter type name is not valid.
+        /// The parameter type name isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListInventoryEntries">REST API Reference for ListInventoryEntries Operation</seealso>
         ListInventoryEntriesResponse ListInventoryEntries(ListInventoryEntriesRequest request);
@@ -7494,34 +7810,37 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify the you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
-        /// The parameter type name is not valid.
+        /// The parameter type name isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListInventoryEntries">REST API Reference for ListInventoryEntries Operation</seealso>
         Task<ListInventoryEntriesResponse> ListInventoryEntriesAsync(ListInventoryEntriesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -7532,8 +7851,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Returns a list of all OpsItem events in the current AWS account and Region. You can
-        /// limit the results to events associated with specific OpsItems by specifying a filter.
+        /// Returns a list of all OpsItem events in the current Region and account. You can limit
+        /// the results to events associated with specific OpsItems by specifying a filter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOpsItemEvents service method.</param>
         /// 
@@ -7559,8 +7878,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Returns a list of all OpsItem events in the current AWS account and Region. You can
-        /// limit the results to events associated with specific OpsItems by specifying a filter.
+        /// Returns a list of all OpsItem events in the current Region and account. You can limit
+        /// the results to events associated with specific OpsItems by specifying a filter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOpsItemEvents service method.</param>
         /// <param name="cancellationToken">
@@ -7634,8 +7953,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Systems Manager calls this API action when displaying all Application Manager OpsMetadata
-        /// objects or blobs.
+        /// Amazon Web Services Systems Manager calls this API operation when displaying all Application
+        /// Manager OpsMetadata objects or blobs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOpsMetadata service method.</param>
         /// 
@@ -7652,8 +7971,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Systems Manager calls this API action when displaying all Application Manager OpsMetadata
-        /// objects or blobs.
+        /// Amazon Web Services Systems Manager calls this API operation when displaying all Application
+        /// Manager OpsMetadata objects or blobs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOpsMetadata service method.</param>
         /// <param name="cancellationToken">
@@ -7687,10 +8006,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify the you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceComplianceSummaries">REST API Reference for ListResourceComplianceSummaries Operation</seealso>
         ListResourceComplianceSummariesResponse ListResourceComplianceSummaries(ListResourceComplianceSummariesRequest request);
@@ -7712,10 +8031,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify the you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceComplianceSummaries">REST API Reference for ListResourceComplianceSummaries Operation</seealso>
         Task<ListResourceComplianceSummariesResponse> ListResourceComplianceSummariesAsync(ListResourceComplianceSummariesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -7748,7 +8067,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncInvalidConfigurationException">
         /// The specified sync configuration is invalid.
@@ -7784,7 +8103,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
-        /// The specified token is not valid.
+        /// The specified token isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncInvalidConfigurationException">
         /// The specified sync configuration is invalid.
@@ -7799,6 +8118,11 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Returns a list of the tags assigned to the specified resource.
+        /// 
+        ///  
+        /// <para>
+        /// For information about the ID format for each supported resource type, see <a>AddTagsToResource</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -7807,10 +8131,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
-        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// The resource ID isn't valid. Verify that you entered the correct ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceTypeException">
-        /// The resource type is not valid. For example, if you are attempting to tag an instance,
+        /// The resource type isn't valid. For example, if you are attempting to tag an instance,
         /// the instance must be a registered, managed instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
@@ -7820,6 +8144,11 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Returns a list of the tags assigned to the specified resource.
+        /// 
+        ///  
+        /// <para>
+        /// For information about the ID format for each supported resource type, see <a>AddTagsToResource</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -7831,10 +8160,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
-        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// The resource ID isn't valid. Verify that you entered the correct ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceTypeException">
-        /// The resource type is not valid. For example, if you are attempting to tag an instance,
+        /// The resource type isn't valid. For example, if you are attempting to tag an instance,
         /// the instance must be a registered, managed instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
@@ -7846,29 +8175,30 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Shares a Systems Manager document publicly or privately. If you share a document privately,
-        /// you must specify the AWS user account IDs for those people who can use the document.
-        /// If you share a document publicly, you must specify <i>All</i> as the account ID.
+        /// Shares a Amazon Web Services Systems Manager document (SSM document)publicly or privately.
+        /// If you share a document privately, you must specify the Amazon Web Services user account
+        /// IDs for those people who can use the document. If you share a document publicly, you
+        /// must specify <i>All</i> as the account ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDocumentPermission service method.</param>
         /// 
         /// <returns>The response from the ModifyDocumentPermission service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentLimitExceededException">
-        /// You can have at most 500 active Systems Manager documents.
+        /// You can have at most 500 active SSM documents.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentPermissionLimitException">
-        /// The document cannot be shared with more AWS user accounts. You can share a document
-        /// with a maximum of 20 accounts. You can publicly share up to five documents. If you
-        /// need to increase this limit, contact AWS Support.
+        /// The document can't be shared with more Amazon Web Services user accounts. You can
+        /// share a document with a maximum of 20 accounts. You can publicly share up to five
+        /// documents. If you need to increase this limit, contact Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidPermissionTypeException">
-        /// The permission type is not supported. <i>Share</i> is the only supported permission
+        /// The permission type isn't supported. <i>Share</i> is the only supported permission
         /// type.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission">REST API Reference for ModifyDocumentPermission Operation</seealso>
@@ -7877,9 +8207,10 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Shares a Systems Manager document publicly or privately. If you share a document privately,
-        /// you must specify the AWS user account IDs for those people who can use the document.
-        /// If you share a document publicly, you must specify <i>All</i> as the account ID.
+        /// Shares a Amazon Web Services Systems Manager document (SSM document)publicly or privately.
+        /// If you share a document privately, you must specify the Amazon Web Services user account
+        /// IDs for those people who can use the document. If you share a document publicly, you
+        /// must specify <i>All</i> as the account ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDocumentPermission service method.</param>
         /// <param name="cancellationToken">
@@ -7888,21 +8219,21 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the ModifyDocumentPermission service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentLimitExceededException">
-        /// You can have at most 500 active Systems Manager documents.
+        /// You can have at most 500 active SSM documents.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentPermissionLimitException">
-        /// The document cannot be shared with more AWS user accounts. You can share a document
-        /// with a maximum of 20 accounts. You can publicly share up to five documents. If you
-        /// need to increase this limit, contact AWS Support.
+        /// The document can't be shared with more Amazon Web Services user accounts. You can
+        /// share a document with a maximum of 20 accounts. You can publicly share up to five
+        /// documents. If you need to increase this limit, contact Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidPermissionTypeException">
-        /// The permission type is not supported. <i>Share</i> is the only supported permission
+        /// The permission type isn't supported. <i>Share</i> is the only supported permission
         /// type.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission">REST API Reference for ModifyDocumentPermission Operation</seealso>
@@ -7915,7 +8246,7 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Registers a compliance type and other compliance details on a designated resource.
-        /// This action lets you register custom compliance details with a resource. This call
+        /// This operation lets you register custom compliance details with a resource. This call
         /// overwrites existing compliance information on the resource, so you must provide a
         /// full list of compliance items each time that you send the request.
         /// 
@@ -7956,7 +8287,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DocumentName: A SSM document name. For example, AWS-RunPatchBaseline.
+        /// DocumentName: An SSM document name. For example, <code>AWS-RunPatchBaseline</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8000,13 +8331,13 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidItemContentException">
-        /// One or more content items is not valid.
+        /// One or more content items isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
-        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// The resource ID isn't valid. Verify that you entered the correct ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceTypeException">
-        /// The resource type is not valid. For example, if you are attempting to tag an instance,
+        /// The resource type isn't valid. For example, if you are attempting to tag an instance,
         /// the instance must be a registered, managed instance.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ItemSizeLimitExceededException">
@@ -8022,7 +8353,7 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Registers a compliance type and other compliance details on a designated resource.
-        /// This action lets you register custom compliance details with a resource. This call
+        /// This operation lets you register custom compliance details with a resource. This call
         /// overwrites existing compliance information on the resource, so you must provide a
         /// full list of compliance items each time that you send the request.
         /// 
@@ -8063,7 +8394,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DocumentName: A SSM document name. For example, AWS-RunPatchBaseline.
+        /// DocumentName: An SSM document name. For example, <code>AWS-RunPatchBaseline</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8110,13 +8441,13 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidItemContentException">
-        /// One or more content items is not valid.
+        /// One or more content items isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
-        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// The resource ID isn't valid. Verify that you entered the correct ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceTypeException">
-        /// The resource type is not valid. For example, if you are attempting to tag an instance,
+        /// The resource type isn't valid. For example, if you are attempting to tag an instance,
         /// the instance must be a registered, managed instance.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ItemSizeLimitExceededException">
@@ -8150,33 +8481,36 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInventoryItemContextException">
         /// You specified invalid keys or values in the <code>Context</code> attribute for <code>InventoryItem</code>.
         /// Verify the keys and values, and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidItemContentException">
-        /// One or more content items is not valid.
+        /// One or more content items isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
-        /// The parameter type name is not valid.
+        /// The parameter type name isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ItemContentMismatchException">
         /// The inventory item has invalid content.
@@ -8192,8 +8526,8 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedInventoryItemContextException">
         /// The <code>Context</code> attribute that you specified for the <code>InventoryItem</code>
-        /// is not allowed for this inventory type. You can only use the <code>Context</code>
-        /// attribute with inventory types like <code>AWS:ComplianceItem</code>.
+        /// isn't allowed for this inventory type. You can only use the <code>Context</code> attribute
+        /// with inventory types like <code>AWS:ComplianceItem</code>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedInventorySchemaVersionException">
         /// Inventory item type schema version has to match supported versions in the service.
@@ -8224,33 +8558,36 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInventoryItemContextException">
         /// You specified invalid keys or values in the <code>Context</code> attribute for <code>InventoryItem</code>.
         /// Verify the keys and values, and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidItemContentException">
-        /// One or more content items is not valid.
+        /// One or more content items isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
-        /// The parameter type name is not valid.
+        /// The parameter type name isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ItemContentMismatchException">
         /// The inventory item has invalid content.
@@ -8266,8 +8603,8 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedInventoryItemContextException">
         /// The <code>Context</code> attribute that you specified for the <code>InventoryItem</code>
-        /// is not allowed for this inventory type. You can only use the <code>Context</code>
-        /// attribute with inventory types like <code>AWS:ComplianceItem</code>.
+        /// isn't allowed for this inventory type. You can only use the <code>Context</code> attribute
+        /// with inventory types like <code>AWS:ComplianceItem</code>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedInventorySchemaVersionException">
         /// Inventory item type schema version has to match supported versions in the service.
@@ -8289,10 +8626,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the PutParameter service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.HierarchyLevelLimitExceededException">
         /// A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
-        /// and constraints for parameter names</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// and constraints for parameter names</a> in the <i>Amazon Web Services Systems Manager
+        /// User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.HierarchyTypeMismatchException">
-        /// Parameter Store does not support changing a parameter type in a hierarchy. For example,
+        /// Parameter Store doesn't support changing a parameter type in a hierarchy. For example,
         /// you can't change a parameter from a <code>String</code> type to a <code>SecureString</code>
         /// type. You must create a new, unique parameter.
         /// </exception>
@@ -8304,31 +8642,30 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAllowedPatternException">
-        /// The request does not meet the regular expression requirement.
+        /// The request doesn't meet the regular expression requirement.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidKeyIdException">
-        /// The query key ID is not valid.
+        /// The query key ID isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidPolicyAttributeException">
         /// A policy attribute or its value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidPolicyTypeException">
-        /// The policy type is not supported. Parameter Store supports the following policy types:
+        /// The policy type isn't supported. Parameter Store supports the following policy types:
         /// Expiration, ExpirationNotification, and NoChangeNotification.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterAlreadyExistsException">
         /// The parameter already exists. You can't create duplicate parameters.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterLimitExceededException">
-        /// You have exceeded the number of parameters for this AWS account. Delete one or more
-        /// parameters and try again.
+        /// You have exceeded the number of parameters for this account. Delete one or more parameters
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterMaxVersionLimitExceededException">
         /// Parameter Store retains the 100 most recently created versions of a parameter. After
         /// this number of versions has been created, Parameter Store deletes the oldest version
         /// when a new one is created. However, if the oldest version has a <i>label</i> attached
-        /// to it, Parameter Store will not delete the version and instead presents this error
-        /// message:
+        /// to it, Parameter Store won't delete the version and instead presents this error message:
         /// 
         ///  
         /// <para>
@@ -8345,11 +8682,12 @@ namespace Amazon.SimpleSystemsManagement
         /// from the oldest version of the parameter to a newer one for use in your operations.
         /// For information about moving parameter labels, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-console-move">Move
         /// a parameter label (console)</a> or <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-cli-move">Move
-        /// a parameter label (CLI)</a> in the <i>AWS Systems Manager User Guide</i>. 
+        /// a parameter label (CLI)</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+        /// 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterPatternMismatchException">
-        /// The parameter name is not valid.
+        /// The parameter name isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.PoliciesLimitExceededException">
         /// You specified more than the maximum number of allowed policies for the parameter.
@@ -8359,7 +8697,7 @@ namespace Amazon.SimpleSystemsManagement
         /// There are concurrent updates for a resource that supports one update at a time.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedParameterTypeException">
-        /// The parameter type is not supported.
+        /// The parameter type isn't supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter">REST API Reference for PutParameter Operation</seealso>
         PutParameterResponse PutParameter(PutParameterRequest request);
@@ -8377,10 +8715,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the PutParameter service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.HierarchyLevelLimitExceededException">
         /// A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
-        /// and constraints for parameter names</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// and constraints for parameter names</a> in the <i>Amazon Web Services Systems Manager
+        /// User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.HierarchyTypeMismatchException">
-        /// Parameter Store does not support changing a parameter type in a hierarchy. For example,
+        /// Parameter Store doesn't support changing a parameter type in a hierarchy. For example,
         /// you can't change a parameter from a <code>String</code> type to a <code>SecureString</code>
         /// type. You must create a new, unique parameter.
         /// </exception>
@@ -8392,31 +8731,30 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAllowedPatternException">
-        /// The request does not meet the regular expression requirement.
+        /// The request doesn't meet the regular expression requirement.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidKeyIdException">
-        /// The query key ID is not valid.
+        /// The query key ID isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidPolicyAttributeException">
         /// A policy attribute or its value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidPolicyTypeException">
-        /// The policy type is not supported. Parameter Store supports the following policy types:
+        /// The policy type isn't supported. Parameter Store supports the following policy types:
         /// Expiration, ExpirationNotification, and NoChangeNotification.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterAlreadyExistsException">
         /// The parameter already exists. You can't create duplicate parameters.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterLimitExceededException">
-        /// You have exceeded the number of parameters for this AWS account. Delete one or more
-        /// parameters and try again.
+        /// You have exceeded the number of parameters for this account. Delete one or more parameters
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterMaxVersionLimitExceededException">
         /// Parameter Store retains the 100 most recently created versions of a parameter. After
         /// this number of versions has been created, Parameter Store deletes the oldest version
         /// when a new one is created. However, if the oldest version has a <i>label</i> attached
-        /// to it, Parameter Store will not delete the version and instead presents this error
-        /// message:
+        /// to it, Parameter Store won't delete the version and instead presents this error message:
         /// 
         ///  
         /// <para>
@@ -8433,11 +8771,12 @@ namespace Amazon.SimpleSystemsManagement
         /// from the oldest version of the parameter to a newer one for use in your operations.
         /// For information about moving parameter labels, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-console-move">Move
         /// a parameter label (console)</a> or <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-cli-move">Move
-        /// a parameter label (CLI)</a> in the <i>AWS Systems Manager User Guide</i>. 
+        /// a parameter label (CLI)</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+        /// 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterPatternMismatchException">
-        /// The parameter name is not valid.
+        /// The parameter name isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.PoliciesLimitExceededException">
         /// You specified more than the maximum number of allowed policies for the parameter.
@@ -8447,7 +8786,7 @@ namespace Amazon.SimpleSystemsManagement
         /// There are concurrent updates for a resource that supports one update at a time.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedParameterTypeException">
-        /// The parameter type is not supported.
+        /// The parameter type isn't supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter">REST API Reference for PutParameter Operation</seealso>
         Task<PutParameterResponse> PutParameterAsync(PutParameterRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -8462,8 +8801,9 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  
         /// <para>
-        /// To reset the AWS predefined patch baseline as the default, specify the full patch
-        /// baseline ARN as the baseline ID value. For example, for CentOS, specify <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0574b43a65ea646ed</code>
+        /// To reset the Amazon Web Services-predefined patch baseline as the default, specify
+        /// the full patch baseline Amazon Resource Name (ARN) as the baseline ID value. For example,
+        /// for CentOS, specify <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0574b43a65ea646ed</code>
         /// instead of <code>pb-0574b43a65ea646ed</code>.
         /// </para>
         /// </summary>
@@ -8472,19 +8812,20 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the RegisterDefaultPatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
-        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// The resource ID isn't valid. Verify that you entered the correct ID and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline">REST API Reference for RegisterDefaultPatchBaseline Operation</seealso>
         RegisterDefaultPatchBaselineResponse RegisterDefaultPatchBaseline(RegisterDefaultPatchBaselineRequest request);
@@ -8496,8 +8837,9 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  
         /// <para>
-        /// To reset the AWS predefined patch baseline as the default, specify the full patch
-        /// baseline ARN as the baseline ID value. For example, for CentOS, specify <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0574b43a65ea646ed</code>
+        /// To reset the Amazon Web Services-predefined patch baseline as the default, specify
+        /// the full patch baseline Amazon Resource Name (ARN) as the baseline ID value. For example,
+        /// for CentOS, specify <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0574b43a65ea646ed</code>
         /// instead of <code>pb-0574b43a65ea646ed</code>.
         /// </para>
         /// </summary>
@@ -8509,19 +8851,20 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the RegisterDefaultPatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
-        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// The resource ID isn't valid. Verify that you entered the correct ID and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline">REST API Reference for RegisterDefaultPatchBaseline Operation</seealso>
         Task<RegisterDefaultPatchBaselineResponse> RegisterDefaultPatchBaselineAsync(RegisterDefaultPatchBaselineRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -8543,19 +8886,20 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
-        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// The resource ID isn't valid. Verify that you entered the correct ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceLimitExceededException">
         /// Error returned when the caller has exceeded the default resource quotas. For example,
@@ -8563,8 +8907,8 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterPatchBaselineForPatchGroup">REST API Reference for RegisterPatchBaselineForPatchGroup Operation</seealso>
@@ -8587,19 +8931,20 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
-        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// The resource ID isn't valid. Verify that you entered the correct ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceLimitExceededException">
         /// Error returned when the caller has exceeded the default resource quotas. For example,
@@ -8607,8 +8952,8 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterPatchBaselineForPatchGroup">REST API Reference for RegisterPatchBaselineForPatchGroup Operation</seealso>
@@ -8627,12 +8972,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the RegisterTargetWithMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.IdempotentParameterMismatchException">
@@ -8648,8 +8994,8 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTargetWithMaintenanceWindow">REST API Reference for RegisterTargetWithMaintenanceWindow Operation</seealso>
@@ -8668,12 +9014,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the RegisterTargetWithMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.IdempotentParameterMismatchException">
@@ -8689,8 +9036,8 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTargetWithMaintenanceWindow">REST API Reference for RegisterTargetWithMaintenanceWindow Operation</seealso>
@@ -8709,17 +9056,18 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the RegisterTaskWithMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.FeatureNotAvailableException">
-        /// You attempted to register a LAMBDA or STEP_FUNCTIONS task in a region where the corresponding
-        /// service is not available.
+        /// You attempted to register a <code>LAMBDA</code> or <code>STEP_FUNCTIONS</code> task
+        /// in a region where the corresponding service isn't available.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.IdempotentParameterMismatchException">
         /// Error returned when an idempotent operation is retried and the parameters don't match
@@ -8734,8 +9082,8 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTaskWithMaintenanceWindow">REST API Reference for RegisterTaskWithMaintenanceWindow Operation</seealso>
@@ -8754,17 +9102,18 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the RegisterTaskWithMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.FeatureNotAvailableException">
-        /// You attempted to register a LAMBDA or STEP_FUNCTIONS task in a region where the corresponding
-        /// service is not available.
+        /// You attempted to register a <code>LAMBDA</code> or <code>STEP_FUNCTIONS</code> task
+        /// in a region where the corresponding service isn't available.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.IdempotentParameterMismatchException">
         /// Error returned when an idempotent operation is retried and the parameters don't match
@@ -8779,8 +9128,8 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTaskWithMaintenanceWindow">REST API Reference for RegisterTaskWithMaintenanceWindow Operation</seealso>
@@ -8801,10 +9150,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
-        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// The resource ID isn't valid. Verify that you entered the correct ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceTypeException">
-        /// The resource type is not valid. For example, if you are attempting to tag an instance,
+        /// The resource type isn't valid. For example, if you are attempting to tag an instance,
         /// the instance must be a registered, managed instance.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
@@ -8828,10 +9177,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
-        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// The resource ID isn't valid. Verify that you entered the correct ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceTypeException">
-        /// The resource type is not valid. For example, if you are attempting to tag an instance,
+        /// The resource type isn't valid. For example, if you are attempting to tag an instance,
         /// the instance must be a registered, managed instance.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
@@ -8846,26 +9195,26 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// <code>ServiceSetting</code> is an account-level setting for an AWS service. This
-        /// setting defines how a user interacts with or uses a service or a feature of a service.
-        /// For example, if an AWS service charges money to the account based on feature or service
-        /// usage, then the AWS service team might create a default setting of "false". This means
-        /// the user can't use this feature unless they change the setting to "true" and intentionally
-        /// opt in for a paid feature.
+        /// <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services
+        /// service. This setting defines how a user interacts with or uses a service or a feature
+        /// of a service. For example, if an Amazon Web Services service charges money to the
+        /// account based on feature or service usage, then the Amazon Web Services service team
+        /// might create a default setting of "false". This means the user can't use this feature
+        /// unless they change the setting to "true" and intentionally opt in for a paid feature.
         /// 
         ///  
         /// <para>
-        /// Services map a <code>SettingId</code> object to a setting value. AWS services teams
-        /// define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>,
-        /// but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code>
-        /// permission for the setting. Use the <a>GetServiceSetting</a> API action to view the
-        /// current value. Use the <a>UpdateServiceSetting</a> API action to change the default
-        /// setting. 
+        /// Services map a <code>SettingId</code> object to a setting value. Amazon Web Services
+        /// services teams define the default value for a <code>SettingId</code>. You can't create
+        /// a new <code>SettingId</code>, but you can overwrite the default value if you have
+        /// the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <a>GetServiceSetting</a>
+        /// API operation to view the current value. Use the <a>UpdateServiceSetting</a> API operation
+        /// to change the default setting. 
         /// </para>
         ///  
         /// <para>
         /// Reset the service setting for the account to the default value as provisioned by the
-        /// AWS service team. 
+        /// Amazon Web Services service team. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetServiceSetting service method.</param>
@@ -8875,8 +9224,8 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ServiceSettingNotFoundException">
-        /// The specified service setting was not found. Either the service name or the setting
-        /// has not been provisioned by the AWS service team.
+        /// The specified service setting wasn't found. Either the service name or the setting
+        /// hasn't been provisioned by the Amazon Web Services service team.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
@@ -8887,26 +9236,26 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// <code>ServiceSetting</code> is an account-level setting for an AWS service. This
-        /// setting defines how a user interacts with or uses a service or a feature of a service.
-        /// For example, if an AWS service charges money to the account based on feature or service
-        /// usage, then the AWS service team might create a default setting of "false". This means
-        /// the user can't use this feature unless they change the setting to "true" and intentionally
-        /// opt in for a paid feature.
+        /// <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services
+        /// service. This setting defines how a user interacts with or uses a service or a feature
+        /// of a service. For example, if an Amazon Web Services service charges money to the
+        /// account based on feature or service usage, then the Amazon Web Services service team
+        /// might create a default setting of "false". This means the user can't use this feature
+        /// unless they change the setting to "true" and intentionally opt in for a paid feature.
         /// 
         ///  
         /// <para>
-        /// Services map a <code>SettingId</code> object to a setting value. AWS services teams
-        /// define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>,
-        /// but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code>
-        /// permission for the setting. Use the <a>GetServiceSetting</a> API action to view the
-        /// current value. Use the <a>UpdateServiceSetting</a> API action to change the default
-        /// setting. 
+        /// Services map a <code>SettingId</code> object to a setting value. Amazon Web Services
+        /// services teams define the default value for a <code>SettingId</code>. You can't create
+        /// a new <code>SettingId</code>, but you can overwrite the default value if you have
+        /// the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <a>GetServiceSetting</a>
+        /// API operation to view the current value. Use the <a>UpdateServiceSetting</a> API operation
+        /// to change the default setting. 
         /// </para>
         ///  
         /// <para>
         /// Reset the service setting for the account to the default value as provisioned by the
-        /// AWS service team. 
+        /// Amazon Web Services service team. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetServiceSetting service method.</param>
@@ -8919,8 +9268,8 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ServiceSettingNotFoundException">
-        /// The specified service setting was not found. Either the service name or the setting
-        /// has not been provisioned by the AWS service team.
+        /// The specified service setting wasn't found. Either the service name or the setting
+        /// hasn't been provisioned by the Amazon Web Services service team.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
@@ -8940,7 +9289,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  <note> 
         /// <para>
         /// This command is primarily for use by client machines to automatically reconnect during
-        /// intermittent network issues. It is not intended for any other use.
+        /// intermittent network issues. It isn't intended for any other use.
         /// </para>
         ///  </note>
         /// </summary>
@@ -8949,12 +9298,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the ResumeSession service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -8972,7 +9322,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  <note> 
         /// <para>
         /// This command is primarily for use by client machines to automatically reconnect during
-        /// intermittent network issues. It is not intended for any other use.
+        /// intermittent network issues. It isn't intended for any other use.
         /// </para>
         ///  </note>
         /// </summary>
@@ -8984,12 +9334,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the ResumeSession service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -9022,7 +9373,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAutomationSignalException">
-        /// The signal is not valid for the current Automation execution.
+        /// The signal isn't valid for the current Automation execution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendAutomationSignal">REST API Reference for SendAutomationSignal Operation</seealso>
         SendAutomationSignalResponse SendAutomationSignal(SendAutomationSignalRequest request);
@@ -9051,7 +9402,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAutomationSignalException">
-        /// The signal is not valid for the current Automation execution.
+        /// The signal isn't valid for the current Automation execution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendAutomationSignal">REST API Reference for SendAutomationSignal Operation</seealso>
         Task<SendAutomationSignalResponse> SendAutomationSignalAsync(SendAutomationSignalRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -9064,65 +9415,70 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Runs commands on one or more managed instances.
         /// </summary>
-        /// <param name="documentName">The name of the Systems Manager document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>AWS Systems Manager User Guide</i>.</param>
-        /// <param name="instanceIds">The IDs of the instances where the command should run. Specifying instance IDs is most useful when you are targeting a limited number of instances, though you can specify up to 50 IDs. To target a larger number of instances, or if you prefer not to list individual instance IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>, which accepts tag key-value pairs to identify the instances to send commands to, you can a send command to tens, hundreds, or thousands of instances at once. For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.</param>
+        /// <param name="documentName">The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</param>
+        /// <param name="instanceIds">The IDs of the instances where the command should run. Specifying instance IDs is most useful when you are targeting a limited number of instances, though you can specify up to 50 IDs. To target a larger number of instances, or if you prefer not to list individual instance IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>, which accepts tag key-value pairs to identify the instances to send commands to, you can a send command to tens, hundreds, or thousands of instances at once. For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</param>
         /// 
         /// <returns>The response from the SendCommand service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
-        /// You cannot specify an instance ID in more than one association.
+        /// You can't specify an instance ID in more than one association.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNotificationConfigException">
-        /// One or more configuration items is not valid. Verify that a valid Amazon Resource
-        /// Name (ARN) was provided for an Amazon SNS topic.
+        /// One or more configuration items isn't valid. Verify that a valid Amazon Resource Name
+        /// (ARN) was provided for an Amazon Simple Notification Service topic.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOutputFolderException">
-        /// The S3 bucket does not exist.
+        /// The S3 bucket doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
-        /// You must specify values for all required parameters in the Systems Manager document.
-        /// You can only supply values to parameters defined in the Systems Manager document.
+        /// You must specify values for all required parameters in the Amazon Web Services Systems
+        /// Manager document (SSM document). You can only supply values to parameters defined
+        /// in the SSM document.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidRoleException">
         /// The role name can't contain invalid characters. Also verify that you specified an
         /// IAM role for notifications that includes the required trust policy. For information
         /// about configuring the IAM role for Run Command notifications, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring
-        /// Amazon SNS Notifications for Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// Amazon SNS Notifications for Run Command</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of a document is 64 KB.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
-        /// The document does not support the platform type of the given instance ID(s). For example,
+        /// The document doesn't support the platform type of the given instance ID(s). For example,
         /// you sent an document for a Windows instance to a Linux instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">REST API Reference for SendCommand Operation</seealso>
@@ -9135,60 +9491,65 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the SendCommand service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
-        /// You cannot specify an instance ID in more than one association.
+        /// You can't specify an instance ID in more than one association.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNotificationConfigException">
-        /// One or more configuration items is not valid. Verify that a valid Amazon Resource
-        /// Name (ARN) was provided for an Amazon SNS topic.
+        /// One or more configuration items isn't valid. Verify that a valid Amazon Resource Name
+        /// (ARN) was provided for an Amazon Simple Notification Service topic.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOutputFolderException">
-        /// The S3 bucket does not exist.
+        /// The S3 bucket doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
-        /// You must specify values for all required parameters in the Systems Manager document.
-        /// You can only supply values to parameters defined in the Systems Manager document.
+        /// You must specify values for all required parameters in the Amazon Web Services Systems
+        /// Manager document (SSM document). You can only supply values to parameters defined
+        /// in the SSM document.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidRoleException">
         /// The role name can't contain invalid characters. Also verify that you specified an
         /// IAM role for notifications that includes the required trust policy. For information
         /// about configuring the IAM role for Run Command notifications, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring
-        /// Amazon SNS Notifications for Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// Amazon SNS Notifications for Run Command</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of a document is 64 KB.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
-        /// The document does not support the platform type of the given instance ID(s). For example,
+        /// The document doesn't support the platform type of the given instance ID(s). For example,
         /// you sent an document for a Windows instance to a Linux instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">REST API Reference for SendCommand Operation</seealso>
@@ -9198,68 +9559,73 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Runs commands on one or more managed instances.
         /// </summary>
-        /// <param name="documentName">The name of the Systems Manager document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>AWS Systems Manager User Guide</i>.</param>
-        /// <param name="instanceIds">The IDs of the instances where the command should run. Specifying instance IDs is most useful when you are targeting a limited number of instances, though you can specify up to 50 IDs. To target a larger number of instances, or if you prefer not to list individual instance IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>, which accepts tag key-value pairs to identify the instances to send commands to, you can a send command to tens, hundreds, or thousands of instances at once. For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.</param>
+        /// <param name="documentName">The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</param>
+        /// <param name="instanceIds">The IDs of the instances where the command should run. Specifying instance IDs is most useful when you are targeting a limited number of instances, though you can specify up to 50 IDs. To target a larger number of instances, or if you prefer not to list individual instance IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>, which accepts tag key-value pairs to identify the instances to send commands to, you can a send command to tens, hundreds, or thousands of instances at once. For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the SendCommand service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
-        /// You cannot specify an instance ID in more than one association.
+        /// You can't specify an instance ID in more than one association.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNotificationConfigException">
-        /// One or more configuration items is not valid. Verify that a valid Amazon Resource
-        /// Name (ARN) was provided for an Amazon SNS topic.
+        /// One or more configuration items isn't valid. Verify that a valid Amazon Resource Name
+        /// (ARN) was provided for an Amazon Simple Notification Service topic.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOutputFolderException">
-        /// The S3 bucket does not exist.
+        /// The S3 bucket doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
-        /// You must specify values for all required parameters in the Systems Manager document.
-        /// You can only supply values to parameters defined in the Systems Manager document.
+        /// You must specify values for all required parameters in the Amazon Web Services Systems
+        /// Manager document (SSM document). You can only supply values to parameters defined
+        /// in the SSM document.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidRoleException">
         /// The role name can't contain invalid characters. Also verify that you specified an
         /// IAM role for notifications that includes the required trust policy. For information
         /// about configuring the IAM role for Run Command notifications, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring
-        /// Amazon SNS Notifications for Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// Amazon SNS Notifications for Run Command</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of a document is 64 KB.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
-        /// The document does not support the platform type of the given instance ID(s). For example,
+        /// The document doesn't support the platform type of the given instance ID(s). For example,
         /// you sent an document for a Windows instance to a Linux instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">REST API Reference for SendCommand Operation</seealso>
@@ -9276,60 +9642,65 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the SendCommand service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
-        /// You cannot specify an instance ID in more than one association.
+        /// You can't specify an instance ID in more than one association.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNotificationConfigException">
-        /// One or more configuration items is not valid. Verify that a valid Amazon Resource
-        /// Name (ARN) was provided for an Amazon SNS topic.
+        /// One or more configuration items isn't valid. Verify that a valid Amazon Resource Name
+        /// (ARN) was provided for an Amazon Simple Notification Service topic.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOutputFolderException">
-        /// The S3 bucket does not exist.
+        /// The S3 bucket doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
-        /// You must specify values for all required parameters in the Systems Manager document.
-        /// You can only supply values to parameters defined in the Systems Manager document.
+        /// You must specify values for all required parameters in the Amazon Web Services Systems
+        /// Manager document (SSM document). You can only supply values to parameters defined
+        /// in the SSM document.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidRoleException">
         /// The role name can't contain invalid characters. Also verify that you specified an
         /// IAM role for notifications that includes the required trust policy. For information
         /// about configuring the IAM role for Run Command notifications, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring
-        /// Amazon SNS Notifications for Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// Amazon SNS Notifications for Run Command</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of a document is 64 KB.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
-        /// The document does not support the platform type of the given instance ID(s). For example,
+        /// The document doesn't support the platform type of the given instance ID(s). For example,
         /// you sent an document for a Windows instance to a Linux instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">REST API Reference for SendCommand Operation</seealso>
@@ -9341,17 +9712,17 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Use this API action to run an association immediately and only one time. This action
-        /// can be helpful when troubleshooting associations.
+        /// Runs an association immediately and only one time. This operation can be helpful when
+        /// troubleshooting associations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartAssociationsOnce service method.</param>
         /// 
         /// <returns>The response from the StartAssociationsOnce service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
-        /// The specified association does not exist.
+        /// The specified association doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAssociationException">
-        /// The association is not valid or does not exist.
+        /// The association isn't valid or doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAssociationsOnce">REST API Reference for StartAssociationsOnce Operation</seealso>
         StartAssociationsOnceResponse StartAssociationsOnce(StartAssociationsOnceRequest request);
@@ -9359,8 +9730,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Use this API action to run an association immediately and only one time. This action
-        /// can be helpful when troubleshooting associations.
+        /// Runs an association immediately and only one time. This operation can be helpful when
+        /// troubleshooting associations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartAssociationsOnce service method.</param>
         /// <param name="cancellationToken">
@@ -9369,10 +9740,10 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the StartAssociationsOnce service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
-        /// The specified association does not exist.
+        /// The specified association doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAssociationException">
-        /// The association is not valid or does not exist.
+        /// The association isn't valid or doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAssociationsOnce">REST API Reference for StartAssociationsOnce Operation</seealso>
         Task<StartAssociationsOnceResponse> StartAssociationsOnceAsync(StartAssociationsOnceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -9383,16 +9754,16 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Initiates execution of an Automation document.
+        /// Initiates execution of an Automation runbook.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartAutomationExecution service method.</param>
         /// 
         /// <returns>The response from the StartAutomationExecution service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AutomationDefinitionNotFoundException">
-        /// An Automation document with the specified name could not be found.
+        /// An Automation runbook with the specified name couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AutomationDefinitionVersionNotFoundException">
-        /// An Automation document with the specified name and version could not be found.
+        /// An Automation runbook with the specified name and version couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AutomationExecutionLimitExceededException">
         /// The number of simultaneously running Automation executions exceeded the allowable
@@ -9406,13 +9777,13 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAutomationExecutionParametersException">
-        /// The supplied parameters for invoking the specified Automation document are incorrect.
+        /// The supplied parameters for invoking the specified Automation runbook are incorrect.
         /// For example, they may not match the set of parameters permitted for the specified
         /// Automation document.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
-        /// The target is not valid or does not exist. It might not be configured for Systems
-        /// Manager or you might not have permission to perform the operation.
+        /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
+        /// or you might not have permission to perform the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution">REST API Reference for StartAutomationExecution Operation</seealso>
         StartAutomationExecutionResponse StartAutomationExecution(StartAutomationExecutionRequest request);
@@ -9420,7 +9791,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Initiates execution of an Automation document.
+        /// Initiates execution of an Automation runbook.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartAutomationExecution service method.</param>
         /// <param name="cancellationToken">
@@ -9429,10 +9800,10 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the StartAutomationExecution service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AutomationDefinitionNotFoundException">
-        /// An Automation document with the specified name could not be found.
+        /// An Automation runbook with the specified name couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AutomationDefinitionVersionNotFoundException">
-        /// An Automation document with the specified name and version could not be found.
+        /// An Automation runbook with the specified name and version couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AutomationExecutionLimitExceededException">
         /// The number of simultaneously running Automation executions exceeded the allowable
@@ -9446,13 +9817,13 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAutomationExecutionParametersException">
-        /// The supplied parameters for invoking the specified Automation document are incorrect.
+        /// The supplied parameters for invoking the specified Automation runbook are incorrect.
         /// For example, they may not match the set of parameters permitted for the specified
         /// Automation document.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
-        /// The target is not valid or does not exist. It might not be configured for Systems
-        /// Manager or you might not have permission to perform the operation.
+        /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
+        /// or you might not have permission to perform the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution">REST API Reference for StartAutomationExecution Operation</seealso>
         Task<StartAutomationExecutionResponse> StartAutomationExecutionAsync(StartAutomationExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -9463,9 +9834,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Creates a change request for Change Manager. The runbooks (Automation documents) specified
-        /// in the change request run only after all required approvals for the change request
-        /// have been received.
+        /// Creates a change request for Change Manager. The Automation runbooks specified in
+        /// the change request run only after all required approvals for the change request have
+        /// been received.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartChangeRequestExecution service method.</param>
         /// 
@@ -9475,10 +9846,10 @@ namespace Amazon.SimpleSystemsManagement
         /// or is still in a pending state.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AutomationDefinitionNotFoundException">
-        /// An Automation document with the specified name could not be found.
+        /// An Automation runbook with the specified name couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AutomationDefinitionVersionNotFoundException">
-        /// An Automation document with the specified name and version could not be found.
+        /// An Automation runbook with the specified name and version couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AutomationExecutionLimitExceededException">
         /// The number of simultaneously running Automation executions exceeded the allowable
@@ -9492,7 +9863,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAutomationExecutionParametersException">
-        /// The supplied parameters for invoking the specified Automation document are incorrect.
+        /// The supplied parameters for invoking the specified Automation runbook are incorrect.
         /// For example, they may not match the set of parameters permitted for the specified
         /// Automation document.
         /// </exception>
@@ -9502,9 +9873,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Creates a change request for Change Manager. The runbooks (Automation documents) specified
-        /// in the change request run only after all required approvals for the change request
-        /// have been received.
+        /// Creates a change request for Change Manager. The Automation runbooks specified in
+        /// the change request run only after all required approvals for the change request have
+        /// been received.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartChangeRequestExecution service method.</param>
         /// <param name="cancellationToken">
@@ -9517,10 +9888,10 @@ namespace Amazon.SimpleSystemsManagement
         /// or is still in a pending state.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AutomationDefinitionNotFoundException">
-        /// An Automation document with the specified name could not be found.
+        /// An Automation runbook with the specified name couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AutomationDefinitionVersionNotFoundException">
-        /// An Automation document with the specified name and version could not be found.
+        /// An Automation runbook with the specified name and version couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AutomationExecutionLimitExceededException">
         /// The number of simultaneously running Automation executions exceeded the allowable
@@ -9534,7 +9905,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAutomationExecutionParametersException">
-        /// The supplied parameters for invoking the specified Automation document are incorrect.
+        /// The supplied parameters for invoking the specified Automation runbook are incorrect.
         /// For example, they may not match the set of parameters permitted for the specified
         /// Automation document.
         /// </exception>
@@ -9553,16 +9924,16 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  <note> 
         /// <para>
-        /// AWS CLI usage: <code>start-session</code> is an interactive command that requires
-        /// the Session Manager plugin to be installed on the client machine making the call.
-        /// For information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">Install
-        /// the Session Manager plugin for the AWS CLI</a> in the <i>AWS Systems Manager User
-        /// Guide</i>.
+        /// Amazon Web Services CLI usage: <code>start-session</code> is an interactive command
+        /// that requires the Session Manager plugin to be installed on the client machine making
+        /// the call. For information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">Install
+        /// the Session Manager plugin for the Amazon Web Services CLI</a> in the <i>Amazon Web
+        /// Services Systems Manager User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// AWS Tools for PowerShell usage: Start-SSMSession is not currently supported by AWS
-        /// Tools for PowerShell on Windows local machines.
+        /// Amazon Web Services Tools for PowerShell usage: Start-SSMSession isn't currently supported
+        /// by Amazon Web Services Tools for PowerShell on Windows local machines.
         /// </para>
         ///  </note>
         /// </summary>
@@ -9573,14 +9944,14 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TargetNotConnectedException">
-        /// The specified target instance for the session is not fully configured for use with
+        /// The specified target instance for the session isn't fully configured for use with
         /// Session Manager. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Getting
-        /// started with Session Manager</a> in the <i>AWS Systems Manager User Guide</i>. This
-        /// error is also returned if you attempt to start a session on an instance that is located
-        /// in a different account or Region
+        /// started with Session Manager</a> in the <i>Amazon Web Services Systems Manager User
+        /// Guide</i>. This error is also returned if you attempt to start a session on an instance
+        /// that is located in a different account or Region
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">REST API Reference for StartSession Operation</seealso>
         StartSessionResponse StartSession(StartSessionRequest request);
@@ -9594,16 +9965,16 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  <note> 
         /// <para>
-        /// AWS CLI usage: <code>start-session</code> is an interactive command that requires
-        /// the Session Manager plugin to be installed on the client machine making the call.
-        /// For information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">Install
-        /// the Session Manager plugin for the AWS CLI</a> in the <i>AWS Systems Manager User
-        /// Guide</i>.
+        /// Amazon Web Services CLI usage: <code>start-session</code> is an interactive command
+        /// that requires the Session Manager plugin to be installed on the client machine making
+        /// the call. For information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">Install
+        /// the Session Manager plugin for the Amazon Web Services CLI</a> in the <i>Amazon Web
+        /// Services Systems Manager User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// AWS Tools for PowerShell usage: Start-SSMSession is not currently supported by AWS
-        /// Tools for PowerShell on Windows local machines.
+        /// Amazon Web Services Tools for PowerShell usage: Start-SSMSession isn't currently supported
+        /// by Amazon Web Services Tools for PowerShell on Windows local machines.
         /// </para>
         ///  </note>
         /// </summary>
@@ -9617,14 +9988,14 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TargetNotConnectedException">
-        /// The specified target instance for the session is not fully configured for use with
+        /// The specified target instance for the session isn't fully configured for use with
         /// Session Manager. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Getting
-        /// started with Session Manager</a> in the <i>AWS Systems Manager User Guide</i>. This
-        /// error is also returned if you attempt to start a session on an instance that is located
-        /// in a different account or Region
+        /// started with Session Manager</a> in the <i>Amazon Web Services Systems Manager User
+        /// Guide</i>. This error is also returned if you attempt to start a session on an instance
+        /// that is located in a different account or Region
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">REST API Reference for StartSession Operation</seealso>
         Task<StartSessionResponse> StartSessionAsync(StartSessionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -9648,7 +10019,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAutomationStatusUpdateException">
-        /// The specified update status operation is not valid.
+        /// The specified update status operation isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution">REST API Reference for StopAutomationExecution Operation</seealso>
         StopAutomationExecutionResponse StopAutomationExecution(StopAutomationExecutionRequest request);
@@ -9672,7 +10043,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAutomationStatusUpdateException">
-        /// The specified update status operation is not valid.
+        /// The specified update status operation isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution">REST API Reference for StopAutomationExecution Operation</seealso>
         Task<StopAutomationExecutionResponse> StopAutomationExecutionAsync(StopAutomationExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -9684,19 +10055,20 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Permanently ends a session and closes the data connection between the Session Manager
-        /// client and SSM Agent on the instance. A terminated session cannot be resumed.
+        /// client and SSM Agent on the instance. A terminated session isn't be resumed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateSession service method.</param>
         /// 
         /// <returns>The response from the TerminateSession service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -9709,7 +10081,7 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Permanently ends a session and closes the data connection between the Session Manager
-        /// client and SSM Agent on the instance. A terminated session cannot be resumed.
+        /// client and SSM Agent on the instance. A terminated session isn't be resumed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateSession service method.</param>
         /// <param name="cancellationToken">
@@ -9719,12 +10091,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the TerminateSession service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -9748,10 +10121,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
-        /// The parameter could not be found. Verify the name and try again.
+        /// The parameter couldn't be found. Verify the name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterVersionNotFoundException">
-        /// The specified parameter version was not found. Verify the parameter name and version,
+        /// The specified parameter version wasn't found. Verify the parameter name and version,
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
@@ -9775,10 +10148,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
-        /// The parameter could not be found. Verify the name and try again.
+        /// The parameter couldn't be found. Verify the name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterVersionNotFoundException">
-        /// The specified parameter version was not found. Verify the parameter name and version,
+        /// The specified parameter version wasn't found. Verify the parameter name and version,
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
@@ -9794,16 +10167,17 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Updates an association. You can update the association name and version, the document
-        /// version, schedule, parameters, and Amazon S3 output. 
+        /// version, schedule, parameters, and Amazon Simple Storage Service (Amazon S3) output.
+        /// 
         /// 
         ///  
         /// <para>
-        /// In order to call this API action, your IAM user account, group, or role must be configured
-        /// with permission to call the <a>DescribeAssociation</a> API action. If you don't have
-        /// permission to call DescribeAssociation, then you receive the following error: <code>An
-        /// error occurred (AccessDeniedException) when calling the UpdateAssociation operation:
-        /// User: &lt;user_arn&gt; is not authorized to perform: ssm:DescribeAssociation on resource:
-        /// &lt;resource_arn&gt;</code> 
+        /// In order to call this API operation, your Identity and Access Management (IAM) user
+        /// account, group, or role must be configured with permission to call the <a>DescribeAssociation</a>
+        /// API operation. If you don't have permission to call <code>DescribeAssociation</code>,
+        /// then you receive the following error: <code>An error occurred (AccessDeniedException)
+        /// when calling the UpdateAssociation operation: User: &lt;user_arn&gt; isn't authorized
+        /// to perform: ssm:DescribeAssociation on resource: &lt;resource_arn&gt;</code> 
         /// </para>
         ///  <important> 
         /// <para>
@@ -9816,7 +10190,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the UpdateAssociation service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
-        /// The specified association does not exist.
+        /// The specified association doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationVersionLimitExceededException">
         /// You have reached the maximum number versions allowed for an association. Each association
@@ -9826,32 +10200,33 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAssociationVersionException">
-        /// The version you specified is not valid. Use ListAssociationVersions to view all versions
+        /// The version you specified isn't valid. Use ListAssociationVersions to view all versions
         /// of an association according to the association ID. Or, use the <code>$LATEST</code>
         /// parameter to view the latest version of the association.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOutputLocationException">
-        /// The output location is not valid or does not exist.
+        /// The output location isn't valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
-        /// You must specify values for all required parameters in the Systems Manager document.
-        /// You can only supply values to parameters defined in the Systems Manager document.
+        /// You must specify values for all required parameters in the Amazon Web Services Systems
+        /// Manager document (SSM document). You can only supply values to parameters defined
+        /// in the SSM document.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidScheduleException">
         /// The schedule is invalid. Verify your cron or rate expression and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
-        /// The target is not valid or does not exist. It might not be configured for Systems
-        /// Manager or you might not have permission to perform the operation.
+        /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
+        /// or you might not have permission to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidUpdateException">
-        /// The update is not valid.
+        /// The update isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
@@ -9863,16 +10238,17 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Updates an association. You can update the association name and version, the document
-        /// version, schedule, parameters, and Amazon S3 output. 
+        /// version, schedule, parameters, and Amazon Simple Storage Service (Amazon S3) output.
+        /// 
         /// 
         ///  
         /// <para>
-        /// In order to call this API action, your IAM user account, group, or role must be configured
-        /// with permission to call the <a>DescribeAssociation</a> API action. If you don't have
-        /// permission to call DescribeAssociation, then you receive the following error: <code>An
-        /// error occurred (AccessDeniedException) when calling the UpdateAssociation operation:
-        /// User: &lt;user_arn&gt; is not authorized to perform: ssm:DescribeAssociation on resource:
-        /// &lt;resource_arn&gt;</code> 
+        /// In order to call this API operation, your Identity and Access Management (IAM) user
+        /// account, group, or role must be configured with permission to call the <a>DescribeAssociation</a>
+        /// API operation. If you don't have permission to call <code>DescribeAssociation</code>,
+        /// then you receive the following error: <code>An error occurred (AccessDeniedException)
+        /// when calling the UpdateAssociation operation: User: &lt;user_arn&gt; isn't authorized
+        /// to perform: ssm:DescribeAssociation on resource: &lt;resource_arn&gt;</code> 
         /// </para>
         ///  <important> 
         /// <para>
@@ -9888,7 +10264,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the UpdateAssociation service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
-        /// The specified association does not exist.
+        /// The specified association doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationVersionLimitExceededException">
         /// You have reached the maximum number versions allowed for an association. Each association
@@ -9898,32 +10274,33 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAssociationVersionException">
-        /// The version you specified is not valid. Use ListAssociationVersions to view all versions
+        /// The version you specified isn't valid. Use ListAssociationVersions to view all versions
         /// of an association according to the association ID. Or, use the <code>$LATEST</code>
         /// parameter to view the latest version of the association.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOutputLocationException">
-        /// The output location is not valid or does not exist.
+        /// The output location isn't valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
-        /// You must specify values for all required parameters in the Systems Manager document.
-        /// You can only supply values to parameters defined in the Systems Manager document.
+        /// You must specify values for all required parameters in the Amazon Web Services Systems
+        /// Manager document (SSM document). You can only supply values to parameters defined
+        /// in the SSM document.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidScheduleException">
         /// The schedule is invalid. Verify your cron or rate expression and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
-        /// The target is not valid or does not exist. It might not be configured for Systems
-        /// Manager or you might not have permission to perform the operation.
+        /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
+        /// or you might not have permission to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidUpdateException">
-        /// The update is not valid.
+        /// The update isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
@@ -9937,40 +10314,44 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Updates the status of the Systems Manager document associated with the specified instance.
+        /// Updates the status of the Amazon Web Services Systems Manager document (SSM document)
+        /// associated with the specified instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssociationStatus service method.</param>
         /// 
         /// <returns>The response from the UpdateAssociationStatus service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
-        /// The specified association does not exist.
+        /// The specified association doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.StatusUnchangedException">
         /// The updated status is the same as the current status.
@@ -9984,7 +10365,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Updates the status of the Systems Manager document associated with the specified instance.
+        /// Updates the status of the Amazon Web Services Systems Manager document (SSM document)
+        /// associated with the specified instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssociationStatus service method.</param>
         /// <param name="cancellationToken">
@@ -9993,34 +10375,37 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the UpdateAssociationStatus service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
-        /// The specified association does not exist.
+        /// The specified association doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.StatusUnchangedException">
         /// The updated status is the same as the current status.
@@ -10057,20 +10442,20 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentContentException">
-        /// The content for the document is not valid.
+        /// The content for the document isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentOperationException">
         /// You attempted to delete a document while it is still shared. You must stop sharing
         /// the document before you can delete it.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentSchemaVersionException">
-        /// The version of the document schema is not supported.
+        /// The version of the document schema isn't supported.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of a document is 64 KB.
@@ -10104,20 +10489,20 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentContentException">
-        /// The content for the document is not valid.
+        /// The content for the document isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentOperationException">
         /// You attempted to delete a document while it is still shared. You must stop sharing
         /// the document before you can delete it.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentSchemaVersionException">
-        /// The version of the document schema is not supported.
+        /// The version of the document schema isn't supported.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of a document is 64 KB.
@@ -10140,13 +10525,13 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentSchemaVersionException">
-        /// The version of the document schema is not supported.
+        /// The version of the document schema isn't supported.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentDefaultVersion">REST API Reference for UpdateDocumentDefaultVersion Operation</seealso>
         UpdateDocumentDefaultVersionResponse UpdateDocumentDefaultVersion(UpdateDocumentDefaultVersionRequest request);
@@ -10166,13 +10551,13 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentSchemaVersionException">
-        /// The version of the document schema is not supported.
+        /// The version of the document schema isn't supported.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentDefaultVersion">REST API Reference for UpdateDocumentDefaultVersion Operation</seealso>
         Task<UpdateDocumentDefaultVersionResponse> UpdateDocumentDefaultVersionAsync(UpdateDocumentDefaultVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -10192,14 +10577,14 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentOperationException">
         /// You attempted to delete a document while it is still shared. You must stop sharing
         /// the document before you can delete it.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentMetadata">REST API Reference for UpdateDocumentMetadata Operation</seealso>
         UpdateDocumentMetadataResponse UpdateDocumentMetadata(UpdateDocumentMetadataRequest request);
@@ -10219,14 +10604,14 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The specified document does not exist.
+        /// The specified SSM document doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentOperationException">
         /// You attempted to delete a document while it is still shared. You must stop sharing
         /// the document before you can delete it.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
-        /// The document version is not valid or does not exist.
+        /// The document version isn't valid or doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentMetadata">REST API Reference for UpdateDocumentMetadata Operation</seealso>
         Task<UpdateDocumentMetadataResponse> UpdateDocumentMetadataAsync(UpdateDocumentMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -10255,12 +10640,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the UpdateMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -10293,12 +10679,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the UpdateMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -10342,7 +10729,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If a parameter is null, then the corresponding field is not modified.
+        /// If a parameter is null, then the corresponding field isn't modified.
         /// </para>
         ///  </note>
         /// </summary>
@@ -10351,12 +10738,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the UpdateMaintenanceWindowTarget service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -10397,7 +10785,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If a parameter is null, then the corresponding field is not modified.
+        /// If a parameter is null, then the corresponding field isn't modified.
         /// </para>
         ///  </note>
         /// </summary>
@@ -10409,12 +10797,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the UpdateMaintenanceWindowTarget service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -10434,49 +10823,50 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// TaskARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript
-        /// to AWS-RunShellScript.
+        ///  <code>TaskARN</code>. For example, you can change a <code>RUN_COMMAND</code> task
+        /// from <code>AWS-RunPowerShellScript</code> to <code>AWS-RunShellScript</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ServiceRoleArn
+        ///  <code>ServiceRoleArn</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// TaskInvocationParameters
+        ///  <code>TaskInvocationParameters</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Priority
+        ///  <code>Priority</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MaxConcurrency
+        ///  <code>MaxConcurrency</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MaxErrors
+        ///  <code>MaxErrors</code> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
         /// One or more targets must be specified for maintenance window Run Command-type tasks.
         /// Depending on the task, targets are optional for other maintenance window task types
-        /// (Automation, AWS Lambda, and AWS Step Functions). For more information about running
-        /// tasks that do not specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
-        /// maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// (Automation, Lambda, and Step Functions). For more information about running tasks
+        /// that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+        /// maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
         /// If the value for a parameter in <code>UpdateMaintenanceWindowTask</code> is null,
-        /// then the corresponding field is not modified. If you set <code>Replace</code> to true,
-        /// then all fields required by the <a>RegisterTaskWithMaintenanceWindow</a> action are
-        /// required for this request. Optional fields that aren't specified are set to null.
+        /// then the corresponding field isn't modified. If you set <code>Replace</code> to true,
+        /// then all fields required by the <a>RegisterTaskWithMaintenanceWindow</a> operation
+        /// are required for this request. Optional fields that aren't specified are set to null.
         /// </para>
         ///  <important> 
         /// <para>
         /// When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>,
         /// you must provide again all the <code>TaskInvocationParameters</code> values that you
-        /// want to retain. The values you do not specify again are removed. For example, suppose
+        /// want to retain. The values you don't specify again are removed. For example, suppose
         /// that when you registered a Run Command task, you specified <code>TaskInvocationParameters</code>
         /// values for <code>Comment</code>, <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>.
         /// If you update the maintenance window task and specify only a different <code>OutputS3BucketName</code>
@@ -10490,12 +10880,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the UpdateMaintenanceWindowTask service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -10512,49 +10903,50 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// TaskARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript
-        /// to AWS-RunShellScript.
+        ///  <code>TaskARN</code>. For example, you can change a <code>RUN_COMMAND</code> task
+        /// from <code>AWS-RunPowerShellScript</code> to <code>AWS-RunShellScript</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ServiceRoleArn
+        ///  <code>ServiceRoleArn</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// TaskInvocationParameters
+        ///  <code>TaskInvocationParameters</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Priority
+        ///  <code>Priority</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MaxConcurrency
+        ///  <code>MaxConcurrency</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MaxErrors
+        ///  <code>MaxErrors</code> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
         /// One or more targets must be specified for maintenance window Run Command-type tasks.
         /// Depending on the task, targets are optional for other maintenance window task types
-        /// (Automation, AWS Lambda, and AWS Step Functions). For more information about running
-        /// tasks that do not specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
-        /// maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// (Automation, Lambda, and Step Functions). For more information about running tasks
+        /// that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+        /// maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
         /// If the value for a parameter in <code>UpdateMaintenanceWindowTask</code> is null,
-        /// then the corresponding field is not modified. If you set <code>Replace</code> to true,
-        /// then all fields required by the <a>RegisterTaskWithMaintenanceWindow</a> action are
-        /// required for this request. Optional fields that aren't specified are set to null.
+        /// then the corresponding field isn't modified. If you set <code>Replace</code> to true,
+        /// then all fields required by the <a>RegisterTaskWithMaintenanceWindow</a> operation
+        /// are required for this request. Optional fields that aren't specified are set to null.
         /// </para>
         ///  <important> 
         /// <para>
         /// When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>,
         /// you must provide again all the <code>TaskInvocationParameters</code> values that you
-        /// want to retain. The values you do not specify again are removed. For example, suppose
+        /// want to retain. The values you don't specify again are removed. For example, suppose
         /// that when you registered a Run Command task, you specified <code>TaskInvocationParameters</code>
         /// values for <code>Comment</code>, <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>.
         /// If you update the maintenance window task and specify only a different <code>OutputS3BucketName</code>
@@ -10571,12 +10963,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the UpdateMaintenanceWindowTask service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -10591,9 +10984,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Changes the Amazon Identity and Access Management (IAM) role that is assigned to the
-        /// on-premises instance or virtual machines (VM). IAM roles are first assigned to these
-        /// hybrid instances during the activation process. For more information, see <a>CreateActivation</a>.
+        /// Changes the Identity and Access Management (IAM) role that is assigned to the on-premises
+        /// instance or virtual machines (VM). IAM roles are first assigned to these hybrid instances
+        /// during the activation process. For more information, see <a>CreateActivation</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateManagedInstanceRole service method.</param>
         /// 
@@ -10604,23 +10997,26 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole">REST API Reference for UpdateManagedInstanceRole Operation</seealso>
         UpdateManagedInstanceRoleResponse UpdateManagedInstanceRole(UpdateManagedInstanceRoleRequest request);
@@ -10628,9 +11024,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Changes the Amazon Identity and Access Management (IAM) role that is assigned to the
-        /// on-premises instance or virtual machines (VM). IAM roles are first assigned to these
-        /// hybrid instances during the activation process. For more information, see <a>CreateActivation</a>.
+        /// Changes the Identity and Access Management (IAM) role that is assigned to the on-premises
+        /// instance or virtual machines (VM). IAM roles are first assigned to these hybrid instances
+        /// during the activation process. For more information, see <a>CreateActivation</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateManagedInstanceRole service method.</param>
         /// <param name="cancellationToken">
@@ -10644,23 +11040,26 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You do not have permission to access the instance.
+        /// You don't have permission to access the instance.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not running. Verify that SSM Agent is running.
+        /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-        /// Invalid states are: Shutting-down and Terminated.
+        /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+        /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+        /// and <code>Terminated</code>.
         /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole">REST API Reference for UpdateManagedInstanceRole Operation</seealso>
         Task<UpdateManagedInstanceRoleResponse> UpdateManagedInstanceRoleAsync(UpdateManagedInstanceRoleRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -10671,16 +11070,16 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Edit or change an OpsItem. You must have permission in AWS Identity and Access Management
+        /// Edit or change an OpsItem. You must have permission in Identity and Access Management
         /// (IAM) to update an OpsItem. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-        /// started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
-        /// remediate operational issues impacting the performance and health of their AWS resources.
-        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
-        /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. 
+        /// Operations engineers and IT professionals use Amazon Web Services Systems Manager
+        /// OpsCenter to view, investigate, and remediate operational issues impacting the performance
+        /// and health of their Amazon Web Services resources. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
+        /// in the <i>Amazon Web Services Systems Manager User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateOpsItem service method.</param>
@@ -10710,16 +11109,16 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Edit or change an OpsItem. You must have permission in AWS Identity and Access Management
+        /// Edit or change an OpsItem. You must have permission in Identity and Access Management
         /// (IAM) to update an OpsItem. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-        /// started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
-        /// remediate operational issues impacting the performance and health of their AWS resources.
-        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
-        /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. 
+        /// Operations engineers and IT professionals use Amazon Web Services Systems Manager
+        /// OpsCenter to view, investigate, and remediate operational issues impacting the performance
+        /// and health of their Amazon Web Services resources. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
+        /// in the <i>Amazon Web Services Systems Manager User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateOpsItem service method.</param>
@@ -10755,7 +11154,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Systems Manager calls this API action when you edit OpsMetadata in Application Manager.
+        /// Amazon Web Services Systems Manager calls this API operation when you edit OpsMetadata
+        /// in Application Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateOpsMetadata service method.</param>
         /// 
@@ -10771,7 +11171,7 @@ namespace Amazon.SimpleSystemsManagement
         /// assign to an application in Application Manager.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataNotFoundException">
-        /// The OpsMetadata object does not exist.
+        /// The OpsMetadata object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataTooManyUpdatesException">
         /// The system is processing too many concurrent updates. Wait a few moments and try again.
@@ -10782,7 +11182,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Systems Manager calls this API action when you edit OpsMetadata in Application Manager.
+        /// Amazon Web Services Systems Manager calls this API operation when you edit OpsMetadata
+        /// in Application Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateOpsMetadata service method.</param>
         /// <param name="cancellationToken">
@@ -10801,7 +11202,7 @@ namespace Amazon.SimpleSystemsManagement
         /// assign to an application in Application Manager.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataNotFoundException">
-        /// The OpsMetadata object does not exist.
+        /// The OpsMetadata object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataTooManyUpdatesException">
         /// The system is processing too many concurrent updates. Wait a few moments and try again.
@@ -10820,8 +11221,8 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  <note> 
         /// <para>
-        /// For information about valid key and value pairs in <code>PatchFilters</code> for each
-        /// supported operating system type, see <a href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.
+        /// For information about valid key-value pairs in <code>PatchFilters</code> for each
+        /// supported operating system type, see <a>PatchFilter</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -10830,12 +11231,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the UpdatePatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -10852,8 +11254,8 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  <note> 
         /// <para>
-        /// For information about valid key and value pairs in <code>PatchFilters</code> for each
-        /// supported operating system type, see <a href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.
+        /// For information about valid key-value pairs in <code>PatchFilters</code> for each
+        /// supported operating system type, see <a>PatchFilter</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -10865,12 +11267,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the UpdatePatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or Patch baseline, doesn't exist.
+        /// or patch baseline, doesn't exist.
         /// 
         ///  
         /// <para>
-        /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
+        /// For information about resource quotas in Amazon Web Services Systems Manager, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
+        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -10887,14 +11290,14 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Update a resource data sync. After you create a resource data sync for a Region, you
         /// can't change the account options for that sync. For example, if you create a sync
-        /// in the us-east-2 (Ohio) Region and you choose the Include only the current account
-        /// option, you can't edit that sync later and choose the Include all accounts from my
-        /// AWS Organizations configuration option. Instead, you must delete the first resource
+        /// in the us-east-2 (Ohio) Region and you choose the <code>Include only the current account</code>
+        /// option, you can't edit that sync later and choose the <code>Include all accounts from
+        /// my Organizations configuration</code> option. Instead, you must delete the first resource
         /// data sync, and create a new one.
         /// 
         ///  <note> 
         /// <para>
-        /// This API action only supports a resource data sync that was created with a SyncFromSource
+        /// This API operation only supports a resource data sync that was created with a SyncFromSource
         /// <code>SyncType</code>.
         /// </para>
         ///  </note>
@@ -10913,7 +11316,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified sync configuration is invalid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncNotFoundException">
-        /// The specified sync name was not found.
+        /// The specified sync name wasn't found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateResourceDataSync">REST API Reference for UpdateResourceDataSync Operation</seealso>
         UpdateResourceDataSyncResponse UpdateResourceDataSync(UpdateResourceDataSyncRequest request);
@@ -10923,14 +11326,14 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Update a resource data sync. After you create a resource data sync for a Region, you
         /// can't change the account options for that sync. For example, if you create a sync
-        /// in the us-east-2 (Ohio) Region and you choose the Include only the current account
-        /// option, you can't edit that sync later and choose the Include all accounts from my
-        /// AWS Organizations configuration option. Instead, you must delete the first resource
+        /// in the us-east-2 (Ohio) Region and you choose the <code>Include only the current account</code>
+        /// option, you can't edit that sync later and choose the <code>Include all accounts from
+        /// my Organizations configuration</code> option. Instead, you must delete the first resource
         /// data sync, and create a new one.
         /// 
         ///  <note> 
         /// <para>
-        /// This API action only supports a resource data sync that was created with a SyncFromSource
+        /// This API operation only supports a resource data sync that was created with a SyncFromSource
         /// <code>SyncType</code>.
         /// </para>
         ///  </note>
@@ -10952,7 +11355,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified sync configuration is invalid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncNotFoundException">
-        /// The specified sync name was not found.
+        /// The specified sync name wasn't found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateResourceDataSync">REST API Reference for UpdateResourceDataSync Operation</seealso>
         Task<UpdateResourceDataSyncResponse> UpdateResourceDataSyncAsync(UpdateResourceDataSyncRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -10963,21 +11366,22 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// <code>ServiceSetting</code> is an account-level setting for an AWS service. This
-        /// setting defines how a user interacts with or uses a service or a feature of a service.
-        /// For example, if an AWS service charges money to the account based on feature or service
-        /// usage, then the AWS service team might create a default setting of "false". This means
-        /// the user can't use this feature unless they change the setting to "true" and intentionally
-        /// opt in for a paid feature.
+        /// <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services
+        /// service. This setting defines how a user interacts with or uses a service or a feature
+        /// of a service. For example, if an Amazon Web Services service charges money to the
+        /// account based on feature or service usage, then the Amazon Web Services service team
+        /// might create a default setting of "false". This means the user can't use this feature
+        /// unless they change the setting to "true" and intentionally opt in for a paid feature.
         /// 
         ///  
         /// <para>
-        /// Services map a <code>SettingId</code> object to a setting value. AWS services teams
-        /// define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>,
-        /// but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code>
-        /// permission for the setting. Use the <a>GetServiceSetting</a> API action to view the
-        /// current value. Or, use the <a>ResetServiceSetting</a> to change the value back to
-        /// the original value defined by the AWS service team.
+        /// Services map a <code>SettingId</code> object to a setting value. Amazon Web Services
+        /// services teams define the default value for a <code>SettingId</code>. You can't create
+        /// a new <code>SettingId</code>, but you can overwrite the default value if you have
+        /// the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <a>GetServiceSetting</a>
+        /// API operation to view the current value. Or, use the <a>ResetServiceSetting</a> to
+        /// change the value back to the original value defined by the Amazon Web Services service
+        /// team.
         /// </para>
         ///  
         /// <para>
@@ -10991,8 +11395,8 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ServiceSettingNotFoundException">
-        /// The specified service setting was not found. Either the service name or the setting
-        /// has not been provisioned by the AWS service team.
+        /// The specified service setting wasn't found. Either the service name or the setting
+        /// hasn't been provisioned by the Amazon Web Services service team.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
@@ -11003,21 +11407,22 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// <code>ServiceSetting</code> is an account-level setting for an AWS service. This
-        /// setting defines how a user interacts with or uses a service or a feature of a service.
-        /// For example, if an AWS service charges money to the account based on feature or service
-        /// usage, then the AWS service team might create a default setting of "false". This means
-        /// the user can't use this feature unless they change the setting to "true" and intentionally
-        /// opt in for a paid feature.
+        /// <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services
+        /// service. This setting defines how a user interacts with or uses a service or a feature
+        /// of a service. For example, if an Amazon Web Services service charges money to the
+        /// account based on feature or service usage, then the Amazon Web Services service team
+        /// might create a default setting of "false". This means the user can't use this feature
+        /// unless they change the setting to "true" and intentionally opt in for a paid feature.
         /// 
         ///  
         /// <para>
-        /// Services map a <code>SettingId</code> object to a setting value. AWS services teams
-        /// define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>,
-        /// but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code>
-        /// permission for the setting. Use the <a>GetServiceSetting</a> API action to view the
-        /// current value. Or, use the <a>ResetServiceSetting</a> to change the value back to
-        /// the original value defined by the AWS service team.
+        /// Services map a <code>SettingId</code> object to a setting value. Amazon Web Services
+        /// services teams define the default value for a <code>SettingId</code>. You can't create
+        /// a new <code>SettingId</code>, but you can overwrite the default value if you have
+        /// the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <a>GetServiceSetting</a>
+        /// API operation to view the current value. Or, use the <a>ResetServiceSetting</a> to
+        /// change the value back to the original value defined by the Amazon Web Services service
+        /// team.
         /// </para>
         ///  
         /// <para>
@@ -11034,8 +11439,8 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ServiceSettingNotFoundException">
-        /// The specified service setting was not found. Either the service name or the setting
-        /// has not been provisioned by the AWS service team.
+        /// The specified service setting wasn't found. Either the service name or the setting
+        /// hasn't been provisioned by the Amazon Web Services service team.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.

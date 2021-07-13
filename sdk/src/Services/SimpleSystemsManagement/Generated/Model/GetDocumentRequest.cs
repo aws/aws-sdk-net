@@ -30,7 +30,8 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDocument operation.
-    /// Gets the contents of the specified Systems Manager document.
+    /// Gets the contents of the specified Amazon Web Services Systems Manager document (SSM
+    /// document).
     /// </summary>
     public partial class GetDocumentRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -47,7 +48,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates GetDocumentRequest with the parameterized properties
         /// </summary>
-        /// <param name="name">The name of the Systems Manager document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         public GetDocumentRequest(string name)
         {
             _name = name;
@@ -93,7 +94,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Systems Manager document.
+        /// The name of the SSM document.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -57,7 +57,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// By default, when you create a new associations, the system runs it immediately after
         /// it is created and then according to the schedule you specified. Specify this option
         /// if you don't want an association to run immediately after you create it. This parameter
-        /// is not supported for rate expressions.
+        /// isn't supported for rate expressions.
         /// </para>
         /// </summary>
         public bool ApplyOnlyAtCronInterval
@@ -129,10 +129,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CalendarNames. 
         /// <para>
-        /// The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type
-        /// documents your associations are gated under. The associations for this version only
-        /// run when that Change Calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
-        /// Systems Manager Change Calendar</a>.
+        /// The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your
+        /// associations are gated under. The associations for this version only run when that
+        /// Change Calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon
+        /// Web Services Systems Manager Change Calendar</a>.
         /// </para>
         /// </summary>
         public List<string> CalendarNames
@@ -186,7 +186,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentVersion. 
         /// <para>
-        /// The version of a Systems Manager document used when the association version was created.
+        /// The version of an Amazon Web Services Systems Manager document (SSM document) used
+        /// when the association version was created.
         /// </para>
         /// </summary>
         public string DocumentVersion
@@ -212,9 +213,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         /// If a new instance starts and attempts to run an association while Systems Manager
-        /// is running MaxConcurrency associations, the association is allowed to run. During
-        /// the next association interval, the new instance will process its association within
-        /// the limit specified for MaxConcurrency.
+        /// is running <code>MaxConcurrency</code> associations, the association is allowed to
+        /// run. During the next association interval, the new instance will process its association
+        /// within the limit specified for <code>MaxConcurrency</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
@@ -238,15 +239,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// of errors, for example 10, or a percentage of the target set, for example 10%. If
         /// you specify 3, for example, the system stops sending requests when the fourth error
         /// is received. If you specify 0, then the system stops sending requests after the first
-        /// error is returned. If you run an association on 50 instances and set MaxError to 10%,
-        /// then the system stops sending the request when the sixth error is received.
+        /// error is returned. If you run an association on 50 instances and set <code>MaxError</code>
+        /// to 10%, then the system stops sending the request when the sixth error is received.
         /// </para>
         ///  
         /// <para>
-        /// Executions that are already running an association when MaxErrors is reached are allowed
-        /// to complete, but some of these executions may fail as well. If you need to ensure
-        /// that there won't be more than max-errors failed executions, set MaxConcurrency to
-        /// 1 so that executions proceed one at a time.
+        /// Executions that are already running an association when <code>MaxErrors</code> is
+        /// reached are allowed to complete, but some of these executions may fail as well. If
+        /// you need to ensure that there won't be more than max-errors failed executions, set
+        /// <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
@@ -349,9 +350,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         /// In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a
-        /// parameter for the <a>PutComplianceItems</a> API action. In this case, compliance data
-        /// is not managed by State Manager. It is managed by your direct call to the <a>PutComplianceItems</a>
-        /// API action.
+        /// parameter for the <a>PutComplianceItems</a> API operation. In this case, compliance
+        /// data isn't managed by State Manager, a capability of Amazon Web Services Systems Manager.
+        /// It is managed by your direct call to the <a>PutComplianceItems</a> API operation.
         /// </para>
         ///  
         /// <para>
@@ -373,8 +374,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TargetLocations. 
         /// <para>
-        /// The combination of AWS Regions and AWS accounts where you wanted to run the association
-        /// when this association version was created.
+        /// The combination of Regions and accounts where you wanted to run the association when
+        /// this association version was created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

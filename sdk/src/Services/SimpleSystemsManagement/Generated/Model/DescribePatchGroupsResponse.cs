@@ -41,14 +41,16 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Each entry in the array contains:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// PatchGroup: string (between 1 and 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
+        ///  <code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code>
+        /// 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// PatchBaselineIdentity: A PatchBaselineIdentity element. 
+        ///  <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<PatchGroupPatchBaselineMapping> Mappings
         {

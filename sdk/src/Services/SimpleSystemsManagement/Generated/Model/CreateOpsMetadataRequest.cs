@@ -30,9 +30,9 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateOpsMetadata operation.
-    /// If you create a new application in Application Manager, Systems Manager calls this
-    /// API action to specify information about the new application, including the application
-    /// type.
+    /// If you create a new application in Application Manager, Amazon Web Services Systems
+    /// Manager calls this API operation to specify information about the new application,
+    /// including the application type.
     /// </summary>
     public partial class CreateOpsMetadataRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -84,8 +84,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Optional metadata that you assign to a resource. You can specify a maximum of five
         /// tags for an OpsMetadata object. Tags enable you to categorize a resource in different
         /// ways, such as by purpose, owner, or environment. For example, you might want to tag
-        /// an OpsMetadata object to identify an environment or target AWS Region. In this case,
-        /// you could specify the following key-value pairs:
+        /// an OpsMetadata object to identify an environment or target Region. In this case, you
+        /// could specify the following key-value pairs:
         /// </para>
         ///  <ul> <li> 
         /// <para>

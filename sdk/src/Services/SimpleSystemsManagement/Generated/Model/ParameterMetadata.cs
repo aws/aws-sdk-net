@@ -148,7 +148,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property LastModifiedUser. 
         /// <para>
-        /// Amazon Resource Name (ARN) of the AWS user who last changed the parameter.
+        /// Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.
         /// </para>
         /// </summary>
         public string LastModifiedUser

@@ -56,7 +56,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ActivationId. 
         /// <para>
-        /// The activation ID created by Systems Manager when the server or VM was registered.
+        /// The activation ID created by Amazon Web Services Systems Manager when the server or
+        /// virtual machine (VM) was registered.
         /// </para>
         /// </summary>
         public string ActivationId
@@ -147,12 +148,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property IamRole. 
         /// <para>
-        /// The Amazon Identity and Access Management (IAM) role assigned to the on-premises Systems
-        /// Manager managed instance. This call does not return the IAM role for EC2 instances.
-        /// To retrieve the IAM role for an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code>
-        /// action. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
+        /// The Identity and Access Management (IAM) role assigned to the on-premises Systems
+        /// Manager managed instance. This call doesn't return the IAM role for Amazon Elastic
+        /// Compute Cloud (Amazon EC2) instances. To retrieve the IAM role for an EC2 instance,
+        /// use the Amazon EC2 <code>DescribeInstances</code> operation. For information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
         /// in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
-        /// in the <i>AWS CLI Command Reference</i>.
+        /// in the <i>Amazon Web Services CLI Command Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
@@ -209,9 +211,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property IsLatestVersion. 
         /// <para>
         /// Indicates whether the latest version of SSM Agent is running on your Linux Managed
-        /// Instance. This field does not indicate whether or not the latest version is installed
+        /// Instance. This field doesn't indicate whether or not the latest version is installed
         /// on Windows managed instances, because some older versions of Windows Server use the
-        /// EC2Config service to process SSM requests.
+        /// EC2Config service to process Systems Manager requests.
         /// </para>
         /// </summary>
         public bool IsLatestVersion
@@ -290,10 +292,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// the instance, as explained in <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install
         /// SSM Agent for a hybrid environment (Linux)</a> and <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install
         /// SSM Agent for a hybrid environment (Windows)</a>. To retrieve the Name tag of an EC2
-        /// instance, use the Amazon EC2 <code>DescribeInstances</code> action. For information,
+        /// instance, use the Amazon EC2 <code>DescribeInstances</code> operation. For information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
         /// in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
-        /// in the <i>AWS CLI Command Reference</i>.
+        /// in the <i>Amazon Web Services CLI Command Reference</i>.
         /// </para>
         /// </summary>
         public string Name
@@ -388,7 +390,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property RegistrationDate. 
         /// <para>
-        /// The date the server or VM was registered with AWS as a managed instance.
+        /// The date the server or VM was registered with Amazon Web Services as a managed instance.
         /// </para>
         /// </summary>
         public DateTime RegistrationDate

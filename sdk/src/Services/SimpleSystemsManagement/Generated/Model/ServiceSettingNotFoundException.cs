@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The specified service setting was not found. Either the service name or the setting
-    /// has not been provisioned by the AWS service team.
+    /// The specified service setting wasn't found. Either the service name or the setting
+    /// hasn't been provisioned by the Amazon Web Services service team.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

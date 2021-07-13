@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Parameter Store does not support changing a parameter type in a hierarchy. For example,
+    /// Parameter Store doesn't support changing a parameter type in a hierarchy. For example,
     /// you can't change a parameter from a <code>String</code> type to a <code>SecureString</code>
     /// type. You must create a new, unique parameter.
     /// </summary>

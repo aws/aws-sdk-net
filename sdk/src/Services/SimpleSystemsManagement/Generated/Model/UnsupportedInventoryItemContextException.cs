@@ -30,8 +30,8 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// The <code>Context</code> attribute that you specified for the <code>InventoryItem</code>
-    /// is not allowed for this inventory type. You can only use the <code>Context</code>
-    /// attribute with inventory types like <code>AWS:ComplianceItem</code>.
+    /// isn't allowed for this inventory type. You can only use the <code>Context</code> attribute
+    /// with inventory types like <code>AWS:ComplianceItem</code>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

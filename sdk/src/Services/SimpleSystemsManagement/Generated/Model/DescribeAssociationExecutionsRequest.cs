@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAssociationExecutions operation.
-    /// Use this API action to view all executions for a specific association ID.
+    /// Views all executions for a specific association ID.
     /// </summary>
     public partial class DescribeAssociationExecutionsRequest : AmazonSimpleSystemsManagementRequest
     {

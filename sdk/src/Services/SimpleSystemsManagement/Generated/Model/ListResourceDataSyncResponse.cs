@@ -58,7 +58,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceDataSyncItems. 
         /// <para>
-        /// A list of your current Resource Data Sync configurations and their statuses.
+        /// A list of your current resource data sync configurations and their statuses.
         /// </para>
         /// </summary>
         public List<ResourceDataSyncItem> ResourceDataSyncItems

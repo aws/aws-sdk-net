@@ -68,8 +68,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Cutoff. 
         /// <para>
-        /// The number of hours before the end of the maintenance window that Systems Manager
-        /// stops scheduling new tasks for execution.
+        /// The number of hours before the end of the maintenance window that Amazon Web Services
+        /// Systems Manager stops scheduling new tasks for execution.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=23)]
@@ -145,7 +145,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property EndDate. 
         /// <para>
         /// The date and time, in ISO-8601 Extended format, for when the maintenance window is
-        /// scheduled to become inactive. The maintenance window will not run after this specified
+        /// scheduled to become inactive. The maintenance window won't run after this specified
         /// time.
         /// </para>
         /// </summary>
@@ -202,7 +202,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ScheduleOffset. 
         /// <para>
-        /// The number of days to wait to run a maintenance window after the scheduled CRON expression
+        /// The number of days to wait to run a maintenance window after the scheduled cron expression
         /// date and time.
         /// </para>
         /// </summary>
@@ -244,7 +244,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property StartDate. 
         /// <para>
         /// The date and time, in ISO-8601 Extended format, for when the maintenance window is
-        /// scheduled to become active. The maintenance window will not run before this specified
+        /// scheduled to become active. The maintenance window won't run before this specified
         /// time.
         /// </para>
         /// </summary>

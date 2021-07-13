@@ -104,8 +104,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OwnerInformation. 
         /// <para>
-        /// User-provided value to be included in any CloudWatch events raised while running tasks
-        /// for these targets in this maintenance window. 
+        /// User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge
+        /// events raised while running tasks for these targets in this maintenance window.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -216,8 +216,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskType. 
         /// <para>
-        /// Retrieves the task type for a maintenance window. Task types include the following:
-        /// LAMBDA, STEP_FUNCTIONS, AUTOMATION, RUN_COMMAND.
+        /// Retrieves the task type for a maintenance window.
         /// </para>
         /// </summary>
         public MaintenanceWindowTaskType TaskType

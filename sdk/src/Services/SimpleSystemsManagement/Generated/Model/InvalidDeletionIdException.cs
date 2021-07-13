@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The ID specified for the delete operation does not exist or is not valid. Verify the
+    /// The ID specified for the delete operation doesn't exist or isn't valid. Verify the
     /// ID and try again.
     /// </summary>
     #if !NETSTANDARD

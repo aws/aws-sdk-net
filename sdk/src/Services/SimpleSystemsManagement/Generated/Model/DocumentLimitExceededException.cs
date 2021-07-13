@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// You can have at most 500 active Systems Manager documents.
+    /// You can have at most 500 active SSM documents.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

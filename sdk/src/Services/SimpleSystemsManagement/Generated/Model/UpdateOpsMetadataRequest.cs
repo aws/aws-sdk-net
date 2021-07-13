@@ -30,7 +30,8 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateOpsMetadata operation.
-    /// Systems Manager calls this API action when you edit OpsMetadata in Application Manager.
+    /// Amazon Web Services Systems Manager calls this API operation when you edit OpsMetadata
+    /// in Application Manager.
     /// </summary>
     public partial class UpdateOpsMetadataRequest : AmazonSimpleSystemsManagementRequest
     {

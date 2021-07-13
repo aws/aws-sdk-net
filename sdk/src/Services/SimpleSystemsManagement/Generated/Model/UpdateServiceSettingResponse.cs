@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The result body of the UpdateServiceSetting API action.
+    /// The result body of the UpdateServiceSetting API operation.
     /// </summary>
     public partial class UpdateServiceSettingResponse : AmazonWebServiceResponse
     {

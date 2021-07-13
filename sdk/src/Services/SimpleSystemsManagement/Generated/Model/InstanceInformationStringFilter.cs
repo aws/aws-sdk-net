@@ -48,7 +48,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <important> 
         /// <para>
-        ///  <code>Tag key</code> is not a valid filter. You must specify either <code>tag-key</code>
+        ///  <code>Tag key</code> isn't a valid filter. You must specify either <code>tag-key</code>
         /// or <code>tag:keyname</code> and a string. Here are some valid examples: tag-key, tag:123,
         /// tag:al!, tag:Windows. Here are some <i>invalid</i> examples: tag-keys, Tag Key, tag:,
         /// tagKey, abc:keyname.

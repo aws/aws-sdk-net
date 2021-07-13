@@ -30,7 +30,8 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
-    /// and constraints for parameter names</a> in the <i>AWS Systems Manager User Guide</i>.
+    /// and constraints for parameter names</a> in the <i>Amazon Web Services Systems Manager
+    /// User Guide</i>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

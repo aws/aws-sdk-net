@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The specified inventory group is not valid.
+    /// The specified inventory group isn't valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

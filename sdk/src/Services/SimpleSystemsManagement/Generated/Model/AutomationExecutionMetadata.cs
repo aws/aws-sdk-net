@@ -139,10 +139,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property AutomationType. 
         /// <para>
         /// Use this filter with <a>DescribeAutomationExecutions</a>. Specify either Local or
-        /// CrossAccount. CrossAccount is an Automation that runs in multiple AWS Regions and
-        /// accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-        /// Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS Systems
-        /// Manager User Guide</i>. 
+        /// CrossAccount. CrossAccount is an Automation that runs in multiple Regions and accounts.
+        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
+        /// Automation workflows in multiple Regions and accounts</a> in the <i>Amazon Web Services
+        /// Systems Manager User Guide</i>. 
         /// </para>
         /// </summary>
         public AutomationType AutomationType
@@ -215,7 +215,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentName. 
         /// <para>
-        /// The name of the Automation document used during execution.
+        /// The name of the Automation runbook used during execution.
         /// </para>
         /// </summary>
         public string DocumentName
@@ -251,7 +251,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ExecutedBy. 
         /// <para>
-        /// The IAM role ARN of the user who ran the Automation.
+        /// The IAM role ARN of the user who ran the automation.
         /// </para>
         /// </summary>
         public string ExecutedBy
@@ -269,7 +269,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ExecutionEndTime. 
         /// <para>
-        /// The time the execution finished. This is not populated if the execution is still in
+        /// The time the execution finished. This isn't populated if the execution is still in
         /// progress.
         /// </para>
         /// </summary>
@@ -306,7 +306,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property FailureMessage. 
         /// <para>
-        /// The list of execution outputs as defined in the Automation document.
+        /// The list of execution outputs as defined in the Automation runbook.
         /// </para>
         /// </summary>
         public string FailureMessage
@@ -342,7 +342,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property MaxConcurrency. 
         /// <para>
-        /// The MaxConcurrency value specified by the user when starting the Automation.
+        /// The <code>MaxConcurrency</code> value specified by the user when starting the automation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
@@ -361,7 +361,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property MaxErrors. 
         /// <para>
-        /// The MaxErrors value specified by the user when starting the Automation.
+        /// The <code>MaxErrors</code> value specified by the user when starting the automation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
@@ -416,7 +416,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Outputs. 
         /// <para>
-        /// The list of execution outputs as defined in the Automation document.
+        /// The list of execution outputs as defined in the Automation runbook.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -435,7 +435,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ParentAutomationExecutionId. 
         /// <para>
-        /// The ExecutionId of the parent Automation.
+        /// The execution ID of the parent automation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -472,8 +472,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Runbooks. 
         /// <para>
-        /// Information about the Automation runbooks (Automation documents) that are run during
-        /// a runbook workflow in Change Manager.
+        /// Information about the Automation runbooks that are run during a runbook workflow in
+        /// Change Manager.
         /// </para>
         ///  <note> 
         /// <para>
@@ -516,7 +516,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Target. 
         /// <para>
-        /// The list of execution outputs as defined in the Automation document.
+        /// The list of execution outputs as defined in the Automation runbook.
         /// </para>
         /// </summary>
         public string Target
@@ -553,7 +553,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TargetParameterName. 
         /// <para>
-        /// The list of execution outputs as defined in the Automation document.
+        /// The list of execution outputs as defined in the Automation runbook.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -572,7 +572,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The targets defined by the user when starting the Automation.
+        /// The targets defined by the user when starting the automation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]

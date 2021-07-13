@@ -73,11 +73,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
-        /// logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code>
-        /// options in the <code>TaskInvocationParameters</code> structure. For information about
-        /// how Systems Manager handles these options for the supported maintenance window task
-        /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+        ///  <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage
+        /// Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code>
+        /// and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code>
+        /// structure. For information about how Amazon Web Services Systems Manager handles these
+        /// options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -173,8 +173,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
-        /// The ARN of the IAM service role to use to publish Amazon Simple Notification Service
-        /// (Amazon SNS) notifications for maintenance window Run Command tasks.
+        /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service
+        /// role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
+        /// for maintenance window Run Command tasks.
         /// </para>
         /// </summary>
         public string ServiceRoleArn
@@ -192,8 +193,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The targets (either instances or tags). Instances are specified using Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;.
-        /// Tags are specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.
+        /// The targets (either instances or tags). Instances are specified using <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
+        /// Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag value&gt;</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
@@ -212,9 +213,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskArn. 
         /// <para>
-        /// The resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task
-        /// types, <code>TaskArn</code> is the Systems Manager document name or ARN. For LAMBDA
-        /// tasks, it's the function name or ARN. For STEP_FUNCTIONS tasks, it's the state machine
+        /// The resource that the task uses during execution. For <code>RUN_COMMAND</code> and
+        /// <code>AUTOMATION</code> task types, <code>TaskArn</code> is the Amazon Web Services
+        /// Systems Manager (SSM document) name or ARN. For <code>LAMBDA</code> tasks, it's the
+        /// function name or ARN. For <code>STEP_FUNCTIONS</code> tasks, it's the state machine
         /// ARN.
         /// </para>
         /// </summary>
@@ -260,8 +262,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA,
-        /// or STEP_FUNCTIONS.
+        /// The type of task.
         /// </para>
         /// </summary>
         public MaintenanceWindowTaskType Type

@@ -57,7 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CloudWatchOutputConfig. 
         /// <para>
-        /// CloudWatch Logs information where you want Systems Manager to send the command output.
+        /// Amazon CloudWatch Logs information where you want Amazon Web Services Systems Manager
+        /// to send the command output.
         /// </para>
         /// </summary>
         public CloudWatchOutputConfig CloudWatchOutputConfig
@@ -150,7 +151,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentVersion. 
         /// <para>
-        /// The SSM document version.
+        /// The Systems Manager document (SSM document) version.
         /// </para>
         /// </summary>
         public string DocumentVersion
@@ -186,7 +187,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceName. 
         /// <para>
-        /// The name of the invocation target. For EC2 instances this is the value for the aws:Name
+        /// The name of the invocation target. For EC2 instances this is the value for the <code>aws:Name</code>
         /// tag. For on-premises instances, this is the name of the instance.
         /// </para>
         /// </summary>
@@ -243,7 +244,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
-        /// The IAM service role that Run Command uses to act on your behalf when sending notifications
+        /// The Identity and Access Management (IAM) service role that Run Command, a capability
+        /// of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications
         /// about command status changes on a per instance basis.
         /// </para>
         /// </summary>
@@ -262,9 +264,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StandardErrorUrl. 
         /// <para>
-        /// The URL to the plugin's StdErr file in Amazon S3, if the S3 bucket was defined for
-        /// the parent command. For an invocation, StandardErrorUrl is populated if there is just
-        /// one plugin defined for the command, and the S3 bucket was defined for the command.
+        /// The URL to the plugin's StdErr file in Amazon Simple Storage Service (Amazon S3),
+        /// if the S3 bucket was defined for the parent command. For an invocation, <code>StandardErrorUrl</code>
+        /// is populated if there is just one plugin defined for the command, and the S3 bucket
+        /// was defined for the command.
         /// </para>
         /// </summary>
         public string StandardErrorUrl
@@ -282,9 +285,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StandardOutputUrl. 
         /// <para>
-        /// The URL to the plugin's StdOut file in Amazon S3, if the S3 bucket was defined for
-        /// the parent command. For an invocation, StandardOutputUrl is populated if there is
-        /// just one plugin defined for the command, and the S3 bucket was defined for the command.
+        /// The URL to the plugin's StdOut file in Amazon Simple Storage Service (Amazon S3),
+        /// if the S3 bucket was defined for the parent command. For an invocation, <code>StandardOutputUrl</code>
+        /// is populated if there is just one plugin defined for the command, and the S3 bucket
+        /// was defined for the command.
         /// </para>
         /// </summary>
         public string StandardOutputUrl
@@ -325,16 +329,16 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// states resulting from error and concurrency control parameters. StatusDetails can
         /// show different results than Status. For more information about these statuses, see
         /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-        /// command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can
-        /// be one of the following values:
+        /// command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+        /// StatusDetails can be one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Pending: The command has not been sent to the instance.
+        /// Pending: The command hasn't been sent to the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In Progress: The command has been sent to the instance but has not reached a terminal
+        /// In Progress: The command has been sent to the instance but hasn't reached a terminal
         /// state.
         /// </para>
         ///  </li> <li> 
@@ -344,23 +348,23 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Delivery Timed Out: The command was not delivered to the instance before the delivery
-        /// timeout expired. Delivery timeouts do not count against the parent command's MaxErrors
+        /// Delivery Timed Out: The command wasn't delivered to the instance before the delivery
+        /// timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code>
         /// limit, but they do contribute to whether the parent command status is Success or Incomplete.
         /// This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Execution Timed Out: Command execution started on the instance, but the execution
-        /// was not complete before the execution timeout expired. Execution timeouts count against
-        /// the MaxErrors limit of the parent command. This is a terminal state.
+        /// wasn't complete before the execution timeout expired. Execution timeouts count against
+        /// the <code>MaxErrors</code> limit of the parent command. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Failed: The command was not successful on the instance. For a plugin, this indicates
-        /// that the result code was not zero. For a command invocation, this indicates that the
-        /// result code for one or more plugins was not zero. Invocation failures count against
-        /// the MaxErrors limit of the parent command. This is a terminal state.
+        /// Failed: The command wasn't successful on the instance. For a plugin, this indicates
+        /// that the result code wasn't zero. For a command invocation, this indicates that the
+        /// result code for one or more plugins wasn't zero. Invocation failures count against
+        /// the <code>MaxErrors</code> limit of the parent command. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>

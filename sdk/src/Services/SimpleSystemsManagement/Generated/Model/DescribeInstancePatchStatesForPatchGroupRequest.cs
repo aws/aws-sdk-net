@@ -44,18 +44,19 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Each entry in the array is a structure containing:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
         /// Key (string between 1 and 200 characters)
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  Values (array containing a single string)
+        /// Values (array containing a single string)
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")
+        /// Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=4)]
         public List<InstancePatchStateFilter> Filters

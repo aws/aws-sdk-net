@@ -30,8 +30,8 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDocuments operation.
-    /// Returns all Systems Manager (SSM) documents in the current AWS account and Region.
-    /// You can limit the results of this request by using a filter.
+    /// Returns all Systems Manager (SSM) documents in the current account and Region. You
+    /// can limit the results of this request by using a filter.
     /// </summary>
     public partial class ListDocumentsRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -85,8 +85,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This API action only supports filtering documents by using a single tag key and one
-        /// or more tag values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
+        /// This API operation only supports filtering documents by using a single tag key and
+        /// one or more tag values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
         /// 
         /// </para>
         ///  </note>

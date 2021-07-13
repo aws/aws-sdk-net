@@ -82,7 +82,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource you want to retrieve information about. For example, "INSTANCE".
+        /// The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -101,7 +101,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The instance ID or key/value pair to retrieve information about.
+        /// The instance ID or key-value pair to retrieve information about.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=5)]

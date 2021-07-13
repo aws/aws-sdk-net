@@ -39,7 +39,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ActivationList. 
         /// <para>
-        /// A list of activations for your AWS account.
+        /// A list of activations for your account.
         /// </para>
         /// </summary>
         public List<Activation> ActivationList

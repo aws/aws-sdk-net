@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The request is not valid.
+    /// The request isn't valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

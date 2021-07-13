@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCommands operation.
-    /// Lists the commands requested by users of the AWS account.
+    /// Lists the commands requested by users of the account.
     /// </summary>
     public partial class ListCommandsRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -101,7 +101,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  <note> 
         /// <para>
         /// You can't specify an instance ID in the same command that you specify <code>Status</code>
-        /// = <code>Pending</code>. This is because the command has not reached the instance yet.
+        /// = <code>Pending</code>. This is because the command hasn't reached the instance yet.
         /// </para>
         ///  </note>
         /// </summary>

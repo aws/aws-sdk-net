@@ -49,8 +49,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Cutoff. 
         /// <para>
-        /// The number of hours before the end of the maintenance window that Systems Manager
-        /// stops scheduling new tasks for execution.
+        /// The number of hours before the end of the maintenance window that Amazon Web Services
+        /// Systems Manager stops scheduling new tasks for execution.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=23)]
@@ -201,7 +201,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ScheduleOffset. 
         /// <para>
-        /// The number of days to wait to run a maintenance window after the scheduled CRON expression
+        /// The number of days to wait to run a maintenance window after the scheduled cron expression
         /// date and time.
         /// </para>
         /// </summary>

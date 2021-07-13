@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+    /// The resource ID isn't valid. Verify that you entered the correct ID and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -32,7 +32,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// Container for the parameters to the DescribePatchProperties operation.
     /// Lists the properties of available patches organized by product, product family, classification,
     /// severity, and other properties of available patches. You can use the reported properties
-    /// in the filters you specify in requests for actions such as <a>CreatePatchBaseline</a>,
+    /// in the filters you specify in requests for operations such as <a>CreatePatchBaseline</a>,
     /// <a>UpdatePatchBaseline</a>, <a>DescribeAvailablePatches</a>, and <a>DescribePatchBaselines</a>.
     /// 
     ///  
@@ -42,43 +42,50 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  <dl> <dt>AMAZON_LINUX</dt> <dd> 
     /// <para>
-    /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+    /// Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code>
+    /// 
     /// </para>
     ///  </dd> <dt>AMAZON_LINUX_2</dt> <dd> 
     /// <para>
-    /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+    /// Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code>
+    /// 
     /// </para>
     ///  </dd> <dt>CENTOS</dt> <dd> 
     /// <para>
-    /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+    /// Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code>
+    /// 
     /// </para>
     ///  </dd> <dt>DEBIAN</dt> <dd> 
     /// <para>
-    /// Valid properties: PRODUCT, PRIORITY
+    /// Valid properties: <code>PRODUCT</code> | <code>PRIORITY</code> 
     /// </para>
     ///  </dd> <dt>MACOS</dt> <dd> 
     /// <para>
-    /// Valid properties: PRODUCT, CLASSIFICATION
+    /// Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> 
     /// </para>
     ///  </dd> <dt>ORACLE_LINUX</dt> <dd> 
     /// <para>
-    /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+    /// Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code>
+    /// 
     /// </para>
     ///  </dd> <dt>REDHAT_ENTERPRISE_LINUX</dt> <dd> 
     /// <para>
-    /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+    /// Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code>
+    /// 
     /// </para>
     ///  </dd> <dt>SUSE</dt> <dd> 
     /// <para>
-    /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+    /// Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code>
+    /// 
     /// </para>
     ///  </dd> <dt>UBUNTU</dt> <dd> 
     /// <para>
-    /// Valid properties: PRODUCT, PRIORITY
+    /// Valid properties: <code>PRODUCT</code> | <code>PRIORITY</code> 
     /// </para>
     ///  </dd> <dt>WINDOWS</dt> <dd> 
     /// <para>
-    /// Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY
+    /// Valid properties: <code>PRODUCT</code> | <code>PRODUCT_FAMILY</code> | <code>CLASSIFICATION</code>
+    /// | <code>MSRC_SEVERITY</code> 
     /// </para>
     ///  </dd> </dl>
     /// </summary>
@@ -151,8 +158,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property PatchSet. 
         /// <para>
-        /// Indicates whether to list patches for the Windows operating system or for Microsoft
-        /// applications. Not applicable for the Linux or macOS operating systems.
+        /// Indicates whether to list patches for the Windows operating system or for applications
+        /// released by Microsoft. Not applicable for the Linux or macOS operating systems.
         /// </para>
         /// </summary>
         public PatchSet PatchSet

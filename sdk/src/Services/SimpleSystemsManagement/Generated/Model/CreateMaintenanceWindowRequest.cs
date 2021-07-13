@@ -61,7 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AllowUnassociatedTargets. 
         /// <para>
-        /// Enables a maintenance window task to run on managed instances, even if you have not
+        /// Enables a maintenance window task to run on managed instances, even if you haven't
         /// registered those instances as targets. If enabled, then you must specify the unregistered
         /// instances (by instance ID) when you register a task with the maintenance window.
         /// </para>
@@ -106,8 +106,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Cutoff. 
         /// <para>
-        /// The number of hours before the end of the maintenance window that Systems Manager
-        /// stops scheduling new tasks for execution.
+        /// The number of hours before the end of the maintenance window that Amazon Web Services
+        /// Systems Manager stops scheduling new tasks for execution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=23)]
@@ -166,8 +166,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property EndDate. 
         /// <para>
         /// The date and time, in ISO-8601 Extended format, for when you want the maintenance
-        /// window to become inactive. EndDate allows you to set a date and time in the future
-        /// when the maintenance window will no longer run.
+        /// window to become inactive. <code>EndDate</code> allows you to set a date and time
+        /// in the future when the maintenance window will no longer run.
         /// </para>
         /// </summary>
         public string EndDate
@@ -223,7 +223,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ScheduleOffset. 
         /// <para>
-        /// The number of days to wait after the date and time specified by a CRON expression
+        /// The number of days to wait after the date and time specified by a cron expression
         /// before running the maintenance window.
         /// </para>
         ///  
@@ -279,8 +279,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property StartDate. 
         /// <para>
         /// The date and time, in ISO-8601 Extended format, for when you want the maintenance
-        /// window to become active. StartDate allows you to delay activation of the maintenance
-        /// window until the specified future date.
+        /// window to become active. <code>StartDate</code> allows you to delay activation of
+        /// the maintenance window until the specified future date.
         /// </para>
         /// </summary>
         public string StartDate
@@ -302,7 +302,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// in different ways, such as by purpose, owner, or environment. For example, you might
         /// want to tag a maintenance window to identify the type of tasks it will run, the types
         /// of targets, and the environment it will run in. In this case, you could specify the
-        /// following key name/value pairs:
+        /// following key-value pairs:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -318,7 +318,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// To add tags to an existing maintenance window, use the <a>AddTagsToResource</a> action.
+        /// To add tags to an existing maintenance window, use the <a>AddTagsToResource</a> operation.
         /// </para>
         ///  </note>
         /// </summary>

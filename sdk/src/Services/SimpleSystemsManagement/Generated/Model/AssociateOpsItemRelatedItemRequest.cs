@@ -32,7 +32,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// Container for the parameters to the AssociateOpsItemRelatedItem operation.
     /// Associates a related resource to a Systems Manager OpsCenter OpsItem. For example,
     /// you can associate an Incident Manager incident or analysis with an OpsItem. Incident
-    /// Manager is a capability of AWS Systems Manager.
+    /// Manager is a capability of Amazon Web Services Systems Manager.
     /// </summary>
     public partial class AssociateOpsItemRelatedItemRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -90,7 +90,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         ///  <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. Incident
-        /// Manager is a capability of AWS Systems Manager.
+        /// Manager is a capability of Amazon Web Services Systems Manager.
         /// </para>
         ///  
         /// <para>
@@ -113,8 +113,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceUri. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS resource that you want to associate with
-        /// the OpsItem.
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to
+        /// associate with the OpsItem.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

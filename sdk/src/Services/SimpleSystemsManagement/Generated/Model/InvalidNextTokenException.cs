@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The specified token is not valid.
+    /// The specified token isn't valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

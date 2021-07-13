@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The specified key is not valid.
+    /// The specified key isn't valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

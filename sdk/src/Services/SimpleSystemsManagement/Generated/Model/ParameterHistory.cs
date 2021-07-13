@@ -168,7 +168,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property LastModifiedUser. 
         /// <para>
-        /// Amazon Resource Name (ARN) of the AWS user who last changed the parameter.
+        /// Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.
         /// </para>
         /// </summary>
         public string LastModifiedUser
@@ -210,7 +210,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
-        /// parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         public List<ParameterInlinePolicy> Policies

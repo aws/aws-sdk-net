@@ -31,8 +31,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the CancelMaintenanceWindowExecution operation.
     /// Stops a maintenance window execution that is already in progress and cancels any tasks
-    /// in the window that have not already starting running. (Tasks already in progress will
-    /// continue to completion.)
+    /// in the window that haven't already starting running. Tasks already in progress will
+    /// continue to completion.
     /// </summary>
     public partial class CancelMaintenanceWindowExecutionRequest : AmazonSimpleSystemsManagementRequest
     {

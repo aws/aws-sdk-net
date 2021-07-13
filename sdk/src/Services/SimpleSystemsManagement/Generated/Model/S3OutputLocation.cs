@@ -79,7 +79,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property OutputS3Region. 
         /// <para>
         /// (Deprecated) You can no longer specify this parameter. The system ignores it. Instead,
-        /// Systems Manager automatically determines the Region of the S3 bucket.
+        /// Amazon Web Services Systems Manager automatically determines the Region of the S3
+        /// bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=20)]

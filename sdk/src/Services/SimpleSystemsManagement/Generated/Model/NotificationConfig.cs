@@ -59,11 +59,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property NotificationEvents. 
         /// <para>
-        /// The different events for which you can receive notifications. These events include
-        /// the following: All (events), InProgress, Success, TimedOut, Cancelled, Failed. To
-        /// learn more about these events, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
-        /// Systems Manager status changes using Amazon SNS notifications</a> in the <i>AWS Systems
-        /// Manager User Guide</i>.
+        /// The different events for which you can receive notifications. To learn more about
+        /// these events, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+        /// Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon
+        /// Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> NotificationEvents
@@ -81,10 +80,18 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property NotificationType. 
         /// <para>
-        /// Command: Receive notification when the status of a command changes. Invocation: For
-        /// commands sent to multiple instances, receive notification on a per-instance basis
-        /// when the status of a command changes. 
+        /// The type of notification.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Command</code>: Receive notification when the status of a command changes.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Invocation</code>: For commands sent to multiple instances, receive notification
+        /// on a per-instance basis when the status of a command changes. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public NotificationType NotificationType
         {

@@ -40,7 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property BaselineId. 
         /// <para>
-        /// The ID of the patch baseline to register the patch group with.
+        /// The ID of the patch baseline to register with the patch group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=128)]
@@ -59,7 +59,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property PatchGroup. 
         /// <para>
-        /// The name of the patch group that should be registered with the patch baseline.
+        /// The name of the patch group to be registered with the patch baseline.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

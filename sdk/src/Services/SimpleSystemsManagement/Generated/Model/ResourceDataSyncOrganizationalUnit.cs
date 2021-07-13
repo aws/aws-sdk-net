@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The AWS Organizations organizational unit data source for the sync.
+    /// The Organizations organizational unit data source for the sync.
     /// </summary>
     public partial class ResourceDataSyncOrganizationalUnit
     {
@@ -38,7 +38,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OrganizationalUnitId. 
         /// <para>
-        /// The AWS Organization unit ID data source for the sync.
+        /// The Organizations unit ID data source for the sync.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

@@ -49,9 +49,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin,
-        /// aws:applications, aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript,
-        /// or aws:updateSSMAgent. 
+        /// The name of the plugin. Must be one of the following: <code>aws:updateAgent</code>,
+        /// <code>aws:domainjoin</code>, <code>aws:applications</code>, <code>aws:runPowerShellScript</code>,
+        /// <code>aws:psmodule</code>, <code>aws:cloudWatch</code>, <code>aws:runShellScript</code>,
+        /// or <code>aws:updateSSMAgent</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=4)]
@@ -94,24 +95,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+        ///  <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
         /// 
         /// </para>
         ///  
         /// <para>
-        /// doc-example-bucket is the name of the S3 bucket;
+        ///  <code>doc-example-bucket</code> is the name of the S3 bucket;
         /// </para>
         ///  
         /// <para>
-        /// ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
+        ///  <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
         /// </para>
         ///  
         /// <para>
-        /// i-02573cafcfEXAMPLE is the instance ID;
+        ///  <code>i-02573cafcfEXAMPLE</code> is the instance ID;
         /// </para>
         ///  
         /// <para>
-        /// awsrunShellScript is the name of the plugin.
+        ///  <code>awsrunShellScript</code> is the name of the plugin.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=63)]
@@ -136,24 +137,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+        ///  <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
         /// 
         /// </para>
         ///  
         /// <para>
-        /// doc-example-bucket is the name of the S3 bucket;
+        ///  <code>doc-example-bucket</code> is the name of the S3 bucket;
         /// </para>
         ///  
         /// <para>
-        /// ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
+        ///  <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
         /// </para>
         ///  
         /// <para>
-        /// i-02573cafcfEXAMPLE is the instance ID;
+        ///  <code>i-02573cafcfEXAMPLE</code> is the instance ID;
         /// </para>
         ///  
         /// <para>
-        /// awsrunShellScript is the name of the plugin.
+        ///  <code>awsrunShellScript</code> is the name of the plugin.
         /// </para>
         /// </summary>
         [AWSProperty(Max=500)]
@@ -173,7 +174,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property OutputS3Region. 
         /// <para>
         /// (Deprecated) You can no longer specify this parameter. The system ignores it. Instead,
-        /// Systems Manager automatically determines the S3 bucket region.
+        /// Amazon Web Services Systems Manager automatically determines the S3 bucket region.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=20)]
@@ -247,7 +248,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StandardErrorUrl. 
         /// <para>
-        /// The URL for the complete text written by the plugin to stderr. If execution is not
+        /// The URL for the complete text written by the plugin to stderr. If execution isn't
         /// yet complete, then this string is empty.
         /// </para>
         /// </summary>
@@ -267,7 +268,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property StandardOutputUrl. 
         /// <para>
         /// The URL for the complete text written by the plugin to stdout in Amazon S3. If the
-        /// S3 bucket for the command was not specified, then this string is empty.
+        /// S3 bucket for the command wasn't specified, then this string is empty.
         /// </para>
         /// </summary>
         public string StandardOutputUrl
@@ -303,20 +304,20 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StatusDetails. 
         /// <para>
-        /// A detailed status of the plugin execution. StatusDetails includes more information
-        /// than Status because it includes states resulting from error and concurrency control
-        /// parameters. StatusDetails can show different results than Status. For more information
-        /// about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-        /// command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can
-        /// be one of the following values:
+        /// A detailed status of the plugin execution. <code>StatusDetails</code> includes more
+        /// information than Status because it includes states resulting from error and concurrency
+        /// control parameters. StatusDetails can show different results than Status. For more
+        /// information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+        /// command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+        /// StatusDetails can be one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Pending: The command has not been sent to the instance.
+        /// Pending: The command hasn't been sent to the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In Progress: The command has been sent to the instance but has not reached a terminal
+        /// In Progress: The command has been sent to the instance but hasn't reached a terminal
         /// state.
         /// </para>
         ///  </li> <li> 
@@ -326,22 +327,22 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Delivery Timed Out: The command was not delivered to the instance before the delivery
-        /// timeout expired. Delivery timeouts do not count against the parent command's MaxErrors
+        /// Delivery Timed Out: The command wasn't delivered to the instance before the delivery
+        /// timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code>
         /// limit, but they do contribute to whether the parent command status is Success or Incomplete.
         /// This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Execution Timed Out: Command execution started on the instance, but the execution
-        /// was not complete before the execution timeout expired. Execution timeouts count against
-        /// the MaxErrors limit of the parent command. This is a terminal state.
+        /// wasn't complete before the execution timeout expired. Execution timeouts count against
+        /// the <code>MaxErrors</code> limit of the parent command. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Failed: The command was not successful on the instance. For a plugin, this indicates
-        /// that the result code was not zero. For a command invocation, this indicates that the
-        /// result code for one or more plugins was not zero. Invocation failures count against
+        /// Failed: The command wasn't successful on the instance. For a plugin, this indicates
+        /// that the result code wasn't zero. For a command invocation, this indicates that the
+        /// result code for one or more plugins wasn't zero. Invocation failures count against
         /// the MaxErrors limit of the parent command. This is a terminal state.
         /// </para>
         ///  </li> <li> 

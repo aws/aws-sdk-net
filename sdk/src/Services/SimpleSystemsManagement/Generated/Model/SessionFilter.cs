@@ -76,7 +76,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Owner: Specify an AWS user account to see a list of sessions started by that user.
+        /// Owner: Specify an Amazon Web Services user account to see a list of sessions started
+        /// by that user.
         /// </para>
         ///  </li> <li> 
         /// <para>

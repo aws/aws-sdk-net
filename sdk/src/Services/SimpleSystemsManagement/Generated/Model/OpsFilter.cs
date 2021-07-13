@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// A filter for viewing OpsItem summaries.
+    /// A filter for viewing OpsData summaries.
     /// </summary>
     public partial class OpsFilter
     {

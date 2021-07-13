@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The specified command ID is not valid. Verify the ID and try again.
+    /// The specified command ID isn't valid. Verify the ID and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

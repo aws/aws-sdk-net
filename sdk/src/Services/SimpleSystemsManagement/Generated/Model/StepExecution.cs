@@ -78,7 +78,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ExecutionEndTime. 
         /// <para>
         /// If a step has finished execution, this contains the time the execution ended. If the
-        /// step has not yet concluded, this field is not populated.
+        /// step hasn't yet concluded, this field isn't populated.
         /// </para>
         /// </summary>
         public DateTime ExecutionEndTime
@@ -97,7 +97,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ExecutionStartTime. 
         /// <para>
         /// If a step has begun execution, this contains the time the step started. If the step
-        /// is in Pending status, this field is not populated.
+        /// is in Pending status, this field isn't populated.
         /// </para>
         /// </summary>
         public DateTime ExecutionStartTime
@@ -207,7 +207,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property MaxAttempts. 
         /// <para>
-        /// The maximum number of tries to run the action of the step. The default value is 1.
+        /// The maximum number of tries to run the action of the step. The default value is <code>1</code>.
         /// </para>
         /// </summary>
         public int MaxAttempts
@@ -243,7 +243,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OnFailure. 
         /// <para>
-        /// The action to take if the step fails. The default value is Abort.
+        /// The action to take if the step fails. The default value is <code>Abort</code>.
         /// </para>
         /// </summary>
         public string OnFailure
@@ -389,7 +389,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TargetLocation. 
         /// <para>
-        /// The combination of AWS Regions and accounts targeted by the current Automation execution.
+        /// The combination of Regions and accounts targeted by the current Automation execution.
         /// </para>
         /// </summary>
         public TargetLocation TargetLocation

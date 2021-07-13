@@ -31,8 +31,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the DisassociateOpsItemRelatedItem operation.
     /// Deletes the association between an OpsItem and a related resource. For example, this
-    /// API action can delete an Incident Manager incident from an OpsItem. Incident Manager
-    /// is a capability of AWS Systems Manager.
+    /// API operation can delete an Incident Manager incident from an OpsItem. Incident Manager
+    /// is a capability of Amazon Web Services Systems Manager.
     /// </summary>
     public partial class DisassociateOpsItemRelatedItemRequest : AmazonSimpleSystemsManagementRequest
     {

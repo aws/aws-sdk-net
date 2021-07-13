@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The target is not valid or does not exist. It might not be configured for Systems
-    /// Manager or you might not have permission to perform the operation.
+    /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
+    /// or you might not have permission to perform the operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -65,7 +65,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The <code>Exists</code> filter must be used with aggregators. For more information,
         /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
-        /// inventory data</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -85,7 +85,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Values. 
         /// <para>
         /// Inventory filter values. Example: inventory filter where instance IDs are specified
-        /// as values Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal
+        /// as values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>.
         /// 
         /// </para>
         /// </summary>

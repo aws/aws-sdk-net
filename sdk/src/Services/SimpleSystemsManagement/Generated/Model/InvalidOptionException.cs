@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The delete inventory option specified is not valid. Verify the option and try again.
+    /// The delete inventory option specified isn't valid. Verify the option and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

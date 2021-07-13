@@ -3189,6 +3189,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly OpsItemFilterKey CreatedTime = new OpsItemFilterKey("CreatedTime");
         /// <summary>
+        /// Constant InsightByType for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey InsightByType = new OpsItemFilterKey("InsightByType");
+        /// <summary>
         /// Constant LastModifiedTime for OpsItemFilterKey
         /// </summary>
         public static readonly OpsItemFilterKey LastModifiedTime = new OpsItemFilterKey("LastModifiedTime");
@@ -3464,6 +3468,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant ChangeCalendarOverrideRejected for OpsItemStatus
         /// </summary>
         public static readonly OpsItemStatus ChangeCalendarOverrideRejected = new OpsItemStatus("ChangeCalendarOverrideRejected");
+        /// <summary>
+        /// Constant Closed for OpsItemStatus
+        /// </summary>
+        public static readonly OpsItemStatus Closed = new OpsItemStatus("Closed");
         /// <summary>
         /// Constant CompletedWithFailure for OpsItemStatus
         /// </summary>

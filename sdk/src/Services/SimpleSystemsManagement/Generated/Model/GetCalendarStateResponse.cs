@@ -41,7 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property AtTime. 
         /// <para>
         /// The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string,
-        /// that you specified in your command. If you did not specify a time, <code>GetCalendarState</code>
+        /// that you specified in your command. If you don't specify a time, <code>GetCalendarState</code>
         /// uses the current time.
         /// </para>
         /// </summary>
@@ -82,8 +82,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property State. 
         /// <para>
         /// The state of the calendar. An <code>OPEN</code> calendar indicates that actions are
-        /// allowed to proceed, and a <code>CLOSED</code> calendar indicates that actions are
-        /// not allowed to proceed.
+        /// allowed to proceed, and a <code>CLOSED</code> calendar indicates that actions aren't
+        /// allowed to proceed.
         /// </para>
         /// </summary>
         public CalendarState State

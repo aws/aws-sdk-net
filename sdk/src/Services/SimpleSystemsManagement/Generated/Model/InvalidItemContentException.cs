@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// One or more content items is not valid.
+    /// One or more content items isn't valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

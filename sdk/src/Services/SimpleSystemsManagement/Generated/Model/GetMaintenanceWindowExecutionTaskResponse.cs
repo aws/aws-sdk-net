@@ -180,7 +180,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StatusDetails. 
         /// <para>
-        /// The details explaining the Status. Only available for certain status values.
+        /// The details explaining the status. Not available for all status values.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=250)]
@@ -199,7 +199,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskArn. 
         /// <para>
-        /// The ARN of the task that ran.
+        /// The Amazon Resource Name (ARN) of the task that ran.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -250,14 +250,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The map has the following format:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// Key: string, between 1 and 255 characters
+        ///  <code>Key</code>: string, between 1 and 255 characters
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Value: an array of strings, each string is between 1 and 255 characters
+        ///  <code>Value</code>: an array of strings, each between 1 and 255 characters
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Dictionary<string, MaintenanceWindowTaskParameterValueExpression>> TaskParameters
         {

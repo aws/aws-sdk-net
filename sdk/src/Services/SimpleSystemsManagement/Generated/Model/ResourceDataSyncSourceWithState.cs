@@ -38,7 +38,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  
     /// <para>
     ///  <code>NoPermissions</code> (The system can't locate the service-linked role. This
-    /// role is automatically created when a user creates a resource data sync in Explorer.)
+    /// role is automatically created when a user creates a resource data sync in Amazon Web
+    /// Services Systems Manager Explorer.)
     /// </para>
     ///  
     /// <para>
@@ -48,7 +49,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  
     /// <para>
     ///  <code>TrustedAccessDisabled</code> (You disabled Systems Manager access in the organization
-    /// in AWS Organizations.)
+    /// in Organizations.)
     /// </para>
     /// </summary>
     public partial class ResourceDataSyncSourceWithState
@@ -82,12 +83,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property EnableAllOpsDataSources. 
         /// <para>
-        /// When you create a resource data sync, if you choose one of the AWS Organizations options,
-        /// then Systems Manager automatically enables all OpsData sources in the selected AWS
-        /// Regions for all AWS accounts in your organization (or in the selected organization
-        /// units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About
-        /// multiple account and Region resource data syncs</a> in the <i>AWS Systems Manager
-        /// User Guide</i>.
+        /// When you create a resource data sync, if you choose one of the Organizations options,
+        /// then Systems Manager automatically enables all OpsData sources in the selected Regions
+        /// for all accounts in your organization (or in the selected organization units). For
+        /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About
+        /// multiple account and Region resource data syncs</a> in the <i>Amazon Web Services
+        /// Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         public bool EnableAllOpsDataSources
@@ -105,8 +106,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property IncludeFutureRegions. 
         /// <para>
-        /// Whether to automatically synchronize and aggregate data from new AWS Regions when
-        /// those Regions come online.
+        /// Whether to automatically synchronize and aggregate data from new Regions when those
+        /// Regions come online.
         /// </para>
         /// </summary>
         public bool IncludeFutureRegions
@@ -124,7 +125,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SourceRegions. 
         /// <para>
-        /// The <code>SyncSource</code> AWS Regions included in the resource data sync.
+        /// The <code>SyncSource</code> Regions included in the resource data sync.
         /// </para>
         /// </summary>
         public List<string> SourceRegions
@@ -143,8 +144,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property SourceType. 
         /// <para>
         /// The type of data source for the resource data sync. <code>SourceType</code> is either
-        /// <code>AwsOrganizations</code> (if an organization is present in AWS Organizations)
-        /// or <code>singleAccountMultiRegions</code>.
+        /// <code>AwsOrganizations</code> (if an organization is present in Organizations) or
+        /// <code>singleAccountMultiRegions</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -182,7 +183,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         ///  <code>TrustedAccessDisabled</code>: You disabled Systems Manager access in the organization
-        /// in AWS Organizations.
+        /// in Organizations.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

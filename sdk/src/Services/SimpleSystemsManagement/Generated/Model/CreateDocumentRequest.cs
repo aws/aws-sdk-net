@@ -30,11 +30,12 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDocument operation.
-    /// Creates a Systems Manager (SSM) document. An SSM document defines the actions that
-    /// Systems Manager performs on your managed instances. For more information about SSM
-    /// documents, including information about supported schemas, features, and syntax, see
-    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">AWS
-    /// Systems Manager Documents</a> in the <i>AWS Systems Manager User Guide</i>.
+    /// Creates a Amazon Web Services Systems Manager (SSM document). An SSM document defines
+    /// the actions that Systems Manager performs on your managed instances. For more information
+    /// about SSM documents, including information about supported schemas, features, and
+    /// syntax, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">Amazon
+    /// Web Services Systems Manager Documents</a> in the <i>Amazon Web Services Systems Manager
+    /// User Guide</i>.
     /// </summary>
     public partial class CreateDocumentRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -57,8 +58,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates CreateDocumentRequest with the parameterized properties
         /// </summary>
-        /// <param name="name">A name for the Systems Manager document. <important> You can't use the following strings as document name prefixes. These are reserved by AWS for use as document name prefixes: <ul> <li>  <code>aws-</code>  </li> <li>  <code>amazon</code>  </li> <li>  <code>amzn</code>  </li> </ul> </important></param>
-        /// <param name="content">The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command. For examples, see the following topics in the <i>AWS Systems Manager User Guide</i>. <ul> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (AWS API)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (AWS CLI)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a>  </li> </ul></param>
+        /// <param name="name">A name for the SSM document. <important> You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes: <ul> <li>  <code>aws-</code>  </li> <li>  <code>amazon</code>  </li> <li>  <code>amzn</code>  </li> </ul> </important></param>
+        /// <param name="content">The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command. For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>. <ul> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a>  </li> </ul></param>
         public CreateDocumentRequest(string name, string content)
         {
             _name = name;
@@ -68,7 +69,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Attachments. 
         /// <para>
-        /// A list of key and value pairs that describe attachments to a version of a document.
+        /// A list of key-value pairs that describe attachments to a version of a document.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
@@ -93,17 +94,18 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// For examples, see the following topics in the <i>AWS Systems Manager User Guide</i>.
+        /// For examples, see the following topics in the <i>Amazon Web Services Systems Manager
+        /// User Guide</i>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
-        /// an SSM document (AWS API)</a> 
+        /// an SSM document (Amazon Web Services API)</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
-        /// an SSM document (AWS CLI)</a> 
+        /// an SSM document (Amazon Web Services CLI)</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -128,9 +130,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// An optional field where you can specify a friendly name for the Systems Manager document.
-        /// This value can differ for each version of the document. You can update this value
-        /// at a later time using the <a>UpdateDocument</a> action.
+        /// An optional field where you can specify a friendly name for the SSM document. This
+        /// value can differ for each version of the document. You can update this value at a
+        /// later time using the <a>UpdateDocument</a> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -186,12 +188,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A name for the Systems Manager document.
+        /// A name for the SSM document.
         /// </para>
         ///  <important> 
         /// <para>
         /// You can't use the following strings as document name prefixes. These are reserved
-        /// by AWS for use as document name prefixes:
+        /// by Amazon Web Services for use as document name prefixes:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -224,11 +226,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Requires. 
         /// <para>
         /// A list of SSM documents required by a document. This parameter is used exclusively
-        /// by AWS AppConfig. When a user creates an AppConfig configuration in an SSM document,
-        /// the user must also specify a required document for validation purposes. In this case,
+        /// by AppConfig. When a user creates an AppConfig configuration in an SSM document, the
+        /// user must also specify a required document for validation purposes. In this case,
         /// an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code>
-        /// document for validation purposes. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig.html">AWS
-        /// AppConfig</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// document for validation purposes. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What
+        /// is AppConfig?</a> in the <i>AppConfig User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -250,7 +252,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Optional metadata that you assign to a resource. Tags enable you to categorize a resource
         /// in different ways, such as by purpose, owner, or environment. For example, you might
         /// want to tag an SSM document to identify the types of targets or the environment where
-        /// it will run. In this case, you could specify the following key name/value pairs:
+        /// it will run. In this case, you could specify the following key-value pairs:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -262,7 +264,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// To add tags to an existing SSM document, use the <a>AddTagsToResource</a> action.
+        /// To add tags to an existing SSM document, use the <a>AddTagsToResource</a> operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -283,12 +285,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property TargetType. 
         /// <para>
         /// Specify a target type to define the kinds of resources the document can run on. For
-        /// example, to run a document on EC2 instances, specify the following value: /AWS::EC2::Instance.
+        /// example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>.
         /// If you specify a value of '/' the document can run on all types of resources. If you
         /// don't specify a value, the document can't run on any resources. For a list of valid
-        /// resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-        /// resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
-        /// 
+        /// resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+        /// Web Services resource and property types reference</a> in the <i>CloudFormation User
+        /// Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=200)]
@@ -309,7 +311,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// An optional field specifying the version of the artifact you are creating with the
         /// document. For example, "Release 12, Update 6". This value is unique across all versions
-        /// of a document, and cannot be changed.
+        /// of a document, and can't be changed.
         /// </para>
         /// </summary>
         public string VersionName

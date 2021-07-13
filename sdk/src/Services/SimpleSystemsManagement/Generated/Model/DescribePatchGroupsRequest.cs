@@ -41,35 +41,30 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters. Use a filter to return a more specific list of results.
+        /// Each element in the array is a structure containing a key-value pair.
         /// </para>
         ///  
         /// <para>
-        /// For <code>DescribePatchGroups</code>,valid filter keys include the following:
+        /// Supported keys for <code>DescribePatchGroups</code> include the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NAME_PREFIX</code>: The name of the patch group. Wildcards (*) are accepted.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>OPERATING_SYSTEM</code>: The supported operating system type to return results
-        /// for. For valid operating system values, see <a>GetDefaultPatchBaselineRequest$OperatingSystem</a>
-        /// in <a>CreatePatchBaseline</a>.
+        ///  <b> <code>NAME_PREFIX</code> </b> 
         /// </para>
         ///  
         /// <para>
-        /// Examples:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>--filters Key=NAME_PREFIX,Values=MyPatchGroup*</code> 
+        /// Sample values: <code>AWS-</code> | <code>My-</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>--filters Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code> 
+        ///  <b> <code>OPERATING_SYSTEM</code> </b> 
         /// </para>
-        ///  </li> </ul> </li> </ul>
+        ///  
+        /// <para>
+        /// Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<PatchOrchestratorFilter> Filters

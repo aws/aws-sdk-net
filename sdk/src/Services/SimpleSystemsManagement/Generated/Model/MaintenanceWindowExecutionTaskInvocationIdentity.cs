@@ -69,7 +69,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ExecutionId. 
         /// <para>
         /// The ID of the action performed in the service that actually handled the task invocation.
-        /// If the task type is RUN_COMMAND, this value is the command ID.
+        /// If the task type is <code>RUN_COMMAND</code>, this value is the command ID.
         /// </para>
         /// </summary>
         public string ExecutionId
@@ -107,7 +107,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property OwnerInformation. 
         /// <para>
         /// User-provided value that was specified when the target was registered with the maintenance
-        /// window. This was also included in any CloudWatch events raised during the task invocation.
+        /// window. This was also included in any Amazon CloudWatch Events events raised during
+        /// the task invocation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -180,8 +181,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StatusDetails. 
         /// <para>
-        /// The details explaining the status of the task invocation. Only available for certain
-        /// Status values. 
+        /// The details explaining the status of the task invocation. Not available for all status
+        /// values. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=250)]

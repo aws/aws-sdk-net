@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The filter value is not valid. Verify the value and try again.
+    /// The filter value isn't valid. Verify the value and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

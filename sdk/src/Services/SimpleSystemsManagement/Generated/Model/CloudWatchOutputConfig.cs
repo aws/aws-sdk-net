@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Configuration options for sending command output to CloudWatch Logs.
+    /// Configuration options for sending command output to Amazon CloudWatch Logs.
     /// </summary>
     public partial class CloudWatchOutputConfig
     {
@@ -39,9 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLogGroupName. 
         /// <para>
-        /// The name of the CloudWatch log group where you want to send command output. If you
-        /// don't specify a group name, Systems Manager automatically creates a log group for
-        /// you. The log group uses the following naming format: aws/ssm/<i>SystemsManagerDocumentName</i>.
+        /// The name of the CloudWatch Logs log group where you want to send command output. If
+        /// you don't specify a group name, Amazon Web Services Systems Manager automatically
+        /// creates a log group for you. The log group uses the following naming format:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws/ssm/<i>SystemsManagerDocumentName</i> </code> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The command ID and instance ID you specified did not match any invocations. Verify
+    /// The command ID and instance ID you specified didn't match any invocations. Verify
     /// the command ID and the instance ID and try again.
     /// </summary>
     #if !NETSTANDARD

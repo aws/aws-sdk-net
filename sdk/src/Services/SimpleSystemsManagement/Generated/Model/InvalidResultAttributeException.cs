@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The specified inventory item result attribute is not valid.
+    /// The specified inventory item result attribute isn't valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

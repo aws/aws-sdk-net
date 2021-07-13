@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// A summary of resources that are not compliant. The summary is organized according
-    /// to resource type.
+    /// A summary of resources that aren't compliant. The summary is organized according to
+    /// resource type.
     /// </summary>
     public partial class NonCompliantSummary
     {
@@ -40,7 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property NonCompliantCount. 
         /// <para>
-        /// The total number of compliance items that are not compliant.
+        /// The total number of compliance items that aren't compliant.
         /// </para>
         /// </summary>
         public int NonCompliantCount

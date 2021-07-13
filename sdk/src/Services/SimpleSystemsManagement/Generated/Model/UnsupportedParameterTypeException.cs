@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The parameter type is not supported.
+    /// The parameter type isn't supported.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

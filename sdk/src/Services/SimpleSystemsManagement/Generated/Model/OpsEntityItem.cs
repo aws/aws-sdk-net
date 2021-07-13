@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The OpsItem summaries result item.
+    /// The OpsData summary.
     /// </summary>
     public partial class OpsEntityItem
     {
@@ -39,7 +39,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CaptureTime. 
         /// <para>
-        /// The time OpsItem data was captured.
+        /// The time the OpsData was captured.
         /// </para>
         /// </summary>
         public string CaptureTime
@@ -57,7 +57,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The detailed data content for an OpsItem summaries result item.
+        /// The details of an OpsData summary.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000)]

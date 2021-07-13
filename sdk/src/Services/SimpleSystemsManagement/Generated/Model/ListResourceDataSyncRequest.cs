@@ -94,8 +94,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code>
         /// to view resource data syncs that synchronize data to an Amazon S3 bucket. Specify
-        /// <code>SyncFromSource</code> to view resource data syncs from AWS Organizations or
-        /// from multiple AWS Regions.
+        /// <code>SyncFromSource</code> to view resource data syncs from Organizations or from
+        /// multiple Regions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

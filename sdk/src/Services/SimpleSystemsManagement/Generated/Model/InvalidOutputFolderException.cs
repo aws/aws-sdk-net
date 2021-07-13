@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The S3 bucket does not exist.
+    /// The S3 bucket doesn't exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

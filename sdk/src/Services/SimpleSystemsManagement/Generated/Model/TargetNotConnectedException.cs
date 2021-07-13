@@ -29,11 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The specified target instance for the session is not fully configured for use with
+    /// The specified target instance for the session isn't fully configured for use with
     /// Session Manager. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Getting
-    /// started with Session Manager</a> in the <i>AWS Systems Manager User Guide</i>. This
-    /// error is also returned if you attempt to start a session on an instance that is located
-    /// in a different account or Region
+    /// started with Session Manager</a> in the <i>Amazon Web Services Systems Manager User
+    /// Guide</i>. This error is also returned if you attempt to start a session on an instance
+    /// that is located in a different account or Region
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

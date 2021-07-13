@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Status information returned by the <code>DeleteInventory</code> action.
+    /// Status information returned by the <code>DeleteInventory</code> operation.
     /// </summary>
     public partial class InventoryDeletionStatusItem
     {
@@ -44,7 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DeletionId. 
         /// <para>
-        /// The deletion ID returned by the <code>DeleteInventory</code> action.
+        /// The deletion ID returned by the <code>DeleteInventory</code> operation.
         /// </para>
         /// </summary>
         public string DeletionId
@@ -82,7 +82,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Information about the delete operation. For more information about this summary, see
         /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
-        /// the delete inventory summary</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public InventoryDeletionSummary DeletionSummary

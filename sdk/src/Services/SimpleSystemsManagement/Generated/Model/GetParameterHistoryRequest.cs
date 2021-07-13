@@ -100,8 +100,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WithDecryption. 
         /// <para>
-        /// Return decrypted values for secure string parameters. This flag is ignored for String
-        /// and StringList parameter types.
+        /// Return decrypted values for secure string parameters. This flag is ignored for <code>String</code>
+        /// and <code>StringList</code> parameter types.
         /// </para>
         /// </summary>
         public bool WithDecryption

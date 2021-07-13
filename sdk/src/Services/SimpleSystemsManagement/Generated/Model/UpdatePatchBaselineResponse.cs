@@ -107,8 +107,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ApprovedPatchesEnableNonSecurity. 
         /// <para>
         /// Indicates whether the list of approved patches includes non-security updates that
-        /// should be applied to the instances. The default value is 'false'. Applies to Linux
-        /// instances only.
+        /// should be applied to the instances. The default value is <code>false</code>. Applies
+        /// to Linux instances only.
         /// </para>
         /// </summary>
         public bool ApprovedPatchesEnableNonSecurity
@@ -163,7 +163,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the Patch Baseline.
+        /// A description of the patch baseline.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -274,9 +274,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property RejectedPatchesAction. 
         /// <para>
-        /// The action specified to take on patches included in the RejectedPatches list. A patch
-        /// can be allowed only if it is a dependency of another package, or blocked entirely
-        /// along with packages that include it as a dependency.
+        /// The action specified to take on patches included in the <code>RejectedPatches</code>
+        /// list. A patch can be allowed only if it is a dependency of another package, or blocked
+        /// entirely along with packages that include it as a dependency.
         /// </para>
         /// </summary>
         public PatchAction RejectedPatchesAction

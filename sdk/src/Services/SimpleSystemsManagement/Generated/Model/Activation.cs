@@ -30,8 +30,9 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// An activation registers one or more on-premises servers or virtual machines (VMs)
-    /// with AWS so that you can configure those servers or VMs using Run Command. A server
-    /// or VM that has been registered with AWS is called a managed instance.
+    /// with Amazon Web Services so that you can configure those servers or VMs using Run
+    /// Command. A server or VM that has been registered with Amazon Web Services Systems
+    /// Manager is called a managed instance.
     /// </summary>
     public partial class Activation
     {
@@ -159,7 +160,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property IamRole. 
         /// <para>
-        /// The Amazon Identity and Access Management (IAM) role to assign to the managed instance.
+        /// The Identity and Access Management (IAM) role to assign to the managed instance.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]

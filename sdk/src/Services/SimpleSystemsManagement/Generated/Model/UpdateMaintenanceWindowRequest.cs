@@ -81,8 +81,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Cutoff. 
         /// <para>
-        /// The number of hours before the end of the maintenance window that Systems Manager
-        /// stops scheduling new tasks for execution.
+        /// The number of hours before the end of the maintenance window that Amazon Web Services
+        /// Systems Manager stops scheduling new tasks for execution.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=23)]
@@ -158,8 +158,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property EndDate. 
         /// <para>
         /// The date and time, in ISO-8601 Extended format, for when you want the maintenance
-        /// window to become inactive. EndDate allows you to set a date and time in the future
-        /// when the maintenance window will no longer run.
+        /// window to become inactive. <code>EndDate</code> allows you to set a date and time
+        /// in the future when the maintenance window will no longer run.
         /// </para>
         /// </summary>
         public string EndDate
@@ -196,9 +196,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Replace. 
         /// <para>
-        /// If True, then all fields that are required by the CreateMaintenanceWindow action are
-        /// also required for this API request. Optional fields that are not specified are set
-        /// to null. 
+        /// If <code>True</code>, then all fields that are required by the <a>CreateMaintenanceWindow</a>
+        /// operation are also required for this API request. Optional fields that aren't specified
+        /// are set to null. 
         /// </para>
         /// </summary>
         public bool Replace
@@ -235,7 +235,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ScheduleOffset. 
         /// <para>
-        /// The number of days to wait after the date and time specified by a CRON expression
+        /// The number of days to wait after the date and time specified by a cron expression
         /// before running the maintenance window.
         /// </para>
         ///  

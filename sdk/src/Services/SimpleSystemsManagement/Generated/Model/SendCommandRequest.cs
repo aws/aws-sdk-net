@@ -60,8 +60,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates SendCommandRequest with the parameterized properties
         /// </summary>
-        /// <param name="documentName">The name of the Systems Manager document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>AWS Systems Manager User Guide</i>.</param>
-        /// <param name="instanceIds">The IDs of the instances where the command should run. Specifying instance IDs is most useful when you are targeting a limited number of instances, though you can specify up to 50 IDs. To target a larger number of instances, or if you prefer not to list individual instance IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>, which accepts tag key-value pairs to identify the instances to send commands to, you can a send command to tens, hundreds, or thousands of instances at once. For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.</param>
+        /// <param name="documentName">The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</param>
+        /// <param name="instanceIds">The IDs of the instances where the command should run. Specifying instance IDs is most useful when you are targeting a limited number of instances, though you can specify up to 50 IDs. To target a larger number of instances, or if you prefer not to list individual instance IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>, which accepts tag key-value pairs to identify the instances to send commands to, you can a send command to tens, hundreds, or thousands of instances at once. For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</param>
         public SendCommandRequest(string documentName, List<string> instanceIds)
         {
             _documentName = documentName;
@@ -71,7 +71,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CloudWatchOutputConfig. 
         /// <para>
-        /// Enables Systems Manager to send Run Command output to Amazon CloudWatch Logs. 
+        /// Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch
+        /// Logs. Run Command is a capability of Amazon Web Services Systems Manager.
         /// </para>
         /// </summary>
         public CloudWatchOutputConfig CloudWatchOutputConfig
@@ -156,10 +157,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentName. 
         /// <para>
-        /// The name of the Systems Manager document to run. This can be a public document or
-        /// a custom document. To run a shared document belonging to another account, specify
-        /// the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
-        /// shared SSM documents</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// The name of the Amazon Web Services Systems Manager document (SSM document) to run.
+        /// This can be a public document or a custom document. To run a shared document belonging
+        /// to another account, specify the document ARN. For more information about how to use
+        /// shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
+        /// shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -179,9 +181,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property DocumentVersion. 
         /// <para>
         /// The SSM document version to use in the request. You can specify $DEFAULT, $LATEST,
-        /// or a specific version number. If you run commands by using the AWS CLI, then you must
-        /// escape the first two options by using a backslash. If you specify a version number,
-        /// then you don't need to use the backslash. For example:
+        /// or a specific version number. If you run commands by using the Command Line Interface
+        /// (Amazon Web Services CLI), then you must escape the first two options by using a backslash.
+        /// If you specify a version number, then you don't need to use the backslash. For example:
         /// </para>
         ///  
         /// <para>
@@ -225,8 +227,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         /// For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-        /// targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems Manager
-        /// User Guide</i>.
+        /// targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web Services
+        /// Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -247,9 +249,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// (Optional) The maximum number of instances that are allowed to run the command at
         /// the same time. You can specify a number such as 10 or a percentage such as 10%. The
-        /// default value is 50. For more information about how to use MaxConcurrency, see <a
-        /// href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
-        /// concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// default value is <code>50</code>. For more information about how to use <code>MaxConcurrency</code>,
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
+        /// concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
@@ -269,10 +271,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property MaxErrors. 
         /// <para>
         /// The maximum number of errors allowed without the command failing. When the command
-        /// fails one more time beyond the value of MaxErrors, the systems stops sending the command
-        /// to additional targets. You can specify a number like 10 or a percentage like 10%.
-        /// The default value is 0. For more information about how to use MaxErrors, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
-        /// error controls</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// fails one more time beyond the value of <code>MaxErrors</code>, the systems stops
+        /// sending the command to additional targets. You can specify a number like 10 or a percentage
+        /// like 10%. The default value is <code>0</code>. For more information about how to use
+        /// <code>MaxErrors</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
+        /// error controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
@@ -385,8 +388,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
-        /// The ARN of the IAM service role to use to publish Amazon Simple Notification Service
-        /// (Amazon SNS) notifications for Run Command commands.
+        /// The ARN of the Identity and Access Management (IAM) service role to use to publish
+        /// Amazon Simple Notification Service (Amazon SNS) notifications for Run Command commands.
         /// </para>
         /// </summary>
         public string ServiceRoleArn
@@ -418,7 +421,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         /// For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-        /// commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
@@ -437,8 +440,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TimeoutSeconds. 
         /// <para>
-        /// If this time is reached and the command has not already started running, it will not
-        /// run.
+        /// If this time is reached and the command hasn't already started running, it won't run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=30, Max=2592000)]

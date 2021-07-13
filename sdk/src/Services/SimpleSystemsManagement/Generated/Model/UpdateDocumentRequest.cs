@@ -46,7 +46,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Attachments. 
         /// <para>
-        /// A list of key and value pairs that describe attachments to a version of a document.
+        /// A list of key-value pairs that describe attachments to a version of a document.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
@@ -84,9 +84,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The friendly name of the Systems Manager document that you want to update. This value
-        /// can differ for each version of the document. If you do not specify a value for this
-        /// parameter in your request, the existing value is applied to the new document version.
+        /// The friendly name of the SSM document that you want to update. This value can differ
+        /// for each version of the document. If you don't specify a value for this parameter
+        /// in your request, the existing value is applied to the new document version.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -144,7 +144,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Systems Manager document that you want to update.
+        /// The name of the SSM document that you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -184,7 +184,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// An optional field specifying the version of the artifact you are updating with the
         /// document. For example, "Release 12, Update 6". This value is unique across all versions
-        /// of a document, and cannot be changed.
+        /// of a document, and can't be changed.
         /// </para>
         /// </summary>
         public string VersionName

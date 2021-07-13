@@ -36,7 +36,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  <note> 
     /// <para>
     /// This command is primarily for use by client machines to automatically reconnect during
-    /// intermittent network issues. It is not intended for any other use.
+    /// intermittent network issues. It isn't intended for any other use.
     /// </para>
     ///  </note>
     /// </summary>

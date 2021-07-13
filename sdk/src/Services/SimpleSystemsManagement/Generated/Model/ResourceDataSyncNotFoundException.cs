@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The specified sync name was not found.
+    /// The specified sync name wasn't found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The OpsMetadata object does not exist.
+    /// The OpsMetadata object doesn't exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -97,7 +97,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StatusDetails. 
         /// <para>
-        /// The details explaining the Status. Only available for certain status values.
+        /// The details explaining the status. Not available for all status values.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=250)]

@@ -30,21 +30,22 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateServiceSetting operation.
-    /// <code>ServiceSetting</code> is an account-level setting for an AWS service. This
-    /// setting defines how a user interacts with or uses a service or a feature of a service.
-    /// For example, if an AWS service charges money to the account based on feature or service
-    /// usage, then the AWS service team might create a default setting of "false". This means
-    /// the user can't use this feature unless they change the setting to "true" and intentionally
-    /// opt in for a paid feature.
+    /// <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services
+    /// service. This setting defines how a user interacts with or uses a service or a feature
+    /// of a service. For example, if an Amazon Web Services service charges money to the
+    /// account based on feature or service usage, then the Amazon Web Services service team
+    /// might create a default setting of "false". This means the user can't use this feature
+    /// unless they change the setting to "true" and intentionally opt in for a paid feature.
     /// 
     ///  
     /// <para>
-    /// Services map a <code>SettingId</code> object to a setting value. AWS services teams
-    /// define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>,
-    /// but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code>
-    /// permission for the setting. Use the <a>GetServiceSetting</a> API action to view the
-    /// current value. Or, use the <a>ResetServiceSetting</a> to change the value back to
-    /// the original value defined by the AWS service team.
+    /// Services map a <code>SettingId</code> object to a setting value. Amazon Web Services
+    /// services teams define the default value for a <code>SettingId</code>. You can't create
+    /// a new <code>SettingId</code>, but you can overwrite the default value if you have
+    /// the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <a>GetServiceSetting</a>
+    /// API operation to view the current value. Or, use the <a>ResetServiceSetting</a> to
+    /// change the value back to the original value defined by the Amazon Web Services service
+    /// team.
     /// </para>
     ///  
     /// <para>
@@ -127,17 +128,17 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         /// For the <code>/ssm/automation/customer-script-log-destination</code> setting ID, the
-        /// setting value can be CloudWatch.
+        /// setting value can be <code>CloudWatch</code>.
         /// </para>
         ///  
         /// <para>
         /// For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the
-        /// setting value can be the name of a CloudWatch Logs log group.
+        /// setting value can be the name of an Amazon CloudWatch Logs log group.
         /// </para>
         ///  
         /// <para>
         /// For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID,
-        /// the setting value can be Enable or Disable.
+        /// the setting value can be <code>Enable</code> or <code>Disable</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=4096)]

@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePatchGroupState operation.
-    /// Returns high-level aggregated patch compliance state for a patch group.
+    /// Returns high-level aggregated patch compliance state information for a patch group.
     /// </summary>
     public partial class DescribePatchGroupStateRequest : AmazonSimpleSystemsManagementRequest
     {

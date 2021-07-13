@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// An Automation document with the specified name and version could not be found.
+    /// An Automation runbook with the specified name and version couldn't be found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

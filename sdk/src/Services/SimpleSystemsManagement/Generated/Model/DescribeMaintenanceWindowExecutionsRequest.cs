@@ -46,19 +46,17 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Each entry in the array is a structure containing:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// Key (string, between 1 and 128 characters)
+        /// Key. A string between 1 and 128 characters. Supported keys include <code>ExecutedBefore</code>
+        /// and <code>ExecutedAfter</code>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Values (array of strings, each string is between 1 and 256 characters)
+        /// Values. An array of strings, each between 1 and 256 characters. Supported values are
+        /// date/time strings in a valid ISO 8601 date/time format, such as <code>2021-11-04T05:00:00Z</code>.
         /// </para>
-        ///  
-        /// <para>
-        /// The supported Keys are ExecutedBefore and ExecutedAfter with the value being a date/time
-        /// string such as 2016-11-04T05:00:00Z.
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<MaintenanceWindowFilter> Filters

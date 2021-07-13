@@ -41,8 +41,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property PolicyStatus. 
         /// <para>
         /// The status of the policy. Policies report the following statuses: Pending (the policy
-        /// has not been enforced or applied yet), Finished (the policy was applied), Failed (the
-        /// policy was not applied), or InProgress (the policy is being applied now). 
+        /// hasn't been enforced or applied yet), Finished (the policy was applied), Failed (the
+        /// policy wasn't applied), or InProgress (the policy is being applied now). 
         /// </para>
         /// </summary>
         public string PolicyStatus
@@ -78,8 +78,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property PolicyType. 
         /// <para>
-        /// The type of policy. Parameter Store supports the following policy types: Expiration,
-        /// ExpirationNotification, and NoChangeNotification. 
+        /// The type of policy. Parameter Store, a capablility of Amazon Web Services Systems
+        /// Manager, supports the following policy types: Expiration, ExpirationNotification,
+        /// and NoChangeNotification. 
         /// </para>
         /// </summary>
         public string PolicyType

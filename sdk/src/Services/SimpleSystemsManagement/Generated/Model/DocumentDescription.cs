@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Describes a Systems Manager document.
+    /// Describes a Amazon Web Services Systems Manager document (SSM document).
     /// </summary>
     public partial class DocumentDescription
     {
@@ -174,8 +174,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The friendly name of the Systems Manager document. This value can differ for each
-        /// version of the document. If you want to update this value, see <a>UpdateDocument</a>.
+        /// The friendly name of the SSM document. This value can differ for each version of the
+        /// document. If you want to update this value, see <a>UpdateDocument</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -313,7 +313,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Systems Manager document.
+        /// The name of the SSM document.
         /// </para>
         /// </summary>
         public string Name
@@ -331,7 +331,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The AWS user account that created the document.
+        /// The Amazon Web Services user account that created the document.
         /// </para>
         /// </summary>
         public string Owner
@@ -385,7 +385,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property PlatformTypes. 
         /// <para>
-        /// The list of OS platforms compatible with this Systems Manager document. 
+        /// The list of OS platforms compatible with this SSM document. 
         /// </para>
         /// </summary>
         public List<string> PlatformTypes
@@ -496,7 +496,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the Systems Manager document.
+        /// The status of the SSM document.
         /// </para>
         /// </summary>
         public DocumentStatus Status
@@ -514,9 +514,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StatusInformation. 
         /// <para>
-        /// A message returned by AWS Systems Manager that explains the <code>Status</code> value.
-        /// For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code>
-        /// message, "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket
+        /// A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code>
+        /// value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code>
+        /// message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket
         /// is correct."
         /// </para>
         /// </summary>
@@ -555,9 +555,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property TargetType. 
         /// <para>
         /// The target type which defines the kinds of resources the document can run on. For
-        /// example, /AWS::EC2::Instance. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-        /// resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
-        /// 
+        /// example, <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+        /// Web Services resource and property types reference</a> in the <i>CloudFormation User
+        /// Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=200)]

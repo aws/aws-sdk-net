@@ -30,11 +30,11 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCalendarState operation.
-    /// Gets the state of the AWS Systems Manager Change Calendar at an optional, specified
-    /// time. If you specify a time, <code>GetCalendarState</code> returns the state of the
-    /// calendar at a specific time, and returns the next time that the Change Calendar state
-    /// will transition. If you do not specify a time, <code>GetCalendarState</code> assumes
-    /// the current time. Change Calendar entries have two possible states: <code>OPEN</code>
+    /// Gets the state of a Amazon Web Services Systems Manager change calendar at the current
+    /// time or a specified time. If you specify a time, <code>GetCalendarState</code> returns
+    /// the state of the calendar at that specific time, and returns the next time that the
+    /// change calendar state will transition. If you don't specify a time, <code>GetCalendarState</code>
+    /// uses the current time. Change Calendar entries have two possible states: <code>OPEN</code>
     /// or <code>CLOSED</code>.
     /// 
     ///  
@@ -45,8 +45,10 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about Systems Manager Change Calendar, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS
-    /// Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User Guide</i>.
+    /// For more information about Change Calendar, a capability of Amazon Web Services Systems
+    /// Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">Amazon
+    /// Web Services Systems Manager Change Calendar</a> in the <i>Amazon Web Services Systems
+    /// Manager User Guide</i>.
     /// </para>
     /// </summary>
     public partial class GetCalendarStateRequest : AmazonSimpleSystemsManagementRequest
@@ -58,8 +60,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property AtTime. 
         /// <para>
         /// (Optional) The specific time for which you want to get calendar state information,
-        /// in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you do
-        /// not add <code>AtTime</code>, the current time is assumed.
+        /// in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't
+        /// specify a value or <code>AtTime</code>, the current time is used.
         /// </para>
         /// </summary>
         public string AtTime
@@ -77,8 +79,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CalendarNames. 
         /// <para>
-        /// The names or Amazon Resource Names (ARNs) of the Systems Manager documents that represent
-        /// the calendar entries for which you want to get the state.
+        /// The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents)
+        /// that represent the calendar entries for which you want to get the state.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -41,7 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// The ID of the instance whose patch state information should be retrieved.
+        /// The ID of the instance for which patch state information should be retrieved.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

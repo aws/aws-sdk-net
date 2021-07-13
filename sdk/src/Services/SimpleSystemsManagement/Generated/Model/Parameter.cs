@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// An Systems Manager parameter in Parameter Store.
+    /// An Amazon Web Services Systems Manager parameter in Parameter Store.
     /// </summary>
     public partial class Parameter
     {
@@ -149,8 +149,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SourceResult. 
         /// <para>
-        /// Applies to parameters that reference information in other AWS services. SourceResult
-        /// is the raw result or response from the source.
+        /// Applies to parameters that reference information in other Amazon Web Services services.
+        /// <code>SourceResult</code> is the raw result or response from the source.
         /// </para>
         /// </summary>
         public string SourceResult

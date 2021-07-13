@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// You must specify values for all required parameters in the Systems Manager document.
-    /// You can only supply values to parameters defined in the Systems Manager document.
+    /// You must specify values for all required parameters in the Amazon Web Services Systems
+    /// Manager document (SSM document). You can only supply values to parameters defined
+    /// in the SSM document.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The association was not found using the parameters you specified in the call. Verify
+    /// The association wasn't found using the parameters you specified in the call. Verify
     /// the information and try again.
     /// </summary>
     #if !NETSTANDARD

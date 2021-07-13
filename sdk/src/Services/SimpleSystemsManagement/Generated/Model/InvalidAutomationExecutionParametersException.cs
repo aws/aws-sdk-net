@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The supplied parameters for invoking the specified Automation document are incorrect.
+    /// The supplied parameters for invoking the specified Automation runbook are incorrect.
     /// For example, they may not match the set of parameters permitted for the specified
     /// Automation document.
     /// </summary>

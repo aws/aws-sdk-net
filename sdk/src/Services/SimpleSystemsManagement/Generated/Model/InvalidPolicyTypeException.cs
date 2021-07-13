@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The policy type is not supported. Parameter Store supports the following policy types:
+    /// The policy type isn't supported. Parameter Store supports the following policy types:
     /// Expiration, ExpirationNotification, and NoChangeNotification.
     /// </summary>
     #if !NETSTANDARD

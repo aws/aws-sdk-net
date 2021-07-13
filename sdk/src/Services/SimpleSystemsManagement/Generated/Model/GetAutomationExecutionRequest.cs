@@ -40,7 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property AutomationExecutionId. 
         /// <para>
         /// The unique identifier for an existing automation execution to examine. The execution
-        /// ID is returned by StartAutomationExecution when the execution of an Automation document
+        /// ID is returned by StartAutomationExecution when the execution of an Automation runbook
         /// is initiated.
         /// </para>
         /// </summary>

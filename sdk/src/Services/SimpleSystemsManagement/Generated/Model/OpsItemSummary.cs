@@ -314,7 +314,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The impacted AWS resource.
+        /// The impacted Amazon Web Services resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

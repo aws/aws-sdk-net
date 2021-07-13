@@ -31,23 +31,26 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// The following problems can cause this exception:
     /// 
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// You do not have permission to access the instance.
+    /// You don't have permission to access the instance.
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// SSM Agent is not running. Verify that SSM Agent is running.
+    /// Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM
+    /// Agent is running.
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
+    /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
-    /// Invalid states are: Shutting-down and Terminated.
+    /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+    /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
+    /// and <code>Terminated</code>.
     /// </para>
+    ///  </li> </ul>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -31,7 +31,20 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the GetDeployablePatchSnapshotForInstance operation.
     /// Retrieves the current snapshot for the patch baseline the instance uses. This API
-    /// is primarily used by the AWS-RunPatchBaseline Systems Manager document.
+    /// is primarily used by the <code>AWS-RunPatchBaseline</code> Systems Manager document
+    /// (SSM document).
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If you run the command locally, such as with the Command Line Interface (CLI), the
+    /// system attempts to use your local AWS credentials and the operation fails. To avoid
+    /// this, you can run the command in the Amazon Web Services Systems Manager console.
+    /// Use Run Command, a capability of Amazon Web Services Systems Manager, with an SSM
+    /// document that enables you to target an instance with a script or command. For example,
+    /// run the command using the <code>AWS-RunShellScript</code> document or the <code>AWS-RunPowerShellScript</code>
+    /// document.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetDeployablePatchSnapshotForInstanceRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -79,7 +92,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SnapshotId. 
         /// <para>
-        /// The user-defined snapshot ID.
+        /// The snapshot ID provided by the user when running <code>AWS-RunPatchBaseline</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

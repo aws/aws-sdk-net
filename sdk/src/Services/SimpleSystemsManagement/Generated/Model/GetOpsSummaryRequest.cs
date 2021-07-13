@@ -30,7 +30,11 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetOpsSummary operation.
-    /// View a summary of OpsItems based on specified filters and aggregators.
+    /// View a summary of operations metadata (OpsData) based on specified filters and aggregators.
+    /// OpsData can include information about Amazon Web Services Systems Manager OpsCenter
+    /// operational workitems (OpsItems) as well as information about any Amazon Web Services
+    /// resource or service configured to report OpsData to Amazon Web Services Systems Manager
+    /// Explorer.
     /// </summary>
     public partial class GetOpsSummaryRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -44,7 +48,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Aggregators. 
         /// <para>
-        /// Optional aggregators that return counts of OpsItems based on one or more expressions.
+        /// Optional aggregators that return counts of OpsData based on one or more expressions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=12)]
@@ -63,7 +67,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Optional filters used to scope down the returned OpsItems. 
+        /// Optional filters used to scope down the returned OpsData. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -120,7 +124,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResultAttributes. 
         /// <para>
-        /// The OpsItem data type to return.
+        /// The OpsData data type to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

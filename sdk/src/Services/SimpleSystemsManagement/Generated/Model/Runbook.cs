@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Information about an Automation runbook (Automation document) used in a runbook workflow
-    /// in Change Manager.
+    /// Information about an Automation runbook used in a runbook workflow in Change Manager.
     /// 
     ///  <note> 
     /// <para>
@@ -53,7 +52,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentName. 
         /// <para>
-        /// The name of the Automation runbook (Automation document) used in a runbook workflow.
+        /// The name of the Automation runbook used in a runbook workflow.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -72,7 +71,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentVersion. 
         /// <para>
-        /// The version of the Automation runbook (Automation document) used in a runbook workflow.
+        /// The version of the Automation runbook used in a runbook workflow.
         /// </para>
         /// </summary>
         public string DocumentVersion
@@ -151,7 +150,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TargetLocations. 
         /// <para>
-        /// Information about the AWS Regions and accounts targeted by the current Runbook operation.
+        /// Information about the Regions and accounts targeted by the current Runbook operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -190,7 +189,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// A key-value mapping to target resources that the Runbook operation performs tasks
+        /// A key-value mapping to target resources that the runbook operation performs tasks
         /// on. Required if you specify <code>TargetParameterName</code>.
         /// </para>
         /// </summary>

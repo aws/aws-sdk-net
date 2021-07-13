@@ -33,8 +33,9 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// Describes the association for the specified target or instance. If you created the
     /// association by using the <code>Targets</code> parameter, then you must retrieve the
     /// association by using the association ID. If you created the association by specifying
-    /// an instance ID and a Systems Manager document, then you retrieve the association by
-    /// specifying the document name and the instance ID.
+    /// an instance ID and an Amazon Web Services Systems Manager document (SSM document),
+    /// then you retrieve the association by specifying the document name and the instance
+    /// ID.
     /// </summary>
     public partial class DescribeAssociationRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -52,7 +53,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Instantiates DescribeAssociationRequest with the parameterized properties
         /// </summary>
         /// <param name="instanceId">The instance ID.</param>
-        /// <param name="name">The name of the Systems Manager document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         public DescribeAssociationRequest(string instanceId, string name)
         {
             _instanceId = instanceId;
@@ -119,7 +120,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Systems Manager document.
+        /// The name of the SSM document.
         /// </para>
         /// </summary>
         public string Name

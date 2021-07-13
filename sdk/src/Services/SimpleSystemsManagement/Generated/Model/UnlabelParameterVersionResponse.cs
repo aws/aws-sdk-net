@@ -39,7 +39,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InvalidLabels. 
         /// <para>
-        /// The labels that are not attached to the given parameter version.
+        /// The labels that aren't attached to the given parameter version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

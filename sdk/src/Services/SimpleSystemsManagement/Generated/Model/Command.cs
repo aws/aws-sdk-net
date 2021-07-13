@@ -61,7 +61,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CloudWatchOutputConfig. 
         /// <para>
-        /// CloudWatch Logs information where you want Systems Manager to send the command output.
+        /// Amazon CloudWatch Logs information where you want Amazon Web Services Systems Manager
+        /// to send the command output.
         /// </para>
         /// </summary>
         public CloudWatchOutputConfig CloudWatchOutputConfig
@@ -174,7 +175,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentVersion. 
         /// <para>
-        /// The SSM document version.
+        /// The Systems Manager document (SSM document) version.
         /// </para>
         /// </summary>
         public string DocumentVersion
@@ -210,9 +211,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ExpiresAfter. 
         /// <para>
-        /// If this time is reached and the command has not already started running, it will not
-        /// run. Calculated based on the ExpiresAfter user input provided as part of the SendCommand
-        /// API.
+        /// If this time is reached and the command hasn't already started running, it won't run.
+        /// Calculated based on the <code>ExpiresAfter</code> user input provided as part of the
+        /// <code>SendCommand</code> API operation.
         /// </para>
         /// </summary>
         public DateTime ExpiresAfter
@@ -251,10 +252,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The maximum number of instances that are allowed to run the command at the same time.
         /// You can specify a number of instances, such as 10, or a percentage of instances, such
-        /// as 10%. The default value is 50. For more information about how to use MaxConcurrency,
+        /// as 10%. The default value is 50. For more information about how to use <code>MaxConcurrency</code>,
         /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-        /// commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager User
-        /// Guide</i>.
+        /// commands using Systems Manager Run Command</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
@@ -275,10 +276,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The maximum number of errors allowed before the system stops sending the command to
         /// additional targets. You can specify a number of errors, such as 10, or a percentage
-        /// or errors, such as 10%. The default value is 0. For more information about how to
-        /// use MaxErrors, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-        /// commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager User
-        /// Guide</i>.
+        /// or errors, such as 10%. The default value is <code>0</code>. For more information
+        /// about how to use <code>MaxErrors</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
+        /// commands using Systems Manager Run Command</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
@@ -411,7 +412,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
-        /// The IAM service role that Run Command uses to act on your behalf when sending notifications
+        /// The Identity and Access Management (IAM) service role that Run Command, a capability
+        /// of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications
         /// about command status changes. 
         /// </para>
         /// </summary>
@@ -448,20 +450,20 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StatusDetails. 
         /// <para>
-        /// A detailed status of the command execution. StatusDetails includes more information
-        /// than Status because it includes states resulting from error and concurrency control
-        /// parameters. StatusDetails can show different results than Status. For more information
-        /// about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-        /// command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can
-        /// be one of the following values:
+        /// A detailed status of the command execution. <code>StatusDetails</code> includes more
+        /// information than <code>Status</code> because it includes states resulting from error
+        /// and concurrency control parameters. <code>StatusDetails</code> can show different
+        /// results than Status. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+        /// command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+        /// StatusDetails can be one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Pending: The command has not been sent to any instances.
+        /// Pending: The command hasn't been sent to any instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In Progress: The command has been sent to at least one instance but has not reached
+        /// In Progress: The command has been sent to at least one instance but hasn't reached
         /// a final state on all instances.
         /// </para>
         ///  </li> <li> 
@@ -486,8 +488,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  </li> <li> 
         /// <para>
         /// Incomplete: The command was attempted on all instances and one or more invocations
-        /// does not have a value of Success but not enough invocations failed for the status
-        /// to be Failed. This is a terminal state.
+        /// doesn't have a value of Success but not enough invocations failed for the status to
+        /// be Failed. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>

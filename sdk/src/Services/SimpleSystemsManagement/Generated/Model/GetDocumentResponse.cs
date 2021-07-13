@@ -69,7 +69,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The contents of the Systems Manager document.
+        /// The contents of the SSM document.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -88,7 +88,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CreatedDate. 
         /// <para>
-        /// The date the Systems Manager document was created.
+        /// The date the SSM document was created.
         /// </para>
         /// </summary>
         public DateTime CreatedDate
@@ -106,8 +106,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The friendly name of the Systems Manager document. This value can differ for each
-        /// version of the document. If you want to update this value, see <a>UpdateDocument</a>.
+        /// The friendly name of the SSM document. This value can differ for each version of the
+        /// document. If you want to update this value, see <a>UpdateDocument</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -180,7 +180,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Systems Manager document.
+        /// The name of the SSM document.
         /// </para>
         /// </summary>
         public string Name
@@ -247,7 +247,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the Systems Manager document, such as <code>Creating</code>, <code>Active</code>,
+        /// The status of the SSM document, such as <code>Creating</code>, <code>Active</code>,
         /// <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.
         /// </para>
         /// </summary>
@@ -266,9 +266,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StatusInformation. 
         /// <para>
-        /// A message returned by AWS Systems Manager that explains the <code>Status</code> value.
-        /// For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code>
-        /// message, "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket
+        /// A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code>
+        /// value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code>
+        /// message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket
         /// is correct."
         /// </para>
         /// </summary>
@@ -288,7 +288,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property VersionName. 
         /// <para>
         /// The version of the artifact associated with the document. For example, "Release 12,
-        /// Update 6". This value is unique across all versions of a document, and cannot be changed.
+        /// Update 6". This value is unique across all versions of a document, and can't be changed.
         /// </para>
         /// </summary>
         public string VersionName

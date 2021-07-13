@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The parameters for an AUTOMATION task type.
+    /// The parameters for an <code>AUTOMATION</code> task type.
     /// </summary>
     public partial class MaintenanceWindowAutomationParameters
     {
@@ -39,7 +39,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentVersion. 
         /// <para>
-        /// The version of an Automation document to use during task execution.
+        /// The version of an Automation runbook to use during task execution.
         /// </para>
         /// </summary>
         public string DocumentVersion
@@ -57,7 +57,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// The parameters for the AUTOMATION task.
+        /// The parameters for the <code>AUTOMATION</code> task.
         /// </para>
         ///  
         /// <para>
@@ -66,11 +66,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
-        /// logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code>
-        /// options in the <code>TaskInvocationParameters</code> structure. For information about
-        /// how Systems Manager handles these options for the supported maintenance window task
-        /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+        ///  <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage
+        /// Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code>
+        /// and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code>
+        /// structure. For information about how Amazon Web Services Systems Manager handles these
+        /// options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
         /// </para>
         ///  
         /// <para>
@@ -81,8 +81,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// For AUTOMATION task types, Systems Manager ignores any values specified for these
-        /// parameters.
+        /// For <code>AUTOMATION</code> task types, Amazon Web Services Systems Manager ignores
+        /// any values specified for these parameters.
         /// </para>
         ///  </note>
         /// </summary>

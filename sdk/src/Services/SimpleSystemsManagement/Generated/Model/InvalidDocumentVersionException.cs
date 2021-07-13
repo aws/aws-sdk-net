@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The document version is not valid or does not exist.
+    /// The document version isn't valid or doesn't exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

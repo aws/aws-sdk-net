@@ -35,49 +35,50 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// TaskARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript
-    /// to AWS-RunShellScript.
+    ///  <code>TaskARN</code>. For example, you can change a <code>RUN_COMMAND</code> task
+    /// from <code>AWS-RunPowerShellScript</code> to <code>AWS-RunShellScript</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// ServiceRoleArn
+    ///  <code>ServiceRoleArn</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// TaskInvocationParameters
+    ///  <code>TaskInvocationParameters</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Priority
+    ///  <code>Priority</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// MaxConcurrency
+    ///  <code>MaxConcurrency</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// MaxErrors
+    ///  <code>MaxErrors</code> 
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
     /// One or more targets must be specified for maintenance window Run Command-type tasks.
     /// Depending on the task, targets are optional for other maintenance window task types
-    /// (Automation, AWS Lambda, and AWS Step Functions). For more information about running
-    /// tasks that do not specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
-    /// maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+    /// (Automation, Lambda, and Step Functions). For more information about running tasks
+    /// that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+    /// maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems
+    /// Manager User Guide</i>.
     /// </para>
     ///  </note> 
     /// <para>
     /// If the value for a parameter in <code>UpdateMaintenanceWindowTask</code> is null,
-    /// then the corresponding field is not modified. If you set <code>Replace</code> to true,
-    /// then all fields required by the <a>RegisterTaskWithMaintenanceWindow</a> action are
-    /// required for this request. Optional fields that aren't specified are set to null.
+    /// then the corresponding field isn't modified. If you set <code>Replace</code> to true,
+    /// then all fields required by the <a>RegisterTaskWithMaintenanceWindow</a> operation
+    /// are required for this request. Optional fields that aren't specified are set to null.
     /// </para>
     ///  <important> 
     /// <para>
     /// When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>,
     /// you must provide again all the <code>TaskInvocationParameters</code> values that you
-    /// want to retain. The values you do not specify again are removed. For example, suppose
+    /// want to retain. The values you don't specify again are removed. For example, suppose
     /// that when you registered a Run Command task, you specified <code>TaskInvocationParameters</code>
     /// values for <code>Comment</code>, <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>.
     /// If you update the maintenance window task and specify only a different <code>OutputS3BucketName</code>
@@ -129,11 +130,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
-        /// logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code>
-        /// options in the <code>TaskInvocationParameters</code> structure. For information about
-        /// how Systems Manager handles these options for the supported maintenance window task
-        /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+        ///  <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage
+        /// Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code>
+        /// and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code>
+        /// structure. For information about how Amazon Web Services Systems Manager handles these
+        /// options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -157,10 +158,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// For maintenance window tasks without a target specified, you cannot supply a value
+        /// For maintenance window tasks without a target specified, you can't supply a value
         /// for this option. Instead, the system inserts a placeholder value of <code>1</code>,
-        /// which may be reported in the response to this command. This value does not affect
-        /// the running of your task and can be ignored.
+        /// which may be reported in the response to this command. This value doesn't affect the
+        /// running of your task and can be ignored.
         /// </para>
         ///  </note>
         /// </summary>
@@ -185,10 +186,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// For maintenance window tasks without a target specified, you cannot supply a value
+        /// For maintenance window tasks without a target specified, you can't supply a value
         /// for this option. Instead, the system inserts a placeholder value of <code>1</code>,
-        /// which may be reported in the response to this command. This value does not affect
-        /// the running of your task and can be ignored.
+        /// which may be reported in the response to this command. This value doesn't affect the
+        /// running of your task and can be ignored.
         /// </para>
         ///  </note>
         /// </summary>
@@ -247,8 +248,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Replace. 
         /// <para>
-        /// If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow
-        /// action are also required for this API request. Optional fields that are not specified
+        /// If True, then all fields that are required by the <a>RegisterTaskWithMaintenanceWindow</a>
+        /// operation are also required for this API request. Optional fields that aren't specified
         /// are set to null.
         /// </para>
         /// </summary>
@@ -267,15 +268,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
-        /// The ARN of the IAM service role for Systems Manager to assume when running a maintenance
-        /// window task. If you do not specify a service role ARN, Systems Manager uses your account's
-        /// service-linked role. If no service-linked role for Systems Manager exists in your
-        /// account, it is created when you run <code>RegisterTaskWithMaintenanceWindow</code>.
+        /// The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems
+        /// Manager to assume when running a maintenance window task. If you do not specify a
+        /// service role ARN, Systems Manager uses your account's service-linked role. If no service-linked
+        /// role for Systems Manager exists in your account, it is created when you run <code>RegisterTaskWithMaintenanceWindow</code>.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see the following topics in the in the <i>AWS Systems Manager
-        /// User Guide</i>:
+        /// For more information, see the following topics in the in the <i>Amazon Web Services
+        /// Systems Manager User Guide</i>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -305,16 +306,18 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The targets (either instances or tags) to modify. Instances are specified using Key=instanceids,Values=instanceID_1,instanceID_2.
-        /// Tags are specified using Key=tag_name,Values=tag_value. 
+        /// The targets (either instances or tags) to modify. Instances are specified using the
+        /// format <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified
+        /// using the format <code> Key=tag_name,Values=tag_value</code>. 
         /// </para>
         ///  <note> 
         /// <para>
         /// One or more targets must be specified for maintenance window Run Command-type tasks.
         /// Depending on the task, targets are optional for other maintenance window task types
-        /// (Automation, AWS Lambda, and AWS Step Functions). For more information about running
-        /// tasks that do not specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
-        /// maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// (Automation, Lambda, and Step Functions). For more information about running tasks
+        /// that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+        /// maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -360,7 +363,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>,
         /// you must provide again all the <code>TaskInvocationParameters</code> values that you
-        /// want to retain. The values you do not specify again are removed. For example, suppose
+        /// want to retain. The values you don't specify again are removed. For example, suppose
         /// that when you registered a Run Command task, you specified <code>TaskInvocationParameters</code>
         /// values for <code>Comment</code>, <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>.
         /// If you update the maintenance window task and specify only a different <code>OutputS3BucketName</code>

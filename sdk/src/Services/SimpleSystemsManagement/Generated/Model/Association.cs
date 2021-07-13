@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Describes an association of a Systems Manager document and an instance.
+    /// Describes an association of a Amazon Web Services Systems Manager document (SSM document)
+    /// and an instance.
     /// </summary>
     public partial class Association
     {
@@ -156,7 +157,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Systems Manager document.
+        /// The name of the SSM document.
         /// </para>
         /// </summary>
         public string Name

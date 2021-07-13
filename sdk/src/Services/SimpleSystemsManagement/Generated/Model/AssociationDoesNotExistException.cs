@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The specified association does not exist.
+    /// The specified association doesn't exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

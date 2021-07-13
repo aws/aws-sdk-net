@@ -29,16 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// An array of search criteria that targets instances using a Key,Value combination that
-    /// you specify.
+    /// An array of search criteria that targets instances using a key-value pair that you
+    /// specify.
     /// 
     ///  <note> 
     /// <para>
     ///  One or more targets must be specified for maintenance window Run Command-type tasks.
     /// Depending on the task, targets are optional for other maintenance window task types
-    /// (Automation, AWS Lambda, and AWS Step Functions). For more information about running
-    /// tasks that do not specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
-    /// maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+    /// (Automation, Lambda, and Step Functions). For more information about running tasks
+    /// that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+    /// maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems
+    /// Manager User Guide</i>.
     /// </para>
     ///  </note> 
     /// <para>
@@ -107,8 +108,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// This example demonstrates how to target only EC2 instances and VPCs in your maintenance
-    /// window.
+    /// This example demonstrates how to target only Amazon Elastic Compute Cloud (Amazon
+    /// EC2) instances and VPCs in your maintenance window.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -122,14 +123,14 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// This example demonstrates how to target all managed instances in the AWS Region where
+    /// This example demonstrates how to target all managed instances in the Region where
     /// the association was created.
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// For more information about how to send commands that target instances using <code>Key,Value</code>
     /// parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting
-    /// multiple instances</a> in the <i>AWS Systems Manager User Guide</i>.
+    /// multiple instances</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
     /// </para>
     /// </summary>
     public partial class Target
@@ -166,8 +167,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code>
-        /// might be lower than the global maximum of 50.
+        /// Depending on the type of target, the maximum number of values for a key might be lower
+        /// than the global maximum of 50.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

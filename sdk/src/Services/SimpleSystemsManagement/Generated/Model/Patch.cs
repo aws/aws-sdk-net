@@ -215,7 +215,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This ID is not the same as the Microsoft Knowledge Base ID.
+        /// This ID isn't the same as the Microsoft Knowledge Base ID.
         /// </para>
         ///  </note>
         /// </summary>

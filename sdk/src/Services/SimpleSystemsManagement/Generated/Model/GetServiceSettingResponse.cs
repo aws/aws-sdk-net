@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The query result body of the GetServiceSetting API action.
+    /// The query result body of the GetServiceSetting API operation.
     /// </summary>
     public partial class GetServiceSettingResponse : AmazonWebServiceResponse
     {

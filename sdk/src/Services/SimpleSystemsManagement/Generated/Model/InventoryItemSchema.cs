@@ -79,10 +79,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TypeName. 
         /// <para>
-        /// The name of the inventory type. Default inventory item type names start with AWS.
-        /// Custom inventory type names will start with Custom. Default inventory item types include
-        /// the following: AWS:AWSComponent, AWS:Application, AWS:InstanceInformation, AWS:Network,
-        /// and AWS:WindowsUpdate.
+        /// The name of the inventory type. Default inventory item type names start with Amazon
+        /// Web Services. Custom inventory type names will start with Custom. Default inventory
+        /// item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>,
+        /// <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

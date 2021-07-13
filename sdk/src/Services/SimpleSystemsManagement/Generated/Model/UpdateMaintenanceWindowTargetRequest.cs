@@ -59,7 +59,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
-    /// If a parameter is null, then the corresponding field is not modified.
+    /// If a parameter is null, then the corresponding field isn't modified.
     /// </para>
     ///  </note>
     /// </summary>
@@ -114,8 +114,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OwnerInformation. 
         /// <para>
-        /// User-provided value that will be included in any CloudWatch events raised while running
-        /// tasks for these targets in this maintenance window.
+        /// User-provided value that will be included in any Amazon CloudWatch Events events raised
+        /// while running tasks for these targets in this maintenance window.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -134,8 +134,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Replace. 
         /// <para>
-        /// If True, then all fields that are required by the RegisterTargetWithMaintenanceWindow
-        /// action are also required for this API request. Optional fields that are not specified
+        /// If <code>True</code>, then all fields that are required by the <a>RegisterTargetWithMaintenanceWindow</a>
+        /// operation are also required for this API request. Optional fields that aren't specified
         /// are set to null.
         /// </para>
         /// </summary>

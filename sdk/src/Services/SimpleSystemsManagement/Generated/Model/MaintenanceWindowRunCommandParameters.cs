@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The parameters for a RUN_COMMAND task type.
+    /// The parameters for a <code>RUN_COMMAND</code> task type.
     /// 
     ///  
     /// <para>
@@ -38,11 +38,11 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  <note> 
     /// <para>
-    ///  <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
-    /// logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code>
-    /// options in the <code>TaskInvocationParameters</code> structure. For information about
-    /// how Systems Manager handles these options for the supported maintenance window task
-    /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+    ///  <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage
+    /// Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code>
+    /// and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code>
+    /// structure. For information about how Amazon Web Services Systems Manager handles these
+    /// options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
     /// </para>
     ///  
     /// <para>
@@ -53,7 +53,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// For Run Command tasks, Systems Manager uses specified values for <code>TaskParameters</code>
+    /// For <code>RUN_COMMAND</code> tasks, Systems Manager uses specified values for <code>TaskParameters</code>
     /// and <code>LoggingInfo</code> only if no values are specified for <code>TaskInvocationParameters</code>.
     /// 
     /// </para>
@@ -148,22 +148,23 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentVersion. 
         /// <para>
-        /// The SSM document version to use in the request. You can specify $DEFAULT, $LATEST,
-        /// or a specific version number. If you run commands by using the AWS CLI, then you must
-        /// escape the first two options by using a backslash. If you specify a version number,
+        /// The Amazon Web Services Systems Manager document (SSM document) version to use in
+        /// the request. You can specify <code>$DEFAULT</code>, <code>$LATEST</code>, or a specific
+        /// version number. If you run commands by using the Amazon Web Services CLI, then you
+        /// must escape the first two options by using a backslash. If you specify a version number,
         /// then you don't need to use the backslash. For example:
         /// </para>
         ///  
         /// <para>
-        /// --document-version "\$DEFAULT"
+        ///  <code>--document-version "\$DEFAULT"</code> 
         /// </para>
         ///  
         /// <para>
-        /// --document-version "\$LATEST"
+        ///  <code>--document-version "\$LATEST"</code> 
         /// </para>
         ///  
         /// <para>
-        /// --document-version "3"
+        ///  <code>--document-version "3"</code> 
         /// </para>
         /// </summary>
         public string DocumentVersion
@@ -200,7 +201,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OutputS3BucketName. 
         /// <para>
-        /// The name of the S3 bucket.
+        /// The name of the Amazon Simple Storage Service (Amazon S3) bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=63)]
@@ -238,7 +239,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// The parameters for the RUN_COMMAND task execution.
+        /// The parameters for the <code>RUN_COMMAND</code> task execution.
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Parameters
@@ -256,8 +257,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
-        /// The ARN of the IAM service role to use to publish Amazon Simple Notification Service
-        /// (Amazon SNS) notifications for maintenance window Run Command tasks.
+        /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service
+        /// role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
+        /// for maintenance window Run Command tasks.
         /// </para>
         /// </summary>
         public string ServiceRoleArn
@@ -275,7 +277,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TimeoutSeconds. 
         /// <para>
-        /// If this time is reached and the command has not already started running, it doesn't
+        /// If this time is reached and the command hasn't already started running, it doesn't
         /// run.
         /// </para>
         /// </summary>

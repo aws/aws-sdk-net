@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The request does not meet the regular expression requirement.
+    /// The request doesn't meet the regular expression requirement.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

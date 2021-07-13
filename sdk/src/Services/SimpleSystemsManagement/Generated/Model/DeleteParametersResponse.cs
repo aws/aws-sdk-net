@@ -58,7 +58,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InvalidParameters. 
         /// <para>
-        /// The names of parameters that weren't deleted because the parameters are not valid.
+        /// The names of parameters that weren't deleted because the parameters aren't valid.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

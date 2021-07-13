@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The plugin name is not valid.
+    /// The plugin name isn't valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

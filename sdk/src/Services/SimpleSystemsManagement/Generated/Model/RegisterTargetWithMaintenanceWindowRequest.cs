@@ -102,8 +102,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OwnerInformation. 
         /// <para>
-        /// User-provided value that will be included in any CloudWatch events raised while running
-        /// tasks for these targets in this maintenance window.
+        /// User-provided value that will be included in any Amazon CloudWatch Events events raised
+        /// while running tasks for these targets in this maintenance window.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -213,8 +213,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// For more information about these examples formats, including the best use case for
         /// each one, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-        /// Register targets with a maintenance window</a> in the <i>AWS Systems Manager User
-        /// Guide</i>.
+        /// Register targets with a maintenance window</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=5)]

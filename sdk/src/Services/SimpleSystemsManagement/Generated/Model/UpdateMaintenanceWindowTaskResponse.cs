@@ -73,11 +73,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
-        /// logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code>
-        /// options in the <code>TaskInvocationParameters</code> structure. For information about
-        /// how Systems Manager handles these options for the supported maintenance window task
-        /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+        ///  <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage
+        /// Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code>
+        /// and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code>
+        /// structure. For information about how Amazon Web Services Systems Manager handles these
+        /// options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -96,7 +96,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property MaxConcurrency. 
         /// <para>
-        /// The updated MaxConcurrency value.
+        /// The updated <code>MaxConcurrency</code> value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
@@ -115,7 +115,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property MaxErrors. 
         /// <para>
-        /// The updated MaxErrors value.
+        /// The updated <code>MaxErrors</code> value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
@@ -172,8 +172,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
-        /// The ARN of the IAM service role to use to publish Amazon Simple Notification Service
-        /// (Amazon SNS) notifications for maintenance window Run Command tasks.
+        /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service
+        /// role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
+        /// for maintenance window Run Command tasks.
         /// </para>
         /// </summary>
         public string ServiceRoleArn

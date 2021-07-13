@@ -99,9 +99,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DefaultBaseline. 
         /// <para>
-        /// Whether this is the default baseline. Note that Systems Manager supports creating
-        /// multiple default patch baselines. For example, you can create a default patch baseline
-        /// for each operating system.
+        /// Whether this is the default baseline. Amazon Web Services Systems Manager supports
+        /// creating multiple default patch baselines. For example, you can create a default patch
+        /// baseline for each operating system.
         /// </para>
         /// </summary>
         public bool DefaultBaseline
@@ -119,7 +119,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OperatingSystem. 
         /// <para>
-        /// Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+        /// Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>.
         /// 
         /// </para>
         /// </summary>

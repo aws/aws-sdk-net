@@ -31,6 +31,11 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
     /// Returns a list of the tags assigned to the specified resource.
+    /// 
+    ///  
+    /// <para>
+    /// For information about the ID format for each supported resource type, see <a>AddTagsToResource</a>.
+    /// </para>
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonSimpleSystemsManagementRequest
     {

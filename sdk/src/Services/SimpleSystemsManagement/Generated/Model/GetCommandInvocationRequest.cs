@@ -69,7 +69,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// (Required) The ID of the managed instance targeted by the command. A managed instance
         /// can be an Amazon Elastic Compute Cloud (Amazon EC2) instance or an instance in your
-        /// hybrid environment that is configured for AWS Systems Manager.
+        /// hybrid environment that is configured for Amazon Web Services Systems Manager.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -95,8 +95,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Plugin names are also referred to as <i>step names</i> in Systems Manager documents.
-        /// For example, <code>aws:RunShellScript</code> is a plugin.
+        /// Plugin names are also referred to as <i>step names</i> in Systems Manager documents
+        /// (SSM documents). For example, <code>aws:RunShellScript</code> is a plugin.
         /// </para>
         ///  
         /// <para>

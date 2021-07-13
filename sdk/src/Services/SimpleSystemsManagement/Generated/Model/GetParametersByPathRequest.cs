@@ -32,7 +32,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// Container for the parameters to the GetParametersByPath operation.
     /// Retrieve information about one or more parameters in a specific hierarchy. 
     /// 
-    ///  <note> 
+    ///  
     /// <para>
     /// Request results are returned on a best-effort basis. If you specify <code>MaxResults</code>
     /// in the request, the response includes information up to the limit specified. The number
@@ -42,7 +42,6 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// You can specify the <code>NextToken</code> in a subsequent call to get the next set
     /// of results.
     /// </para>
-    ///  </note>
     /// </summary>
     public partial class GetParametersByPathRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -125,7 +124,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierachy
         /// is the parameter name except the last part of the parameter. For the API call to succeeed,
-        /// the last part of the parameter name cannot be in the path. A parameter name hierarchy
+        /// the last part of the parameter name can't be in the path. A parameter name hierarchy
         /// can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33
         /// </code> 
         /// </para>
@@ -154,7 +153,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// For example, if a user has permission to access path <code>/a</code>, then the user
         /// can also access <code>/a/b</code>. Even if a user has explicitly been denied access
         /// in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath
-        /// API action recursively for <code>/a</code> and view <code>/a/b</code>.
+        /// API operation recursively for <code>/a</code> and view <code>/a/b</code>.
         /// </para>
         ///  </important>
         /// </summary>

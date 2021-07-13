@@ -39,9 +39,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InvalidLabels. 
         /// <para>
-        /// The label does not meet the requirements. For information about parameter label requirements,
+        /// The label doesn't meet the requirements. For information about parameter label requirements,
         /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling
-        /// parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

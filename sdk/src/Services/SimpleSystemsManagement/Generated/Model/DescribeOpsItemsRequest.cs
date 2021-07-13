@@ -30,16 +30,16 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeOpsItems operation.
-    /// Query a set of OpsItems. You must have permission in AWS Identity and Access Management
+    /// Query a set of OpsItems. You must have permission in Identity and Access Management
     /// (IAM) to query a list of OpsItems. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-    /// started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+    /// started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
     /// 
     ///  
     /// <para>
-    /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
-    /// remediate operational issues impacting the performance and health of their AWS resources.
-    /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
-    /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. 
+    /// Operations engineers and IT professionals use Amazon Web Services Systems Manager
+    /// OpsCenter to view, investigate, and remediate operational issues impacting the performance
+    /// and health of their Amazon Web Services resources. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
+    /// in the <i>Amazon Web Services Systems Manager User Guide</i>. 
     /// </para>
     /// </summary>
     public partial class DescribeOpsItemsRequest : AmazonSimpleSystemsManagementRequest
@@ -141,15 +141,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key: Title
+        /// Key: Title*
         /// </para>
         ///  
         /// <para>
-        /// Operations: Contains
+        /// Operations: Equals,Contains
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key: OperationalData*
+        /// Key: OperationalData**
         /// </para>
         ///  
         /// <para>
@@ -197,7 +197,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// *If you filter the response by using the OperationalData operator, specify a key-value
+        /// *The Equals operator for Title matches the first 100 characters. If you specify more
+        /// than 100 characters, they system returns an error that the filter value exceeds the
+        /// length limit.
+        /// </para>
+        ///  
+        /// <para>
+        /// **If you filter the response by using the OperationalData operator, specify a key-value
         /// pair by using the following JSON format: {"key":"key_name","value":"a_value"}
         /// </para>
         /// </summary>

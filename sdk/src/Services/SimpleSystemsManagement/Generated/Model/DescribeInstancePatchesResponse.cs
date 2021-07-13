@@ -60,34 +60,35 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Each entry in the array is a structure containing:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
         /// Title (string)
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         /// KBId (string)
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         /// Classification (string)
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         /// Severity (string)
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         /// State (string, such as "INSTALLED" or "FAILED")
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         /// InstalledTime (DateTime)
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         /// InstalledBy (string)
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<PatchComplianceData> Patches
         {

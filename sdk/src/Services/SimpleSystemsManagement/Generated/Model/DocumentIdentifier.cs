@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Describes the name of a Systems Manager document.
+    /// Describes the name of a SSM document.
     /// </summary>
     public partial class DocumentIdentifier
     {
@@ -57,7 +57,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates DocumentIdentifier with the parameterized properties
         /// </summary>
-        /// <param name="name">The name of the Systems Manager document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         public DocumentIdentifier(string name)
         {
             _name = name;
@@ -84,7 +84,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CreatedDate. 
         /// <para>
-        /// The date the Systems Manager document was created.
+        /// The date the SSM document was created.
         /// </para>
         /// </summary>
         public DateTime CreatedDate
@@ -102,9 +102,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// An optional field where you can specify a friendly name for the Systems Manager document.
-        /// This value can differ for each version of the document. If you want to update this
-        /// value, see <a>UpdateDocument</a>.
+        /// An optional field where you can specify a friendly name for the SSM document. This
+        /// value can differ for each version of the document. If you want to update this value,
+        /// see <a>UpdateDocument</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -177,7 +177,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Systems Manager document.
+        /// The name of the SSM document.
         /// </para>
         /// </summary>
         public string Name
@@ -195,7 +195,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The AWS user account that created the document.
+        /// The Amazon Web Services user account that created the document.
         /// </para>
         /// </summary>
         public string Owner
@@ -307,9 +307,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property TargetType. 
         /// <para>
         /// The target type which defines the kinds of resources the document can run on. For
-        /// example, /AWS::EC2::Instance. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-        /// resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
-        /// 
+        /// example, <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+        /// Web Services resource and property types reference</a> in the <i>CloudFormation User
+        /// Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=200)]
@@ -330,7 +331,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// An optional field specifying the version of the artifact associated with the document.
         /// For example, "Release 12, Update 6". This value is unique across all versions of a
-        /// document, and cannot be changed.
+        /// document, and can't be changed.
         /// </para>
         /// </summary>
         public string VersionName

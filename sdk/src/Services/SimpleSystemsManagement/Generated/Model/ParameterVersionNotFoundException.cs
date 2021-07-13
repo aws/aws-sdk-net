@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The specified parameter version was not found. Verify the parameter name and version,
+    /// The specified parameter version wasn't found. Verify the parameter name and version,
     /// and try again.
     /// </summary>
     #if !NETSTANDARD

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The result body of the ResetServiceSetting API action.
+    /// The result body of the ResetServiceSetting API operation.
     /// </summary>
     public partial class ResetServiceSettingResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ServiceSetting. 
         /// <para>
-        /// The current, effective service setting after calling the ResetServiceSetting API action.
+        /// The current, effective service setting after calling the ResetServiceSetting API operation.
         /// </para>
         /// </summary>
         public ServiceSetting ServiceSetting

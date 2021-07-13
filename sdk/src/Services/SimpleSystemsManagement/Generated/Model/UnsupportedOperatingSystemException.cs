@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The operating systems you specified is not supported, or the operation is not supported
+    /// The operating systems you specified isn't supported, or the operation isn't supported
     /// for the operating system.
     /// </summary>
     #if !NETSTANDARD

@@ -120,7 +120,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The ID of the AWS user account that started the session.
+        /// The ID of the Amazon Web Services user account that started the session.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

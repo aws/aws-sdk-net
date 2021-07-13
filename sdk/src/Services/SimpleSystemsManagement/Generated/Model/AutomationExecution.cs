@@ -196,7 +196,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentName. 
         /// <para>
-        /// The name of the Automation document used during the execution.
+        /// The name of the Automation runbook used during the execution.
         /// </para>
         /// </summary>
         public string DocumentName
@@ -304,7 +304,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property MaxConcurrency. 
         /// <para>
-        /// The MaxConcurrency value specified by the user when the execution started.
+        /// The <code>MaxConcurrency</code> value specified by the user when the execution started.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
@@ -378,7 +378,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Outputs. 
         /// <para>
-        /// The list of execution outputs as defined in the automation document.
+        /// The list of execution outputs as defined in the Automation runbook.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -397,7 +397,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// The key-value map of execution parameters, which were supplied when calling StartAutomationExecution.
+        /// The key-value map of execution parameters, which were supplied when calling <a>StartAutomationExecution</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -435,8 +435,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ProgressCounters. 
         /// <para>
-        /// An aggregate of step execution statuses displayed in the AWS Console for a multi-Region
-        /// and multi-account Automation execution.
+        /// An aggregate of step execution statuses displayed in the Amazon Web Services Systems
+        /// Manager console for a multi-Region and multi-account Automation execution.
         /// </para>
         /// </summary>
         public ProgressCounters ProgressCounters
@@ -472,8 +472,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Runbooks. 
         /// <para>
-        /// Information about the Automation runbooks (Automation documents) that are run as part
-        /// of a runbook workflow.
+        /// Information about the Automation runbooks that are run as part of a runbook workflow.
         /// </para>
         ///  <note> 
         /// <para>
@@ -517,7 +516,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property StepExecutions. 
         /// <para>
         /// A list of details about the current state of all steps that comprise an execution.
-        /// An Automation document contains a list of steps that are run in order.
+        /// An Automation runbook contains a list of steps that are run in order.
         /// </para>
         /// </summary>
         public List<StepExecution> StepExecutions
@@ -536,8 +535,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property StepExecutionsTruncated. 
         /// <para>
         /// A boolean value that indicates if the response contains the full list of the Automation
-        /// step executions. If true, use the DescribeAutomationStepExecutions API action to get
-        /// the full list of step executions.
+        /// step executions. If true, use the DescribeAutomationStepExecutions API operation to
+        /// get the full list of step executions.
         /// </para>
         /// </summary>
         public bool StepExecutionsTruncated
@@ -573,7 +572,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TargetLocations. 
         /// <para>
-        /// The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
+        /// The combination of Regions and/or accounts where you want to run the Automation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

@@ -31,7 +31,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the TerminateSession operation.
     /// Permanently ends a session and closes the data connection between the Session Manager
-    /// client and SSM Agent on the instance. A terminated session cannot be resumed.
+    /// client and SSM Agent on the instance. A terminated session isn't be resumed.
     /// </summary>
     public partial class TerminateSessionRequest : AmazonSimpleSystemsManagementRequest
     {

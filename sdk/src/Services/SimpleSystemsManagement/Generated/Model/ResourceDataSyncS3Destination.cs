@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Information about the target S3 bucket for the Resource Data Sync.
+    /// Information about the target S3 bucket for the resource data sync.
     /// </summary>
     public partial class ResourceDataSyncS3Destination
     {
@@ -119,7 +119,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS Region with the S3 bucket targeted by the Resource Data Sync.
+        /// The Region with the S3 bucket targeted by the resource data sync.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

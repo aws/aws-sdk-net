@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePatchBaselines operation.
-    /// Lists the patch baselines in your AWS account.
+    /// Lists the patch baselines in your account.
     /// </summary>
     public partial class DescribePatchBaselinesRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -41,16 +41,38 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Each element in the array is a structure containing: 
+        /// Each element in the array is a structure containing a key-value pair.
         /// </para>
         ///  
         /// <para>
-        /// Key: (string, "NAME_PREFIX" or "OWNER")
+        /// Supported keys for <code>DescribePatchBaselines</code> include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b> <code>NAME_PREFIX</code> </b> 
         /// </para>
         ///  
         /// <para>
-        /// Value: (array of strings, exactly 1 entry, between 1 and 255 characters)
+        /// Sample values: <code>AWS-</code> | <code>My-</code> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>OWNER</code> </b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Sample values: <code>AWS</code> | <code>Self</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>OPERATING_SYSTEM</code> </b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<PatchOrchestratorFilter> Filters
