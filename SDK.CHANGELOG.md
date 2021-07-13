@@ -1,3 +1,24 @@
+### 3.7.71.0 (2021-07-13 18:17 UTC)
+* AmplifyBackend (3.7.2.0)
+	* Added Sign in with Apple OAuth provider.
+* DevOpsGuru (3.7.3.0)
+	* Add paginator for GetCostEstimation
+* DirectConnect (3.7.2.0)
+	* This release adds a new filed named awsLogicalDeviceId that it displays the AWS Direct Connect endpoint which terminates a physical connection's BGP Sessions.
+* LexModelBuildingService (3.7.2.0)
+	* Customers can now migrate bots built with Lex V1 APIs to V2 APIs. This release adds APIs to initiate and manage the migration of a bot.
+* Pricing (3.7.1.38)
+	* Documentation updates for api.pricing
+* Redshift (3.7.7.0)
+	* Release new APIs to support new Redshift feature - Authentication Profile
+* SimpleSystemsManagement (3.7.4.0)
+	* Changes to OpsCenter APIs to support a new feature, operational insights.
+* Core 3.7.0.44
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.70.0 (2021-07-12 18:12 UTC)
 * EKS (3.7.6.2)
 	* Documentation updates for Wesley to support the parallel node upgrade feature.
