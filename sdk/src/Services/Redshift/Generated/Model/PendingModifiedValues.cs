@@ -192,7 +192,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
-        /// The pending or in-progress change of the master user password for the cluster.
+        /// The pending or in-progress change of the admin user password for the cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

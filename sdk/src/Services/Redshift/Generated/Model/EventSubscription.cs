@@ -48,7 +48,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property CustomerAwsId. 
         /// <para>
-        /// The AWS customer account associated with the Amazon Redshift event notification subscription.
+        /// The account associated with the Amazon Redshift event notification subscription.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

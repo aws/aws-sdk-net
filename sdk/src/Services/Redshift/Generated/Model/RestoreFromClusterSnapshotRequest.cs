@@ -130,8 +130,8 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift
-        /// node type.
+        /// enabled - Use AQUA if it is available for the current Region and Amazon Redshift node
+        /// type.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -261,7 +261,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must be unique for all clusters within an AWS account.
+        /// Must be unique for all clusters within an account.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -461,9 +461,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property IamRoles. 
         /// <para>
-        /// A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster
-        /// to access other AWS services. You must supply the IAM roles in their Amazon Resource
-        /// Name (ARN) format. You can supply up to 10 IAM roles in a single request.
+        /// A list of Identity and Access Management (IAM) roles that can be used by the cluster
+        /// to access other Amazon Web Services services. You must supply the IAM roles in their
+        /// Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single request.
         /// </para>
         ///  
         /// <para>
@@ -485,8 +485,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS Key Management Service (KMS) key ID of the encryption key that you want to
-        /// use to encrypt data in the cluster that you restore from a shared snapshot.
+        /// The Key Management Service (KMS) key ID of the encryption key that you want to use
+        /// to encrypt data in the cluster that you restore from a shared snapshot.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -604,8 +604,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        /// The AWS customer account used to create or copy the snapshot. Required if you are
-        /// restoring a snapshot you do not own, optional if you own the snapshot.
+        /// The account used to create or copy the snapshot. Required if you are restoring a snapshot
+        /// you do not own, optional if you own the snapshot.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

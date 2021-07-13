@@ -96,7 +96,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property SnapshotIdentifier. 
         /// <para>
         /// A unique identifier for the snapshot that you are requesting. This identifier must
-        /// be unique for all snapshots within the AWS account.
+        /// be unique for all snapshots within the account.
         /// </para>
         ///  
         /// <para>

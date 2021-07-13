@@ -42,7 +42,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID that owns the cluster.
+        /// The Region ID that owns the cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

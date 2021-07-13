@@ -40,7 +40,7 @@ namespace Amazon.Redshift.Model
     /// <para>
     /// If you authorize access to an Amazon EC2 security group, specify <i>EC2SecurityGroupName</i>
     /// and <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon Redshift
-    /// cluster must be in the same AWS Region. 
+    /// cluster must be in the same Region. 
     /// </para>
     ///  
     /// <para>
@@ -123,8 +123,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property EC2SecurityGroupOwnerId. 
         /// <para>
-        /// The AWS account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i>
-        /// parameter. The AWS Access Key ID is not an acceptable value. 
+        /// The account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i>
+        /// parameter. The Amazon Web Services Access Key ID is not an acceptable value. 
         /// </para>
         ///  
         /// <para>

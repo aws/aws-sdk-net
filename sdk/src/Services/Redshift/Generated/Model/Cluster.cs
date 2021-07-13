@@ -766,8 +766,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property IamRoles. 
         /// <para>
-        /// A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster
-        /// to access other AWS services.
+        /// A list of Identity and Access Management (IAM) roles that can be used by the cluster
+        /// to access other Amazon Web Services services.
         /// </para>
         /// </summary>
         public List<ClusterIamRole> IamRoles
@@ -785,8 +785,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS Key Management Service (AWS KMS) key ID of the encryption key used to encrypt
-        /// data in the cluster.
+        /// The Key Management Service (KMS) key ID of the encryption key used to encrypt data
+        /// in the cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -848,7 +848,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        /// The master user name for the cluster. This name is used to connect to the database
+        /// The admin user name for the cluster. This name is used to connect to the database
         /// that is specified in the <b>DBName</b> parameter. 
         /// </para>
         /// </summary>

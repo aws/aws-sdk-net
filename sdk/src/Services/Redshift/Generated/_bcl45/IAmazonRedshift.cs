@@ -214,7 +214,7 @@ namespace Amazon.Redshift
         /// <para>
         /// If you authorize access to an Amazon EC2 security group, specify <i>EC2SecurityGroupName</i>
         /// and <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon Redshift
-        /// cluster must be in the same AWS Region. 
+        /// cluster must be in the same Region. 
         /// </para>
         ///  
         /// <para>
@@ -262,7 +262,7 @@ namespace Amazon.Redshift
         /// <para>
         /// If you authorize access to an Amazon EC2 security group, specify <i>EC2SecurityGroupName</i>
         /// and <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon Redshift
-        /// cluster must be in the same AWS Region. 
+        /// cluster must be in the same Region. 
         /// </para>
         ///  
         /// <para>
@@ -370,7 +370,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Authorizes the specified AWS customer account to restore the specified snapshot.
+        /// Authorizes the specified account to restore the specified snapshot.
         /// 
         ///  
         /// <para>
@@ -400,7 +400,7 @@ namespace Amazon.Redshift
         /// accounts are authorized to access the snapshot.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
-        /// The encryption key has exceeded its grant limit in AWS KMS.
+        /// The encryption key has exceeded its grant limit in Amazon Web Services KMS.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeSnapshotAccess">REST API Reference for AuthorizeSnapshotAccess Operation</seealso>
         AuthorizeSnapshotAccessResponse AuthorizeSnapshotAccess(AuthorizeSnapshotAccessRequest request);
@@ -408,7 +408,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Authorizes the specified AWS customer account to restore the specified snapshot.
+        /// Authorizes the specified account to restore the specified snapshot.
         /// 
         ///  
         /// <para>
@@ -441,7 +441,7 @@ namespace Amazon.Redshift
         /// accounts are authorized to access the snapshot.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
-        /// The encryption key has exceeded its grant limit in AWS KMS.
+        /// The encryption key has exceeded its grant limit in Amazon Web Services KMS.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeSnapshotAccess">REST API Reference for AuthorizeSnapshotAccess Operation</seealso>
         Task<AuthorizeSnapshotAccessResponse> AuthorizeSnapshotAccessAsync(AuthorizeSnapshotAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -686,6 +686,58 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  CreateAuthenticationProfile
+
+
+        /// <summary>
+        /// Creates an authentication profile with the specified parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAuthenticationProfile service method.</param>
+        /// 
+        /// <returns>The response from the CreateAuthenticationProfile service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.AuthenticationProfileAlreadyExistsException">
+        /// The authentication profile already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.AuthenticationProfileQuotaExceededException">
+        /// The size or number of authentication profiles has exceeded the quota. The maximum
+        /// length of the JSON string and maximum number of authentication profiles is determined
+        /// by a quota for your account.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidAuthenticationProfileRequestException">
+        /// The authentication profile request is not valid. The profile name can't be null or
+        /// empty. The authentication profile API operation must be available in the Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateAuthenticationProfile">REST API Reference for CreateAuthenticationProfile Operation</seealso>
+        CreateAuthenticationProfileResponse CreateAuthenticationProfile(CreateAuthenticationProfileRequest request);
+
+
+
+        /// <summary>
+        /// Creates an authentication profile with the specified parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAuthenticationProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAuthenticationProfile service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.AuthenticationProfileAlreadyExistsException">
+        /// The authentication profile already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.AuthenticationProfileQuotaExceededException">
+        /// The size or number of authentication profiles has exceeded the quota. The maximum
+        /// length of the JSON string and maximum number of authentication profiles is determined
+        /// by a quota for your account.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidAuthenticationProfileRequestException">
+        /// The authentication profile request is not valid. The profile name can't be null or
+        /// empty. The authentication profile API operation must be available in the Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateAuthenticationProfile">REST API Reference for CreateAuthenticationProfile Operation</seealso>
+        Task<CreateAuthenticationProfileResponse> CreateAuthenticationProfileAsync(CreateAuthenticationProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateCluster
 
 
@@ -761,7 +813,7 @@ namespace Amazon.Redshift
         /// The cluster subnet group does not cover all Availability Zones.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
-        /// The encryption key has exceeded its grant limit in AWS KMS.
+        /// The encryption key has exceeded its grant limit in Amazon Web Services KMS.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.NumberOfNodesPerClusterLimitExceededException">
         /// The operation would exceed the number of nodes allowed for a cluster.
@@ -860,7 +912,7 @@ namespace Amazon.Redshift
         /// The cluster subnet group does not cover all Availability Zones.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
-        /// The encryption key has exceeded its grant limit in AWS KMS.
+        /// The encryption key has exceeded its grant limit in Amazon Web Services KMS.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.NumberOfNodesPerClusterLimitExceededException">
         /// The operation would exceed the number of nodes allowed for a cluster.
@@ -1351,9 +1403,9 @@ namespace Amazon.Redshift
         /// and source identifier = my-cluster-1, notifications will be sent for all the cluster
         /// events for my-cluster-1. If you specify a source type but do not specify a source
         /// identifier, you will receive notice of the events for the objects of that type in
-        /// your AWS account. If you do not specify either the SourceType nor the SourceIdentifier,
+        /// your account. If you do not specify either the SourceType nor the SourceIdentifier,
         /// you will be notified of events generated from all Amazon Redshift sources belonging
-        /// to your AWS account. You must specify a source type if you specify a source ID.
+        /// to your account. You must specify a source type if you specify a source ID.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEventSubscription service method.</param>
@@ -1425,9 +1477,9 @@ namespace Amazon.Redshift
         /// and source identifier = my-cluster-1, notifications will be sent for all the cluster
         /// events for my-cluster-1. If you specify a source type but do not specify a source
         /// identifier, you will receive notice of the events for the objects of that type in
-        /// your AWS account. If you do not specify either the SourceType nor the SourceIdentifier,
+        /// your account. If you do not specify either the SourceType nor the SourceIdentifier,
         /// you will be notified of events generated from all Amazon Redshift sources belonging
-        /// to your AWS account. You must specify a source type if you specify a source ID.
+        /// to your account. You must specify a source type if you specify a source ID.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEventSubscription service method.</param>
@@ -1711,8 +1763,8 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Creates a snapshot copy grant that permits Amazon Redshift to use a customer master
-        /// key (CMK) from AWS Key Management Service (AWS KMS) to encrypt copied snapshots in
-        /// a destination region.
+        /// key (CMK) from Key Management Service (KMS) to encrypt copied snapshots in a destination
+        /// region.
         /// 
         ///  
         /// <para>
@@ -1732,14 +1784,14 @@ namespace Amazon.Redshift
         /// The tag is invalid.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
-        /// The encryption key has exceeded its grant limit in AWS KMS.
+        /// The encryption key has exceeded its grant limit in Amazon Web Services KMS.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.SnapshotCopyGrantAlreadyExistsException">
         /// The snapshot copy grant can't be created because a grant with the same name already
         /// exists.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.SnapshotCopyGrantQuotaExceededException">
-        /// The AWS account has exceeded the maximum number of snapshot copy grants in this region.
+        /// The account has exceeded the maximum number of snapshot copy grants in this region.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
         /// You have exceeded the number of tags allowed.
@@ -1751,8 +1803,8 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Creates a snapshot copy grant that permits Amazon Redshift to use a customer master
-        /// key (CMK) from AWS Key Management Service (AWS KMS) to encrypt copied snapshots in
-        /// a destination region.
+        /// key (CMK) from Key Management Service (KMS) to encrypt copied snapshots in a destination
+        /// region.
         /// 
         ///  
         /// <para>
@@ -1775,14 +1827,14 @@ namespace Amazon.Redshift
         /// The tag is invalid.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
-        /// The encryption key has exceeded its grant limit in AWS KMS.
+        /// The encryption key has exceeded its grant limit in Amazon Web Services KMS.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.SnapshotCopyGrantAlreadyExistsException">
         /// The snapshot copy grant can't be created because a grant with the same name already
         /// exists.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.SnapshotCopyGrantQuotaExceededException">
-        /// The AWS account has exceeded the maximum number of snapshot copy grants in this region.
+        /// The account has exceeded the maximum number of snapshot copy grants in this region.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
         /// You have exceeded the number of tags allowed.
@@ -1952,7 +2004,7 @@ namespace Amazon.Redshift
         /// The usage limit is not valid.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
-        /// The encryption key has exceeded its grant limit in AWS KMS.
+        /// The encryption key has exceeded its grant limit in Amazon Web Services KMS.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
         /// You have exceeded the number of tags allowed.
@@ -1988,7 +2040,7 @@ namespace Amazon.Redshift
         /// The usage limit is not valid.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
-        /// The encryption key has exceeded its grant limit in AWS KMS.
+        /// The encryption key has exceeded its grant limit in Amazon Web Services KMS.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
         /// You have exceeded the number of tags allowed.
@@ -2001,6 +2053,48 @@ namespace Amazon.Redshift
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateUsageLimit">REST API Reference for CreateUsageLimit Operation</seealso>
         Task<CreateUsageLimitResponse> CreateUsageLimitAsync(CreateUsageLimitRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAuthenticationProfile
+
+
+        /// <summary>
+        /// Deletes an authentication profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAuthenticationProfile service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAuthenticationProfile service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.AuthenticationProfileNotFoundException">
+        /// The authentication profile can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidAuthenticationProfileRequestException">
+        /// The authentication profile request is not valid. The profile name can't be null or
+        /// empty. The authentication profile API operation must be available in the Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteAuthenticationProfile">REST API Reference for DeleteAuthenticationProfile Operation</seealso>
+        DeleteAuthenticationProfileResponse DeleteAuthenticationProfile(DeleteAuthenticationProfileRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an authentication profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAuthenticationProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAuthenticationProfile service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.AuthenticationProfileNotFoundException">
+        /// The authentication profile can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidAuthenticationProfileRequestException">
+        /// The authentication profile request is not valid. The profile name can't be null or
+        /// empty. The authentication profile API operation must be available in the Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteAuthenticationProfile">REST API Reference for DeleteAuthenticationProfile Operation</seealso>
+        Task<DeleteAuthenticationProfileResponse> DeleteAuthenticationProfileAsync(DeleteAuthenticationProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2806,6 +2900,48 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  DescribeAuthenticationProfiles
+
+
+        /// <summary>
+        /// Describes an authentication profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAuthenticationProfiles service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAuthenticationProfiles service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.AuthenticationProfileNotFoundException">
+        /// The authentication profile can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidAuthenticationProfileRequestException">
+        /// The authentication profile request is not valid. The profile name can't be null or
+        /// empty. The authentication profile API operation must be available in the Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeAuthenticationProfiles">REST API Reference for DescribeAuthenticationProfiles Operation</seealso>
+        DescribeAuthenticationProfilesResponse DescribeAuthenticationProfiles(DescribeAuthenticationProfilesRequest request);
+
+
+
+        /// <summary>
+        /// Describes an authentication profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAuthenticationProfiles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAuthenticationProfiles service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.AuthenticationProfileNotFoundException">
+        /// The authentication profile can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidAuthenticationProfileRequestException">
+        /// The authentication profile request is not valid. The profile name can't be null or
+        /// empty. The authentication profile API operation must be available in the Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeAuthenticationProfiles">REST API Reference for DescribeAuthenticationProfiles Operation</seealso>
+        Task<DescribeAuthenticationProfilesResponse> DescribeAuthenticationProfilesAsync(DescribeAuthenticationProfilesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeClusterDbRevisions
 
 
@@ -3383,8 +3519,8 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns one or more snapshot objects, which contain metadata about your cluster snapshots.
         /// By default, this operation returns information about all snapshots of all clusters
-        /// that are owned by you AWS customer account. No information is returned for snapshots
-        /// owned by inactive AWS customer accounts.
+        /// that are owned by your account. No information is returned for snapshots owned by
+        /// inactive accounts.
         /// 
         ///  
         /// <para>
@@ -3419,8 +3555,8 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns one or more snapshot objects, which contain metadata about your cluster snapshots.
         /// By default, this operation returns information about all snapshots of all clusters
-        /// that are owned by you AWS customer account. No information is returned for snapshots
-        /// owned by inactive AWS customer accounts.
+        /// that are owned by your account. No information is returned for snapshots owned by
+        /// inactive accounts.
         /// 
         ///  
         /// <para>
@@ -3456,8 +3592,8 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns one or more snapshot objects, which contain metadata about your cluster snapshots.
         /// By default, this operation returns information about all snapshots of all clusters
-        /// that are owned by you AWS customer account. No information is returned for snapshots
-        /// owned by inactive AWS customer accounts.
+        /// that are owned by your account. No information is returned for snapshots owned by
+        /// inactive accounts.
         /// 
         ///  
         /// <para>
@@ -3496,8 +3632,8 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns one or more snapshot objects, which contain metadata about your cluster snapshots.
         /// By default, this operation returns information about all snapshots of all clusters
-        /// that are owned by you AWS customer account. No information is returned for snapshots
-        /// owned by inactive AWS customer accounts.
+        /// that are owned by your account. No information is returned for snapshots owned by
+        /// inactive accounts.
         /// 
         ///  
         /// <para>
@@ -3540,7 +3676,7 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns one or more cluster subnet group objects, which contain metadata about your
         /// cluster subnet groups. By default, this operation returns information about all cluster
-        /// subnet groups that are defined in you AWS account.
+        /// subnet groups that are defined in your account.
         /// 
         ///  
         /// <para>
@@ -3571,7 +3707,7 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns one or more cluster subnet group objects, which contain metadata about your
         /// cluster subnet groups. By default, this operation returns information about all cluster
-        /// subnet groups that are defined in you AWS account.
+        /// subnet groups that are defined in your account.
         /// 
         ///  
         /// <para>
@@ -3603,7 +3739,7 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns one or more cluster subnet group objects, which contain metadata about your
         /// cluster subnet groups. By default, this operation returns information about all cluster
-        /// subnet groups that are defined in you AWS account.
+        /// subnet groups that are defined in your account.
         /// 
         ///  
         /// <para>
@@ -3638,7 +3774,7 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns one or more cluster subnet group objects, which contain metadata about your
         /// cluster subnet groups. By default, this operation returns information about all cluster
-        /// subnet groups that are defined in you AWS account.
+        /// subnet groups that are defined in your account.
         /// 
         ///  
         /// <para>
@@ -4163,7 +4299,7 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns information about the specified HSM client certificate. If no certificate
         /// ID is specified, returns information about all the HSM certificates owned by your
-        /// AWS customer account.
+        /// account.
         /// 
         ///  
         /// <para>
@@ -4194,7 +4330,7 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns information about the specified HSM client certificate. If no certificate
         /// ID is specified, returns information about all the HSM certificates owned by your
-        /// AWS customer account.
+        /// account.
         /// 
         ///  
         /// <para>
@@ -4226,7 +4362,7 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns information about the specified HSM client certificate. If no certificate
         /// ID is specified, returns information about all the HSM certificates owned by your
-        /// AWS customer account.
+        /// account.
         /// 
         ///  
         /// <para>
@@ -4261,7 +4397,7 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns information about the specified HSM client certificate. If no certificate
         /// ID is specified, returns information about all the HSM certificates owned by your
-        /// AWS customer account.
+        /// account.
         /// 
         ///  
         /// <para>
@@ -4300,7 +4436,7 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns information about the specified Amazon Redshift HSM configuration. If no configuration
         /// ID is specified, returns information about all the HSM configurations owned by your
-        /// AWS customer account.
+        /// account.
         /// 
         ///  
         /// <para>
@@ -4331,7 +4467,7 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns information about the specified Amazon Redshift HSM configuration. If no configuration
         /// ID is specified, returns information about all the HSM configurations owned by your
-        /// AWS customer account.
+        /// account.
         /// 
         ///  
         /// <para>
@@ -4363,7 +4499,7 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns information about the specified Amazon Redshift HSM configuration. If no configuration
         /// ID is specified, returns information about all the HSM configurations owned by your
-        /// AWS customer account.
+        /// account.
         /// 
         ///  
         /// <para>
@@ -4398,7 +4534,7 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns information about the specified Amazon Redshift HSM configuration. If no configuration
         /// ID is specified, returns information about all the HSM configurations owned by your
-        /// AWS customer account.
+        /// account.
         /// 
         ///  
         /// <para>
@@ -4531,11 +4667,11 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns a list of orderable cluster options. Before you create a new cluster you can
         /// use this operation to find what options are available, such as the EC2 Availability
-        /// Zones (AZ) in the specific AWS Region that you can specify, and the node types you
-        /// can request. The node types differ by available storage, memory, CPU and price. With
-        /// the cost involved you might want to obtain a list of cluster options in the specific
-        /// region and specify values when creating a cluster. For more information about managing
-        /// clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+        /// Zones (AZ) in the specific Region that you can specify, and the node types you can
+        /// request. The node types differ by available storage, memory, CPU and price. With the
+        /// cost involved you might want to obtain a list of cluster options in the specific region
+        /// and specify values when creating a cluster. For more information about managing clusters,
+        /// go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
         /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </summary>
         /// 
@@ -4547,11 +4683,11 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns a list of orderable cluster options. Before you create a new cluster you can
         /// use this operation to find what options are available, such as the EC2 Availability
-        /// Zones (AZ) in the specific AWS Region that you can specify, and the node types you
-        /// can request. The node types differ by available storage, memory, CPU and price. With
-        /// the cost involved you might want to obtain a list of cluster options in the specific
-        /// region and specify values when creating a cluster. For more information about managing
-        /// clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+        /// Zones (AZ) in the specific Region that you can specify, and the node types you can
+        /// request. The node types differ by available storage, memory, CPU and price. With the
+        /// cost involved you might want to obtain a list of cluster options in the specific region
+        /// and specify values when creating a cluster. For more information about managing clusters,
+        /// go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
         /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrderableClusterOptions service method.</param>
@@ -4564,11 +4700,11 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns a list of orderable cluster options. Before you create a new cluster you can
         /// use this operation to find what options are available, such as the EC2 Availability
-        /// Zones (AZ) in the specific AWS Region that you can specify, and the node types you
-        /// can request. The node types differ by available storage, memory, CPU and price. With
-        /// the cost involved you might want to obtain a list of cluster options in the specific
-        /// region and specify values when creating a cluster. For more information about managing
-        /// clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+        /// Zones (AZ) in the specific Region that you can specify, and the node types you can
+        /// request. The node types differ by available storage, memory, CPU and price. With the
+        /// cost involved you might want to obtain a list of cluster options in the specific region
+        /// and specify values when creating a cluster. For more information about managing clusters,
+        /// go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
         /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </summary>
         /// <param name="cancellationToken">
@@ -4584,11 +4720,11 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns a list of orderable cluster options. Before you create a new cluster you can
         /// use this operation to find what options are available, such as the EC2 Availability
-        /// Zones (AZ) in the specific AWS Region that you can specify, and the node types you
-        /// can request. The node types differ by available storage, memory, CPU and price. With
-        /// the cost involved you might want to obtain a list of cluster options in the specific
-        /// region and specify values when creating a cluster. For more information about managing
-        /// clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+        /// Zones (AZ) in the specific Region that you can specify, and the node types you can
+        /// request. The node types differ by available storage, memory, CPU and price. With the
+        /// cost involved you might want to obtain a list of cluster options in the specific region
+        /// and specify values when creating a cluster. For more information about managing clusters,
+        /// go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
         /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrderableClusterOptions service method.</param>
@@ -4954,8 +5090,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Returns a list of snapshot copy grants owned by the AWS account in the destination
-        /// region.
+        /// Returns a list of snapshot copy grants owned by the account in the destination region.
         /// 
         ///  
         /// <para>
@@ -4980,8 +5115,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Returns a list of snapshot copy grants owned by the AWS account in the destination
-        /// region.
+        /// Returns a list of snapshot copy grants owned by the account in the destination region.
         /// 
         ///  
         /// <para>
@@ -5360,8 +5494,8 @@ namespace Amazon.Redshift
         ///  
         /// <para>
         /// If your cluster and its snapshots are encrypted using a customer master key (CMK)
-        /// from AWS KMS, use <a>DeleteSnapshotCopyGrant</a> to delete the grant that grants Amazon
-        /// Redshift permission to the CMK in the destination region. 
+        /// from Key Management Service, use <a>DeleteSnapshotCopyGrant</a> to delete the grant
+        /// that grants Amazon Redshift permission to the CMK in the destination region. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableSnapshotCopy service method.</param>
@@ -5391,8 +5525,8 @@ namespace Amazon.Redshift
         ///  
         /// <para>
         /// If your cluster and its snapshots are encrypted using a customer master key (CMK)
-        /// from AWS KMS, use <a>DeleteSnapshotCopyGrant</a> to delete the grant that grants Amazon
-        /// Redshift permission to the CMK in the destination region. 
+        /// from Key Management Service, use <a>DeleteSnapshotCopyGrant</a> to delete the grant
+        /// that grants Amazon Redshift permission to the CMK in the destination region. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableSnapshotCopy service method.</param>
@@ -5527,7 +5661,7 @@ namespace Amazon.Redshift
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
-        /// The encryption key has exceeded its grant limit in AWS KMS.
+        /// The encryption key has exceeded its grant limit in Amazon Web Services KMS.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.SnapshotCopyAlreadyEnabledException">
         /// The cluster already has cross-region snapshot copy enabled.
@@ -5582,7 +5716,7 @@ namespace Amazon.Redshift
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
-        /// The encryption key has exceeded its grant limit in AWS KMS.
+        /// The encryption key has exceeded its grant limit in Amazon Web Services KMS.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.SnapshotCopyAlreadyEnabledException">
         /// The cluster already has cross-region snapshot copy enabled.
@@ -5618,7 +5752,7 @@ namespace Amazon.Redshift
         /// 
         ///  
         /// <para>
-        /// The AWS Identity and Access Management (IAM)user or role that executes GetClusterCredentials
+        /// The Identity and Access Management (IAM) user or role that runs GetClusterCredentials
         /// must have an IAM policy attached that allows access to all necessary actions and resources.
         /// For more information about permissions, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources">Resource
         /// Policies for GetClusterCredentials</a> in the Amazon Redshift Cluster Management Guide.
@@ -5667,7 +5801,7 @@ namespace Amazon.Redshift
         /// 
         ///  
         /// <para>
-        /// The AWS Identity and Access Management (IAM)user or role that executes GetClusterCredentials
+        /// The Identity and Access Management (IAM) user or role that runs GetClusterCredentials
         /// must have an IAM policy attached that allows access to all necessary actions and resources.
         /// For more information about permissions, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources">Resource
         /// Policies for GetClusterCredentials</a> in the Amazon Redshift Cluster Management Guide.
@@ -5820,6 +5954,58 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  ModifyAuthenticationProfile
+
+
+        /// <summary>
+        /// Modifies an authentication profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyAuthenticationProfile service method.</param>
+        /// 
+        /// <returns>The response from the ModifyAuthenticationProfile service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.AuthenticationProfileNotFoundException">
+        /// The authentication profile can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.AuthenticationProfileQuotaExceededException">
+        /// The size or number of authentication profiles has exceeded the quota. The maximum
+        /// length of the JSON string and maximum number of authentication profiles is determined
+        /// by a quota for your account.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidAuthenticationProfileRequestException">
+        /// The authentication profile request is not valid. The profile name can't be null or
+        /// empty. The authentication profile API operation must be available in the Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyAuthenticationProfile">REST API Reference for ModifyAuthenticationProfile Operation</seealso>
+        ModifyAuthenticationProfileResponse ModifyAuthenticationProfile(ModifyAuthenticationProfileRequest request);
+
+
+
+        /// <summary>
+        /// Modifies an authentication profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyAuthenticationProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyAuthenticationProfile service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.AuthenticationProfileNotFoundException">
+        /// The authentication profile can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.AuthenticationProfileQuotaExceededException">
+        /// The size or number of authentication profiles has exceeded the quota. The maximum
+        /// length of the JSON string and maximum number of authentication profiles is determined
+        /// by a quota for your account.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidAuthenticationProfileRequestException">
+        /// The authentication profile request is not valid. The profile name can't be null or
+        /// empty. The authentication profile API operation must be available in the Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyAuthenticationProfile">REST API Reference for ModifyAuthenticationProfile Operation</seealso>
+        Task<ModifyAuthenticationProfileResponse> ModifyAuthenticationProfileAsync(ModifyAuthenticationProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ModifyCluster
 
 
@@ -5834,7 +6020,7 @@ namespace Amazon.Redshift
         /// </para>
         ///  
         /// <para>
-        /// You can add another security or parameter group, or change the master user password.
+        /// You can add another security or parameter group, or change the admin user password.
         /// Resetting a cluster password or modifying the security groups associated with a cluster
         /// do not need a reboot. However, modifying a parameter group requires a reboot for parameters
         /// to take effect. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
@@ -5890,7 +6076,7 @@ namespace Amazon.Redshift
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
-        /// The encryption key has exceeded its grant limit in AWS KMS.
+        /// The encryption key has exceeded its grant limit in Amazon Web Services KMS.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.NumberOfNodesPerClusterLimitExceededException">
         /// The operation would exceed the number of nodes allowed for a cluster.
@@ -5926,7 +6112,7 @@ namespace Amazon.Redshift
         /// </para>
         ///  
         /// <para>
-        /// You can add another security or parameter group, or change the master user password.
+        /// You can add another security or parameter group, or change the admin user password.
         /// Resetting a cluster password or modifying the security groups associated with a cluster
         /// do not need a reboot. However, modifying a parameter group requires a reboot for parameters
         /// to take effect. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
@@ -5985,7 +6171,7 @@ namespace Amazon.Redshift
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
-        /// The encryption key has exceeded its grant limit in AWS KMS.
+        /// The encryption key has exceeded its grant limit in Amazon Web Services KMS.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.NumberOfNodesPerClusterLimitExceededException">
         /// The operation would exceed the number of nodes allowed for a cluster.
@@ -6062,8 +6248,8 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Modifies the list of AWS Identity and Access Management (IAM) roles that can be used
-        /// by the cluster to access other AWS services.
+        /// Modifies the list of Identity and Access Management (IAM) roles that can be used by
+        /// the cluster to access other Amazon Web Services services.
         /// 
         ///  
         /// <para>
@@ -6085,8 +6271,8 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Modifies the list of AWS Identity and Access Management (IAM) roles that can be used
-        /// by the cluster to access other AWS services.
+        /// Modifies the list of Identity and Access Management (IAM) roles that can be used by
+        /// the cluster to access other Amazon Web Services services.
         /// 
         ///  
         /// <para>
@@ -6612,13 +6798,13 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Modifies the number of days to retain snapshots in the destination AWS Region after
-        /// they are copied from the source AWS Region. By default, this operation only changes
-        /// the retention period of copied automated snapshots. The retention periods for both
-        /// new and existing copied automated snapshots are updated with the new retention period.
-        /// You can set the manual option to change only the retention periods of copied manual
-        /// snapshots. If you set this option, only newly copied manual snapshots have the new
-        /// retention period.
+        /// Modifies the number of days to retain snapshots in the destination Region after they
+        /// are copied from the source Region. By default, this operation only changes the retention
+        /// period of copied automated snapshots. The retention periods for both new and existing
+        /// copied automated snapshots are updated with the new retention period. You can set
+        /// the manual option to change only the retention periods of copied manual snapshots.
+        /// If you set this option, only newly copied manual snapshots have the new retention
+        /// period.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifySnapshotCopyRetentionPeriod service method.</param>
         /// 
@@ -6649,13 +6835,13 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Modifies the number of days to retain snapshots in the destination AWS Region after
-        /// they are copied from the source AWS Region. By default, this operation only changes
-        /// the retention period of copied automated snapshots. The retention periods for both
-        /// new and existing copied automated snapshots are updated with the new retention period.
-        /// You can set the manual option to change only the retention periods of copied manual
-        /// snapshots. If you set this option, only newly copied manual snapshots have the new
-        /// retention period.
+        /// Modifies the number of days to retain snapshots in the destination Region after they
+        /// are copied from the source Region. By default, this operation only changes the retention
+        /// period of copied automated snapshots. The retention periods for both new and existing
+        /// copied automated snapshots are updated with the new retention period. You can set
+        /// the manual option to change only the retention periods of copied manual snapshots.
+        /// If you set this option, only newly copied manual snapshots have the new retention
+        /// period.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifySnapshotCopyRetentionPeriod service method.</param>
         /// <param name="cancellationToken">
@@ -7070,7 +7256,7 @@ namespace Amazon.Redshift
         /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
-        /// The encryption key has exceeded its grant limit in AWS KMS.
+        /// The encryption key has exceeded its grant limit in Amazon Web Services KMS.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.NumberOfNodesPerClusterLimitExceededException">
         /// The operation would exceed the number of nodes allowed for a cluster.
@@ -7166,7 +7352,7 @@ namespace Amazon.Redshift
         /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
-        /// The encryption key has exceeded its grant limit in AWS KMS.
+        /// The encryption key has exceeded its grant limit in Amazon Web Services KMS.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.NumberOfNodesPerClusterLimitExceededException">
         /// The operation would exceed the number of nodes allowed for a cluster.
@@ -7279,7 +7465,7 @@ namespace Amazon.Redshift
         /// The cluster subnet group does not cover all Availability Zones.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
-        /// The encryption key has exceeded its grant limit in AWS KMS.
+        /// The encryption key has exceeded its grant limit in Amazon Web Services KMS.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.NumberOfNodesPerClusterLimitExceededException">
         /// The operation would exceed the number of nodes allowed for a cluster.
@@ -7392,7 +7578,7 @@ namespace Amazon.Redshift
         /// The cluster subnet group does not cover all Availability Zones.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
-        /// The encryption key has exceeded its grant limit in AWS KMS.
+        /// The encryption key has exceeded its grant limit in Amazon Web Services KMS.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.NumberOfNodesPerClusterLimitExceededException">
         /// The operation would exceed the number of nodes allowed for a cluster.
@@ -7698,9 +7884,8 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Removes the ability of the specified AWS customer account to restore the specified
-        /// snapshot. If the account is currently restoring the snapshot, the restore will run
-        /// to completion.
+        /// Removes the ability of the specified account to restore the specified snapshot. If
+        /// the account is currently restoring the snapshot, the restore will run to completion.
         /// 
         ///  
         /// <para>
@@ -7728,9 +7913,8 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Removes the ability of the specified AWS customer account to restore the specified
-        /// snapshot. If the account is currently restoring the snapshot, the restore will run
-        /// to completion.
+        /// Removes the ability of the specified account to restore the specified snapshot. If
+        /// the account is currently restoring the snapshot, the restore will run to completion.
         /// 
         ///  
         /// <para>

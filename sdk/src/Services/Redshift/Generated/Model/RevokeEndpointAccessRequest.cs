@@ -42,7 +42,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Account. 
         /// <para>
-        /// The AWS account ID whose access is to be revoked.
+        /// The account ID whose access is to be revoked.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

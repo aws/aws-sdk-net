@@ -30,7 +30,7 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Describes an endpoint authorization for authorizing Redshift-managed VPC endpoint
-    /// access to a cluster across AWS accounts.
+    /// access to a cluster across accounts.
     /// </summary>
     public partial class EndpointAuthorization
     {
@@ -157,7 +157,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Grantee. 
         /// <para>
-        /// The AWS account ID of the grantee of the cluster.
+        /// The account ID of the grantee of the cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -176,7 +176,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Grantor. 
         /// <para>
-        /// The AWS account ID of the cluster owner.
+        /// The account ID of the cluster owner.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

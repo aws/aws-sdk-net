@@ -71,7 +71,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AccountsWithRestoreAccess. 
         /// <para>
-        /// A list of the AWS customer accounts authorized to restore the snapshot. Returns <code>null</code>
+        /// A list of the accounts authorized to restore the snapshot. Returns <code>null</code>
         /// if no accounts are authorized. Visible only to the snapshot owner. 
         /// </para>
         /// </summary>
@@ -364,8 +364,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS Key Management Service (KMS) key ID of the encryption key that was used to
-        /// encrypt data in the cluster from which the snapshot was taken.
+        /// The Key Management Service (KMS) key ID of the encryption key that was used to encrypt
+        /// data in the cluster from which the snapshot was taken.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -444,7 +444,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        /// The master user name for the cluster.
+        /// The admin user name for the cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -500,9 +500,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        /// For manual snapshots, the AWS customer account used to create or copy the snapshot.
-        /// For automatic snapshots, the owner of the cluster. The owner can perform all snapshot
-        /// actions, such as sharing a manual snapshot.
+        /// For manual snapshots, the account used to create or copy the snapshot. For automatic
+        /// snapshots, the owner of the cluster. The owner can perform all snapshot actions, such
+        /// as sharing a manual snapshot.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

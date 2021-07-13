@@ -68,12 +68,11 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property DestinationRegion. 
         /// <para>
-        /// The destination AWS Region that you want to copy snapshots to.
+        /// The destination Region that you want to copy snapshots to.
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must be the name of a valid AWS Region. For more information, see <a
-        /// href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
+        /// Constraints: Must be the name of a valid Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
         /// and Endpoints</a> in the Amazon Web Services General Reference. 
         /// </para>
         /// </summary>
@@ -93,9 +92,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ManualSnapshotRetentionPeriod. 
         /// <para>
-        /// The number of days to retain newly copied snapshots in the destination AWS Region
-        /// after they are copied from the source AWS Region. If the value is -1, the manual snapshot
-        /// is retained indefinitely. 
+        /// The number of days to retain newly copied snapshots in the destination Region after
+        /// they are copied from the source Region. If the value is -1, the manual snapshot is
+        /// retained indefinitely. 
         /// </para>
         ///  
         /// <para>
@@ -144,8 +143,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SnapshotCopyGrantName. 
         /// <para>
-        /// The name of the snapshot copy grant to use when snapshots of an AWS KMS-encrypted
-        /// cluster are copied to the destination region.
+        /// The name of the snapshot copy grant to use when snapshots of an Amazon Web Services
+        /// KMS-encrypted cluster are copied to the destination region.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

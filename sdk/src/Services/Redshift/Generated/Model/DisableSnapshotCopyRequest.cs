@@ -36,8 +36,8 @@ namespace Amazon.Redshift.Model
     ///  
     /// <para>
     /// If your cluster and its snapshots are encrypted using a customer master key (CMK)
-    /// from AWS KMS, use <a>DeleteSnapshotCopyGrant</a> to delete the grant that grants Amazon
-    /// Redshift permission to the CMK in the destination region. 
+    /// from Key Management Service, use <a>DeleteSnapshotCopyGrant</a> to delete the grant
+    /// that grants Amazon Redshift permission to the CMK in the destination region. 
     /// </para>
     /// </summary>
     public partial class DisableSnapshotCopyRequest : AmazonRedshiftRequest

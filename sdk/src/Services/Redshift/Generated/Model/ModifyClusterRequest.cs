@@ -40,7 +40,7 @@ namespace Amazon.Redshift.Model
     /// </para>
     ///  
     /// <para>
-    /// You can add another security or parameter group, or change the master user password.
+    /// You can add another security or parameter group, or change the admin user password.
     /// Resetting a cluster password or modifying the security groups associated with a cluster
     /// do not need a reboot. However, modifying a parameter group requires a reboot for parameters
     /// to take effect. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
@@ -456,8 +456,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS Key Management Service (KMS) key ID of the encryption key that you want to
-        /// use to encrypt data in the cluster.
+        /// The Key Management Service (KMS) key ID of the encryption key that you want to use
+        /// to encrypt data in the cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -527,7 +527,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
-        /// The new password for the cluster master user. This change is asynchronously applied
+        /// The new password for the cluster admin user. This change is asynchronously applied
         /// as soon as possible. Between the time of the request and the completion of the request,
         /// the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code>
         /// element of the operation response. 
@@ -535,7 +535,7 @@ namespace Amazon.Redshift.Model
         ///  <note> 
         /// <para>
         /// Operations never return the password, so this operation provides a way to regain access
-        /// to the master user account for a cluster if the password is lost.
+        /// to the admin user account for a cluster if the password is lost.
         /// </para>
         ///  </note> 
         /// <para>
@@ -608,7 +608,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must be unique for all clusters within an AWS account.
+        /// Must be unique for all clusters within an account.
         /// </para>
         ///  </li> </ul> 
         /// <para>

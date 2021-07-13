@@ -87,8 +87,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ResourceOwner. 
         /// <para>
-        /// The AWS account ID of the owner of the cluster. This is only required if the cluster
-        /// is in another AWS account.
+        /// The account ID of the owner of the cluster. This is only required if the cluster is
+        /// in another account.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

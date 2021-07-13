@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// The AWS account has exceeded the maximum number of snapshot copy grants in this region.
+    /// The account has exceeded the maximum number of snapshot copy grants in this region.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

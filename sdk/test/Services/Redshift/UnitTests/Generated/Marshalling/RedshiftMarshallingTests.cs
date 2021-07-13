@@ -1116,6 +1116,97 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void CreateAuthenticationProfileMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAuthenticationProfile");
+
+            var request = InstantiateClassGenerator.Execute<CreateAuthenticationProfileRequest>();
+            var marshaller = new CreateAuthenticationProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreateAuthenticationProfileResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateAuthenticationProfileResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void CreateAuthenticationProfile_AuthenticationProfileAlreadyExistsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAuthenticationProfile");
+
+            var request = InstantiateClassGenerator.Execute<CreateAuthenticationProfileRequest>();
+            var marshaller = new CreateAuthenticationProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AuthenticationProfileAlreadyExistsException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateAuthenticationProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void CreateAuthenticationProfile_AuthenticationProfileQuotaExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAuthenticationProfile");
+
+            var request = InstantiateClassGenerator.Execute<CreateAuthenticationProfileRequest>();
+            var marshaller = new CreateAuthenticationProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AuthenticationProfileQuotaExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateAuthenticationProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void CreateAuthenticationProfile_InvalidAuthenticationProfileRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAuthenticationProfile");
+
+            var request = InstantiateClassGenerator.Execute<CreateAuthenticationProfileRequest>();
+            var marshaller = new CreateAuthenticationProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAuthenticationProfileRequestException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateAuthenticationProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void CreateClusterMarshallTest()
         {
             var operation = service_model.FindOperation("CreateCluster");
@@ -3788,6 +3879,74 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void DeleteAuthenticationProfileMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAuthenticationProfile");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAuthenticationProfileRequest>();
+            var marshaller = new DeleteAuthenticationProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeleteAuthenticationProfileResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteAuthenticationProfileResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DeleteAuthenticationProfile_AuthenticationProfileNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAuthenticationProfile");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAuthenticationProfileRequest>();
+            var marshaller = new DeleteAuthenticationProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AuthenticationProfileNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteAuthenticationProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DeleteAuthenticationProfile_InvalidAuthenticationProfileRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAuthenticationProfile");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAuthenticationProfileRequest>();
+            var marshaller = new DeleteAuthenticationProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAuthenticationProfileRequestException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteAuthenticationProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void DeleteClusterMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteCluster");
@@ -4953,6 +5112,74 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = DescribeAccountAttributesResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeAccountAttributesResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DescribeAuthenticationProfilesMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAuthenticationProfiles");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAuthenticationProfilesRequest>();
+            var marshaller = new DescribeAuthenticationProfilesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeAuthenticationProfilesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeAuthenticationProfilesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DescribeAuthenticationProfiles_AuthenticationProfileNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAuthenticationProfiles");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAuthenticationProfilesRequest>();
+            var marshaller = new DescribeAuthenticationProfilesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AuthenticationProfileNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeAuthenticationProfilesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DescribeAuthenticationProfiles_InvalidAuthenticationProfileRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAuthenticationProfiles");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAuthenticationProfilesRequest>();
+            var marshaller = new DescribeAuthenticationProfilesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAuthenticationProfileRequestException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeAuthenticationProfilesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -7742,6 +7969,97 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = ModifyAquaConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void ModifyAuthenticationProfileMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyAuthenticationProfile");
+
+            var request = InstantiateClassGenerator.Execute<ModifyAuthenticationProfileRequest>();
+            var marshaller = new ModifyAuthenticationProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ModifyAuthenticationProfileResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyAuthenticationProfileResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void ModifyAuthenticationProfile_AuthenticationProfileNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyAuthenticationProfile");
+
+            var request = InstantiateClassGenerator.Execute<ModifyAuthenticationProfileRequest>();
+            var marshaller = new ModifyAuthenticationProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AuthenticationProfileNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyAuthenticationProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void ModifyAuthenticationProfile_AuthenticationProfileQuotaExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyAuthenticationProfile");
+
+            var request = InstantiateClassGenerator.Execute<ModifyAuthenticationProfileRequest>();
+            var marshaller = new ModifyAuthenticationProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AuthenticationProfileQuotaExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyAuthenticationProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void ModifyAuthenticationProfile_InvalidAuthenticationProfileRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyAuthenticationProfile");
+
+            var request = InstantiateClassGenerator.Execute<ModifyAuthenticationProfileRequest>();
+            var marshaller = new ModifyAuthenticationProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAuthenticationProfileRequestException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyAuthenticationProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

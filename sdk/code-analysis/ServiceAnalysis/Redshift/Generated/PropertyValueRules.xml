@@ -132,6 +132,24 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateAuthenticationProfileRequest.AuthenticationProfileContent</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateAuthenticationProfileRequest.AuthenticationProfileName</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateAuthenticationProfileResponse.AuthenticationProfileContent</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateAuthenticationProfileResponse.AuthenticationProfileName</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.AdditionalInfo</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -396,6 +414,16 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.DeleteAuthenticationProfileRequest.AuthenticationProfileName</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DeleteAuthenticationProfileResponse.AuthenticationProfileName</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteClusterRequest.ClusterIdentifier</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -513,6 +541,11 @@
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteUsageLimitRequest.UsageLimitId</property>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeAuthenticationProfilesRequest.AuthenticationProfileName</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterDbRevisionsRequest.ClusterIdentifier</property>
@@ -1044,6 +1077,24 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyAuthenticationProfileRequest.AuthenticationProfileContent</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyAuthenticationProfileRequest.AuthenticationProfileName</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyAuthenticationProfileResponse.AuthenticationProfileContent</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyAuthenticationProfileResponse.AuthenticationProfileName</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterRequest.AvailabilityZone</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1498,6 +1549,15 @@
   <property-value-rule>
     <property>Amazon.Redshift.Model.AttributeValueTarget.AttributeValue</property>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.AuthenticationProfile.AuthenticationProfileContent</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.AuthenticationProfile.AuthenticationProfileName</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AvailabilityZone.Name</property>

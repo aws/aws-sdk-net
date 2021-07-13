@@ -32,7 +32,7 @@ namespace Amazon.Redshift.Model
     /// Container for the parameters to the DescribeHsmClientCertificates operation.
     /// Returns information about the specified HSM client certificate. If no certificate
     /// ID is specified, returns information about all the HSM certificates owned by your
-    /// AWS customer account.
+    /// account.
     /// 
     ///  
     /// <para>
@@ -61,7 +61,7 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// The identifier of a specific HSM client certificate for which you want information.
         /// If no identifier is specified, information is returned for all HSM client certificates
-        /// owned by your AWS customer account.
+        /// owned by your account.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -82,10 +82,10 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeHsmClientCertificates</a> request exceed
-        /// the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code>
-        /// field of the response. You can retrieve the next set of response records by providing
-        /// the returned marker value in the <code>Marker</code> parameter and retrying the request.
-        /// 
+        /// the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value
+        /// in the <code>Marker</code> field of the response. You can retrieve the next set of
+        /// response records by providing the returned marker value in the <code>Marker</code>
+        /// parameter and retrying the request. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

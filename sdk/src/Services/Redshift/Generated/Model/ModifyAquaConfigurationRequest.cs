@@ -44,8 +44,8 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift
-        /// node type.
+        /// enabled - Use AQUA if it is available for the current Region and Amazon Redshift node
+        /// type.
         /// </para>
         ///  </li> <li> 
         /// <para>

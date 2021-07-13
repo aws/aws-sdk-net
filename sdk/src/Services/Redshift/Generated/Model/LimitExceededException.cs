@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// The encryption key has exceeded its grant limit in AWS KMS.
+    /// The encryption key has exceeded its grant limit in Amazon Web Services KMS.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

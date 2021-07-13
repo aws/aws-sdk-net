@@ -65,7 +65,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must be unique for all security groups that are created by your AWS account.
+        /// Must be unique for all security groups that are created by your account.
         /// </para>
         ///  </li> </ul> 
         /// <para>

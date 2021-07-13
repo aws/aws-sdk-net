@@ -60,7 +60,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property EC2SecurityGroupOwnerId. 
         /// <para>
-        /// The AWS ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code>
+        /// The account ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code>
         /// field. 
         /// </para>
         /// </summary>

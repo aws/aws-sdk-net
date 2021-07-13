@@ -30,7 +30,7 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the AuthorizeSnapshotAccess operation.
-    /// Authorizes the specified AWS customer account to restore the specified snapshot.
+    /// Authorizes the specified account to restore the specified snapshot.
     /// 
     ///  
     /// <para>
@@ -47,11 +47,11 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AccountWithRestoreAccess. 
         /// <para>
-        /// The identifier of the AWS customer account authorized to restore the specified snapshot.
+        /// The identifier of the account authorized to restore the specified snapshot.
         /// </para>
         ///  
         /// <para>
-        /// To share a snapshot with AWS support, specify amazon-redshift-support.
+        /// To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=2147483647)]

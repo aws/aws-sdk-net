@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// An AWS Identity and Access Management (IAM) role that can be used by the associated
-    /// Amazon Redshift cluster to access other AWS services.
+    /// An Identity and Access Management (IAM) role that can be used by the associated Amazon
+    /// Redshift cluster to access other Amazon Web Services services.
     /// </summary>
     public partial class ClusterIamRole
     {

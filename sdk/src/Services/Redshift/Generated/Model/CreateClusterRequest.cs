@@ -132,8 +132,8 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift
-        /// node type.
+        /// enabled - Use AQUA if it is available for the current Region and Amazon Redshift node
+        /// type.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -274,7 +274,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must be unique for all clusters within an AWS account.
+        /// Must be unique for all clusters within an account.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -618,9 +618,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property IamRoles. 
         /// <para>
-        /// A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster
-        /// to access other AWS services. You must supply the IAM roles in their Amazon Resource
-        /// Name (ARN) format. You can supply up to 10 IAM roles in a single request.
+        /// A list of Identity and Access Management (IAM) roles that can be used by the cluster
+        /// to access other Amazon Web Services services. You must supply the IAM roles in their
+        /// Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single request.
         /// </para>
         ///  
         /// <para>
@@ -642,8 +642,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS Key Management Service (KMS) key ID of the encryption key that you want to
-        /// use to encrypt data in the cluster.
+        /// The Key Management Service (KMS) key ID of the encryption key that you want to use
+        /// to encrypt data in the cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -707,7 +707,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        /// The user name associated with the master user account for the cluster that is being
+        /// The user name associated with the admin user account for the cluster that is being
         /// created.
         /// </para>
         ///  
@@ -745,7 +745,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
-        /// The password associated with the master user account for the cluster that is being
+        /// The password associated with the admin user account for the cluster that is being
         /// created.
         /// </para>
         ///  

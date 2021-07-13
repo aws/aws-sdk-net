@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Describes an AWS customer account authorized to restore a snapshot.
+    /// Describes an account authorized to restore a snapshot.
     /// </summary>
     public partial class AccountWithRestoreAccess
     {
@@ -39,8 +39,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AccountAlias. 
         /// <para>
-        /// The identifier of an AWS support account authorized to restore a snapshot. For AWS
-        /// support, the identifier is <code>amazon-redshift-support</code>. 
+        /// The identifier of an Amazon Web Services support account authorized to restore a snapshot.
+        /// For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -59,7 +60,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The identifier of an AWS customer account authorized to restore a snapshot.
+        /// The identifier of an account authorized to restore a snapshot.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
