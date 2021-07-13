@@ -36,6 +36,7 @@ namespace Amazon.AmplifyBackend.Model
         private BackendAuthSocialProviderConfig _facebook;
         private BackendAuthSocialProviderConfig _google;
         private BackendAuthSocialProviderConfig _loginWithAmazon;
+        private BackendAuthAppleProviderConfig _signInWithApple;
 
         /// <summary>
         /// Gets and sets the property Facebook.
@@ -80,6 +81,21 @@ namespace Amazon.AmplifyBackend.Model
         internal bool IsSetLoginWithAmazon()
         {
             return this._loginWithAmazon != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SignInWithApple.
+        /// </summary>
+        public BackendAuthAppleProviderConfig SignInWithApple
+        {
+            get { return this._signInWithApple; }
+            set { this._signInWithApple = value; }
+        }
+
+        // Check to see if SignInWithApple property is set
+        internal bool IsSetSignInWithApple()
+        {
+            return this._signInWithApple != null;
         }
 
     }

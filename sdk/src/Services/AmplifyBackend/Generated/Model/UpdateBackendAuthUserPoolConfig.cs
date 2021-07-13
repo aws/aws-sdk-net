@@ -61,8 +61,8 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property Mfa. 
         /// <para>
-        /// Describes whether multi-factor authentication policies should be applied for your
-        /// Amazon Cognito user pool configured as a part of your Amplify project.
+        /// Describes whether to apply multi-factor authentication policies for your Amazon Cognito
+        /// user pool configured as a part of your Amplify project.
         /// </para>
         /// </summary>
         public UpdateBackendAuthMFAConfig Mfa

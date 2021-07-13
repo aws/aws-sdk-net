@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
-    /// Describes whether multi-factor authentication policies should be applied for your
-    /// Amazon Cognito user pool configured as a part of your Amplify project.
+    /// Describes whether to apply multi-factor authentication policies for your Amazon Cognito
+    /// user pool configured as a part of your Amplify project.
     /// </summary>
     public partial class CreateBackendAuthMFAConfig
     {
@@ -40,8 +40,8 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property MFAMode. 
         /// <para>
-        /// Describes whether MFA should be [ON, OFF, OPTIONAL] for authentication in your Amplify
-        /// project.
+        /// Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in your
+        /// Amplify project.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -78,6 +78,17 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSignInWithApple())
+            {
+                context.Writer.WritePropertyName("SignInWithApple");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BackendAuthAppleProviderConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.SignInWithApple, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SocialProviderSettings Object
+    /// Response Unmarshaller for BackendAuthAppleProviderConfig Object
     /// </summary>  
-    public class SocialProviderSettingsUnmarshaller : IUnmarshaller<SocialProviderSettings, XmlUnmarshallerContext>, IUnmarshaller<SocialProviderSettings, JsonUnmarshallerContext>
+    public class BackendAuthAppleProviderConfigUnmarshaller : IUnmarshaller<BackendAuthAppleProviderConfig, XmlUnmarshallerContext>, IUnmarshaller<BackendAuthAppleProviderConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SocialProviderSettings IUnmarshaller<SocialProviderSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        BackendAuthAppleProviderConfig IUnmarshaller<BackendAuthAppleProviderConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,39 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SocialProviderSettings Unmarshall(JsonUnmarshallerContext context)
+        public BackendAuthAppleProviderConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SocialProviderSettings unmarshalledObject = new SocialProviderSettings();
+            BackendAuthAppleProviderConfig unmarshalledObject = new BackendAuthAppleProviderConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Facebook", targetDepth))
+                if (context.TestExpression("client_id", targetDepth))
                 {
-                    var unmarshaller = BackendAuthSocialProviderConfigUnmarshaller.Instance;
-                    unmarshalledObject.Facebook = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ClientId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Google", targetDepth))
+                if (context.TestExpression("key_id", targetDepth))
                 {
-                    var unmarshaller = BackendAuthSocialProviderConfigUnmarshaller.Instance;
-                    unmarshalledObject.Google = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LoginWithAmazon", targetDepth))
+                if (context.TestExpression("private_key", targetDepth))
                 {
-                    var unmarshaller = BackendAuthSocialProviderConfigUnmarshaller.Instance;
-                    unmarshalledObject.LoginWithAmazon = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PrivateKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SignInWithApple", targetDepth))
+                if (context.TestExpression("team_id", targetDepth))
                 {
-                    var unmarshaller = BackendAuthAppleProviderConfigUnmarshaller.Instance;
-                    unmarshalledObject.SignInWithApple = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TeamId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +94,12 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         }
 
 
-        private static SocialProviderSettingsUnmarshaller _instance = new SocialProviderSettingsUnmarshaller();        
+        private static BackendAuthAppleProviderConfigUnmarshaller _instance = new BackendAuthAppleProviderConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SocialProviderSettingsUnmarshaller Instance
+        public static BackendAuthAppleProviderConfigUnmarshaller Instance
         {
             get
             {

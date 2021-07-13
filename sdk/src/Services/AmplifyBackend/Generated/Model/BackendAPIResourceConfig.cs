@@ -61,7 +61,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property ApiName. 
         /// <para>
-        /// The API name used to interact with the data model, configured as a part of the amplify
+        /// The API name used to interact with the data model, configured as a part of your Amplify
         /// project.
         /// </para>
         /// </summary>
