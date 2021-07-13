@@ -57,8 +57,9 @@ namespace Amazon.LexModelBuildingService.Model
     /// </para>
     ///  
     /// <para>
-    /// If you set <code>childDirected</code> field to true when you created your bot, or
-    /// if you opted out of participating in improving Amazon Lex, utterances are not available.
+    /// If you set <code>childDirected</code> field to true when you created your bot, if
+    /// you are using slot obfuscation with one or more slots, or if you opted out of participating
+    /// in improving Amazon Lex, utterances are not available.
     /// </para>
     ///  
     /// <para>

@@ -66,6 +66,11 @@ namespace Amazon.LexModelBuildingService.Model
         IGetIntentVersionsPaginator GetIntentVersions(GetIntentVersionsRequest request);
 
         /// <summary>
+        /// Paginator for GetMigrations operation
+        ///</summary>
+        IGetMigrationsPaginator GetMigrations(GetMigrationsRequest request);
+
+        /// <summary>
         /// Paginator for GetSlotTypes operation
         ///</summary>
         IGetSlotTypesPaginator GetSlotTypes(GetSlotTypesRequest request);

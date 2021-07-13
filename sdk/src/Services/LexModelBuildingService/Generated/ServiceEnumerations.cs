@@ -635,6 +635,210 @@ namespace Amazon.LexModelBuildingService
 
 
     /// <summary>
+    /// Constants used for properties of type MigrationAlertType.
+    /// </summary>
+    public class MigrationAlertType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ERROR for MigrationAlertType
+        /// </summary>
+        public static readonly MigrationAlertType ERROR = new MigrationAlertType("ERROR");
+        /// <summary>
+        /// Constant WARN for MigrationAlertType
+        /// </summary>
+        public static readonly MigrationAlertType WARN = new MigrationAlertType("WARN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MigrationAlertType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MigrationAlertType FindValue(string value)
+        {
+            return FindValue<MigrationAlertType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MigrationAlertType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MigrationSortAttribute.
+    /// </summary>
+    public class MigrationSortAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MIGRATION_DATE_TIME for MigrationSortAttribute
+        /// </summary>
+        public static readonly MigrationSortAttribute MIGRATION_DATE_TIME = new MigrationSortAttribute("MIGRATION_DATE_TIME");
+        /// <summary>
+        /// Constant V1_BOT_NAME for MigrationSortAttribute
+        /// </summary>
+        public static readonly MigrationSortAttribute V1_BOT_NAME = new MigrationSortAttribute("V1_BOT_NAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MigrationSortAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MigrationSortAttribute FindValue(string value)
+        {
+            return FindValue<MigrationSortAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MigrationSortAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MigrationStatus.
+    /// </summary>
+    public class MigrationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for MigrationStatus
+        /// </summary>
+        public static readonly MigrationStatus COMPLETED = new MigrationStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for MigrationStatus
+        /// </summary>
+        public static readonly MigrationStatus FAILED = new MigrationStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for MigrationStatus
+        /// </summary>
+        public static readonly MigrationStatus IN_PROGRESS = new MigrationStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MigrationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MigrationStatus FindValue(string value)
+        {
+            return FindValue<MigrationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MigrationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MigrationStrategy.
+    /// </summary>
+    public class MigrationStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_NEW for MigrationStrategy
+        /// </summary>
+        public static readonly MigrationStrategy CREATE_NEW = new MigrationStrategy("CREATE_NEW");
+        /// <summary>
+        /// Constant UPDATE_EXISTING for MigrationStrategy
+        /// </summary>
+        public static readonly MigrationStrategy UPDATE_EXISTING = new MigrationStrategy("UPDATE_EXISTING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MigrationStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MigrationStrategy FindValue(string value)
+        {
+            return FindValue<MigrationStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MigrationStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ObfuscationSetting.
     /// </summary>
     public class ObfuscationSetting : ConstantClass
@@ -940,6 +1144,56 @@ namespace Amazon.LexModelBuildingService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SlotValueSelectionStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SortOrder.
+    /// </summary>
+    public class SortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASCENDING for SortOrder
+        /// </summary>
+        public static readonly SortOrder ASCENDING = new SortOrder("ASCENDING");
+        /// <summary>
+        /// Constant DESCENDING for SortOrder
+        /// </summary>
+        public static readonly SortOrder DESCENDING = new SortOrder("DESCENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortOrder FindValue(string value)
+        {
+            return FindValue<SortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortOrder(string value)
         {
             return FindValue(value);
         }

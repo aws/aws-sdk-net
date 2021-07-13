@@ -438,6 +438,53 @@
     <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.GetMigrationRequest.MigrationId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.GetMigrationResponse.MigrationId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.GetMigrationResponse.V1BotName</property>
+    <min>2</min>
+    <max>50</max>
+    <pattern>^([A-Za-z]_?)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.GetMigrationResponse.V1BotVersion</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>\$LATEST|[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.GetMigrationResponse.V2BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.GetMigrationResponse.V2BotRole</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w\-]+:iam::[\d]{12}:role/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.GetMigrationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.GetMigrationsRequest.V1BotNameContains</property>
+    <min>2</min>
+    <max>50</max>
+    <pattern>^([A-Za-z]_?)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetSlotTypeRequest.Name</property>
     <min>1</min>
     <max>100</max>
@@ -680,6 +727,60 @@
     <pattern>[a-zA-Z_]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.StartMigrationRequest.V1BotName</property>
+    <min>2</min>
+    <max>50</max>
+    <pattern>^([A-Za-z]_?)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.StartMigrationRequest.V1BotVersion</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>\$LATEST|[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.StartMigrationRequest.V2BotName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^([0-9a-zA-Z][_-]?)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.StartMigrationRequest.V2BotRole</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w\-]+:iam::[\d]{12}:role/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.StartMigrationResponse.MigrationId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.StartMigrationResponse.V1BotName</property>
+    <min>2</min>
+    <max>50</max>
+    <pattern>^([A-Za-z]_?)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.StartMigrationResponse.V1BotVersion</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>\$LATEST|[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.StartMigrationResponse.V2BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.StartMigrationResponse.V2BotRole</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w\-]+:iam::[\d]{12}:role/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
@@ -761,7 +862,7 @@
     <property>Amazon.LexModelBuildingService.Model.CodeHook.Uri</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws:lambda:[a-z]+-[a-z]+-[0-9]:[0-9]{12}:function:[a-zA-Z0-9-_]+(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?(:[a-zA-Z0-9-_]+)?</pattern>
+    <pattern>arn:aws[a-zA-Z-]*:lambda:[a-z]+-[a-z]+(-[a-z]+)*-[0-9]:[0-9]{12}:function:[a-zA-Z0-9-_]+(\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?(:[a-zA-Z0-9-_]+)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.ConversationLogsRequest.IamRoleArn</property>
@@ -868,6 +969,36 @@
     <property>Amazon.LexModelBuildingService.Model.Message.GroupNumber</property>
     <min>1</min>
     <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.MigrationSummary.MigrationId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.MigrationSummary.V1BotName</property>
+    <min>2</min>
+    <max>50</max>
+    <pattern>^([A-Za-z]_?)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.MigrationSummary.V1BotVersion</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>\$LATEST|[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.MigrationSummary.V2BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.MigrationSummary.V2BotRole</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w\-]+:iam::[\d]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.OutputContext.Name</property>

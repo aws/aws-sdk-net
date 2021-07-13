@@ -100,6 +100,14 @@ namespace Amazon.LexModelBuildingService.Model
         }
 
         /// <summary>
+        /// Paginator for GetMigrations operation
+        ///</summary>
+        public IGetMigrationsPaginator GetMigrations(GetMigrationsRequest request) 
+        {
+            return new GetMigrationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetSlotTypes operation
         ///</summary>
         public IGetSlotTypesPaginator GetSlotTypes(GetSlotTypesRequest request) 

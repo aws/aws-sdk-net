@@ -2014,6 +2014,99 @@ namespace Amazon.LexModelBuildingService
 
         #endregion
         
+        #region  GetMigration
+
+        internal virtual GetMigrationResponse GetMigration(GetMigrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMigrationResponseUnmarshaller.Instance;
+
+            return Invoke<GetMigrationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides details about an ongoing or complete migration from an Amazon Lex V1 bot
+        /// to an Amazon Lex V2 bot. Use this operation to view the migration alerts and warnings
+        /// related to the migration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMigration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMigration service method, as returned by LexModelBuildingService.</returns>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.InternalFailureException">
+        /// An internal Amazon Lex error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetMigration">REST API Reference for GetMigration Operation</seealso>
+        public virtual Task<GetMigrationResponse> GetMigrationAsync(GetMigrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMigrationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetMigrationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetMigrations
+
+        internal virtual GetMigrationsResponse GetMigrations(GetMigrationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMigrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMigrationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetMigrationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a list of migrations between Amazon Lex V1 and Amazon Lex V2.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMigrations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMigrations service method, as returned by LexModelBuildingService.</returns>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.InternalFailureException">
+        /// An internal Amazon Lex error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetMigrations">REST API Reference for GetMigrations Operation</seealso>
+        public virtual Task<GetMigrationsResponse> GetMigrationsAsync(GetMigrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMigrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMigrationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetMigrationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetSlotType
 
         internal virtual GetSlotTypeResponse GetSlotType(GetSlotTypeRequest request)
@@ -2235,8 +2328,9 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        /// If you set <code>childDirected</code> field to true when you created your bot, or
-        /// if you opted out of participating in improving Amazon Lex, utterances are not available.
+        /// If you set <code>childDirected</code> field to true when you created your bot, if
+        /// you are using slot obfuscation with one or more slots, or if you opted out of participating
+        /// in improving Amazon Lex, utterances are not available.
         /// </para>
         ///  
         /// <para>
@@ -2680,6 +2774,64 @@ namespace Amazon.LexModelBuildingService
             options.ResponseUnmarshaller = StartImportResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartImportResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartMigration
+
+        internal virtual StartMigrationResponse StartMigration(StartMigrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMigrationResponseUnmarshaller.Instance;
+
+            return Invoke<StartMigrationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts migrating a bot from Amazon Lex V1 to Amazon Lex V2. Migrate your bot when
+        /// you want to take advantage of the new features of Amazon Lex V2.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/migrate.html">Migrating
+        /// a bot</a> in the <i>Amazon Lex developer guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMigration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartMigration service method, as returned by LexModelBuildingService.</returns>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.AccessDeniedException">
+        /// Your IAM user or role does not have permission to call the Amazon Lex V2 APIs required
+        /// to migrate your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.InternalFailureException">
+        /// An internal Amazon Lex error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartMigration">REST API Reference for StartMigration Operation</seealso>
+        public virtual Task<StartMigrationResponse> StartMigrationAsync(StartMigrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMigrationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartMigrationResponse>(request, options, cancellationToken);
         }
 
         #endregion

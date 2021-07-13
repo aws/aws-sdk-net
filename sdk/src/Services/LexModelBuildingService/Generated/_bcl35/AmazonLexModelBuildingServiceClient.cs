@@ -2533,6 +2533,139 @@ namespace Amazon.LexModelBuildingService
 
         #endregion
         
+        #region  GetMigration
+
+        /// <summary>
+        /// Provides details about an ongoing or complete migration from an Amazon Lex V1 bot
+        /// to an Amazon Lex V2 bot. Use this operation to view the migration alerts and warnings
+        /// related to the migration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMigration service method.</param>
+        /// 
+        /// <returns>The response from the GetMigration service method, as returned by LexModelBuildingService.</returns>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.InternalFailureException">
+        /// An internal Amazon Lex error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetMigration">REST API Reference for GetMigration Operation</seealso>
+        public virtual GetMigrationResponse GetMigration(GetMigrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMigrationResponseUnmarshaller.Instance;
+
+            return Invoke<GetMigrationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMigration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMigration operation on AmazonLexModelBuildingServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMigration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetMigration">REST API Reference for GetMigration Operation</seealso>
+        public virtual IAsyncResult BeginGetMigration(GetMigrationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMigrationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMigration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMigration.</param>
+        /// 
+        /// <returns>Returns a  GetMigrationResult from LexModelBuildingService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetMigration">REST API Reference for GetMigration Operation</seealso>
+        public virtual GetMigrationResponse EndGetMigration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMigrationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetMigrations
+
+        /// <summary>
+        /// Gets a list of migrations between Amazon Lex V1 and Amazon Lex V2.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMigrations service method.</param>
+        /// 
+        /// <returns>The response from the GetMigrations service method, as returned by LexModelBuildingService.</returns>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.InternalFailureException">
+        /// An internal Amazon Lex error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetMigrations">REST API Reference for GetMigrations Operation</seealso>
+        public virtual GetMigrationsResponse GetMigrations(GetMigrationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMigrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMigrationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetMigrationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMigrations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMigrations operation on AmazonLexModelBuildingServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMigrations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetMigrations">REST API Reference for GetMigrations Operation</seealso>
+        public virtual IAsyncResult BeginGetMigrations(GetMigrationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMigrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMigrationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMigrations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMigrations.</param>
+        /// 
+        /// <returns>Returns a  GetMigrationsResult from LexModelBuildingService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetMigrations">REST API Reference for GetMigrations Operation</seealso>
+        public virtual GetMigrationsResponse EndGetMigrations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMigrationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetSlotType
 
         /// <summary>
@@ -2803,8 +2936,9 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        /// If you set <code>childDirected</code> field to true when you created your bot, or
-        /// if you opted out of participating in improving Amazon Lex, utterances are not available.
+        /// If you set <code>childDirected</code> field to true when you created your bot, if
+        /// you are using slot obfuscation with one or more slots, or if you opted out of participating
+        /// in improving Amazon Lex, utterances are not available.
         /// </para>
         ///  
         /// <para>
@@ -3399,6 +3533,84 @@ namespace Amazon.LexModelBuildingService
         public virtual StartImportResponse EndStartImport(IAsyncResult asyncResult)
         {
             return EndInvoke<StartImportResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartMigration
+
+        /// <summary>
+        /// Starts migrating a bot from Amazon Lex V1 to Amazon Lex V2. Migrate your bot when
+        /// you want to take advantage of the new features of Amazon Lex V2.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/migrate.html">Migrating
+        /// a bot</a> in the <i>Amazon Lex developer guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMigration service method.</param>
+        /// 
+        /// <returns>The response from the StartMigration service method, as returned by LexModelBuildingService.</returns>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.AccessDeniedException">
+        /// Your IAM user or role does not have permission to call the Amazon Lex V2 APIs required
+        /// to migrate your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.InternalFailureException">
+        /// An internal Amazon Lex error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartMigration">REST API Reference for StartMigration Operation</seealso>
+        public virtual StartMigrationResponse StartMigration(StartMigrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMigrationResponseUnmarshaller.Instance;
+
+            return Invoke<StartMigrationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMigration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMigration operation on AmazonLexModelBuildingServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMigration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartMigration">REST API Reference for StartMigration Operation</seealso>
+        public virtual IAsyncResult BeginStartMigration(StartMigrationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMigrationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartMigration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartMigration.</param>
+        /// 
+        /// <returns>Returns a  StartMigrationResult from LexModelBuildingService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartMigration">REST API Reference for StartMigration Operation</seealso>
+        public virtual StartMigrationResponse EndStartMigration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartMigrationResponse>(asyncResult);
         }
 
         #endregion
