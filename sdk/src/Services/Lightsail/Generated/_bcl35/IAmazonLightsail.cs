@@ -32,16 +32,16 @@ namespace Amazon.Lightsail
     /// Amazon Lightsail is the easiest way to get started with Amazon Web Services (AWS)
     /// for developers who need to build websites or web applications. It includes everything
     /// you need to launch your project quickly - instances (virtual private servers), container
-    /// services, managed databases, SSD-based block storage, static IP addresses, load balancers,
-    /// content delivery network (CDN) distributions, DNS management of registered domains,
-    /// and resource snapshots (backups) - for a low, predictable monthly price.
+    /// services, storage buckets, managed databases, SSD-based block storage, static IP addresses,
+    /// load balancers, content delivery network (CDN) distributions, DNS management of registered
+    /// domains, and resource snapshots (backups) - for a low, predictable monthly price.
     /// 
     ///  
     /// <para>
     /// You can manage your Lightsail resources using the Lightsail console, Lightsail API,
     /// AWS Command Line Interface (AWS CLI), or SDKs. For more information about Lightsail
-    /// concepts and tasks, see the <a href="http://lightsail.aws.amazon.com/ls/docs/how-to/article/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli">Lightsail
-    /// Dev Guide</a>.
+    /// concepts and tasks, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli">Amazon
+    /// Lightsail Developer Guide</a>.
     /// </para>
     ///  
     /// <para>
@@ -229,8 +229,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>attach disk</code> operation supports tag-based access control via resource
         /// tags applied to the resource identified by <code>disk name</code>. For more information,
-        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachDisk service method.</param>
@@ -314,8 +314,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>attach instances to load balancer</code> operation supports tag-based access
         /// control via resource tags applied to the resource identified by <code>load balancer
-        /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachInstancesToLoadBalancer service method.</param>
@@ -402,8 +402,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>AttachLoadBalancerTlsCertificate</code> operation supports tag-based access
         /// control via resource tags applied to the resource identified by <code>load balancer
-        /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachLoadBalancerTlsCertificate service method.</param>
@@ -554,8 +554,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>CloseInstancePublicPorts</code> action supports tag-based access control
         /// via resource tags applied to the resource identified by <code>instanceName</code>.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CloseInstancePublicPorts service method.</param>
@@ -709,6 +709,160 @@ namespace Amazon.Lightsail
         /// <returns>Returns a  CopySnapshotResult from Lightsail.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CopySnapshot">REST API Reference for CopySnapshot Operation</seealso>
         CopySnapshotResponse EndCopySnapshot(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateBucket
+
+
+        /// <summary>
+        /// Creates an Amazon Lightsail bucket.
+        /// 
+        ///  
+        /// <para>
+        /// A bucket is a cloud storage resource available in the Lightsail object storage service.
+        /// Use buckets to store objects such as data and its descriptive metadata. For more information
+        /// about buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/buckets-in-amazon-lightsail">Buckets
+        /// in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBucket service method.</param>
+        /// 
+        /// <returns>The response from the CreateBucket service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>)
+        /// AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to
+        /// create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateBucket">REST API Reference for CreateBucket Operation</seealso>
+        CreateBucketResponse CreateBucket(CreateBucketRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBucket operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBucket operation on AmazonLightsailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBucket
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateBucket">REST API Reference for CreateBucket Operation</seealso>
+        IAsyncResult BeginCreateBucket(CreateBucketRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateBucket operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateBucket.</param>
+        /// 
+        /// <returns>Returns a  CreateBucketResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateBucket">REST API Reference for CreateBucket Operation</seealso>
+        CreateBucketResponse EndCreateBucket(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateBucketAccessKey
+
+
+        /// <summary>
+        /// Creates a new access key for the specified Amazon Lightsail bucket. Access keys consist
+        /// of an access key ID and corresponding secret access key.
+        /// 
+        ///  
+        /// <para>
+        /// Access keys grant full programmatic access to the specified bucket and its objects.
+        /// You can have a maximum of two access keys per bucket. Use the <a>GetBucketAccessKeys</a>
+        /// action to get a list of current access keys for a specific bucket. For more information
+        /// about access keys, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys">Creating
+        /// access keys for a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
+        /// Guide</i>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// The <code>secretAccessKey</code> value is returned only in response to the <code>CreateBucketAccessKey</code>
+        /// action. You can get a secret access key only when you first create an access key;
+        /// you cannot get the secret access key later. If you lose the secret access key, you
+        /// must create a new access key.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBucketAccessKey service method.</param>
+        /// 
+        /// <returns>The response from the CreateBucketAccessKey service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>)
+        /// AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to
+        /// create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateBucketAccessKey">REST API Reference for CreateBucketAccessKey Operation</seealso>
+        CreateBucketAccessKeyResponse CreateBucketAccessKey(CreateBucketAccessKeyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBucketAccessKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBucketAccessKey operation on AmazonLightsailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBucketAccessKey
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateBucketAccessKey">REST API Reference for CreateBucketAccessKey Operation</seealso>
+        IAsyncResult BeginCreateBucketAccessKey(CreateBucketAccessKeyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateBucketAccessKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateBucketAccessKey.</param>
+        /// 
+        /// <returns>Returns a  CreateBucketAccessKeyResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateBucketAccessKey">REST API Reference for CreateBucketAccessKey Operation</seealso>
+        CreateBucketAccessKeyResponse EndCreateBucketAccessKey(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1045,8 +1199,8 @@ namespace Amazon.Lightsail
         /// You can deploy containers to your container service using container images from a
         /// public registry like Docker Hub, or from your local machine. For more information,
         /// see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-container-images">Creating
-        /// container images for your Amazon Lightsail container services</a> in the <i>Lightsail
-        /// Dev Guide</i>.
+        /// container images for your Amazon Lightsail container services</a> in the <i>Amazon
+        /// Lightsail Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContainerServiceDeployment service method.</param>
@@ -1137,7 +1291,7 @@ namespace Amazon.Lightsail
         /// plugin to push container images to your Lightsail container service. For more information,
         /// see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-pushing-container-images">Pushing
         /// and managing container images on your Amazon Lightsail container services</a> in the
-        /// <i>Lightsail Dev Guide</i>.
+        /// <i>Amazon Lightsail Developer Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1210,8 +1364,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>create disk</code> operation supports tag-based access control via request
-        /// tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDisk service method.</param>
@@ -1292,8 +1446,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>create disk from snapshot</code> operation supports tag-based access control
         /// via request tags and resource tags applied to the resource identified by <code>disk
-        /// snapshot name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// snapshot name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDiskFromSnapshot service method.</param>
@@ -1395,8 +1549,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>create disk snapshot</code> operation supports tag-based access control
-        /// via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDiskSnapshot service method.</param>
@@ -1550,8 +1704,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>create domain</code> operation supports tag-based access control via request
-        /// tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method.</param>
@@ -1632,8 +1786,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>create domain entry</code> operation supports tag-based access control via
         /// resource tags applied to the resource identified by <code>domain name</code>. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomainEntry service method.</param>
@@ -1711,8 +1865,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>create instances</code> operation supports tag-based access control via
-        /// request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateInstances service method.</param>
@@ -1791,8 +1945,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>create instances from snapshot</code> operation supports tag-based access
         /// control via request tags and resource tags applied to the resource identified by <code>instance
-        /// snapshot name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// snapshot name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateInstancesFromSnapshot service method.</param>
@@ -1871,8 +2025,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>create instance snapshot</code> operation supports tag-based access control
-        /// via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateInstanceSnapshot service method.</param>
@@ -1950,8 +2104,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>create key pair</code> operation supports tag-based access control via request
-        /// tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateKeyPair service method.</param>
@@ -2025,7 +2179,7 @@ namespace Amazon.Lightsail
 
         /// <summary>
         /// Creates a Lightsail load balancer. To learn more about deciding whether to load balance
-        /// your application, see <a href="https://lightsail.aws.amazon.com/ls/docs/how-to/article/configure-lightsail-instances-for-load-balancing">Configure
+        /// your application, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/configure-lightsail-instances-for-load-balancing">Configure
         /// your Lightsail instances for load balancing</a>. You can create up to 5 load balancers
         /// per AWS Region in your account.
         /// 
@@ -2038,8 +2192,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>create load balancer</code> operation supports tag-based access control
-        /// via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancer service method.</param>
@@ -2122,8 +2276,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>CreateLoadBalancerTlsCertificate</code> operation supports tag-based access
         /// control via resource tags applied to the resource identified by <code>load balancer
-        /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancerTlsCertificate service method.</param>
@@ -2201,8 +2355,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>create relational database</code> operation supports tag-based access control
-        /// via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRelationalDatabase service method.</param>
@@ -2287,8 +2441,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>create relational database from snapshot</code> operation supports tag-based
         /// access control via request tags and resource tags applied to the resource identified
-        /// by relationalDatabaseSnapshotName. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// by relationalDatabaseSnapshotName. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRelationalDatabaseFromSnapshot service method.</param>
@@ -2367,8 +2521,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>create relational database snapshot</code> operation supports tag-based
-        /// access control via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// access control via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRelationalDatabaseSnapshot service method.</param>
@@ -2518,8 +2672,8 @@ namespace Amazon.Lightsail
 
         /// <summary>
         /// Deletes an automatic snapshot of an instance or disk. For more information, see the
-        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-        /// Dev Guide</a>.
+        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAutoSnapshot service method.</param>
         /// 
@@ -2580,6 +2734,154 @@ namespace Amazon.Lightsail
         /// <returns>Returns a  DeleteAutoSnapshotResult from Lightsail.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteAutoSnapshot">REST API Reference for DeleteAutoSnapshot Operation</seealso>
         DeleteAutoSnapshotResponse EndDeleteAutoSnapshot(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteBucket
+
+
+        /// <summary>
+        /// Deletes a Amazon Lightsail bucket.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When you delete your bucket, the bucket name is released and can be reused for a new
+        /// bucket in your account or another AWS account.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucket service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBucket service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>)
+        /// AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to
+        /// create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteBucket">REST API Reference for DeleteBucket Operation</seealso>
+        DeleteBucketResponse DeleteBucket(DeleteBucketRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucket operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucket operation on AmazonLightsailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucket
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteBucket">REST API Reference for DeleteBucket Operation</seealso>
+        IAsyncResult BeginDeleteBucket(DeleteBucketRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBucket operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucket.</param>
+        /// 
+        /// <returns>Returns a  DeleteBucketResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteBucket">REST API Reference for DeleteBucket Operation</seealso>
+        DeleteBucketResponse EndDeleteBucket(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteBucketAccessKey
+
+
+        /// <summary>
+        /// Deletes an access key for the specified Amazon Lightsail bucket.
+        /// 
+        ///  
+        /// <para>
+        /// We recommend that you delete an access key if the secret access key is compromised.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about access keys, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys">Creating
+        /// access keys for a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketAccessKey service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBucketAccessKey service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>)
+        /// AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to
+        /// create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteBucketAccessKey">REST API Reference for DeleteBucketAccessKey Operation</seealso>
+        DeleteBucketAccessKeyResponse DeleteBucketAccessKey(DeleteBucketAccessKeyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketAccessKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketAccessKey operation on AmazonLightsailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketAccessKey
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteBucketAccessKey">REST API Reference for DeleteBucketAccessKey Operation</seealso>
+        IAsyncResult BeginDeleteBucketAccessKey(DeleteBucketAccessKeyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBucketAccessKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketAccessKey.</param>
+        /// 
+        /// <returns>Returns a  DeleteBucketAccessKeyResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteBucketAccessKey">REST API Reference for DeleteBucketAccessKey Operation</seealso>
+        DeleteBucketAccessKeyResponse EndDeleteBucketAccessKey(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2879,8 +3181,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>delete disk</code> operation supports tag-based access control via resource
         /// tags applied to the resource identified by <code>disk name</code>. For more information,
-        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDisk service method.</param>
@@ -2967,8 +3269,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>delete disk snapshot</code> operation supports tag-based access control
         /// via resource tags applied to the resource identified by <code>disk snapshot name</code>.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDiskSnapshot service method.</param>
@@ -3115,8 +3417,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>delete domain</code> operation supports tag-based access control via resource
         /// tags applied to the resource identified by <code>domain name</code>. For more information,
-        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomain service method.</param>
@@ -3195,8 +3497,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>delete domain entry</code> operation supports tag-based access control via
         /// resource tags applied to the resource identified by <code>domain name</code>. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomainEntry service method.</param>
@@ -3275,8 +3577,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>delete instance</code> operation supports tag-based access control via resource
         /// tags applied to the resource identified by <code>instance name</code>. For more information,
-        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInstance service method.</param>
@@ -3355,8 +3657,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>delete instance snapshot</code> operation supports tag-based access control
         /// via resource tags applied to the resource identified by <code>instance snapshot name</code>.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInstanceSnapshot service method.</param>
@@ -3435,8 +3737,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>delete key pair</code> operation supports tag-based access control via resource
         /// tags applied to the resource identified by <code>key pair name</code>. For more information,
-        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteKeyPair service method.</param>
@@ -3517,7 +3819,7 @@ namespace Amazon.Lightsail
         /// <para>
         /// Perform this operation only if you were expecting the host key or certificate mismatch
         /// or if you are familiar with the new host key or certificate on the instance. For more
-        /// information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection">Troubleshooting
+        /// information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection">Troubleshooting
         /// connection issues when using the Amazon Lightsail browser-based SSH or RDP client</a>.
         /// </para>
         ///  </important>
@@ -3600,8 +3902,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>delete load balancer</code> operation supports tag-based access control
         /// via resource tags applied to the resource identified by <code>load balancer name</code>.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancer service method.</param>
@@ -3680,8 +3982,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>DeleteLoadBalancerTlsCertificate</code> operation supports tag-based access
         /// control via resource tags applied to the resource identified by <code>load balancer
-        /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancerTlsCertificate service method.</param>
@@ -3760,8 +4062,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>delete relational database</code> operation supports tag-based access control
         /// via resource tags applied to the resource identified by relationalDatabaseName. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRelationalDatabase service method.</param>
@@ -3840,8 +4142,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>delete relational database snapshot</code> operation supports tag-based
         /// access control via resource tags applied to the resource identified by relationalDatabaseName.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRelationalDatabaseSnapshot service method.</param>
@@ -3997,8 +4299,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>detach disk</code> operation supports tag-based access control via resource
         /// tags applied to the resource identified by <code>disk name</code>. For more information,
-        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachDisk service method.</param>
@@ -4082,8 +4384,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>detach instances from load balancer</code> operation supports tag-based
         /// access control via resource tags applied to the resource identified by <code>load
-        /// balancer name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// balancer name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachInstancesFromLoadBalancer service method.</param>
@@ -4229,8 +4531,8 @@ namespace Amazon.Lightsail
 
         /// <summary>
         /// Disables an add-on for an Amazon Lightsail resource. For more information, see the
-        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-        /// Dev Guide</a>.
+        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableAddOn service method.</param>
         /// 
@@ -4371,8 +4673,8 @@ namespace Amazon.Lightsail
 
         /// <summary>
         /// Enables or modifies an add-on for an Amazon Lightsail resource. For more information,
-        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-        /// Dev Guide</a>.
+        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableAddOn service method.</param>
         /// 
@@ -4457,8 +4759,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>export snapshot</code> operation supports tag-based access control via resource
         /// tags applied to the resource identified by <code>source snapshot name</code>. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -4688,8 +4990,8 @@ namespace Amazon.Lightsail
 
         /// <summary>
         /// Returns the available automatic snapshots for an instance or disk. For more information,
-        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-        /// Dev Guide</a>.
+        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAutoSnapshots service method.</param>
         /// 
@@ -4834,6 +5136,294 @@ namespace Amazon.Lightsail
         /// <returns>Returns a  GetBlueprintsResult from Lightsail.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBlueprints">REST API Reference for GetBlueprints Operation</seealso>
         GetBlueprintsResponse EndGetBlueprints(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetBucketAccessKeys
+
+
+        /// <summary>
+        /// Returns the existing access key IDs for the specified Amazon Lightsail bucket.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This action does not return the secret access key value of an access key. You can
+        /// get a secret access key only when you create it from the response of the <a>CreateBucketAccessKey</a>
+        /// action. If you lose the secret access key, you must create a new access key.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketAccessKeys service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketAccessKeys service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>)
+        /// AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to
+        /// create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBucketAccessKeys">REST API Reference for GetBucketAccessKeys Operation</seealso>
+        GetBucketAccessKeysResponse GetBucketAccessKeys(GetBucketAccessKeysRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketAccessKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketAccessKeys operation on AmazonLightsailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketAccessKeys
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBucketAccessKeys">REST API Reference for GetBucketAccessKeys Operation</seealso>
+        IAsyncResult BeginGetBucketAccessKeys(GetBucketAccessKeysRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBucketAccessKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketAccessKeys.</param>
+        /// 
+        /// <returns>Returns a  GetBucketAccessKeysResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBucketAccessKeys">REST API Reference for GetBucketAccessKeys Operation</seealso>
+        GetBucketAccessKeysResponse EndGetBucketAccessKeys(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetBucketBundles
+
+
+        /// <summary>
+        /// Returns the bundles that you can apply to a Amazon Lightsail bucket.
+        /// 
+        ///  
+        /// <para>
+        /// The bucket bundle specifies the monthly cost, storage quota, and data transfer quota
+        /// for a bucket.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <a>UpdateBucketBundle</a> action to update the bundle for a bucket.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketBundles service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketBundles service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>)
+        /// AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to
+        /// create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBucketBundles">REST API Reference for GetBucketBundles Operation</seealso>
+        GetBucketBundlesResponse GetBucketBundles(GetBucketBundlesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketBundles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketBundles operation on AmazonLightsailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketBundles
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBucketBundles">REST API Reference for GetBucketBundles Operation</seealso>
+        IAsyncResult BeginGetBucketBundles(GetBucketBundlesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBucketBundles operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketBundles.</param>
+        /// 
+        /// <returns>Returns a  GetBucketBundlesResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBucketBundles">REST API Reference for GetBucketBundles Operation</seealso>
+        GetBucketBundlesResponse EndGetBucketBundles(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetBucketMetricData
+
+
+        /// <summary>
+        /// Returns the data points of a specific metric for an Amazon Lightsail bucket.
+        /// 
+        ///  
+        /// <para>
+        /// Metrics report the utilization of a bucket. View and collect metric data regularly
+        /// to monitor the number of objects stored in a bucket (including object versions) and
+        /// the storage space used by those objects.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketMetricData service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketMetricData service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>)
+        /// AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to
+        /// create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBucketMetricData">REST API Reference for GetBucketMetricData Operation</seealso>
+        GetBucketMetricDataResponse GetBucketMetricData(GetBucketMetricDataRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketMetricData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketMetricData operation on AmazonLightsailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketMetricData
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBucketMetricData">REST API Reference for GetBucketMetricData Operation</seealso>
+        IAsyncResult BeginGetBucketMetricData(GetBucketMetricDataRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBucketMetricData operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketMetricData.</param>
+        /// 
+        /// <returns>Returns a  GetBucketMetricDataResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBucketMetricData">REST API Reference for GetBucketMetricData Operation</seealso>
+        GetBucketMetricDataResponse EndGetBucketMetricData(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetBuckets
+
+
+        /// <summary>
+        /// Returns information about one or more Amazon Lightsail buckets.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/buckets-in-amazon-lightsail">Buckets
+        /// in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>..
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBuckets service method.</param>
+        /// 
+        /// <returns>The response from the GetBuckets service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>)
+        /// AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to
+        /// create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBuckets">REST API Reference for GetBuckets Operation</seealso>
+        GetBucketsResponse GetBuckets(GetBucketsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBuckets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBuckets operation on AmazonLightsailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBuckets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBuckets">REST API Reference for GetBuckets Operation</seealso>
+        IAsyncResult BeginGetBuckets(GetBucketsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBuckets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBuckets.</param>
+        /// 
+        /// <returns>Returns a  GetBucketsResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBuckets">REST API Reference for GetBuckets Operation</seealso>
+        GetBucketsResponse EndGetBuckets(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5929,7 +6519,7 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Returns the list bundles that can be applied to you Amazon Lightsail content delivery
+        /// Returns the bundles that can be applied to your Amazon Lightsail content delivery
         /// network (CDN) distributions.
         /// 
         ///  
@@ -6362,13 +6952,13 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Returns the export snapshot record created as a result of the <code>export snapshot</code>
+        /// Returns all export snapshot records created as a result of the <code>export snapshot</code>
         /// operation.
         /// 
         ///  
         /// <para>
         /// An export snapshot record can be used to create a new Amazon EC2 instance and its
-        /// related resources with the <code>create cloud formation stack</code> operation.
+        /// related resources with the <a>CreateCloudFormationStack</a> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetExportSnapshotRecords service method.</param>
@@ -6521,8 +7111,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>get instance access details</code> operation supports tag-based access control
         /// via resource tags applied to the resource identified by <code>instance name</code>.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInstanceAccessDetails service method.</param>
@@ -8977,8 +9567,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>OpenInstancePublicPorts</code> action supports tag-based access control
         /// via resource tags applied to the resource identified by <code>instanceName</code>.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the OpenInstancePublicPorts service method.</param>
@@ -9051,7 +9641,7 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Tries to peer the Lightsail VPC with the user's default VPC.
+        /// Peers the Lightsail VPC with the user's default VPC.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PeerVpc service method.</param>
         /// 
@@ -9222,8 +9812,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>PutInstancePublicPorts</code> action supports tag-based access control via
         /// resource tags applied to the resource identified by <code>instanceName</code>. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutInstancePublicPorts service method.</param>
@@ -9302,8 +9892,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>reboot instance</code> operation supports tag-based access control via resource
         /// tags applied to the resource identified by <code>instance name</code>. For more information,
-        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RebootInstance service method.</param>
@@ -9382,8 +9972,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>reboot relational database</code> operation supports tag-based access control
         /// via resource tags applied to the resource identified by relationalDatabaseName. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RebootRelationalDatabase service method.</param>
@@ -9464,7 +10054,7 @@ namespace Amazon.Lightsail
         /// plugin to push container images to your Lightsail container service. For more information,
         /// see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-pushing-container-images">Pushing
         /// and managing container images on your Amazon Lightsail container services</a> in the
-        /// <i>Lightsail Dev Guide</i>.
+        /// <i>Amazon Lightsail Developer Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -9844,6 +10434,77 @@ namespace Amazon.Lightsail
 
         #endregion
         
+        #region  SetResourceAccessForBucket
+
+
+        /// <summary>
+        /// Sets the Amazon Lightsail resources that can access the specified Lightsail bucket.
+        /// 
+        ///  
+        /// <para>
+        /// Lightsail buckets currently support setting access for Lightsail instances in the
+        /// same AWS Region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetResourceAccessForBucket service method.</param>
+        /// 
+        /// <returns>The response from the SetResourceAccessForBucket service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>)
+        /// AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to
+        /// create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SetResourceAccessForBucket">REST API Reference for SetResourceAccessForBucket Operation</seealso>
+        SetResourceAccessForBucketResponse SetResourceAccessForBucket(SetResourceAccessForBucketRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetResourceAccessForBucket operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetResourceAccessForBucket operation on AmazonLightsailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetResourceAccessForBucket
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SetResourceAccessForBucket">REST API Reference for SetResourceAccessForBucket Operation</seealso>
+        IAsyncResult BeginSetResourceAccessForBucket(SetResourceAccessForBucketRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SetResourceAccessForBucket operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetResourceAccessForBucket.</param>
+        /// 
+        /// <returns>Returns a  SetResourceAccessForBucketResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SetResourceAccessForBucket">REST API Reference for SetResourceAccessForBucket Operation</seealso>
+        SetResourceAccessForBucketResponse EndSetResourceAccessForBucket(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StartInstance
 
 
@@ -9856,15 +10517,15 @@ namespace Amazon.Lightsail
         /// When you start a stopped instance, Lightsail assigns a new public IP address to the
         /// instance. To use the same IP address after stopping and starting an instance, create
         /// a static IP address and attach it to the instance. For more information, see the <a
-        /// href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail
-        /// Dev Guide</a>.
+        /// href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-create-static-ip">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         ///  </note> 
         /// <para>
         /// The <code>start instance</code> operation supports tag-based access control via resource
         /// tags applied to the resource identified by <code>instance name</code>. For more information,
-        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartInstance service method.</param>
@@ -9944,8 +10605,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>start relational database</code> operation supports tag-based access control
         /// via resource tags applied to the resource identified by relationalDatabaseName. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartRelationalDatabase service method.</param>
@@ -10025,15 +10686,15 @@ namespace Amazon.Lightsail
         /// When you start a stopped instance, Lightsail assigns a new public IP address to the
         /// instance. To use the same IP address after stopping and starting an instance, create
         /// a static IP address and attach it to the instance. For more information, see the <a
-        /// href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail
-        /// Dev Guide</a>.
+        /// href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-create-static-ip">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         ///  </note> 
         /// <para>
         /// The <code>stop instance</code> operation supports tag-based access control via resource
         /// tags applied to the resource identified by <code>instance name</code>. For more information,
-        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopInstance service method.</param>
@@ -10112,8 +10773,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>stop relational database</code> operation supports tag-based access control
         /// via resource tags applied to the resource identified by relationalDatabaseName. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopRelationalDatabase service method.</param>
@@ -10188,15 +10849,15 @@ namespace Amazon.Lightsail
         /// <summary>
         /// Adds one or more tags to the specified Amazon Lightsail resource. Each resource can
         /// have a maximum of 50 tags. Each tag consists of a key and an optional value. Tag keys
-        /// must be unique per resource. For more information about tags, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-        /// Dev Guide</a>.
+        /// must be unique per resource. For more information about tags, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// 
         ///  
         /// <para>
         /// The <code>tag resource</code> operation supports tag-based access control via request
         /// tags and resource tags applied to the resource identified by <code>resource name</code>.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -10348,7 +11009,7 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Attempts to unpeer the Lightsail VPC from the user's default VPC.
+        /// Unpeers the Lightsail VPC from the user's default VPC.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnpeerVpc service method.</param>
         /// 
@@ -10427,8 +11088,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>untag resource</code> operation supports tag-based access control via request
         /// tags and resource tags applied to the resource identified by <code>resource name</code>.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
@@ -10494,6 +11155,161 @@ namespace Amazon.Lightsail
         /// <returns>Returns a  UntagResourceResult from Lightsail.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateBucket
+
+
+        /// <summary>
+        /// Updates an existing Amazon Lightsail bucket.
+        /// 
+        ///  
+        /// <para>
+        /// Use this action to update the configuration of an existing bucket, such as versioning,
+        /// public accessibility, and the AWS accounts that can access the bucket.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBucket service method.</param>
+        /// 
+        /// <returns>The response from the UpdateBucket service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>)
+        /// AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to
+        /// create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateBucket">REST API Reference for UpdateBucket Operation</seealso>
+        UpdateBucketResponse UpdateBucket(UpdateBucketRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateBucket operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBucket operation on AmazonLightsailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateBucket
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateBucket">REST API Reference for UpdateBucket Operation</seealso>
+        IAsyncResult BeginUpdateBucket(UpdateBucketRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateBucket operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateBucket.</param>
+        /// 
+        /// <returns>Returns a  UpdateBucketResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateBucket">REST API Reference for UpdateBucket Operation</seealso>
+        UpdateBucketResponse EndUpdateBucket(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateBucketBundle
+
+
+        /// <summary>
+        /// Updates the bundle, or storage plan, of an existing Amazon Lightsail bucket.
+        /// 
+        ///  
+        /// <para>
+        /// A bucket bundle specifies the monthly cost, storage space, and data transfer quota
+        /// for a bucket. You can update a bucket's bundle only one time within a monthly AWS
+        /// billing cycle. To determine if you can update a bucket's bundle, use the <a>GetBuckets</a>
+        /// action. The <code>ableToUpdateBundle</code> parameter in the response will indicate
+        /// whether you can currently update a bucket's bundle.
+        /// </para>
+        ///  
+        /// <para>
+        /// Update a bucket's bundle if it's consistently going over its storage space or data
+        /// transfer quota, or if a bucket's usage is consistently in the lower range of its storage
+        /// space or data transfer quota. Due to the unpredictable usage fluctuations that a bucket
+        /// might experience, we strongly recommend that you update a bucket's bundle only as
+        /// a long-term strategy, instead of as a short-term, monthly cost-cutting measure. Choose
+        /// a bucket bundle that will provide the bucket with ample storage space and data transfer
+        /// for a long time to come.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBucketBundle service method.</param>
+        /// 
+        /// <returns>The response from the UpdateBucketBundle service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>)
+        /// AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to
+        /// create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateBucketBundle">REST API Reference for UpdateBucketBundle Operation</seealso>
+        UpdateBucketBundleResponse UpdateBucketBundle(UpdateBucketBundleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateBucketBundle operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBucketBundle operation on AmazonLightsailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateBucketBundle
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateBucketBundle">REST API Reference for UpdateBucketBundle Operation</seealso>
+        IAsyncResult BeginUpdateBucketBundle(UpdateBucketBundleRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateBucketBundle operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateBucketBundle.</param>
+        /// 
+        /// <returns>Returns a  UpdateBucketBundleResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateBucketBundle">REST API Reference for UpdateBucketBundle Operation</seealso>
+        UpdateBucketBundleResponse EndUpdateBucketBundle(IAsyncResult asyncResult);
 
         #endregion
         
@@ -10571,7 +11387,7 @@ namespace Amazon.Lightsail
         /// 
         ///  
         /// <para>
-        /// Use this action to update the configuration of your existing distribution
+        /// Use this action to update the configuration of your existing distribution.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDistribution service method.</param>
@@ -10732,8 +11548,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>update domain entry</code> operation supports tag-based access control via
         /// resource tags applied to the resource identified by <code>domain name</code>. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomainEntry service method.</param>
@@ -10813,8 +11629,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>update load balancer attribute</code> operation supports tag-based access
         /// control via resource tags applied to the resource identified by <code>load balancer
-        /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLoadBalancerAttribute service method.</param>
@@ -10898,8 +11714,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>update relational database</code> operation supports tag-based access control
         /// via resource tags applied to the resource identified by relationalDatabaseName. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRelationalDatabase service method.</param>
@@ -10987,8 +11803,8 @@ namespace Amazon.Lightsail
         /// <para>
         /// The <code>update relational database parameters</code> operation supports tag-based
         /// access control via resource tags applied to the resource identified by relationalDatabaseName.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-        /// Dev Guide</a>.
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRelationalDatabaseParameters service method.</param>

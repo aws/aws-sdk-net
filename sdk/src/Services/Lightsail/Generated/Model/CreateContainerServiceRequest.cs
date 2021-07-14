@@ -226,12 +226,16 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tag keys and optional values for the container service.
+        /// The tag keys and optional values to add to the certificate during create.
         /// </para>
         ///  
         /// <para>
-        /// For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-        /// Dev Guide</a>.
+        /// Use the <code>TagResource</code> action to tag a resource after it's created.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         public List<Tag> Tags

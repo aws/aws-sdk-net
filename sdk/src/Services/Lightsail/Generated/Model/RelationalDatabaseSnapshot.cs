@@ -309,8 +309,8 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The tag keys and optional values for the resource. For more information about tags
-        /// in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-        /// Dev Guide</a>.
+        /// in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>
         public List<Tag> Tags

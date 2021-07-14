@@ -45,8 +45,8 @@ namespace Amazon.Lightsail.Model
     /// You can deploy containers to your container service using container images from a
     /// public registry like Docker Hub, or from your local machine. For more information,
     /// see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-container-images">Creating
-    /// container images for your Amazon Lightsail container services</a> in the <i>Lightsail
-    /// Dev Guide</i>.
+    /// container images for your Amazon Lightsail container services</a> in the <i>Amazon
+    /// Lightsail Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateContainerServiceDeploymentRequest : AmazonLightsailRequest

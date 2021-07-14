@@ -38,7 +38,7 @@ namespace Amazon.Lightsail.Model
     /// plugin to push container images to your Lightsail container service. For more information,
     /// see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-pushing-container-images">Pushing
     /// and managing container images on your Amazon Lightsail container services</a> in the
-    /// <i>Lightsail Dev Guide</i>.
+    /// <i>Amazon Lightsail Developer Guide</i>.
     /// </para>
     ///  </note>
     /// </summary>

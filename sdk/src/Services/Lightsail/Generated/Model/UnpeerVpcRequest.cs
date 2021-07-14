@@ -30,7 +30,7 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the UnpeerVpc operation.
-    /// Attempts to unpeer the Lightsail VPC from the user's default VPC.
+    /// Unpeers the Lightsail VPC from the user's default VPC.
     /// </summary>
     public partial class UnpeerVpcRequest : AmazonLightsailRequest
     {

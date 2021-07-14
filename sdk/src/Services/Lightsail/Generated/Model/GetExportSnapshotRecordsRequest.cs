@@ -30,13 +30,13 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the GetExportSnapshotRecords operation.
-    /// Returns the export snapshot record created as a result of the <code>export snapshot</code>
+    /// Returns all export snapshot records created as a result of the <code>export snapshot</code>
     /// operation.
     /// 
     ///  
     /// <para>
     /// An export snapshot record can be used to create a new Amazon EC2 instance and its
-    /// related resources with the <code>create cloud formation stack</code> operation.
+    /// related resources with the <a>CreateCloudFormationStack</a> action.
     /// </para>
     /// </summary>
     public partial class GetExportSnapshotRecordsRequest : AmazonLightsailRequest

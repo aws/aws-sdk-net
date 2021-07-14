@@ -31,8 +31,8 @@ namespace Amazon.Lightsail.Model
     /// <summary>
     /// Container for the parameters to the DeleteAutoSnapshot operation.
     /// Deletes an automatic snapshot of an instance or disk. For more information, see the
-    /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-    /// Dev Guide</a>.
+    /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+    /// Lightsail Developer Guide</a>.
     /// </summary>
     public partial class DeleteAutoSnapshotRequest : AmazonLightsailRequest
     {

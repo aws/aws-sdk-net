@@ -57,6 +57,22 @@
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.CreateBucketRequest.BucketName</property>
+    <min>3</min>
+    <max>54</max>
+    <pattern>^[a-z0-9][a-z0-9-]{1,52}[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.CreateBucketRequest.BundleId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.CreateBucketAccessKeyRequest.BucketName</property>
+    <min>3</min>
+    <max>54</max>
+    <pattern>^[a-z0-9][a-z0-9-]{1,52}[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateContactMethodRequest.ContactEndpoint</property>
     <min>1</min>
     <max>256</max>
@@ -212,6 +228,22 @@
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.DeleteBucketRequest.BucketName</property>
+    <min>3</min>
+    <max>54</max>
+    <pattern>^[a-z0-9][a-z0-9-]{1,52}[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.DeleteBucketAccessKeyRequest.AccessKeyId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.DeleteBucketAccessKeyRequest.BucketName</property>
+    <min>3</min>
+    <max>54</max>
+    <pattern>^[a-z0-9][a-z0-9-]{1,52}[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.DeleteContainerImageRequest.ServiceName</property>
     <min>1</min>
     <max>63</max>
@@ -318,6 +350,29 @@
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetAutoSnapshotsResponse.ResourceName</property>
     <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.GetBucketAccessKeysRequest.BucketName</property>
+    <min>3</min>
+    <max>54</max>
+    <pattern>^[a-z0-9][a-z0-9-]{1,52}[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.GetBucketMetricDataRequest.BucketName</property>
+    <min>3</min>
+    <max>54</max>
+    <pattern>^[a-z0-9][a-z0-9-]{1,52}[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.GetBucketMetricDataRequest.Period</property>
+    <min>60</min>
+    <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.GetBucketsRequest.BucketName</property>
+    <min>3</min>
+    <max>54</max>
+    <pattern>^[a-z0-9][a-z0-9-]{1,52}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetContainerImagesRequest.ServiceName</property>
@@ -531,6 +586,16 @@
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.SetResourceAccessForBucketRequest.BucketName</property>
+    <min>3</min>
+    <max>54</max>
+    <pattern>^[a-z0-9][a-z0-9-]{1,52}[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.SetResourceAccessForBucketRequest.ResourceName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.StartInstanceRequest.InstanceName</property>
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
@@ -571,6 +636,26 @@
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.UpdateBucketRequest.BucketName</property>
+    <min>3</min>
+    <max>54</max>
+    <pattern>^[a-z0-9][a-z0-9-]{1,52}[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.UpdateBucketRequest.Versioning</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.UpdateBucketBundleRequest.BucketName</property>
+    <min>3</min>
+    <max>54</max>
+    <pattern>^[a-z0-9][a-z0-9-]{1,52}[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.UpdateBucketBundleRequest.BundleId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.UpdateContainerServiceRequest.Scale</property>
     <min>1</min>
     <max>20</max>
@@ -605,6 +690,16 @@
   <property-value-rule>
     <property>Amazon.Lightsail.Model.UpdateRelationalDatabaseParametersRequest.RelationalDatabaseName</property>
     <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.AccessKey.AccessKeyId</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^[A-Z0-9]{20}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.AccessKey.SecretAccessKey</property>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.AddOn.NextSnapshotTimeOfDay</property>
@@ -650,6 +745,48 @@
   <property-value-rule>
     <property>Amazon.Lightsail.Model.Blueprint.Name</property>
     <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.Bucket.Arn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.Bucket.BundleId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.Bucket.Name</property>
+    <min>3</min>
+    <max>54</max>
+    <pattern>^[a-z0-9][a-z0-9-]{1,52}[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.Bucket.ObjectVersioning</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.Bucket.ResourceType</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.Bucket.SupportCode</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.Bucket.Url</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.BucketBundle.BundleId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.BucketBundle.Name</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.BucketState.Code</property>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.Bundle.BundleId</property>
@@ -1114,6 +1251,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.RelationalDatabaseSnapshot.State</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.ResourceReceivingAccess.Name</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.ResourceReceivingAccess.ResourceType</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>

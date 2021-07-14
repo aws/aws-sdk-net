@@ -30,7 +30,7 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the PeerVpc operation.
-    /// Tries to peer the Lightsail VPC with the user's default VPC.
+    /// Peers the Lightsail VPC with the user's default VPC.
     /// </summary>
     public partial class PeerVpcRequest : AmazonLightsailRequest
     {

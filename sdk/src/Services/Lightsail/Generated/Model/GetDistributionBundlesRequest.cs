@@ -30,7 +30,7 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDistributionBundles operation.
-    /// Returns the list bundles that can be applied to you Amazon Lightsail content delivery
+    /// Returns the bundles that can be applied to your Amazon Lightsail content delivery
     /// network (CDN) distributions.
     /// 
     ///  

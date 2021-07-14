@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model
     /// 
     ///  
     /// <para>
-    /// Use this action to update the configuration of your existing distribution
+    /// Use this action to update the configuration of your existing distribution.
     /// </para>
     /// </summary>
     public partial class UpdateDistributionRequest : AmazonLightsailRequest

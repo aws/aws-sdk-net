@@ -60,7 +60,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property IsActive. 
         /// <para>
-        /// Indicates whether the bundle is active, and can be specified for a new distribution.
+        /// Indicates whether the bundle is active, and can be specified for a new or existing
+        /// distribution.
         /// </para>
         /// </summary>
         public bool IsActive

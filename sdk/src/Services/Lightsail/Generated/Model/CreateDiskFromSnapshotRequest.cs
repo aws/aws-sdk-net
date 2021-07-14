@@ -38,8 +38,8 @@ namespace Amazon.Lightsail.Model
     /// <para>
     /// The <code>create disk from snapshot</code> operation supports tag-based access control
     /// via request tags and resource tags applied to the resource identified by <code>disk
-    /// snapshot name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-    /// Dev Guide</a>.
+    /// snapshot name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+    /// Lightsail Developer Guide</a>.
     /// </para>
     /// </summary>
     public partial class CreateDiskFromSnapshotRequest : AmazonLightsailRequest
@@ -170,8 +170,8 @@ namespace Amazon.Lightsail.Model
         ///  </li> <li> 
         /// <para>
         /// Define this parameter only when creating a new disk from an automatic snapshot. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-        /// Dev Guide</a>.
+        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -224,8 +224,8 @@ namespace Amazon.Lightsail.Model
         ///  </li> <li> 
         /// <para>
         /// Define this parameter only when creating a new disk from an automatic snapshot. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-        /// Dev Guide</a>.
+        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -281,8 +281,8 @@ namespace Amazon.Lightsail.Model
         ///  </li> <li> 
         /// <para>
         /// Define this parameter only when creating a new disk from an automatic snapshot. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-        /// Dev Guide</a>.
+        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+        /// Lightsail Developer Guide</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

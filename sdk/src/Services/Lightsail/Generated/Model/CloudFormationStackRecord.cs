@@ -30,7 +30,7 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Describes a CloudFormation stack record created as a result of the <code>create cloud
-    /// formation stack</code> operation.
+    /// formation stack</code> action.
     /// 
     ///  
     /// <para>

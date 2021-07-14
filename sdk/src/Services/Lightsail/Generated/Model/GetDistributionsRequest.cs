@@ -45,11 +45,6 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>GetDistributions</code> action to get a list of distribution names that
-        /// you can specify.
-        /// </para>
-        ///  
-        /// <para>
         /// When omitted, the response includes all of your distributions in the AWS Region where
         /// the request is made.
         /// </para>

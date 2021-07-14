@@ -101,7 +101,9 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property SuccessCodes. 
         /// <para>
         /// The HTTP codes to use when checking for a successful response from a container. You
-        /// can specify values between 200 and 499.
+        /// can specify values between <code>200</code> and <code>499</code>. You can specify
+        /// multiple values (for example, <code>200,202</code>) or a range of values (for example,
+        /// <code>200-299</code>).
         /// </para>
         /// </summary>
         public string SuccessCodes

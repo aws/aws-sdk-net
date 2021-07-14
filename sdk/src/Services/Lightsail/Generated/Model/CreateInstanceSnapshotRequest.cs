@@ -36,8 +36,8 @@ namespace Amazon.Lightsail.Model
     ///  
     /// <para>
     /// The <code>create instance snapshot</code> operation supports tag-based access control
-    /// via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-    /// Dev Guide</a>.
+    /// via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+    /// Lightsail Developer Guide</a>.
     /// </para>
     /// </summary>
     public partial class CreateInstanceSnapshotRequest : AmazonLightsailRequest

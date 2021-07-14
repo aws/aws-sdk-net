@@ -75,6 +75,56 @@ namespace Amazon.Lightsail
 
 
     /// <summary>
+    /// Constants used for properties of type AccessType.
+    /// </summary>
+    public class AccessType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Private for AccessType
+        /// </summary>
+        public static readonly AccessType Private = new AccessType("private");
+        /// <summary>
+        /// Constant Public for AccessType
+        /// </summary>
+        public static readonly AccessType Public = new AccessType("public");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessType FindValue(string value)
+        {
+            return FindValue<AccessType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AddOnType.
     /// </summary>
     public class AddOnType : ConstantClass
@@ -326,6 +376,56 @@ namespace Amazon.Lightsail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator BlueprintType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BucketMetricName.
+    /// </summary>
+    public class BucketMetricName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BucketSizeBytes for BucketMetricName
+        /// </summary>
+        public static readonly BucketMetricName BucketSizeBytes = new BucketMetricName("BucketSizeBytes");
+        /// <summary>
+        /// Constant NumberOfObjects for BucketMetricName
+        /// </summary>
+        public static readonly BucketMetricName NumberOfObjects = new BucketMetricName("NumberOfObjects");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BucketMetricName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BucketMetricName FindValue(string value)
+        {
+            return FindValue<BucketMetricName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BucketMetricName(string value)
         {
             return FindValue(value);
         }
@@ -2953,6 +3053,14 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly OperationType CloseInstancePublicPorts = new OperationType("CloseInstancePublicPorts");
         /// <summary>
+        /// Constant CreateBucket for OperationType
+        /// </summary>
+        public static readonly OperationType CreateBucket = new OperationType("CreateBucket");
+        /// <summary>
+        /// Constant CreateBucketAccessKey for OperationType
+        /// </summary>
+        public static readonly OperationType CreateBucketAccessKey = new OperationType("CreateBucketAccessKey");
+        /// <summary>
         /// Constant CreateCertificate for OperationType
         /// </summary>
         public static readonly OperationType CreateCertificate = new OperationType("CreateCertificate");
@@ -3028,6 +3136,14 @@ namespace Amazon.Lightsail
         /// Constant DeleteAlarm for OperationType
         /// </summary>
         public static readonly OperationType DeleteAlarm = new OperationType("DeleteAlarm");
+        /// <summary>
+        /// Constant DeleteBucket for OperationType
+        /// </summary>
+        public static readonly OperationType DeleteBucket = new OperationType("DeleteBucket");
+        /// <summary>
+        /// Constant DeleteBucketAccessKey for OperationType
+        /// </summary>
+        public static readonly OperationType DeleteBucketAccessKey = new OperationType("DeleteBucketAccessKey");
         /// <summary>
         /// Constant DeleteCertificate for OperationType
         /// </summary>
@@ -3165,6 +3281,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly OperationType SetIpAddressType = new OperationType("SetIpAddressType");
         /// <summary>
+        /// Constant SetResourceAccessForBucket for OperationType
+        /// </summary>
+        public static readonly OperationType SetResourceAccessForBucket = new OperationType("SetResourceAccessForBucket");
+        /// <summary>
         /// Constant StartInstance for OperationType
         /// </summary>
         public static readonly OperationType StartInstance = new OperationType("StartInstance");
@@ -3184,6 +3304,14 @@ namespace Amazon.Lightsail
         /// Constant TestAlarm for OperationType
         /// </summary>
         public static readonly OperationType TestAlarm = new OperationType("TestAlarm");
+        /// <summary>
+        /// Constant UpdateBucket for OperationType
+        /// </summary>
+        public static readonly OperationType UpdateBucket = new OperationType("UpdateBucket");
+        /// <summary>
+        /// Constant UpdateBucketBundle for OperationType
+        /// </summary>
+        public static readonly OperationType UpdateBucketBundle = new OperationType("UpdateBucketBundle");
         /// <summary>
         /// Constant UpdateContainerService for OperationType
         /// </summary>
@@ -3545,6 +3673,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly RegionName EuCentral1 = new RegionName("eu-central-1");
         /// <summary>
+        /// Constant EuNorth1 for RegionName
+        /// </summary>
+        public static readonly RegionName EuNorth1 = new RegionName("eu-north-1");
+        /// <summary>
         /// Constant EuWest1 for RegionName
         /// </summary>
         public static readonly RegionName EuWest1 = new RegionName("eu-west-1");
@@ -3833,6 +3965,56 @@ namespace Amazon.Lightsail
 
 
     /// <summary>
+    /// Constants used for properties of type ResourceBucketAccess.
+    /// </summary>
+    public class ResourceBucketAccess : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Allow for ResourceBucketAccess
+        /// </summary>
+        public static readonly ResourceBucketAccess Allow = new ResourceBucketAccess("allow");
+        /// <summary>
+        /// Constant Deny for ResourceBucketAccess
+        /// </summary>
+        public static readonly ResourceBucketAccess Deny = new ResourceBucketAccess("deny");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceBucketAccess(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceBucketAccess FindValue(string value)
+        {
+            return FindValue<ResourceBucketAccess>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceBucketAccess(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceType.
     /// </summary>
     public class ResourceType : ConstantClass
@@ -3842,6 +4024,10 @@ namespace Amazon.Lightsail
         /// Constant Alarm for ResourceType
         /// </summary>
         public static readonly ResourceType Alarm = new ResourceType("Alarm");
+        /// <summary>
+        /// Constant Bucket for ResourceType
+        /// </summary>
+        public static readonly ResourceType Bucket = new ResourceType("Bucket");
         /// <summary>
         /// Constant Certificate for ResourceType
         /// </summary>
@@ -3944,6 +4130,56 @@ namespace Amazon.Lightsail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StatusType.
+    /// </summary>
+    public class StatusType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for StatusType
+        /// </summary>
+        public static readonly StatusType Active = new StatusType("Active");
+        /// <summary>
+        /// Constant Inactive for StatusType
+        /// </summary>
+        public static readonly StatusType Inactive = new StatusType("Inactive");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StatusType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StatusType FindValue(string value)
+        {
+            return FindValue<StatusType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StatusType(string value)
         {
             return FindValue(value);
         }

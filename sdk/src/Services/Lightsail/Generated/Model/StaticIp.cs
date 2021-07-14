@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
-    /// Describes the static IP.
+    /// Describes a static IP.
     /// </summary>
     public partial class StaticIp
     {
