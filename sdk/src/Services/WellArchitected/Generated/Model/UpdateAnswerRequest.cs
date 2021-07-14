@@ -34,12 +34,33 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class UpdateAnswerRequest : AmazonWellArchitectedRequest
     {
+        private Dictionary<string, ChoiceUpdate> _choiceUpdates = new Dictionary<string, ChoiceUpdate>();
         private bool? _isApplicable;
         private string _lensAlias;
         private string _notes;
         private string _questionId;
+        private AnswerReason _reason;
         private List<string> _selectedChoices = new List<string>();
         private string _workloadId;
+
+        /// <summary>
+        /// Gets and sets the property ChoiceUpdates. 
+        /// <para>
+        /// A list of choices to update on a question in your workload. The String key corresponds
+        /// to the choice ID to be updated.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, ChoiceUpdate> ChoiceUpdates
+        {
+            get { return this._choiceUpdates; }
+            set { this._choiceUpdates = value; }
+        }
+
+        // Check to see if ChoiceUpdates property is set
+        internal bool IsSetChoiceUpdates()
+        {
+            return this._choiceUpdates != null && this._choiceUpdates.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property IsApplicable.
@@ -102,6 +123,24 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetQuestionId()
         {
             return this._questionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// The reason why a question is not applicable to your workload.
+        /// </para>
+        /// </summary>
+        public AnswerReason Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
         }
 
         /// <summary>

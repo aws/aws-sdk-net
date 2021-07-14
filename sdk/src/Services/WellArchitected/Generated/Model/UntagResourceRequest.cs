@@ -31,6 +31,15 @@ namespace Amazon.WellArchitected.Model
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
     /// Deletes specified tags from a resource.
+    /// 
+    ///  
+    /// <para>
+    /// To specify multiple tags, use separate <b>tagKeys</b> parameters, for example:
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>DELETE /tags/WorkloadArn?tagKeys=key1&amp;tagKeys=key2</code> 
+    /// </para>
     /// </summary>
     public partial class UntagResourceRequest : AmazonWellArchitectedRequest
     {
@@ -40,7 +49,8 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The keys of the tags to be removed.
+        /// A list of tag keys. Existing tags of the resource whose keys are members of this list
+        /// are removed from the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

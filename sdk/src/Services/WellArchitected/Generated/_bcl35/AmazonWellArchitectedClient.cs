@@ -788,7 +788,7 @@ namespace Amazon.WellArchitected
         #region  GetAnswer
 
         /// <summary>
-        /// Get lens review.
+        /// Get the answer to a specific question in a workload review.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAnswer service method.</param>
         /// 
@@ -1932,6 +1932,15 @@ namespace Amazon.WellArchitected
 
         /// <summary>
         /// Deletes specified tags from a resource.
+        /// 
+        ///  
+        /// <para>
+        /// To specify multiple tags, use separate <b>tagKeys</b> parameters, for example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>DELETE /tags/WorkloadArn?tagKeys=key1&amp;tagKeys=key2</code> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 

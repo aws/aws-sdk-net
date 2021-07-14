@@ -25,6 +25,184 @@ namespace Amazon.WellArchitected
 {
 
     /// <summary>
+    /// Constants used for properties of type AnswerReason.
+    /// </summary>
+    public class AnswerReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ARCHITECTURE_CONSTRAINTS for AnswerReason
+        /// </summary>
+        public static readonly AnswerReason ARCHITECTURE_CONSTRAINTS = new AnswerReason("ARCHITECTURE_CONSTRAINTS");
+        /// <summary>
+        /// Constant BUSINESS_PRIORITIES for AnswerReason
+        /// </summary>
+        public static readonly AnswerReason BUSINESS_PRIORITIES = new AnswerReason("BUSINESS_PRIORITIES");
+        /// <summary>
+        /// Constant NONE for AnswerReason
+        /// </summary>
+        public static readonly AnswerReason NONE = new AnswerReason("NONE");
+        /// <summary>
+        /// Constant OTHER for AnswerReason
+        /// </summary>
+        public static readonly AnswerReason OTHER = new AnswerReason("OTHER");
+        /// <summary>
+        /// Constant OUT_OF_SCOPE for AnswerReason
+        /// </summary>
+        public static readonly AnswerReason OUT_OF_SCOPE = new AnswerReason("OUT_OF_SCOPE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnswerReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnswerReason FindValue(string value)
+        {
+            return FindValue<AnswerReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnswerReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ChoiceReason.
+    /// </summary>
+    public class ChoiceReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ARCHITECTURE_CONSTRAINTS for ChoiceReason
+        /// </summary>
+        public static readonly ChoiceReason ARCHITECTURE_CONSTRAINTS = new ChoiceReason("ARCHITECTURE_CONSTRAINTS");
+        /// <summary>
+        /// Constant BUSINESS_PRIORITIES for ChoiceReason
+        /// </summary>
+        public static readonly ChoiceReason BUSINESS_PRIORITIES = new ChoiceReason("BUSINESS_PRIORITIES");
+        /// <summary>
+        /// Constant NONE for ChoiceReason
+        /// </summary>
+        public static readonly ChoiceReason NONE = new ChoiceReason("NONE");
+        /// <summary>
+        /// Constant OTHER for ChoiceReason
+        /// </summary>
+        public static readonly ChoiceReason OTHER = new ChoiceReason("OTHER");
+        /// <summary>
+        /// Constant OUT_OF_SCOPE for ChoiceReason
+        /// </summary>
+        public static readonly ChoiceReason OUT_OF_SCOPE = new ChoiceReason("OUT_OF_SCOPE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChoiceReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChoiceReason FindValue(string value)
+        {
+            return FindValue<ChoiceReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChoiceReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ChoiceStatus.
+    /// </summary>
+    public class ChoiceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NOT_APPLICABLE for ChoiceStatus
+        /// </summary>
+        public static readonly ChoiceStatus NOT_APPLICABLE = new ChoiceStatus("NOT_APPLICABLE");
+        /// <summary>
+        /// Constant SELECTED for ChoiceStatus
+        /// </summary>
+        public static readonly ChoiceStatus SELECTED = new ChoiceStatus("SELECTED");
+        /// <summary>
+        /// Constant UNSELECTED for ChoiceStatus
+        /// </summary>
+        public static readonly ChoiceStatus UNSELECTED = new ChoiceStatus("UNSELECTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChoiceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChoiceStatus FindValue(string value)
+        {
+            return FindValue<ChoiceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChoiceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DifferenceStatus.
     /// </summary>
     public class DifferenceStatus : ConstantClass

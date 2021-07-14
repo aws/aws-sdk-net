@@ -74,6 +74,25 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetChoiceUpdates())
+                {
+                    context.Writer.WritePropertyName("ChoiceUpdates");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestChoiceUpdatesKvp in publicRequest.ChoiceUpdates)
+                    {
+                        context.Writer.WritePropertyName(publicRequestChoiceUpdatesKvp.Key);
+                        var publicRequestChoiceUpdatesValue = publicRequestChoiceUpdatesKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ChoiceUpdateMarshaller.Instance;
+                        marshaller.Marshall(publicRequestChoiceUpdatesValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetIsApplicable())
                 {
                     context.Writer.WritePropertyName("IsApplicable");
@@ -84,6 +103,12 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Notes");
                     context.Writer.Write(publicRequest.Notes);
+                }
+
+                if(publicRequest.IsSetReason())
+                {
+                    context.Writer.WritePropertyName("Reason");
+                    context.Writer.Write(publicRequest.Reason);
                 }
 
                 if(publicRequest.IsSetSelectedChoices())

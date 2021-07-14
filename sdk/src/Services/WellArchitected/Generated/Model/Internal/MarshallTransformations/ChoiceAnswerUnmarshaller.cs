@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AnswerSummary Object
+    /// Response Unmarshaller for ChoiceAnswer Object
     /// </summary>  
-    public class AnswerSummaryUnmarshaller : IUnmarshaller<AnswerSummary, XmlUnmarshallerContext>, IUnmarshaller<AnswerSummary, JsonUnmarshallerContext>
+    public class ChoiceAnswerUnmarshaller : IUnmarshaller<ChoiceAnswer, XmlUnmarshallerContext>, IUnmarshaller<ChoiceAnswer, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AnswerSummary IUnmarshaller<AnswerSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ChoiceAnswer IUnmarshaller<ChoiceAnswer, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AnswerSummary Unmarshall(JsonUnmarshallerContext context)
+        public ChoiceAnswer Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AnswerSummary unmarshalledObject = new AnswerSummary();
+            ChoiceAnswer unmarshalledObject = new ChoiceAnswer();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ChoiceAnswerSummaries", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ChoiceAnswerSummary, ChoiceAnswerSummaryUnmarshaller>(ChoiceAnswerSummaryUnmarshaller.Instance);
-                    unmarshalledObject.ChoiceAnswerSummaries = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Choices", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Choice, ChoiceUnmarshaller>(ChoiceUnmarshaller.Instance);
-                    unmarshalledObject.Choices = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IsApplicable", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.IsApplicable = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PillarId", targetDepth))
+                if (context.TestExpression("ChoiceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PillarId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ChoiceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("QuestionId", targetDepth))
+                if (context.TestExpression("Notes", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.QuestionId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("QuestionTitle", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.QuestionTitle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Notes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Reason", targetDepth))
@@ -106,16 +82,10 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Risk", targetDepth))
+                if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Risk = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SelectedChoices", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SelectedChoices = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -124,12 +94,12 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         }
 
 
-        private static AnswerSummaryUnmarshaller _instance = new AnswerSummaryUnmarshaller();        
+        private static ChoiceAnswerUnmarshaller _instance = new ChoiceAnswerUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AnswerSummaryUnmarshaller Instance
+        public static ChoiceAnswerUnmarshaller Instance
         {
             get
             {

@@ -30,7 +30,7 @@ namespace Amazon.WellArchitected.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAnswer operation.
-    /// Get lens review.
+    /// Get the answer to a specific question in a workload review.
     /// </summary>
     public partial class GetAnswerRequest : AmazonWellArchitectedRequest
     {

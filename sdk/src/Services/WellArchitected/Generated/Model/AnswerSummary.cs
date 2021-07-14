@@ -33,13 +33,33 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class AnswerSummary
     {
+        private List<ChoiceAnswerSummary> _choiceAnswerSummaries = new List<ChoiceAnswerSummary>();
         private List<Choice> _choices = new List<Choice>();
         private bool? _isApplicable;
         private string _pillarId;
         private string _questionId;
         private string _questionTitle;
+        private AnswerReason _reason;
         private Risk _risk;
         private List<string> _selectedChoices = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property ChoiceAnswerSummaries. 
+        /// <para>
+        /// A list of selected choices to a question in your workload.
+        /// </para>
+        /// </summary>
+        public List<ChoiceAnswerSummary> ChoiceAnswerSummaries
+        {
+            get { return this._choiceAnswerSummaries; }
+            set { this._choiceAnswerSummaries = value; }
+        }
+
+        // Check to see if ChoiceAnswerSummaries property is set
+        internal bool IsSetChoiceAnswerSummaries()
+        {
+            return this._choiceAnswerSummaries != null && this._choiceAnswerSummaries.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Choices.
@@ -117,6 +137,24 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetQuestionTitle()
         {
             return this._questionTitle != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// The reason why a choice is non-applicable to a question in your workload.
+        /// </para>
+        /// </summary>
+        public AnswerReason Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
         }
 
         /// <summary>

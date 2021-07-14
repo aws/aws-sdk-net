@@ -546,6 +546,24 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ChoiceAnswer.ChoiceId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ChoiceAnswer.Notes</property>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ChoiceAnswerSummary.ChoiceId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ChoiceUpdate.Notes</property>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ImprovementSummary.ImprovementPlanUrl</property>
     <min>1</min>
     <max>2048</max>

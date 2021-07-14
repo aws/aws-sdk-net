@@ -64,6 +64,12 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ChoiceAnswers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ChoiceAnswer, ChoiceAnswerUnmarshaller>(ChoiceAnswerUnmarshaller.Instance);
+                    unmarshalledObject.ChoiceAnswers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Choices", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Choice, ChoiceUnmarshaller>(ChoiceUnmarshaller.Instance);
@@ -116,6 +122,12 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QuestionTitle = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Reason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Risk", targetDepth))

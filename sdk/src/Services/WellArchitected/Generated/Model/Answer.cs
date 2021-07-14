@@ -33,6 +33,7 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class Answer
     {
+        private List<ChoiceAnswer> _choiceAnswers = new List<ChoiceAnswer>();
         private List<Choice> _choices = new List<Choice>();
         private string _helpfulResourceUrl;
         private string _improvementPlanUrl;
@@ -42,8 +43,27 @@ namespace Amazon.WellArchitected.Model
         private string _questionDescription;
         private string _questionId;
         private string _questionTitle;
+        private AnswerReason _reason;
         private Risk _risk;
         private List<string> _selectedChoices = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property ChoiceAnswers. 
+        /// <para>
+        /// A list of selected choices to a question in your workload.
+        /// </para>
+        /// </summary>
+        public List<ChoiceAnswer> ChoiceAnswers
+        {
+            get { return this._choiceAnswers; }
+            set { this._choiceAnswers = value; }
+        }
+
+        // Check to see if ChoiceAnswers property is set
+        internal bool IsSetChoiceAnswers()
+        {
+            return this._choiceAnswers != null && this._choiceAnswers.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Choices.
@@ -185,6 +205,24 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetQuestionTitle()
         {
             return this._questionTitle != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// The reason why the question is not applicable to your workload.
+        /// </para>
+        /// </summary>
+        public AnswerReason Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
         }
 
         /// <summary>
