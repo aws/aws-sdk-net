@@ -30,7 +30,7 @@ namespace Amazon.CertificateManager.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAccountConfiguration operation.
-    /// Returns the account configuration options associated with an AWS account.
+    /// Returns the account configuration options associated with an Amazon Web Services account.
     /// </summary>
     public partial class GetAccountConfigurationRequest : AmazonCertificateManagerRequest
     {

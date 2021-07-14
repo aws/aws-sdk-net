@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
-    /// The certificate is in use by another AWS service in the caller's account. Remove the
-    /// association and try again.
+    /// The certificate is in use by another Amazon Web Services service in the caller's account.
+    /// Remove the association and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

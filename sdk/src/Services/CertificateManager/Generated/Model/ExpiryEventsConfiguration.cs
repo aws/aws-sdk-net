@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
-    /// Object containing expiration events options associated with an AWS account.
+    /// Object containing expiration events options associated with an Amazon Web Services
+    /// account.
     /// </summary>
     public partial class ExpiryEventsConfiguration
     {

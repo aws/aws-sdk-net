@@ -479,6 +479,10 @@ namespace Amazon.CertificateManager
         /// </summary>
         public static readonly KeyAlgorithm RSA_2048 = new KeyAlgorithm("RSA_2048");
         /// <summary>
+        /// Constant RSA_3072 for KeyAlgorithm
+        /// </summary>
+        public static readonly KeyAlgorithm RSA_3072 = new KeyAlgorithm("RSA_3072");
+        /// <summary>
         /// Constant RSA_4096 for KeyAlgorithm
         /// </summary>
         public static readonly KeyAlgorithm RSA_4096 = new KeyAlgorithm("RSA_4096");

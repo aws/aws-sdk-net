@@ -66,7 +66,7 @@ namespace Amazon.CertificateManager.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the certificate. For more information about ARNs,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -190,7 +190,8 @@ namespace Amazon.CertificateManager.Model
         /// <para>
         /// The reason the certificate request failed. This value exists only when the certificate
         /// status is <code>FAILED</code>. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-        /// Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>. 
+        /// Request Failed</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>.
+        /// 
         /// </para>
         /// </summary>
         public FailureReason FailureReason
@@ -227,8 +228,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property InUseBy. 
         /// <para>
-        /// A list of ARNs for the AWS resources that are using the certificate. A certificate
-        /// can be used by multiple AWS resources. 
+        /// A list of ARNs for the Amazon Web Services resources that are using the certificate.
+        /// A certificate can be used by multiple Amazon Web Services resources. 
         /// </para>
         /// </summary>
         public List<string> InUseBy
@@ -555,7 +556,8 @@ namespace Amazon.CertificateManager.Model
         /// ACM does not provide <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
         /// renewal</a> for imported certificates. For more information about the differences
         /// between certificates that you import and those that ACM provides, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-        /// Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. 
+        /// Certificates</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>.
+        /// 
         /// </para>
         /// </summary>
         public CertificateType Type

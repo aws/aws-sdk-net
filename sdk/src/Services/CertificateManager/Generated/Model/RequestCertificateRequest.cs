@@ -30,8 +30,8 @@ namespace Amazon.CertificateManager.Model
 {
     /// <summary>
     /// Container for the parameters to the RequestCertificate operation.
-    /// Requests an ACM certificate for use with other AWS services. To request an ACM certificate,
-    /// you must specify a fully qualified domain name (FQDN) in the <code>DomainName</code>
+    /// Requests an ACM certificate for use with other Amazon Web Services services. To request
+    /// an ACM certificate, you must specify a fully qualified domain name (FQDN) in the <code>DomainName</code>
     /// parameter. You can also specify additional FQDNs in the <code>SubjectAlternativeNames</code>
     /// parameter. 
     /// 
@@ -44,6 +44,13 @@ namespace Amazon.CertificateManager.Model
     /// validation</a>. We recommend that you use DNS validation. ACM issues public certificates
     /// after receiving approval from the domain owner. 
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// ACM behavior differs from the <a href="https://tools.ietf.org/html/rfc6125#appendix-B.2">https://tools.ietf.org/html/rfc6125#appendix-B.2</a>RFC
+    /// 6125 specification of the certificate validation process. first checks for a subject
+    /// alternative name, and, if it finds one, ignores the common name (CN)
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class RequestCertificateRequest : AmazonCertificateManagerRequest
     {
@@ -62,9 +69,9 @@ namespace Amazon.CertificateManager.Model
         /// The Amazon Resource Name (ARN) of the private certificate authority (CA) that will
         /// be used to issue the certificate. If you do not provide an ARN and you are trying
         /// to request a private certificate, ACM will attempt to issue a public certificate.
-        /// For more information about private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">AWS
-        /// Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must
-        /// have the following form: 
+        /// For more information about private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon
+        /// Web Services Certificate Manager Private Certificate Authority (PCA)</a> user guide.
+        /// The ARN must have the following form: 
         /// </para>
         ///  
         /// <para>

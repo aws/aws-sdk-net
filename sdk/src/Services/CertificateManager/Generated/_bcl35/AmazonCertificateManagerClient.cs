@@ -35,12 +35,12 @@ namespace Amazon.CertificateManager
     /// <summary>
     /// Implementation for accessing CertificateManager
     ///
-    /// AWS Certificate Manager 
+    /// Amazon Web Services Certificate Manager 
     /// <para>
-    /// You can use AWS Certificate Manager (ACM) to manage SSL/TLS certificates for your
-    /// AWS-based websites and applications. For more information about using ACM, see the
-    /// <a href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
-    /// User Guide</a>.
+    /// You can use Amazon Web Services Certificate Manager (ACM) to manage SSL/TLS certificates
+    /// for your Amazon Web Services-based websites and applications. For more information
+    /// about using ACM, see the <a href="https://docs.aws.amazon.com/acm/latest/userguide/">Amazon
+    /// Web Services Certificate Manager User Guide</a>.
     /// </para>
     /// </summary>
     public partial class AmazonCertificateManagerClient : AmazonServiceClient, IAmazonCertificateManager
@@ -247,9 +247,9 @@ namespace Amazon.CertificateManager
 
         /// <summary>
         /// Adds one or more tags to an ACM certificate. Tags are labels that you can use to identify
-        /// and organize your AWS resources. Each tag consists of a <code>key</code> and an optional
-        /// <code>value</code>. You specify the certificate on input by its Amazon Resource Name
-        /// (ARN). You specify the tag by using a key-value pair. 
+        /// and organize your Amazon Web Services resources. Each tag consists of a <code>key</code>
+        /// and an optional <code>value</code>. You specify the certificate on input by its Amazon
+        /// Resource Name (ARN). You specify the tag by using a key-value pair. 
         /// 
         ///  
         /// <para>
@@ -347,12 +347,14 @@ namespace Amazon.CertificateManager
         /// Deletes a certificate and its associated private key. If this action succeeds, the
         /// certificate no longer appears in the list that can be displayed by calling the <a>ListCertificates</a>
         /// action or be retrieved by calling the <a>GetCertificate</a> action. The certificate
-        /// will not be available for use by AWS services integrated with ACM. 
+        /// will not be available for use by Amazon Web Services services integrated with ACM.
+        /// 
         /// 
         ///  <note> 
         /// <para>
-        /// You cannot delete an ACM certificate that is being used by another AWS service. To
-        /// delete a certificate that is in use, the certificate association must first be removed.
+        /// You cannot delete an ACM certificate that is being used by another Amazon Web Services
+        /// service. To delete a certificate that is in use, the certificate association must
+        /// first be removed.
         /// </para>
         ///  </note>
         /// </summary>
@@ -363,8 +365,8 @@ namespace Amazon.CertificateManager
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.ResourceInUseException">
-        /// The certificate is in use by another AWS service in the caller's account. Remove the
-        /// association and try again.
+        /// The certificate is in use by another Amazon Web Services service in the caller's account.
+        /// Remove the association and try again.
         /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
         /// The specified certificate cannot be found in the caller's account or the caller's
@@ -383,12 +385,14 @@ namespace Amazon.CertificateManager
         /// Deletes a certificate and its associated private key. If this action succeeds, the
         /// certificate no longer appears in the list that can be displayed by calling the <a>ListCertificates</a>
         /// action or be retrieved by calling the <a>GetCertificate</a> action. The certificate
-        /// will not be available for use by AWS services integrated with ACM. 
+        /// will not be available for use by Amazon Web Services services integrated with ACM.
+        /// 
         /// 
         ///  <note> 
         /// <para>
-        /// You cannot delete an ACM certificate that is being used by another AWS service. To
-        /// delete a certificate that is in use, the certificate association must first be removed.
+        /// You cannot delete an ACM certificate that is being used by another Amazon Web Services
+        /// service. To delete a certificate that is in use, the certificate association must
+        /// first be removed.
         /// </para>
         ///  </note>
         /// </summary>
@@ -399,8 +403,8 @@ namespace Amazon.CertificateManager
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.ResourceInUseException">
-        /// The certificate is in use by another AWS service in the caller's account. Remove the
-        /// association and try again.
+        /// The certificate is in use by another Amazon Web Services service in the caller's account.
+        /// Remove the association and try again.
         /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
         /// The specified certificate cannot be found in the caller's account or the caller's
@@ -614,7 +618,7 @@ namespace Amazon.CertificateManager
         #region  GetAccountConfiguration
 
         /// <summary>
-        /// Returns the account configuration options associated with an AWS account.
+        /// Returns the account configuration options associated with an Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountConfiguration service method.</param>
         /// 
@@ -771,13 +775,14 @@ namespace Amazon.CertificateManager
         #region  ImportCertificate
 
         /// <summary>
-        /// Imports a certificate into AWS Certificate Manager (ACM) to use with services that
-        /// are integrated with ACM. Note that <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">integrated
+        /// Imports a certificate into Amazon Web Services Certificate Manager (ACM) to use with
+        /// services that are integrated with ACM. Note that <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">integrated
         /// services</a> allow only certificate types and keys they support to be associated with
         /// their resources. Further, their support differs depending on whether the certificate
         /// is imported into IAM or into ACM. For more information, see the documentation for
         /// each service. For more information about importing certificates into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-        /// Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. 
+        /// Certificates</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>.
+        /// 
         /// 
         ///  <note> 
         /// <para>
@@ -1099,7 +1104,7 @@ namespace Amazon.CertificateManager
         /// The request was denied because it exceeded a quota.
         /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
-        /// The supplied input failed to satisfy constraints of an AWS service.
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/PutAccountConfiguration">REST API Reference for PutAccountConfiguration Operation</seealso>
         public virtual PutAccountConfigurationResponse PutAccountConfiguration(PutAccountConfigurationRequest request)
@@ -1299,8 +1304,8 @@ namespace Amazon.CertificateManager
         #region  RequestCertificate
 
         /// <summary>
-        /// Requests an ACM certificate for use with other AWS services. To request an ACM certificate,
-        /// you must specify a fully qualified domain name (FQDN) in the <code>DomainName</code>
+        /// Requests an ACM certificate for use with other Amazon Web Services services. To request
+        /// an ACM certificate, you must specify a fully qualified domain name (FQDN) in the <code>DomainName</code>
         /// parameter. You can also specify additional FQDNs in the <code>SubjectAlternativeNames</code>
         /// parameter. 
         /// 
@@ -1313,6 +1318,13 @@ namespace Amazon.CertificateManager
         /// validation</a>. We recommend that you use DNS validation. ACM issues public certificates
         /// after receiving approval from the domain owner. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// ACM behavior differs from the <a href="https://tools.ietf.org/html/rfc6125#appendix-B.2">https://tools.ietf.org/html/rfc6125#appendix-B.2</a>RFC
+        /// 6125 specification of the certificate validation process. first checks for a subject
+        /// alternative name, and, if it finds one, ignores the common name (CN)
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="domainName"> Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.   The first domain name you enter cannot exceed 64 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </param>
         /// 
@@ -1349,8 +1361,8 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Requests an ACM certificate for use with other AWS services. To request an ACM certificate,
-        /// you must specify a fully qualified domain name (FQDN) in the <code>DomainName</code>
+        /// Requests an ACM certificate for use with other Amazon Web Services services. To request
+        /// an ACM certificate, you must specify a fully qualified domain name (FQDN) in the <code>DomainName</code>
         /// parameter. You can also specify additional FQDNs in the <code>SubjectAlternativeNames</code>
         /// parameter. 
         /// 
@@ -1363,6 +1375,13 @@ namespace Amazon.CertificateManager
         /// validation</a>. We recommend that you use DNS validation. ACM issues public certificates
         /// after receiving approval from the domain owner. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// ACM behavior differs from the <a href="https://tools.ietf.org/html/rfc6125#appendix-B.2">https://tools.ietf.org/html/rfc6125#appendix-B.2</a>RFC
+        /// 6125 specification of the certificate validation process. first checks for a subject
+        /// alternative name, and, if it finds one, ignores the common name (CN)
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestCertificate service method.</param>
         /// 

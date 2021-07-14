@@ -38,7 +38,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property ExpiryEvents. 
         /// <para>
-        /// Expiration events configuration options associated with the AWS account.
+        /// Expiration events configuration options associated with the Amazon Web Services account.
         /// </para>
         /// </summary>
         public ExpiryEventsConfiguration ExpiryEvents

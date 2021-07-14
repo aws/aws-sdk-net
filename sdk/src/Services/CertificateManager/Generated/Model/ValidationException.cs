@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
-    /// The supplied input failed to satisfy constraints of an AWS service.
+    /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
