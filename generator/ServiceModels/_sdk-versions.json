@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.71.0",
+    "ProductVersion" : "3.7.72.0",
     "CoreVersion"    : "3.7.0.44",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -506,7 +506,7 @@
             "InPreview"               : false
         },
         "CertificateManager"              : {
-            "Version" : "3.7.0.42",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.44"
@@ -522,7 +522,7 @@
             "InPreview"               : false
         },
         "DatabaseMigrationService"        : {
-            "Version" : "3.7.1.30",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.44"
@@ -618,7 +618,7 @@
             "InPreview"               : false
         },
         "Lightsail"                       : {
-            "Version" : "3.7.1.37",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.44"
@@ -826,7 +826,7 @@
             "InPreview"               : false
         },
         "Glue"                            : {
-            "Version" : "3.7.4.7",
+            "Version" : "3.7.5.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.44"
@@ -1986,7 +1986,7 @@
             "InPreview"               : false
         },
         "HealthLake"                      : {
-            "Version" : "3.7.0.42",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.44"
@@ -2050,7 +2050,7 @@
             "InPreview"               : false
         },
         "WellArchitected"                 : {
-            "Version" : "3.7.0.42",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.44"

@@ -1,3 +1,17 @@
+### 3.7.72.0 (2021-07-14 18:15 UTC)
+* CertificateManager (3.7.1.0)
+	* Added support for RSA 3072 SSL certificate import
+* DatabaseMigrationService (3.7.2.0)
+	* Release of feature needed for ECA-Endpoint settings. This allows customer to delete a field in endpoint settings by using --exact-settings flag in modify-endpoint api. This also displays default values for certain required fields of endpoint settings in describe-endpoint-settings api.
+* Glue (3.7.5.0)
+	* Add support for Event Driven Workflows
+* HealthLake (3.7.1.0)
+	* General availability for Amazon HealthLake. StartFHIRImportJob and StartFHIRExportJob APIs now require AWS KMS parameter. For more information, see the Amazon HealthLake Documentation https://docs.aws.amazon.com/healthlake/index.html.
+* Lightsail (3.7.2.0)
+	* This release adds support for the Amazon Lightsail object storage service, which allows you to create buckets and store objects.
+* WellArchitected (3.7.1.0)
+	* This update provides support for Well-Architected API users to mark answer choices as not applicable.
+
 ### 3.7.71.0 (2021-07-13 18:17 UTC)
 * AmplifyBackend (3.7.2.0)
 	* Added Sign in with Apple OAuth provider.
