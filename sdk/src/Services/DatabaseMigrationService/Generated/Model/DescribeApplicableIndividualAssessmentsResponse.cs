@@ -43,8 +43,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// run that you start based on the specified request parameters. For more information
         /// on the available individual assessments, including compatibility with different migration
         /// task configurations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working
-        /// with premigration assessment runs</a> in the <i>AWS Database Migration Service User
-        /// Guide.</i> 
+        /// with premigration assessment runs</a> in the <i>Database Migration Service User Guide.</i>
+        /// 
         /// </para>
         /// </summary>
         public List<string> IndividualAssessmentNames

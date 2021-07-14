@@ -43,6 +43,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private bool? _includeTransactionDetails;
         private MessageFormatValue _messageFormat;
         private int? _messageMaxBytes;
+        private bool? _noHexPrefix;
         private bool? _partitionIncludeSchemaTable;
         private string _saslPassword;
         private string _saslUsername;
@@ -61,8 +62,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </code>. For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>.
         /// For more information and examples of specifying a list of broker locations, see <a
         /// href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
-        /// Apache Kafka as a target for AWS Database Migration Service</a> in the <i>AWS Data
-        /// Migration Service User Guide</i>. 
+        /// Apache Kafka as a target for Database Migration Service</a> in the <i>Database Migration
+        /// Service User Guide</i>. 
         /// </para>
         /// </summary>
         public string Broker
@@ -118,7 +119,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property IncludePartitionValue. 
         /// <para>
-        /// Shows the partition value within the Kafka message output, unless the partition type
+        /// Shows the partition value within the Kafka message output unless the partition type
         /// is <code>schema-table-type</code>. The default is <code>false</code>.
         /// </para>
         /// </summary>
@@ -213,6 +214,26 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NoHexPrefix. 
+        /// <para>
+        /// If this attribute is Y, it allows hexadecimal values that don't have the <code>0x</code>
+        /// prefix when migrated to a Kafka target. If this attribute is N, all hexadecimal values
+        /// include this prefix when migrated to Kafka.
+        /// </para>
+        /// </summary>
+        public bool NoHexPrefix
+        {
+            get { return this._noHexPrefix.GetValueOrDefault(); }
+            set { this._noHexPrefix = value; }
+        }
+
+        // Check to see if NoHexPrefix property is set
+        internal bool IsSetNoHexPrefix()
+        {
+            return this._noHexPrefix.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PartitionIncludeSchemaTable. 
         /// <para>
         /// Prefixes schema and table names to partition values, when the partition type is <code>primary-key-type</code>.
@@ -257,7 +278,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SaslUsername. 
         /// <para>
-        ///  The secure username you created when you first set up your MSK cluster to validate
+        ///  The secure user name you created when you first set up your MSK cluster to validate
         /// a client identity and make an encrypted connection between server and client using
         /// SASL-SSL authentication.
         /// </para>
@@ -299,7 +320,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property SslCaCertificateArn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert
-        /// that AWS DMS uses to securely connect to your Kafka target endpoint.
+        /// that DMS uses to securely connect to your Kafka target endpoint.
         /// </para>
         /// </summary>
         public string SslCaCertificateArn
@@ -374,7 +395,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Topic. 
         /// <para>
-        /// The topic to which you migrate the data. If you don't specify a topic, AWS DMS specifies
+        /// The topic to which you migrate the data. If you don't specify a topic, DMS specifies
         /// <code>"kafka-default-topic"</code> as the migration topic.
         /// </para>
         /// </summary>

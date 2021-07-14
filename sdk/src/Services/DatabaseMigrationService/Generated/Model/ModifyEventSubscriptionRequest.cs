@@ -30,7 +30,7 @@ namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyEventSubscription operation.
-    /// Modifies an existing AWS DMS event notification subscription.
+    /// Modifies an existing DMS event notification subscription.
     /// </summary>
     public partial class ModifyEventSubscriptionRequest : AmazonDatabaseMigrationServiceRequest
     {
@@ -99,8 +99,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        ///  The type of AWS DMS resource that generates the events you want to subscribe to.
-        /// 
+        ///  The type of DMS resource that generates the events you want to subscribe to. 
         /// </para>
         ///  
         /// <para>
@@ -122,7 +121,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SubscriptionName. 
         /// <para>
-        /// The name of the AWS DMS event notification subscription to be modified.
+        /// The name of the DMS event notification subscription to be modified.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

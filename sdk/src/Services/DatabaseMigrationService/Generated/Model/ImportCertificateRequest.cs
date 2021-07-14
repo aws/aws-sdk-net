@@ -81,7 +81,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property CertificateWallet. 
         /// <para>
-        /// The location of an imported Oracle Wallet certificate for use with SSL.
+        /// The location of an imported Oracle Wallet certificate for use with SSL. Provide the
+        /// name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't
+        /// provide the certificate inline. 
         /// </para>
         /// </summary>
         public MemoryStream CertificateWallet

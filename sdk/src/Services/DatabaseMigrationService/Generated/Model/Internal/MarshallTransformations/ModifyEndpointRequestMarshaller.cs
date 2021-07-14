@@ -147,6 +147,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EngineName);
                 }
 
+                if(publicRequest.IsSetExactSettings())
+                {
+                    context.Writer.WritePropertyName("ExactSettings");
+                    context.Writer.Write(publicRequest.ExactSettings);
+                }
+
                 if(publicRequest.IsSetExternalTableDefinition())
                 {
                     context.Writer.WritePropertyName("ExternalTableDefinition");

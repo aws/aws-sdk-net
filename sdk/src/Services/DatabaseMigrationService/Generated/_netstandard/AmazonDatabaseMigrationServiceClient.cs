@@ -38,19 +38,19 @@ namespace Amazon.DatabaseMigrationService
     /// <summary>
     /// Implementation for accessing DatabaseMigrationService
     ///
-    /// AWS Database Migration Service 
+    /// Database Migration Service 
     /// <para>
-    /// AWS Database Migration Service (AWS DMS) can migrate your data to and from the most
-    /// widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft
-    /// SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server
-    /// Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle,
-    /// as well as heterogeneous migrations between different database platforms, such as
-    /// Oracle to MySQL or SQL Server to PostgreSQL.
+    /// Database Migration Service (DMS) can migrate your data to and from the most widely
+    /// used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL
+    /// Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise
+    /// (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well
+    /// as heterogeneous migrations between different database platforms, such as Oracle to
+    /// MySQL or SQL Server to PostgreSQL.
     /// </para>
     ///  
     /// <para>
-    /// For more information about AWS DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What
-    /// Is AWS Database Migration Service?</a> in the <i>AWS Database Migration User Guide.</i>
+    /// For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What
+    /// Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i>
     /// 
     /// </para>
     /// </summary>
@@ -286,10 +286,10 @@ namespace Amazon.DatabaseMigrationService
 
 
         /// <summary>
-        /// Adds metadata tags to an AWS DMS resource, including replication instance, endpoint,
-        /// security group, and migration task. These tags can also be used with cost allocation
-        /// reporting to track cost associated with DMS resources, or used in a Condition statement
-        /// in an IAM policy for DMS. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
+        /// Adds metadata tags to an DMS resource, including replication instance, endpoint, security
+        /// group, and migration task. These tags can also be used with cost allocation reporting
+        /// to track cost associated with DMS resources, or used in a Condition statement in an
+        /// IAM policy for DMS. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
         /// <code>Tag</code> </a> data type description.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
@@ -381,7 +381,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the CancelReplicationTaskAssessmentRun service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
-        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
@@ -416,6 +416,16 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Creates an endpoint using the provided settings.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// For a MySQL source or target endpoint, don't explicitly specify the database using
+        /// the <code>DatabaseName</code> request parameter on the <code>CreateEndpoint</code>
+        /// API call. Specifying <code>DatabaseName</code> when you create a MySQL endpoint replicates
+        /// all the task tables to this single database. For MySQL endpoints, you specify the
+        /// database only when you specify the schema in the table-mapping rules of the DMS task.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEndpoint service method.</param>
         /// <param name="cancellationToken">
@@ -424,13 +434,13 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the CreateEndpoint service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
-        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// AWS DMS cannot access the AWS KMS key.
+        /// DMS cannot access the KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
         /// The resource you are attempting to create already exists.
@@ -470,26 +480,26 @@ namespace Amazon.DatabaseMigrationService
 
 
         /// <summary>
-        /// Creates an AWS DMS event notification subscription. 
+        /// Creates an DMS event notification subscription. 
         /// 
         ///  
         /// <para>
         /// You can specify the type of source (<code>SourceType</code>) you want to be notified
-        /// of, provide a list of AWS DMS source IDs (<code>SourceIds</code>) that triggers the
-        /// events, and provide a list of event categories (<code>EventCategories</code>) for
-        /// events you want to be notified of. If you specify both the <code>SourceType</code>
-        /// and <code>SourceIds</code>, such as <code>SourceType = replication-instance</code>
-        /// and <code>SourceIdentifier = my-replinstance</code>, you will be notified of all the
-        /// replication instance events for the specified source. If you specify a <code>SourceType</code>
-        /// but don't specify a <code>SourceIdentifier</code>, you receive notice of the events
-        /// for that source type for all your AWS DMS sources. If you don't specify either <code>SourceType</code>
+        /// of, provide a list of DMS source IDs (<code>SourceIds</code>) that triggers the events,
+        /// and provide a list of event categories (<code>EventCategories</code>) for events you
+        /// want to be notified of. If you specify both the <code>SourceType</code> and <code>SourceIds</code>,
+        /// such as <code>SourceType = replication-instance</code> and <code>SourceIdentifier
+        /// = my-replinstance</code>, you will be notified of all the replication instance events
+        /// for the specified source. If you specify a <code>SourceType</code> but don't specify
+        /// a <code>SourceIdentifier</code>, you receive notice of the events for that source
+        /// type for all your DMS sources. If you don't specify either <code>SourceType</code>
         /// nor <code>SourceIdentifier</code>, you will be notified of events generated from all
-        /// AWS DMS sources belonging to your customer account.
+        /// DMS sources belonging to your customer account.
         /// </para>
         ///  
         /// <para>
-        /// For more information about AWS DMS events, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
-        /// with Events and Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
+        /// For more information about DMS events, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+        /// with Events and Notifications</a> in the <i>Database Migration Service User Guide.</i>
         /// 
         /// </para>
         /// </summary>
@@ -507,13 +517,13 @@ namespace Amazon.DatabaseMigrationService
         /// The specified master key (CMK) isn't enabled.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSInvalidStateException">
-        /// The state of the specified AWS KMS resource isn't valid for this request.
+        /// The state of the specified KMS resource isn't valid for this request.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSNotFoundException">
-        /// The specified AWS KMS entity or resource can't be found.
+        /// The specified KMS entity or resource can't be found.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSThrottlingException">
-        /// This request triggered AWS KMS request throttling.
+        /// This request triggered KMS request throttling.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
         /// The resource you are attempting to create already exists.
@@ -560,12 +570,12 @@ namespace Amazon.DatabaseMigrationService
         /// 
         ///  
         /// <para>
-        /// AWS DMS requires that your account have certain roles with appropriate permissions
-        /// before you can create a replication instance. For information on the required roles,
-        /// see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.APIRole">Creating
-        /// the IAM Roles to Use With the AWS CLI and AWS DMS API</a>. For information on the
-        /// required permissions, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.IAMPermissions">IAM
-        /// Permissions Needed to Use AWS DMS</a>.
+        /// DMS requires that your account have certain roles with appropriate permissions before
+        /// you can create a replication instance. For information on the required roles, see
+        /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.APIRole">Creating
+        /// the IAM Roles to Use With the CLI and DMS API</a>. For information on the required
+        /// permissions, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.IAMPermissions">IAM
+        /// Permissions Needed to Use DMS</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReplicationInstance service method.</param>
@@ -575,7 +585,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the CreateReplicationInstance service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
-        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InsufficientResourceCapacityException">
         /// There are not enough resources allocated to the database migration.
@@ -587,7 +597,7 @@ namespace Amazon.DatabaseMigrationService
         /// The subnet provided is invalid.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// AWS DMS cannot access the AWS KMS key.
+        /// DMS cannot access the KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ReplicationSubnetGroupDoesNotCoverEnoughAZsException">
         /// The replication subnet group does not cover enough Availability Zones (AZs). Edit
@@ -640,7 +650,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the CreateReplicationSubnetGroup service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
-        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidSubnetException">
         /// The subnet provided is invalid.
@@ -693,13 +703,13 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the CreateReplicationTask service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
-        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// AWS DMS cannot access the AWS KMS key.
+        /// DMS cannot access the KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
         /// The resource you are attempting to create already exists.
@@ -785,7 +795,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the DeleteConnection service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
-        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
@@ -865,7 +875,7 @@ namespace Amazon.DatabaseMigrationService
 
 
         /// <summary>
-        /// Deletes an AWS DMS event subscription.
+        /// Deletes an DMS event subscription.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEventSubscription service method.</param>
         /// <param name="cancellationToken">
@@ -1036,7 +1046,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         ///  
         /// <para>
-        /// This operation removes all metadata that AWS DMS maintains about this assessment run.
+        /// This operation removes all metadata that DMS maintains about this assessment run.
         /// However, the operation leaves untouched all information about this assessment run
         /// that is stored in your Amazon S3 bucket.
         /// </para>
@@ -1048,7 +1058,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the DeleteReplicationTaskAssessmentRun service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
-        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
@@ -1082,11 +1092,11 @@ namespace Amazon.DatabaseMigrationService
 
 
         /// <summary>
-        /// Lists all of the AWS DMS attributes for a customer account. These attributes include
-        /// AWS DMS quotas for the account and a unique account identifier in a particular DMS
-        /// region. DMS quotas include a list of resource quotas supported by the account, such
-        /// as the number of replication instances allowed. The description for each resource
-        /// quota, includes the quota name, current usage toward that quota, and the quota's maximum
+        /// Lists all of the DMS attributes for a customer account. These attributes include DMS
+        /// quotas for the account and a unique account identifier in a particular DMS region.
+        /// DMS quotas include a list of resource quotas supported by the account, such as the
+        /// number of replication instances allowed. The description for each resource quota,
+        /// includes the quota name, current usage toward that quota, and the quota's maximum
         /// value. DMS uses the unique account identifier to name each artifact used by DMS in
         /// the given region.
         /// 
@@ -1161,7 +1171,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the DescribeApplicableIndividualAssessments service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
-        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
@@ -1378,7 +1388,7 @@ namespace Amazon.DatabaseMigrationService
         /// <summary>
         /// Lists categories for all event source types, or, if specified, for a specified source
         /// type. You can see a list of the event categories and source types in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
-        /// with Events and Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
+        /// with Events and Notifications</a> in the <i>Database Migration Service User Guide.</i>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventCategories service method.</param>
         /// <param name="cancellationToken">
@@ -1413,8 +1423,8 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Lists events for a given source identifier and source type. You can also specify
-        /// a start and end time. For more information on AWS DMS events, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
-        /// with Events and Notifications</a> in the <i>AWS Database Migration User Guide.</i>
+        /// a start and end time. For more information on DMS events, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+        /// with Events and Notifications</a> in the <i>Database Migration Service User Guide.</i>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
         /// <param name="cancellationToken">
@@ -1720,8 +1730,15 @@ namespace Amazon.DatabaseMigrationService
 
 
         /// <summary>
-        /// Returns the task assessment results from Amazon S3. This action always returns the
-        /// latest results.
+        /// Returns the task assessment results from the Amazon S3 bucket that DMS creates in
+        /// your account. This action always returns the latest results.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about DMS task assessments, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating
+        /// a task assessment report</a> in the <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/Welcome.html">
+        /// Database Migration Service User Guide</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationTaskAssessmentResults service method.</param>
         /// <param name="cancellationToken">
@@ -1932,9 +1949,9 @@ namespace Amazon.DatabaseMigrationService
         /// 
         ///  
         /// <para>
-        /// Note that the "last updated" column the DMS console only indicates the time that AWS
-        /// DMS last updated the table statistics record for a table. It does not indicate the
-        /// time of the last update to the table.
+        /// Note that the "last updated" column the DMS console only indicates the time that DMS
+        /// last updated the table statistics record for a table. It does not indicate the time
+        /// of the last update to the table.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTableStatistics service method.</param>
@@ -2018,7 +2035,7 @@ namespace Amazon.DatabaseMigrationService
 
 
         /// <summary>
-        /// Lists all metadata tags attached to an AWS DMS resource, including replication instance,
+        /// Lists all metadata tags attached to an DMS resource, including replication instance,
         /// endpoint, security group, and migration task. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
         /// <code>Tag</code> </a> data type description.
         /// </summary>
@@ -2058,6 +2075,16 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Modifies the specified endpoint.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// For a MySQL source or target endpoint, don't explicitly specify the database using
+        /// the <code>DatabaseName</code> request parameter on the <code>ModifyEndpoint</code>
+        /// API call. Specifying <code>DatabaseName</code> when you modify a MySQL endpoint replicates
+        /// all the task tables to this single database. For MySQL endpoints, you specify the
+        /// database only when you specify the schema in the table-mapping rules of the DMS task.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyEndpoint service method.</param>
         /// <param name="cancellationToken">
@@ -2066,13 +2093,13 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the ModifyEndpoint service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
-        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// AWS DMS cannot access the AWS KMS key.
+        /// DMS cannot access the KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
         /// The resource you are attempting to create already exists.
@@ -2106,7 +2133,7 @@ namespace Amazon.DatabaseMigrationService
 
 
         /// <summary>
-        /// Modifies an existing AWS DMS event notification subscription.
+        /// Modifies an existing DMS event notification subscription.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyEventSubscription service method.</param>
         /// <param name="cancellationToken">
@@ -2122,13 +2149,13 @@ namespace Amazon.DatabaseMigrationService
         /// The specified master key (CMK) isn't enabled.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSInvalidStateException">
-        /// The state of the specified AWS KMS resource isn't valid for this request.
+        /// The state of the specified KMS resource isn't valid for this request.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSNotFoundException">
-        /// The specified AWS KMS entity or resource can't be found.
+        /// The specified KMS entity or resource can't be found.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSThrottlingException">
-        /// This request triggered AWS KMS request throttling.
+        /// This request triggered KMS request throttling.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
@@ -2183,7 +2210,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the ModifyReplicationInstance service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
-        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InsufficientResourceCapacityException">
         /// There are not enough resources allocated to the database migration.
@@ -2238,7 +2265,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the ModifyReplicationSubnetGroup service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
-        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidSubnetException">
         /// The subnet provided is invalid.
@@ -2291,8 +2318,8 @@ namespace Amazon.DatabaseMigrationService
         /// </para>
         ///  
         /// <para>
-        /// For more information about AWS DMS tasks, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
-        /// with Migration Tasks</a> in the <i>AWS Database Migration Service User Guide</i>.
+        /// For more information about DMS tasks, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
+        /// with Migration Tasks</a> in the <i>Database Migration Service User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationTask service method.</param>
@@ -2305,7 +2332,7 @@ namespace Amazon.DatabaseMigrationService
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// AWS DMS cannot access the AWS KMS key.
+        /// DMS cannot access the KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
         /// The resource you are attempting to create already exists.
@@ -2341,8 +2368,7 @@ namespace Amazon.DatabaseMigrationService
         /// <summary>
         /// Moves a replication task from its current replication instance to a different target
         /// replication instance using the specified parameters. The target replication instance
-        /// must be created with the same or later AWS DMS version as the current replication
-        /// instance.
+        /// must be created with the same or later DMS version as the current replication instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MoveReplicationTask service method.</param>
         /// <param name="cancellationToken">
@@ -2351,13 +2377,13 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the MoveReplicationTask service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
-        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// AWS DMS cannot access the AWS KMS key.
+        /// DMS cannot access the KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
@@ -2443,7 +2469,7 @@ namespace Amazon.DatabaseMigrationService
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// AWS DMS cannot access the AWS KMS key.
+        /// DMS cannot access the KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
@@ -2517,7 +2543,7 @@ namespace Amazon.DatabaseMigrationService
 
 
         /// <summary>
-        /// Removes metadata tags from an AWS DMS resource, including replication instance, endpoint,
+        /// Removes metadata tags from an DMS resource, including replication instance, endpoint,
         /// security group, and migration task. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
         /// <code>Tag</code> </a> data type description.
         /// </summary>
@@ -2560,9 +2586,8 @@ namespace Amazon.DatabaseMigrationService
         /// 
         ///  
         /// <para>
-        /// For more information about AWS DMS tasks, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
-        /// with Migration Tasks </a> in the <i>AWS Database Migration Service User Guide.</i>
-        /// 
+        /// For more information about DMS tasks, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
+        /// with Migration Tasks </a> in the <i>Database Migration Service User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartReplicationTask service method.</param>
@@ -2572,7 +2597,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the StartReplicationTask service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
-        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
@@ -2665,7 +2690,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the StartReplicationTaskAssessmentRun service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
-        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
@@ -2678,16 +2703,16 @@ namespace Amazon.DatabaseMigrationService
         /// The specified master key (CMK) isn't enabled.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSException">
-        /// An AWS Key Management Service (AWS KMS) error is preventing access to AWS KMS.
+        /// An Key Management Service (KMS) error is preventing access to KMS.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSInvalidStateException">
-        /// The state of the specified AWS KMS resource isn't valid for this request.
+        /// The state of the specified KMS resource isn't valid for this request.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// AWS DMS cannot access the AWS KMS key.
+        /// DMS cannot access the KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSNotFoundException">
-        /// The specified AWS KMS entity or resource can't be found.
+        /// The specified KMS entity or resource can't be found.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
         /// The resource you are attempting to create already exists.
@@ -2776,13 +2801,13 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the TestConnection service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
-        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// AWS DMS cannot access the AWS KMS key.
+        /// DMS cannot access the KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.

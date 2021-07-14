@@ -51,8 +51,13 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property AfterConnectScript. 
         /// <para>
-        /// Specifies a script to run immediately after AWS DMS connects to the endpoint. The
-        /// migration task continues running regardless if the SQL statement succeeds or fails.
+        /// Specifies a script to run immediately after DMS connects to the endpoint. The migration
+        /// task continues running regardless if the SQL statement succeeds or fails.
+        /// </para>
+        ///  
+        /// <para>
+        /// For this parameter, provide the code of the script itself, not the name of a file
+        /// containing the script.
         /// </para>
         /// </summary>
         public string AfterConnectScript
@@ -91,7 +96,12 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// Database name for the endpoint.
+        /// Database name for the endpoint. For a MySQL source or target endpoint, don't explicitly
+        /// specify the database using the <code>DatabaseName</code> request parameter on either
+        /// the <code>CreateEndpoint</code> or <code>ModifyEndpoint</code> API call. Specifying
+        /// <code>DatabaseName</code> when you create or modify a MySQL endpoint replicates all
+        /// the task tables to this single database. For MySQL endpoints, you specify the database
+        /// only when you specify the schema in the table-mapping rules of the DMS task.
         /// </para>
         /// </summary>
         public string DatabaseName
@@ -118,7 +128,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// In the example, AWS DMS checks for changes in the binary logs every five seconds.
+        /// In the example, DMS checks for changes in the binary logs every five seconds.
         /// </para>
         /// </summary>
         public int EventsPollInterval
@@ -220,10 +230,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SecretsManagerAccessRoleArn. 
         /// <para>
-        /// The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the
-        /// trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
-        /// <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret
-        /// that allows access to the MySQL endpoint.
+        /// The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted
+        /// entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
+        /// The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code>
+        /// has the value of the Amazon Web Services Secrets Manager secret that allows access
+        /// to the MySQL endpoint.
         /// </para>
         ///  <note> 
         /// <para>
@@ -232,9 +243,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>,
         /// and <code>Port</code>. You can't specify both. For more information on creating this
         /// <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-        /// and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
-        /// secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database
-        /// Migration Service User Guide</i>.
+        /// and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+        /// secrets to access Database Migration Service resources</a> in the <i>Database Migration
+        /// Service User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>

@@ -30,8 +30,15 @@ namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReplicationTaskAssessmentResults operation.
-    /// Returns the task assessment results from Amazon S3. This action always returns the
-    /// latest results.
+    /// Returns the task assessment results from the Amazon S3 bucket that DMS creates in
+    /// your account. This action always returns the latest results.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about DMS task assessments, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating
+    /// a task assessment report</a> in the <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/Welcome.html">
+    /// Database Migration Service User Guide</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeReplicationTaskAssessmentResultsRequest : AmazonDatabaseMigrationServiceRequest
     {

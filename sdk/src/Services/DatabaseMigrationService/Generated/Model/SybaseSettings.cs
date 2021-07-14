@@ -98,10 +98,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SecretsManagerAccessRoleArn. 
         /// <para>
-        /// The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the
-        /// trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
-        /// <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret
-        /// that allows access to the SAP ASE endpoint.
+        /// The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted
+        /// entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
+        /// The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code>
+        /// has the value of the Amazon Web Services Secrets Manager secret that allows access
+        /// to the SAP ASE endpoint.
         /// </para>
         ///  <note> 
         /// <para>
@@ -110,9 +111,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>,
         /// and <code>Port</code>. You can't specify both. For more information on creating this
         /// <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-        /// and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
-        /// secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database
-        /// Migration Service User Guide</i>.
+        /// and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+        /// secrets to access Database Migration Service resources</a> in the <i>Database Migration
+        /// Service User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>

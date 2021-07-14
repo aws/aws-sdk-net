@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// An AWS Key Management Service (AWS KMS) error is preventing access to AWS KMS.
+    /// An Key Management Service (KMS) error is preventing access to KMS.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

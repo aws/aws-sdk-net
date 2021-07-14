@@ -39,8 +39,12 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _ddlArtifactsSchema;
         private int? _executeTimeout;
         private bool? _failTasksOnLobTruncation;
+        private bool? _heartbeatEnable;
+        private int? _heartbeatFrequency;
+        private string _heartbeatSchema;
         private int? _maxFileSize;
         private string _password;
+        private PluginNameValue _pluginName;
         private int? _port;
         private string _secretsManagerAccessRoleArn;
         private string _secretsManagerSecretId;
@@ -51,7 +55,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property AfterConnectScript. 
         /// <para>
-        /// For use with change data capture (CDC) only, this attribute has AWS DMS bypass foreign
+        /// For use with change data capture (CDC) only, this attribute has DMS bypass foreign
         /// keys and user triggers to reduce the time it takes to bulk load data.
         /// </para>
         ///  
@@ -74,8 +78,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property CaptureDdls. 
         /// <para>
-        /// To capture DDL events, AWS DMS creates various artifacts in the PostgreSQL database
-        /// when the task starts. You can later remove these artifacts.
+        /// To capture DDL events, DMS creates various artifacts in the PostgreSQL database when
+        /// the task starts. You can later remove these artifacts.
         /// </para>
         ///  
         /// <para>
@@ -183,6 +187,63 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HeartbeatEnable. 
+        /// <para>
+        /// If this attribute is set to true, the write-ahead log (WAL) heartbeat keeps <code>restart_lsn</code>
+        /// moving and prevents storage full scenarios. The WAL heartbeat mimics a dummy transaction,
+        /// so that idle logical replication slots don't hold onto old WAL logs that result in
+        /// storage full situations on the source. 
+        /// </para>
+        /// </summary>
+        public bool HeartbeatEnable
+        {
+            get { return this._heartbeatEnable.GetValueOrDefault(); }
+            set { this._heartbeatEnable = value; }
+        }
+
+        // Check to see if HeartbeatEnable property is set
+        internal bool IsSetHeartbeatEnable()
+        {
+            return this._heartbeatEnable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HeartbeatFrequency. 
+        /// <para>
+        /// Sets the WAL heartbeat frequency (in minutes).
+        /// </para>
+        /// </summary>
+        public int HeartbeatFrequency
+        {
+            get { return this._heartbeatFrequency.GetValueOrDefault(); }
+            set { this._heartbeatFrequency = value; }
+        }
+
+        // Check to see if HeartbeatFrequency property is set
+        internal bool IsSetHeartbeatFrequency()
+        {
+            return this._heartbeatFrequency.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HeartbeatSchema. 
+        /// <para>
+        /// Sets the schema in which the heartbeat artifacts are created.
+        /// </para>
+        /// </summary>
+        public string HeartbeatSchema
+        {
+            get { return this._heartbeatSchema; }
+            set { this._heartbeatSchema = value; }
+        }
+
+        // Check to see if HeartbeatSchema property is set
+        internal bool IsSetHeartbeatSchema()
+        {
+            return this._heartbeatSchema != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxFileSize. 
         /// <para>
         /// Specifies the maximum size (in KB) of any .csv file used to transfer data to PostgreSQL.
@@ -223,6 +284,24 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PluginName. 
+        /// <para>
+        /// Specifies the plugin to use to create a replication slot.
+        /// </para>
+        /// </summary>
+        public PluginNameValue PluginName
+        {
+            get { return this._pluginName; }
+            set { this._pluginName = value; }
+        }
+
+        // Check to see if PluginName property is set
+        internal bool IsSetPluginName()
+        {
+            return this._pluginName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
         /// Endpoint TCP port.
@@ -243,10 +322,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SecretsManagerAccessRoleArn. 
         /// <para>
-        /// The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the
-        /// trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
-        /// <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret
-        /// that allows access to the PostgreSQL endpoint.
+        /// The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted
+        /// entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
+        /// The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code>
+        /// has the value of the Amazon Web Services Secrets Manager secret that allows access
+        /// to the PostgreSQL endpoint.
         /// </para>
         ///  <note> 
         /// <para>
@@ -255,9 +335,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>,
         /// and <code>Port</code>. You can't specify both. For more information on creating this
         /// <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-        /// and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
-        /// secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database
-        /// Migration Service User Guide</i>.
+        /// and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+        /// secrets to access Database Migration Service resources</a> in the <i>Database Migration
+        /// Service User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -318,8 +398,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// When used with the AWS DMS API <code>CdcStartPosition</code> request parameter, this
-        /// attribute also enables using native CDC start points.
+        /// When used with the DMS API <code>CdcStartPosition</code> request parameter, this attribute
+        /// also enables using native CDC start points.
         /// </para>
         /// </summary>
         public string SlotName

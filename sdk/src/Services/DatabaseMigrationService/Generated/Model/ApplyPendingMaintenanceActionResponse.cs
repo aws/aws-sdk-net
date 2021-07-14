@@ -38,7 +38,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ResourcePendingMaintenanceActions. 
         /// <para>
-        /// The AWS DMS resource that the pending maintenance action will be applied to.
+        /// The DMS resource that the pending maintenance action will be applied to.
         /// </para>
         /// </summary>
         public ResourcePendingMaintenanceActions ResourcePendingMaintenanceActions

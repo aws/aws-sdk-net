@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// The specified AWS KMS entity or resource can't be found.
+    /// The specified KMS entity or resource can't be found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -100,6 +100,24 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.FailTasksOnLobTruncation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HeartbeatEnable", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.HeartbeatEnable = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HeartbeatFrequency", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.HeartbeatFrequency = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HeartbeatSchema", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HeartbeatSchema = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaxFileSize", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -110,6 +128,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Password = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PluginName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PluginName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Port", targetDepth))

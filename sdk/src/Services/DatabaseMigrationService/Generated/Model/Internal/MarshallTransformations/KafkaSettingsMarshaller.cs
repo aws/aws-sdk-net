@@ -93,6 +93,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MessageMaxBytes);
             }
 
+            if(requestObject.IsSetNoHexPrefix())
+            {
+                context.Writer.WritePropertyName("NoHexPrefix");
+                context.Writer.Write(requestObject.NoHexPrefix);
+            }
+
             if(requestObject.IsSetPartitionIncludeSchemaTable())
             {
                 context.Writer.WritePropertyName("PartitionIncludeSchemaTable");

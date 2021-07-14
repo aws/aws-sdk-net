@@ -31,6 +31,16 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the ModifyEndpoint operation.
     /// Modifies the specified endpoint.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// For a MySQL source or target endpoint, don't explicitly specify the database using
+    /// the <code>DatabaseName</code> request parameter on the <code>ModifyEndpoint</code>
+    /// API call. Specifying <code>DatabaseName</code> when you modify a MySQL endpoint replicates
+    /// all the task tables to this single database. For MySQL endpoints, you specify the
+    /// database only when you specify the schema in the table-mapping rules of the DMS task.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ModifyEndpointRequest : AmazonDatabaseMigrationServiceRequest
     {
@@ -44,6 +54,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _endpointIdentifier;
         private ReplicationEndpointTypeValue _endpointType;
         private string _engineName;
+        private bool? _exactSettings;
         private string _externalTableDefinition;
         private string _extraConnectionAttributes;
         private IBMDb2Settings _ibmDb2Settings;
@@ -86,7 +97,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The name of the endpoint database.
+        /// The name of the endpoint database. For a MySQL source or target endpoint, do not specify
+        /// DatabaseName.
         /// </para>
         /// </summary>
         public string DatabaseName
@@ -112,28 +124,23 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// serviceAccessRoleArn - The AWS Identity and Access Management (IAM) role that has
-        /// permission to access the Amazon S3 bucket.
+        /// serviceAccessRoleArn - The Identity and Access Management (IAM) role that has permission
+        /// to access the Amazon S3 bucket. The role must allow the <code>iam:PassRole</code>
+        /// action.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// BucketName - The name of the S3 bucket to use.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// compressionType - An optional parameter to use GZIP to compress the target files.
-        /// Either set this parameter to NONE (the default) or don't use it to leave the files
-        /// uncompressed.
-        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string
-        /// ,BucketName=string,CompressionType=string</code> 
+        /// ,BucketName=string</code> 
         /// </para>
         ///  
         /// <para>
         /// JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string",
-        /// "BucketName": "string", "CompressionType": "none"|"gzip" } </code> 
+        /// "BucketName": "string"} </code> 
         /// </para>
         /// </summary>
         public DmsTransferSettings DmsTransferSettings
@@ -153,8 +160,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Settings in JSON format for the source DocumentDB endpoint. For more information about
         /// the available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html">
-        /// Using DocumentDB as a Target for AWS Database Migration Service</a> in the <i>AWS
-        /// Database Migration Service User Guide.</i> 
+        /// Using DocumentDB as a Target for Database Migration Service </a> in the <i>Database
+        /// Migration Service User Guide.</i> 
         /// </para>
         /// </summary>
         public DocDbSettings DocDbSettings
@@ -173,8 +180,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property DynamoDbSettings. 
         /// <para>
         /// Settings in JSON format for the target Amazon DynamoDB endpoint. For information about
-        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
-        /// Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration Service
+        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using
+        /// Object Mapping to Migrate Data to DynamoDB</a> in the <i>Database Migration Service
         /// User Guide.</i> 
         /// </para>
         /// </summary>
@@ -195,8 +202,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Settings in JSON format for the target Elasticsearch endpoint. For more information
         /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
-        /// Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in the
-        /// <i>AWS Database Migration Service User Guide.</i> 
+        /// Connection Attributes When Using Elasticsearch as a Target for DMS</a> in the <i>Database
+        /// Migration Service User Guide.</i> 
         /// </para>
         /// </summary>
         public ElasticsearchSettings ElasticsearchSettings
@@ -293,6 +300,51 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExactSettings. 
+        /// <para>
+        /// If this attribute is Y, the current call to <code>ModifyEndpoint</code> replaces all
+        /// existing endpoint settings with the exact settings that you specify in this call.
+        /// If this attribute is N, the current call to <code>ModifyEndpoint</code> does two things:
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// It replaces any endpoint settings that already exist with new values, for settings
+        /// with the same names.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It creates new endpoint settings that you specify in the call, for settings with different
+        /// names. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For example, if you call <code>create-endpoint ... --endpoint-settings '{"a":1}' ...</code>,
+        /// the endpoint has the following endpoint settings: <code>'{"a":1}'</code>. If you then
+        /// call <code>modify-endpoint ... --endpoint-settings '{"b":2}' ...</code> for the same
+        /// endpoint, the endpoint has the following settings: <code>'{"a":1,"b":2}'</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// However, suppose that you follow this with a call to <code>modify-endpoint ... --endpoint-settings
+        /// '{"b":2}' --exact-settings ...</code> for that same endpoint again. Then the endpoint
+        /// has the following settings: <code>'{"b":2}'</code>. All existing settings are replaced
+        /// with the exact settings that you specify. 
+        /// </para>
+        /// </summary>
+        public bool ExactSettings
+        {
+            get { return this._exactSettings.GetValueOrDefault(); }
+            set { this._exactSettings = value; }
+        }
+
+        // Check to see if ExactSettings property is set
+        internal bool IsSetExactSettings()
+        {
+            return this._exactSettings.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ExternalTableDefinition. 
         /// <para>
         /// The external table definition.
@@ -333,9 +385,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property IBMDb2Settings. 
         /// <para>
         /// Settings in JSON format for the source IBM Db2 LUW endpoint. For information about
-        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.ConnectionAttrib">Extra
-        /// connection attributes when using Db2 LUW as a source for AWS DMS</a> in the <i>AWS
-        /// Database Migration Service User Guide.</i> 
+        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra
+        /// connection attributes when using Db2 LUW as a source for DMS</a> in the <i>Database
+        /// Migration Service User Guide.</i> 
         /// </para>
         /// </summary>
         public IBMDb2Settings IBMDb2Settings
@@ -354,9 +406,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property KafkaSettings. 
         /// <para>
         /// Settings in JSON format for the target Apache Kafka endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
-        /// Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS Database
-        /// Migration Service User Guide.</i> 
+        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using
+        /// object mapping to migrate data to a Kafka topic</a> in the <i>Database Migration Service
+        /// User Guide.</i> 
         /// </para>
         /// </summary>
         public KafkaSettings KafkaSettings
@@ -375,9 +427,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property KinesisSettings. 
         /// <para>
         /// Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For
-        /// more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using
-        /// Amazon Kinesis Data Streams as a Target for AWS Database Migration Service</a> in
-        /// the <i>AWS Database Migration Service User Guide.</i> 
+        /// more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
+        /// object mapping to migrate data to a Kinesis data stream</a> in the <i>Database Migration
+        /// Service User Guide.</i> 
         /// </para>
         /// </summary>
         public KinesisSettings KinesisSettings
@@ -396,10 +448,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property MicrosoftSQLServerSettings. 
         /// <para>
         /// Settings in JSON format for the source and target Microsoft SQL Server endpoint. For
-        /// information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.ConnectionAttrib">Extra
-        /// connection attributes when using SQL Server as a source for AWS DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.ConnectionAttrib">
-        /// Extra connection attributes when using SQL Server as a target for AWS DMS</a> in the
-        /// <i>AWS Database Migration Service User Guide.</i> 
+        /// information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra
+        /// connection attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib">
+        /// Extra connection attributes when using SQL Server as a target for DMS</a> in the <i>Database
+        /// Migration Service User Guide.</i> 
         /// </para>
         /// </summary>
         public MicrosoftSQLServerSettings MicrosoftSQLServerSettings
@@ -418,9 +470,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property MongoDbSettings. 
         /// <para>
         /// Settings in JSON format for the source MongoDB endpoint. For more information about
-        /// the available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
-        /// Using MongoDB as a Target for AWS Database Migration Service</a> in the <i>AWS Database
-        /// Migration Service User Guide.</i> 
+        /// the available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint
+        /// configuration settings when using MongoDB as a source for Database Migration Service</a>
+        /// in the <i>Database Migration Service User Guide.</i> 
         /// </para>
         /// </summary>
         public MongoDbSettings MongoDbSettings
@@ -439,10 +491,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property MySQLSettings. 
         /// <para>
         /// Settings in JSON format for the source and target MySQL endpoint. For information
-        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.ConnectionAttrib">Extra
-        /// connection attributes when using MySQL as a source for AWS DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.ConnectionAttrib">Extra
-        /// connection attributes when using a MySQL-compatible database as a target for AWS DMS</a>
-        /// in the <i>AWS Database Migration Service User Guide.</i> 
+        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra
+        /// connection attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra
+        /// connection attributes when using a MySQL-compatible database as a target for DMS</a>
+        /// in the <i>Database Migration Service User Guide.</i> 
         /// </para>
         /// </summary>
         public MySQLSettings MySQLSettings
@@ -462,8 +514,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Settings in JSON format for the target Amazon Neptune endpoint. For more information
         /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying
-        /// Endpoint Settings for Amazon Neptune as a Target</a> in the <i>AWS Database Migration
-        /// Service User Guide.</i> 
+        /// graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a> in
+        /// the <i>Database Migration Service User Guide.</i> 
         /// </para>
         /// </summary>
         public NeptuneSettings NeptuneSettings
@@ -482,10 +534,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property OracleSettings. 
         /// <para>
         /// Settings in JSON format for the source and target Oracle endpoint. For information
-        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.ConnectionAttrib">Extra
-        /// connection attributes when using Oracle as a source for AWS DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.ConnectionAttrib">
-        /// Extra connection attributes when using Oracle as a target for AWS DMS</a> in the <i>AWS
-        /// Database Migration Service User Guide.</i> 
+        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra
+        /// connection attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib">
+        /// Extra connection attributes when using Oracle as a target for DMS</a> in the <i>Database
+        /// Migration Service User Guide.</i> 
         /// </para>
         /// </summary>
         public OracleSettings OracleSettings
@@ -540,10 +592,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property PostgreSQLSettings. 
         /// <para>
         /// Settings in JSON format for the source and target PostgreSQL endpoint. For information
-        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-        /// connection attributes when using PostgreSQL as a source for AWS DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.ConnectionAttrib">
-        /// Extra connection attributes when using PostgreSQL as a target for AWS DMS</a> in the
-        /// <i>AWS Database Migration Service User Guide.</i> 
+        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+        /// connection attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib">
+        /// Extra connection attributes when using PostgreSQL as a target for DMS</a> in the <i>Database
+        /// Migration Service User Guide.</i> 
         /// </para>
         /// </summary>
         public PostgreSQLSettings PostgreSQLSettings
@@ -578,8 +630,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Settings in JSON format for the target Amazon S3 endpoint. For more information about
         /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
-        /// Connection Attributes When Using Amazon S3 as a Target for AWS DMS</a> in the <i>AWS
-        /// Database Migration Service User Guide.</i> 
+        /// Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the <i>Database
+        /// Migration Service User Guide.</i> 
         /// </para>
         /// </summary>
         public S3Settings S3Settings
@@ -615,8 +667,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServiceAccessRoleArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) for the service access role you want to use to modify
-        /// the endpoint. 
+        ///  The Amazon Resource Name (ARN) for the IAM role you want to use to modify the endpoint.
+        /// The role must allow the <code>iam:PassRole</code> action.
         /// </para>
         /// </summary>
         public string ServiceAccessRoleArn
@@ -653,10 +705,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property SybaseSettings. 
         /// <para>
         /// Settings in JSON format for the source and target SAP ASE endpoint. For information
-        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.ConnectionAttrib">Extra
-        /// connection attributes when using SAP ASE as a source for AWS DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.ConnectionAttrib">Extra
-        /// connection attributes when using SAP ASE as a target for AWS DMS</a> in the <i>AWS
-        /// Database Migration Service User Guide.</i> 
+        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra
+        /// connection attributes when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra
+        /// connection attributes when using SAP ASE as a target for DMS</a> in the <i>Database
+        /// Migration Service User Guide.</i> 
         /// </para>
         /// </summary>
         public SybaseSettings SybaseSettings

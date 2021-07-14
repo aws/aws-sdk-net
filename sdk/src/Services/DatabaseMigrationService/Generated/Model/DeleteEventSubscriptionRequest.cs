@@ -30,7 +30,7 @@ namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEventSubscription operation.
-    /// Deletes an AWS DMS event subscription.
+    /// Deletes an DMS event subscription.
     /// </summary>
     public partial class DeleteEventSubscriptionRequest : AmazonDatabaseMigrationServiceRequest
     {

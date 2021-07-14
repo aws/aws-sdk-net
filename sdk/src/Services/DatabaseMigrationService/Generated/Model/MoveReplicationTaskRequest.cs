@@ -32,8 +32,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// Container for the parameters to the MoveReplicationTask operation.
     /// Moves a replication task from its current replication instance to a different target
     /// replication instance using the specified parameters. The target replication instance
-    /// must be created with the same or later AWS DMS version as the current replication
-    /// instance.
+    /// must be created with the same or later DMS version as the current replication instance.
     /// </summary>
     public partial class MoveReplicationTaskRequest : AmazonDatabaseMigrationServiceRequest
     {

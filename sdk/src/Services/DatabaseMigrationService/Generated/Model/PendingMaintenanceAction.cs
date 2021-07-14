@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// Describes a maintenance action pending for an AWS DMS resource, including when and
-    /// how it will be applied. This data type is a response element to the <code>DescribePendingMaintenanceActions</code>
+    /// Describes a maintenance action pending for an DMS resource, including when and how
+    /// it will be applied. This data type is a response element to the <code>DescribePendingMaintenanceActions</code>
     /// operation.
     /// </summary>
     public partial class PendingMaintenanceAction

@@ -34,9 +34,8 @@ namespace Amazon.DatabaseMigrationService.Model
     /// 
     ///  
     /// <para>
-    /// For more information about AWS DMS tasks, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
-    /// with Migration Tasks </a> in the <i>AWS Database Migration Service User Guide.</i>
-    /// 
+    /// For more information about DMS tasks, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
+    /// with Migration Tasks </a> in the <i>Database Migration Service User Guide.</i> 
     /// </para>
     /// </summary>
     public partial class StartReplicationTaskRequest : AmazonDatabaseMigrationServiceRequest
@@ -76,7 +75,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// slot should already be created and associated with the source endpoint. You can verify
         /// this by setting the <code>slotName</code> extra connection attribute to the name of
         /// this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-        /// Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+        /// Connection Attributes When Using PostgreSQL as a Source for DMS</a>.
         /// </para>
         ///  </note>
         /// </summary>

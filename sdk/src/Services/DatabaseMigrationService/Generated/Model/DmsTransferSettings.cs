@@ -57,7 +57,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServiceAccessRoleArn. 
         /// <para>
-        ///  The IAM role that has permission to access the Amazon S3 bucket. 
+        ///  The IAM role that has permission to access the Amazon S3 bucket. When specified as
+        /// part of request syntax, such as for the <code>CreateEndpoint</code> and <code>ModifyEndpoint</code>
+        /// actions, the role must allow the <code>iam:PassRole</code> action.
         /// </para>
         /// </summary>
         public string ServiceAccessRoleArn

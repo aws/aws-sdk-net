@@ -164,7 +164,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// AWS DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
+        /// DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
         /// </para>
         ///  </note>
         /// </summary>
@@ -191,7 +191,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// For more information on the settings and capacities for the available replication
         /// instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-        /// Selecting the right AWS DMS replication instance for your migration</a>. 
+        /// Selecting the right DMS replication instance for your migration</a>. 
         /// </para>
         /// </summary>
         public string ReplicationInstanceClass

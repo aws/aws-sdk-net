@@ -32,7 +32,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// Container for the parameters to the DescribeEventCategories operation.
     /// Lists categories for all event source types, or, if specified, for a specified source
     /// type. You can see a list of the event categories and source types in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
-    /// with Events and Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
+    /// with Events and Notifications</a> in the <i>Database Migration Service User Guide.</i>
     /// </summary>
     public partial class DescribeEventCategoriesRequest : AmazonDatabaseMigrationServiceRequest
     {
@@ -60,7 +60,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        ///  The type of AWS DMS resource that generates events. 
+        ///  The type of DMS resource that generates events. 
         /// </para>
         ///  
         /// <para>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// AWS DMS cannot access the AWS KMS key.
+    /// DMS cannot access the KMS key.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

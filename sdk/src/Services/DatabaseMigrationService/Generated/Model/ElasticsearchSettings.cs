@@ -41,7 +41,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EndpointUri. 
         /// <para>
-        /// The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport protocol
+        /// The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport protocol
         /// (http/https) is not specified.
         /// </para>
         /// </summary>
@@ -106,7 +106,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServiceAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) used by service to access the IAM role.
+        /// The Amazon Resource Name (ARN) used by the service to access the IAM role. The role
+        /// must allow the <code>iam:PassRole</code> action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

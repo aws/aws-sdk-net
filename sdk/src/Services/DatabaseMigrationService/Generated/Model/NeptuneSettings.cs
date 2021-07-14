@@ -44,7 +44,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ErrorRetryDuration. 
         /// <para>
-        /// The number of milliseconds for AWS DMS to wait to retry a bulk-load of migrated graph
+        /// The number of milliseconds for DMS to wait to retry a bulk-load of migrated graph
         /// data to the Neptune target database before raising an error. The default is 250.
         /// </para>
         /// </summary>
@@ -63,10 +63,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property IamAuthEnabled. 
         /// <para>
-        /// If you want AWS Identity and Access Management (IAM) authorization enabled for this
-        /// endpoint, set this parameter to <code>true</code>. Then attach the appropriate IAM
-        /// policy document to your service role specified by <code>ServiceAccessRoleArn</code>.
-        /// The default is <code>false</code>.
+        /// If you want Identity and Access Management (IAM) authorization enabled for this endpoint,
+        /// set this parameter to <code>true</code>. Then attach the appropriate IAM policy document
+        /// to your service role specified by <code>ServiceAccessRoleArn</code>. The default is
+        /// <code>false</code>.
         /// </para>
         /// </summary>
         public bool IamAuthEnabled
@@ -85,9 +85,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property MaxFileSize. 
         /// <para>
         /// The maximum size in kilobytes of migrated graph data stored in a .csv file before
-        /// AWS DMS bulk-loads the data to the Neptune target database. The default is 1,048,576
-        /// KB. If the bulk load is successful, AWS DMS clears the bucket, ready to store the
-        /// next batch of migrated graph data.
+        /// DMS bulk-loads the data to the Neptune target database. The default is 1,048,576 KB.
+        /// If the bulk load is successful, DMS clears the bucket, ready to store the next batch
+        /// of migrated graph data.
         /// </para>
         /// </summary>
         public int MaxFileSize
@@ -105,8 +105,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property MaxRetryCount. 
         /// <para>
-        /// The number of times for AWS DMS to retry a bulk load of migrated graph data to the
-        /// Neptune target database before raising an error. The default is 5.
+        /// The number of times for DMS to retry a bulk load of migrated graph data to the Neptune
+        /// target database before raising an error. The default is 5.
         /// </para>
         /// </summary>
         public int MaxRetryCount
@@ -124,8 +124,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property S3BucketFolder. 
         /// <para>
-        /// A folder path where you want AWS DMS to store migrated graph data in the S3 bucket
-        /// specified by <code>S3BucketName</code> 
+        /// A folder path where you want DMS to store migrated graph data in the S3 bucket specified
+        /// by <code>S3BucketName</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -144,9 +144,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property S3BucketName. 
         /// <para>
-        /// The name of the Amazon S3 bucket where AWS DMS can temporarily store migrated graph
-        /// data in .csv files before bulk-loading it to the Neptune target database. AWS DMS
-        /// maps the SQL source data to graph data before storing it in these .csv files.
+        /// The name of the Amazon S3 bucket where DMS can temporarily store migrated graph data
+        /// in .csv files before bulk-loading it to the Neptune target database. DMS maps the
+        /// SQL source data to graph data before storing it in these .csv files.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -166,8 +166,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property ServiceAccessRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the service role that you created for the Neptune
-        /// target endpoint. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole">Creating
-        /// an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>AWS Database
+        /// target endpoint. The role must allow the <code>iam:PassRole</code> action. For more
+        /// information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole">Creating
+        /// an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>Database
         /// Migration Service User Guide. </i> 
         /// </para>
         /// </summary>

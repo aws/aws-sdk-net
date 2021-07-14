@@ -100,8 +100,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationInstanceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS DMS resource that the pending maintenance
-        /// action applies to.
+        /// The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action
+        /// applies to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

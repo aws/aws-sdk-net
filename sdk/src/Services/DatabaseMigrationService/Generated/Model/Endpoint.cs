@@ -42,10 +42,6 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DescribeEndpointTypes</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     ///  <code>ModifyEndpoint</code> 
     /// </para>
     ///  </li> </ul>
@@ -134,27 +130,21 @@ namespace Amazon.DatabaseMigrationService.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the
-        /// Amazon S3 bucket.
+        /// Amazon S3 bucket. The role must allow the <code>iam:PassRole</code> action.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>BucketName</code> - The name of the S3 bucket to use.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>CompressionType</code> - An optional parameter to use GZIP to compress the
-        /// target files. To use GZIP, set this value to <code>NONE</code> (the default). To keep
-        /// the files uncompressed, don't use this value.
-        /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
+        /// Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string,BucketName=string,</code>
         /// 
         /// </para>
         ///  
         /// <para>
         /// JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string",
-        /// "BucketName": "string", "CompressionType": "none"|"gzip" } </code> 
+        /// "BucketName": "string"} </code> 
         /// </para>
         /// </summary>
         public DmsTransferSettings DmsTransferSettings
@@ -436,18 +426,17 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// An AWS KMS key identifier that is used to encrypt the connection parameters for the
-        /// endpoint.
+        /// An KMS key identifier that is used to encrypt the connection parameters for the endpoint.
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS
-        /// uses your default encryption key.
+        /// If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses
+        /// your default encryption key.
         /// </para>
         ///  
         /// <para>
-        /// AWS KMS creates the default encryption key for your AWS account. Your AWS account
-        /// has a different default encryption key for each AWS Region.
+        /// KMS creates the default encryption key for your account. Your account has a different
+        /// default encryption key for each Region.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -652,7 +641,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServiceAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) used by the service access IAM role.
+        /// The Amazon Resource Name (ARN) used by the service to access the IAM role. The role
+        /// must allow the <code>iam:PassRole</code> action.
         /// </para>
         /// </summary>
         public string ServiceAccessRoleArn

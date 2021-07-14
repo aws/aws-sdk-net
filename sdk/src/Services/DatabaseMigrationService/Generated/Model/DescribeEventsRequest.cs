@@ -31,8 +31,8 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the DescribeEvents operation.
     /// Lists events for a given source identifier and source type. You can also specify
-    /// a start and end time. For more information on AWS DMS events, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
-    /// with Events and Notifications</a> in the <i>AWS Database Migration User Guide.</i>
+    /// a start and end time. For more information on DMS events, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+    /// with Events and Notifications</a> in the <i>Database Migration Service User Guide.</i>
     /// </summary>
     public partial class DescribeEventsRequest : AmazonDatabaseMigrationServiceRequest
     {
@@ -187,7 +187,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        /// The type of AWS DMS resource that generates events.
+        /// The type of DMS resource that generates events.
         /// </para>
         ///  
         /// <para>

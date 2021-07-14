@@ -46,6 +46,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         ///  The task assessment results in JSON format. 
         /// </para>
+        ///  
+        /// <para>
+        /// The response object only contains this field if you provide <a>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</a>
+        /// in the request.
+        /// </para>
         /// </summary>
         public string AssessmentResults
         {
@@ -154,6 +159,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property S3ObjectUrl. 
         /// <para>
         ///  The URL of the S3 object containing the task assessment results. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The response object only contains this field if you provide <a>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</a>
+        /// in the request.
         /// </para>
         /// </summary>
         public string S3ObjectUrl

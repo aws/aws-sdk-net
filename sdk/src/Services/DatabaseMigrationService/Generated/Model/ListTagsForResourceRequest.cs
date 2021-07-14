@@ -30,7 +30,7 @@ namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists all metadata tags attached to an AWS DMS resource, including replication instance,
+    /// Lists all metadata tags attached to an DMS resource, including replication instance,
     /// endpoint, security group, and migration task. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
     /// <code>Tag</code> </a> data type description.
     /// </summary>
@@ -41,7 +41,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) string that uniquely identifies the AWS DMS resource.
+        /// The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

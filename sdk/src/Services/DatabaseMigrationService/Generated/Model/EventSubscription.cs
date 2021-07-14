@@ -47,7 +47,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property CustomerAwsId. 
         /// <para>
-        /// The AWS customer account associated with the AWS DMS event notification subscription.
+        /// The Amazon Web Services customer account associated with the DMS event notification
+        /// subscription.
         /// </para>
         /// </summary>
         public string CustomerAwsId
@@ -65,7 +66,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property CustSubscriptionId. 
         /// <para>
-        /// The AWS DMS event notification subscription Id.
+        /// The DMS event notification subscription Id.
         /// </para>
         /// </summary>
         public string CustSubscriptionId
@@ -119,7 +120,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SnsTopicArn. 
         /// <para>
-        /// The topic ARN of the AWS DMS event notification subscription.
+        /// The topic ARN of the DMS event notification subscription.
         /// </para>
         /// </summary>
         public string SnsTopicArn
@@ -155,7 +156,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        ///  The type of AWS DMS resource that generates events. 
+        ///  The type of DMS resource that generates events. 
         /// </para>
         ///  
         /// <para>
@@ -177,7 +178,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the AWS DMS event notification subscription.
+        /// The status of the DMS event notification subscription.
         /// </para>
         ///  
         /// <para>
@@ -190,9 +191,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// The status "no-permission" indicates that AWS DMS no longer has permission to post
-        /// to the SNS topic. The status "topic-not-exist" indicates that the topic was deleted
-        /// after the subscription was created.
+        /// The status "no-permission" indicates that DMS no longer has permission to post to
+        /// the SNS topic. The status "topic-not-exist" indicates that the topic was deleted after
+        /// the subscription was created.
         /// </para>
         /// </summary>
         public string Status
@@ -210,7 +211,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SubscriptionCreationTime. 
         /// <para>
-        /// The time the AWS DMS event notification subscription was created.
+        /// The time the DMS event notification subscription was created.
         /// </para>
         /// </summary>
         public string SubscriptionCreationTime

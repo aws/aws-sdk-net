@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// Identifies an AWS DMS resource and any pending actions for it.
+    /// Identifies an DMS resource and any pending actions for it.
     /// </summary>
     public partial class ResourcePendingMaintenanceActions
     {
@@ -59,7 +59,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action
         /// applies to. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.AWS.ARN.html">
-        /// Constructing an Amazon Resource Name (ARN) for AWS DMS</a> in the DMS documentation.
+        /// Constructing an Amazon Resource Name (ARN) for DMS</a> in the DMS documentation.
         /// </para>
         /// </summary>
         public string ResourceIdentifier

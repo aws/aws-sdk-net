@@ -34,6 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model
     public partial class EndpointSetting
     {
         private string _applicability;
+        private string _defaultValue;
         private List<string> _enumValues = new List<string>();
         private int? _intValueMax;
         private int? _intValueMin;
@@ -59,6 +60,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetApplicability()
         {
             return this._applicability != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultValue. 
+        /// <para>
+        /// The default value of the endpoint setting if no value is specified using <code>CreateEndpoint</code>
+        /// or <code>ModifyEndpoint</code>.
+        /// </para>
+        /// </summary>
+        public string DefaultValue
+        {
+            get { return this._defaultValue; }
+            set { this._defaultValue = value; }
+        }
+
+        // Check to see if DefaultValue property is set
+        internal bool IsSetDefaultValue()
+        {
+            return this._defaultValue != null;
         }
 
         /// <summary>

@@ -540,7 +540,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Supplemental information that the task requires to migrate the data for certain source
         /// and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-        /// Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service User
+        /// Supplemental Data for Task Settings</a> in the <i>Database Migration Service User
         /// Guide.</i> 
         /// </para>
         /// </summary>

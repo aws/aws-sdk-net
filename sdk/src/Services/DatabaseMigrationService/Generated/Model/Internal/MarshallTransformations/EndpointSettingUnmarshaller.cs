@@ -70,6 +70,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Applicability = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DefaultValue", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EnumValues", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

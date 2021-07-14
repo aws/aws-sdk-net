@@ -31,7 +31,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Describes an identifiable significant activity that affects a replication instance
     /// or task. This object can provide the message, the available event categories, the
-    /// date and source of the event, and the AWS DMS resource type.
+    /// date and source of the event, and the DMS resource type.
     /// </summary>
     public partial class DMSEvent
     {
@@ -116,7 +116,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        ///  The type of AWS DMS resource that generates events. 
+        ///  The type of DMS resource that generates events. 
         /// </para>
         ///  
         /// <para>

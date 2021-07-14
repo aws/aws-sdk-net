@@ -237,10 +237,34 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SpatialDataOptionToGeoJsonFunctionName);
             }
 
+            if(requestObject.IsSetStandbyDelayTime())
+            {
+                context.Writer.WritePropertyName("StandbyDelayTime");
+                context.Writer.Write(requestObject.StandbyDelayTime);
+            }
+
             if(requestObject.IsSetUseAlternateFolderForOnline())
             {
                 context.Writer.WritePropertyName("UseAlternateFolderForOnline");
                 context.Writer.Write(requestObject.UseAlternateFolderForOnline);
+            }
+
+            if(requestObject.IsSetUseBFile())
+            {
+                context.Writer.WritePropertyName("UseBFile");
+                context.Writer.Write(requestObject.UseBFile);
+            }
+
+            if(requestObject.IsSetUseDirectPathFullLoad())
+            {
+                context.Writer.WritePropertyName("UseDirectPathFullLoad");
+                context.Writer.Write(requestObject.UseDirectPathFullLoad);
+            }
+
+            if(requestObject.IsSetUseLogminerReader())
+            {
+                context.Writer.WritePropertyName("UseLogminerReader");
+                context.Writer.Write(requestObject.UseLogminerReader);
             }
 
             if(requestObject.IsSetUsePathPrefix())

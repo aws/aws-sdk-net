@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+    /// DMS was denied access to the endpoint. Check that the role is correctly configured.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

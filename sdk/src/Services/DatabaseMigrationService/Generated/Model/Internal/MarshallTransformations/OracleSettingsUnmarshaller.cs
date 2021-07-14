@@ -256,10 +256,34 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.SpatialDataOptionToGeoJsonFunctionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StandbyDelayTime", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.StandbyDelayTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UseAlternateFolderForOnline", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.UseAlternateFolderForOnline = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UseBFile", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UseBFile = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UseDirectPathFullLoad", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UseDirectPathFullLoad = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UseLogminerReader", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UseLogminerReader = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UsePathPrefix", targetDepth))

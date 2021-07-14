@@ -112,6 +112,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.MessageMaxBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NoHexPrefix", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.NoHexPrefix = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PartitionIncludeSchemaTable", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

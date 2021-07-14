@@ -136,7 +136,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// AWS DMS has enabled automatic patching for the given engine version. 
+        /// DMS has enabled automatic patching for the given engine version. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -263,7 +263,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// For more information on the settings and capacities for the available replication
         /// instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-        /// Selecting the right AWS DMS replication instance for your migration</a>. 
+        /// Selecting the right DMS replication instance for your migration</a>. 
         /// </para>
         /// </summary>
         public string ReplicationInstanceClass

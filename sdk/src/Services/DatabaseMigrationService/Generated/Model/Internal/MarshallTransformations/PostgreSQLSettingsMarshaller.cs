@@ -81,6 +81,24 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.FailTasksOnLobTruncation);
             }
 
+            if(requestObject.IsSetHeartbeatEnable())
+            {
+                context.Writer.WritePropertyName("HeartbeatEnable");
+                context.Writer.Write(requestObject.HeartbeatEnable);
+            }
+
+            if(requestObject.IsSetHeartbeatFrequency())
+            {
+                context.Writer.WritePropertyName("HeartbeatFrequency");
+                context.Writer.Write(requestObject.HeartbeatFrequency);
+            }
+
+            if(requestObject.IsSetHeartbeatSchema())
+            {
+                context.Writer.WritePropertyName("HeartbeatSchema");
+                context.Writer.Write(requestObject.HeartbeatSchema);
+            }
+
             if(requestObject.IsSetMaxFileSize())
             {
                 context.Writer.WritePropertyName("MaxFileSize");
@@ -91,6 +109,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Password");
                 context.Writer.Write(requestObject.Password);
+            }
+
+            if(requestObject.IsSetPluginName())
+            {
+                context.Writer.WritePropertyName("PluginName");
+                context.Writer.Write(requestObject.PluginName);
             }
 
             if(requestObject.IsSetPort())

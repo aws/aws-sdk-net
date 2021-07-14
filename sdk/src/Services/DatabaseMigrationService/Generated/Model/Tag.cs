@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// A user-defined key-value pair that describes metadata added to an AWS DMS resource
-    /// and that is used by operations such as the following:
+    /// A user-defined key-value pair that describes metadata added to an DMS resource and
+    /// that is used by operations such as the following:
     /// 
     ///  <ul> <li> 
     /// <para>

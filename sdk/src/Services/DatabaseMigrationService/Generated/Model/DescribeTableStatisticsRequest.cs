@@ -35,9 +35,9 @@ namespace Amazon.DatabaseMigrationService.Model
     /// 
     ///  
     /// <para>
-    /// Note that the "last updated" column the DMS console only indicates the time that AWS
-    /// DMS last updated the table statistics record for a table. It does not indicate the
-    /// time of the last update to the table.
+    /// Note that the "last updated" column the DMS console only indicates the time that DMS
+    /// last updated the table statistics record for a table. It does not indicate the time
+    /// of the last update to the table.
     /// </para>
     /// </summary>
     public partial class DescribeTableStatisticsRequest : AmazonDatabaseMigrationServiceRequest

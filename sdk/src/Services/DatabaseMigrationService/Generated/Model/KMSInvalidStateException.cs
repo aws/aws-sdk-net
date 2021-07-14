@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// The state of the specified AWS KMS resource isn't valid for this request.
+    /// The state of the specified KMS resource isn't valid for this request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

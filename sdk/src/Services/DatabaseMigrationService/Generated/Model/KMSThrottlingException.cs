@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// This request triggered AWS KMS request throttling.
+    /// This request triggered KMS request throttling.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

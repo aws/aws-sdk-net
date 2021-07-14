@@ -199,17 +199,17 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// An AWS KMS key identifier that is used to encrypt the data on the replication instance.
+        /// An KMS key identifier that is used to encrypt the data on the replication instance.
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS
-        /// uses your default encryption key.
+        /// If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses
+        /// your default encryption key.
         /// </para>
         ///  
         /// <para>
-        /// AWS KMS creates the default encryption key for your AWS account. Your AWS account
-        /// has a different default encryption key for each AWS Region.
+        /// KMS creates the default encryption key for your account. Your account has a different
+        /// default encryption key for each Region.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -323,14 +323,14 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property ReplicationInstanceClass. 
         /// <para>
         /// The compute and memory capacity of the replication instance as defined for the specified
-        /// replication instance class. It is a required parameter, although a defualt value is
+        /// replication instance class. It is a required parameter, although a default value is
         /// pre-selected in the DMS console.
         /// </para>
         ///  
         /// <para>
         /// For more information on the settings and capacities for the available replication
         /// instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-        /// Selecting the right AWS DMS replication instance for your migration</a>. 
+        /// Selecting the right DMS replication instance for your migration</a>. 
         /// </para>
         /// </summary>
         public string ReplicationInstanceClass

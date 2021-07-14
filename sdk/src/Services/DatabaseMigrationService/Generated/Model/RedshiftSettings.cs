@@ -117,16 +117,16 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// For full load mode, AWS DMS converts source records into .csv files and loads them
-        /// to the <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code>
-        /// command to upload the .csv files to the target table. The files are deleted once the
-        /// <code>COPY</code> operation has finished. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a>
+        /// For full load mode, DMS converts source records into .csv files and loads them to
+        /// the <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code> command
+        /// to upload the .csv files to the target table. The files are deleted once the <code>COPY</code>
+        /// operation has finished. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a>
         /// in the <i>Amazon Redshift Database Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For change-data-capture (CDC) mode, AWS DMS creates a <i>NetChanges</i> table, and
-        /// loads the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.
+        /// For change-data-capture (CDC) mode, DMS creates a <i>NetChanges</i> table, and loads
+        /// the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.
         /// </para>
         /// </summary>
         public string BucketFolder
@@ -267,9 +267,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EmptyAsNull. 
         /// <para>
-        /// A value that specifies whether AWS DMS should migrate empty CHAR and VARCHAR fields
-        /// as NULL. A value of <code>true</code> sets empty CHAR and VARCHAR fields to null.
-        /// The default is <code>false</code>.
+        /// A value that specifies whether DMS should migrate empty CHAR and VARCHAR fields as
+        /// NULL. A value of <code>true</code> sets empty CHAR and VARCHAR fields to null. The
+        /// default is <code>false</code>.
         /// </para>
         /// </summary>
         public bool EmptyAsNull
@@ -300,9 +300,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// To use <code>SSE_S3</code>, create an AWS Identity and Access Management (IAM) role
-        /// with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions:
-        /// <code>"s3:PutObject", "s3:ListBucket"</code> 
+        /// To use <code>SSE_S3</code>, create an Identity and Access Management (IAM) role with
+        /// a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions: <code>"s3:PutObject",
+        /// "s3:ListBucket"</code> 
         /// </para>
         /// </summary>
         public EncryptionModeValue EncryptionMode
@@ -372,7 +372,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property LoadTimeout. 
         /// <para>
         /// The amount of time to wait (in milliseconds) before timing out of operations performed
-        /// by AWS DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.
+        /// by DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.
         /// </para>
         /// </summary>
         public int LoadTimeout
@@ -502,10 +502,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SecretsManagerAccessRoleArn. 
         /// <para>
-        /// The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the
-        /// trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
-        /// <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret
-        /// that allows access to the Amazon Redshift endpoint.
+        /// The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted
+        /// entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
+        /// The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code>
+        /// has the value of the Amazon Web Services Secrets Manager secret that allows access
+        /// to the Amazon Redshift endpoint.
         /// </para>
         ///  <note> 
         /// <para>
@@ -514,9 +515,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>,
         /// and <code>Port</code>. You can't specify both. For more information on creating this
         /// <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-        /// and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
-        /// secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database
-        /// Migration Service User Guide</i>.
+        /// and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+        /// secrets to access Database Migration Service resources</a> in the <i>Database Migration
+        /// Service User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -572,7 +573,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServerSideEncryptionKmsKeyId. 
         /// <para>
-        /// The AWS KMS key ID. If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>,
+        /// The KMS key ID. If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>,
         /// provide this key ID. The key that you use needs an attached policy that enables IAM
         /// user permissions and allows use of the key.
         /// </para>
@@ -593,7 +594,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property ServiceAccessRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon Redshift
-        /// service.
+        /// service. The role must allow the <code>iam:PassRole</code> action.
         /// </para>
         /// </summary>
         public string ServiceAccessRoleArn

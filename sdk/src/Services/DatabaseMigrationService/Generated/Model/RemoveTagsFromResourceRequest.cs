@@ -30,7 +30,7 @@ namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveTagsFromResource operation.
-    /// Removes metadata tags from an AWS DMS resource, including replication instance, endpoint,
+    /// Removes metadata tags from an DMS resource, including replication instance, endpoint,
     /// security group, and migration task. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
     /// <code>Tag</code> </a> data type description.
     /// </summary>
@@ -42,7 +42,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// An AWS DMS resource from which you want to remove tag(s). The value for this parameter
+        /// An DMS resource from which you want to remove tag(s). The value for this parameter
         /// is an Amazon Resource Name (ARN).
         /// </para>
         /// </summary>

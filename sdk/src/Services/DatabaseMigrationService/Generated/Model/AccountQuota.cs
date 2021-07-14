@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// Describes a quota for an AWS account, for example, the number of replication instances
+    /// Describes a quota for an account, for example the number of replication instances
     /// allowed.
     /// </summary>
     public partial class AccountQuota
@@ -41,7 +41,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property AccountQuotaName. 
         /// <para>
-        /// The name of the AWS DMS quota for this AWS account.
+        /// The name of the DMS quota for this account.
         /// </para>
         /// </summary>
         public string AccountQuotaName

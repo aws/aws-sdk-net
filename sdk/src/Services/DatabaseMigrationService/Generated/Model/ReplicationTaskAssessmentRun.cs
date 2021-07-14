@@ -184,7 +184,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ResultKmsKeyArn. 
         /// <para>
-        /// ARN of the AWS KMS encryption key used to encrypt the assessment run results.
+        /// ARN of the KMS encryption key used to encrypt the assessment run results.
         /// </para>
         /// </summary>
         public string ResultKmsKeyArn
@@ -202,7 +202,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ResultLocationBucket. 
         /// <para>
-        /// Amazon S3 bucket where AWS DMS stores the results of this assessment run.
+        /// Amazon S3 bucket where DMS stores the results of this assessment run.
         /// </para>
         /// </summary>
         public string ResultLocationBucket
@@ -220,8 +220,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ResultLocationFolder. 
         /// <para>
-        /// Folder in an Amazon S3 bucket where AWS DMS stores the results of this assessment
-        /// run.
+        /// Folder in an Amazon S3 bucket where DMS stores the results of this assessment run.
         /// </para>
         /// </summary>
         public string ResultLocationFolder
@@ -240,7 +239,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property ServiceAccessRoleArn. 
         /// <para>
         /// ARN of the service role used to start the assessment run using the <code>StartReplicationTaskAssessmentRun</code>
-        /// operation.
+        /// operation. The role must allow the <code>iam:PassRole</code> action.
         /// </para>
         /// </summary>
         public string ServiceAccessRoleArn

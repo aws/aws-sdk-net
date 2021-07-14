@@ -34,12 +34,12 @@ namespace Amazon.DatabaseMigrationService.Model
     /// 
     ///  
     /// <para>
-    /// AWS DMS requires that your account have certain roles with appropriate permissions
-    /// before you can create a replication instance. For information on the required roles,
-    /// see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.APIRole">Creating
-    /// the IAM Roles to Use With the AWS CLI and AWS DMS API</a>. For information on the
-    /// required permissions, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.IAMPermissions">IAM
-    /// Permissions Needed to Use AWS DMS</a>.
+    /// DMS requires that your account have certain roles with appropriate permissions before
+    /// you can create a replication instance. For information on the required roles, see
+    /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.APIRole">Creating
+    /// the IAM Roles to Use With the CLI and DMS API</a>. For information on the required
+    /// permissions, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.IAMPermissions">IAM
+    /// Permissions Needed to Use DMS</a>.
     /// </para>
     /// </summary>
     public partial class CreateReplicationInstanceRequest : AmazonDatabaseMigrationServiceRequest
@@ -107,8 +107,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
         /// The Availability Zone where the replication instance will be created. The default
-        /// value is a random, system-chosen Availability Zone in the endpoint's AWS Region, for
-        /// example: <code>us-east-1d</code> 
+        /// value is a random, system-chosen Availability Zone in the endpoint's Region, for example:
+        /// <code>us-east-1d</code> 
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -171,17 +171,17 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// An AWS KMS key identifier that is used to encrypt the data on the replication instance.
+        /// An KMS key identifier that is used to encrypt the data on the replication instance.
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS
-        /// uses your default encryption key.
+        /// If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses
+        /// your default encryption key.
         /// </para>
         ///  
         /// <para>
-        /// AWS KMS creates the default encryption key for your AWS account. Your AWS account
-        /// has a different default encryption key for each AWS Region.
+        /// KMS creates the default encryption key for your account. Your account has a different
+        /// default encryption key for each Region.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -228,8 +228,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: A 30-minute window selected at random from an 8-hour block of time per AWS
-        /// Region, occurring on a random day of the week.
+        /// Default: A 30-minute window selected at random from an 8-hour block of time per Region,
+        /// occurring on a random day of the week.
         /// </para>
         ///  
         /// <para>
@@ -283,7 +283,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// For more information on the settings and capacities for the available replication
         /// instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-        /// Selecting the right AWS DMS replication instance for your migration</a>. 
+        /// Selecting the right DMS replication instance for your migration</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -365,8 +365,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive
         /// hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>.
         /// For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>.
-        /// If you don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
-        /// default identifier value for the end of <code>EndpointArn</code>.
+        /// If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
+        /// identifier value for the end of <code>EndpointArn</code>.
         /// </para>
         /// </summary>
         public string ResourceIdentifier

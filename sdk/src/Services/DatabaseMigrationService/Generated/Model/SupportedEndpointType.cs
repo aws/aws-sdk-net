@@ -104,9 +104,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationInstanceEngineMinimumVersion. 
         /// <para>
-        /// The earliest AWS DMS engine version that supports this endpoint engine. Note that
-        /// endpoint engines released with AWS DMS versions earlier than 3.1.1 do not return a
-        /// value for this parameter.
+        /// The earliest DMS engine version that supports this endpoint engine. Note that endpoint
+        /// engines released with DMS versions earlier than 3.1.1 do not return a value for this
+        /// parameter.
         /// </para>
         /// </summary>
         public string ReplicationInstanceEngineMinimumVersion
@@ -124,7 +124,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SupportsCDC. 
         /// <para>
-        /// Indicates if Change Data Capture (CDC) is supported.
+        /// Indicates if change data capture (CDC) is supported.
         /// </para>
         /// </summary>
         public bool SupportsCDC
