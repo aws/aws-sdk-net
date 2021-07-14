@@ -33,26 +33,25 @@ namespace Amazon.HealthLake.Model
     /// </summary>
     public partial class OutputDataConfig
     {
-        private string _s3Uri;
+        private S3Configuration _s3Configuration;
 
         /// <summary>
-        /// Gets and sets the property S3Uri. 
+        /// Gets and sets the property S3Configuration. 
         /// <para>
-        /// The S3Uri is the user specified S3 location to which data will be exported from a
-        /// FHIR Data Store.
+        ///  The output data configuration that was supplied when the export job was created.
+        /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
-        public string S3Uri
+        public S3Configuration S3Configuration
         {
-            get { return this._s3Uri; }
-            set { this._s3Uri = value; }
+            get { return this._s3Configuration; }
+            set { this._s3Configuration = value; }
         }
 
-        // Check to see if S3Uri property is set
-        internal bool IsSetS3Uri()
+        // Check to see if S3Configuration property is set
+        internal bool IsSetS3Configuration()
         {
-            return this._s3Uri != null;
+            return this._s3Configuration != null;
         }
 
     }

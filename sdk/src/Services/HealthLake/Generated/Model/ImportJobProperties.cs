@@ -40,6 +40,7 @@ namespace Amazon.HealthLake.Model
         private InputDataConfig _inputDataConfig;
         private string _jobId;
         private string _jobName;
+        private OutputDataConfig _jobOutputDataConfig;
         private JobStatus _jobStatus;
         private string _message;
         private DateTime? _submitTime;
@@ -155,6 +156,21 @@ namespace Amazon.HealthLake.Model
         internal bool IsSetJobName()
         {
             return this._jobName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobOutputDataConfig.
+        /// </summary>
+        public OutputDataConfig JobOutputDataConfig
+        {
+            get { return this._jobOutputDataConfig; }
+            set { this._jobOutputDataConfig = value; }
+        }
+
+        // Check to see if JobOutputDataConfig property is set
+        internal bool IsSetJobOutputDataConfig()
+        {
+            return this._jobOutputDataConfig != null;
         }
 
         /// <summary>

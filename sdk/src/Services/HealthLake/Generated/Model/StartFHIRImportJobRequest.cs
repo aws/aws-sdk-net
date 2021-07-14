@@ -39,6 +39,7 @@ namespace Amazon.HealthLake.Model
         private string _datastoreId;
         private InputDataConfig _inputDataConfig;
         private string _jobName;
+        private OutputDataConfig _jobOutputDataConfig;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -133,6 +134,22 @@ namespace Amazon.HealthLake.Model
         internal bool IsSetJobName()
         {
             return this._jobName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobOutputDataConfig.
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public OutputDataConfig JobOutputDataConfig
+        {
+            get { return this._jobOutputDataConfig; }
+            set { this._jobOutputDataConfig = value; }
+        }
+
+        // Check to see if JobOutputDataConfig property is set
+        internal bool IsSetJobOutputDataConfig()
+        {
+            return this._jobOutputDataConfig != null;
         }
 
     }

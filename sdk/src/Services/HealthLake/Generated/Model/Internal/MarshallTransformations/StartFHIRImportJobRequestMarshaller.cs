@@ -107,6 +107,17 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.JobName);
                 }
 
+                if(publicRequest.IsSetJobOutputDataConfig())
+                {
+                    context.Writer.WritePropertyName("JobOutputDataConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OutputDataConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.JobOutputDataConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

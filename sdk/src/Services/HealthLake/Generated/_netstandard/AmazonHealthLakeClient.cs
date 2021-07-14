@@ -281,6 +281,9 @@ namespace Amazon.HealthLake
         /// </param>
         /// 
         /// <returns>The response from the CreateFHIRDatastore service method, as returned by HealthLake.</returns>
+        /// <exception cref="Amazon.HealthLake.Model.AccessDeniedException">
+        /// Access is denied. Your account is not authorized to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
         /// Unknown error occurs in the service.
         /// </exception>
@@ -540,6 +543,144 @@ namespace Amazon.HealthLake
 
         #endregion
         
+        #region  ListFHIRExportJobs
+
+        internal virtual ListFHIRExportJobsResponse ListFHIRExportJobs(ListFHIRExportJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFHIRExportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFHIRExportJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFHIRExportJobsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all FHIR export jobs associated with an account and their statuses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFHIRExportJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFHIRExportJobs service method, as returned by HealthLake.</returns>
+        /// <exception cref="Amazon.HealthLake.Model.AccessDeniedException">
+        /// Access is denied. Your account is not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
+        /// Unknown error occurs in the service.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
+        /// The requested Data Store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
+        /// The user has exceeded their maximum number of allowed calls to the given API.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ValidationException">
+        /// The user input parameter was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListFHIRExportJobs">REST API Reference for ListFHIRExportJobs Operation</seealso>
+        public virtual Task<ListFHIRExportJobsResponse> ListFHIRExportJobsAsync(ListFHIRExportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFHIRExportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFHIRExportJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListFHIRExportJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListFHIRImportJobs
+
+        internal virtual ListFHIRImportJobsResponse ListFHIRImportJobs(ListFHIRImportJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFHIRImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFHIRImportJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFHIRImportJobsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all FHIR import jobs associated with an account and their statuses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFHIRImportJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFHIRImportJobs service method, as returned by HealthLake.</returns>
+        /// <exception cref="Amazon.HealthLake.Model.AccessDeniedException">
+        /// Access is denied. Your account is not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
+        /// Unknown error occurs in the service.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
+        /// The requested Data Store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
+        /// The user has exceeded their maximum number of allowed calls to the given API.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ValidationException">
+        /// The user input parameter was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListFHIRImportJobs">REST API Reference for ListFHIRImportJobs Operation</seealso>
+        public virtual Task<ListFHIRImportJobsResponse> ListFHIRImportJobsAsync(ListFHIRImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFHIRImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFHIRImportJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListFHIRImportJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+        internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of all existing tags associated with a Data Store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by HealthLake.</returns>
+        /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
+        /// The requested Data Store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ValidationException">
+        /// The user input parameter was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartFHIRExportJob
 
         internal virtual StartFHIRExportJobResponse StartFHIRExportJob(StartFHIRExportJobRequest request)
@@ -634,6 +775,86 @@ namespace Amazon.HealthLake
             options.ResponseUnmarshaller = StartFHIRImportJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartFHIRImportJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds a user specifed key and value tag to a Data Store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by HealthLake.</returns>
+        /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
+        /// The requested Data Store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ValidationException">
+        /// The user input parameter was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes tags from a Data Store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by HealthLake.</returns>
+        /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
+        /// The requested Data Store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ValidationException">
+        /// The user input parameter was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion

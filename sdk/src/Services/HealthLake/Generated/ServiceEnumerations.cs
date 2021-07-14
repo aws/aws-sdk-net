@@ -25,6 +25,56 @@ namespace Amazon.HealthLake
 {
 
     /// <summary>
+    /// Constants used for properties of type CmkType.
+    /// </summary>
+    public class CmkType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_OWNED_KMS_KEY for CmkType
+        /// </summary>
+        public static readonly CmkType AWS_OWNED_KMS_KEY = new CmkType("AWS_OWNED_KMS_KEY");
+        /// <summary>
+        /// Constant CUSTOMER_MANAGED_KMS_KEY for CmkType
+        /// </summary>
+        public static readonly CmkType CUSTOMER_MANAGED_KMS_KEY = new CmkType("CUSTOMER_MANAGED_KMS_KEY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmkType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmkType FindValue(string value)
+        {
+            return FindValue<CmkType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmkType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DatastoreStatus.
     /// </summary>
     public class DatastoreStatus : ConstantClass
@@ -138,6 +188,10 @@ namespace Amazon.HealthLake
         /// Constant COMPLETED for JobStatus
         /// </summary>
         public static readonly JobStatus COMPLETED = new JobStatus("COMPLETED");
+        /// <summary>
+        /// Constant COMPLETED_WITH_ERRORS for JobStatus
+        /// </summary>
+        public static readonly JobStatus COMPLETED_WITH_ERRORS = new JobStatus("COMPLETED_WITH_ERRORS");
         /// <summary>
         /// Constant FAILED for JobStatus
         /// </summary>

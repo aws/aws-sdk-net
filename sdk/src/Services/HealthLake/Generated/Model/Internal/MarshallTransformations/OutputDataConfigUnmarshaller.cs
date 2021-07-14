@@ -64,10 +64,10 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("S3Uri", targetDepth))
+                if (context.TestExpression("S3Configuration", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3Uri = unmarshaller.Unmarshall(context);
+                    var unmarshaller = S3ConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.S3Configuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

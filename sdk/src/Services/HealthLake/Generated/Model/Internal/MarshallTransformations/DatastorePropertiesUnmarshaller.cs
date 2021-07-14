@@ -112,6 +112,12 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                     unmarshalledObject.PreloadDataConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SseConfiguration", targetDepth))
+                {
+                    var unmarshaller = SseConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SseConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

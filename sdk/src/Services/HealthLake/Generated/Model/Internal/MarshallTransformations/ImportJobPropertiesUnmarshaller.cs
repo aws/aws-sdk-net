@@ -100,6 +100,12 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                     unmarshalledObject.JobName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("JobOutputDataConfig", targetDepth))
+                {
+                    var unmarshaller = OutputDataConfigUnmarshaller.Instance;
+                    unmarshalledObject.JobOutputDataConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("JobStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -42,6 +42,7 @@ namespace Amazon.HealthLake.Model
         private DatastoreStatus _datastoreStatus;
         private FHIRVersion _datastoreTypeVersion;
         private PreloadDataConfig _preloadDataConfig;
+        private SseConfiguration _sseConfiguration;
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -194,6 +195,25 @@ namespace Amazon.HealthLake.Model
         internal bool IsSetPreloadDataConfig()
         {
             return this._preloadDataConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SseConfiguration. 
+        /// <para>
+        ///  The server-side encryption key configuration for a customer provided encryption key
+        /// (CMK). 
+        /// </para>
+        /// </summary>
+        public SseConfiguration SseConfiguration
+        {
+            get { return this._sseConfiguration; }
+            set { this._sseConfiguration = value; }
+        }
+
+        // Check to see if SseConfiguration property is set
+        internal bool IsSetSseConfiguration()
+        {
+            return this._sseConfiguration != null;
         }
 
     }

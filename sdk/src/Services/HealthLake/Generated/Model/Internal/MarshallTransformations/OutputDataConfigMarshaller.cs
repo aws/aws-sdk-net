@@ -45,10 +45,15 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OutputDataConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetS3Uri())
+            if(requestObject.IsSetS3Configuration())
             {
-                context.Writer.WritePropertyName("S3Uri");
-                context.Writer.Write(requestObject.S3Uri);
+                context.Writer.WritePropertyName("S3Configuration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3ConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3Configuration, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }

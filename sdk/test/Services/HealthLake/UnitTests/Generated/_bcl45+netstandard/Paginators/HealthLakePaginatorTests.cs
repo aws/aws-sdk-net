@@ -77,5 +77,83 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
             paginator.Responses.ToList();
         }
 
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("HealthLake")]
+        public void ListFHIRExportJobsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListFHIRExportJobsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListFHIRExportJobsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListFHIRExportJobsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListFHIRExportJobs(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListFHIRExportJobs(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("HealthLake")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListFHIRExportJobsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListFHIRExportJobsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListFHIRExportJobsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListFHIRExportJobs(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListFHIRExportJobs(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("HealthLake")]
+        public void ListFHIRImportJobsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListFHIRImportJobsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListFHIRImportJobsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListFHIRImportJobsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListFHIRImportJobs(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListFHIRImportJobs(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("HealthLake")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListFHIRImportJobsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListFHIRImportJobsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListFHIRImportJobsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListFHIRImportJobs(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListFHIRImportJobs(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
     }
 }

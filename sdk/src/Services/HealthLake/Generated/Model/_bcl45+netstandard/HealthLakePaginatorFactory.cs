@@ -42,5 +42,21 @@ namespace Amazon.HealthLake.Model
         {
             return new ListFHIRDatastoresPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListFHIRExportJobs operation
+        ///</summary>
+        public IListFHIRExportJobsPaginator ListFHIRExportJobs(ListFHIRExportJobsRequest request) 
+        {
+            return new ListFHIRExportJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListFHIRImportJobs operation
+        ///</summary>
+        public IListFHIRImportJobsPaginator ListFHIRImportJobs(ListFHIRImportJobsRequest request) 
+        {
+            return new ListFHIRImportJobsPaginator(this.client, request);
+        }
     }
 }
