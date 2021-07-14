@@ -89,6 +89,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetEventBatchingCondition())
+                {
+                    context.Writer.WritePropertyName("EventBatchingCondition");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EventBatchingConditionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EventBatchingCondition, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");

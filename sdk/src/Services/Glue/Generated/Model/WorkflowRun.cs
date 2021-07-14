@@ -39,6 +39,7 @@ namespace Amazon.Glue.Model
         private string _name;
         private string _previousRunId;
         private DateTime? _startedOn;
+        private StartingEventBatchCondition _startingEventBatchCondition;
         private WorkflowRunStatistics _statistics;
         private WorkflowRunStatus _status;
         private string _workflowRunId;
@@ -154,6 +155,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetStartedOn()
         {
             return this._startedOn.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartingEventBatchCondition. 
+        /// <para>
+        /// The batch condition that started the workflow run.
+        /// </para>
+        /// </summary>
+        public StartingEventBatchCondition StartingEventBatchCondition
+        {
+            get { return this._startingEventBatchCondition; }
+            set { this._startingEventBatchCondition = value; }
+        }
+
+        // Check to see if StartingEventBatchCondition property is set
+        internal bool IsSetStartingEventBatchCondition()
+        {
+            return this._startingEventBatchCondition != null;
         }
 
         /// <summary>

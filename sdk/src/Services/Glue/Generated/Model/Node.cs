@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// A node represents an Glue component such as a trigger, or job, etc., that is part
-    /// of a workflow.
+    /// A node represents an Glue component (trigger, crawler, or job) on a workflow graph.
     /// </summary>
     public partial class Node
     {

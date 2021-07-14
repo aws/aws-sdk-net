@@ -29,49 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// An edge represents a directed connection between two components on a workflow graph.
+    /// The batch condition that started the workflow run. Either the number of events in
+    /// the batch size arrived, in which case the BatchSize member is non-zero, or the batch
+    /// window expired, in which case the BatchWindow member is non-zero.
     /// </summary>
-    public partial class Edge
+    public partial class StartingEventBatchCondition
     {
-        private string _destinationId;
-        private string _sourceId;
+        private int? _batchSize;
+        private int? _batchWindow;
 
         /// <summary>
-        /// Gets and sets the property DestinationId. 
+        /// Gets and sets the property BatchSize. 
         /// <para>
-        /// The unique of the node within the workflow where the edge ends.
+        /// Number of events in the batch.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
-        public string DestinationId
+        public int BatchSize
         {
-            get { return this._destinationId; }
-            set { this._destinationId = value; }
+            get { return this._batchSize.GetValueOrDefault(); }
+            set { this._batchSize = value; }
         }
 
-        // Check to see if DestinationId property is set
-        internal bool IsSetDestinationId()
+        // Check to see if BatchSize property is set
+        internal bool IsSetBatchSize()
         {
-            return this._destinationId != null;
+            return this._batchSize.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property SourceId. 
+        /// Gets and sets the property BatchWindow. 
         /// <para>
-        /// The unique of the node within the workflow where the edge starts.
+        /// Duration of the batch window in seconds.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
-        public string SourceId
+        public int BatchWindow
         {
-            get { return this._sourceId; }
-            set { this._sourceId = value; }
+            get { return this._batchWindow.GetValueOrDefault(); }
+            set { this._batchWindow = value; }
         }
 
-        // Check to see if SourceId property is set
-        internal bool IsSetSourceId()
+        // Check to see if BatchWindow property is set
+        internal bool IsSetBatchWindow()
         {
-            return this._sourceId != null;
+            return this._batchWindow.HasValue; 
         }
 
     }

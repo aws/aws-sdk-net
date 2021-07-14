@@ -100,6 +100,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.StartedOn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StartingEventBatchCondition", targetDepth))
+                {
+                    var unmarshaller = StartingEventBatchConditionUnmarshaller.Instance;
+                    unmarshalledObject.StartingEventBatchCondition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Statistics", targetDepth))
                 {
                     var unmarshaller = WorkflowRunStatisticsUnmarshaller.Instance;

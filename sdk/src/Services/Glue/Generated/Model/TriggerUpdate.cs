@@ -36,6 +36,7 @@ namespace Amazon.Glue.Model
     {
         private List<Action> _actions = new List<Action>();
         private string _description;
+        private EventBatchingCondition _eventBatchingCondition;
         private string _name;
         private Predicate _predicate;
         private string _schedule;
@@ -75,6 +76,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventBatchingCondition. 
+        /// <para>
+        /// Batch condition that must be met (specified number of events received or batch time
+        /// window expired) before EventBridge event trigger fires.
+        /// </para>
+        /// </summary>
+        public EventBatchingCondition EventBatchingCondition
+        {
+            get { return this._eventBatchingCondition; }
+            set { this._eventBatchingCondition = value; }
+        }
+
+        // Check to see if EventBatchingCondition property is set
+        internal bool IsSetEventBatchingCondition()
+        {
+            return this._eventBatchingCondition != null;
         }
 
         /// <summary>

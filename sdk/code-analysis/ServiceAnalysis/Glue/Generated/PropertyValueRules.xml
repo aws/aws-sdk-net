@@ -2257,6 +2257,16 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.EventBatchingCondition.BatchSize</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.EventBatchingCondition.BatchWindow</property>
+    <min>1</min>
+    <max>900</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.FindMatchesMetrics.AreaUnderPRCurve</property>
     <min>0</min>
     <max>1</max>

@@ -2669,6 +2669,10 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly TriggerType CONDITIONAL = new TriggerType("CONDITIONAL");
         /// <summary>
+        /// Constant EVENT for TriggerType
+        /// </summary>
+        public static readonly TriggerType EVENT = new TriggerType("EVENT");
+        /// <summary>
         /// Constant ON_DEMAND for TriggerType
         /// </summary>
         public static readonly TriggerType ON_DEMAND = new TriggerType("ON_DEMAND");
