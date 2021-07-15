@@ -63,7 +63,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             request.AddPathResource("{assetModelId}", StringUtils.FromString(publicRequest.AssetModelId));
             request.ResourcePath = "/asset-models/{assetModelId}";
             
-            request.HostPrefix = $"model.";
+            request.HostPrefix = $"api.";
 
             return request;
         }

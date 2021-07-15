@@ -103,7 +103,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             }
 
             
-            request.HostPrefix = $"edge.";
+            request.HostPrefix = $"api.";
 
             return request;
         }

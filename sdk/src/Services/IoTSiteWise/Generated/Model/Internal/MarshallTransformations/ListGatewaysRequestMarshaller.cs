@@ -67,7 +67,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             request.ResourcePath = "/20200301/gateways";
             request.UseQueryString = true;
             
-            request.HostPrefix = $"edge.";
+            request.HostPrefix = $"api.";
 
             return request;
         }

@@ -88,6 +88,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
+            
+            request.HostPrefix = $"api.";
 
             return request;
         }

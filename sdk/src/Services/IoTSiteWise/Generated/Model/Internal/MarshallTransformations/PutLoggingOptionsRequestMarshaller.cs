@@ -83,7 +83,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             }
 
             
-            request.HostPrefix = $"model.";
+            request.HostPrefix = $"api.";
 
             return request;
         }

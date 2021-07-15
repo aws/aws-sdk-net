@@ -63,6 +63,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 request.Parameters.Add("resourceArn", StringUtils.FromString(publicRequest.ResourceArn));
             request.ResourcePath = "/tags";
             request.UseQueryString = true;
+            
+            request.HostPrefix = $"api.";
 
             return request;
         }

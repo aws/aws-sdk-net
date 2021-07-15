@@ -60,7 +60,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 
             request.ResourcePath = "/logging";
             
-            request.HostPrefix = $"model.";
+            request.HostPrefix = $"api.";
 
             return request;
         }

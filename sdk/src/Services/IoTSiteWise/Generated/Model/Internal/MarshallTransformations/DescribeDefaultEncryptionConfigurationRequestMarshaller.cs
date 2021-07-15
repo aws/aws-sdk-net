@@ -59,6 +59,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             request.ResourcePath = "/configuration/account/encryption";
+            
+            request.HostPrefix = $"api.";
 
             return request;
         }

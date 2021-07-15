@@ -76,7 +76,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             request.ResourcePath = "/assets/{assetId}/hierarchies";
             request.UseQueryString = true;
             
-            request.HostPrefix = $"model.";
+            request.HostPrefix = $"api.";
 
             return request;
         }

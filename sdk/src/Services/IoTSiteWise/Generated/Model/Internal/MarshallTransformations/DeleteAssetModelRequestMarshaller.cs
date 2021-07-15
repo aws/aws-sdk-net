@@ -70,7 +70,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             request.ResourcePath = "/asset-models/{assetModelId}";
             request.UseQueryString = true;
             
-            request.HostPrefix = $"model.";
+            request.HostPrefix = $"api.";
 
             return request;
         }

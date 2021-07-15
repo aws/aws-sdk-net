@@ -63,7 +63,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             request.AddPathResource("{gatewayId}", StringUtils.FromString(publicRequest.GatewayId));
             request.ResourcePath = "/20200301/gateways/{gatewayId}";
             
-            request.HostPrefix = $"edge.";
+            request.HostPrefix = $"api.";
 
             return request;
         }
