@@ -5189,6 +5189,64 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type InstanceEventWindowState.
+    /// </summary>
+    public class InstanceEventWindowState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for InstanceEventWindowState
+        /// </summary>
+        public static readonly InstanceEventWindowState Active = new InstanceEventWindowState("active");
+        /// <summary>
+        /// Constant Creating for InstanceEventWindowState
+        /// </summary>
+        public static readonly InstanceEventWindowState Creating = new InstanceEventWindowState("creating");
+        /// <summary>
+        /// Constant Deleted for InstanceEventWindowState
+        /// </summary>
+        public static readonly InstanceEventWindowState Deleted = new InstanceEventWindowState("deleted");
+        /// <summary>
+        /// Constant Deleting for InstanceEventWindowState
+        /// </summary>
+        public static readonly InstanceEventWindowState Deleting = new InstanceEventWindowState("deleting");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceEventWindowState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceEventWindowState FindValue(string value)
+        {
+            return FindValue<InstanceEventWindowState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceEventWindowState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceHealthStatus.
     /// </summary>
     public class InstanceHealthStatus : ConstantClass
@@ -10139,6 +10197,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType Instance = new ResourceType("instance");
         /// <summary>
+        /// Constant InstanceEventWindow for ResourceType
+        /// </summary>
+        public static readonly ResourceType InstanceEventWindow = new ResourceType("instance-event-window");
+        /// <summary>
         /// Constant InternetGateway for ResourceType
         /// </summary>
         public static readonly ResourceType InternetGateway = new ResourceType("internet-gateway");
@@ -14162,6 +14224,76 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VpnStaticRouteSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WeekDay.
+    /// </summary>
+    public class WeekDay : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Friday for WeekDay
+        /// </summary>
+        public static readonly WeekDay Friday = new WeekDay("friday");
+        /// <summary>
+        /// Constant Monday for WeekDay
+        /// </summary>
+        public static readonly WeekDay Monday = new WeekDay("monday");
+        /// <summary>
+        /// Constant Saturday for WeekDay
+        /// </summary>
+        public static readonly WeekDay Saturday = new WeekDay("saturday");
+        /// <summary>
+        /// Constant Sunday for WeekDay
+        /// </summary>
+        public static readonly WeekDay Sunday = new WeekDay("sunday");
+        /// <summary>
+        /// Constant Thursday for WeekDay
+        /// </summary>
+        public static readonly WeekDay Thursday = new WeekDay("thursday");
+        /// <summary>
+        /// Constant Tuesday for WeekDay
+        /// </summary>
+        public static readonly WeekDay Tuesday = new WeekDay("tuesday");
+        /// <summary>
+        /// Constant Wednesday for WeekDay
+        /// </summary>
+        public static readonly WeekDay Wednesday = new WeekDay("wednesday");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WeekDay(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WeekDay FindValue(string value)
+        {
+            return FindValue<WeekDay>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WeekDay(string value)
         {
             return FindValue(value);
         }

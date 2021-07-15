@@ -29,35 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeregisterInstanceEventNotificationAttributes operation.
-    /// c
-    /// 
-    ///  
-    /// <para>
-    /// Deregisters tag keys to prevent tags that have the specified tag keys from being included
-    /// in scheduled event notifications for resources in the Region.
-    /// </para>
+    /// This is the response object from the ModifyInstanceEventWindow operation.
     /// </summary>
-    public partial class DeregisterInstanceEventNotificationAttributesRequest : AmazonEC2Request
+    public partial class ModifyInstanceEventWindowResponse : AmazonWebServiceResponse
     {
-        private DeregisterInstanceTagAttributeRequest _instanceTagAttribute;
+        private InstanceEventWindow _instanceEventWindow;
 
         /// <summary>
-        /// Gets and sets the property InstanceTagAttribute. 
+        /// Gets and sets the property InstanceEventWindow. 
         /// <para>
-        /// Information about the tag keys to deregister.
+        /// Information about the event window.
         /// </para>
         /// </summary>
-        public DeregisterInstanceTagAttributeRequest InstanceTagAttribute
+        public InstanceEventWindow InstanceEventWindow
         {
-            get { return this._instanceTagAttribute; }
-            set { this._instanceTagAttribute = value; }
+            get { return this._instanceEventWindow; }
+            set { this._instanceEventWindow = value; }
         }
 
-        // Check to see if InstanceTagAttribute property is set
-        internal bool IsSetInstanceTagAttribute()
+        // Check to see if InstanceEventWindow property is set
+        internal bool IsSetInstanceEventWindow()
         {
-            return this._instanceTagAttribute != null;
+            return this._instanceEventWindow != null;
         }
 
     }

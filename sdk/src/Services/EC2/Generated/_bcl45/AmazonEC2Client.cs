@@ -1528,6 +1528,61 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AssociateInstanceEventWindow
+
+
+        /// <summary>
+        /// Associates one or more targets with an event window. Only one type of target (instance
+        /// IDs, Dedicated Host IDs, or tags) can be specified with an event window.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+        /// event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateInstanceEventWindow service method.</param>
+        /// 
+        /// <returns>The response from the AssociateInstanceEventWindow service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateInstanceEventWindow">REST API Reference for AssociateInstanceEventWindow Operation</seealso>
+        public virtual AssociateInstanceEventWindowResponse AssociateInstanceEventWindow(AssociateInstanceEventWindowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateInstanceEventWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateInstanceEventWindowResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateInstanceEventWindowResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates one or more targets with an event window. Only one type of target (instance
+        /// IDs, Dedicated Host IDs, or tags) can be specified with an event window.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+        /// event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateInstanceEventWindow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateInstanceEventWindow service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateInstanceEventWindow">REST API Reference for AssociateInstanceEventWindow Operation</seealso>
+        public virtual Task<AssociateInstanceEventWindowResponse> AssociateInstanceEventWindowAsync(AssociateInstanceEventWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateInstanceEventWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateInstanceEventWindowResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateInstanceEventWindowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateRouteTable
 
 
@@ -4158,6 +4213,127 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = CreateImageResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateImageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateInstanceEventWindow
+
+
+        /// <summary>
+        /// Creates an event window in which scheduled events for the associated Amazon EC2 instances
+        /// can run.
+        /// 
+        ///  
+        /// <para>
+        /// You can define either a set of time ranges or a cron expression when creating the
+        /// event window, but not both. All event window times are in UTC.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can create up to 200 event windows per Amazon Web Services Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you create the event window, targets (instance IDs, Dedicated Host IDs, or tags)
+        /// are not yet associated with it. To ensure that the event window can be used, you must
+        /// associate one or more targets with it by using the <a>AssociateInstanceEventWindow</a>
+        /// API.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Event windows are applicable only for scheduled events that stop, reboot, or terminate
+        /// instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// Event windows are <i>not</i> applicable for:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Expedited scheduled events and network maintenance events. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Unscheduled maintenance such as AutoRecovery and unplanned reboots.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+        /// event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInstanceEventWindow service method.</param>
+        /// 
+        /// <returns>The response from the CreateInstanceEventWindow service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceEventWindow">REST API Reference for CreateInstanceEventWindow Operation</seealso>
+        public virtual CreateInstanceEventWindowResponse CreateInstanceEventWindow(CreateInstanceEventWindowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInstanceEventWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInstanceEventWindowResponseUnmarshaller.Instance;
+
+            return Invoke<CreateInstanceEventWindowResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an event window in which scheduled events for the associated Amazon EC2 instances
+        /// can run.
+        /// 
+        ///  
+        /// <para>
+        /// You can define either a set of time ranges or a cron expression when creating the
+        /// event window, but not both. All event window times are in UTC.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can create up to 200 event windows per Amazon Web Services Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you create the event window, targets (instance IDs, Dedicated Host IDs, or tags)
+        /// are not yet associated with it. To ensure that the event window can be used, you must
+        /// associate one or more targets with it by using the <a>AssociateInstanceEventWindow</a>
+        /// API.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Event windows are applicable only for scheduled events that stop, reboot, or terminate
+        /// instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// Event windows are <i>not</i> applicable for:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Expedited scheduled events and network maintenance events. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Unscheduled maintenance such as AutoRecovery and unplanned reboots.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+        /// event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInstanceEventWindow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateInstanceEventWindow service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceEventWindow">REST API Reference for CreateInstanceEventWindow Operation</seealso>
+        public virtual Task<CreateInstanceEventWindowResponse> CreateInstanceEventWindowAsync(CreateInstanceEventWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInstanceEventWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInstanceEventWindowResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateInstanceEventWindowResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8082,6 +8258,59 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteInstanceEventWindow
+
+
+        /// <summary>
+        /// Deletes the specified event window.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+        /// event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInstanceEventWindow service method.</param>
+        /// 
+        /// <returns>The response from the DeleteInstanceEventWindow service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInstanceEventWindow">REST API Reference for DeleteInstanceEventWindow Operation</seealso>
+        public virtual DeleteInstanceEventWindowResponse DeleteInstanceEventWindow(DeleteInstanceEventWindowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInstanceEventWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInstanceEventWindowResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteInstanceEventWindowResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the specified event window.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+        /// event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInstanceEventWindow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteInstanceEventWindow service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInstanceEventWindow">REST API Reference for DeleteInstanceEventWindow Operation</seealso>
+        public virtual Task<DeleteInstanceEventWindowResponse> DeleteInstanceEventWindowAsync(DeleteInstanceEventWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInstanceEventWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInstanceEventWindowResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteInstanceEventWindowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteInternetGateway
 
 
@@ -10361,8 +10590,13 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// c
+        /// 
+        ///  
+        /// <para>
         /// Deregisters tag keys to prevent tags that have the specified tag keys from being included
         /// in scheduled event notifications for resources in the Region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterInstanceEventNotificationAttributes service method.</param>
         /// 
@@ -10379,8 +10613,13 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// c
+        /// 
+        ///  
+        /// <para>
         /// Deregisters tag keys to prevent tags that have the specified tag keys from being included
         /// in scheduled event notifications for resources in the Region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterInstanceEventNotificationAttributes service method.</param>
         /// <param name="cancellationToken">
@@ -13199,6 +13438,77 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DescribeInstanceEventNotificationAttributesResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeInstanceEventNotificationAttributesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeInstanceEventWindows
+
+
+        /// <summary>
+        /// Describes the specified event windows or all event windows.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify event window IDs, the output includes information for only the specified
+        /// event windows. If you specify filters, the output includes information for only those
+        /// event windows that meet the filter criteria. If you do not specify event windows IDs
+        /// or filters, the output includes information for all event windows, which can affect
+        /// performance. We recommend that you use pagination to ensure that the operation returns
+        /// quickly and successfully. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+        /// event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceEventWindows service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstanceEventWindows service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventWindows">REST API Reference for DescribeInstanceEventWindows Operation</seealso>
+        public virtual DescribeInstanceEventWindowsResponse DescribeInstanceEventWindows(DescribeInstanceEventWindowsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceEventWindowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceEventWindowsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstanceEventWindowsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the specified event windows or all event windows.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify event window IDs, the output includes information for only the specified
+        /// event windows. If you specify filters, the output includes information for only those
+        /// event windows that meet the filter criteria. If you do not specify event windows IDs
+        /// or filters, the output includes information for all event windows, which can affect
+        /// performance. We recommend that you use pagination to ensure that the operation returns
+        /// quickly and successfully. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+        /// event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceEventWindows service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInstanceEventWindows service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventWindows">REST API Reference for DescribeInstanceEventWindows Operation</seealso>
+        public virtual Task<DescribeInstanceEventWindowsResponse> DescribeInstanceEventWindowsAsync(DescribeInstanceEventWindowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceEventWindowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceEventWindowsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeInstanceEventWindowsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -19801,6 +20111,59 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisassociateInstanceEventWindow
+
+
+        /// <summary>
+        /// Disassociates one or more targets from an event window.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+        /// event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateInstanceEventWindow service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateInstanceEventWindow service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateInstanceEventWindow">REST API Reference for DisassociateInstanceEventWindow Operation</seealso>
+        public virtual DisassociateInstanceEventWindowResponse DisassociateInstanceEventWindow(DisassociateInstanceEventWindowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateInstanceEventWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateInstanceEventWindowResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateInstanceEventWindowResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disassociates one or more targets from an event window.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+        /// event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateInstanceEventWindow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateInstanceEventWindow service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateInstanceEventWindow">REST API Reference for DisassociateInstanceEventWindow Operation</seealso>
+        public virtual Task<DisassociateInstanceEventWindowResponse> DisassociateInstanceEventWindowAsync(DisassociateInstanceEventWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateInstanceEventWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateInstanceEventWindowResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateInstanceEventWindowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateRouteTable
 
 
@@ -23413,6 +23776,89 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ModifyInstanceEventStartTimeResponseUnmarshaller.Instance;
             
             return InvokeAsync<ModifyInstanceEventStartTimeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyInstanceEventWindow
+
+
+        /// <summary>
+        /// Modifies the specified event window.
+        /// 
+        ///  
+        /// <para>
+        /// You can define either a set of time ranges or a cron expression when modifying the
+        /// event window, but not both.
+        /// </para>
+        ///  
+        /// <para>
+        /// To modify the targets associated with the event window, use the <a>AssociateInstanceEventWindow</a>
+        /// and <a>DisassociateInstanceEventWindow</a> API.
+        /// </para>
+        ///  
+        /// <para>
+        /// If Amazon Web Services has already scheduled an event, modifying an event window won't
+        /// change the time of the scheduled event.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+        /// event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceEventWindow service method.</param>
+        /// 
+        /// <returns>The response from the ModifyInstanceEventWindow service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventWindow">REST API Reference for ModifyInstanceEventWindow Operation</seealso>
+        public virtual ModifyInstanceEventWindowResponse ModifyInstanceEventWindow(ModifyInstanceEventWindowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyInstanceEventWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyInstanceEventWindowResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyInstanceEventWindowResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies the specified event window.
+        /// 
+        ///  
+        /// <para>
+        /// You can define either a set of time ranges or a cron expression when modifying the
+        /// event window, but not both.
+        /// </para>
+        ///  
+        /// <para>
+        /// To modify the targets associated with the event window, use the <a>AssociateInstanceEventWindow</a>
+        /// and <a>DisassociateInstanceEventWindow</a> API.
+        /// </para>
+        ///  
+        /// <para>
+        /// If Amazon Web Services has already scheduled an event, modifying an event window won't
+        /// change the time of the scheduled event.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+        /// event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceEventWindow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyInstanceEventWindow service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventWindow">REST API Reference for ModifyInstanceEventWindow Operation</seealso>
+        public virtual Task<ModifyInstanceEventWindowResponse> ModifyInstanceEventWindowAsync(ModifyInstanceEventWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyInstanceEventWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyInstanceEventWindowResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyInstanceEventWindowResponse>(request, options, cancellationToken);
         }
 
         #endregion

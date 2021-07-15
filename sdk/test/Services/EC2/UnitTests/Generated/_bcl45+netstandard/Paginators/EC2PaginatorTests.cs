@@ -1017,6 +1017,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("EC2")]
+        public void DescribeInstanceEventWindowsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeInstanceEventWindowsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeInstanceEventWindowsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeInstanceEventWindowsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.DescribeInstanceEventWindows(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeInstanceEventWindows(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeInstanceEventWindowsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeInstanceEventWindowsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeInstanceEventWindowsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.DescribeInstanceEventWindows(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeInstanceEventWindows(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
         public void DescribeInstancesTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<DescribeInstancesRequest>();

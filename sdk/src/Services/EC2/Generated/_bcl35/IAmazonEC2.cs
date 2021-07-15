@@ -1014,6 +1014,53 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AssociateInstanceEventWindow
+
+
+        /// <summary>
+        /// Associates one or more targets with an event window. Only one type of target (instance
+        /// IDs, Dedicated Host IDs, or tags) can be specified with an event window.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+        /// event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateInstanceEventWindow service method.</param>
+        /// 
+        /// <returns>The response from the AssociateInstanceEventWindow service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateInstanceEventWindow">REST API Reference for AssociateInstanceEventWindow Operation</seealso>
+        AssociateInstanceEventWindowResponse AssociateInstanceEventWindow(AssociateInstanceEventWindowRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateInstanceEventWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateInstanceEventWindow operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateInstanceEventWindow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateInstanceEventWindow">REST API Reference for AssociateInstanceEventWindow Operation</seealso>
+        IAsyncResult BeginAssociateInstanceEventWindow(AssociateInstanceEventWindowRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateInstanceEventWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateInstanceEventWindow.</param>
+        /// 
+        /// <returns>Returns a  AssociateInstanceEventWindowResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateInstanceEventWindow">REST API Reference for AssociateInstanceEventWindow Operation</seealso>
+        AssociateInstanceEventWindowResponse EndAssociateInstanceEventWindow(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AssociateRouteTable
 
 
@@ -3108,6 +3155,86 @@ namespace Amazon.EC2
         /// <returns>Returns a  CreateImageResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImage">REST API Reference for CreateImage Operation</seealso>
         CreateImageResponse EndCreateImage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateInstanceEventWindow
+
+
+        /// <summary>
+        /// Creates an event window in which scheduled events for the associated Amazon EC2 instances
+        /// can run.
+        /// 
+        ///  
+        /// <para>
+        /// You can define either a set of time ranges or a cron expression when creating the
+        /// event window, but not both. All event window times are in UTC.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can create up to 200 event windows per Amazon Web Services Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you create the event window, targets (instance IDs, Dedicated Host IDs, or tags)
+        /// are not yet associated with it. To ensure that the event window can be used, you must
+        /// associate one or more targets with it by using the <a>AssociateInstanceEventWindow</a>
+        /// API.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Event windows are applicable only for scheduled events that stop, reboot, or terminate
+        /// instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// Event windows are <i>not</i> applicable for:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Expedited scheduled events and network maintenance events. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Unscheduled maintenance such as AutoRecovery and unplanned reboots.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+        /// event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInstanceEventWindow service method.</param>
+        /// 
+        /// <returns>The response from the CreateInstanceEventWindow service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceEventWindow">REST API Reference for CreateInstanceEventWindow Operation</seealso>
+        CreateInstanceEventWindowResponse CreateInstanceEventWindow(CreateInstanceEventWindowRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateInstanceEventWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateInstanceEventWindow operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInstanceEventWindow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceEventWindow">REST API Reference for CreateInstanceEventWindow Operation</seealso>
+        IAsyncResult BeginCreateInstanceEventWindow(CreateInstanceEventWindowRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateInstanceEventWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInstanceEventWindow.</param>
+        /// 
+        /// <returns>Returns a  CreateInstanceEventWindowResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceEventWindow">REST API Reference for CreateInstanceEventWindow Operation</seealso>
+        CreateInstanceEventWindowResponse EndCreateInstanceEventWindow(IAsyncResult asyncResult);
 
         #endregion
         
@@ -6197,6 +6324,52 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteInstanceEventWindow
+
+
+        /// <summary>
+        /// Deletes the specified event window.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+        /// event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInstanceEventWindow service method.</param>
+        /// 
+        /// <returns>The response from the DeleteInstanceEventWindow service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInstanceEventWindow">REST API Reference for DeleteInstanceEventWindow Operation</seealso>
+        DeleteInstanceEventWindowResponse DeleteInstanceEventWindow(DeleteInstanceEventWindowRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteInstanceEventWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInstanceEventWindow operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteInstanceEventWindow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInstanceEventWindow">REST API Reference for DeleteInstanceEventWindow Operation</seealso>
+        IAsyncResult BeginDeleteInstanceEventWindow(DeleteInstanceEventWindowRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteInstanceEventWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInstanceEventWindow.</param>
+        /// 
+        /// <returns>Returns a  DeleteInstanceEventWindowResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInstanceEventWindow">REST API Reference for DeleteInstanceEventWindow Operation</seealso>
+        DeleteInstanceEventWindowResponse EndDeleteInstanceEventWindow(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteInternetGateway
 
 
@@ -8250,8 +8423,13 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// c
+        /// 
+        ///  
+        /// <para>
         /// Deregisters tag keys to prevent tags that have the specified tag keys from being included
         /// in scheduled event notifications for resources in the Region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterInstanceEventNotificationAttributes service method.</param>
         /// 
@@ -10518,6 +10696,61 @@ namespace Amazon.EC2
         /// <returns>Returns a  DescribeInstanceEventNotificationAttributesResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventNotificationAttributes">REST API Reference for DescribeInstanceEventNotificationAttributes Operation</seealso>
         DescribeInstanceEventNotificationAttributesResponse EndDescribeInstanceEventNotificationAttributes(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeInstanceEventWindows
+
+
+        /// <summary>
+        /// Describes the specified event windows or all event windows.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify event window IDs, the output includes information for only the specified
+        /// event windows. If you specify filters, the output includes information for only those
+        /// event windows that meet the filter criteria. If you do not specify event windows IDs
+        /// or filters, the output includes information for all event windows, which can affect
+        /// performance. We recommend that you use pagination to ensure that the operation returns
+        /// quickly and successfully. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+        /// event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceEventWindows service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstanceEventWindows service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventWindows">REST API Reference for DescribeInstanceEventWindows Operation</seealso>
+        DescribeInstanceEventWindowsResponse DescribeInstanceEventWindows(DescribeInstanceEventWindowsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstanceEventWindows operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceEventWindows operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstanceEventWindows
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventWindows">REST API Reference for DescribeInstanceEventWindows Operation</seealso>
+        IAsyncResult BeginDescribeInstanceEventWindows(DescribeInstanceEventWindowsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInstanceEventWindows operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstanceEventWindows.</param>
+        /// 
+        /// <returns>Returns a  DescribeInstanceEventWindowsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventWindows">REST API Reference for DescribeInstanceEventWindows Operation</seealso>
+        DescribeInstanceEventWindowsResponse EndDescribeInstanceEventWindows(IAsyncResult asyncResult);
 
         #endregion
         
@@ -15601,6 +15834,52 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisassociateInstanceEventWindow
+
+
+        /// <summary>
+        /// Disassociates one or more targets from an event window.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+        /// event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateInstanceEventWindow service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateInstanceEventWindow service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateInstanceEventWindow">REST API Reference for DisassociateInstanceEventWindow Operation</seealso>
+        DisassociateInstanceEventWindowResponse DisassociateInstanceEventWindow(DisassociateInstanceEventWindowRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateInstanceEventWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateInstanceEventWindow operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateInstanceEventWindow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateInstanceEventWindow">REST API Reference for DisassociateInstanceEventWindow Operation</seealso>
+        IAsyncResult BeginDisassociateInstanceEventWindow(DisassociateInstanceEventWindowRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateInstanceEventWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateInstanceEventWindow.</param>
+        /// 
+        /// <returns>Returns a  DisassociateInstanceEventWindowResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateInstanceEventWindow">REST API Reference for DisassociateInstanceEventWindow Operation</seealso>
+        DisassociateInstanceEventWindowResponse EndDisassociateInstanceEventWindow(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisassociateRouteTable
 
 
@@ -18654,6 +18933,67 @@ namespace Amazon.EC2
         /// <returns>Returns a  ModifyInstanceEventStartTimeResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventStartTime">REST API Reference for ModifyInstanceEventStartTime Operation</seealso>
         ModifyInstanceEventStartTimeResponse EndModifyInstanceEventStartTime(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyInstanceEventWindow
+
+
+        /// <summary>
+        /// Modifies the specified event window.
+        /// 
+        ///  
+        /// <para>
+        /// You can define either a set of time ranges or a cron expression when modifying the
+        /// event window, but not both.
+        /// </para>
+        ///  
+        /// <para>
+        /// To modify the targets associated with the event window, use the <a>AssociateInstanceEventWindow</a>
+        /// and <a>DisassociateInstanceEventWindow</a> API.
+        /// </para>
+        ///  
+        /// <para>
+        /// If Amazon Web Services has already scheduled an event, modifying an event window won't
+        /// change the time of the scheduled event.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+        /// event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceEventWindow service method.</param>
+        /// 
+        /// <returns>The response from the ModifyInstanceEventWindow service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventWindow">REST API Reference for ModifyInstanceEventWindow Operation</seealso>
+        ModifyInstanceEventWindowResponse ModifyInstanceEventWindow(ModifyInstanceEventWindowRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyInstanceEventWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceEventWindow operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyInstanceEventWindow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventWindow">REST API Reference for ModifyInstanceEventWindow Operation</seealso>
+        IAsyncResult BeginModifyInstanceEventWindow(ModifyInstanceEventWindowRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyInstanceEventWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyInstanceEventWindow.</param>
+        /// 
+        /// <returns>Returns a  ModifyInstanceEventWindowResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventWindow">REST API Reference for ModifyInstanceEventWindow Operation</seealso>
+        ModifyInstanceEventWindowResponse EndModifyInstanceEventWindow(IAsyncResult asyncResult);
 
         #endregion
         

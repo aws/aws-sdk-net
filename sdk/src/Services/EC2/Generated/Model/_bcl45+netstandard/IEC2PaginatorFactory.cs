@@ -151,6 +151,11 @@ namespace Amazon.EC2.Model
         IDescribeInstanceCreditSpecificationsPaginator DescribeInstanceCreditSpecifications(DescribeInstanceCreditSpecificationsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeInstanceEventWindows operation
+        ///</summary>
+        IDescribeInstanceEventWindowsPaginator DescribeInstanceEventWindows(DescribeInstanceEventWindowsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeInstances operation
         ///</summary>
         IDescribeInstancesPaginator DescribeInstances(DescribeInstancesRequest request);

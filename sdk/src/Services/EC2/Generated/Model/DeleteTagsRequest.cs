@@ -93,7 +93,8 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// If you omit this parameter, we delete all user-defined tags for the specified resources.
-        /// We do not delete AWS-generated tags (tags that have the <code>aws:</code> prefix).
+        /// We do not delete Amazon Web Services-generated tags (tags that have the <code>aws:</code>
+        /// prefix).
         /// </para>
         /// </summary>
         public List<Tag> Tags

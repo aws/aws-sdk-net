@@ -236,6 +236,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeInstanceEventWindows operation
+        ///</summary>
+        public IDescribeInstanceEventWindowsPaginator DescribeInstanceEventWindows(DescribeInstanceEventWindowsRequest request) 
+        {
+            return new DescribeInstanceEventWindowsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeInstances operation
         ///</summary>
         public IDescribeInstancesPaginator DescribeInstances(DescribeInstancesRequest request) 
