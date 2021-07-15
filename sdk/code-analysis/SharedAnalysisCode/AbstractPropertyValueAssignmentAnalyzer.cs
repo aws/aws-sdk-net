@@ -66,7 +66,7 @@ namespace Amazon.CodeAnalysis.Shared
         private const string Category = "Property Values";
 
         DiagnosticDescriptor _minLengthRule;
-        private DiagnosticDescriptor MinLengthRule
+        internal DiagnosticDescriptor MinLengthRule
         {
             get
             {
@@ -87,7 +87,7 @@ namespace Amazon.CodeAnalysis.Shared
         }
 
         DiagnosticDescriptor _maxLengthRule;
-        private DiagnosticDescriptor MaxLengthRule
+        internal DiagnosticDescriptor MaxLengthRule
         {
             get
             {
@@ -107,7 +107,7 @@ namespace Amazon.CodeAnalysis.Shared
         }
 
         DiagnosticDescriptor _patternRule;
-        private DiagnosticDescriptor PatternRule
+        internal DiagnosticDescriptor PatternRule
         {
             get
             {
@@ -127,7 +127,7 @@ namespace Amazon.CodeAnalysis.Shared
         }
 
         DiagnosticDescriptor _minValueRule;
-        private DiagnosticDescriptor MinValueRule
+        internal DiagnosticDescriptor MinValueRule
         {
             get
             {
@@ -148,7 +148,7 @@ namespace Amazon.CodeAnalysis.Shared
         }
 
         DiagnosticDescriptor _maxValueRule;
-        private DiagnosticDescriptor MaxValueRule
+        internal DiagnosticDescriptor MaxValueRule
         {
             get
             {
