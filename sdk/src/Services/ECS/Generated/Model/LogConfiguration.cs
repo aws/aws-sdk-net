@@ -69,7 +69,7 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For tasks on AWS Fargate, because you do not have access to the underlying infrastructure
+    /// For tasks on Fargate, because you do not have access to the underlying infrastructure
     /// your tasks are hosted on, any additional software needed will have to be installed
     /// outside of the task. For example, the Fluentd output aggregators or a remote host
     /// running Logstash to send Gelf logs to.
@@ -89,7 +89,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// For tasks on AWS Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>,
+        /// For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>,
         /// and <code>awsfirelens</code>.
         /// </para>
         ///  

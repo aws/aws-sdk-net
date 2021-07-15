@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code>
+    /// Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code>
     /// deployment. An Amazon ECS task set includes details such as the desired number of
     /// tasks, how many tasks are running, and whether the task set serves production traffic.
     /// </summary>
@@ -142,14 +142,14 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If a task set is created by an AWS CodeDeploy deployment, the <code>externalId</code>
-        /// parameter contains the AWS CodeDeploy deployment ID.
+        /// If a task set is created by an CodeDeploy deployment, the <code>externalId</code>
+        /// parameter contains the CodeDeploy deployment ID.
         /// </para>
         ///  
         /// <para>
         /// If a task set is created for an external deployment and is associated with a service
         /// discovery registry, the <code>externalId</code> parameter contains the <code>ECS_TASK_SET_EXTERNAL_ID</code>
-        /// AWS Cloud Map attribute.
+        /// Cloud Map attribute.
         /// </para>
         /// </summary>
         public string ExternalId
@@ -262,11 +262,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PlatformVersion. 
         /// <para>
-        /// The AWS Fargate platform version on which the tasks in the task set are running. A
-        /// platform version is only specified for tasks run on AWS Fargate. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-        /// Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer
-        /// Guide</i>.
+        /// The Fargate platform version on which the tasks in the task set are running. A platform
+        /// version is only specified for tasks run on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+        /// platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string PlatformVersion
@@ -418,9 +416,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StartedBy. 
         /// <para>
-        /// The tag specified when a task set is started. If the task set is created by an AWS
-        /// CodeDeploy deployment, the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>.
-        /// For a task set created for an external deployment, the startedBy field isn't used.
+        /// The tag specified when a task set is started. If the task set is created by an CodeDeploy
+        /// deployment, the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. For
+        /// a task set created for an external deployment, the startedBy field isn't used.
         /// </para>
         /// </summary>
         public string StartedBy
@@ -508,9 +506,9 @@ namespace Amazon.ECS.Model
         ///  </li> <li> 
         /// <para>
         /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
-        /// of such as a prefix for either keys or values as it is reserved for AWS use. You cannot
-        /// edit or delete tag keys or values with this prefix. Tags with this prefix do not count
-        /// against your tags per resource limit.
+        /// of such as a prefix for either keys or values as it is reserved for Amazon Web Services
+        /// use. You cannot edit or delete tag keys or values with this prefix. Tags with this
+        /// prefix do not count against your tags per resource limit.
         /// </para>
         ///  </li> </ul>
         /// </summary>

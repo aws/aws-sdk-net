@@ -38,9 +38,9 @@ namespace Amazon.ECS.Model
     /// <para>
     /// When you call the <a>CreateCluster</a> API operation, Amazon ECS attempts to create
     /// the Amazon ECS service-linked role for your account so that required resources in
-    /// other AWS services can be managed on your behalf. However, if the IAM user that makes
-    /// the call does not have permissions to create the service-linked role, it is not created.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+    /// other Amazon Web Services services can be managed on your behalf. However, if the
+    /// IAM user that makes the call does not have permissions to create the service-linked
+    /// role, it is not created. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
     /// Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
     /// Developer Guide</i>.
     /// </para>
@@ -72,9 +72,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
-        /// <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers are
-        /// available to all accounts and only need to be associated with a cluster to be used.
+        /// To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+        /// capacity providers. The Fargate capacity providers are available to all accounts and
+        /// only need to be associated with a cluster to be used.
         /// </para>
         ///  
         /// <para>
@@ -219,9 +219,9 @@ namespace Amazon.ECS.Model
         ///  </li> <li> 
         /// <para>
         /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
-        /// of such as a prefix for either keys or values as it is reserved for AWS use. You cannot
-        /// edit or delete tag keys or values with this prefix. Tags with this prefix do not count
-        /// against your tags per resource limit.
+        /// of such as a prefix for either keys or values as it is reserved for Amazon Web Services
+        /// use. You cannot edit or delete tag keys or values with this prefix. Tags with this
+        /// prefix do not count against your tags per resource limit.
         /// </para>
         ///  </li> </ul>
         /// </summary>

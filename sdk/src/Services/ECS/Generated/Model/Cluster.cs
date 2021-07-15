@@ -145,9 +145,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ClusterArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code>
-        /// namespace, followed by the Region of the cluster, the AWS account ID of the cluster
-        /// owner, the <code>cluster</code> namespace, and then the cluster name. For example,
-        /// <code>arn:aws:ecs:region:012345678910:cluster/test</code>.
+        /// namespace, followed by the Region of the cluster, the account ID of the cluster owner,
+        /// the <code>cluster</code> namespace, and then the cluster name. For example, <code>arn:aws:ecs:region:012345678910:cluster/test</code>.
         /// </para>
         /// </summary>
         public string ClusterArn
@@ -430,9 +429,9 @@ namespace Amazon.ECS.Model
         ///  </li> <li> 
         /// <para>
         /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
-        /// of such as a prefix for either keys or values as it is reserved for AWS use. You cannot
-        /// edit or delete tag keys or values with this prefix. Tags with this prefix do not count
-        /// against your tags per resource limit.
+        /// of such as a prefix for either keys or values as it is reserved for Amazon Web Services
+        /// use. You cannot edit or delete tag keys or values with this prefix. Tags with this
+        /// prefix do not count against your tags per resource limit.
         /// </para>
         ///  </li> </ul>
         /// </summary>

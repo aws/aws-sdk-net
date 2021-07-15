@@ -110,7 +110,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property RegistryArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the service registry. The currently supported service
-        /// registry is AWS Cloud Map. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.
+        /// registry is Cloud Map. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.
         /// </para>
         /// </summary>
         public string RegistryArn

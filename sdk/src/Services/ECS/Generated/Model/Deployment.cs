@@ -212,9 +212,8 @@ namespace Amazon.ECS.Model
         /// The platform version on which your tasks in the service are running. A platform version
         /// is only specified for tasks using the Fargate launch type. If one is not specified,
         /// the <code>LATEST</code> platform version is used by default. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-        /// Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
-        /// Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+        /// Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string PlatformVersion

@@ -188,9 +188,9 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS
-        /// container agent permission to make AWS API calls on your behalf. The task execution
-        /// IAM role is required depending on the requirements of your task. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+        /// container agent permission to make Amazon Web Services API calls on your behalf. The
+        /// task execution IAM role is required depending on the requirements of your task. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
         /// ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
@@ -290,7 +290,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// This parameter is not supported for Windows containers or tasks run on AWS Fargate.
+        /// This parameter is not supported for Windows containers or tasks run on Fargate.
         /// </para>
         ///  </note>
         /// </summary>
@@ -321,8 +321,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If your tasks will be run on AWS Fargate, this field is required and you must use
-        /// one of the following values, which determines your range of valid values for the <code>cpu</code>
+        /// If your tasks will be run on Fargate, this field is required and you must use one
+        /// of the following values, which determines your range of valid values for the <code>cpu</code>
         /// parameter:
         /// </para>
         ///  <ul> <li> 
@@ -374,12 +374,14 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// For Amazon ECS tasks on Fargate, the <code>awsvpc</code> network mode is required.
-        /// For Amazon ECS tasks on Amazon EC2 instances, any network mode can be used. If the
-        /// network mode is set to <code>none</code>, you cannot specify port mappings in your
-        /// container definitions, and the tasks containers do not have external connectivity.
-        /// The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking
-        /// performance for containers because they use the EC2 network stack instead of the virtualized
-        /// network stack provided by the <code>bridge</code> mode.
+        /// For Amazon ECS tasks on Amazon EC2 Linux instances, any network mode can be used.
+        /// For Amazon ECS tasks on Amazon EC2 Windows instances, <code>&lt;default&gt;</code>
+        /// or <code>awsvpc</code> can be used. If the network mode is set to <code>none</code>,
+        /// you cannot specify port mappings in your container definitions, and the tasks containers
+        /// do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network
+        /// modes offer the highest networking performance for containers because they use the
+        /// EC2 network stack instead of the virtualized network stack provided by the <code>bridge</code>
+        /// mode.
         /// </para>
         ///  
         /// <para>
@@ -400,23 +402,10 @@ namespace Amazon.ECS.Model
         /// a service or run a task with the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
         /// Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Currently, only Amazon ECS-optimized AMIs, other Amazon Linux variants with the <code>ecs-init</code>
-        /// package, or AWS Fargate infrastructure support the <code>awsvpc</code> network mode.
-        /// 
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// If the network mode is <code>host</code>, you cannot run multiple instantiations of
         /// the same task on a single container instance when port mappings are used.
-        /// </para>
-        ///  
-        /// <para>
-        /// Docker for Windows uses different network modes than Docker for Linux. When you register
-        /// a task definition with Windows containers, you must not specify a network mode. If
-        /// you use the console to register a task definition with Windows containers, you must
-        /// choose the <code>&lt;default&gt;</code> network mode object. 
         /// </para>
         ///  
         /// <para>
@@ -456,7 +445,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is not supported for Windows containers or tasks run on AWS Fargate.
+        /// This parameter is not supported for Windows containers or tasks run on Fargate.
         /// </para>
         ///  </note>
         /// </summary>
@@ -479,7 +468,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is not supported for tasks run on AWS Fargate.
+        /// This parameter is not supported for tasks run on Fargate.
         /// </para>
         ///  </note>
         /// </summary>
@@ -571,7 +560,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is not supported for tasks run on AWS Fargate.
+        /// This parameter is not supported for tasks run on Fargate.
         /// </para>
         ///  </note>
         /// </summary>
@@ -668,9 +657,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TaskRoleArn. 
         /// <para>
-        /// The short name or full Amazon Resource Name (ARN) of the AWS Identity and Access Management
-        /// (IAM) role that grants containers in the task permission to call AWS APIs on your
-        /// behalf. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Amazon
+        /// The short name or full Amazon Resource Name (ARN) of the Identity and Access Management
+        /// role that grants containers in the task permission to call Amazon Web Services APIs
+        /// on your behalf. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Amazon
         /// ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
@@ -703,7 +692,7 @@ namespace Amazon.ECS.Model
         ///  <note> 
         /// <para>
         /// The <code>host</code> and <code>sourcePath</code> parameters are not supported for
-        /// tasks run on AWS Fargate.
+        /// tasks run on Fargate.
         /// </para>
         ///  </note>
         /// </summary>

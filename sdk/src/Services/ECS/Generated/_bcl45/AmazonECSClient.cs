@@ -43,9 +43,9 @@ namespace Amazon.ECS
     /// Amazon Elastic Container Service (Amazon ECS) is a highly scalable, fast, container
     /// management service that makes it easy to run, stop, and manage Docker containers on
     /// a cluster. You can host your cluster on a serverless infrastructure that is managed
-    /// by Amazon ECS by launching your services or tasks on AWS Fargate. For more control,
-    /// you can host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2)
-    /// instances that you manage.
+    /// by Amazon ECS by launching your services or tasks on Fargate. For more control, you
+    /// can host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances
+    /// that you manage.
     /// </para>
     ///  
     /// <para>
@@ -286,9 +286,8 @@ namespace Amazon.ECS
         ///  
         /// <para>
         /// Only capacity providers using an Auto Scaling group can be created. Amazon ECS tasks
-        /// on AWS Fargate use the <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity
-        /// providers which are already created and available to all accounts in Regions supported
-        /// by AWS Fargate.
+        /// on Fargate use the <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers
+        /// which are already created and available to all accounts in Regions supported by Fargate.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCapacityProvider service method.</param>
@@ -334,9 +333,8 @@ namespace Amazon.ECS
         ///  
         /// <para>
         /// Only capacity providers using an Auto Scaling group can be created. Amazon ECS tasks
-        /// on AWS Fargate use the <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity
-        /// providers which are already created and available to all accounts in Regions supported
-        /// by AWS Fargate.
+        /// on Fargate use the <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers
+        /// which are already created and available to all accounts in Regions supported by Fargate.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCapacityProvider service method.</param>
@@ -390,9 +388,9 @@ namespace Amazon.ECS
         /// <para>
         /// When you call the <a>CreateCluster</a> API operation, Amazon ECS attempts to create
         /// the Amazon ECS service-linked role for your account so that required resources in
-        /// other AWS services can be managed on your behalf. However, if the IAM user that makes
-        /// the call does not have permissions to create the service-linked role, it is not created.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+        /// other Amazon Web Services services can be managed on your behalf. However, if the
+        /// IAM user that makes the call does not have permissions to create the service-linked
+        /// role, it is not created. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
         /// Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
         /// Developer Guide</i>.
         /// </para>
@@ -432,9 +430,9 @@ namespace Amazon.ECS
         /// <para>
         /// When you call the <a>CreateCluster</a> API operation, Amazon ECS attempts to create
         /// the Amazon ECS service-linked role for your account so that required resources in
-        /// other AWS services can be managed on your behalf. However, if the IAM user that makes
-        /// the call does not have permissions to create the service-linked role, it is not created.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+        /// other Amazon Web Services services can be managed on your behalf. However, if the
+        /// IAM user that makes the call does not have permissions to create the service-linked
+        /// role, it is not created. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
         /// Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
         /// Developer Guide</i>.
         /// </para>
@@ -3446,8 +3444,9 @@ namespace Amazon.ECS
         /// <para>
         /// You can specify an IAM role for your task with the <code>taskRoleArn</code> parameter.
         /// When you specify an IAM role for a task, its containers can then use the latest versions
-        /// of the AWS CLI or SDKs to make API requests to the AWS services that are specified
-        /// in the IAM policy associated with the role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+        /// of the CLI or SDKs to make API requests to the Amazon Web Services services that are
+        /// specified in the IAM policy associated with the role. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
         /// Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
@@ -3498,8 +3497,9 @@ namespace Amazon.ECS
         /// <para>
         /// You can specify an IAM role for your task with the <code>taskRoleArn</code> parameter.
         /// When you specify an IAM role for a task, its containers can then use the latest versions
-        /// of the AWS CLI or SDKs to make API requests to the AWS services that are specified
-        /// in the IAM policy associated with the role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+        /// of the CLI or SDKs to make API requests to the Amazon Web Services services that are
+        /// specified in the IAM policy associated with the role. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
         /// Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
@@ -3596,8 +3596,8 @@ namespace Amazon.ECS
         /// You do not have authorization to perform the requested action.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.BlockedException">
-        /// Your AWS account has been blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/">AWS
-        /// Support</a>.
+        /// Your Amazon Web Services account has been blocked. For more information, contact <a
+        /// href="http://aws.amazon.com/contact-us/"> Amazon Web Services Support</a>.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
@@ -3687,8 +3687,8 @@ namespace Amazon.ECS
         /// You do not have authorization to perform the requested action.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.BlockedException">
-        /// Your AWS account has been blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/">AWS
-        /// Support</a>.
+        /// Your Amazon Web Services account has been blocked. For more information, contact <a
+        /// href="http://aws.amazon.com/contact-us/"> Amazon Web Services Support</a>.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
@@ -4752,9 +4752,9 @@ namespace Amazon.ECS
         /// For services using the blue/green (<code>CODE_DEPLOY</code>) deployment controller,
         /// only the desired count, deployment configuration, task placement constraints and strategies,
         /// and health check grace period can be updated using this API. If the network configuration,
-        /// platform version, or task definition need to be updated, a new AWS CodeDeploy deployment
+        /// platform version, or task definition need to be updated, a new CodeDeploy deployment
         /// should be created. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
-        /// in the <i>AWS CodeDeploy API Reference</i>.
+        /// in the <i>CodeDeploy API Reference</i>.
         /// </para>
         ///  
         /// <para>
@@ -4936,9 +4936,9 @@ namespace Amazon.ECS
         /// For services using the blue/green (<code>CODE_DEPLOY</code>) deployment controller,
         /// only the desired count, deployment configuration, task placement constraints and strategies,
         /// and health check grace period can be updated using this API. If the network configuration,
-        /// platform version, or task definition need to be updated, a new AWS CodeDeploy deployment
+        /// platform version, or task definition need to be updated, a new CodeDeploy deployment
         /// should be created. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
-        /// in the <i>AWS CodeDeploy API Reference</i>.
+        /// in the <i>CodeDeploy API Reference</i>.
         /// </para>
         ///  
         /// <para>

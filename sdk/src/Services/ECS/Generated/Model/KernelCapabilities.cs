@@ -52,8 +52,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Tasks launched on AWS Fargate only support adding the <code>SYS_PTRACE</code> kernel
-        /// capability.
+        /// Tasks launched on Fargate only support adding the <code>SYS_PTRACE</code> kernel capability.
         /// </para>
         ///  </note> 
         /// <para>

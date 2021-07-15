@@ -996,7 +996,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is not supported for Windows containers or tasks run on AWS Fargate.
+        /// This parameter is not supported for Windows containers or tasks run on Fargate.
         /// </para>
         ///  </note>
         /// </summary>

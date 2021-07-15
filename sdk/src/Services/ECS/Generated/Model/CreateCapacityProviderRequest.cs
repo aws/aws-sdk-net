@@ -37,9 +37,8 @@ namespace Amazon.ECS.Model
     ///  
     /// <para>
     /// Only capacity providers using an Auto Scaling group can be created. Amazon ECS tasks
-    /// on AWS Fargate use the <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity
-    /// providers which are already created and available to all accounts in Regions supported
-    /// by AWS Fargate.
+    /// on Fargate use the <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers
+    /// which are already created and available to all accounts in Regions supported by Fargate.
     /// </para>
     /// </summary>
     public partial class CreateCapacityProviderRequest : AmazonECSRequest
@@ -129,9 +128,9 @@ namespace Amazon.ECS.Model
         ///  </li> <li> 
         /// <para>
         /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
-        /// of such as a prefix for either keys or values as it is reserved for AWS use. You cannot
-        /// edit or delete tag keys or values with this prefix. Tags with this prefix do not count
-        /// against your tags per resource limit.
+        /// of such as a prefix for either keys or values as it is reserved for Amazon Web Services
+        /// use. You cannot edit or delete tag keys or values with this prefix. Tags with this
+        /// prefix do not count against your tags per resource limit.
         /// </para>
         ///  </li> </ul>
         /// </summary>

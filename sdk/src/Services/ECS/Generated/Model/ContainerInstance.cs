@@ -150,8 +150,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ContainerInstanceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code>
-        /// namespace, followed by the Region of the container instance, the AWS account ID of
-        /// the container instance owner, the <code>container-instance</code> namespace, and then
+        /// namespace, followed by the Region of the container instance, the account ID of the
+        /// container instance owner, the <code>container-instance</code> namespace, and then
         /// the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.
         /// </para>
         /// </summary>
@@ -171,8 +171,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Ec2InstanceId. 
         /// <para>
         /// The ID of the container instance. For Amazon EC2 instances, this value is the Amazon
-        /// EC2 instance ID. For external instances, this value is the AWS Systems Manager managed
-        /// instance ID.
+        /// EC2 instance ID. For external instances, this value is the Amazon Web Services Systems
+        /// Manager managed instance ID.
         /// </para>
         /// </summary>
         public string Ec2InstanceId
@@ -388,9 +388,9 @@ namespace Amazon.ECS.Model
         ///  </li> <li> 
         /// <para>
         /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
-        /// of such as a prefix for either keys or values as it is reserved for AWS use. You cannot
-        /// edit or delete tag keys or values with this prefix. Tags with this prefix do not count
-        /// against your tags per resource limit.
+        /// of such as a prefix for either keys or values as it is reserved for Amazon Web Services
+        /// use. You cannot edit or delete tag keys or values with this prefix. Tags with this
+        /// prefix do not count against your tags per resource limit.
         /// </para>
         ///  </li> </ul>
         /// </summary>

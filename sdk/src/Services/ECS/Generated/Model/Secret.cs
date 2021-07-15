@@ -76,14 +76,14 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ValueFrom. 
         /// <para>
         /// The secret to expose to the container. The supported values are either the full ARN
-        /// of the AWS Secrets Manager secret or the full ARN of the parameter in the AWS Systems
-        /// Manager Parameter Store.
+        /// of the Secrets Manager secret or the full ARN of the parameter in the SSM Parameter
+        /// Store.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the AWS Systems Manager Parameter Store parameter exists in the same Region as
-        /// the task you are launching, then you can use either the full ARN or name of the parameter.
-        /// If the parameter exists in a different Region, then the full ARN must be specified.
+        /// If the SSM Parameter Store parameter exists in the same Region as the task you are
+        /// launching, then you can use either the full ARN or name of the parameter. If the parameter
+        /// exists in a different Region, then the full ARN must be specified.
         /// </para>
         ///  </note>
         /// </summary>

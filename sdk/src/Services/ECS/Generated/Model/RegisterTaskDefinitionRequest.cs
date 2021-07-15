@@ -40,8 +40,9 @@ namespace Amazon.ECS.Model
     /// <para>
     /// You can specify an IAM role for your task with the <code>taskRoleArn</code> parameter.
     /// When you specify an IAM role for a task, its containers can then use the latest versions
-    /// of the AWS CLI or SDKs to make API requests to the AWS services that are specified
-    /// in the IAM policy associated with the role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+    /// of the CLI or SDKs to make API requests to the Amazon Web Services services that are
+    /// specified in the IAM policy associated with the role. For more information, see <a
+    /// href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
     /// Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  
@@ -164,12 +165,12 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The amount of ephemeral storage to allocate for the task. This parameter is used to
         /// expand the total amount of ephemeral storage available, beyond the default amount,
-        /// for tasks hosted on AWS Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
-        /// task storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+        /// for tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
+        /// task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is only supported for tasks hosted on AWS Fargate using platform version
+        /// This parameter is only supported for tasks hosted on Fargate using platform version
         /// <code>1.4.0</code> or later.
         /// </para>
         ///  </note>
@@ -190,9 +191,9 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS
-        /// container agent permission to make AWS API calls on your behalf. The task execution
-        /// IAM role is required depending on the requirements of your task. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+        /// container agent permission to make Amazon Web Services API calls on your behalf. The
+        /// task execution IAM role is required depending on the requirements of your task. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
         /// ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
@@ -289,7 +290,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// This parameter is not supported for Windows containers or tasks run on AWS Fargate.
+        /// This parameter is not supported for Windows containers or tasks run on Fargate.
         /// </para>
         ///  </note>
         /// </summary>
@@ -377,12 +378,14 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// For Amazon ECS tasks on Fargate, the <code>awsvpc</code> network mode is required.
-        /// For Amazon ECS tasks on Amazon EC2 instances, any network mode can be used. If the
-        /// network mode is set to <code>none</code>, you cannot specify port mappings in your
-        /// container definitions, and the tasks containers do not have external connectivity.
-        /// The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking
-        /// performance for containers because they use the EC2 network stack instead of the virtualized
-        /// network stack provided by the <code>bridge</code> mode.
+        /// For Amazon ECS tasks on Amazon EC2 Linux instances, any network mode can be used.
+        /// For Amazon ECS tasks on Amazon EC2 Windows instances, <code>&lt;default&gt;</code>
+        /// or <code>awsvpc</code> can be used. If the network mode is set to <code>none</code>,
+        /// you cannot specify port mappings in your container definitions, and the tasks containers
+        /// do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network
+        /// modes offer the highest networking performance for containers because they use the
+        /// EC2 network stack instead of the virtualized network stack provided by the <code>bridge</code>
+        /// mode.
         /// </para>
         ///  
         /// <para>
@@ -403,23 +406,10 @@ namespace Amazon.ECS.Model
         /// a service or run a task with the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
         /// Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Currently, only Amazon ECS-optimized AMIs, other Amazon Linux variants with the <code>ecs-init</code>
-        /// package, or AWS Fargate infrastructure support the <code>awsvpc</code> network mode.
-        /// 
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// If the network mode is <code>host</code>, you cannot run multiple instantiations of
         /// the same task on a single container instance when port mappings are used.
-        /// </para>
-        ///  
-        /// <para>
-        /// Docker for Windows uses different network modes than Docker for Linux. When you register
-        /// a task definition with Windows containers, you must not specify a network mode. If
-        /// you use the console to register a task definition with Windows containers, you must
-        /// choose the <code>&lt;default&gt;</code> network mode object. 
         /// </para>
         ///  
         /// <para>
@@ -459,7 +449,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is not supported for Windows containers or tasks run on AWS Fargate.
+        /// This parameter is not supported for Windows containers or tasks run on Fargate.
         /// </para>
         ///  </note>
         /// </summary>
@@ -586,9 +576,9 @@ namespace Amazon.ECS.Model
         ///  </li> <li> 
         /// <para>
         /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
-        /// of such as a prefix for either keys or values as it is reserved for AWS use. You cannot
-        /// edit or delete tag keys or values with this prefix. Tags with this prefix do not count
-        /// against your tags per resource limit.
+        /// of such as a prefix for either keys or values as it is reserved for Amazon Web Services
+        /// use. You cannot edit or delete tag keys or values with this prefix. Tags with this
+        /// prefix do not count against your tags per resource limit.
         /// </para>
         ///  </li> </ul>
         /// </summary>

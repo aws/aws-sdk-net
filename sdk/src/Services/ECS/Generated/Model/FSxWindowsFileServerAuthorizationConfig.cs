@@ -49,9 +49,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property CredentialsParameter. 
         /// <para>
         /// The authorization credential option to use. The authorization credential options can
-        /// be provided using either the Amazon Resource Name (ARN) of an AWS Secrets Manager
-        /// secret or AWS Systems Manager Parameter Store parameter. The ARNs refer to the stored
-        /// credentials.
+        /// be provided using either the Amazon Resource Name (ARN) of an Secrets Manager secret
+        /// or SSM Parameter Store parameter. The ARNs refer to the stored credentials.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -70,9 +69,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// A fully qualified domain name hosted by an <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS
-        /// Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on
-        /// Amazon EC2.
+        /// A fully qualified domain name hosted by an <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">Directory
+        /// Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on Amazon EC2.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

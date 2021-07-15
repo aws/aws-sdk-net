@@ -40,8 +40,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// Specify an AWS Key Management Service key ID to encrypt the data between the local
-        /// client and the container.
+        /// Specify an Key Management Service key ID to encrypt the data between the local client
+        /// and the container.
         /// </para>
         /// </summary>
         public string KmsKeyId

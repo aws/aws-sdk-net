@@ -57,7 +57,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Docker volumes are not supported by tasks run on AWS Fargate.
+        /// Docker volumes are not supported by tasks run on Fargate.
         /// </para>
         ///  </note>
         /// </summary>

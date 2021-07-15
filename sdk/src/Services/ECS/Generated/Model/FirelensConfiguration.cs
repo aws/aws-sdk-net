@@ -51,8 +51,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Tasks hosted on AWS Fargate only support the <code>file</code> configuration file
-        /// type.
+        /// Tasks hosted on Fargate only support the <code>file</code> configuration file type.
         /// </para>
         ///  </note>
         /// </summary>

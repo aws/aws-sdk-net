@@ -56,8 +56,8 @@ namespace Amazon.ECS.Model
         ///  </dd> <dt>CODE_DEPLOY</dt> <dd> 
         /// <para>
         /// The blue/green (<code>CODE_DEPLOY</code>) deployment type uses the blue/green deployment
-        /// model powered by AWS CodeDeploy, which allows you to verify a new deployment of a
-        /// service before sending production traffic to it.
+        /// model powered by CodeDeploy, which allows you to verify a new deployment of a service
+        /// before sending production traffic to it.
         /// </para>
         ///  </dd> <dt>EXTERNAL</dt> <dd> 
         /// <para>

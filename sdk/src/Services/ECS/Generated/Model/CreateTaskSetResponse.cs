@@ -38,7 +38,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TaskSet. 
         /// <para>
-        /// Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code>
+        /// Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code>
         /// deployment. A task set includes details such as the desired number of tasks, how many
         /// tasks are running, and whether the task set serves production traffic.
         /// </para>

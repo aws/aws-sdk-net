@@ -42,6 +42,11 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
+        /// A service will return either a <code>capacityProviderStrategy</code> or <code>launchType</code>
+        /// parameter, but not both, depending on which one was specified during creation.
+        /// </para>
+        ///  
+        /// <para>
         /// If a service is using the <code>ECS</code> deployment controller, the <code>deploymentController</code>
         /// and <code>taskSets</code> parameters will not be returned.
         /// </para>

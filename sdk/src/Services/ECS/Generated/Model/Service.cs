@@ -67,7 +67,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CapacityProviderStrategy. 
         /// <para>
-        /// The capacity provider strategy associated with the service.
+        /// The capacity provider strategy the service is using. When using the DescribeServices
+        /// API, this field is omitted if the service was created using a launch type.
         /// </para>
         /// </summary>
         public List<CapacityProviderStrategyItem> CapacityProviderStrategy
@@ -294,9 +295,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LaunchType. 
         /// <para>
-        /// The infrastructure on which your service is running. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-        /// ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// The launch type the service is using. When using the DescribeServices API, this field
+        /// is omitted if the service was created using a capacity provider strategy.
         /// </para>
         /// </summary>
         public LaunchType LaunchType
@@ -408,10 +408,9 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property PlatformVersion. 
         /// <para>
         /// The platform version on which to run your service. A platform version is only specified
-        /// for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code>
-        /// platform version is used by default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-        /// Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
-        /// Guide</i>.
+        /// for tasks hosted on Fargate. If one is not specified, the <code>LATEST</code> platform
+        /// version is used by default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+        /// Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string PlatformVersion
@@ -527,9 +526,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ServiceArn. 
         /// <para>
         /// The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code>
-        /// namespace, followed by the Region of the service, the AWS account ID of the service
-        /// owner, the <code>service</code> namespace, and then the service name. For example,
-        /// <code>arn:aws:ecs:region:012345678910:service/my-service</code>.
+        /// namespace, followed by the Region of the service, the account ID of the service owner,
+        /// the <code>service</code> namespace, and then the service name. For example, <code>arn:aws:ecs:region:012345678910:service/my-service</code>.
         /// </para>
         /// </summary>
         public string ServiceArn
@@ -645,9 +643,9 @@ namespace Amazon.ECS.Model
         ///  </li> <li> 
         /// <para>
         /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
-        /// of such as a prefix for either keys or values as it is reserved for AWS use. You cannot
-        /// edit or delete tag keys or values with this prefix. Tags with this prefix do not count
-        /// against your tags per resource limit.
+        /// of such as a prefix for either keys or values as it is reserved for Amazon Web Services
+        /// use. You cannot edit or delete tag keys or values with this prefix. Tags with this
+        /// prefix do not count against your tags per resource limit.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -686,7 +684,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TaskSets. 
         /// <para>
-        /// Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code>
+        /// Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code>
         /// deployment. An Amazon ECS task set includes details such as the desired number of
         /// tasks, how many tasks are running, and whether the task set serves production traffic.
         /// </para>

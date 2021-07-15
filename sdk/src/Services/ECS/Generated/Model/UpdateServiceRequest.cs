@@ -52,9 +52,9 @@ namespace Amazon.ECS.Model
     /// For services using the blue/green (<code>CODE_DEPLOY</code>) deployment controller,
     /// only the desired count, deployment configuration, task placement constraints and strategies,
     /// and health check grace period can be updated using this API. If the network configuration,
-    /// platform version, or task definition need to be updated, a new AWS CodeDeploy deployment
+    /// platform version, or task definition need to be updated, a new CodeDeploy deployment
     /// should be created. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
-    /// in the <i>AWS CodeDeploy API Reference</i>.
+    /// in the <i>CodeDeploy API Reference</i>.
     /// </para>
     ///  
     /// <para>
@@ -213,9 +213,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
-        /// <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers are
-        /// available to all accounts and only need to be associated with a cluster to be used.
+        /// To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+        /// capacity providers. The Fargate capacity providers are available to all accounts and
+        /// only need to be associated with a cluster to be used.
         /// </para>
         ///  
         /// <para>
@@ -437,9 +437,8 @@ namespace Amazon.ECS.Model
         /// The platform version on which your tasks in the service are running. A platform version
         /// is only specified for tasks using the Fargate launch type. If a platform version is
         /// not specified, the <code>LATEST</code> platform version is used by default. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-        /// Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
-        /// Guide</i>.
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+        /// Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string PlatformVersion

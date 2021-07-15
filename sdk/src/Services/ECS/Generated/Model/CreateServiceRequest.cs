@@ -391,13 +391,13 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>FARGATE</code> launch type runs your tasks on AWS Fargate On-Demand infrastructure.
+        /// The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand infrastructure.
         /// </para>
         ///  <note> 
         /// <para>
         /// Fargate Spot infrastructure is available for use but a capacity provider strategy
-        /// must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS
-        /// Fargate capacity providers</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+        /// must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
+        /// capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -448,13 +448,13 @@ namespace Amazon.ECS.Model
         /// <para>
         /// If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service
         /// is required to use either an Application Load Balancer or Network Load Balancer. When
-        /// creating an AWS CodeDeploy deployment group, you specify two target groups (referred
-        /// to as a <code>targetGroupPair</code>). During a deployment, AWS CodeDeploy determines
-        /// which task set in your service has the status <code>PRIMARY</code> and associates
-        /// one target group with it, and then associates the other target group with the replacement
-        /// task set. The load balancer can also have up to two listeners: a required listener
-        /// for production traffic and an optional listener that allows you perform validation
-        /// tests with Lambda functions before routing production traffic to it.
+        /// creating an CodeDeploy deployment group, you specify two target groups (referred to
+        /// as a <code>targetGroupPair</code>). During a deployment, CodeDeploy determines which
+        /// task set in your service has the status <code>PRIMARY</code> and associates one target
+        /// group with it, and then associates the other target group with the replacement task
+        /// set. The load balancer can also have up to two listeners: a required listener for
+        /// production traffic and an optional listener that allows you perform validation tests
+        /// with Lambda functions before routing production traffic to it.
         /// </para>
         ///  
         /// <para>
@@ -569,9 +569,8 @@ namespace Amazon.ECS.Model
         /// The platform version that your tasks in the service are running on. A platform version
         /// is specified only for tasks using the Fargate launch type. If one isn't specified,
         /// the <code>LATEST</code> platform version is used by default. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-        /// Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer
-        /// Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+        /// platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string PlatformVersion
@@ -785,9 +784,9 @@ namespace Amazon.ECS.Model
         ///  </li> <li> 
         /// <para>
         /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
-        /// of such as a prefix for either keys or values as it is reserved for AWS use. You cannot
-        /// edit or delete tag keys or values with this prefix. Tags with this prefix do not count
-        /// against your tags per resource limit.
+        /// of such as a prefix for either keys or values as it is reserved for Amazon Web Services
+        /// use. You cannot edit or delete tag keys or values with this prefix. Tags with this
+        /// prefix do not count against your tags per resource limit.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -35,7 +35,7 @@ namespace Amazon.ECS.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Task placement constraints are not supported for tasks run on AWS Fargate.
+    /// Task placement constraints are not supported for tasks run on Fargate.
     /// </para>
     ///  </note>
     /// </summary>

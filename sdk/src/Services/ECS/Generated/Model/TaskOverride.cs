@@ -84,7 +84,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is only supported for tasks hosted on AWS Fargate using platform version
+        /// This parameter is only supported for tasks hosted on Fargate using platform version
         /// <code>1.4.0</code> or later.
         /// </para>
         ///  </note>
