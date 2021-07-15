@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// Specifies the configuration for AWS Lambda triggers.
+    /// Specifies the configuration for Lambda triggers.
     /// </summary>
     public partial class LambdaConfigType
     {
@@ -69,7 +69,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CustomEmailSender. 
         /// <para>
-        /// A custom email sender AWS Lambda trigger.
+        /// A custom email sender Lambda trigger.
         /// </para>
         /// </summary>
         public CustomEmailLambdaVersionConfigType CustomEmailSender
@@ -87,7 +87,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CustomMessage. 
         /// <para>
-        /// A custom Message AWS Lambda trigger.
+        /// A custom Message Lambda trigger.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -106,7 +106,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CustomSMSSender. 
         /// <para>
-        /// A custom SMS sender AWS Lambda trigger.
+        /// A custom SMS sender Lambda trigger.
         /// </para>
         /// </summary>
         public CustomSMSLambdaVersionConfigType CustomSMSSender
@@ -164,7 +164,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property PostAuthentication. 
         /// <para>
-        /// A post-authentication AWS Lambda trigger.
+        /// A post-authentication Lambda trigger.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -183,7 +183,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property PostConfirmation. 
         /// <para>
-        /// A post-confirmation AWS Lambda trigger.
+        /// A post-confirmation Lambda trigger.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -202,7 +202,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property PreAuthentication. 
         /// <para>
-        /// A pre-authentication AWS Lambda trigger.
+        /// A pre-authentication Lambda trigger.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -221,7 +221,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property PreSignUp. 
         /// <para>
-        /// A pre-registration AWS Lambda trigger.
+        /// A pre-registration Lambda trigger.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

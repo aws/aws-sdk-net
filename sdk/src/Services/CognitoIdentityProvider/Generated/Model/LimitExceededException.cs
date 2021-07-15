@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+    /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+    /// Services resource.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

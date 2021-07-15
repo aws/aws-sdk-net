@@ -356,7 +356,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LambdaConfig. 
         /// <para>
-        /// The AWS Lambda triggers associated with the user pool.
+        /// The Lambda triggers associated with the user pool.
         /// </para>
         /// </summary>
         public LambdaConfigType LambdaConfig
@@ -532,10 +532,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SNSSandbox - The AWS account is in SNS Sandbox and messages won’t reach unverified
-        /// end users. This parameter won’t get populated with SNSSandbox if the IAM user creating
-        /// the user pool doesn’t have SNS permissions. To learn how to move your AWS account
-        /// out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
+        /// SNSSandbox - The account is in SNS Sandbox and messages won’t reach unverified end
+        /// users. This parameter won’t get populated with SNSSandbox if the IAM user creating
+        /// the user pool doesn’t have SNS permissions. To learn how to move your account out
+        /// of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
         /// out of the SMS sandbox</a>.
         /// </para>
         ///  </li> </ul>

@@ -455,14 +455,15 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -480,11 +481,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
@@ -519,14 +520,15 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -544,11 +546,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
@@ -588,8 +590,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -627,8 +629,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -642,7 +644,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -661,14 +663,14 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnsupportedUserStateException">
         /// The request failed because the user is in an unsupported state.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UsernameExistsException">
         /// This exception is thrown when Amazon Cognito encounters a user name that already exists
@@ -708,8 +710,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -750,8 +752,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -765,7 +767,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -784,14 +786,14 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnsupportedUserStateException">
         /// The request failed because the user is in an unsupported state.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UsernameExistsException">
         /// This exception is thrown when Amazon Cognito encounters a user name that already exists
@@ -1632,8 +1634,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -1652,8 +1654,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -1664,7 +1666,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -1690,11 +1692,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
@@ -1728,8 +1730,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -1751,8 +1753,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -1763,7 +1765,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -1789,11 +1791,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
@@ -1861,7 +1863,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -1935,7 +1938,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -2345,8 +2349,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -2369,8 +2373,8 @@ namespace Amazon.CognitoIdentityProvider
         /// HTTP status code: 400.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -2381,12 +2385,13 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -2400,11 +2405,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
@@ -2446,8 +2451,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -2473,8 +2478,8 @@ namespace Amazon.CognitoIdentityProvider
         /// HTTP status code: 400.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -2485,12 +2490,13 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -2504,11 +2510,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
@@ -2543,8 +2549,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -2574,8 +2580,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -2589,7 +2595,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -2619,11 +2625,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
@@ -2657,8 +2663,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -2691,8 +2697,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -2706,7 +2712,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -2736,11 +2742,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
@@ -3260,8 +3266,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -3289,8 +3295,8 @@ namespace Amazon.CognitoIdentityProvider
         /// HTTP status code: 400.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -3301,7 +3307,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -3317,11 +3323,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
@@ -3363,8 +3369,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -3395,8 +3401,8 @@ namespace Amazon.CognitoIdentityProvider
         /// HTTP status code: 400.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -3407,7 +3413,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -3423,11 +3429,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
@@ -3661,7 +3667,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid password.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -3712,7 +3719,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid password.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -3758,8 +3766,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -3817,8 +3825,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -3883,8 +3891,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -3893,7 +3901,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid password.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -3911,11 +3920,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
@@ -3953,8 +3962,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -3963,7 +3972,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid password.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -3981,11 +3991,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
@@ -4029,14 +4039,15 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -4054,11 +4065,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
@@ -4098,14 +4109,15 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -4123,11 +4135,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
@@ -4169,7 +4181,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -4217,7 +4230,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -4260,7 +4274,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -4302,7 +4317,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -4342,7 +4358,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -4381,7 +4398,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -4421,7 +4439,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -4463,7 +4482,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -4508,8 +4528,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -4537,12 +4557,13 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -4579,8 +4600,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -4611,12 +4632,13 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -4664,7 +4686,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -4715,7 +4738,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -4758,7 +4782,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -4794,7 +4819,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -6094,8 +6120,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -6118,8 +6144,8 @@ namespace Amazon.CognitoIdentityProvider
         /// HTTP status code: 400.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -6130,12 +6156,13 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -6149,11 +6176,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
@@ -6194,8 +6221,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -6221,8 +6248,8 @@ namespace Amazon.CognitoIdentityProvider
         /// HTTP status code: 400.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -6233,12 +6260,13 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -6252,11 +6280,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
@@ -6853,8 +6881,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -6877,8 +6905,8 @@ namespace Amazon.CognitoIdentityProvider
         /// HTTP status code: 400.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -6889,12 +6917,13 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -6911,11 +6940,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
@@ -6949,8 +6978,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -6976,8 +7005,8 @@ namespace Amazon.CognitoIdentityProvider
         /// HTTP status code: 400.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -6988,12 +7017,13 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -7010,11 +7040,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
@@ -7214,8 +7244,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -7231,8 +7261,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -7243,7 +7273,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -7265,11 +7295,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
@@ -7303,8 +7333,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -7323,8 +7353,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -7335,7 +7365,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -7357,11 +7387,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
@@ -7950,7 +7980,7 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Lists the user pools associated with an AWS account.
+        /// Lists the user pools associated with an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUserPools service method.</param>
         /// 
@@ -7979,7 +8009,7 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Lists the user pools associated with an AWS account.
+        /// Lists the user pools associated with an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUserPools service method.</param>
         /// <param name="cancellationToken">
@@ -8186,8 +8216,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -8210,8 +8240,8 @@ namespace Amazon.CognitoIdentityProvider
         /// HTTP status code: 400.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -8222,12 +8252,13 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -8241,11 +8272,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
@@ -8277,8 +8308,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -8304,8 +8335,8 @@ namespace Amazon.CognitoIdentityProvider
         /// HTTP status code: 400.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -8316,12 +8347,13 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -8335,11 +8367,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
@@ -8374,8 +8406,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -8402,8 +8434,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -8417,7 +8449,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -8447,11 +8479,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
@@ -8485,8 +8517,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -8516,8 +8548,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -8531,7 +8563,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -8561,11 +8593,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
@@ -9001,8 +9033,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -9026,7 +9058,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -9066,8 +9098,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -9094,7 +9126,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -9230,8 +9262,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -9254,8 +9286,8 @@ namespace Amazon.CognitoIdentityProvider
         /// HTTP status code: 400.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -9269,7 +9301,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -9285,11 +9317,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UsernameExistsException">
         /// This exception is thrown when Amazon Cognito encounters a user name that already exists
@@ -9322,8 +9354,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -9349,8 +9381,8 @@ namespace Amazon.CognitoIdentityProvider
         /// HTTP status code: 400.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -9364,7 +9396,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -9380,11 +9412,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UsernameExistsException">
         /// This exception is thrown when Amazon Cognito encounters a user name that already exists
@@ -9950,11 +9982,6 @@ namespace Amazon.CognitoIdentityProvider
         /// <para>
         /// Calling this action requires developer credentials.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// If you don't provide a value for an attribute, it will be set to the default value.
-        /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGroup service method.</param>
         /// 
@@ -9993,11 +10020,6 @@ namespace Amazon.CognitoIdentityProvider
         /// <para>
         /// Calling this action requires developer credentials.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// If you don't provide a value for an attribute, it will be set to the default value.
-        /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGroup service method.</param>
         /// <param name="cancellationToken">
@@ -10215,8 +10237,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -10250,8 +10272,8 @@ namespace Amazon.CognitoIdentityProvider
         /// HTTP status code: 400.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -10262,7 +10284,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -10281,11 +10303,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
@@ -10319,8 +10341,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -10357,8 +10379,8 @@ namespace Amazon.CognitoIdentityProvider
         /// HTTP status code: 400.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
-        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
-        /// Lambda response.
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
@@ -10369,7 +10391,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -10388,11 +10410,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
-        /// exception with the AWS Lambda service.
+        /// exception with the Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
@@ -10432,8 +10454,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -10464,7 +10486,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -10513,8 +10535,8 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-        /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+        /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+        /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
         /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
         /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -10548,7 +10570,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is invalid for the role provided
-        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -10710,9 +10732,8 @@ namespace Amazon.CognitoIdentityProvider
         /// <para>
         /// A custom domain is used to host the Amazon Cognito hosted UI, which provides sign-up
         /// and sign-in pages for your application. When you set up a custom domain, you provide
-        /// a certificate that you manage with AWS Certificate Manager (ACM). When necessary,
-        /// you can use this operation to change the certificate that you applied to your custom
-        /// domain.
+        /// a certificate that you manage with Certificate Manager (ACM). When necessary, you
+        /// can use this operation to change the certificate that you applied to your custom domain.
         /// </para>
         ///  
         /// <para>
@@ -10729,7 +10750,7 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// When you add your new certificate in ACM, you must choose US East (N. Virginia) as
-        /// the AWS Region.
+        /// the Region.
         /// </para>
         ///  
         /// <para>
@@ -10785,9 +10806,8 @@ namespace Amazon.CognitoIdentityProvider
         /// <para>
         /// A custom domain is used to host the Amazon Cognito hosted UI, which provides sign-up
         /// and sign-in pages for your application. When you set up a custom domain, you provide
-        /// a certificate that you manage with AWS Certificate Manager (ACM). When necessary,
-        /// you can use this operation to change the certificate that you applied to your custom
-        /// domain.
+        /// a certificate that you manage with Certificate Manager (ACM). When necessary, you
+        /// can use this operation to change the certificate that you applied to your custom domain.
         /// </para>
         ///  
         /// <para>
@@ -10804,7 +10824,7 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// When you add your new certificate in ACM, you must choose US East (N. Virginia) as
-        /// the AWS Region.
+        /// the Region.
         /// </para>
         ///  
         /// <para>
@@ -10996,7 +11016,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
@@ -11050,7 +11071,8 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
-        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.

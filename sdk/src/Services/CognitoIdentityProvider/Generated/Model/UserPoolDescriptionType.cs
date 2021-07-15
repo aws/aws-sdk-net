@@ -80,7 +80,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LambdaConfig. 
         /// <para>
-        /// The AWS Lambda configuration information in a user pool description.
+        /// The Lambda configuration information in a user pool description.
         /// </para>
         /// </summary>
         public LambdaConfigType LambdaConfig

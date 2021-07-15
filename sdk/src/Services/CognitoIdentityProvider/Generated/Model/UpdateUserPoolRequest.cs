@@ -46,8 +46,8 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </para>
     ///  
     /// <para>
-    /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-    /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+    /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+    /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
     /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
     /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
     /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -213,7 +213,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LambdaConfig. 
         /// <para>
-        /// The AWS Lambda configuration information from the request to update the user pool.
+        /// The Lambda configuration information from the request to update the user pool.
         /// </para>
         /// </summary>
         public LambdaConfigType LambdaConfig

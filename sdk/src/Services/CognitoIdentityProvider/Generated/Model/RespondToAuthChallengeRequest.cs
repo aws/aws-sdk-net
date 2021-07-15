@@ -45,8 +45,8 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </para>
     ///  
     /// <para>
-    /// If you have never used SMS text messages with Amazon Cognito or any other AWS service,
-    /// Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+    /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+    /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
     /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
     /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
     /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
@@ -193,16 +193,15 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// You create custom workflows by assigning AWS Lambda functions to user pool triggers.
-        /// When you use the RespondToAuthChallenge API action, Amazon Cognito invokes any functions
+        /// You create custom workflows by assigning Lambda functions to user pool triggers. When
+        /// you use the RespondToAuthChallenge API action, Amazon Cognito invokes any functions
         /// that are assigned to the following triggers: <i>post authentication</i>, <i>pre token
         /// generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and <i>verify
         /// auth challenge</i>. When Amazon Cognito invokes any of these functions, it passes
         /// a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code>
         /// attribute, which provides the data that you assigned to the ClientMetadata parameter
-        /// in your RespondToAuthChallenge request. In your function code in AWS Lambda, you can
-        /// process the <code>clientMetadata</code> value to enhance your workflow for your specific
-        /// needs.
+        /// in your RespondToAuthChallenge request. In your function code in Lambda, you can process
+        /// the <code>clientMetadata</code> value to enhance your workflow for your specific needs.
         /// </para>
         ///  
         /// <para>
@@ -217,8 +216,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  <ul> <li> 
         /// <para>
         /// Amazon Cognito does not store the ClientMetadata value. This data is available only
-        /// to AWS Lambda triggers that are assigned to a user pool to support custom workflows.
-        /// If your user pool configuration does not include triggers, the ClientMetadata parameter
+        /// to Lambda triggers that are assigned to a user pool to support custom workflows. If
+        /// your user pool configuration does not include triggers, the ClientMetadata parameter
         /// serves no purpose.
         /// </para>
         ///  </li> <li> 

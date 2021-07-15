@@ -30,7 +30,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-    /// exception with the AWS Lambda service.
+    /// exception with the Lambda service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

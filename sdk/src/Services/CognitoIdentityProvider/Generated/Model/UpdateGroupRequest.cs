@@ -36,11 +36,6 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <para>
     /// Calling this action requires developer credentials.
     /// </para>
-    ///  <important> 
-    /// <para>
-    /// If you don't provide a value for an attribute, it will be set to the default value.
-    /// </para>
-    ///  </important>
     /// </summary>
     public partial class UpdateGroupRequest : AmazonCognitoIdentityProviderRequest
     {

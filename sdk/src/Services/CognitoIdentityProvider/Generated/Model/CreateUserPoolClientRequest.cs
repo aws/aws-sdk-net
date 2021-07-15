@@ -142,8 +142,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>,
         /// <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values
-        /// provided by AWS are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created
-        /// in Resource Servers are also supported.
+        /// provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom
+        /// scopes created in Resource Servers are also supported.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]

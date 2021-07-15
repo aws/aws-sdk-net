@@ -45,7 +45,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AWSAccountId. 
         /// <para>
-        /// The AWS account ID for the user pool owner.
+        /// The account ID for the user pool owner.
         /// </para>
         /// </summary>
         public string AWSAccountId

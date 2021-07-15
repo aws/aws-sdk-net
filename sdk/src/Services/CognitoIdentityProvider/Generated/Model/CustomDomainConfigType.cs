@@ -39,8 +39,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CertificateArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an AWS Certificate Manager SSL certificate. You
-        /// use this certificate for the subdomain of your custom domain.
+        /// The Amazon Resource Name (ARN) of an Certificate Manager SSL certificate. You use
+        /// this certificate for the subdomain of your custom domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
