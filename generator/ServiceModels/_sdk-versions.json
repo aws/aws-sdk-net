@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.72.0",
+    "ProductVersion" : "3.7.73.0",
     "CoreVersion"    : "3.7.0.44",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -152,7 +152,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.7.16.5",
+            "Version" : "3.7.17.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.44"
@@ -160,7 +160,7 @@
             "InPreview"               : false
         },
         "ECS"               : {
-            "Version" : "3.7.2.16",
+            "Version" : "3.7.2.17",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.44"
@@ -538,7 +538,7 @@
             "InPreview"               : false
         },
         "CognitoIdentityProvider"         : {
-            "Version" : "3.7.1.13",
+            "Version" : "3.7.1.14",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.44"
@@ -778,7 +778,7 @@
             "InPreview"               : false
         },
         "LexModelBuildingService"         : {
-            "Version" : "3.7.2.0",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.44"
@@ -1770,7 +1770,7 @@
             "InPreview"               : false
         },
         "IoTSiteWise"                     : {
-            "Version" : "3.7.3.5",
+            "Version" : "3.7.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.44"
