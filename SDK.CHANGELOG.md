@@ -1,3 +1,16 @@
+### 3.7.74.0 (2021-07-16 18:12 UTC)
+* AppIntegrationsService (3.7.0.43)
+	* Documentation update for AppIntegrations Service
+* AuditManager (3.7.4.0)
+	* This release relaxes the S3 URL character restrictions in AWS Audit Manager. Regex patterns have been updated for the following attributes: s3RelativePath, destination, and s3ResourcePath. 'AWS' terms have also been replaced with entities to align with China Rebrand documentation efforts.
+* Chime (3.7.8.0)
+	* This SDK release adds Account Status as one of the attributes in Account API response
+* Core 3.7.0.45
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.73.0 (2021-07-15 18:13 UTC)
 * CognitoIdentityProvider (3.7.1.14)
 	* Documentation updates for cognito-idp
