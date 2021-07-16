@@ -30,12 +30,7 @@ namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// The Amazon AppIntegrations APIs are in preview release and are subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Removes the specified tags from the specified resource.
-    /// </para>
     /// </summary>
     public partial class UntagResourceRequest : AmazonAppIntegrationsServiceRequest
     {

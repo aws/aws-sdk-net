@@ -29,12 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
-    /// The Amazon AppIntegrations APIs are in preview release and are subject to change.
-    /// 
-    ///  
-    /// <para>
     /// The event integration.
-    /// </para>
     /// </summary>
     public partial class EventIntegration
     {
@@ -67,7 +62,7 @@ namespace Amazon.AppIntegrationsService.Model
         /// <summary>
         /// Gets and sets the property EventBridgeBus. 
         /// <para>
-        /// The Amazon Eventbridge bus for the event integration.
+        /// The Amazon EventBridge bus for the event integration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

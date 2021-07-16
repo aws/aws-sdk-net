@@ -30,12 +30,7 @@ namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateEventIntegration operation.
-    /// The Amazon AppIntegrations APIs are in preview release and are subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Updates the description of an event integration.
-    /// </para>
     /// </summary>
     public partial class UpdateEventIntegrationRequest : AmazonAppIntegrationsServiceRequest
     {

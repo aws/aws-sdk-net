@@ -30,12 +30,7 @@ namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEventIntegrationAssociations operation.
-    /// The Amazon AppIntegrations APIs are in preview release and are subject to change.
-    /// 
-    ///  
-    /// <para>
-    /// Returns a paginated list of event integration associations in the account. 
-    /// </para>
+    /// Returns a paginated list of event integration associations in the account.
     /// </summary>
     public partial class ListEventIntegrationAssociationsRequest : AmazonAppIntegrationsServiceRequest
     {

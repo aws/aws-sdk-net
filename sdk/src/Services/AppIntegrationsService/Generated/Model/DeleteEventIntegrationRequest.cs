@@ -30,13 +30,8 @@ namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEventIntegration operation.
-    /// The Amazon AppIntegrations APIs are in preview release and are subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Deletes the specified existing event integration. If the event integration is associated
     /// with clients, the request is rejected.
-    /// </para>
     /// </summary>
     public partial class DeleteEventIntegrationRequest : AmazonAppIntegrationsServiceRequest
     {

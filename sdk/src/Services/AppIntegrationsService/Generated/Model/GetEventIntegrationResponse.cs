@@ -62,7 +62,7 @@ namespace Amazon.AppIntegrationsService.Model
         /// <summary>
         /// Gets and sets the property EventBridgeBus. 
         /// <para>
-        /// The Eventbridge bus.
+        /// The EventBridge bus.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

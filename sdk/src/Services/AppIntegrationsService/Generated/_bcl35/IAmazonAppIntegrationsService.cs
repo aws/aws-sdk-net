@@ -29,13 +29,9 @@ namespace Amazon.AppIntegrationsService
     /// <summary>
     /// Interface for accessing AppIntegrationsService
     ///
-    /// The Amazon AppIntegrations APIs are in preview release and are subject to change.
-    /// 
-    ///  
-    /// <para>
     /// The Amazon AppIntegrations service enables you to configure and reuse connections
     /// to external applications.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// For information about how you can use external applications with Amazon Connect, see
@@ -54,15 +50,10 @@ namespace Amazon.AppIntegrationsService
 
 
         /// <summary>
-        /// The Amazon AppIntegrations APIs are in preview release and are subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Creates an EventIntegration, given a specified name, description, and a reference
-        /// to an Amazon Eventbridge bus in your account and a partner event source that will
-        /// push events to that bus. No objects are created in the your account, only metadata
-        /// that is persisted on the EventIntegration control plane.
-        /// </para>
+        /// to an Amazon EventBridge bus in your account and a partner event source that pushes
+        /// events to that bus. No objects are created in the your account, only metadata that
+        /// is persisted on the EventIntegration control plane.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEventIntegration service method.</param>
         /// 
@@ -120,13 +111,8 @@ namespace Amazon.AppIntegrationsService
 
 
         /// <summary>
-        /// The Amazon AppIntegrations APIs are in preview release and are subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Deletes the specified existing event integration. If the event integration is associated
         /// with clients, the request is rejected.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEventIntegration service method.</param>
         /// 
@@ -181,12 +167,7 @@ namespace Amazon.AppIntegrationsService
 
 
         /// <summary>
-        /// The Amazon AppIntegrations APIs are in preview release and are subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Return information about the event integration.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEventIntegration service method.</param>
         /// 
@@ -241,12 +222,7 @@ namespace Amazon.AppIntegrationsService
 
 
         /// <summary>
-        /// The Amazon AppIntegrations APIs are in preview release and are subject to change.
-        /// 
-        ///  
-        /// <para>
-        /// Returns a paginated list of event integration associations in the account. 
-        /// </para>
+        /// Returns a paginated list of event integration associations in the account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEventIntegrationAssociations service method.</param>
         /// 
@@ -301,12 +277,7 @@ namespace Amazon.AppIntegrationsService
 
 
         /// <summary>
-        /// The Amazon AppIntegrations APIs are in preview release and are subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Returns a paginated list of event integrations in the account.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEventIntegrations service method.</param>
         /// 
@@ -358,12 +329,7 @@ namespace Amazon.AppIntegrationsService
 
 
         /// <summary>
-        /// The Amazon AppIntegrations APIs are in preview release and are subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Lists the tags for the specified resource.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -415,12 +381,7 @@ namespace Amazon.AppIntegrationsService
 
 
         /// <summary>
-        /// The Amazon AppIntegrations APIs are in preview release and are subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Adds the specified tags to the specified resource.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -472,12 +433,7 @@ namespace Amazon.AppIntegrationsService
 
 
         /// <summary>
-        /// The Amazon AppIntegrations APIs are in preview release and are subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Removes the specified tags from the specified resource.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -529,12 +485,7 @@ namespace Amazon.AppIntegrationsService
 
 
         /// <summary>
-        /// The Amazon AppIntegrations APIs are in preview release and are subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the description of an event integration.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEventIntegration service method.</param>
         /// 

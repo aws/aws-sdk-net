@@ -30,12 +30,7 @@ namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// The Amazon AppIntegrations APIs are in preview release and are subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Lists the tags for the specified resource.
-    /// </para>
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonAppIntegrationsServiceRequest
     {

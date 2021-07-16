@@ -29,12 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
-    /// The Amazon AppIntegrations APIs are in preview release and are subject to change.
-    /// 
-    ///  
-    /// <para>
     /// The event filter.
-    /// </para>
     /// </summary>
     public partial class EventFilter
     {
