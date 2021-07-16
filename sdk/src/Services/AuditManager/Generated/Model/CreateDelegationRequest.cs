@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// A collection of attributes used to create a delegation for an assessment in AWS Audit
+    /// A collection of attributes used to create a delegation for an assessment in Audit
     /// Manager.
     /// </summary>
     public partial class CreateDelegationRequest

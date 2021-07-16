@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSettings operation.
-    /// Updates AWS Audit Manager settings for the current user account.
+    /// Updates Audit Manager settings for the current user account.
     /// </summary>
     public partial class UpdateSettingsRequest : AmazonAuditManagerRequest
     {
@@ -78,7 +78,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property KmsKey. 
         /// <para>
-        ///  The AWS KMS key details. 
+        ///  The KMS key details. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=2048)]
@@ -97,7 +97,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property SnsTopic. 
         /// <para>
-        ///  The Amazon Simple Notification Service (Amazon SNS) topic to which AWS Audit Manager
+        ///  The Amazon Simple Notification Service (Amazon SNS) topic to which Audit Manager
         /// sends notifications. 
         /// </para>
         /// </summary>

@@ -31,7 +31,7 @@ namespace Amazon.AuditManager.Model
     /// <summary>
     /// Container for the parameters to the BatchImportEvidenceToAssessmentControl operation.
     /// Uploads one or more pieces of evidence to the specified control in the assessment
-    /// in AWS Audit Manager.
+    /// in Audit Manager.
     /// </summary>
     public partial class BatchImportEvidenceToAssessmentControlRequest : AmazonAuditManagerRequest
     {

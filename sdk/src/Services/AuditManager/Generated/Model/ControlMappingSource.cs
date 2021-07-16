@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The data source that determines from where AWS Audit Manager collects evidence for
-    /// the control.
+    /// The data source that determines from where Audit Manager collects evidence for the
+    /// control.
     /// </summary>
     public partial class ControlMappingSource
     {

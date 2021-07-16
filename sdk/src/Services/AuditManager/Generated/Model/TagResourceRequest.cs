@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Tags the specified resource in AWS Audit Manager.
+    /// Tags the specified resource in Audit Manager.
     /// </summary>
     public partial class TagResourceRequest : AmazonAuditManagerRequest
     {

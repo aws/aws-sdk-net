@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The file used to structure and automate AWS Audit Manager assessments for a given
-    /// compliance standard.
+    /// The file used to structure and automate Audit Manager assessments for a given compliance
+    /// standard.
     /// </summary>
     public partial class Framework
     {
@@ -110,7 +110,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlSources. 
         /// <para>
-        ///  The sources from which AWS Audit Manager collects evidence for the control. 
+        ///  The sources from which Audit Manager collects evidence for the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

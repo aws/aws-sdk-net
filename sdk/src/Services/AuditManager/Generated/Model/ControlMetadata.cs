@@ -62,8 +62,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlSources. 
         /// <para>
-        ///  The data source that determines from where AWS Audit Manager collects evidence for
-        /// the control. 
+        ///  The data source that determines from where Audit Manager collects evidence for the
+        /// control. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// A metadata object associated with an assessment in AWS Audit Manager.
+    /// A metadata object associated with an assessment in Audit Manager.
     /// </summary>
     public partial class AssessmentMetadataItem
     {

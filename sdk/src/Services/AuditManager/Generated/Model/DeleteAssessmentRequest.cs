@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAssessment operation.
-    /// Deletes an assessment in AWS Audit Manager.
+    /// Deletes an assessment in Audit Manager.
     /// </summary>
     public partial class DeleteAssessmentRequest : AmazonAuditManagerRequest
     {

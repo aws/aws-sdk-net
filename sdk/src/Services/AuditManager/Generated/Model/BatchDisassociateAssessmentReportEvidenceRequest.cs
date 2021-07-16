@@ -30,8 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchDisassociateAssessmentReportEvidence operation.
-    /// Disassociates a list of evidence from the specified assessment report in AWS Audit
-    /// Manager.
+    /// Disassociates a list of evidence from the specified assessment report in Audit Manager.
     /// </summary>
     public partial class BatchDisassociateAssessmentReportEvidenceRequest : AmazonAuditManagerRequest
     {

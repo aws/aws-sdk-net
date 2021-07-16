@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterAccount operation.
-    /// Deregisters an account in AWS Audit Manager.
+    /// Deregisters an account in Audit Manager.
     /// </summary>
     public partial class DeregisterAccountRequest : AmazonAuditManagerRequest
     {

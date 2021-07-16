@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The file used to structure and automate AWS Audit Manager assessments for a given
-    /// compliance standard.
+    /// The file used to structure and automate Audit Manager assessments for a given compliance
+    /// standard.
     /// </summary>
     public partial class AssessmentFramework
     {

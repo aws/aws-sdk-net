@@ -93,7 +93,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        ///  The identifier for the specified AWS account. 
+        ///  The identifier for the specified account. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -112,8 +112,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AwsOrganization. 
         /// <para>
-        ///  The AWS account from which the evidence is collected, and its AWS organization path.
-        /// 
+        ///  The account from which the evidence is collected, and its organization path. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -133,9 +132,9 @@ namespace Amazon.AuditManager.Model
         /// Gets and sets the property ComplianceCheck. 
         /// <para>
         ///  The evaluation status for evidence that falls under the compliance check category.
-        /// For evidence collected from AWS Security Hub, a <i>Pass</i> or <i>Fail</i> result
-        /// is shown. For evidence collected from AWS Config, a <i>Compliant</i> or <i>Noncompliant</i>
-        /// result is shown. 
+        /// For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i> result is shown.
+        /// For evidence collected from Config, a <i>Compliant</i> or <i>Noncompliant</i> result
+        /// is shown. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -192,7 +191,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property EventSource. 
         /// <para>
-        ///  The AWS service from which the evidence is collected. 
+        ///  The Amazon Web Service from which the evidence is collected. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=40)]
@@ -211,7 +210,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property EvidenceAwsAccountId. 
         /// <para>
-        ///  The identifier for the specified AWS account. 
+        ///  The identifier for the specified account. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

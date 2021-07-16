@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchCreateDelegationByAssessment operation.
-    /// Create a batch of delegations for a specified assessment in AWS Audit Manager.
+    /// Create a batch of delegations for a specified assessment in Audit Manager.
     /// </summary>
     public partial class BatchCreateDelegationByAssessmentRequest : AmazonAuditManagerRequest
     {
@@ -59,7 +59,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property CreateDelegationRequests. 
         /// <para>
-        ///  The API request to batch create delegations in AWS Audit Manager. 
+        ///  The API request to batch create delegations in Audit Manager. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

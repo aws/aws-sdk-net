@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAssessmentReports operation.
-    /// Returns a list of assessment reports created in AWS Audit Manager.
+    /// Returns a list of assessment reports created in Audit Manager.
     /// </summary>
     public partial class ListAssessmentReportsRequest : AmazonAuditManagerRequest
     {

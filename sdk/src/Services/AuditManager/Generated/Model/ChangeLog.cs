@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The record of a change within AWS Audit Manager, such as a modified assessment, a
-    /// delegated control set, and so on.
+    /// The record of a change within Audit Manager, such as a modified assessment, a delegated
+    /// control set, and so on.
     /// </summary>
     public partial class ChangeLog
     {

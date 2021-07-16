@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The folder in which AWS Audit Manager stores evidence for an assessment.
+    /// The folder in which Audit Manager stores evidence for an assessment.
     /// </summary>
     public partial class AssessmentEvidenceFolder
     {
@@ -168,7 +168,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property DataSource. 
         /// <para>
-        ///  The AWS service from which the evidence was collected. 
+        ///  The Amazon Web Service from which the evidence was collected. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -205,7 +205,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property EvidenceAwsServiceSourceCount. 
         /// <para>
-        ///  The total number of AWS resources assessed to generate the evidence. 
+        ///  The total number of Amazon Web Services resources assessed to generate the evidence.
+        /// 
         /// </para>
         /// </summary>
         public int EvidenceAwsServiceSourceCount
@@ -224,7 +225,7 @@ namespace Amazon.AuditManager.Model
         /// Gets and sets the property EvidenceByTypeComplianceCheckCount. 
         /// <para>
         ///  The number of evidence that falls under the compliance check category. This evidence
-        /// is collected from AWS Config or AWS Security Hub. 
+        /// is collected from Config or Security Hub. 
         /// </para>
         /// </summary>
         public int EvidenceByTypeComplianceCheckCount
@@ -242,8 +243,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property EvidenceByTypeComplianceCheckIssuesCount. 
         /// <para>
-        ///  The total number of issues that were reported directly from AWS Security Hub, AWS
-        /// Config, or both. 
+        ///  The total number of issues that were reported directly from Security Hub, Config,
+        /// or both. 
         /// </para>
         /// </summary>
         public int EvidenceByTypeComplianceCheckIssuesCount
@@ -262,8 +263,8 @@ namespace Amazon.AuditManager.Model
         /// Gets and sets the property EvidenceByTypeConfigurationDataCount. 
         /// <para>
         ///  The number of evidence that falls under the configuration data category. This evidence
-        /// is collected from configuration snapshots of other AWS services such as Amazon EC2,
-        /// Amazon S3, or IAM. 
+        /// is collected from configuration snapshots of other Amazon Web Services services such
+        /// as Amazon EC2, Amazon S3, or IAM. 
         /// </para>
         /// </summary>
         public int EvidenceByTypeConfigurationDataCount
@@ -301,7 +302,7 @@ namespace Amazon.AuditManager.Model
         /// Gets and sets the property EvidenceByTypeUserActivityCount. 
         /// <para>
         ///  The number of evidence that falls under the user activity category. This evidence
-        /// is collected from AWS CloudTrail logs. 
+        /// is collected from CloudTrail logs. 
         /// </para>
         /// </summary>
         public int EvidenceByTypeUserActivityCount

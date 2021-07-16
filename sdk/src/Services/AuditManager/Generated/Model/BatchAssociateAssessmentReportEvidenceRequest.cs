@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchAssociateAssessmentReportEvidence operation.
-    /// Associates a list of evidence to an assessment report in an AWS Audit Manager assessment.
+    /// Associates a list of evidence to an assessment report in an Audit Manager assessment.
     /// </summary>
     public partial class BatchAssociateAssessmentReportEvidenceRequest : AmazonAuditManagerRequest
     {

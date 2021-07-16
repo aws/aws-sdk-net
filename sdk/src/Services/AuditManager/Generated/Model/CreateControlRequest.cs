@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateControl operation.
-    /// Creates a new custom control in AWS Audit Manager.
+    /// Creates a new custom control in Audit Manager.
     /// </summary>
     public partial class CreateControlRequest : AmazonAuditManagerRequest
     {

@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the GetServicesInScope operation.
-    /// Returns a list of the in-scope AWS services for the specified assessment.
+    /// Returns a list of the in-scope Amazon Web Services services for the specified assessment.
     /// </summary>
     public partial class GetServicesInScopeRequest : AmazonAuditManagerRequest
     {

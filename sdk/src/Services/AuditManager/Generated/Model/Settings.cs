@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The settings object that holds all supported AWS Audit Manager settings.
+    /// The settings object that holds all supported Audit Manager settings.
     /// </summary>
     public partial class Settings
     {
@@ -78,7 +78,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property IsAwsOrgEnabled. 
         /// <para>
-        ///  Specifies whether AWS Organizations is enabled. 
+        ///  Specifies whether Organizations is enabled. 
         /// </para>
         /// </summary>
         public bool IsAwsOrgEnabled
@@ -96,7 +96,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property KmsKey. 
         /// <para>
-        ///  The AWS KMS key details. 
+        ///  The KMS key details. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=2048)]

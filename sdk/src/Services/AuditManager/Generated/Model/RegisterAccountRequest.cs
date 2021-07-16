@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterAccount operation.
-    /// Enables AWS Audit Manager for the specified AWS account.
+    /// Enables Audit Manager for the specified account.
     /// </summary>
     public partial class RegisterAccountRequest : AmazonAuditManagerRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property DelegatedAdminAccount. 
         /// <para>
-        ///  The delegated administrator account for AWS Audit Manager. 
+        ///  The delegated administrator account for Audit Manager. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -59,7 +59,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property KmsKey. 
         /// <para>
-        ///  The AWS KMS key details. 
+        ///  The KMS key details. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=2048)]

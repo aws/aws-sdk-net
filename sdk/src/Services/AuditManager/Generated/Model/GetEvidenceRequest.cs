@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the GetEvidence operation.
-    /// Returns evidence from AWS Audit Manager.
+    /// Returns evidence from Audit Manager.
     /// </summary>
     public partial class GetEvidenceRequest : AmazonAuditManagerRequest
     {

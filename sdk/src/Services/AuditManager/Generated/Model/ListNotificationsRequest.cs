@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ListNotifications operation.
-    /// Returns a list of all AWS Audit Manager notifications.
+    /// Returns a list of all Audit Manager notifications.
     /// </summary>
     public partial class ListNotificationsRequest : AmazonAuditManagerRequest
     {

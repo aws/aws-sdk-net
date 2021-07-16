@@ -38,7 +38,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
-        ///  The settings object that holds all supported AWS Audit Manager settings. 
+        ///  The settings object that holds all supported Audit Manager settings. 
         /// </para>
         /// </summary>
         public Settings Settings

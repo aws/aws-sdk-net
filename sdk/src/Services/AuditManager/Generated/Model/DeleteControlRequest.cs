@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteControl operation.
-    /// Deletes a custom control in AWS Audit Manager.
+    /// Deletes a custom control in Audit Manager.
     /// </summary>
     public partial class DeleteControlRequest : AmazonAuditManagerRequest
     {

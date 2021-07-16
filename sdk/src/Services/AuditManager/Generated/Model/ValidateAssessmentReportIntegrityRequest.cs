@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ValidateAssessmentReportIntegrity operation.
-    /// Validates the integrity of an assessment report in AWS Audit Manager.
+    /// Validates the integrity of an assessment report in Audit Manager.
     /// </summary>
     public partial class ValidateAssessmentReportIntegrityRequest : AmazonAuditManagerRequest
     {

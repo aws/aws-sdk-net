@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAssessmentFramework operation.
-    /// Deletes a custom framework in AWS Audit Manager.
+    /// Deletes a custom framework in Audit Manager.
     /// </summary>
     public partial class DeleteAssessmentFrameworkRequest : AmazonAuditManagerRequest
     {

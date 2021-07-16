@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Returns a list of tags for the specified resource in AWS Audit Manager.
+    /// Returns a list of tags for the specified resource in Audit Manager.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonAuditManagerRequest
     {

@@ -81,7 +81,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ManualEvidence. 
         /// <para>
-        ///  Manual evidence that cannot be collected automatically by AWS Audit Manager. 
+        ///  Manual evidence that cannot be collected automatically by Audit Manager. 
         /// </para>
         /// </summary>
         public ManualEvidence ManualEvidence

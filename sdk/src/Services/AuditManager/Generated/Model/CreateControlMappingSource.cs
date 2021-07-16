@@ -45,7 +45,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property SourceDescription. 
         /// <para>
-        ///  The description of the data source that determines from where AWS Audit Manager collects
+        ///  The description of the data source that determines from where Audit Manager collects
         /// evidence for the control. 
         /// </para>
         /// </summary>

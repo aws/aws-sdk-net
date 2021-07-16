@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// Represents a set of controls in an AWS Audit Manager assessment.
+    /// Represents a set of controls in an Audit Manager assessment.
     /// </summary>
     public partial class AssessmentControlSet
     {

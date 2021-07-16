@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The wrapper that contains the AWS accounts and AWS services in scope for the assessment.
+    /// The wrapper that contains the accounts and services in scope for the assessment.
     /// </summary>
     public partial class Scope
     {
@@ -39,7 +39,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AwsAccounts. 
         /// <para>
-        ///  The AWS accounts included in the scope of the assessment. 
+        ///  The accounts included in the scope of the assessment. 
         /// </para>
         /// </summary>
         public List<AWSAccount> AwsAccounts
@@ -57,7 +57,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AwsServices. 
         /// <para>
-        ///  The AWS services included in the scope of the assessment. 
+        ///  The Amazon Web Services services included in the scope of the assessment. 
         /// </para>
         /// </summary>
         public List<AWSService> AwsServices

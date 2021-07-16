@@ -30,7 +30,8 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the GetOrganizationAdminAccount operation.
-    /// Returns the name of the delegated AWS administrator account for the AWS organization.
+    /// Returns the name of the delegated Amazon Web Services administrator account for the
+    /// organization.
     /// </summary>
     public partial class GetOrganizationAdminAccountRequest : AmazonAuditManagerRequest
     {

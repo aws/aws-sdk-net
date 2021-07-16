@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The wrapper of AWS account details, such as account ID, email address, and so on.
+    /// The wrapper of account details, such as account ID, email address, and so on.
     /// </summary>
     public partial class AWSAccount
     {
@@ -40,7 +40,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property EmailAddress. 
         /// <para>
-        ///  The email address associated with the specified AWS account. 
+        ///  The email address associated with the specified account. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=320)]
@@ -59,7 +59,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        ///  The identifier for the specified AWS account. 
+        ///  The identifier for the specified account. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -78,7 +78,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the specified AWS account. 
+        ///  The name of the specified account. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

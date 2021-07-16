@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// A finalized document generated from an AWS Audit Manager assessment. These reports
-    /// summarize the relevant evidence collected for your audit, and link to the relevant
-    /// evidence folders which are named and organized according to the controls specified
-    /// in your assessment.
+    /// A finalized document generated from an Audit Manager assessment. These reports summarize
+    /// the relevant evidence collected for your audit, and link to the relevant evidence
+    /// folders which are named and organized according to the controls specified in your
+    /// assessment.
     /// </summary>
     public partial class AssessmentReport
     {
@@ -106,7 +106,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        ///  The identifier for the specified AWS account. 
+        ///  The identifier for the specified account. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

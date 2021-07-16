@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAssessmentFramework operation.
-    /// Updates a custom framework in AWS Audit Manager.
+    /// Updates a custom framework in Audit Manager.
     /// </summary>
     public partial class UpdateAssessmentFrameworkRequest : AmazonAuditManagerRequest
     {

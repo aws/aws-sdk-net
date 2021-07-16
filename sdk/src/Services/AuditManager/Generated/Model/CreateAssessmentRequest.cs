@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAssessment operation.
-    /// Creates an assessment in AWS Audit Manager.
+    /// Creates an assessment in Audit Manager.
     /// </summary>
     public partial class CreateAssessmentRequest : AmazonAuditManagerRequest
     {

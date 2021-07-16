@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// A system asset that is evaluated in an AWS Audit Manager assessment.
+    /// A system asset that is evaluated in an Audit Manager assessment.
     /// </summary>
     public partial class Resource
     {

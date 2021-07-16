@@ -58,7 +58,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property OrganizationId. 
         /// <para>
-        ///  The identifier for the specified AWS organization. 
+        ///  The identifier for the specified organization. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=34)]

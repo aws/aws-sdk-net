@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAssessmentFrameworks operation.
-    /// Returns a list of the frameworks available in the AWS Audit Manager framework library.
+    /// Returns a list of the frameworks available in the Audit Manager framework library.
     /// </summary>
     public partial class ListAssessmentFrameworksRequest : AmazonAuditManagerRequest
     {

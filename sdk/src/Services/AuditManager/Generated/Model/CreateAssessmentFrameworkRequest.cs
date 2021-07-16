@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAssessmentFramework operation.
-    /// Creates a custom framework in AWS Audit Manager.
+    /// Creates a custom framework in Audit Manager.
     /// </summary>
     public partial class CreateAssessmentFrameworkRequest : AmazonAuditManagerRequest
     {

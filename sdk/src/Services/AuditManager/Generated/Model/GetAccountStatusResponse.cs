@@ -38,7 +38,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status of the specified AWS account. 
+        ///  The status of the specified account. 
         /// </para>
         /// </summary>
         public AccountStatus Status

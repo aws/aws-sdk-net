@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAccountStatus operation.
-    /// Returns the registration status of an account in AWS Audit Manager.
+    /// Returns the registration status of an account in Audit Manager.
     /// </summary>
     public partial class GetAccountStatusRequest : AmazonAuditManagerRequest
     {

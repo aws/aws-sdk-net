@@ -704,7 +704,6 @@
     <property>Amazon.AuditManager.Model.ValidateAssessmentReportIntegrityRequest.S3RelativePath</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^(S|s)3:\/\/[a-zA-Z0-9-_\/.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ValidateAssessmentReportIntegrityResponse.SignatureAlgorithm</property>
@@ -990,7 +989,6 @@
     <property>Amazon.AuditManager.Model.AssessmentReportsDestination.Destination</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^(S|s)3:\/\/[a-zA-Z0-9-_\/.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.AWSAccount.EmailAddress</property>
@@ -1455,7 +1453,6 @@
     <property>Amazon.AuditManager.Model.ManualEvidence.S3ResourcePath</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^(S|s)3:\/\/[a-zA-Z0-9-_\/.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.Notification.AssessmentId</property>

@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAssessmentStatus operation.
-    /// Updates the status of an assessment in AWS Audit Manager.
+    /// Updates the status of an assessment in Audit Manager.
     /// </summary>
     public partial class UpdateAssessmentStatusRequest : AmazonAuditManagerRequest
     {

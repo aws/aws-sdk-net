@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// An AWS service such as Amazon S3, AWS CloudTrail, and so on.
+    /// An Amazon Web Service such as Amazon S3, CloudTrail, and so on.
     /// </summary>
     public partial class AWSService
     {
@@ -38,7 +38,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        ///  The name of the AWS service. 
+        ///  The name of the Amazon Web Service. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=40)]

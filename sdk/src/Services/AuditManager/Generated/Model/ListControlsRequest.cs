@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ListControls operation.
-    /// Returns a list of controls from AWS Audit Manager.
+    /// Returns a list of controls from Audit Manager.
     /// </summary>
     public partial class ListControlsRequest : AmazonAuditManagerRequest
     {

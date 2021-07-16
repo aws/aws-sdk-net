@@ -30,8 +30,8 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterOrganizationAdminAccount operation.
-    /// Enables an AWS account within the organization as the delegated administrator for
-    /// AWS Audit Manager.
+    /// Enables an account within the organization as the delegated administrator for Audit
+    /// Manager.
     /// </summary>
     public partial class RegisterOrganizationAdminAccountRequest : AmazonAuditManagerRequest
     {

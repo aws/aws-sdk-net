@@ -41,7 +41,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property CreateDelegationRequest. 
         /// <para>
-        ///  The API request to batch create delegations in AWS Audit Manager. 
+        ///  The API request to batch create delegations in Audit Manager. 
         /// </para>
         /// </summary>
         public CreateDelegationRequest CreateDelegationRequest

@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateControl operation.
-    /// Updates a custom control in AWS Audit Manager.
+    /// Updates a custom control in Audit Manager.
     /// </summary>
     public partial class UpdateControlRequest : AmazonAuditManagerRequest
     {

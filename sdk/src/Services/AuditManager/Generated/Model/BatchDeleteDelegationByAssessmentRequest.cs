@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchDeleteDelegationByAssessment operation.
-    /// Deletes the delegations in the specified AWS Audit Manager assessment.
+    /// Deletes the delegations in the specified Audit Manager assessment.
     /// </summary>
     public partial class BatchDeleteDelegationByAssessmentRequest : AmazonAuditManagerRequest
     {

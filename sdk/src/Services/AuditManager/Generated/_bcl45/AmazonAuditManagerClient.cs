@@ -38,19 +38,19 @@ namespace Amazon.AuditManager
     /// <summary>
     /// Implementation for accessing AuditManager
     ///
-    /// Welcome to the AWS Audit Manager API reference. This guide is for developers who need
-    /// detailed information about the AWS Audit Manager API operations, data types, and errors.
+    /// Welcome to the Audit Manager API reference. This guide is for developers who need
+    /// detailed information about the Audit Manager API operations, data types, and errors.
     /// 
     /// 
     ///  
     /// <para>
-    /// AWS Audit Manager is a service that provides automated evidence collection so that
-    /// you can continuously audit your AWS usage, and assess the effectiveness of your controls
-    /// to better manage risk and simplify compliance.
+    /// Audit Manager is a service that provides automated evidence collection so that you
+    /// can continuously audit your Amazon Web Services usage, and assess the effectiveness
+    /// of your controls to better manage risk and simplify compliance.
     /// </para>
     ///  
     /// <para>
-    /// AWS Audit Manager provides pre-built frameworks that structure and automate assessments
+    /// Audit Manager provides pre-built frameworks that structure and automate assessments
     /// for a given compliance standard. Frameworks include a pre-built collection of controls
     /// with descriptions and testing procedures, which are grouped according to the requirements
     /// of the specified compliance standard or regulation. You can also customize frameworks
@@ -58,17 +58,17 @@ namespace Amazon.AuditManager
     /// </para>
     ///  
     /// <para>
-    /// Use the following links to get started with the AWS Audit Manager API:
+    /// Use the following links to get started with the Audit Manager API:
     /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Operations.html">Actions</a>:
-    /// An alphabetical list of all AWS Audit Manager API operations.
+    /// An alphabetical list of all Audit Manager API operations.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Types.html">Data
-    /// types</a>: An alphabetical list of all AWS Audit Manager data types.
+    /// types</a>: An alphabetical list of all Audit Manager data types.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -82,8 +82,8 @@ namespace Amazon.AuditManager
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// If you're new to AWS Audit Manager, we recommend that you review the <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/what-is.html">
-    /// AWS Audit Manager User Guide</a>.
+    /// If you're new to Audit Manager, we recommend that you review the <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/what-is.html">
+    /// Audit Manager User Guide</a>.
     /// </para>
     /// </summary>
     public partial class AmazonAuditManagerClient : AmazonServiceClient, IAmazonAuditManager
@@ -304,14 +304,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Associates an evidence folder to the specified assessment report in AWS Audit Manager.
+        /// Associates an evidence folder to the specified assessment report in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateAssessmentReportEvidenceFolder service method.</param>
         /// 
         /// <returns>The response from the AssociateAssessmentReportEvidenceFolder service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -335,7 +335,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Associates an evidence folder to the specified assessment report in AWS Audit Manager.
+        /// Associates an evidence folder to the specified assessment report in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateAssessmentReportEvidenceFolder service method.</param>
         /// <param name="cancellationToken">
@@ -344,8 +344,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the AssociateAssessmentReportEvidenceFolder service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -373,14 +373,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Associates a list of evidence to an assessment report in an AWS Audit Manager assessment.
+        /// Associates a list of evidence to an assessment report in an Audit Manager assessment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchAssociateAssessmentReportEvidence service method.</param>
         /// 
         /// <returns>The response from the BatchAssociateAssessmentReportEvidence service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -404,7 +404,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Associates a list of evidence to an assessment report in an AWS Audit Manager assessment.
+        /// Associates a list of evidence to an assessment report in an Audit Manager assessment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchAssociateAssessmentReportEvidence service method.</param>
         /// <param name="cancellationToken">
@@ -413,8 +413,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the BatchAssociateAssessmentReportEvidence service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -442,14 +442,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Create a batch of delegations for a specified assessment in AWS Audit Manager.
+        /// Create a batch of delegations for a specified assessment in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchCreateDelegationByAssessment service method.</param>
         /// 
         /// <returns>The response from the BatchCreateDelegationByAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -473,7 +473,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Create a batch of delegations for a specified assessment in AWS Audit Manager.
+        /// Create a batch of delegations for a specified assessment in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchCreateDelegationByAssessment service method.</param>
         /// <param name="cancellationToken">
@@ -482,8 +482,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the BatchCreateDelegationByAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -511,14 +511,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Deletes the delegations in the specified AWS Audit Manager assessment.
+        /// Deletes the delegations in the specified Audit Manager assessment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteDelegationByAssessment service method.</param>
         /// 
         /// <returns>The response from the BatchDeleteDelegationByAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -542,7 +542,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Deletes the delegations in the specified AWS Audit Manager assessment.
+        /// Deletes the delegations in the specified Audit Manager assessment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteDelegationByAssessment service method.</param>
         /// <param name="cancellationToken">
@@ -551,8 +551,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the BatchDeleteDelegationByAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -580,15 +580,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Disassociates a list of evidence from the specified assessment report in AWS Audit
-        /// Manager.
+        /// Disassociates a list of evidence from the specified assessment report in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateAssessmentReportEvidence service method.</param>
         /// 
         /// <returns>The response from the BatchDisassociateAssessmentReportEvidence service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -612,8 +611,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Disassociates a list of evidence from the specified assessment report in AWS Audit
-        /// Manager.
+        /// Disassociates a list of evidence from the specified assessment report in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateAssessmentReportEvidence service method.</param>
         /// <param name="cancellationToken">
@@ -622,8 +620,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the BatchDisassociateAssessmentReportEvidence service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -652,14 +650,14 @@ namespace Amazon.AuditManager
 
         /// <summary>
         /// Uploads one or more pieces of evidence to the specified control in the assessment
-        /// in AWS Audit Manager.
+        /// in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchImportEvidenceToAssessmentControl service method.</param>
         /// 
         /// <returns>The response from the BatchImportEvidenceToAssessmentControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -684,7 +682,7 @@ namespace Amazon.AuditManager
 
         /// <summary>
         /// Uploads one or more pieces of evidence to the specified control in the assessment
-        /// in AWS Audit Manager.
+        /// in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchImportEvidenceToAssessmentControl service method.</param>
         /// <param name="cancellationToken">
@@ -693,8 +691,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the BatchImportEvidenceToAssessmentControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -722,14 +720,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Creates an assessment in AWS Audit Manager.
+        /// Creates an assessment in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssessment service method.</param>
         /// 
         /// <returns>The response from the CreateAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -753,7 +751,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Creates an assessment in AWS Audit Manager.
+        /// Creates an assessment in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssessment service method.</param>
         /// <param name="cancellationToken">
@@ -762,8 +760,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the CreateAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -791,14 +789,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Creates a custom framework in AWS Audit Manager.
+        /// Creates a custom framework in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssessmentFramework service method.</param>
         /// 
         /// <returns>The response from the CreateAssessmentFramework service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -822,7 +820,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Creates a custom framework in AWS Audit Manager.
+        /// Creates a custom framework in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssessmentFramework service method.</param>
         /// <param name="cancellationToken">
@@ -831,8 +829,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the CreateAssessmentFramework service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -866,8 +864,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the CreateAssessmentReport service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -900,8 +898,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the CreateAssessmentReport service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -929,14 +927,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Creates a new custom control in AWS Audit Manager.
+        /// Creates a new custom control in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateControl service method.</param>
         /// 
         /// <returns>The response from the CreateControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -960,7 +958,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Creates a new custom control in AWS Audit Manager.
+        /// Creates a new custom control in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateControl service method.</param>
         /// <param name="cancellationToken">
@@ -969,8 +967,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the CreateControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -998,14 +996,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Deletes an assessment in AWS Audit Manager.
+        /// Deletes an assessment in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAssessment service method.</param>
         /// 
         /// <returns>The response from the DeleteAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1029,7 +1027,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Deletes an assessment in AWS Audit Manager.
+        /// Deletes an assessment in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAssessment service method.</param>
         /// <param name="cancellationToken">
@@ -1038,8 +1036,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the DeleteAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1067,14 +1065,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Deletes a custom framework in AWS Audit Manager.
+        /// Deletes a custom framework in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAssessmentFramework service method.</param>
         /// 
         /// <returns>The response from the DeleteAssessmentFramework service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1098,7 +1096,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Deletes a custom framework in AWS Audit Manager.
+        /// Deletes a custom framework in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAssessmentFramework service method.</param>
         /// <param name="cancellationToken">
@@ -1107,8 +1105,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the DeleteAssessmentFramework service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1136,14 +1134,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Deletes an assessment report from an assessment in AWS Audit Manager.
+        /// Deletes an assessment report from an assessment in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAssessmentReport service method.</param>
         /// 
         /// <returns>The response from the DeleteAssessmentReport service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1167,7 +1165,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Deletes an assessment report from an assessment in AWS Audit Manager.
+        /// Deletes an assessment report from an assessment in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAssessmentReport service method.</param>
         /// <param name="cancellationToken">
@@ -1176,8 +1174,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the DeleteAssessmentReport service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1205,14 +1203,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Deletes a custom control in AWS Audit Manager.
+        /// Deletes a custom control in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteControl service method.</param>
         /// 
         /// <returns>The response from the DeleteControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1236,7 +1234,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Deletes a custom control in AWS Audit Manager.
+        /// Deletes a custom control in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteControl service method.</param>
         /// <param name="cancellationToken">
@@ -1245,8 +1243,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the DeleteControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1274,14 +1272,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Deregisters an account in AWS Audit Manager.
+        /// Deregisters an account in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterAccount service method.</param>
         /// 
         /// <returns>The response from the DeregisterAccount service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1305,7 +1303,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Deregisters an account in AWS Audit Manager.
+        /// Deregisters an account in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterAccount service method.</param>
         /// <param name="cancellationToken">
@@ -1314,8 +1312,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the DeregisterAccount service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1343,14 +1341,25 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Deregisters the delegated AWS administrator account from the AWS organization.
+        /// Removes the specified member account as a delegated administrator for Audit Manager.
+        /// 
+        /// 
+        ///  <important> 
+        /// <para>
+        /// When you remove a delegated administrator from your Audit Manager settings, or when
+        /// you deregister a delegated administrator from Organizations, you continue to have
+        /// access to the evidence that you previously collected under that account. However,
+        /// Audit Manager will stop collecting and attaching evidence to that delegated administrator
+        /// account moving forward.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterOrganizationAdminAccount service method.</param>
         /// 
         /// <returns>The response from the DeregisterOrganizationAdminAccount service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1374,7 +1383,18 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Deregisters the delegated AWS administrator account from the AWS organization.
+        /// Removes the specified member account as a delegated administrator for Audit Manager.
+        /// 
+        /// 
+        ///  <important> 
+        /// <para>
+        /// When you remove a delegated administrator from your Audit Manager settings, or when
+        /// you deregister a delegated administrator from Organizations, you continue to have
+        /// access to the evidence that you previously collected under that account. However,
+        /// Audit Manager will stop collecting and attaching evidence to that delegated administrator
+        /// account moving forward.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterOrganizationAdminAccount service method.</param>
         /// <param name="cancellationToken">
@@ -1383,8 +1403,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the DeregisterOrganizationAdminAccount service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1412,15 +1432,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Disassociates an evidence folder from the specified assessment report in AWS Audit
-        /// Manager.
+        /// Disassociates an evidence folder from the specified assessment report in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateAssessmentReportEvidenceFolder service method.</param>
         /// 
         /// <returns>The response from the DisassociateAssessmentReportEvidenceFolder service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1444,8 +1463,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Disassociates an evidence folder from the specified assessment report in AWS Audit
-        /// Manager.
+        /// Disassociates an evidence folder from the specified assessment report in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateAssessmentReportEvidenceFolder service method.</param>
         /// <param name="cancellationToken">
@@ -1454,8 +1472,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the DisassociateAssessmentReportEvidenceFolder service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1483,7 +1501,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns the registration status of an account in AWS Audit Manager.
+        /// Returns the registration status of an account in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountStatus service method.</param>
         /// 
@@ -1504,7 +1522,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns the registration status of an account in AWS Audit Manager.
+        /// Returns the registration status of an account in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountStatus service method.</param>
         /// <param name="cancellationToken">
@@ -1532,14 +1550,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns an assessment from AWS Audit Manager.
+        /// Returns an assessment from Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAssessment service method.</param>
         /// 
         /// <returns>The response from the GetAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1563,7 +1581,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns an assessment from AWS Audit Manager.
+        /// Returns an assessment from Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAssessment service method.</param>
         /// <param name="cancellationToken">
@@ -1572,8 +1590,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1601,14 +1619,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a framework from AWS Audit Manager.
+        /// Returns a framework from Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAssessmentFramework service method.</param>
         /// 
         /// <returns>The response from the GetAssessmentFramework service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1632,7 +1650,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a framework from AWS Audit Manager.
+        /// Returns a framework from Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAssessmentFramework service method.</param>
         /// <param name="cancellationToken">
@@ -1641,8 +1659,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetAssessmentFramework service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1670,14 +1688,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns the URL of a specified assessment report in AWS Audit Manager.
+        /// Returns the URL of a specified assessment report in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAssessmentReportUrl service method.</param>
         /// 
         /// <returns>The response from the GetAssessmentReportUrl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1701,7 +1719,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns the URL of a specified assessment report in AWS Audit Manager.
+        /// Returns the URL of a specified assessment report in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAssessmentReportUrl service method.</param>
         /// <param name="cancellationToken">
@@ -1710,8 +1728,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetAssessmentReportUrl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1739,14 +1757,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a list of changelogs from AWS Audit Manager.
+        /// Returns a list of changelogs from Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChangeLogs service method.</param>
         /// 
         /// <returns>The response from the GetChangeLogs service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1770,7 +1788,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a list of changelogs from AWS Audit Manager.
+        /// Returns a list of changelogs from Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChangeLogs service method.</param>
         /// <param name="cancellationToken">
@@ -1779,8 +1797,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetChangeLogs service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1808,14 +1826,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a control from AWS Audit Manager.
+        /// Returns a control from Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetControl service method.</param>
         /// 
         /// <returns>The response from the GetControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1839,7 +1857,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a control from AWS Audit Manager.
+        /// Returns a control from Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetControl service method.</param>
         /// <param name="cancellationToken">
@@ -1848,8 +1866,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1883,8 +1901,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetDelegations service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1914,8 +1932,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetDelegations service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1940,14 +1958,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns evidence from AWS Audit Manager.
+        /// Returns evidence from Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvidence service method.</param>
         /// 
         /// <returns>The response from the GetEvidence service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1971,7 +1989,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns evidence from AWS Audit Manager.
+        /// Returns evidence from Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvidence service method.</param>
         /// <param name="cancellationToken">
@@ -1980,8 +1998,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetEvidence service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2009,14 +2027,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns all evidence from a specified evidence folder in AWS Audit Manager.
+        /// Returns all evidence from a specified evidence folder in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvidenceByEvidenceFolder service method.</param>
         /// 
         /// <returns>The response from the GetEvidenceByEvidenceFolder service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2040,7 +2058,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns all evidence from a specified evidence folder in AWS Audit Manager.
+        /// Returns all evidence from a specified evidence folder in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvidenceByEvidenceFolder service method.</param>
         /// <param name="cancellationToken">
@@ -2049,8 +2067,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetEvidenceByEvidenceFolder service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2078,14 +2096,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns an evidence folder from the specified assessment in AWS Audit Manager.
+        /// Returns an evidence folder from the specified assessment in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvidenceFolder service method.</param>
         /// 
         /// <returns>The response from the GetEvidenceFolder service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2109,7 +2127,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns an evidence folder from the specified assessment in AWS Audit Manager.
+        /// Returns an evidence folder from the specified assessment in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvidenceFolder service method.</param>
         /// <param name="cancellationToken">
@@ -2118,8 +2136,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetEvidenceFolder service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2147,14 +2165,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns the evidence folders from a specified assessment in AWS Audit Manager.
+        /// Returns the evidence folders from a specified assessment in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvidenceFoldersByAssessment service method.</param>
         /// 
         /// <returns>The response from the GetEvidenceFoldersByAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2178,7 +2196,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns the evidence folders from a specified assessment in AWS Audit Manager.
+        /// Returns the evidence folders from a specified assessment in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvidenceFoldersByAssessment service method.</param>
         /// <param name="cancellationToken">
@@ -2187,8 +2205,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetEvidenceFoldersByAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2217,14 +2235,14 @@ namespace Amazon.AuditManager
 
         /// <summary>
         /// Returns a list of evidence folders associated with a specified control of an assessment
-        /// in AWS Audit Manager.
+        /// in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvidenceFoldersByAssessmentControl service method.</param>
         /// 
         /// <returns>The response from the GetEvidenceFoldersByAssessmentControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2249,7 +2267,7 @@ namespace Amazon.AuditManager
 
         /// <summary>
         /// Returns a list of evidence folders associated with a specified control of an assessment
-        /// in AWS Audit Manager.
+        /// in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvidenceFoldersByAssessmentControl service method.</param>
         /// <param name="cancellationToken">
@@ -2258,8 +2276,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetEvidenceFoldersByAssessmentControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2287,14 +2305,15 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns the name of the delegated AWS administrator account for the AWS organization.
+        /// Returns the name of the delegated Amazon Web Services administrator account for the
+        /// organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOrganizationAdminAccount service method.</param>
         /// 
         /// <returns>The response from the GetOrganizationAdminAccount service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2318,7 +2337,8 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns the name of the delegated AWS administrator account for the AWS organization.
+        /// Returns the name of the delegated Amazon Web Services administrator account for the
+        /// organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOrganizationAdminAccount service method.</param>
         /// <param name="cancellationToken">
@@ -2327,8 +2347,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetOrganizationAdminAccount service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2356,14 +2376,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a list of the in-scope AWS services for the specified assessment.
+        /// Returns a list of the in-scope Amazon Web Services services for the specified assessment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServicesInScope service method.</param>
         /// 
         /// <returns>The response from the GetServicesInScope service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2384,7 +2404,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a list of the in-scope AWS services for the specified assessment.
+        /// Returns a list of the in-scope Amazon Web Services services for the specified assessment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServicesInScope service method.</param>
         /// <param name="cancellationToken">
@@ -2393,8 +2413,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetServicesInScope service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2419,14 +2439,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns the settings for the specified AWS account.
+        /// Returns the settings for the specified account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSettings service method.</param>
         /// 
         /// <returns>The response from the GetSettings service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2444,7 +2464,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns the settings for the specified AWS account.
+        /// Returns the settings for the specified account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSettings service method.</param>
         /// <param name="cancellationToken">
@@ -2453,8 +2473,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetSettings service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2476,14 +2496,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a list of the frameworks available in the AWS Audit Manager framework library.
+        /// Returns a list of the frameworks available in the Audit Manager framework library.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssessmentFrameworks service method.</param>
         /// 
         /// <returns>The response from the ListAssessmentFrameworks service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2504,7 +2524,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a list of the frameworks available in the AWS Audit Manager framework library.
+        /// Returns a list of the frameworks available in the Audit Manager framework library.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssessmentFrameworks service method.</param>
         /// <param name="cancellationToken">
@@ -2513,8 +2533,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the ListAssessmentFrameworks service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2539,14 +2559,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a list of assessment reports created in AWS Audit Manager.
+        /// Returns a list of assessment reports created in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssessmentReports service method.</param>
         /// 
         /// <returns>The response from the ListAssessmentReports service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2567,7 +2587,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a list of assessment reports created in AWS Audit Manager.
+        /// Returns a list of assessment reports created in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssessmentReports service method.</param>
         /// <param name="cancellationToken">
@@ -2576,8 +2596,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the ListAssessmentReports service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2602,14 +2622,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a list of current and past assessments from AWS Audit Manager.
+        /// Returns a list of current and past assessments from Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssessments service method.</param>
         /// 
         /// <returns>The response from the ListAssessments service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2630,7 +2650,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a list of current and past assessments from AWS Audit Manager.
+        /// Returns a list of current and past assessments from Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssessments service method.</param>
         /// <param name="cancellationToken">
@@ -2639,8 +2659,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the ListAssessments service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2665,14 +2685,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a list of controls from AWS Audit Manager.
+        /// Returns a list of controls from Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListControls service method.</param>
         /// 
         /// <returns>The response from the ListControls service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2693,7 +2713,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a list of controls from AWS Audit Manager.
+        /// Returns a list of controls from Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListControls service method.</param>
         /// <param name="cancellationToken">
@@ -2702,8 +2722,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the ListControls service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2734,8 +2754,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the ListKeywordsForDataSource service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2765,8 +2785,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the ListKeywordsForDataSource service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2791,14 +2811,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a list of all AWS Audit Manager notifications.
+        /// Returns a list of all Audit Manager notifications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNotifications service method.</param>
         /// 
         /// <returns>The response from the ListNotifications service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2819,7 +2839,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a list of all AWS Audit Manager notifications.
+        /// Returns a list of all Audit Manager notifications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNotifications service method.</param>
         /// <param name="cancellationToken">
@@ -2828,8 +2848,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the ListNotifications service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2854,7 +2874,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a list of tags for the specified resource in AWS Audit Manager.
+        /// Returns a list of tags for the specified resource in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -2881,7 +2901,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a list of tags for the specified resource in AWS Audit Manager.
+        /// Returns a list of tags for the specified resource in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -2915,14 +2935,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Enables AWS Audit Manager for the specified AWS account.
+        /// Enables Audit Manager for the specified account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterAccount service method.</param>
         /// 
         /// <returns>The response from the RegisterAccount service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2946,7 +2966,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Enables AWS Audit Manager for the specified AWS account.
+        /// Enables Audit Manager for the specified account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterAccount service method.</param>
         /// <param name="cancellationToken">
@@ -2955,8 +2975,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the RegisterAccount service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2984,15 +3004,15 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Enables an AWS account within the organization as the delegated administrator for
-        /// AWS Audit Manager.
+        /// Enables an account within the organization as the delegated administrator for Audit
+        /// Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterOrganizationAdminAccount service method.</param>
         /// 
         /// <returns>The response from the RegisterOrganizationAdminAccount service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -3016,8 +3036,8 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Enables an AWS account within the organization as the delegated administrator for
-        /// AWS Audit Manager.
+        /// Enables an account within the organization as the delegated administrator for Audit
+        /// Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterOrganizationAdminAccount service method.</param>
         /// <param name="cancellationToken">
@@ -3026,8 +3046,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the RegisterOrganizationAdminAccount service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -3055,7 +3075,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Tags the specified resource in AWS Audit Manager.
+        /// Tags the specified resource in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -3082,7 +3102,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Tags the specified resource in AWS Audit Manager.
+        /// Tags the specified resource in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -3116,7 +3136,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Removes a tag from a resource in AWS Audit Manager.
+        /// Removes a tag from a resource in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -3143,7 +3163,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Removes a tag from a resource in AWS Audit Manager.
+        /// Removes a tag from a resource in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -3177,14 +3197,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Edits an AWS Audit Manager assessment.
+        /// Edits an Audit Manager assessment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssessment service method.</param>
         /// 
         /// <returns>The response from the UpdateAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -3208,7 +3228,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Edits an AWS Audit Manager assessment.
+        /// Edits an Audit Manager assessment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssessment service method.</param>
         /// <param name="cancellationToken">
@@ -3217,8 +3237,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the UpdateAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -3246,14 +3266,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Updates a control within an assessment in AWS Audit Manager.
+        /// Updates a control within an assessment in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssessmentControl service method.</param>
         /// 
         /// <returns>The response from the UpdateAssessmentControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -3277,7 +3297,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Updates a control within an assessment in AWS Audit Manager.
+        /// Updates a control within an assessment in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssessmentControl service method.</param>
         /// <param name="cancellationToken">
@@ -3286,8 +3306,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the UpdateAssessmentControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -3315,14 +3335,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Updates the status of a control set in an AWS Audit Manager assessment.
+        /// Updates the status of a control set in an Audit Manager assessment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssessmentControlSetStatus service method.</param>
         /// 
         /// <returns>The response from the UpdateAssessmentControlSetStatus service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -3346,7 +3366,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Updates the status of a control set in an AWS Audit Manager assessment.
+        /// Updates the status of a control set in an Audit Manager assessment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssessmentControlSetStatus service method.</param>
         /// <param name="cancellationToken">
@@ -3355,8 +3375,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the UpdateAssessmentControlSetStatus service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -3384,14 +3404,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Updates a custom framework in AWS Audit Manager.
+        /// Updates a custom framework in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssessmentFramework service method.</param>
         /// 
         /// <returns>The response from the UpdateAssessmentFramework service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -3415,7 +3435,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Updates a custom framework in AWS Audit Manager.
+        /// Updates a custom framework in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssessmentFramework service method.</param>
         /// <param name="cancellationToken">
@@ -3424,8 +3444,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the UpdateAssessmentFramework service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -3453,14 +3473,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Updates the status of an assessment in AWS Audit Manager.
+        /// Updates the status of an assessment in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssessmentStatus service method.</param>
         /// 
         /// <returns>The response from the UpdateAssessmentStatus service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -3484,7 +3504,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Updates the status of an assessment in AWS Audit Manager.
+        /// Updates the status of an assessment in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssessmentStatus service method.</param>
         /// <param name="cancellationToken">
@@ -3493,8 +3513,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the UpdateAssessmentStatus service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -3522,14 +3542,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Updates a custom control in AWS Audit Manager.
+        /// Updates a custom control in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateControl service method.</param>
         /// 
         /// <returns>The response from the UpdateControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -3553,7 +3573,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Updates a custom control in AWS Audit Manager.
+        /// Updates a custom control in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateControl service method.</param>
         /// <param name="cancellationToken">
@@ -3562,8 +3582,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the UpdateControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -3591,14 +3611,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Updates AWS Audit Manager settings for the current user account.
+        /// Updates Audit Manager settings for the current user account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSettings service method.</param>
         /// 
         /// <returns>The response from the UpdateSettings service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -3619,7 +3639,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Updates AWS Audit Manager settings for the current user account.
+        /// Updates Audit Manager settings for the current user account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSettings service method.</param>
         /// <param name="cancellationToken">
@@ -3628,8 +3648,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the UpdateSettings service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -3654,14 +3674,14 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Validates the integrity of an assessment report in AWS Audit Manager.
+        /// Validates the integrity of an assessment report in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ValidateAssessmentReportIntegrity service method.</param>
         /// 
         /// <returns>The response from the ValidateAssessmentReportIntegrity service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -3685,7 +3705,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Validates the integrity of an assessment report in AWS Audit Manager.
+        /// Validates the integrity of an assessment report in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ValidateAssessmentReportIntegrity service method.</param>
         /// <param name="cancellationToken">
@@ -3694,8 +3714,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the ValidateAssessmentReportIntegrity service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
-        /// setup on the AWS Audit Manager settings page, and try again.
+        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again

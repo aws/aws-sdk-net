@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes a tag from a resource in AWS Audit Manager.
+    /// Removes a tag from a resource in Audit Manager.
     /// </summary>
     public partial class UntagResourceRequest : AmazonAuditManagerRequest
     {

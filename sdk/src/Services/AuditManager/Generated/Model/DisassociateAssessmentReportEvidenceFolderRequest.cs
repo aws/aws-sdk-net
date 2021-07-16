@@ -30,8 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateAssessmentReportEvidenceFolder operation.
-    /// Disassociates an evidence folder from the specified assessment report in AWS Audit
-    /// Manager.
+    /// Disassociates an evidence folder from the specified assessment report in Audit Manager.
     /// </summary>
     public partial class DisassociateAssessmentReportEvidenceFolderRequest : AmazonAuditManagerRequest
     {

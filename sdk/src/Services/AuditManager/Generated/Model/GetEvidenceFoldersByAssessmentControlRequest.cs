@@ -31,7 +31,7 @@ namespace Amazon.AuditManager.Model
     /// <summary>
     /// Container for the parameters to the GetEvidenceFoldersByAssessmentControl operation.
     /// Returns a list of evidence folders associated with a specified control of an assessment
-    /// in AWS Audit Manager.
+    /// in Audit Manager.
     /// </summary>
     public partial class GetEvidenceFoldersByAssessmentControlRequest : AmazonAuditManagerRequest
     {

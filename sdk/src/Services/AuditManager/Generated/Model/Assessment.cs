@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// An entity that defines the scope of audit evidence collected by AWS Audit Manager.
-    /// An AWS Audit Manager assessment is an implementation of an AWS Audit Manager framework.
+    /// An entity that defines the scope of audit evidence collected by Audit Manager. An
+    /// Audit Manager assessment is an implementation of an Audit Manager framework.
     /// </summary>
     public partial class Assessment
     {
@@ -62,7 +62,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AwsAccount. 
         /// <para>
-        ///  The AWS account associated with the assessment. 
+        ///  The account associated with the assessment. 
         /// </para>
         /// </summary>
         public AWSAccount AwsAccount
