@@ -34,6 +34,7 @@ namespace Amazon.Chime.Model
     public partial class Account
     {
         private string _accountId;
+        private AccountStatus _accountStatus;
         private AccountType _accountType;
         private string _awsAccountId;
         private DateTime? _createdTimestamp;
@@ -59,6 +60,24 @@ namespace Amazon.Chime.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AccountStatus. 
+        /// <para>
+        /// The status of the account, <code>Suspended</code> or <code>Active</code>.
+        /// </para>
+        /// </summary>
+        public AccountStatus AccountStatus
+        {
+            get { return this._accountStatus; }
+            set { this._accountStatus = value; }
+        }
+
+        // Check to see if AccountStatus property is set
+        internal bool IsSetAccountStatus()
+        {
+            return this._accountStatus != null;
         }
 
         /// <summary>

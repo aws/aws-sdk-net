@@ -70,6 +70,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AccountStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AccountStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AccountType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
