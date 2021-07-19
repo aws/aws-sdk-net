@@ -42,6 +42,12 @@ namespace Amazon.Imagebuilder.Model
         /// <para>
         /// The list of component semantic versions.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The semantic version has four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;.
+        /// You can assign values for the first three, and can filter on all of them.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<ComponentVersion> ComponentVersionList
         {

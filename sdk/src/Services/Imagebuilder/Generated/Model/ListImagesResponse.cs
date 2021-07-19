@@ -42,6 +42,21 @@ namespace Amazon.Imagebuilder.Model
         /// <para>
         /// The list of image semantic versions.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The semantic version has four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;.
+        /// You can assign values for the first three, and can filter on all of them.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Filtering:</b> When you retrieve or reference a resource with a semantic version,
+        /// you can use wildcards (x) to filter your results. When you use a wildcard in any node,
+        /// all nodes to the right of the first wildcard must also be wildcards. For example,
+        /// specifying "1.2.x", or "1.x.x" works to filter list results, but neither "1.x.2",
+        /// nor "x.2.x" will work. You do not have to specify the build - Image Builder automatically
+        /// uses a wildcard for that, if applicable.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<ImageVersion> ImageVersionList
         {

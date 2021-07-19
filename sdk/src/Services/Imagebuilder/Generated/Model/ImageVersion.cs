@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// An image semantic version.
+    /// The defining characteristics of a specific version of an Image Builder image.
     /// </summary>
     public partial class ImageVersion
     {
@@ -45,8 +45,29 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image semantic version.
+        /// The Amazon Resource Name (ARN) of a specific version of an Image Builder image.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Semantic versioning is included in each object's Amazon Resource Name (ARN), at the
+        /// level that applies to that object as follows:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Versionless ARNs and Name ARNs do not include specific values in any of the nodes.
+        /// The nodes are either left off entirely, or they are specified as wildcards, for example:
+        /// x.x.x.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Version ARNs have only the first three nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Build version ARNs have all four nodes, and point to a specific build for a specific
+        /// version of an object.
+        /// </para>
+        ///  </li> </ol> </note>
         /// </summary>
         public string Arn
         {
@@ -63,7 +84,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DateCreated. 
         /// <para>
-        /// The date at which this image semantic version was created.
+        /// The date on which this specific version of the Image Builder image was created.
         /// </para>
         /// </summary>
         public string DateCreated
@@ -81,7 +102,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the image semantic version.
+        /// The name of this specific version of an Image Builder image.
         /// </para>
         /// </summary>
         public string Name
@@ -99,8 +120,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property OsVersion. 
         /// <para>
-        /// The operating system version of the instance. For example, Amazon Linux 2, Ubuntu
-        /// 18, or Microsoft Windows Server 2019.
+        /// The operating system version of the Amazon EC2 build instance. For example, Amazon
+        /// Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -119,7 +140,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The owner of the image semantic version.
+        /// The owner of the image version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -138,7 +159,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The platform of the image semantic version.
+        /// The platform of the image version, for example "Windows" or "Linux".
         /// </para>
         /// </summary>
         public Platform Platform
@@ -156,7 +177,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Specifies whether this is an AMI or container image.
+        /// Specifies whether this image is an AMI or a container image.
         /// </para>
         /// </summary>
         public ImageType Type
@@ -174,8 +195,36 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The semantic version of the image semantic version.
+        /// Details for a specific version of an Image Builder image. This version follows the
+        /// semantic version syntax.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The semantic version has four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;.
+        /// You can assign values for the first three, and can filter on all of them.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Assignment:</b> For the first three nodes you can assign any positive integer
+        /// value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node.
+        /// Image Builder automatically assigns the build number, and that is not open for updates.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements
+        /// for the nodes that you can assign. For example, you might choose a software version
+        /// pattern, such as 1.0.0, or a date, such as 2021.01.01.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Filtering:</b> When you retrieve or reference a resource with a semantic version,
+        /// you can use wildcards (x) to filter your results. When you use a wildcard in any node,
+        /// all nodes to the right of the first wildcard must also be wildcards. For example,
+        /// specifying "1.2.x", or "1.x.x" works to filter list results, but neither "1.x.2",
+        /// nor "x.2.x" will work. You do not have to specify the build - Image Builder automatically
+        /// uses a wildcard for that, if applicable.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Version
         {

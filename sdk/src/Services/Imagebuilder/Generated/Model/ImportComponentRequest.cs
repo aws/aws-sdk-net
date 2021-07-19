@@ -205,9 +205,22 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property SemanticVersion. 
         /// <para>
         /// The semantic version of the component. This version follows the semantic version syntax.
-        /// For example, major.minor.patch. This could be versioned like software (2.0.1) or like
-        /// a date (2019.12.01).
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The semantic version has four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;.
+        /// You can assign values for the first three, and can filter on all of them.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Filtering:</b> When you retrieve or reference a resource with a semantic version,
+        /// you can use wildcards (x) to filter your results. When you use a wildcard in any node,
+        /// all nodes to the right of the first wildcard must also be wildcards. For example,
+        /// specifying "1.2.x", or "1.x.x" works to filter list results, but neither "1.x.2",
+        /// nor "x.2.x" will work. You do not have to specify the build - Image Builder automatically
+        /// uses a wildcard for that, if applicable.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SemanticVersion
@@ -244,7 +257,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the component denotes whether the component is used to build the image
+        /// The type of the component denotes whether the component is used to build the image,
         /// or only to test it.
         /// </para>
         /// </summary>
