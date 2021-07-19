@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.74.0",
+    "ProductVersion" : "3.7.75.0",
     "CoreVersion"    : "3.7.0.45",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -136,7 +136,7 @@
             "InPreview"               : false
         },
         "DirectConnect"     : {
-            "Version" : "3.7.2.1",
+            "Version" : "3.7.2.2",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.45"
@@ -682,7 +682,7 @@
             "InPreview"               : false
         },
         "AWSHealth"                       : {
-            "Version" : "3.7.0.44",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.45"
@@ -1242,7 +1242,7 @@
             "InPreview"               : false
         },
         "RoboMaker"                       : {
-            "Version" : "3.7.2.27",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.45"
@@ -1642,7 +1642,7 @@
             "InPreview"               : false
         },
         "Imagebuilder"                    : {
-            "Version" : "3.7.2.6",
+            "Version" : "3.7.2.7",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.45"
@@ -1970,7 +1970,7 @@
             "InPreview"               : false
         },
         "EMRContainers"                   : {
-            "Version" : "3.7.0.43",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.45"
@@ -2042,7 +2042,7 @@
             "InPreview"               : false
         },
         "LocationService"                 : {
-            "Version" : "3.7.2.14",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.45"

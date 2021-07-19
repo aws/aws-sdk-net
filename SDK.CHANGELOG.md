@@ -1,3 +1,17 @@
+### 3.7.75.0 (2021-07-19 18:13 UTC)
+* AWSHealth (3.7.1.0)
+	* In the Health API, the maximum number of entities for the EventFilter and EntityFilter data types has changed from 100 to 99. This change is related to an internal optimization of the AWS Health service.
+* DirectConnect (3.7.2.2)
+	* Documentation updates for directconnect
+* EMRContainers (3.7.1.0)
+	* Updated DescribeManagedEndpoint and ListManagedEndpoints to return failureReason and stateDetails in API response.
+* Imagebuilder (3.7.2.7)
+	* Documentation updates for reversal of default value for additional instance configuration SSM switch, plus improved descriptions for semantic versioning.
+* LocationService (3.7.3.0)
+	* Add five new API operations: UpdateGeofenceCollection, UpdateMap, UpdatePlaceIndex, UpdateRouteCalculator, UpdateTracker.
+* RoboMaker (3.7.3.0)
+	* This release allows customers to create a new version of WorldTemplates with support for Doors.
+
 ### 3.7.74.0 (2021-07-16 18:12 UTC)
 * AppIntegrationsService (3.7.0.43)
 	* Documentation update for AppIntegrations Service
