@@ -94,7 +94,7 @@ namespace Amazon.AWSHealth.Model
         /// The maximum number of items to return in one batch, between 10 and 100, inclusive.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=10, Max=100)]
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

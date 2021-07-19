@@ -86,7 +86,7 @@ namespace Amazon.AWSHealth.Model
         /// A list of entity ARNs (unique identifiers).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=99)]
         public List<string> EntityArns
         {
             get { return this._entityArns; }
@@ -106,7 +106,7 @@ namespace Amazon.AWSHealth.Model
         /// (vol-426ab23e).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=99)]
         public List<string> EntityValues
         {
             get { return this._entityValues; }
