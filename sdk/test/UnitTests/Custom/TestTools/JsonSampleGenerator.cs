@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using ServiceClientGenerator;
 using ThirdParty.Json.LitJson;
 using System.Globalization;
+using Amazon.Runtime.Documents;
+using Amazon.Runtime.Documents.Internal.Transform;
 using Amazon.Util;
 
 namespace AWSSDK_DotNet35.UnitTests.TestTools
@@ -38,7 +40,15 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         private void Write(JsonWriter writer, Member member, Shape shape)
         {
-            if (shape.IsStructure)
+            if (shape.IsDocument)
+            {
+                var document = InstantiateClassGenerator.Execute<DummyDocumentWrapper>().Document;
+                
+                DocumentMarshaller.Instance.Write(
+                    writer,
+                    document);
+            }
+            else if (shape.IsStructure)
                 WriteStructure(writer, member, shape);
             else if (shape.IsList)
                 WriteArray(writer, member, shape);
@@ -74,6 +84,12 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         private void WriteStructure(JsonWriter writer, Member memberWithComplexShape, Shape structure)
         {
+            if (structure.IsDocument)
+            {
+                Write(writer, memberWithComplexShape, structure);
+                return;
+            }
+
             var pushed = this._tcr.Push(structure.Name);
             if (!pushed)
             {
@@ -153,6 +169,16 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             }
 
             writer.WriteObjectEnd();
+        }
+
+        /// <summary>
+        /// Helper for populating a Document
+        /// via <see cref="InstantiateClassGenerator.Execute"/>, which
+        /// requires a wrapper class.
+        /// </summary>
+        private class DummyDocumentWrapper
+        {
+            public Document Document { get; set; }
         }
     }
 }

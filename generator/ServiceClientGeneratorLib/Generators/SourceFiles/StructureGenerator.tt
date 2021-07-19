@@ -242,6 +242,12 @@ namespace <#=this.Config.Namespace#>.Model
             return this.<#=member.VariableName#> != null && this.<#=member.VariableName#>.Count > 0; 
 <#
 					}
+                    else if (member.IsDocument)
+                    {
+#>
+            return !this.<#=member.VariableName#>.IsNull();
+<#
+                    }
 					else
 					{
 #>

@@ -140,6 +140,13 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 <#=new string(' ', level * 4)#>                context.Writer.WriteObjectEnd();
 <#+
 			}
+			else if(structure.IsDocument)
+			{
+#>
+<#=new string(' ', level * 4)#>                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, <#=variableName#>);
+<#+
+
+			}
 			else if(structure.IsStructure)
 			{
 #>

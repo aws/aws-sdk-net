@@ -109,6 +109,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix", Scope = "type", Target = "Amazon.Runtime.Internal.AutoConstructedList`1")]
 [module: SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix", Scope = "type", Target = "Amazon.Runtime.Internal.ParametersDictionaryFacade")]
 [module: SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix", Scope = "type", Target = "Amazon.Runtime.Internal.ParameterCollection")]
+[assembly: SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "Not a collection", Scope = "type", Target = "~T:Amazon.Runtime.Documents.Document")]
 [assembly: SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "Not a collection", Scope = "type", Target = "~T:Amazon.Runtime.PaginatedResultKeyResponse`2")]
 [assembly: SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "Not a collection", Scope = "type", Target = "~T:Amazon.Runtime.IPaginatedEnumerable`1")]
 [assembly: SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "Not a collection", Scope = "type", Target = "~T:Amazon.Runtime.PaginatedResponse`1")]

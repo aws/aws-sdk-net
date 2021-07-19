@@ -215,7 +215,7 @@ namespace ServiceClientGenerator
                 this.ExecuteGenerator(new BaseServiceException(), "Amazon" + this.Configuration.ClassName + "Exception.cs");
             }
 
-            // Generates the Request, Responce, Marshaller, Unmarshaller, and Exception objects for a given client operation
+            // Generates the Request, Response, Marshaller, Unmarshaller, and Exception objects for a given client operation
             foreach (var operation in Configuration.ServiceModel.Operations)
             {
                 GenerateRequest(operation);
@@ -295,6 +295,9 @@ namespace ServiceClientGenerator
         {
             if (containingShape.IsStructure)
             {
+                if (containingShape.IsDocument)
+                    return;
+
                 if (this._structuresToProcess.Contains(containingShape))
                     return;
                 else if (includeContainingShape)
@@ -499,6 +502,10 @@ namespace ServiceClientGenerator
                     if (IsShapePresentInParentModel(this.Configuration, nestedStructure.Name))
                         continue;
 
+                    // Documents don't use a custom marshaller, always use DocumentMarshaller 
+                    if (nestedStructure.IsDocument)
+                        continue;
+
                     if (!this._processedMarshallers.Contains(nestedStructure.Name))
                     {
                         var structureGenerator = GetStructureMarshaller();
@@ -584,6 +591,11 @@ namespace ServiceClientGenerator
                     if (this.Configuration.ServiceModel.Customizations.IsSubstitutedShape(nestedStructure.Name))
                         continue;
 
+                    // Document structure don't need a custom marshaller, they use 
+                    // the 'simple' DocumentMarshaller in AWSSDK.
+                    if (nestedStructure.IsDocument)
+                        continue;
+
                     // Skip already processed unmarshallers. This handles the case of structures being returned in mulitiple requests.
                     if (!this._processedUnmarshallers.Contains(nestedStructure.Name))
                     {
@@ -612,6 +624,11 @@ namespace ServiceClientGenerator
                     continue;
 
                 if (this.Configuration.ServiceModel.Customizations.IsSubstitutedShape(nestedStructure.Name))
+                    continue;
+
+                // Document structure don't need a custom unmarshaller, they use 
+                // the 'simple' DocumentMarshaller in AWSSDK.
+                if (nestedStructure.IsDocument)
                     continue;
 
                 // Skip already processed unmarshallers. This handles the case of structures being returned in mulitiple requests.

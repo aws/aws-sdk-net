@@ -507,6 +507,10 @@ namespace ServiceClientGenerator
                 typeNode = memberShape[Shape.TypeKey];
             }
 
+            var documentTrait = memberShape[Shape.DocumentKey];
+            if (documentTrait?.IsBoolean == true && (bool) documentTrait)
+                return "Amazon.Runtime.Documents.Document";
+
             if (typeNode == null)
                 throw new Exception("Type is missing for shape " + extendsNode.ToString());
 
@@ -677,6 +681,10 @@ namespace ServiceClientGenerator
                 ? this.model.DocumentRoot[ServiceModel.ShapesKey][substituteType]
                 : this.model.DocumentRoot[ServiceModel.ShapesKey][extendsNode.ToString()];
 
+            var document = memberShape[Shape.DocumentKey];
+            if (document?.IsBoolean == true && (bool) document)
+                return "Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance";
+
             var typeNode = memberShape[Shape.TypeKey];
             if (typeNode == null)
                 throw new Exception("Type is missing for shape " + extendsNode);
@@ -843,6 +851,17 @@ namespace ServiceClientGenerator
             get
             {
                 return this.Shape.IsStreaming;
+            }
+        }
+
+        /// <summary>
+        /// Determines if the member is a document from the shape in the json model
+        /// </summary>
+        public bool IsDocument
+        {
+            get
+            {
+                return this.Shape.IsDocument;
             }
         }
 

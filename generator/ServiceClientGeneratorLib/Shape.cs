@@ -35,7 +35,8 @@ namespace ServiceClientGenerator
         public const string EventStreamKey = "eventstream";
         public const string DeprecatedKey = "deprecated";
         public const string DeprecatedMessageKey = "deprecatedMessage";
-        public const string TimestampFormatKey = "timestampFormat";        
+        public const string TimestampFormatKey = "timestampFormat";
+        public const string DocumentKey = "document";
 
         public static readonly HashSet<string> NullableTypes = new HashSet<string> {
             "bool",
@@ -517,6 +518,29 @@ namespace ServiceClientGenerator
             get
             {                
                 return (bool)(this.data[RequiresLengthKey] ?? false);
+            }
+        }
+
+        /// <summary>
+        /// Determines if the shape has the Document trait.
+        /// <para />
+        /// From the Spec:
+        /// 1. Structures marked with the document trait MUST NOT contain members.
+        /// 2. Document Types can not be used as an input, output, or error shape of an operation.
+        /// 3. IDocument types cannot function as unions, errors, event streams, or events.  A Structure that has a Document trait can not also have 
+        ///    exception, fault, union, event, or eventstream traits.
+        /// <para />
+        /// NOTE: Restrictions are NOT enforced at this property.  This will always return true if the document trait is present, even if the shape is not in a valid configuration. 
+        /// </summary> 
+        public bool IsDocument
+        {
+            get
+            {
+                var documentNode = this.data[DocumentKey];
+                if (documentNode == null)
+                    return false;
+
+                return bool.Parse(documentNode.ToString());
             }
         }
 

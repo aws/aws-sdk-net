@@ -382,6 +382,16 @@ namespace Amazon.Runtime.Internal.Transform
 
         #endregion
 
+        public JsonData ToJsonData()
+        {
+            var data = JsonMapper.ToObject(jsonReader);
+
+            if (stack.Count > 0)
+                stack.Pop();
+            
+            return data;
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (!disposed)

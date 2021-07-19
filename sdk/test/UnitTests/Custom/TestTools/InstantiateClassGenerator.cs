@@ -8,6 +8,7 @@ using System.Reflection;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Net;
+using Amazon.Runtime.Documents;
 
 namespace AWSSDK_DotNet35.UnitTests.TestTools
 {
@@ -89,6 +90,10 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 else if (type == typeof(MemoryStream))
                 {
                     return new MemoryStream(Constants.DEFAULT_BLOB);
+                }
+                else if (type == typeof(Document))
+                {
+                    return new Document(Document.FromObject(new {Hello = "World", Testing = true }), new Document(42));
                 }
                 //else if (type == typeof(Amazon.S3.S3Region))
                 //{
