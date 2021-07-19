@@ -39,6 +39,7 @@ namespace Amazon.RoboMaker.Model
         private DateTime? _lastUpdatedAt;
         private string _name;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private string _version;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -151,6 +152,25 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The version of the world template that you're using.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string Version
+        {
+            get { return this._version; }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version != null;
         }
 
     }

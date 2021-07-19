@@ -81,6 +81,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     response.Template = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("worldDescriptionBody", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.WorldDescriptionBody = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

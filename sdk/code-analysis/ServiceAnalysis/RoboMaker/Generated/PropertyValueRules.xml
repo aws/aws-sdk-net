@@ -673,6 +673,12 @@
     <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DescribeWorldResponse.WorldDescriptionBody</property>
+    <min>1</min>
+    <max>262144</max>
+    <pattern>[\S\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RoboMaker.Model.DescribeWorldExportJobRequest.Job</property>
     <min>1</min>
     <max>1224</max>
@@ -754,6 +760,12 @@
     <property>Amazon.RoboMaker.Model.DescribeWorldTemplateResponse.Name</property>
     <min>0</min>
     <max>255</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DescribeWorldTemplateResponse.Version</property>
+    <min>0</min>
+    <max>1024</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1545,6 +1557,12 @@
     <property>Amazon.RoboMaker.Model.TemplateSummary.Name</property>
     <min>0</min>
     <max>255</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.TemplateSummary.Version</property>
+    <min>0</min>
+    <max>1024</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>

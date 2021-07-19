@@ -87,6 +87,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("version", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Version = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

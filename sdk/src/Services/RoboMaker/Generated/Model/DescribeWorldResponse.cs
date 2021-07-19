@@ -38,6 +38,7 @@ namespace Amazon.RoboMaker.Model
         private string _generationJob;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _template;
+        private string _worldDescriptionBody;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -131,6 +132,25 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetTemplate()
         {
             return this._template != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorldDescriptionBody. 
+        /// <para>
+        /// Returns the JSON formatted string that describes the contents of your world.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=262144)]
+        public string WorldDescriptionBody
+        {
+            get { return this._worldDescriptionBody; }
+            set { this._worldDescriptionBody = value; }
+        }
+
+        // Check to see if WorldDescriptionBody property is set
+        internal bool IsSetWorldDescriptionBody()
+        {
+            return this._worldDescriptionBody != null;
         }
 
     }
