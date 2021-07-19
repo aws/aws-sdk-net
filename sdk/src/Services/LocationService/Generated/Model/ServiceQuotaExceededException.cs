@@ -29,41 +29,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// The request was unsuccessful because of a conflict.
+    /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
+    /// set for Amazon Location Service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class ConflictException : AmazonLocationServiceException
+    public partial class ServiceQuotaExceededException : AmazonLocationServiceException
     {
 
         /// <summary>
-        /// Constructs a new ConflictException with the specified error
+        /// Constructs a new ServiceQuotaExceededException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public ConflictException(string message) 
+        public ServiceQuotaExceededException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of ConflictException
+        /// Construct instance of ServiceQuotaExceededException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public ConflictException(string message, Exception innerException) 
+        public ServiceQuotaExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of ConflictException
+        /// Construct instance of ServiceQuotaExceededException
         /// </summary>
         /// <param name="innerException"></param>
-        public ConflictException(Exception innerException) 
+        public ServiceQuotaExceededException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of ConflictException
+        /// Construct instance of ServiceQuotaExceededException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -71,30 +72,30 @@ namespace Amazon.LocationService.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ConflictException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ServiceQuotaExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of ConflictException
+        /// Construct instance of ServiceQuotaExceededException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ConflictException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ServiceQuotaExceededException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the ConflictException class with serialized data.
+        /// Constructs a new instance of the ServiceQuotaExceededException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected ConflictException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected ServiceQuotaExceededException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
         }

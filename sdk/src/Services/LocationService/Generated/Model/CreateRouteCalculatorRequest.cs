@@ -96,12 +96,25 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// Valid Values: <code>Esri</code> | <code>Here</code> 
+        /// Valid values include:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-        /// Location Service data providers</a>.
+        ///  <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
+        /// coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
+        /// details on street networks and traffic coverage</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+        /// Technologies</a>'s coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
+        /// car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE
+        /// truck routing coverage</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
+        /// providers</a> on the <i>Amazon Location Service Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

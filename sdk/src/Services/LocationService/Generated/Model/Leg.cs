@@ -30,7 +30,7 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Contains the calculated route's details for each path between a pair of positions.
-    /// The number of legs returned corresponds to one less than the total number of positions
+    /// The number of legs returned corresponds to one fewer than the total number of positions
     /// in the request. 
     /// 
     ///  
@@ -50,7 +50,7 @@ namespace Amazon.LocationService.Model
     ///  </li> </ul> 
     /// <para>
     /// A route with a waypoint between the departure and destination position returns two
-    /// legs with the positions snapped to a nearby road.:
+    /// legs with the positions snapped to a nearby road:
     /// </para>
     ///  <ul> <li> 
     /// <para>

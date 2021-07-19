@@ -29,43 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// This is the response object from the CreatePlaceIndex operation.
+    /// This is the response object from the UpdatePlaceIndex operation.
     /// </summary>
-    public partial class CreatePlaceIndexResponse : AmazonWebServiceResponse
+    public partial class UpdatePlaceIndexResponse : AmazonWebServiceResponse
     {
-        private DateTime? _createTime;
         private string _indexArn;
         private string _indexName;
-
-        /// <summary>
-        /// Gets and sets the property CreateTime. 
-        /// <para>
-        /// The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
-        /// 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public DateTime CreateTime
-        {
-            get { return this._createTime.GetValueOrDefault(); }
-            set { this._createTime = value; }
-        }
-
-        // Check to see if CreateTime property is set
-        internal bool IsSetCreateTime()
-        {
-            return this._createTime.HasValue; 
-        }
+        private DateTime? _updateTime;
 
         /// <summary>
         /// Gets and sets the property IndexArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource
-        /// across AWS. 
+        /// The Amazon Resource Name (ARN) of the upated place index resource. Used to specify
+        /// a resource across AWS.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
+        /// Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code>
         /// 
         /// </para>
         ///  </li> </ul>
@@ -86,7 +66,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property IndexName. 
         /// <para>
-        /// The name for the place index resource.
+        /// The name of the updated place index resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -100,6 +80,26 @@ namespace Amazon.LocationService.Model
         internal bool IsSetIndexName()
         {
             return this._indexName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateTime. 
+        /// <para>
+        /// The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">
+        /// ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public DateTime UpdateTime
+        {
+            get { return this._updateTime.GetValueOrDefault(); }
+            set { this._updateTime = value; }
+        }
+
+        // Check to see if UpdateTime property is set
+        internal bool IsSetUpdateTime()
+        {
+            return this._updateTime.HasValue; 
         }
 
     }

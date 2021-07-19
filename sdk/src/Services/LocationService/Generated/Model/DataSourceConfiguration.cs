@@ -30,6 +30,28 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Specifies the data storage option chosen for requesting Places.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// When using Amazon Location Places:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// If using HERE Technologies as a data provider, you can't store results for locations
+    /// in Japan by setting <code>IntendedUse</code> to <code>Storage</code>. parameter.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Under the <code>MobileAssetTracking</code> or <code>MobilAssetManagement</code> pricing
+    /// plan, you can't store results from your place index resources by setting <code>IntendedUse</code>
+    /// to <code>Storage</code>. This returns a validation exception error.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS
+    /// Service Terms</a> for Amazon Location Service.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DataSourceConfiguration
     {
@@ -52,13 +74,7 @@ namespace Amazon.LocationService.Model
         /// <para>
         ///  <code>Storage</code> specifies that the result can be cached or stored in a database.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// Place index resources using HERE as a data provider can't be configured to store results
-        /// for locations in Japan when choosing <code>Storage</code> for the <code>IntendedUse</code>
-        /// parameter.
-        /// </para>
-        ///  </important> </li> </ul> 
+        ///  </li> </ul> 
         /// <para>
         /// Default value: <code>SingleUse</code> 
         /// </para>

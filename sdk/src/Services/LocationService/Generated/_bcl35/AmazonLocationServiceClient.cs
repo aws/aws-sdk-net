@@ -243,6 +243,11 @@ namespace Amazon.LocationService
         /// Creates an association between a geofence collection and a tracker resource. This
         /// allows the tracker resource to communicate location data to the linked geofence collection.
         /// 
+        /// 
+        ///  
+        /// <para>
+        /// You can associate up to five geofence collections to each tracker resource.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Currently not supported — Cross-account configurations, such as creating associations
@@ -254,11 +259,11 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the AssociateTrackerConsumer service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ConflictException">
-        /// The request was unsuccessful due to a conflict.
+        /// The request was unsuccessful because of a conflict.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -267,8 +272,12 @@ namespace Amazon.LocationService
         /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ServiceQuotaExceededException">
+        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
+        /// set for Amazon Location Service.
+        /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -328,8 +337,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the BatchDeleteDevicePositionHistory service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -339,7 +348,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -405,8 +414,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the BatchDeleteGeofence service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -416,7 +425,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -471,13 +480,27 @@ namespace Amazon.LocationService
 
         /// <summary>
         /// Evaluates device positions against the geofence geometries from a given geofence collection.
-        /// The evaluation determines if the device has entered or exited a geofenced area, which
-        /// publishes ENTER or EXIT geofence events to Amazon EventBridge.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        /// The last geofence that a device was observed within, if any, is tracked for 30 days
-        /// after the most recent device position update
+        /// This operation always returns an empty response because geofences are asynchronously
+        /// evaluated. The evaluation determines if the device has entered or exited a geofenced
+        /// area, and then publishes one of the following events to Amazon EventBridge:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ENTER</code> if Amazon Location determines that the tracked device has entered
+        /// a geofenced area.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>EXIT</code> if Amazon Location determines that the tracked device has exited
+        /// a geofenced area.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The last geofence that a device was observed within is tracked for 30 days after the
+        /// most recent device position update.
         /// </para>
         ///  </note>
         /// </summary>
@@ -485,8 +508,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the BatchEvaluateGeofences service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -496,7 +519,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -550,14 +573,14 @@ namespace Amazon.LocationService
         #region  BatchGetDevicePosition
 
         /// <summary>
-        /// A batch request to retrieve all device positions.
+        /// Lists the latest device positions for requested devices.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetDevicePosition service method.</param>
         /// 
         /// <returns>The response from the BatchGetDevicePosition service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -567,7 +590,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -629,8 +652,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the BatchPutGeofence service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -640,7 +663,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -710,8 +733,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the BatchUpdateDevicePosition service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -721,7 +744,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -778,7 +801,7 @@ namespace Amazon.LocationService
         /// <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates
         /// a route</a> given the following required parameters: <code>DeparturePostiton</code>
         /// and <code>DestinationPosition</code>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
-        /// aroute calculator resource</a> 
+        /// a route calculator resource</a> 
         /// 
         ///  
         /// <para>
@@ -803,7 +826,7 @@ namespace Amazon.LocationService
         ///  </note> </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#travel-mode">Specifying
-        /// a travel mode</a> using TravelMode. This lets you specify additional route preference
+        /// a travel mode</a> using TravelMode. This lets you specify an additional route preference
         /// such as <code>CarModeOptions</code> if traveling by <code>Car</code>, or <code>TruckModeOptions</code>
         /// if traveling by <code>Truck</code>.
         /// </para>
@@ -816,8 +839,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the CalculateRoute service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -827,7 +850,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -887,18 +910,18 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the CreateGeofenceCollection service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ConflictException">
-        /// The request was unsuccessful due to a conflict.
+        /// The request was unsuccessful because of a conflict.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
         /// failure.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -959,18 +982,18 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the CreateMap service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ConflictException">
-        /// The request was unsuccessful due to a conflict.
+        /// The request was unsuccessful because of a conflict.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
         /// failure.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -1031,18 +1054,18 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the CreatePlaceIndex service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ConflictException">
-        /// The request was unsuccessful due to a conflict.
+        /// The request was unsuccessful because of a conflict.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
         /// failure.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -1109,18 +1132,18 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the CreateRouteCalculator service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ConflictException">
-        /// The request was unsuccessful due to a conflict.
+        /// The request was unsuccessful because of a conflict.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
         /// failure.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -1181,18 +1204,18 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the CreateTracker service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ConflictException">
-        /// The request was unsuccessful due to a conflict.
+        /// The request was unsuccessful because of a conflict.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
         /// failure.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -1259,8 +1282,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the DeleteGeofenceCollection service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -1270,7 +1293,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -1337,8 +1360,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the DeleteMap service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -1348,7 +1371,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -1414,8 +1437,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the DeletePlaceIndex service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -1425,7 +1448,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -1491,8 +1514,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the DeleteRouteCalculator service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -1502,7 +1525,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -1570,8 +1593,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the DeleteTracker service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -1581,7 +1604,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -1641,8 +1664,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the DescribeGeofenceCollection service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -1652,7 +1675,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -1712,8 +1735,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the DescribeMap service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -1723,7 +1746,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -1783,8 +1806,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the DescribePlaceIndex service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -1794,7 +1817,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -1854,8 +1877,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the DescribeRouteCalculator service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -1865,7 +1888,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -1925,8 +1948,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the DescribeTracker service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -1936,7 +1959,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -2003,8 +2026,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the DisassociateTrackerConsumer service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -2014,7 +2037,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -2080,8 +2103,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the GetDevicePosition service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -2091,7 +2114,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -2158,8 +2181,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the GetDevicePositionHistory service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -2169,7 +2192,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -2229,8 +2252,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the GetGeofence service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -2240,7 +2263,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -2300,8 +2323,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the GetMapGlyphs service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -2311,7 +2334,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -2373,8 +2396,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the GetMapSprites service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -2384,7 +2407,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -2451,8 +2474,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the GetMapStyleDescriptor service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -2462,7 +2485,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -2531,8 +2554,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the GetMapTile service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -2542,7 +2565,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -2596,21 +2619,21 @@ namespace Amazon.LocationService
         #region  ListDevicePositions
 
         /// <summary>
-        /// Lists the latest device positions for requested devices.
+        /// A batch request to retrieve all device positions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDevicePositions service method.</param>
         /// 
         /// <returns>The response from the ListDevicePositions service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
         /// failure.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -2670,15 +2693,15 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the ListGeofenceCollections service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
         /// failure.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -2738,8 +2761,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the ListGeofences service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -2749,7 +2772,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -2809,15 +2832,15 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the ListMaps service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
         /// failure.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -2877,15 +2900,15 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the ListPlaceIndexes service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
         /// failure.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -2945,15 +2968,15 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the ListRouteCalculators service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
         /// failure.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -3007,14 +3030,14 @@ namespace Amazon.LocationService
         #region  ListTagsForResource
 
         /// <summary>
-        /// Returns the tags for the specified Amazon Location Service resource.
+        /// Returns a list of tags that are applied to the specified Amazon Location resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -3024,7 +3047,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -3084,8 +3107,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the ListTrackerConsumers service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -3095,7 +3118,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -3155,15 +3178,15 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the ListTrackers service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
         /// failure.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -3224,11 +3247,11 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the PutGeofence service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ConflictException">
-        /// The request was unsuccessful due to a conflict.
+        /// The request was unsuccessful because of a conflict.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -3238,7 +3261,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -3299,8 +3322,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the SearchPlaceIndexForPosition service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -3310,7 +3333,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -3383,8 +3406,8 @@ namespace Amazon.LocationService
         /// 
         /// <returns>The response from the SearchPlaceIndexForText service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -3394,7 +3417,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -3453,21 +3476,20 @@ namespace Amazon.LocationService
         /// 
         ///  <pre><code> &lt;p&gt;Tags can help you organize and categorize your resources. You
         /// can also use them to scope user permissions, by granting a user permission to access
-        /// or change only resources with certain tag values.&lt;/p&gt; &lt;p&gt;Tags don't have
-        /// any semantic meaning to AWS and are interpreted strictly as strings of characters.&lt;/p&gt;
-        /// &lt;p&gt;You can use the &lt;code&gt;TagResource&lt;/code&gt; action with an Amazon
-        /// Location Service resource that already has tags. If you specify a new tag key for
-        /// the resource, this tag is appended to the tags already associated with the resource.
-        /// If you specify a tag key that is already associated with the resource, the new tag
-        /// value that you specify replaces the previous value for that tag. &lt;/p&gt; &lt;p&gt;You
-        /// can associate as many as 50 tags with a resource.&lt;/p&gt; </code></pre>
+        /// or change only resources with certain tag values.&lt;/p&gt; &lt;p&gt;You can use the
+        /// &lt;code&gt;TagResource&lt;/code&gt; operation with an Amazon Location Service resource
+        /// that already has tags. If you specify a new tag key for the resource, this tag is
+        /// appended to the tags already associated with the resource. If you specify a tag key
+        /// that's already associated with the resource, the new tag value that you specify replaces
+        /// the previous value for that tag. &lt;/p&gt; &lt;p&gt;You can associate up to 50 tags
+        /// with a resource.&lt;/p&gt; </code></pre>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -3477,7 +3499,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -3531,14 +3553,14 @@ namespace Amazon.LocationService
         #region  UntagResource
 
         /// <summary>
-        /// Removes one or more tags from the specified Amazon Location Service resource.
+        /// Removes one or more tags from the specified Amazon Location resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by LocationService.</returns>
         /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
-        /// The request was denied due to insufficient access or permission. Check with an administrator
-        /// to verify your permissions.
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
@@ -3548,7 +3570,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied because of request throttling.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ValidationException">
         /// The input failed to meet the constraints specified by the AWS service.
@@ -3595,6 +3617,361 @@ namespace Amazon.LocationService
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateGeofenceCollection
+
+        /// <summary>
+        /// Updates the specified properties of a given geofence collection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGeofenceCollection service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGeofenceCollection service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateGeofenceCollection">REST API Reference for UpdateGeofenceCollection Operation</seealso>
+        public virtual UpdateGeofenceCollectionResponse UpdateGeofenceCollection(UpdateGeofenceCollectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGeofenceCollectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGeofenceCollectionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGeofenceCollectionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGeofenceCollection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGeofenceCollection operation on AmazonLocationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGeofenceCollection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateGeofenceCollection">REST API Reference for UpdateGeofenceCollection Operation</seealso>
+        public virtual IAsyncResult BeginUpdateGeofenceCollection(UpdateGeofenceCollectionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGeofenceCollectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGeofenceCollectionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateGeofenceCollection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGeofenceCollection.</param>
+        /// 
+        /// <returns>Returns a  UpdateGeofenceCollectionResult from LocationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateGeofenceCollection">REST API Reference for UpdateGeofenceCollection Operation</seealso>
+        public virtual UpdateGeofenceCollectionResponse EndUpdateGeofenceCollection(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateGeofenceCollectionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateMap
+
+        /// <summary>
+        /// Updates the specified properties of a given map resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMap service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMap service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateMap">REST API Reference for UpdateMap Operation</seealso>
+        public virtual UpdateMapResponse UpdateMap(UpdateMapRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMapRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMapResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMapResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMap operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMap operation on AmazonLocationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMap
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateMap">REST API Reference for UpdateMap Operation</seealso>
+        public virtual IAsyncResult BeginUpdateMap(UpdateMapRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMapRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMapResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMap operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMap.</param>
+        /// 
+        /// <returns>Returns a  UpdateMapResult from LocationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateMap">REST API Reference for UpdateMap Operation</seealso>
+        public virtual UpdateMapResponse EndUpdateMap(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateMapResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdatePlaceIndex
+
+        /// <summary>
+        /// Updates the specified properties of a given place index resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePlaceIndex service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePlaceIndex service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdatePlaceIndex">REST API Reference for UpdatePlaceIndex Operation</seealso>
+        public virtual UpdatePlaceIndexResponse UpdatePlaceIndex(UpdatePlaceIndexRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePlaceIndexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePlaceIndexResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePlaceIndexResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePlaceIndex operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePlaceIndex operation on AmazonLocationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePlaceIndex
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdatePlaceIndex">REST API Reference for UpdatePlaceIndex Operation</seealso>
+        public virtual IAsyncResult BeginUpdatePlaceIndex(UpdatePlaceIndexRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePlaceIndexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePlaceIndexResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePlaceIndex operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePlaceIndex.</param>
+        /// 
+        /// <returns>Returns a  UpdatePlaceIndexResult from LocationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdatePlaceIndex">REST API Reference for UpdatePlaceIndex Operation</seealso>
+        public virtual UpdatePlaceIndexResponse EndUpdatePlaceIndex(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdatePlaceIndexResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateRouteCalculator
+
+        /// <summary>
+        /// Updates the specified properties for a given route calculator resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRouteCalculator service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRouteCalculator service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateRouteCalculator">REST API Reference for UpdateRouteCalculator Operation</seealso>
+        public virtual UpdateRouteCalculatorResponse UpdateRouteCalculator(UpdateRouteCalculatorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRouteCalculatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRouteCalculatorResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRouteCalculatorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRouteCalculator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRouteCalculator operation on AmazonLocationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRouteCalculator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateRouteCalculator">REST API Reference for UpdateRouteCalculator Operation</seealso>
+        public virtual IAsyncResult BeginUpdateRouteCalculator(UpdateRouteCalculatorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRouteCalculatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRouteCalculatorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateRouteCalculator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRouteCalculator.</param>
+        /// 
+        /// <returns>Returns a  UpdateRouteCalculatorResult from LocationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateRouteCalculator">REST API Reference for UpdateRouteCalculator Operation</seealso>
+        public virtual UpdateRouteCalculatorResponse EndUpdateRouteCalculator(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateRouteCalculatorResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateTracker
+
+        /// <summary>
+        /// Updates the specified properties of a given tracker resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTracker service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTracker service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateTracker">REST API Reference for UpdateTracker Operation</seealso>
+        public virtual UpdateTrackerResponse UpdateTracker(UpdateTrackerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTrackerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTrackerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTrackerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTracker operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTracker operation on AmazonLocationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTracker
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateTracker">REST API Reference for UpdateTracker Operation</seealso>
+        public virtual IAsyncResult BeginUpdateTracker(UpdateTrackerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTrackerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTrackerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTracker operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTracker.</param>
+        /// 
+        /// <returns>Returns a  UpdateTrackerResult from LocationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateTracker">REST API Reference for UpdateTracker Operation</seealso>
+        public virtual UpdateTrackerResponse EndUpdateTracker(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateTrackerResponse>(asyncResult);
         }
 
         #endregion

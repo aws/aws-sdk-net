@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// The request was denied due to insufficient access or permission. Check with an administrator
-    /// to verify your permissions.
+    /// The request was denied because of insufficient access or permissions. Check with an
+    /// administrator to verify your permissions.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

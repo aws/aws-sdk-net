@@ -33,6 +33,11 @@ namespace Amazon.LocationService.Model
     /// Creates an association between a geofence collection and a tracker resource. This
     /// allows the tracker resource to communicate location data to the linked geofence collection.
     /// 
+    /// 
+    ///  
+    /// <para>
+    /// You can associate up to five geofence collections to each tracker resource.
+    /// </para>
     ///  <note> 
     /// <para>
     /// Currently not supported — Cross-account configurations, such as creating associations

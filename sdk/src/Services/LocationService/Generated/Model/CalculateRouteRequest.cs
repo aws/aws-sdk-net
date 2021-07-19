@@ -33,7 +33,7 @@ namespace Amazon.LocationService.Model
     /// <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates
     /// a route</a> given the following required parameters: <code>DeparturePostiton</code>
     /// and <code>DestinationPosition</code>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
-    /// aroute calculator resource</a> 
+    /// a route calculator resource</a> 
     /// 
     ///  
     /// <para>
@@ -58,7 +58,7 @@ namespace Amazon.LocationService.Model
     ///  </note> </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#travel-mode">Specifying
-    /// a travel mode</a> using TravelMode. This lets you specify additional route preference
+    /// a travel mode</a> using TravelMode. This lets you specify an additional route preference
     /// such as <code>CarModeOptions</code> if traveling by <code>Car</code>, or <code>TruckModeOptions</code>
     /// if traveling by <code>Truck</code>.
     /// </para>

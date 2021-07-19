@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// The request was denied due to request throttling.
+    /// The request was denied because of request throttling.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

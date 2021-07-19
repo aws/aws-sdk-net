@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AssociateTrackerConsumer operation
+    /// Response Unmarshaller for UpdatePlaceIndex operation
     /// </summary>  
-    public class AssociateTrackerConsumerResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdatePlaceIndexResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,31 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            AssociateTrackerConsumerResponse response = new AssociateTrackerConsumerResponse();
+            UpdatePlaceIndexResponse response = new UpdatePlaceIndexResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("IndexArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.IndexArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IndexName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.IndexName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UpdateTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.UpdateTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -73,10 +96,6 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -84,10 +103,6 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
-                {
-                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
@@ -101,9 +116,9 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             return new AmazonLocationServiceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static AssociateTrackerConsumerResponseUnmarshaller _instance = new AssociateTrackerConsumerResponseUnmarshaller();        
+        private static UpdatePlaceIndexResponseUnmarshaller _instance = new UpdatePlaceIndexResponseUnmarshaller();        
 
-        internal static AssociateTrackerConsumerResponseUnmarshaller GetInstance()
+        internal static UpdatePlaceIndexResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -111,7 +126,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AssociateTrackerConsumerResponseUnmarshaller Instance
+        public static UpdatePlaceIndexResponseUnmarshaller Instance
         {
             get
             {

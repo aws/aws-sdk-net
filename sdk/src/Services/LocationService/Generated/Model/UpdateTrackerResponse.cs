@@ -29,46 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// Container for the parameters to the BatchGetDevicePosition operation.
-    /// Lists the latest device positions for requested devices.
+    /// This is the response object from the UpdateTracker operation.
     /// </summary>
-    public partial class BatchGetDevicePositionRequest : AmazonLocationServiceRequest
+    public partial class UpdateTrackerResponse : AmazonWebServiceResponse
     {
-        private List<string> _deviceIds = new List<string>();
+        private string _trackerArn;
         private string _trackerName;
+        private DateTime? _updateTime;
 
         /// <summary>
-        /// Gets and sets the property DeviceIds. 
+        /// Gets and sets the property TrackerArn. 
         /// <para>
-        /// Devices whose position you want to retrieve.
+        /// The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a
+        /// resource across AWS.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code>
+        /// Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
         /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
-        public List<string> DeviceIds
+        [AWSProperty(Required=true, Min=0, Max=1600)]
+        public string TrackerArn
         {
-            get { return this._deviceIds; }
-            set { this._deviceIds = value; }
+            get { return this._trackerArn; }
+            set { this._trackerArn = value; }
         }
 
-        // Check to see if DeviceIds property is set
-        internal bool IsSetDeviceIds()
+        // Check to see if TrackerArn property is set
+        internal bool IsSetTrackerArn()
         {
-            return this._deviceIds != null && this._deviceIds.Count > 0; 
+            return this._trackerArn != null;
         }
 
         /// <summary>
         /// Gets and sets the property TrackerName. 
         /// <para>
-        /// The tracker resource retrieving the device position.
+        /// The name of the updated tracker resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string TrackerName
         {
             get { return this._trackerName; }
@@ -79,6 +80,26 @@ namespace Amazon.LocationService.Model
         internal bool IsSetTrackerName()
         {
             return this._trackerName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateTime. 
+        /// <para>
+        /// The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">
+        /// ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public DateTime UpdateTime
+        {
+            get { return this._updateTime.GetValueOrDefault(); }
+            set { this._updateTime = value; }
+        }
+
+        // Check to see if UpdateTime property is set
+        internal bool IsSetUpdateTime()
+        {
+            return this._updateTime.HasValue; 
         }
 
     }

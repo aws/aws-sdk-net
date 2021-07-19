@@ -30,7 +30,7 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Returns the tags for the specified Amazon Location Service resource.
+    /// Returns a list of tags that are applied to the specified Amazon Location resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonLocationServiceRequest
     {
@@ -41,6 +41,12 @@ namespace Amazon.LocationService.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1600)]
         public string ResourceArn

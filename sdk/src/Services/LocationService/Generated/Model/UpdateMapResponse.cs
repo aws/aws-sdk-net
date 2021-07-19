@@ -29,39 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// This is the response object from the CreateMap operation.
+    /// This is the response object from the UpdateMap operation.
     /// </summary>
-    public partial class CreateMapResponse : AmazonWebServiceResponse
+    public partial class UpdateMapResponse : AmazonWebServiceResponse
     {
-        private DateTime? _createTime;
         private string _mapArn;
         private string _mapName;
-
-        /// <summary>
-        /// Gets and sets the property CreateTime. 
-        /// <para>
-        /// The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
-        /// 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public DateTime CreateTime
-        {
-            get { return this._createTime.GetValueOrDefault(); }
-            set { this._createTime = value; }
-        }
-
-        // Check to see if CreateTime property is set
-        internal bool IsSetCreateTime()
-        {
-            return this._createTime.HasValue; 
-        }
+        private DateTime? _updateTime;
 
         /// <summary>
         /// Gets and sets the property MapArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across
-        /// all AWS.
+        /// The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource
+        /// across AWS.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -85,7 +65,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property MapName. 
         /// <para>
-        /// The name of the map resource.
+        /// The name of the updated map resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -99,6 +79,26 @@ namespace Amazon.LocationService.Model
         internal bool IsSetMapName()
         {
             return this._mapName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateTime. 
+        /// <para>
+        /// The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">
+        /// ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public DateTime UpdateTime
+        {
+            get { return this._updateTime.GetValueOrDefault(); }
+            set { this._updateTime = value; }
+        }
+
+        // Check to see if UpdateTime property is set
+        internal bool IsSetUpdateTime()
+        {
+            return this._updateTime.HasValue; 
         }
 
     }

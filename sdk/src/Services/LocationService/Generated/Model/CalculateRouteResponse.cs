@@ -42,7 +42,7 @@ namespace Amazon.LocationService.Model
         /// Contains details about each path between a pair of positions included along a route
         /// such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>,
         /// <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number
-        /// of legs returned corresponds to one less than the total number of positions in the
+        /// of legs returned corresponds to one fewer than the total number of positions in the
         /// request. 
         /// </para>
         ///  
@@ -62,7 +62,7 @@ namespace Amazon.LocationService.Model
         ///  </li> </ul> 
         /// <para>
         /// A route with a waypoint between the departure and destination position returns two
-        /// legs with the positions snapped to a nearby road.:
+        /// legs with the positions snapped to a nearby road:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -93,8 +93,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property Summary. 
         /// <para>
         /// Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>,
-        /// <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>
-        /// 
+        /// <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

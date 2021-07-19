@@ -35,14 +35,13 @@ namespace Amazon.LocationService.Model
     /// 
     ///  <pre><code> &lt;p&gt;Tags can help you organize and categorize your resources. You
     /// can also use them to scope user permissions, by granting a user permission to access
-    /// or change only resources with certain tag values.&lt;/p&gt; &lt;p&gt;Tags don't have
-    /// any semantic meaning to AWS and are interpreted strictly as strings of characters.&lt;/p&gt;
-    /// &lt;p&gt;You can use the &lt;code&gt;TagResource&lt;/code&gt; action with an Amazon
-    /// Location Service resource that already has tags. If you specify a new tag key for
-    /// the resource, this tag is appended to the tags already associated with the resource.
-    /// If you specify a tag key that is already associated with the resource, the new tag
-    /// value that you specify replaces the previous value for that tag. &lt;/p&gt; &lt;p&gt;You
-    /// can associate as many as 50 tags with a resource.&lt;/p&gt; </code></pre>
+    /// or change only resources with certain tag values.&lt;/p&gt; &lt;p&gt;You can use the
+    /// &lt;code&gt;TagResource&lt;/code&gt; operation with an Amazon Location Service resource
+    /// that already has tags. If you specify a new tag key for the resource, this tag is
+    /// appended to the tags already associated with the resource. If you specify a tag key
+    /// that's already associated with the resource, the new tag value that you specify replaces
+    /// the previous value for that tag. &lt;/p&gt; &lt;p&gt;You can associate up to 50 tags
+    /// with a resource.&lt;/p&gt; </code></pre>
     /// </summary>
     public partial class TagResourceRequest : AmazonLocationServiceRequest
     {
@@ -54,6 +53,12 @@ namespace Amazon.LocationService.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the resource whose tags you want to update.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1600)]
         public string ResourceArn
@@ -71,8 +76,14 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The mapping from tag key to tag value for each tag associated with the specified resource.
+        /// Tags that have been applied to the specified resource. Tags are mapped from the tag
+        /// key to the tag value: <code>"TagKey" : "TagValue"</code>.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]
         public Dictionary<string, string> Tags

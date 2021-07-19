@@ -141,7 +141,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property RouteBBox. 
         /// <para>
         /// Specifies a geographical box surrounding a route. Used to zoom into a route when displaying
-        /// it in a map. For example, <code>[min x, min y, max x, max y]</code> 
+        /// it in a map. For example, <code>[min x, min y, max x, max y]</code>.
         /// </para>
         ///  
         /// <para>

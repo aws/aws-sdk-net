@@ -30,7 +30,7 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes one or more tags from the specified Amazon Location Service resource.
+    /// Removes one or more tags from the specified Amazon Location resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonLocationServiceRequest
     {
@@ -42,6 +42,12 @@ namespace Amazon.LocationService.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the resource from which you want to remove tags.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1600)]
         public string ResourceArn
@@ -59,7 +65,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The list of tag keys to remove from the resource.
+        /// The list of tag keys to remove from the specified resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
