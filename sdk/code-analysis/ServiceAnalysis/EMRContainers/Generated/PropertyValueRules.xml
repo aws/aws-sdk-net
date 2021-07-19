@@ -339,14 +339,14 @@
   <property-value-rule>
     <property>Amazon.EMRContainers.Model.ContainerProvider.Id</property>
     <min>1</min>
-    <max>256</max>
-    <pattern>.*\S.*</pattern>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRContainers.Model.EksInfo.Namespace</property>
     <min>1</min>
-    <max>256</max>
-    <pattern>.*\S.*</pattern>
+    <max>63</max>
+    <pattern>[a-z0-9]([-a-z0-9]*[a-z0-9])?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRContainers.Model.Endpoint.Arn</property>
@@ -395,6 +395,12 @@
     <min>1</min>
     <max>10280</max>
     <pattern>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDBFF-\uDC00\uDFFF\r\n\t]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.Endpoint.StateDetails</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRContainers.Model.Endpoint.Type</property>
@@ -477,7 +483,7 @@
   <property-value-rule>
     <property>Amazon.EMRContainers.Model.SparkSubmitJobDriver.SparkSubmitParameters</property>
     <min>1</min>
-    <max>1024</max>
+    <max>102400</max>
     <pattern>(?!\s*$)(^[^';|\u0026\u003C\u003E*?`$(){}\[\]!#\\]*$)</pattern>
   </property-value-rule>
   <property-value-rule>

@@ -80,7 +80,7 @@ namespace Amazon.EMRContainers.Model
         /// The Spark submit parameters that are used for job runs.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=102400)]
         public string SparkSubmitParameters
         {
             get { return this._sparkSubmitParameters; }

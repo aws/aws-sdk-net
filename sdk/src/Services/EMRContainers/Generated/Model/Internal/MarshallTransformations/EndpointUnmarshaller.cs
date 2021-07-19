@@ -94,6 +94,12 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExecutionRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("failureReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -128,6 +134,12 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("stateDetails", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StateDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("subnetIds", targetDepth))

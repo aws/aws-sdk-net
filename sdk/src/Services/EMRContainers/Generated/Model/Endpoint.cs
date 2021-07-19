@@ -38,12 +38,14 @@ namespace Amazon.EMRContainers.Model
         private ConfigurationOverrides _configurationOverrides;
         private DateTime? _createdAt;
         private string _executionRoleArn;
+        private FailureReason _failureReason;
         private string _id;
         private string _name;
         private string _releaseLabel;
         private string _securityGroup;
         private string _serverUrl;
         private EndpointState _state;
+        private string _stateDetails;
         private List<string> _subnetIds = new List<string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _type;
@@ -140,6 +142,24 @@ namespace Amazon.EMRContainers.Model
         internal bool IsSetExecutionRoleArn()
         {
             return this._executionRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureReason. 
+        /// <para>
+        ///  The reasons why the endpoint has failed. 
+        /// </para>
+        /// </summary>
+        public FailureReason FailureReason
+        {
+            get { return this._failureReason; }
+            set { this._failureReason = value; }
+        }
+
+        // Check to see if FailureReason property is set
+        internal bool IsSetFailureReason()
+        {
+            return this._failureReason != null;
         }
 
         /// <summary>
@@ -253,6 +273,25 @@ namespace Amazon.EMRContainers.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateDetails. 
+        /// <para>
+        ///  Additional details of the endpoint state. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string StateDetails
+        {
+            get { return this._stateDetails; }
+            set { this._stateDetails = value; }
+        }
+
+        // Check to see if StateDetails property is set
+        internal bool IsSetStateDetails()
+        {
+            return this._stateDetails != null;
         }
 
         /// <summary>

@@ -41,7 +41,7 @@ namespace Amazon.EMRContainers.Model
         /// The namespaces of the EKS cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=63)]
         public string Namespace
         {
             get { return this._awsNamespace; }

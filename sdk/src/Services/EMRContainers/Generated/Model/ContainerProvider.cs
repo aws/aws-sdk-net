@@ -43,7 +43,7 @@ namespace Amazon.EMRContainers.Model
         /// The ID of the container cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Id
         {
             get { return this._id; }
