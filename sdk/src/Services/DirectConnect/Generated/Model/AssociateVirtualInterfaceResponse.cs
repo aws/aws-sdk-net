@@ -157,7 +157,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AwsDeviceV2. 
         /// <para>
-        /// The Direct Connect endpoint on which the virtual interface terminates.
+        /// The Direct Connect endpoint that terminates the physical connection.
         /// </para>
         /// </summary>
         public string AwsDeviceV2
@@ -175,7 +175,8 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AwsLogicalDeviceId. 
         /// <para>
-        /// The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+        /// The Direct Connect endpoint that terminates the logical connection. This device might
+        /// be different than the device that terminates the physical connection.
         /// </para>
         /// </summary>
         public string AwsLogicalDeviceId

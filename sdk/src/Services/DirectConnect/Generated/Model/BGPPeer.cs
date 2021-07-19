@@ -120,7 +120,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AwsDeviceV2. 
         /// <para>
-        /// The Direct Connect endpoint on which the BGP peer terminates.
+        /// The Direct Connect endpoint that terminates the BGP peer.
         /// </para>
         /// </summary>
         public string AwsDeviceV2
@@ -136,7 +136,11 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AwsLogicalDeviceId.
+        /// Gets and sets the property AwsLogicalDeviceId. 
+        /// <para>
+        /// The Direct Connect endpoint that terminates the logical connection. This device might
+        /// be different than the device that terminates the physical connection.
+        /// </para>
         /// </summary>
         public string AwsLogicalDeviceId
         {

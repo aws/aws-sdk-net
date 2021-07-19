@@ -112,7 +112,8 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AwsLogicalDeviceId. 
         /// <para>
-        /// The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+        /// The Direct Connect endpoint that terminates the logical connection. This device might
+        /// be different than the device that terminates the physical connection.
         /// </para>
         /// </summary>
         public string AwsLogicalDeviceId
