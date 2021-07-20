@@ -67,7 +67,12 @@ namespace Amazon.S3Control.Internal
             {
                 throw new AmazonClientException("Invalid ARN, Account ID not set");
             }
-            return requestAccountId ?? arnAccountId;
+            if (string.IsNullOrEmpty(requestAccountId) && !(arnAccountId.Length == 12 && arnAccountId.ToCharArray().All(x => char.IsDigit(x))))
+            {
+                throw new AmazonAccountIdException();
+            }
+
+            return !string.IsNullOrEmpty(requestAccountId) ? requestAccountId : arnAccountId;
         }
 
         /// <summary>

@@ -55,7 +55,7 @@ namespace AWSSDK.UnitTests
         [DataRow("arn:aws:s3-object-lambda:us-west-2:123456789012:bucket_name:mybucket","us-west-2", S3ConfigFlags.ArnRegion, "Invalid ARN specified for bucket name. Only access point ARNs are allowed for the value of bucket name.")]
         [DataRow("arn:aws:s3-object-lambda::123456789012:accesspoint/mybanner","us-west-2", S3ConfigFlags.ArnRegion, "AWS region is missing in S3ObjectLambda access point ARN")]
         [DataRow("arn:aws:s3-object-lambda:us-west-2::accesspoint/mybanner","us-west-2", S3ConfigFlags.ArnRegion, "Account ID is missing in S3ObjectLambda access point ARN")]
-        [DataRow("arn:aws:s3-object-lambda:us-west-2:123.45678.9012:accesspoint:mybucket", "us-west-2", S3ConfigFlags.ArnRegion,"AccountId is invalid. The AccountId length should be 12 and only contain numeric characters with no spaces or periods.")]
+        [DataRow("arn:aws:s3-object-lambda:us-west-2:123.45678.9012:accesspoint:mybucket", "us-west-2", S3ConfigFlags.ArnRegion, "AccountId is invalid. The AccountId length should be 12 and only contain numeric characters with no spaces or periods.")]
         [DataRow("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:*","us-west-2",S3ConfigFlags.ArnRegion, "Invalid Arn. S3ObjectLambda arns can only contain alphanumeric characters, :, / and -")]
         [DataRow("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:my.bucket", "us-west-2", S3ConfigFlags.ArnRegion, "Invalid Arn. S3ObjectLambda arns can only contain alphanumeric characters, :, / and -")]
         [DataRow("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybucket:object:foo","us-west-2", S3ConfigFlags.ArnRegion, "Invalid ARN, Access Point ARN contains sub resources")]

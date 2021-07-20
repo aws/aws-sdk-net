@@ -306,6 +306,10 @@ namespace Amazon.S3.Internal
                             "To use this access point create a new S3 service client with the UseAccelerateEndpoint property set to false."
                     );
             }
+            if (!s3Arn.HasValidAccountId())
+            {
+                throw new AmazonAccountIdException();
+            }
             if (string.IsNullOrEmpty(s3Arn.AccountId))
             {
                 throw new AmazonClientException("Account ID is missing in access point ARN");
@@ -341,6 +345,12 @@ namespace Amazon.S3.Internal
         private static void ValidateS3ObjectLambdaAccessPoint(Arn arn, AmazonS3Config s3Config, RegionEndpoint region)
         {
             var arnString = arn.ToString();
+
+            if (!arn.HasValidAccountId())
+            {
+                throw new AmazonAccountIdException();
+            }
+
             foreach (var ch in arnString)
             {
                 if (!char.IsLetterOrDigit(ch) && ch != ':' && ch != '/' && ch != '-')
@@ -392,6 +402,10 @@ namespace Amazon.S3.Internal
             if (s3Config.UseDualstackEndpoint)
             {
                 throw new AmazonClientException("Invalid configuration outpost access points do not support dualstack");
+            }
+            if (!arn.HasValidAccountId())
+            {
+                throw new AmazonAccountIdException();
             }
             if (string.IsNullOrEmpty(arn.AccountId))
             {
@@ -497,9 +511,22 @@ namespace Amazon.S3.Internal
             resourcePath = resourcePath.Trim().Trim(separators);
             /// If the resource is an outposts resource, we want to handle getting the bucket name
             /// later and just return the trimmed path.
-            if (Arn.IsArn(resourcePath) && Arn.Parse(resourcePath).IsOutpostArn())
+            if (Arn.IsArn(resourcePath))
             {
-                return resourcePath;
+                Arn arn;
+                try
+                {
+                    arn = Arn.Parse(resourcePath);
+                }
+                catch(AmazonAccountIdException)
+                {
+                    throw new AmazonAccountIdException(); // Throw with the default exception message.
+                }
+
+                if (arn.IsOutpostArn())
+                {
+                    return resourcePath;
+                }
             }
             var parts = resourcePath.Split(separators);
             var bucketName = parts[0];
