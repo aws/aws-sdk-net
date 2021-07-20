@@ -15,6 +15,7 @@
 
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
+using AWSSDK.DynamoDBv2.CoreCLR.Custom.DataModel;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -22,7 +23,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// A strongly-typed object for retrieving search results (Query or Scan)
     /// from DynamoDB.
     /// </summary>
-    public partial class AsyncSearch<T>
+    public partial class AsyncSearch<T> : IAsyncSearch<T>
     {
         #region Constructor
 

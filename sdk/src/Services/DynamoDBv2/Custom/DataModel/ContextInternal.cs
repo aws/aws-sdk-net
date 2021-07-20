@@ -25,6 +25,7 @@ using Amazon.DynamoDBv2.Model;
 
 using Amazon.Util.Internal;
 using System.Globalization;
+using AWSSDK.DynamoDBv2.CoreCLR.Custom.DataModel;
 
 namespace Amazon.DynamoDBv2.DataModel
 {

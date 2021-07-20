@@ -18,6 +18,7 @@ using System.Collections.Generic;
 
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
+using AWSSDK.DynamoDBv2.CoreCLR.Custom.DataModel;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -162,7 +163,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the Delete operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Delete"/>
+        /// <seealso cref="Delete"/>
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="value">Object to delete.</param>
@@ -174,7 +175,7 @@ namespace Amazon.DynamoDBv2.DataModel
         IAsyncResult BeginDelete<T>(T value, AsyncCallback callback, object state);
         /// <summary>
         /// Initiates the asynchronous execution of the Delete operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Delete"/>
+        /// <seealso cref="Delete"/>
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="value">Object to delete.</param>
@@ -188,7 +189,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the Delete operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Delete"/>
+        /// <seealso cref="Delete"/>
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="hashKey">Hash key element of the object to delete.</param>
@@ -201,7 +202,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the Delete operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Delete"/>
+        /// <seealso cref="Delete"/>
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="hashKey">Hash key element of the object to delete.</param>
@@ -215,7 +216,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the Delete operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Delete"/>
+        /// <seealso cref="Delete"/>
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="hashKey">Hash key element of the object to delete.</param>
@@ -229,7 +230,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the Delete operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Delete"/>
+        /// <seealso cref="Delete"/>
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="hashKey">Hash key element of the object to delete.</param>
@@ -244,7 +245,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Finishes the asynchronous execution of the Delete operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Delete"/>
+        /// <seealso cref="Delete"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDelete.</param>
         void EndDelete(IAsyncResult asyncResult);
