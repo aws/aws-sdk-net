@@ -72,10 +72,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// The value ranges from 0 to 5, with 0 meaning that the recommended resource is predicted
-        /// to always provide enough hardware capability. The higher the performance risk is,
-        /// the more likely you should validate whether the recommended resource meets the performance
-        /// requirements of your workload before migrating your resource.
+        /// The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning
+        /// that the recommended resource is predicted to always provide enough hardware capability.
+        /// The higher the performance risk is, the more likely you should validate whether the
+        /// recommendation will meet the performance requirements of your workload before migrating
+        /// your resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
