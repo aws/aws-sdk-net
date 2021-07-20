@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.75.0",
+    "ProductVersion" : "3.7.76.0",
     "CoreVersion"    : "3.7.0.45",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -152,7 +152,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.7.17.1",
+            "Version" : "3.7.18.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.45"
@@ -1666,7 +1666,7 @@
             "InPreview"               : false
         },
         "ComputeOptimizer"                : {
-            "Version" : "3.7.2.17",
+            "Version" : "3.7.2.18",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.45"

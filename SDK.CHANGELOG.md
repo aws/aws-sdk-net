@@ -1,3 +1,9 @@
+### 3.7.76.0 (2021-07-20 18:16 UTC)
+* ComputeOptimizer (3.7.2.18)
+	* Documentation updates for Compute Optimizer
+* EC2 (3.7.18.0)
+	* Added idempotency to the CreateVolume API using the ClientToken request parameter
+
 ### 3.7.75.0 (2021-07-19 18:13 UTC)
 * AWSHealth (3.7.1.0)
 	* In the Health API, the maximum number of entities for the EventFilter and EntityFilter data types has changed from 100 to 99. This change is related to an internal optimization of the AWS Health service.
