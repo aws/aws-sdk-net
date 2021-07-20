@@ -33,20 +33,18 @@ namespace Amazon.EC2.Model
     /// You can modify several parameters of an existing EBS volume, including volume size,
     /// volume type, and IOPS capacity. If your EBS volume is attached to a current-generation
     /// EC2 instance type, you might be able to apply these changes without stopping the instance
-    /// or detaching the volume from it. For more information about modifying an EBS volume
-    /// running Linux, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
-    /// the size, IOPS, or type of an EBS volume on Linux</a>. For more information about
-    /// modifying an EBS volume running Windows, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
-    /// the size, IOPS, or type of an EBS volume on Windows</a>.
+    /// or detaching the volume from it. For more information about modifying EBS volumes,
+    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modify-volume.html">Amazon
+    /// EBS Elastic Volumes</a> (Linux instances) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-modify-volume.html">Amazon
+    /// EBS Elastic Volumes</a> (Windows instances).
     /// 
     ///  
     /// <para>
-    ///  When you complete a resize operation on your volume, you need to extend the volume's
-    /// file-system size to take advantage of the new storage capacity. For information about
-    /// extending a Linux file system, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extending
-    /// a Linux file system</a>. For information about extending a Windows file system, see
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extending
-    /// a Windows file system</a>. 
+    /// When you complete a resize operation on your volume, you need to extend the volume's
+    /// file-system size to take advantage of the new storage capacity. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extend
+    /// a Linux file system</a> or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extend
+    /// a Windows file system</a>.
     /// </para>
     ///  
     /// <para>
@@ -54,22 +52,18 @@ namespace Amazon.EC2.Model
     /// For information about CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
     /// CloudWatch Events User Guide</a>. You can also track the status of a modification
     /// using <a>DescribeVolumesModifications</a>. For information about tracking status changes
-    /// using either method, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-    /// volume modifications</a>. 
+    /// using either method, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html">Monitor
+    /// the progress of volume modifications</a>.
     /// </para>
     ///  
     /// <para>
     /// With previous-generation instance types, resizing an EBS volume might require detaching
-    /// and reattaching the volume or stopping and restarting the instance. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modify-volume.html">Amazon
-    /// EBS Elastic Volumes</a> (Linux) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-modify-volume.html">Amazon
-    /// EBS Elastic Volumes</a> (Windows).
+    /// and reattaching the volume or stopping and restarting the instance.
     /// </para>
     ///  
     /// <para>
-    /// If you reach the maximum volume modification rate per volume limit, you will need
-    /// to wait at least six hours before applying further modifications to the affected EBS
-    /// volume.
+    /// If you reach the maximum volume modification rate per volume limit, you must wait
+    /// at least six hours before applying further modifications to the affected EBS volume.
     /// </para>
     /// </summary>
     public partial class ModifyVolumeRequest : AmazonEC2Request
@@ -105,8 +99,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default: If no IOPS value is specified, the existing value is retained, unless a volume
-        /// type is modified that supports different values.
+        /// Default: The existing value is retained if you keep the same volume type. If you change
+        /// the volume type to <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default
+        /// is 3,000.
         /// </para>
         /// </summary>
         public int Iops
@@ -172,7 +167,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default: If no size is specified, the existing size is retained.
+        /// Default: The existing size is retained.
         /// </para>
         /// </summary>
         public int Size
@@ -195,7 +190,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: If no throughput value is specified, the existing value is retained.
+        /// Default: The existing value is retained if the source and target volume type is <code>gp3</code>.
+        /// Otherwise, the default value is 125.
         /// </para>
         ///  
         /// <para>
@@ -241,7 +237,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: If no type is specified, the existing type is retained.
+        /// Default: The existing type is retained.
         /// </para>
         /// </summary>
         public VolumeType VolumeType

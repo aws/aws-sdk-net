@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Add. 
         /// <para>
-        /// Adds the specified AWS account ID or group to the list.
+        /// Adds the specified account ID or group to the list.
         /// </para>
         /// </summary>
         public List<CreateVolumePermission> Add
@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Remove. 
         /// <para>
-        /// Removes the specified AWS account ID or group from the list.
+        /// Removes the specified account ID or group from the list.
         /// </para>
         /// </summary>
         public List<CreateVolumePermission> Remove

@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The AWS account ID to be added or removed.
+        /// The ID of the account to be added or removed.
         /// </para>
         /// </summary>
         public string UserId

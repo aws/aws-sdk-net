@@ -156,8 +156,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerAlias. 
         /// <para>
-        /// The AWS owner alias that enabled fast snapshot restores on the snapshot. This is intended
-        /// for future use.
+        /// The Amazon Web Services owner alias that enabled fast snapshot restores on the snapshot.
+        /// This is intended for future use.
         /// </para>
         /// </summary>
         public string OwnerAlias
@@ -175,7 +175,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The ID of the AWS account that enabled fast snapshot restores on the snapshot.
+        /// The ID of the account that enabled fast snapshot restores on the snapshot.
         /// </para>
         /// </summary>
         public string OwnerId

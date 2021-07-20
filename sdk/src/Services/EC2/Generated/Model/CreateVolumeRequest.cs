@@ -35,8 +35,8 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// You can create a new empty volume or restore a volume from an EBS snapshot. Any AWS
-    /// Marketplace product codes from the snapshot are propagated to the volume.
+    /// You can create a new empty volume or restore a volume from an EBS snapshot. Any Marketplace
+    /// product codes from the snapshot are propagated to the volume.
     /// </para>
     ///  
     /// <para>
@@ -47,18 +47,19 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// You can tag your volumes during creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+    /// You can tag your volumes during creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
     /// your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Create
     /// an Amazon EBS volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateVolumeRequest : AmazonEC2Request
     {
         private string _availabilityZone;
+        private string _clientToken;
         private bool? _encrypted;
         private int? _iops;
         private string _kmsKeyId;
@@ -117,6 +118,26 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure
+        /// Idempotency</a>.
+        /// </para>
+        /// </summary>
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
         /// Indicates whether the volume should be encrypted. The effect of setting the encryption
@@ -170,10 +191,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
-        /// built on the Nitro System</a>. Other instance families guarantee performance up to
-        /// 32,000 IOPS.
+        ///  <code>io1</code> and <code>io2</code> volumes support up to 64,000 IOPS only on <a
+        /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
+        /// built on the Nitro System</a>. Other instance families support performance up to 32,000
+        /// IOPS.
         /// </para>
         ///  
         /// <para>
@@ -198,14 +219,13 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The identifier of the AWS Key Management Service (AWS KMS) customer master key (CMK)
-        /// to use for Amazon EBS encryption. If this parameter is not specified, your AWS managed
-        /// CMK for EBS is used. If <code>KmsKeyId</code> is specified, the encrypted state must
-        /// be <code>true</code>.
+        /// The identifier of the Key Management Service (KMS) KMS key to use for Amazon EBS encryption.
+        /// If this parameter is not specified, your KMS key for Amazon EBS is used. If <code>KmsKeyId</code>
+        /// is specified, the encrypted state must be <code>true</code>.
         /// </para>
         ///  
         /// <para>
-        /// You can specify the CMK using any of the following:
+        /// You can specify the KMS key using any of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -225,8 +245,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// AWS authenticates the CMK asynchronously. Therefore, if you specify an ID, alias,
-        /// or ARN that is not valid, the action can appear to complete, but eventually fails.
+        /// Amazon Web Services authenticates the KMS key asynchronously. Therefore, if you specify
+        /// an ID, alias, or ARN that is not valid, the action can appear to complete, but eventually
+        /// fails.
         /// </para>
         /// </summary>
         public string KmsKeyId

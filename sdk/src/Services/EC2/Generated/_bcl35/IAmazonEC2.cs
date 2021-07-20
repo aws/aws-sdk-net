@@ -1503,12 +1503,12 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// After you attach an EBS volume, you must make it available. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html">Making
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html">Make
         /// an EBS volume available for use</a>.
         /// </para>
         ///  
         /// <para>
-        /// If a volume has an AWS Marketplace product code:
+        /// If a volume has an Marketplace product code:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1516,7 +1516,7 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// AWS Marketplace product codes are copied from the volume to the instance.
+        /// Marketplace product codes are copied from the volume to the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1530,8 +1530,9 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
-        /// Amazon EBS volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attach
+        /// an Amazon EBS volume to an instance</a> in the <i>Amazon Elastic Compute Cloud User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachVolume service method.</param>
@@ -2370,9 +2371,9 @@ namespace Amazon.EC2
         /// When copying snapshots to a Region, copies of encrypted EBS snapshots remain encrypted.
         /// Copies of unencrypted snapshots remain unencrypted, unless you enable encryption for
         /// the snapshot copy operation. By default, encrypted snapshot copies use the default
-        /// AWS Key Management Service (AWS KMS) customer master key (CMK); however, you can specify
-        /// a different CMK. To copy an encrypted snapshot that has been shared from another account,
-        /// you must have permissions for the CMK used to encrypt the snapshot.
+        /// Key Management Service (KMS) KMS key; however, you can specify a different KMS key.
+        /// To copy an encrypted snapshot that has been shared from another account, you must
+        /// have permissions for the KMS key used to encrypt the snapshot.
         /// </para>
         ///  
         /// <para>
@@ -2389,7 +2390,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copy
         /// an Amazon EBS snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -4004,8 +4005,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/">Replace a root volume</a>
-        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace
+        /// a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReplaceRootVolumeTask service method.</param>
@@ -4377,15 +4378,15 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// When a snapshot is created, any AWS Marketplace product codes that are associated
-        /// with the source volume are propagated to the snapshot.
+        /// When a snapshot is created, any Marketplace product codes that are associated with
+        /// the source volume are propagated to the snapshot.
         /// </para>
         ///  
         /// <para>
         /// You can take a snapshot of an attached volume that is in use. However, snapshots only
-        /// capture data that has been written to your EBS volume at the time the snapshot command
-        /// is issued; this might exclude any data that has been cached by any applications or
-        /// the operating system. If you can pause any file systems on the volume long enough
+        /// capture data that has been written to your Amazon EBS volume at the time the snapshot
+        /// command is issued; this might exclude any data that has been cached by any applications
+        /// or the operating system. If you can pause any file systems on the volume long enough
         /// to take a snapshot, your snapshot should be complete. However, if you cannot pause
         /// all file writes to the volume, you should unmount the volume from within the instance,
         /// issue the snapshot command, and then remount the volume to ensure a consistent and
@@ -4394,8 +4395,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// To create a snapshot for EBS volumes that serve as root devices, you should stop the
-        /// instance before taking the snapshot.
+        /// To create a snapshot for Amazon EBS volumes that serve as root devices, you should
+        /// stop the instance before taking the snapshot.
         /// </para>
         ///  
         /// <para>
@@ -4405,7 +4406,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// You can tag your snapshots during creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+        /// You can tag your snapshots during creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
         /// your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
@@ -5383,8 +5384,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// You can create a new empty volume or restore a volume from an EBS snapshot. Any AWS
-        /// Marketplace product codes from the snapshot are propagated to the volume.
+        /// You can create a new empty volume or restore a volume from an EBS snapshot. Any Marketplace
+        /// product codes from the snapshot are propagated to the volume.
         /// </para>
         ///  
         /// <para>
@@ -5395,12 +5396,12 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// You can tag your volumes during creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+        /// You can tag your volumes during creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
         /// your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Create
         /// an Amazon EBS volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -7172,7 +7173,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Deleting
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Delete
         /// an Amazon EBS snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -7892,7 +7893,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Deleting
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Delete
         /// an Amazon EBS volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -12186,7 +12187,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes a root volume replacement task. For more information, see <a href="https://docs.aws.amazon.com/">Replace
+        /// Describes a root volume replacement task. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace
         /// a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReplaceRootVolumeTasks service method.</param>
@@ -12898,8 +12899,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// The snapshots available to you include public snapshots, private snapshots that you
-        /// own, and private snapshots owned by other AWS accounts for which you have explicit
-        /// create volume permissions.
+        /// own, and private snapshots owned by other accounts for which you have explicit create
+        /// volume permissions.
         /// </para>
         ///  
         /// <para>
@@ -12908,24 +12909,24 @@ namespace Amazon.EC2
         ///  <ul> <li> 
         /// <para>
         ///  <i>public</i>: The owner of the snapshot granted create volume permissions for the
-        /// snapshot to the <code>all</code> group. All AWS accounts have create volume permissions
+        /// snapshot to the <code>all</code> group. All accounts have create volume permissions
         /// for these snapshots.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <i>explicit</i>: The owner of the snapshot granted create volume permissions to a
-        /// specific AWS account.
+        /// specific account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>implicit</i>: An AWS account has implicit create volume permissions for all snapshots
+        ///  <i>implicit</i>: An account has implicit create volume permissions for all snapshots
         /// it owns.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The list of snapshots returned can be filtered by specifying snapshot IDs, snapshot
-        /// owners, or AWS accounts with create volume permissions. If no options are specified,
-        /// Amazon EC2 returns all snapshots for which you have create volume permissions.
+        /// owners, or accounts with create volume permissions. If no options are specified, Amazon
+        /// EC2 returns all snapshots for which you have create volume permissions.
         /// </para>
         ///  
         /// <para>
@@ -12938,13 +12939,13 @@ namespace Amazon.EC2
         /// <para>
         /// If you specify one or more snapshot owners using the <code>OwnerIds</code> option,
         /// only snapshots from the specified owners and for which you have access are returned.
-        /// The results can include the AWS account IDs of the specified owners, <code>amazon</code>
+        /// The results can include the account IDs of the specified owners, <code>amazon</code>
         /// for snapshots owned by Amazon, or <code>self</code> for snapshots that you own.
         /// </para>
         ///  
         /// <para>
         /// If you specify a list of restorable users, only snapshots with create snapshot permissions
-        /// for those users are returned. You can specify AWS account IDs (if you own the snapshots),
+        /// for those users are returned. You can specify account IDs (if you own the snapshots),
         /// <code>self</code> for snapshots for which you own or have explicit permissions, or
         /// <code>all</code> for public snapshots.
         /// </para>
@@ -12979,8 +12980,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// The snapshots available to you include public snapshots, private snapshots that you
-        /// own, and private snapshots owned by other AWS accounts for which you have explicit
-        /// create volume permissions.
+        /// own, and private snapshots owned by other accounts for which you have explicit create
+        /// volume permissions.
         /// </para>
         ///  
         /// <para>
@@ -12989,24 +12990,24 @@ namespace Amazon.EC2
         ///  <ul> <li> 
         /// <para>
         ///  <i>public</i>: The owner of the snapshot granted create volume permissions for the
-        /// snapshot to the <code>all</code> group. All AWS accounts have create volume permissions
+        /// snapshot to the <code>all</code> group. All accounts have create volume permissions
         /// for these snapshots.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <i>explicit</i>: The owner of the snapshot granted create volume permissions to a
-        /// specific AWS account.
+        /// specific account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>implicit</i>: An AWS account has implicit create volume permissions for all snapshots
+        ///  <i>implicit</i>: An account has implicit create volume permissions for all snapshots
         /// it owns.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The list of snapshots returned can be filtered by specifying snapshot IDs, snapshot
-        /// owners, or AWS accounts with create volume permissions. If no options are specified,
-        /// Amazon EC2 returns all snapshots for which you have create volume permissions.
+        /// owners, or accounts with create volume permissions. If no options are specified, Amazon
+        /// EC2 returns all snapshots for which you have create volume permissions.
         /// </para>
         ///  
         /// <para>
@@ -13019,13 +13020,13 @@ namespace Amazon.EC2
         /// <para>
         /// If you specify one or more snapshot owners using the <code>OwnerIds</code> option,
         /// only snapshots from the specified owners and for which you have access are returned.
-        /// The results can include the AWS account IDs of the specified owners, <code>amazon</code>
+        /// The results can include the account IDs of the specified owners, <code>amazon</code>
         /// for snapshots owned by Amazon, or <code>self</code> for snapshots that you own.
         /// </para>
         ///  
         /// <para>
         /// If you specify a list of restorable users, only snapshots with create snapshot permissions
-        /// for those users are returned. You can specify AWS account IDs (if you own the snapshots),
+        /// for those users are returned. You can specify account IDs (if you own the snapshots),
         /// <code>self</code> for snapshots for which you own or have explicit permissions, or
         /// <code>all</code> for public snapshots.
         /// </para>
@@ -14278,8 +14279,9 @@ namespace Amazon.EC2
         /// <para>
         /// You can also use CloudWatch Events to check the status of a modification to an EBS
         /// volume. For information about CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
-        /// CloudWatch Events User Guide</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-        /// volume modifications</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// CloudWatch Events User Guide</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html">Monitor
+        /// the progress of volume modifications</a> in the <i>Amazon Elastic Compute Cloud User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumesModifications service method.</param>
@@ -14340,7 +14342,7 @@ namespace Amazon.EC2
         /// If all checks pass, the overall status of the volume is <code>ok</code>. If the check
         /// fails, the overall status is <code>impaired</code>. If the status is <code>insufficient-data</code>,
         /// then the checks might still be taking place on your volume at the time. We recommend
-        /// that you retry the request. For more information about volume status, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
+        /// that you retry the request. For more information about volume status, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitor
         /// the status of your volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
@@ -14392,7 +14394,7 @@ namespace Amazon.EC2
         /// If all checks pass, the overall status of the volume is <code>ok</code>. If the check
         /// fails, the overall status is <code>impaired</code>. If the status is <code>insufficient-data</code>,
         /// then the checks might still be taking place on your volume at the time. We recommend
-        /// that you retry the request. For more information about volume status, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
+        /// that you retry the request. For more information about volume status, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitor
         /// the status of your volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
@@ -15184,12 +15186,12 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// When a volume with an AWS Marketplace product code is detached from an instance, the
-        /// product code is no longer associated with the instance.
+        /// When a volume with an Marketplace product code is detached from an instance, the product
+        /// code is no longer associated with the instance.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detaching
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detach
         /// an Amazon EBS volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -16148,13 +16150,13 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// After you enable encryption by default, the EBS volumes that you create are always
-        /// encrypted, either using the default CMK or the CMK that you specified when you created
-        /// each volume. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+        /// encrypted, either using the default KMS key or the KMS key that you specified when
+        /// you created each volume. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
         /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// You can specify the default CMK for encryption by default using <a>ModifyEbsDefaultKmsKeyId</a>
+        /// You can specify the default KMS key for encryption by default using <a>ModifyEbsDefaultKmsKeyId</a>
         /// or <a>ResetEbsDefaultKmsKeyId</a>.
         /// </para>
         ///  
@@ -17063,9 +17065,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the default customer master key (CMK) for EBS encryption by default for
-        /// your account in this Region. You can change the default CMK for encryption by default
-        /// using <a>ModifyEbsDefaultKmsKeyId</a> or <a>ResetEbsDefaultKmsKeyId</a>.
+        /// Describes the default KMS key for EBS encryption by default for your account in this
+        /// Region. You can change the default KMS key for encryption by default using <a>ModifyEbsDefaultKmsKeyId</a>
+        /// or <a>ResetEbsDefaultKmsKeyId</a>.
         /// 
         ///  
         /// <para>
@@ -18327,19 +18329,20 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Changes the default customer master key (CMK) for EBS encryption by default for your
-        /// account in this Region.
+        /// Changes the default KMS key for EBS encryption by default for your account in this
+        /// Region.
         /// 
         ///  
         /// <para>
-        /// AWS creates a unique AWS managed CMK in each Region for use with encryption by default.
-        /// If you change the default CMK to a symmetric customer managed CMK, it is used instead
-        /// of the AWS managed CMK. To reset the default CMK to the AWS managed CMK for EBS, use
-        /// <a>ResetEbsDefaultKmsKeyId</a>. Amazon EBS does not support asymmetric CMKs.
+        /// Amazon Web Services creates a unique Amazon Web Services managed KMS key in each Region
+        /// for use with encryption by default. If you change the default KMS key to a symmetric
+        /// customer managed KMS key, it is used instead of the Amazon Web Services managed KMS
+        /// key. To reset the default KMS key to the Amazon Web Services managed KMS key for EBS,
+        /// use <a>ResetEbsDefaultKmsKeyId</a>. Amazon EBS does not support asymmetric KMS keys.
         /// </para>
         ///  
         /// <para>
-        /// If you delete or disable the customer managed CMK that you specified for use with
+        /// If you delete or disable the customer managed KMS key that you specified for use with
         /// encryption by default, your instances will fail to launch.
         /// </para>
         ///  
@@ -19345,20 +19348,20 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Adds or removes permission settings for the specified snapshot. You may add or remove
-        /// specified AWS account IDs from a snapshot's list of create volume permissions, but
-        /// you cannot do both in a single operation. If you need to both add and remove account
-        /// IDs for a snapshot, you must use multiple operations. You can make up to 500 modifications
+        /// specified account IDs from a snapshot's list of create volume permissions, but you
+        /// cannot do both in a single operation. If you need to both add and remove account IDs
+        /// for a snapshot, you must use multiple operations. You can make up to 500 modifications
         /// to a snapshot in a single operation.
         /// 
         ///  
         /// <para>
-        /// Encrypted snapshots and snapshots with AWS Marketplace product codes cannot be made
-        /// public. Snapshots encrypted with your default CMK cannot be shared with other accounts.
+        /// Encrypted snapshots and snapshots with Marketplace product codes cannot be made public.
+        /// Snapshots encrypted with your default KMS key cannot be shared with other accounts.
         /// </para>
         ///  
         /// <para>
-        /// For more information about modifying snapshot permissions, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
-        /// snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information about modifying snapshot permissions, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Share
+        /// a snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifySnapshotAttribute service method.</param>
@@ -19786,20 +19789,18 @@ namespace Amazon.EC2
         /// You can modify several parameters of an existing EBS volume, including volume size,
         /// volume type, and IOPS capacity. If your EBS volume is attached to a current-generation
         /// EC2 instance type, you might be able to apply these changes without stopping the instance
-        /// or detaching the volume from it. For more information about modifying an EBS volume
-        /// running Linux, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
-        /// the size, IOPS, or type of an EBS volume on Linux</a>. For more information about
-        /// modifying an EBS volume running Windows, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
-        /// the size, IOPS, or type of an EBS volume on Windows</a>.
+        /// or detaching the volume from it. For more information about modifying EBS volumes,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modify-volume.html">Amazon
+        /// EBS Elastic Volumes</a> (Linux instances) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-modify-volume.html">Amazon
+        /// EBS Elastic Volumes</a> (Windows instances).
         /// 
         ///  
         /// <para>
-        ///  When you complete a resize operation on your volume, you need to extend the volume's
-        /// file-system size to take advantage of the new storage capacity. For information about
-        /// extending a Linux file system, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extending
-        /// a Linux file system</a>. For information about extending a Windows file system, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extending
-        /// a Windows file system</a>. 
+        /// When you complete a resize operation on your volume, you need to extend the volume's
+        /// file-system size to take advantage of the new storage capacity. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extend
+        /// a Linux file system</a> or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extend
+        /// a Windows file system</a>.
         /// </para>
         ///  
         /// <para>
@@ -19807,22 +19808,18 @@ namespace Amazon.EC2
         /// For information about CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
         /// CloudWatch Events User Guide</a>. You can also track the status of a modification
         /// using <a>DescribeVolumesModifications</a>. For information about tracking status changes
-        /// using either method, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-        /// volume modifications</a>. 
+        /// using either method, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html">Monitor
+        /// the progress of volume modifications</a>.
         /// </para>
         ///  
         /// <para>
         /// With previous-generation instance types, resizing an EBS volume might require detaching
-        /// and reattaching the volume or stopping and restarting the instance. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modify-volume.html">Amazon
-        /// EBS Elastic Volumes</a> (Linux) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-modify-volume.html">Amazon
-        /// EBS Elastic Volumes</a> (Windows).
+        /// and reattaching the volume or stopping and restarting the instance.
         /// </para>
         ///  
         /// <para>
-        /// If you reach the maximum volume modification rate per volume limit, you will need
-        /// to wait at least six hours before applying further modifications to the affected EBS
-        /// volume.
+        /// If you reach the maximum volume modification rate per volume limit, you must wait
+        /// at least six hours before applying further modifications to the affected EBS volume.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVolume service method.</param>
@@ -21939,14 +21936,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Resets the default customer master key (CMK) for EBS encryption for your account in
-        /// this Region to the AWS managed CMK for EBS.
+        /// Resets the default KMS key for EBS encryption for your account in this Region to the
+        /// Amazon Web Services managed KMS key for EBS.
         /// 
         ///  
         /// <para>
-        /// After resetting the default CMK to the AWS managed CMK, you can continue to encrypt
-        /// by a customer managed CMK by specifying it when you create the volume. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+        /// After resetting the default KMS key to the Amazon Web Services managed KMS key, you
+        /// can continue to encrypt by a customer managed KMS key by specifying it when you create
+        /// the volume. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
         /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -22170,8 +22167,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about modifying snapshot permissions, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
-        /// snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information about modifying snapshot permissions, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Share
+        /// a snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetSnapshotAttribute service method.</param>

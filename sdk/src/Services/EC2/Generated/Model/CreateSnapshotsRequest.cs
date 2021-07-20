@@ -110,7 +110,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OutpostArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Outpost on which to create the local snapshots.
+        /// The Amazon Resource Name (ARN) of the Outpost on which to create the local snapshots.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -131,7 +131,7 @@ namespace Amazon.EC2.Model
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
-        /// Creating multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon
+        /// Create multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon
         /// Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>

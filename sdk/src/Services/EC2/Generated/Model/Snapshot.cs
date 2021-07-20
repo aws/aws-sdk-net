@@ -111,9 +111,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer
-        /// master key (CMK) that was used to protect the volume encryption key for the parent
-        /// volume.
+        /// The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was
+        /// used to protect the volume encryption key for the parent volume.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -131,9 +130,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OutpostArn. 
         /// <para>
-        /// The ARN of the AWS Outpost on which the snapshot is stored. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS
-        /// Local Snapshot on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// The ARN of the Outpost on which the snapshot is stored. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon
+        /// EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         public string OutpostArn
@@ -151,8 +150,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerAlias. 
         /// <para>
-        /// The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>). This is
-        /// not the user-configured AWS account alias set using the IAM console.
+        /// The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>).
+        /// This is not the user-configured account alias set using the IAM console.
         /// </para>
         /// </summary>
         public string OwnerAlias
@@ -170,7 +169,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The AWS account ID of the EBS snapshot owner.
+        /// The ID of the account that owns the EBS snapshot.
         /// </para>
         /// </summary>
         public string OwnerId
@@ -261,9 +260,9 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property StateMessage. 
         /// <para>
         /// Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation
-        /// fails (for example, if the proper AWS Key Management Service (AWS KMS) permissions
-        /// are not obtained) this field displays error state details to help you diagnose why
-        /// the error occurred. This parameter is only returned by <a>DescribeSnapshots</a>.
+        /// fails (for example, if the proper Key Management Service (KMS) permissions are not
+        /// obtained) this field displays error state details to help you diagnose why the error
+        /// occurred. This parameter is only returned by <a>DescribeSnapshots</a>.
         /// </para>
         /// </summary>
         public string StateMessage

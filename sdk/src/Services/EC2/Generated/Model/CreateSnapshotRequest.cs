@@ -43,15 +43,15 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// When a snapshot is created, any AWS Marketplace product codes that are associated
-    /// with the source volume are propagated to the snapshot.
+    /// When a snapshot is created, any Marketplace product codes that are associated with
+    /// the source volume are propagated to the snapshot.
     /// </para>
     ///  
     /// <para>
     /// You can take a snapshot of an attached volume that is in use. However, snapshots only
-    /// capture data that has been written to your EBS volume at the time the snapshot command
-    /// is issued; this might exclude any data that has been cached by any applications or
-    /// the operating system. If you can pause any file systems on the volume long enough
+    /// capture data that has been written to your Amazon EBS volume at the time the snapshot
+    /// command is issued; this might exclude any data that has been cached by any applications
+    /// or the operating system. If you can pause any file systems on the volume long enough
     /// to take a snapshot, your snapshot should be complete. However, if you cannot pause
     /// all file writes to the volume, you should unmount the volume from within the instance,
     /// issue the snapshot command, and then remount the volume to ensure a consistent and
@@ -60,8 +60,8 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// To create a snapshot for EBS volumes that serve as root devices, you should stop the
-    /// instance before taking the snapshot.
+    /// To create a snapshot for Amazon EBS volumes that serve as root devices, you should
+    /// stop the instance before taking the snapshot.
     /// </para>
     ///  
     /// <para>
@@ -71,7 +71,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// You can tag your snapshots during creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+    /// You can tag your snapshots during creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
     /// your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     ///  
@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates CreateSnapshotRequest with the parameterized properties
         /// </summary>
-        /// <param name="volumeId">The ID of the EBS volume.</param>
+        /// <param name="volumeId">The ID of the Amazon EBS volume.</param>
         /// <param name="description">A description for the snapshot.</param>
         public CreateSnapshotRequest(string volumeId, string description)
         {
@@ -125,7 +125,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OutpostArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Outpost on which to create a local snapshot.
+        /// The Amazon Resource Name (ARN) of the Outpost on which to create a local snapshot.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -145,9 +145,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">
-        /// Creating local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute
-        /// Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">Create
+        /// local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute Cloud
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         public string OutpostArn
@@ -183,7 +183,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VolumeId. 
         /// <para>
-        /// The ID of the EBS volume.
+        /// The ID of the Amazon EBS volume.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

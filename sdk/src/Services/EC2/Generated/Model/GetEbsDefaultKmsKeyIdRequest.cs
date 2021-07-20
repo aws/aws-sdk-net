@@ -30,9 +30,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetEbsDefaultKmsKeyId operation.
-    /// Describes the default customer master key (CMK) for EBS encryption by default for
-    /// your account in this Region. You can change the default CMK for encryption by default
-    /// using <a>ModifyEbsDefaultKmsKeyId</a> or <a>ResetEbsDefaultKmsKeyId</a>.
+    /// Describes the default KMS key for EBS encryption by default for your account in this
+    /// Region. You can change the default KMS key for encryption by default using <a>ModifyEbsDefaultKmsKeyId</a>
+    /// or <a>ResetEbsDefaultKmsKeyId</a>.
     /// 
     ///  
     /// <para>
