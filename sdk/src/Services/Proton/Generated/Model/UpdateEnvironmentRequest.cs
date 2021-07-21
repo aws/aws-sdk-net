@@ -42,7 +42,7 @@ namespace Amazon.Proton.Model
     /// <para>
     /// You can only update to a new environment account connection if it was created in the
     /// same environment account that the current environment account connection was created
-    /// in and associated with the current environment.
+    /// in and is associated with the current environment.
     /// </para>
     ///  
     /// <para>
@@ -202,7 +202,7 @@ namespace Amazon.Proton.Model
         /// <para>
         /// You can only update to a new environment account connection if it was created in the
         /// same environment account that the current environment account connection was created
-        /// in and associated with the current environment.
+        /// in and is associated with the current environment.
         /// </para>
         /// </summary>
         public string EnvironmentAccountConnectionId
@@ -239,8 +239,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ProtonServiceRoleArn. 
         /// <para>
-        /// The ARN of the AWS Proton service role that allows AWS Proton to make API calls to
-        /// other services your behalf.
+        /// The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS Proton
+        /// to make API calls to other services your behalf.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

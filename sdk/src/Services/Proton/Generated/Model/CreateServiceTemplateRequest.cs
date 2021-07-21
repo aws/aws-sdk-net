@@ -36,7 +36,7 @@ namespace Amazon.Proton.Model
     /// includes a service pipeline definition, they provide a link to their source code repository.
     /// AWS Proton then deploys and manages the infrastructure defined by the selected service
     /// template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/managing-svc-templates.html">Service
-    /// Templates</a> in the <i>AWS Proton Administration Guide</i>.
+    /// Templates</a> in the <i>AWS Proton Administrator Guide</i>.
     /// </summary>
     public partial class CreateServiceTemplateRequest : AmazonProtonRequest
     {
@@ -129,8 +129,8 @@ namespace Amazon.Proton.Model
         /// AWS Proton includes a service pipeline for your service by default. When included,
         /// this parameter indicates that an AWS Proton service pipeline <i>won't</i> be included
         /// for your service. Once specified, this parameter <i>can't</i> be changed. For more
-        /// information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-template-bundles.html">Service
-        /// template bundles</a> in the <i>AWS Proton Administration Guide</i>.
+        /// information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service
+        /// template bundles</a> in the <i>AWS Proton Administrator Guide</i>.
         /// </para>
         /// </summary>
         public Provisioning PipelineProvisioning
@@ -150,7 +150,7 @@ namespace Amazon.Proton.Model
         /// <para>
         /// Create tags for your service template. For more information, see <i>AWS Proton resources
         /// and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-        /// Proton Administration Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
+        /// Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
         /// Proton User Guide</a>.
         /// </para>
         /// </summary>

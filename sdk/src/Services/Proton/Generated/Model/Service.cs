@@ -183,10 +183,11 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property RepositoryConnectionArn. 
         /// <para>
-        /// The ARN of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-        /// up a repository connection</a> in the <i>AWS Proton Administration Guide</i> and <a
-        /// href="https://docs.aws.amazon.com/proton/latest/userguide/ug-getting-started.html#getting-started-step1">Getting
-        /// started</a> in the <i>AWS Proton User Guide</i>.
+        /// The Amazon Resource Name (ARN) of the repository connection. For more information,
+        /// see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
+        /// up a repository connection</a> in the <i>AWS Proton Administrator Guide</i> and <a
+        /// href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
+        /// up with AWS Proton</a> in the <i>AWS Proton User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

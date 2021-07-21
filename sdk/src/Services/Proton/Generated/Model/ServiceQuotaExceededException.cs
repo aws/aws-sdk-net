@@ -30,7 +30,7 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">AWS
-    /// Proton Quotas</a> in the <i>AWS Proton Administration Guide</i>.
+    /// Proton Quotas</a> in the <i>AWS Proton Administrator Guide</i>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

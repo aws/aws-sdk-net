@@ -31,7 +31,7 @@ namespace Amazon.Proton.Model
     /// <summary>
     /// Container for the parameters to the CreateEnvironmentAccountConnection operation.
     /// Create an environment account connection in an environment account so that environment
-    /// infrastructure resources can be provisioned in the environment account from the management
+    /// infrastructure resources can be provisioned in the environment account from a management
     /// account.
     /// 
     ///  
@@ -39,7 +39,7 @@ namespace Amazon.Proton.Model
     /// An environment account connection is a secure bi-directional connection between a
     /// <i>management account</i> and an <i>environment account</i> that maintains authorization
     /// and permissions. For more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-    /// account connections</a> in the <i>AWS Proton Administration guide</i>.
+    /// account connections</a> in the <i>AWS Proton Administrator guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateEnvironmentAccountConnectionRequest : AmazonProtonRequest

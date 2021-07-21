@@ -32,7 +32,7 @@ namespace Amazon.Proton.Model
     /// Container for the parameters to the UntagResource operation.
     /// Remove a tag from a resource. For more information, see <i>AWS Proton resources and
     /// tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-    /// Proton Administration Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
+    /// Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
     /// Proton User Guide</a>.
     /// </summary>
     public partial class UntagResourceRequest : AmazonProtonRequest

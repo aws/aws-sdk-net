@@ -243,8 +243,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ProtonServiceRoleArn. 
         /// <para>
-        /// The ARN of the AWS Proton service role that allows AWS Proton to make calls to other
-        /// services on your behalf.
+        /// The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS Proton
+        /// to make calls to other services on your behalf.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -339,7 +339,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        /// The ARN of the environment template.
+        /// The Amazon Resource Name (ARN) of the environment template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

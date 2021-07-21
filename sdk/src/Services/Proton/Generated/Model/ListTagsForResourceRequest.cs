@@ -32,7 +32,7 @@ namespace Amazon.Proton.Model
     /// Container for the parameters to the ListTagsForResource operation.
     /// List tags for a resource. For more information, see <i>AWS Proton resources and tagging</i>
     /// in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-    /// Proton Administration Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
+    /// Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
     /// Proton User Guide</a>.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonProtonRequest
@@ -82,7 +82,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the resource for the listed tags.
+        /// The Amazon Resource Name (ARN) of the resource for the listed tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

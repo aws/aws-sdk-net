@@ -90,7 +90,8 @@ namespace Amazon.Proton.Model
         /// </para>
         ///  
         /// <para>
-        /// To create a new major and minor version of the environment template, exclude <code>majorVersion</code>.
+        /// To create a new major and minor version of the environment template, <i>exclude</i>
+        /// <code>majorVersion</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

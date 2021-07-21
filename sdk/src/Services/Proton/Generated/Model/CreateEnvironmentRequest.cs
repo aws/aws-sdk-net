@@ -33,7 +33,7 @@ namespace Amazon.Proton.Model
     /// Deploy a new environment. An AWS Proton environment is created from an environment
     /// template that defines infrastructure and resources that can be shared across services.
     /// For more information, see the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
-    /// in the <i>AWS Proton Administration Guide.</i>
+    /// in the <i>AWS Proton Administrator Guide.</i>
     /// </summary>
     public partial class CreateEnvironmentRequest : AmazonProtonRequest
     {
@@ -73,7 +73,7 @@ namespace Amazon.Proton.Model
         /// your environment infrastructure resources to an environment account. You must include
         /// either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
         /// parameter and value. For more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>AWS Proton Administration guide</i>.
+        /// account connections</a> in the <i>AWS Proton Administrator guide</i>.
         /// </para>
         /// </summary>
         public string EnvironmentAccountConnectionId
@@ -132,8 +132,8 @@ namespace Amazon.Proton.Model
         /// Gets and sets the property Spec. 
         /// <para>
         /// A link to a YAML formatted spec file that provides inputs as defined in the environment
-        /// template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-managing-environments.html">Environments</a>
-        /// in the <i>AWS Proton Administration Guide</i>.
+        /// template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
+        /// in the <i>AWS Proton Administrator Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=51200)]
@@ -154,7 +154,7 @@ namespace Amazon.Proton.Model
         /// <para>
         /// Create tags for your environment. For more information, see <i>AWS Proton resources
         /// and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-        /// Proton Administration Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
+        /// Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
         /// Proton User Guide</a>.
         /// </para>
         /// </summary>
@@ -212,8 +212,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        /// The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-templates.html">Environment
-        /// Templates</a> in the <i>AWS Proton Administration Guide</i>.
+        /// The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment
+        /// Templates</a> in the <i>AWS Proton Administrator Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
