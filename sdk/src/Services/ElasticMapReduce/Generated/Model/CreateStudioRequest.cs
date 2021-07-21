@@ -148,7 +148,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property ServiceRole. 
         /// <para>
         /// The IAM role that will be assumed by the Amazon EMR Studio. The service role provides
-        /// a way for Amazon EMR Studio to interoperate with other AWS services.
+        /// a way for Amazon EMR Studio to interoperate with other Amazon Web Services services.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10280)]

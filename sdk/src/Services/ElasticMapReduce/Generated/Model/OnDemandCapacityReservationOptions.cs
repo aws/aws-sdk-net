@@ -102,7 +102,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         ///  
         /// <para>
-        /// If you do not specify a value, the fleet fulfils the On-Demand capacity according
+        /// If you do not specify a value, the fleet fulfills the On-Demand capacity according
         /// to the chosen On-Demand allocation strategy.
         /// </para>
         /// </summary>

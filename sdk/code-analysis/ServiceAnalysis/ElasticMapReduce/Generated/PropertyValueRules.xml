@@ -151,6 +151,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.DescribeReleaseLabelRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.DescribeSecurityConfigurationRequest.Name</property>
     <min>0</min>
     <max>10280</max>
@@ -184,6 +189,11 @@
     <property>Amazon.ElasticMapReduce.Model.ListNotebookExecutionsRequest.EditorId</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.ListReleaseLabelsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.ListStudioSessionMappingsRequest.StudioId</property>

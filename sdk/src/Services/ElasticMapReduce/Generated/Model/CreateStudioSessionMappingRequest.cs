@@ -44,10 +44,10 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property IdentityId. 
         /// <para>
-        /// The globally unique identifier (GUID) of the user or group from the AWS SSO Identity
-        /// Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a>
+        /// The globally unique identifier (GUID) of the user or group from the Amazon Web Services
+        /// SSO Identity Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a>
         /// and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a>
-        /// in the <i>AWS SSO Identity Store API Reference</i>. Either <code>IdentityName</code>
+        /// in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code>
         /// or <code>IdentityId</code> must be specified.
         /// </para>
         /// </summary>
@@ -69,7 +69,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
         /// and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
-        /// in the <i>AWS SSO Identity Store API Reference</i>. Either <code>IdentityName</code>
+        /// in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code>
         /// or <code>IdentityId</code> must be specified.
         /// </para>
         /// </summary>
@@ -109,8 +109,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property SessionPolicyArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for the session policy that will be applied to the
-        /// user or group. Session policies refine Studio user permissions without the need to
-        /// use multiple IAM user roles.
+        /// user or group. You should specify the ARN for the session policy that you want to
+        /// apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create
+        /// an EMR Studio User Role with Session Policies</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

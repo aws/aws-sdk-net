@@ -16,26 +16,18 @@
 /*
  * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
-using System.Net;
-
 using Amazon.Runtime;
-using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetBlockPublicAccessConfiguration operation.
-    /// Returns the Amazon EMR block public access configuration for your account in the current
-    /// Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure
-    /// Block Public Access for Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.
-    /// </summary>
-    public partial class GetBlockPublicAccessConfigurationRequest : AmazonElasticMapReduceRequest
+    /// Paginator for the ListReleaseLabels operation
+    ///</summary>
+    public interface IListReleaseLabelsPaginator
     {
-
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListReleaseLabelsResponse> Responses { get; }
     }
 }

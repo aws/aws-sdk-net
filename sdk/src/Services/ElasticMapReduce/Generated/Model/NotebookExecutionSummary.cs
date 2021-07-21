@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// 
+    /// Details for a notebook execution. The details include information such as the unique
+    /// ID and status of the notebook execution.
     /// </summary>
     public partial class NotebookExecutionSummary
     {

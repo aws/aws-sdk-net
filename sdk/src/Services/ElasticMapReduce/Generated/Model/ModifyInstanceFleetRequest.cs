@@ -68,7 +68,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceFleet. 
         /// <para>
-        /// The unique identifier of the instance fleet.
+        /// The configuration parameters of the instance fleet.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

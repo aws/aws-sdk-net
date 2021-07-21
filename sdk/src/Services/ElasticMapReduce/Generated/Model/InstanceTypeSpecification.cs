@@ -110,7 +110,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EbsBlockDevices. 
         /// <para>
-        /// The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance
+        /// The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance
         /// as defined by <code>InstanceType</code>.
         /// </para>
         /// </summary>

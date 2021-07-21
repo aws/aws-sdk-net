@@ -84,6 +84,14 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
+        /// Paginator for ListReleaseLabels operation
+        ///</summary>
+        public IListReleaseLabelsPaginator ListReleaseLabels(ListReleaseLabelsRequest request) 
+        {
+            return new ListReleaseLabelsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSecurityConfigurations operation
         ///</summary>
         public IListSecurityConfigurationsPaginator ListSecurityConfigurations(ListSecurityConfigurationsRequest request) 

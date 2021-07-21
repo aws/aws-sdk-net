@@ -30,7 +30,7 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the PutBlockPublicAccessConfiguration operation.
-    /// Creates or updates an Amazon EMR block public access configuration for your AWS account
+    /// Creates or updates an Amazon EMR block public access configuration for your account
     /// in the current Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure
     /// Block Public Access for Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.
     /// </summary>

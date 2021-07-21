@@ -39,9 +39,9 @@ namespace Amazon.ElasticMapReduce
     /// Implementation for accessing ElasticMapReduce
     ///
     /// Amazon EMR is a web service that makes it easier to process large amounts of data
-    /// efficiently. Amazon EMR uses Hadoop processing combined with several AWS services
-    /// to do tasks such as web indexing, data mining, log file analysis, machine learning,
-    /// scientific simulation, and data warehouse management.
+    /// efficiently. Amazon EMR uses Hadoop processing combined with several Amazon Web Services
+    /// services to do tasks such as web indexing, data mining, log file analysis, machine
+    /// learning, scientific simulation, and data warehouse management.
     /// </summary>
     public partial class AmazonElasticMapReduceClient : AmazonServiceClient, IAmazonElasticMapReduce
     {
@@ -474,7 +474,9 @@ namespace Amazon.ElasticMapReduce
         /// versions 4.8.0 and later, excluding version 5.0.0. A maximum of 256 steps are allowed
         /// in each CancelSteps request. CancelSteps is idempotent but asynchronous; it does not
         /// guarantee that a step will be canceled, even if the request is successfully submitted.
-        /// You can only cancel steps that are in a <code>PENDING</code> state.
+        /// When you use Amazon EMR versions 5.28.0 and later, you can cancel steps that are in
+        /// a <code>PENDING</code> or <code>RUNNING</code> state. In earlier versions of Amazon
+        /// EMR, you can only cancel steps that are in a <code>PENDING</code> state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelSteps service method.</param>
         /// <param name="cancellationToken">
@@ -984,6 +986,48 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  DescribeReleaseLabel
+
+        internal virtual DescribeReleaseLabelResponse DescribeReleaseLabel(DescribeReleaseLabelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReleaseLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReleaseLabelResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReleaseLabelResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides EMR release label details, such as releases available the region where the
+        /// API request is run, and the available applications for a specific EMR release label.
+        /// Can also list EMR release versions that support a specified version of Spark.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReleaseLabel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeReleaseLabel service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeReleaseLabel">REST API Reference for DescribeReleaseLabel Operation</seealso>
+        public virtual Task<DescribeReleaseLabelResponse> DescribeReleaseLabelAsync(DescribeReleaseLabelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReleaseLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReleaseLabelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeReleaseLabelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeSecurityConfiguration
 
         internal virtual DescribeSecurityConfigurationResponse DescribeSecurityConfiguration(DescribeSecurityConfigurationRequest request)
@@ -1144,8 +1188,8 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// Returns the Amazon EMR block public access configuration for your AWS account in the
-        /// current Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure
+        /// Returns the Amazon EMR block public access configuration for your account in the current
+        /// Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure
         /// Block Public Access for Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBlockPublicAccessConfiguration service method.</param>
@@ -1330,11 +1374,11 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// Provides the status of all clusters visible to this AWS account. Allows you to filter
+        /// Provides the status of all clusters visible to this account. Allows you to filter
         /// the list of clusters based on certain criteria; for example, filtering by cluster
-        /// creation date and time or by status. This call returns a maximum of 50 clusters per
-        /// call, but returns a marker to track the paging of the cluster list across multiple
-        /// ListClusters calls.
+        /// creation date and time or by status. This call returns a maximum of 50 clusters in
+        /// unsorted order per call, but returns a marker to track the paging of the cluster list
+        /// across multiple ListClusters calls.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1356,11 +1400,11 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// Provides the status of all clusters visible to this AWS account. Allows you to filter
+        /// Provides the status of all clusters visible to this account. Allows you to filter
         /// the list of clusters based on certain criteria; for example, filtering by cluster
-        /// creation date and time or by status. This call returns a maximum of 50 clusters per
-        /// call, but returns a marker to track the paging of the cluster list across multiple
-        /// ListClusters calls.
+        /// creation date and time or by status. This call returns a maximum of 50 clusters in
+        /// unsorted order per call, but returns a marker to track the paging of the cluster list
+        /// across multiple ListClusters calls.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListClusters service method.</param>
         /// <param name="cancellationToken">
@@ -1611,6 +1655,46 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  ListReleaseLabels
+
+        internal virtual ListReleaseLabelsResponse ListReleaseLabels(ListReleaseLabelsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReleaseLabelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReleaseLabelsResponseUnmarshaller.Instance;
+
+            return Invoke<ListReleaseLabelsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves release labels of EMR services in the region where the API is called.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReleaseLabels service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListReleaseLabels service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListReleaseLabels">REST API Reference for ListReleaseLabels Operation</seealso>
+        public virtual Task<ListReleaseLabelsResponse> ListReleaseLabelsAsync(ListReleaseLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReleaseLabelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReleaseLabelsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListReleaseLabelsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListSecurityConfigurations
 
         internal virtual ListSecurityConfigurationsResponse ListSecurityConfigurations(ListSecurityConfigurationsRequest request)
@@ -1672,8 +1756,10 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Provides a list of steps for the cluster in reverse order unless you specify <code>stepIds</code>
-        /// with the request of filter by <code>StepStates</code>. You can specify a maximum of
-        /// 10 <code>stepIDs</code>.
+        /// with the request or filter by <code>StepStates</code>. You can specify a maximum of
+        /// 10 <code>stepIDs</code>. The CLI automatically paginates results to return a list
+        /// greater than 50 steps. To return more than 50 steps using the CLI, specify a <code>Marker</code>,
+        /// which is a pagination token that indicates the next set of steps to retrieve.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1696,8 +1782,10 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Provides a list of steps for the cluster in reverse order unless you specify <code>stepIds</code>
-        /// with the request of filter by <code>StepStates</code>. You can specify a maximum of
-        /// 10 <code>stepIDs</code>.
+        /// with the request or filter by <code>StepStates</code>. You can specify a maximum of
+        /// 10 <code>stepIDs</code>. The CLI automatically paginates results to return a list
+        /// greater than 50 steps. To return more than 50 steps using the CLI, specify a <code>Marker</code>,
+        /// which is a pagination token that indicates the next set of steps to retrieve.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSteps service method.</param>
         /// <param name="cancellationToken">
@@ -1737,8 +1825,8 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// Returns a list of all Amazon EMR Studios associated with the AWS account. The list
-        /// includes details such as ID, Studio Access URL, and creation time for each Studio.
+        /// Returns a list of all Amazon EMR Studios associated with the account. The list includes
+        /// details such as ID, Studio Access URL, and creation time for each Studio.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStudios service method.</param>
         /// <param name="cancellationToken">
@@ -1988,7 +2076,7 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// Creates or updates an Amazon EMR block public access configuration for your AWS account
+        /// Creates or updates an Amazon EMR block public access configuration for your account
         /// in the current Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure
         /// Block Public Access for Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.
         /// </summary>
@@ -2318,15 +2406,22 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// Sets the <a>Cluster$VisibleToAllUsers</a> value, which determines whether the cluster
-        /// is visible to all IAM users of the AWS account associated with the cluster. Only the
-        /// IAM user who created the cluster or the AWS account root user can call this action.
-        /// The default value, <code>true</code>, indicates that all IAM users in the AWS account
-        /// can perform cluster actions if they have the proper IAM policy permissions. If set
-        /// to <code>false</code>, only the IAM user that created the cluster can perform actions.
-        /// This action works on running clusters. You can override the default <code>true</code>
-        /// setting when you create a cluster by using the <code>VisibleToAllUsers</code> parameter
-        /// with <code>RunJobFlow</code>.
+        /// Sets the <a>Cluster$VisibleToAllUsers</a> value for an EMR cluster. When <code>true</code>,
+        /// IAM principals in the account can perform EMR cluster actions that their IAM policies
+        /// allow. When <code>false</code>, only the IAM principal that created the cluster and
+        /// the account root user can perform EMR actions on the cluster, regardless of IAM permissions
+        /// policies attached to other IAM principals.
+        /// 
+        ///  
+        /// <para>
+        /// This action works on running clusters. When you create a cluster, use the <a>RunJobFlowInput$VisibleToAllUsers</a>
+        /// parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
+        /// the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetVisibleToAllUsers service method.</param>
         /// <param name="cancellationToken">

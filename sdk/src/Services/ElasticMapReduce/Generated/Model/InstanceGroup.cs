@@ -100,8 +100,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// The list of configurations supplied for an EMR cluster instance group. You can specify
-        /// a separate configuration for each instance group (master, core, and task).
+        /// The list of configurations supplied for an Amazon EMR cluster instance group. You
+        /// can specify a separate configuration for each instance group (master, core, and task).
         /// </para>
         /// </summary>
         public List<Configuration> Configurations

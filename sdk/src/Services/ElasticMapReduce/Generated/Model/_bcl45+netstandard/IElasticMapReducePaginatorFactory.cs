@@ -56,6 +56,11 @@ namespace Amazon.ElasticMapReduce.Model
         IListNotebookExecutionsPaginator ListNotebookExecutions(ListNotebookExecutionsRequest request);
 
         /// <summary>
+        /// Paginator for ListReleaseLabels operation
+        ///</summary>
+        IListReleaseLabelsPaginator ListReleaseLabels(ListReleaseLabelsRequest request);
+
+        /// <summary>
         /// Paginator for ListSecurityConfigurations operation
         ///</summary>
         IListSecurityConfigurationsPaginator ListSecurityConfigurations(ListSecurityConfigurationsRequest request);

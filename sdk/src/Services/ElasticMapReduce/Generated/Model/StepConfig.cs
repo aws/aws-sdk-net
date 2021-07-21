@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Specification of a cluster (job flow) step.
+    /// Specification for a cluster (job flow) step.
     /// </summary>
     public partial class StepConfig
     {
@@ -56,9 +56,41 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ActionOnFailure. 
         /// <para>
-        /// The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER,
-        /// CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is provided for backward compatibility.
-        /// We recommend using TERMINATE_CLUSTER instead.
+        /// The action to take when the step fails. Use one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>TERMINATE_CLUSTER</code> - Shuts down the cluster.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CANCEL_AND_WAIT</code> - Cancels any pending steps and returns the cluster
+        /// to the <code>WAITING</code> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CONTINUE</code> - Continues to the next step in the queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TERMINATE_JOB_FLOW</code> - Shuts down the cluster. <code>TERMINATE_JOB_FLOW</code>
+        /// is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code>
+        /// instead.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do
+        /// not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code>
+        /// or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails
+        /// with a message that the <code>ActionOnFailure</code> setting is not valid.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you change a cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while
+        /// a step is running, the <code>ActionOnFailure</code> parameter may not behave as you
+        /// expect. In this case, for a step that fails with this parameter set to <code>CANCEL_AND_WAIT</code>,
+        /// pending steps and the running step are not canceled; for a step that fails with this
+        /// parameter set to <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.
         /// </para>
         /// </summary>
         public ActionOnFailure ActionOnFailure

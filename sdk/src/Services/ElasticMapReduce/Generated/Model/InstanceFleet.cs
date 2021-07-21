@@ -94,8 +94,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceTypeSpecifications. 
         /// <para>
-        /// The specification for the instance types that comprise an instance fleet. Up to five
-        /// unique instance specifications may be defined for each instance fleet. 
+        /// An array of specifications for the instance types that comprise an instance fleet.
         /// </para>
         /// </summary>
         public List<InstanceTypeSpecification> InstanceTypeSpecifications

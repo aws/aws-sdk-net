@@ -29,30 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListStudios operation.
-    /// Returns a list of all Amazon EMR Studios associated with the account. The list includes
-    /// details such as ID, Studio Access URL, and creation time for each Studio.
+    /// The returned release label application names or versions.
     /// </summary>
-    public partial class ListStudiosRequest : AmazonElasticMapReduceRequest
+    public partial class SimplifiedApplication
     {
-        private string _marker;
+        private string _name;
+        private string _version;
 
         /// <summary>
-        /// Gets and sets the property Marker. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The pagination token that indicates the set of results to retrieve.
+        /// The returned release label application name. For example, <code>hadoop</code>.
         /// </para>
         /// </summary>
-        public string Marker
+        public string Name
         {
-            get { return this._marker; }
-            set { this._marker = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Marker property is set
-        internal bool IsSetMarker()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._marker != null;
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The returned release label application version. For example, <code>3.2.1</code>.
+        /// </para>
+        /// </summary>
+        public string Version
+        {
+            get { return this._version; }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version != null;
         }
 
     }

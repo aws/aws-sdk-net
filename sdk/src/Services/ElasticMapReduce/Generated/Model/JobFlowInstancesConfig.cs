@@ -166,7 +166,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EmrManagedMasterSecurityGroup. 
         /// <para>
-        /// The identifier of the Amazon EC2 security group for the master node.
+        /// The identifier of the Amazon EC2 security group for the master node. If you specify
+        /// <code>EmrManagedMasterSecurityGroup</code>, you must also specify <code>EmrManagedSlaveSecurityGroup</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -185,7 +186,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EmrManagedSlaveSecurityGroup. 
         /// <para>
-        /// The identifier of the Amazon EC2 security group for the core and task nodes.
+        /// The identifier of the Amazon EC2 security group for the core and task nodes. If you
+        /// specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify <code>EmrManagedMasterSecurityGroup</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -289,6 +291,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property KeepJobFlowAliveWhenNoSteps. 
         /// <para>
         /// Specifies whether the cluster should remain available after completing all steps.
+        /// Defaults to <code>true</code>. For more information about configuring cluster termination,
+        /// see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control
+        /// Cluster Termination</a> in the <i>EMR Management Guide</i>.
         /// </para>
         /// </summary>
         public bool KeepJobFlowAliveWhenNoSteps

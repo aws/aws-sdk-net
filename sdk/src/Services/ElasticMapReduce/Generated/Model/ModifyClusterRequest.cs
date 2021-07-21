@@ -61,7 +61,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property StepConcurrencyLevel. 
         /// <para>
         /// The number of steps that can be executed concurrently. You can specify a minimum of
-        /// 1 step and a maximum of 256 steps. 
+        /// 1 step and a maximum of 256 steps. We recommend that you do not change this parameter
+        /// while steps are running or the <code>ActionOnFailure</code> setting may not behave
+        /// as expected. For more information see <a>Step$ActionOnFailure</a>.
         /// </para>
         /// </summary>
         public int StepConcurrencyLevel

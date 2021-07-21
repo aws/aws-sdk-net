@@ -49,7 +49,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EbsVolumes. 
         /// <para>
-        /// The list of EBS volumes that are attached to this instance.
+        /// The list of Amazon EBS volumes that are attached to this instance.
         /// </para>
         /// </summary>
         public List<EbsVolume> EbsVolumes

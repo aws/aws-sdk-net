@@ -29,30 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListStudios operation.
-    /// Returns a list of all Amazon EMR Studios associated with the account. The list includes
-    /// details such as ID, Studio Access URL, and creation time for each Studio.
+    /// The release label filters by application or version prefix.
     /// </summary>
-    public partial class ListStudiosRequest : AmazonElasticMapReduceRequest
+    public partial class ReleaseLabelFilter
     {
-        private string _marker;
+        private string _application;
+        private string _prefix;
 
         /// <summary>
-        /// Gets and sets the property Marker. 
+        /// Gets and sets the property Application. 
         /// <para>
-        /// The pagination token that indicates the set of results to retrieve.
+        /// Optional release label application filter. For example, <code>spark@2.1.0</code>.
         /// </para>
         /// </summary>
-        public string Marker
+        public string Application
         {
-            get { return this._marker; }
-            set { this._marker = value; }
+            get { return this._application; }
+            set { this._application = value; }
         }
 
-        // Check to see if Marker property is set
-        internal bool IsSetMarker()
+        // Check to see if Application property is set
+        internal bool IsSetApplication()
         {
-            return this._marker != null;
+            return this._application != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Prefix. 
+        /// <para>
+        /// Optional release label version prefix filter. For example, <code>emr-5</code>.
+        /// </para>
+        /// </summary>
+        public string Prefix
+        {
+            get { return this._prefix; }
+            set { this._prefix = value; }
+        }
+
+        // Check to see if Prefix property is set
+        internal bool IsSetPrefix()
+        {
+            return this._prefix != null;
         }
 
     }

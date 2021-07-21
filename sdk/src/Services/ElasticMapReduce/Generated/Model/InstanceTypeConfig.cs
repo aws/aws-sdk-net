@@ -31,8 +31,11 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// An instance type configuration for each instance type in an instance fleet, which
     /// determines the EC2 instances Amazon EMR attempts to provision to fulfill On-Demand
-    /// and Spot target capacities. There can be a maximum of five instance type configurations
-    /// in a fleet.
+    /// and Spot target capacities. When you use an allocation strategy, you can include a
+    /// maximum of 30 instance type configurations for a fleet. For more information about
+    /// how to use an allocation strategy, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-instance-fleet.html">Configure
+    /// Instance Fleets</a>. Without an allocation strategy, you may specify a maximum of
+    /// five instance type configurations for a fleet.
     /// 
     ///  <note> 
     /// <para>
@@ -115,7 +118,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EbsConfiguration. 
         /// <para>
-        /// The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance
+        /// The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance
         /// as defined by <code>InstanceType</code>. 
         /// </para>
         /// </summary>
