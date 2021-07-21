@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.76.0",
+    "ProductVersion" : "3.7.77.0",
     "CoreVersion"    : "3.7.0.45",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -192,7 +192,7 @@
             "InPreview"               : false
         },
         "ElasticMapReduce"     : {
-            "Version" : "3.7.0.43",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.45"
@@ -218,7 +218,7 @@
             "InPreview"               : false
         },
         "IdentityManagement"   : {
-            "Version" : "3.7.2.22",
+            "Version" : "3.7.2.23",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.45"
@@ -242,7 +242,7 @@
             "InPreview"               : false
         },
         "Lambda"               : {
-            "Version" : "3.7.1.6",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.45"
@@ -282,7 +282,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.7.2.11",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.45"
@@ -570,7 +570,7 @@
             "InPreview"               : false
         },
         "ElasticLoadBalancingV2"          : {
-            "Version" : "3.7.0.44",
+            "Version" : "3.7.0.45",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.45"
@@ -658,7 +658,7 @@
             "InPreview"               : false
         },
         "CodeBuild"                       : {
-            "Version" : "3.7.2.9",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.45"
@@ -1442,7 +1442,7 @@
             "InPreview"               : false
         },
         "Personalize"                     : {
-            "Version" : "3.7.4.14",
+            "Version" : "3.7.5.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.45"
@@ -1682,7 +1682,7 @@
             "InPreview"               : false
         },
         "Kendra"                          : {
-            "Version" : "3.7.7.2",
+            "Version" : "3.7.8.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.45"
@@ -2162,7 +2162,7 @@
             "InPreview"               : false
         },
         "Proton"                          : {
-            "Version" : "3.7.1.8",
+            "Version" : "3.7.1.9",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.45"
