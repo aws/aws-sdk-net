@@ -150,6 +150,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.OptionGroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("OriginalSnapshotCreateTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.OriginalSnapshotCreateTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("PercentProgress", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

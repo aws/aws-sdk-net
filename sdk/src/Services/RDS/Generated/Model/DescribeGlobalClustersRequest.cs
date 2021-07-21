@@ -54,19 +54,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// A filter that specifies one or more global DB clusters to describe.
+        /// This parameter isn't currently supported.
         /// </para>
-        ///  
-        /// <para>
-        /// Supported filters:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon
-        /// Resource Names (ARNs). The results list will only include information about the DB
-        /// clusters identified by these ARNs.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {

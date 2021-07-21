@@ -55,6 +55,7 @@ namespace Amazon.RDS.Model
         private string _licenseModel;
         private string _masterUsername;
         private string _optionGroupName;
+        private DateTime? _originalSnapshotCreateTime;
         private int? _percentProgress;
         private int? _port;
         private List<ProcessorFeature> _processorFeatures = new List<ProcessorFeature>();
@@ -370,6 +371,25 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OriginalSnapshotCreateTime. 
+        /// <para>
+        /// Specifies the time of the CreateDBSnapshot operation in Coordinated Universal Time
+        /// (UTC). Doesn't change when the snapshot is copied.
+        /// </para>
+        /// </summary>
+        public DateTime OriginalSnapshotCreateTime
+        {
+            get { return this._originalSnapshotCreateTime.GetValueOrDefault(); }
+            set { this._originalSnapshotCreateTime = value; }
+        }
+
+        // Check to see if OriginalSnapshotCreateTime property is set
+        internal bool IsSetOriginalSnapshotCreateTime()
+        {
+            return this._originalSnapshotCreateTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PercentProgress. 
         /// <para>
         /// The percentage of the estimated data that has been transferred.
@@ -427,7 +447,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SnapshotCreateTime. 
         /// <para>
-        /// Specifies when the snapshot was taken in Coordinated Universal Time (UTC).
+        /// Specifies when the snapshot was taken in Coordinated Universal Time (UTC). Changes
+        /// for the copy when the snapshot is copied.
         /// </para>
         /// </summary>
         public DateTime SnapshotCreateTime
@@ -464,7 +485,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property SourceDBSnapshotIdentifier. 
         /// <para>
         /// The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It
-        /// only has value in case of cross-customer or cross-region copy.
+        /// only has a value in the case of a cross-account or cross-Region copy.
         /// </para>
         /// </summary>
         public string SourceDBSnapshotIdentifier
