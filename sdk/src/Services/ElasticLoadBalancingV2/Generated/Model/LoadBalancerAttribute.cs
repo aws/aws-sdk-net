@@ -96,6 +96,17 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Indicates whether the two headers (<code>x-amzn-tls-version</code> and <code>x-amzn-tls-cipher-suite</code>),
+        /// which contain information about the negotiated TLS version and cipher suite, are added
+        /// to the client request before sending it to the target. The <code>x-amzn-tls-version</code>
+        /// header has information about the TLS protocol version negotiated with the client,
+        /// and the <code>x-amzn-tls-cipher-suite</code> header has information about the cipher
+        /// suite negotiated with the client. Both headers are in OpenSSL format. The possible
+        /// values for the attribute are <code>true</code> and <code>false</code>. The default
+        /// is <code>false</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value
         /// is <code>true</code> or <code>false</code>. The default is <code>true</code>. Elastic
         /// Load Balancing requires that message header names contain only alphanumeric characters
