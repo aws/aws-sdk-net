@@ -138,7 +138,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The maximum number of event source mappings to return.
+        /// The maximum number of event source mappings to return. Note that ListEventSourceMappings
+        /// returns a maximum of 100 items in each response, even if you set the number higher.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]

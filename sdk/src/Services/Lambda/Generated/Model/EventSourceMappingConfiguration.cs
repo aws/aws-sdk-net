@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// A mapping between an Amazon Web Services resource and an Lambda function. See <a>CreateEventSourceMapping</a>
-    /// for details.
+    /// A mapping between an Amazon Web Services resource and a Lambda function. For details,
+    /// see <a>CreateEventSourceMapping</a>.
     /// </summary>
     public partial class EventSourceMappingConfiguration
     {
@@ -171,7 +171,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property LastModified. 
         /// <para>
-        /// The date that the event source mapping was last updated, or its state changed.
+        /// The date that the event source mapping was last updated or that its state changed.
         /// </para>
         /// </summary>
         public DateTime LastModified
@@ -189,7 +189,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property LastProcessingResult. 
         /// <para>
-        /// The result of the last Lambda invocation of your Lambda function.
+        /// The result of the last Lambda invocation of your function.
         /// </para>
         /// </summary>
         public string LastProcessingResult
@@ -207,8 +207,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumBatchingWindowInSeconds. 
         /// <para>
-        /// (Streams and SQS standard queues) The maximum amount of time to gather records before
-        /// invoking the function, in seconds. The default value is zero.
+        /// (Streams and Amazon SQS standard queues) The maximum amount of time to gather records
+        /// before invoking the function, in seconds. The default value is zero.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]
@@ -269,7 +269,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ParallelizationFactor. 
         /// <para>
-        /// (Streams only) The number of batches to process from each shard concurrently. The
+        /// (Streams only) The number of batches to process concurrently from each shard. The
         /// default value is 1.
         /// </para>
         /// </summary>
@@ -289,7 +289,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Queues. 
         /// <para>
-        ///  (MQ) The name of the Amazon MQ broker destination queue to consume. 
+        ///  (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -308,7 +308,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property SelfManagedEventSource. 
         /// <para>
-        /// The Self-Managed Apache Kafka cluster for your event source.
+        /// The self-managed Apache Kafka cluster for your event source.
         /// </para>
         /// </summary>
         public SelfManagedEventSource SelfManagedEventSource
@@ -326,8 +326,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property SourceAccessConfigurations. 
         /// <para>
-        /// An array of the authentication protocol, or the VPC components to secure your event
-        /// source.
+        /// An array of the authentication protocol, VPC components, or virtual host to secure
+        /// and define your event source.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=22)]
@@ -347,8 +347,8 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property StartingPosition. 
         /// <para>
         /// The position in a stream from which to start reading. Required for Amazon Kinesis,
-        /// Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only
-        /// supported for Amazon Kinesis streams.
+        /// Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported
+        /// only for Amazon Kinesis streams.
         /// </para>
         /// </summary>
         public EventSourcePosition StartingPosition
@@ -405,8 +405,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property StateTransitionReason. 
         /// <para>
-        /// Indicates whether the last change to the event source mapping was made by a user,
-        /// or by the Lambda service.
+        /// Indicates whether a user or Lambda made the last change to the event source mapping.
         /// </para>
         /// </summary>
         public string StateTransitionReason
@@ -443,8 +442,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property TumblingWindowInSeconds. 
         /// <para>
-        /// (Streams only) The duration in seconds of a processing window. The range is between
-        /// 1 second up to 900 seconds.
+        /// (Streams only) The duration in seconds of a processing window. The range is 1–900
+        /// seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=900)]

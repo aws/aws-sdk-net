@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The Self-Managed Apache Kafka cluster for your event source.
+    /// The self-managed Apache Kafka cluster for your event source.
     /// </summary>
     public partial class SelfManagedEventSource
     {

@@ -321,7 +321,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property SourceAccessConfigurations. 
         /// <para>
-        /// An array of the authentication protocol, or the VPC components to secure your event
+        /// An array of authentication protocols or VPC components required to secure your event
         /// source.
         /// </para>
         /// </summary>
