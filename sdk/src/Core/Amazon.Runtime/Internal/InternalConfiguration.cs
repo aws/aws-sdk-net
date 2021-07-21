@@ -47,6 +47,16 @@ namespace Amazon.Runtime.Internal
         /// The max number of request attempts.
         /// </summary>
         public int? MaxAttempts { get; set; }
+
+        /// <summary>
+        /// Endpoint of the EC2 Instance Metadata Service
+        /// </summary>
+        public string EC2MetadataServiceEndpoint { get; set; }
+
+        /// <summary>
+        /// Internet protocol version to be used for communicating with the EC2 Instance Metadata Service
+        /// </summary>
+        public EC2MetadataServiceEndpointMode? EC2MetadataServiceEndpointMode { get; set; }
     }
 
 #if BCL || NETSTANDARD
@@ -62,6 +72,8 @@ namespace Amazon.Runtime.Internal
         public const string ENVIRONMENT_VARIABLE_AWS_ENABLE_ENDPOINT_DISCOVERY = "AWS_ENABLE_ENDPOINT_DISCOVERY";
         public const string ENVIRONMENT_VARIABLE_AWS_MAX_ATTEMPTS = "AWS_MAX_ATTEMPTS";
         public const string ENVIRONMENT_VARIABLE_AWS_RETRY_MODE = "AWS_RETRY_MODE";
+        public const string ENVIRONMENT_VARIABLE_AWS_EC2_METADATA_SERVICE_ENDPOINT = "AWS_EC2_METADATA_SERVICE_ENDPOINT";
+        public const string ENVIRONMENT_VARIABLE_AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE = "AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE";
 
         /// <summary>
         /// Attempts to construct a configuration instance of configuration environment 
@@ -75,6 +87,8 @@ namespace Amazon.Runtime.Internal
             EndpointDiscoveryEnabled = GetEnvironmentVariable<bool>(ENVIRONMENT_VARIABLE_AWS_ENABLE_ENDPOINT_DISCOVERY);
             MaxAttempts = GetEnvironmentVariable<int>(ENVIRONMENT_VARIABLE_AWS_MAX_ATTEMPTS);
             RetryMode = GetEnvironmentVariable<RequestRetryMode>(ENVIRONMENT_VARIABLE_AWS_RETRY_MODE);
+            EC2MetadataServiceEndpoint = GetEC2MetadataEndpointEnvironmentVariable();
+            EC2MetadataServiceEndpointMode = GetEnvironmentVariable<EC2MetadataServiceEndpointMode>(ENVIRONMENT_VARIABLE_AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE);
         }
 
         private bool TryGetEnvironmentVariable(string environmentVariableName, out string value)
@@ -114,6 +128,26 @@ namespace Amazon.Runtime.Internal
                 _logger.Error(e, $"The environment variable {name} was set with value {value}, but it could not be parsed as a valid value.");
             }
             return null;
+        }
+
+        /// <summary>
+        /// Loads the EC2 Instance Metadata endpoint from the environment variable, and validates it is a well-formed uri
+        /// </summary>
+        /// <returns>Override EC2 instance metadata endpoint if valid, else an empty string</returns>
+        private string GetEC2MetadataEndpointEnvironmentVariable()
+        {
+            if (!TryGetEnvironmentVariable(ENVIRONMENT_VARIABLE_AWS_EC2_METADATA_SERVICE_ENDPOINT, out var rawValue))
+            {
+                return null;
+            }
+
+            if (!Uri.IsWellFormedUriString(rawValue, UriKind.Absolute))
+            {
+                throw new AmazonClientException($"The environment variable {ENVIRONMENT_VARIABLE_AWS_EC2_METADATA_SERVICE_ENDPOINT} was set with value " +
+                    $"{rawValue}, but it could not be parsed as a well-formed Uri.");
+            }
+
+            return rawValue;
         }
     }
 
@@ -160,6 +194,8 @@ namespace Amazon.Runtime.Internal
                 EndpointDiscoveryEnabled = profile.EndpointDiscoveryEnabled;
                 RetryMode = profile.RetryMode;
                 MaxAttempts = profile.MaxAttempts;
+                EC2MetadataServiceEndpoint = profile.EC2MetadataServiceEndpoint;
+                EC2MetadataServiceEndpointMode = profile.EC2MetadataServiceEndpointMode;
             }
             else
             {
@@ -171,7 +207,9 @@ namespace Amazon.Runtime.Internal
             {
                 new KeyValuePair<string, object>("endpoint_discovery_enabled", profile.EndpointDiscoveryEnabled),
                 new KeyValuePair<string, object>("retry_mode", profile.RetryMode),
-                new KeyValuePair<string, object>("max_attempts", profile.MaxAttempts)
+                new KeyValuePair<string, object>("max_attempts", profile.MaxAttempts),
+                new KeyValuePair<string, object>("ec2_metadata_service_endpoint", profile.EC2MetadataServiceEndpoint),
+                new KeyValuePair<string, object>("ec2_metadata_service_endpoint_mode", profile.EC2MetadataServiceEndpointMode)
             };
 
             foreach(var item in items)
@@ -230,6 +268,8 @@ namespace Amazon.Runtime.Internal
             _cachedConfiguration.EndpointDiscoveryEnabled = SeekValue(standardGenerators, (c) => c.EndpointDiscoveryEnabled);
             _cachedConfiguration.RetryMode = SeekValue(standardGenerators, (c) => c.RetryMode);
             _cachedConfiguration.MaxAttempts = SeekValue(standardGenerators, (c) => c.MaxAttempts);
+            _cachedConfiguration.EC2MetadataServiceEndpoint = SeekString(standardGenerators, (c) => c.EC2MetadataServiceEndpoint);
+            _cachedConfiguration.EC2MetadataServiceEndpointMode = SeekValue(standardGenerators, (c) => c.EC2MetadataServiceEndpointMode);
         }        
                 
         private static T? SeekValue<T>(List<ConfigGenerator> generators, Func<InternalConfiguration, T?> getValue) where T : struct
@@ -246,6 +286,22 @@ namespace Amazon.Runtime.Internal
             }
 
             return null;
+        }
+
+        private static string SeekString(List<ConfigGenerator> generators, Func<InternalConfiguration, string> getValue)
+        {
+            //Look for the configuration value stopping at the first generator that returns the expected value.
+            foreach (var generator in generators)
+            {
+                var configuration = generator();
+                string value = getValue(configuration);
+                if (!string.IsNullOrEmpty(value))
+                {
+                    return value;
+                }
+            }
+
+            return "";
         }
 
         /// <summary>
@@ -281,6 +337,28 @@ namespace Amazon.Runtime.Internal
             get
             {
                 return _cachedConfiguration.MaxAttempts;
+            }
+        }
+
+        /// <summary>
+        /// Endpoint of the EC2 Instance Metadata Service
+        /// </summary>
+        public static string EC2MetadataServiceEndpoint
+        {
+            get
+            {
+                return _cachedConfiguration.EC2MetadataServiceEndpoint;
+            }
+        }
+
+        /// <summary>
+        /// Internet protocol version to be used for communicating with the EC2 Instance Metadata Service
+        /// </summary>
+        public static EC2MetadataServiceEndpointMode? EC2MetadataServiceEndpointMode 
+        { 
+            get
+            {
+                return _cachedConfiguration.EC2MetadataServiceEndpointMode;
             }
         }
     }
