@@ -22,7 +22,7 @@ using System.Runtime.Serialization;
 namespace Amazon.Runtime.Internal
 {
     /// <summary>
-    /// Collection used to indicate if the property was initialized was created by the SDK.
+    /// Collection used to indicate if the property was initialized by the SDK.
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public class AutoConstructedList<T> : List<T>
@@ -30,7 +30,7 @@ namespace Amazon.Runtime.Internal
     }
 
     /// <summary>
-    /// Collection used to indicate if the property was initialized was created by the SDK.
+    /// Collection used to indicate if the property was initialized by the SDK.
     /// </summary>
     /// <typeparam name="K"></typeparam>
     /// <typeparam name="V"></typeparam>
