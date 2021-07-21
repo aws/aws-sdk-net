@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// An Amazon Web Services service limit was exceeded for the calling Amazon Web Services
-    /// account.
+    /// An AWS service limit was exceeded for the calling AWS account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

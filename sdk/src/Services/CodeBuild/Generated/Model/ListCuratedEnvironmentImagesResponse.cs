@@ -38,7 +38,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Platforms. 
         /// <para>
-        /// Information about supported platforms for Docker images that are managed by CodeBuild.
+        /// Information about supported platforms for Docker images that are managed by AWS CodeBuild.
         /// </para>
         /// </summary>
         public List<EnvironmentPlatform> Platforms

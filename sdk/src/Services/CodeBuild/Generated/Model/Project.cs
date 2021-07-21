@@ -214,8 +214,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property EncryptionKey. 
         /// <para>
-        /// The Key Management Service customer master key (CMK) to be used for encrypting the
-        /// build output artifacts.
+        /// The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for
+        /// encrypting the build output artifacts.
         /// </para>
         ///  <note> 
         /// <para>
@@ -225,9 +225,7 @@ namespace Amazon.CodeBuild.Model
         ///  </note> 
         /// <para>
         /// You can specify either the Amazon Resource Name (ARN) of the CMK or, if available,
-        /// the CMK's alias (using the format <code>alias/&lt;alias-name&gt;</code>). If you don't
-        /// specify a value, CodeBuild uses the managed CMK for Amazon Simple Storage Service
-        /// (Amazon S3). 
+        /// the CMK's alias (using the format <code>alias/&lt;alias-name&gt;</code>). 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -303,8 +301,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property LogsConfig. 
         /// <para>
-        /// Information about logs for the build project. A project can create logs in CloudWatch
-        /// Logs, an S3 bucket, or both. 
+        /// Information about logs for the build project. A project can create logs in Amazon
+        /// CloudWatch Logs, an S3 bucket, or both. 
         /// </para>
         /// </summary>
         public LogsConfig LogsConfig
@@ -419,8 +417,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
-        /// The ARN of the Identity and Access Management role that enables CodeBuild to interact
-        /// with dependent Amazon Web Services services on behalf of the Amazon Web Services account.
+        /// The ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild
+        /// to interact with dependent AWS services on behalf of the AWS account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -462,7 +460,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For CodeCommit: the commit ID, branch, or Git tag to use.
+        /// For AWS CodeCommit: the commit ID, branch, or Git tag to use.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -491,7 +489,7 @@ namespace Amazon.CodeBuild.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-        /// Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. 
+        /// Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. 
         /// </para>
         /// </summary>
         public string SourceVersion
@@ -513,8 +511,8 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  
         /// <para>
-        /// These tags are available for use by Amazon Web Services services that support CodeBuild
-        /// build project tags.
+        /// These tags are available for use by AWS services that support AWS CodeBuild build
+        /// project tags.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -533,7 +531,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property TimeoutInMinutes. 
         /// <para>
-        /// How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing
+        /// How long, in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait before timing
         /// out any related build that did not get marked as completed. The default is 60 minutes.
         /// </para>
         /// </summary>
@@ -553,7 +551,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property VpcConfig. 
         /// <para>
-        /// Information about the VPC configuration that CodeBuild accesses.
+        /// Information about the VPC configuration that AWS CodeBuild accesses.
         /// </para>
         /// </summary>
         public VpcConfig VpcConfig
@@ -572,7 +570,7 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property Webhook. 
         /// <para>
         /// Information about a webhook that connects repository events to a build project in
-        /// CodeBuild.
+        /// AWS CodeBuild.
         /// </para>
         /// </summary>
         public Webhook Webhook

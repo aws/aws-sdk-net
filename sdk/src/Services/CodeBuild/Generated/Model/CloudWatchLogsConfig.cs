@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// Information about CloudWatch Logs for a build project.
+    /// Information about Amazon CloudWatch Logs for a build project.
     /// </summary>
     public partial class CloudWatchLogsConfig
     {
@@ -40,7 +40,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        ///  The group name of the logs in CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
+        ///  The group name of the logs in Amazon CloudWatch Logs. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
         /// with Log Groups and Log Streams</a>. 
         /// </para>
         /// </summary>
@@ -59,16 +60,16 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the logs in CloudWatch Logs for a build project. Valid values
-        /// are:
+        /// The current status of the logs in Amazon CloudWatch Logs for a build project. Valid
+        /// values are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.
+        ///  <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.
+        ///  <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -88,8 +89,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property StreamName. 
         /// <para>
-        ///  The prefix of the stream name of the CloudWatch Logs. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
+        ///  The prefix of the stream name of the Amazon CloudWatch Logs. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
         /// with Log Groups and Log Streams</a>. 
         /// </para>
         /// </summary>

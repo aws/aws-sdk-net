@@ -30,7 +30,7 @@ namespace Amazon.CodeBuild.Model
 {
     /// <summary>
     /// A set of Docker images that are related by programming language and are managed by
-    /// CodeBuild.
+    /// AWS CodeBuild.
     /// </summary>
     public partial class EnvironmentLanguage
     {

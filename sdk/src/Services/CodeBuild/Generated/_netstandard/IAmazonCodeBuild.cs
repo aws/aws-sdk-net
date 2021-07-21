@@ -31,15 +31,18 @@ namespace Amazon.CodeBuild
     /// <summary>
     /// Interface for accessing CodeBuild
     ///
-    /// CodeBuild is a fully managed build service in the cloud. CodeBuild compiles your source
-    /// code, runs unit tests, and produces artifacts that are ready to deploy. CodeBuild
-    /// eliminates the need to provision, manage, and scale your own build servers. It provides
-    /// prepackaged build environments for the most popular programming languages and build
-    /// tools, such as Apache Maven, Gradle, and more. You can also fully customize build
-    /// environments in CodeBuild to use your own build tools. CodeBuild scales automatically
-    /// to meet peak build requests. You pay only for the build time you consume. For more
-    /// information about CodeBuild, see the <i> <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html">CodeBuild
-    /// User Guide</a>.</i>
+    /// AWS CodeBuild 
+    /// <para>
+    /// AWS CodeBuild is a fully managed build service in the cloud. AWS CodeBuild compiles
+    /// your source code, runs unit tests, and produces artifacts that are ready to deploy.
+    /// AWS CodeBuild eliminates the need to provision, manage, and scale your own build servers.
+    /// It provides prepackaged build environments for the most popular programming languages
+    /// and build tools, such as Apache Maven, Gradle, and more. You can also fully customize
+    /// build environments in AWS CodeBuild to use your own build tools. AWS CodeBuild scales
+    /// automatically to meet peak build requests. You pay only for the build time you consume.
+    /// For more information about AWS CodeBuild, see the <i> <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html">AWS
+    /// CodeBuild User Guide</a>.</i> 
+    /// </para>
     /// </summary>
     public partial interface IAmazonCodeBuild : IAmazonService, IDisposable
     {
@@ -190,15 +193,14 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>The response from the CreateProject service method, as returned by CodeBuild.</returns>
         /// <exception cref="Amazon.CodeBuild.Model.AccountLimitExceededException">
-        /// An Amazon Web Services service limit was exceeded for the calling Amazon Web Services
-        /// account.
+        /// An AWS service limit was exceeded for the calling AWS account.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
         /// The input value that was provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.ResourceAlreadyExistsException">
-        /// The specified Amazon Web Services resource cannot be created, because an Amazon Web
-        /// Services resource with the same settings already exists.
+        /// The specified AWS resource cannot be created, because an AWS resource with the same
+        /// settings already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateProject">REST API Reference for CreateProject Operation</seealso>
         Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -219,15 +221,14 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>The response from the CreateReportGroup service method, as returned by CodeBuild.</returns>
         /// <exception cref="Amazon.CodeBuild.Model.AccountLimitExceededException">
-        /// An Amazon Web Services service limit was exceeded for the calling Amazon Web Services
-        /// account.
+        /// An AWS service limit was exceeded for the calling AWS account.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
         /// The input value that was provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.ResourceAlreadyExistsException">
-        /// The specified Amazon Web Services resource cannot be created, because an Amazon Web
-        /// Services resource with the same settings already exists.
+        /// The specified AWS resource cannot be created, because an AWS resource with the same
+        /// settings already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateReportGroup">REST API Reference for CreateReportGroup Operation</seealso>
         Task<CreateReportGroupResponse> CreateReportGroupAsync(CreateReportGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -239,18 +240,19 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// For an existing CodeBuild build project that has its source code stored in a GitHub
-        /// or Bitbucket repository, enables CodeBuild to start rebuilding the source code every
-        /// time a code change is pushed to the repository.
+        /// For an existing AWS CodeBuild build project that has its source code stored in a GitHub
+        /// or Bitbucket repository, enables AWS CodeBuild to start rebuilding the source code
+        /// every time a code change is pushed to the repository.
         /// 
         ///  <important> 
         /// <para>
-        /// If you enable webhooks for an CodeBuild project, and the project is used as a build
-        /// step in CodePipeline, then two identical builds are created for each commit. One build
-        /// is triggered through webhooks, and one through CodePipeline. Because billing is on
-        /// a per-build basis, you are billed for both builds. Therefore, if you are using CodePipeline,
-        /// we recommend that you disable webhooks in CodeBuild. In the CodeBuild console, clear
-        /// the Webhook box. For more information, see step 5 in <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
+        /// If you enable webhooks for an AWS CodeBuild project, and the project is used as a
+        /// build step in AWS CodePipeline, then two identical builds are created for each commit.
+        /// One build is triggered through webhooks, and one through AWS CodePipeline. Because
+        /// billing is on a per-build basis, you are billed for both builds. Therefore, if you
+        /// are using AWS CodePipeline, we recommend that you disable webhooks in AWS CodeBuild.
+        /// In the AWS CodeBuild console, clear the Webhook box. For more information, see step
+        /// 5 in <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
         /// a Build Project's Settings</a>.
         /// </para>
         ///  </important>
@@ -268,11 +270,11 @@ namespace Amazon.CodeBuild
         /// There was a problem with the underlying OAuth provider.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.ResourceAlreadyExistsException">
-        /// The specified Amazon Web Services resource cannot be created, because an Amazon Web
-        /// Services resource with the same settings already exists.
+        /// The specified AWS resource cannot be created, because an AWS resource with the same
+        /// settings already exists.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
-        /// The specified Amazon Web Services resource cannot be found.
+        /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook">REST API Reference for CreateWebhook Operation</seealso>
         Task<CreateWebhookResponse> CreateWebhookAsync(CreateWebhookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -401,7 +403,7 @@ namespace Amazon.CodeBuild
         /// The input value that was provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
-        /// The specified Amazon Web Services resource cannot be found.
+        /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteSourceCredentials">REST API Reference for DeleteSourceCredentials Operation</seealso>
         Task<DeleteSourceCredentialsResponse> DeleteSourceCredentialsAsync(DeleteSourceCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -413,9 +415,9 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// For an existing CodeBuild build project that has its source code stored in a GitHub
-        /// or Bitbucket repository, stops CodeBuild from rebuilding the source code every time
-        /// a code change is pushed to the repository.
+        /// For an existing AWS CodeBuild build project that has its source code stored in a GitHub
+        /// or Bitbucket repository, stops AWS CodeBuild from rebuilding the source code every
+        /// time a code change is pushed to the repository.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteWebhook service method.</param>
         /// <param name="cancellationToken">
@@ -430,7 +432,7 @@ namespace Amazon.CodeBuild
         /// There was a problem with the underlying OAuth provider.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
-        /// The specified Amazon Web Services resource cannot be found.
+        /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
         Task<DeleteWebhookResponse> DeleteWebhookAsync(DeleteWebhookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -475,7 +477,7 @@ namespace Amazon.CodeBuild
         /// The input value that was provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
-        /// The specified Amazon Web Services resource cannot be found.
+        /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DescribeTestCases">REST API Reference for DescribeTestCases Operation</seealso>
         Task<DescribeTestCasesResponse> DescribeTestCasesAsync(DescribeTestCasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -499,7 +501,7 @@ namespace Amazon.CodeBuild
         /// The input value that was provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
-        /// The specified Amazon Web Services resource cannot be found.
+        /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/GetReportGroupTrend">REST API Reference for GetReportGroupTrend Operation</seealso>
         Task<GetReportGroupTrendResponse> GetReportGroupTrendAsync(GetReportGroupTrendRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -523,7 +525,7 @@ namespace Amazon.CodeBuild
         /// The input value that was provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
-        /// The specified Amazon Web Services resource cannot be found.
+        /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -535,8 +537,8 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// Imports the source repository credentials for an CodeBuild project that has its source
-        /// code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.
+        /// Imports the source repository credentials for an AWS CodeBuild project that has its
+        /// source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportSourceCredentials service method.</param>
         /// <param name="cancellationToken">
@@ -545,15 +547,14 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>The response from the ImportSourceCredentials service method, as returned by CodeBuild.</returns>
         /// <exception cref="Amazon.CodeBuild.Model.AccountLimitExceededException">
-        /// An Amazon Web Services service limit was exceeded for the calling Amazon Web Services
-        /// account.
+        /// An AWS service limit was exceeded for the calling AWS account.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
         /// The input value that was provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.ResourceAlreadyExistsException">
-        /// The specified Amazon Web Services resource cannot be created, because an Amazon Web
-        /// Services resource with the same settings already exists.
+        /// The specified AWS resource cannot be created, because an AWS resource with the same
+        /// settings already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ImportSourceCredentials">REST API Reference for ImportSourceCredentials Operation</seealso>
         Task<ImportSourceCredentialsResponse> ImportSourceCredentialsAsync(ImportSourceCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -577,7 +578,7 @@ namespace Amazon.CodeBuild
         /// The input value that was provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
-        /// The specified Amazon Web Services resource cannot be found.
+        /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/InvalidateProjectCache">REST API Reference for InvalidateProjectCache Operation</seealso>
         Task<InvalidateProjectCacheResponse> InvalidateProjectCacheAsync(InvalidateProjectCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -622,7 +623,7 @@ namespace Amazon.CodeBuild
         /// The input value that was provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
-        /// The specified Amazon Web Services resource cannot be found.
+        /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildBatchesForProject">REST API Reference for ListBuildBatchesForProject Operation</seealso>
         Task<ListBuildBatchesForProjectResponse> ListBuildBatchesForProjectAsync(ListBuildBatchesForProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -668,7 +669,7 @@ namespace Amazon.CodeBuild
         /// The input value that was provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
-        /// The specified Amazon Web Services resource cannot be found.
+        /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildsForProject">REST API Reference for ListBuildsForProject Operation</seealso>
         Task<ListBuildsForProjectResponse> ListBuildsForProjectAsync(ListBuildsForProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -680,7 +681,7 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// Gets information about Docker images that are managed by CodeBuild.
+        /// Gets information about Docker images that are managed by AWS CodeBuild.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCuratedEnvironmentImages service method.</param>
         /// <param name="cancellationToken">
@@ -720,7 +721,7 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// Gets a list ARNs for the report groups in the current Amazon Web Services account.
+        /// Gets a list ARNs for the report groups in the current AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReportGroups service method.</param>
         /// <param name="cancellationToken">
@@ -741,7 +742,7 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// Returns a list of ARNs for the reports in the current Amazon Web Services account.
+        /// Returns a list of ARNs for the reports in the current AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReports service method.</param>
         /// <param name="cancellationToken">
@@ -774,7 +775,7 @@ namespace Amazon.CodeBuild
         /// The input value that was provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
-        /// The specified Amazon Web Services resource cannot be found.
+        /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReportsForReportGroup">REST API Reference for ListReportsForReportGroup Operation</seealso>
         Task<ListReportsForReportGroupResponse> ListReportsForReportGroupAsync(ListReportsForReportGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -786,8 +787,7 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// Gets a list of projects that are shared with other Amazon Web Services accounts or
-        /// users.
+        /// Gets a list of projects that are shared with other AWS accounts or users.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSharedProjects service method.</param>
         /// <param name="cancellationToken">
@@ -808,8 +808,7 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// Gets a list of report groups that are shared with other Amazon Web Services accounts
-        /// or users.
+        /// Gets a list of report groups that are shared with other AWS accounts or users.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSharedReportGroups service method.</param>
         /// <param name="cancellationToken">
@@ -864,7 +863,7 @@ namespace Amazon.CodeBuild
         /// The input value that was provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
-        /// The specified Amazon Web Services resource cannot be found.
+        /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -885,14 +884,13 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>The response from the RetryBuild service method, as returned by CodeBuild.</returns>
         /// <exception cref="Amazon.CodeBuild.Model.AccountLimitExceededException">
-        /// An Amazon Web Services service limit was exceeded for the calling Amazon Web Services
-        /// account.
+        /// An AWS service limit was exceeded for the calling AWS account.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
         /// The input value that was provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
-        /// The specified Amazon Web Services resource cannot be found.
+        /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/RetryBuild">REST API Reference for RetryBuild Operation</seealso>
         Task<RetryBuildResponse> RetryBuildAsync(RetryBuildRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -916,7 +914,7 @@ namespace Amazon.CodeBuild
         /// The input value that was provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
-        /// The specified Amazon Web Services resource cannot be found.
+        /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/RetryBuildBatch">REST API Reference for RetryBuildBatch Operation</seealso>
         Task<RetryBuildBatchResponse> RetryBuildBatchAsync(RetryBuildBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -937,14 +935,13 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>The response from the StartBuild service method, as returned by CodeBuild.</returns>
         /// <exception cref="Amazon.CodeBuild.Model.AccountLimitExceededException">
-        /// An Amazon Web Services service limit was exceeded for the calling Amazon Web Services
-        /// account.
+        /// An AWS service limit was exceeded for the calling AWS account.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
         /// The input value that was provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
-        /// The specified Amazon Web Services resource cannot be found.
+        /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild">REST API Reference for StartBuild Operation</seealso>
         Task<StartBuildResponse> StartBuildAsync(StartBuildRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -968,7 +965,7 @@ namespace Amazon.CodeBuild
         /// The input value that was provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
-        /// The specified Amazon Web Services resource cannot be found.
+        /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuildBatch">REST API Reference for StartBuildBatch Operation</seealso>
         Task<StartBuildBatchResponse> StartBuildBatchAsync(StartBuildBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -992,7 +989,7 @@ namespace Amazon.CodeBuild
         /// The input value that was provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
-        /// The specified Amazon Web Services resource cannot be found.
+        /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild">REST API Reference for StopBuild Operation</seealso>
         Task<StopBuildResponse> StopBuildAsync(StopBuildRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1016,7 +1013,7 @@ namespace Amazon.CodeBuild
         /// The input value that was provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
-        /// The specified Amazon Web Services resource cannot be found.
+        /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuildBatch">REST API Reference for StopBuildBatch Operation</seealso>
         Task<StopBuildBatchResponse> StopBuildBatchAsync(StopBuildBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1040,7 +1037,7 @@ namespace Amazon.CodeBuild
         /// The input value that was provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
-        /// The specified Amazon Web Services resource cannot be found.
+        /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1064,7 +1061,7 @@ namespace Amazon.CodeBuild
         /// The input value that was provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
-        /// The specified Amazon Web Services resource cannot be found.
+        /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateReportGroup">REST API Reference for UpdateReportGroup Operation</seealso>
         Task<UpdateReportGroupResponse> UpdateReportGroupAsync(UpdateReportGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1076,7 +1073,7 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// Updates the webhook associated with an CodeBuild build project. 
+        /// Updates the webhook associated with an AWS CodeBuild build project. 
         /// 
         ///  <note> 
         /// <para>
@@ -1097,7 +1094,7 @@ namespace Amazon.CodeBuild
         /// There was a problem with the underlying OAuth provider.
         /// </exception>
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
-        /// The specified Amazon Web Services resource cannot be found.
+        /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateWebhook">REST API Reference for UpdateWebhook Operation</seealso>
         Task<UpdateWebhookResponse> UpdateWebhookAsync(UpdateWebhookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));

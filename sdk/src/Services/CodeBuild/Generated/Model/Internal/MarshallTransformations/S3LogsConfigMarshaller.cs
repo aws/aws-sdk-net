@@ -45,6 +45,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3LogsConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBucketOwnerAccess())
+            {
+                context.Writer.WritePropertyName("bucketOwnerAccess");
+                context.Writer.Write(requestObject.BucketOwnerAccess);
+            }
+
             if(requestObject.IsSetEncryptionDisabled())
             {
                 context.Writer.WritePropertyName("encryptionDisabled");
