@@ -791,9 +791,16 @@ namespace Amazon.DynamoDBv2.DataModel
                 throw new ArgumentNullException("hashKey");
 
             if (storageConfig.HashKeyPropertyNames.Count != 1)
-                throw new InvalidOperationException("Must have one hash key defined for the table " + storageConfig.TableName);
+            {
+                var tableName = GetTableName(storageConfig.TableName, currentConfig);
+                throw new InvalidOperationException("Must have one hash key defined for the table " + tableName);
+            }
+
             if (storageConfig.RangeKeyPropertyNames.Count != 1 && storageConfig.IndexNameToGSIMapping.Count == 0)
-                throw new InvalidOperationException("Must have one range key or a GSI index defined for the table " + storageConfig.TableName);
+            {
+                var tableName = GetTableName(storageConfig.TableName, currentConfig);
+                throw new InvalidOperationException("Must have one range key or a GSI index defined for the table " + tableName);
+            }
 
             QueryFilter filter = new QueryFilter();
 
@@ -931,7 +938,10 @@ namespace Amazon.DynamoDBv2.DataModel
         internal Key MakeKey(object hashKey, object rangeKey, ItemStorageConfig storageConfig, DynamoDBFlatConfig flatConfig)
         {
             if (storageConfig.HashKeyPropertyNames.Count != 1)
-                throw new InvalidOperationException("Must have one hash key defined for the table " + storageConfig.TableName);
+            {
+                var tableName = GetTableName(storageConfig.TableName, flatConfig);
+                throw new InvalidOperationException("Must have one hash key defined for the table " + tableName);
+            }
 
             Key key = new Key();
 
@@ -948,7 +958,10 @@ namespace Amazon.DynamoDBv2.DataModel
             if (storageConfig.RangeKeyPropertyNames.Count > 0)
             {
                 if (storageConfig.RangeKeyPropertyNames.Count != 1)
-                    throw new InvalidOperationException("Must have one range key defined for the table");
+                {
+                    var tableName = GetTableName(storageConfig.TableName, flatConfig);
+                    throw new InvalidOperationException("Must have one range key defined for the table " + tableName);
+                }
 
                 string rangeKeyPropertyName = storageConfig.RangeKeyPropertyNames[0];
                 PropertyStorage rangeKeyProperty = storageConfig.GetPropertyStorage(rangeKeyPropertyName);
