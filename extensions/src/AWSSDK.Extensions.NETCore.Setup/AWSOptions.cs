@@ -47,6 +47,12 @@ namespace Amazon.Extensions.NETCore.Setup
         public RegionEndpoint Region { get; set; }
 
         /// <summary>
+        /// The Logging destination.
+        /// Changes to this setting will propagate within 500 ms.
+        /// </summary>
+        public LoggingOptions LogTo { get; set; }
+
+        /// <summary>
         /// AWS Credentials used for creating service clients. If this is set it overrides the Profile property.
         /// </summary>
         public AWSCredentials Credentials { get; set; }

@@ -57,7 +57,7 @@ namespace Microsoft.Extensions.Configuration
         public static AWSOptions GetAWSOptions(this IConfiguration config, string configSection)
         {
             var options = new AWSOptions();
-
+            
             IConfiguration section;
             if (string.IsNullOrEmpty(configSection))
                 section = config;
@@ -126,6 +126,12 @@ namespace Microsoft.Extensions.Configuration
             else if (!string.IsNullOrEmpty(section["AWSRegion"]))
             {
                 options.Region = RegionEndpoint.GetBySystemName(section["AWSRegion"]);
+            }
+
+            if (!string.IsNullOrEmpty(section["LogTo"]) 
+            && Enum.TryParse(section["LogTo"], out LoggingOptions logToFlag))
+            {
+                options.LogTo = logToFlag;
             }
 
             return options;

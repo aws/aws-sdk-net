@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using System.IO;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 using Xunit;
@@ -6,6 +8,7 @@ using Xunit;
 using Amazon;
 using Amazon.S3;
 using Amazon.Extensions.NETCore.Setup;
+using Amazon.NETCore.SetupTests;
 using Moq;
 
 namespace DependencyInjectionTests
@@ -80,6 +83,39 @@ namespace DependencyInjectionTests
             public TestController(IAmazonS3 s3Client)
             {
                 S3Client = s3Client;
+            }
+        }
+
+        [Fact]
+        public async Task AddDefaultAWSOptionsUpdatesOnFileChange()
+        {
+            var testFileContents = File.ReadAllText("./TestFiles/LogToConfigTest.json");
+
+            using (var tempFileHelper = new TempFileHelper(testFileContents))
+            {
+                var builder = new ConfigurationBuilder();
+                builder.AddJsonFile(tempFileHelper.Path, true, true);
+
+                IConfiguration config = builder.Build();
+
+                var options = config.GetAWSOptions();
+
+                ServiceCollection services = new ServiceCollection();
+
+                services.AddDefaultAWSOptions(options, config);
+
+                Assert.Equal(LoggingOptions.Console, options.LogTo);
+                Assert.Equal(LoggingOptions.Console, AWSConfigs.LoggingConfig.LogTo);
+
+                var updatedFileContents =
+                    testFileContents.Replace(@"""LogTo"": ""Console""", @"""LogTo"": ""Console,Log4Net""");
+
+                tempFileHelper.Write(updatedFileContents);
+
+                await Task.Delay(500).ConfigureAwait(false);
+
+                Assert.Equal(LoggingOptions.Console | LoggingOptions.Log4Net, options.LogTo);
+                Assert.Equal(LoggingOptions.Console | LoggingOptions.Log4Net, AWSConfigs.LoggingConfig.LogTo);
             }
         }
     }
