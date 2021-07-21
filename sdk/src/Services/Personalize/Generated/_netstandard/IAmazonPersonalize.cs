@@ -282,8 +282,8 @@ namespace Amazon.Personalize
         /// <summary>
         /// Creates a job that exports data from your dataset to an Amazon S3 bucket. To allow
         /// Amazon Personalize to export the training data, you must specify an service-linked
-        /// AWS Identity and Access Management (IAM) role that gives Amazon Personalize <code>PutObject</code>
-        /// permissions for your Amazon S3 bucket. For information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/export-data.html">Exporting
+        /// IAM role that gives Amazon Personalize <code>PutObject</code> permissions for your
+        /// Amazon S3 bucket. For information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/export-data.html">Exporting
         /// a dataset</a> in the Amazon Personalize developer guide. 
         /// 
         ///  
@@ -383,9 +383,9 @@ namespace Amazon.Personalize
         /// </para>
         ///  </note> 
         /// <para>
-        /// You can specify an AWS Key Management Service (KMS) key to encrypt the datasets in
-        /// the group. If you specify a KMS key, you must also include an AWS Identity and Access
-        /// Management (IAM) role that has permission to access the key.
+        /// You can specify an Key Management Service (KMS) key to encrypt the datasets in the
+        /// group. If you specify a KMS key, you must also include an Identity and Access Management
+        /// (IAM) role that has permission to access the key.
         /// </para>
         ///  <p class="title"> <b>APIs that require a dataset group ARN in the request</b> 
         /// </para>
@@ -444,10 +444,9 @@ namespace Amazon.Personalize
         /// <summary>
         /// Creates a job that imports training data from your data source (an Amazon S3 bucket)
         /// to an Amazon Personalize dataset. To allow Amazon Personalize to import the training
-        /// data, you must specify an AWS Identity and Access Management (IAM) service role that
-        /// has permission to read from the data source, as Amazon Personalize makes a copy of
-        /// your data and processes it in an internal AWS system. For information on granting
-        /// access to your Amazon S3 bucket, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html">Giving
+        /// data, you must specify an IAM service role that has permission to read from the data
+        /// source, as Amazon Personalize makes a copy of your data and processes it internally.
+        /// For information on granting access to your Amazon S3 bucket, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html">Giving
         /// Amazon Personalize Access to Amazon S3 Resources</a>. 
         /// 
         ///  <important> 

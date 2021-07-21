@@ -212,8 +212,8 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management service role
-        /// that has permissions to add data to your output Amazon S3 bucket.
+        /// The Amazon Resource Name (ARN) of the IAM service role that has permissions to add
+        /// data to your output Amazon S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

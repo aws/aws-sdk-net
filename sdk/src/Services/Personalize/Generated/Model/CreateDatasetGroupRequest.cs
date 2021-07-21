@@ -76,9 +76,9 @@ namespace Amazon.Personalize.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// You can specify an AWS Key Management Service (KMS) key to encrypt the datasets in
-    /// the group. If you specify a KMS key, you must also include an AWS Identity and Access
-    /// Management (IAM) role that has permission to access the key.
+    /// You can specify an Key Management Service (KMS) key to encrypt the datasets in the
+    /// group. If you specify a KMS key, you must also include an Identity and Access Management
+    /// (IAM) role that has permission to access the key.
     /// </para>
     ///  <p class="title"> <b>APIs that require a dataset group ARN in the request</b> 
     /// </para>
@@ -119,7 +119,8 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a KMS key used to encrypt the datasets.
+        /// The Amazon Resource Name (ARN) of a Key Management Service (KMS) key used to encrypt
+        /// the datasets.
         /// </para>
         /// </summary>
         public string KmsKeyArn
@@ -156,8 +157,9 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the IAM role that has permissions to access the KMS key. Supplying an IAM
-        /// role is only valid when also specifying a KMS key.
+        /// The ARN of the Identity and Access Management (IAM) role that has permissions to access
+        /// the Key Management Service (KMS) key. Supplying an IAM role is only valid when also
+        /// specifying a KMS key.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

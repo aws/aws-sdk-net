@@ -37,8 +37,8 @@ namespace Amazon.Personalize.Model
     /// 
     ///  
     /// <para>
-    /// You can specify an AWS Key Management Service (KMS) key to encrypt the datasets in
-    /// the group.
+    /// You can specify an Key Management Service (KMS) key to encrypt the datasets in the
+    /// group.
     /// </para>
     /// </summary>
     public partial class DatasetGroup
@@ -110,7 +110,8 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the KMS key used to encrypt the datasets.
+        /// The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt
+        /// the datasets.
         /// </para>
         /// </summary>
         public string KmsKeyArn

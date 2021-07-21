@@ -45,7 +45,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The Amazon AWS account that owns the event tracker.
+        /// The Amazon Web Services account that owns the event tracker.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

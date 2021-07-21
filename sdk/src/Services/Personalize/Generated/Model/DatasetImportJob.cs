@@ -186,8 +186,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the AWS Identity and Access Management (IAM) role that has permissions
-        /// to read from the Amazon S3 data source.
+        /// The ARN of the IAM role that has permissions to read from the Amazon S3 data source.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

@@ -138,7 +138,7 @@ namespace Amazon.Personalize.Model
         /// that Amazon Personalize will support.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Min=1)]
         public int MinProvisionedTPS
         {
             get { return this._minProvisionedTPS.GetValueOrDefault(); }

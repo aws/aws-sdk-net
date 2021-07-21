@@ -32,8 +32,8 @@ namespace Amazon.Personalize.Model
     /// Container for the parameters to the CreateDatasetExportJob operation.
     /// Creates a job that exports data from your dataset to an Amazon S3 bucket. To allow
     /// Amazon Personalize to export the training data, you must specify an service-linked
-    /// AWS Identity and Access Management (IAM) role that gives Amazon Personalize <code>PutObject</code>
-    /// permissions for your Amazon S3 bucket. For information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/export-data.html">Exporting
+    /// IAM role that gives Amazon Personalize <code>PutObject</code> permissions for your
+    /// Amazon S3 bucket. For information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/export-data.html">Exporting
     /// a dataset</a> in the Amazon Personalize developer guide. 
     /// 
     ///  
@@ -146,8 +146,8 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management service role
-        /// that has permissions to add data to your output Amazon S3 bucket.
+        /// The Amazon Resource Name (ARN) of the IAM service role that has permissions to add
+        /// data to your output Amazon S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
