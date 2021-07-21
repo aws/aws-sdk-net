@@ -1,3 +1,10 @@
+### 3.7.78.0 (2021-07-21 21:39 UTC)
+* DynamoDBv2 (3.7.0.45)
+	* Use correct table name in exceptions
+* Core 3.7.1.0
+	* Enable IPv6 support for IMDS; Fix typos in AutoConstructedTypes.cs summary tags
+	* All services packages updated to require new Core
+
 ### 3.7.77.0 (2021-07-21 18:21 UTC)
 * CodeBuild (3.7.3.0)
 	* AWS CodeBuild now allows you to set the access permissions for build artifacts, project artifacts, and log files that are uploaded to an Amazon S3 bucket that is owned by another account.
