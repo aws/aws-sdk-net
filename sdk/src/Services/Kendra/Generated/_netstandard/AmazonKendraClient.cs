@@ -2265,8 +2265,8 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Enables you to provide feedback to Amazon Kendra to improve the performance of the
-        /// service.
+        /// Enables you to provide feedback to Amazon Kendra to improve the performance of your
+        /// index.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SubmitFeedback service method.</param>
         /// <param name="cancellationToken">

@@ -30,8 +30,8 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the SubmitFeedback operation.
-    /// Enables you to provide feedback to Amazon Kendra to improve the performance of the
-    /// service.
+    /// Enables you to provide feedback to Amazon Kendra to improve the performance of your
+    /// index.
     /// </summary>
     public partial class SubmitFeedbackRequest : AmazonKendraRequest
     {

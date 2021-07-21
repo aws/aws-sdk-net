@@ -53,6 +53,12 @@ namespace Amazon.Kendra.Model
     /// If you use more than 2 layers, you receive a <code>ValidationException</code> exception
     /// with the message "<code>AttributeFilter</code> cannot have a depth of more than 2."
     /// </para>
+    ///  
+    /// <para>
+    /// If you use more than 10 attribute filters, you receive a <code>ValidationException</code>
+    /// exception with the message "<code>AttributeFilter</code> cannot have a length of more
+    /// than 10".
+    /// </para>
     /// </summary>
     public partial class AttributeFilter
     {

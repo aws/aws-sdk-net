@@ -144,6 +144,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetWorkDocsConfiguration())
+            {
+                context.Writer.WritePropertyName("WorkDocsConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = WorkDocsConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.WorkDocsConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

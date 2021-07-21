@@ -730,6 +730,10 @@ namespace Amazon.Kendra
         /// Constant WEBCRAWLER for DataSourceType
         /// </summary>
         public static readonly DataSourceType WEBCRAWLER = new DataSourceType("WEBCRAWLER");
+        /// <summary>
+        /// Constant WORKDOCS for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType WORKDOCS = new DataSourceType("WORKDOCS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

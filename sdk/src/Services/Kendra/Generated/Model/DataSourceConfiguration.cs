@@ -42,6 +42,7 @@ namespace Amazon.Kendra.Model
         private ServiceNowConfiguration _serviceNowConfiguration;
         private SharePointConfiguration _sharePointConfiguration;
         private WebCrawlerConfiguration _webCrawlerConfiguration;
+        private WorkDocsConfiguration _workDocsConfiguration;
 
         /// <summary>
         /// Gets and sets the property ConfluenceConfiguration. 
@@ -202,6 +203,24 @@ namespace Amazon.Kendra.Model
         internal bool IsSetWebCrawlerConfiguration()
         {
             return this._webCrawlerConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkDocsConfiguration. 
+        /// <para>
+        /// Provides the configuration information to connect to WorkDocs as your data source.
+        /// </para>
+        /// </summary>
+        public WorkDocsConfiguration WorkDocsConfiguration
+        {
+            get { return this._workDocsConfiguration; }
+            set { this._workDocsConfiguration = value; }
+        }
+
+        // Check to see if WorkDocsConfiguration property is set
+        internal bool IsSetWorkDocsConfiguration()
+        {
+            return this._workDocsConfiguration != null;
         }
 
     }

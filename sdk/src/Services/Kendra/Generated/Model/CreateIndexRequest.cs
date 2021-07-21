@@ -99,12 +99,17 @@ namespace Amazon.Kendra.Model
         /// The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code>
         /// for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code>
         /// for your production databases. Once you set the edition for an index, it can't be
-        /// changed. 
+        /// changed.
         /// </para>
         ///  
         /// <para>
         /// The <code>Edition</code> parameter is optional. If you don't supply a value, the default
         /// is <code>ENTERPRISE_EDITION</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on quota limits for enterprise and developer editions, see <a
+        /// href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
         /// </para>
         /// </summary>
         public IndexEdition Edition

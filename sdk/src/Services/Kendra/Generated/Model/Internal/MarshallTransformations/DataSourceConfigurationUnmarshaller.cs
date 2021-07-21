@@ -118,6 +118,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     unmarshalledObject.WebCrawlerConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("WorkDocsConfiguration", targetDepth))
+                {
+                    var unmarshaller = WorkDocsConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.WorkDocsConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
