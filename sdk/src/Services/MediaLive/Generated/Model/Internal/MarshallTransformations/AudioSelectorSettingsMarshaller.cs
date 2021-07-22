@@ -45,6 +45,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AudioSelectorSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAudioHlsRenditionSelection())
+            {
+                context.Writer.WritePropertyName("audioHlsRenditionSelection");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AudioHlsRenditionSelectionMarshaller.Instance;
+                marshaller.Marshall(requestObject.AudioHlsRenditionSelection, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAudioLanguageSelection())
             {
                 context.Writer.WritePropertyName("audioLanguageSelection");

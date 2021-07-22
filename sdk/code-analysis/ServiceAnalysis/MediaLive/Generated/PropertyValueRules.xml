@@ -79,6 +79,14 @@
     <max>35</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.AudioHlsRenditionSelection.GroupId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.AudioHlsRenditionSelection.Name</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.AudioPidSelection.Pid</property>
     <min>0</min>
     <max>8191</max>

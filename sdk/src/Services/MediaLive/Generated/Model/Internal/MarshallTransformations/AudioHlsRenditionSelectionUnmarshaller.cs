@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for WebvttDestinationSettings Object
+    /// Response Unmarshaller for AudioHlsRenditionSelection Object
     /// </summary>  
-    public class WebvttDestinationSettingsUnmarshaller : IUnmarshaller<WebvttDestinationSettings, XmlUnmarshallerContext>, IUnmarshaller<WebvttDestinationSettings, JsonUnmarshallerContext>
+    public class AudioHlsRenditionSelectionUnmarshaller : IUnmarshaller<AudioHlsRenditionSelection, XmlUnmarshallerContext>, IUnmarshaller<AudioHlsRenditionSelection, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        WebvttDestinationSettings IUnmarshaller<WebvttDestinationSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AudioHlsRenditionSelection IUnmarshaller<AudioHlsRenditionSelection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,21 +53,27 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public WebvttDestinationSettings Unmarshall(JsonUnmarshallerContext context)
+        public AudioHlsRenditionSelection Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            WebvttDestinationSettings unmarshalledObject = new WebvttDestinationSettings();
+            AudioHlsRenditionSelection unmarshalledObject = new AudioHlsRenditionSelection();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("styleControl", targetDepth))
+                if (context.TestExpression("groupId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StyleControl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GroupId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -76,12 +82,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static WebvttDestinationSettingsUnmarshaller _instance = new WebvttDestinationSettingsUnmarshaller();        
+        private static AudioHlsRenditionSelectionUnmarshaller _instance = new AudioHlsRenditionSelectionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static WebvttDestinationSettingsUnmarshaller Instance
+        public static AudioHlsRenditionSelectionUnmarshaller Instance
         {
             get
             {

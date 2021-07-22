@@ -64,6 +64,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("audioHlsRenditionSelection", targetDepth))
+                {
+                    var unmarshaller = AudioHlsRenditionSelectionUnmarshaller.Instance;
+                    unmarshalledObject.AudioHlsRenditionSelection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("audioLanguageSelection", targetDepth))
                 {
                     var unmarshaller = AudioLanguageSelectionUnmarshaller.Instance;

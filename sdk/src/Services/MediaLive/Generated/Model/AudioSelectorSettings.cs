@@ -33,9 +33,25 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class AudioSelectorSettings
     {
+        private AudioHlsRenditionSelection _audioHlsRenditionSelection;
         private AudioLanguageSelection _audioLanguageSelection;
         private AudioPidSelection _audioPidSelection;
         private AudioTrackSelection _audioTrackSelection;
+
+        /// <summary>
+        /// Gets and sets the property AudioHlsRenditionSelection.
+        /// </summary>
+        public AudioHlsRenditionSelection AudioHlsRenditionSelection
+        {
+            get { return this._audioHlsRenditionSelection; }
+            set { this._audioHlsRenditionSelection = value; }
+        }
+
+        // Check to see if AudioHlsRenditionSelection property is set
+        internal bool IsSetAudioHlsRenditionSelection()
+        {
+            return this._audioHlsRenditionSelection != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AudioLanguageSelection.

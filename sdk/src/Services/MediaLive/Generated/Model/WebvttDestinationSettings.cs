@@ -33,6 +33,25 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class WebvttDestinationSettings
     {
+        private WebvttDestinationStyleControl _styleControl;
+
+        /// <summary>
+        /// Gets and sets the property StyleControl. Controls whether the color and position of
+        /// the source captions is passed through to the WebVTT output captions.  PASSTHROUGH
+        /// - Valid only if the source captions are EMBEDDED or TELETEXT.  NO_STYLE_DATA - Don't
+        /// pass through the style. The output captions will not contain any font styling information.
+        /// </summary>
+        public WebvttDestinationStyleControl StyleControl
+        {
+            get { return this._styleControl; }
+            set { this._styleControl = value; }
+        }
+
+        // Check to see if StyleControl property is set
+        internal bool IsSetStyleControl()
+        {
+            return this._styleControl != null;
+        }
 
     }
 }

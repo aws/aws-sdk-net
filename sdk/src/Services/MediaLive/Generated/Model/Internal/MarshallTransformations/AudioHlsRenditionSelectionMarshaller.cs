@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// WebvttDestinationSettings Marshaller
+    /// AudioHlsRenditionSelection Marshaller
     /// </summary>       
-    public class WebvttDestinationSettingsMarshaller : IRequestMarshaller<WebvttDestinationSettings, JsonMarshallerContext> 
+    public class AudioHlsRenditionSelectionMarshaller : IRequestMarshaller<AudioHlsRenditionSelection, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,12 +43,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(WebvttDestinationSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(AudioHlsRenditionSelection requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetStyleControl())
+            if(requestObject.IsSetGroupId())
             {
-                context.Writer.WritePropertyName("styleControl");
-                context.Writer.Write(requestObject.StyleControl);
+                context.Writer.WritePropertyName("groupId");
+                context.Writer.Write(requestObject.GroupId);
+            }
+
+            if(requestObject.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.Write(requestObject.Name);
             }
 
         }
@@ -56,7 +62,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static WebvttDestinationSettingsMarshaller Instance = new WebvttDestinationSettingsMarshaller();
+        public readonly static AudioHlsRenditionSelectionMarshaller Instance = new AudioHlsRenditionSelectionMarshaller();
 
     }
 }
