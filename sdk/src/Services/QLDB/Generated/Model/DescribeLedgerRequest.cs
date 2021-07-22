@@ -30,7 +30,8 @@ namespace Amazon.QLDB.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLedger operation.
-    /// Returns information about a ledger, including its state and when it was created.
+    /// Returns information about a ledger, including its state, permissions mode, encryption
+    /// at rest settings, and when it was created.
     /// </summary>
     public partial class DescribeLedgerRequest : AmazonQLDBRequest
     {

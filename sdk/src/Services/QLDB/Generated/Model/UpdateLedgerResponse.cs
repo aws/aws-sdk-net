@@ -36,6 +36,7 @@ namespace Amazon.QLDB.Model
         private string _arn;
         private DateTime? _creationDateTime;
         private bool? _deletionProtection;
+        private LedgerEncryptionDescription _encryptionDescription;
         private string _name;
         private LedgerState _state;
 
@@ -100,6 +101,26 @@ namespace Amazon.QLDB.Model
         internal bool IsSetDeletionProtection()
         {
             return this._deletionProtection.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionDescription. 
+        /// <para>
+        /// Information about the encryption of data at rest in the ledger. This includes the
+        /// current status, the KMS key, and when the key became inaccessible (in the case of
+        /// an error).
+        /// </para>
+        /// </summary>
+        public LedgerEncryptionDescription EncryptionDescription
+        {
+            get { return this._encryptionDescription; }
+            set { this._encryptionDescription = value; }
+        }
+
+        // Check to see if EncryptionDescription property is set
+        internal bool IsSetEncryptionDescription()
+        {
+            return this._encryptionDescription != null;
         }
 
         /// <summary>

@@ -30,7 +30,7 @@ namespace Amazon.QLDB.Model
 {
     /// <summary>
     /// Container for the parameters to the ListLedgers operation.
-    /// Returns an array of ledger summaries that are associated with the current AWS account
+    /// Returns an array of ledger summaries that are associated with the current account
     /// and Region.
     /// 
     ///  

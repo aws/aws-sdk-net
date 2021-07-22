@@ -153,8 +153,8 @@ namespace Amazon.QLDB.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// (Optional) Use your customer master key (CMK) in AWS Key Management Service (AWS KMS)
-        /// for server-side encryption of your exported data.
+        /// (Optional) Use your customer master key (CMK) in Key Management Service (KMS) for
+        /// server-side encryption of your exported data.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -74,6 +74,12 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DeletionProtection);
                 }
 
+                if(publicRequest.IsSetKmsKey())
+                {
+                    context.Writer.WritePropertyName("KmsKey");
+                    context.Writer.Write(publicRequest.KmsKey);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

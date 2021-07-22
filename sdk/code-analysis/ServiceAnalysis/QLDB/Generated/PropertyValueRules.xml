@@ -19,6 +19,10 @@
     <pattern>^[A-Za-z-0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QLDB.Model.CreateLedgerRequest.KmsKey</property>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QLDB.Model.CreateLedgerRequest.Name</property>
     <min>1</min>
     <max>32</max>
@@ -26,6 +30,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QLDB.Model.CreateLedgerResponse.Arn</property>
+    <min>20</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QLDB.Model.CreateLedgerResponse.KmsKeyArn</property>
     <min>20</min>
     <max>1600</max>
   </property-value-rule>
@@ -247,6 +256,10 @@
     <max>1600</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QLDB.Model.UpdateLedgerRequest.KmsKey</property>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QLDB.Model.UpdateLedgerRequest.Name</property>
     <min>1</min>
     <max>32</max>
@@ -327,6 +340,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QLDB.Model.KinesisConfiguration.StreamArn</property>
+    <min>20</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QLDB.Model.LedgerEncryptionDescription.KmsKeyArn</property>
     <min>20</min>
     <max>1600</max>
   </property-value-rule>

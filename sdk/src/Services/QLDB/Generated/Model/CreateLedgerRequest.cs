@@ -30,11 +30,12 @@ namespace Amazon.QLDB.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLedger operation.
-    /// Creates a new ledger in your AWS account in the current Region.
+    /// Creates a new ledger in your account in the current Region.
     /// </summary>
     public partial class CreateLedgerRequest : AmazonQLDBRequest
     {
         private bool? _deletionProtection;
+        private string _kmsKey;
         private string _name;
         private PermissionsMode _permissionsMode;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -65,10 +66,86 @@ namespace Amazon.QLDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KmsKey. 
+        /// <para>
+        /// The key in Key Management Service (KMS) to use for encryption of data at rest in the
+        /// ledger. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption
+        /// at rest</a> in the <i>Amazon QLDB Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use one of the following options to specify this parameter:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon
+        /// Web Services on your behalf.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Undefined</b>: By default, use an Amazon Web Services owned KMS key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>A valid symmetric customer managed KMS key</b>: Use the specified KMS key in your
+        /// account that you create, own, and manage.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+        /// symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name
+        /// (ARN), alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>.
+        /// To specify a key in a different account, you must use the key ARN or alias ARN.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alias name: <code>alias/ExampleAlias</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
+        /// identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1600)]
+        public string KmsKey
+        {
+            get { return this._kmsKey; }
+            set { this._kmsKey = value; }
+        }
+
+        // Check to see if KmsKey property is set
+        internal bool IsSetKmsKey()
+        {
+            return this._kmsKey != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the ledger that you want to create. The name must be unique among all
-        /// of your ledgers in the current AWS Region.
+        /// of the ledgers in your account in the current Region.
         /// </para>
         ///  
         /// <para>

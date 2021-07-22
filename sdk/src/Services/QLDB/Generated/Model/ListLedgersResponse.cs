@@ -39,8 +39,7 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property Ledgers. 
         /// <para>
-        /// The array of ledger summaries that are associated with the current AWS account and
-        /// Region.
+        /// The array of ledger summaries that are associated with the current account and Region.
         /// </para>
         /// </summary>
         public List<LedgerSummary> Ledgers

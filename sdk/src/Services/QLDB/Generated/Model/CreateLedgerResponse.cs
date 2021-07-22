@@ -36,6 +36,7 @@ namespace Amazon.QLDB.Model
         private string _arn;
         private DateTime? _creationDateTime;
         private bool? _deletionProtection;
+        private string _kmsKeyArn;
         private string _name;
         private PermissionsMode _permissionsMode;
         private LedgerState _state;
@@ -101,6 +102,27 @@ namespace Amazon.QLDB.Model
         internal bool IsSetDeletionProtection()
         {
             return this._deletionProtection.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The ARN of the customer managed KMS key that the ledger uses for encryption at rest.
+        /// If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key
+        /// for encryption.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=1600)]
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>

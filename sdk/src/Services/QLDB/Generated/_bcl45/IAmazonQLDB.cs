@@ -108,7 +108,7 @@ namespace Amazon.QLDB
 
 
         /// <summary>
-        /// Creates a new ledger in your AWS account in the current Region.
+        /// Creates a new ledger in your account in the current Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLedger service method.</param>
         /// 
@@ -131,7 +131,7 @@ namespace Amazon.QLDB
 
 
         /// <summary>
-        /// Creates a new ledger in your AWS account in the current Region.
+        /// Creates a new ledger in your account in the current Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLedger service method.</param>
         /// <param name="cancellationToken">
@@ -360,7 +360,8 @@ namespace Amazon.QLDB
 
 
         /// <summary>
-        /// Returns information about a ledger, including its state and when it was created.
+        /// Returns information about a ledger, including its state, permissions mode, encryption
+        /// at rest settings, and when it was created.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLedger service method.</param>
         /// 
@@ -377,7 +378,8 @@ namespace Amazon.QLDB
 
 
         /// <summary>
-        /// Returns information about a ledger, including its state and when it was created.
+        /// Returns information about a ledger, including its state, permissions mode, encryption
+        /// at rest settings, and when it was created.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLedger service method.</param>
         /// <param name="cancellationToken">
@@ -735,7 +737,7 @@ namespace Amazon.QLDB
 
         /// <summary>
         /// Returns an array of journal export job descriptions for all ledgers that are associated
-        /// with the current AWS account and Region.
+        /// with the current account and Region.
         /// 
         ///  
         /// <para>
@@ -760,7 +762,7 @@ namespace Amazon.QLDB
 
         /// <summary>
         /// Returns an array of journal export job descriptions for all ledgers that are associated
-        /// with the current AWS account and Region.
+        /// with the current account and Region.
         /// 
         ///  
         /// <para>
@@ -844,7 +846,7 @@ namespace Amazon.QLDB
 
 
         /// <summary>
-        /// Returns an array of ledger summaries that are associated with the current AWS account
+        /// Returns an array of ledger summaries that are associated with the current account
         /// and Region.
         /// 
         ///  
@@ -862,7 +864,7 @@ namespace Amazon.QLDB
 
 
         /// <summary>
-        /// Returns an array of ledger summaries that are associated with the current AWS account
+        /// Returns an array of ledger summaries that are associated with the current account
         /// and Region.
         /// 
         ///  

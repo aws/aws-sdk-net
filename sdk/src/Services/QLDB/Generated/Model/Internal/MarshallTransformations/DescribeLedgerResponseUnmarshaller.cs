@@ -69,6 +69,12 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
                     response.DeletionProtection = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EncryptionDescription", targetDepth))
+                {
+                    var unmarshaller = LedgerEncryptionDescriptionUnmarshaller.Instance;
+                    response.EncryptionDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

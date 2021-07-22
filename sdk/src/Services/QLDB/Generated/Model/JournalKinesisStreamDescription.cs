@@ -109,7 +109,7 @@ namespace Amazon.QLDB.Model
         /// Gets and sets the property ExclusiveEndTime. 
         /// <para>
         /// The exclusive date and time that specifies when the stream ends. If this parameter
-        /// is blank, the stream runs indefinitely until you cancel it.
+        /// is undefined, the stream runs indefinitely until you cancel it.
         /// </para>
         /// </summary>
         public DateTime ExclusiveEndTime
