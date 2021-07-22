@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.78.0",
+    "ProductVersion" : "3.7.79.0",
     "CoreVersion"    : "3.7.1.0",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -152,7 +152,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.7.18.1",
+            "Version" : "3.7.19.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.1.0"
@@ -570,7 +570,7 @@
             "InPreview"               : false
         },
         "ElasticLoadBalancingV2"          : {
-            "Version" : "3.7.0.46",
+            "Version" : "3.7.0.47",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.1.0"
@@ -874,7 +874,7 @@
             "InPreview"               : false
         },
         "MediaLive"                       : {
-            "Version" : "3.7.4.14",
+            "Version" : "3.7.5.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.1.0"
@@ -1194,7 +1194,7 @@
             "InPreview"               : false
         },
         "S3Control"                       : {
-            "Version" : "3.7.1.15",
+            "Version" : "3.7.1.16",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.1.0"
@@ -1514,7 +1514,7 @@
             "InPreview"               : false
         },
         "QLDB"                            : {
-            "Version" : "3.7.1.18",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.1.0"
@@ -1874,7 +1874,7 @@
             "InPreview"               : false
         },
         "GlueDataBrew"                    : {
-            "Version" : "3.7.2.9",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.1.0"
