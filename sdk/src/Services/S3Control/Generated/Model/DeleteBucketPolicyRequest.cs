@@ -40,7 +40,7 @@ namespace Amazon.S3Control.Model
     /// <para>
     /// This implementation of the DELETE action uses the policy subresource to delete the
     /// policy of a specified Amazon S3 on Outposts bucket. If you are using an identity other
-    /// than the root user of the AWS account that owns the bucket, the calling identity must
+    /// than the root user of the account that owns the bucket, the calling identity must
     /// have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the specified
     /// Outposts bucket and belong to the bucket owner's account to use this action. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
@@ -55,9 +55,9 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// As a security precaution, the root user of the AWS account that owns a bucket can
-    /// always use this action, even if the policy explicitly denies the root user the ability
-    /// to perform this action.
+    /// As a security precaution, the root user of the account that owns a bucket can always
+    /// use this action, even if the policy explicitly denies the root user the ability to
+    /// perform this action.
     /// </para>
     ///  </important> 
     /// <para>
@@ -126,8 +126,8 @@ namespace Amazon.S3Control.Model
         /// </para>
         ///  
         /// <para>
-        /// For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify
-        /// the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
+        /// For using this parameter with S3 on Outposts with the Amazon Web Services SDK and
+        /// CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
         /// For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code>
         /// owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the
         /// URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>.

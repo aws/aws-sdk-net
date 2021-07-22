@@ -47,8 +47,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property LambdaInvoke. 
         /// <para>
-        /// Directs the specified job to invoke an AWS Lambda function on every object in the
-        /// manifest.
+        /// Directs the specified job to invoke an Lambda function on every object in the manifest.
         /// </para>
         /// </summary>
         public LambdaInvokeOperation LambdaInvoke

@@ -69,7 +69,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID for owner of the bucket associated with the specified access point.
+        /// The account ID for owner of the bucket associated with the specified access point.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -97,8 +97,8 @@ namespace Amazon.S3Control.Model
         /// </para>
         ///  
         /// <para>
-        /// For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify
-        /// the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
+        /// For using this parameter with S3 on Outposts with the Amazon Web Services SDK and
+        /// CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
         /// For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code>
         /// owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the
         /// URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>.

@@ -30,7 +30,7 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// The requested Outposts bucket name is not available. The bucket namespace is shared
-    /// by all users of the AWS Outposts in this Region. Select a different name and try again.
+    /// by all users of the Outposts in this Region. Select a different name and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

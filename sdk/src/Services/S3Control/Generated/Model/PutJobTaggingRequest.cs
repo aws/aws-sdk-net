@@ -79,7 +79,7 @@ namespace Amazon.S3Control.Model
     ///  </li> <li> 
     /// <para>
     /// For tagging-related restrictions related to characters and encodings, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
-    /// Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+    /// Tag Restrictions</a> in the <i>Billing and Cost Management User Guide</i>.
     /// </para>
     ///  </li> </ul> </li> </ul> </note>  
     /// <para>
@@ -116,7 +116,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID associated with the S3 Batch Operations job.
+        /// The account ID associated with the S3 Batch Operations job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

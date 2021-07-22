@@ -64,7 +64,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AwsOrg. 
         /// <para>
-        /// A container for the AWS organization for this S3 Storage Lens configuration.
+        /// A container for the Amazon Web Services organization for this S3 Storage Lens configuration.
         /// </para>
         /// </summary>
         public StorageLensAwsOrg AwsOrg

@@ -38,8 +38,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property FunctionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the AWS Lambda function that the specified job
-        /// will invoke on every object in the manifest.
+        /// The Amazon Resource Name (ARN) for the Lambda function that the specified job will
+        /// invoke on every object in the manifest.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

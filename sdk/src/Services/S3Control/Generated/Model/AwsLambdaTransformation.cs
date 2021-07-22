@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// AWS Lambda function used to transform objects through an Object Lambda Access Point.
+    /// Lambda function used to transform objects through an Object Lambda Access Point.
     /// </summary>
     public partial class AwsLambdaTransformation
     {
@@ -39,7 +39,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property FunctionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Lambda function.
+        /// The Amazon Resource Name (ARN) of the Lambda function.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

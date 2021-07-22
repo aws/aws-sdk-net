@@ -31,7 +31,7 @@ namespace Amazon.S3Control
     /// <summary>
     /// Interface for accessing S3Control
     ///
-    /// AWS S3 Control provides access to Amazon S3 control plane actions.
+    /// Amazon Web Services S3 Control provides access to Amazon S3 control plane actions.
     /// </summary>
     public partial interface IAmazonS3Control : IAmazonService, IDisposable
     {
@@ -312,7 +312,7 @@ namespace Amazon.S3Control
         /// <returns>The response from the CreateBucket service method, as returned by S3Control.</returns>
         /// <exception cref="Amazon.S3Control.Model.BucketAlreadyExistsException">
         /// The requested Outposts bucket name is not available. The bucket namespace is shared
-        /// by all users of the AWS Outposts in this Region. Select a different name and try again.
+        /// by all users of the Outposts in this Region. Select a different name and try again.
         /// </exception>
         /// <exception cref="Amazon.S3Control.Model.BucketAlreadyOwnedByYouException">
         /// The Outposts bucket you tried to create already exists, and you own it.
@@ -406,7 +406,7 @@ namespace Amazon.S3Control
         /// <returns>The response from the CreateBucket service method, as returned by S3Control.</returns>
         /// <exception cref="Amazon.S3Control.Model.BucketAlreadyExistsException">
         /// The requested Outposts bucket name is not available. The bucket namespace is shared
-        /// by all users of the AWS Outposts in this Region. Select a different name and try again.
+        /// by all users of the Outposts in this Region. Select a different name and try again.
         /// </exception>
         /// <exception cref="Amazon.S3Control.Model.BucketAlreadyOwnedByYouException">
         /// The Outposts bucket you tried to create already exists, and you own it.
@@ -1094,7 +1094,7 @@ namespace Amazon.S3Control
         /// <para>
         /// This implementation of the DELETE action uses the policy subresource to delete the
         /// policy of a specified Amazon S3 on Outposts bucket. If you are using an identity other
-        /// than the root user of the AWS account that owns the bucket, the calling identity must
+        /// than the root user of the account that owns the bucket, the calling identity must
         /// have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the specified
         /// Outposts bucket and belong to the bucket owner's account to use this action. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
@@ -1109,9 +1109,9 @@ namespace Amazon.S3Control
         /// </para>
         ///  <important> 
         /// <para>
-        /// As a security precaution, the root user of the AWS account that owns a bucket can
-        /// always use this action, even if the policy explicitly denies the root user the ability
-        /// to perform this action.
+        /// As a security precaution, the root user of the account that owns a bucket can always
+        /// use this action, even if the policy explicitly denies the root user the ability to
+        /// perform this action.
         /// </para>
         ///  </important> 
         /// <para>
@@ -1163,7 +1163,7 @@ namespace Amazon.S3Control
         /// <para>
         /// This implementation of the DELETE action uses the policy subresource to delete the
         /// policy of a specified Amazon S3 on Outposts bucket. If you are using an identity other
-        /// than the root user of the AWS account that owns the bucket, the calling identity must
+        /// than the root user of the account that owns the bucket, the calling identity must
         /// have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the specified
         /// Outposts bucket and belong to the bucket owner's account to use this action. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
@@ -1178,9 +1178,9 @@ namespace Amazon.S3Control
         /// </para>
         ///  <important> 
         /// <para>
-        /// As a security precaution, the root user of the AWS account that owns a bucket can
-        /// always use this action, even if the policy explicitly denies the root user the ability
-        /// to perform this action.
+        /// As a security precaution, the root user of the account that owns a bucket can always
+        /// use this action, even if the policy explicitly denies the root user the ability to
+        /// perform this action.
         /// </para>
         ///  </important> 
         /// <para>
@@ -1432,7 +1432,7 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// Removes the <code>PublicAccessBlock</code> configuration for an AWS account. For more
+        /// Removes the <code>PublicAccessBlock</code> configuration for an account. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
         /// Using Amazon S3 block public access</a>.
         /// 
@@ -1461,7 +1461,7 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// Removes the <code>PublicAccessBlock</code> configuration for an AWS account. For more
+        /// Removes the <code>PublicAccessBlock</code> configuration for an account. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
         /// Using Amazon S3 block public access</a>.
         /// 
@@ -2101,8 +2101,8 @@ namespace Amazon.S3Control
         /// 
         ///  
         /// <para>
-        /// If you are using an identity other than the root user of the AWS account that owns
-        /// the Outposts bucket, the calling identity must have the <code>s3-outposts:GetBucket</code>
+        /// If you are using an identity other than the root user of the account that owns the
+        /// Outposts bucket, the calling identity must have the <code>s3-outposts:GetBucket</code>
         /// permissions on the specified Outposts bucket and belong to the Outposts bucket owner's
         /// account in order to use this action. Only users from Outposts bucket owner account
         /// with the right permissions can perform actions on an Outposts bucket. 
@@ -2158,8 +2158,8 @@ namespace Amazon.S3Control
         /// 
         ///  
         /// <para>
-        /// If you are using an identity other than the root user of the AWS account that owns
-        /// the Outposts bucket, the calling identity must have the <code>s3-outposts:GetBucket</code>
+        /// If you are using an identity other than the root user of the account that owns the
+        /// Outposts bucket, the calling identity must have the <code>s3-outposts:GetBucket</code>
         /// permissions on the specified Outposts bucket and belong to the Outposts bucket owner's
         /// account in order to use this action. Only users from Outposts bucket owner account
         /// with the right permissions can perform actions on an Outposts bucket. 
@@ -2391,8 +2391,8 @@ namespace Amazon.S3Control
         /// </para>
         ///  
         /// <para>
-        /// If you are using an identity other than the root user of the AWS account that owns
-        /// the bucket, the calling identity must have the <code>GetBucketPolicy</code> permissions
+        /// If you are using an identity other than the root user of the account that owns the
+        /// bucket, the calling identity must have the <code>GetBucketPolicy</code> permissions
         /// on the specified bucket and belong to the bucket owner's account in order to use this
         /// action.
         /// </para>
@@ -2405,9 +2405,9 @@ namespace Amazon.S3Control
         /// </para>
         ///  <important> 
         /// <para>
-        /// As a security precaution, the root user of the AWS account that owns a bucket can
-        /// always use this action, even if the policy explicitly denies the root user the ability
-        /// to perform this action.
+        /// As a security precaution, the root user of the account that owns a bucket can always
+        /// use this action, even if the policy explicitly denies the root user the ability to
+        /// perform this action.
         /// </para>
         ///  </important> 
         /// <para>
@@ -2467,8 +2467,8 @@ namespace Amazon.S3Control
         /// </para>
         ///  
         /// <para>
-        /// If you are using an identity other than the root user of the AWS account that owns
-        /// the bucket, the calling identity must have the <code>GetBucketPolicy</code> permissions
+        /// If you are using an identity other than the root user of the account that owns the
+        /// bucket, the calling identity must have the <code>GetBucketPolicy</code> permissions
         /// on the specified bucket and belong to the bucket owner's account in order to use this
         /// action.
         /// </para>
@@ -2481,9 +2481,9 @@ namespace Amazon.S3Control
         /// </para>
         ///  <important> 
         /// <para>
-        /// As a security precaution, the root user of the AWS account that owns a bucket can
-        /// always use this action, even if the policy explicitly denies the root user the ability
-        /// to perform this action.
+        /// As a security precaution, the root user of the account that owns a bucket can always
+        /// use this action, even if the policy explicitly denies the root user the ability to
+        /// perform this action.
         /// </para>
         ///  </important> 
         /// <para>
@@ -2766,8 +2766,8 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// Retrieves the <code>PublicAccessBlock</code> configuration for an AWS account. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
+        /// Retrieves the <code>PublicAccessBlock</code> configuration for an account. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
         /// Using Amazon S3 block public access</a>.
         /// 
         ///  
@@ -2800,8 +2800,8 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// Retrieves the <code>PublicAccessBlock</code> configuration for an AWS account. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
+        /// Retrieves the <code>PublicAccessBlock</code> configuration for an account. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
         /// Using Amazon S3 block public access</a>.
         /// 
         ///  
@@ -3115,7 +3115,7 @@ namespace Amazon.S3Control
 
         /// <summary>
         /// Lists current S3 Batch Operations jobs and jobs that have ended within the last 30
-        /// days for the AWS account making the request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
+        /// days for the account making the request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
         /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
         /// 
         ///  
@@ -3163,7 +3163,7 @@ namespace Amazon.S3Control
 
         /// <summary>
         /// Lists current S3 Batch Operations jobs and jobs that have ended within the last 30
-        /// days for the AWS account making the request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
+        /// days for the account making the request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
         /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
         /// 
         ///  
@@ -3628,10 +3628,10 @@ namespace Amazon.S3Control
         /// </para>
         ///  
         /// <para>
-        /// If you are using an identity other than the root user of the AWS account that owns
-        /// the Outposts bucket, the calling identity must have the <code>PutBucketPolicy</code>
-        /// permissions on the specified Outposts bucket and belong to the bucket owner's account
-        /// in order to use this action.
+        /// If you are using an identity other than the root user of the account that owns the
+        /// Outposts bucket, the calling identity must have the <code>PutBucketPolicy</code> permissions
+        /// on the specified Outposts bucket and belong to the bucket owner's account in order
+        /// to use this action.
         /// </para>
         ///  
         /// <para>
@@ -3642,9 +3642,9 @@ namespace Amazon.S3Control
         /// </para>
         ///  <important> 
         /// <para>
-        ///  As a security precaution, the root user of the AWS account that owns a bucket can
-        /// always use this action, even if the policy explicitly denies the root user the ability
-        /// to perform this action. 
+        ///  As a security precaution, the root user of the account that owns a bucket can always
+        /// use this action, even if the policy explicitly denies the root user the ability to
+        /// perform this action. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -3700,10 +3700,10 @@ namespace Amazon.S3Control
         /// </para>
         ///  
         /// <para>
-        /// If you are using an identity other than the root user of the AWS account that owns
-        /// the Outposts bucket, the calling identity must have the <code>PutBucketPolicy</code>
-        /// permissions on the specified Outposts bucket and belong to the bucket owner's account
-        /// in order to use this action.
+        /// If you are using an identity other than the root user of the account that owns the
+        /// Outposts bucket, the calling identity must have the <code>PutBucketPolicy</code> permissions
+        /// on the specified Outposts bucket and belong to the bucket owner's account in order
+        /// to use this action.
         /// </para>
         ///  
         /// <para>
@@ -3714,9 +3714,9 @@ namespace Amazon.S3Control
         /// </para>
         ///  <important> 
         /// <para>
-        ///  As a security precaution, the root user of the AWS account that owns a bucket can
-        /// always use this action, even if the policy explicitly denies the root user the ability
-        /// to perform this action. 
+        ///  As a security precaution, the root user of the account that owns a bucket can always
+        /// use this action, even if the policy explicitly denies the root user the ability to
+        /// perform this action. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -3777,12 +3777,13 @@ namespace Amazon.S3Control
         /// </para>
         ///  
         /// <para>
-        /// Use tags to organize your AWS bill to reflect your own cost structure. To do this,
-        /// sign up to get your AWS account bill with tag key values included. Then, to see the
-        /// cost of combined resources, organize your billing information according to resources
-        /// with the same tag key values. For example, you can tag several resources with a specific
-        /// application name, and then organize your billing information to see the total cost
-        /// of that application across several services. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
+        /// Use tags to organize your Amazon Web Services bill to reflect your own cost structure.
+        /// To do this, sign up to get your account bill with tag key values included. Then, to
+        /// see the cost of combined resources, organize your billing information according to
+        /// resources with the same tag key values. For example, you can tag several resources
+        /// with a specific application name, and then organize your billing information to see
+        /// the total cost of that application across several services. For more information,
+        /// see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
         /// allocation and tagging</a>.
         /// </para>
         ///  <note> 
@@ -3812,7 +3813,7 @@ namespace Amazon.S3Control
         /// Description: The tag provided was not a valid tag. This error can occur if the tag
         /// did not pass input validation. For information about tag restrictions, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">
         /// User-Defined Tag Restrictions</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/aws-tag-restrictions.html">
-        /// AWS-Generated Cost Allocation Tag Restrictions</a>.
+        /// Amazon Web Services-Generated Cost Allocation Tag Restrictions</a>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -3887,12 +3888,13 @@ namespace Amazon.S3Control
         /// </para>
         ///  
         /// <para>
-        /// Use tags to organize your AWS bill to reflect your own cost structure. To do this,
-        /// sign up to get your AWS account bill with tag key values included. Then, to see the
-        /// cost of combined resources, organize your billing information according to resources
-        /// with the same tag key values. For example, you can tag several resources with a specific
-        /// application name, and then organize your billing information to see the total cost
-        /// of that application across several services. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
+        /// Use tags to organize your Amazon Web Services bill to reflect your own cost structure.
+        /// To do this, sign up to get your account bill with tag key values included. Then, to
+        /// see the cost of combined resources, organize your billing information according to
+        /// resources with the same tag key values. For example, you can tag several resources
+        /// with a specific application name, and then organize your billing information to see
+        /// the total cost of that application across several services. For more information,
+        /// see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
         /// allocation and tagging</a>.
         /// </para>
         ///  <note> 
@@ -3922,7 +3924,7 @@ namespace Amazon.S3Control
         /// Description: The tag provided was not a valid tag. This error can occur if the tag
         /// did not pass input validation. For information about tag restrictions, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">
         /// User-Defined Tag Restrictions</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/aws-tag-restrictions.html">
-        /// AWS-Generated Cost Allocation Tag Restrictions</a>.
+        /// Amazon Web Services-Generated Cost Allocation Tag Restrictions</a>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -4039,7 +4041,7 @@ namespace Amazon.S3Control
         ///  </li> <li> 
         /// <para>
         /// For tagging-related restrictions related to characters and encodings, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
-        /// Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+        /// Tag Restrictions</a> in the <i>Billing and Cost Management User Guide</i>.
         /// </para>
         ///  </li> </ul> </li> </ul> </note>  
         /// <para>
@@ -4137,7 +4139,7 @@ namespace Amazon.S3Control
         ///  </li> <li> 
         /// <para>
         /// For tagging-related restrictions related to characters and encodings, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
-        /// Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+        /// Tag Restrictions</a> in the <i>Billing and Cost Management User Guide</i>.
         /// </para>
         ///  </li> </ul> </li> </ul> </note>  
         /// <para>
@@ -4192,7 +4194,7 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// Creates or modifies the <code>PublicAccessBlock</code> configuration for an AWS account.
+        /// Creates or modifies the <code>PublicAccessBlock</code> configuration for an account.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
         /// Using Amazon S3 block public access</a>.
         /// 
@@ -4221,7 +4223,7 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// Creates or modifies the <code>PublicAccessBlock</code> configuration for an AWS account.
+        /// Creates or modifies the <code>PublicAccessBlock</code> configuration for an account.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
         /// Using Amazon S3 block public access</a>.
         /// 

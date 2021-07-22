@@ -31,7 +31,7 @@ namespace Amazon.S3Control.Model
     /// <summary>
     /// Container for the parameters to the ListJobs operation.
     /// Lists current S3 Batch Operations jobs and jobs that have ended within the last 30
-    /// days for the AWS account making the request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
+    /// days for the account making the request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
     /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
     /// 
     ///  
@@ -70,7 +70,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID associated with the S3 Batch Operations job.
+        /// The account ID associated with the S3 Batch Operations job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

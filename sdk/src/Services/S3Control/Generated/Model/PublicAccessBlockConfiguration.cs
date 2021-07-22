@@ -147,8 +147,8 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// Specifies whether Amazon S3 should restrict public bucket policies for buckets in
         /// this account. Setting this element to <code>TRUE</code> restricts access to buckets
-        /// with public policies to only AWS service principals and authorized users within this
-        /// account.
+        /// with public policies to only Amazon Web Service principals and authorized users within
+        /// this account.
         /// </para>
         ///  
         /// <para>

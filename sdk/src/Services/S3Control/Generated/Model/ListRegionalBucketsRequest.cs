@@ -52,7 +52,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID of the Outposts bucket.
+        /// The account ID of the Outposts bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -103,7 +103,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property OutpostId. 
         /// <para>
-        /// The ID of the AWS Outposts.
+        /// The ID of the Outposts.
         /// </para>
         ///  <note> 
         /// <para>

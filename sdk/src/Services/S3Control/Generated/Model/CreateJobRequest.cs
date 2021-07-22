@@ -86,7 +86,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID that creates the job.
+        /// The account ID that creates the job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -242,8 +242,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role
-        /// that Batch Operations will use to run this job's action on every object in the manifest.
+        /// The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role that
+        /// Batch Operations will use to run this job's action on every object in the manifest.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

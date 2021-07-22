@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// An access point with an attached AWS Lambda function used to access transformed data
-    /// from an Amazon S3 bucket.
+    /// An access point with an attached Lambda function used to access transformed data from
+    /// an Amazon S3 bucket.
     /// </summary>
     public partial class ObjectLambdaAccessPoint
     {

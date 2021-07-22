@@ -262,8 +262,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role
-        /// assigned to run the tasks for this job.
+        /// The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role assigned
+        /// to run the tasks for this job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

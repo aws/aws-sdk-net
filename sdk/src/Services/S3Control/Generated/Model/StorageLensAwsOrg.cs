@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// The AWS organization for your S3 Storage Lens.
+    /// The Amazon Web Services organization for your S3 Storage Lens.
     /// </summary>
     public partial class StorageLensAwsOrg
     {
@@ -38,8 +38,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// A container for the Amazon Resource Name (ARN) of the AWS organization. This property
-        /// is read-only and follows the following format: <code> arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i>
+        /// A container for the Amazon Resource Name (ARN) of the Amazon Web Services organization.
+        /// This property is read-only and follows the following format: <code> arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i>
         /// </code> 
         /// </para>
         /// </summary>

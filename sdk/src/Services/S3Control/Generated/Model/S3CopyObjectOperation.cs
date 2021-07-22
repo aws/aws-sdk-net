@@ -73,8 +73,9 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property BucketKeyEnabled. 
         /// <para>
         /// Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with
-        /// server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code>
-        /// causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.
+        /// server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting this header
+        /// to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
+        /// with SSE-KMS.
         /// </para>
         ///  
         /// <para>

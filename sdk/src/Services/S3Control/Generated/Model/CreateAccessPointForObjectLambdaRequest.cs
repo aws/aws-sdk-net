@@ -63,7 +63,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID for owner of the specified Object Lambda Access Point.
+        /// The account ID for owner of the specified Object Lambda Access Point.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

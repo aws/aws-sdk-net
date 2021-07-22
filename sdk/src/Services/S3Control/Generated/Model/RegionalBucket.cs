@@ -96,7 +96,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property OutpostId. 
         /// <para>
-        /// The AWS Outposts ID of the regional bucket.
+        /// The Outposts ID of the regional bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

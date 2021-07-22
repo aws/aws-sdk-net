@@ -38,7 +38,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AwsLambda. 
         /// <para>
-        /// A container for an AWS Lambda function.
+        /// A container for an Lambda function.
         /// </para>
         /// </summary>
         public AwsLambdaTransformation AwsLambda
