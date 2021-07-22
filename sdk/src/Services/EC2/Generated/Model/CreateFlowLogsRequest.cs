@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
     /// Flow log data for a monitored network interface is recorded as flow log records, which
     /// are log events consisting of fields that describe the traffic flow. For more information,
     /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-    /// Log Records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// log records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -72,7 +72,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-        /// to Ensure Idempotency</a>.
+        /// to ensure idempotency</a>.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -182,13 +182,13 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The fields to include in the flow log record, in the order in which they should appear.
         /// For a list of available fields, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-        /// Log Records</a>. If you omit this parameter, the flow log is created using the default
+        /// log records</a>. If you omit this parameter, the flow log is created using the default
         /// format. If you specify this parameter, you must specify at least one field.
         /// </para>
         ///  
         /// <para>
         /// Specify the fields using the <code>${field-id}</code> format, separated by spaces.
-        /// For the AWS CLI, use single quotation marks (' ') to surround the parameter value.
+        /// For the CLI, use single quotation marks (' ') to surround the parameter value.
         /// </para>
         /// </summary>
         public string LogFormat

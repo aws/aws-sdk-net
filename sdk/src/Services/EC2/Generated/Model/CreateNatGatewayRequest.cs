@@ -49,7 +49,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT
-    /// Gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateNatGatewayRequest : AmazonEC2Request
@@ -86,7 +86,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-        /// to Ensure Idempotency</a>.
+        /// to ensure idempotency</a>.
         /// </para>
         ///  
         /// <para>

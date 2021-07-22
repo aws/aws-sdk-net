@@ -101,7 +101,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property CpuOptions. 
         /// <para>
         /// The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
-        /// CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         public LaunchTemplateCpuOptions CpuOptions
@@ -210,7 +210,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EnclaveOptions. 
         /// <para>
-        /// Indicates whether the instance is enabled for AWS Nitro Enclaves.
+        /// Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.
         /// </para>
         /// </summary>
         public LaunchTemplateEnclaveOptions EnclaveOptions
@@ -230,7 +230,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Indicates whether an instance is configured for hibernation. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-        /// Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         public LaunchTemplateHibernationOptions HibernationOptions
@@ -394,7 +394,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MetadataOptions. 
         /// <para>
         /// The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-        /// Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         public LaunchTemplateInstanceMetadataOptions MetadataOptions

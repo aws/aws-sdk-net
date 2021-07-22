@@ -55,7 +55,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-        /// to Ensure Idempotency</a>.
+        /// to ensure idempotency</a>.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -73,7 +73,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// The AWS resource that is the destination of the path.
+        /// The Amazon Web Services resource that is the destination of the path.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -92,7 +92,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DestinationIp. 
         /// <para>
-        /// The IP address of the AWS resource that is the destination of the path.
+        /// The IP address of the Amazon Web Services resource that is the destination of the
+        /// path.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=15)]
@@ -149,7 +150,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The AWS resource that is the source of the path.
+        /// The Amazon Web Services resource that is the source of the path.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -168,7 +169,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SourceIp. 
         /// <para>
-        /// The IP address of the AWS resource that is the source of the path.
+        /// The IP address of the Amazon Web Services resource that is the source of the path.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=15)]

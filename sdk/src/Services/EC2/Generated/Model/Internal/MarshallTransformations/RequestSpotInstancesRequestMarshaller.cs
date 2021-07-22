@@ -220,6 +220,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "InterfaceType", StringUtils.FromString(publicRequestLaunchSpecificationlistValue.InterfaceType));
                             }
+                            if(publicRequestLaunchSpecificationlistValue.IsSetIpv4PrefixCount())
+                            {
+                                request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ipv4PrefixCount", StringUtils.FromInt(publicRequestLaunchSpecificationlistValue.Ipv4PrefixCount));
+                            }
+                            if(publicRequestLaunchSpecificationlistValue.IsSetIpv4Prefixes())
+                            {
+                                int publicRequestLaunchSpecificationlistValuelistValueIndex = 1;
+                                foreach(var publicRequestLaunchSpecificationlistValuelistValue in publicRequestLaunchSpecificationlistValue.Ipv4Prefixes)
+                                {
+                                    if(publicRequestLaunchSpecificationlistValuelistValue.IsSetIpv4Prefix())
+                                    {
+                                        request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ipv4Prefix" + "." + publicRequestLaunchSpecificationlistValuelistValueIndex + "." + "Ipv4Prefix", StringUtils.FromString(publicRequestLaunchSpecificationlistValuelistValue.Ipv4Prefix));
+                                    }
+                                    publicRequestLaunchSpecificationlistValuelistValueIndex++;
+                                }
+                            }
                             if(publicRequestLaunchSpecificationlistValue.IsSetIpv6AddressCount())
                             {
                                 request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ipv6AddressCount", StringUtils.FromInt(publicRequestLaunchSpecificationlistValue.Ipv6AddressCount));
@@ -232,6 +248,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     if(publicRequestLaunchSpecificationlistValuelistValue.IsSetIpv6Address())
                                     {
                                         request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ipv6Addresses" + "." + publicRequestLaunchSpecificationlistValuelistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestLaunchSpecificationlistValuelistValue.Ipv6Address));
+                                    }
+                                    publicRequestLaunchSpecificationlistValuelistValueIndex++;
+                                }
+                            }
+                            if(publicRequestLaunchSpecificationlistValue.IsSetIpv6PrefixCount())
+                            {
+                                request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ipv6PrefixCount", StringUtils.FromInt(publicRequestLaunchSpecificationlistValue.Ipv6PrefixCount));
+                            }
+                            if(publicRequestLaunchSpecificationlistValue.IsSetIpv6Prefixes())
+                            {
+                                int publicRequestLaunchSpecificationlistValuelistValueIndex = 1;
+                                foreach(var publicRequestLaunchSpecificationlistValuelistValue in publicRequestLaunchSpecificationlistValue.Ipv6Prefixes)
+                                {
+                                    if(publicRequestLaunchSpecificationlistValuelistValue.IsSetIpv6Prefix())
+                                    {
+                                        request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ipv6Prefix" + "." + publicRequestLaunchSpecificationlistValuelistValueIndex + "." + "Ipv6Prefix", StringUtils.FromString(publicRequestLaunchSpecificationlistValuelistValue.Ipv6Prefix));
                                     }
                                     publicRequestLaunchSpecificationlistValuelistValueIndex++;
                                 }

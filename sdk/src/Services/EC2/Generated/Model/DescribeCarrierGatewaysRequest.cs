@@ -73,7 +73,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>owner-id</code> - The AWS account ID of the owner of the carrier gateway.
+        ///  <code>owner-id</code> - The account ID of the owner of the carrier gateway.
         /// </para>
         ///  </li> <li> 
         /// <para>

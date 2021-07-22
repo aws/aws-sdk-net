@@ -33,8 +33,27 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AssignPrivateIpAddressesResponse : AmazonWebServiceResponse
     {
+        private List<Ipv4PrefixSpecification> _assignedIpv4Prefixes = new List<Ipv4PrefixSpecification>();
         private List<AssignedPrivateIpAddress> _assignedPrivateIpAddresses = new List<AssignedPrivateIpAddress>();
         private string _networkInterfaceId;
+
+        /// <summary>
+        /// Gets and sets the property AssignedIpv4Prefixes. 
+        /// <para>
+        /// The IPv4 Prefix Delegation prefixes that are assigned to the network interface.
+        /// </para>
+        /// </summary>
+        public List<Ipv4PrefixSpecification> AssignedIpv4Prefixes
+        {
+            get { return this._assignedIpv4Prefixes; }
+            set { this._assignedIpv4Prefixes = value; }
+        }
+
+        // Check to see if AssignedIpv4Prefixes property is set
+        internal bool IsSetAssignedIpv4Prefixes()
+        {
+            return this._assignedIpv4Prefixes != null && this._assignedIpv4Prefixes.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AssignedPrivateIpAddresses. 

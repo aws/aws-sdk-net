@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     {
         private string _networkInterfaceId;
         private List<string> _unassignedIpv6Addresses = new List<string>();
+        private List<string> _unassignedIpv6Prefixes = new List<string>();
 
         /// <summary>
         /// Gets and sets the property NetworkInterfaceId. 
@@ -70,6 +71,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetUnassignedIpv6Addresses()
         {
             return this._unassignedIpv6Addresses != null && this._unassignedIpv6Addresses.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnassignedIpv6Prefixes. 
+        /// <para>
+        /// The IPv4 Prefix Delegation prefixes that have been unassigned from the network interface.
+        /// </para>
+        /// </summary>
+        public List<string> UnassignedIpv6Prefixes
+        {
+            get { return this._unassignedIpv6Prefixes; }
+            set { this._unassignedIpv6Prefixes = value; }
+        }
+
+        // Check to see if UnassignedIpv6Prefixes property is set
+        internal bool IsSetUnassignedIpv6Prefixes()
+        {
+            return this._unassignedIpv6Prefixes != null && this._unassignedIpv6Prefixes.Count > 0; 
         }
 
     }

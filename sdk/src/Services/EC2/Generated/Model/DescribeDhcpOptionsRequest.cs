@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-    /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeDhcpOptionsRequest : AmazonEC2Request
@@ -86,7 +86,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>owner-id</code> - The ID of the AWS account that owns the DHCP options set.
+        ///  <code>owner-id</code> - The ID of the account that owns the DHCP options set.
         /// </para>
         ///  </li> <li> 
         /// <para>

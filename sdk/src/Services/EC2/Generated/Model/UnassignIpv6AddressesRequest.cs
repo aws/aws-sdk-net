@@ -30,11 +30,13 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the UnassignIpv6Addresses operation.
-    /// Unassigns one or more IPv6 addresses from a network interface.
+    /// Unassigns one or more IPv6 addresses IPv4 Prefix Delegation prefixes from a network
+    /// interface.
     /// </summary>
     public partial class UnassignIpv6AddressesRequest : AmazonEC2Request
     {
         private List<string> _ipv6Addresses = new List<string>();
+        private List<string> _ipv6Prefixes = new List<string>();
         private string _networkInterfaceId;
 
         /// <summary>
@@ -43,7 +45,6 @@ namespace Amazon.EC2.Model
         /// The IPv6 addresses to unassign from the network interface.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<string> Ipv6Addresses
         {
             get { return this._ipv6Addresses; }
@@ -54,6 +55,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpv6Addresses()
         {
             return this._ipv6Addresses != null && this._ipv6Addresses.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Prefixes. 
+        /// <para>
+        /// One or moreIPv6 Prefix Delegation prefixes to unassign from the network interface.
+        /// </para>
+        /// </summary>
+        public List<string> Ipv6Prefixes
+        {
+            get { return this._ipv6Prefixes; }
+            set { this._ipv6Prefixes = value; }
+        }
+
+        // Check to see if Ipv6Prefixes property is set
+        internal bool IsSetIpv6Prefixes()
+        {
+            return this._ipv6Prefixes != null && this._ipv6Prefixes.Count > 0; 
         }
 
         /// <summary>

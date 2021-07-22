@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-    /// VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeSubnetsRequest : AmazonEC2Request
@@ -98,7 +98,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>owner-id</code> - The ID of the AWS account that owns the subnet.
+        ///  <code>owner-id</code> - The ID of the account that owns the subnet.
         /// </para>
         ///  </li> <li> 
         /// <para>

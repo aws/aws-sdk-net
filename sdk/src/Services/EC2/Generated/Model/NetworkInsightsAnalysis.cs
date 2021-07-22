@@ -87,7 +87,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property FilterInArns. 
         /// <para>
-        /// The Amazon Resource Names (ARN) of the AWS resources that the path must traverse.
+        /// The Amazon Resource Names (ARN) of the Amazon Web Services resources that the path
+        /// must traverse.
         /// </para>
         /// </summary>
         public List<string> FilterInArns

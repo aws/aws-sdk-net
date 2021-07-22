@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the CreateVpcPeeringConnection operation.
     /// Requests a VPC peering connection between two VPCs: a requester VPC that you own and
     /// an accepter VPC with which to create the connection. The accepter VPC can belong to
-    /// another AWS account and can be in a different Region to the requester VPC. The requester
+    /// another account and can be in a different Region to the requester VPC. The requester
     /// VPC and accepter VPC cannot have overlapping CIDR blocks.
     /// 
     ///  <note> 
@@ -64,11 +64,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PeerOwnerId. 
         /// <para>
-        /// The AWS account ID of the owner of the accepter VPC.
+        /// The account ID of the owner of the accepter VPC.
         /// </para>
         ///  
         /// <para>
-        /// Default: Your AWS account ID
+        /// Default: Your account ID
         /// </para>
         /// </summary>
         public string PeerOwnerId

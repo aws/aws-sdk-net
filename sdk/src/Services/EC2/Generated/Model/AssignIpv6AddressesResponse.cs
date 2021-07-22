@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class AssignIpv6AddressesResponse : AmazonWebServiceResponse
     {
         private List<string> _assignedIpv6Addresses = new List<string>();
+        private List<string> _assignedIpv6Prefixes = new List<string>();
         private string _networkInterfaceId;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAssignedIpv6Addresses()
         {
             return this._assignedIpv6Addresses != null && this._assignedIpv6Addresses.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssignedIpv6Prefixes. 
+        /// <para>
+        /// The IPv6 Prefix Delegation prefixes that are assigned to the network interface.
+        /// </para>
+        /// </summary>
+        public List<string> AssignedIpv6Prefixes
+        {
+            get { return this._assignedIpv6Prefixes; }
+            set { this._assignedIpv6Prefixes = value; }
+        }
+
+        // Check to see if AssignedIpv6Prefixes property is set
+        internal bool IsSetAssignedIpv6Prefixes()
+        {
+            return this._assignedIpv6Prefixes != null && this._assignedIpv6Prefixes.Count > 0; 
         }
 
         /// <summary>

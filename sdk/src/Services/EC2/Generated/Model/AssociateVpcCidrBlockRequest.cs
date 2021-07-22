@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
     /// <para>
     /// For more information about associating CIDR blocks with your VPC and applicable restrictions,
     /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing">VPC
-    /// and Subnet Sizing</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// and subnet sizing</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class AssociateVpcCidrBlockRequest : AmazonEC2Request

@@ -85,11 +85,25 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.InterfaceType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ipv4PrefixSet/item", targetDepth))
+                    {
+                        var unmarshaller = InstanceIpv4PrefixUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Ipv4Prefixes.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("ipv6AddressesSet/item", targetDepth))
                     {
                         var unmarshaller = InstanceIpv6AddressUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Ipv6Addresses.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("ipv6PrefixSet/item", targetDepth))
+                    {
+                        var unmarshaller = InstanceIpv6PrefixUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Ipv6Prefixes.Add(item);
                         continue;
                     }
                     if (context.TestExpression("macAddress", targetDepth))

@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the CreateCarrierGateway operation.
     /// Creates a carrier gateway. For more information about carrier gateways, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#wavelength-carrier-gateway">Carrier
-    /// gateways</a> in the <i>AWS Wavelength Developer Guide</i>.
+    /// gateways</a> in the <i>Amazon Web Services Wavelength Developer Guide</i>.
     /// </summary>
     public partial class CreateCarrierGatewayRequest : AmazonEC2Request
     {
@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-        /// to Ensure Idempotency</a>.
+        /// to ensure idempotency</a>.
         /// </para>
         /// </summary>
         public string ClientToken

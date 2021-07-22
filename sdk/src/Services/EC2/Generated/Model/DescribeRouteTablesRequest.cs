@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-    /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeRouteTablesRequest : AmazonEC2Request
@@ -78,7 +78,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>owner-id</code> - The ID of the AWS account that owns the route table.
+        ///  <code>owner-id</code> - The ID of the account that owns the route table.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -96,8 +96,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS service
-        /// specified in a route in the table.
+        ///  <code>route.destination-prefix-list-id</code> - The ID (prefix) of the Amazon Web
+        /// Service specified in a route in the table.
         /// </para>
         ///  </li> <li> 
         /// <para>

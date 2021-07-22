@@ -106,7 +106,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DestinationPrefixListId. 
         /// <para>
-        /// The prefix of the AWS service.
+        /// The prefix of the Amazon Web Service.
         /// </para>
         /// </summary>
         public string DestinationPrefixListId
@@ -178,7 +178,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceOwnerId. 
         /// <para>
-        /// The AWS account ID of the owner of the instance.
+        /// The ID of account that owns the instance.
         /// </para>
         /// </summary>
         public string InstanceOwnerId

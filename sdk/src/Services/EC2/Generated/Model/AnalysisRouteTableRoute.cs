@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DestinationPrefixListId. 
         /// <para>
-        /// The prefix of the AWS service.
+        /// The prefix of the Amazon Web Service.
         /// </para>
         /// </summary>
         public string DestinationPrefixListId

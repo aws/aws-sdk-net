@@ -68,7 +68,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  </li> </ul> </important> 
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
     /// event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>

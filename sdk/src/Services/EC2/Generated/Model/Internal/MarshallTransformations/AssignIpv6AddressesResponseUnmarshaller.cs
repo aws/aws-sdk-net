@@ -62,6 +62,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         response.AssignedIpv6Addresses.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("assignedIpv6PrefixSet/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.AssignedIpv6Prefixes.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("networkInterfaceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

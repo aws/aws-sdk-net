@@ -46,8 +46,8 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// AWS reserves both the first four and the last IPv4 address in each subnet's CIDR block.
-    /// They're not available for use.
+    /// Amazon Web Services reserves both the first four and the last IPv4 address in each
+    /// subnet's CIDR block. They're not available for use.
     /// </para>
     ///  </important> 
     /// <para>
@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information about subnets, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-    /// VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateSubnetRequest : AmazonEC2Request
@@ -99,8 +99,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: AWS selects one for you. If you create more than one subnet in your VPC,
-        /// we do not necessarily select a different zone for each subnet.
+        /// Default: Amazon Web Services selects one for you. If you create more than one subnet
+        /// in your VPC, we do not necessarily select a different zone for each subnet.
         /// </para>
         ///  
         /// <para>

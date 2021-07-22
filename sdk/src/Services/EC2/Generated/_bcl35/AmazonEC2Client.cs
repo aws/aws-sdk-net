@@ -978,6 +978,14 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You must specify either the IPv6 addresses or the IPv6 address count in the request.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally use Prefix Delegation on the network interface. You must specify
+        /// either the IPV6 Prefix Delegation prefixes, or the IPv6 Prefix Delegation count. For
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
+        /// Delegation</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssignIpv6Addresses service method.</param>
@@ -1058,6 +1066,13 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You must specify either the IP addresses or the IP address count in the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally use Prefix Delegation on the network interface. You must specify
+        /// either the IPv4 Prefix Delegation prefixes, or the IPv4 Prefix Delegation count. For
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
+        /// Delegation</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssignPrivateIpAddresses service method.</param>
@@ -1288,7 +1303,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-        /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateDhcpOptions service method.</param>
@@ -1478,7 +1493,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
         /// event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -1543,7 +1558,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-        /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateRouteTable service method.</param>
@@ -1851,7 +1866,7 @@ namespace Amazon.EC2
         /// <para>
         /// For more information about associating CIDR blocks with your VPC and applicable restrictions,
         /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing">VPC
-        /// and Subnet Sizing</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// and subnet sizing</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateVpcCidrBlock service method.</param>
@@ -3362,7 +3377,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates a carrier gateway. For more information about carrier gateways, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#wavelength-carrier-gateway">Carrier
-        /// gateways</a> in the <i>AWS Wavelength Developer Guide</i>.
+        /// gateways</a> in the <i>Amazon Web Services Wavelength Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCarrierGateway service method.</param>
         /// 
@@ -3630,7 +3645,7 @@ namespace Amazon.EC2
         /// Creates a default subnet with a size <code>/20</code> IPv4 CIDR block in the specified
         /// Availability Zone in your default VPC. You can have only one default subnet per Availability
         /// Zone. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Creating
-        /// a Default Subnet</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// a default subnet</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDefaultSubnet service method.</param>
         /// 
@@ -3687,7 +3702,7 @@ namespace Amazon.EC2
         /// Creates a default VPC with a size <code>/16</code> IPv4 CIDR block and a default subnet
         /// in each Availability Zone. For more information about the components of a default
         /// VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html">Default
-        /// VPC and Default Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// VPC and default subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// You cannot specify the components of the default VPC yourself.
         /// 
         ///  
@@ -3806,7 +3821,7 @@ namespace Amazon.EC2
         /// if your VPC has an internet gateway, make sure to set the <code>domain-name-servers</code>
         /// option either to <code>AmazonProvidedDNS</code> or to a domain name server of your
         /// choice. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-        /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDhcpOptions service method.</param>
@@ -3991,7 +4006,7 @@ namespace Amazon.EC2
         /// Flow log data for a monitored network interface is recorded as flow log records, which
         /// are log events consisting of fields that describe the traffic flow. For more information,
         /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-        /// Log Records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// log records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -4230,7 +4245,7 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> </ul> </important> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
         /// event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -4812,7 +4827,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT
-        /// Gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNatGateway service method.</param>
@@ -5501,7 +5516,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-        /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRoute service method.</param>
@@ -5562,7 +5577,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-        /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRouteTable service method.</param>
@@ -6013,8 +6028,8 @@ namespace Amazon.EC2
         /// </para>
         ///  <important> 
         /// <para>
-        /// AWS reserves both the first four and the last IPv4 address in each subnet's CIDR block.
-        /// They're not available for use.
+        /// Amazon Web Services reserves both the first four and the last IPv4 address in each
+        /// subnet's CIDR block. They're not available for use.
         /// </para>
         ///  </important> 
         /// <para>
@@ -6030,7 +6045,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about subnets, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-        /// VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSubnet service method.</param>
@@ -6078,6 +6093,62 @@ namespace Amazon.EC2
         public virtual CreateSubnetResponse EndCreateSubnet(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSubnetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateSubnetCidrReservation
+
+        /// <summary>
+        /// Creates a subnet CIDR reservation. For information about subnet CIDR reservations,
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet
+        /// CIDR reservations</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSubnetCidrReservation service method.</param>
+        /// 
+        /// <returns>The response from the CreateSubnetCidrReservation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnetCidrReservation">REST API Reference for CreateSubnetCidrReservation Operation</seealso>
+        public virtual CreateSubnetCidrReservationResponse CreateSubnetCidrReservation(CreateSubnetCidrReservationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSubnetCidrReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSubnetCidrReservationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSubnetCidrReservationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSubnetCidrReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSubnetCidrReservation operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSubnetCidrReservation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnetCidrReservation">REST API Reference for CreateSubnetCidrReservation Operation</seealso>
+        public virtual IAsyncResult BeginCreateSubnetCidrReservation(CreateSubnetCidrReservationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSubnetCidrReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSubnetCidrReservationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSubnetCidrReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSubnetCidrReservation.</param>
+        /// 
+        /// <returns>Returns a  CreateSubnetCidrReservationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnetCidrReservation">REST API Reference for CreateSubnetCidrReservation Operation</seealso>
+        public virtual CreateSubnetCidrReservationResponse EndCreateSubnetCidrReservation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateSubnetCidrReservationResponse>(asyncResult);
         }
 
         #endregion
@@ -7066,7 +7137,7 @@ namespace Amazon.EC2
         /// Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can create
         /// uses a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536
         /// IPv4 addresses). For more information about how large to make your VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-        /// VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -7079,7 +7150,7 @@ namespace Amazon.EC2
         /// By default, each instance you launch in the VPC has the default DHCP options, which
         /// include only a default DNS server that we provide (AmazonProvidedDNS). For more information,
         /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-        /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -7371,7 +7442,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Requests a VPC peering connection between two VPCs: a requester VPC that you own and
         /// an accepter VPC with which to create the connection. The accepter VPC can belong to
-        /// another AWS account and can be in a different Region to the requester VPC. The requester
+        /// another account and can be in a different Region to the requester VPC. The requester
         /// VPC and accepter VPC cannot have overlapping CIDR blocks.
         /// 
         ///  <note> 
@@ -8191,7 +8262,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
         /// event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -9480,6 +9551,60 @@ namespace Amazon.EC2
         public virtual DeleteSubnetResponse EndDeleteSubnet(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSubnetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteSubnetCidrReservation
+
+        /// <summary>
+        /// Deletes a subnet CIDR reservation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSubnetCidrReservation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSubnetCidrReservation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSubnetCidrReservation">REST API Reference for DeleteSubnetCidrReservation Operation</seealso>
+        public virtual DeleteSubnetCidrReservationResponse DeleteSubnetCidrReservation(DeleteSubnetCidrReservationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSubnetCidrReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSubnetCidrReservationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSubnetCidrReservationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSubnetCidrReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSubnetCidrReservation operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSubnetCidrReservation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSubnetCidrReservation">REST API Reference for DeleteSubnetCidrReservation Operation</seealso>
+        public virtual IAsyncResult BeginDeleteSubnetCidrReservation(DeleteSubnetCidrReservationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSubnetCidrReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSubnetCidrReservationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSubnetCidrReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSubnetCidrReservation.</param>
+        /// 
+        /// <returns>Returns a  DeleteSubnetCidrReservationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSubnetCidrReservation">REST API Reference for DeleteSubnetCidrReservation Operation</seealso>
+        public virtual DeleteSubnetCidrReservationResponse EndDeleteSubnetCidrReservation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteSubnetCidrReservationResponse>(asyncResult);
         }
 
         #endregion
@@ -12350,7 +12475,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-        /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -12367,7 +12492,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-        /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDhcpOptions service method.</param>
@@ -13921,7 +14046,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
         /// event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -16275,7 +16400,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-        /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -16298,7 +16423,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-        /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRouteTables service method.</param>
@@ -17513,7 +17638,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-        /// VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -17530,7 +17655,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-        /// VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSubnets service method.</param>
@@ -20512,7 +20637,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
         /// event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -20575,7 +20700,7 @@ namespace Amazon.EC2
         /// After you perform this action, the subnet no longer uses the routes in the route table.
         /// Instead, it uses the routes in the VPC's main route table. For more information about
         /// route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-        /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateRouteTable service method.</param>
@@ -22789,6 +22914,60 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetSubnetCidrReservations
+
+        /// <summary>
+        /// Gets information about the subnet CIDR reservations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSubnetCidrReservations service method.</param>
+        /// 
+        /// <returns>The response from the GetSubnetCidrReservations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSubnetCidrReservations">REST API Reference for GetSubnetCidrReservations Operation</seealso>
+        public virtual GetSubnetCidrReservationsResponse GetSubnetCidrReservations(GetSubnetCidrReservationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSubnetCidrReservationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSubnetCidrReservationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetSubnetCidrReservationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSubnetCidrReservations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSubnetCidrReservations operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSubnetCidrReservations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSubnetCidrReservations">REST API Reference for GetSubnetCidrReservations Operation</seealso>
+        public virtual IAsyncResult BeginGetSubnetCidrReservations(GetSubnetCidrReservationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSubnetCidrReservationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSubnetCidrReservationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSubnetCidrReservations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSubnetCidrReservations.</param>
+        /// 
+        /// <returns>Returns a  GetSubnetCidrReservationsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSubnetCidrReservations">REST API Reference for GetSubnetCidrReservations Operation</seealso>
+        public virtual GetSubnetCidrReservationsResponse EndGetSubnetCidrReservations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSubnetCidrReservationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetTransitGatewayAttachmentPropagations
 
         /// <summary>
@@ -24540,7 +24719,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
         /// event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -26071,11 +26250,11 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If the peered VPCs are in the same AWS account, you can enable DNS resolution for
-        /// queries from the local VPC. This ensures that queries from the local VPC resolve to
-        /// private IP addresses in the peer VPC. This option is not available if the peered VPCs
-        /// are in different AWS accounts or different Regions. For peered VPCs in different AWS
-        /// accounts, each AWS account owner must initiate a separate request to modify the peering
+        /// If the peered VPCs are in the same account, you can enable DNS resolution for queries
+        /// from the local VPC. This ensures that queries from the local VPC resolve to private
+        /// IP addresses in the peer VPC. This option is not available if the peered VPCs are
+        /// in different different accounts or different Regions. For peered VPCs in different
+        /// accounts, each account owner must initiate a separate request to modify the peering
         /// connection options. For inter-region peering connections, you must use the Region
         /// for the requester VPC to modify the requester VPC peering options and the Region for
         /// the accepter VPC to modify the accepter VPC peering options. To verify which VPCs
@@ -27884,7 +28063,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-        /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReplaceRoute service method.</param>
@@ -27943,7 +28122,7 @@ namespace Amazon.EC2
         /// private gateway in a VPC. After the operation completes, the subnet or gateway uses
         /// the routes in the new route table. For more information about route tables, see <a
         /// href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-        /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -29949,7 +30128,8 @@ namespace Amazon.EC2
         #region  UnassignIpv6Addresses
 
         /// <summary>
-        /// Unassigns one or more IPv6 addresses from a network interface.
+        /// Unassigns one or more IPv6 addresses IPv4 Prefix Delegation prefixes from a network
+        /// interface.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnassignIpv6Addresses service method.</param>
         /// 
@@ -30003,7 +30183,8 @@ namespace Amazon.EC2
         #region  UnassignPrivateIpAddresses
 
         /// <summary>
-        /// Unassigns one or more secondary private IP addresses from a network interface.
+        /// Unassigns one or more secondary private IP addresses, or IPv4 Prefix Delegation prefixes
+        /// from a network interface.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnassignPrivateIpAddresses service method.</param>
         /// 

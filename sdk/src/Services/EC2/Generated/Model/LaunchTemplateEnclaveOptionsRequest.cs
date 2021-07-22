@@ -29,9 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information,
-    /// see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">
-    /// What is AWS Nitro Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.
+    /// Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.
+    /// For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">
+    /// What is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
+    /// Enclaves User Guide</i>.
     /// </summary>
     public partial class LaunchTemplateEnclaveOptionsRequest
     {
@@ -40,7 +41,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>.
+        /// To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter
+        /// to <code>true</code>.
         /// </para>
         /// </summary>
         public bool Enabled

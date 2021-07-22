@@ -40,8 +40,12 @@ namespace Amazon.EC2.Model
         private int? _deviceIndex;
         private List<string> _groups = new List<string>();
         private string _interfaceType;
+        private int? _ipv4PrefixCount;
+        private List<Ipv4PrefixSpecificationRequest> _ipv4Prefixes = new List<Ipv4PrefixSpecificationRequest>();
         private int? _ipv6AddressCount;
         private List<InstanceIpv6Address> _ipv6Addresses = new List<InstanceIpv6Address>();
+        private int? _ipv6PrefixCount;
+        private List<Ipv6PrefixSpecificationRequest> _ipv6Prefixes = new List<Ipv6PrefixSpecificationRequest>();
         private int? _networkCardIndex;
         private string _networkInterfaceId;
         private string _privateIpAddress;
@@ -206,6 +210,44 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Ipv4PrefixCount. 
+        /// <para>
+        /// The number of IPv4 delegated prefixes to be automatically assigned to the network
+        /// interface. You cannot use this option if you use the <code>Ipv4Prefix</code> option.
+        /// </para>
+        /// </summary>
+        public int Ipv4PrefixCount
+        {
+            get { return this._ipv4PrefixCount.GetValueOrDefault(); }
+            set { this._ipv4PrefixCount = value; }
+        }
+
+        // Check to see if Ipv4PrefixCount property is set
+        internal bool IsSetIpv4PrefixCount()
+        {
+            return this._ipv4PrefixCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv4Prefixes. 
+        /// <para>
+        /// One or more IPv4 delegated prefixes to be assigned to the network interface. You cannot
+        /// use this option if you use the <code>Ipv4PrefixCount</code> option.
+        /// </para>
+        /// </summary>
+        public List<Ipv4PrefixSpecificationRequest> Ipv4Prefixes
+        {
+            get { return this._ipv4Prefixes; }
+            set { this._ipv4Prefixes = value; }
+        }
+
+        // Check to see if Ipv4Prefixes property is set
+        internal bool IsSetIpv4Prefixes()
+        {
+            return this._ipv4Prefixes != null && this._ipv4Prefixes.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Ipv6AddressCount. 
         /// <para>
         /// A number of IPv6 addresses to assign to the network interface. Amazon EC2 chooses
@@ -245,6 +287,44 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpv6Addresses()
         {
             return this._ipv6Addresses != null && this._ipv6Addresses.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6PrefixCount. 
+        /// <para>
+        /// The number of IPv6 delegated prefixes to be automatically assigned to the network
+        /// interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option.
+        /// </para>
+        /// </summary>
+        public int Ipv6PrefixCount
+        {
+            get { return this._ipv6PrefixCount.GetValueOrDefault(); }
+            set { this._ipv6PrefixCount = value; }
+        }
+
+        // Check to see if Ipv6PrefixCount property is set
+        internal bool IsSetIpv6PrefixCount()
+        {
+            return this._ipv6PrefixCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Prefixes. 
+        /// <para>
+        /// One or more IPv6 delegated prefixes to be assigned to the network interface. You cannot
+        /// use this option if you use the <code>Ipv6PrefixCount</code> option.
+        /// </para>
+        /// </summary>
+        public List<Ipv6PrefixSpecificationRequest> Ipv6Prefixes
+        {
+            get { return this._ipv6Prefixes; }
+            set { this._ipv6Prefixes = value; }
+        }
+
+        // Check to see if Ipv6Prefixes property is set
+        internal bool IsSetIpv6Prefixes()
+        {
+            return this._ipv6Prefixes != null && this._ipv6Prefixes.Count > 0; 
         }
 
         /// <summary>

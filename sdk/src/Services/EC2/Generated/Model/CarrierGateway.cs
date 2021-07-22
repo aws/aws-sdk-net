@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The AWS account ID of the owner of the carrier gateway.
+        /// The account ID of the owner of the carrier gateway.
         /// </para>
         /// </summary>
         public string OwnerId

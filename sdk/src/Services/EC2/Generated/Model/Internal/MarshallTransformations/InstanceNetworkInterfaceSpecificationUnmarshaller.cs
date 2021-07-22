@@ -97,6 +97,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.InterfaceType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ipv4PrefixCount", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Ipv4PrefixCount = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ipv4Prefix/item", targetDepth))
+                    {
+                        var unmarshaller = Ipv4PrefixSpecificationRequestUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Ipv4Prefixes.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("ipv6AddressCount", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
@@ -108,6 +121,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         var unmarshaller = InstanceIpv6AddressUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Ipv6Addresses.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("ipv6PrefixCount", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Ipv6PrefixCount = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ipv6Prefix/item", targetDepth))
+                    {
+                        var unmarshaller = Ipv6PrefixSpecificationRequestUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Ipv6Prefixes.Add(item);
                         continue;
                     }
                     if (context.TestExpression("networkCardIndex", targetDepth))

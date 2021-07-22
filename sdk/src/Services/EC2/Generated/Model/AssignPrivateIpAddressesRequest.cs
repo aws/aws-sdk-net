@@ -57,10 +57,19 @@ namespace Amazon.EC2.Model
     /// <para>
     /// You must specify either the IP addresses or the IP address count in the request.
     /// </para>
+    ///  
+    /// <para>
+    /// You can optionally use Prefix Delegation on the network interface. You must specify
+    /// either the IPv4 Prefix Delegation prefixes, or the IPv4 Prefix Delegation count. For
+    /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
+    /// Delegation</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class AssignPrivateIpAddressesRequest : AmazonEC2Request
     {
         private bool? _allowReassignment;
+        private int? _ipv4PrefixCount;
+        private List<string> _ipv4Prefixes = new List<string>();
         private string _networkInterfaceId;
         private List<string> _privateIpAddresses = new List<string>();
         private int? _secondaryPrivateIpAddressCount;
@@ -82,6 +91,45 @@ namespace Amazon.EC2.Model
         internal bool IsSetAllowReassignment()
         {
             return this._allowReassignment.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv4PrefixCount. 
+        /// <para>
+        /// The number of IPv4 Prefix Delegation prefixes that AWS automatically assigns to the
+        /// network interface. You cannot use this option if you use the <code>Ipv4 Prefixes</code>
+        /// option.
+        /// </para>
+        /// </summary>
+        public int Ipv4PrefixCount
+        {
+            get { return this._ipv4PrefixCount.GetValueOrDefault(); }
+            set { this._ipv4PrefixCount = value; }
+        }
+
+        // Check to see if Ipv4PrefixCount property is set
+        internal bool IsSetIpv4PrefixCount()
+        {
+            return this._ipv4PrefixCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv4Prefixes. 
+        /// <para>
+        /// One or more IPv4 Prefix Delegation prefixes assigned to the network interface. You
+        /// cannot use this option if you use the <code>Ipv4PrefixCount</code> option.
+        /// </para>
+        /// </summary>
+        public List<string> Ipv4Prefixes
+        {
+            get { return this._ipv4Prefixes; }
+            set { this._ipv4Prefixes = value; }
+        }
+
+        // Check to see if Ipv4Prefixes property is set
+        internal bool IsSetIpv4Prefixes()
+        {
+            return this._ipv4Prefixes != null && this._ipv4Prefixes.Count > 0; 
         }
 
         /// <summary>

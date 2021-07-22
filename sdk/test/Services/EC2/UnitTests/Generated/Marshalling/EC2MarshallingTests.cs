@@ -2060,6 +2060,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void CreateSubnetCidrReservationMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateSubnetCidrReservation");
+
+            var request = InstantiateClassGenerator.Execute<CreateSubnetCidrReservationRequest>();
+            var marshaller = new CreateSubnetCidrReservationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateSubnetCidrReservationResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateSubnetCidrReservationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void CreateTagsMarshallTest()
         {
             var operation = service_model.FindOperation("CreateTags");
@@ -3292,6 +3316,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DeleteSubnetCidrReservationMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteSubnetCidrReservation");
+
+            var request = InstantiateClassGenerator.Execute<DeleteSubnetCidrReservationRequest>();
+            var marshaller = new DeleteSubnetCidrReservationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DeleteSubnetCidrReservationResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteSubnetCidrReservationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         
@@ -8208,6 +8256,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = GetSerialConsoleAccessStatusResponseUnmarshaller.Instance.Unmarshall(context)
                 as GetSerialConsoleAccessStatusResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void GetSubnetCidrReservationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSubnetCidrReservations");
+
+            var request = InstantiateClassGenerator.Execute<GetSubnetCidrReservationsRequest>();
+            var marshaller = new GetSubnetCidrReservationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetSubnetCidrReservationsResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetSubnetCidrReservationsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

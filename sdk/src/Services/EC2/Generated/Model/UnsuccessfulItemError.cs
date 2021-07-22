@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Information about the error that occurred. For more information about errors, see
     /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-    /// Codes</a>.
+    /// codes</a>.
     /// </summary>
     public partial class UnsuccessfulItemError
     {

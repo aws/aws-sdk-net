@@ -236,6 +236,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InterfaceType", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.InterfaceType));
                                     }
+                                    if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetIpv4PrefixCount())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ipv4PrefixCount", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.Ipv4PrefixCount));
+                                    }
+                                    if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetIpv4Prefixes())
+                                    {
+                                        int publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex = 1;
+                                        foreach(var publicRequestSpotFleetRequestConfiglistValuelistValuelistValue in publicRequestSpotFleetRequestConfiglistValuelistValue.Ipv4Prefixes)
+                                        {
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValuelistValue.IsSetIpv4Prefix())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ipv4Prefix" + "." + publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex + "." + "Ipv4Prefix", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValuelistValue.Ipv4Prefix));
+                                            }
+                                            publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex++;
+                                        }
+                                    }
                                     if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetIpv6AddressCount())
                                     {
                                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ipv6AddressCount", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.Ipv6AddressCount));
@@ -248,6 +264,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                             if(publicRequestSpotFleetRequestConfiglistValuelistValuelistValue.IsSetIpv6Address())
                                             {
                                                 request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ipv6Addresses" + "." + publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValuelistValue.Ipv6Address));
+                                            }
+                                            publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex++;
+                                        }
+                                    }
+                                    if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetIpv6PrefixCount())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ipv6PrefixCount", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.Ipv6PrefixCount));
+                                    }
+                                    if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetIpv6Prefixes())
+                                    {
+                                        int publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex = 1;
+                                        foreach(var publicRequestSpotFleetRequestConfiglistValuelistValuelistValue in publicRequestSpotFleetRequestConfiglistValuelistValue.Ipv6Prefixes)
+                                        {
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValuelistValue.IsSetIpv6Prefix())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ipv6Prefix" + "." + publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex + "." + "Ipv6Prefix", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValuelistValue.Ipv6Prefix));
                                             }
                                             publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex++;
                                         }

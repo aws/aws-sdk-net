@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-    /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class ReplaceRouteRequest : AmazonEC2Request

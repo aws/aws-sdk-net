@@ -91,11 +91,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>isDefault</code> - Indicates whether the VPC is the default VPC.
+        ///  <code>is-default</code> - Indicates whether the VPC is the default VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>owner-id</code> - The ID of the AWS account that owns the VPC.
+        ///  <code>owner-id</code> - The ID of the account that owns the VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>

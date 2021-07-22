@@ -30,12 +30,32 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the UnassignPrivateIpAddresses operation.
-    /// Unassigns one or more secondary private IP addresses from a network interface.
+    /// Unassigns one or more secondary private IP addresses, or IPv4 Prefix Delegation prefixes
+    /// from a network interface.
     /// </summary>
     public partial class UnassignPrivateIpAddressesRequest : AmazonEC2Request
     {
+        private List<string> _ipv4Prefixes = new List<string>();
         private string _networkInterfaceId;
         private List<string> _privateIpAddresses = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property Ipv4Prefixes. 
+        /// <para>
+        /// The IPv4 Prefix Delegation prefixes to unassign from the network interface.
+        /// </para>
+        /// </summary>
+        public List<string> Ipv4Prefixes
+        {
+            get { return this._ipv4Prefixes; }
+            set { this._ipv4Prefixes = value; }
+        }
+
+        // Check to see if Ipv4Prefixes property is set
+        internal bool IsSetIpv4Prefixes()
+        {
+            return this._ipv4Prefixes != null && this._ipv4Prefixes.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property NetworkInterfaceId. 
@@ -63,7 +83,6 @@ namespace Amazon.EC2.Model
         /// specify this option multiple times to unassign more than one IP address.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<string> PrivateIpAddresses
         {
             get { return this._privateIpAddresses; }

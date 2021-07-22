@@ -38,7 +38,9 @@ namespace Amazon.EC2.Model
         private string _description;
         private List<GroupIdentifier> _groups = new List<GroupIdentifier>();
         private string _interfaceType;
+        private List<InstanceIpv4Prefix> _ipv4Prefixes = new List<InstanceIpv4Prefix>();
         private List<InstanceIpv6Address> _ipv6Addresses = new List<InstanceIpv6Address>();
+        private List<InstanceIpv6Prefix> _ipv6Prefixes = new List<InstanceIpv6Prefix>();
         private string _macAddress;
         private string _networkInterfaceId;
         private string _ownerId;
@@ -145,6 +147,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Ipv4Prefixes. 
+        /// <para>
+        /// The IPv4 delegated prefixes that are assigned to the network interface.
+        /// </para>
+        /// </summary>
+        public List<InstanceIpv4Prefix> Ipv4Prefixes
+        {
+            get { return this._ipv4Prefixes; }
+            set { this._ipv4Prefixes = value; }
+        }
+
+        // Check to see if Ipv4Prefixes property is set
+        internal bool IsSetIpv4Prefixes()
+        {
+            return this._ipv4Prefixes != null && this._ipv4Prefixes.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Ipv6Addresses. 
         /// <para>
         /// One or more IPv6 addresses associated with the network interface.
@@ -160,6 +180,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpv6Addresses()
         {
             return this._ipv6Addresses != null && this._ipv6Addresses.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Prefixes. 
+        /// <para>
+        /// The IPv6 delegated prefixes that are assigned to the network interface.
+        /// </para>
+        /// </summary>
+        public List<InstanceIpv6Prefix> Ipv6Prefixes
+        {
+            get { return this._ipv6Prefixes; }
+            set { this._ipv6Prefixes = value; }
+        }
+
+        // Check to see if Ipv6Prefixes property is set
+        internal bool IsSetIpv6Prefixes()
+        {
+            return this._ipv6Prefixes != null && this._ipv6Prefixes.Count > 0; 
         }
 
         /// <summary>

@@ -99,7 +99,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ARN of the AWS Key Management Service (AWS KMS) CMK used for encryption.
+        /// The ARN of the Key Management Service (KMS) CMK used for encryption.
         /// </para>
         /// </summary>
         public string KmsKeyId
