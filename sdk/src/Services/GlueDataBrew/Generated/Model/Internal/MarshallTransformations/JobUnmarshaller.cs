@@ -82,6 +82,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedBy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DatabaseOutputs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DatabaseOutput, DatabaseOutputUnmarshaller>(DatabaseOutputUnmarshaller.Instance);
+                    unmarshalledObject.DatabaseOutputs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DataCatalogOutputs", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<DataCatalogOutput, DataCatalogOutputUnmarshaller>(DataCatalogOutputUnmarshaller.Instance);

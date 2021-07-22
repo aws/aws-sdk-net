@@ -36,6 +36,7 @@ namespace Amazon.GlueDataBrew.Model
         private string _accountId;
         private DateTime? _createDate;
         private string _createdBy;
+        private List<DatabaseOutput> _databaseOutputs = new List<DatabaseOutput>();
         private List<DataCatalogOutput> _dataCatalogOutputs = new List<DataCatalogOutput>();
         private string _datasetName;
         private string _encryptionKeyArn;
@@ -112,10 +113,30 @@ namespace Amazon.GlueDataBrew.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DatabaseOutputs. 
+        /// <para>
+        /// Represents a list of JDBC database output objects which defines the output destination
+        /// for a DataBrew recipe job to write into.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<DatabaseOutput> DatabaseOutputs
+        {
+            get { return this._databaseOutputs; }
+            set { this._databaseOutputs = value; }
+        }
+
+        // Check to see if DatabaseOutputs property is set
+        internal bool IsSetDatabaseOutputs()
+        {
+            return this._databaseOutputs != null && this._databaseOutputs.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DataCatalogOutputs. 
         /// <para>
-        /// One or more artifacts that represent the AWS Glue Data Catalog output from running
-        /// the job.
+        /// One or more artifacts that represent the Glue Data Catalog output from running the
+        /// job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

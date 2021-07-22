@@ -713,6 +713,16 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.ColumnSelector.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.ColumnSelector.Regex</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.ConditionExpression.Condition</property>
     <min>1</min>
     <max>128</max>
@@ -743,6 +753,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.DatabaseInputDefinition.GlueConnectionName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.DatabaseOutput.GlueConnectionName</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -999,6 +1014,11 @@
     <property>Amazon.GlueDataBrew.Model.Schedule.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.StatisticOverride.Statistic</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.ViewFrame.ColumnRange</property>

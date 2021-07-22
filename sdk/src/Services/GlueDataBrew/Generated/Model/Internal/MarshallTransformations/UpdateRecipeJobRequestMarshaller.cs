@@ -68,6 +68,22 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDatabaseOutputs())
+                {
+                    context.Writer.WritePropertyName("DatabaseOutputs");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDatabaseOutputsListValue in publicRequest.DatabaseOutputs)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DatabaseOutputMarshaller.Instance;
+                        marshaller.Marshall(publicRequestDatabaseOutputsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDataCatalogOutputs())
                 {
                     context.Writer.WritePropertyName("DataCatalogOutputs");

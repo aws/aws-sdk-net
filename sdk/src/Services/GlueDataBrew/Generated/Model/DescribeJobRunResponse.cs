@@ -35,6 +35,7 @@ namespace Amazon.GlueDataBrew.Model
     {
         private int? _attempt;
         private DateTime? _completedOn;
+        private List<DatabaseOutput> _databaseOutputs = new List<DatabaseOutput>();
         private List<DataCatalogOutput> _dataCatalogOutputs = new List<DataCatalogOutput>();
         private string _datasetName;
         private string _errorMessage;
@@ -44,6 +45,7 @@ namespace Amazon.GlueDataBrew.Model
         private string _logGroupName;
         private LogSubscription _logSubscription;
         private List<Output> _outputs = new List<Output>();
+        private ProfileConfiguration _profileConfiguration;
         private RecipeReference _recipeReference;
         private string _runId;
         private string _startedBy;
@@ -87,10 +89,30 @@ namespace Amazon.GlueDataBrew.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DatabaseOutputs. 
+        /// <para>
+        /// Represents a list of JDBC database output objects which defines the output destination
+        /// for a DataBrew recipe job to write into.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<DatabaseOutput> DatabaseOutputs
+        {
+            get { return this._databaseOutputs; }
+            set { this._databaseOutputs = value; }
+        }
+
+        // Check to see if DatabaseOutputs property is set
+        internal bool IsSetDatabaseOutputs()
+        {
+            return this._databaseOutputs != null && this._databaseOutputs.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DataCatalogOutputs. 
         /// <para>
-        /// One or more artifacts that represent the AWS Glue Data Catalog output from running
-        /// the job.
+        /// One or more artifacts that represent the Glue Data Catalog output from running the
+        /// job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -256,6 +278,26 @@ namespace Amazon.GlueDataBrew.Model
         internal bool IsSetOutputs()
         {
             return this._outputs != null && this._outputs.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileConfiguration. 
+        /// <para>
+        /// Configuration for profile jobs. Used to select columns, do evaluations, and override
+        /// default parameters of evaluations. When configuration is null, the profile job will
+        /// run with default settings.
+        /// </para>
+        /// </summary>
+        public ProfileConfiguration ProfileConfiguration
+        {
+            get { return this._profileConfiguration; }
+            set { this._profileConfiguration = value; }
+        }
+
+        // Check to see if ProfileConfiguration property is set
+        internal bool IsSetProfileConfiguration()
+        {
+            return this._profileConfiguration != null;
         }
 
         /// <summary>

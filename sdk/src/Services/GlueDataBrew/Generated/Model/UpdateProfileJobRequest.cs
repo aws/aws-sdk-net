@@ -34,6 +34,7 @@ namespace Amazon.GlueDataBrew.Model
     /// </summary>
     public partial class UpdateProfileJobRequest : AmazonGlueDataBrewRequest
     {
+        private ProfileConfiguration _configuration;
         private string _encryptionKeyArn;
         private EncryptionMode _encryptionMode;
         private JobSample _jobSample;
@@ -44,6 +45,26 @@ namespace Amazon.GlueDataBrew.Model
         private S3Location _outputLocation;
         private string _roleArn;
         private int? _timeout;
+
+        /// <summary>
+        /// Gets and sets the property Configuration. 
+        /// <para>
+        /// Configuration for profile jobs. Used to select columns, do evaluations, and override
+        /// default parameters of evaluations. When configuration is null, the profile job will
+        /// run with default settings.
+        /// </para>
+        /// </summary>
+        public ProfileConfiguration Configuration
+        {
+            get { return this._configuration; }
+            set { this._configuration = value; }
+        }
+
+        // Check to see if Configuration property is set
+        internal bool IsSetConfiguration()
+        {
+            return this._configuration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EncryptionKeyArn. 

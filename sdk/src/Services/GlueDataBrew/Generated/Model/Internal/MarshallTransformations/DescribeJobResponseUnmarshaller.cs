@@ -63,6 +63,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                     response.CreatedBy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DatabaseOutputs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DatabaseOutput, DatabaseOutputUnmarshaller>(DatabaseOutputUnmarshaller.Instance);
+                    response.DatabaseOutputs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DataCatalogOutputs", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<DataCatalogOutput, DataCatalogOutputUnmarshaller>(DataCatalogOutputUnmarshaller.Instance);
@@ -133,6 +139,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<Output, OutputUnmarshaller>(OutputUnmarshaller.Instance);
                     response.Outputs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProfileConfiguration", targetDepth))
+                {
+                    var unmarshaller = ProfileConfigurationUnmarshaller.Instance;
+                    response.ProfileConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ProjectName", targetDepth))
