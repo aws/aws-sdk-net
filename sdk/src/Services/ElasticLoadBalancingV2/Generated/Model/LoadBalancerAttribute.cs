@@ -96,7 +96,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Indicates whether the two headers (<code>x-amzn-tls-version</code> and <code>x-amzn-tls-cipher-suite</code>),
+        ///  <code>routing.http.x_amzn_tls_version_and_cipher_suite.enabled</code> - Indicates
+        /// whether the two headers (<code>x-amzn-tls-version</code> and <code>x-amzn-tls-cipher-suite</code>),
         /// which contain information about the negotiated TLS version and cipher suite, are added
         /// to the client request before sending it to the target. The <code>x-amzn-tls-version</code>
         /// header has information about the TLS protocol version negotiated with the client,
