@@ -1,3 +1,11 @@
+### 3.7.80.0 (2021-07-23 18:14 UTC)
+* Imagebuilder (3.7.2.9)
+	* Update to documentation to reapply missing change to SSM uninstall switch default value and improve description.
+* S3Outposts (3.7.1.0)
+	* Add on-premise access type support for endpoints
+* SecurityHub (3.7.4.0)
+	* Added product name, company name, and Region fields for security findings. Added details objects for RDS event subscriptions and AWS ECS services. Added fields to the details for AWS Elasticsearch domains.
+
 ### 3.7.79.0 (2021-07-22 18:18 UTC)
 * EC2 (3.7.19.0)
 	* This release allows customers to assign prefixes to their elastic network interface and to reserve IP blocks in their subnet CIDRs. These reserved blocks can be used to assign prefixes to elastic network interfaces or be excluded from auto-assignment.
