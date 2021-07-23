@@ -45,6 +45,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsElasticsearchDomainLogPublishingOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAuditLogs())
+            {
+                context.Writer.WritePropertyName("AuditLogs");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsElasticsearchDomainLogPublishingOptionsLogConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.AuditLogs, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetIndexSlowLogs())
             {
                 context.Writer.WritePropertyName("IndexSlowLogs");

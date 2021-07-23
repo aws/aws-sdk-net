@@ -299,7 +299,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property TracingEnabled. 
         /// <para>
-        /// Indicates whether active tracing with AWS X-Ray is enabled for the stage.
+        /// Indicates whether active tracing with X-Ray is enabled for the stage.
         /// </para>
         /// </summary>
         public bool TracingEnabled

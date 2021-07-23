@@ -97,7 +97,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The ID of an AWS account.
+        /// The ID of an Amazon Web Services account.
         /// </para>
         ///  
         /// <para>

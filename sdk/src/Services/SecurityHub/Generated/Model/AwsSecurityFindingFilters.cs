@@ -88,6 +88,7 @@ namespace Amazon.SecurityHub.Model
         private List<StringFilter> _productName = new List<StringFilter>();
         private List<StringFilter> _recommendationText = new List<StringFilter>();
         private List<StringFilter> _recordState = new List<StringFilter>();
+        private List<StringFilter> _region = new List<StringFilter>();
         private List<StringFilter> _relatedFindingsId = new List<StringFilter>();
         private List<StringFilter> _relatedFindingsProductArn = new List<StringFilter>();
         private List<StringFilter> _resourceAwsEc2InstanceIamInstanceProfileArn = new List<StringFilter>();
@@ -100,8 +101,10 @@ namespace Amazon.SecurityHub.Model
         private List<StringFilter> _resourceAwsEc2InstanceType = new List<StringFilter>();
         private List<StringFilter> _resourceAwsEc2InstanceVpcId = new List<StringFilter>();
         private List<DateFilter> _resourceAwsIamAccessKeyCreatedAt = new List<DateFilter>();
+        private List<StringFilter> _resourceAwsIamAccessKeyPrincipalName = new List<StringFilter>();
         private List<StringFilter> _resourceAwsIamAccessKeyStatus = new List<StringFilter>();
         private List<StringFilter> _resourceAwsIamAccessKeyUserName = new List<StringFilter>();
+        private List<StringFilter> _resourceAwsIamUserUserName = new List<StringFilter>();
         private List<StringFilter> _resourceAwsS3BucketOwnerId = new List<StringFilter>();
         private List<StringFilter> _resourceAwsS3BucketOwnerName = new List<StringFilter>();
         private List<StringFilter> _resourceContainerImageId = new List<StringFilter>();
@@ -135,7 +138,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The AWS account ID that a finding is generated in.
+        /// The Amazon Web Services account ID that a finding is generated in.
         /// </para>
         /// </summary>
         public List<StringFilter> AwsAccountId
@@ -156,6 +159,12 @@ namespace Amazon.SecurityHub.Model
         /// The name of the findings provider (company) that owns the solution (product) that
         /// generates findings.
         /// </para>
+        ///  
+        /// <para>
+        /// Note that this is a filter against the <code>aws/securityhub/CompanyName</code> field
+        /// in <code>ProductFields</code>. It is not a filter for the top-level <code>CompanyName</code>
+        /// field.
+        /// </para>
         /// </summary>
         public List<StringFilter> CompanyName
         {
@@ -173,8 +182,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ComplianceStatus. 
         /// <para>
         /// Exclusive to findings that are generated as the result of a check run against a specific
-        /// rule in a supported standard, such as CIS AWS Foundations. Contains security standard-related
-        /// finding details.
+        /// rule in a supported standard, such as CIS Amazon Web Services Foundations. Contains
+        /// security standard-related finding details.
         /// </para>
         /// </summary>
         public List<StringFilter> ComplianceStatus
@@ -991,6 +1000,12 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The name of the solution (product) that generates findings.
         /// </para>
+        ///  
+        /// <para>
+        /// Note that this is a filter against the <code>aws/securityhub/ProductName</code> field
+        /// in <code>ProductFields</code>. It is not a filter for the top-level <code>ProductName</code>
+        /// field.
+        /// </para>
         /// </summary>
         public List<StringFilter> ProductName
         {
@@ -1038,6 +1053,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetRecordState()
         {
             return this._recordState != null && this._recordState.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Region. 
+        /// <para>
+        /// The Region from which the finding was generated.
+        /// </para>
+        /// </summary>
+        public List<StringFilter> Region
+        {
+            get { return this._region; }
+            set { this._region = value; }
+        }
+
+        // Check to see if Region property is set
+        internal bool IsSetRegion()
+        {
+            return this._region != null && this._region.Count > 0; 
         }
 
         /// <summary>
@@ -1257,6 +1290,24 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResourceAwsIamAccessKeyPrincipalName. 
+        /// <para>
+        /// The name of the principal that is associated with an IAM access key.
+        /// </para>
+        /// </summary>
+        public List<StringFilter> ResourceAwsIamAccessKeyPrincipalName
+        {
+            get { return this._resourceAwsIamAccessKeyPrincipalName; }
+            set { this._resourceAwsIamAccessKeyPrincipalName = value; }
+        }
+
+        // Check to see if ResourceAwsIamAccessKeyPrincipalName property is set
+        internal bool IsSetResourceAwsIamAccessKeyPrincipalName()
+        {
+            return this._resourceAwsIamAccessKeyPrincipalName != null && this._resourceAwsIamAccessKeyPrincipalName.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceAwsIamAccessKeyStatus. 
         /// <para>
         /// The status of the IAM access key related to a finding.
@@ -1280,6 +1331,7 @@ namespace Amazon.SecurityHub.Model
         /// The user associated with the IAM access key related to a finding.
         /// </para>
         /// </summary>
+        [Obsolete("This filter is deprecated. Instead, use ResourceAwsIamAccessKeyPrincipalName.")]
         public List<StringFilter> ResourceAwsIamAccessKeyUserName
         {
             get { return this._resourceAwsIamAccessKeyUserName; }
@@ -1290,6 +1342,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetResourceAwsIamAccessKeyUserName()
         {
             return this._resourceAwsIamAccessKeyUserName != null && this._resourceAwsIamAccessKeyUserName.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceAwsIamUserUserName. 
+        /// <para>
+        /// The name of an IAM user.
+        /// </para>
+        /// </summary>
+        public List<StringFilter> ResourceAwsIamUserUserName
+        {
+            get { return this._resourceAwsIamUserUserName; }
+            set { this._resourceAwsIamUserUserName = value; }
+        }
+
+        // Check to see if ResourceAwsIamUserUserName property is set
+        internal bool IsSetResourceAwsIamUserUserName()
+        {
+            return this._resourceAwsIamUserUserName != null && this._resourceAwsIamUserUserName.Count > 0; 
         }
 
         /// <summary>
@@ -1440,7 +1510,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ResourcePartition. 
         /// <para>
-        /// The canonical AWS partition name that the Region is assigned to.
+        /// The canonical Amazon Web Services partition name that the Region is assigned to.
         /// </para>
         /// </summary>
         public List<StringFilter> ResourcePartition
@@ -1458,7 +1528,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ResourceRegion. 
         /// <para>
-        /// The canonical AWS external Region name where this resource is located.
+        /// The canonical Amazon Web Services external Region name where this resource is located.
         /// </para>
         /// </summary>
         public List<StringFilter> ResourceRegion
@@ -1476,7 +1546,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ResourceTags. 
         /// <para>
-        /// A list of AWS tags associated with a resource at the time the finding was processed.
+        /// A list of Amazon Web Services tags associated with a resource at the time the finding
+        /// was processed.
         /// </para>
         /// </summary>
         public List<MapFilter> ResourceTags
@@ -1533,7 +1604,7 @@ namespace Amazon.SecurityHub.Model
         /// The normalized severity of a finding.
         /// </para>
         /// </summary>
-        [Obsolete("This filter is deprecated, use SeverityLabel or FindingProviderFieldsSeverityLabel instead.")]
+        [Obsolete("This filter is deprecated. Instead, use SeverityLabel or FindingProviderFieldsSeverityLabel.")]
         public List<NumberFilter> SeverityNormalized
         {
             get { return this._severityNormalized; }
@@ -1553,7 +1624,7 @@ namespace Amazon.SecurityHub.Model
         /// the finding.
         /// </para>
         /// </summary>
-        [Obsolete("This filter is deprecated, use FindingProviiltersSeverityOriginal instead.")]
+        [Obsolete("This filter is deprecated. Instead, use FindingProviderSeverityOriginal.")]
         public List<NumberFilter> SeverityProduct
         {
             get { return this._severityProduct; }

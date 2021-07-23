@@ -254,6 +254,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsEcsService())
+            {
+                context.Writer.WritePropertyName("AwsEcsService");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsEcsServiceDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsEcsService, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsEcsTaskDefinition())
             {
                 context.Writer.WritePropertyName("AwsEcsTaskDefinition");
@@ -437,6 +448,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsRdsDbSnapshotDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsRdsDbSnapshot, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsRdsEventSubscription())
+            {
+                context.Writer.WritePropertyName("AwsRdsEventSubscription");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsRdsEventSubscriptionDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsRdsEventSubscription, context);
 
                 context.Writer.WriteObjectEnd();
             }

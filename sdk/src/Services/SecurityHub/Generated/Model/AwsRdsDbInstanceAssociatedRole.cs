@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// An AWS Identity and Access Management (IAM) role associated with the DB instance.
+    /// An IAM role associated with the DB instance.
     /// </summary>
     public partial class AwsRdsDbInstanceAssociatedRole
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property FeatureName. 
         /// <para>
-        /// The name of the feature associated with the IAM)role.
+        /// The name of the feature associated with the IAM role.
         /// </para>
         /// </summary>
         public string FeatureName
@@ -82,7 +82,7 @@ namespace Amazon.SecurityHub.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>ACTIVE</code> - The IAM role ARN is associated with the DB instance and can
-        /// be used to access other AWS services on your behalf.
+        /// be used to access other Amazon Web Services services on your behalf.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -91,8 +91,8 @@ namespace Amazon.SecurityHub.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>INVALID</code> - The IAM role ARN is associated with the DB instance. But the
-        /// DB instance is unable to assume the IAM role in order to access other AWS services
-        /// on your behalf. 
+        /// DB instance is unable to assume the IAM role in order to access other Amazon Web Services
+        /// services on your behalf. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

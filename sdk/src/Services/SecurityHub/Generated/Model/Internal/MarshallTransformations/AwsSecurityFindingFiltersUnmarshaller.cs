@@ -352,6 +352,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.RecordState = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Region", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
+                    unmarshalledObject.Region = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RelatedFindingsId", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
@@ -424,6 +430,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResourceAwsIamAccessKeyCreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ResourceAwsIamAccessKeyPrincipalName", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
+                    unmarshalledObject.ResourceAwsIamAccessKeyPrincipalName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceAwsIamAccessKeyStatus", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
@@ -434,6 +446,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.ResourceAwsIamAccessKeyUserName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ResourceAwsIamUserUserName", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
+                    unmarshalledObject.ResourceAwsIamUserUserName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ResourceAwsS3BucketOwnerId", targetDepth))

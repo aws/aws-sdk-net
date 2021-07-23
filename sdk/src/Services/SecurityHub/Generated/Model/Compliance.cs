@@ -82,9 +82,9 @@ namespace Amazon.SecurityHub.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage,
-        /// API error, or because the result of the AWS Config evaluation was <code>NOT_APPLICABLE</code>.
-        /// If the AWS Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3
-        /// days, Security Hub automatically archives the finding.
+        /// API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>.
+        /// If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days,
+        /// Security Hub automatically archives the finding.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
@@ -105,7 +105,7 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// For findings generated from controls, a list of reasons behind the value of <code>Status</code>.
         /// For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related
-        /// information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>. 
+        /// information in the ASFF</a> in the <i>Security Hub User Guide</i>. 
         /// </para>
         /// </summary>
         public List<StatusReason> StatusReasons

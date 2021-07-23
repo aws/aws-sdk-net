@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// A remote IP address issued an AWS API call
+    /// A remote IP address issued an Amazon Web Services API call
     /// </para>
     ///  </li> <li> 
     /// <para>

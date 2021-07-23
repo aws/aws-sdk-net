@@ -115,7 +115,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The identifier of the AWS account that owns the network ACL.
+        /// The identifier of the Amazon Web Services account that owns the network ACL.
         /// </para>
         /// </summary>
         public string OwnerId

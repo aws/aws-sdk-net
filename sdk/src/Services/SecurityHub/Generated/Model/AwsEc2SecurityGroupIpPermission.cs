@@ -143,9 +143,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property PrefixListIds. 
         /// <para>
-        /// [VPC only] The prefix list IDs for an AWS service. With outbound rules, this is the
-        /// AWS service to access through a VPC endpoint from instances associated with the security
-        /// group.
+        /// [VPC only] The prefix list IDs for an Amazon Web Services service. With outbound rules,
+        /// this is the Amazon Web Services service to access through a VPC endpoint from instances
+        /// associated with the security group.
         /// </para>
         /// </summary>
         public List<AwsEc2SecurityGroupPrefixListId> PrefixListIds
@@ -186,7 +186,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property UserIdGroupPairs. 
         /// <para>
-        /// The security group and AWS account ID pairs.
+        /// The security group and Amazon Web Services account ID pairs.
         /// </para>
         /// </summary>
         public List<AwsEc2SecurityGroupUserIdGroupPair> UserIdGroupPairs

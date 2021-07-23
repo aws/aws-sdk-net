@@ -207,7 +207,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property CrossAccountClone. 
         /// <para>
-        /// Whether the DB cluster is a clone of a DB cluster owned by a different AWS account.
+        /// Whether the DB cluster is a clone of a DB cluster owned by a different Amazon Web
+        /// Services account.
         /// </para>
         /// </summary>
         public bool CrossAccountClone
@@ -334,8 +335,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property DbClusterResourceId. 
         /// <para>
-        /// The identifier of the DB cluster. The identifier must be unique within each AWS Region
-        /// and is immutable.
+        /// The identifier of the DB cluster. The identifier must be unique within each Amazon
+        /// Web Services Region and is immutable.
         /// </para>
         /// </summary>
         public string DbClusterResourceId
@@ -552,8 +553,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ARN of the AWS KMS master key that is used to encrypt the database instances in
-        /// the DB cluster.
+        /// The ARN of the KMS master key that is used to encrypt the database instances in the
+        /// DB cluster.
         /// </para>
         /// </summary>
         public string KmsKeyId

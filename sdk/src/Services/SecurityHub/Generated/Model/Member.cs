@@ -44,7 +44,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID of the member account.
+        /// The Amazon Web Services account ID of the member account.
         /// </para>
         /// </summary>
         public string AccountId
@@ -62,8 +62,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AdministratorId. 
         /// <para>
-        /// The AWS account ID of the Security Hub administrator account associated with this
-        /// member account.
+        /// The Amazon Web Services account ID of the Security Hub administrator account associated
+        /// with this member account.
         /// </para>
         /// </summary>
         public string AdministratorId
@@ -121,8 +121,8 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// The AWS account ID of the Security Hub administrator account associated with this
-        /// member account.
+        /// The Amazon Web Services account ID of the Security Hub administrator account associated
+        /// with this member account.
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated, use AdministratorId instead.")]
@@ -177,6 +177,12 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  <code>DELETED</code> - Indicates that the administrator account deleted the member
         /// account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was suspended
+        /// from Amazon Web Services at the same time that the administrator account tried to
+        /// enable the organization account as a member account.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -100,8 +100,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Findings. 
         /// <para>
         /// A list of findings to import. To successfully import a finding, it must follow the
-        /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">AWS
-        /// Security Finding Format</a>. Maximum of 100 findings per request.
+        /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon
+        /// Web Services Security Finding Format</a>. Maximum of 100 findings per request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

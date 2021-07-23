@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// An attachment to an AWS EC2 volume.
+    /// An attachment to an Amazon EC2 volume.
     /// </summary>
     public partial class AwsEc2VolumeAttachment
     {

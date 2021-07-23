@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Details for a rule in a WAF WebACL.
+    /// Details for a rule in an WAF WebACL.
     /// </summary>
     public partial class AwsWafWebAclRule
     {
@@ -43,8 +43,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// Specifies the action that CloudFront or AWS WAF takes when a web request matches the
-        /// conditions in the rule. 
+        /// Specifies the action that CloudFront or WAF takes when a web request matches the conditions
+        /// in the rule. 
         /// </para>
         /// </summary>
         public WafAction Action

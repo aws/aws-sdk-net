@@ -64,7 +64,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID of the account for the key.
+        /// The Amazon Web Services account ID of the account for the key.
         /// </para>
         /// </summary>
         public string AccountId

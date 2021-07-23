@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// An IAM role that the cluster can use to access other AWS services.
+    /// An IAM role that the cluster can use to access other Amazon Web Services services.
     /// </summary>
     public partial class AwsRedshiftClusterIamRole
     {

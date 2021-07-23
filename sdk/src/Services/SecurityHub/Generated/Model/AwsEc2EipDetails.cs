@@ -47,8 +47,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AllocationId. 
         /// <para>
-        /// The identifier that AWS assigns to represent the allocation of the Elastic IP address
-        /// for use with Amazon VPC.
+        /// The identifier that Amazon Web Services assigns to represent the allocation of the
+        /// Elastic IP address for use with Amazon VPC.
         /// </para>
         /// </summary>
         public string AllocationId
@@ -162,7 +162,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaceOwnerId. 
         /// <para>
-        /// The AWS account ID of the owner of the network interface.
+        /// The Amazon Web Services account ID of the owner of the network interface.
         /// </para>
         /// </summary>
         public string NetworkInterfaceOwnerId

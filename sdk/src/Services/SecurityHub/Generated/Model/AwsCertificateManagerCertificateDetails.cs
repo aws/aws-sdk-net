@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Provides details about an AWS Certificate Manager certificate.
+    /// Provides details about an Certificate Manager certificate.
     /// </summary>
     public partial class AwsCertificateManagerCertificateDetails
     {
@@ -216,7 +216,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property InUseBy. 
         /// <para>
-        /// The list of ARNs for the AWS resources that use the certificate.
+        /// The list of ARNs for the Amazon Web Services resources that use the certificate.
         /// </para>
         /// </summary>
         public List<string> InUseBy
@@ -406,8 +406,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property RenewalSummary. 
         /// <para>
-        /// Information about the status of the AWS Certificate Manager managed renewal for the
-        /// certificate. Provided only when the certificate type is <code>AMAZON_ISSUED</code>.
+        /// Information about the status of the Certificate Manager managed renewal for the certificate.
+        /// Provided only when the certificate type is <code>AMAZON_ISSUED</code>.
         /// </para>
         /// </summary>
         public AwsCertificateManagerCertificateRenewalSummary RenewalSummary
@@ -528,7 +528,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The source of the certificate. For certificates that AWS Certificate Manager provides,
+        /// The source of the certificate. For certificates that Certificate Manager provides,
         /// <code>Type</code> is <code>AMAZON_ISSUED</code>. For certificates that are imported
         /// with <code>ImportCertificate</code>, <code>Type</code> is <code>IMPORTED</code>.
         /// </para>

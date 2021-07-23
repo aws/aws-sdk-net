@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Information about an AWS CodeBuild project.
+    /// Information about an CodeBuild project.
     /// </summary>
     public partial class AwsCodeBuildProjectDetails
     {
@@ -43,8 +43,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property EncryptionKey. 
         /// <para>
-        /// The AWS Key Management Service (AWS KMS) customer master key (CMK) used to encrypt
-        /// the build output artifacts.
+        /// The KMS customer master key (CMK) used to encrypt the build output artifacts.
         /// </para>
         ///  
         /// <para>
@@ -103,8 +102,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
-        /// The ARN of the IAM role that enables AWS CodeBuild to interact with dependent AWS
-        /// services on behalf of the AWS account.
+        /// The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web
+        /// Services services on behalf of the Amazon Web Services account.
         /// </para>
         /// </summary>
         public string ServiceRole
@@ -140,7 +139,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property VpcConfig. 
         /// <para>
-        /// Information about the VPC configuration that AWS CodeBuild accesses.
+        /// Information about the VPC configuration that CodeBuild accesses.
         /// </para>
         /// </summary>
         public AwsCodeBuildProjectVpcConfig VpcConfig

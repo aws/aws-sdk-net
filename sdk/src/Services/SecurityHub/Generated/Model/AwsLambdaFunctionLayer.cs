@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// An AWS Lambda layer.
+    /// An Lambda layer.
     /// </summary>
     public partial class AwsLambdaFunctionLayer
     {

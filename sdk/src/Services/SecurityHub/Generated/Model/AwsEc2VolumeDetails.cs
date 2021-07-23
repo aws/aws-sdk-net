@@ -104,8 +104,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) that
-        /// was used to protect the volume encryption key for the volume.
+        /// The ARN of the KMS customer master key (CMK) that was used to protect the volume encryption
+        /// key for the volume.
         /// </para>
         /// </summary>
         public string KmsKeyId

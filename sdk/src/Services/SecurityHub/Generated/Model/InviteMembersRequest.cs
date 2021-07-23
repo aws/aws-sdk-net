@@ -30,8 +30,8 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the InviteMembers operation.
-    /// Invites other AWS accounts to become member accounts for the Security Hub administrator
-    /// account that the invitation is sent from.
+    /// Invites other Amazon Web Services accounts to become member accounts for the Security
+    /// Hub administrator account that the invitation is sent from.
     /// 
     ///  
     /// <para>
@@ -40,8 +40,8 @@ namespace Amazon.SecurityHub.Model
     /// </para>
     ///  
     /// <para>
-    /// Before you can use this action to invite a member, you must first use the <code> <a>CreateMembers</a>
-    /// </code> action to create the member account in Security Hub.
+    /// Before you can use this action to invite a member, you must first use the <code>CreateMembers</code>
+    /// action to create the member account in Security Hub.
     /// </para>
     ///  
     /// <para>
@@ -57,8 +57,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// The list of account IDs of the AWS accounts to invite to Security Hub as members.
-        /// 
+        /// The list of account IDs of the Amazon Web Services accounts to invite to Security
+        /// Hub as members. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

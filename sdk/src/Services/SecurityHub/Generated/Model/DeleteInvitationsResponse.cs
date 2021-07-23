@@ -38,8 +38,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property UnprocessedAccounts. 
         /// <para>
-        /// The list of AWS accounts for which the invitations were not deleted. For each account,
-        /// the list includes the account ID and the email address.
+        /// The list of Amazon Web Services accounts for which the invitations were not deleted.
+        /// For each account, the list includes the account ID and the email address.
         /// </para>
         /// </summary>
         public List<Result> UnprocessedAccounts

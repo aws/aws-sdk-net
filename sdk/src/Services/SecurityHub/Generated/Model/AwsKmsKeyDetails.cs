@@ -44,7 +44,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AWSAccountId. 
         /// <para>
-        /// The twelve-digit account ID of the AWS account that owns the CMK.
+        /// The twelve-digit account ID of the Amazon Web Services account that owns the CMK.
         /// </para>
         /// </summary>
         public string AWSAccountId
@@ -122,8 +122,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property KeyManager. 
         /// <para>
-        /// The manager of the CMK. CMKs in your AWS account are either customer managed or AWS
-        /// managed.
+        /// The manager of the CMK. CMKs in your Amazon Web Services account are either customer
+        /// managed or Amazon Web Services managed.
         /// </para>
         /// </summary>
         public string KeyManager
@@ -163,7 +163,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// When this value is <code>AWS_KMS</code>, AWS KMS created the key material.
+        /// When this value is <code>AWS_KMS</code>, KMS created the key material.
         /// </para>
         ///  
         /// <para>
@@ -173,7 +173,7 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the
-        /// AWS CloudHSM cluster associated with a custom key store.
+        /// CloudHSM cluster associated with a custom key store.
         /// </para>
         /// </summary>
         public string Origin

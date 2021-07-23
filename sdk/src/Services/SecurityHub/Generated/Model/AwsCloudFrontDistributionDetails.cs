@@ -237,8 +237,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property WebAclId. 
         /// <para>
-        /// A unique identifier that specifies the AWS WAF web ACL, if any, to associate with
-        /// this distribution.
+        /// A unique identifier that specifies the WAF web ACL, if any, to associate with this
+        /// distribution.
         /// </para>
         /// </summary>
         public string WebAclId

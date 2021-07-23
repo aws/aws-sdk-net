@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Details about the action that CloudFront or AWS WAF takes when a web request matches
-    /// the conditions in the rule.
+    /// Details about the action that CloudFront or WAF takes when a web request matches the
+    /// conditions in the rule.
     /// </summary>
     public partial class WafAction
     {
@@ -39,8 +39,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Specifies how you want AWS WAF to respond to requests that match the settings in a
-        /// rule.
+        /// Specifies how you want WAF to respond to requests that match the settings in a rule.
         /// </para>
         ///  
         /// <para>
@@ -48,18 +47,18 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALLOW</code> - AWS WAF allows requests
+        ///  <code>ALLOW</code> - WAF allows requests
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BLOCK</code> - AWS WAF blocks requests
+        ///  <code>BLOCK</code> - WAF blocks requests
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COUNT</code> - AWS WAF increments a counter of the requests that match all
-        /// of the conditions in the rule. AWS WAF then continues to inspect the web request based
-        /// on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the
-        /// default action for a WebACL.
+        ///  <code>COUNT</code> - WAF increments a counter of the requests that match all of the
+        /// conditions in the rule. WAF then continues to inspect the web request based on the
+        /// remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default
+        /// action for a WebACL.
         /// </para>
         ///  </li> </ul>
         /// </summary>

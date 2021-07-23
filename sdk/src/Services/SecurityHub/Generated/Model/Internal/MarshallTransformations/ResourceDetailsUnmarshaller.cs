@@ -178,6 +178,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsEcsCluster = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsEcsService", targetDepth))
+                {
+                    var unmarshaller = AwsEcsServiceDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsEcsService = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsEcsTaskDefinition", targetDepth))
                 {
                     var unmarshaller = AwsEcsTaskDefinitionDetailsUnmarshaller.Instance;
@@ -278,6 +284,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AwsRdsDbSnapshotDetailsUnmarshaller.Instance;
                     unmarshalledObject.AwsRdsDbSnapshot = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsRdsEventSubscription", targetDepth))
+                {
+                    var unmarshaller = AwsRdsEventSubscriptionDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsRdsEventSubscription = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AwsRedshiftCluster", targetDepth))

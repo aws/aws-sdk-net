@@ -33,8 +33,24 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsElasticsearchDomainLogPublishingOptions
     {
+        private AwsElasticsearchDomainLogPublishingOptionsLogConfig _auditLogs;
         private AwsElasticsearchDomainLogPublishingOptionsLogConfig _indexSlowLogs;
         private AwsElasticsearchDomainLogPublishingOptionsLogConfig _searchSlowLogs;
+
+        /// <summary>
+        /// Gets and sets the property AuditLogs.
+        /// </summary>
+        public AwsElasticsearchDomainLogPublishingOptionsLogConfig AuditLogs
+        {
+            get { return this._auditLogs; }
+            set { this._auditLogs = value; }
+        }
+
+        // Check to see if AuditLogs property is set
+        internal bool IsSetAuditLogs()
+        {
+            return this._auditLogs != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IndexSlowLogs. 

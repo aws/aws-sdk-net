@@ -88,6 +88,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.DomainName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ElasticsearchClusterConfig", targetDepth))
+                {
+                    var unmarshaller = AwsElasticsearchDomainElasticsearchClusterConfigDetailsUnmarshaller.Instance;
+                    unmarshalledObject.ElasticsearchClusterConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ElasticsearchVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

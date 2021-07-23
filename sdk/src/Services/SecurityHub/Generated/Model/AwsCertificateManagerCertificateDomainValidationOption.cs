@@ -38,7 +38,7 @@ namespace Amazon.SecurityHub.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The validation of each domain name in the certificate, as it pertains to AWS Certificate
+    /// The validation of each domain name in the certificate, as it pertains to Certificate
     /// Manager managed renewal
     /// </para>
     ///  </li> </ul>
@@ -91,7 +91,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ValidationDomain. 
         /// <para>
-        /// The domain name that AWS Certificate Manager uses to send domain validation emails.
+        /// The domain name that Certificate Manager uses to send domain validation emails.
         /// </para>
         /// </summary>
         public string ValidationDomain
@@ -109,7 +109,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ValidationEmails. 
         /// <para>
-        /// A list of email addresses that AWS Certificate Manager uses to send domain validation
+        /// A list of email addresses that Certificate Manager uses to send domain validation
         /// emails.
         /// </para>
         /// </summary>

@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// A complex type that describes the Amazon S3 bucket, HTTP server (for example, a web
-    /// server), Amazon Elemental MediaStore, or other server from which CloudFront gets your
-    /// files.
+    /// A complex type that describes the S3 bucket, HTTP server (for example, a web server),
+    /// AWS Elemental MediaStore, or other server from which CloudFront gets your files.
     /// </summary>
     public partial class AwsCloudFrontDistributionOriginItem
     {
@@ -43,8 +42,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// Amazon S3 origins: The DNS name of the Amazon S3 bucket from which you want CloudFront
-        /// to get objects for this origin.
+        /// Amazon S3 origins: The DNS name of the S3 bucket from which you want CloudFront to
+        /// get objects for this origin.
         /// </para>
         /// </summary>
         public string DomainName

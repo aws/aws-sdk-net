@@ -76,6 +76,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsAccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CompanyName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CompanyName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Compliance", targetDepth))
                 {
                     var unmarshaller = ComplianceUnmarshaller.Instance;
@@ -184,10 +190,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProductFields = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProductName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProductName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RecordState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RecordState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Region", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Region = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RelatedFindings", targetDepth))

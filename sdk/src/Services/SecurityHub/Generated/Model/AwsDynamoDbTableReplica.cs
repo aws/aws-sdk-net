@@ -61,8 +61,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property KmsMasterKeyId. 
         /// <para>
-        /// The identifier of the AWS KMS customer master key (CMK) that will be used for AWS
-        /// KMS encryption for the replica.
+        /// The identifier of the KMS customer master key (CMK) that will be used for KMS encryption
+        /// for the replica.
         /// </para>
         /// </summary>
         public string KmsMasterKeyId

@@ -813,6 +813,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetRegion())
+            {
+                context.Writer.WritePropertyName("Region");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRegionListValue in requestObject.Region)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectRegionListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetRelatedFindingsId())
             {
                 context.Writer.WritePropertyName("RelatedFindingsId");
@@ -1005,6 +1021,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetResourceAwsIamAccessKeyPrincipalName())
+            {
+                context.Writer.WritePropertyName("ResourceAwsIamAccessKeyPrincipalName");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectResourceAwsIamAccessKeyPrincipalNameListValue in requestObject.ResourceAwsIamAccessKeyPrincipalName)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectResourceAwsIamAccessKeyPrincipalNameListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetResourceAwsIamAccessKeyStatus())
             {
                 context.Writer.WritePropertyName("ResourceAwsIamAccessKeyStatus");
@@ -1031,6 +1063,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectResourceAwsIamAccessKeyUserNameListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetResourceAwsIamUserUserName())
+            {
+                context.Writer.WritePropertyName("ResourceAwsIamUserUserName");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectResourceAwsIamUserUserNameListValue in requestObject.ResourceAwsIamUserUserName)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectResourceAwsIamUserUserNameListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }

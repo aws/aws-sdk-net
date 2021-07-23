@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Information about an Elasticsearch domain.
+    /// Information about an Amazon Elasticsearch Service domain.
     /// </summary>
     public partial class AwsElasticsearchDomainDetails
     {
@@ -37,6 +37,7 @@ namespace Amazon.SecurityHub.Model
         private AwsElasticsearchDomainDomainEndpointOptions _domainEndpointOptions;
         private string _domainId;
         private string _domainName;
+        private AwsElasticsearchDomainElasticsearchClusterConfigDetails _elasticsearchClusterConfig;
         private string _elasticsearchVersion;
         private AwsElasticsearchDomainEncryptionAtRestOptions _encryptionAtRestOptions;
         private string _endpoint;
@@ -49,7 +50,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccessPolicies. 
         /// <para>
-        /// IAM policy document specifying the access policies for the new Amazon ES domain.
+        /// IAM policy document specifying the access policies for the new Elasticsearch domain.
         /// </para>
         /// </summary>
         public string AccessPolicies
@@ -85,7 +86,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property DomainId. 
         /// <para>
-        /// Unique identifier for an Amazon ES domain.
+        /// Unique identifier for an Elasticsearch domain.
         /// </para>
         /// </summary>
         public string DomainId
@@ -103,12 +104,12 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// Name of an Amazon ES domain.
+        /// Name of an Elasticsearch domain.
         /// </para>
         ///  
         /// <para>
-        /// Domain names are unique across all domains owned by the same account within an AWS
-        /// Region.
+        /// Domain names are unique across all domains owned by the same account within an Amazon
+        /// Web Services Region.
         /// </para>
         ///  
         /// <para>
@@ -129,6 +130,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ElasticsearchClusterConfig. 
+        /// <para>
+        /// Information about an Elasticsearch cluster configuration.
+        /// </para>
+        /// </summary>
+        public AwsElasticsearchDomainElasticsearchClusterConfigDetails ElasticsearchClusterConfig
+        {
+            get { return this._elasticsearchClusterConfig; }
+            set { this._elasticsearchClusterConfig = value; }
+        }
+
+        // Check to see if ElasticsearchClusterConfig property is set
+        internal bool IsSetElasticsearchClusterConfig()
+        {
+            return this._elasticsearchClusterConfig != null;
         }
 
         /// <summary>
@@ -171,7 +190,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Endpoint. 
         /// <para>
         /// Domain-specific endpoint used to submit index, search, and data upload requests to
-        /// an Amazon ES domain.
+        /// an Elasticsearch domain.
         /// </para>
         ///  
         /// <para>
@@ -193,7 +212,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Endpoints. 
         /// <para>
-        /// The key-value pair that exists if the Amazon ES domain uses VPC endpoints.
+        /// The key-value pair that exists if the Elasticsearch domain uses VPC endpoints.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Endpoints
@@ -265,7 +284,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property VPCOptions. 
         /// <para>
-        /// Information that Amazon ES derives based on <code>VPCOptions</code> for the domain.
+        /// Information that Elasticsearch derives based on <code>VPCOptions</code> for the domain.
         /// </para>
         /// </summary>
         public AwsElasticsearchDomainVPCOptions VPCOptions

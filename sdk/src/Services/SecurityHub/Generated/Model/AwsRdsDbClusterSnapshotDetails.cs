@@ -205,8 +205,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ARN of the AWS KMS master key that is used to encrypt the database instances in
-        /// the DB cluster.
+        /// The ARN of the KMS master key that is used to encrypt the database instances in the
+        /// DB cluster.
         /// </para>
         /// </summary>
         public string KmsKeyId

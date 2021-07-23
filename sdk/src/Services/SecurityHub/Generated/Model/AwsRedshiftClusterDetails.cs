@@ -595,7 +595,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property IamRoles. 
         /// <para>
-        /// A list of IAM roles that the cluster can use to access other AWS services.
+        /// A list of IAM roles that the cluster can use to access other Amazon Web Services services.
         /// </para>
         /// </summary>
         public List<AwsRedshiftClusterIamRole> IamRoles
@@ -613,7 +613,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The identifier of the AWS KMS encryption key that is used to encrypt data in the cluster.
+        /// The identifier of the KMS encryption key that is used to encrypt data in the cluster.
         /// </para>
         /// </summary>
         public string KmsKeyId

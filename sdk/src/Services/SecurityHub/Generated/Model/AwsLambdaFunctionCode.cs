@@ -42,8 +42,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property S3Bucket. 
         /// <para>
-        /// An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in
-        /// a different AWS account.
+        /// An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket
+        /// can be in a different Amazon Web Services account.
         /// </para>
         /// </summary>
         public string S3Bucket
@@ -97,8 +97,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ZipFile. 
         /// <para>
-        /// The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients
-        /// handle the encoding for you.
+        /// The base64-encoded contents of the deployment package. Amazon Web Services SDK and
+        /// Amazon Web Services CLI clients handle the encoding for you.
         /// </para>
         /// </summary>
         public string ZipFile

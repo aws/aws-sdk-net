@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Information that Amazon ES derives based on <code>VPCOptions</code> for the domain.
+    /// Information that Elasticsearch derives based on <code>VPCOptions</code> for the domain.
     /// </summary>
     public partial class AwsElasticsearchDomainVPCOptions
     {

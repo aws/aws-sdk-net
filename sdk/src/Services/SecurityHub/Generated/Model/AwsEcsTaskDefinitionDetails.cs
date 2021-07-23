@@ -270,7 +270,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property TaskRoleArn. 
         /// <para>
         /// The short name or ARN of the IAM role that grants containers in the task permission
-        /// to call AWS API operations on your behalf.
+        /// to call Amazon Web Services API operations on your behalf.
         /// </para>
         /// </summary>
         public string TaskRoleArn

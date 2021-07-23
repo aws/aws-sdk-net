@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Details about a WAF WebACL.
+    /// Details about an WAF WebACL.
     /// </summary>
     public partial class AwsWafWebAclDetails
     {

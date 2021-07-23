@@ -100,7 +100,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Partition. 
         /// <para>
-        /// The canonical AWS partition name that the Region is assigned to.
+        /// The canonical Amazon Web Services partition name that the Region is assigned to.
         /// </para>
         /// </summary>
         public Partition Partition
@@ -118,7 +118,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The canonical AWS external Region name where this resource is located.
+        /// The canonical Amazon Web Services external Region name where this resource is located.
         /// </para>
         /// </summary>
         public string Region
@@ -155,7 +155,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of AWS tags associated with a resource at the time the finding was processed.
+        /// A list of Amazon Web Services tags associated with a resource at the time the finding
+        /// was processed.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

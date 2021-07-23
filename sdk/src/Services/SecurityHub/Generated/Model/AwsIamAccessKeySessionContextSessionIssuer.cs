@@ -42,7 +42,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The identifier of the AWS account that created the session.
+        /// The identifier of the Amazon Web Services account that created the session.
         /// </para>
         /// </summary>
         public string AccountId

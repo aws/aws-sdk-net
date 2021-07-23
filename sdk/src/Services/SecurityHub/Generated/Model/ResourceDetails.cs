@@ -69,6 +69,7 @@ namespace Amazon.SecurityHub.Model
         private AwsEc2VolumeDetails _awsEc2Volume;
         private AwsEc2VpcDetails _awsEc2Vpc;
         private AwsEcsClusterDetails _awsEcsCluster;
+        private AwsEcsServiceDetails _awsEcsService;
         private AwsEcsTaskDefinitionDetails _awsEcsTaskDefinition;
         private AwsElasticBeanstalkEnvironmentDetails _awsElasticBeanstalkEnvironment;
         private AwsElasticsearchDomainDetails _awsElasticsearchDomain;
@@ -86,6 +87,7 @@ namespace Amazon.SecurityHub.Model
         private AwsRdsDbClusterSnapshotDetails _awsRdsDbClusterSnapshot;
         private AwsRdsDbInstanceDetails _awsRdsDbInstance;
         private AwsRdsDbSnapshotDetails _awsRdsDbSnapshot;
+        private AwsRdsEventSubscriptionDetails _awsRdsEventSubscription;
         private AwsRedshiftClusterDetails _awsRedshiftCluster;
         private AwsS3AccountPublicAccessBlockDetails _awsS3AccountPublicAccessBlock;
         private AwsS3BucketDetails _awsS3Bucket;
@@ -191,7 +193,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsCertificateManagerCertificate. 
         /// <para>
-        /// Provides details about an AWS Certificate Manager (ACM) certificate.
+        /// Provides details about an Certificate Manager certificate.
         /// </para>
         /// </summary>
         public AwsCertificateManagerCertificateDetails AwsCertificateManagerCertificate
@@ -245,7 +247,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsCodeBuildProject. 
         /// <para>
-        /// Details for an AWS CodeBuild project.
+        /// Details for an CodeBuild project.
         /// </para>
         /// </summary>
         public AwsCodeBuildProjectDetails AwsCodeBuildProject
@@ -335,7 +337,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsEc2NetworkInterface. 
         /// <para>
-        /// Details for an Amazon EC2 network interface.
+        /// Details for an EC2 network interface.
         /// </para>
         /// </summary>
         public AwsEc2NetworkInterfaceDetails AwsEc2NetworkInterface
@@ -371,7 +373,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsEc2Subnet. 
         /// <para>
-        /// Details about a subnet in EC2.
+        /// Details about a subnet in Amazon EC2.
         /// </para>
         /// </summary>
         public AwsEc2SubnetDetails AwsEc2Subnet
@@ -438,6 +440,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsEcsCluster()
         {
             return this._awsEcsCluster != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsEcsService. 
+        /// <para>
+        /// Details about a service within an ECS cluster.
+        /// </para>
+        /// </summary>
+        public AwsEcsServiceDetails AwsEcsService
+        {
+            get { return this._awsEcsService; }
+            set { this._awsEcsService = value; }
+        }
+
+        // Check to see if AwsEcsService property is set
+        internal bool IsSetAwsEcsService()
+        {
+            return this._awsEcsService != null;
         }
 
         /// <summary>
@@ -624,7 +644,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsKmsKey. 
         /// <para>
-        /// Details about a KMS key.
+        /// Details about an KMS key.
         /// </para>
         /// </summary>
         public AwsKmsKeyDetails AwsKmsKey
@@ -748,6 +768,24 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AwsRdsEventSubscription. 
+        /// <para>
+        /// Details about an RDS event notification subscription.
+        /// </para>
+        /// </summary>
+        public AwsRdsEventSubscriptionDetails AwsRdsEventSubscription
+        {
+            get { return this._awsRdsEventSubscription; }
+            set { this._awsRdsEventSubscription = value; }
+        }
+
+        // Check to see if AwsRdsEventSubscription property is set
+        internal bool IsSetAwsRdsEventSubscription()
+        {
+            return this._awsRdsEventSubscription != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AwsRedshiftCluster. 
         /// <para>
         /// Contains details about an Amazon Redshift cluster.
@@ -786,7 +824,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsS3Bucket. 
         /// <para>
-        /// Details about an Amazon S3 bucket related to a finding.
+        /// Details about an S3 bucket related to a finding.
         /// </para>
         /// </summary>
         public AwsS3BucketDetails AwsS3Bucket
@@ -804,7 +842,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsS3Object. 
         /// <para>
-        /// Details about an Amazon S3 object related to a finding.
+        /// Details about an S3 object related to a finding.
         /// </para>
         /// </summary>
         public AwsS3ObjectDetails AwsS3Object
@@ -895,7 +933,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsWafWebAcl. 
         /// <para>
-        /// Details for a WAF WebACL.
+        /// Details for an WAF WebACL.
         /// </para>
         /// </summary>
         public AwsWafWebAclDetails AwsWafWebAcl

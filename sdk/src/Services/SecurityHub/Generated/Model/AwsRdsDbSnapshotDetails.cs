@@ -265,8 +265,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// If <code>Encrypted</code> is <code>true</code>, the AWS KMS key identifier for the
-        /// encrypted DB snapshot.
+        /// If <code>Encrypted</code> is <code>true</code>, the KMS key identifier for the encrypted
+        /// DB snapshot.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -447,7 +447,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SourceRegion. 
         /// <para>
-        /// The AWS Region that the DB snapshot was created in or copied from.
+        /// The Amazon Web Services Region that the DB snapshot was created in or copied from.
         /// </para>
         /// </summary>
         public string SourceRegion

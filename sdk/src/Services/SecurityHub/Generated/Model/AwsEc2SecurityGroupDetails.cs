@@ -115,7 +115,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The AWS account ID of the owner of the security group.
+        /// The Amazon Web Services account ID of the owner of the security group.
         /// </para>
         /// </summary>
         public string OwnerId

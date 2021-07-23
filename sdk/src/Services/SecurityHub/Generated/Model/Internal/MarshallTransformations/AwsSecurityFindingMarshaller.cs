@@ -62,6 +62,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AwsAccountId);
             }
 
+            if(requestObject.IsSetCompanyName())
+            {
+                context.Writer.WritePropertyName("CompanyName");
+                context.Writer.Write(requestObject.CompanyName);
+            }
+
             if(requestObject.IsSetCompliance())
             {
                 context.Writer.WritePropertyName("Compliance");
@@ -228,10 +234,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetProductName())
+            {
+                context.Writer.WritePropertyName("ProductName");
+                context.Writer.Write(requestObject.ProductName);
+            }
+
             if(requestObject.IsSetRecordState())
             {
                 context.Writer.WritePropertyName("RecordState");
                 context.Writer.Write(requestObject.RecordState);
+            }
+
+            if(requestObject.IsSetRegion())
+            {
+                context.Writer.WritePropertyName("Region");
+                context.Writer.Write(requestObject.Region);
             }
 
             if(requestObject.IsSetRelatedFindings())

@@ -112,7 +112,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AssociatedRoles. 
         /// <para>
-        /// The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+        /// The IAM roles associated with the DB instance.
         /// </para>
         /// </summary>
         public List<AwsRdsDbInstanceAssociatedRole> AssociatedRoles
@@ -331,9 +331,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property DbiResourceId. 
         /// <para>
-        /// The AWS Region-unique, immutable identifier for the DB instance. This identifier is
-        /// found in AWS CloudTrail log entries whenever the AWS KMS key for the DB instance is
-        /// accessed. 
+        /// The Amazon Web Services Region-unique, immutable identifier for the DB instance. This
+        /// identifier is found in CloudTrail log entries whenever the KMS key for the DB instance
+        /// is accessed. 
         /// </para>
         /// </summary>
         public string DbiResourceId
@@ -573,8 +573,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property IAMDatabaseAuthenticationEnabled. 
         /// <para>
-        /// True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts
-        /// is enabled, and otherwise false.
+        /// True if mapping of IAM accounts to database accounts is enabled, and otherwise false.
         /// </para>
         ///  
         /// <para>
@@ -651,7 +650,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted
+        /// If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted
         /// DB instance.
         /// </para>
         /// </summary>
@@ -874,7 +873,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property PerformanceInsightsKmsKeyId. 
         /// <para>
-        /// The identifier of the AWS KMS key used to encrypt the Performance Insights data.
+        /// The identifier of the KMS key used to encrypt the Performance Insights data.
         /// </para>
         /// </summary>
         public string PerformanceInsightsKmsKeyId

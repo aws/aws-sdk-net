@@ -98,8 +98,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property RestrictPublicBuckets. 
         /// <para>
         /// Indicates whether to restrict access to an access point or S3 bucket that has a public
-        /// policy to only AWS service principals and authorized users within the S3 bucket owner's
-        /// account.
+        /// policy to only Amazon Web Services service principals and authorized users within
+        /// the S3 bucket owner's account.
         /// </para>
         /// </summary>
         public bool RestrictPublicBuckets

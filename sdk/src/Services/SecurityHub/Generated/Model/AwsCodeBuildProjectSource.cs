@@ -86,13 +86,13 @@ namespace Amazon.SecurityHub.Model
         ///  <ul> <li> 
         /// <para>
         /// For source code settings that are specified in the source action of a pipeline in
-        /// AWS CodePipeline, location should not be specified. If it is specified, AWS CodePipeline
-        /// ignores it. This is because AWS CodePipeline uses the settings in a pipeline's source
-        /// action instead of this value.
+        /// CodePipeline, location should not be specified. If it is specified, CodePipeline ignores
+        /// it. This is because CodePipeline uses the settings in a pipeline's source action instead
+        /// of this value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository
+        /// For source code in an CodeCommit repository, the HTTPS clone URL to the repository
         /// that contains the source code and the build spec file (for example, <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code>
         /// ).
         /// </para>
@@ -143,12 +143,12 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CODECOMMIT</code> - The source code is in an AWS CodeCommit repository.
+        ///  <code>CODECOMMIT</code> - The source code is in an CodeCommit repository.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>CODEPIPELINE</code> - The source code settings are specified in the source
-        /// action of a pipeline in AWS CodePipeline.
+        /// action of a pipeline in CodePipeline.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -41,7 +41,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property KmsMasterKeyId. 
         /// <para>
-        /// The ID of an AWS managed customer master key (CMK) for Amazon SNS or a custom CMK.
+        /// The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SNS
+        /// or a custom CMK.
         /// </para>
         /// </summary>
         public string KmsMasterKeyId
@@ -78,7 +79,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Subscription. 
         /// <para>
         /// Subscription is an embedded property that describes the subscription endpoints of
-        /// an Amazon SNS topic.
+        /// an SNS topic.
         /// </para>
         /// </summary>
         public List<AwsSnsTopicSubscription> Subscription

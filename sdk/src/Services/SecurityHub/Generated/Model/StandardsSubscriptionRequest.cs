@@ -40,7 +40,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property StandardsArn. 
         /// <para>
         /// The ARN of the standard that you want to enable. To view the list of available standards
-        /// and their ARNs, use the <code> <a>DescribeStandards</a> </code> operation.
+        /// and their ARNs, use the <code>DescribeStandards</code> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

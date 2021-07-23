@@ -74,6 +74,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DomainName);
             }
 
+            if(requestObject.IsSetElasticsearchClusterConfig())
+            {
+                context.Writer.WritePropertyName("ElasticsearchClusterConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsElasticsearchDomainElasticsearchClusterConfigDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ElasticsearchClusterConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetElasticsearchVersion())
             {
                 context.Writer.WritePropertyName("ElasticsearchVersion");

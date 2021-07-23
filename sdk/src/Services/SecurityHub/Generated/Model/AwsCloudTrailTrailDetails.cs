@@ -70,8 +70,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLogsRoleArn. 
         /// <para>
-        /// The ARN of the role that the CloudWatch Logs endpoint assumes when it writes to the
-        /// log group.
+        /// The ARN of the role that the CloudWatch Events endpoint assumes when it writes to
+        /// the log group.
         /// </para>
         /// </summary>
         public string CloudWatchLogsRoleArn
@@ -162,8 +162,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property IsOrganizationTrail. 
         /// <para>
-        /// Whether the trail is created for all accounts in an organization in AWS Organizations,
-        /// or only for the current AWS account.
+        /// Whether the trail is created for all accounts in an organization in Organizations,
+        /// or only for the current Amazon Web Services account.
         /// </para>
         /// </summary>
         public bool IsOrganizationTrail
@@ -181,7 +181,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key ID to use to encrypt the logs.
+        /// The KMS key ID to use to encrypt the logs.
         /// </para>
         /// </summary>
         public string KmsKeyId

@@ -36,28 +36,30 @@ namespace Amazon.SecurityHub
     /// Implementation for accessing SecurityHub
     ///
     /// Security Hub provides you with a comprehensive view of the security state of your
-    /// AWS environment and resources. It also provides you with the readiness status of your
-    /// environment based on controls from supported security standards. Security Hub collects
-    /// security data from AWS accounts, services, and integrated third-party products and
-    /// helps you analyze security trends in your environment to identify the highest priority
-    /// security issues. For more information about Security Hub, see the <i> <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">AWS
-    /// Security Hub User Guide</a> </i>.
+    /// Amazon Web Services environment and resources. It also provides you with the readiness
+    /// status of your environment based on controls from supported security standards. Security
+    /// Hub collects security data from Amazon Web Services accounts, services, and integrated
+    /// third-party products and helps you analyze security trends in your environment to
+    /// identify the highest priority security issues. For more information about Security
+    /// Hub, see the <i>Security Hub<a href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">User
+    /// Guide</a> </i>.
     /// 
     ///  
     /// <para>
     /// When you use operations in the Security Hub API, the requests are executed only in
-    /// the AWS Region that is currently active or in the specific AWS Region that you specify
-    /// in your request. Any configuration or settings change that results from the operation
-    /// is applied only to that Region. To make the same change in other Regions, execute
-    /// the same command for each Region to apply the change to.
+    /// the Amazon Web Services Region that is currently active or in the specific Amazon
+    /// Web Services Region that you specify in your request. Any configuration or settings
+    /// change that results from the operation is applied only to that Region. To make the
+    /// same change in other Regions, execute the same command for each Region to apply the
+    /// change to.
     /// </para>
     ///  
     /// <para>
-    /// For example, if your Region is set to <code>us-west-2</code>, when you use <code>
-    /// <a>CreateMembers</a> </code> to add a member account to Security Hub, the association
-    /// of the member account with the administrator account is created only in the <code>us-west-2</code>
-    /// Region. Security Hub must be enabled for the member account in the same Region that
-    /// the invitation was sent from.
+    /// For example, if your Region is set to <code>us-west-2</code>, when you use <code>CreateMembers</code>
+    /// to add a member account to Security Hub, the association of the member account with
+    /// the administrator account is created only in the <code>us-west-2</code> Region. Security
+    /// Hub must be enabled for the member account in the same Region that the invitation
+    /// was sent from.
     /// </para>
     ///  
     /// <para>
@@ -65,23 +67,23 @@ namespace Amazon.SecurityHub
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code> <a>BatchEnableStandards</a> </code> - <code>RateLimit</code> of 1 request
-    /// per second, <code>BurstLimit</code> of 1 request per second.
+    ///  <code>BatchEnableStandards</code> - <code>RateLimit</code> of 1 request per second,
+    /// <code>BurstLimit</code> of 1 request per second.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code> <a>GetFindings</a> </code> - <code>RateLimit</code> of 3 requests per second.
-    /// <code>BurstLimit</code> of 6 requests per second.
+    ///  <code>GetFindings</code> - <code>RateLimit</code> of 3 requests per second. <code>BurstLimit</code>
+    /// of 6 requests per second.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code> <a>UpdateFindings</a> </code> - <code>RateLimit</code> of 1 request per second.
+    ///  <code>UpdateFindings</code> - <code>RateLimit</code> of 1 request per second. <code>BurstLimit</code>
+    /// of 5 requests per second.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>UpdateStandardsControl</code> - <code>RateLimit</code> of 1 request per second,
     /// <code>BurstLimit</code> of 5 requests per second.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code> <a>UpdateStandardsControl</a> </code> - <code>RateLimit</code> of 1 request
-    /// per second, <code>BurstLimit</code> of 5 requests per second.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -323,7 +325,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -419,7 +422,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -481,7 +485,7 @@ namespace Amazon.SecurityHub
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security
-        /// Standards</a> section of the <i>AWS Security Hub User Guide</i>.
+        /// Standards</a> section of the <i>Security Hub User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDisableStandards service method.</param>
@@ -501,7 +505,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDisableStandards">REST API Reference for BatchDisableStandards Operation</seealso>
         public virtual BatchDisableStandardsResponse BatchDisableStandards(BatchDisableStandardsRequest request)
@@ -553,12 +558,12 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Enables the standards specified by the provided <code>StandardsArn</code>. To obtain
-        /// the ARN for a standard, use the <code> <a>DescribeStandards</a> </code> operation.
+        /// the ARN for a standard, use the <code>DescribeStandards</code> operation.
         /// 
         ///  
         /// <para>
         /// For more information, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security
-        /// Standards</a> section of the <i>AWS Security Hub User Guide</i>.
+        /// Standards</a> section of the <i>Security Hub User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchEnableStandards service method.</param>
@@ -578,7 +583,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchEnableStandards">REST API Reference for BatchEnableStandards Operation</seealso>
         public virtual BatchEnableStandardsResponse BatchEnableStandards(BatchEnableStandardsRequest request)
@@ -708,7 +714,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchImportFindings">REST API Reference for BatchImportFindings Operation</seealso>
         public virtual BatchImportFindingsResponse BatchImportFindings(BatchImportFindingsRequest request)
@@ -815,7 +822,7 @@ namespace Amazon.SecurityHub
         /// You can configure IAM policies to restrict access to fields and field values. For
         /// example, you might not want member accounts to be able to suppress findings or change
         /// the finding severity. See <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring
-        /// access to BatchUpdateFindings</a> in the <i>AWS Security Hub User Guide</i>.
+        /// access to BatchUpdateFindings</a> in the <i>Security Hub User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateFindings service method.</param>
@@ -835,7 +842,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings">REST API Reference for BatchUpdateFindings Operation</seealso>
         public virtual BatchUpdateFindingsResponse BatchUpdateFindings(BatchUpdateFindingsRequest request)
@@ -911,7 +919,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
         /// The resource specified in the request conflicts with an existing resource.
@@ -990,7 +999,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
         /// The resource specified in the request conflicts with an existing resource.
@@ -1056,12 +1066,12 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// For accounts that are part of an organization, <code>CreateMembers</code> is only
+        /// For accounts that are managed using Organizations, <code>CreateMembers</code> is only
         /// used in the following cases:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Security Hub is not configured to automatically add new accounts in an organization.
+        /// Security Hub is not configured to automatically add new organization accounts.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1070,19 +1080,22 @@ namespace Amazon.SecurityHub
         ///  </li> </ul> 
         /// <para>
         /// This action can only be used by an account that has Security Hub enabled. To enable
-        /// Security Hub, you can use the <code> <a>EnableSecurityHub</a> </code> operation.
+        /// Security Hub, you can use the <code>EnableSecurityHub</code> operation.
         /// </para>
         ///  
         /// <para>
         /// For accounts that are not organization members, you create the account association
         /// and then send an invitation to the member account. To send the invitation, you use
-        /// the <code> <a>InviteMembers</a> </code> operation. If the account owner accepts the
-        /// invitation, the account becomes a member account in Security Hub.
+        /// the <code>InviteMembers</code> operation. If the account owner accepts the invitation,
+        /// the account becomes a member account in Security Hub.
         /// </para>
         ///  
         /// <para>
-        /// Accounts that are part of an organization do not receive an invitation. They automatically
-        /// become a member account in Security Hub.
+        /// Accounts that are managed using Organizations do not receive an invitation. They automatically
+        /// become a member account in Security Hub, and Security Hub is automatically enabled
+        /// for those accounts. Note that Security Hub cannot be enabled automatically for the
+        /// organization management account. The organization management account must enable Security
+        /// Hub before the administrator account enables it as a member account.
         /// </para>
         ///  
         /// <para>
@@ -1092,9 +1105,8 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// To remove the association between the administrator and member accounts, use the <code>
-        /// <a>DisassociateFromMasterAccount</a> </code> or <code> <a>DisassociateMembers</a>
-        /// </code> operation.
+        /// To remove the association between the administrator and member accounts, use the <code>DisassociateFromMasterAccount</code>
+        /// or <code>DisassociateMembers</code> operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMembers service method.</param>
@@ -1114,7 +1126,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
         /// The resource specified in the request conflicts with an existing resource.
@@ -1337,7 +1350,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -1391,7 +1405,8 @@ namespace Amazon.SecurityHub
         #region  DeleteInvitations
 
         /// <summary>
-        /// Deletes invitations received by the AWS account to become a member account.
+        /// Deletes invitations received by the Amazon Web Services account to become a member
+        /// account.
         /// 
         ///  
         /// <para>
@@ -1416,7 +1431,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -1495,7 +1511,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -1638,7 +1655,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -1712,7 +1730,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeOrganizationConfiguration">REST API Reference for DescribeOrganizationConfiguration Operation</seealso>
         public virtual DescribeOrganizationConfigurationResponse DescribeOrganizationConfiguration(DescribeOrganizationConfigurationRequest request)
@@ -1793,7 +1812,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeProducts">REST API Reference for DescribeProducts Operation</seealso>
         public virtual DescribeProductsResponse DescribeProducts(DescribeProductsRequest request)
@@ -2011,7 +2031,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -2085,7 +2106,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableOrganizationAdminAccount">REST API Reference for DisableOrganizationAdminAccount Operation</seealso>
         public virtual DisableOrganizationAdminAccountResponse DisableOrganizationAdminAccount(DisableOrganizationAdminAccountRequest request)
@@ -2171,7 +2193,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -2251,7 +2274,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -2344,7 +2368,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -2426,7 +2451,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -2506,7 +2532,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
         /// The resource specified in the request conflicts with an existing resource.
@@ -2580,7 +2607,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableOrganizationAdminAccount">REST API Reference for EnableOrganizationAdminAccount Operation</seealso>
         public virtual EnableOrganizationAdminAccountResponse EnableOrganizationAdminAccount(EnableOrganizationAdminAccountRequest request)
@@ -2646,11 +2674,11 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// CIS AWS Foundations
+        /// CIS Amazon Web Services Foundations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// AWS Foundational Security Best Practices
+        /// Amazon Web Services Foundational Security Best Practices
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2664,14 +2692,13 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// After you enable Security Hub, to enable a standard, use the <code> <a>BatchEnableStandards</a>
-        /// </code> operation. To disable a standard, use the <code> <a>BatchDisableStandards</a>
-        /// </code> operation.
+        /// After you enable Security Hub, to enable a standard, use the <code>BatchEnableStandards</code>
+        /// operation. To disable a standard, use the <code>BatchDisableStandards</code> operation.
         /// </para>
         ///  
         /// <para>
-        /// To learn more, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting
-        /// Up AWS Security Hub</a> in the <i>AWS Security Hub User Guide</i>.
+        /// To learn more, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">setup
+        /// information</a> in the <i>Security Hub User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableSecurityHub service method.</param>
@@ -2690,7 +2717,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
         /// The resource specified in the request conflicts with an existing resource.
@@ -2770,7 +2798,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -2843,7 +2872,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetEnabledStandards">REST API Reference for GetEnabledStandards Operation</seealso>
         public virtual GetEnabledStandardsResponse GetEnabledStandards(GetEnabledStandardsRequest request)
@@ -2913,7 +2943,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindings">REST API Reference for GetFindings Operation</seealso>
         public virtual GetFindingsResponse GetFindings(GetFindingsRequest request)
@@ -2983,7 +3014,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -3056,7 +3088,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -3130,7 +3163,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetInvitationsCount">REST API Reference for GetInvitationsCount Operation</seealso>
         public virtual GetInvitationsCountResponse GetInvitationsCount(GetInvitationsCountRequest request)
@@ -3219,7 +3253,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -3307,7 +3342,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -3361,8 +3397,8 @@ namespace Amazon.SecurityHub
         #region  InviteMembers
 
         /// <summary>
-        /// Invites other AWS accounts to become member accounts for the Security Hub administrator
-        /// account that the invitation is sent from.
+        /// Invites other Amazon Web Services accounts to become member accounts for the Security
+        /// Hub administrator account that the invitation is sent from.
         /// 
         ///  
         /// <para>
@@ -3371,8 +3407,8 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// Before you can use this action to invite a member, you must first use the <code> <a>CreateMembers</a>
-        /// </code> action to create the member account in Security Hub.
+        /// Before you can use this action to invite a member, you must first use the <code>CreateMembers</code>
+        /// action to create the member account in Security Hub.
         /// </para>
         ///  
         /// <para>
@@ -3398,7 +3434,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -3468,7 +3505,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListEnabledProductsForImport">REST API Reference for ListEnabledProductsForImport Operation</seealso>
         public virtual ListEnabledProductsForImportResponse ListEnabledProductsForImport(ListEnabledProductsForImportRequest request)
@@ -3519,12 +3557,13 @@ namespace Amazon.SecurityHub
         #region  ListInvitations
 
         /// <summary>
-        /// Lists all Security Hub membership invitations that were sent to the current AWS account.
+        /// Lists all Security Hub membership invitations that were sent to the current Amazon
+        /// Web Services account.
         /// 
         ///  
         /// <para>
         /// This operation is only used by accounts that are managed by invitation. Accounts that
-        /// are managed using the integration with AWS Organizations do not receive invitations.
+        /// are managed using the integration with Organizations do not receive invitations.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInvitations service method.</param>
@@ -3544,7 +3583,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
         public virtual ListInvitationsResponse ListInvitations(ListInvitationsRequest request)
@@ -3621,7 +3661,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListMembers">REST API Reference for ListMembers Operation</seealso>
         public virtual ListMembersResponse ListMembers(ListMembersRequest request)
@@ -3692,7 +3733,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListOrganizationAdminAccounts">REST API Reference for ListOrganizationAdminAccounts Operation</seealso>
         public virtual ListOrganizationAdminAccountsResponse ListOrganizationAdminAccounts(ListOrganizationAdminAccountsRequest request)
@@ -4031,7 +4073,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -4104,7 +4147,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -4178,7 +4222,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateOrganizationConfiguration">REST API Reference for UpdateOrganizationConfiguration Operation</seealso>
         public virtual UpdateOrganizationConfigurationResponse UpdateOrganizationConfiguration(UpdateOrganizationConfigurationRequest request)
@@ -4248,7 +4293,8 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.

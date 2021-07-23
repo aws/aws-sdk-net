@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Details about an AWS Secrets Manager secret.
+    /// Details about an Secrets Manager secret.
     /// </summary>
     public partial class AwsSecretsManagerSecretDetails
     {
@@ -81,9 +81,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ARN, Key ID, or alias of the AWS KMS customer master key (CMK) used to encrypt
-        /// the <code>SecretString</code> or <code>SecretBinary</code> values for versions of
-        /// this secret.
+        /// The ARN, Key ID, or alias of the KMS customer master key (CMK) used to encrypt the
+        /// <code>SecretString</code> or <code>SecretBinary</code> values for versions of this
+        /// secret.
         /// </para>
         /// </summary>
         public string KmsKeyId

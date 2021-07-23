@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Information about the VPC configuration that AWS CodeBuild accesses.
+    /// Information about the VPC configuration that CodeBuild accesses.
     /// </summary>
     public partial class AwsCodeBuildProjectVpcConfig
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// A list of one or more security group IDs in your Amazon VPC.
+        /// A list of one or more security group IDs in your VPC.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -58,7 +58,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        /// A list of one or more subnet IDs in your Amazon VPC.
+        /// A list of one or more subnet IDs in your VPC.
         /// </para>
         /// </summary>
         public List<string> Subnets

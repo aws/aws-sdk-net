@@ -38,7 +38,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property TargetArn. 
         /// <para>
-        /// The ARN of an Amazon SQS queue or Amazon SNS topic.
+        /// The ARN of an SQS queue or SNS topic.
         /// </para>
         /// </summary>
         public string TargetArn

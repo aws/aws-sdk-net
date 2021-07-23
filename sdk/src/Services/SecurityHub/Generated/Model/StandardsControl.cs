@@ -181,7 +181,7 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// The finding severity is based on an assessment of how easy it would be to compromise
-        /// AWS resources if the issue is detected.
+        /// Amazon Web Services resources if the issue is detected.
         /// </para>
         /// </summary>
         public SeverityRating SeverityRating

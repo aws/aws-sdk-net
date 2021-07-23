@@ -40,7 +40,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AdminAccountId. 
         /// <para>
-        /// The AWS account identifier of the Security Hub administrator account.
+        /// The Amazon Web Services account identifier of the Security Hub administrator account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

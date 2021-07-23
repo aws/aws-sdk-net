@@ -61,7 +61,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property KmsDataKeyReusePeriodSeconds. 
         /// <para>
         /// The length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt
-        /// or decrypt messages before calling AWS KMS again.
+        /// or decrypt messages before calling KMS again.
         /// </para>
         /// </summary>
         public int KmsDataKeyReusePeriodSeconds
@@ -79,7 +79,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property KmsMasterKeyId. 
         /// <para>
-        /// The ID of an AWS managed customer master key (CMK) for Amazon SQS or a custom CMK.
+        /// The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS
+        /// or a custom CMK.
         /// </para>
         /// </summary>
         public string KmsMasterKeyId

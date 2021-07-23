@@ -39,7 +39,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// An AWS account ID of the account that was not processed.
+        /// An Amazon Web Services account ID of the account that was not processed.
         /// </para>
         /// </summary>
         public string AccountId

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Contains information about the AWS Certificate Manager managed renewal for an <code>AMAZON_ISSUED</code>
+    /// Contains information about the Certificate Manager managed renewal for an <code>AMAZON_ISSUED</code>
     /// certificate.
     /// </summary>
     public partial class AwsCertificateManagerCertificateRenewalSummary
@@ -43,8 +43,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property DomainValidationOptions. 
         /// <para>
         /// Information about the validation of each domain name in the certificate, as it pertains
-        /// to AWS Certificate Manager managed renewal. Provided only when the certificate type
-        /// is <code>AMAZON_ISSUED</code>.
+        /// to Certificate Manager managed renewal. Provided only when the certificate type is
+        /// <code>AMAZON_ISSUED</code>.
         /// </para>
         /// </summary>
         public List<AwsCertificateManagerCertificateDomainValidationOption> DomainValidationOptions
@@ -62,7 +62,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property RenewalStatus. 
         /// <para>
-        /// The status of the AWS Certificate Manager managed renewal of the certificate.
+        /// The status of the Certificate Manager managed renewal of the certificate.
         /// </para>
         ///  
         /// <para>

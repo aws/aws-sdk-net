@@ -59,7 +59,7 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A code that represents a reason for the control status. For the list of status reason
         /// codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related
-        /// information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>. 
+        /// information in the ASFF</a> in the <i>Security Hub User Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

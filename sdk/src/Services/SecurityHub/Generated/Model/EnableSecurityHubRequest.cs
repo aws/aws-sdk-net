@@ -45,11 +45,11 @@ namespace Amazon.SecurityHub.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// CIS AWS Foundations
+    /// CIS Amazon Web Services Foundations
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// AWS Foundational Security Best Practices
+    /// Amazon Web Services Foundational Security Best Practices
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -63,14 +63,13 @@ namespace Amazon.SecurityHub.Model
     /// </para>
     ///  
     /// <para>
-    /// After you enable Security Hub, to enable a standard, use the <code> <a>BatchEnableStandards</a>
-    /// </code> operation. To disable a standard, use the <code> <a>BatchDisableStandards</a>
-    /// </code> operation.
+    /// After you enable Security Hub, to enable a standard, use the <code>BatchEnableStandards</code>
+    /// operation. To disable a standard, use the <code>BatchDisableStandards</code> operation.
     /// </para>
     ///  
     /// <para>
-    /// To learn more, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting
-    /// Up AWS Security Hub</a> in the <i>AWS Security Hub User Guide</i>.
+    /// To learn more, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">setup
+    /// information</a> in the <i>Security Hub User Guide</i>.
     /// </para>
     /// </summary>
     public partial class EnableSecurityHubRequest : AmazonSecurityHubRequest

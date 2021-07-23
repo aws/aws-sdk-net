@@ -41,7 +41,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// The Amazon S3 bucket to store the access logs in.
+        /// The S3 bucket to store the access logs in.
         /// </para>
         /// </summary>
         public string Bucket

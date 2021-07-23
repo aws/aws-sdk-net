@@ -176,7 +176,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The name of the AWS service that the API method belongs to.
+        /// The name of the Amazon Web Services service that the API method belongs to.
         /// </para>
         /// </summary>
         public string ServiceName

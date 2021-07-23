@@ -163,7 +163,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The KMS key that's used to encrypt the function's environment variables. This key
+        /// The KMS key that is used to encrypt the function's environment variables. This key
         /// is only returned if you've configured a customer managed CMK.
         /// </para>
         /// </summary>
@@ -332,7 +332,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property TracingConfig. 
         /// <para>
-        /// The function's AWS X-Ray tracing configuration.
+        /// The function's X-Ray tracing configuration.
         /// </para>
         /// </summary>
         public AwsLambdaFunctionTracingConfig TracingConfig

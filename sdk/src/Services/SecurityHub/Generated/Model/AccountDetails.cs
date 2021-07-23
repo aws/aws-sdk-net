@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// The details of an AWS account.
+    /// The details of an Amazon Web Services account.
     /// </summary>
     public partial class AccountDetails
     {
@@ -39,7 +39,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The ID of an AWS account.
+        /// The ID of an Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Email. 
         /// <para>
-        /// The email of an AWS account.
+        /// The email of an Amazon Web Services account.
         /// </para>
         /// </summary>
         public string Email

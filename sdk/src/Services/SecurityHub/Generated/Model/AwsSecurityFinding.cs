@@ -30,14 +30,13 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Provides consistent format for the contents of the Security Hub-aggregated findings.
-    /// <code>AwsSecurityFinding</code> format enables you to share findings between AWS security
-    /// services and third-party solutions, and security standards checks.
+    /// <code>AwsSecurityFinding</code> format enables you to share findings between Amazon
+    /// Web Services security services and third-party solutions, and security standards checks.
     /// 
     ///  <note> 
     /// <para>
-    /// A finding is a potential security issue generated either by AWS services (Amazon GuardDuty,
-    /// Amazon Inspector, and Amazon Macie) or by the integrated third-party solutions and
-    /// standards checks.
+    /// A finding is a potential security issue generated either by Amazon Web Services services
+    /// or by the integrated third-party solutions and standards checks.
     /// </para>
     ///  </note>
     /// </summary>
@@ -45,6 +44,7 @@ namespace Amazon.SecurityHub.Model
     {
         private Action _action;
         private string _awsAccountId;
+        private string _companyName;
         private Compliance _compliance;
         private int? _confidence;
         private string _createdAt;
@@ -63,7 +63,9 @@ namespace Amazon.SecurityHub.Model
         private ProcessDetails _process;
         private string _productArn;
         private Dictionary<string, string> _productFields = new Dictionary<string, string>();
+        private string _productName;
         private RecordState _recordState;
+        private string _region;
         private List<RelatedFinding> _relatedFindings = new List<RelatedFinding>();
         private Remediation _remediation;
         private List<Resource> _resources = new List<Resource>();
@@ -101,7 +103,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The AWS account ID that a finding is generated in.
+        /// The Amazon Web Services account ID that a finding is generated in.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -118,11 +120,49 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CompanyName. 
+        /// <para>
+        /// The name of the company for the product that generated the finding.
+        /// </para>
+        ///  
+        /// <para>
+        /// Security Hub populates this attribute automatically for each finding. You cannot be
+        /// updated using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.
+        /// The exception to this is when you use a custom integration.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you use the Security Hub console to filter findings by company name, you use
+        /// this attribute.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you use the Security Hub API to filter findings by company name, you use the
+        /// <code>aws/securityhub/CompanyName</code> attribute under <code>ProductFields</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Security Hub does not synchronize those two attributes.
+        /// </para>
+        /// </summary>
+        public string CompanyName
+        {
+            get { return this._companyName; }
+            set { this._companyName = value; }
+        }
+
+        // Check to see if CompanyName property is set
+        internal bool IsSetCompanyName()
+        {
+            return this._companyName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Compliance. 
         /// <para>
         /// This data type is exclusive to findings that are generated as the result of a check
-        /// run against a specific rule in a supported security standard, such as CIS AWS Foundations.
-        /// Contains security standard-related finding details.
+        /// run against a specific rule in a supported security standard, such as CIS Amazon Web
+        /// Services Foundations. Contains security standard-related finding details.
         /// </para>
         /// </summary>
         public Compliance Compliance
@@ -481,6 +521,11 @@ namespace Amazon.SecurityHub.Model
         /// A data type where security-findings providers can include additional solution-specific
         /// details that aren't part of the defined <code>AwsSecurityFinding</code> format.
         /// </para>
+        ///  
+        /// <para>
+        /// Can contain up to 50 key-value pairs. For each key-value pair, the key can contain
+        /// up to 128 characters, and the value can contain up to 2048 characters.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> ProductFields
         {
@@ -492,6 +537,44 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetProductFields()
         {
             return this._productFields != null && this._productFields.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProductName. 
+        /// <para>
+        /// The name of the product that generated the finding.
+        /// </para>
+        ///  
+        /// <para>
+        /// Security Hub populates this attribute automatically for each finding. You cannot update
+        /// it using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The
+        /// exception to this is when you use a custom integration.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you use the Security Hub console to filter findings by product name, you use
+        /// this attribute.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you use the Security Hub API to filter findings by product name, you use the
+        /// <code>aws/securityhub/ProductyName</code> attribute under <code>ProductFields</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Security Hub does not synchronize those two attributes.
+        /// </para>
+        /// </summary>
+        public string ProductName
+        {
+            get { return this._productName; }
+            set { this._productName = value; }
+        }
+
+        // Check to see if ProductName property is set
+        internal bool IsSetProductName()
+        {
+            return this._productName != null;
         }
 
         /// <summary>
@@ -510,6 +593,29 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetRecordState()
         {
             return this._recordState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Region. 
+        /// <para>
+        /// The Region from which the finding was generated.
+        /// </para>
+        ///  
+        /// <para>
+        /// Security Hub populates this attribute automatically for each finding. You cannot update
+        /// it using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.
+        /// </para>
+        /// </summary>
+        public string Region
+        {
+            get { return this._region; }
+            set { this._region = value; }
+        }
+
+        // Check to see if Region property is set
+        internal bool IsSetRegion()
+        {
+            return this._region != null;
         }
 
         /// <summary>

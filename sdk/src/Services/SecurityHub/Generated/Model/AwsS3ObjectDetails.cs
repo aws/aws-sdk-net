@@ -123,8 +123,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SSEKMSKeyId. 
         /// <para>
-        /// The identifier of the AWS Key Management Service (AWS KMS) symmetric customer managed
-        /// customer master key (CMK) that was used for the object.
+        /// The identifier of the KMS symmetric customer managed customer master key (CMK) that
+        /// was used for the object.
         /// </para>
         /// </summary>
         public string SSEKMSKeyId

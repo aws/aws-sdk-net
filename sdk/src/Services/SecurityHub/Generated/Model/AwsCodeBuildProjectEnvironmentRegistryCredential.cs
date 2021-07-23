@@ -39,12 +39,12 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Credential. 
         /// <para>
-        /// The ARN or name of credentials created using AWS Secrets Manager.
+        /// The ARN or name of credentials created using Secrets Manager.
         /// </para>
         ///  <note> 
         /// <para>
         /// The credential can use the name of the credentials only if they exist in your current
-        /// AWS Region. 
+        /// Amazon Web Services Region. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// The valid value,<code> SECRETS_MANAGER</code>, is for AWS Secrets Manager.
+        /// The valid value,<code> SECRETS_MANAGER</code>, is for Secrets Manager.
         /// </para>
         /// </summary>
         public string CredentialProvider

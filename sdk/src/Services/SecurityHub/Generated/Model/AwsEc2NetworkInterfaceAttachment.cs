@@ -140,7 +140,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property InstanceOwnerId. 
         /// <para>
-        /// The AWS account ID of the owner of the instance.
+        /// The Amazon Web Services account ID of the owner of the instance.
         /// </para>
         /// </summary>
         public string InstanceOwnerId

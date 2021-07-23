@@ -59,7 +59,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ImagePullCredentialsType. 
         /// <para>
-        /// The type of credentials AWS CodeBuild uses to pull images in your build.
+        /// The type of credentials CodeBuild uses to pull images in your build.
         /// </para>
         ///  
         /// <para>
@@ -67,19 +67,18 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This
-        /// requires that you modify your ECR repository policy to trust the AWS CodeBuild service
-        /// principal.
+        ///  <code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires
+        /// that you modify your ECR repository policy to trust the CodeBuild service principal.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's
-        /// service role.
+        ///  <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service
+        /// role.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// When you use a cross-account or private registry image, you must use <code>SERVICE_ROLE</code>
-        /// credentials. When you use an AWS CodeBuild curated image, you must use <code>CODEBUILD</code>
+        /// credentials. When you use an CodeBuild curated image, you must use <code>CODEBUILD</code>
         /// credentials.
         /// </para>
         /// </summary>

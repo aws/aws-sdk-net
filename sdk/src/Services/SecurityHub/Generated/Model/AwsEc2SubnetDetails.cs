@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Contains information about a subnet in EC2.
+    /// Contains information about a subnet in Amazon EC2.
     /// </summary>
     public partial class AwsEc2SubnetDetails
     {
@@ -195,7 +195,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The identifier of the AWS account that owns the subnet.
+        /// The identifier of the Amazon Web Services account that owns the subnet.
         /// </para>
         /// </summary>
         public string OwnerId
