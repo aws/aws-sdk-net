@@ -30,15 +30,21 @@ namespace Amazon.S3Outposts.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEndpoint operation.
-    /// S3 on Outposts access points simplify managing data access at scale for shared datasets
-    /// in Amazon S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets
-    /// so that you can perform actions within your virtual private cloud (VPC). 
+    /// Amazon S3 on Outposts Access Points simplify managing data access at scale for shared
+    /// datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets
+    /// so that you can perform actions within your virtual private cloud (VPC). For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html">
+    /// Accessing S3 on Outposts using VPC only access points</a>.
     /// 
     ///  
     /// <para>
-    /// This action creates an endpoint and associates it with the specified Outpost. 
+    /// This action creates an endpoint and associates it with the specified Outposts.
     /// </para>
-    ///   
+    ///  <note> 
+    /// <para>
+    /// It can take up to 5 minutes for this action to complete.
+    /// </para>
+    ///  </note>  
     /// <para>
     /// Related actions include:
     /// </para>
@@ -56,17 +62,58 @@ namespace Amazon.S3Outposts.Model
     /// </summary>
     public partial class CreateEndpointRequest : AmazonS3OutpostsRequest
     {
+        private EndpointAccessType _accessType;
+        private string _customerOwnedIpv4Pool;
         private string _outpostId;
         private string _securityGroupId;
         private string _subnetId;
 
         /// <summary>
-        /// Gets and sets the property OutpostId. 
+        /// Gets and sets the property AccessType. 
         /// <para>
-        /// The ID of the AWS Outpost. 
+        /// The type of access for the on-premise network connectivity for the Outpost endpoint.
+        /// To access the endpoint from an on-premises network, you must specify the access type
+        /// and provide the customer owned IPv4 pool.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        public EndpointAccessType AccessType
+        {
+            get { return this._accessType; }
+            set { this._accessType = value; }
+        }
+
+        // Check to see if AccessType property is set
+        internal bool IsSetAccessType()
+        {
+            return this._accessType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerOwnedIpv4Pool. 
+        /// <para>
+        /// The ID of the customer-owned IPv4 pool for the endpoint. IP addresses will be allocated
+        /// from this pool for the endpoint.
+        /// </para>
+        /// </summary>
+        public string CustomerOwnedIpv4Pool
+        {
+            get { return this._customerOwnedIpv4Pool; }
+            set { this._customerOwnedIpv4Pool = value; }
+        }
+
+        // Check to see if CustomerOwnedIpv4Pool property is set
+        internal bool IsSetCustomerOwnedIpv4Pool()
+        {
+            return this._customerOwnedIpv4Pool != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutpostId. 
+        /// <para>
+        /// The ID of the AWS Outposts. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
         public string OutpostId
         {
             get { return this._outpostId; }
@@ -85,7 +132,7 @@ namespace Amazon.S3Outposts.Model
         /// The ID of the security group to use with the endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true)]
         public string SecurityGroupId
         {
             get { return this._securityGroupId; }
@@ -101,10 +148,11 @@ namespace Amazon.S3Outposts.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The ID of the subnet in the selected VPC.
+        /// The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost
+        /// that has the Amazon S3 on Outposts provisioned.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true)]
         public string SubnetId
         {
             get { return this._subnetId; }

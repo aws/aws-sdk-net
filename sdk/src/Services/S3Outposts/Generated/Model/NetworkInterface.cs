@@ -41,7 +41,6 @@ namespace Amazon.S3Outposts.Model
         /// The ID for the network interface.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
         public string NetworkInterfaceId
         {
             get { return this._networkInterfaceId; }

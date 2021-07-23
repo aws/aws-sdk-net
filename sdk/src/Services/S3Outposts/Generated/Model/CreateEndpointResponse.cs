@@ -41,7 +41,6 @@ namespace Amazon.S3Outposts.Model
         /// The Amazon Resource Name (ARN) of the endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=5, Max=500)]
         public string EndpointArn
         {
             get { return this._endpointArn; }

@@ -39,7 +39,7 @@ namespace Amazon.S3Outposts.Model
         /// <summary>
         /// Gets and sets the property Endpoints. 
         /// <para>
-        /// Returns an array of endpoints associated with AWS Outpost.
+        /// Returns an array of endpoints associated with AWS Outposts.
         /// </para>
         /// </summary>
         public List<Endpoint> Endpoints

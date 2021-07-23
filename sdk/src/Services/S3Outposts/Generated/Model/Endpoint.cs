@@ -29,18 +29,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Outposts.Model
 {
     /// <summary>
-    /// S3 on Outposts access points simplify managing data access at scale for shared datasets
-    /// in Amazon S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets
-    /// so that you can perform actions within your virtual private cloud (VPC).
+    /// Amazon S3 on Outposts Access Points simplify managing data access at scale for shared
+    /// datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets
+    /// so that you can perform actions within your virtual private cloud (VPC). For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html">
+    /// Accessing S3 on Outposts using VPC only access points</a>.
     /// </summary>
     public partial class Endpoint
     {
+        private EndpointAccessType _accessType;
         private string _cidrBlock;
         private DateTime? _creationTime;
+        private string _customerOwnedIpv4Pool;
         private string _endpointArn;
         private List<NetworkInterface> _networkInterfaces = new List<NetworkInterface>();
         private string _outpostsId;
+        private string _securityGroupId;
         private EndpointStatus _status;
+        private string _subnetId;
+        private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property AccessType.
+        /// </summary>
+        public EndpointAccessType AccessType
+        {
+            get { return this._accessType; }
+            set { this._accessType = value; }
+        }
+
+        // Check to see if AccessType property is set
+        internal bool IsSetAccessType()
+        {
+            return this._accessType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CidrBlock. 
@@ -48,7 +70,6 @@ namespace Amazon.S3Outposts.Model
         /// The VPC CIDR committed by this endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=20)]
         public string CidrBlock
         {
             get { return this._cidrBlock; }
@@ -80,12 +101,29 @@ namespace Amazon.S3Outposts.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomerOwnedIpv4Pool. 
+        /// <para>
+        /// The ID of the customer-owned IPv4 pool used for the endpoint.
+        /// </para>
+        /// </summary>
+        public string CustomerOwnedIpv4Pool
+        {
+            get { return this._customerOwnedIpv4Pool; }
+            set { this._customerOwnedIpv4Pool = value; }
+        }
+
+        // Check to see if CustomerOwnedIpv4Pool property is set
+        internal bool IsSetCustomerOwnedIpv4Pool()
+        {
+            return this._customerOwnedIpv4Pool != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EndpointArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=5, Max=500)]
         public string EndpointArn
         {
             get { return this._endpointArn; }
@@ -119,10 +157,9 @@ namespace Amazon.S3Outposts.Model
         /// <summary>
         /// Gets and sets the property OutpostsId. 
         /// <para>
-        /// The ID of the AWS Outpost.
+        /// The ID of the AWS Outposts.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
         public string OutpostsId
         {
             get { return this._outpostsId; }
@@ -133,6 +170,24 @@ namespace Amazon.S3Outposts.Model
         internal bool IsSetOutpostsId()
         {
             return this._outpostsId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroupId. 
+        /// <para>
+        /// The ID of the security group used for the endpoint.
+        /// </para>
+        /// </summary>
+        public string SecurityGroupId
+        {
+            get { return this._securityGroupId; }
+            set { this._securityGroupId = value; }
+        }
+
+        // Check to see if SecurityGroupId property is set
+        internal bool IsSetSecurityGroupId()
+        {
+            return this._securityGroupId != null;
         }
 
         /// <summary>
@@ -151,6 +206,42 @@ namespace Amazon.S3Outposts.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubnetId. 
+        /// <para>
+        /// The ID of the subnet used for the endpoint.
+        /// </para>
+        /// </summary>
+        public string SubnetId
+        {
+            get { return this._subnetId; }
+            set { this._subnetId = value; }
+        }
+
+        // Check to see if SubnetId property is set
+        internal bool IsSetSubnetId()
+        {
+            return this._subnetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        /// The ID of the VPC used for the endpoint.
+        /// </para>
+        /// </summary>
+        public string VpcId
+        {
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this._vpcId != null;
         }
 
     }

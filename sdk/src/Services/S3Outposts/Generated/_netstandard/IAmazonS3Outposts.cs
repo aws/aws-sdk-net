@@ -47,15 +47,21 @@ namespace Amazon.S3Outposts
 
 
         /// <summary>
-        /// S3 on Outposts access points simplify managing data access at scale for shared datasets
-        /// in Amazon S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets
-        /// so that you can perform actions within your virtual private cloud (VPC). 
+        /// Amazon S3 on Outposts Access Points simplify managing data access at scale for shared
+        /// datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets
+        /// so that you can perform actions within your virtual private cloud (VPC). For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html">
+        /// Accessing S3 on Outposts using VPC only access points</a>.
         /// 
         ///  
         /// <para>
-        /// This action creates an endpoint and associates it with the specified Outpost. 
+        /// This action creates an endpoint and associates it with the specified Outposts.
         /// </para>
-        ///   
+        ///  <note> 
+        /// <para>
+        /// It can take up to 5 minutes for this action to complete.
+        /// </para>
+        ///  </note>  
         /// <para>
         /// Related actions include:
         /// </para>
@@ -102,15 +108,21 @@ namespace Amazon.S3Outposts
 
 
         /// <summary>
-        /// S3 on Outposts access points simplify managing data access at scale for shared datasets
-        /// in Amazon S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets
-        /// so that you can perform actions within your virtual private cloud (VPC). 
+        /// Amazon S3 on Outposts Access Points simplify managing data access at scale for shared
+        /// datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets
+        /// so that you can perform actions within your virtual private cloud (VPC). For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html">
+        /// Accessing S3 on Outposts using VPC only access points</a>.
         /// 
         ///  
         /// <para>
-        /// This action deletes an endpoint. 
+        /// This action deletes an endpoint.
         /// </para>
-        ///   
+        ///  <note> 
+        /// <para>
+        /// It can take up to 5 minutes for this action to complete.
+        /// </para>
+        ///  </note>  
         /// <para>
         /// Related actions include:
         /// </para>
@@ -154,13 +166,15 @@ namespace Amazon.S3Outposts
 
 
         /// <summary>
-        /// S3 on Outposts access points simplify managing data access at scale for shared datasets
-        /// in Amazon S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets
-        /// so that you can perform actions within your virtual private cloud (VPC). 
+        /// Amazon S3 on Outposts Access Points simplify managing data access at scale for shared
+        /// datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets
+        /// so that you can perform actions within your virtual private cloud (VPC). For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html">
+        /// Accessing S3 on Outposts using VPC only access points</a>.
         /// 
         ///  
         /// <para>
-        /// This action lists endpoints associated with the Outpost. 
+        /// This action lists endpoints associated with the Outposts. 
         /// </para>
         ///   
         /// <para>

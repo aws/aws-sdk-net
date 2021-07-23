@@ -30,13 +30,15 @@ namespace Amazon.S3Outposts.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEndpoints operation.
-    /// S3 on Outposts access points simplify managing data access at scale for shared datasets
-    /// in Amazon S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets
-    /// so that you can perform actions within your virtual private cloud (VPC). 
+    /// Amazon S3 on Outposts Access Points simplify managing data access at scale for shared
+    /// datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets
+    /// so that you can perform actions within your virtual private cloud (VPC). For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html">
+    /// Accessing S3 on Outposts using VPC only access points</a>.
     /// 
     ///  
     /// <para>
-    /// This action lists endpoints associated with the Outpost. 
+    /// This action lists endpoints associated with the Outposts. 
     /// </para>
     ///   
     /// <para>

@@ -65,6 +65,18 @@ namespace Amazon.S3Outposts.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAccessType())
+                {
+                    context.Writer.WritePropertyName("AccessType");
+                    context.Writer.Write(publicRequest.AccessType);
+                }
+
+                if(publicRequest.IsSetCustomerOwnedIpv4Pool())
+                {
+                    context.Writer.WritePropertyName("CustomerOwnedIpv4Pool");
+                    context.Writer.Write(publicRequest.CustomerOwnedIpv4Pool);
+                }
+
                 if(publicRequest.IsSetOutpostId())
                 {
                     context.Writer.WritePropertyName("OutpostId");

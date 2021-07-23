@@ -30,15 +30,21 @@ namespace Amazon.S3Outposts.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEndpoint operation.
-    /// S3 on Outposts access points simplify managing data access at scale for shared datasets
-    /// in Amazon S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets
-    /// so that you can perform actions within your virtual private cloud (VPC). 
+    /// Amazon S3 on Outposts Access Points simplify managing data access at scale for shared
+    /// datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets
+    /// so that you can perform actions within your virtual private cloud (VPC). For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html">
+    /// Accessing S3 on Outposts using VPC only access points</a>.
     /// 
     ///  
     /// <para>
-    /// This action deletes an endpoint. 
+    /// This action deletes an endpoint.
     /// </para>
-    ///   
+    ///  <note> 
+    /// <para>
+    /// It can take up to 5 minutes for this action to complete.
+    /// </para>
+    ///  </note>  
     /// <para>
     /// Related actions include:
     /// </para>
@@ -62,10 +68,10 @@ namespace Amazon.S3Outposts.Model
         /// <summary>
         /// Gets and sets the property EndpointId. 
         /// <para>
-        /// The ID of the end point.
+        /// The ID of the endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=5, Max=500)]
+        [AWSProperty(Required=true)]
         public string EndpointId
         {
             get { return this._endpointId; }
@@ -81,10 +87,10 @@ namespace Amazon.S3Outposts.Model
         /// <summary>
         /// Gets and sets the property OutpostId. 
         /// <para>
-        /// The ID of the AWS Outpost. 
+        /// The ID of the AWS Outposts. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true)]
         public string OutpostId
         {
             get { return this._outpostId; }
