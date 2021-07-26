@@ -40,7 +40,7 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property ActiveTracing. 
         /// <para>
-        /// Displays whether this canary run used active AWS X-Ray tracing. 
+        /// Displays whether this canary run used active X-Ray tracing. 
         /// </para>
         /// </summary>
         public bool ActiveTracing

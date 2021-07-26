@@ -74,7 +74,8 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property ArtifactS3Location. 
         /// <para>
         /// The location in Amazon S3 where Synthetics stores artifacts from the test runs of
-        /// this canary. Artifacts include the log file, screenshots, and HAR files.
+        /// this canary. Artifacts include the log file, screenshots, and HAR files. The name
+        /// of the S3 bucket can't include a period (.).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

@@ -61,9 +61,13 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property Expression. 
         /// <para>
-        /// A rate expression that defines how often the canary is to run. The syntax is <code>rate(<i>number
-        /// unit</i>)</code>. <i>unit</i> can be <code>minute</code>, <code>minutes</code>, or
-        /// <code>hour</code>. 
+        /// A <code>rate</code> expression or a <code>cron</code> expression that defines how
+        /// often the canary is to run.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a rate expression, The syntax is <code>rate(<i>number unit</i>)</code>. <i>unit</i>
+        /// can be <code>minute</code>, <code>minutes</code>, or <code>hour</code>. 
         /// </para>
         ///  
         /// <para>
@@ -76,6 +80,13 @@ namespace Amazon.Synthetics.Model
         /// <para>
         /// Specifying <code>rate(0 minute)</code> or <code>rate(0 hour)</code> is a special value
         /// that causes the canary to run only once when it is started.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <code>cron(<i>expression</i>)</code> to specify a cron expression. You can't schedule
+        /// a canary to wait for more than a year before running. For information about the syntax
+        /// for cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_cron.html">
+        /// Scheduling canary runs using cron</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

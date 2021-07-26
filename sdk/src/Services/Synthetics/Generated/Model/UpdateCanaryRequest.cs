@@ -48,6 +48,7 @@ namespace Amazon.Synthetics.Model
         private string _runtimeVersion;
         private CanaryScheduleInput _schedule;
         private int? _successRetentionPeriodInDays;
+        private VisualReferenceInput _visualReference;
         private VpcConfigInput _vpcConfig;
 
         /// <summary>
@@ -239,6 +240,21 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetSuccessRetentionPeriodInDays()
         {
             return this._successRetentionPeriodInDays.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VisualReference.
+        /// </summary>
+        public VisualReferenceInput VisualReference
+        {
+            get { return this._visualReference; }
+            set { this._visualReference = value; }
+        }
+
+        // Check to see if VisualReference property is set
+        internal bool IsSetVisualReference()
+        {
+            return this._visualReference != null;
         }
 
         /// <summary>

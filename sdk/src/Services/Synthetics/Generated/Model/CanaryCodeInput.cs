@@ -47,7 +47,8 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property Handler. 
         /// <para>
         /// The entry point to use for the source code when running the canary. This value must
-        /// end with the string <code>.handler</code>.
+        /// end with the string <code>.handler</code>. The string is limited to 29 characters
+        /// or fewer.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
@@ -66,9 +67,8 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property S3Bucket. 
         /// <para>
-        /// If your canary script is located in S3, specify the full bucket name here. The bucket
-        /// must already exist. Specify the full bucket name, including <code>s3://</code> as
-        /// the start of the bucket name.
+        /// If your canary script is located in S3, specify the bucket name here. Do not include
+        /// <code>s3://</code> as the start of the bucket name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -127,8 +127,8 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property ZipFile. 
         /// <para>
         /// If you input your canary script directly into the canary instead of referring to an
-        /// S3 location, the value of this parameter is the .zip file that contains the script.
-        /// It can be up to 5 MB.
+        /// S3 location, the value of this parameter is the base64-encoded contents of the .zip
+        /// file that contains the script. It can be up to 5 MB.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000000)]

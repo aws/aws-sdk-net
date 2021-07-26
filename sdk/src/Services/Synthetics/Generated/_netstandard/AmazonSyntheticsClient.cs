@@ -810,8 +810,8 @@ namespace Amazon.Synthetics
         /// </para>
         ///  
         /// <para>
-        /// Tags don't have any semantic meaning to AWS and are interpreted strictly as strings
-        /// of characters.
+        /// Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly
+        /// as strings of characters.
         /// </para>
         ///  
         /// <para>

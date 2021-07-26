@@ -125,6 +125,17 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SuccessRetentionPeriodInDays);
                 }
 
+                if(publicRequest.IsSetVisualReference())
+                {
+                    context.Writer.WritePropertyName("VisualReference");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VisualReferenceInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VisualReference, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetVpcConfig())
                 {
                     context.Writer.WritePropertyName("VpcConfig");

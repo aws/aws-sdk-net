@@ -41,9 +41,9 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property ActiveTracing. 
         /// <para>
-        /// Specifies whether this canary is to use active AWS X-Ray tracing when it runs. Active
+        /// Specifies whether this canary is to use active X-Ray tracing when it runs. Active
         /// tracing enables this canary run to be displayed in the ServiceLens and X-Ray service
-        /// maps even if the canary does not hit an endpoint that has X-ray tracing enabled. Using
+        /// maps even if the canary does not hit an endpoint that has X-Ray tracing enabled. Using
         /// X-Ray tracing incurs charges. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_tracing.html">
         /// Canaries and X-Ray tracing</a>.
         /// </para>

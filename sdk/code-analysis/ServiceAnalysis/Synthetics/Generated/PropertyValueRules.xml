@@ -168,6 +168,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Synthetics.Model.BaseScreenshot.ScreenshotName</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Synthetics.Model.Canary.ArtifactS3Location</property>
     <min>1</min>
     <max>1024</max>
@@ -322,6 +327,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.RuntimeVersion.VersionName</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.VisualReferenceInput.BaseCanaryRunId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.VisualReferenceOutput.BaseCanaryRunId</property>
     <min>1</min>
     <max>1024</max>
   </property-value-rule>

@@ -148,6 +148,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                     unmarshalledObject.Timeline = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VisualReference", targetDepth))
+                {
+                    var unmarshaller = VisualReferenceOutputUnmarshaller.Instance;
+                    unmarshalledObject.VisualReference = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("VpcConfig", targetDepth))
                 {
                     var unmarshaller = VpcConfigOutputUnmarshaller.Instance;
