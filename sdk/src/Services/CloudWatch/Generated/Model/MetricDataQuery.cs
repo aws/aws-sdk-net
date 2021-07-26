@@ -67,12 +67,37 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class MetricDataQuery
     {
+        private string _accountId;
         private string _expression;
         private string _id;
         private string _label;
         private MetricStat _metricStat;
         private int? _period;
         private bool? _returnData;
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The ID of the account where the metrics are located, if this is a cross-account alarm.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use this field only for <code>PutMetricAlarm</code> operations. It is not used in
+        /// <code>GetMetricData</code> operations.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Expression. 

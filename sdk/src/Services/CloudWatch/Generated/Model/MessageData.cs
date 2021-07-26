@@ -30,6 +30,14 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// A message returned by the <code>GetMetricData</code>API, including a code and a description.
+    /// 
+    ///  
+    /// <para>
+    /// If a cross-Region <code>GetMetricData</code> operation fails with a code of <code>Forbidden</code>
+    /// and a value of <code>Authentication too complex to retrieve cross region data</code>,
+    /// you can correct the problem by running the <code>GetMetricData</code> operation in
+    /// the same Region where the metric data is.
+    /// </para>
     /// </summary>
     public partial class MessageData
     {

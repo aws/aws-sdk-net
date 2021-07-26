@@ -133,6 +133,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     int publicRequestlistValueIndex = 1;
                     foreach(var publicRequestlistValue in publicRequest.Metrics)
                     {
+                        if(publicRequestlistValue.IsSetAccountId())
+                        {
+                            request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AccountId", StringUtils.FromString(publicRequestlistValue.AccountId));
+                        }
                         if(publicRequestlistValue.IsSetExpression())
                         {
                             request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Expression", StringUtils.FromString(publicRequestlistValue.Expression));

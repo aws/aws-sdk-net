@@ -31,7 +31,8 @@ namespace Amazon.CloudWatch.Model
     /// <summary>
     /// Container for the parameters to the PutMetricStream operation.
     /// Creates or updates a metric stream. Metric streams can automatically stream CloudWatch
-    /// metrics to AWS destinations including Amazon S3 and to many third-party solutions.
+    /// metrics to Amazon Web Services destinations including Amazon S3 and to many third-party
+    /// solutions.
     /// 
     ///  
     /// <para>
@@ -238,6 +239,14 @@ namespace Amazon.CloudWatch.Model
         /// Tags can help you organize and categorize your resources. You can also use them to
         /// scope user permissions by granting a user permission to access or change only resources
         /// with certain tag values.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this parameter only when you are creating a new metric stream. If you
+        /// are using this operation to update an existing metric stream, any tags you specify
+        /// in this parameter are ignored. To change the tags of an existing metric stream, use
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+        /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.
         /// </para>
         /// </summary>
         public List<Tag> Tags

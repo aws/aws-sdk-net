@@ -35,9 +35,10 @@ namespace Amazon.CloudWatch
     /// <summary>
     /// Implementation for accessing CloudWatch
     ///
-    /// Amazon CloudWatch monitors your Amazon Web Services (AWS) resources and the applications
-    /// you run on AWS in real time. You can use CloudWatch to collect and track metrics,
-    /// which are the variables you want to measure for your resources and applications.
+    /// Amazon CloudWatch monitors your Amazon Web Services (Amazon Web Services) resources
+    /// and the applications you run on Amazon Web Services in real time. You can use CloudWatch
+    /// to collect and track metrics, which are the variables you want to measure for your
+    /// resources and applications.
     /// 
     ///  
     /// <para>
@@ -49,9 +50,9 @@ namespace Amazon.CloudWatch
     /// </para>
     ///  
     /// <para>
-    /// In addition to monitoring the built-in metrics that come with AWS, you can monitor
-    /// your own custom metrics. With CloudWatch, you gain system-wide visibility into resource
-    /// utilization, application performance, and operational health.
+    /// In addition to monitoring the built-in metrics that come with Amazon Web Services,
+    /// you can monitor your own custom metrics. With CloudWatch, you gain system-wide visibility
+    /// into resource utilization, application performance, and operational health.
     /// </para>
     /// </summary>
     public partial class AmazonCloudWatchClient : AmazonServiceClient, IAmazonCloudWatch
@@ -1553,8 +1554,8 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// For information about metrics and dimensions supported by AWS services, see the <a
-        /// href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
+        /// For information about metrics and dimensions supported by Amazon Web Services services,
+        /// see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
         /// CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
         /// </para>
         /// </summary>
@@ -2464,13 +2465,42 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The first time you create an alarm in the AWS Management Console, the CLI, or by using
+        /// The first time you create an alarm in the Management Console, the CLI, or by using
         /// the PutMetricAlarm API, CloudWatch creates the necessary service-linked role for you.
         /// The service-linked roles are called <code>AWSServiceRoleForCloudWatchEvents</code>
         /// and <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
-        /// service-linked role</a>.
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">Amazon
+        /// Web Services service-linked role</a>.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account alarms</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can set an alarm on metrics in the current account, or in another account. To
+        /// create a cross-account alarm that watches a metric in a different account, you must
+        /// have completed the following pre-requisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The account where the metrics are located (the <i>sharing account</i>) must already
+        /// have a sharing role named <b>CloudWatch-CrossAccountSharingRole</b>. If it does not
+        /// already have this role, you must create it using the instructions in <b>Set up a sharing
+        /// account</b> in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Cross-Account-Cross-Region.html#enable-cross-account-cross-Region">
+        /// Cross-account cross-Region CloudWatch console</a>. The policy for that role must grant
+        /// access to the ID of the account where you are creating the alarm. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The account where you are creating the alarm (the <i>monitoring account</i>) must
+        /// already have a service-linked role named <b>AWSServiceRoleForCloudWatchCrossAccount</b>
+        /// to allow CloudWatch to assume the sharing role in the sharing account. If it does
+        /// not, you must create it following the directions in <b>Set up a monitoring account</b>
+        /// in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Cross-Account-Cross-Region.html#enable-cross-account-cross-Region">
+        /// Cross-account cross-Region CloudWatch console</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutMetricAlarm service method.</param>
         /// 
@@ -2659,7 +2689,8 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Creates or updates a metric stream. Metric streams can automatically stream CloudWatch
-        /// metrics to AWS destinations including Amazon S3 and to many third-party solutions.
+        /// metrics to Amazon Web Services destinations including Amazon S3 and to many third-party
+        /// solutions.
         /// 
         ///  
         /// <para>
@@ -2985,8 +3016,8 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// Tags don't have any semantic meaning to AWS and are interpreted strictly as strings
-        /// of characters.
+        /// Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly
+        /// as strings of characters.
         /// </para>
         ///  
         /// <para>
