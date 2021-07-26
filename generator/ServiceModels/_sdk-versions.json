@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.80.0",
+    "ProductVersion" : "3.7.81.0",
     "CoreVersion"    : "3.7.1.0",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -78,7 +78,7 @@
             "InPreview"               : false
         },
         "CloudWatch"        : {
-            "Version" : "3.7.1.41",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.1.0"
@@ -1194,7 +1194,7 @@
             "InPreview"               : false
         },
         "S3Control"                       : {
-            "Version" : "3.7.1.16",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.1.0"
@@ -1378,7 +1378,7 @@
             "InPreview"               : false
         },
         "Textract"                        : {
-            "Version" : "3.7.0.45",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.1.0"
@@ -1762,7 +1762,7 @@
             "InPreview"               : false
         },
         "Synthetics"                      : {
-            "Version" : "3.7.0.44",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.1.0"
@@ -1818,7 +1818,7 @@
             "InPreview"               : false
         },
         "IdentityStore"                   : {
-            "Version" : "3.7.0.44",
+            "Version" : "3.7.0.45",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.1.0"
@@ -2162,7 +2162,7 @@
             "InPreview"               : false
         },
         "Proton"                          : {
-            "Version" : "3.7.1.10",
+            "Version" : "3.7.1.11",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.1.0"

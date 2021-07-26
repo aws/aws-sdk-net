@@ -1,3 +1,17 @@
+### 3.7.81.0 (2021-07-26 19:52 UTC)
+* CloudWatch (3.7.2.0)
+	* SDK update to support creation of Cross-Account Metric Alarms and update API documentation.
+* IdentityStore (3.7.0.45)
+	* Documentation updates for SSO API Ref.
+* Proton (3.7.1.11)
+	* Documentation-only update links
+* S3Control (3.7.2.0)
+	* S3 Access Point aliases can be used anywhere you use S3 bucket names to access data in S3
+* Synthetics (3.7.1.0)
+	* CloudWatch Synthetics now supports visual testing in its canaries.
+* Textract (3.7.1.0)
+	* Adds support for AnalyzeExpense, a new API to extract relevant data such as contact information, items purchased, and vendor name, from almost any invoice or receipt without the need for any templates or configuration.
+
 ### 3.7.80.0 (2021-07-23 18:14 UTC)
 * Imagebuilder (3.7.2.9)
 	* Update to documentation to reapply missing change to SSM uninstall switch default value and improve description.
