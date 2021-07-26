@@ -259,7 +259,7 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
         /// account connections</a> in the <i>AWS Proton Administrator guide</i>.
         /// </para>
         /// </summary>
@@ -636,7 +636,7 @@ namespace Amazon.Proton
         /// <para>
         /// An environment account connection is a secure bi-directional connection between a
         /// <i>management account</i> and an <i>environment account</i> that maintains authorization
-        /// and permissions. For more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+        /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
         /// account connections</a> in the <i>AWS Proton Administrator guide</i>.
         /// </para>
         /// </summary>
@@ -1108,7 +1108,7 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
         /// account connections</a> in the <i>AWS Proton Administrator guide</i>.
         /// </para>
         /// </summary>
@@ -1598,7 +1598,7 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
         /// account connections</a> in the <i>AWS Proton Administrator guide</i>.
         /// </para>
         /// </summary>
@@ -1990,7 +1990,7 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
         /// account connections</a> in the <i>AWS Proton Administrator guide</i>.
         /// </para>
         /// </summary>
@@ -2493,7 +2493,7 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
         /// account connections</a> in the <i>AWS Proton Administrator guide</i>.
         /// </para>
         /// </summary>
@@ -2863,7 +2863,7 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
         /// account connections</a> in the <i>AWS Proton Administrator guide</i>.
         /// </para>
         /// </summary>

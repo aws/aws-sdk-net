@@ -72,7 +72,7 @@ namespace Amazon.Proton.Model
         /// The ID of the environment account connection that you provide if you're provisioning
         /// your environment infrastructure resources to an environment account. You must include
         /// either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-        /// parameter and value. For more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+        /// parameter and value. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
         /// account connections</a> in the <i>AWS Proton Administrator guide</i>.
         /// </para>
         /// </summary>
