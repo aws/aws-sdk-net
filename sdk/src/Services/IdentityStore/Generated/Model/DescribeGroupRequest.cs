@@ -60,10 +60,10 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property IdentityStoreId. 
         /// <para>
-        /// The globally unique identifier for the identity store, such as d-1234567890. In this
-        /// example, d- is a fixed prefix, and 1234567890 is a randomly generated string which
-        /// contains number and lower case letters. This value is generated at the time that a
-        /// new identity store is created.
+        /// The globally unique identifier for the identity store, such as <code>d-1234567890</code>.
+        /// In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is
+        /// a randomly generated string that contains number and lower case letters. This value
+        /// is generated at the time that a new identity store is created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=12)]

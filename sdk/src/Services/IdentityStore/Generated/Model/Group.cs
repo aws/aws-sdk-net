@@ -39,11 +39,12 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// Contains the group’s display name value. The length limit is 1024 characters. This
+        /// Contains the group’s display name value. The length limit is 1,024 characters. This
         /// value can consist of letters, accented characters, symbols, numbers, punctuation,
-        /// tab, new line, carriage return, space and non breaking space in this attribute. The
-        /// characters “&lt;&gt;;:%” are excluded. This value is specified at the time the group
-        /// is created and stored as an attribute of the group object in the identity store.
+        /// tab, new line, carriage return, space, and nonbreaking space in this attribute. The
+        /// characters <code>&lt;&gt;;:%</code> are excluded. This value is specified at the time
+        /// the group is created and stored as an attribute of the group object in the identity
+        /// store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
