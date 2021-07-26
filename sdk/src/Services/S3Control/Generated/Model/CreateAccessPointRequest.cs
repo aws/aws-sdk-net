@@ -142,7 +142,7 @@ namespace Amazon.S3Control.Model
         /// The name you want to assign to this access point.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=50)]
+        [AWSProperty(Required=true, Min=3, Max=63)]
         public string Name
         {
             get { return this._name; }

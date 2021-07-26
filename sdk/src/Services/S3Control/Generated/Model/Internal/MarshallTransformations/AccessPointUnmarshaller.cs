@@ -61,6 +61,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.AccessPointArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Alias", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Alias = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Bucket", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

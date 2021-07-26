@@ -34,6 +34,7 @@ namespace Amazon.S3Control.Model
     public partial class CreateAccessPointResponse : AmazonWebServiceResponse
     {
         private string _accessPointArn;
+        private string _alias;
 
         /// <summary>
         /// Gets and sets the property AccessPointArn. 
@@ -57,6 +58,25 @@ namespace Amazon.S3Control.Model
         internal bool IsSetAccessPointArn()
         {
             return this._accessPointArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Alias. 
+        /// <para>
+        /// The name or alias of the access point.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=63)]
+        public string Alias
+        {
+            get { return this._alias; }
+            set { this._alias = value; }
+        }
+
+        // Check to see if Alias property is set
+        internal bool IsSetAlias()
+        {
+            return this._alias != null;
         }
 
     }

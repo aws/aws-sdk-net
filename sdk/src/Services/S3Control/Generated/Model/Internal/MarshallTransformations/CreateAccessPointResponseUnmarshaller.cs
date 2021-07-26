@@ -69,6 +69,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         response.AccessPointArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Alias", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.Alias = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

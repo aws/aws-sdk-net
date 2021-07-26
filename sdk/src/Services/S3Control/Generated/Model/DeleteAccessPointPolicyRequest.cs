@@ -102,7 +102,7 @@ namespace Amazon.S3Control.Model
         /// The value must be URL encoded. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=50)]
+        [AWSProperty(Required=true, Min=3, Max=63)]
         public string Name
         {
             get { return this._name; }

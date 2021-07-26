@@ -61,6 +61,18 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AccessPointArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.AccessPointArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Alias", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.Alias = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Bucket", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -71,6 +83,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
                         response.CreationDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Endpoints", targetDepth))
+                    {
+                        var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        response.Endpoints = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Name", targetDepth))

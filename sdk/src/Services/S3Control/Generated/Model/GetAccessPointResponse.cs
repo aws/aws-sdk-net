@@ -33,12 +33,53 @@ namespace Amazon.S3Control.Model
     /// </summary>
     public partial class GetAccessPointResponse : AmazonWebServiceResponse
     {
+        private string _accessPointArn;
+        private string _alias;
         private string _bucket;
         private DateTime? _creationDate;
+        private Dictionary<string, string> _endpoints = new Dictionary<string, string>();
         private string _name;
         private NetworkOrigin _networkOrigin;
         private PublicAccessBlockConfiguration _publicAccessBlockConfiguration;
         private VpcConfiguration _vpcConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property AccessPointArn. 
+        /// <para>
+        /// The ARN of the access point.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=4, Max=128)]
+        public string AccessPointArn
+        {
+            get { return this._accessPointArn; }
+            set { this._accessPointArn = value; }
+        }
+
+        // Check to see if AccessPointArn property is set
+        internal bool IsSetAccessPointArn()
+        {
+            return this._accessPointArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Alias. 
+        /// <para>
+        /// The name or alias of the access point.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=63)]
+        public string Alias
+        {
+            get { return this._alias; }
+            set { this._alias = value; }
+        }
+
+        // Check to see if Alias property is set
+        internal bool IsSetAlias()
+        {
+            return this._alias != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Bucket. 
@@ -78,12 +119,30 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Endpoints. 
+        /// <para>
+        /// The VPC endpoint for the access point.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Endpoints
+        {
+            get { return this._endpoints; }
+            set { this._endpoints = value; }
+        }
+
+        // Check to see if Endpoints property is set
+        internal bool IsSetEndpoints()
+        {
+            return this._endpoints != null && this._endpoints.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the specified access point.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=50)]
+        [AWSProperty(Min=3, Max=63)]
         public string Name
         {
             get { return this._name; }
