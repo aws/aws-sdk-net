@@ -51,7 +51,7 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// The name of the S3 bucket.
+        /// The name of the S3 bucket. Note that the # character is not valid in the file name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=255)]

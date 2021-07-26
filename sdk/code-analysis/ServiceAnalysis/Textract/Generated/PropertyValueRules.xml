@@ -131,6 +131,24 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Textract.Model.ExpenseDetection.Confidence</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.ExpenseDocument.ExpenseIndex</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.ExpenseField.PageNumber</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.ExpenseType.Confidence</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Textract.Model.HumanLoopActivationOutput.HumanLoopActivationConditionsEvaluationResults</property>
     <max>10240</max>
   </property-value-rule>
@@ -147,6 +165,10 @@
     <min>1</min>
     <max>63</max>
     <pattern>^[a-z0-9](-*[a-z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.LineItemGroup.LineItemGroupIndex</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Textract.Model.NotificationChannel.RoleArn</property>

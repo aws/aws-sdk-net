@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Textract.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetDocumentTextDetection operation
+    /// Response Unmarshaller for AnalyzeExpense operation
     /// </summary>  
-    public class GetDocumentTextDetectionResponseUnmarshaller : JsonResponseUnmarshaller
+    public class AnalyzeExpenseResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,52 +45,22 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetDocumentTextDetectionResponse response = new GetDocumentTextDetectionResponse();
+            AnalyzeExpenseResponse response = new AnalyzeExpenseResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Blocks", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Block, BlockUnmarshaller>(BlockUnmarshaller.Instance);
-                    response.Blocks = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DetectDocumentTextModelVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DetectDocumentTextModelVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("DocumentMetadata", targetDepth))
                 {
                     var unmarshaller = DocumentMetadataUnmarshaller.Instance;
                     response.DocumentMetadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("JobStatus", targetDepth))
+                if (context.TestExpression("ExpenseDocuments", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.JobStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NextToken", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StatusMessage", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.StatusMessage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Warnings", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Warning, WarningUnmarshaller>(WarningUnmarshaller.Instance);
-                    response.Warnings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ExpenseDocument, ExpenseDocumentUnmarshaller>(ExpenseDocumentUnmarshaller.Instance);
+                    response.ExpenseDocuments = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -120,17 +90,17 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("BadDocumentException"))
+                {
+                    return BadDocumentExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DocumentTooLargeException"))
+                {
+                    return DocumentTooLargeExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerError"))
                 {
                     return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidJobIdException"))
-                {
-                    return InvalidJobIdExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidKMSKeyException"))
-                {
-                    return InvalidKMSKeyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
                 {
@@ -148,13 +118,17 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedDocumentException"))
+                {
+                    return UnsupportedDocumentExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonTextractException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetDocumentTextDetectionResponseUnmarshaller _instance = new GetDocumentTextDetectionResponseUnmarshaller();        
+        private static AnalyzeExpenseResponseUnmarshaller _instance = new AnalyzeExpenseResponseUnmarshaller();        
 
-        internal static GetDocumentTextDetectionResponseUnmarshaller GetInstance()
+        internal static AnalyzeExpenseResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -162,7 +136,7 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetDocumentTextDetectionResponseUnmarshaller Instance
+        public static AnalyzeExpenseResponseUnmarshaller Instance
         {
             get
             {
