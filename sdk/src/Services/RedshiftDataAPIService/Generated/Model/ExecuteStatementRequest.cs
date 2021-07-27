@@ -36,8 +36,8 @@ namespace Amazon.RedshiftDataAPIService.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the
-    /// cluster identifier that matches the cluster in the secret. 
+    /// Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database
+    /// name, and the cluster identifier that matches the cluster in the secret. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -62,7 +62,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
         /// The cluster identifier. This parameter is required when authenticating using either
-        /// AWS Secrets Manager or temporary credentials. 
+        /// Secrets Manager or temporary credentials. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,10 +81,11 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// <summary>
         /// Gets and sets the property Database. 
         /// <para>
-        /// The name of the database. This parameter is required when authenticating using temporary
-        /// credentials.
+        /// The name of the database. This parameter is required when authenticating using either
+        /// Secrets Manager or temporary credentials. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Database
         {
             get { return this._database; }
@@ -139,7 +140,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// Gets and sets the property SecretArn. 
         /// <para>
         /// The name or ARN of the secret that enables access to the database. This parameter
-        /// is required when authenticating using AWS Secrets Manager. 
+        /// is required when authenticating using Secrets Manager. 
         /// </para>
         /// </summary>
         public string SecretArn

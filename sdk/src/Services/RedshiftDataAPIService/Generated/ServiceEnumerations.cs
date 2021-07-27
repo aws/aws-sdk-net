@@ -25,6 +25,72 @@ namespace Amazon.RedshiftDataAPIService
 {
 
     /// <summary>
+    /// Constants used for properties of type StatementStatusString.
+    /// </summary>
+    public class StatementStatusString : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ABORTED for StatementStatusString
+        /// </summary>
+        public static readonly StatementStatusString ABORTED = new StatementStatusString("ABORTED");
+        /// <summary>
+        /// Constant FAILED for StatementStatusString
+        /// </summary>
+        public static readonly StatementStatusString FAILED = new StatementStatusString("FAILED");
+        /// <summary>
+        /// Constant FINISHED for StatementStatusString
+        /// </summary>
+        public static readonly StatementStatusString FINISHED = new StatementStatusString("FINISHED");
+        /// <summary>
+        /// Constant PICKED for StatementStatusString
+        /// </summary>
+        public static readonly StatementStatusString PICKED = new StatementStatusString("PICKED");
+        /// <summary>
+        /// Constant STARTED for StatementStatusString
+        /// </summary>
+        public static readonly StatementStatusString STARTED = new StatementStatusString("STARTED");
+        /// <summary>
+        /// Constant SUBMITTED for StatementStatusString
+        /// </summary>
+        public static readonly StatementStatusString SUBMITTED = new StatementStatusString("SUBMITTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StatementStatusString(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StatementStatusString FindValue(string value)
+        {
+            return FindValue<StatementStatusString>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StatementStatusString(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StatusString.
     /// </summary>
     public class StatusString : ConstantClass

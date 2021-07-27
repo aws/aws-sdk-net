@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StatementData Object
+    /// Response Unmarshaller for SubStatementData Object
     /// </summary>  
-    public class StatementDataUnmarshaller : IUnmarshaller<StatementData, XmlUnmarshallerContext>, IUnmarshaller<StatementData, JsonUnmarshallerContext>
+    public class SubStatementDataUnmarshaller : IUnmarshaller<SubStatementData, XmlUnmarshallerContext>, IUnmarshaller<SubStatementData, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StatementData IUnmarshaller<StatementData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SubStatementData IUnmarshaller<SubStatementData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public StatementData Unmarshall(JsonUnmarshallerContext context)
+        public SubStatementData Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            StatementData unmarshalledObject = new StatementData();
+            SubStatementData unmarshalledObject = new SubStatementData();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -70,22 +70,28 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Duration", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Error", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Error = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HasResultSet", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.HasResultSet = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IsBatchStatement", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.IsBatchStatement = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("QueryParameters", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<SqlParameter, SqlParameterUnmarshaller>(SqlParameterUnmarshaller.Instance);
-                    unmarshalledObject.QueryParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("QueryString", targetDepth))
@@ -94,22 +100,22 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                     unmarshalledObject.QueryString = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("QueryStrings", targetDepth))
+                if (context.TestExpression("RedshiftQueryId", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.QueryStrings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.RedshiftQueryId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SecretArn", targetDepth))
+                if (context.TestExpression("ResultRows", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SecretArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ResultRows = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("StatementName", targetDepth))
+                if (context.TestExpression("ResultSize", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StatementName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ResultSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
@@ -130,12 +136,12 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
         }
 
 
-        private static StatementDataUnmarshaller _instance = new StatementDataUnmarshaller();        
+        private static SubStatementDataUnmarshaller _instance = new SubStatementDataUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StatementDataUnmarshaller Instance
+        public static SubStatementDataUnmarshaller Instance
         {
             get
             {

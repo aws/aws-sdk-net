@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeStatement operation
+    /// Response Unmarshaller for BatchExecuteStatement operation
     /// </summary>  
-    public class DescribeStatementResponseUnmarshaller : JsonResponseUnmarshaller
+    public class BatchExecuteStatementResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeStatementResponse response = new DescribeStatementResponse();
+            BatchExecuteStatementResponse response = new BatchExecuteStatementResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -75,88 +75,16 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                     response.DbUser = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Duration", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    response.Duration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Error", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Error = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("HasResultSet", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.HasResultSet = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("QueryParameters", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<SqlParameter, SqlParameterUnmarshaller>(SqlParameterUnmarshaller.Instance);
-                    response.QueryParameters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("QueryString", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.QueryString = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RedshiftPid", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    response.RedshiftPid = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RedshiftQueryId", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    response.RedshiftQueryId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ResultRows", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    response.ResultRows = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ResultSize", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    response.ResultSize = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("SecretArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SecretArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SubStatements", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<SubStatementData, SubStatementDataUnmarshaller>(SubStatementDataUnmarshaller.Instance);
-                    response.SubStatements = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("UpdatedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.UpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -182,13 +110,13 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ActiveStatementsExceededException"))
                 {
-                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ActiveStatementsExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("BatchExecuteStatementException"))
                 {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return BatchExecuteStatementExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
@@ -198,9 +126,9 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
             return new AmazonRedshiftDataAPIServiceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeStatementResponseUnmarshaller _instance = new DescribeStatementResponseUnmarshaller();        
+        private static BatchExecuteStatementResponseUnmarshaller _instance = new BatchExecuteStatementResponseUnmarshaller();        
 
-        internal static DescribeStatementResponseUnmarshaller GetInstance()
+        internal static BatchExecuteStatementResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -208,7 +136,7 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeStatementResponseUnmarshaller Instance
+        public static BatchExecuteStatementResponseUnmarshaller Instance
         {
             get
             {

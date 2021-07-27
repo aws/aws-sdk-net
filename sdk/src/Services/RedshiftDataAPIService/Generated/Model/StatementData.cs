@@ -35,8 +35,10 @@ namespace Amazon.RedshiftDataAPIService.Model
     {
         private DateTime? _createdAt;
         private string _id;
+        private bool? _isBatchStatement;
         private List<SqlParameter> _queryParameters = new List<SqlParameter>();
         private string _queryString;
+        private List<string> _queryStrings = new List<string>();
         private string _secretArn;
         private string _statementName;
         private StatusString _status;
@@ -81,6 +83,24 @@ namespace Amazon.RedshiftDataAPIService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsBatchStatement. 
+        /// <para>
+        /// A value that indicates whether the statement is a batch query request.
+        /// </para>
+        /// </summary>
+        public bool IsBatchStatement
+        {
+            get { return this._isBatchStatement.GetValueOrDefault(); }
+            set { this._isBatchStatement = value; }
+        }
+
+        // Check to see if IsBatchStatement property is set
+        internal bool IsSetIsBatchStatement()
+        {
+            return this._isBatchStatement.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property QueryParameters. 
         /// <para>
         /// The parameters used in a SQL statement.
@@ -115,6 +135,25 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetQueryString()
         {
             return this._queryString != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryStrings. 
+        /// <para>
+        /// One or more SQL statements. Each query string in the array corresponds to one of the
+        /// queries in a batch query request.
+        /// </para>
+        /// </summary>
+        public List<string> QueryStrings
+        {
+            get { return this._queryStrings; }
+            set { this._queryStrings = value; }
+        }
+
+        // Check to see if QueryStrings property is set
+        internal bool IsSetQueryStrings()
+        {
+            return this._queryStrings != null && this._queryStrings.Count > 0; 
         }
 
         /// <summary>

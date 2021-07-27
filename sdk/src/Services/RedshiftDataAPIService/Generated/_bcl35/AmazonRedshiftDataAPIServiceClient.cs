@@ -36,8 +36,7 @@ namespace Amazon.RedshiftDataAPIService
     /// Implementation for accessing RedshiftDataAPIService
     ///
     /// You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables.
-    /// You can run individual SQL statements, which are committed if the statement succeeds.
-    /// 
+    /// You can run SQL statements, which are committed if the statement succeeds. 
     /// 
     ///  
     /// <para>
@@ -246,6 +245,84 @@ namespace Amazon.RedshiftDataAPIService
         #endregion
 
 
+        #region  BatchExecuteStatement
+
+        /// <summary>
+        /// Runs one or more SQL statements, which can be data manipulation language (DML) or
+        /// data definition language (DDL). Depending on the authorization method, use one of
+        /// the following combinations of request parameters: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database
+        /// name, and the cluster identifier that matches the cluster in the secret. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Temporary credentials - specify the cluster identifier, the database name, and the
+        /// database user name. Permission to call the <code>redshift:GetClusterCredentials</code>
+        /// operation is required to use this method. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchExecuteStatement service method.</param>
+        /// 
+        /// <returns>The response from the BatchExecuteStatement service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveStatementsExceededException">
+        /// The number of active statements exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.BatchExecuteStatementException">
+        /// An SQL statement encountered an environmental error while running.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/BatchExecuteStatement">REST API Reference for BatchExecuteStatement Operation</seealso>
+        public virtual BatchExecuteStatementResponse BatchExecuteStatement(BatchExecuteStatementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchExecuteStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchExecuteStatementResponseUnmarshaller.Instance;
+
+            return Invoke<BatchExecuteStatementResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchExecuteStatement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchExecuteStatement operation on AmazonRedshiftDataAPIServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchExecuteStatement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/BatchExecuteStatement">REST API Reference for BatchExecuteStatement Operation</seealso>
+        public virtual IAsyncResult BeginBatchExecuteStatement(BatchExecuteStatementRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchExecuteStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchExecuteStatementResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchExecuteStatement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchExecuteStatement.</param>
+        /// 
+        /// <returns>Returns a  BatchExecuteStatementResult from RedshiftDataAPIService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/BatchExecuteStatement">REST API Reference for BatchExecuteStatement Operation</seealso>
+        public virtual BatchExecuteStatementResponse EndBatchExecuteStatement(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchExecuteStatementResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CancelStatement
 
         /// <summary>
@@ -259,6 +336,9 @@ namespace Amazon.RedshiftDataAPIService
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
         /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/CancelStatement">REST API Reference for CancelStatement Operation</seealso>
         public virtual CancelStatementResponse CancelStatement(CancelStatementRequest request)
@@ -381,8 +461,8 @@ namespace Amazon.RedshiftDataAPIService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the
-        /// cluster identifier that matches the cluster in the secret. 
+        /// Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database
+        /// name, and the cluster identifier that matches the cluster in the secret. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -456,8 +536,8 @@ namespace Amazon.RedshiftDataAPIService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the
-        /// cluster identifier that matches the cluster in the secret. 
+        /// Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database
+        /// name, and the cluster identifier that matches the cluster in the secret. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -598,8 +678,8 @@ namespace Amazon.RedshiftDataAPIService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the
-        /// cluster identifier that matches the cluster in the secret. 
+        /// Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database
+        /// name, and the cluster identifier that matches the cluster in the secret. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -673,8 +753,8 @@ namespace Amazon.RedshiftDataAPIService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the
-        /// cluster identifier that matches the cluster in the secret. 
+        /// Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database
+        /// name, and the cluster identifier that matches the cluster in the secret. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -810,8 +890,8 @@ namespace Amazon.RedshiftDataAPIService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the
-        /// cluster identifier that matches the cluster in the secret. 
+        /// Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database
+        /// name, and the cluster identifier that matches the cluster in the secret. 
         /// </para>
         ///  </li> <li> 
         /// <para>

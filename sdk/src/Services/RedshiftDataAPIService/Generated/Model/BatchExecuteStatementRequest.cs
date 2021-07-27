@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RedshiftDataAPIService.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListDatabases operation.
-    /// List the databases in a cluster. A token is returned to page through the database
-    /// list. Depending on the authorization method, use one of the following combinations
-    /// of request parameters: 
+    /// Container for the parameters to the BatchExecuteStatement operation.
+    /// Runs one or more SQL statements, which can be data manipulation language (DML) or
+    /// data definition language (DDL). Depending on the authorization method, use one of
+    /// the following combinations of request parameters: 
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -47,14 +47,15 @@ namespace Amazon.RedshiftDataAPIService.Model
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial class ListDatabasesRequest : AmazonRedshiftDataAPIServiceRequest
+    public partial class BatchExecuteStatementRequest : AmazonRedshiftDataAPIServiceRequest
     {
         private string _clusterIdentifier;
         private string _database;
         private string _dbUser;
-        private int? _maxResults;
-        private string _nextToken;
         private string _secretArn;
+        private List<string> _sqls = new List<string>();
+        private string _statementName;
+        private bool? _withEvent;
 
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
@@ -116,49 +117,6 @@ namespace Amazon.RedshiftDataAPIService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        /// The maximum number of databases to return in the response. If more databases exist
-        /// than fit in one response, then <code>NextToken</code> is returned to page through
-        /// the results. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=1000)]
-        public int MaxResults
-        {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
-        }
-
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
-        {
-            return this._maxResults.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// A value that indicates the starting point for the next set of response records in
-        /// a subsequent request. If a value is returned in a response, you can retrieve the next
-        /// set of records by providing this returned NextToken value in the next NextToken parameter
-        /// and retrying the command. If the NextToken field is empty, all response records have
-        /// been retrieved for the request. 
-        /// </para>
-        /// </summary>
-        public string NextToken
-        {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
-        }
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this._nextToken != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property SecretArn. 
         /// <para>
         /// The name or ARN of the secret that enables access to the database. This parameter
@@ -175,6 +133,64 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetSecretArn()
         {
             return this._secretArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sqls. 
+        /// <para>
+        /// One or more SQL statements to run. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=40)]
+        public List<string> Sqls
+        {
+            get { return this._sqls; }
+            set { this._sqls = value; }
+        }
+
+        // Check to see if Sqls property is set
+        internal bool IsSetSqls()
+        {
+            return this._sqls != null && this._sqls.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatementName. 
+        /// <para>
+        /// The name of the SQL statements. You can name the SQL statements when you create them
+        /// to identify the query. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=500)]
+        public string StatementName
+        {
+            get { return this._statementName; }
+            set { this._statementName = value; }
+        }
+
+        // Check to see if StatementName property is set
+        internal bool IsSetStatementName()
+        {
+            return this._statementName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WithEvent. 
+        /// <para>
+        /// A value that indicates whether to send an event to the Amazon EventBridge event bus
+        /// after the SQL statements run. 
+        /// </para>
+        /// </summary>
+        public bool WithEvent
+        {
+            get { return this._withEvent.GetValueOrDefault(); }
+            set { this._withEvent = value; }
+        }
+
+        // Check to see if WithEvent property is set
+        internal bool IsSetWithEvent()
+        {
+            return this._withEvent.HasValue; 
         }
 
     }

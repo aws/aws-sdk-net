@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.BatchExecuteStatementRequest.StatementName</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.BatchExecuteStatementResponse.Id</property>
+    <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d+)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.CancelStatementRequest.Id</property>
+    <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d+)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.DescribeStatementRequest.Id</property>
+    <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d+)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.DescribeStatementResponse.Id</property>
+    <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d+)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.DescribeTableRequest.MaxResults</property>
     <min>0</min>
     <max>1000</max>
@@ -9,6 +30,14 @@
     <property>Amazon.RedshiftDataAPIService.Model.ExecuteStatementRequest.StatementName</property>
     <min>0</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.ExecuteStatementResponse.Id</property>
+    <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d+)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.GetStatementResultRequest.Id</property>
+    <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d+)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ListDatabasesRequest.MaxResults</property>
@@ -44,8 +73,16 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.StatementData.Id</property>
+    <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d+)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.StatementData.StatementName</property>
     <min>0</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.SubStatementData.Id</property>
+    <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d+)?$</pattern>
   </property-value-rule>
 </property-value-rules>
