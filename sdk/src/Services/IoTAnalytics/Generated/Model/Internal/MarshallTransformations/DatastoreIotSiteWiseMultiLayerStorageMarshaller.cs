@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DatastoreStorage Marshaller
+    /// DatastoreIotSiteWiseMultiLayerStorage Marshaller
     /// </summary>       
-    public class DatastoreStorageMarshaller : IRequestMarshaller<DatastoreStorage, JsonMarshallerContext> 
+    public class DatastoreIotSiteWiseMultiLayerStorageMarshaller : IRequestMarshaller<DatastoreIotSiteWiseMultiLayerStorage, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,37 +43,15 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DatastoreStorage requestObject, JsonMarshallerContext context)
+        public void Marshall(DatastoreIotSiteWiseMultiLayerStorage requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCustomerManagedS3())
+            if(requestObject.IsSetCustomerManagedS3Storage())
             {
-                context.Writer.WritePropertyName("customerManagedS3");
+                context.Writer.WritePropertyName("customerManagedS3Storage");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = CustomerManagedDatastoreS3StorageMarshaller.Instance;
-                marshaller.Marshall(requestObject.CustomerManagedS3, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetIotSiteWiseMultiLayerStorage())
-            {
-                context.Writer.WritePropertyName("iotSiteWiseMultiLayerStorage");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = DatastoreIotSiteWiseMultiLayerStorageMarshaller.Instance;
-                marshaller.Marshall(requestObject.IotSiteWiseMultiLayerStorage, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetServiceManagedS3())
-            {
-                context.Writer.WritePropertyName("serviceManagedS3");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ServiceManagedDatastoreS3StorageMarshaller.Instance;
-                marshaller.Marshall(requestObject.ServiceManagedS3, context);
+                var marshaller = IotSiteWiseCustomerManagedDatastoreS3StorageMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomerManagedS3Storage, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -83,7 +61,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static DatastoreStorageMarshaller Instance = new DatastoreStorageMarshaller();
+        public readonly static DatastoreIotSiteWiseMultiLayerStorageMarshaller Instance = new DatastoreIotSiteWiseMultiLayerStorageMarshaller();
 
     }
 }

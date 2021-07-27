@@ -29,17 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Where data store data is stored.
+    /// Contains information about your data store.
     /// </summary>
     public partial class DatastoreStorageSummary
     {
         private CustomerManagedDatastoreS3StorageSummary _customerManagedS3;
+        private DatastoreIotSiteWiseMultiLayerStorageSummary _iotSiteWiseMultiLayerStorage;
         private ServiceManagedDatastoreS3StorageSummary _serviceManagedS3;
 
         /// <summary>
         /// Gets and sets the property CustomerManagedS3. 
         /// <para>
-        /// Used to store data store data in an S3 bucket that you manage.
+        /// Used to store data in an Amazon S3 bucket managed by IoT Analytics.
         /// </para>
         /// </summary>
         public CustomerManagedDatastoreS3StorageSummary CustomerManagedS3
@@ -55,9 +56,27 @@ namespace Amazon.IoTAnalytics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IotSiteWiseMultiLayerStorage. 
+        /// <para>
+        ///  Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. 
+        /// </para>
+        /// </summary>
+        public DatastoreIotSiteWiseMultiLayerStorageSummary IotSiteWiseMultiLayerStorage
+        {
+            get { return this._iotSiteWiseMultiLayerStorage; }
+            set { this._iotSiteWiseMultiLayerStorage = value; }
+        }
+
+        // Check to see if IotSiteWiseMultiLayerStorage property is set
+        internal bool IsSetIotSiteWiseMultiLayerStorage()
+        {
+            return this._iotSiteWiseMultiLayerStorage != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServiceManagedS3. 
         /// <para>
-        /// Used to store data store data in an S3 bucket managed by AWS IoT Analytics.
+        /// Used to store data in an Amazon S3 bucket managed by IoT Analytics.
         /// </para>
         /// </summary>
         public ServiceManagedDatastoreS3StorageSummary ServiceManagedS3

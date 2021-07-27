@@ -38,10 +38,10 @@ namespace Amazon.IoTAnalytics
     /// <summary>
     /// Implementation for accessing IoTAnalytics
     ///
-    /// AWS IoT Analytics allows you to collect large amounts of device data, process messages,
+    /// IoT Analytics allows you to collect large amounts of device data, process messages,
     /// and store them. You can then query the data and run sophisticated analytics on it.
-    /// AWS IoT Analytics enables advanced data exploration through integration with Jupyter
-    /// Notebooks and data visualization through integration with Amazon QuickSight.
+    /// IoT Analytics enables advanced data exploration through integration with Jupyter Notebooks
+    /// and data visualization through integration with Amazon QuickSight.
     /// 
     ///  
     /// <para>
@@ -54,16 +54,15 @@ namespace Amazon.IoTAnalytics
     /// </para>
     ///  
     /// <para>
-    /// AWS IoT Analytics automates the steps required to analyze data from IoT devices. AWS
-    /// IoT Analytics filters, transforms, and enriches IoT data before storing it in a time-series
-    /// data store for analysis. You can set up the service to collect only the data you need
-    /// from your devices, apply mathematical transforms to process the data, and enrich the
-    /// data with device-specific metadata such as device type and location before storing
-    /// it. Then, you can analyze your data by running queries using the built-in SQL query
-    /// engine, or perform more complex analytics and machine learning inference. AWS IoT
-    /// Analytics includes pre-built models for common IoT use cases so you can answer questions
-    /// like which devices are about to fail or which customers are at risk of abandoning
-    /// their wearable devices.
+    /// IoT Analytics automates the steps required to analyze data from IoT devices. IoT Analytics
+    /// filters, transforms, and enriches IoT data before storing it in a time-series data
+    /// store for analysis. You can set up the service to collect only the data you need from
+    /// your devices, apply mathematical transforms to process the data, and enrich the data
+    /// with device-specific metadata such as device type and location before storing it.
+    /// Then, you can analyze your data by running queries using the built-in SQL query engine,
+    /// or perform more complex analytics and machine learning inference. IoT Analytics includes
+    /// pre-built models for common IoT use cases so you can answer questions like which devices
+    /// are about to fail or which customers are at risk of abandoning their wearable devices.
     /// </para>
     /// </summary>
     public partial class AmazonIoTAnalyticsClient : AmazonServiceClient, IAmazonIoTAnalytics
@@ -426,8 +425,8 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Creates a channel. A channel collects data from an MQTT topic and archives the raw,
-        /// unprocessed messages before publishing the data to a pipeline.
+        /// Used to create a channel. A channel collects data from an MQTT topic and archives
+        /// the raw, unprocessed messages before publishing the data to a pipeline.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateChannel service method.</param>
         /// 
@@ -462,8 +461,8 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Creates a channel. A channel collects data from an MQTT topic and archives the raw,
-        /// unprocessed messages before publishing the data to a pipeline.
+        /// Used to create a channel. A channel collects data from an MQTT topic and archives
+        /// the raw, unprocessed messages before publishing the data to a pipeline.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateChannel service method.</param>
         /// <param name="cancellationToken">
@@ -505,8 +504,8 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Creates a dataset. A dataset stores data retrieved from a data store by applying a
-        /// <code>queryAction</code> (a SQL query) or a <code>containerAction</code> (executing
+        /// Used to create a dataset. A dataset stores data retrieved from a data store by applying
+        /// a <code>queryAction</code> (a SQL query) or a <code>containerAction</code> (executing
         /// a containerized application). This operation creates the skeleton of a dataset. The
         /// dataset can be populated manually by calling <code>CreateDatasetContent</code> or
         /// automatically according to a trigger you specify.
@@ -544,8 +543,8 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Creates a dataset. A dataset stores data retrieved from a data store by applying a
-        /// <code>queryAction</code> (a SQL query) or a <code>containerAction</code> (executing
+        /// Used to create a dataset. A dataset stores data retrieved from a data store by applying
+        /// a <code>queryAction</code> (a SQL query) or a <code>containerAction</code> (executing
         /// a containerized application). This operation creates the skeleton of a dataset. The
         /// dataset can be populated manually by calling <code>CreateDatasetContent</code> or
         /// automatically according to a trigger you specify.
@@ -590,7 +589,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Creates the content of a data set by applying a <code>queryAction</code> (a SQL query)
+        /// Creates the content of a dataset by applying a <code>queryAction</code> (a SQL query)
         /// or a <code>containerAction</code> (executing a containerized application).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDatasetContent service method.</param>
@@ -623,7 +622,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Creates the content of a data set by applying a <code>queryAction</code> (a SQL query)
+        /// Creates the content of a dataset by applying a <code>queryAction</code> (a SQL query)
         /// or a <code>containerAction</code> (executing a containerized application).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDatasetContent service method.</param>
@@ -663,8 +662,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Creates a data store, which is a repository for messages. Only data stores that are
-        /// used to save pipeline data can be configured with <code>ParquetConfiguration</code>.
+        /// Creates a data store, which is a repository for messages.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDatastore service method.</param>
         /// 
@@ -699,8 +697,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Creates a data store, which is a repository for messages. Only data stores that are
-        /// used to save pipeline data can be configured with <code>ParquetConfiguration</code>.
+        /// Creates a data store, which is a repository for messages.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDatastore service method.</param>
         /// <param name="cancellationToken">
@@ -1403,7 +1400,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Retrieves the current settings of the AWS IoT Analytics logging options.
+        /// Retrieves the current settings of the IoT Analytics logging options.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoggingOptions service method.</param>
         /// 
@@ -1435,7 +1432,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Retrieves the current settings of the AWS IoT Analytics logging options.
+        /// Retrieves the current settings of the IoT Analytics logging options.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoggingOptions service method.</param>
         /// <param name="cancellationToken">
@@ -1545,7 +1542,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Retrieves the contents of a data set as presigned URIs.
+        /// Retrieves the contents of a dataset as presigned URIs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDatasetContent service method.</param>
         /// 
@@ -1577,7 +1574,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Retrieves the contents of a data set as presigned URIs.
+        /// Retrieves the contents of a dataset as presigned URIs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDatasetContent service method.</param>
         /// <param name="cancellationToken">
@@ -1681,7 +1678,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Lists information about data set contents that have been created.
+        /// Lists information about dataset contents that have been created.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasetContents service method.</param>
         /// 
@@ -1713,7 +1710,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Lists information about data set contents that have been created.
+        /// Lists information about dataset contents that have been created.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasetContents service method.</param>
         /// <param name="cancellationToken">
@@ -1752,7 +1749,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Retrieves information about data sets.
+        /// Retrieves information about datasets.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasets service method.</param>
         /// 
@@ -1781,7 +1778,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Retrieves information about data sets.
+        /// Retrieves information about datasets.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasets service method.</param>
         /// <param name="cancellationToken">
@@ -2024,7 +2021,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Sets or updates the AWS IoT Analytics logging options.
+        /// Sets or updates the IoT Analytics logging options.
         /// 
         ///  
         /// <para>
@@ -2061,7 +2058,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Sets or updates the AWS IoT Analytics logging options.
+        /// Sets or updates the IoT Analytics logging options.
         /// 
         ///  
         /// <para>
@@ -2476,7 +2473,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Updates the settings of a channel.
+        /// Used to update the settings of a channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateChannel service method.</param>
         /// 
@@ -2508,7 +2505,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Updates the settings of a channel.
+        /// Used to update the settings of a channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateChannel service method.</param>
         /// <param name="cancellationToken">
@@ -2547,7 +2544,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Updates the settings of a data set.
+        /// Updates the settings of a dataset.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataset service method.</param>
         /// 
@@ -2579,7 +2576,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Updates the settings of a data set.
+        /// Updates the settings of a dataset.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataset service method.</param>
         /// <param name="cancellationToken">
@@ -2618,7 +2615,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Updates the settings of a data store.
+        /// Used to update the settings of a data store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDatastore service method.</param>
         /// 
@@ -2650,7 +2647,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Updates the settings of a data store.
+        /// Used to update the settings of a data store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDatastore service method.</param>
         /// <param name="cancellationToken">

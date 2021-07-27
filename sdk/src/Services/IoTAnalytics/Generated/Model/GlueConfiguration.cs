@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Configuration information for coordination with AWS Glue, a fully managed extract,
-    /// transform and load (ETL) service.
+    /// Configuration information for coordination with Glue, a fully managed extract, transform
+    /// and load (ETL) service.
     /// </summary>
     public partial class GlueConfiguration
     {
@@ -40,8 +40,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The name of the database in your AWS Glue Data Catalog in which the table is located.
-        /// An AWS Glue Data Catalog database contains metadata tables.
+        /// The name of the database in your Glue Data Catalog in which the table is located.
+        /// An Glue Data Catalog database contains metadata tables.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=150)]
@@ -60,9 +60,9 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The name of the table in your AWS Glue Data Catalog that is used to perform the ETL
-        /// operations. An AWS Glue Data Catalog table contains partitioned data and descriptions
-        /// of data sources and targets.
+        /// The name of the table in your Glue Data Catalog that is used to perform the ETL operations.
+        /// An Glue Data Catalog table contains partitioned data and descriptions of data sources
+        /// and targets.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=150)]

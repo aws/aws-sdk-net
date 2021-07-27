@@ -29,22 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Where data store data is stored. You can choose one of <code>serviceManagedS3</code>
-    /// or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
-    /// You cannot change this storage option after the data store is created.
+    /// Where data in a data store is stored.. You can choose <code>serviceManagedS3</code>
+    /// storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code>
+    /// storage. The default is <code>serviceManagedS3</code>. You can't change the choice
+    /// of Amazon S3 storage after your data store is created.
     /// </summary>
     public partial class DatastoreStorage
     {
         private CustomerManagedDatastoreS3Storage _customerManagedS3;
+        private DatastoreIotSiteWiseMultiLayerStorage _iotSiteWiseMultiLayerStorage;
         private ServiceManagedDatastoreS3Storage _serviceManagedS3;
 
         /// <summary>
         /// Gets and sets the property CustomerManagedS3. 
         /// <para>
-        /// Use this to store data store data in an S3 bucket that you manage. When customer managed
-        /// storage is selected, the <code>retentionPeriod</code> parameter is ignored. The choice
-        /// of service-managed or customer-managed S3 storage cannot be changed after creation
-        /// of the data store.
+        /// S3-customer-managed; When you choose customer-managed storage, the <code>retentionPeriod</code>
+        /// parameter is ignored. You can't change the choice of Amazon S3 storage after your
+        /// data store is created. 
         /// </para>
         /// </summary>
         public CustomerManagedDatastoreS3Storage CustomerManagedS3
@@ -60,11 +61,29 @@ namespace Amazon.IoTAnalytics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IotSiteWiseMultiLayerStorage. 
+        /// <para>
+        ///  Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. You
+        /// can't change the choice of Amazon S3 storage after your data store is created. 
+        /// </para>
+        /// </summary>
+        public DatastoreIotSiteWiseMultiLayerStorage IotSiteWiseMultiLayerStorage
+        {
+            get { return this._iotSiteWiseMultiLayerStorage; }
+            set { this._iotSiteWiseMultiLayerStorage = value; }
+        }
+
+        // Check to see if IotSiteWiseMultiLayerStorage property is set
+        internal bool IsSetIotSiteWiseMultiLayerStorage()
+        {
+            return this._iotSiteWiseMultiLayerStorage != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServiceManagedS3. 
         /// <para>
-        /// Use this to store data store data in an S3 bucket managed by AWS IoT Analytics. You
-        /// cannot change the choice of service-managed or customer-managed S3 storage after the
-        /// data store is created.
+        /// Used to store data in an Amazon S3 bucket managed by IoT Analytics. You can't change
+        /// the choice of Amazon S3 storage after your data store is created. 
         /// </para>
         /// </summary>
         public ServiceManagedDatastoreS3Storage ServiceManagedS3

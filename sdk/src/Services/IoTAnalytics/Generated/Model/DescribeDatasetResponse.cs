@@ -38,7 +38,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Dataset. 
         /// <para>
-        /// An object that contains information about the data set.
+        /// An object that contains information about the dataset.
         /// </para>
         /// </summary>
         public Dataset Dataset

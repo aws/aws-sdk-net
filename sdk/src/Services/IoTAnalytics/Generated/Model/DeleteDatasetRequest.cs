@@ -44,7 +44,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DatasetName. 
         /// <para>
-        /// The name of the data set to delete.
+        /// The name of the dataset to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

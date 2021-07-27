@@ -30,7 +30,7 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the PutLoggingOptions operation.
-    /// Sets or updates the AWS IoT Analytics logging options.
+    /// Sets or updates the IoT Analytics logging options.
     /// 
     ///  
     /// <para>
@@ -47,7 +47,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property LoggingOptions. 
         /// <para>
-        /// The new values of the AWS IoT Analytics logging options.
+        /// The new values of the IoT Analytics logging options.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

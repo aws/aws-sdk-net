@@ -39,7 +39,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property IotEventsDestinationConfiguration. 
         /// <para>
-        /// Configuration information for delivery of dataset contents to AWS IoT Events.
+        /// Configuration information for delivery of dataset contents to IoT Events.
         /// </para>
         /// </summary>
         public IotEventsDestinationConfiguration IotEventsDestinationConfiguration

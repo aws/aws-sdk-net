@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// A summary of information about a data set.
+    /// A summary of information about a dataset.
     /// </summary>
     public partial class DatasetSummary
     {
@@ -62,7 +62,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time the data set was created.
+        /// The time the dataset was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -80,7 +80,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DatasetName. 
         /// <para>
-        /// The name of the data set.
+        /// The name of the dataset.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -99,7 +99,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property LastUpdateTime. 
         /// <para>
-        /// The last time the data set was updated.
+        /// The last time the dataset was updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdateTime
@@ -117,7 +117,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the data set.
+        /// The status of the dataset.
         /// </para>
         /// </summary>
         public DatasetStatus Status
@@ -135,8 +135,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Triggers. 
         /// <para>
-        /// A list of triggers. A trigger causes data set content to be populated at a specified
-        /// time interval or when another data set is populated. The list of triggers can be empty
+        /// A list of triggers. A trigger causes dataset content to be populated at a specified
+        /// time interval or when another dataset is populated. The list of triggers can be empty
         /// or contain up to five <code>DataSetTrigger</code> objects
         /// </para>
         /// </summary>

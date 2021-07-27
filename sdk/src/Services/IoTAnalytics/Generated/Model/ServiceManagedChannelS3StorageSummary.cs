@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Used to store channel data in an S3 bucket managed by AWS IoT Analytics.
+    /// Used to store channel data in an S3 bucket managed by IoT Analytics.
     /// </summary>
     public partial class ServiceManagedChannelS3StorageSummary
     {

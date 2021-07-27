@@ -29,10 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Use this to store channel data in an S3 bucket that you manage. If customer managed
-    /// storage is selected, the <code>retentionPeriod</code> parameter is ignored. You cannot
-    /// change the choice of service-managed or customer-managed S3 storage after the channel
-    /// is created.
+    /// Used to store channel data in an S3 bucket that you manage. If customer-managed storage
+    /// is selected, the <code>retentionPeriod</code> parameter is ignored. You can't change
+    /// the choice of S3 storage after the data store is created.
     /// </summary>
     public partial class CustomerManagedChannelS3Storage
     {
@@ -62,7 +61,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property KeyPrefix. 
         /// <para>
-        /// Optional. The prefix used to create the keys of the channel data objects. Each object
+        /// (Optional) The prefix used to create the keys of the channel data objects. Each object
         /// in an S3 bucket has a key that is its unique identifier in the bucket. Each object
         /// in a bucket has exactly one key. The prefix must end with a forward slash (/).
         /// </para>
@@ -83,8 +82,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the role that grants AWS IoT Analytics permission to interact with your
-        /// Amazon S3 resources.
+        /// The ARN of the role that grants IoT Analytics permission to interact with your Amazon
+        /// S3 resources.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

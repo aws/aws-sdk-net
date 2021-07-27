@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Where channel data is stored. You may choose one of <code>serviceManagedS3</code>
-    /// or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
-    /// This cannot be changed after creation of the channel.
+    /// Where channel data is stored. You may choose one of <code>serviceManagedS3</code>,
+    /// <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
+    /// This can't be changed after creation of the channel.
     /// </summary>
     public partial class ChannelStorage
     {
@@ -41,10 +41,9 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property CustomerManagedS3. 
         /// <para>
-        /// Use this to store channel data in an S3 bucket that you manage. If customer managed
-        /// storage is selected, the <code>retentionPeriod</code> parameter is ignored. You cannot
-        /// change the choice of service-managed or customer-managed S3 storage after the channel
-        /// is created.
+        /// Used to store channel data in an S3 bucket that you manage. If customer managed storage
+        /// is selected, the <code>retentionPeriod</code> parameter is ignored. You can't change
+        /// the choice of S3 storage after the data store is created.
         /// </para>
         /// </summary>
         public CustomerManagedChannelS3Storage CustomerManagedS3
@@ -62,9 +61,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property ServiceManagedS3. 
         /// <para>
-        /// Use this to store channel data in an S3 bucket managed by AWS IoT Analytics. You cannot
-        /// change the choice of service-managed or customer-managed S3 storage after the channel
-        /// is created.
+        /// Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change
+        /// the choice of S3 storage after the data store is created.
         /// </para>
         /// </summary>
         public ServiceManagedChannelS3Storage ServiceManagedS3

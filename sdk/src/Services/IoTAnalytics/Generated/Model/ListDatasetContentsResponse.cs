@@ -39,7 +39,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DatasetContentSummaries. 
         /// <para>
-        /// Summary information about data set contents that have been created.
+        /// Summary information about dataset contents that have been created.
         /// </para>
         /// </summary>
         public List<DatasetContentSummary> DatasetContentSummaries

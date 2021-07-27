@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// A single partition.
+    /// A partition dimension defined by an attribute.
     /// </summary>
     public partial class Partition
     {
@@ -38,7 +38,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
-        ///  The attribute name of the partition. 
+        ///  The name of the attribute that defines a partition dimension. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

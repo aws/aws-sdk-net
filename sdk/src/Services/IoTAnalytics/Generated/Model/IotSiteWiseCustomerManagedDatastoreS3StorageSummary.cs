@@ -29,18 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Used to store channel data in an S3 bucket that you manage.
+    /// Contains information about the data store that you manage, which stores data used
+    /// by IoT SiteWise.
     /// </summary>
-    public partial class CustomerManagedChannelS3StorageSummary
+    public partial class IotSiteWiseCustomerManagedDatastoreS3StorageSummary
     {
         private string _bucket;
         private string _keyPrefix;
-        private string _roleArn;
 
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// The name of the S3 bucket in which channel data is stored.
+        ///  The name of the Amazon S3 bucket where your data is stored. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=255)]
@@ -59,9 +59,10 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property KeyPrefix. 
         /// <para>
-        /// (Optional) The prefix used to create the keys of the channel data objects. Each object
-        /// in an S3 bucket has a key that is its unique identifier within the bucket (each object
-        /// in a bucket has exactly one key). The prefix must end with a forward slash (/).
+        ///  (Optional) The prefix used to create the keys of the data store data objects. Each
+        /// object in an Amazon S3 bucket has a key that is its unique identifier in the bucket.
+        /// Each object in a bucket has exactly one key. The prefix must end with a forward slash
+        /// (/). 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -75,26 +76,6 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetKeyPrefix()
         {
             return this._keyPrefix != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RoleArn. 
-        /// <para>
-        /// The ARN of the role that grants IoT Analytics permission to interact with your Amazon
-        /// S3 resources.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
-        public string RoleArn
-        {
-            get { return this._roleArn; }
-            set { this._roleArn = value; }
-        }
-
-        // Check to see if RoleArn property is set
-        internal bool IsSetRoleArn()
-        {
-            return this._roleArn != null;
         }
 
     }

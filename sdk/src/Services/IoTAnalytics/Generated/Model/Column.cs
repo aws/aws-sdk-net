@@ -59,7 +59,7 @@ namespace Amazon.IoTAnalytics.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of data. For more information about the supported data types, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common
-        /// data types</a> in the <i>AWS Glue Developer Guide</i>.
+        /// data types</a> in the <i>Glue Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=131072)]

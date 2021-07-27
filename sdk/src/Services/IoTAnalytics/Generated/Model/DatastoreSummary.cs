@@ -82,7 +82,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DatastorePartitions. 
         /// <para>
-        ///  Contains information about the partitions in a data store. 
+        ///  Contains information about the partition dimensions in a data store. 
         /// </para>
         /// </summary>
         public DatastorePartitions DatastorePartitions
@@ -100,7 +100,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DatastoreStorage. 
         /// <para>
-        /// Where data store data is stored.
+        /// Where data in a data store is stored.
         /// </para>
         /// </summary>
         public DatastoreStorageSummary DatastoreStorage
@@ -140,8 +140,9 @@ namespace Amazon.IoTAnalytics.Model
         /// </para>
         ///  
         /// <para>
-        /// AWS IoT Analytics updates this value at most once per minute for one data store. Hence,
-        /// the <code>lastMessageArrivalTime</code> value is an approximation.
+        /// IoT Analytics updates this value at most once per minute for Amazon Simple Storage
+        /// Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an
+        /// approximation.
         /// </para>
         ///  
         /// <para>

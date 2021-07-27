@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// A single partition in a data store.
+    /// A single dimension to partition a data store. The dimension must be an <code>AttributePartition</code>
+    /// or a <code>TimestampPartition</code>.
     /// </summary>
     public partial class DatastorePartition
     {
@@ -39,7 +40,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property AttributePartition. 
         /// <para>
-        ///  A partition defined by an <code>attributeName</code>. 
+        ///  A partition dimension defined by an <code>attributeName</code>. 
         /// </para>
         /// </summary>
         public Partition AttributePartition
@@ -57,7 +58,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property TimestampPartition. 
         /// <para>
-        ///  A partition defined by an <code>attributeName</code> and a timestamp format. 
+        ///  A partition dimension defined by a timestamp attribute. 
         /// </para>
         /// </summary>
         public TimestampPartition TimestampPartition

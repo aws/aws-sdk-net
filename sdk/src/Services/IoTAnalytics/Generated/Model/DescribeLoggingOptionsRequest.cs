@@ -30,7 +30,7 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLoggingOptions operation.
-    /// Retrieves the current settings of the AWS IoT Analytics logging options.
+    /// Retrieves the current settings of the IoT Analytics logging options.
     /// </summary>
     public partial class DescribeLoggingOptionsRequest : AmazonIoTAnalyticsRequest
     {

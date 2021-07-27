@@ -30,8 +30,8 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateChannel operation.
-    /// Creates a channel. A channel collects data from an MQTT topic and archives the raw,
-    /// unprocessed messages before publishing the data to a pipeline.
+    /// Used to create a channel. A channel collects data from an MQTT topic and archives
+    /// the raw, unprocessed messages before publishing the data to a pipeline.
     /// </summary>
     public partial class CreateChannelRequest : AmazonIoTAnalyticsRequest
     {
@@ -64,7 +64,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <para>
         /// Where channel data is stored. You can choose one of <code>serviceManagedS3</code>
         /// or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
-        /// You cannot change this storage option after the channel is created.
+        /// You can't change this storage option after the channel is created.
         /// </para>
         /// </summary>
         public ChannelStorage ChannelStorage

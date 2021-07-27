@@ -38,7 +38,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property LoggingOptions. 
         /// <para>
-        /// The current settings of the AWS IoT Analytics logging options.
+        /// The current settings of the IoT Analytics logging options.
         /// </para>
         /// </summary>
         public LoggingOptions LoggingOptions

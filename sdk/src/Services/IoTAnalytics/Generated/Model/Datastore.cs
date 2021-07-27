@@ -83,7 +83,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DatastorePartitions. 
         /// <para>
-        ///  Contains information about the partitions in a data store. 
+        ///  Contains information about the partition dimensions in a data store. 
         /// </para>
         /// </summary>
         public DatastorePartitions DatastorePartitions
@@ -101,7 +101,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property FileFormatConfiguration. 
         /// <para>
-        /// Contains the configuration information of file formats. AWS IoT Analytics data stores
+        /// Contains the configuration information of file formats. IoT Analytics data stores
         /// support JSON and <a href="https://parquet.apache.org/">Parquet</a>.
         /// </para>
         ///  
@@ -132,8 +132,9 @@ namespace Amazon.IoTAnalytics.Model
         /// </para>
         ///  
         /// <para>
-        /// AWS IoT Analytics updates this value at most once per minute for one data store. Hence,
-        /// the <code>lastMessageArrivalTime</code> value is an approximation.
+        /// IoT Analytics updates this value at most once per minute for Amazon Simple Storage
+        /// Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an
+        /// approximation.
         /// </para>
         ///  
         /// <para>
@@ -243,9 +244,10 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Storage. 
         /// <para>
-        /// Where data store data is stored. You can choose one of <code>serviceManagedS3</code>
-        /// or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
-        /// You cannot change this storage option after the data store is created.
+        /// Where data in a data store is stored.. You can choose <code>serviceManagedS3</code>
+        /// storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code>
+        /// storage. The default is <code>serviceManagedS3</code>. You can't change the choice
+        /// of Amazon S3 storage after your data store is created. 
         /// </para>
         /// </summary>
         public DatastoreStorage Storage

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// The reference to a data set entry.
+    /// The reference to a dataset entry.
     /// </summary>
     public partial class DatasetEntry
     {
@@ -39,7 +39,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DataURI. 
         /// <para>
-        /// The presigned URI of the data set item.
+        /// The presigned URI of the dataset item.
         /// </para>
         /// </summary>
         public string DataURI
@@ -57,7 +57,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property EntryName. 
         /// <para>
-        /// The name of the data set item.
+        /// The name of the dataset item.
         /// </para>
         /// </summary>
         public string EntryName

@@ -40,7 +40,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// If true, logging is enabled for AWS IoT Analytics.
+        /// If true, logging is enabled for IoT Analytics.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -78,7 +78,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the role that grants permission to AWS IoT Analytics to perform logging.
+        /// The ARN of the role that grants permission to IoT Analytics to perform logging.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

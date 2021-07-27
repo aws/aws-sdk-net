@@ -29,10 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Use this to store data store data in an S3 bucket that you manage. When customer-managed
-    /// storage is selected, the <code>retentionPeriod</code> parameter is ignored. You cannot
-    /// change the choice of service-managed or customer-managed S3 storage after the data
-    /// store is created.
+    /// S3-customer-managed; When you choose customer-managed storage, the <code>retentionPeriod</code>
+    /// parameter is ignored. You can't change the choice of Amazon S3 storage after your
+    /// data store is created.
     /// </summary>
     public partial class CustomerManagedDatastoreS3Storage
     {
@@ -43,7 +42,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// The name of the S3 bucket in which data store data is stored.
+        /// The name of the Amazon S3 bucket where your data is stored.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=255)]
@@ -62,9 +61,10 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property KeyPrefix. 
         /// <para>
-        /// Optional. The prefix used to create the keys of the data store data objects. Each
-        /// object in an S3 bucket has a key that is its unique identifier in the bucket. Each
-        /// object in a bucket has exactly one key. The prefix must end with a forward slash (/).
+        /// (Optional) The prefix used to create the keys of the data store data objects. Each
+        /// object in an Amazon S3 bucket has a key that is its unique identifier in the bucket.
+        /// Each object in a bucket has exactly one key. The prefix must end with a forward slash
+        /// (/).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -83,8 +83,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the role that grants AWS IoT Analytics permission to interact with your
-        /// Amazon S3 resources.
+        /// The ARN of the role that grants IoT Analytics permission to interact with your Amazon
+        /// S3 resources.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Creates a new message using only the specified attributes from the original message.
+    /// Used to create a new message using only the specified attributes from the original
+    /// message.
     /// </summary>
     public partial class SelectAttributesActivity
     {

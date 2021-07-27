@@ -39,7 +39,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DatasetName. 
         /// <para>
-        /// The name of the data set whose information is retrieved.
+        /// The name of the dataset whose information is retrieved.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

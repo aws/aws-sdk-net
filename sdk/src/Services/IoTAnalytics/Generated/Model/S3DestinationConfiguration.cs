@@ -61,8 +61,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property GlueConfiguration. 
         /// <para>
-        /// Configuration information for coordination with AWS Glue, a fully managed extract,
-        /// transform and load (ETL) service.
+        /// Configuration information for coordination with Glue, a fully managed extract, transform
+        /// and load (ETL) service.
         /// </para>
         /// </summary>
         public GlueConfiguration GlueConfiguration
@@ -132,8 +132,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the role that grants AWS IoT Analytics permission to interact with your
-        /// Amazon S3 and AWS Glue resources.
+        /// The ARN of the role that grants IoT Analytics permission to interact with your Amazon
+        /// S3 and Glue resources.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

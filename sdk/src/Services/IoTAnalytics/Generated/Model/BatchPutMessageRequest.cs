@@ -64,7 +64,7 @@ namespace Amazon.IoTAnalytics.Model
         /// </para>
         ///  
         /// <para>
-        /// The field names of message payloads (data) that you send to AWS IoT Analytics:
+        /// The field names of message payloads (data) that you send to IoT Analytics:
         /// </para>
         ///  <ul> <li> 
         /// <para>

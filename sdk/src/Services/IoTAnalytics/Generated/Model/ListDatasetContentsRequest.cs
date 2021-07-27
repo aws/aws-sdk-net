@@ -30,7 +30,7 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDatasetContents operation.
-    /// Lists information about data set contents that have been created.
+    /// Lists information about dataset contents that have been created.
     /// </summary>
     public partial class ListDatasetContentsRequest : AmazonIoTAnalyticsRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DatasetName. 
         /// <para>
-        /// The name of the data set whose contents information you want to list.
+        /// The name of the dataset whose contents information you want to list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -99,7 +99,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property ScheduledBefore. 
         /// <para>
-        /// A filter to limit results to those data set contents whose creation is scheduled before
+        /// A filter to limit results to those dataset contents whose creation is scheduled before
         /// the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code>
         /// request. (timestamp)
         /// </para>
@@ -119,7 +119,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property ScheduledOnOrAfter. 
         /// <para>
-        /// A filter to limit results to those data set contents whose creation is scheduled on
+        /// A filter to limit results to those dataset contents whose creation is scheduled on
         /// or after the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code>
         /// request. (timestamp)
         /// </para>

@@ -46,7 +46,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <para>
         /// A list of <code>PipelineActivity</code> objects. Activities perform transformations
         /// on your messages, such as removing, renaming or adding message attributes; filtering
-        /// messages based on attribute values; invoking your Lambda functions on messages for
+        /// messages based on attribute values; invoking your Lambda unctions on messages for
         /// advanced processing; or performing mathematical transformations to normalize device
         /// data.
         /// </para>

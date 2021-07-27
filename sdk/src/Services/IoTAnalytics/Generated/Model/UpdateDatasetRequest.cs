@@ -30,7 +30,7 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDataset operation.
-    /// Updates the settings of a data set.
+    /// Updates the settings of a dataset.
     /// </summary>
     public partial class UpdateDatasetRequest : AmazonIoTAnalyticsRequest
     {
@@ -83,7 +83,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DatasetName. 
         /// <para>
-        /// The name of the data set to update.
+        /// The name of the dataset to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -102,8 +102,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property LateDataRules. 
         /// <para>
-        /// A list of data rules that send notifications to Amazon CloudWatch, when data arrives
-        /// late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
+        /// A list of data rules that send notifications to CloudWatch, when data arrives late.
+        /// To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
         /// filter.
         /// </para>
         /// </summary>
@@ -165,8 +165,7 @@ namespace Amazon.IoTAnalytics.Model
         /// to null, only the latest version plus the latest succeeded version (if they are different)
         /// are kept for the time period specified by the <code>retentionPeriod</code> parameter.
         /// For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping
-        /// Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User
-        /// Guide</i>.
+        /// Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.
         /// </para>
         /// </summary>
         public VersioningConfiguration VersioningConfiguration

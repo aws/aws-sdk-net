@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// A <code>DatasetAction</code> object that specifies how data set contents are automatically
+    /// A <code>DatasetAction</code> object that specifies how dataset contents are automatically
     /// created.
     /// </summary>
     public partial class DatasetAction
@@ -41,7 +41,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property ActionName. 
         /// <para>
-        /// The name of the data set action by which data set contents are automatically created.
+        /// The name of the dataset action by which dataset contents are automatically created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -81,7 +81,7 @@ namespace Amazon.IoTAnalytics.Model
         /// Gets and sets the property QueryAction. 
         /// <para>
         /// An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically
-        /// create data set contents.
+        /// create dataset contents.
         /// </para>
         /// </summary>
         public SqlQueryDatasetAction QueryAction

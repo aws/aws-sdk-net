@@ -30,7 +30,7 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDatastore operation.
-    /// Updates the settings of a data store.
+    /// Used to update the settings of a data store.
     /// </summary>
     public partial class UpdateDatastoreRequest : AmazonIoTAnalyticsRequest
     {
@@ -61,9 +61,10 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DatastoreStorage. 
         /// <para>
-        /// Where data store data is stored. You can choose one of <code>serviceManagedS3</code>
-        /// or <code>customerManagedS3</code> storage. If not specified, the default is<code>serviceManagedS3</code>.
-        /// You cannot change this storage option after the data store is created.
+        /// Where data in a data store is stored.. You can choose <code>serviceManagedS3</code>
+        /// storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code>
+        /// storage. The default is <code>serviceManagedS3</code>. You can't change the choice
+        /// of Amazon S3 storage after your data store is created. 
         /// </para>
         /// </summary>
         public DatastoreStorage DatastoreStorage
@@ -81,7 +82,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property FileFormatConfiguration. 
         /// <para>
-        /// Contains the configuration information of file formats. AWS IoT Analytics data stores
+        /// Contains the configuration information of file formats. IoT Analytics data stores
         /// support JSON and <a href="https://parquet.apache.org/">Parquet</a>.
         /// </para>
         ///  
@@ -108,8 +109,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property RetentionPeriod. 
         /// <para>
-        /// How long, in days, message data is kept for the data store. The retention period cannot
-        /// be updated if the data store's S3 storage is customer-managed.
+        /// How long, in days, message data is kept for the data store. The retention period can't
+        /// be updated if the data store's Amazon S3 storage is customer-managed.
         /// </para>
         /// </summary>
         public RetentionPeriod RetentionPeriod

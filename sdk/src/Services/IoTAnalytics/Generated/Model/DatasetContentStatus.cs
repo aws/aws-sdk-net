@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// The state of the data set contents and the reason they are in this state.
+    /// The state of the dataset contents and the reason they are in this state.
     /// </summary>
     public partial class DatasetContentStatus
     {
@@ -39,7 +39,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// The reason the data set contents are in this state.
+        /// The reason the dataset contents are in this state.
         /// </para>
         /// </summary>
         public string Reason
@@ -57,7 +57,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the data set contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.
+        /// The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.
         /// </para>
         /// </summary>
         public DatasetContentState State

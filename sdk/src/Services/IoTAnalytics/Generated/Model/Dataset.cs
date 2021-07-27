@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Information about a data set.
+    /// Information about a dataset.
     /// </summary>
     public partial class Dataset
     {
@@ -48,7 +48,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Actions. 
         /// <para>
-        /// The <code>DatasetAction</code> objects that automatically create the data set contents.
+        /// The <code>DatasetAction</code> objects that automatically create the dataset contents.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -67,7 +67,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the data set.
+        /// The ARN of the dataset.
         /// </para>
         /// </summary>
         public string Arn
@@ -104,7 +104,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// When the data set was created.
+        /// When the dataset was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -122,7 +122,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property LastUpdateTime. 
         /// <para>
-        /// The last time the data set was updated.
+        /// The last time the dataset was updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdateTime
@@ -140,8 +140,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property LateDataRules. 
         /// <para>
-        /// A list of data rules that send notifications to Amazon CloudWatch, when data arrives
-        /// late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
+        /// A list of data rules that send notifications to CloudWatch, when data arrives late.
+        /// To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
         /// filter.
         /// </para>
         /// </summary>
@@ -161,7 +161,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the data set.
+        /// The name of the dataset.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -180,7 +180,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property RetentionPeriod. 
         /// <para>
-        /// Optional. How long, in days, message data is kept for the data set.
+        /// Optional. How long, in days, message data is kept for the dataset.
         /// </para>
         /// </summary>
         public RetentionPeriod RetentionPeriod
@@ -198,7 +198,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the data set.
+        /// The status of the dataset.
         /// </para>
         /// </summary>
         public DatasetStatus Status
@@ -216,7 +216,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Triggers. 
         /// <para>
-        /// The <code>DatasetTrigger</code> objects that specify when the data set is automatically
+        /// The <code>DatasetTrigger</code> objects that specify when the dataset is automatically
         /// updated.
         /// </para>
         /// </summary>
@@ -239,8 +239,8 @@ namespace Amazon.IoTAnalytics.Model
         /// Optional. How many versions of dataset contents are kept. If not specified or set
         /// to null, only the latest version plus the latest succeeded version (if they are different)
         /// are kept for the time period specified by the <code>retentionPeriod</code> parameter.
-        /// For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping
-        /// Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User
+        /// For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">
+        /// Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User
         /// Guide</i>.
         /// </para>
         /// </summary>

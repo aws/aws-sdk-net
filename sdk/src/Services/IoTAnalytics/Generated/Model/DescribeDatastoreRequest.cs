@@ -60,7 +60,7 @@ namespace Amazon.IoTAnalytics.Model
         /// Gets and sets the property IncludeStatistics. 
         /// <para>
         /// If true, additional statistical information about the data store is included in the
-        /// response. This feature cannot be used with a data store whose S3 storage is customer-managed.
+        /// response. This feature can't be used with a data store whose S3 storage is customer-managed.
         /// </para>
         /// </summary>
         public bool IncludeStatistics

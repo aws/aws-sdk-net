@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Contains the configuration information of file formats. AWS IoT Analytics data stores
+    /// Contains the configuration information of file formats. IoT Analytics data stores
     /// support JSON and <a href="https://parquet.apache.org/">Parquet</a>.
     /// 
     ///  

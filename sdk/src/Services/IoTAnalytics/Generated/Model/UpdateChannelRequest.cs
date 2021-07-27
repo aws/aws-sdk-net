@@ -30,7 +30,7 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateChannel operation.
-    /// Updates the settings of a channel.
+    /// Used to update the settings of a channel.
     /// </summary>
     public partial class UpdateChannelRequest : AmazonIoTAnalyticsRequest
     {
@@ -62,7 +62,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <para>
         /// Where channel data is stored. You can choose one of <code>serviceManagedS3</code>
         /// or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
-        /// You cannot change this storage option after the channel is created.
+        /// You can't change this storage option after the channel is created.
         /// </para>
         /// </summary>
         public ChannelStorage ChannelStorage
@@ -80,8 +80,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property RetentionPeriod. 
         /// <para>
-        /// How long, in days, message data is kept for the channel. The retention period cannot
-        /// be updated if the channel's S3 storage is customer-managed.
+        /// How long, in days, message data is kept for the channel. The retention period can't
+        /// be updated if the channel's Amazon S3 storage is customer-managed.
         /// </para>
         /// </summary>
         public RetentionPeriod RetentionPeriod

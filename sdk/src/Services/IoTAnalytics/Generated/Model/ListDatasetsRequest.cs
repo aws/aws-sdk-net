@@ -30,7 +30,7 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDatasets operation.
-    /// Retrieves information about data sets.
+    /// Retrieves information about datasets.
     /// </summary>
     public partial class ListDatasetsRequest : AmazonIoTAnalyticsRequest
     {

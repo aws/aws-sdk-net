@@ -30,8 +30,8 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDataset operation.
-    /// Creates a dataset. A dataset stores data retrieved from a data store by applying a
-    /// <code>queryAction</code> (a SQL query) or a <code>containerAction</code> (executing
+    /// Used to create a dataset. A dataset stores data retrieved from a data store by applying
+    /// a <code>queryAction</code> (a SQL query) or a <code>containerAction</code> (executing
     /// a containerized application). This operation creates the skeleton of a dataset. The
     /// dataset can be populated manually by calling <code>CreateDatasetContent</code> or
     /// automatically according to a trigger you specify.
@@ -50,7 +50,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Actions. 
         /// <para>
-        /// A list of actions that create the data set contents.
+        /// A list of actions that create the dataset contents.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
@@ -88,7 +88,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DatasetName. 
         /// <para>
-        /// The name of the data set.
+        /// The name of the dataset.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -107,8 +107,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property LateDataRules. 
         /// <para>
-        /// A list of data rules that send notifications to Amazon CloudWatch, when data arrives
-        /// late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
+        /// A list of data rules that send notifications to CloudWatch, when data arrives late.
+        /// To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
         /// filter.
         /// </para>
         /// </summary>
@@ -132,8 +132,8 @@ namespace Amazon.IoTAnalytics.Model
         /// If not specified or set to <code>null</code>, versions of dataset contents are retained
         /// for at most 90 days. The number of versions of dataset contents retained is determined
         /// by the <code>versioningConfiguration</code> parameter. For more information, see <a
-        /// href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping
-        /// Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User
+        /// href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">
+        /// Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User
         /// Guide</i>.
         /// </para>
         /// </summary>
@@ -152,7 +152,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Metadata which can be used to manage the data set.
+        /// Metadata which can be used to manage the dataset.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -171,8 +171,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Triggers. 
         /// <para>
-        /// A list of triggers. A trigger causes data set contents to be populated at a specified
-        /// time interval or when another data set's contents are created. The list of triggers
+        /// A list of triggers. A trigger causes dataset contents to be populated at a specified
+        /// time interval or when another dataset's contents are created. The list of triggers
         /// can be empty or contain up to five <code>DataSetTrigger</code> objects.
         /// </para>
         /// </summary>
@@ -196,8 +196,7 @@ namespace Amazon.IoTAnalytics.Model
         /// to null, only the latest version plus the latest succeeded version (if they are different)
         /// are kept for the time period specified by the <code>retentionPeriod</code> parameter.
         /// For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping
-        /// Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User
-        /// Guide</i>.
+        /// Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.
         /// </para>
         /// </summary>
         public VersioningConfiguration VersioningConfiguration

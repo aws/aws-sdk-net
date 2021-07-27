@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// A partition defined by a timestamp.
+    /// A partition dimension defined by a timestamp attribute.
     /// </summary>
     public partial class TimestampPartition
     {
@@ -58,7 +58,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property TimestampFormat. 
         /// <para>
-        ///  The timestamp format of a partition defined by a timestamp. 
+        ///  The timestamp format of a partition defined by a timestamp. The default format is
+        /// seconds since epoch (January 1, 1970 at midnight UTC time). 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

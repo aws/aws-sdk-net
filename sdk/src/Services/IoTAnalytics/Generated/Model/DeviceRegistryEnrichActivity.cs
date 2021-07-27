@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// An activity that adds data from the AWS IoT device registry to your message.
+    /// An activity that adds data from the IoT device registry to your message.
     /// </summary>
     public partial class DeviceRegistryEnrichActivity
     {

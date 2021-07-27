@@ -96,7 +96,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the data set contents.
+        /// The status of the dataset contents.
         /// </para>
         /// </summary>
         public DatasetContentStatus Status

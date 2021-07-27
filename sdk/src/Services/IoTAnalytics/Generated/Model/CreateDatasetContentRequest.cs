@@ -30,7 +30,7 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDatasetContent operation.
-    /// Creates the content of a data set by applying a <code>queryAction</code> (a SQL query)
+    /// Creates the content of a dataset by applying a <code>queryAction</code> (a SQL query)
     /// or a <code>containerAction</code> (executing a containerized application).
     /// </summary>
     public partial class CreateDatasetContentRequest : AmazonIoTAnalyticsRequest

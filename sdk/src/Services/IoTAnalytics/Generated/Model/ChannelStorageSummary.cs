@@ -57,7 +57,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property ServiceManagedS3. 
         /// <para>
-        /// Used to store channel data in an S3 bucket managed by AWS IoT Analytics.
+        /// Used to store channel data in an S3 bucket managed by IoT Analytics.
         /// </para>
         /// </summary>
         public ServiceManagedChannelS3StorageSummary ServiceManagedS3

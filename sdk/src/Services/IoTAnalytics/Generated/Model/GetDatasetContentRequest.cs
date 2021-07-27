@@ -30,7 +30,7 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDatasetContent operation.
-    /// Retrieves the contents of a data set as presigned URIs.
+    /// Retrieves the contents of a dataset as presigned URIs.
     /// </summary>
     public partial class GetDatasetContentRequest : AmazonIoTAnalyticsRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DatasetName. 
         /// <para>
-        /// The name of the data set whose contents are retrieved.
+        /// The name of the dataset whose contents are retrieved.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -59,9 +59,9 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// The version of the data set whose contents are retrieved. You can also use the strings
+        /// The version of the dataset whose contents are retrieved. You can also use the strings
         /// "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest
-        /// successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the default.
+        /// successfully completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=36)]

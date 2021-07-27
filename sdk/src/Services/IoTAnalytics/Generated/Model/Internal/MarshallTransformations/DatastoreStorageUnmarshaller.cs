@@ -70,6 +70,12 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomerManagedS3 = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("iotSiteWiseMultiLayerStorage", targetDepth))
+                {
+                    var unmarshaller = DatastoreIotSiteWiseMultiLayerStorageUnmarshaller.Instance;
+                    unmarshalledObject.IotSiteWiseMultiLayerStorage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("serviceManagedS3", targetDepth))
                 {
                     var unmarshaller = ServiceManagedDatastoreS3StorageUnmarshaller.Instance;

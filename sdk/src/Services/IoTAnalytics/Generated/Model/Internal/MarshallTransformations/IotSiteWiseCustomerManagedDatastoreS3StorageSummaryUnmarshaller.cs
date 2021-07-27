@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DatastoreStorageSummary Object
+    /// Response Unmarshaller for IotSiteWiseCustomerManagedDatastoreS3StorageSummary Object
     /// </summary>  
-    public class DatastoreStorageSummaryUnmarshaller : IUnmarshaller<DatastoreStorageSummary, XmlUnmarshallerContext>, IUnmarshaller<DatastoreStorageSummary, JsonUnmarshallerContext>
+    public class IotSiteWiseCustomerManagedDatastoreS3StorageSummaryUnmarshaller : IUnmarshaller<IotSiteWiseCustomerManagedDatastoreS3StorageSummary, XmlUnmarshallerContext>, IUnmarshaller<IotSiteWiseCustomerManagedDatastoreS3StorageSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DatastoreStorageSummary IUnmarshaller<DatastoreStorageSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        IotSiteWiseCustomerManagedDatastoreS3StorageSummary IUnmarshaller<IotSiteWiseCustomerManagedDatastoreS3StorageSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DatastoreStorageSummary Unmarshall(JsonUnmarshallerContext context)
+        public IotSiteWiseCustomerManagedDatastoreS3StorageSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DatastoreStorageSummary unmarshalledObject = new DatastoreStorageSummary();
+            IotSiteWiseCustomerManagedDatastoreS3StorageSummary unmarshalledObject = new IotSiteWiseCustomerManagedDatastoreS3StorageSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("customerManagedS3", targetDepth))
+                if (context.TestExpression("bucket", targetDepth))
                 {
-                    var unmarshaller = CustomerManagedDatastoreS3StorageSummaryUnmarshaller.Instance;
-                    unmarshalledObject.CustomerManagedS3 = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Bucket = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("iotSiteWiseMultiLayerStorage", targetDepth))
+                if (context.TestExpression("keyPrefix", targetDepth))
                 {
-                    var unmarshaller = DatastoreIotSiteWiseMultiLayerStorageSummaryUnmarshaller.Instance;
-                    unmarshalledObject.IotSiteWiseMultiLayerStorage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("serviceManagedS3", targetDepth))
-                {
-                    var unmarshaller = ServiceManagedDatastoreS3StorageSummaryUnmarshaller.Instance;
-                    unmarshalledObject.ServiceManagedS3 = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KeyPrefix = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         }
 
 
-        private static DatastoreStorageSummaryUnmarshaller _instance = new DatastoreStorageSummaryUnmarshaller();        
+        private static IotSiteWiseCustomerManagedDatastoreS3StorageSummaryUnmarshaller _instance = new IotSiteWiseCustomerManagedDatastoreS3StorageSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DatastoreStorageSummaryUnmarshaller Instance
+        public static IotSiteWiseCustomerManagedDatastoreS3StorageSummaryUnmarshaller Instance
         {
             get
             {

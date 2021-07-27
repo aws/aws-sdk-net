@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// An activity that adds information from the AWS IoT Device Shadow service to a message.
+    /// An activity that adds information from the IoT Device Shadow service to a message.
     /// </summary>
     public partial class DeviceShadowEnrichActivity
     {

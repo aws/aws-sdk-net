@@ -29,29 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Contains information about the partition dimensions in a data store.
+    /// Contains information about the data store that you manage, which stores data used
+    /// by IoT SiteWise.
     /// </summary>
-    public partial class DatastorePartitions
+    public partial class DatastoreIotSiteWiseMultiLayerStorageSummary
     {
-        private List<DatastorePartition> _partitions = new List<DatastorePartition>();
+        private IotSiteWiseCustomerManagedDatastoreS3StorageSummary _customerManagedS3Storage;
 
         /// <summary>
-        /// Gets and sets the property Partitions. 
+        /// Gets and sets the property CustomerManagedS3Storage. 
         /// <para>
-        ///  A list of partition dimensions in a data store. 
+        /// Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=25)]
-        public List<DatastorePartition> Partitions
+        public IotSiteWiseCustomerManagedDatastoreS3StorageSummary CustomerManagedS3Storage
         {
-            get { return this._partitions; }
-            set { this._partitions = value; }
+            get { return this._customerManagedS3Storage; }
+            set { this._customerManagedS3Storage = value; }
         }
 
-        // Check to see if Partitions property is set
-        internal bool IsSetPartitions()
+        // Check to see if CustomerManagedS3Storage property is set
+        internal bool IsSetCustomerManagedS3Storage()
         {
-            return this._partitions != null && this._partitions.Count > 0; 
+            return this._customerManagedS3Storage != null;
         }
 
     }

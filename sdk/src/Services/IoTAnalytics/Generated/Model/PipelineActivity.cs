@@ -101,7 +101,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DeviceRegistryEnrich. 
         /// <para>
-        /// Adds data from the AWS IoT device registry to your message.
+        /// Adds data from the IoT device registry to your message.
         /// </para>
         /// </summary>
         public DeviceRegistryEnrichActivity DeviceRegistryEnrich
@@ -119,7 +119,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DeviceShadowEnrich. 
         /// <para>
-        /// Adds information from the AWS IoT Device Shadow service to a message.
+        /// Adds information from the IoT Device Shadow service to a message.
         /// </para>
         /// </summary>
         public DeviceShadowEnrichActivity DeviceShadowEnrich
@@ -210,8 +210,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property SelectAttributes. 
         /// <para>
-        /// Creates a new message using only the specified attributes from the original message.
-        /// 
+        /// Used to create a new message using only the specified attributes from the original
+        /// message. 
         /// </para>
         /// </summary>
         public SelectAttributesActivity SelectAttributes

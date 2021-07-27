@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Configuration information for delivery of dataset contents to AWS IoT Events.
+    /// Configuration information for delivery of dataset contents to IoT Events.
     /// </summary>
     public partial class IotEventsDestinationConfiguration
     {
@@ -39,7 +39,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property InputName. 
         /// <para>
-        /// The name of the AWS IoT Events input to which dataset contents are delivered.
+        /// The name of the IoT Events input to which dataset contents are delivered.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -58,8 +58,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the role that grants AWS IoT Analytics permission to deliver dataset contents
-        /// to an AWS IoT Events input.
+        /// The ARN of the role that grants IoT Analytics permission to deliver dataset contents
+        /// to an IoT Events input.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
