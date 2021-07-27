@@ -521,6 +521,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.
 * [AWSSDK.Route53Domains](https://www.nuget.org/packages/AWSSDK.Route53Domains/)
 	* Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.
+* [AWSSDK.Route53RecoveryControlConfig](https://www.nuget.org/packages/AWSSDK.Route53RecoveryControlConfig/)
+	* Amazon Route 53 Application Recovery Controller's routing control - Routing Control Configuration APIs help you create and delete clusters, control panels, routing controls and safety rules. State changes (On/Off) of routing controls are not part of configuration APIs.
 * [AWSSDK.Route53RecoveryReadiness](https://www.nuget.org/packages/AWSSDK.Route53RecoveryReadiness/)
 	* Amazon Route 53 Application Recovery Controller's readiness check capability continually monitors resource quotas, capacity, and network routing policies to ensure that the recovery environment is scaled and configured to take over when needed.
 * [AWSSDK.Route53Resolver](https://www.nuget.org/packages/AWSSDK.Route53Resolver/)
