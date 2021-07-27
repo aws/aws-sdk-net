@@ -74,8 +74,8 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You must use the same AWS account to create the log group and the hosted zone that
-    /// you want to configure query logging for.
+    /// You must use the same account to create the log group and the hosted zone that you
+    /// want to configure query logging for.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -89,10 +89,10 @@ namespace Amazon.Route53.Model
     ///  
     /// <para>
     /// In the next step, you'll create a resource policy, which controls access to one or
-    /// more log groups and the associated AWS resources, such as Route 53 hosted zones. There's
-    /// a limit on the number of resource policies that you can create, so we recommend that
-    /// you use a consistent prefix so you can use the same resource policy for all the log
-    /// groups that you create for query logging.
+    /// more log groups and the associated Amazon Web Services resources, such as Route 53
+    /// hosted zones. There's a limit on the number of resource policies that you can create,
+    /// so we recommend that you use a consistent prefix so you can use the same resource
+    /// policy for all the log groups that you create for query logging.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -110,7 +110,7 @@ namespace Amazon.Route53.Model
     ///  <note> 
     /// <para>
     /// You can't use the CloudWatch console to create or edit a resource policy. You must
-    /// use the CloudWatch API, one of the AWS SDKs, or the AWS CLI.
+    /// use the CloudWatch API, one of the Amazon Web Services SDKs, or the CLI.
     /// </para>
     ///  </note> </li> </ol> </dd> <dt>Log Streams and Edge Locations</dt> <dd> 
     /// <para>
@@ -213,7 +213,7 @@ namespace Amazon.Route53.Model
         /// <para>
         /// To get the ARN for a log group, you can use the CloudWatch console, the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogGroups.html">DescribeLogGroups</a>
         /// API action, the <a href="https://docs.aws.amazon.com/cli/latest/reference/logs/describe-log-groups.html">describe-log-groups</a>
-        /// command, or the applicable command in one of the AWS SDKs.
+        /// command, or the applicable command in one of the Amazon Web Services SDKs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

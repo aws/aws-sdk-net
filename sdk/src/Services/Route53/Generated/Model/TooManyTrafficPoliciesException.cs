@@ -45,7 +45,7 @@ namespace Amazon.Route53.Model
     ///  
     /// <para>
     /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
-    /// a case</a> with the AWS Support Center.
+    /// a case</a> with the Amazon Web Services Support Center.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

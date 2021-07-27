@@ -35,7 +35,7 @@ namespace Amazon.Route53.Model
     ///  
     /// <para>
     /// For information about using tags for cost allocation, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-    /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+    /// Cost Allocation Tags</a> in the <i>Billing and Cost Management User Guide</i>.
     /// </para>
     /// </summary>
     public partial class ChangeTagsForResourceRequest : AmazonRoute53Request

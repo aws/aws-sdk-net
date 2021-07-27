@@ -30,7 +30,7 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the GetHostedZoneCount operation.
-    /// Retrieves the number of hosted zones that are associated with the current AWS account.
+    /// Retrieves the number of hosted zones that are associated with the current account.
     /// </summary>
     public partial class GetHostedZoneCountRequest : AmazonRoute53Request
     {

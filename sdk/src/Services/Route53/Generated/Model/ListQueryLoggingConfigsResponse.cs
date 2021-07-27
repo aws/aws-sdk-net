@@ -41,7 +41,7 @@ namespace Amazon.Route53.Model
         /// <para>
         /// An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a>
         /// element for each configuration for DNS query logging that is associated with the current
-        /// AWS account.
+        /// account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If a response includes the last of the query logging configurations that are associated
-        /// with the current AWS account, <code>NextToken</code> doesn't appear in the response.
+        /// with the current account, <code>NextToken</code> doesn't appear in the response.
         /// </para>
         ///  
         /// <para>

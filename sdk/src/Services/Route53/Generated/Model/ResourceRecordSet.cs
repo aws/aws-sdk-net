@@ -332,8 +332,8 @@ namespace Amazon.Route53.Model
         /// <para>
         ///  <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created
         /// the resource that this resource record set refers to. The resource typically is an
-        /// AWS resource, such as an EC2 instance or an ELB load balancer, and is referred to
-        /// by an IP address or a DNS domain name, depending on the record type.
+        /// Amazon Web Services resource, such as an EC2 instance or an ELB load balancer, and
+        /// is referred to by an IP address or a DNS domain name, depending on the record type.
         /// </para>
         ///  <note> 
         /// <para>
@@ -658,9 +658,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property AliasTarget. 
         /// <para>
-        ///  <i>Alias resource record sets only:</i> Information about the AWS resource, such
-        /// as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic
-        /// to. 
+        ///  <i>Alias resource record sets only:</i> Information about the Amazon Web Services
+        /// resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want
+        /// to route traffic to. 
         /// </para>
         ///  
         /// <para>

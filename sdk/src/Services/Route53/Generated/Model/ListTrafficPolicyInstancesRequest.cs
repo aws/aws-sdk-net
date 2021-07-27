@@ -31,7 +31,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Container for the parameters to the ListTrafficPolicyInstances operation.
     /// Gets information about the traffic policy instances that you created by using the
-    /// current AWS account.
+    /// current account.
     /// 
     ///  <note> 
     /// <para>

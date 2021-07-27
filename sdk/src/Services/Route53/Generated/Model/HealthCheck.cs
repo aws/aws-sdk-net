@@ -30,7 +30,7 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// A complex type that contains information about one health check that is associated
-    /// with the current AWS account.
+    /// with the current Amazon Web Services account.
     /// </summary>
     public partial class HealthCheck
     {

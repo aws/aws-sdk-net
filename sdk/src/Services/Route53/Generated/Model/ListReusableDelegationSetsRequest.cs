@@ -31,7 +31,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Container for the parameters to the ListReusableDelegationSets operation.
     /// Retrieves a list of the reusable delegation sets that are associated with the current
-    /// AWS account.
+    /// account.
     /// </summary>
     public partial class ListReusableDelegationSetsRequest : AmazonRoute53Request
     {

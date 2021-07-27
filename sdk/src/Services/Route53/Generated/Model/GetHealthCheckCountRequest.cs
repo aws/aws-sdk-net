@@ -30,7 +30,7 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the GetHealthCheckCount operation.
-    /// Retrieves the number of health checks that are associated with the current AWS account.
+    /// Retrieves the number of health checks that are associated with the current account.
     /// </summary>
     public partial class GetHealthCheckCountRequest : AmazonRoute53Request
     {

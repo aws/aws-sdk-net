@@ -82,7 +82,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The value that you specified for <code>NextToken</code> in the most recent <code>ListHostedZonesByVPC</code>
+        /// The value that you will use for <code>NextToken</code> in the next <code>ListHostedZonesByVPC</code>
         /// request.
         /// </para>
         /// </summary>

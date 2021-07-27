@@ -503,6 +503,10 @@ namespace Amazon.Route53
         /// </summary>
         public static readonly HealthCheckType HTTPS_STR_MATCH = new HealthCheckType("HTTPS_STR_MATCH");
         /// <summary>
+        /// Constant RECOVERY_CONTROL for HealthCheckType
+        /// </summary>
+        public static readonly HealthCheckType RECOVERY_CONTROL = new HealthCheckType("RECOVERY_CONTROL");
+        /// <summary>
         /// Constant TCP for HealthCheckType
         /// </summary>
         public static readonly HealthCheckType TCP = new HealthCheckType("TCP");

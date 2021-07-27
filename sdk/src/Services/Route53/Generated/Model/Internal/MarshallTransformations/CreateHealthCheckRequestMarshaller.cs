@@ -147,6 +147,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     if(publicRequest.HealthCheckConfig.IsSetInsufficientDataHealthStatus())
                         xmlWriter.WriteElementString("InsufficientDataHealthStatus", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.HealthCheckConfig.InsufficientDataHealthStatus));                 
     
+                    if(publicRequest.HealthCheckConfig.IsSetRoutingControlArn())
+                        xmlWriter.WriteElementString("RoutingControlArn", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.HealthCheckConfig.RoutingControlArn));                 
+    
                     xmlWriter.WriteEndElement();
                 }
 

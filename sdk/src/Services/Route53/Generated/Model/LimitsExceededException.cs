@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model
     /// To get the current limit on the number of Amazon VPCs that you can associate with
     /// a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html">GetHostedZoneLimit</a>.
     /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
-    /// a case</a> with the AWS Support Center.
+    /// a case</a> with the Amazon Web Services Support Center.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

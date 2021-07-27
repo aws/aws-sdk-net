@@ -45,6 +45,12 @@ namespace Amazon.Route53.Model
     /// <para>
     /// The resource policy hasn't finished propagating yet.
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The Key management service (KMS) key you specified doesn’t exist or it can’t be used
+    /// with the log group associated with query log. Update or provide a resource policy
+    /// to grant permissions for the KMS key.
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     #if !NETSTANDARD

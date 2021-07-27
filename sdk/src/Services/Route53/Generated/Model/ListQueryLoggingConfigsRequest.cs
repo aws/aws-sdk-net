@@ -31,7 +31,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Container for the parameters to the ListQueryLoggingConfigs operation.
     /// Lists the configurations for DNS query logging that are associated with the current
-    /// AWS account or the configuration that is associated with a specified hosted zone.
+    /// account or the configuration that is associated with a specified hosted zone.
     /// 
     ///  
     /// <para>
@@ -55,7 +55,7 @@ namespace Amazon.Route53.Model
         ///  
         /// <para>
         /// If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code> returns
-        /// all of the configurations that are associated with the current AWS account.
+        /// all of the configurations that are associated with the current account.
         /// </para>
         /// </summary>
         [AWSProperty(Max=32)]
@@ -74,9 +74,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// (Optional) If the current AWS account has more than <code>MaxResults</code> query
-        /// logging configurations, use <code>NextToken</code> to get the second and subsequent
-        /// pages of results.
+        /// (Optional) If the current account has more than <code>MaxResults</code> query logging
+        /// configurations, use <code>NextToken</code> to get the second and subsequent pages
+        /// of results.
         /// </para>
         ///  
         /// <para>
@@ -105,8 +105,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// (Optional) The maximum number of query logging configurations that you want Amazon
-        /// Route 53 to return in response to the current request. If the current AWS account
-        /// has more than <code>MaxResults</code> configurations, use the value of <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a>
+        /// Route 53 to return in response to the current request. If the current account has
+        /// more than <code>MaxResults</code> configurations, use the value of <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a>
         /// in the response to get the next page of results.
         /// </para>
         ///  

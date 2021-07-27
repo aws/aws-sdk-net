@@ -39,7 +39,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property TrafficPolicyInstanceCount. 
         /// <para>
-        /// The number of traffic policy instances that are associated with the current AWS account.
+        /// The number of traffic policy instances that are associated with the current account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

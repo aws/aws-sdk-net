@@ -30,7 +30,14 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the GetHealthCheckStatus operation.
-    /// Gets status of a specified health check.
+    /// Gets status of a specified health check. 
+    /// 
+    ///  <important> 
+    /// <para>
+    /// This API is intended for use during development to diagnose behavior. It doesn’t support
+    /// production use-cases with high query rates that require immediate and actionable responses.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class GetHealthCheckStatusRequest : AmazonRoute53Request
     {

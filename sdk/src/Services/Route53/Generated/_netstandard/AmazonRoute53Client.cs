@@ -294,6 +294,9 @@ namespace Amazon.Route53
         /// Another user submitted a request to create, update, or delete the object at the same
         /// time that you did. Retry the request.
         /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
         /// The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
         /// </exception>
@@ -342,8 +345,8 @@ namespace Amazon.Route53
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// If you want to associate a VPC that was created by using one AWS account with a private
-        /// hosted zone that was created by using a different account, the AWS account that created
+        /// If you want to associate a VPC that was created by using one account with a private
+        /// hosted zone that was created by using a different account, the account that created
         /// the private hosted zone must first submit a <code>CreateVPCAssociationAuthorization</code>
         /// request. Then the account that created the VPC must submit an <code>AssociateVPCWithHostedZone</code>
         /// request.
@@ -395,7 +398,7 @@ namespace Amazon.Route53
         /// To get the current limit on the number of Amazon VPCs that you can associate with
         /// a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html">GetHostedZoneLimit</a>.
         /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
-        /// a case</a> with the AWS Support Center.
+        /// a case</a> with the Amazon Web Services Support Center.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
@@ -516,9 +519,9 @@ namespace Amazon.Route53
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPSERT</code>: If a resource record set does not already exist, AWS creates
-        /// it. If a resource set does exist, Route 53 updates it with the values in the request.
-        /// 
+        ///  <code>UPSERT</code>: If a resource record set does not already exist, Amazon Web
+        /// Services creates it. If a resource set does exist, Route 53 updates it with the values
+        /// in the request. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -621,7 +624,7 @@ namespace Amazon.Route53
         ///  
         /// <para>
         /// For information about using tags for cost allocation, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+        /// Cost Allocation Tags</a> in the <i>Billing and Cost Management User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ChangeTagsForResource service method.</param>
@@ -764,13 +767,13 @@ namespace Amazon.Route53
         /// <para>
         /// For information about how to get the current limit for an account, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.
         /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
-        /// a case</a> with the AWS Support Center.
+        /// a case</a> with the Amazon Web Services Support Center.
         /// </para>
         ///  
         /// <para>
-        /// You have reached the maximum number of active health checks for an AWS account. To
-        /// request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a>
-        /// with the AWS Support Center.
+        /// You have reached the maximum number of active health checks for an account. To request
+        /// a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a>
+        /// with the Amazon Web Services Support Center.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheck">REST API Reference for CreateHealthCheck Operation</seealso>
@@ -937,7 +940,7 @@ namespace Amazon.Route53
         ///  
         /// <para>
         /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
-        /// a case</a> with the AWS Support Center.
+        /// a case</a> with the Amazon Web Services Support Center.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZone">REST API Reference for CreateHostedZone Operation</seealso>
@@ -1079,8 +1082,8 @@ namespace Amazon.Route53
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You must use the same AWS account to create the log group and the hosted zone that
-        /// you want to configure query logging for.
+        /// You must use the same account to create the log group and the hosted zone that you
+        /// want to configure query logging for.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1094,10 +1097,10 @@ namespace Amazon.Route53
         ///  
         /// <para>
         /// In the next step, you'll create a resource policy, which controls access to one or
-        /// more log groups and the associated AWS resources, such as Route 53 hosted zones. There's
-        /// a limit on the number of resource policies that you can create, so we recommend that
-        /// you use a consistent prefix so you can use the same resource policy for all the log
-        /// groups that you create for query logging.
+        /// more log groups and the associated Amazon Web Services resources, such as Route 53
+        /// hosted zones. There's a limit on the number of resource policies that you can create,
+        /// so we recommend that you use a consistent prefix so you can use the same resource
+        /// policy for all the log groups that you create for query logging.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -1115,7 +1118,7 @@ namespace Amazon.Route53
         ///  <note> 
         /// <para>
         /// You can't use the CloudWatch console to create or edit a resource policy. You must
-        /// use the CloudWatch API, one of the AWS SDKs, or the AWS CLI.
+        /// use the CloudWatch API, one of the Amazon Web Services SDKs, or the CLI.
         /// </para>
         ///  </note> </li> </ol> </dd> <dt>Log Streams and Edge Locations</dt> <dd> 
         /// <para>
@@ -1206,6 +1209,12 @@ namespace Amazon.Route53
         /// <para>
         /// The resource policy hasn't finished propagating yet.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Key management service (KMS) key you specified doesn’t exist or it can’t be used
+        /// with the log group associated with query log. Update or provide a resource policy
+        /// to grant permissions for the KMS key.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
@@ -1248,7 +1257,7 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Creates a delegation set (a group of four name servers) that can be reused by multiple
-        /// hosted zones that were created by the same AWS account. 
+        /// hosted zones that were created by the same account. 
         /// 
         ///  
         /// <para>
@@ -1358,7 +1367,7 @@ namespace Amazon.Route53
         /// To get the current limit on the number of Amazon VPCs that you can associate with
         /// a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html">GetHostedZoneLimit</a>.
         /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
-        /// a case</a> with the AWS Support Center.
+        /// a case</a> with the Amazon Web Services Support Center.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateReusableDelegationSet">REST API Reference for CreateReusableDelegationSet Operation</seealso>
         public virtual Task<CreateReusableDelegationSetResponse> CreateReusableDelegationSetAsync(CreateReusableDelegationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1419,7 +1428,7 @@ namespace Amazon.Route53
         ///  
         /// <para>
         /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
-        /// a case</a> with the AWS Support Center.
+        /// a case</a> with the Amazon Web Services Support Center.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.TrafficPolicyAlreadyExistsException">
@@ -1489,7 +1498,7 @@ namespace Amazon.Route53
         ///  
         /// <para>
         /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
-        /// a case</a> with the AWS Support Center.
+        /// a case</a> with the Amazon Web Services Support Center.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.TrafficPolicyInstanceAlreadyExistsException">
@@ -1587,7 +1596,7 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Authorizes the AWS account that created a specified VPC to submit an <code>AssociateVPCWithHostedZone</code>
+        /// Authorizes the account that created a specified VPC to submit an <code>AssociateVPCWithHostedZone</code>
         /// request to associate the VPC with a specified hosted zone that was created by a different
         /// account. To submit a <code>CreateVPCAssociationAuthorization</code> request, you must
         /// use the account that created the hosted zone. After you authorize the association,
@@ -1668,6 +1677,9 @@ namespace Amazon.Route53
         /// Another user submitted a request to create, update, or delete the object at the same
         /// time that you did. Retry the request.
         /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
         /// The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
         /// </exception>
@@ -1725,7 +1737,7 @@ namespace Amazon.Route53
         /// </para>
         ///  </important> 
         /// <para>
-        /// If you're using AWS Cloud Map and you configured Cloud Map to create a Route 53 health
+        /// If you're using Cloud Map and you configured Cloud Map to create a Route 53 health
         /// check when you register an instance, you can't use the Route 53 <code>DeleteHealthCheck</code>
         /// command to delete the health check. The health check is deleted automatically when
         /// you deregister the instance; there can be a delay of several hours before the health
@@ -1777,7 +1789,7 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// If the hosted zone was created by another service, such as AWS Cloud Map, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html#delete-public-hosted-zone-created-by-another-service">Deleting
+        /// If the hosted zone was created by another service, such as Cloud Map, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html#delete-public-hosted-zone-created-by-another-service">Deleting
         /// Public Hosted Zones That Were Created by Another Service</a> in the <i>Amazon Route
         /// 53 Developer Guide</i> for information about how to delete it. (The process is the
         /// same for public and private hosted zones that were created by another service.)
@@ -1829,7 +1841,7 @@ namespace Amazon.Route53
         ///  </li> <li> 
         /// <para>
         /// Use the <code>ListHostedZones</code> action to get a list of the hosted zones associated
-        /// with the current AWS account.
+        /// with the current account.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1897,6 +1909,9 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
         /// Another user submitted a request to create, update, or delete the object at the same
         /// time that you did. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
         /// The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
@@ -2176,7 +2191,7 @@ namespace Amazon.Route53
         /// 
         ///  <important> 
         /// <para>
-        /// Sending this request only prevents the AWS account that created the VPC from associating
+        /// Sending this request only prevents the account that created the VPC from associating
         /// the VPC with the Amazon Route 53 hosted zone in the future. If the VPC is already
         /// associated with the hosted zone, <code>DeleteVPCAssociationAuthorization</code> won't
         /// disassociate the VPC from the hosted zone. If you want to delete an existing association,
@@ -2252,6 +2267,9 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.InvalidArgumentException">
         /// Parameter name is not valid.
         /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
         /// The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
         /// </exception>
@@ -2308,7 +2326,7 @@ namespace Amazon.Route53
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Some services, such as AWS Cloud Map and Amazon Elastic File System (Amazon EFS) automatically
+        /// Some services, such as Cloud Map and Amazon Elastic File System (Amazon EFS) automatically
         /// create hosted zones and associate VPCs with the hosted zones. A service can create
         /// a hosted zone using your account or using its own account. You can disassociate a
         /// VPC from a hosted zone only if the service created the hosted zone using your account.
@@ -2393,6 +2411,9 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.InvalidArgumentException">
         /// Parameter name is not valid.
         /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
         /// The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
         /// </exception>
@@ -2442,8 +2463,8 @@ namespace Amazon.Route53
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can also view account limits in AWS Trusted Advisor. Sign in to the AWS Management
-        /// Console and open the Trusted Advisor console at <a href="https://console.aws.amazon.com/trustedadvisor">https://console.aws.amazon.com/trustedadvisor/</a>.
+        /// You can also view account limits in Amazon Web Services Trusted Advisor. Sign in to
+        /// the Management Console and open the Trusted Advisor console at <a href="https://console.aws.amazon.com/trustedadvisor">https://console.aws.amazon.com/trustedadvisor/</a>.
         /// Then choose <b>Service limits</b> in the navigation pane.
         /// </para>
         ///  </note>
@@ -2543,8 +2564,8 @@ namespace Amazon.Route53
         ///  <important> 
         /// <para>
         ///  <code>GetCheckerIpRanges</code> still works, but we recommend that you download ip-ranges.json,
-        /// which includes IP address ranges for all AWS services. For more information, see <a
-        /// href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP
+        /// which includes IP address ranges for all Amazon Web Services services. For more information,
+        /// see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP
         /// Address Ranges of Amazon Route 53 Servers</a> in the <i>Amazon Route 53 Developer
         /// Guide</i>.
         /// </para>
@@ -2593,6 +2614,9 @@ namespace Amazon.Route53
         /// <returns>The response from the GetDNSSEC service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidArgumentException">
         /// Parameter name is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
@@ -2743,7 +2767,7 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Retrieves the number of health checks that are associated with the current AWS account.
+        /// Retrieves the number of health checks that are associated with the current account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckCount service method.</param>
         /// <param name="cancellationToken">
@@ -2817,7 +2841,14 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Gets status of a specified health check.
+        /// Gets status of a specified health check. 
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This API is intended for use during development to diagnose behavior. It doesn’t support
+        /// production use-cases with high query rates that require immediate and actionable responses.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckStatus service method.</param>
         /// <param name="cancellationToken">
@@ -2901,7 +2932,7 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Retrieves the number of hosted zones that are associated with the current AWS account.
+        /// Retrieves the number of hosted zones that are associated with the current account.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2920,7 +2951,7 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Retrieves the number of hosted zones that are associated with the current AWS account.
+        /// Retrieves the number of hosted zones that are associated with the current account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetHostedZoneCount service method.</param>
         /// <param name="cancellationToken">
@@ -3247,8 +3278,7 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Gets the number of traffic policy instances that are associated with the current AWS
-        /// account.
+        /// Gets the number of traffic policy instances that are associated with the current account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTrafficPolicyInstanceCount service method.</param>
         /// <param name="cancellationToken">
@@ -3380,7 +3410,7 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Retrieve a list of the health checks that are associated with the current AWS account.
+        /// Retrieve a list of the health checks that are associated with the current account.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -3402,7 +3432,7 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Retrieve a list of the health checks that are associated with the current AWS account.
+        /// Retrieve a list of the health checks that are associated with the current account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHealthChecks service method.</param>
         /// <param name="cancellationToken">
@@ -3446,8 +3476,8 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Retrieves a list of the public and private hosted zones that are associated with the
-        /// current AWS account. The response includes a <code>HostedZones</code> child element
-        /// for each hosted zone.
+        /// current account. The response includes a <code>HostedZones</code> child element for
+        /// each hosted zone.
         /// 
         ///  
         /// <para>
@@ -3480,8 +3510,8 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Retrieves a list of the public and private hosted zones that are associated with the
-        /// current AWS account. The response includes a <code>HostedZones</code> child element
-        /// for each hosted zone.
+        /// current account. The response includes a <code>HostedZones</code> child element for
+        /// each hosted zone.
         /// 
         ///  
         /// <para>
@@ -3533,7 +3563,7 @@ namespace Amazon.Route53
         /// <summary>
         /// Retrieves a list of your hosted zones in lexicographic order. The response includes
         /// a <code>HostedZones</code> child element for each hosted zone created by the current
-        /// AWS account. 
+        /// account. 
         /// 
         ///  
         /// <para>
@@ -3589,7 +3619,7 @@ namespace Amazon.Route53
         ///  </li> <li> 
         /// <para>
         /// If the value of <code>IsTruncated</code> in the response is true, there are more hosted
-        /// zones associated with the current AWS account. 
+        /// zones associated with the current account. 
         /// </para>
         ///  
         /// <para>
@@ -3601,8 +3631,8 @@ namespace Amazon.Route53
         /// <para>
         /// The <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements in the response
         /// contain the domain name and the hosted zone ID of the next hosted zone that is associated
-        /// with the current AWS account. If you want to list more hosted zones, make another
-        /// call to <code>ListHostedZonesByName</code>, and specify the value of <code>NextDNSName</code>
+        /// with the current account. If you want to list more hosted zones, make another call
+        /// to <code>ListHostedZonesByName</code>, and specify the value of <code>NextDNSName</code>
         /// and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code>
         /// parameters, respectively.
         /// </para>
@@ -3647,20 +3677,20 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Lists all the private hosted zones that a specified VPC is associated with, regardless
-        /// of which AWS account or AWS service owns the hosted zones. The <code>HostedZoneOwner</code>
+        /// of which account or Amazon Web Services service owns the hosted zones. The <code>HostedZoneOwner</code>
         /// structure in the response contains one of the following values:
         /// 
         ///  <ul> <li> 
         /// <para>
         /// An <code>OwningAccount</code> element, which contains the account number of either
-        /// the current AWS account or another AWS account. Some services, such as AWS Cloud Map,
-        /// create hosted zones using the current account. 
+        /// the current account or another account. Some services, such as Cloud Map, create hosted
+        /// zones using the current account. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An <code>OwningService</code> element, which identifies the AWS service that created
-        /// and owns the hosted zone. For example, if a hosted zone was created by Amazon Elastic
-        /// File System (Amazon EFS), the value of <code>Owner</code> is <code>efs.amazonaws.com</code>.
+        /// An <code>OwningService</code> element, which identifies the Amazon Web Services service
+        /// that created and owns the hosted zone. For example, if a hosted zone was created by
+        /// Amazon Elastic File System (Amazon EFS), the value of <code>Owner</code> is <code>efs.amazonaws.com</code>.
         /// 
         /// </para>
         ///  </li> </ul>
@@ -3704,7 +3734,7 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Lists the configurations for DNS query logging that are associated with the current
-        /// AWS account or the configuration that is associated with a specified hosted zone.
+        /// account or the configuration that is associated with a specified hosted zone.
         /// 
         ///  
         /// <para>
@@ -3891,7 +3921,7 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Retrieves a list of the reusable delegation sets that are associated with the current
-        /// AWS account.
+        /// account.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -3911,7 +3941,7 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Retrieves a list of the reusable delegation sets that are associated with the current
-        /// AWS account.
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReusableDelegationSets service method.</param>
         /// <param name="cancellationToken">
@@ -3953,7 +3983,7 @@ namespace Amazon.Route53
         ///  
         /// <para>
         /// For information about using tags for cost allocation, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+        /// Cost Allocation Tags</a> in the <i>Billing and Cost Management User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -4012,7 +4042,7 @@ namespace Amazon.Route53
         ///  
         /// <para>
         /// For information about using tags for cost allocation, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+        /// Cost Allocation Tags</a> in the <i>Billing and Cost Management User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResources service method.</param>
@@ -4067,7 +4097,7 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Gets information about the latest version for every traffic policy that is associated
-        /// with the current AWS account. Policies are listed in the order that they were created
+        /// with the current account. Policies are listed in the order that they were created
         /// in. 
         /// 
         ///  
@@ -4113,7 +4143,7 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Gets information about the traffic policy instances that you created by using the
-        /// current AWS account.
+        /// current account.
         /// 
         ///  <note> 
         /// <para>

@@ -112,6 +112,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 {
                     return InvalidArgumentExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInput"))
+                {
+                    return InvalidInputExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidKeySigningKeyStatus"))
                 {
                     return InvalidKeySigningKeyStatusExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

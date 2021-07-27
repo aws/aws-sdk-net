@@ -30,7 +30,7 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// A complex type that contains information about the reusable delegation sets that are
-    /// associated with the current AWS account.
+    /// associated with the current account.
     /// </summary>
     public partial class ListReusableDelegationSetsResponse : AmazonWebServiceResponse
     {
@@ -44,7 +44,7 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property DelegationSets. 
         /// <para>
         /// A complex type that contains one <code>DelegationSet</code> element for each reusable
-        /// delegation set that was created by the current AWS account.
+        /// delegation set that was created by the current account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
