@@ -1,3 +1,32 @@
+### 3.7.82.0 (2021-07-27 18:20 UTC)
+* Batch (3.7.2.0)
+	* Add support for ListJob filters
+* IoTAnalytics (3.7.2.0)
+	* IoT Analytics now supports creating a dataset resource with IoT SiteWise MultiLayerStorage data stores, enabling customers to query industrial data within the service. This release includes adding JOIN functionality for customers to query multiple data sources in a dataset.
+* IoTWireless (3.7.6.0)
+	* Add SidewalkManufacturingSn as an identifier to allow Customer to query WirelessDevice, in the response, AmazonId is added in the case that Sidewalk device is return.
+* LexModelsV2 (3.7.4.0)
+	* Add waiters that automatically poll for resource status for asynchronous operations, such as building a bot
+* QuickSight (3.7.4.0)
+	* Add support to use row-level security with tags when embedding dashboards for users not provisioned in QuickSight
+* RedshiftDataAPIService (3.7.2.0)
+	* Added structures to support new Data API operation BatchExecuteStatement, used to execute multiple SQL statements within a single transaction.
+* Route53 (3.7.1.0)
+	* This release adds support for the RECOVERY_CONTROL health check type to be used in conjunction with Route53 Application Recovery Controller.
+* Route53RecoveryCluster (3.7.0.0)
+	* Amazon Route 53 Application Recovery Controller's routing control - Routing Control Data Plane APIs help you update the state (On/Off) of the routing controls to reroute traffic across application replicas in a 100% available manner.
+* Route53RecoveryControlConfig (3.7.0.0)
+	* Amazon Route 53 Application Recovery Controller's routing control - Routing Control Configuration APIs help you create and delete clusters, control panels, routing controls and safety rules. State changes (On/Off) of routing controls are not part of configuration APIs.
+* Route53RecoveryReadiness (3.7.0.0)
+	* Amazon Route 53 Application Recovery Controller's readiness check capability continually monitors resource quotas, capacity, and network routing policies to ensure that the recovery environment is scaled and configured to take over when needed.
+* Shield (3.7.1.36)
+	* Change name of DDoS Response Team (DRT) to Shield Response Team (SRT)
+* Core 3.7.1.1
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.81.0 (2021-07-26 19:52 UTC)
 * CloudWatch (3.7.2.0)
 	* SDK update to support creation of Cross-Account Metric Alarms and update API documentation.
