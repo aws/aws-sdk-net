@@ -29,9 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
-    /// The log option for a wireless gateway event. Can be used to set log level for a specific
-    /// wireless gateway event. For a LoRaWAN gateway, the possible events for a log message
-    /// are: CUPS_Request, Certificate.
+    /// The log options for a wireless gateway event and can be used to set log levels for
+    /// a specific wireless gateway event.
+    /// 
+    ///  
+    /// <para>
+    /// For a LoRaWAN gateway, possible events for a log message are <code>CUPS_Request</code>
+    /// and <code>Certificate</code>.
+    /// </para>
     /// </summary>
     public partial class WirelessGatewayEventLogOption
     {

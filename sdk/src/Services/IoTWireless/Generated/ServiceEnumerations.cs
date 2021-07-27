@@ -579,6 +579,10 @@ namespace Amazon.IoTWireless
         /// </summary>
         public static readonly WirelessDeviceIdType DevEui = new WirelessDeviceIdType("DevEui");
         /// <summary>
+        /// Constant SidewalkManufacturingSn for WirelessDeviceIdType
+        /// </summary>
+        public static readonly WirelessDeviceIdType SidewalkManufacturingSn = new WirelessDeviceIdType("SidewalkManufacturingSn");
+        /// <summary>
         /// Constant ThingName for WirelessDeviceIdType
         /// </summary>
         public static readonly WirelessDeviceIdType ThingName = new WirelessDeviceIdType("ThingName");

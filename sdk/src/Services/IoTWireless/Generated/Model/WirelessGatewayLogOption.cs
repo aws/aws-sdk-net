@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
-    /// The log option for wireless gateways. Can be used to set log level for a specific
+    /// The log options for wireless gateways and can be used to set log levels for a specific
     /// type of wireless gateway.
     /// </summary>
     public partial class WirelessGatewayLogOption

@@ -888,6 +888,10 @@
     <pattern>[a-fA-F0-9]{64}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTWireless.Model.SidewalkDevice.AmazonId</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTWireless.Model.SidewalkDevice.SidewalkId</property>
     <max>256</max>
   </property-value-rule>

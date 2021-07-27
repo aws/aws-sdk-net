@@ -1487,8 +1487,8 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Returns current default log-levels, or log levels by resource types, could be for
-        /// wireless device log options or wireless gateway log options.
+        /// Returns current default log levels or log levels by resource types. Based on resource
+        /// types, log levels can be for wireless device log options or wireless gateway log options.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLogLevelsByResourceTypes service method.</param>
         /// <param name="cancellationToken">
@@ -1584,8 +1584,8 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Fetches the log-level override if any for a given resource-ID and resource-type, coulde
-        /// be a wireless device or a wireless gateway.
+        /// Fetches the log-level override, if any, for a given resource-ID and resource-type.
+        /// It can be used for a wireless device or a wireless gateway.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceLogLevel service method.</param>
         /// <param name="cancellationToken">
@@ -2493,8 +2493,9 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Sets the log-level override for a resource-ID and resource-type, could be a wireless
-        /// gateway or a wireless device.
+        /// Sets the log-level override for a resource-ID and resource-type. This option can be
+        /// specified for a wireless gateway or a wireless device. A limit of 200 log level override
+        /// can be set per account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourceLogLevel service method.</param>
         /// <param name="cancellationToken">
@@ -2543,8 +2544,8 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Remove log-level overrides if any for all resources (both wireless devices and wireless
-        /// gateways).
+        /// Removes the log-level overrides for all resources; both wireless devices and wireless
+        /// gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetAllResourceLogLevels service method.</param>
         /// <param name="cancellationToken">
@@ -2593,8 +2594,8 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Remove log-level override if any for a specific resource-ID and resource-type, could
-        /// be a wireless device or a wireless gateway.
+        /// Removes the log-level override, if any, for a specific resource-ID and resource-type.
+        /// It can be used for a wireless device or a wireless gateway.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetResourceLogLevel service method.</param>
         /// <param name="cancellationToken">
@@ -2885,9 +2886,9 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Set default log level, or log levels by resource types, could be for wireless device
-        /// log options or wireless gateways log options. This is to control the log messages
-        /// that will be displayed in CloudWatch.
+        /// Set default log level, or log levels by resource types. This can be for wireless device
+        /// log options or wireless gateways log options and is used to control the log messages
+        /// that'll be displayed in CloudWatch.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLogLevelsByResourceTypes service method.</param>
         /// <param name="cancellationToken">

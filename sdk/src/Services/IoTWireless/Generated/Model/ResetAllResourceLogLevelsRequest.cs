@@ -30,8 +30,8 @@ namespace Amazon.IoTWireless.Model
 {
     /// <summary>
     /// Container for the parameters to the ResetAllResourceLogLevels operation.
-    /// Remove log-level overrides if any for all resources (both wireless devices and wireless
-    /// gateways).
+    /// Removes the log-level overrides for all resources; both wireless devices and wireless
+    /// gateways.
     /// </summary>
     public partial class ResetAllResourceLogLevelsRequest : AmazonIoTWirelessRequest
     {

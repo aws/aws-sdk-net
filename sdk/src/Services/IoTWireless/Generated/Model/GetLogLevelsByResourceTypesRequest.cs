@@ -30,8 +30,8 @@ namespace Amazon.IoTWireless.Model
 {
     /// <summary>
     /// Container for the parameters to the GetLogLevelsByResourceTypes operation.
-    /// Returns current default log-levels, or log levels by resource types, could be for
-    /// wireless device log options or wireless gateway log options.
+    /// Returns current default log levels or log levels by resource types. Based on resource
+    /// types, log levels can be for wireless device log options or wireless gateway log options.
     /// </summary>
     public partial class GetLogLevelsByResourceTypesRequest : AmazonIoTWirelessRequest
     {
