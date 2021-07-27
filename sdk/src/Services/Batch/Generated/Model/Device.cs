@@ -33,8 +33,8 @@ namespace Amazon.Batch.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This object isn't applicable to jobs running on Fargate resources and shouldn't be
-    /// provided.
+    /// This object isn't applicable to jobs that are running on Fargate resources and shouldn't
+    /// be provided.
     /// </para>
     ///  </note>
     /// </summary>
@@ -47,8 +47,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ContainerPath. 
         /// <para>
-        /// The path inside the container used to expose the host device. By default, the <code>hostPath</code>
-        /// value is used.
+        /// The path inside the container that's used to expose the host device. By default, the
+        /// <code>hostPath</code> value is used.
         /// </para>
         /// </summary>
         public string ContainerPath

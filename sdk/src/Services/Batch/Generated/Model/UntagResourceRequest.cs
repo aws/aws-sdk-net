@@ -30,7 +30,7 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Deletes specified tags from an AWS Batch resource.
+    /// Deletes specified tags from an Batch resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonBatchRequest
     {
@@ -40,9 +40,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource from which to delete tags. AWS Batch
-        /// resources that support tags are compute environments, jobs, job definitions, and job
-        /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.
+        /// The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources
+        /// that support tags are compute environments, jobs, job definitions, and job queues.
+        /// ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

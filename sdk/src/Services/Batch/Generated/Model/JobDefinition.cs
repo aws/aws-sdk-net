@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing an AWS Batch job definition.
+    /// An object representing an Batch job definition.
     /// </summary>
     public partial class JobDefinition
     {
@@ -134,7 +134,7 @@ namespace Amazon.Batch.Model
         /// definition. Parameters are specified as a key-value pair mapping. Parameters in a
         /// <code>SubmitJob</code> request override any corresponding parameter defaults from
         /// the job definition. For more information about specifying parameters, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-        /// Definition Parameters</a> in the <i>AWS Batch User Guide</i>.
+        /// Definition Parameters</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Parameters
@@ -269,8 +269,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Timeout. 
         /// <para>
         /// The timeout configuration for jobs that are submitted with this job definition. You
-        /// can specify a timeout duration after which AWS Batch terminates your jobs if they
-        /// haven't finished.
+        /// can specify a timeout duration after which Batch terminates your jobs if they haven't
+        /// finished.
         /// </para>
         /// </summary>
         public JobTimeout Timeout
@@ -290,7 +290,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The type of job definition. If the job is run on Fargate resources, then <code>multinode</code>
         /// isn't supported. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
-        /// a multi-node parallel job definition</a> in the <i>AWS Batch User Guide</i>.
+        /// a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

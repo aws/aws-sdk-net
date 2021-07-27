@@ -105,7 +105,7 @@ namespace Amazon.Batch.Model
         ///  <note> 
         /// <para>
         /// Environment variables must not start with <code>AWS_BATCH</code>; this naming convention
-        /// is reserved for variables that are set by the AWS Batch service.
+        /// is reserved for variables that are set by the Batch service.
         /// </para>
         ///  </note>
         /// </summary>
@@ -124,9 +124,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For
-        /// more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
-        /// Batch execution IAM role</a> in the <i>AWS Batch User Guide</i>.
+        /// The Amazon Resource Name (ARN) of the execution role that Batch can assume. For more
+        /// information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch
+        /// execution IAM role</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
         public string ExecutionRoleArn
@@ -162,8 +162,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property FargatePlatformConfiguration. 
         /// <para>
-        /// The platform configuration for jobs running on Fargate resources. Jobs running on
-        /// EC2 resources must not specify this parameter.
+        /// The platform configuration for jobs that are running on Fargate resources. Jobs that
+        /// are running on EC2 resources must not specify this parameter.
         /// </para>
         /// </summary>
         public FargatePlatformConfiguration FargatePlatformConfiguration
@@ -203,7 +203,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't applicable to jobs running on Fargate resources.
+        /// This parameter isn't applicable to jobs that are running on Fargate resources.
         /// </para>
         ///  </note>
         /// </summary>
@@ -277,9 +277,9 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// AWS Batch currently supports a subset of the logging drivers available to the Docker
-        /// daemon (shown in the <a>LogConfiguration</a> data type). Additional log drivers might
-        /// be available in future releases of the Amazon ECS container agent.
+        /// Batch currently supports a subset of the logging drivers available to the Docker daemon
+        /// (shown in the <a>LogConfiguration</a> data type). Additional log drivers might be
+        /// available in future releases of the Amazon ECS container agent.
         /// </para>
         ///  </note> 
         /// <para>
@@ -315,7 +315,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property LogStreamName. 
         /// <para>
         /// The name of the CloudWatch Logs log stream associated with the container. The log
-        /// group for AWS Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives
+        /// group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives
         /// a log stream name when they reach the <code>RUNNING</code> status.
         /// </para>
         /// </summary>
@@ -372,8 +372,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
-        /// The network configuration for jobs running on Fargate resources. Jobs running on EC2
-        /// resources must not specify this parameter.
+        /// The network configuration for jobs that are running on Fargate resources. Jobs that
+        /// are running on EC2 resources must not specify this parameter.
         /// </para>
         /// </summary>
         public NetworkConfiguration NetworkConfiguration
@@ -414,8 +414,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't applicable to jobs running on Fargate resources and shouldn't
-        /// be provided, or specified as false.
+        /// This parameter isn't applicable to jobs that are running on Fargate resources and
+        /// shouldn't be provided, or specified as false.
         /// </para>
         ///  </note>
         /// </summary>
@@ -495,7 +495,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Secrets. 
         /// <para>
         /// The secrets to pass to the container. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-        /// sensitive data</a> in the <i>AWS Batch User Guide</i>.
+        /// sensitive data</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
         public List<Secret> Secrets
@@ -541,7 +541,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't applicable to jobs running on Fargate resources.
+        /// This parameter isn't applicable to jobs that are running on Fargate resources.
         /// </para>
         ///  </note>
         /// </summary>

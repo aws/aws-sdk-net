@@ -69,7 +69,7 @@ namespace Amazon.Batch.Model
         ///  <note> 
         /// <para>
         /// Environment variables must not start with <code>AWS_BATCH</code>; this naming convention
-        /// is reserved for variables that are set by the AWS Batch service.
+        /// is reserved for variables that are set by the Batch service.
         /// </para>
         ///  </note>
         /// </summary>
@@ -92,8 +92,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't applicable to single-node container jobs or for jobs running
-        /// on Fargate resources and shouldn't be provided.
+        /// This parameter isn't applicable to single-node container jobs or jobs that run on
+        /// Fargate resources, and shouldn't be provided.
         /// </para>
         ///  </note>
         /// </summary>
@@ -115,7 +115,10 @@ namespace Amazon.Batch.Model
         /// This parameter indicates the amount of memory (in MiB) that's reserved for the job.
         /// It overrides the <code>memory</code> parameter set in the job definition, but doesn't
         /// override any memory requirement specified in the <code>ResourceRequirement</code>
-        /// structure in the job definition.
+        /// structure in the job definition. To override memory requirements that are specified
+        /// in the <code>ResourceRequirement</code> structure in the job definition, <code>ResourceRequirement</code>
+        /// must be specified in the <code>SubmitJob</code> request, with <code>type</code> set
+        /// to <code>MEMORY</code> and <code>value</code> set to the new value.
         /// </para>
         ///  
         /// <para>
@@ -163,14 +166,10 @@ namespace Amazon.Batch.Model
         /// This parameter indicates the number of vCPUs reserved for the container.It overrides
         /// the <code>vcpus</code> parameter that's set in the job definition, but doesn't override
         /// any vCPU requirement specified in the <code>resourceRequirement</code> structure in
-        /// the job definition.
-        /// </para>
-        ///  
-        /// <para>
-        /// This parameter is supported for jobs that run on EC2 resources, but isn't supported
-        /// for jobs that run on Fargate resources. For Fargate resources, you can only use <code>resourceRequirement</code>.
-        /// For EC2 resources, you can use either this parameter or <code>resourceRequirement</code>
-        /// but not both. 
+        /// the job definition. To override vCPU requirements that are specified in the <code>ResourceRequirement</code>
+        /// structure in the job definition, <code>ResourceRequirement</code> must be specified
+        /// in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code>
+        /// and <code>value</code> set to the new value.
         /// </para>
         ///  
         /// <para>
@@ -182,9 +181,10 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't applicable to jobs that run on Fargate resources and shouldn't
-        /// be provided. For jobs that run on Fargate resources, you must specify the vCPU requirement
-        /// for the job using <code>resourceRequirements</code>.
+        /// This parameter is supported for jobs that run on EC2 resources, but isn't supported
+        /// for jobs that run on Fargate resources. For Fargate resources, you can only use <code>resourceRequirement</code>.
+        /// For EC2 resources, you can use either this parameter or <code>resourceRequirement</code>
+        /// but not both.
         /// </para>
         ///  </note>
         /// </summary>

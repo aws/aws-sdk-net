@@ -52,8 +52,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't applicable to jobs running on Fargate resources and shouldn't
-        /// be provided.
+        /// This parameter isn't applicable to jobs that are running on Fargate resources and
+        /// shouldn't be provided.
         /// </para>
         ///  </note>
         /// </summary>
@@ -111,8 +111,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't applicable to jobs running on Fargate resources and shouldn't
-        /// be provided.
+        /// This parameter isn't applicable to jobs that are running on Fargate resources and
+        /// shouldn't be provided.
         /// </para>
         ///  </note>
         /// </summary>
@@ -137,8 +137,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't applicable to jobs running on Fargate resources and shouldn't
-        /// be provided.
+        /// This parameter isn't applicable to jobs that are running on Fargate resources and
+        /// shouldn't be provided.
         /// </para>
         ///  </note>
         /// </summary>
@@ -162,8 +162,8 @@ namespace Amazon.Batch.Model
         /// A <code>swappiness</code> value of <code>100</code> causes pages to be swapped very
         /// aggressively. Accepted values are whole numbers between <code>0</code> and <code>100</code>.
         /// If the <code>swappiness</code> parameter isn't specified, a default value of <code>60</code>
-        /// is used. If a value isn't specified for <code>maxSwap</code> then this parameter is
-        /// ignored. If <code>maxSwap</code> is set to 0, the container doesn't use swap. This
+        /// is used. If a value isn't specified for <code>maxSwap</code>, then this parameter
+        /// is ignored. If <code>maxSwap</code> is set to 0, the container doesn't use swap. This
         /// parameter maps to the <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
@@ -198,8 +198,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// This parameter isn't applicable to jobs running on Fargate resources and shouldn't
-        /// be provided.
+        /// This parameter isn't applicable to jobs that are running on Fargate resources and
+        /// shouldn't be provided.
         /// </para>
         ///  </note>
         /// </summary>
@@ -224,8 +224,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't applicable to jobs running on Fargate resources and shouldn't
-        /// be provided.
+        /// This parameter isn't applicable to jobs that are running on Fargate resources and
+        /// shouldn't be provided.
         /// </para>
         ///  </note>
         /// </summary>

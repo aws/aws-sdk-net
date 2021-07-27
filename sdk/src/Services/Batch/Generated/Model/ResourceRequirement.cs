@@ -71,13 +71,13 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// GPUs are not available for jobs running on Fargate resources.
+        /// GPUs are not available for jobs that are running on Fargate resources.
         /// </para>
         ///  </note> </dd> <dt>type="MEMORY"</dt> <dd> 
         /// <para>
         /// The memory hard limit (in MiB) present to the container. This parameter is supported
-        /// for jobs running on EC2 resources. If your container attempts to exceed the memory
-        /// specified, the container is terminated. This parameter maps to <code>Memory</code>
+        /// for jobs that are running on EC2 resources. If your container attempts to exceed the
+        /// memory specified, the container is terminated. This parameter maps to <code>Memory</code>
         /// in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
         /// Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
@@ -93,13 +93,13 @@ namespace Amazon.Batch.Model
         /// <para>
         /// If you're trying to maximize your resource utilization by providing your jobs as much
         /// memory as possible for a particular instance type, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-        /// Management</a> in the <i>AWS Batch User Guide</i>.
+        /// Management</a> in the <i>Batch User Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
-        /// For jobs running on Fargate resources, then <code>value</code> is the hard limit (in
-        /// MiB), and must match one of the supported values and the <code>VCPU</code> values
-        /// must be one of the values supported for that memory value.
+        /// For jobs that are running on Fargate resources, then <code>value</code> is the hard
+        /// limit (in MiB), and must match one of the supported values and the <code>VCPU</code>
+        /// values must be one of the values supported for that memory value.
         /// </para>
         ///  <dl> <dt>value = 512</dt> <dd> 
         /// <para>
@@ -151,9 +151,10 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  
         /// <para>
-        /// For jobs running on Fargate resources, then <code>value</code> must match one of the
-        /// supported values and the <code>MEMORY</code> values must be one of the values supported
-        /// for that VCPU value. The supported values are 0.25, 0.5, 1, 2, and 4
+        /// For jobs that are running on Fargate resources, then <code>value</code> must match
+        /// one of the supported values and the <code>MEMORY</code> values must be one of the
+        /// values supported for that VCPU value. The supported values are 0.25, 0.5, 1, 2, and
+        /// 4
         /// </para>
         ///  <dl> <dt>value = 0.25</dt> <dd> 
         /// <para>

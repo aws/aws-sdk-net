@@ -30,7 +30,7 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateComputeEnvironment operation.
-    /// Updates an AWS Batch compute environment.
+    /// Updates an Batch compute environment.
     /// </summary>
     public partial class UpdateComputeEnvironmentRequest : AmazonBatchRequest
     {
@@ -63,7 +63,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// Details of the compute resources managed by the compute environment. Required for
         /// a managed compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-        /// Environments</a> in the <i>AWS Batch User Guide</i>.
+        /// Environments</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
         public ComputeResourceUpdate ComputeResources
@@ -81,15 +81,16 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
-        /// The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make
-        /// calls to other AWS services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS
-        /// Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.
+        /// The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls
+        /// to other Amazon Web Services services on your behalf. For more information, see <a
+        /// href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch
+        /// service IAM role</a> in the <i>Batch User Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
-        /// If the compute environment has a service-linked role, it cannot be changed to use
-        /// a regular IAM role. If the compute environment has a regular IAM role, it cannot be
-        /// changed to use a service-linked role.
+        /// If the compute environment has a service-linked role, it can't be changed to use a
+        /// regular IAM role. Likewise, if the compute environment has a regular IAM role, it
+        /// can't be changed to use a service-linked role.
         /// </para>
         ///  </important> 
         /// <para>
@@ -98,11 +99,11 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Depending on how you created your AWS Batch service role, its ARN might contain the
-        /// <code>service-role</code> path prefix. When you only specify the name of the service
-        /// role, AWS Batch assumes that your ARN doesn't use the <code>service-role</code> path
-        /// prefix. Because of this, we recommend that you specify the full ARN of your service
-        /// role when you create compute environments.
+        /// Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code>
+        /// path prefix. When you only specify the name of the service role, Batch assumes that
+        /// your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we
+        /// recommend that you specify the full ARN of your service role when you create compute
+        /// environments.
         /// </para>
         ///  </note>
         /// </summary>
@@ -127,15 +128,15 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  
         /// <para>
-        /// If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to
-        /// place jobs from an associated job queue on the compute resources within the environment.
+        /// If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place
+        /// jobs from an associated job queue on the compute resources within the environment.
         /// If the compute environment is managed, then it can scale its instances out or in automatically,
         /// based on the job queue demand.
         /// </para>
         ///  
         /// <para>
-        /// If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt
-        /// to place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
+        /// If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to
+        /// place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
         /// state continue to progress normally. Managed compute environments in the <code>DISABLED</code>
         /// state don't scale out. However, they scale in to <code>minvCpus</code> value after
         /// instances become idle.

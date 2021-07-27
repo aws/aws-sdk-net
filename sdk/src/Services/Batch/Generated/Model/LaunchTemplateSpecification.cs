@@ -42,7 +42,7 @@ namespace Amazon.Batch.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// This object isn't applicable to jobs running on Fargate resources.
+    /// This object isn't applicable to jobs that are running on Fargate resources.
     /// </para>
     ///  </note>
     /// </summary>
@@ -101,8 +101,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// After the compute environment is created, the launch template version used will not
-        /// be changed, even if the <code>$Default</code> or <code>$Latest</code> version for
+        /// After the compute environment is created, the launch template version that's used
+        /// isn't changed, even if the <code>$Default</code> or <code>$Latest</code> version for
         /// the launch template is updated. To use a new launch template version, create a new
         /// compute environment, add the new compute environment to the existing job queue, remove
         /// the old compute environment from the job queue, and delete the old compute environment.

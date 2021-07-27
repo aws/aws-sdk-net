@@ -37,6 +37,7 @@ namespace Amazon.Batch.Model
         private ContainerSummary _container;
         private long? _createdAt;
         private string _jobArn;
+        private string _jobDefinition;
         private string _jobId;
         private string _jobName;
         private NodePropertiesSummary _nodeProperties;
@@ -121,6 +122,24 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property JobDefinition. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the job definition.
+        /// </para>
+        /// </summary>
+        public string JobDefinition
+        {
+            get { return this._jobDefinition; }
+            set { this._jobDefinition = value; }
+        }
+
+        // Check to see if JobDefinition property is set
+        internal bool IsSetJobDefinition()
+        {
+            return this._jobDefinition != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
         /// The ID of the job.
@@ -165,7 +184,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This isn't applicable to jobs running on Fargate resources.
+        /// This isn't applicable to jobs that are running on Fargate resources.
         /// </para>
         ///  </note>
         /// </summary>

@@ -30,15 +30,15 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateComputeEnvironment operation.
-    /// Creates an AWS Batch compute environment. You can create <code>MANAGED</code> or <code>UNMANAGED</code>
+    /// Creates an Batch compute environment. You can create <code>MANAGED</code> or <code>UNMANAGED</code>
     /// compute environments. <code>MANAGED</code> compute environments can use Amazon EC2
-    /// or AWS Fargate resources. <code>UNMANAGED</code> compute environments can only use
-    /// EC2 resources.
+    /// or Fargate resources. <code>UNMANAGED</code> compute environments can only use EC2
+    /// resources.
     /// 
     ///  
     /// <para>
-    /// In a managed compute environment, AWS Batch manages the capacity and instance types
-    /// of the compute resources within the environment. This is based on the compute resource
+    /// In a managed compute environment, Batch manages the capacity and instance types of
+    /// the compute resources within the environment. This is based on the compute resource
     /// specification that you define or the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
     /// template</a> that you specify when you create the compute environment. Either, you
     /// can choose to use EC2 On-Demand Instances and EC2 Spot Instances. Or, you can use
@@ -65,12 +65,12 @@ namespace Amazon.Batch.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// AWS Batch doesn't upgrade the AMIs in a compute environment after the environment
-    /// is created. For example, it doesn't update the AMIs when a newer version of the Amazon
-    /// ECS optimized AMI is available. Therefore, you're responsible for managing the guest
-    /// operating system (including its updates and security patches) and any additional application
-    /// software or utilities that you install on the compute resources. To use a new AMI
-    /// for your AWS Batch jobs, complete these steps:
+    /// Batch doesn't upgrade the AMIs in a compute environment after the environment is created.
+    /// For example, it doesn't update the AMIs when a newer version of the Amazon ECS optimized
+    /// AMI is available. Therefore, you're responsible for managing the guest operating system
+    /// (including its updates and security patches) and any additional application software
+    /// or utilities that you install on the compute resources. To use a new AMI for your
+    /// Batch jobs, complete these steps:
     /// </para>
     ///  <ol> <li> 
     /// <para>
@@ -124,7 +124,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// Details about the compute resources managed by the compute environment. This parameter
         /// is required for managed compute environments. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-        /// Environments</a> in the <i>AWS Batch User Guide</i>.
+        /// Environments</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
         public ComputeResource ComputeResources
@@ -142,16 +142,17 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
-        /// The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make
-        /// calls to other AWS services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS
-        /// Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.
+        /// The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls
+        /// to other Amazon Web Services services on your behalf. For more information, see <a
+        /// href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch
+        /// service IAM role</a> in the <i>Batch User Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
-        /// If your account has already created the AWS Batch service-linked role, that role is
-        /// used by default for your compute environment unless you specify a role here. If the
-        /// AWS Batch service-linked role does not exist in your account, and no role is specified
-        /// here, the service will try to create the AWS Batch service-linked role in your account.
+        /// If your account already created the Batch service-linked role, that role is used by
+        /// default for your compute environment unless you specify a different role here. If
+        /// the Batch service-linked role doesn't exist in your account, and no role is specified
+        /// here, the service attempts to create the Batch service-linked role in your account.
         /// </para>
         ///  </important> 
         /// <para>
@@ -164,11 +165,11 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Depending on how you created your AWS Batch service role, its ARN might contain the
-        /// <code>service-role</code> path prefix. When you only specify the name of the service
-        /// role, AWS Batch assumes that your ARN doesn't use the <code>service-role</code> path
-        /// prefix. Because of this, we recommend that you specify the full ARN of your service
-        /// role when you create compute environments.
+        /// Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code>
+        /// path prefix. When you only specify the name of the service role, Batch assumes that
+        /// your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we
+        /// recommend that you specify the full ARN of your service role when you create compute
+        /// environments.
         /// </para>
         ///  </note>
         /// </summary>
@@ -193,15 +194,15 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  
         /// <para>
-        /// If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to
-        /// place jobs from an associated job queue on the compute resources within the environment.
+        /// If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place
+        /// jobs from an associated job queue on the compute resources within the environment.
         /// If the compute environment is managed, then it can scale its instances out or in automatically,
         /// based on the job queue demand.
         /// </para>
         ///  
         /// <para>
-        /// If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt
-        /// to place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
+        /// If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to
+        /// place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
         /// state continue to progress normally. Managed compute environments in the <code>DISABLED</code>
         /// state don't scale out. However, they scale in to <code>minvCpus</code> value after
         /// instances become idle.
@@ -225,7 +226,7 @@ namespace Amazon.Batch.Model
         /// The tags that you apply to the compute environment to help you categorize and organize
         /// your resources. Each tag consists of a key and an optional value. For more information,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// AWS Resources</a> in <i>AWS General Reference</i>.
+        /// Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.
         /// </para>
         ///  
         /// <para>
@@ -252,7 +253,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-        /// Environments</a> in the <i>AWS Batch User Guide</i>.
+        /// Environments</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

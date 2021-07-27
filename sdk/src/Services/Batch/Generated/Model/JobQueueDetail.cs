@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing the details of an AWS Batch job queue.
+    /// An object representing the details of an Batch job queue.
     /// </summary>
     public partial class JobQueueDetail
     {
@@ -189,7 +189,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The tags applied to the job queue. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-        /// your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.
+        /// your Batch resources</a> in <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

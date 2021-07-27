@@ -42,7 +42,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The AWS Batch job ID of the job to terminate.
+        /// The Batch job ID of the job to terminate.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +63,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// A message to attach to the job that explains the reason for canceling it. This message
         /// is returned by future <a>DescribeJobs</a> operations on the job. This message is also
-        /// recorded in the AWS Batch activity logs.
+        /// recorded in the Batch activity logs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

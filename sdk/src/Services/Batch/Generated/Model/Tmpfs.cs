@@ -33,7 +33,7 @@ namespace Amazon.Batch.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This object isn't applicable to jobs running on Fargate resources.
+    /// This object isn't applicable to jobs that are running on Fargate resources.
     /// </para>
     ///  </note>
     /// </summary>

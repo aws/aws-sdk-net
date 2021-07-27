@@ -41,8 +41,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property EfsVolumeConfiguration. 
         /// <para>
         /// This parameter is specified when you are using an Amazon Elastic File System file
-        /// system for job storage. Jobs running on Fargate resources must specify a <code>platformVersion</code>
-        /// of at least <code>1.4.0</code>.
+        /// system for job storage. Jobs that are running on Fargate resources must specify a
+        /// <code>platformVersion</code> of at least <code>1.4.0</code>.
         /// </para>
         /// </summary>
         public EFSVolumeConfiguration EfsVolumeConfiguration
@@ -68,8 +68,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't applicable to jobs running on Fargate resources and shouldn't
-        /// be provided.
+        /// This parameter isn't applicable to jobs that are running on Fargate resources and
+        /// shouldn't be provided.
         /// </para>
         ///  </note>
         /// </summary>

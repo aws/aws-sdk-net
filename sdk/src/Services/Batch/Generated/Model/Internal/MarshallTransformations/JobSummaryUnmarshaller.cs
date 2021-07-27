@@ -88,6 +88,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.JobArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("jobDefinition", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.JobDefinition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("jobId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

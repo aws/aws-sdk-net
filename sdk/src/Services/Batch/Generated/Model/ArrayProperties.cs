@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing an AWS Batch array job.
+    /// An object representing an Batch array job.
     /// </summary>
     public partial class ArrayProperties
     {

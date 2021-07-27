@@ -30,7 +30,7 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelJob operation.
-    /// Cancels a job in an AWS Batch job queue. Jobs that are in the <code>SUBMITTED</code>,
+    /// Cancels a job in an Batch job queue. Jobs that are in the <code>SUBMITTED</code>,
     /// <code>PENDING</code>, or <code>RUNNABLE</code> state are canceled. Jobs that have
     /// progressed to <code>STARTING</code> or <code>RUNNING</code> aren't canceled, but the
     /// API operation still succeeds, even if no job is canceled. These jobs must be terminated
@@ -44,7 +44,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The AWS Batch job ID of the job to cancel.
+        /// The Batch job ID of the job to cancel.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -65,7 +65,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// A message to attach to the job that explains the reason for canceling it. This message
         /// is returned by future <a>DescribeJobs</a> operations on the job. This message is also
-        /// recorded in the AWS Batch activity logs.
+        /// recorded in the Batch activity logs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

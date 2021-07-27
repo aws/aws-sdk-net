@@ -30,7 +30,7 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterJobDefinition operation.
-    /// Deregisters an AWS Batch job definition. Job definitions are permanently deleted after
+    /// Deregisters an Batch job definition. Job definitions are permanently deleted after
     /// 180 days.
     /// </summary>
     public partial class DeregisterJobDefinitionRequest : AmazonBatchRequest

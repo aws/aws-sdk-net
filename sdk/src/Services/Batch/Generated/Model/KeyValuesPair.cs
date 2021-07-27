@@ -29,46 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// The <code>ulimit</code> settings to pass to the container.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// This object isn't applicable to jobs that are running on Fargate resources.
-    /// </para>
-    ///  </note>
+    /// A filter name and value pair that's used to return a more specific list of results
+    /// from a <code>ListJobs</code> API operation.
     /// </summary>
-    public partial class Ulimit
+    public partial class KeyValuesPair
     {
-        private int? _hardLimit;
         private string _name;
-        private int? _softLimit;
-
-        /// <summary>
-        /// Gets and sets the property HardLimit. 
-        /// <para>
-        /// The hard limit for the <code>ulimit</code> type.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public int HardLimit
-        {
-            get { return this._hardLimit.GetValueOrDefault(); }
-            set { this._hardLimit = value; }
-        }
-
-        // Check to see if HardLimit property is set
-        internal bool IsSetHardLimit()
-        {
-            return this._hardLimit.HasValue; 
-        }
+        private List<string> _values = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The <code>type</code> of the <code>ulimit</code>.
+        /// The name of the filter. Filter names are case sensitive.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -82,22 +56,21 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SoftLimit. 
+        /// Gets and sets the property Values. 
         /// <para>
-        /// The soft limit for the <code>ulimit</code> type.
+        /// The filter values.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public int SoftLimit
+        public List<string> Values
         {
-            get { return this._softLimit.GetValueOrDefault(); }
-            set { this._softLimit = value; }
+            get { return this._values; }
+            set { this._values = value; }
         }
 
-        // Check to see if SoftLimit property is set
-        internal bool IsSetSoftLimit()
+        // Check to see if Values property is set
+        internal bool IsSetValues()
         {
-            return this._softLimit.HasValue; 
+            return this._values != null && this._values.Count > 0; 
         }
 
     }

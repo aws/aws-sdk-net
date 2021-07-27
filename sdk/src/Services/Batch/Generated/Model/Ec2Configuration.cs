@@ -32,13 +32,13 @@ namespace Amazon.Batch.Model
     /// Provides information used to select Amazon Machine Images (AMIs) for instances in
     /// the compute environment. If <code>Ec2Configuration</code> isn't specified, the default
     /// is currently <code>ECS_AL1</code> (<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-    /// Linux</a>) for non-GPU, non-Graviton instances. Starting on March 31, 2021, this default
-    /// will be changing to <code>ECS_AL2</code> (<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
+    /// Linux</a>) for non-GPU, non AWSGraviton instances. Starting on March 31, 2021, this
+    /// default will be changing to <code>ECS_AL2</code> (<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
     /// Linux 2</a>).
     /// 
     ///  <note> 
     /// <para>
-    /// This object isn't applicable to jobs running on Fargate resources.
+    /// This object isn't applicable to jobs that are running on Fargate resources.
     /// </para>
     ///  </note>
     /// </summary>
@@ -80,22 +80,23 @@ namespace Amazon.Batch.Model
         ///  <dl> <dt>ECS_AL2</dt> <dd> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
-        /// Linux 2</a>− Default for all AWS Graviton-based instance families (for example, <code>C6g</code>,
-        /// <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and can be used for all
-        /// non-GPU instance types.
+        /// Linux 2</a>− Default for all Amazon Web Services Graviton-based instance families
+        /// (for example, <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>)
+        /// and can be used for all non-GPU instance types.
         /// </para>
         ///  </dd> <dt>ECS_AL2_NVIDIA</dt> <dd> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon
         /// Linux 2 (GPU)</a>−Default for all GPU instance families (for example <code>P4</code>
-        /// and <code>G4</code>) and can be used for all non-AWS Graviton-based instance types.
+        /// and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based
+        /// instance types.
         /// </para>
         ///  </dd> <dt>ECS_AL1</dt> <dd> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-        /// Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon Linux
-        /// is reaching the end-of-life of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon
-        /// Linux AMI</a>.
+        /// Linux</a>−Default for all non-GPU, non Amazon Web Services Graviton instance families.
+        /// Amazon Linux is reaching the end-of-life of standard support. For more information,
+        /// see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.
         /// </para>
         ///  </dd> </dl>
         /// </summary>

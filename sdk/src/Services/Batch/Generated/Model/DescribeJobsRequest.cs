@@ -30,7 +30,7 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeJobs operation.
-    /// Describes a list of AWS Batch jobs.
+    /// Describes a list of Batch jobs.
     /// </summary>
     public partial class DescribeJobsRequest : AmazonBatchRequest
     {

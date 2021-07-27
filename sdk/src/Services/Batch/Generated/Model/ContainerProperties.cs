@@ -94,7 +94,7 @@ namespace Amazon.Batch.Model
         ///  </important> <note> 
         /// <para>
         /// Environment variables must not start with <code>AWS_BATCH</code>; this naming convention
-        /// is reserved for variables that are set by the AWS Batch service.
+        /// is reserved for variables that are set by the Batch service.
         /// </para>
         ///  </note>
         /// </summary>
@@ -113,10 +113,10 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For
-        /// jobs that run on Fargate resources, you must provide an execution role. For more information,
-        /// see <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
-        /// Batch execution IAM role</a> in the <i>AWS Batch User Guide</i>.
+        /// The Amazon Resource Name (ARN) of the execution role that Batch can assume. For jobs
+        /// that run on Fargate resources, you must provide an execution role. For more information,
+        /// see <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch
+        /// execution IAM role</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
         public string ExecutionRoleArn
@@ -134,8 +134,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property FargatePlatformConfiguration. 
         /// <para>
-        /// The platform configuration for jobs running on Fargate resources. Jobs running on
-        /// EC2 resources must not specify this parameter.
+        /// The platform configuration for jobs that are running on Fargate resources. Jobs that
+        /// are running on EC2 resources must not specify this parameter.
         /// </para>
         /// </summary>
         public FargatePlatformConfiguration FargatePlatformConfiguration
@@ -211,8 +211,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't applicable to single-node container jobs or for jobs that run
-        /// on Fargate resources and shouldn't be provided.
+        /// This parameter isn't applicable to single-node container jobs or jobs that run on
+        /// Fargate resources, and shouldn't be provided.
         /// </para>
         ///  </note>
         /// </summary>
@@ -231,8 +231,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS
-        /// permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+        /// The Amazon Resource Name (ARN) of the IAM role that the container can assume for Amazon
+        /// Web Services permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
         /// Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -287,8 +287,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// AWS Batch currently supports a subset of the logging drivers available to the Docker
-        /// daemon (shown in the <a>LogConfiguration</a> data type).
+        /// Batch currently supports a subset of the logging drivers available to the Docker daemon
+        /// (shown in the <a>LogConfiguration</a> data type).
         /// </para>
         ///  </note> 
         /// <para>
@@ -324,7 +324,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Memory. 
         /// <para>
         /// This parameter indicates the memory hard limit (in MiB) for a container. If your container
-        /// attempts to exceed the specified number, it is terminated. You must specify at least
+        /// attempts to exceed the specified number, it's terminated. You must specify at least
         /// 4 MiB of memory for a job using this parameter. The memory hard limit can be specified
         /// in several places. It must be specified for each node at least once.
         /// </para>
@@ -339,13 +339,13 @@ namespace Amazon.Batch.Model
         /// <para>
         /// This parameter is supported on EC2 resources but isn't supported on Fargate resources.
         /// For Fargate resources, you should specify the memory requirement using <code>resourceRequirement</code>.
-        /// You can do this for EC2 resources.
+        /// You can also do this for EC2 resources.
         /// </para>
         ///  <note> 
         /// <para>
         /// If you're trying to maximize your resource utilization by providing your jobs as much
         /// memory as possible for a particular instance type, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-        /// Management</a> in the <i>AWS Batch User Guide</i>.
+        /// Management</a> in the <i>Batch User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -387,8 +387,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
-        /// The network configuration for jobs running on Fargate resources. Jobs running on EC2
-        /// resources must not specify this parameter.
+        /// The network configuration for jobs that are running on Fargate resources. Jobs that
+        /// are running on EC2 resources must not specify this parameter.
         /// </para>
         /// </summary>
         public NetworkConfiguration NetworkConfiguration
@@ -415,8 +415,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't applicable to jobs running on Fargate resources and shouldn't
-        /// be provided, or specified as false.
+        /// This parameter isn't applicable to jobs that are running on Fargate resources and
+        /// shouldn't be provided, or specified as false.
         /// </para>
         ///  </note>
         /// </summary>
@@ -476,7 +476,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Secrets. 
         /// <para>
         /// The secrets for the container. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-        /// sensitive data</a> in the <i>AWS Batch User Guide</i>.
+        /// sensitive data</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
         public List<Secret> Secrets
@@ -502,8 +502,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't applicable to jobs running on Fargate resources and shouldn't
-        /// be provided.
+        /// This parameter isn't applicable to jobs that are running on Fargate resources and
+        /// shouldn't be provided.
         /// </para>
         ///  </note>
         /// </summary>
@@ -548,8 +548,8 @@ namespace Amazon.Batch.Model
         /// This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
         /// Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-        /// run</a>. The number of vCPUs must be specified but can be be specified in several
-        /// places. You must specify it at least once for each node.
+        /// run</a>. The number of vCPUs must be specified but can be specified in several places.
+        /// You must specify it at least once for each node.
         /// </para>
         ///  
         /// <para>
@@ -560,9 +560,9 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't applicable to jobs running on Fargate resources and shouldn't
-        /// be provided. For jobs that run on Fargate resources, you must specify the vCPU requirement
-        /// for the job using <code>resourceRequirements</code>.
+        /// This parameter isn't applicable to jobs that are running on Fargate resources and
+        /// shouldn't be provided. For jobs that run on Fargate resources, you must specify the
+        /// vCPU requirement for the job using <code>resourceRequirements</code>.
         /// </para>
         ///  </note>
         /// </summary>

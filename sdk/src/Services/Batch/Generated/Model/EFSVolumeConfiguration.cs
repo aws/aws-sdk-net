@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// This parameter is specified when you are using an Amazon Elastic File System file
-    /// system for task storage. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/ug/efs-volumes.html">Amazon
-    /// EFS Volumes</a> in the <i>AWS Batch User Guide</i>.
+    /// This is used when you're using an Amazon Elastic File System file system for job storage.
+    /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/efs-volumes.html">Amazon
+    /// EFS Volumes</a> in the <i>Batch User Guide</i>.
     /// </summary>
     public partial class EFSVolumeConfiguration
     {
@@ -82,13 +82,14 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property RootDirectory. 
         /// <para>
         /// The directory within the Amazon EFS file system to mount as the root directory inside
-        /// the host. If this parameter is omitted, the root of the Amazon EFS volume will be
-        /// used. Specifying <code>/</code> will have the same effect as omitting this parameter.
+        /// the host. If this parameter is omitted, the root of the Amazon EFS volume is used
+        /// instead. Specifying <code>/</code> has the same effect as omitting this parameter.
+        /// The maximum length is 4,096 characters.
         /// </para>
         ///  <important> 
         /// <para>
         /// If an EFS access point is specified in the <code>authorizationConfig</code>, the root
-        /// directory parameter must either be omitted or set to <code>/</code> which will enforce
+        /// directory parameter must either be omitted or set to <code>/</code>, which enforces
         /// the path set on the Amazon EFS access point.
         /// </para>
         ///  </important>
@@ -108,10 +109,10 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property TransitEncryption. 
         /// <para>
-        /// Whether or not to enable encryption for Amazon EFS data in transit between the Amazon
-        /// ECS host and the Amazon EFS server. Transit encryption must be enabled if Amazon EFS
-        /// IAM authorization is used. If this parameter is omitted, the default value of <code>DISABLED</code>
-        /// is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
+        /// Determines whether to enable encryption for Amazon EFS data in transit between the
+        /// Amazon ECS host and the Amazon EFS server. Transit encryption must be enabled if Amazon
+        /// EFS IAM authorization is used. If this parameter is omitted, the default value of
+        /// <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
         /// data in transit</a> in the <i>Amazon Elastic File System User Guide</i>.
         /// </para>
         /// </summary>
@@ -131,10 +132,10 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property TransitEncryptionPort. 
         /// <para>
         /// The port to use when sending encrypted data between the Amazon ECS host and the Amazon
-        /// EFS server. If you do not specify a transit encryption port, it will use the port
-        /// selection strategy that the Amazon EFS mount helper uses. For more information, see
-        /// <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
-        /// Helper</a> in the <i>Amazon Elastic File System User Guide</i>.
+        /// EFS server. If you don't specify a transit encryption port, it uses the port selection
+        /// strategy that the Amazon EFS mount helper uses. The value must be between 0 and 65,535.
+        /// For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS
+        /// Mount Helper</a> in the <i>Amazon Elastic File System User Guide</i>.
         /// </para>
         /// </summary>
         public int TransitEncryptionPort

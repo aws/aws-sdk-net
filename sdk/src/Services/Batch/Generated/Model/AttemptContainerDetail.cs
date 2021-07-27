@@ -81,7 +81,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property LogStreamName. 
         /// <para>
         /// The name of the CloudWatch Logs log stream associated with the container. The log
-        /// group for AWS Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives
+        /// group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives
         /// a log stream name when they reach the <code>RUNNING</code> status.
         /// </para>
         /// </summary>

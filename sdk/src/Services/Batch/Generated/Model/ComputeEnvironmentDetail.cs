@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing an AWS Batch compute environment.
+    /// An object representing an Batch compute environment.
     /// </summary>
     public partial class ComputeEnvironmentDetail
     {
@@ -88,7 +88,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The compute resources defined for the compute environment. For more information, see
         /// <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-        /// Environments</a> in the <i>AWS Batch User Guide</i>.
+        /// Environments</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
         public ComputeResource ComputeResources
@@ -126,9 +126,10 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
-        /// The service role associated with the compute environment that allows AWS Batch to
-        /// make calls to AWS API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS
-        /// Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.
+        /// The service role associated with the compute environment that allows Batch to make
+        /// calls to Amazon Web Services API operations on your behalf. For more information,
+        /// see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch
+        /// service IAM role</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
         public string ServiceRole
@@ -151,15 +152,15 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  
         /// <para>
-        /// If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to
-        /// place jobs from an associated job queue on the compute resources within the environment.
+        /// If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place
+        /// jobs from an associated job queue on the compute resources within the environment.
         /// If the compute environment is managed, then it can scale its instances out or in automatically,
         /// based on the job queue demand.
         /// </para>
         ///  
         /// <para>
-        /// If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt
-        /// to place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
+        /// If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to
+        /// place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
         /// state continue to progress normally. Managed compute environments in the <code>DISABLED</code>
         /// state don't scale out. However, they scale in to <code>minvCpus</code> value after
         /// instances become idle.
@@ -239,7 +240,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-        /// Environments</a> in the <i>AWS Batch User Guide</i>.
+        /// Environments</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
         public CEType Type

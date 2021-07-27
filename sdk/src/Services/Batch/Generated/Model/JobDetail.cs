@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing an AWS Batch job.
+    /// An object representing an Batch job.
     /// </summary>
     public partial class JobDetail
     {
@@ -269,7 +269,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This isn't applicable to jobs running on Fargate resources.
+        /// This isn't applicable to jobs that are running on Fargate resources.
         /// </para>
         ///  </note>
         /// </summary>
@@ -393,8 +393,7 @@ namespace Amazon.Batch.Model
         ///  <note> 
         /// <para>
         /// If your jobs don't progress to <code>STARTING</code>, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
-        /// Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch User
-        /// Guide</i>.
+        /// Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>Batch User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>

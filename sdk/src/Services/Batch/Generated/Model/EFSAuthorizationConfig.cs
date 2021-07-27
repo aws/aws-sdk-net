@@ -62,11 +62,11 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Iam. 
         /// <para>
-        /// Whether or not to use the AWS Batch execution IAM role defined in a job definition
-        /// when mounting the Amazon EFS file system. If enabled, transit encryption must be enabled
-        /// in the <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default
-        /// value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/ug/efs-volumes.html#efs-volume-accesspoints">Using
-        /// Amazon EFS Access Points</a> in the <i>AWS Batch User Guide</i>. EFS IAM authorization
+        /// Whether or not to use the Batch job IAM role defined in a job definition when mounting
+        /// the Amazon EFS file system. If enabled, transit encryption must be enabled in the
+        /// <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default value
+        /// of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/efs-volumes.html#efs-volume-accesspoints">Using
+        /// Amazon EFS Access Points</a> in the <i>Batch User Guide</i>. EFS IAM authorization
         /// requires that <code>TransitEncryption</code> be <code>ENABLED</code> and that a <code>JobRoleArn</code>
         /// is specified.
         /// </para>

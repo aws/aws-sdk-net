@@ -45,7 +45,7 @@ namespace Amazon.Batch.Model
     ///  </li> </ul> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-    /// sensitive data</a> in the <i>AWS Batch User Guide</i>.
+    /// sensitive data</a> in the <i>Batch User Guide</i>.
     /// </para>
     /// </summary>
     public partial class Secret
@@ -76,14 +76,15 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property ValueFrom. 
         /// <para>
         /// The secret to expose to the container. The supported values are either the full ARN
-        /// of the AWS Secrets Manager secret or the full ARN of the parameter in the AWS Systems
-        /// Manager Parameter Store.
+        /// of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services
+        /// Systems Manager Parameter Store.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the AWS Systems Manager Parameter Store parameter exists in the same Region as
-        /// the job you're launching, then you can use either the full ARN or name of the parameter.
-        /// If the parameter exists in a different Region, then the full ARN must be specified.
+        /// If the Amazon Web Services Systems Manager Parameter Store parameter exists in the
+        /// same Region as the job you're launching, then you can use either the full ARN or name
+        /// of the parameter. If the parameter exists in a different Region, then the full ARN
+        /// must be specified.
         /// </para>
         ///  </note>
         /// </summary>

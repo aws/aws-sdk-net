@@ -30,13 +30,13 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// Container for the parameters to the SubmitJob operation.
-    /// Submits an AWS Batch job from a job definition. Parameters that are specified during
-    /// <a>SubmitJob</a> override parameters defined in the job definition. vCPU and memory
-    /// requirements that are specified in the <code>ResourceRequirements</code> objects in
-    /// the job definition are the exception. They can't be overridden this way using the
-    /// <code>memory</code> and <code>vcpus</code> parameters. Rather, you must specify updates
-    /// to job definition parameters in a <code>ResourceRequirements</code> object that's
-    /// included in the <code>containerOverrides</code> parameter.
+    /// Submits an Batch job from a job definition. Parameters that are specified during <a>SubmitJob</a>
+    /// override parameters defined in the job definition. vCPU and memory requirements that
+    /// are specified in the <code>ResourceRequirements</code> objects in the job definition
+    /// are the exception. They can't be overridden this way using the <code>memory</code>
+    /// and <code>vcpus</code> parameters. Rather, you must specify updates to job definition
+    /// parameters in a <code>ResourceRequirements</code> object that's included in the <code>containerOverrides</code>
+    /// parameter.
     /// 
     ///  <important> 
     /// <para>
@@ -67,7 +67,7 @@ namespace Amazon.Batch.Model
         /// The array properties for the submitted job, such as the size of the array. The array
         /// size can be between 2 and 10,000. If you specify array properties for a job, it becomes
         /// an array job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
-        /// Jobs</a> in the <i>AWS Batch User Guide</i>.
+        /// Jobs</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
         public ArrayProperties ArrayProperties
@@ -197,8 +197,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't applicable to jobs running on Fargate resources; use <code>containerOverrides</code>
-        /// instead.
+        /// This parameter isn't applicable to jobs that are running on Fargate resources; use
+        /// <code>containerOverrides</code> instead.
         /// </para>
         ///  </note>
         /// </summary>
@@ -284,7 +284,7 @@ namespace Amazon.Batch.Model
         /// The tags that you apply to the job request to help you categorize and organize your
         /// resources. Each tag consists of a key and an optional value. For more information,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// AWS Resources</a> in <i>AWS General Reference</i>.
+        /// Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -304,8 +304,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Timeout. 
         /// <para>
         /// The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout
-        /// duration after which AWS Batch terminates your jobs if they haven't finished. If a
-        /// job is terminated due to a timeout, it isn't retried. The minimum value for the timeout
+        /// duration after which Batch terminates your jobs if they haven't finished. If a job
+        /// is terminated due to a timeout, it isn't retried. The minimum value for the timeout
         /// is 60 seconds. This configuration overrides any timeout configuration specified in
         /// the job definition. For array jobs, child jobs have the same timeout configuration
         /// as the parent job. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job

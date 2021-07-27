@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// The network configuration for jobs running on Fargate resources. Jobs running on EC2
-    /// resources must not specify this parameter.
+    /// The network configuration for jobs that are running on Fargate resources. Jobs that
+    /// are running on EC2 resources must not specify this parameter.
     /// </summary>
     public partial class NetworkConfiguration
     {
@@ -39,10 +39,10 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property AssignPublicIp. 
         /// <para>
-        /// Indicates whether the job should have a public IP address. For a job running on Fargate
-        /// resources in a private subnet to send outbound traffic to the internet (for example,
-        /// in order to pull container images), the private subnet requires a NAT gateway be attached
-        /// to route requests to the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon
+        /// Indicates whether the job should have a public IP address. For a job that is running
+        /// on Fargate resources in a private subnet to send outbound traffic to the internet
+        /// (for example, to pull container images), the private subnet requires a NAT gateway
+        /// be attached to route requests to the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon
         /// ECS task networking</a>. The default value is "DISABLED".
         /// </para>
         /// </summary>

@@ -71,6 +71,22 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ArrayJobId);
                 }
 
+                if(publicRequest.IsSetFilters())
+                {
+                    context.Writer.WritePropertyName("filters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = KeyValuesPairMarshaller.Instance;
+                        marshaller.Marshall(publicRequestFiltersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetJobQueue())
                 {
                     context.Writer.WritePropertyName("jobQueue");

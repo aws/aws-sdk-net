@@ -31,7 +31,7 @@ namespace Amazon.Batch.Model
     /// <summary>
     /// An object representing the attributes of a compute environment that can be updated.
     /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-    /// Environments</a> in the <i>AWS Batch User Guide</i>.
+    /// Environments</a> in the <i>Batch User Guide</i>.
     /// </summary>
     public partial class ComputeResourceUpdate
     {
@@ -48,8 +48,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't applicable to jobs running on Fargate resources, and shouldn't
-        /// be specified.
+        /// This parameter isn't applicable to jobs that are running on Fargate resources, and
+        /// shouldn't be specified.
         /// </para>
         ///  </note>
         /// </summary>
@@ -73,10 +73,10 @@ namespace Amazon.Batch.Model
         ///  <note> 
         /// <para>
         /// With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code>
-        /// allocation strategies, AWS Batch might need to exceed <code>maxvCpus</code> to meet
-        /// your capacity requirements. In this event, AWS Batch never exceeds <code>maxvCpus</code>
-        /// by more than a single instance. That is, no more than a single instance from among
-        /// those specified in your compute environment.
+        /// allocation strategies, Batch might need to exceed <code>maxvCpus</code> to meet your
+        /// capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by
+        /// more than a single instance. That is, no more than a single instance from among those
+        /// specified in your compute environment.
         /// </para>
         ///  </note>
         /// </summary>
@@ -99,8 +99,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't applicable to jobs running on Fargate resources, and shouldn't
-        /// be specified.
+        /// This parameter isn't applicable to jobs that are running on Fargate resources, and
+        /// shouldn't be specified.
         /// </para>
         ///  </note>
         /// </summary>
@@ -140,7 +140,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        /// The VPC subnets that the compute resources are launched into. Fargate compute resources
+        /// The VPC subnets where the compute resources are launched. Fargate compute resources
         /// can contain up to 16 subnets. Providing an empty list will be handled as if this parameter
         /// wasn't specified and no change is made. This can't be specified for EC2 compute resources.
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs

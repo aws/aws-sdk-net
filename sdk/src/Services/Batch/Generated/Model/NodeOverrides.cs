@@ -34,8 +34,8 @@ namespace Amazon.Batch.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This isn't applicable to jobs running on Fargate resources and shouldn't be provided;
-    /// use <code>containerOverrides</code> instead.
+    /// This isn't applicable to jobs that are running on Fargate resources and shouldn't
+    /// be provided; use <code>containerOverrides</code> instead.
     /// </para>
     ///  </note>
     /// </summary>
