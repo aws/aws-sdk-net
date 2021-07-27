@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Shield.Model
 {
     /// <summary>
-    /// Information about the AWS Shield Advanced subscription for an account.
+    /// Information about the Shield Advanced subscription for an account.
     /// </summary>
     public partial class Subscription
     {
@@ -107,8 +107,8 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property ProactiveEngagementStatus. 
         /// <para>
-        /// If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to
-        /// notify contacts about escalations to the DRT and to initiate proactive customer support.
+        /// If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to
+        /// notify contacts about escalations to the SRT and to initiate proactive customer support.
         /// </para>
         ///  
         /// <para>
@@ -117,7 +117,7 @@ namespace Amazon.Shield.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations
+        /// If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations
         /// or to initiate proactive customer support. 
         /// </para>
         /// </summary>
@@ -193,7 +193,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property TimeCommitmentInSeconds. 
         /// <para>
-        /// The length, in seconds, of the AWS Shield Advanced subscription for the account.
+        /// The length, in seconds, of the Shield Advanced subscription for the account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

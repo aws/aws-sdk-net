@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Shield.Model
 {
     /// <summary>
-    /// Contact information that the DRT can use to contact you if you have proactive engagement
-    /// enabled, for escalations to the DRT and to initiate proactive customer support.
+    /// Contact information that the SRT can use to contact you if you have proactive engagement
+    /// enabled, for escalations to the SRT and to initiate proactive customer support.
     /// </summary>
     public partial class EmergencyContact
     {

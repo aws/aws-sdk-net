@@ -30,8 +30,8 @@ namespace Amazon.Shield.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableProactiveEngagement operation.
-    /// Authorizes the DDoS Response Team (DRT) to use email and phone to notify contacts
-    /// about escalations to the DRT and to initiate proactive customer support.
+    /// Authorizes the Shield Response Team (SRT) to use email and phone to notify contacts
+    /// about escalations to the SRT and to initiate proactive customer support.
     /// </summary>
     public partial class EnableProactiveEngagementRequest : AmazonShieldRequest
     {

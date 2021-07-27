@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Shield.Model
 {
     /// <summary>
-    /// Details of the described attack.
+    /// Details of a Shield event. This is provided as part of an <a>AttackDetail</a>.
     /// </summary>
     public partial class AttackProperty
     {
@@ -42,9 +42,15 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property AttackLayer. 
         /// <para>
-        /// The type of distributed denial of service (DDoS) event that was observed. <code>NETWORK</code>
-        /// indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer
-        /// 7 events.
+        /// The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3
+        /// and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.
+        /// </para>
+        ///  
+        /// <para>
+        /// For infrastructure layer events (L3 and L4 events) after January 25, 2021, you can
+        /// view metrics for top contributors in Amazon CloudWatch metrics. For more information,
+        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+        /// metrics and alarms</a> in the <i>WAF Developer Guide</i>. 
         /// </para>
         /// </summary>
         public AttackLayer AttackLayer
@@ -62,9 +68,9 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property AttackPropertyIdentifier. 
         /// <para>
-        /// Defines the DDoS attack property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code>
+        /// Defines the Shield event property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code>
         /// and <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective
-        /// pingback DDoS attacks.
+        /// pingback events.
         /// </para>
         /// </summary>
         public AttackPropertyIdentifier AttackPropertyIdentifier
@@ -82,8 +88,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property TopContributors. 
         /// <para>
-        /// The array of contributor objects that includes the top five contributors to an attack.
-        /// 
+        /// Contributor objects for the top five contributors to a Shield event. 
         /// </para>
         /// </summary>
         public List<Contributor> TopContributors
@@ -101,8 +106,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property Total. 
         /// <para>
-        /// The total contributions made to this attack by all contributors, not just the five
-        /// listed in the <code>TopContributors</code> list.
+        /// The total contributions made to this Shield event by all contributors.
         /// </para>
         /// </summary>
         public long Total
@@ -120,7 +124,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        /// The unit of the <code>Value</code> of the contributions.
+        /// The unit used for the <code>Contributor</code> <code>Value</code> property. 
         /// </para>
         /// </summary>
         public Unit Unit

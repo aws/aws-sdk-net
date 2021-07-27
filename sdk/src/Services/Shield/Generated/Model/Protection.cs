@@ -118,7 +118,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN (Amazon Resource Name) of the AWS resource that is protected.
+        /// The ARN (Amazon Resource Name) of the Amazon Web Services resource that is protected.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

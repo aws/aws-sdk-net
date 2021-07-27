@@ -61,9 +61,9 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a> object
-        /// that is described. When submitting the <code>DescribeProtection</code> request you
-        /// must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>,
+        /// The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <a>Protection</a>
+        /// object that is described. When submitting the <code>DescribeProtection</code> request
+        /// you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>,
         /// but not both.
         /// </para>
         /// </summary>

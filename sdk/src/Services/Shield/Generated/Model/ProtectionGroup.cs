@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Shield.Model
 {
     /// <summary>
-    /// A grouping of protected resources that you and AWS Shield Advanced can monitor as
-    /// a collective. This resource grouping improves the accuracy of detection and reduces
-    /// false positives.
+    /// A grouping of protected resources that you and Shield Advanced can monitor as a collective.
+    /// This resource grouping improves the accuracy of detection and reduces false positives.
     /// </summary>
     public partial class ProtectionGroup
     {
@@ -45,7 +44,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property Aggregation. 
         /// <para>
-        /// Defines how AWS Shield combines resource data for the group in order to detect, mitigate,
+        /// Defines how Shield combines resource data for the group in order to detect, mitigate,
         /// and report events.
         /// </para>
         ///  <ul> <li> 
@@ -62,7 +61,8 @@ namespace Amazon.Shield.Model
         /// <para>
         /// Max - Use the highest traffic from each resource. This is useful for resources that
         /// don't share traffic and for resources that share that traffic in a non-uniform way.
-        /// Examples include CloudFront distributions and origin resources for CloudFront distributions.
+        /// Examples include Amazon CloudFront distributions and origin resources for CloudFront
+        /// distributions.
         /// </para>
         ///  </li> </ul>
         /// </summary>

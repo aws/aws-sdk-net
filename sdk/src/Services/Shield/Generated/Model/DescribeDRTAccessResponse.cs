@@ -39,7 +39,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property LogBucketList. 
         /// <para>
-        /// The list of Amazon S3 buckets accessed by the DRT.
+        /// The list of Amazon S3 buckets accessed by the SRT.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -58,7 +58,8 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the role the DRT used to access your AWS account.
+        /// The Amazon Resource Name (ARN) of the role the SRT used to access your Amazon Web
+        /// Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

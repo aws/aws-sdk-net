@@ -82,7 +82,14 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property AttackProperties. 
         /// <para>
-        /// The array of <a>AttackProperty</a> objects.
+        /// The array of objects that provide details of the Shield event. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For infrastructure layer events (L3 and L4 events) after January 25, 2021, you can
+        /// view metrics for top contributors in Amazon CloudWatch metrics. For more information,
+        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+        /// metrics and alarms</a> in the <i>WAF Developer Guide</i>. 
         /// </para>
         /// </summary>
         public List<AttackProperty> AttackProperties

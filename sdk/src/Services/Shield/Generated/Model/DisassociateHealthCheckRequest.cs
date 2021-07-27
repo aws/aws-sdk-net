@@ -31,15 +31,15 @@ namespace Amazon.Shield.Model
     /// <summary>
     /// Container for the parameters to the DisassociateHealthCheck operation.
     /// Removes health-based detection from the Shield Advanced protection for a resource.
-    /// Shield Advanced health-based detection uses the health of your AWS resource to improve
-    /// responsiveness and accuracy in attack detection and mitigation. 
+    /// Shield Advanced health-based detection uses the health of your Amazon Web Services
+    /// resource to improve responsiveness and accuracy in attack detection and mitigation.
+    /// 
     /// 
     ///  
     /// <para>
     /// You define the health check in Route 53 and then associate or disassociate it with
     /// your Shield Advanced protection. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield
-    /// Advanced Health-Based Detection</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS
-    /// WAF and AWS Shield Developer Guide</a>. 
+    /// Advanced Health-Based Detection</a> in the <i>WAF Developer Guide</i>. 
     /// </para>
     /// </summary>
     public partial class DisassociateHealthCheckRequest : AmazonShieldRequest

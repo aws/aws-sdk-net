@@ -30,7 +30,7 @@ namespace Amazon.Shield.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSubscription operation.
-    /// Provides details about the AWS Shield Advanced subscription for an account.
+    /// Provides details about the Shield Advanced subscription for an account.
     /// </summary>
     public partial class DescribeSubscriptionRequest : AmazonShieldRequest
     {

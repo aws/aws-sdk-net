@@ -30,9 +30,9 @@ namespace Amazon.Shield.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateEmergencyContactSettings operation.
-    /// Updates the details of the list of email addresses and phone numbers that the DDoS
-    /// Response Team (DRT) can use to contact you if you have proactive engagement enabled,
-    /// for escalations to the DRT and to initiate proactive customer support.
+    /// Updates the details of the list of email addresses and phone numbers that the Shield
+    /// Response Team (SRT) can use to contact you if you have proactive engagement enabled,
+    /// for escalations to the SRT and to initiate proactive customer support.
     /// </summary>
     public partial class UpdateEmergencyContactSettingsRequest : AmazonShieldRequest
     {
@@ -41,9 +41,9 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property EmergencyContactList. 
         /// <para>
-        /// A list of email addresses and phone numbers that the DDoS Response Team (DRT) can
+        /// A list of email addresses and phone numbers that the Shield Response Team (SRT) can
         /// use to contact you if you have proactive engagement enabled, for escalations to the
-        /// DRT and to initiate proactive customer support.
+        /// SRT and to initiate proactive customer support.
         /// </para>
         ///  
         /// <para>

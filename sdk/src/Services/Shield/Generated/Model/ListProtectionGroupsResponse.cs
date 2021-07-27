@@ -40,8 +40,8 @@ namespace Amazon.Shield.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If you specify a value for <code>MaxResults</code> and you have more protection groups
-        /// than the value of MaxResults, AWS Shield Advanced returns this token that you can
-        /// use in your next request, to get the next batch of objects. 
+        /// than the value of MaxResults, Shield Advanced returns this token that you can use
+        /// in your next request, to get the next batch of objects. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]

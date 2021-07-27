@@ -38,9 +38,9 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property ProtectionGroup. 
         /// <para>
-        /// A grouping of protected resources that you and AWS Shield Advanced can monitor as
-        /// a collective. This resource grouping improves the accuracy of detection and reduces
-        /// false positives. 
+        /// A grouping of protected resources that you and Shield Advanced can monitor as a collective.
+        /// This resource grouping improves the accuracy of detection and reduces false positives.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

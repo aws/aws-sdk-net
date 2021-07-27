@@ -30,7 +30,7 @@ namespace Amazon.Shield.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds or updates tags for a resource in AWS Shield.
+    /// Adds or updates tags for a resource in Shield.
     /// </summary>
     public partial class TagResourceRequest : AmazonShieldRequest
     {

@@ -30,7 +30,7 @@ namespace Amazon.Shield.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSubscription operation.
-    /// Activates AWS Shield Advanced for an account.
+    /// Activates Shield Advanced for an account.
     /// 
     ///  
     /// <para>

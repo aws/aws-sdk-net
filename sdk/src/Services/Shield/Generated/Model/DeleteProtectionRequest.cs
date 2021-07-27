@@ -30,7 +30,7 @@ namespace Amazon.Shield.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteProtection operation.
-    /// Deletes an AWS Shield Advanced <a>Protection</a>.
+    /// Deletes an Shield Advanced <a>Protection</a>.
     /// </summary>
     public partial class DeleteProtectionRequest : AmazonShieldRequest
     {

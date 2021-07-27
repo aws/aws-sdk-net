@@ -30,17 +30,17 @@ namespace Amazon.Shield.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateProtection operation.
-    /// Enables AWS Shield Advanced for a specific AWS resource. The resource can be an Amazon
-    /// CloudFront distribution, Elastic Load Balancing load balancer, AWS Global Accelerator
-    /// accelerator, Elastic IP Address, or an Amazon Route 53 hosted zone.
+    /// Enables Shield Advanced for a specific Amazon Web Services resource. The resource
+    /// can be an Amazon CloudFront distribution, Elastic Load Balancing load balancer, Global
+    /// Accelerator accelerator, Elastic IP Address, or an Amazon Route 53 hosted zone.
     /// 
     ///  
     /// <para>
     /// You can add protection to only a single resource with each CreateProtection request.
-    /// If you want to add protection to multiple resources at once, use the <a href="https://console.aws.amazon.com/waf/">AWS
-    /// WAF console</a>. For more information see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
-    /// Started with AWS Shield Advanced</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/configure-new-protection.html">Add
-    /// AWS Shield Advanced Protection to more AWS Resources</a>.
+    /// If you want to add protection to multiple resources at once, use the <a href="https://console.aws.amazon.com/waf/">WAF
+    /// console</a>. For more information see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
+    /// Started with Shield Advanced</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/configure-new-protection.html">Add
+    /// Shield Advanced Protection to more Amazon Web Services Resources</a>.
     /// </para>
     /// </summary>
     public partial class CreateProtectionRequest : AmazonShieldRequest
@@ -89,12 +89,12 @@ namespace Amazon.Shield.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For an AWS CloudFront distribution: <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
+        /// For an Amazon CloudFront distribution: <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
         /// </code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For an AWS Global Accelerator accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
+        /// For an Global Accelerator accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
         /// </code> 
         /// </para>
         ///  </li> <li> 

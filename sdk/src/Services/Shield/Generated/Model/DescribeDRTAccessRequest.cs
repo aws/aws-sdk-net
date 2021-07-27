@@ -30,8 +30,9 @@ namespace Amazon.Shield.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDRTAccess operation.
-    /// Returns the current role and list of Amazon S3 log buckets used by the DDoS Response
-    /// Team (DRT) to access your AWS account while assisting with attack mitigation.
+    /// Returns the current role and list of Amazon S3 log buckets used by the Shield Response
+    /// Team (SRT) to access your Amazon Web Services account while assisting with attack
+    /// mitigation.
     /// </summary>
     public partial class DescribeDRTAccessRequest : AmazonShieldRequest
     {

@@ -30,8 +30,8 @@ namespace Amazon.Shield.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateProactiveEngagementDetails operation.
-    /// Initializes proactive engagement and sets the list of contacts for the DDoS Response
-    /// Team (DRT) to use. You must provide at least one phone number in the emergency contact
+    /// Initializes proactive engagement and sets the list of contacts for the Shield Response
+    /// Team (SRT) to use. You must provide at least one phone number in the emergency contact
     /// list. 
     /// 
     ///  
@@ -42,9 +42,8 @@ namespace Amazon.Shield.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// This call defines the list of email addresses and phone numbers that the DDoS Response
-    /// Team (DRT) can use to contact you for escalations to the DRT and to initiate proactive
-    /// customer support.
+    /// This call defines the list of email addresses and phone numbers that the SRT can use
+    /// to contact you for escalations to the SRT and to initiate proactive customer support.
     /// </para>
     ///  
     /// <para>
@@ -62,8 +61,8 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property EmergencyContactList. 
         /// <para>
-        /// A list of email addresses and phone numbers that the DDoS Response Team (DRT) can
-        /// use to contact you for escalations to the DRT and to initiate proactive customer support.
+        /// A list of email addresses and phone numbers that the Shield Response Team (SRT) can
+        /// use to contact you for escalations to the SRT and to initiate proactive customer support.
         /// 
         /// </para>
         ///  

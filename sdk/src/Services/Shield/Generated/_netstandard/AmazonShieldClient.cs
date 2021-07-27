@@ -38,14 +38,13 @@ namespace Amazon.Shield
     /// <summary>
     /// Implementation for accessing Shield
     ///
-    /// AWS Shield Advanced 
+    /// Shield Advanced 
     /// <para>
-    /// This is the <i>AWS Shield Advanced API Reference</i>. This guide is for developers
-    /// who need detailed information about the AWS Shield Advanced API actions, data types,
-    /// and errors. For detailed information about AWS WAF and AWS Shield Advanced features
-    /// and an overview of how to use the AWS WAF and AWS Shield Advanced APIs, see the <a
-    /// href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF and AWS Shield
-    /// Developer Guide</a>.
+    /// This is the <i>Shield Advanced API Reference</i>. This guide is for developers who
+    /// need detailed information about the Shield Advanced API actions, data types, and errors.
+    /// For detailed information about WAF and Shield Advanced features and an overview of
+    /// how to use the WAF and Shield Advanced APIs, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF
+    /// and Shield Developer Guide</a>.
     /// </para>
     /// </summary>
     public partial class AmazonShieldClient : AmazonServiceClient, IAmazonShield
@@ -280,12 +279,14 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Authorizes the DDoS Response Team (DRT) to access the specified Amazon S3 bucket containing
-        /// your AWS WAF logs. You can associate up to 10 Amazon S3 buckets with your subscription.
+        /// Authorizes the Shield Response Team (SRT) to access the specified Amazon S3 bucket
+        /// containing log data such as Application Load Balancer access logs, CloudFront logs,
+        /// or logs from third party sources. You can associate up to 10 Amazon S3 buckets with
+        /// your subscription.
         /// 
         ///  
         /// <para>
-        /// To use the services of the DRT and make an <code>AssociateDRTLogBucket</code> request,
+        /// To use the services of the SRT and make an <code>AssociateDRTLogBucket</code> request,
         /// you must be subscribed to the <a href="https://aws.amazon.com/premiumsupport/business-support/">Business
         /// Support plan</a> or the <a href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
         /// Support plan</a>.
@@ -298,10 +299,11 @@ namespace Amazon.Shield
         /// 
         /// <returns>The response from the AssociateDRTLogBucket service method, as returned by Shield.</returns>
         /// <exception cref="Amazon.Shield.Model.AccessDeniedForDependencyException">
-        /// In order to grant the necessary access to the DDoS Response Team (DRT), the user submitting
-        /// the request must have the <code>iam:PassRole</code> permission. This error indicates
-        /// the user did not have the appropriate permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
-        /// a User Permissions to Pass a Role to an AWS Service</a>.
+        /// In order to grant the necessary access to the Shield Response Team (SRT) the user
+        /// submitting the request must have the <code>iam:PassRole</code> permission. This error
+        /// indicates the user did not have the appropriate permissions. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
+        /// a User Permissions to Pass a Role to an Amazon Web Services Service</a>.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InternalErrorException">
         /// Exception that indicates that a problem occurred with the service infrastructure.
@@ -354,10 +356,10 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Authorizes the DDoS Response Team (DRT), using the specified role, to access your
-        /// AWS account to assist with DDoS attack mitigation during potential attacks. This enables
-        /// the DRT to inspect your AWS WAF configuration and create or update AWS WAF rules and
-        /// web ACLs.
+        /// Authorizes the Shield Response Team (SRT) using the specified role, to access your
+        /// Amazon Web Services account to assist with DDoS attack mitigation during potential
+        /// attacks. This enables the SRT to inspect your WAF configuration and create or update
+        /// WAF rules and web ACLs.
         /// 
         ///  
         /// <para>
@@ -378,20 +380,20 @@ namespace Amazon.Shield
         /// </para>
         ///  
         /// <para>
-        /// The DRT will have access only to your AWS WAF and Shield resources. By submitting
-        /// this request, you authorize the DRT to inspect your AWS WAF and Shield configuration
-        /// and create and update AWS WAF rules and web ACLs on your behalf. The DRT takes these
-        /// actions only if explicitly authorized by you.
+        /// The SRT will have access only to your WAF and Shield resources. By submitting this
+        /// request, you authorize the SRT to inspect your WAF and Shield configuration and create
+        /// and update WAF rules and web ACLs on your behalf. The SRT takes these actions only
+        /// if explicitly authorized by you.
         /// </para>
         ///  
         /// <para>
         /// You must have the <code>iam:PassRole</code> permission to make an <code>AssociateDRTRole</code>
         /// request. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
-        /// a User Permissions to Pass a Role to an AWS Service</a>. 
+        /// a User Permissions to Pass a Role to an Amazon Web Services Service</a>. 
         /// </para>
         ///  
         /// <para>
-        /// To use the services of the DRT and make an <code>AssociateDRTRole</code> request,
+        /// To use the services of the SRT and make an <code>AssociateDRTRole</code> request,
         /// you must be subscribed to the <a href="https://aws.amazon.com/premiumsupport/business-support/">Business
         /// Support plan</a> or the <a href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
         /// Support plan</a>.
@@ -404,10 +406,11 @@ namespace Amazon.Shield
         /// 
         /// <returns>The response from the AssociateDRTRole service method, as returned by Shield.</returns>
         /// <exception cref="Amazon.Shield.Model.AccessDeniedForDependencyException">
-        /// In order to grant the necessary access to the DDoS Response Team (DRT), the user submitting
-        /// the request must have the <code>iam:PassRole</code> permission. This error indicates
-        /// the user did not have the appropriate permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
-        /// a User Permissions to Pass a Role to an AWS Service</a>.
+        /// In order to grant the necessary access to the Shield Response Team (SRT) the user
+        /// submitting the request must have the <code>iam:PassRole</code> permission. This error
+        /// indicates the user did not have the appropriate permissions. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
+        /// a User Permissions to Pass a Role to an Amazon Web Services Service</a>.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InternalErrorException">
         /// Exception that indicates that a problem occurred with the service infrastructure.
@@ -455,15 +458,14 @@ namespace Amazon.Shield
 
         /// <summary>
         /// Adds health-based detection to the Shield Advanced protection for a resource. Shield
-        /// Advanced health-based detection uses the health of your AWS resource to improve responsiveness
-        /// and accuracy in attack detection and mitigation. 
+        /// Advanced health-based detection uses the health of your Amazon Web Services resource
+        /// to improve responsiveness and accuracy in attack detection and mitigation. 
         /// 
         ///  
         /// <para>
         /// You define the health check in Route 53 and then associate it with your Shield Advanced
         /// protection. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield
-        /// Advanced Health-Based Detection</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS
-        /// WAF and AWS Shield Developer Guide</a>. 
+        /// Advanced Health-Based Detection</a> in the <i>WAF Developer Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateHealthCheck service method.</param>
@@ -517,8 +519,8 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Initializes proactive engagement and sets the list of contacts for the DDoS Response
-        /// Team (DRT) to use. You must provide at least one phone number in the emergency contact
+        /// Initializes proactive engagement and sets the list of contacts for the Shield Response
+        /// Team (SRT) to use. You must provide at least one phone number in the emergency contact
         /// list. 
         /// 
         ///  
@@ -529,9 +531,8 @@ namespace Amazon.Shield
         /// </para>
         ///  <note> 
         /// <para>
-        /// This call defines the list of email addresses and phone numbers that the DDoS Response
-        /// Team (DRT) can use to contact you for escalations to the DRT and to initiate proactive
-        /// customer support.
+        /// This call defines the list of email addresses and phone numbers that the SRT can use
+        /// to contact you for escalations to the SRT and to initiate proactive customer support.
         /// </para>
         ///  
         /// <para>
@@ -593,17 +594,17 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Enables AWS Shield Advanced for a specific AWS resource. The resource can be an Amazon
-        /// CloudFront distribution, Elastic Load Balancing load balancer, AWS Global Accelerator
-        /// accelerator, Elastic IP Address, or an Amazon Route 53 hosted zone.
+        /// Enables Shield Advanced for a specific Amazon Web Services resource. The resource
+        /// can be an Amazon CloudFront distribution, Elastic Load Balancing load balancer, Global
+        /// Accelerator accelerator, Elastic IP Address, or an Amazon Route 53 hosted zone.
         /// 
         ///  
         /// <para>
         /// You can add protection to only a single resource with each CreateProtection request.
-        /// If you want to add protection to multiple resources at once, use the <a href="https://console.aws.amazon.com/waf/">AWS
-        /// WAF console</a>. For more information see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
-        /// Started with AWS Shield Advanced</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/configure-new-protection.html">Add
-        /// AWS Shield Advanced Protection to more AWS Resources</a>.
+        /// If you want to add protection to multiple resources at once, use the <a href="https://console.aws.amazon.com/waf/">WAF
+        /// console</a>. For more information see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
+        /// Started with Shield Advanced</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/configure-new-protection.html">Add
+        /// Shield Advanced Protection to more Amazon Web Services Resources</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProtection service method.</param>
@@ -726,7 +727,7 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Activates AWS Shield Advanced for an account.
+        /// Activates Shield Advanced for an account.
         /// 
         ///  
         /// <para>
@@ -775,7 +776,7 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Deletes an AWS Shield Advanced <a>Protection</a>.
+        /// Deletes an Shield Advanced <a>Protection</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProtection service method.</param>
         /// <param name="cancellationToken">
@@ -868,9 +869,8 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Removes AWS Shield Advanced from an account. AWS Shield Advanced requires a 1-year
-        /// subscription commitment. You cannot delete a subscription prior to the completion
-        /// of that commitment.
+        /// Removes Shield Advanced from an account. Shield Advanced requires a 1-year subscription
+        /// commitment. You cannot delete a subscription prior to the completion of that commitment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSubscription service method.</param>
         /// <param name="cancellationToken">
@@ -961,10 +961,10 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Provides information about the number and type of attacks AWS Shield has detected
-        /// in the last year for all resources that belong to your account, regardless of whether
-        /// you've defined Shield protections for them. This operation is available to Shield
-        /// customers as well as to Shield Advanced customers.
+        /// Provides information about the number and type of attacks Shield has detected in the
+        /// last year for all resources that belong to your account, regardless of whether you've
+        /// defined Shield protections for them. This operation is available to Shield customers
+        /// as well as to Shield Advanced customers.
         /// 
         ///  
         /// <para>
@@ -1015,8 +1015,9 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Returns the current role and list of Amazon S3 log buckets used by the DDoS Response
-        /// Team (DRT) to access your AWS account while assisting with attack mitigation.
+        /// Returns the current role and list of Amazon S3 log buckets used by the Shield Response
+        /// Team (SRT) to access your Amazon Web Services account while assisting with attack
+        /// mitigation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDRTAccess service method.</param>
         /// <param name="cancellationToken">
@@ -1058,9 +1059,9 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// A list of email addresses and phone numbers that the DDoS Response Team (DRT) can
+        /// A list of email addresses and phone numbers that the Shield Response Team (SRT) can
         /// use to contact you if you have proactive engagement enabled, for escalations to the
-        /// DRT and to initiate proactive customer support.
+        /// SRT and to initiate proactive customer support.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEmergencyContactSettings service method.</param>
         /// <param name="cancellationToken">
@@ -1190,7 +1191,7 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Provides details about the AWS Shield Advanced subscription for an account.
+        /// Provides details about the Shield Advanced subscription for an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSubscription service method.</param>
         /// <param name="cancellationToken">
@@ -1232,8 +1233,8 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Removes authorization from the DDoS Response Team (DRT) to notify contacts about escalations
-        /// to the DRT and to initiate proactive customer support.
+        /// Removes authorization from the Shield Response Team (SRT) to notify contacts about
+        /// escalations to the SRT and to initiate proactive customer support.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableProactiveEngagement service method.</param>
         /// <param name="cancellationToken">
@@ -1286,8 +1287,8 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Removes the DDoS Response Team's (DRT) access to the specified Amazon S3 bucket containing
-        /// your AWS WAF logs.
+        /// Removes the Shield Response Team's (SRT) access to the specified Amazon S3 bucket
+        /// containing the logs that you shared previously.
         /// 
         ///  
         /// <para>
@@ -1295,7 +1296,7 @@ namespace Amazon.Shield
         /// the <a href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
         /// plan</a> or the <a href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
         /// Support plan</a>. However, if you are not subscribed to one of these support plans,
-        /// but had been previously and had granted the DRT access to your account, you can submit
+        /// but had been previously and had granted the SRT access to your account, you can submit
         /// a <code>DisassociateDRTLogBucket</code> request to remove this access.
         /// </para>
         /// </summary>
@@ -1306,10 +1307,11 @@ namespace Amazon.Shield
         /// 
         /// <returns>The response from the DisassociateDRTLogBucket service method, as returned by Shield.</returns>
         /// <exception cref="Amazon.Shield.Model.AccessDeniedForDependencyException">
-        /// In order to grant the necessary access to the DDoS Response Team (DRT), the user submitting
-        /// the request must have the <code>iam:PassRole</code> permission. This error indicates
-        /// the user did not have the appropriate permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
-        /// a User Permissions to Pass a Role to an AWS Service</a>.
+        /// In order to grant the necessary access to the Shield Response Team (SRT) the user
+        /// submitting the request must have the <code>iam:PassRole</code> permission. This error
+        /// indicates the user did not have the appropriate permissions. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
+        /// a User Permissions to Pass a Role to an Amazon Web Services Service</a>.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InternalErrorException">
         /// Exception that indicates that a problem occurred with the service infrastructure.
@@ -1355,7 +1357,7 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Removes the DDoS Response Team's (DRT) access to your AWS account.
+        /// Removes the Shield Response Team's (SRT) access to your Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -1363,7 +1365,7 @@ namespace Amazon.Shield
         /// <a href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
         /// plan</a> or the <a href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
         /// Support plan</a>. However, if you are not subscribed to one of these support plans,
-        /// but had been previously and had granted the DRT access to your account, you can submit
+        /// but had been previously and had granted the SRT access to your account, you can submit
         /// a <code>DisassociateDRTRole</code> request to remove this access.
         /// </para>
         /// </summary>
@@ -1415,15 +1417,15 @@ namespace Amazon.Shield
 
         /// <summary>
         /// Removes health-based detection from the Shield Advanced protection for a resource.
-        /// Shield Advanced health-based detection uses the health of your AWS resource to improve
-        /// responsiveness and accuracy in attack detection and mitigation. 
+        /// Shield Advanced health-based detection uses the health of your Amazon Web Services
+        /// resource to improve responsiveness and accuracy in attack detection and mitigation.
+        /// 
         /// 
         ///  
         /// <para>
         /// You define the health check in Route 53 and then associate or disassociate it with
         /// your Shield Advanced protection. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield
-        /// Advanced Health-Based Detection</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS
-        /// WAF and AWS Shield Developer Guide</a>. 
+        /// Advanced Health-Based Detection</a> in the <i>WAF Developer Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateHealthCheck service method.</param>
@@ -1474,8 +1476,8 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Authorizes the DDoS Response Team (DRT) to use email and phone to notify contacts
-        /// about escalations to the DRT and to initiate proactive customer support.
+        /// Authorizes the Shield Response Team (SRT) to use email and phone to notify contacts
+        /// about escalations to the SRT and to initiate proactive customer support.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableProactiveEngagement service method.</param>
         /// <param name="cancellationToken">
@@ -1749,8 +1751,8 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
-        /// Shield.
+        /// Gets information about Amazon Web Services tags for a specified Amazon Resource Name
+        /// (ARN) in Shield.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -1796,7 +1798,7 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Adds or updates tags for a resource in AWS Shield.
+        /// Adds or updates tags for a resource in Shield.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1846,7 +1848,7 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Removes tags from a resource in AWS Shield.
+        /// Removes tags from a resource in Shield.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1896,9 +1898,9 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Updates the details of the list of email addresses and phone numbers that the DDoS
-        /// Response Team (DRT) can use to contact you if you have proactive engagement enabled,
-        /// for escalations to the DRT and to initiate proactive customer support.
+        /// Updates the details of the list of email addresses and phone numbers that the Shield
+        /// Response Team (SRT) can use to contact you if you have proactive engagement enabled,
+        /// for escalations to the SRT and to initiate proactive customer support.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEmergencyContactSettings service method.</param>
         /// <param name="cancellationToken">

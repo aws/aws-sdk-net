@@ -38,7 +38,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property Subscription. 
         /// <para>
-        /// The AWS Shield Advanced subscription details for an account.
+        /// The Shield Advanced subscription details for an account.
         /// </para>
         /// </summary>
         public Subscription Subscription

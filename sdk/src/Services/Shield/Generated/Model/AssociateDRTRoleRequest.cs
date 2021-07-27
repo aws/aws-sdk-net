@@ -30,10 +30,10 @@ namespace Amazon.Shield.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateDRTRole operation.
-    /// Authorizes the DDoS Response Team (DRT), using the specified role, to access your
-    /// AWS account to assist with DDoS attack mitigation during potential attacks. This enables
-    /// the DRT to inspect your AWS WAF configuration and create or update AWS WAF rules and
-    /// web ACLs.
+    /// Authorizes the Shield Response Team (SRT) using the specified role, to access your
+    /// Amazon Web Services account to assist with DDoS attack mitigation during potential
+    /// attacks. This enables the SRT to inspect your WAF configuration and create or update
+    /// WAF rules and web ACLs.
     /// 
     ///  
     /// <para>
@@ -54,20 +54,20 @@ namespace Amazon.Shield.Model
     /// </para>
     ///  
     /// <para>
-    /// The DRT will have access only to your AWS WAF and Shield resources. By submitting
-    /// this request, you authorize the DRT to inspect your AWS WAF and Shield configuration
-    /// and create and update AWS WAF rules and web ACLs on your behalf. The DRT takes these
-    /// actions only if explicitly authorized by you.
+    /// The SRT will have access only to your WAF and Shield resources. By submitting this
+    /// request, you authorize the SRT to inspect your WAF and Shield configuration and create
+    /// and update WAF rules and web ACLs on your behalf. The SRT takes these actions only
+    /// if explicitly authorized by you.
     /// </para>
     ///  
     /// <para>
     /// You must have the <code>iam:PassRole</code> permission to make an <code>AssociateDRTRole</code>
     /// request. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
-    /// a User Permissions to Pass a Role to an AWS Service</a>. 
+    /// a User Permissions to Pass a Role to an Amazon Web Services Service</a>. 
     /// </para>
     ///  
     /// <para>
-    /// To use the services of the DRT and make an <code>AssociateDRTRole</code> request,
+    /// To use the services of the SRT and make an <code>AssociateDRTRole</code> request,
     /// you must be subscribed to the <a href="https://aws.amazon.com/premiumsupport/business-support/">Business
     /// Support plan</a> or the <a href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
     /// Support plan</a>.
@@ -80,7 +80,8 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the role the DRT will use to access your AWS account.
+        /// The Amazon Resource Name (ARN) of the role the SRT will use to access your Amazon
+        /// Web Services account.
         /// </para>
         ///  
         /// <para>

@@ -30,12 +30,14 @@ namespace Amazon.Shield.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateDRTLogBucket operation.
-    /// Authorizes the DDoS Response Team (DRT) to access the specified Amazon S3 bucket containing
-    /// your AWS WAF logs. You can associate up to 10 Amazon S3 buckets with your subscription.
+    /// Authorizes the Shield Response Team (SRT) to access the specified Amazon S3 bucket
+    /// containing log data such as Application Load Balancer access logs, CloudFront logs,
+    /// or logs from third party sources. You can associate up to 10 Amazon S3 buckets with
+    /// your subscription.
     /// 
     ///  
     /// <para>
-    /// To use the services of the DRT and make an <code>AssociateDRTLogBucket</code> request,
+    /// To use the services of the SRT and make an <code>AssociateDRTLogBucket</code> request,
     /// you must be subscribed to the <a href="https://aws.amazon.com/premiumsupport/business-support/">Business
     /// Support plan</a> or the <a href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
     /// Support plan</a>.
@@ -48,7 +50,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property LogBucket. 
         /// <para>
-        /// The Amazon S3 bucket that contains your AWS WAF logs.
+        /// The Amazon S3 bucket that contains the logs that you want to share.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=63)]

@@ -30,7 +30,7 @@ namespace Amazon.Shield.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateDRTRole operation.
-    /// Removes the DDoS Response Team's (DRT) access to your AWS account.
+    /// Removes the Shield Response Team's (SRT) access to your Amazon Web Services account.
     /// 
     ///  
     /// <para>
@@ -38,7 +38,7 @@ namespace Amazon.Shield.Model
     /// <a href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
     /// plan</a> or the <a href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
     /// Support plan</a>. However, if you are not subscribed to one of these support plans,
-    /// but had been previously and had granted the DRT access to your account, you can submit
+    /// but had been previously and had granted the SRT access to your account, you can submit
     /// a <code>DisassociateDRTRole</code> request to remove this access.
     /// </para>
     /// </summary>

@@ -30,8 +30,8 @@ namespace Amazon.Shield.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableProactiveEngagement operation.
-    /// Removes authorization from the DDoS Response Team (DRT) to notify contacts about escalations
-    /// to the DRT and to initiate proactive customer support.
+    /// Removes authorization from the Shield Response Team (SRT) to notify contacts about
+    /// escalations to the SRT and to initiate proactive customer support.
     /// </summary>
     public partial class DisableProactiveEngagementRequest : AmazonShieldRequest
     {
