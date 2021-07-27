@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAnalyses operation.
-    /// Lists Amazon QuickSight analyses that exist in the specified AWS account.
+    /// Lists Amazon QuickSight analyses that exist in the specified Amazon Web Services account;.
     /// </summary>
     public partial class ListAnalysesRequest : AmazonQuickSightRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the AWS account that contains the analyses.
+        /// The ID of the Amazon Web Services account; that contains the analyses.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

@@ -30,9 +30,9 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUser operation.
-    /// Deletes the Amazon QuickSight user that is associated with the identity of the AWS
-    /// Identity and Access Management (IAM) user or role that's making the call. The IAM
-    /// user isn't deleted as a result of this call.
+    /// Deletes the Amazon QuickSight user that is associated with the identity of the Identity
+    /// and Access Management (IAM) user or role that's making the call. The IAM user isn't
+    /// deleted as a result of this call.
     /// </summary>
     public partial class DeleteUserRequest : AmazonQuickSightRequest
     {
@@ -43,8 +43,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID for the AWS account that the user is in. Currently, you use the ID for the
-        /// AWS account that contains your Amazon QuickSight account.
+        /// The ID for the Amazon Web Services account; that the user is in. Currently, you use
+        /// the ID for the Amazon Web Services account; that contains your Amazon QuickSight account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

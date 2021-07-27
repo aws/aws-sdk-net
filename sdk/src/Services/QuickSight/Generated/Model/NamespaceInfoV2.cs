@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property CapacityRegion. 
         /// <para>
-        /// The namespace AWS Region.
+        /// The namespace Region;.
         /// </para>
         /// </summary>
         public string CapacityRegion

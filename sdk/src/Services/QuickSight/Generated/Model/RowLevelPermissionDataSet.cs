@@ -47,6 +47,7 @@ namespace Amazon.QuickSight.Model
         private RowLevelPermissionFormatVersion _formatVersion;
         private string _awsNamespace;
         private RowLevelPermissionPolicy _permissionPolicy;
+        private Status _status;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -130,6 +131,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetPermissionPolicy()
         {
             return this._permissionPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the row-level security permission dataset. If enabled, the status is
+        /// <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.
+        /// </para>
+        /// </summary>
+        public Status Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

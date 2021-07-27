@@ -41,8 +41,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DashboardSummaryList. 
         /// <para>
-        /// A structure that contains all of the dashboards in your AWS account. This structure
-        /// provides basic information about the dashboards.
+        /// A structure that contains all of the dashboards in your Amazon Web Services account;.
+        /// This structure provides basic information about the dashboards.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -79,7 +79,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// The AWS request ID for this operation.
+        /// The Amazon Web Services request ID for this operation.
         /// </para>
         /// </summary>
         public string RequestId

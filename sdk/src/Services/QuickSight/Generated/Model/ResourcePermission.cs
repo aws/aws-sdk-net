@@ -72,9 +72,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The ARN of an AWS account root: This is an IAM ARN rather than a QuickSight ARN. Use
-        /// this option only to share resources (templates) across AWS accounts. (This is less
-        /// common.) 
+        /// The ARN of an Amazon Web Services account; root: This is an IAM ARN rather than a
+        /// QuickSight ARN. Use this option only to share resources (templates) across Amazon
+        /// Web Services accounts. (This is less common.) 
         /// </para>
         ///  </li> </ul>
         /// </summary>

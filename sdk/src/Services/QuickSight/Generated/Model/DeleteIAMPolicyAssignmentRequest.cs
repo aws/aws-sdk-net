@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The AWS account ID where you want to delete the IAM policy assignment.
+        /// The Amazon Web Services account; ID where you want to delete the IAM policy assignment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

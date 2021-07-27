@@ -65,7 +65,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the AWS account where you are creating an analysis.
+        /// The ID of the Amazon Web Services account; where you are creating an analysis.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -125,8 +125,8 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// A structure that describes the principals and the resource-level permissions on an
         /// analysis. You can use the <code>Permissions</code> structure to grant permissions
-        /// by providing a list of AWS Identity and Access Management (IAM) action information
-        /// for each principal listed by Amazon Resource Name (ARN). 
+        /// by providing a list of Identity and Access Management (IAM) action information for
+        /// each principal listed by Amazon Resource Name (ARN). 
         /// </para>
         ///  
         /// <para>

@@ -1019,6 +1019,33 @@
     <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.GenerateEmbedUrlForAnonymousUserRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GenerateEmbedUrlForAnonymousUserRequest.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GenerateEmbedUrlForAnonymousUserRequest.SessionLifetimeInMinutes</property>
+    <min>15</min>
+    <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GenerateEmbedUrlForRegisteredUserRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GenerateEmbedUrlForRegisteredUserRequest.SessionLifetimeInMinutes</property>
+    <min>15</min>
+    <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.GetDashboardEmbedUrlRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -1912,6 +1939,12 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.AnonymousUserDashboardEmbeddingConfiguration.InitialDashboardId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.AthenaParameters.WorkGroup</property>
     <min>1</min>
     <max>128</max>
@@ -2341,6 +2374,17 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.RegisteredUserDashboardEmbeddingConfiguration.InitialDashboardId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.RegisteredUserQuickSightConsoleEmbeddingConfiguration.InitialPath</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.RelationalTable.Catalog</property>
     <max>256</max>
   </property-value-rule>
@@ -2374,9 +2418,33 @@
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.RowLevelPermissionTagRule.MatchAllValue</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.RowLevelPermissionTagRule.TagKey</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.RowLevelPermissionTagRule.TagMultiValueDelimiter</property>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.ServiceNowParameters.SiteBaseUrl</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.SessionTag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.SessionTag.Value</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.Sheet.Name</property>

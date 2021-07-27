@@ -38,7 +38,8 @@ namespace Amazon.QuickSight.Model
     /// A dashboard is an entity in QuickSight that identifies QuickSight reports, created
     /// from analyses. You can share QuickSight dashboards. With the right permissions, you
     /// can create scheduled email reports from them. If you have the correct permissions,
-    /// you can create a dashboard from a template that exists in a different AWS account.
+    /// you can create a dashboard from a template that exists in a different Amazon Web Services
+    /// account;.
     /// </para>
     /// </summary>
     public partial class CreateDashboardRequest : AmazonQuickSightRequest
@@ -57,7 +58,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the AWS account where you want to create the dashboard.
+        /// The ID of the Amazon Web Services account; where you want to create the dashboard.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -205,7 +206,8 @@ namespace Amazon.QuickSight.Model
         /// a dashboard from an analysis, first convert the analysis to a template by using the
         /// <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify the
         /// Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN
-        /// can contain any AWS Account and any QuickSight-supported AWS Region. 
+        /// can contain any Amazon Web Services account; and any QuickSight-supported Region;.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -252,7 +254,8 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the theme that is being used for this dashboard.
         /// If you add a value for this field, it overrides the value that is used in the source
-        /// entity. The theme ARN must exist in the same AWS account where you create the dashboard.
+        /// entity. The theme ARN must exist in the same Amazon Web Services account; where you
+        /// create the dashboard.
         /// </para>
         /// </summary>
         public string ThemeArn

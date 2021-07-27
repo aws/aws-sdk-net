@@ -47,7 +47,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The AWS account ID.
+        /// The Amazon Web Services account; ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -67,7 +67,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property DataSetId. 
         /// <para>
         /// The ID for the dataset whose permissions you want to update. This ID is unique per
-        /// AWS Region for each AWS account.
+        /// Region; for each Amazon Web Services account;.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

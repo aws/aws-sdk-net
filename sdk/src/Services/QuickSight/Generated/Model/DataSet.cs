@@ -47,6 +47,7 @@ namespace Amazon.QuickSight.Model
         private List<OutputColumn> _outputColumns = new List<OutputColumn>();
         private Dictionary<string, PhysicalTable> _physicalTableMap = new Dictionary<string, PhysicalTable>();
         private RowLevelPermissionDataSet _rowLevelPermissionDataSet;
+        private RowLevelPermissionTagConfiguration _rowLevelPermissionTagConfiguration;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -306,6 +307,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetRowLevelPermissionDataSet()
         {
             return this._rowLevelPermissionDataSet != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RowLevelPermissionTagConfiguration. 
+        /// <para>
+        /// The element you can use to define tags for row-level security.
+        /// </para>
+        /// </summary>
+        public RowLevelPermissionTagConfiguration RowLevelPermissionTagConfiguration
+        {
+            get { return this._rowLevelPermissionTagConfiguration; }
+            set { this._rowLevelPermissionTagConfiguration = value; }
+        }
+
+        // Check to see if RowLevelPermissionTagConfiguration property is set
+        internal bool IsSetRowLevelPermissionTagConfiguration()
+        {
+            return this._rowLevelPermissionTagConfiguration != null;
         }
 
     }

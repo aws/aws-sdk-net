@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The active AWS Identity and Access Management (IAM) policy assignment.
+    /// The active Identity and Access Management (IAM) policy assignment.
     /// </summary>
     public partial class ActiveIAMPolicyAssignment
     {

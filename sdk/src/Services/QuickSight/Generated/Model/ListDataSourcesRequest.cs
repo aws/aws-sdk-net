@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDataSources operation.
-    /// Lists data sources in current AWS Region that belong to this AWS account.
+    /// Lists data sources in current Region; that belong to this Amazon Web Services account;.
     /// </summary>
     public partial class ListDataSourcesRequest : AmazonQuickSightRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The AWS account ID.
+        /// The Amazon Web Services account; ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

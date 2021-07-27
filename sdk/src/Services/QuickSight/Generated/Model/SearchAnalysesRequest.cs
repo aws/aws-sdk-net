@@ -31,6 +31,13 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the SearchAnalyses operation.
     /// Searches for analyses that belong to the user specified in the filter.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This operation is eventually consistent. The results are best effort and may not reflect
+    /// very recent updates and changes.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class SearchAnalysesRequest : AmazonQuickSightRequest
     {
@@ -42,7 +49,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the AWS account that contains the analyses that you're searching for.
+        /// The ID of the Amazon Web Services account; that contains the analyses that you're
+        /// searching for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

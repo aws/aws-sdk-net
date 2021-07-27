@@ -51,8 +51,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID for the AWS account that the user is in. Currently, you use the ID for the
-        /// AWS account that contains your Amazon QuickSight account.
+        /// The ID for the Amazon Web Services account; that the user is in. Currently, you use
+        /// the ID for the Amazon Web Services account; that contains your Amazon QuickSight account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -132,8 +132,7 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// This feature is available only to QuickSight Enterprise edition subscriptions that
-        /// use SAML 2.0-Based Federation for Single Sign-On (SSO).
+        /// This feature is available only to QuickSight Enterprise edition subscriptions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

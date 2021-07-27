@@ -112,6 +112,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.RowLevelPermissionDataSet = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RowLevelPermissionTagConfigurationApplied", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.RowLevelPermissionTagConfigurationApplied = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

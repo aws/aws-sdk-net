@@ -40,13 +40,13 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AccountSettings. 
         /// <para>
-        /// The QuickSight settings for this AWS account. This information includes the edition
-        /// of Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification
-        /// email for the QuickSight subscription. In the QuickSight console, the QuickSight subscription
-        /// is sometimes referred to as a QuickSight "account" even though it's technically not
-        /// an account by itself. Instead, it's a subscription to the QuickSight service for your
-        /// AWS account. The edition that you subscribe to applies to QuickSight in every AWS
-        /// Region where you use it.
+        /// The QuickSight settings for this Amazon Web Services account;. This information includes
+        /// the edition of Amazon QuickSight that you subscribed to (Standard or Enterprise) and
+        /// the notification email for the QuickSight subscription. In the QuickSight console,
+        /// the QuickSight subscription is sometimes referred to as a QuickSight "account" even
+        /// though it's technically not an account by itself. Instead, it's a subscription to
+        /// the QuickSight service for your Amazon Web Services account;. The edition that you
+        /// subscribe to applies to QuickSight in every Region; where you use it.
         /// </para>
         /// </summary>
         public AccountSettings AccountSettings
@@ -64,7 +64,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// The AWS request ID for this operation.
+        /// The Amazon Web Services request ID for this operation.
         /// </para>
         /// </summary>
         public string RequestId

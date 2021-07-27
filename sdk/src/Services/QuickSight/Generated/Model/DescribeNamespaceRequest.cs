@@ -40,8 +40,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID for the AWS account that contains the QuickSight namespace that you want to
-        /// describe.
+        /// The ID for the Amazon Web Services account; that contains the QuickSight namespace
+        /// that you want to describe.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

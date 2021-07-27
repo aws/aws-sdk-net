@@ -30,8 +30,8 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTemplate operation.
-    /// Creates a template from an existing QuickSight analysis or template. You can use the
-    /// resulting template to create a dashboard.
+    /// Creates a template from an existing Amazon QuickSight analysis or template. You can
+    /// use the resulting template to create a dashboard.
     /// 
     ///  
     /// <para>
@@ -56,8 +56,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID for the AWS account that the group is in. Currently, you use the ID for the
-        /// AWS account that contains your Amazon QuickSight account.
+        /// The ID for the Amazon Web Services account; that the group is in. Currently, you use
+        /// the ID for the Amazon Web Services account; that contains your Amazon QuickSight account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -119,8 +119,8 @@ namespace Amazon.QuickSight.Model
         /// for a template or <code>SourceAnalysis</code> for an analysis. Both of these require
         /// an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of
         /// the source template. For <code>SourceAnalysis</code>, specify the ARN of the source
-        /// analysis. The <code>SourceTemplate</code> ARN can contain any AWS Account and any
-        /// QuickSight-supported AWS Region. 
+        /// analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services
+        /// account; and any QuickSight-supported Region;. 
         /// </para>
         ///  
         /// <para>
@@ -165,8 +165,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property TemplateId. 
         /// <para>
-        /// An ID for the template that you want to create. This template is unique per AWS Region
-        /// in each AWS account.
+        /// An ID for the template that you want to create. This template is unique per Region;
+        /// in each Amazon Web Services account;.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

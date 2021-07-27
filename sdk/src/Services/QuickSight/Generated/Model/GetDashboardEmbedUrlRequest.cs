@@ -61,6 +61,12 @@ namespace Amazon.QuickSight.Model
     /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
     /// Analytics</a> in the <i>Amazon QuickSight User Guide</i>.
     /// </para>
+    ///  
+    /// <para>
+    /// For more information about the high-level steps for embedding and for an interactive
+    /// demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
+    /// QuickSight Developer Portal</a>.
+    /// </para>
     /// </summary>
     public partial class GetDashboardEmbedUrlRequest : AmazonQuickSightRequest
     {
@@ -101,7 +107,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID for the AWS account that contains the dashboard that you're embedding.
+        /// The ID for the Amazon Web Services account; that contains the dashboard that you're
+        /// embedding.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -120,8 +127,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DashboardId. 
         /// <para>
-        /// The ID for the dashboard, also added to the AWS Identity and Access Management (IAM)
-        /// policy.
+        /// The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -159,8 +165,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The QuickSight namespace that contains the dashboard IDs in this request. If you're
-        /// not using a custom namespace, set this to "<code>default</code>".
+        /// The Amazon QuickSight namespace that the user virtually belongs to. If you are not
+        /// using an Amazon QuickSight custom namespace, set this to <code>default</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]

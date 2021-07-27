@@ -59,8 +59,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSetId. 
         /// <para>
-        /// The ID for the dataset that you want to create. This ID is unique per AWS Region for
-        /// each AWS account.
+        /// The ID for the dataset that you want to create. This ID is unique per Region; for
+        /// each Amazon Web Services account;.
         /// </para>
         /// </summary>
         public string DataSetId
@@ -78,7 +78,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// The AWS request ID for this operation.
+        /// The Amazon Web Services request ID for this operation.
         /// </para>
         /// </summary>
         public string RequestId

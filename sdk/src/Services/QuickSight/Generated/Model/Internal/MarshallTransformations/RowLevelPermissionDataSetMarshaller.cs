@@ -69,6 +69,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PermissionPolicy);
             }
 
+            if(requestObject.IsSetStatus())
+            {
+                context.Writer.WritePropertyName("Status");
+                context.Writer.Write(requestObject.Status);
+            }
+
         }
 
         /// <summary>

@@ -58,11 +58,11 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The dataset column tag, currently only used for geospatial type tagging. .
+        /// The dataset column tag, currently only used for geospatial type tagging.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This is not tags for the AWS tagging feature. .
+        /// This is not tags for the Amazon Web Services tagging feature.
         /// </para>
         ///  </note>
         /// </summary>

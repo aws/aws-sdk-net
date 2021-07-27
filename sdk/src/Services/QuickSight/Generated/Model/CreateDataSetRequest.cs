@@ -45,12 +45,13 @@ namespace Amazon.QuickSight.Model
         private List<ResourcePermission> _permissions = new List<ResourcePermission>();
         private Dictionary<string, PhysicalTable> _physicalTableMap = new Dictionary<string, PhysicalTable>();
         private RowLevelPermissionDataSet _rowLevelPermissionDataSet;
+        private RowLevelPermissionTagConfiguration _rowLevelPermissionTagConfiguration;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The AWS account ID.
+        /// The Amazon Web Services account; ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -108,8 +109,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSetId. 
         /// <para>
-        /// An ID for the dataset that you want to create. This ID is unique per AWS Region for
-        /// each AWS account.
+        /// An ID for the dataset that you want to create. This ID is unique per Region; for each
+        /// Amazon Web Services account;.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -254,6 +255,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetRowLevelPermissionDataSet()
         {
             return this._rowLevelPermissionDataSet != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RowLevelPermissionTagConfiguration. 
+        /// <para>
+        /// The configuration of tags on a dataset to set row-level security. Row-level security
+        /// tags are currently supported for anonymous embedding only.
+        /// </para>
+        /// </summary>
+        public RowLevelPermissionTagConfiguration RowLevelPermissionTagConfiguration
+        {
+            get { return this._rowLevelPermissionTagConfiguration; }
+            set { this._rowLevelPermissionTagConfiguration = value; }
+        }
+
+        // Check to see if RowLevelPermissionTagConfiguration property is set
+        internal bool IsSetRowLevelPermissionTagConfiguration()
+        {
+            return this._rowLevelPermissionTagConfiguration != null;
         }
 
         /// <summary>

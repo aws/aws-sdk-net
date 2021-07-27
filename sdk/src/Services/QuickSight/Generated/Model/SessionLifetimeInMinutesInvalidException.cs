@@ -127,7 +127,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// The AWS request ID for this request.
+        /// The Amazon Web Services request ID for this request.
         /// </para>
         /// </summary>
         public string RequestId

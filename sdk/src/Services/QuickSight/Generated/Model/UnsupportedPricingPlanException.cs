@@ -30,9 +30,9 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// This error indicates that you are calling an embedding operation in Amazon QuickSight
-    /// without the required pricing plan on your AWS account. Before you can use embedding
-    /// for anonymous users, a QuickSight administrator needs to add capacity pricing to QuickSight.
-    /// You can do this on the <b>Manage QuickSight</b> page. 
+    /// without the required pricing plan on your Amazon Web Services account;. Before you
+    /// can use embedding for anonymous users, a QuickSight administrator needs to add capacity
+    /// pricing to QuickSight. You can do this on the <b>Manage QuickSight</b> page. 
     /// 
     ///  
     /// <para>
@@ -135,7 +135,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// The AWS request ID for this request.
+        /// The Amazon Web Services request ID for this request.
         /// </para>
         /// </summary>
         public string RequestId

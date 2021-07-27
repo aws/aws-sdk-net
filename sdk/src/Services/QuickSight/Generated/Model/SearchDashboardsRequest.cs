@@ -30,7 +30,14 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchDashboards operation.
-    /// Searches for dashboards that belong to a user.
+    /// Searches for dashboards that belong to a user. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This operation is eventually consistent. The results are best effort and may not reflect
+    /// very recent updates and changes.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class SearchDashboardsRequest : AmazonQuickSightRequest
     {
@@ -42,8 +49,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the AWS account that contains the user whose dashboards you're searching
-        /// for. 
+        /// The ID of the Amazon Web Services account; that contains the user whose dashboards
+        /// you're searching for. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

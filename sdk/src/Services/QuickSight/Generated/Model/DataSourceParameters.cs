@@ -131,7 +131,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsIotAnalyticsParameters. 
         /// <para>
-        /// AWS IoT Analytics parameters.
+        /// Amazon Web Services IoT Analytics parameters.
         /// </para>
         /// </summary>
         public AwsIotAnalyticsParameters AwsIotAnalyticsParameters

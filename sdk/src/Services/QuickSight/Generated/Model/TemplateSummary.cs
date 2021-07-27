@@ -135,7 +135,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property TemplateId. 
         /// <para>
-        /// The ID of the template. This ID is unique per AWS Region for each AWS account.
+        /// The ID of the template. This ID is unique per Region; for each Amazon Web Services
+        /// account;.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

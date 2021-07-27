@@ -79,7 +79,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the AWS account where you want to delete an analysis.
+        /// The ID of the Amazon Web Services account; where you want to delete an analysis.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

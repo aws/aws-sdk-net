@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The QuickSight settings associated with your AWS account.
+    /// The QuickSight settings associated with your Amazon Web Services account;.
     /// </summary>
     public partial class AccountSettings
     {
@@ -41,9 +41,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AccountName. 
         /// <para>
-        /// The "account name" you provided for the QuickSight subscription in your AWS account.
-        /// You create this name when you sign up for QuickSight. It is unique in all of AWS and
-        /// it appears only in the console when users sign in.
+        /// The "account name" you provided for the QuickSight subscription in your Amazon Web
+        /// Services account;. You create this name when you sign up for QuickSight. It is unique
+        /// in all of Amazon Web Services and it appears only when users sign in.
         /// </para>
         /// </summary>
         public string AccountName
@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DefaultNamespace. 
         /// <para>
-        /// The default QuickSight namespace for your AWS account. 
+        /// The default QuickSight namespace for your Amazon Web Services account;. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]

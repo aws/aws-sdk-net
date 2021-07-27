@@ -43,7 +43,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AccountCustomization. 
         /// <para>
-        /// The QuickSight customizations that exist in the current AWS Region. 
+        /// The QuickSight customizations that exist in the current Region;. 
         /// </para>
         /// </summary>
         public AccountCustomization AccountCustomization
@@ -61,8 +61,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the customization that's associated with this AWS
-        /// account.
+        /// The Amazon Resource Name (ARN) of the customization that's associated with this Amazon
+        /// Web Services account;.
         /// </para>
         /// </summary>
         public string Arn
@@ -80,7 +80,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID for the AWS account that you're describing.
+        /// The ID for the Amazon Web Services account; that you're describing.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -118,7 +118,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// The AWS request ID for this operation.
+        /// The Amazon Web Services request ID for this operation.
         /// </para>
         /// </summary>
         public string RequestId

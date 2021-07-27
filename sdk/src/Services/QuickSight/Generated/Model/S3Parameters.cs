@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property ManifestFileLocation. 
         /// <para>
         /// Location of the Amazon S3 manifest file. This is NULL if the manifest file was uploaded
-        /// in the console.
+        /// into QuickSight.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

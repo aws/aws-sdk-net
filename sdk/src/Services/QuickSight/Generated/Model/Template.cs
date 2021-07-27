@@ -38,8 +38,9 @@ namespace Amazon.QuickSight.Model
     /// 
     ///  
     /// <para>
-    /// You can share templates across AWS accounts by allowing users in other AWS accounts
-    /// to create a template or a dashboard from an existing template.
+    /// You can share templates across Amazon Web Services accounts by allowing users in other
+    /// Amazon Web Services accounts to create a template or a dashboard from an existing
+    /// template.
     /// </para>
     /// </summary>
     public partial class Template
@@ -127,7 +128,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property TemplateId. 
         /// <para>
-        /// The ID for the template. This is unique per AWS Region for each AWS account.
+        /// The ID for the template. This is unique per Region; for each Amazon Web Services account;.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

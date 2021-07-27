@@ -43,7 +43,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the AWS account that contains the template that you're updating.
+        /// The ID of the Amazon Web Services account; that contains the template that you're
+        /// updating.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -86,8 +87,8 @@ namespace Amazon.QuickSight.Model
         /// for a template or <code>SourceAnalysis</code> for an analysis. Both of these require
         /// an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of
         /// the source template. For <code>SourceAnalysis</code>, specify the ARN of the source
-        /// analysis. The <code>SourceTemplate</code> ARN can contain any AWS Account and any
-        /// QuickSight-supported AWS Region. 
+        /// analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services
+        /// account; and any QuickSight-supported Region;. 
         /// </para>
         ///  
         /// <para>

@@ -62,7 +62,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID for the AWS account associated with your QuickSight subscription.
+        /// The ID for the Amazon Web Services account; associated with your QuickSight subscription.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -161,7 +161,7 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// AWS Identity and Access Management (IAM) users and IAM role-based sessions authenticated
+        /// Identity and Access Management (IAM) users and IAM role-based sessions authenticated
         /// through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation
         /// </para>
         ///  </li> </ol> 

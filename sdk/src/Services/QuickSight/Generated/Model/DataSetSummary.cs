@@ -41,6 +41,7 @@ namespace Amazon.QuickSight.Model
         private DateTime? _lastUpdatedTime;
         private string _name;
         private RowLevelPermissionDataSet _rowLevelPermissionDataSet;
+        private bool? _rowLevelPermissionTagConfigurationApplied;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -185,6 +186,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetRowLevelPermissionDataSet()
         {
             return this._rowLevelPermissionDataSet != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RowLevelPermissionTagConfigurationApplied. 
+        /// <para>
+        /// Whether or not the row level permission tags are applied.
+        /// </para>
+        /// </summary>
+        public bool RowLevelPermissionTagConfigurationApplied
+        {
+            get { return this._rowLevelPermissionTagConfigurationApplied.GetValueOrDefault(); }
+            set { this._rowLevelPermissionTagConfigurationApplied = value; }
+        }
+
+        // Check to see if RowLevelPermissionTagConfigurationApplied property is set
+        internal bool IsSetRowLevelPermissionTagConfigurationApplied()
+        {
+            return this._rowLevelPermissionTagConfigurationApplied.HasValue; 
         }
 
     }

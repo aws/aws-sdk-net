@@ -37,8 +37,8 @@ namespace Amazon.QuickSight.Model
     /// Any ingestions operating on tagged datasets inherit the same tags automatically for
     /// use in access control. For an example, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How
     /// do I create an IAM policy to control access to Amazon EC2 resources using tags?</a>
-    /// in the AWS Knowledge Center. Tags are visible on the tagged dataset, but not on the
-    /// ingestion resource.
+    /// in the Amazon Web Services Knowledge Center. Tags are visible on the tagged dataset,
+    /// but not on the ingestion resource.
     /// </para>
     /// </summary>
     public partial class CreateIngestionRequest : AmazonQuickSightRequest
@@ -50,7 +50,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The AWS account ID.
+        /// The Amazon Web Services account; ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

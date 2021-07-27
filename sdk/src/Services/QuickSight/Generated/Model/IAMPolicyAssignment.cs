@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// An AWS Identity and Access Management (IAM) policy assignment.
+    /// An Identity and Access Management (IAM) policy assignment.
     /// </summary>
     public partial class IAMPolicyAssignment
     {
@@ -98,7 +98,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The AWS account ID.
+        /// The Amazon Web Services account; ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

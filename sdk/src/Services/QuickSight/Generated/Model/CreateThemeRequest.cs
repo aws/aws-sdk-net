@@ -53,7 +53,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the AWS account where you want to store the new theme. 
+        /// The ID of the Amazon Web Services account; where you want to store the new theme.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -171,8 +172,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ThemeId. 
         /// <para>
-        /// An ID for the theme that you want to create. The theme ID is unique per AWS Region
-        /// in each AWS account.
+        /// An ID for the theme that you want to create. The theme ID is unique per Region; in
+        /// each Amazon Web Services account;.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

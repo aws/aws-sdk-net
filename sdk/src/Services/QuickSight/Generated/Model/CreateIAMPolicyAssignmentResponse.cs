@@ -62,7 +62,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AssignmentName. 
         /// <para>
-        /// The name of the assignment. This name must be unique within the AWS account.
+        /// The name of the assignment. This name must be unique within the Amazon Web Services
+        /// account;.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -151,7 +152,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// The AWS request ID for this operation.
+        /// The Amazon Web Services request ID for this operation.
         /// </para>
         /// </summary>
         public string RequestId

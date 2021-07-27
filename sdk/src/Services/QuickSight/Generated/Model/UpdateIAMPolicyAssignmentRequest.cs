@@ -47,7 +47,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property AssignmentName. 
         /// <para>
         /// The name of the assignment, also called a rule. This name must be unique within an
-        /// AWS account.
+        /// Amazon Web Services account;.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -99,7 +99,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the AWS account that contains the IAM policy assignment. 
+        /// The ID of the Amazon Web Services account; that contains the IAM policy assignment.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

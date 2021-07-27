@@ -59,7 +59,7 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// QuickSight doesn't currently support the Tag Editor for AWS Resource Groups.
+    /// QuickSight doesn't currently support the Tag Editor for Resource Groups.
     /// </para>
     ///  </li> </ul>
     /// </summary>

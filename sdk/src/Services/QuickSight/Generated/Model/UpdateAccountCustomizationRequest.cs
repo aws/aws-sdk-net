@@ -30,15 +30,16 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAccountCustomization operation.
-    /// Updates Amazon QuickSight customizations the current AWS Region. Currently, the only
+    /// Updates Amazon QuickSight customizations the current Region;. Currently, the only
     /// customization you can use is a theme.
     /// 
     ///  
     /// <para>
-    /// You can use customizations for your AWS account or, if you specify a namespace, for
-    /// a QuickSight namespace instead. Customizations that apply to a namespace override
-    /// customizations that apply to an AWS account. To find out which customizations apply,
-    /// use the <code>DescribeAccountCustomization</code> API operation. 
+    /// You can use customizations for your Amazon Web Services account; or, if you specify
+    /// a namespace, for a QuickSight namespace instead. Customizations that apply to a namespace
+    /// override customizations that apply to an Amazon Web Services account;. To find out
+    /// which customizations apply, use the <code>DescribeAccountCustomization</code> API
+    /// operation. 
     /// </para>
     /// </summary>
     public partial class UpdateAccountCustomizationRequest : AmazonQuickSightRequest
@@ -50,7 +51,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AccountCustomization. 
         /// <para>
-        /// The QuickSight customizations you're updating in the current AWS Region. 
+        /// The QuickSight customizations you're updating in the current Region;. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -69,7 +70,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID for the AWS account that you want to update QuickSight customizations for.
+        /// The ID for the Amazon Web Services account; that you want to update QuickSight customizations
+        /// for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

@@ -202,6 +202,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetRowLevelPermissionTagConfiguration())
+                {
+                    context.Writer.WritePropertyName("RowLevelPermissionTagConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RowLevelPermissionTagConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RowLevelPermissionTagConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

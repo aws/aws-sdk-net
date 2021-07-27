@@ -41,9 +41,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespaces. 
         /// <para>
-        /// The information about the namespaces in this AWS account. The response includes the
-        /// namespace ARN, name, AWS Region, notification email address, creation status, and
-        /// identity store.
+        /// The information about the namespaces in this Amazon Web Services account;. The response
+        /// includes the namespace ARN, name, Region;, notification email address, creation status,
+        /// and identity store.
         /// </para>
         /// </summary>
         public List<NamespaceInfoV2> Namespaces
@@ -79,7 +79,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// The AWS request ID for this operation.
+        /// The Amazon Web Services request ID for this operation.
         /// </para>
         /// </summary>
         public string RequestId
