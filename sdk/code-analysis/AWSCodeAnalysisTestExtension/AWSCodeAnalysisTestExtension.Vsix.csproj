@@ -924,6 +924,10 @@
       <Project>{3F10D8F8-C535-4123-A2C3-28A5F06B8630}</Project>
       <Name>AWSSDK.Route53Domains.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Route53RecoveryReadiness/AWSSDK.Route53RecoveryReadiness.CodeAnalysis.csproj">
+      <Project>{30A651C1-099D-4F37-B5A7-9F4B4D3814EB}</Project>
+      <Name>AWSSDK.Route53RecoveryReadiness.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Route53Resolver/AWSSDK.Route53Resolver.CodeAnalysis.csproj">
       <Project>{B90CE7E1-24C8-4371-902E-D68B13913A47}</Project>
       <Name>AWSSDK.Route53Resolver.CodeAnalysis</Name>
