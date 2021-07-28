@@ -178,8 +178,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-        /// AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)
+        /// Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+        /// Web Services Resource Types Reference</a> in the CloudFormation User Guide.)
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

@@ -30,9 +30,9 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeChangeSet operation.
-    /// Returns the inputs for the change set and a list of changes that AWS CloudFormation
-    /// will make if you execute the change set. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html">Updating
-    /// Stacks Using Change Sets</a> in the AWS CloudFormation User Guide.
+    /// Returns the inputs for the change set and a list of changes that CloudFormation will
+    /// make if you execute the change set. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html">Updating
+    /// Stacks Using Change Sets</a> in the CloudFormation User Guide.
     /// </summary>
     public partial class DescribeChangeSetRequest : AmazonCloudFormationRequest
     {

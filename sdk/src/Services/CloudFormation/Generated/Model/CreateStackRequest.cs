@@ -58,7 +58,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Capabilities. 
         /// <para>
         /// In some cases, you must explicitly acknowledge that your stack template contains certain
-        /// capabilities in order for AWS CloudFormation to create the stack.
+        /// capabilities in order for CloudFormation to create the stack.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -66,10 +66,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Some stack templates might include resources that can affect permissions in your AWS
-        /// account; for example, by creating new AWS Identity and Access Management (IAM) users.
-        /// For those stacks, you must explicitly acknowledge this by specifying one of these
-        /// capabilities.
+        /// Some stack templates might include resources that can affect permissions in your account;
+        /// for example, by creating new Identity and Access Management (IAM) users. For those
+        /// stacks, you must explicitly acknowledge this by specifying one of these capabilities.
         /// </para>
         ///  
         /// <para>
@@ -87,7 +86,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you don't specify either of these capabilities, AWS CloudFormation returns an <code>InsufficientCapabilities</code>
+        /// If you don't specify either of these capabilities, CloudFormation returns an <code>InsufficientCapabilities</code>
         /// error.
         /// </para>
         ///  </li> </ul> 
@@ -133,7 +132,7 @@ namespace Amazon.CloudFormation.Model
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-        /// IAM Resources in AWS CloudFormation Templates</a>.
+        /// IAM Resources in CloudFormation Templates</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -150,7 +149,7 @@ namespace Amazon.CloudFormation.Model
         /// without first reviewing the resulting changes in a change set, you must acknowledge
         /// this capability. This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
         /// and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-        /// transforms, which are macros hosted by AWS CloudFormation.
+        /// transforms, which are macros hosted by CloudFormation.
         /// </para>
         ///  
         /// <para>
@@ -166,12 +165,12 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Each macro relies on an underlying Lambda service function for processing stack templates.
         /// Be aware that the Lambda function owner can update the function operation without
-        /// AWS CloudFormation being notified.
+        /// CloudFormation being notified.
         /// </para>
         ///  </important> 
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-        /// AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.
+        /// CloudFormation Macros to Perform Custom Processing on Templates</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -191,9 +190,9 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// A unique identifier for this <code>CreateStack</code> request. Specify this token
-        /// if you plan to retry requests so that AWS CloudFormation knows that you're not attempting
+        /// if you plan to retry requests so that CloudFormation knows that you're not attempting
         /// to create a stack with the same name. You might retry <code>CreateStack</code> requests
-        /// to ensure that AWS CloudFormation successfully received them.
+        /// to ensure that CloudFormation successfully received them.
         /// </para>
         ///  
         /// <para>
@@ -255,7 +254,7 @@ namespace Amazon.CloudFormation.Model
         /// Whether to enable termination protection on the specified stack. If a user attempts
         /// to delete a stack with termination protection enabled, the operation fails and the
         /// stack remains unchanged. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
-        /// a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>. Termination
+        /// a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>. Termination
         /// protection is disabled on stacks by default. 
         /// </para>
         ///  
@@ -348,19 +347,19 @@ namespace Amazon.CloudFormation.Model
         /// The template resource types that you have permissions to work with for this create
         /// stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
         /// <code>Custom::MyCustomInstance</code>. Use the following syntax to describe template
-        /// resource types: <code>AWS::*</code> (for all AWS resource), <code>Custom::*</code>
+        /// resource types: <code>AWS::*</code> (for all Amazon Web Services resources), <code>Custom::*</code>
         /// (for all custom resources), <code>Custom::<i>logical_ID</i> </code> (for a specific
         /// custom resource), <code>AWS::<i>service_name</i>::*</code> (for all resources of a
-        /// particular AWS service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i>
-        /// </code> (for a specific AWS resource).
+        /// particular Amazon Web Services service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i>
+        /// </code> (for a specific Amazon Web Services resource).
         /// </para>
         ///  
         /// <para>
         /// If the list of resource types doesn't include a resource that you're creating, the
-        /// stack creation fails. By default, AWS CloudFormation grants permissions to all resource
-        /// types. AWS Identity and Access Management (IAM) uses this parameter for AWS CloudFormation-specific
+        /// stack creation fails. By default, CloudFormation grants permissions to all resource
+        /// types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific
         /// condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-        /// Access with AWS Identity and Access Management</a>.
+        /// Access with Identity and Access Management</a>.
         /// </para>
         /// </summary>
         public List<string> ResourceTypes
@@ -378,18 +377,18 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
-        /// that AWS CloudFormation assumes to create the stack. AWS CloudFormation uses the role's
-        /// credentials to make calls on your behalf. AWS CloudFormation always uses this role
-        /// for all future operations on the stack. As long as users have permission to operate
-        /// on the stack, AWS CloudFormation uses this role even if the users don't have permission
-        /// to pass it. Ensure that the role grants least privilege.
+        /// The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that
+        /// CloudFormation assumes to create the stack. CloudFormation uses the role's credentials
+        /// to make calls on your behalf. CloudFormation always uses this role for all future
+        /// operations on the stack. As long as users have permission to operate on the stack,
+        /// CloudFormation uses this role even if the users don't have permission to pass it.
+        /// Ensure that the role grants least privilege.
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value, AWS CloudFormation uses the role that was previously
-        /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
-        /// session that is generated from your user credentials.
+        /// If you don't specify a value, CloudFormation uses the role that was previously associated
+        /// with the stack. If no role is available, CloudFormation uses a temporary session that
+        /// is generated from your user credentials.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -408,8 +407,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RollbackConfiguration. 
         /// <para>
-        /// The rollback triggers for AWS CloudFormation to monitor during stack creation and
-        /// updating operations, and for the specified monitoring period afterwards.
+        /// The rollback triggers for CloudFormation to monitor during stack creation and updating
+        /// operations, and for the specified monitoring period afterwards.
         /// </para>
         /// </summary>
         public RollbackConfiguration RollbackConfiguration
@@ -454,8 +453,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property StackPolicyBody. 
         /// <para>
         /// Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-        /// Prevent Updates to Stack Resources</a> in the <i>AWS CloudFormation User Guide</i>.
-        /// You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
+        /// Prevent Updates to Stack Resources</a> in the <i>CloudFormation User Guide</i>. You
+        /// can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
         /// parameter, but not both.
         /// </para>
         /// </summary>
@@ -497,7 +496,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Key-value pairs to associate with this stack. AWS CloudFormation also propagates these
+        /// Key-value pairs to associate with this stack. CloudFormation also propagates these
         /// tags to the resources created in the stack. A maximum number of 50 tags can be specified.
         /// </para>
         /// </summary>
@@ -519,7 +518,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Structure containing the template body with a minimum length of 1 byte and a maximum
         /// length of 51,200 bytes. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-        /// Anatomy</a> in the AWS CloudFormation User Guide.
+        /// Anatomy</a> in the CloudFormation User Guide.
         /// </para>
         ///  
         /// <para>
@@ -546,7 +545,7 @@ namespace Amazon.CloudFormation.Model
         /// Location of file containing the template body. The URL must point to a template (max
         /// size: 460,800 bytes) that is located in an Amazon S3 bucket or a Systems Manager document.
         /// For more information, go to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-        /// Anatomy</a> in the AWS CloudFormation User Guide.
+        /// Anatomy</a> in the CloudFormation User Guide.
         /// </para>
         ///  
         /// <para>

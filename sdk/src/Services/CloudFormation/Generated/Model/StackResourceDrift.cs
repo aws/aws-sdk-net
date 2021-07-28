@@ -30,7 +30,7 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Contains the drift information for a resource that has been checked for drift. This
-    /// includes actual and expected property values for resources in which AWS CloudFormation
+    /// includes actual and expected property values for resources in which CloudFormation
     /// has detected drift. Only resource properties explicitly defined in the stack template
     /// are checked for drift. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
     /// Unregulated Configuration Changes to Stacks and Resources</a>.
@@ -150,7 +150,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property PhysicalResourceId. 
         /// <para>
         /// The name or unique identifier that corresponds to a physical instance ID of a resource
-        /// supported by AWS CloudFormation. 
+        /// supported by CloudFormation. 
         /// </para>
         /// </summary>
         public string PhysicalResourceId
@@ -168,10 +168,10 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property PhysicalResourceIdContext. 
         /// <para>
-        /// Context information that enables AWS CloudFormation to uniquely identify a resource.
-        /// AWS CloudFormation uses context key-value pairs in cases where a resource's logical
-        /// and physical IDs are not enough to uniquely identify that resource. Each context key-value
-        /// pair specifies a unique resource that contains the targeted resource.
+        /// Context information that enables CloudFormation to uniquely identify a resource. CloudFormation
+        /// uses context key-value pairs in cases where a resource's logical and physical IDs
+        /// are not enough to uniquely identify that resource. Each context key-value pair specifies
+        /// a unique resource that contains the targeted resource.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]
@@ -267,7 +267,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKED</code>: AWS CloudFormation does not currently return this value.
+        ///  <code>NOT_CHECKED</code>: CloudFormation does not currently return this value.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -287,7 +287,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// Time at which AWS CloudFormation performed drift detection on the stack resource.
+        /// Time at which CloudFormation performed drift detection on the stack resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -53,9 +53,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ChangeSetName. 
         /// <para>
-        /// The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation
-        /// returns the associated template. If you specify a name, you must also specify the
-        /// <code>StackName</code>.
+        /// The name or Amazon Resource Name (ARN) of a change set for which CloudFormation returns
+        /// the associated template. If you specify a name, you must also specify the <code>StackName</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -105,15 +104,15 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TemplateStage. 
         /// <para>
-        /// For templates that include transforms, the stage of the template that AWS CloudFormation
+        /// For templates that include transforms, the stage of the template that CloudFormation
         /// returns. To get the user-submitted template, specify <code>Original</code>. To get
-        /// the template after AWS CloudFormation has processed all transforms, specify <code>Processed</code>.
+        /// the template after CloudFormation has processed all transforms, specify <code>Processed</code>.
         /// 
         /// </para>
         ///  
         /// <para>
         /// If the template doesn't include transforms, <code>Original</code> and <code>Processed</code>
-        /// return the same template. By default, AWS CloudFormation specifies <code>Processed</code>.
+        /// return the same template. By default, CloudFormation specifies <code>Processed</code>.
         /// </para>
         /// </summary>
         public TemplateStage TemplateStage

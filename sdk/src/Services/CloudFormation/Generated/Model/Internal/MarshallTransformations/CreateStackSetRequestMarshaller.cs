@@ -130,6 +130,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PermissionModel", StringUtils.FromString(publicRequest.PermissionModel));
                 }
+                if(publicRequest.IsSetStackId())
+                {
+                    request.Parameters.Add("StackId", StringUtils.FromString(publicRequest.StackId));
+                }
                 if(publicRequest.IsSetStackSetName())
                 {
                     request.Parameters.Add("StackSetName", StringUtils.FromString(publicRequest.StackSetName));

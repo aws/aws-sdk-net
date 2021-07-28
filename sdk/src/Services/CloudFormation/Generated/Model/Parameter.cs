@@ -42,8 +42,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ParameterKey. 
         /// <para>
         /// The key associated with the parameter. If you don't specify a key and value for a
-        /// particular parameter, AWS CloudFormation uses the default value that is specified
-        /// in your template.
+        /// particular parameter, CloudFormation uses the default value that is specified in your
+        /// template.
         /// </para>
         /// </summary>
         public string ParameterKey

@@ -49,8 +49,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Accounts. 
         /// <para>
-        /// [Self-managed permissions] The names of one or more AWS accounts that you want to
-        /// create stack instances in the specified Region(s) for.
+        /// [Self-managed permissions] The names of one or more accounts that you want to create
+        /// stack instances in the specified Region(s) for.
         /// </para>
         ///  
         /// <para>
@@ -91,9 +91,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Your AWS account must be registered as a delegated administrator in the management
-        /// account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-        /// a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// Your account must be registered as a delegated administrator in the management account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+        /// a delegated administrator</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -112,7 +112,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property DeploymentTargets. 
         /// <para>
-        /// [Service-managed permissions] The AWS Organizations accounts for which to create stack
+        /// [Service-managed permissions] The Organizations accounts for which to create stack
         /// instances in the specified Regions.
         /// </para>
         ///  
@@ -139,9 +139,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// The operation ID also functions as an idempotency token, to ensure that AWS CloudFormation
+        /// The operation ID also functions as an idempotency token, to ensure that CloudFormation
         /// performs the stack set operation only once, even if you retry the request multiple
-        /// times. You might retry stack set operation requests to ensure that AWS CloudFormation
+        /// times. You might retry stack set operation requests to ensure that CloudFormation
         /// successfully received them.
         /// </para>
         ///  
@@ -170,7 +170,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OperationPreferences. 
         /// <para>
-        /// Preferences for how AWS CloudFormation performs this stack set operation.
+        /// Preferences for how CloudFormation performs this stack set operation.
         /// </para>
         /// </summary>
         public StackSetOperationPreferences OperationPreferences
@@ -195,7 +195,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Any overridden parameter values will be applied to all stack instances in the specified
         /// accounts and Regions. When specifying parameters and their values, be aware of how
-        /// AWS CloudFormation sets parameter values during stack instance operations:
+        /// CloudFormation sets parameter values during stack instance operations:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -204,21 +204,14 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To leave a parameter set to its present value, you can do one of the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Do not include the parameter in the list.
+        /// To leave an overridden parameter set to its present value, include the parameter and
+        /// specify <code>UsePreviousValue</code> as <code>true</code>. (You cannot specify both
+        /// a value and set <code>UsePreviousValue</code> to <code>true</code>.)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Include the parameter and specify <code>UsePreviousValue</code> as <code>true</code>.
-        /// (You cannot specify both a value and set <code>UsePreviousValue</code> to <code>true</code>.)
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// To set all overridden parameter back to the values specified in the stack set, specify
-        /// a parameter list but do not include any parameters.
+        /// To set an overridden parameter back to the value specified in the stack set, specify
+        /// a parameter list but do not include the parameter in the list.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -253,7 +246,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Regions. 
         /// <para>
         /// The names of one or more Regions where you want to create stack instances using the
-        /// specified AWS account(s). 
+        /// specified accounts. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

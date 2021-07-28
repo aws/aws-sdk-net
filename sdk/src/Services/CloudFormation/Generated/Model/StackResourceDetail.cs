@@ -129,7 +129,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// The content of the <code>Metadata</code> attribute declared for the resource. For
         /// more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
-        /// Attribute</a> in the AWS CloudFormation User Guide.
+        /// Attribute</a> in the CloudFormation User Guide.
         /// </para>
         /// </summary>
         public string Metadata
@@ -167,7 +167,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property PhysicalResourceId. 
         /// <para>
         /// The name or unique identifier that corresponds to a physical instance ID of a resource
-        /// supported by AWS CloudFormation.
+        /// supported by CloudFormation.
         /// </para>
         /// </summary>
         public string PhysicalResourceId
@@ -222,8 +222,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// Type of resource. ((For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-        /// AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)
+        /// Type of resource. ((For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+        /// Web Services Resource Types Reference</a> in the CloudFormation User Guide.)
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

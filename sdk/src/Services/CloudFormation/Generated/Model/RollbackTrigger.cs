@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// A rollback trigger AWS CloudFormation monitors during creation and updating of stacks.
+    /// A rollback trigger CloudFormation monitors during creation and updating of stacks.
     /// If any of the alarms you specify goes to ALARM state during the stack operation or
     /// within the specified monitoring period afterwards, CloudFormation rolls back the entire
     /// stack operation.

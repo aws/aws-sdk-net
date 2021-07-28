@@ -77,7 +77,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Use customized administrator roles to control which users or groups can manage specific
         /// stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-        /// Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// Permissions for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -98,7 +98,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// The time at which the operation was initiated. Note that the creation times for the
         /// stack set operation might differ from the creation time of the individual stacks themselves.
-        /// This is because AWS CloudFormation needs to perform preparatory work for the operation,
+        /// This is because CloudFormation needs to perform preparatory work for the operation,
         /// such as dispatching the work to the requested Regions, before actually creating the
         /// first stacks.
         /// </para>
@@ -118,8 +118,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property DeploymentTargets. 
         /// <para>
-        /// [Service-managed permissions] The AWS Organizations accounts affected by the stack
-        /// operation.
+        /// [Service-managed permissions] The Organizations accounts affected by the stack operation.
         /// </para>
         /// </summary>
         public DeploymentTargets DeploymentTargets
@@ -200,7 +199,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OperationPreferences. 
         /// <para>
-        /// The preferences for how AWS CloudFormation performs this stack set operation.
+        /// The preferences for how CloudFormation performs this stack set operation.
         /// </para>
         /// </summary>
         public StackSetOperationPreferences OperationPreferences
@@ -250,7 +249,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
-        /// Unmanaged Changes in Stack Sets</a> in the AWS CloudFormation User Guide.
+        /// Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.
         /// </para>
         /// </summary>
         public StackSetDriftDetectionDetails StackSetDriftDetectionDetails
@@ -295,7 +294,7 @@ namespace Amazon.CloudFormation.Model
         /// during stack create and update operations. If the number of failed stacks within a
         /// Region exceeds the failure tolerance, the status of the operation in the Region is
         /// set to <code>FAILED</code>. This in turn sets the status of the operation as a whole
-        /// to <code>FAILED</code>, and AWS CloudFormation cancels the operation in any remaining
+        /// to <code>FAILED</code>, and CloudFormation cancels the operation in any remaining
         /// Regions.
         /// </para>
         ///  </li> <li> 
@@ -303,7 +302,7 @@ namespace Amazon.CloudFormation.Model
         ///  <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that
         /// require a sequence of operations, the operation is queued to be performed. For more
         /// information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
-        /// set operation status codes</a> in the AWS CloudFormation User Guide.
+        /// set operation status codes</a> in the CloudFormation User Guide.
         /// </para>
         ///  </li> <li> 
         /// <para>

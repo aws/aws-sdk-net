@@ -33,10 +33,10 @@ namespace Amazon.CloudFormation.Model
     /// Creates a list of changes that will be applied to a stack so that you can review the
     /// changes before executing them. You can create a change set for a stack that doesn't
     /// exist or an existing stack. If you create a change set for a stack that doesn't exist,
-    /// the change set shows all of the resources that AWS CloudFormation will create. If
-    /// you create a change set for an existing stack, AWS CloudFormation compares the stack's
-    /// information with the information that you submit in the change set and lists the differences.
-    /// Use change sets to understand which resources AWS CloudFormation will create or change,
+    /// the change set shows all of the resources that CloudFormation will create. If you
+    /// create a change set for an existing stack, CloudFormation compares the stack's information
+    /// with the information that you submit in the change set and lists the differences.
+    /// Use change sets to understand which resources CloudFormation will create or change,
     /// and how it will change resources in an existing stack, before you create or update
     /// a stack.
     /// 
@@ -46,14 +46,14 @@ namespace Amazon.CloudFormation.Model
     /// parameter, specify <code>CREATE</code>. To create a change set for an existing stack,
     /// specify <code>UPDATE</code> for the <code>ChangeSetType</code> parameter. To create
     /// a change set for an import operation, specify <code>IMPORT</code> for the <code>ChangeSetType</code>
-    /// parameter. After the <code>CreateChangeSet</code> call successfully completes, AWS
-    /// CloudFormation starts creating the change set. To check the status of the change set
-    /// or to review it, use the <a>DescribeChangeSet</a> action.
+    /// parameter. After the <code>CreateChangeSet</code> call successfully completes, CloudFormation
+    /// starts creating the change set. To check the status of the change set or to review
+    /// it, use the <a>DescribeChangeSet</a> action.
     /// </para>
     ///  
     /// <para>
     /// When you are satisfied with the changes the change set will make, execute the change
-    /// set by using the <a>ExecuteChangeSet</a> action. AWS CloudFormation doesn't make changes
+    /// set by using the <a>ExecuteChangeSet</a> action. CloudFormation doesn't make changes
     /// until you execute the change set.
     /// </para>
     ///  
@@ -86,7 +86,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Capabilities. 
         /// <para>
         /// In some cases, you must explicitly acknowledge that your stack template contains certain
-        /// capabilities in order for AWS CloudFormation to create the stack.
+        /// capabilities in order for CloudFormation to create the stack.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -94,10 +94,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Some stack templates might include resources that can affect permissions in your AWS
-        /// account; for example, by creating new AWS Identity and Access Management (IAM) users.
-        /// For those stacks, you must explicitly acknowledge this by specifying one of these
-        /// capabilities.
+        /// Some stack templates might include resources that can affect permissions in your account;
+        /// for example, by creating new Identity and Access Management (IAM) users. For those
+        /// stacks, you must explicitly acknowledge this by specifying one of these capabilities.
         /// </para>
         ///  
         /// <para>
@@ -115,7 +114,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you don't specify either of these capabilities, AWS CloudFormation returns an <code>InsufficientCapabilities</code>
+        /// If you don't specify either of these capabilities, CloudFormation returns an <code>InsufficientCapabilities</code>
         /// error.
         /// </para>
         ///  </li> </ul> 
@@ -161,7 +160,7 @@ namespace Amazon.CloudFormation.Model
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-        /// IAM Resources in AWS CloudFormation Templates</a>.
+        /// IAM Resources in CloudFormation Templates</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -178,7 +177,7 @@ namespace Amazon.CloudFormation.Model
         /// without first reviewing the resulting changes in a change set, you must acknowledge
         /// this capability. This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
         /// and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-        /// transforms, which are macros hosted by AWS CloudFormation.
+        /// transforms, which are macros hosted by CloudFormation.
         /// </para>
         ///  <note> 
         /// <para>
@@ -194,7 +193,7 @@ namespace Amazon.CloudFormation.Model
         ///  </note> 
         /// <para>
         /// For more information on macros, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-        /// AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.
+        /// CloudFormation Macros to Perform Custom Processing on Templates</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -244,13 +243,13 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// If you create a change set for a new stack, AWS Cloudformation creates a stack with
-        /// a unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
+        /// If you create a change set for a new stack, CloudFormation creates a stack with a
+        /// unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
         /// <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.
         /// </para>
         ///  
         /// <para>
-        /// By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code>
+        /// By default, CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code>
         /// type to create a change set for a new stack or the <code>CREATE</code> type to create
         /// a change set for an existing stack.
         /// </para>
@@ -271,9 +270,9 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A unique identifier for this <code>CreateChangeSet</code> request. Specify this token
-        /// if you plan to retry requests so that AWS CloudFormation knows that you're not attempting
+        /// if you plan to retry requests so that CloudFormation knows that you're not attempting
         /// to create another change set with the same name. You might retry <code>CreateChangeSet</code>
-        /// requests to ensure that AWS CloudFormation successfully received them.
+        /// requests to ensure that CloudFormation successfully received them.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -332,8 +331,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property NotificationARNs. 
         /// <para>
         /// The Amazon Resource Names (ARNs) of Amazon Simple Notification Service (Amazon SNS)
-        /// topics that AWS CloudFormation associates with the stack. To remove all associated
-        /// notification topics, specify an empty list.
+        /// topics that CloudFormation associates with the stack. To remove all associated notification
+        /// topics, specify an empty list.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]
@@ -397,11 +396,10 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// If the list of resource types doesn't include a resource type that you're updating,
-        /// the stack update fails. By default, AWS CloudFormation grants permissions to all resource
-        /// types. AWS Identity and Access Management (IAM) uses this parameter for condition
-        /// keys in IAM policies for AWS CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-        /// Access with AWS Identity and Access Management</a> in the AWS CloudFormation User
-        /// Guide.
+        /// the stack update fails. By default, CloudFormation grants permissions to all resource
+        /// types. Identity and Access Management (IAM) uses this parameter for condition keys
+        /// in IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+        /// Access with Identity and Access Management</a> in the CloudFormation User Guide.
         /// </para>
         /// </summary>
         public List<string> ResourceTypes
@@ -419,18 +417,18 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
-        /// that AWS CloudFormation assumes when executing the change set. AWS CloudFormation
-        /// uses the role's credentials to make calls on your behalf. AWS CloudFormation uses
-        /// this role for all future operations on the stack. As long as users have permission
-        /// to operate on the stack, AWS CloudFormation uses this role even if the users don't
-        /// have permission to pass it. Ensure that the role grants least privilege.
+        /// The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that
+        /// CloudFormation assumes when executing the change set. CloudFormation uses the role's
+        /// credentials to make calls on your behalf. CloudFormation uses this role for all future
+        /// operations on the stack. As long as users have permission to operate on the stack,
+        /// CloudFormation uses this role even if the users don't have permission to pass it.
+        /// Ensure that the role grants least privilege.
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value, AWS CloudFormation uses the role that was previously
-        /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
-        /// session that is generated from your user credentials.
+        /// If you don't specify a value, CloudFormation uses the role that was previously associated
+        /// with the stack. If no role is available, CloudFormation uses a temporary session that
+        /// is generated from your user credentials.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -449,8 +447,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RollbackConfiguration. 
         /// <para>
-        /// The rollback triggers for AWS CloudFormation to monitor during stack creation and
-        /// updating operations, and for the specified monitoring period afterwards.
+        /// The rollback triggers for CloudFormation to monitor during stack creation and updating
+        /// operations, and for the specified monitoring period afterwards.
         /// </para>
         /// </summary>
         public RollbackConfiguration RollbackConfiguration
@@ -468,10 +466,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The name or the unique ID of the stack for which you are creating a change set. AWS
-        /// CloudFormation generates the change set by comparing this stack's information with
-        /// the information that you submit, such as a modified template or different parameter
-        /// input values.
+        /// The name or the unique ID of the stack for which you are creating a change set. CloudFormation
+        /// generates the change set by comparing this stack's information with the information
+        /// that you submit, such as a modified template or different parameter input values.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -490,7 +487,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Key-value pairs to associate with this stack. AWS CloudFormation also propagates these
+        /// Key-value pairs to associate with this stack. CloudFormation also propagates these
         /// tags to resources in the stack. You can specify a maximum of 50 tags.
         /// </para>
         /// </summary>
@@ -511,7 +508,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property TemplateBody. 
         /// <para>
         /// A structure that contains the body of the revised template, with a minimum length
-        /// of 1 byte and a maximum length of 51,200 bytes. AWS CloudFormation generates the change
+        /// of 1 byte and a maximum length of 51,200 bytes. CloudFormation generates the change
         /// set by comparing this template with the template of the stack that you specified.
         /// </para>
         ///  
@@ -537,7 +534,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// The location of the file that contains the revised template. The URL must point to
         /// a template (max size: 460,800 bytes) that is located in an S3 bucket or a Systems
-        /// Manager document. AWS CloudFormation generates the change set by comparing this template
+        /// Manager document. CloudFormation generates the change set by comparing this template
         /// with the stack that you specified.
         /// </para>
         ///  

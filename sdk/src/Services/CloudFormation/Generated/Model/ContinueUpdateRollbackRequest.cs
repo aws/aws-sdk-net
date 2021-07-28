@@ -39,12 +39,12 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  
     /// <para>
-    /// A stack goes into the <code>UPDATE_ROLLBACK_FAILED</code> state when AWS CloudFormation
+    /// A stack goes into the <code>UPDATE_ROLLBACK_FAILED</code> state when CloudFormation
     /// cannot roll back all changes after a failed stack update. For example, you might have
     /// a stack that is rolling back to an old database instance that was deleted outside
-    /// of AWS CloudFormation. Because AWS CloudFormation doesn't know the database was deleted,
-    /// it assumes that the database instance still exists and attempts to roll back to it,
-    /// causing the update rollback to fail.
+    /// of CloudFormation. Because CloudFormation doesn't know the database was deleted, it
+    /// assumes that the database instance still exists and attempts to roll back to it, causing
+    /// the update rollback to fail.
     /// </para>
     /// </summary>
     public partial class ContinueUpdateRollbackRequest : AmazonCloudFormationRequest
@@ -58,9 +58,9 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify
-        /// this token if you plan to retry requests so that AWS CloudFormation knows that you're
-        /// not attempting to continue the rollback to a stack with the same name. You might retry
-        /// <code>ContinueUpdateRollback</code> requests to ensure that AWS CloudFormation successfully
+        /// this token if you plan to retry requests so that CloudFormationknows that you're not
+        /// attempting to continue the rollback to a stack with the same name. You might retry
+        /// <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation successfully
         /// received them.
         /// </para>
         /// </summary>
@@ -80,19 +80,19 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ResourcesToSkip. 
         /// <para>
-        /// A list of the logical IDs of the resources that AWS CloudFormation skips during the
-        /// continue update rollback operation. You can specify only resources that are in the
-        /// <code>UPDATE_FAILED</code> state because a rollback failed. You can't specify resources
-        /// that are in the <code>UPDATE_FAILED</code> state for other reasons, for example, because
-        /// an update was cancelled. To check why a resource update failed, use the <a>DescribeStackResources</a>
-        /// action, and view the resource status reason. 
+        /// A list of the logical IDs of the resources that CloudFormation skips during the continue
+        /// update rollback operation. You can specify only resources that are in the <code>UPDATE_FAILED</code>
+        /// state because a rollback failed. You can't specify resources that are in the <code>UPDATE_FAILED</code>
+        /// state for other reasons, for example, because an update was cancelled. To check why
+        /// a resource update failed, use the <a>DescribeStackResources</a> action, and view the
+        /// resource status reason. 
         /// </para>
         ///  <important> 
         /// <para>
-        /// Specify this property to skip rolling back resources that AWS CloudFormation can't
-        /// successfully roll back. We recommend that you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
-        /// troubleshoot</a> resources before skipping them. AWS CloudFormation sets the status
-        /// of the specified resources to <code>UPDATE_COMPLETE</code> and continues to roll back
+        /// Specify this property to skip rolling back resources that CloudFormation can't successfully
+        /// roll back. We recommend that you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
+        /// troubleshoot</a> resources before skipping them. CloudFormation sets the status of
+        /// the specified resources to <code>UPDATE_COMPLETE</code> and continues to roll back
         /// the stack. After the rollback is complete, the state of the skipped resources will
         /// be inconsistent with the state of the resources in the stack template. Before performing
         /// another stack update, you must update the stack or resources to be consistent with
@@ -137,18 +137,18 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
-        /// that AWS CloudFormation assumes to roll back the stack. AWS CloudFormation uses the
-        /// role's credentials to make calls on your behalf. AWS CloudFormation always uses this
-        /// role for all future operations on the stack. As long as users have permission to operate
-        /// on the stack, AWS CloudFormation uses this role even if the users don't have permission
-        /// to pass it. Ensure that the role grants least privilege.
+        /// The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that
+        /// CloudFormation assumes to roll back the stack. CloudFormation uses the role's credentials
+        /// to make calls on your behalf. CloudFormation always uses this role for all future
+        /// operations on the stack. As long as users have permission to operate on the stack,
+        /// CloudFormation uses this role even if the users don't have permission to pass it.
+        /// Ensure that the role grants least privilege.
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value, AWS CloudFormation uses the role that was previously
-        /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
-        /// session that is generated from your user credentials.
+        /// If you don't specify a value, CloudFormation uses the role that was previously associated
+        /// with the stack. If no role is available, CloudFormation uses a temporary session that
+        /// is generated from your user credentials.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

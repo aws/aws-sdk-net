@@ -30,7 +30,7 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// The <code>ResourceChange</code> structure describes the resource and the action that
-    /// AWS CloudFormation will perform on it if you execute this change set.
+    /// CloudFormation will perform on it if you execute this change set.
     /// </summary>
     public partial class ResourceChange
     {
@@ -47,10 +47,10 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action that AWS CloudFormation takes on the resource, such as <code>Add</code>
-        /// (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code>
-        /// (deletes a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code>
-        /// (exact action for the resource cannot be determined).
+        /// The action that CloudFormation takes on the resource, such as <code>Add</code> (adds
+        /// a new resource), <code>Modify</code> (changes a resource), <code>Remove</code> (deletes
+        /// a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code> (exact
+        /// action for the resource cannot be determined).
         /// </para>
         /// </summary>
         public ChangeAction Action
@@ -88,7 +88,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Details. 
         /// <para>
         /// For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code> structures
-        /// that describes the changes that AWS CloudFormation will make to the resource. 
+        /// that describes the changes that CloudFormation will make to the resource. 
         /// </para>
         /// </summary>
         public List<ResourceChangeDetail> Details
@@ -162,7 +162,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Replacement. 
         /// <para>
-        /// For the <code>Modify</code> action, indicates whether AWS CloudFormation will replace
+        /// For the <code>Modify</code> action, indicates whether CloudFormation will replace
         /// the resource by creating a new one and deleting the old one. This value depends on
         /// the value of the <code>RequiresRecreation</code> property in the <code>ResourceTargetDefinition</code>
         /// structure. For example, if the <code>RequiresRecreation</code> field is <code>Always</code>
@@ -194,7 +194,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of AWS CloudFormation resource, such as <code>AWS::S3::Bucket</code>.
+        /// The type of CloudFormation resource, such as <code>AWS::S3::Bucket</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

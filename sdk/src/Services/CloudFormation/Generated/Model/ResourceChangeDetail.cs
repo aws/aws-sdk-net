@@ -30,7 +30,7 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// For a resource with <code>Modify</code> as the action, the <code>ResourceChange</code>
-    /// structure describes the changes AWS CloudFormation will make to that resource.
+    /// structure describes the changes CloudFormation will make to that resource.
     /// </summary>
     public partial class ResourceChangeDetail
     {
@@ -98,10 +98,9 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         ///  <code>Automatic</code> entities are <code>AWS::CloudFormation::Stack</code> resource
         /// types, which are also known as nested stacks. If you made no changes to the <code>AWS::CloudFormation::Stack</code>
-        /// resource, AWS CloudFormation sets the <code>ChangeSource</code> to <code>Automatic</code>
+        /// resource, CloudFormation sets the <code>ChangeSource</code> to <code>Automatic</code>
         /// because the nested stack's template might have changed. Changes to a nested stack's
-        /// template aren't visible to AWS CloudFormation until you run an update on the parent
-        /// stack.
+        /// template aren't visible to CloudFormation until you run an update on the parent stack.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -120,15 +119,15 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Evaluation. 
         /// <para>
-        /// Indicates whether AWS CloudFormation can determine the target value, and whether the
-        /// target value will change before you execute a change set.
+        /// Indicates whether CloudFormation can determine the target value, and whether the target
+        /// value will change before you execute a change set.
         /// </para>
         ///  
         /// <para>
-        /// For <code>Static</code> evaluations, AWS CloudFormation can determine that the target
+        /// For <code>Static</code> evaluations, CloudFormation can determine that the target
         /// value will change, and its value. For example, if you directly modify the <code>InstanceType</code>
-        /// property of an EC2 instance, AWS CloudFormation knows that this property value will
-        /// change, and its value, so this is a <code>Static</code> evaluation.
+        /// property of an EC2 instance, CloudFormation knows that this property value will change,
+        /// and its value, so this is a <code>Static</code> evaluation.
         /// </para>
         ///  
         /// <para>
@@ -156,8 +155,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Target. 
         /// <para>
-        /// A <code>ResourceTargetDefinition</code> structure that describes the field that AWS
-        /// CloudFormation will change and whether the resource will be recreated.
+        /// A <code>ResourceTargetDefinition</code> structure that describes the field that CloudFormation
+        /// will change and whether the resource will be recreated.
         /// </para>
         /// </summary>
         public ResourceTargetDefinition Target

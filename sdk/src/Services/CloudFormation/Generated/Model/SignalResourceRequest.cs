@@ -32,8 +32,8 @@ namespace Amazon.CloudFormation.Model
     /// Container for the parameters to the SignalResource operation.
     /// Sends a signal to the specified resource with a success or failure status. You can
     /// use the SignalResource API in conjunction with a creation policy or update policy.
-    /// AWS CloudFormation doesn't proceed with a stack creation or update until resources
-    /// receive the required number of signals or the timeout period is exceeded. The SignalResource
+    /// CloudFormation doesn't proceed with a stack creation or update until resources receive
+    /// the required number of signals or the timeout period is exceeded. The SignalResource
     /// API is useful in cases where you want to send signals from anywhere other than an
     /// Amazon EC2 instance.
     /// </summary>
@@ -87,7 +87,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the signal, which is either success or failure. A failure signal causes
-        /// AWS CloudFormation to immediately fail the stack creation or update.
+        /// CloudFormation to immediately fail the stack creation or update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

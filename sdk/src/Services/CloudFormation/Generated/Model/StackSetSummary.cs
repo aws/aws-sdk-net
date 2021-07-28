@@ -46,7 +46,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property AutoDeployment. 
         /// <para>
         /// [Service-managed permissions] Describes whether StackSets automatically deploys to
-        /// AWS Organizations accounts that are added to a target organizational unit (OU).
+        /// Organizations accounts that are added to a target organizational unit (OU).
         /// </para>
         /// </summary>
         public AutoDeployment AutoDeployment
@@ -96,7 +96,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKED</code>: AWS CloudFormation has not checked the stack set for drift.
+        ///  <code>NOT_CHECKED</code>: CloudFormation has not checked the stack set for drift.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -156,7 +156,7 @@ namespace Amazon.CloudFormation.Model
         ///  </li> <li> 
         /// <para>
         /// With <code>service-managed</code> permissions, StackSets automatically creates the
-        /// IAM roles required to deploy to accounts managed by AWS Organizations. For more information,
+        /// IAM roles required to deploy to accounts managed by Organizations. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
         /// Service-Managed Stack Set Permissions</a>.
         /// </para>

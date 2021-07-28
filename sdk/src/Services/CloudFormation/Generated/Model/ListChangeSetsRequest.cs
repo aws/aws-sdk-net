@@ -30,9 +30,9 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the ListChangeSets operation.
-    /// Returns the ID and status of each active change set for a stack. For example, AWS
-    /// CloudFormation lists change sets that are in the <code>CREATE_IN_PROGRESS</code> or
-    /// <code>CREATE_PENDING</code> state.
+    /// Returns the ID and status of each active change set for a stack. For example, CloudFormation
+    /// lists change sets that are in the <code>CREATE_IN_PROGRESS</code> or <code>CREATE_PENDING</code>
+    /// state.
     /// </summary>
     public partial class ListChangeSetsRequest : AmazonCloudFormationRequest
     {

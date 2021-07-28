@@ -50,8 +50,8 @@ namespace Amazon.CloudFormation.Model
     ///  </li> </ul> 
     /// <para>
     /// For more information about these account limits, and other CloudFormation limits,
-    /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">AWS
-    /// CloudFormation Limits</a> in the <i>AWS CloudFormation User Guide</i>.
+    /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
+    /// Limits</a> in the <i>CloudFormation User Guide</i>.
     /// </para>
     /// </summary>
     public partial class AccountLimit

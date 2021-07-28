@@ -44,7 +44,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Account. 
         /// <para>
-        /// [Self-managed permissions] The name of the AWS account for this operation result.
+        /// [Self-managed permissions] The name of the account for this operation result.
         /// </para>
         /// </summary>
         public string Account
@@ -62,7 +62,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property AccountGateResult. 
         /// <para>
-        /// The results of the account gate function AWS CloudFormation invokes, if present, before
+        /// The results of the account gate function CloudFormation invokes, if present, before
         /// proceeding with stack set operations in an account
         /// </para>
         /// </summary>
@@ -100,7 +100,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The name of the AWS Region for this operation result.
+        /// The name of the Region for this operation result.
         /// </para>
         /// </summary>
         public string Region

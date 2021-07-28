@@ -86,7 +86,7 @@ namespace Amazon.CloudFormation.Model
         /// Whether CloudFormation automatically updates the extension in this account and region
         /// when a new <i>minor</i> version is published by the extension publisher. Major versions
         /// released by the publisher must be manually updated. For more information, see <a href="AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating
-        /// public extensions for use in your account</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         public bool AutoUpdate
@@ -241,8 +241,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///   
         /// <para>
-        /// If the registered extension calls any AWS APIs, you must create an <i> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
-        /// execution role</a> </i> that includes the necessary permissions to call those AWS
+        /// If the registered extension calls any Amazon Web Services APIs, you must create an
+        /// <i> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution
+        /// role</a> </i> that includes the necessary permissions to call those Amazon Web Services
         /// APIs, and provision that execution role in your account. CloudFormation then assumes
         /// that execution role to provide your extension with the appropriate credentials.
         /// </para>
@@ -432,9 +433,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ProvisioningType. 
         /// <para>
-        /// For resource type extensions, the provisioning behavior of the resource type. AWS
-        /// CloudFormation determines the provisioning type during registration, based on the
-        /// types of handlers in the schema handler package submitted.
+        /// For resource type extensions, the provisioning behavior of the resource type. CloudFormation
+        /// determines the provisioning type during registration, based on the types of handlers
+        /// in the schema handler package submitted.
         /// </para>
         ///  
         /// <para>
@@ -741,8 +742,7 @@ namespace Amazon.CloudFormation.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>PRIVATE</code>: The extension is only visible and usable within the account
-        /// in which it is registered. AWS CloudFormation marks any extensions you register as
-        /// <code>PRIVATE</code>.
+        /// in which it is registered. CloudFormation marks any extensions you register as <code>PRIVATE</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

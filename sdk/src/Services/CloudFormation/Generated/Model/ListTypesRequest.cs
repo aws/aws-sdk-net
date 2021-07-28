@@ -145,7 +145,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ProvisioningType. 
         /// <para>
-        /// For resource types, the provisioning behavior of the resource type. AWS CloudFormation
+        /// For resource types, the provisioning behavior of the resource type. CloudFormation
         /// determines the provisioning type during registration, based on the types of handlers
         /// in the schema handler package submitted.
         /// </para>

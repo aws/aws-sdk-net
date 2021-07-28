@@ -38,8 +38,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// An AWS Simple Monthly Calculator URL with a query string that describes the resources
-        /// required to run the template.
+        /// An Amazon Web Services Simple Monthly Calculator URL with a query string that describes
+        /// the resources required to run the template.
         /// </para>
         /// </summary>
         public string Url

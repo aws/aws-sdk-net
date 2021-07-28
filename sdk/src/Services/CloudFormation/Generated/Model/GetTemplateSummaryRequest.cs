@@ -76,9 +76,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Your AWS account must be registered as a delegated administrator in the management
-        /// account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-        /// a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// Your account must be registered as a delegated administrator in the management account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+        /// a delegated administrator</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -148,7 +148,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Structure containing the template body with a minimum length of 1 byte and a maximum
         /// length of 51,200 bytes. For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-        /// Anatomy</a> in the AWS CloudFormation User Guide.
+        /// Anatomy</a> in the CloudFormation User Guide.
         /// </para>
         ///  
         /// <para>
@@ -175,7 +175,7 @@ namespace Amazon.CloudFormation.Model
         /// Location of file containing the template body. The URL must point to a template (max
         /// size: 460,800 bytes) that is located in an Amazon S3 bucket or a Systems Manager document.
         /// For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-        /// Anatomy</a> in the AWS CloudFormation User Guide.
+        /// Anatomy</a> in the CloudFormation User Guide.
         /// </para>
         ///  
         /// <para>

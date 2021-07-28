@@ -71,8 +71,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if the stack differs
-        /// from its expected template configuration.
+        ///  <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs from
+        /// its expected template configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>

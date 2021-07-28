@@ -39,8 +39,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property AccountLimits. 
         /// <para>
-        /// An account limit structure that contain a list of AWS CloudFormation account limits
-        /// and their values.
+        /// An account limit structure that contain a list of CloudFormation account limits and
+        /// their values.
         /// </para>
         /// </summary>
         public List<AccountLimit> AccountLimits

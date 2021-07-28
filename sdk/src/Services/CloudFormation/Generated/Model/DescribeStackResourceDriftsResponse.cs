@@ -63,7 +63,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Drift information for the resources that have been checked for drift in the specified
         /// stack. This includes actual and expected configuration values for resources where
-        /// AWS CloudFormation detects drift.
+        /// CloudFormation detects drift.
         /// </para>
         ///  
         /// <para>

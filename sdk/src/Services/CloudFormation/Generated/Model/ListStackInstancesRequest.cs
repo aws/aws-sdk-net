@@ -32,7 +32,7 @@ namespace Amazon.CloudFormation.Model
     /// Container for the parameters to the ListStackInstances operation.
     /// Returns summary information about stack instances that are associated with the specified
     /// stack set. You can filter for stack instances that are associated with a specific
-    /// AWS account name or Region, or that have a specific status.
+    /// account name or Region, or that have a specific status.
     /// </summary>
     public partial class ListStackInstancesRequest : AmazonCloudFormationRequest
     {
@@ -66,9 +66,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Your AWS account must be registered as a delegated administrator in the management
-        /// account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-        /// a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// Your account must be registered as a delegated administrator in the management account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+        /// a delegated administrator</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -151,7 +151,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackInstanceAccount. 
         /// <para>
-        /// The name of the AWS account that you want to list stack instances for.
+        /// The name of the account that you want to list stack instances for.
         /// </para>
         /// </summary>
         public string StackInstanceAccount

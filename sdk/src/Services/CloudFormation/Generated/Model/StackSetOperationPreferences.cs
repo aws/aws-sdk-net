@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The user-specified preferences for how AWS CloudFormation performs a stack set operation.
+    /// The user-specified preferences for how CloudFormation performs a stack set operation.
     /// 
     /// 
     ///  
@@ -51,8 +51,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property FailureToleranceCount. 
         /// <para>
-        /// The number of accounts, per Region, for which this operation can fail before AWS CloudFormation
-        /// stops the operation in that Region. If the operation is stopped in a Region, AWS CloudFormation
+        /// The number of accounts, per Region, for which this operation can fail before CloudFormation
+        /// stops the operation in that Region. If the operation is stopped in a Region, CloudFormation
         /// doesn't attempt the operation in any subsequent Regions.
         /// </para>
         ///  
@@ -82,12 +82,12 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property FailureTolerancePercentage. 
         /// <para>
         /// The percentage of accounts, per Region, for which this stack operation can fail before
-        /// AWS CloudFormation stops the operation in that Region. If the operation is stopped
-        /// in a Region, AWS CloudFormation doesn't attempt the operation in any subsequent Regions.
+        /// CloudFormation stops the operation in that Region. If the operation is stopped in
+        /// a Region, CloudFormation doesn't attempt the operation in any subsequent Regions.
         /// </para>
         ///  
         /// <para>
-        /// When calculating the number of accounts based on the specified percentage, AWS CloudFormation
+        /// When calculating the number of accounts based on the specified percentage, CloudFormation
         /// rounds <i>down</i> to the next whole number.
         /// </para>
         ///  
@@ -156,7 +156,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// When calculating the number of accounts based on the specified percentage, AWS CloudFormation
+        /// When calculating the number of accounts based on the specified percentage, CloudFormation
         /// rounds down to the next whole number. This is true except in cases where rounding
         /// down would result is zero. In this case, CloudFormation sets the number as one instead.
         /// </para>
@@ -192,8 +192,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RegionConcurrencyType. 
         /// <para>
-        /// The concurrency type of deploying StackSets operations in regions, could be in parallel
-        /// or one region at a time.
+        /// The concurrency type of deploying StackSets operations in Regions, could be in parallel
+        /// or one Region at a time.
         /// </para>
         /// </summary>
         public RegionConcurrencyType RegionConcurrencyType

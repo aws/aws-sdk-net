@@ -75,7 +75,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Changes. 
         /// <para>
-        /// A list of <code>Change</code> structures that describes the resources AWS CloudFormation
+        /// A list of <code>Change</code> structures that describes the resources CloudFormation
         /// changes if you execute the change set.
         /// </para>
         /// </summary>
@@ -171,7 +171,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// If the change set execution status is <code>AVAILABLE</code>, you can execute the
         /// change set. If you can’t execute the change set, the status indicates why. For example,
-        /// a change set might be in an <code>UNAVAILABLE</code> state because AWS CloudFormation
+        /// a change set might be in an <code>UNAVAILABLE</code> state because CloudFormation
         /// is still creating it or in an <code>OBSOLETE</code> state because the stack was already
         /// updated.
         /// </para>
@@ -289,8 +289,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RollbackConfiguration. 
         /// <para>
-        /// The rollback triggers for AWS CloudFormation to monitor during stack creation and
-        /// updating operations, and for the specified monitoring period afterwards.
+        /// The rollback triggers for CloudFormation to monitor during stack creation and updating
+        /// operations, and for the specified monitoring period afterwards.
         /// </para>
         /// </summary>
         public RollbackConfiguration RollbackConfiguration
@@ -384,7 +384,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property StatusReason. 
         /// <para>
         /// A description of the change set's status. For example, if your attempt to create a
-        /// change set failed, AWS CloudFormation shows the error message.
+        /// change set failed, CloudFormation shows the error message.
         /// </para>
         /// </summary>
         public string StatusReason

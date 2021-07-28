@@ -54,15 +54,15 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specified logical resource IDs for AWS CloudFormation to use as a filter for
-        /// the stack drift detection operation, only the resources with those logical IDs are
-        /// checked for drift.
+        /// If you specified logical resource IDs for CloudFormation to use as a filter for the
+        /// stack drift detection operation, only the resources with those logical IDs are checked
+        /// for drift.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>DETECTION_FAILED</code>: The stack drift detection operation has failed for
         /// at least one resource in the stack. Results will be available for resources on which
-        /// AWS CloudFormation successfully completed drift detection.
+        /// CloudFormation successfully completed drift detection.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -129,9 +129,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// AWS CloudFormation generates new results, with a new drift detection ID, each time
-        /// this operation is run. However, the number of reports AWS CloudFormation retains for
-        /// any given stack, and for how long, may vary.
+        /// CloudFormation generates new results, with a new drift detection ID, each time this
+        /// operation is run. However, the number of reports CloudFormation retains for any given
+        /// stack, and for how long, may vary.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=36)]
@@ -160,8 +160,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if the stack differs
-        /// from its expected template configuration.
+        ///  <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs from
+        /// its expected template configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>

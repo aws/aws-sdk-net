@@ -40,8 +40,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property LastCheckTimestamp. 
         /// <para>
-        /// When AWS CloudFormation last checked if the resource had drifted from its expected
-        /// configuration.
+        /// When CloudFormation last checked if the resource had drifted from its expected configuration.
         /// </para>
         /// </summary>
         public DateTime LastCheckTimestamp
@@ -72,7 +71,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if the resource differs
+        ///  <code>NOT_CHECKED</code>: CloudFormation has not checked if the resource differs
         /// from its expected configuration.
         /// </para>
         ///  
@@ -83,7 +82,7 @@ namespace Amazon.CloudFormation.Model
         /// operation on a stack, any resources included in <code>ResourcesToSkip</code> will
         /// also have a status of <code>NOT_CHECKED</code>. For more information on skipping resources
         /// during rollback operations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue
-        /// Rolling Back an Update</a> in the AWS CloudFormation User Guide.
+        /// Rolling Back an Update</a> in the CloudFormation User Guide.
         /// </para>
         ///  </li> <li> 
         /// <para>

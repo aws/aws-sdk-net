@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// An AWS CloudFormation stack, in a specific account and Region, that's part of a stack
+    /// An CloudFormation stack, in a specific account and Region, that's part of a stack
     /// set operation. A stack instance is a reference to an attempted or actual stack in
     /// a given account within a given Region. A stack instance can exist without a stack—for
     /// example, if the stack couldn't be created for some reason. A stack instance is associated
@@ -53,8 +53,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Account. 
         /// <para>
-        /// [Self-managed permissions] The name of the AWS account that the stack instance is
-        /// associated with.
+        /// [Self-managed permissions] The name of the account that the stack instance is associated
+        /// with.
         /// </para>
         /// </summary>
         public string Account
@@ -83,8 +83,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if the stack instance
-        /// differs from its expected stack set configuration.
+        ///  <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack instance differs
+        /// from its expected stack set configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -170,7 +170,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The name of the AWS Region that the stack instance is associated with.
+        /// The name of the Region that the stack instance is associated with.
         /// </para>
         /// </summary>
         public string Region

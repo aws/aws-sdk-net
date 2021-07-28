@@ -32,7 +32,7 @@ namespace Amazon.CloudFormation.Model
     /// Container for the parameters to the DescribeStackResourceDrifts operation.
     /// Returns drift information for the resources that have been checked for drift in the
     /// specified stack. This includes actual and expected configuration values for resources
-    /// where AWS CloudFormation detects configuration drift.
+    /// where CloudFormation detects configuration drift.
     /// 
     ///  
     /// <para>
@@ -139,7 +139,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKED</code>: AWS CloudFormation does not currently return this value.
+        ///  <code>NOT_CHECKED</code>: CloudFormation does not currently return this value.
         /// </para>
         ///  </li> </ul>
         /// </summary>

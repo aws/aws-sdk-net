@@ -132,7 +132,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-        /// with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         public string ParentId
@@ -156,7 +156,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-        /// with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         public string RootId

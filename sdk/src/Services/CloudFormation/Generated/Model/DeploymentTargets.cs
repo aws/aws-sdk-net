@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// [Service-managed permissions] The AWS Organizations accounts to which StackSets deploys.
+    /// [Service-managed permissions] The Organizations accounts to which StackSets deploys.
     /// StackSets does not deploy stack instances to the organization management account,
     /// even if the organization management account is in your organization or in an OU in
     /// your organization.
@@ -49,7 +49,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Accounts. 
         /// <para>
-        /// The names of one or more AWS accounts for which you want to deploy stack set updates.
+        /// The names of one or more accounts for which you want to deploy stack set updates.
         /// </para>
         /// </summary>
         public List<string> Accounts
@@ -67,7 +67,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property AccountsUrl. 
         /// <para>
-        /// Returns the value of the AccountsUrl property.
+        /// Returns the value of the <code>AccountsUrl</code> property.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5120)]

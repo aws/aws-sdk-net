@@ -40,8 +40,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property LastCheckTimestamp. 
         /// <para>
-        /// When AWS CloudFormation last checked if the resource had drifted from its expected
-        /// configuration.
+        /// When CloudFormation last checked if the resource had drifted from its expected configuration.
         /// </para>
         /// </summary>
         public DateTime LastCheckTimestamp
@@ -72,7 +71,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if the resource differs
+        ///  <code>NOT_CHECKED</code>: CloudFormation has not checked if the resource differs
         /// from its expected configuration.
         /// </para>
         ///  

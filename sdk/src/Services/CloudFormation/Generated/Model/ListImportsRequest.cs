@@ -48,8 +48,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ExportName. 
         /// <para>
-        /// The name of the exported output value. AWS CloudFormation returns the stack names
-        /// that are importing this value. 
+        /// The name of the exported output value. CloudFormation returns the stack names that
+        /// are importing this value. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

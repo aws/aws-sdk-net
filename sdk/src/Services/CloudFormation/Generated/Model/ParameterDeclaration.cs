@@ -81,7 +81,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property NoEcho. 
         /// <para>
         /// Flag that indicates whether the parameter value is shown as plain text in logs and
-        /// in the AWS Management Console.
+        /// in the Management Console.
         /// </para>
         /// </summary>
         public bool NoEcho
@@ -99,7 +99,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ParameterConstraints. 
         /// <para>
-        /// The criteria that AWS CloudFormation uses to validate parameter values.
+        /// The criteria that CloudFormation uses to validate parameter values.
         /// </para>
         /// </summary>
         public ParameterConstraints ParameterConstraints

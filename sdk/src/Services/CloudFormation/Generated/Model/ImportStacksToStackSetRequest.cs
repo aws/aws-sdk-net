@@ -29,30 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeStackInstance operation.
-    /// Returns the stack instance that's associated with the specified stack set, account,
-    /// and Region.
+    /// Container for the parameters to the ImportStacksToStackSet operation.
+    /// Import existing stacks into a new stack sets. Use the stack import operation to import
+    /// up to 10 stacks into a new stack set in the same account as the source stack or in
+    /// a different administrator account and Region, by specifying the stack ID of the stack
+    /// you intend to import.
     /// 
-    ///  
+    ///  <note> 
     /// <para>
-    /// For a list of stack instances that are associated with a specific stack set, use <a>ListStackInstances</a>.
+    ///  <code>ImportStacksToStackSet</code> is only supported by self-managed permissions.
     /// </para>
+    ///  </note>
     /// </summary>
-    public partial class DescribeStackInstanceRequest : AmazonCloudFormationRequest
+    public partial class ImportStacksToStackSetRequest : AmazonCloudFormationRequest
     {
         private CallAs _callAs;
-        private string _stackInstanceAccount;
-        private string _stackInstanceRegion;
+        private string _operationId;
+        private StackSetOperationPreferences _operationPreferences;
+        private List<string> _stackIds = new List<string>();
         private string _stackSetName;
 
         /// <summary>
         /// Gets and sets the property CallAs. 
-        /// <para>
-        /// [Service-managed permissions] Specifies whether you are acting as an account administrator
-        /// in the organization's management account or as a delegated administrator in a member
-        /// account.
-        /// </para>
-        ///  
         /// <para>
         /// By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
         /// self-managed permissions.
@@ -63,13 +61,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Your account must be registered as a delegated administrator in the management account.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-        /// a delegated administrator</a> in the <i>CloudFormation User Guide</i>.
+        /// For service managed stack sets, specify <code>DELEGATED_ADMIN</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -86,48 +78,64 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StackInstanceAccount. 
+        /// Gets and sets the property OperationId. 
         /// <para>
-        /// The ID of an account that's associated with this stack instance.
+        /// A unique, user defined, identifier for the stack set operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string StackInstanceAccount
+        [AWSProperty(Min=1, Max=128)]
+        public string OperationId
         {
-            get { return this._stackInstanceAccount; }
-            set { this._stackInstanceAccount = value; }
+            get { return this._operationId; }
+            set { this._operationId = value; }
         }
 
-        // Check to see if StackInstanceAccount property is set
-        internal bool IsSetStackInstanceAccount()
+        // Check to see if OperationId property is set
+        internal bool IsSetOperationId()
         {
-            return this._stackInstanceAccount != null;
+            return this._operationId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property StackInstanceRegion. 
+        /// Gets and sets the property OperationPreferences.
+        /// </summary>
+        public StackSetOperationPreferences OperationPreferences
+        {
+            get { return this._operationPreferences; }
+            set { this._operationPreferences = value; }
+        }
+
+        // Check to see if OperationPreferences property is set
+        internal bool IsSetOperationPreferences()
+        {
+            return this._operationPreferences != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StackIds. 
         /// <para>
-        /// The name of a Region that's associated with this stack instance.
+        /// The IDs of the stacks you are importing into a stack set. You import up to 10 stacks
+        /// per stack set at a time.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string StackInstanceRegion
+        public List<string> StackIds
         {
-            get { return this._stackInstanceRegion; }
-            set { this._stackInstanceRegion = value; }
+            get { return this._stackIds; }
+            set { this._stackIds = value; }
         }
 
-        // Check to see if StackInstanceRegion property is set
-        internal bool IsSetStackInstanceRegion()
+        // Check to see if StackIds property is set
+        internal bool IsSetStackIds()
         {
-            return this._stackInstanceRegion != null;
+            return this._stackIds != null && this._stackIds.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property StackSetName. 
         /// <para>
-        /// The name or the unique stack ID of the stack set that you want to get stack instance
-        /// information for.
+        /// The name of the stack set. The name must be unique in the Region where you create
+        /// your stack set.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

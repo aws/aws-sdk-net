@@ -207,7 +207,7 @@ namespace Amazon.CloudFormation.Model
         ///  For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
         /// stacks</a>, termination protection is set on the root stack and cannot be changed
         /// directly on the nested stack. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
-        /// a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         public bool EnableTerminationProtection
@@ -306,7 +306,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-        /// with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         public string ParentId
@@ -324,9 +324,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
-        /// that is associated with the stack. During a stack operation, AWS CloudFormation uses
-        /// this role's credentials to make calls on your behalf.
+        /// The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that
+        /// is associated with the stack. During a stack operation, CloudFormation uses this role's
+        /// credentials to make calls on your behalf.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -345,8 +345,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RollbackConfiguration. 
         /// <para>
-        /// The rollback triggers for AWS CloudFormation to monitor during stack creation and
-        /// updating operations, and for the specified monitoring period afterwards.
+        /// The rollback triggers for CloudFormation to monitor during stack creation and updating
+        /// operations, and for the specified monitoring period afterwards.
         /// </para>
         /// </summary>
         public RollbackConfiguration RollbackConfiguration
@@ -370,7 +370,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-        /// with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         public string RootId

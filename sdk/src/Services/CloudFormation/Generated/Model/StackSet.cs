@@ -30,7 +30,7 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// A structure that contains information about a stack set. A stack set enables you to
-    /// provision stacks into AWS accounts and across Regions by using a single CloudFormation
+    /// provision stacks into accounts and across Regions by using a single CloudFormation
     /// template. In the stack set, you specify the template to use, as well as any parameters
     /// and capabilities that the template requires.
     /// </summary>
@@ -62,8 +62,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Use customized administrator roles to control which users or groups can manage specific
         /// stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
-        /// Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation User
-        /// Guide</i>.
+        /// Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -83,8 +82,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property AutoDeployment. 
         /// <para>
         /// [Service-managed permissions] Describes whether StackSets automatically deploys to
-        /// AWS Organizations accounts that are added to a target organization or organizational
-        /// unit (OU).
+        /// Organizations accounts that are added to a target organization or organizational unit
+        /// (OU).
         /// </para>
         /// </summary>
         public AutoDeployment AutoDeployment
@@ -103,10 +102,9 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Capabilities. 
         /// <para>
         /// The capabilities that are allowed in the stack set. Some stack set templates might
-        /// include resources that can affect permissions in your AWS account—for example, by
-        /// creating new AWS Identity and Access Management (IAM) users. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-        /// IAM Resources in AWS CloudFormation Templates.</a> 
+        /// include resources that can affect permissions in your account—for example, by creating
+        /// new Identity and Access Management (IAM) users. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+        /// IAM Resources in CloudFormation Templates.</a> 
         /// </para>
         /// </summary>
         public List<string> Capabilities
@@ -216,7 +214,7 @@ namespace Amazon.CloudFormation.Model
         ///  </li> <li> 
         /// <para>
         /// With <code>service-managed</code> permissions, StackSets automatically creates the
-        /// IAM roles required to deploy to accounts managed by AWS Organizations. For more information,
+        /// IAM roles required to deploy to accounts managed by Organizations. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
         /// Service-Managed Stack Set Permissions</a>.
         /// </para>

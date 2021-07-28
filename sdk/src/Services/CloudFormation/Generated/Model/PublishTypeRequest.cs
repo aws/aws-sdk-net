@@ -95,6 +95,11 @@ namespace Amazon.CloudFormation.Model
         /// If you do not specify a version number, CloudFormation increments the version number
         /// by one minor version release.
         /// </para>
+        ///  
+        /// <para>
+        /// The first time you publish a type, CloudFormation sets the version number to <code>1.0.0</code>,
+        /// regardless of the value you specify.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=5)]
         public string PublicVersionNumber

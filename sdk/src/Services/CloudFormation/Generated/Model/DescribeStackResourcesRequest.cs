@@ -30,10 +30,10 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStackResources operation.
-    /// Returns AWS resource descriptions for running and deleted stacks. If <code>StackName</code>
-    /// is specified, all the associated resources that are part of the stack are returned.
-    /// If <code>PhysicalResourceId</code> is specified, the associated resources of the stack
-    /// that the resource belongs to are returned.
+    /// Returns Amazon Web Services resource descriptions for running and deleted stacks.
+    /// If <code>StackName</code> is specified, all the associated resources that are part
+    /// of the stack are returned. If <code>PhysicalResourceId</code> is specified, the associated
+    /// resources of the stack that the resource belongs to are returned.
     /// 
     ///  <note> 
     /// <para>
@@ -50,8 +50,8 @@ namespace Amazon.CloudFormation.Model
     /// You must specify either <code>StackName</code> or <code>PhysicalResourceId</code>,
     /// but not both. In addition, you can specify <code>LogicalResourceId</code> to filter
     /// the returned result. For more information about resources, the <code>LogicalResourceId</code>
-    /// and <code>PhysicalResourceId</code>, go to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
-    /// CloudFormation User Guide</a>.
+    /// and <code>PhysicalResourceId</code>, go to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">CloudFormation
+    /// User Guide</a>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -92,7 +92,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property PhysicalResourceId. 
         /// <para>
         /// The name or unique identifier that corresponds to a physical instance ID of a resource
-        /// supported by AWS CloudFormation.
+        /// supported by CloudFormation.
         /// </para>
         ///  
         /// <para>

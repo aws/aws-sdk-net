@@ -30,9 +30,9 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the EstimateTemplateCost operation.
-    /// Returns the estimated monthly cost of a template. The return value is an AWS Simple
-    /// Monthly Calculator URL with a query string that describes the resources required to
-    /// run the template.
+    /// Returns the estimated monthly cost of a template. The return value is an Amazon Web
+    /// Services Simple Monthly Calculator URL with a query string that describes the resources
+    /// required to run the template.
     /// </summary>
     public partial class EstimateTemplateCostRequest : AmazonCloudFormationRequest
     {
@@ -63,7 +63,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Structure containing the template body with a minimum length of 1 byte and a maximum
         /// length of 51,200 bytes. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-        /// Anatomy</a> in the AWS CloudFormation User Guide.)
+        /// Anatomy</a> in the CloudFormation User Guide.)
         /// </para>
         ///  
         /// <para>
@@ -90,7 +90,7 @@ namespace Amazon.CloudFormation.Model
         /// Location of file containing the template body. The URL must point to a template that
         /// is located in an Amazon S3 bucket or a Systems Manager document. For more information,
         /// go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-        /// Anatomy</a> in the AWS CloudFormation User Guide.
+        /// Anatomy</a> in the CloudFormation User Guide.
         /// </para>
         ///  
         /// <para>

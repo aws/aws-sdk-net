@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html#module-enabling">Activating
-    /// public modules for use in your account</a> in the <i>AWS CloudFormation User Guide</i>.
+    /// public modules for use in your account</a> in the <i>CloudFormation User Guide</i>.
     /// </para>
     /// </summary>
     public partial class RequiredActivatedType

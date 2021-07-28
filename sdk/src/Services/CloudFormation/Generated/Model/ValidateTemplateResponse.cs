@@ -50,7 +50,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-        /// IAM Resources in AWS CloudFormation Templates</a>.
+        /// IAM Resources in CloudFormation Templates</a>.
         /// </para>
         /// </summary>
         public List<string> Capabilities

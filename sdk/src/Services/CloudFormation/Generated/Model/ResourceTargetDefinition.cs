@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The field that AWS CloudFormation will change, such as the name of a resource's property,
+    /// The field that CloudFormation will change, such as the name of a resource's property,
     /// and whether the resource will be recreated.
     /// </summary>
     public partial class ResourceTargetDefinition
@@ -83,7 +83,7 @@ namespace Amazon.CloudFormation.Model
         /// a change to this property causes the resource to be recreated. The value can be <code>Never</code>,
         /// <code>Always</code>, or <code>Conditionally</code>. To determine the conditions for
         /// a <code>Conditionally</code> recreation, see the update behavior for that <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a>
-        /// in the AWS CloudFormation User Guide.
+        /// in the CloudFormation User Guide.
         /// </para>
         /// </summary>
         public RequiresRecreation RequiresRecreation

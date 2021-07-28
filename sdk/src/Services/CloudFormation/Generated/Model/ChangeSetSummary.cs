@@ -127,7 +127,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// If the change set execution status is <code>AVAILABLE</code>, you can execute the
         /// change set. If you can’t execute the change set, the status indicates why. For example,
-        /// a change set might be in an <code>UNAVAILABLE</code> state because AWS CloudFormation
+        /// a change set might be in an <code>UNAVAILABLE</code> state because CloudFormation
         /// is still creating it or in an <code>OBSOLETE</code> state because the stack was already
         /// updated.
         /// </para>
@@ -259,7 +259,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property StatusReason. 
         /// <para>
         /// A description of the change set's status. For example, if your change set is in the
-        /// <code>FAILED</code> state, AWS CloudFormation shows the error message.
+        /// <code>FAILED</code> state, CloudFormation shows the error message.
         /// </para>
         /// </summary>
         public string StatusReason

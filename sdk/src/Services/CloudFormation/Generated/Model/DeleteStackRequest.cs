@@ -45,9 +45,9 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// A unique identifier for this <code>DeleteStack</code> request. Specify this token
-        /// if you plan to retry requests so that AWS CloudFormation knows that you're not attempting
+        /// if you plan to retry requests so that CloudFormation knows that you're not attempting
         /// to delete a stack with the same name. You might retry <code>DeleteStack</code> requests
-        /// to ensure that AWS CloudFormation successfully received them.
+        /// to ensure that CloudFormation successfully received them.
         /// </para>
         ///  
         /// <para>
@@ -83,7 +83,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property RetainResources. 
         /// <para>
         /// For stacks in the <code>DELETE_FAILED</code> state, a list of resource logical IDs
-        /// that are associated with the resources you want to retain. During deletion, AWS CloudFormation
+        /// that are associated with the resources you want to retain. During deletion, CloudFormation
         /// deletes the stack but does not delete the retained resources.
         /// </para>
         ///  
@@ -107,15 +107,15 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
-        /// that AWS CloudFormation assumes to delete the stack. AWS CloudFormation uses the role's
-        /// credentials to make calls on your behalf.
+        /// The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that
+        /// CloudFormation assumes to delete the stack. CloudFormation uses the role's credentials
+        /// to make calls on your behalf.
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value, AWS CloudFormation uses the role that was previously
-        /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
-        /// session that is generated from your user credentials.
+        /// If you don't specify a value, CloudFormation uses the role that was previously associated
+        /// with the stack. If no role is available, CloudFormation uses a temporary session that
+        /// is generated from your user credentials.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

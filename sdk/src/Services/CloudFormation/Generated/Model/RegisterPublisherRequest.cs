@@ -32,7 +32,7 @@ namespace Amazon.CloudFormation.Model
     /// Container for the parameters to the RegisterPublisher operation.
     /// Registers your account as a publisher of public extensions in the CloudFormation registry.
     /// Public extensions are available for use by all CloudFormation users. This publisher
-    /// ID applies to your account in all AWS regions.
+    /// ID applies to your account in all Regions.
     /// 
     ///  
     /// <para>
@@ -50,9 +50,10 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property AcceptTermsAndConditions. 
         /// <para>
-        /// Whether you accept the terms and conditions for publishing extensions in the CloudFormation
-        /// registry. You must accept the terms and conditions in order to register to publish
-        /// public extensions to the CloudFormation registry.
+        /// Whether you accept the <a href="https://cloudformation-registry-documents.s3.amazonaws.com/Terms_and_Conditions_for_AWS_CloudFormation_Registry_Publishers.pdf">Terms
+        /// and Conditions</a> for publishing extensions in the CloudFormation registry. You must
+        /// accept the terms and conditions in order to register to publish public extensions
+        /// to the CloudFormation registry.
         /// </para>
         ///  
         /// <para>

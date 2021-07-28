@@ -53,7 +53,7 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  
     /// <para>
-    /// To perform testing, CloudFormation assumes the execution role specified when the test
+    /// To perform testing, CloudFormation assumes the execution role specified when the type
     /// was registered. For more information, see <a href="AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
     /// </para>
     ///  
@@ -127,8 +127,8 @@ namespace Amazon.CloudFormation.Model
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions,
-        /// Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and Access
-        /// Management User Guide</i>.
+        /// Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services Identity
+        /// and Access Management User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=63)]

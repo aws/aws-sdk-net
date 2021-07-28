@@ -45,7 +45,7 @@ namespace Amazon.CloudFormation.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
-    /// Unmanaged Changes in Stack Sets</a> in the <i>AWS CloudFormation User Guide</i>.
+    /// Unmanaged Changes in Stack Sets</a> in the <i>CloudFormation User Guide</i>.
     /// </para>
     /// </summary>
     public partial class StackSetDriftDetectionDetails
@@ -138,7 +138,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKED</code>: AWS CloudFormation has not checked the stack set for drift.
+        ///  <code>NOT_CHECKED</code>: CloudFormation has not checked the stack set for drift.
         /// </para>
         ///  </li> <li> 
         /// <para>

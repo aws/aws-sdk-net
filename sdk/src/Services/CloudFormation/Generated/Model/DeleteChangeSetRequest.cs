@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  
     /// <para>
-    /// If the call successfully completes, AWS CloudFormation successfully deleted the change
+    /// If the call successfully completes, CloudFormation successfully deleted the change
     /// set.
     /// </para>
     ///  

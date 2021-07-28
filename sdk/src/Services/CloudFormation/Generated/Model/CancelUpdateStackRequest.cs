@@ -48,9 +48,9 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// A unique identifier for this <code>CancelUpdateStack</code> request. Specify this
-        /// token if you plan to retry requests so that AWS CloudFormation knows that you're not
-        /// attempting to cancel an update on a stack with the same name. You might retry <code>CancelUpdateStack</code>
-        /// requests to ensure that AWS CloudFormation successfully received them.
+        /// token if you plan to retry requests so that CloudFormation knows that you're not attempting
+        /// to cancel an update on a stack with the same name. You might retry <code>CancelUpdateStack</code>
+        /// requests to ensure that CloudFormation successfully received them.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

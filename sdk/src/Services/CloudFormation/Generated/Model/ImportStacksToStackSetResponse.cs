@@ -29,35 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// This is the response object from the DetectStackDrift operation.
+    /// This is the response object from the ImportStacksToStackSet operation.
     /// </summary>
-    public partial class DetectStackDriftResponse : AmazonWebServiceResponse
+    public partial class ImportStacksToStackSetResponse : AmazonWebServiceResponse
     {
-        private string _stackDriftDetectionId;
+        private string _operationId;
 
         /// <summary>
-        /// Gets and sets the property StackDriftDetectionId. 
+        /// Gets and sets the property OperationId. 
         /// <para>
-        /// The ID of the drift detection results of this operation. 
-        /// </para>
-        ///  
-        /// <para>
-        /// CloudFormation generates new results, with a new drift detection ID, each time this
-        /// operation is run. However, the number of drift results CloudFormation retains for
-        /// any given stack, and for how long, may vary. 
+        /// The unique identifier for the stack set operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=36)]
-        public string StackDriftDetectionId
+        [AWSProperty(Min=1, Max=128)]
+        public string OperationId
         {
-            get { return this._stackDriftDetectionId; }
-            set { this._stackDriftDetectionId = value; }
+            get { return this._operationId; }
+            set { this._operationId = value; }
         }
 
-        // Check to see if StackDriftDetectionId property is set
-        internal bool IsSetStackDriftDetectionId()
+        // Check to see if OperationId property is set
+        internal bool IsSetOperationId()
         {
-            return this._stackDriftDetectionId != null;
+            return this._operationId != null;
         }
 
     }

@@ -65,7 +65,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// The time at which the operation was initiated. Note that the creation times for the
         /// stack set operation might differ from the creation time of the individual stacks themselves.
-        /// This is because AWS CloudFormation needs to perform preparatory work for the operation,
+        /// This is because CloudFormation needs to perform preparatory work for the operation,
         /// such as dispatching the work to the requested Regions, before actually creating the
         /// first stacks.
         /// </para>
@@ -133,7 +133,7 @@ namespace Amazon.CloudFormation.Model
         /// during stack create and update operations. If the number of failed stacks within a
         /// Region exceeds the failure tolerance, the status of the operation in the Region is
         /// set to <code>FAILED</code>. This in turn sets the status of the operation as a whole
-        /// to <code>FAILED</code>, and AWS CloudFormation cancels the operation in any remaining
+        /// to <code>FAILED</code>, and CloudFormation cancels the operation in any remaining
         /// Regions.
         /// </para>
         ///  </li> <li> 
@@ -141,7 +141,7 @@ namespace Amazon.CloudFormation.Model
         ///  <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that
         /// require a sequence of operations, the operation is queued to be performed. For more
         /// information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
-        /// set operation status codes</a> in the AWS CloudFormation User Guide.
+        /// set operation status codes</a> in the CloudFormation User Guide.
         /// </para>
         ///  </li> <li> 
         /// <para>

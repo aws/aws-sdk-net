@@ -46,7 +46,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Accounts. 
         /// <para>
-        /// [Self-managed permissions] The names of the AWS accounts that you want to delete stack
+        /// [Self-managed permissions] The names of the accounts that you want to delete stack
         /// instances for.
         /// </para>
         ///  
@@ -88,9 +88,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Your AWS account must be registered as a delegated administrator in the management
-        /// account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-        /// a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// Your account must be registered as a delegated administrator in the management account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+        /// a delegated administrator</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -109,8 +109,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property DeploymentTargets. 
         /// <para>
-        /// [Service-managed permissions] The AWS Organizations accounts from which to delete
-        /// stack instances.
+        /// [Service-managed permissions] The Organizations accounts from which to delete stack
+        /// instances.
         /// </para>
         ///  
         /// <para>
@@ -140,10 +140,10 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// The operation ID also functions as an idempotency token, to ensure that AWS CloudFormation
+        /// The operation ID also functions as an idempotency token, to ensure that CloudFormation
         /// performs the stack set operation only once, even if you retry the request multiple
-        /// times. You can retry stack set operation requests to ensure that AWS CloudFormation
-        /// successfully received them.
+        /// times. You can retry stack set operation requests to ensure that CloudFormation successfully
+        /// received them.
         /// </para>
         ///  
         /// <para>
@@ -167,7 +167,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OperationPreferences. 
         /// <para>
-        /// Preferences for how AWS CloudFormation performs this stack set operation.
+        /// Preferences for how CloudFormation performs this stack set operation.
         /// </para>
         /// </summary>
         public StackSetOperationPreferences OperationPreferences

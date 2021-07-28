@@ -30,8 +30,8 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// [Service-managed permissions] Describes whether StackSets automatically deploys to
-    /// AWS Organizations accounts that are added to a target organization or organizational
-    /// unit (OU).
+    /// Organizations accounts that are added to a target organization or organizational unit
+    /// (OU).
     /// </summary>
     public partial class AutoDeployment
     {
@@ -42,7 +42,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Enabled. 
         /// <para>
         /// If set to <code>true</code>, StackSets automatically deploys additional stack instances
-        /// to AWS Organizations accounts that are added to a target organization or organizational
+        /// to Organizations accounts that are added to a target organization or organizational
         /// unit (OU) in the specified Regions. If an account is removed from a target organization
         /// or OU, StackSets deletes stack instances from the account in the specified Regions.
         /// </para>

@@ -41,8 +41,8 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// The stage of the template that you can retrieve. For stacks, the <code>Original</code>
         /// and <code>Processed</code> templates are always available. For change sets, the <code>Original</code>
-        /// template is always available. After AWS CloudFormation finishes creating the change
-        /// set, the <code>Processed</code> template becomes available.
+        /// template is always available. After CloudFormation finishes creating the change set,
+        /// the <code>Processed</code> template becomes available.
         /// </para>
         /// </summary>
         public List<string> StagesAvailable
@@ -61,11 +61,11 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property TemplateBody. 
         /// <para>
         /// Structure containing the template body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-        /// Anatomy</a> in the AWS CloudFormation User Guide.)
+        /// Anatomy</a> in the CloudFormation User Guide.)
         /// </para>
         ///  
         /// <para>
-        /// AWS CloudFormation returns the same template that was used when the stack was created.
+        /// CloudFormation returns the same template that was used when the stack was created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

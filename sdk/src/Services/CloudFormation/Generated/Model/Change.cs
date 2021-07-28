@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The <code>Change</code> structure describes the changes AWS CloudFormation will perform
+    /// The <code>Change</code> structure describes the changes CloudFormation will perform
     /// if you execute the change set.
     /// </summary>
     public partial class Change
@@ -41,7 +41,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ResourceChange. 
         /// <para>
         /// A <code>ResourceChange</code> structure that describes the resource and action that
-        /// AWS CloudFormation will perform.
+        /// CloudFormation will perform.
         /// </para>
         /// </summary>
         public ResourceChange ResourceChange
@@ -59,8 +59,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of entity that AWS CloudFormation changes. Currently, the only entity type
-        /// is <code>Resource</code>.
+        /// The type of entity that CloudFormation changes. Currently, the only entity type is
+        /// <code>Resource</code>.
         /// </para>
         /// </summary>
         public ChangeType Type
