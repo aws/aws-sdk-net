@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.82.0",
+    "ProductVersion" : "3.7.83.0",
     "CoreVersion"    : "3.7.1.1",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -30,7 +30,7 @@
             "InPreview"               : false
         },
         "CloudFormation" : {
-            "Version" : "3.7.3.12",
+            "Version" : "3.7.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.1.1"
@@ -1842,7 +1842,7 @@
             "InPreview"               : false
         },
         "SSOAdmin"                        : {
-            "Version" : "3.7.0.45",
+            "Version" : "3.7.0.46",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.1.1"

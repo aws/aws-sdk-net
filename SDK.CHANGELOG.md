@@ -1,3 +1,9 @@
+### 3.7.83.0 (2021-07-28 18:12 UTC)
+* CloudFormation (3.7.4.0)
+	* SDK update to support Importing existing Stacks to new/existing Self Managed StackSet - Stack Import feature.
+* SSOAdmin (3.7.0.46)
+	* Documentation updates for arn:aws:trebuchet:::service:v1:03a2216d-1cda-4696-9ece-1387cb6f6952
+
 ### 3.7.82.0 (2021-07-27 18:20 UTC)
 * Batch (3.7.2.0)
 	* Add support for ListJob filters
