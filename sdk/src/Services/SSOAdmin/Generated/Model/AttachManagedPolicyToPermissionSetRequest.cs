@@ -35,8 +35,9 @@ namespace Amazon.SSOAdmin.Model
     ///  <note> 
     /// <para>
     /// If the permission set is already referenced by one or more account assignments, you
-    /// will need to call <code> <a>ProvisionPermissionSet</a> </code> after this action to
-    /// apply the corresponding IAM policy updates to all assigned accounts.
+    /// will need to call <code> <a>ProvisionPermissionSet</a> </code> after this operation.
+    /// Calling <code>ProvisionPermissionSet</code> applies the corresponding IAM policy updates
+    /// to all assigned accounts.
     /// </para>
     ///  </note>
     /// </summary>
@@ -51,7 +52,8 @@ namespace Amazon.SSOAdmin.Model
         /// <para>
         /// The ARN of the SSO instance under which the operation will be executed. For more information
         /// about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
+        /// General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=1224)]

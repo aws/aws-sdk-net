@@ -30,12 +30,12 @@ namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteInstanceAccessControlAttributeConfiguration operation.
-    /// Disables the attributes-based access control (ABAC) feature for the specified AWS
-    /// SSO instance and deletes all of the attribute mappings that have been configured.
-    /// Once deleted, any attributes that are received from an identity source and any custom
-    /// attributes you have previously configured will not be passed. For more information
-    /// about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based
-    /// Access Control</a> in the <i>AWS SSO User Guide</i>.
+    /// Disables the attributes-based access control (ABAC) feature for the specified Amazon
+    /// Web Services SSO instance and deletes all of the attribute mappings that have been
+    /// configured. Once deleted, any attributes that are received from an identity source
+    /// and any custom attributes you have previously configured will not be passed. For more
+    /// information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based
+    /// Access Control</a> in the <i>Amazon Web Services SSO User Guide</i>.
     /// </summary>
     public partial class DeleteInstanceAccessControlAttributeConfigurationRequest : AmazonSSOAdminRequest
     {

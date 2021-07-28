@@ -38,7 +38,8 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The identity source to use when mapping a specified attribute to AWS SSO.
+        /// The identity source to use when mapping a specified attribute to Amazon Web Services
+        /// SSO.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]

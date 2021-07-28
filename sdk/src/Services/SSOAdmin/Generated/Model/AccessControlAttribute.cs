@@ -29,11 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
-    /// These are AWS SSO identity store attributes that you can configure for use in attributes-based
-    /// access control (ABAC). You can create permission policies that determine who can access
-    /// your AWS resources based upon the configured attribute value(s). When you enable ABAC
-    /// and specify AccessControlAttributes, AWS SSO passes the attribute(s) value of the
-    /// authenticated user into IAM for use in policy evaluation.
+    /// These are Amazon Web Services SSO identity store attributes that you can configure
+    /// for use in attributes-based access control (ABAC). You can create permissions policies
+    /// that determine who can access your Amazon Web Services resources based upon the configured
+    /// attribute values. When you enable ABAC and specify <code>AccessControlAttributes</code>,
+    /// Amazon Web Services SSO passes the attribute values of the authenticated user into
+    /// IAM for use in policy evaluation.
     /// </summary>
     public partial class AccessControlAttribute
     {
@@ -45,7 +46,7 @@ namespace Amazon.SSOAdmin.Model
         /// <para>
         /// The name of the attribute associated with your identities in your identity source.
         /// This is used to map a specified attribute in your identity source with an attribute
-        /// in AWS SSO.
+        /// in Amazon Web Services SSO.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
