@@ -12905,6 +12905,165 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  StartMeetingTranscription
+
+        /// <summary>
+        /// Start transcription for the specified <code>meetingId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMeetingTranscription service method.</param>
+        /// 
+        /// <returns>The response from the StartMeetingTranscription service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnprocessableEntityException">
+        /// The request was well-formed but was unable to be followed due to semantic errors.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StartMeetingTranscription">REST API Reference for StartMeetingTranscription Operation</seealso>
+        public virtual StartMeetingTranscriptionResponse StartMeetingTranscription(StartMeetingTranscriptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMeetingTranscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMeetingTranscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<StartMeetingTranscriptionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMeetingTranscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMeetingTranscription operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMeetingTranscription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StartMeetingTranscription">REST API Reference for StartMeetingTranscription Operation</seealso>
+        public virtual IAsyncResult BeginStartMeetingTranscription(StartMeetingTranscriptionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMeetingTranscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMeetingTranscriptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartMeetingTranscription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartMeetingTranscription.</param>
+        /// 
+        /// <returns>Returns a  StartMeetingTranscriptionResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StartMeetingTranscription">REST API Reference for StartMeetingTranscription Operation</seealso>
+        public virtual StartMeetingTranscriptionResponse EndStartMeetingTranscription(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartMeetingTranscriptionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopMeetingTranscription
+
+        /// <summary>
+        /// Stops transcription for the specified <code>meetingId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopMeetingTranscription service method.</param>
+        /// 
+        /// <returns>The response from the StopMeetingTranscription service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnprocessableEntityException">
+        /// The request was well-formed but was unable to be followed due to semantic errors.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StopMeetingTranscription">REST API Reference for StopMeetingTranscription Operation</seealso>
+        public virtual StopMeetingTranscriptionResponse StopMeetingTranscription(StopMeetingTranscriptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopMeetingTranscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopMeetingTranscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<StopMeetingTranscriptionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopMeetingTranscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopMeetingTranscription operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopMeetingTranscription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StopMeetingTranscription">REST API Reference for StopMeetingTranscription Operation</seealso>
+        public virtual IAsyncResult BeginStopMeetingTranscription(StopMeetingTranscriptionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopMeetingTranscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopMeetingTranscriptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopMeetingTranscription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopMeetingTranscription.</param>
+        /// 
+        /// <returns>Returns a  StopMeetingTranscriptionResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StopMeetingTranscription">REST API Reference for StopMeetingTranscription Operation</seealso>
+        public virtual StopMeetingTranscriptionResponse EndStopMeetingTranscription(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopMeetingTranscriptionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  TagAttendee
 
         /// <summary>

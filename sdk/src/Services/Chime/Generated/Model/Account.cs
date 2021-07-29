@@ -65,7 +65,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AccountStatus. 
         /// <para>
-        /// The status of the account, <code>Suspended</code> or <code>Active</code>.
+        /// The status of the account.
         /// </para>
         /// </summary>
         public AccountStatus AccountStatus

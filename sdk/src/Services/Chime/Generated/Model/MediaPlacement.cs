@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// A set of endpoints used by clients to connect to the media service group for a Amazon
+    /// A set of endpoints used by clients to connect to the media service group for an Amazon
     /// Chime SDK meeting.
     /// </summary>
     public partial class MediaPlacement
@@ -84,7 +84,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property EventIngestionUrl. 
         /// <para>
-        /// The event ingestion URL.
+        /// The URL of the S3 bucket used to store the captured media.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]
