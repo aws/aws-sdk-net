@@ -566,7 +566,7 @@ namespace Amazon.IoT
         #region  AttachPolicy
 
         /// <summary>
-        /// Attaches a policy to the specified target.
+        /// Attaches the specified policy to the specified principal (certificate or other credential).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachPolicy service method.</param>
         /// 

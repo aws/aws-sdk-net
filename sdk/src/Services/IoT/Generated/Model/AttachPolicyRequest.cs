@@ -30,7 +30,7 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachPolicy operation.
-    /// Attaches a policy to the specified target.
+    /// Attaches the specified policy to the specified principal (certificate or other credential).
     /// </summary>
     public partial class AttachPolicyRequest : AmazonIoTRequest
     {

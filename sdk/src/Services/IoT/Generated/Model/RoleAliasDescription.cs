@@ -65,7 +65,7 @@ namespace Amazon.IoT.Model
         /// The number of seconds for which the credential is valid.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=900, Max=3600)]
+        [AWSProperty(Min=900, Max=43200)]
         public int CredentialDurationSeconds
         {
             get { return this._credentialDurationSeconds.GetValueOrDefault(); }

@@ -518,7 +518,7 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.CreateRoleAliasRequest.CredentialDurationSeconds</property>
     <min>900</min>
-    <max>3600</max>
+    <max>43200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CreateRoleAliasRequest.RoleAlias</property>
@@ -2370,7 +2370,7 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.UpdateRoleAliasRequest.CredentialDurationSeconds</property>
     <min>900</min>
-    <max>3600</max>
+    <max>43200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.UpdateRoleAliasRequest.RoleAlias</property>
@@ -3149,7 +3149,7 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.RoleAliasDescription.CredentialDurationSeconds</property>
     <min>900</min>
-    <max>3600</max>
+    <max>43200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.RoleAliasDescription.Owner</property>
