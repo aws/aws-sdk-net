@@ -1,3 +1,20 @@
+### 3.7.84.0 (2021-07-29 18:14 UTC)
+* Chime (3.7.9.0)
+	* Adds support for live transcription of meetings with Amazon Transcribe and Amazon Transcribe Medical.  The new APIs, StartMeetingTranscription and StopMeetingTranscription, control the generation of user-attributed transcriptions sent to meeting clients via Amazon Chime SDK data messages.
+* EC2 (3.7.20.0)
+	* This release adds support for G4ad xlarge and 2xlarge instances powered by AMD Radeon Pro V520 GPUs and AMD 2nd Generation EPYC processors
+* IoT (3.7.3.0)
+	* Increase maximum credential duration of role alias to 12 hours.
+* IoTSiteWise (3.7.5.0)
+	* Added support for AWS IoT SiteWise Edge. You can now create an AWS IoT SiteWise gateway that runs on AWS IoT Greengrass V2. With the gateway,  you can collect local server and equipment data, process the data, and export the selected data from the edge to the AWS Cloud.
+* SavingsPlans (3.7.2.0)
+	* Documentation update for valid Savings Plans offering ID pattern
+* Core 3.7.1.2
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.83.0 (2021-07-28 18:12 UTC)
 * CloudFormation (3.7.4.0)
 	* SDK update to support Importing existing Stacks to new/existing Self Managed StackSet - Stack Import feature.
