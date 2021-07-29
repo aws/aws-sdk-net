@@ -56,8 +56,8 @@ namespace Amazon.EC2.Model
         /// | <code>transit-gateway</code> | <code>transit-gateway-attachment</code> | <code>transit-gateway-multicast-domain</code>
         /// | <code>transit-gateway-route-table</code> | <code>volume</code> |<code>vpc</code>
         /// | <code> vpc-peering-connection</code> | <code>vpc-endpoint</code> (for interface
-        /// and gateway endpoints) | <code>vpc-endpoint-service</code> (for PrivateLink) | <code>vpc-flow-log</code>
-        /// | <code>vpn-connection</code> | <code>vpn-gateway</code>.
+        /// and gateway endpoints) | <code>vpc-endpoint-service</code> (for Amazon Web Services
+        /// PrivateLink) | <code>vpc-flow-log</code> | <code>vpn-connection</code> | <code>vpn-gateway</code>.
         /// </para>
         ///  
         /// <para>

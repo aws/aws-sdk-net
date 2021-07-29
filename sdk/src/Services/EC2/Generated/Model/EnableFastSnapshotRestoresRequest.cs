@@ -73,7 +73,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SourceSnapshotIds. 
         /// <para>
         /// The IDs of one or more snapshots. For example, <code>snap-1234567890abcdef0</code>.
-        /// You can specify a snapshot that was shared with you from another account.
+        /// You can specify a snapshot that was shared with you from another Amazon Web Services
+        /// account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

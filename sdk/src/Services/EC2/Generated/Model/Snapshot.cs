@@ -151,7 +151,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property OwnerAlias. 
         /// <para>
         /// The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>).
-        /// This is not the user-configured account alias set using the IAM console.
+        /// This is not the user-configured Amazon Web Services account alias set using the IAM
+        /// console.
         /// </para>
         /// </summary>
         public string OwnerAlias
@@ -169,7 +170,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The ID of the account that owns the EBS snapshot.
+        /// The ID of the Amazon Web Services account that owns the EBS snapshot.
         /// </para>
         /// </summary>
         public string OwnerId

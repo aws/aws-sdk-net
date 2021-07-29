@@ -381,7 +381,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>owner-id</code> - The account ID of the instance owner.
+        ///  <code>owner-id</code> - The Amazon Web Services account ID of the instance owner.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -427,7 +427,8 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>requester-id</code> - The ID of the entity that launched the instance on your
-        /// behalf (for example, Management Console, Auto Scaling, and so on).
+        /// behalf (for example, Amazon Web Services Management Console, Auto Scaling, and so
+        /// on).
         /// </para>
         ///  </li> <li> 
         /// <para>

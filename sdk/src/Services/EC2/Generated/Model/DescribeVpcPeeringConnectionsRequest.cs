@@ -50,8 +50,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>accepter-vpc-info.owner-id</code> - The ID of the account that owns the accepter
-        /// VPC.
+        ///  <code>accepter-vpc-info.owner-id</code> - The ID of the Amazon Web Services account
+        /// that owns the accepter VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -68,8 +68,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>requester-vpc-info.owner-id</code> - The ID of the account that owns the requester
-        /// VPC.
+        ///  <code>requester-vpc-info.owner-id</code> - The ID of the Amazon Web Services account
+        /// that owns the requester VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>

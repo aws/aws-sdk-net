@@ -155,7 +155,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>owner-id</code> - The account ID of the network interface owner.
+        ///  <code>owner-id</code> - The Amazon Web Services account ID of the network interface
+        /// owner.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -168,14 +169,14 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>requester-id</code> - The alias or account ID of the principal or service that
-        /// created the network interface.
+        ///  <code>requester-id</code> - The alias or Amazon Web Services account ID of the principal
+        /// or service that created the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>requester-managed</code> - Indicates whether the network interface is being
-        /// managed by an Amazon Web Service (for example, Management Console, Auto Scaling, and
-        /// so on).
+        /// managed by an Amazon Web Service (for example, Amazon Web Services Management Console,
+        /// Auto Scaling, and so on).
         /// </para>
         ///  </li> <li> 
         /// <para>

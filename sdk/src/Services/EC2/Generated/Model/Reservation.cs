@@ -98,7 +98,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The ID of the account that owns the reservation.
+        /// The ID of the Amazon Web Services account that owns the reservation.
         /// </para>
         /// </summary>
         public string OwnerId
@@ -116,8 +116,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RequesterId. 
         /// <para>
-        /// The ID of the requester that launched the instances on your behalf (for example, Management
-        /// Console or Auto Scaling).
+        /// The ID of the requester that launched the instances on your behalf (for example, Amazon
+        /// Web Services Management Console or Auto Scaling).
         /// </para>
         /// </summary>
         public string RequesterId

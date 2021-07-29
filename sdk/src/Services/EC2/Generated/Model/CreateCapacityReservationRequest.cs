@@ -378,12 +378,12 @@ namespace Amazon.EC2.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>default</code> - The Capacity Reservation is created on hardware that is shared
-        /// with other accounts.
+        /// with other Amazon Web Services accounts.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware
-        /// that is dedicated to a single account.
+        /// that is dedicated to a single Amazon Web Services account.
         /// </para>
         ///  </li> </ul>
         /// </summary>

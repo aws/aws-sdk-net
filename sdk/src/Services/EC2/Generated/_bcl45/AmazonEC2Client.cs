@@ -688,10 +688,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Allocates an Elastic IP address to your account. After you allocate the Elastic IP
-        /// address you can associate it with an instance or network interface. After you release
-        /// an Elastic IP address, it is released to the IP address pool and can be allocated
-        /// to a different account.
+        /// Allocates an Elastic IP address to your Amazon Web Services account. After you allocate
+        /// the Elastic IP address you can associate it with an instance or network interface.
+        /// After you release an Elastic IP address, it is released to the IP address pool and
+        /// can be allocated to a different Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -705,8 +705,9 @@ namespace Amazon.EC2
         /// <para>
         /// [EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You
         /// cannot recover an Elastic IP address that you released after it is allocated to another
-        /// account. You cannot recover an Elastic IP address for EC2-Classic. To attempt to recover
-        /// an Elastic IP address that you released, specify it in this operation.
+        /// Amazon Web Services account. You cannot recover an Elastic IP address for EC2-Classic.
+        /// To attempt to recover an Elastic IP address that you released, specify it in this
+        /// operation.
         /// </para>
         ///  
         /// <para>
@@ -736,10 +737,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Allocates an Elastic IP address to your account. After you allocate the Elastic IP
-        /// address you can associate it with an instance or network interface. After you release
-        /// an Elastic IP address, it is released to the IP address pool and can be allocated
-        /// to a different account.
+        /// Allocates an Elastic IP address to your Amazon Web Services account. After you allocate
+        /// the Elastic IP address you can associate it with an instance or network interface.
+        /// After you release an Elastic IP address, it is released to the IP address pool and
+        /// can be allocated to a different Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -753,8 +754,9 @@ namespace Amazon.EC2
         /// <para>
         /// [EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You
         /// cannot recover an Elastic IP address that you released after it is allocated to another
-        /// account. You cannot recover an Elastic IP address for EC2-Classic. To attempt to recover
-        /// an Elastic IP address that you released, specify it in this operation.
+        /// Amazon Web Services account. You cannot recover an Elastic IP address for EC2-Classic.
+        /// To attempt to recover an Elastic IP address that you released, specify it in this
+        /// operation.
         /// </para>
         ///  
         /// <para>
@@ -789,10 +791,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Allocates an Elastic IP address to your account. After you allocate the Elastic IP
-        /// address you can associate it with an instance or network interface. After you release
-        /// an Elastic IP address, it is released to the IP address pool and can be allocated
-        /// to a different account.
+        /// Allocates an Elastic IP address to your Amazon Web Services account. After you allocate
+        /// the Elastic IP address you can associate it with an instance or network interface.
+        /// After you release an Elastic IP address, it is released to the IP address pool and
+        /// can be allocated to a different Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -806,8 +808,9 @@ namespace Amazon.EC2
         /// <para>
         /// [EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You
         /// cannot recover an Elastic IP address that you released after it is allocated to another
-        /// account. You cannot recover an Elastic IP address for EC2-Classic. To attempt to recover
-        /// an Elastic IP address that you released, specify it in this operation.
+        /// Amazon Web Services account. You cannot recover an Elastic IP address for EC2-Classic.
+        /// To attempt to recover an Elastic IP address that you released, specify it in this
+        /// operation.
         /// </para>
         ///  
         /// <para>
@@ -839,10 +842,10 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Allocates an Elastic IP address to your account. After you allocate the Elastic IP
-        /// address you can associate it with an instance or network interface. After you release
-        /// an Elastic IP address, it is released to the IP address pool and can be allocated
-        /// to a different account.
+        /// Allocates an Elastic IP address to your Amazon Web Services account. After you allocate
+        /// the Elastic IP address you can associate it with an instance or network interface.
+        /// After you release an Elastic IP address, it is released to the IP address pool and
+        /// can be allocated to a different Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -856,8 +859,9 @@ namespace Amazon.EC2
         /// <para>
         /// [EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You
         /// cannot recover an Elastic IP address that you released after it is allocated to another
-        /// account. You cannot recover an Elastic IP address for EC2-Classic. To attempt to recover
-        /// an Elastic IP address that you released, specify it in this operation.
+        /// Amazon Web Services account. You cannot recover an Elastic IP address for EC2-Classic.
+        /// To attempt to recover an Elastic IP address that you released, specify it in this
+        /// operation.
         /// </para>
         ///  
         /// <para>
@@ -2135,7 +2139,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// If a volume has an Marketplace product code:
+        /// If a volume has an Amazon Web Services Marketplace product code:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2143,7 +2147,7 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Marketplace product codes are copied from the volume to the instance.
+        /// Amazon Web Services Marketplace product codes are copied from the volume to the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2194,7 +2198,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// If a volume has an Marketplace product code:
+        /// If a volume has an Amazon Web Services Marketplace product code:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2202,7 +2206,7 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Marketplace product codes are copied from the volume to the instance.
+        /// Amazon Web Services Marketplace product codes are copied from the volume to the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5192,7 +5196,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// You can grant permission to a single account only, and only one account at a time.
+        /// You can grant permission to a single Amazon Web Services account only, and only one
+        /// account at a time.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNetworkInterfacePermission service method.</param>
@@ -5215,7 +5220,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// You can grant permission to a single account only, and only one account at a time.
+        /// You can grant permission to a single Amazon Web Services account only, and only one
+        /// account at a time.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNetworkInterfacePermission service method.</param>
@@ -5822,8 +5828,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// When a snapshot is created, any Marketplace product codes that are associated with
-        /// the source volume are propagated to the snapshot.
+        /// When a snapshot is created, any Amazon Web Services Marketplace product codes that
+        /// are associated with the source volume are propagated to the snapshot.
         /// </para>
         ///  
         /// <para>
@@ -5888,8 +5894,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// When a snapshot is created, any Marketplace product codes that are associated with
-        /// the source volume are propagated to the snapshot.
+        /// When a snapshot is created, any Amazon Web Services Marketplace product codes that
+        /// are associated with the source volume are propagated to the snapshot.
         /// </para>
         ///  
         /// <para>
@@ -6014,7 +6020,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs.
-        /// You can create one data feed per account. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
+        /// You can create one data feed per Amazon Web Services account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
         /// Instance data feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSpotDatafeedSubscription service method.</param>
@@ -6033,7 +6040,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs.
-        /// You can create one data feed per account. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
+        /// You can create one data feed per Amazon Web Services account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
         /// Instance data feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSpotDatafeedSubscription service method.</param>
@@ -7146,8 +7154,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// You can create a new empty volume or restore a volume from an EBS snapshot. Any Marketplace
-        /// product codes from the snapshot are propagated to the volume.
+        /// You can create a new empty volume or restore a volume from an EBS snapshot. Any Amazon
+        /// Web Services Marketplace product codes from the snapshot are propagated to the volume.
         /// </para>
         ///  
         /// <para>
@@ -7187,8 +7195,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// You can create a new empty volume or restore a volume from an EBS snapshot. Any Marketplace
-        /// product codes from the snapshot are propagated to the volume.
+        /// You can create a new empty volume or restore a volume from an EBS snapshot. Any Amazon
+        /// Web Services Marketplace product codes from the snapshot are propagated to the volume.
         /// </para>
         ///  
         /// <para>
@@ -7576,8 +7584,8 @@ namespace Amazon.EC2
         /// <summary>
         /// Requests a VPC peering connection between two VPCs: a requester VPC that you own and
         /// an accepter VPC with which to create the connection. The accepter VPC can belong to
-        /// another account and can be in a different Region to the requester VPC. The requester
-        /// VPC and accepter VPC cannot have overlapping CIDR blocks.
+        /// another Amazon Web Services account and can be in a different Region to the requester
+        /// VPC. The requester VPC and accepter VPC cannot have overlapping CIDR blocks.
         /// 
         ///  <note> 
         /// <para>
@@ -7614,8 +7622,8 @@ namespace Amazon.EC2
         /// <summary>
         /// Requests a VPC peering connection between two VPCs: a requester VPC that you own and
         /// an accepter VPC with which to create the connection. The accepter VPC can belong to
-        /// another account and can be in a different Region to the requester VPC. The requester
-        /// VPC and accepter VPC cannot have overlapping CIDR blocks.
+        /// another Amazon Web Services account and can be in a different Region to the requester
+        /// VPC. The requester VPC and accepter VPC cannot have overlapping CIDR blocks.
         /// 
         ///  <note> 
         /// <para>
@@ -11533,7 +11541,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes one or more of your Capacity Reservations. The results describe only the
-        /// Capacity Reservations in the Region that you're currently using.
+        /// Capacity Reservations in the Amazon Web Services Region that you're currently using.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityReservations service method.</param>
         /// 
@@ -11551,7 +11559,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes one or more of your Capacity Reservations. The results describe only the
-        /// Capacity Reservations in the Region that you're currently using.
+        /// Capacity Reservations in the Amazon Web Services Region that you're currently using.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityReservations service method.</param>
         /// <param name="cancellationToken">
@@ -16450,8 +16458,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// The snapshots available to you include public snapshots, private snapshots that you
-        /// own, and private snapshots owned by other accounts for which you have explicit create
-        /// volume permissions.
+        /// own, and private snapshots owned by other Amazon Web Services accounts for which you
+        /// have explicit create volume permissions.
         /// </para>
         ///  
         /// <para>
@@ -16460,24 +16468,24 @@ namespace Amazon.EC2
         ///  <ul> <li> 
         /// <para>
         ///  <i>public</i>: The owner of the snapshot granted create volume permissions for the
-        /// snapshot to the <code>all</code> group. All accounts have create volume permissions
-        /// for these snapshots.
+        /// snapshot to the <code>all</code> group. All Amazon Web Services accounts have create
+        /// volume permissions for these snapshots.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <i>explicit</i>: The owner of the snapshot granted create volume permissions to a
-        /// specific account.
+        /// specific Amazon Web Services account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>implicit</i>: An account has implicit create volume permissions for all snapshots
-        /// it owns.
+        ///  <i>implicit</i>: An Amazon Web Services account has implicit create volume permissions
+        /// for all snapshots it owns.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The list of snapshots returned can be filtered by specifying snapshot IDs, snapshot
-        /// owners, or accounts with create volume permissions. If no options are specified, Amazon
-        /// EC2 returns all snapshots for which you have create volume permissions.
+        /// owners, or Amazon Web Services accounts with create volume permissions. If no options
+        /// are specified, Amazon EC2 returns all snapshots for which you have create volume permissions.
         /// </para>
         ///  
         /// <para>
@@ -16490,15 +16498,16 @@ namespace Amazon.EC2
         /// <para>
         /// If you specify one or more snapshot owners using the <code>OwnerIds</code> option,
         /// only snapshots from the specified owners and for which you have access are returned.
-        /// The results can include the account IDs of the specified owners, <code>amazon</code>
-        /// for snapshots owned by Amazon, or <code>self</code> for snapshots that you own.
+        /// The results can include the Amazon Web Services account IDs of the specified owners,
+        /// <code>amazon</code> for snapshots owned by Amazon, or <code>self</code> for snapshots
+        /// that you own.
         /// </para>
         ///  
         /// <para>
         /// If you specify a list of restorable users, only snapshots with create snapshot permissions
-        /// for those users are returned. You can specify account IDs (if you own the snapshots),
-        /// <code>self</code> for snapshots for which you own or have explicit permissions, or
-        /// <code>all</code> for public snapshots.
+        /// for those users are returned. You can specify Amazon Web Services account IDs (if
+        /// you own the snapshots), <code>self</code> for snapshots for which you own or have
+        /// explicit permissions, or <code>all</code> for public snapshots.
         /// </para>
         ///  
         /// <para>
@@ -16535,8 +16544,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// The snapshots available to you include public snapshots, private snapshots that you
-        /// own, and private snapshots owned by other accounts for which you have explicit create
-        /// volume permissions.
+        /// own, and private snapshots owned by other Amazon Web Services accounts for which you
+        /// have explicit create volume permissions.
         /// </para>
         ///  
         /// <para>
@@ -16545,24 +16554,24 @@ namespace Amazon.EC2
         ///  <ul> <li> 
         /// <para>
         ///  <i>public</i>: The owner of the snapshot granted create volume permissions for the
-        /// snapshot to the <code>all</code> group. All accounts have create volume permissions
-        /// for these snapshots.
+        /// snapshot to the <code>all</code> group. All Amazon Web Services accounts have create
+        /// volume permissions for these snapshots.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <i>explicit</i>: The owner of the snapshot granted create volume permissions to a
-        /// specific account.
+        /// specific Amazon Web Services account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>implicit</i>: An account has implicit create volume permissions for all snapshots
-        /// it owns.
+        ///  <i>implicit</i>: An Amazon Web Services account has implicit create volume permissions
+        /// for all snapshots it owns.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The list of snapshots returned can be filtered by specifying snapshot IDs, snapshot
-        /// owners, or accounts with create volume permissions. If no options are specified, Amazon
-        /// EC2 returns all snapshots for which you have create volume permissions.
+        /// owners, or Amazon Web Services accounts with create volume permissions. If no options
+        /// are specified, Amazon EC2 returns all snapshots for which you have create volume permissions.
         /// </para>
         ///  
         /// <para>
@@ -16575,15 +16584,16 @@ namespace Amazon.EC2
         /// <para>
         /// If you specify one or more snapshot owners using the <code>OwnerIds</code> option,
         /// only snapshots from the specified owners and for which you have access are returned.
-        /// The results can include the account IDs of the specified owners, <code>amazon</code>
-        /// for snapshots owned by Amazon, or <code>self</code> for snapshots that you own.
+        /// The results can include the Amazon Web Services account IDs of the specified owners,
+        /// <code>amazon</code> for snapshots owned by Amazon, or <code>self</code> for snapshots
+        /// that you own.
         /// </para>
         ///  
         /// <para>
         /// If you specify a list of restorable users, only snapshots with create snapshot permissions
-        /// for those users are returned. You can specify account IDs (if you own the snapshots),
-        /// <code>self</code> for snapshots for which you own or have explicit permissions, or
-        /// <code>all</code> for public snapshots.
+        /// for those users are returned. You can specify Amazon Web Services account IDs (if
+        /// you own the snapshots), <code>self</code> for snapshots for which you own or have
+        /// explicit permissions, or <code>all</code> for public snapshots.
         /// </para>
         ///  
         /// <para>
@@ -16625,8 +16635,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// The snapshots available to you include public snapshots, private snapshots that you
-        /// own, and private snapshots owned by other accounts for which you have explicit create
-        /// volume permissions.
+        /// own, and private snapshots owned by other Amazon Web Services accounts for which you
+        /// have explicit create volume permissions.
         /// </para>
         ///  
         /// <para>
@@ -16635,24 +16645,24 @@ namespace Amazon.EC2
         ///  <ul> <li> 
         /// <para>
         ///  <i>public</i>: The owner of the snapshot granted create volume permissions for the
-        /// snapshot to the <code>all</code> group. All accounts have create volume permissions
-        /// for these snapshots.
+        /// snapshot to the <code>all</code> group. All Amazon Web Services accounts have create
+        /// volume permissions for these snapshots.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <i>explicit</i>: The owner of the snapshot granted create volume permissions to a
-        /// specific account.
+        /// specific Amazon Web Services account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>implicit</i>: An account has implicit create volume permissions for all snapshots
-        /// it owns.
+        ///  <i>implicit</i>: An Amazon Web Services account has implicit create volume permissions
+        /// for all snapshots it owns.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The list of snapshots returned can be filtered by specifying snapshot IDs, snapshot
-        /// owners, or accounts with create volume permissions. If no options are specified, Amazon
-        /// EC2 returns all snapshots for which you have create volume permissions.
+        /// owners, or Amazon Web Services accounts with create volume permissions. If no options
+        /// are specified, Amazon EC2 returns all snapshots for which you have create volume permissions.
         /// </para>
         ///  
         /// <para>
@@ -16665,15 +16675,16 @@ namespace Amazon.EC2
         /// <para>
         /// If you specify one or more snapshot owners using the <code>OwnerIds</code> option,
         /// only snapshots from the specified owners and for which you have access are returned.
-        /// The results can include the account IDs of the specified owners, <code>amazon</code>
-        /// for snapshots owned by Amazon, or <code>self</code> for snapshots that you own.
+        /// The results can include the Amazon Web Services account IDs of the specified owners,
+        /// <code>amazon</code> for snapshots owned by Amazon, or <code>self</code> for snapshots
+        /// that you own.
         /// </para>
         ///  
         /// <para>
         /// If you specify a list of restorable users, only snapshots with create snapshot permissions
-        /// for those users are returned. You can specify account IDs (if you own the snapshots),
-        /// <code>self</code> for snapshots for which you own or have explicit permissions, or
-        /// <code>all</code> for public snapshots.
+        /// for those users are returned. You can specify Amazon Web Services account IDs (if
+        /// you own the snapshots), <code>self</code> for snapshots for which you own or have
+        /// explicit permissions, or <code>all</code> for public snapshots.
         /// </para>
         ///  
         /// <para>
@@ -16712,8 +16723,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// The snapshots available to you include public snapshots, private snapshots that you
-        /// own, and private snapshots owned by other accounts for which you have explicit create
-        /// volume permissions.
+        /// own, and private snapshots owned by other Amazon Web Services accounts for which you
+        /// have explicit create volume permissions.
         /// </para>
         ///  
         /// <para>
@@ -16722,24 +16733,24 @@ namespace Amazon.EC2
         ///  <ul> <li> 
         /// <para>
         ///  <i>public</i>: The owner of the snapshot granted create volume permissions for the
-        /// snapshot to the <code>all</code> group. All accounts have create volume permissions
-        /// for these snapshots.
+        /// snapshot to the <code>all</code> group. All Amazon Web Services accounts have create
+        /// volume permissions for these snapshots.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <i>explicit</i>: The owner of the snapshot granted create volume permissions to a
-        /// specific account.
+        /// specific Amazon Web Services account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>implicit</i>: An account has implicit create volume permissions for all snapshots
-        /// it owns.
+        ///  <i>implicit</i>: An Amazon Web Services account has implicit create volume permissions
+        /// for all snapshots it owns.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The list of snapshots returned can be filtered by specifying snapshot IDs, snapshot
-        /// owners, or accounts with create volume permissions. If no options are specified, Amazon
-        /// EC2 returns all snapshots for which you have create volume permissions.
+        /// owners, or Amazon Web Services accounts with create volume permissions. If no options
+        /// are specified, Amazon EC2 returns all snapshots for which you have create volume permissions.
         /// </para>
         ///  
         /// <para>
@@ -16752,15 +16763,16 @@ namespace Amazon.EC2
         /// <para>
         /// If you specify one or more snapshot owners using the <code>OwnerIds</code> option,
         /// only snapshots from the specified owners and for which you have access are returned.
-        /// The results can include the account IDs of the specified owners, <code>amazon</code>
-        /// for snapshots owned by Amazon, or <code>self</code> for snapshots that you own.
+        /// The results can include the Amazon Web Services account IDs of the specified owners,
+        /// <code>amazon</code> for snapshots owned by Amazon, or <code>self</code> for snapshots
+        /// that you own.
         /// </para>
         ///  
         /// <para>
         /// If you specify a list of restorable users, only snapshots with create snapshot permissions
-        /// for those users are returned. You can specify account IDs (if you own the snapshots),
-        /// <code>self</code> for snapshots for which you own or have explicit permissions, or
-        /// <code>all</code> for public snapshots.
+        /// for those users are returned. You can specify Amazon Web Services account IDs (if
+        /// you own the snapshots), <code>self</code> for snapshots for which you own or have
+        /// explicit permissions, or <code>all</code> for public snapshots.
         /// </para>
         ///  
         /// <para>
@@ -19463,8 +19475,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// When a volume with an Marketplace product code is detached from an instance, the product
-        /// code is no longer associated with the instance.
+        /// When a volume with an Amazon Web Services Marketplace product code is detached from
+        /// an instance, the product code is no longer associated with the instance.
         /// </para>
         ///  
         /// <para>
@@ -19497,8 +19509,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// When a volume with an Marketplace product code is detached from an instance, the product
-        /// code is no longer associated with the instance.
+        /// When a volume with an Amazon Web Services Marketplace product code is detached from
+        /// an instance, the product code is no longer associated with the instance.
         /// </para>
         ///  
         /// <para>
@@ -21354,9 +21366,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Gets usage information about a Capacity Reservation. If the Capacity Reservation is
-        /// shared, it shows usage information for the Capacity Reservation owner and each account
-        /// that is currently using the shared capacity. If the Capacity Reservation is not shared,
-        /// it shows only the Capacity Reservation owner's usage.
+        /// shared, it shows usage information for the Capacity Reservation owner and each Amazon
+        /// Web Services account that is currently using the shared capacity. If the Capacity
+        /// Reservation is not shared, it shows only the Capacity Reservation owner's usage.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCapacityReservationUsage service method.</param>
         /// 
@@ -21374,9 +21386,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Gets usage information about a Capacity Reservation. If the Capacity Reservation is
-        /// shared, it shows usage information for the Capacity Reservation owner and each account
-        /// that is currently using the shared capacity. If the Capacity Reservation is not shared,
-        /// it shows only the Capacity Reservation owner's usage.
+        /// shared, it shows usage information for the Capacity Reservation owner and each Amazon
+        /// Web Services account that is currently using the shared capacity. If the Capacity
+        /// Reservation is not shared, it shows only the Capacity Reservation owner's usage.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCapacityReservationUsage service method.</param>
         /// <param name="cancellationToken">
@@ -23072,17 +23084,17 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies the default credit option for CPU usage of burstable performance instances.
-        /// The default credit option is set at the account level per Region, and is specified
-        /// per instance family. All new burstable performance instances in the account launch
-        /// using the default credit option.
+        /// The default credit option is set at the account level per Amazon Web Services Region,
+        /// and is specified per instance family. All new burstable performance instances in the
+        /// account launch using the default credit option.
         /// 
         ///  
         /// <para>
         ///  <code>ModifyDefaultCreditSpecification</code> is an asynchronous operation, which
-        /// works at an Region level and modifies the credit option for each Availability Zone.
-        /// All zones in a Region are updated within five minutes. But if instances are launched
-        /// during this operation, they might not get the new credit option until the zone is
-        /// updated. To verify whether the update has occurred, you can call <code>GetDefaultCreditSpecification</code>
+        /// works at an Amazon Web Services Region level and modifies the credit option for each
+        /// Availability Zone. All zones in a Region are updated within five minutes. But if instances
+        /// are launched during this operation, they might not get the new credit option until
+        /// the zone is updated. To verify whether the update has occurred, you can call <code>GetDefaultCreditSpecification</code>
         /// and check <code>DefaultCreditSpecification</code> for updates.
         /// </para>
         ///  
@@ -23107,17 +23119,17 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies the default credit option for CPU usage of burstable performance instances.
-        /// The default credit option is set at the account level per Region, and is specified
-        /// per instance family. All new burstable performance instances in the account launch
-        /// using the default credit option.
+        /// The default credit option is set at the account level per Amazon Web Services Region,
+        /// and is specified per instance family. All new burstable performance instances in the
+        /// account launch using the default credit option.
         /// 
         ///  
         /// <para>
         ///  <code>ModifyDefaultCreditSpecification</code> is an asynchronous operation, which
-        /// works at an Region level and modifies the credit option for each Availability Zone.
-        /// All zones in a Region are updated within five minutes. But if instances are launched
-        /// during this operation, they might not get the new credit option until the zone is
-        /// updated. To verify whether the update has occurred, you can call <code>GetDefaultCreditSpecification</code>
+        /// works at an Amazon Web Services Region level and modifies the credit option for each
+        /// Availability Zone. All zones in a Region are updated within five minutes. But if instances
+        /// are launched during this operation, they might not get the new credit option until
+        /// the zone is updated. To verify whether the update has occurred, you can call <code>GetDefaultCreditSpecification</code>
         /// and check <code>DefaultCreditSpecification</code> for updates.
         /// </para>
         ///  
@@ -24444,15 +24456,16 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Adds or removes permission settings for the specified snapshot. You may add or remove
-        /// specified account IDs from a snapshot's list of create volume permissions, but you
-        /// cannot do both in a single operation. If you need to both add and remove account IDs
-        /// for a snapshot, you must use multiple operations. You can make up to 500 modifications
-        /// to a snapshot in a single operation.
+        /// specified Amazon Web Services account IDs from a snapshot's list of create volume
+        /// permissions, but you cannot do both in a single operation. If you need to both add
+        /// and remove account IDs for a snapshot, you must use multiple operations. You can make
+        /// up to 500 modifications to a snapshot in a single operation.
         /// 
         ///  
         /// <para>
-        /// Encrypted snapshots and snapshots with Marketplace product codes cannot be made public.
-        /// Snapshots encrypted with your default KMS key cannot be shared with other accounts.
+        /// Encrypted snapshots and snapshots with Amazon Web Services Marketplace product codes
+        /// cannot be made public. Snapshots encrypted with your default KMS key cannot be shared
+        /// with other accounts.
         /// </para>
         ///  
         /// <para>
@@ -24476,15 +24489,16 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Adds or removes permission settings for the specified snapshot. You may add or remove
-        /// specified account IDs from a snapshot's list of create volume permissions, but you
-        /// cannot do both in a single operation. If you need to both add and remove account IDs
-        /// for a snapshot, you must use multiple operations. You can make up to 500 modifications
-        /// to a snapshot in a single operation.
+        /// specified Amazon Web Services account IDs from a snapshot's list of create volume
+        /// permissions, but you cannot do both in a single operation. If you need to both add
+        /// and remove account IDs for a snapshot, you must use multiple operations. You can make
+        /// up to 500 modifications to a snapshot in a single operation.
         /// 
         ///  
         /// <para>
-        /// Encrypted snapshots and snapshots with Marketplace product codes cannot be made public.
-        /// Snapshots encrypted with your default KMS key cannot be shared with other accounts.
+        /// Encrypted snapshots and snapshots with Amazon Web Services Marketplace product codes
+        /// cannot be made public. Snapshots encrypted with your default KMS key cannot be shared
+        /// with other accounts.
         /// </para>
         ///  
         /// <para>
@@ -25419,15 +25433,16 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If the peered VPCs are in the same account, you can enable DNS resolution for queries
-        /// from the local VPC. This ensures that queries from the local VPC resolve to private
-        /// IP addresses in the peer VPC. This option is not available if the peered VPCs are
-        /// in different different accounts or different Regions. For peered VPCs in different
-        /// accounts, each account owner must initiate a separate request to modify the peering
-        /// connection options. For inter-region peering connections, you must use the Region
-        /// for the requester VPC to modify the requester VPC peering options and the Region for
-        /// the accepter VPC to modify the accepter VPC peering options. To verify which VPCs
-        /// are the accepter and the requester for a VPC peering connection, use the <a>DescribeVpcPeeringConnections</a>
+        /// If the peered VPCs are in the same Amazon Web Services account, you can enable DNS
+        /// resolution for queries from the local VPC. This ensures that queries from the local
+        /// VPC resolve to private IP addresses in the peer VPC. This option is not available
+        /// if the peered VPCs are in different different Amazon Web Services accounts or different
+        /// Regions. For peered VPCs in different Amazon Web Services accounts, each Amazon Web
+        /// Services account owner must initiate a separate request to modify the peering connection
+        /// options. For inter-region peering connections, you must use the Region for the requester
+        /// VPC to modify the requester VPC peering options and the Region for the accepter VPC
+        /// to modify the accepter VPC peering options. To verify which VPCs are the accepter
+        /// and the requester for a VPC peering connection, use the <a>DescribeVpcPeeringConnections</a>
         /// command.
         /// </para>
         /// </summary>
@@ -25466,15 +25481,16 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If the peered VPCs are in the same account, you can enable DNS resolution for queries
-        /// from the local VPC. This ensures that queries from the local VPC resolve to private
-        /// IP addresses in the peer VPC. This option is not available if the peered VPCs are
-        /// in different different accounts or different Regions. For peered VPCs in different
-        /// accounts, each account owner must initiate a separate request to modify the peering
-        /// connection options. For inter-region peering connections, you must use the Region
-        /// for the requester VPC to modify the requester VPC peering options and the Region for
-        /// the accepter VPC to modify the accepter VPC peering options. To verify which VPCs
-        /// are the accepter and the requester for a VPC peering connection, use the <a>DescribeVpcPeeringConnections</a>
+        /// If the peered VPCs are in the same Amazon Web Services account, you can enable DNS
+        /// resolution for queries from the local VPC. This ensures that queries from the local
+        /// VPC resolve to private IP addresses in the peer VPC. This option is not available
+        /// if the peered VPCs are in different different Amazon Web Services accounts or different
+        /// Regions. For peered VPCs in different Amazon Web Services accounts, each Amazon Web
+        /// Services account owner must initiate a separate request to modify the peering connection
+        /// options. For inter-region peering connections, you must use the Region for the requester
+        /// VPC to modify the requester VPC peering options and the Region for the accepter VPC
+        /// to modify the accepter VPC peering options. To verify which VPCs are the accepter
+        /// and the requester for a VPC peering connection, use the <a>DescribeVpcPeeringConnections</a>
         /// command.
         /// </para>
         /// </summary>
@@ -26942,7 +26958,7 @@ namespace Amazon.EC2
         /// to update your DNS records and any servers or devices that communicate with the address.
         /// If you attempt to release an Elastic IP address that you already released, you'll
         /// get an <code>AuthFailure</code> error if the address is already allocated to another
-        /// account.
+        /// Amazon Web Services account.
         /// </para>
         ///  
         /// <para>
@@ -26984,7 +27000,7 @@ namespace Amazon.EC2
         /// to update your DNS records and any servers or devices that communicate with the address.
         /// If you attempt to release an Elastic IP address that you already released, you'll
         /// get an <code>AuthFailure</code> error if the address is already allocated to another
-        /// account.
+        /// Amazon Web Services account.
         /// </para>
         ///  
         /// <para>

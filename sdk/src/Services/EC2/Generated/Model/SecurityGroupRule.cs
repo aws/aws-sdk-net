@@ -142,7 +142,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupOwnerId. 
         /// <para>
-        /// The ID of the account that owns the security group. 
+        /// The ID of the Amazon Web Services account that owns the security group. 
         /// </para>
         /// </summary>
         public string GroupOwnerId

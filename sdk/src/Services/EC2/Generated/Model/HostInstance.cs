@@ -76,7 +76,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The ID of the account that owns the instance.
+        /// The ID of the Amazon Web Services account that owns the instance.
         /// </para>
         /// </summary>
         public string OwnerId

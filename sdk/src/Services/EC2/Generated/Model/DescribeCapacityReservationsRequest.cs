@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeCapacityReservations operation.
     /// Describes one or more of your Capacity Reservations. The results describe only the
-    /// Capacity Reservations in the Region that you're currently using.
+    /// Capacity Reservations in the Amazon Web Services Region that you're currently using.
     /// </summary>
     public partial class DescribeCapacityReservationsRequest : AmazonEC2Request
     {
@@ -70,7 +70,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>owner-id</code> - The ID of the account that owns the Capacity Reservation.
+        ///  <code>owner-id</code> - The ID of the Amazon Web Services account that owns the Capacity
+        /// Reservation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -93,12 +94,12 @@ namespace Amazon.EC2.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>default</code> - The Capacity Reservation is created on hardware that is shared
-        /// with other accounts.
+        /// with other Amazon Web Services accounts.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware
-        /// that is dedicated to a single account.
+        /// that is dedicated to a single Amazon Web Services account.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>

@@ -49,7 +49,7 @@ namespace Amazon.EC2.Model
     /// to update your DNS records and any servers or devices that communicate with the address.
     /// If you attempt to release an Elastic IP address that you already released, you'll
     /// get an <code>AuthFailure</code> error if the address is already allocated to another
-    /// account.
+    /// Amazon Web Services account.
     /// </para>
     ///  
     /// <para>

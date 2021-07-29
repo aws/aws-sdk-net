@@ -35,7 +35,8 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// You can grant permission to a single account only, and only one account at a time.
+    /// You can grant permission to a single Amazon Web Services account only, and only one
+    /// account at a time.
     /// </para>
     /// </summary>
     public partial class CreateNetworkInterfacePermissionRequest : AmazonEC2Request
@@ -48,7 +49,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The account ID.
+        /// The Amazon Web Services account ID.
         /// </para>
         /// </summary>
         public string AwsAccountId

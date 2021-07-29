@@ -40,8 +40,8 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// When a volume with an Marketplace product code is detached from an instance, the product
-    /// code is no longer associated with the instance.
+    /// When a volume with an Amazon Web Services Marketplace product code is detached from
+    /// an instance, the product code is no longer associated with the instance.
     /// </para>
     ///  
     /// <para>

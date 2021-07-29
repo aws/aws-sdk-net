@@ -239,7 +239,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The ID of the account that created the network interface.
+        /// The ID of the Amazon Web Services account that created the network interface.
         /// </para>
         /// </summary>
         public string OwnerId

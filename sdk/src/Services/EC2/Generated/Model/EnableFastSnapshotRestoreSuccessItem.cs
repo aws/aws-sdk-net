@@ -175,7 +175,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The ID of the account that enabled fast snapshot restores on the snapshot.
+        /// The ID of the Amazon Web Services account that enabled fast snapshot restores on the
+        /// snapshot.
         /// </para>
         /// </summary>
         public string OwnerId

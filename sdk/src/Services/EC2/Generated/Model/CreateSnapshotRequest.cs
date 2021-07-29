@@ -43,8 +43,8 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// When a snapshot is created, any Marketplace product codes that are associated with
-    /// the source volume are propagated to the snapshot.
+    /// When a snapshot is created, any Amazon Web Services Marketplace product codes that
+    /// are associated with the source volume are propagated to the snapshot.
     /// </para>
     ///  
     /// <para>

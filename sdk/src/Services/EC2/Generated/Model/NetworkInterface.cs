@@ -277,7 +277,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The account ID of the owner of the network interface.
+        /// The Amazon Web Services account ID of the owner of the network interface.
         /// </para>
         /// </summary>
         public string OwnerId
@@ -349,7 +349,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RequesterId. 
         /// <para>
-        /// The alias or account ID of the principal or service that created the network interface.
+        /// The alias or Amazon Web Services account ID of the principal or service that created
+        /// the network interface.
         /// </para>
         /// </summary>
         public string RequesterId

@@ -35,8 +35,8 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// You can create a new empty volume or restore a volume from an EBS snapshot. Any Marketplace
-    /// product codes from the snapshot are propagated to the volume.
+    /// You can create a new empty volume or restore a volume from an EBS snapshot. Any Amazon
+    /// Web Services Marketplace product codes from the snapshot are propagated to the volume.
     /// </para>
     ///  
     /// <para>

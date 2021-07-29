@@ -36,8 +36,8 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// The snapshots available to you include public snapshots, private snapshots that you
-    /// own, and private snapshots owned by other accounts for which you have explicit create
-    /// volume permissions.
+    /// own, and private snapshots owned by other Amazon Web Services accounts for which you
+    /// have explicit create volume permissions.
     /// </para>
     ///  
     /// <para>
@@ -46,24 +46,24 @@ namespace Amazon.EC2.Model
     ///  <ul> <li> 
     /// <para>
     ///  <i>public</i>: The owner of the snapshot granted create volume permissions for the
-    /// snapshot to the <code>all</code> group. All accounts have create volume permissions
-    /// for these snapshots.
+    /// snapshot to the <code>all</code> group. All Amazon Web Services accounts have create
+    /// volume permissions for these snapshots.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <i>explicit</i>: The owner of the snapshot granted create volume permissions to a
-    /// specific account.
+    /// specific Amazon Web Services account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <i>implicit</i>: An account has implicit create volume permissions for all snapshots
-    /// it owns.
+    ///  <i>implicit</i>: An Amazon Web Services account has implicit create volume permissions
+    /// for all snapshots it owns.
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// The list of snapshots returned can be filtered by specifying snapshot IDs, snapshot
-    /// owners, or accounts with create volume permissions. If no options are specified, Amazon
-    /// EC2 returns all snapshots for which you have create volume permissions.
+    /// owners, or Amazon Web Services accounts with create volume permissions. If no options
+    /// are specified, Amazon EC2 returns all snapshots for which you have create volume permissions.
     /// </para>
     ///  
     /// <para>
@@ -76,15 +76,16 @@ namespace Amazon.EC2.Model
     /// <para>
     /// If you specify one or more snapshot owners using the <code>OwnerIds</code> option,
     /// only snapshots from the specified owners and for which you have access are returned.
-    /// The results can include the account IDs of the specified owners, <code>amazon</code>
-    /// for snapshots owned by Amazon, or <code>self</code> for snapshots that you own.
+    /// The results can include the Amazon Web Services account IDs of the specified owners,
+    /// <code>amazon</code> for snapshots owned by Amazon, or <code>self</code> for snapshots
+    /// that you own.
     /// </para>
     ///  
     /// <para>
     /// If you specify a list of restorable users, only snapshots with create snapshot permissions
-    /// for those users are returned. You can specify account IDs (if you own the snapshots),
-    /// <code>self</code> for snapshots for which you own or have explicit permissions, or
-    /// <code>all</code> for public snapshots.
+    /// for those users are returned. You can specify Amazon Web Services account IDs (if
+    /// you own the snapshots), <code>self</code> for snapshots for which you own or have
+    /// explicit permissions, or <code>all</code> for public snapshots.
     /// </para>
     ///  
     /// <para>
@@ -131,13 +132,13 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>owner-alias</code> - The owner alias, from an Amazon-maintained list (<code>amazon</code>).
-        /// This is not the user-configured account alias set using the IAM console. We recommend
-        /// that you use the related parameter instead of this filter.
+        /// This is not the user-configured Amazon Web Services account alias set using the IAM
+        /// console. We recommend that you use the related parameter instead of this filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>owner-id</code> - The account ID of the owner. We recommend that you use the
-        /// related parameter instead of this filter.
+        ///  <code>owner-id</code> - The Amazon Web Services account ID of the owner. We recommend
+        /// that you use the related parameter instead of this filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -244,7 +245,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property OwnerIds. 
         /// <para>
         /// Scopes the results to snapshots with the specified owners. You can specify a combination
-        /// of account IDs, <code>self</code>, and <code>amazon</code>.
+        /// of Amazon Web Services account IDs, <code>self</code>, and <code>amazon</code>.
         /// </para>
         /// </summary>
         public List<string> OwnerIds
@@ -262,7 +263,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RestorableByUserIds. 
         /// <para>
-        /// The IDs of the accounts that can create volumes from the snapshot.
+        /// The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.
         /// </para>
         /// </summary>
         public List<string> RestorableByUserIds

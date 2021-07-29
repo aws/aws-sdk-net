@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// If a volume has an Marketplace product code:
+    /// If a volume has an Amazon Web Services Marketplace product code:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -55,7 +55,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Marketplace product codes are copied from the volume to the instance.
+    /// Amazon Web Services Marketplace product codes are copied from the volume to the instance.
     /// </para>
     ///  </li> <li> 
     /// <para>

@@ -98,7 +98,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>network-interface-owner-id</code> - The account ID of the owner.
+        ///  <code>network-interface-owner-id</code> - The Amazon Web Services account ID of the
+        /// owner.
         /// </para>
         ///  </li> <li> 
         /// <para>
