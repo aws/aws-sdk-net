@@ -37,6 +37,7 @@ namespace Amazon.IoTSiteWise.Model
         private List<GatewayCapabilitySummary> _gatewayCapabilitySummaries = new List<GatewayCapabilitySummary>();
         private string _gatewayId;
         private string _gatewayName;
+        private GatewayPlatform _gatewayPlatform;
         private DateTime? _lastUpdateDate;
 
         /// <summary>
@@ -114,6 +115,21 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetGatewayName()
         {
             return this._gatewayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GatewayPlatform.
+        /// </summary>
+        public GatewayPlatform GatewayPlatform
+        {
+            get { return this._gatewayPlatform; }
+            set { this._gatewayPlatform = value; }
+        }
+
+        // Check to see if GatewayPlatform property is set
+        internal bool IsSetGatewayPlatform()
+        {
+            return this._gatewayPlatform != null;
         }
 
         /// <summary>

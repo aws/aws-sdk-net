@@ -34,6 +34,7 @@ namespace Amazon.IoTSiteWise.Model
     public partial class GatewayPlatform
     {
         private Greengrass _greengrass;
+        private GreengrassV2 _greengrassv2;
 
         /// <summary>
         /// Gets and sets the property Greengrass. 
@@ -41,7 +42,6 @@ namespace Amazon.IoTSiteWise.Model
         /// A gateway that runs on IoT Greengrass.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public Greengrass Greengrass
         {
             get { return this._greengrass; }
@@ -52,6 +52,24 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetGreengrass()
         {
             return this._greengrass != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GreengrassV2. 
+        /// <para>
+        /// A gateway that runs on IoT Greengrass V2.
+        /// </para>
+        /// </summary>
+        public GreengrassV2 GreengrassV2
+        {
+            get { return this._greengrassv2; }
+            set { this._greengrassv2 = value; }
+        }
+
+        // Check to see if GreengrassV2 property is set
+        internal bool IsSetGreengrassV2()
+        {
+            return this._greengrassv2 != null;
         }
 
     }

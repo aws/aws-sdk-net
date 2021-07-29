@@ -45,6 +45,17 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Measurement requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetProcessingConfig())
+            {
+                context.Writer.WritePropertyName("processingConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MeasurementProcessingConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ProcessingConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

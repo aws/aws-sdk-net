@@ -70,6 +70,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     unmarshalledObject.Expression = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("processingConfig", targetDepth))
+                {
+                    var unmarshaller = MetricProcessingConfigUnmarshaller.Instance;
+                    unmarshalledObject.ProcessingConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("variables", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ExpressionVariable, ExpressionVariableUnmarshaller>(ExpressionVariableUnmarshaller.Instance);

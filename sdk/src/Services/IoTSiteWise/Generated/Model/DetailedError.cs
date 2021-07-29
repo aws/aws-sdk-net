@@ -29,31 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains an asset measurement property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#measurements">Measurements</a>
-    /// in the <i>IoT SiteWise User Guide</i>.
+    /// Contains detailed error information.
     /// </summary>
-    public partial class Measurement
+    public partial class DetailedError
     {
-        private MeasurementProcessingConfig _processingConfig;
+        private DetailedErrorCode _code;
+        private string _message;
 
         /// <summary>
-        /// Gets and sets the property ProcessingConfig. 
+        /// Gets and sets the property Code. 
         /// <para>
-        /// The processing configuration for the given measurement property. You can configure
-        /// measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud.
-        /// By default, measurements are forwarded to the cloud.
+        /// The error code. 
         /// </para>
         /// </summary>
-        public MeasurementProcessingConfig ProcessingConfig
+        [AWSProperty(Required=true)]
+        public DetailedErrorCode Code
         {
-            get { return this._processingConfig; }
-            set { this._processingConfig = value; }
+            get { return this._code; }
+            set { this._code = value; }
         }
 
-        // Check to see if ProcessingConfig property is set
-        internal bool IsSetProcessingConfig()
+        // Check to see if Code property is set
+        internal bool IsSetCode()
         {
-            return this._processingConfig != null;
+            return this._code != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// The error message. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string Message
+        {
+            get { return this._message; }
+            set { this._message = value; }
+        }
+
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
+        {
+            return this._message != null;
         }
 
     }

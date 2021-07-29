@@ -34,6 +34,7 @@ namespace Amazon.IoTSiteWise.Model
     public partial class ErrorDetails
     {
         private ErrorCode _code;
+        private List<DetailedError> _details = new List<DetailedError>();
         private string _message;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetCode()
         {
             return this._code != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Details. 
+        /// <para>
+        ///  A list of detailed errors. 
+        /// </para>
+        /// </summary>
+        public List<DetailedError> Details
+        {
+            get { return this._details; }
+            set { this._details = value; }
+        }
+
+        // Check to see if Details property is set
+        internal bool IsSetDetails()
+        {
+            return this._details != null && this._details.Count > 0; 
         }
 
         /// <summary>

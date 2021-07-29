@@ -51,6 +51,17 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Expression);
             }
 
+            if(requestObject.IsSetProcessingConfig())
+            {
+                context.Writer.WritePropertyName("processingConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MetricProcessingConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ProcessingConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetVariables())
             {
                 context.Writer.WritePropertyName("variables");

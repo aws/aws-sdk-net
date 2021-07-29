@@ -29,31 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains an asset measurement property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#measurements">Measurements</a>
-    /// in the <i>IoT SiteWise User Guide</i>.
+    /// The processing configuration for the given measurement property. You can configure
+    /// measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud.
+    /// By default, measurements are forwarded to the cloud.
     /// </summary>
-    public partial class Measurement
+    public partial class MeasurementProcessingConfig
     {
-        private MeasurementProcessingConfig _processingConfig;
+        private ForwardingConfig _forwardingConfig;
 
         /// <summary>
-        /// Gets and sets the property ProcessingConfig. 
+        /// Gets and sets the property ForwardingConfig. 
         /// <para>
-        /// The processing configuration for the given measurement property. You can configure
-        /// measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud.
-        /// By default, measurements are forwarded to the cloud.
+        /// The forwarding configuration for the given measurement property. 
         /// </para>
         /// </summary>
-        public MeasurementProcessingConfig ProcessingConfig
+        [AWSProperty(Required=true)]
+        public ForwardingConfig ForwardingConfig
         {
-            get { return this._processingConfig; }
-            set { this._processingConfig = value; }
+            get { return this._forwardingConfig; }
+            set { this._forwardingConfig = value; }
         }
 
-        // Check to see if ProcessingConfig property is set
-        internal bool IsSetProcessingConfig()
+        // Check to see if ForwardingConfig property is set
+        internal bool IsSetForwardingConfig()
         {
-            return this._processingConfig != null;
+            return this._forwardingConfig != null;
         }
 
     }

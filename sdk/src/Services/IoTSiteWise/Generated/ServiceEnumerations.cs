@@ -456,6 +456,10 @@ namespace Amazon.IoTSiteWise
         /// Constant SYNC_FAILED for CapabilitySyncStatus
         /// </summary>
         public static readonly CapabilitySyncStatus SYNC_FAILED = new CapabilitySyncStatus("SYNC_FAILED");
+        /// <summary>
+        /// Constant UNKNOWN for CapabilitySyncStatus
+        /// </summary>
+        public static readonly CapabilitySyncStatus UNKNOWN = new CapabilitySyncStatus("UNKNOWN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -486,6 +490,56 @@ namespace Amazon.IoTSiteWise
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CapabilitySyncStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ComputeLocation.
+    /// </summary>
+    public class ComputeLocation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOUD for ComputeLocation
+        /// </summary>
+        public static readonly ComputeLocation CLOUD = new ComputeLocation("CLOUD");
+        /// <summary>
+        /// Constant EDGE for ComputeLocation
+        /// </summary>
+        public static readonly ComputeLocation EDGE = new ComputeLocation("EDGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComputeLocation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComputeLocation FindValue(string value)
+        {
+            return FindValue<ComputeLocation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComputeLocation(string value)
         {
             return FindValue(value);
         }
@@ -540,6 +594,56 @@ namespace Amazon.IoTSiteWise
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConfigurationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DetailedErrorCode.
+    /// </summary>
+    public class DetailedErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INCOMPATIBLE_COMPUTE_LOCATION for DetailedErrorCode
+        /// </summary>
+        public static readonly DetailedErrorCode INCOMPATIBLE_COMPUTE_LOCATION = new DetailedErrorCode("INCOMPATIBLE_COMPUTE_LOCATION");
+        /// <summary>
+        /// Constant INCOMPATIBLE_FORWARDING_CONFIGURATION for DetailedErrorCode
+        /// </summary>
+        public static readonly DetailedErrorCode INCOMPATIBLE_FORWARDING_CONFIGURATION = new DetailedErrorCode("INCOMPATIBLE_FORWARDING_CONFIGURATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DetailedErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DetailedErrorCode FindValue(string value)
+        {
+            return FindValue<DetailedErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DetailedErrorCode(string value)
         {
             return FindValue(value);
         }
@@ -640,6 +744,56 @@ namespace Amazon.IoTSiteWise
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ForwardingConfigState.
+    /// </summary>
+    public class ForwardingConfigState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ForwardingConfigState
+        /// </summary>
+        public static readonly ForwardingConfigState DISABLED = new ForwardingConfigState("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ForwardingConfigState
+        /// </summary>
+        public static readonly ForwardingConfigState ENABLED = new ForwardingConfigState("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ForwardingConfigState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ForwardingConfigState FindValue(string value)
+        {
+            return FindValue<ForwardingConfigState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ForwardingConfigState(string value)
         {
             return FindValue(value);
         }

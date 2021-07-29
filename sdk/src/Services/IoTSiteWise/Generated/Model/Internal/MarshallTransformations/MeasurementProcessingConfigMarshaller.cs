@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GatewayPlatform Marshaller
+    /// MeasurementProcessingConfig Marshaller
     /// </summary>       
-    public class GatewayPlatformMarshaller : IRequestMarshaller<GatewayPlatform, JsonMarshallerContext> 
+    public class MeasurementProcessingConfigMarshaller : IRequestMarshaller<MeasurementProcessingConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,26 +43,15 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(GatewayPlatform requestObject, JsonMarshallerContext context)
+        public void Marshall(MeasurementProcessingConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetGreengrass())
+            if(requestObject.IsSetForwardingConfig())
             {
-                context.Writer.WritePropertyName("greengrass");
+                context.Writer.WritePropertyName("forwardingConfig");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = GreengrassMarshaller.Instance;
-                marshaller.Marshall(requestObject.Greengrass, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetGreengrassV2())
-            {
-                context.Writer.WritePropertyName("greengrassV2");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = GreengrassV2Marshaller.Instance;
-                marshaller.Marshall(requestObject.GreengrassV2, context);
+                var marshaller = ForwardingConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ForwardingConfig, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -72,7 +61,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static GatewayPlatformMarshaller Instance = new GatewayPlatformMarshaller();
+        public readonly static MeasurementProcessingConfigMarshaller Instance = new MeasurementProcessingConfigMarshaller();
 
     }
 }

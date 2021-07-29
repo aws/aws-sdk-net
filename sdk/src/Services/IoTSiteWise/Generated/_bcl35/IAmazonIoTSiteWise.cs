@@ -2058,6 +2058,14 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Retrieves information about the storage configuration for IoT SiteWise.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Exporting data to Amazon S3 is currently in preview release and is subject to change.
+        /// We recommend that you use this feature only with test data, and not in production
+        /// environments.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStorageConfiguration service method.</param>
         /// 
@@ -3367,6 +3375,14 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Configures storage settings for IoT SiteWise.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Exporting data to Amazon S3 is currently in preview release and is subject to change.
+        /// We recommend that you use this feature only with test data, and not in production
+        /// environments.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutStorageConfiguration service method.</param>
         /// 

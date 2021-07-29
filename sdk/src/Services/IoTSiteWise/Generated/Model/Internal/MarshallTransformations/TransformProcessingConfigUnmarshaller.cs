@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GatewaySummary Object
+    /// Response Unmarshaller for TransformProcessingConfig Object
     /// </summary>  
-    public class GatewaySummaryUnmarshaller : IUnmarshaller<GatewaySummary, XmlUnmarshallerContext>, IUnmarshaller<GatewaySummary, JsonUnmarshallerContext>
+    public class TransformProcessingConfigUnmarshaller : IUnmarshaller<TransformProcessingConfig, XmlUnmarshallerContext>, IUnmarshaller<TransformProcessingConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GatewaySummary IUnmarshaller<GatewaySummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TransformProcessingConfig IUnmarshaller<TransformProcessingConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public GatewaySummary Unmarshall(JsonUnmarshallerContext context)
+        public TransformProcessingConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            GatewaySummary unmarshalledObject = new GatewaySummary();
+            TransformProcessingConfig unmarshalledObject = new TransformProcessingConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("creationDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("gatewayCapabilitySummaries", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<GatewayCapabilitySummary, GatewayCapabilitySummaryUnmarshaller>(GatewayCapabilitySummaryUnmarshaller.Instance);
-                    unmarshalledObject.GatewayCapabilitySummaries = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("gatewayId", targetDepth))
+                if (context.TestExpression("computeLocation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GatewayId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ComputeLocation = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("gatewayName", targetDepth))
+                if (context.TestExpression("forwardingConfig", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GatewayName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("gatewayPlatform", targetDepth))
-                {
-                    var unmarshaller = GatewayPlatformUnmarshaller.Instance;
-                    unmarshalledObject.GatewayPlatform = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lastUpdateDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdateDate = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ForwardingConfigUnmarshaller.Instance;
+                    unmarshalledObject.ForwardingConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         }
 
 
-        private static GatewaySummaryUnmarshaller _instance = new GatewaySummaryUnmarshaller();        
+        private static TransformProcessingConfigUnmarshaller _instance = new TransformProcessingConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GatewaySummaryUnmarshaller Instance
+        public static TransformProcessingConfigUnmarshaller Instance
         {
             get
             {

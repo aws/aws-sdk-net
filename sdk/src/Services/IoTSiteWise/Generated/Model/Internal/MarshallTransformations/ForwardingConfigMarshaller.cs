@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GatewayPlatform Marshaller
+    /// ForwardingConfig Marshaller
     /// </summary>       
-    public class GatewayPlatformMarshaller : IRequestMarshaller<GatewayPlatform, JsonMarshallerContext> 
+    public class ForwardingConfigMarshaller : IRequestMarshaller<ForwardingConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(GatewayPlatform requestObject, JsonMarshallerContext context)
+        public void Marshall(ForwardingConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetGreengrass())
+            if(requestObject.IsSetState())
             {
-                context.Writer.WritePropertyName("greengrass");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = GreengrassMarshaller.Instance;
-                marshaller.Marshall(requestObject.Greengrass, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetGreengrassV2())
-            {
-                context.Writer.WritePropertyName("greengrassV2");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = GreengrassV2Marshaller.Instance;
-                marshaller.Marshall(requestObject.GreengrassV2, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("state");
+                context.Writer.Write(requestObject.State);
             }
 
         }
@@ -72,7 +56,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static GatewayPlatformMarshaller Instance = new GatewayPlatformMarshaller();
+        public readonly static ForwardingConfigMarshaller Instance = new ForwardingConfigMarshaller();
 
     }
 }

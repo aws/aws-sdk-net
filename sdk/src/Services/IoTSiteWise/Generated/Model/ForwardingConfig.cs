@@ -29,31 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains an asset measurement property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#measurements">Measurements</a>
-    /// in the <i>IoT SiteWise User Guide</i>.
+    /// The forwarding configuration for a given property.
     /// </summary>
-    public partial class Measurement
+    public partial class ForwardingConfig
     {
-        private MeasurementProcessingConfig _processingConfig;
+        private ForwardingConfigState _state;
 
         /// <summary>
-        /// Gets and sets the property ProcessingConfig. 
+        /// Gets and sets the property State. 
         /// <para>
-        /// The processing configuration for the given measurement property. You can configure
-        /// measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud.
-        /// By default, measurements are forwarded to the cloud.
+        /// The forwarding state for the given property. 
         /// </para>
         /// </summary>
-        public MeasurementProcessingConfig ProcessingConfig
+        [AWSProperty(Required=true)]
+        public ForwardingConfigState State
         {
-            get { return this._processingConfig; }
-            set { this._processingConfig = value; }
+            get { return this._state; }
+            set { this._state = value; }
         }
 
-        // Check to see if ProcessingConfig property is set
-        internal bool IsSetProcessingConfig()
+        // Check to see if State property is set
+        internal bool IsSetState()
         {
-            return this._processingConfig != null;
+            return this._state != null;
         }
 
     }

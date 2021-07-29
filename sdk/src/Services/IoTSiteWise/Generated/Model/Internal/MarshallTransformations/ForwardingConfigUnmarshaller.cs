@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Transform Object
+    /// Response Unmarshaller for ForwardingConfig Object
     /// </summary>  
-    public class TransformUnmarshaller : IUnmarshaller<Transform, XmlUnmarshallerContext>, IUnmarshaller<Transform, JsonUnmarshallerContext>
+    public class ForwardingConfigUnmarshaller : IUnmarshaller<ForwardingConfig, XmlUnmarshallerContext>, IUnmarshaller<ForwardingConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Transform IUnmarshaller<Transform, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ForwardingConfig IUnmarshaller<ForwardingConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Transform Unmarshall(JsonUnmarshallerContext context)
+        public ForwardingConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Transform unmarshalledObject = new Transform();
+            ForwardingConfig unmarshalledObject = new ForwardingConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("expression", targetDepth))
+                if (context.TestExpression("state", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Expression = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("processingConfig", targetDepth))
-                {
-                    var unmarshaller = TransformProcessingConfigUnmarshaller.Instance;
-                    unmarshalledObject.ProcessingConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("variables", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ExpressionVariable, ExpressionVariableUnmarshaller>(ExpressionVariableUnmarshaller.Instance);
-                    unmarshalledObject.Variables = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         }
 
 
-        private static TransformUnmarshaller _instance = new TransformUnmarshaller();        
+        private static ForwardingConfigUnmarshaller _instance = new ForwardingConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TransformUnmarshaller Instance
+        public static ForwardingConfigUnmarshaller Instance
         {
             get
             {

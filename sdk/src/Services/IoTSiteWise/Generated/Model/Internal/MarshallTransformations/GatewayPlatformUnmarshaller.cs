@@ -70,6 +70,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     unmarshalledObject.Greengrass = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("greengrassV2", targetDepth))
+                {
+                    var unmarshaller = GreengrassV2Unmarshaller.Instance;
+                    unmarshalledObject.GreengrassV2 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
