@@ -63,7 +63,7 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// To list all of the secrets in the AWS account, use <a>ListSecrets</a>.
+    /// To list all of the secrets in the Amazon Web Services account, use <a>ListSecrets</a>.
     /// </para>
     ///  </li> </ul>
     /// </summary>

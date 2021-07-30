@@ -79,11 +79,11 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ResourcePolicy. 
         /// <para>
-        /// A JSON-formatted string constructed according to the grammar and syntax for an AWS
-        /// resource-based policy. The policy in the string identifies who can access or manage
-        /// this secret and its versions. For information on how to format a JSON parameter for
-        /// the various command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-        /// JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.publi
+        /// A JSON-formatted string constructed according to the grammar and syntax for an Amazon
+        /// Web Services resource-based policy. The policy in the string identifies who can access
+        /// or manage this secret and its versions. For information on how to format a JSON parameter
+        /// for the various command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+        /// JSON for Parameters</a> in the <i>CLI User Guide</i>.publi
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20480)]

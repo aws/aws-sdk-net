@@ -135,11 +135,11 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ARN or alias of the AWS KMS customer master key (CMK) that's used to encrypt the
-        /// <code>SecretString</code> or <code>SecretBinary</code> fields in each version of the
-        /// secret. If you don't provide a key, then Secrets Manager defaults to encrypting the
-        /// secret fields with the default AWS KMS CMK (the one named <code>awssecretsmanager</code>)
-        /// for this account.
+        /// The ARN or alias of the Amazon Web Services KMS customer master key (CMK) that's used
+        /// to encrypt the <code>SecretString</code> or <code>SecretBinary</code> fields in each
+        /// version of the secret. If you don't provide a key, then Secrets Manager defaults to
+        /// encrypting the secret fields with the default Amazon Web Services KMS CMK (the one
+        /// named <code>awssecretsmanager</code>) for this account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

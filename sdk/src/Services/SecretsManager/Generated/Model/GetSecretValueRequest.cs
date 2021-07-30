@@ -47,9 +47,9 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// kms:Decrypt - required only if you use a customer-managed AWS KMS key to encrypt the
-    /// secret. You do not need this permission to use the account's default AWS managed CMK
-    /// for Secrets Manager.
+    /// kms:Decrypt - required only if you use a customer-managed Amazon Web Services KMS
+    /// key to encrypt the secret. You do not need this permission to use the account's default
+    /// Amazon Web Services managed CMK for Secrets Manager.
     /// </para>
     ///  </li> </ul> 
     /// <para>

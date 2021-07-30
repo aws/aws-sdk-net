@@ -70,6 +70,12 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("KmsKeyIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.KmsKeyIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastAccessedDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

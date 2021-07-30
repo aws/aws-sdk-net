@@ -34,6 +34,7 @@ namespace Amazon.SecretsManager.Model
     public partial class SecretVersionsListEntry
     {
         private DateTime? _createdDate;
+        private List<string> _kmsKeyIds = new List<string>();
         private DateTime? _lastAccessedDate;
         private string _versionId;
         private List<string> _versionStages = new List<string>();
@@ -54,6 +55,24 @@ namespace Amazon.SecretsManager.Model
         internal bool IsSetCreatedDate()
         {
             return this._createdDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyIds. 
+        /// <para>
+        /// The KMS keys used to encrypt the secret version.
+        /// </para>
+        /// </summary>
+        public List<string> KmsKeyIds
+        {
+            get { return this._kmsKeyIds; }
+            set { this._kmsKeyIds = value; }
+        }
+
+        // Check to see if KmsKeyIds property is set
+        internal bool IsSetKmsKeyIds()
+        {
+            return this._kmsKeyIds != null && this._kmsKeyIds.Count > 0; 
         }
 
         /// <summary>

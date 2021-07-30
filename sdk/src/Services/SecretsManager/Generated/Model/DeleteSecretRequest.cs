@@ -111,10 +111,10 @@ namespace Amazon.SecretsManager.Model
         ///  <important> 
         /// <para>
         /// Use this parameter with caution. This parameter causes the operation to skip the normal
-        /// waiting period before the permanent deletion that AWS would normally impose with the
-        /// <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code>
-        /// parameter, then you have no opportunity to recover the secret. You lose the secret
-        /// permanently.
+        /// waiting period before the permanent deletion that Amazon Web Services would normally
+        /// impose with the <code>RecoveryWindowInDays</code> parameter. If you delete a secret
+        /// with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity
+        /// to recover the secret. You lose the secret permanently.
         /// </para>
         ///  </important> <important> 
         /// <para>

@@ -60,7 +60,7 @@ namespace Amazon.SecretsManager.Model
         ///  
         /// <para>
         /// For more information about ARNs in Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
-        /// Resources</a> in the <i>AWS Secrets Manager User Guide</i>.
+        /// Resources</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -137,10 +137,11 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ARN or alias of the AWS KMS customer master key (CMK) used to encrypt the <code>SecretString</code>
-        /// and <code>SecretBinary</code> fields in each version of the secret. If you don't provide
-        /// a key, then Secrets Manager defaults to encrypting the secret fields with the default
-        /// KMS CMK, the key named <code>awssecretsmanager</code>, for this account.
+        /// The ARN or alias of the Amazon Web Services KMS customer master key (CMK) used to
+        /// encrypt the <code>SecretString</code> and <code>SecretBinary</code> fields in each
+        /// version of the secret. If you don't provide a key, then Secrets Manager defaults to
+        /// encrypting the secret fields with the default KMS CMK, the key named <code>awssecretsmanager</code>,
+        /// for this account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -293,8 +294,9 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property RotationLambdaARN. 
         /// <para>
-        /// The ARN of an AWS Lambda function invoked by Secrets Manager to rotate and expire
-        /// the secret either automatically per the schedule or manually by a call to <a>RotateSecret</a>.
+        /// The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate
+        /// and expire the secret either automatically per the schedule or manually by a call
+        /// to <a>RotateSecret</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

@@ -39,14 +39,16 @@ namespace Amazon.SecretsManager.Model
     /// 
     ///  
     /// <para>
-    /// This required configuration information includes the ARN of an AWS Lambda function
-    /// and the time between scheduled rotations. The Lambda rotation function creates a new
-    /// version of the secret and creates or updates the credentials on the protected service
-    /// to match. After testing the new credentials, the function marks the new secret with
-    /// the staging label <code>AWSCURRENT</code> so that your clients all immediately begin
-    /// to use the new version. For more information about rotating secrets and how to configure
-    /// a Lambda function to rotate the secrets for your protected service, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html">Rotating
-    /// Secrets in AWS Secrets Manager</a> in the <i>AWS Secrets Manager User Guide</i>.
+    /// This required configuration information includes the ARN of an Amazon Web Services
+    /// Lambda function and optionally, the time between scheduled rotations. The Lambda rotation
+    /// function creates a new version of the secret and creates or updates the credentials
+    /// on the protected service to match. After testing the new credentials, the function
+    /// marks the new secret with the staging label <code>AWSCURRENT</code> so that your clients
+    /// all immediately begin to use the new version. For more information about rotating
+    /// secrets and how to configure a Lambda function to rotate the secrets for your protected
+    /// service, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html">Rotating
+    /// Secrets in Amazon Web Services Secrets Manager</a> in the <i>Amazon Web Services Secrets
+    /// Manager User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -129,12 +131,12 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  
         /// <para>
-        /// If you use the AWS CLI or one of the AWS SDK to call this operation, then you can
-        /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes
-        /// that in the request for this parameter. If you don't use the SDK and instead generate
-        /// a raw HTTP request to the Secrets Manager service endpoint, then you must generate
-        /// a <code>ClientRequestToken</code> yourself for new versions and include that value
-        /// in the request.
+        /// If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call
+        /// this operation, then you can leave this parameter empty. The CLI or SDK generates
+        /// a random UUID for you and includes that in the request for this parameter. If you
+        /// don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service
+        /// endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new
+        /// versions and include that value in the request.
         /// </para>
         ///  
         /// <para>

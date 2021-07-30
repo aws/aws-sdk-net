@@ -83,8 +83,8 @@ namespace Amazon.SecretsManager.Model
         /// with the user or role that attempts to access this secret. The combined permissions
         /// specify who can access the secret and what actions they can perform. For more information,
         /// see <a href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
-        /// and Access Control for AWS Secrets Manager</a> in the <i>AWS Secrets Manager User
-        /// Guide</i>.
+        /// and Access Control for Amazon Web Services Secrets Manager</a> in the <i>Amazon Web
+        /// Services Secrets Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20480)]

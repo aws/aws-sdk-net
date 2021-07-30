@@ -55,23 +55,25 @@ namespace Amazon.SecretsManager.Model
     /// <para>
     /// If you call an operation to encrypt or decrypt the <code>SecretString</code> or <code>SecretBinary</code>
     /// for a secret in the same account as the calling user and that secret doesn't specify
-    /// a AWS KMS encryption key, Secrets Manager uses the account's default AWS managed customer
-    /// master key (CMK) with the alias <code>aws/secretsmanager</code>. If this key doesn't
-    /// already exist in your account then Secrets Manager creates it for you automatically.
-    /// All users and roles in the same AWS account automatically have access to use the default
-    /// CMK. Note that if an Secrets Manager API call results in AWS creating the account's
-    /// AWS-managed CMK, it can result in a one-time significant delay in returning the result.
+    /// a Amazon Web Services KMS encryption key, Secrets Manager uses the account's default
+    /// Amazon Web Services managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>.
+    /// If this key doesn't already exist in your account then Secrets Manager creates it
+    /// for you automatically. All users and roles in the same Amazon Web Services account
+    /// automatically have access to use the default CMK. Note that if an Secrets Manager
+    /// API call results in Amazon Web Services creating the account's Amazon Web Services-managed
+    /// CMK, it can result in a one-time significant delay in returning the result.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If the secret resides in a different AWS account from the credentials calling an API
-    /// that requires encryption or decryption of the secret value then you must create and
-    /// use a custom AWS KMS CMK because you can't access the default CMK for the account
-    /// using credentials from a different AWS account. Store the ARN of the CMK in the secret
-    /// when you create the secret or when you update it by including it in the <code>KMSKeyId</code>.
-    /// If you call an API that must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code>
-    /// using credentials from a different account then the AWS KMS key policy must grant
-    /// cross-account access to that other account's user or role for both the kms:GenerateDataKey
+    /// If the secret resides in a different Amazon Web Services account from the credentials
+    /// calling an API that requires encryption or decryption of the secret value then you
+    /// must create and use a custom Amazon Web Services KMS CMK because you can't access
+    /// the default CMK for the account using credentials from a different Amazon Web Services
+    /// account. Store the ARN of the CMK in the secret when you create the secret or when
+    /// you update it by including it in the <code>KMSKeyId</code>. If you call an API that
+    /// must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code> using
+    /// credentials from a different account then the Amazon Web Services KMS key policy must
+    /// grant cross-account access to that other account's user or role for both the kms:GenerateDataKey
     /// and kms:Decrypt operations.
     /// </para>
     ///  </li> </ul> </note> 
@@ -92,15 +94,15 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// kms:GenerateDataKey - needed only if you use a customer-managed AWS KMS key to encrypt
-    /// the secret. You do not need this permission to use the account default AWS managed
-    /// CMK for Secrets Manager.
+    /// kms:GenerateDataKey - needed only if you use a customer-managed Amazon Web Services
+    /// KMS key to encrypt the secret. You do not need this permission to use the account
+    /// default Amazon Web Services managed CMK for Secrets Manager.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// kms:Decrypt - needed only if you use a customer-managed AWS KMS key to encrypt the
-    /// secret. You do not need this permission to use the account default AWS managed CMK
-    /// for Secrets Manager.
+    /// kms:Decrypt - needed only if you use a customer-managed Amazon Web Services KMS key
+    /// to encrypt the secret. You do not need this permission to use the account default
+    /// Amazon Web Services managed CMK for Secrets Manager.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -180,12 +182,12 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you use the AWS CLI or one of the AWS SDK to call this operation, then you can
-        /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes
-        /// it as the value for this parameter in the request. If you don't use the SDK and instead
-        /// generate a raw HTTP request to the Secrets Manager service endpoint, then you must
-        /// generate a <code>ClientRequestToken</code> yourself for the new version and include
-        /// the value in the request.
+        /// If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call
+        /// this operation, then you can leave this parameter empty. The CLI or SDK generates
+        /// a random UUID for you and includes it as the value for this parameter in the request.
+        /// If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager
+        /// service endpoint, then you must generate a <code>ClientRequestToken</code> yourself
+        /// for the new version and include the value in the request.
         /// </para>
         ///  </note> 
         /// <para>
@@ -271,23 +273,23 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// (Optional) Specifies the ARN, Key ID, or alias of the AWS KMS customer master key
-        /// (CMK) to be used to encrypt the <code>SecretString</code> or <code>SecretBinary</code>
+        /// (Optional) Specifies the ARN, Key ID, or alias of the Amazon Web Services KMS customer
+        /// master key (CMK) to be used to encrypt the <code>SecretString</code> or <code>SecretBinary</code>
         /// values in the versions stored in this secret.
         /// </para>
         ///  
         /// <para>
-        /// You can specify any of the supported ways to identify a AWS KMS key ID. If you need
-        /// to reference a CMK in a different account, you can use only the key ARN or the alias
-        /// ARN.
+        /// You can specify any of the supported ways to identify a Amazon Web Services KMS key
+        /// ID. If you need to reference a CMK in a different account, you can use only the key
+        /// ARN or the alias ARN.
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify this value, then Secrets Manager defaults to using the AWS account's
-        /// default CMK (the one named <code>aws/secretsmanager</code>). If a AWS KMS CMK with
-        /// that name doesn't yet exist, then Secrets Manager creates it for you automatically
-        /// the first time it needs to encrypt a version's <code>SecretString</code> or <code>SecretBinary</code>
-        /// fields.
+        /// If you don't specify this value, then Secrets Manager defaults to using the Amazon
+        /// Web Services account's default CMK (the one named <code>aws/secretsmanager</code>).
+        /// If a Amazon Web Services KMS CMK with that name doesn't yet exist, then Secrets Manager
+        /// creates it for you automatically the first time it needs to encrypt a version's <code>SecretString</code>
+        /// or <code>SecretBinary</code> fields.
         /// </para>
         ///  <important> 
         /// <para>
@@ -358,7 +360,7 @@ namespace Amazon.SecretsManager.Model
         ///  
         /// <para>
         /// This parameter is not available using the Secrets Manager console. It can be accessed
-        /// only by using the AWS CLI or one of the AWS SDKs.
+        /// only by using the Amazon Web Services CLI or one of the Amazon Web Services SDKs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65536)]
@@ -397,7 +399,7 @@ namespace Amazon.SecretsManager.Model
         /// For storing multiple values, we recommend that you use a JSON text string argument
         /// and specify key/value pairs. For information on how to format a JSON parameter for
         /// the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-        /// JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
+        /// JSON for Parameters</a> in the <i>CLI User Guide</i>. For example:
         /// </para>
         ///  
         /// <para>
@@ -446,7 +448,7 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// This parameter requires a JSON text string argument. For information on how to format
         /// a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-        /// JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
+        /// JSON for Parameters</a> in the <i>CLI User Guide</i>. For example:
         /// </para>
         ///  
         /// <para>
@@ -481,9 +483,10 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Do not use the <code>aws:</code> prefix in your tag names or values because AWS reserves
-        /// it for AWS use. You can't edit or delete tag names or values with this prefix. Tags
-        /// with this prefix do not count against your tags per secret limit.
+        /// Do not use the <code>aws:</code> prefix in your tag names or values because Amazon
+        /// Web Services reserves it for Amazon Web Services use. You can't edit or delete tag
+        /// names or values with this prefix. Tags with this prefix do not count against your
+        /// tags per secret limit.
         /// </para>
         ///  </li> <li> 
         /// <para>
