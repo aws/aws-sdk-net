@@ -343,6 +343,38 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly AppInstanceType MlM58xlarge = new AppInstanceType("ml.m5.8xlarge");
         /// <summary>
+        /// Constant MlM5d12xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM5d12xlarge = new AppInstanceType("ml.m5d.12xlarge");
+        /// <summary>
+        /// Constant MlM5d16xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM5d16xlarge = new AppInstanceType("ml.m5d.16xlarge");
+        /// <summary>
+        /// Constant MlM5d24xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM5d24xlarge = new AppInstanceType("ml.m5d.24xlarge");
+        /// <summary>
+        /// Constant MlM5d2xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM5d2xlarge = new AppInstanceType("ml.m5d.2xlarge");
+        /// <summary>
+        /// Constant MlM5d4xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM5d4xlarge = new AppInstanceType("ml.m5d.4xlarge");
+        /// <summary>
+        /// Constant MlM5d8xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM5d8xlarge = new AppInstanceType("ml.m5d.8xlarge");
+        /// <summary>
+        /// Constant MlM5dLarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM5dLarge = new AppInstanceType("ml.m5d.large");
+        /// <summary>
+        /// Constant MlM5dXlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM5dXlarge = new AppInstanceType("ml.m5d.xlarge");
+        /// <summary>
         /// Constant MlM5Large for AppInstanceType
         /// </summary>
         public static readonly AppInstanceType MlM5Large = new AppInstanceType("ml.m5.large");
@@ -362,6 +394,42 @@ namespace Amazon.SageMaker
         /// Constant MlP38xlarge for AppInstanceType
         /// </summary>
         public static readonly AppInstanceType MlP38xlarge = new AppInstanceType("ml.p3.8xlarge");
+        /// <summary>
+        /// Constant MlP3dn24xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlP3dn24xlarge = new AppInstanceType("ml.p3dn.24xlarge");
+        /// <summary>
+        /// Constant MlR512xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR512xlarge = new AppInstanceType("ml.r5.12xlarge");
+        /// <summary>
+        /// Constant MlR516xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR516xlarge = new AppInstanceType("ml.r5.16xlarge");
+        /// <summary>
+        /// Constant MlR524xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR524xlarge = new AppInstanceType("ml.r5.24xlarge");
+        /// <summary>
+        /// Constant MlR52xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR52xlarge = new AppInstanceType("ml.r5.2xlarge");
+        /// <summary>
+        /// Constant MlR54xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR54xlarge = new AppInstanceType("ml.r5.4xlarge");
+        /// <summary>
+        /// Constant MlR58xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR58xlarge = new AppInstanceType("ml.r5.8xlarge");
+        /// <summary>
+        /// Constant MlR5Large for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR5Large = new AppInstanceType("ml.r5.large");
+        /// <summary>
+        /// Constant MlR5Xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR5Xlarge = new AppInstanceType("ml.r5.xlarge");
         /// <summary>
         /// Constant MlT32xlarge for AppInstanceType
         /// </summary>

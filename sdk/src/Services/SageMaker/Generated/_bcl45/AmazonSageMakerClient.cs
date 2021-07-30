@@ -1505,9 +1505,8 @@ namespace Amazon.SageMaker
         ///  
         /// <para>
         /// For an example that calls this method when deploying a model to Amazon SageMaker hosting
-        /// services, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
-        /// the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for Python
-        /// (Boto 3)).</a> 
+        /// services, see the <a href="https://github.com/aws/amazon-sagemaker-examples/blob/master/sagemaker-fundamentals/create-endpoint/create_endpoint.ipynb">Create
+        /// Endpoint example notebook.</a> 
         /// </para>
         ///  <note> 
         /// <para>
@@ -1633,9 +1632,8 @@ namespace Amazon.SageMaker
         ///  
         /// <para>
         /// For an example that calls this method when deploying a model to Amazon SageMaker hosting
-        /// services, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
-        /// the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for Python
-        /// (Boto 3)).</a> 
+        /// services, see the <a href="https://github.com/aws/amazon-sagemaker-examples/blob/master/sagemaker-fundamentals/create-endpoint/create_endpoint.ipynb">Create
+        /// Endpoint example notebook.</a> 
         /// </para>
         ///  <note> 
         /// <para>

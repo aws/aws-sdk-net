@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     {
         private CallbackStepMetadata _callback;
         private ConditionStepMetadata _condition;
+        private LambdaStepMetadata _lambda;
         private ModelStepMetadata _model;
         private ProcessingJobStepMetadata _processingJob;
         private RegisterModelStepMetadata _registerModel;
@@ -43,7 +44,11 @@ namespace Amazon.SageMaker.Model
         private TuningJobStepMetaData _tuningJob;
 
         /// <summary>
-        /// Gets and sets the property Callback.
+        /// Gets and sets the property Callback. 
+        /// <para>
+        /// The URL of the Amazon SQS queue used by this step execution, the pipeline generated
+        /// token, and a list of output parameters.
+        /// </para>
         /// </summary>
         public CallbackStepMetadata Callback
         {
@@ -60,7 +65,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Condition. 
         /// <para>
-        /// If this is a Condition step metadata object, details on the condition.
+        /// The outcome of the condition evaluation that was run by this step execution.
         /// </para>
         /// </summary>
         public ConditionStepMetadata Condition
@@ -76,9 +81,28 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Lambda. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Lambda function that was run by this step execution
+        /// and a list of output parameters.
+        /// </para>
+        /// </summary>
+        public LambdaStepMetadata Lambda
+        {
+            get { return this._lambda; }
+            set { this._lambda = value; }
+        }
+
+        // Check to see if Lambda property is set
+        internal bool IsSetLambda()
+        {
+            return this._lambda != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Model. 
         /// <para>
-        /// Metadata for the Model step.
+        /// The Amazon Resource Name (ARN) of the model that was created by this step execution.
         /// </para>
         /// </summary>
         public ModelStepMetadata Model
@@ -114,7 +138,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RegisterModel. 
         /// <para>
-        /// Metadata for the RegisterModel step.
+        /// The Amazon Resource Name (ARN) of the model package the model was registered to by
+        /// this step execution.
         /// </para>
         /// </summary>
         public RegisterModelStepMetadata RegisterModel

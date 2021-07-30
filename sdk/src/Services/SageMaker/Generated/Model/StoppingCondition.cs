@@ -36,9 +36,9 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal,
-    /// which delays job termination for 120 seconds. Algorithms can use this 120-second window
-    /// to save the model artifacts, so the results of training are not lost. 
+    /// To stop a training job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code>
+    /// signal, which delays job termination for 120 seconds. Algorithms can use this 120-second
+    /// window to save the model artifacts, so the results of training are not lost. 
     /// </para>
     ///  
     /// <para>
@@ -66,15 +66,18 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property MaxRuntimeInSeconds. 
         /// <para>
         /// The maximum length of time, in seconds, that a training or compilation job can run.
-        /// If the job does not complete during this time, Amazon SageMaker ends the job.
         /// </para>
         ///  
         /// <para>
-        /// When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code>
+        /// For compilation jobs, if the job does not complete during this time, you will receive
+        /// a <code>TimeOut</code> error. We recommend starting with 900 seconds and increase
+        /// as necessary based on your model.
+        /// </para>
+        ///  
+        /// <para>
+        /// For all other jobs, if the job does not complete during this time, Amazon SageMaker
+        /// ends the job. When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code>
         /// specifies the maximum time for all of the attempts in total, not each individual attempt.
-        /// </para>
-        ///  
-        /// <para>
         /// The default value is 1 day. The maximum value is 28 days.
         /// </para>
         /// </summary>
