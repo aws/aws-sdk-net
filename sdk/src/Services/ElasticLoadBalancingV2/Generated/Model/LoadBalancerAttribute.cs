@@ -108,17 +108,24 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value
-        /// is <code>true</code> or <code>false</code>. The default is <code>true</code>. Elastic
-        /// Load Balancing requires that message header names contain only alphanumeric characters
-        /// and hyphens.
+        ///  <code>routing.http.xff_client_port.enabled</code> - Indicates whether the <code>X-Forwarded-For</code>
+        /// header should preserve the source port that the client used to connect to the load
+        /// balancer. The possible values are <code>true</code> and <code>false</code>. The default
+        /// is <code>false</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible
+        /// values are <code>true</code> and <code>false</code>. The default is <code>true</code>.
+        /// Elastic Load Balancing requires that message header names contain only alphanumeric
+        /// characters and hyphens.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load
         /// balancer to route requests to targets if it is unable to forward the request to Amazon
-        /// Web Services WAF. The value is <code>true</code> or <code>false</code>. The default
-        /// is <code>false</code>.
+        /// Web Services WAF. The possible values are <code>true</code> and <code>false</code>.
+        /// The default is <code>false</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -127,8 +134,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load
-        /// balancing is enabled. The value is <code>true</code> or <code>false</code>. The default
-        /// is <code>false</code>.
+        /// balancing is enabled. The possible values are <code>true</code> and <code>false</code>.
+        /// The default is <code>false</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
