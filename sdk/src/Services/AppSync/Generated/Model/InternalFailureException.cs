@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// An internal AWS AppSync error occurred. Try your request again.
+    /// An internal AppSync error occurred. Try your request again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

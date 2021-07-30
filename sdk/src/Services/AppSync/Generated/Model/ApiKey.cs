@@ -33,7 +33,7 @@ namespace Amazon.AppSync.Model
     /// 
     ///  
     /// <para>
-    /// Customers invoke AWS AppSync GraphQL API operations with API keys as an identity mechanism.
+    /// Customers invoke AppSync GraphQL API operations with API keys as an identity mechanism.
     /// There are two key versions:
     /// </para>
     ///  

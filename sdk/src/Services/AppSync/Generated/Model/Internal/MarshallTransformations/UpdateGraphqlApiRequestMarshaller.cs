@@ -90,6 +90,17 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AuthenticationType);
                 }
 
+                if(publicRequest.IsSetLambdaAuthorizerConfig())
+                {
+                    context.Writer.WritePropertyName("lambdaAuthorizerConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LambdaAuthorizerConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LambdaAuthorizerConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetLogConfig())
                 {
                     context.Writer.WritePropertyName("logConfig");

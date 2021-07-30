@@ -59,7 +59,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property AwsRegion. 
         /// <para>
-        /// The AWS Region in which the user pool was created.
+        /// The Amazon Web Services Region in which the user pool was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -51,6 +51,17 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AuthenticationType);
             }
 
+            if(requestObject.IsSetLambdaAuthorizerConfig())
+            {
+                context.Writer.WritePropertyName("lambdaAuthorizerConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LambdaAuthorizerConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.LambdaAuthorizerConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetOpenIDConnectConfig())
             {
                 context.Writer.WritePropertyName("openIDConnectConfig");

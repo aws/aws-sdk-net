@@ -37,6 +37,7 @@ namespace Amazon.AppSync.Model
         private string _apiId;
         private string _arn;
         private AuthenticationType _authenticationType;
+        private LambdaAuthorizerConfig _lambdaAuthorizerConfig;
         private LogConfig _logConfig;
         private string _name;
         private OpenIDConnectConfig _openidConnectConfig;
@@ -116,6 +117,24 @@ namespace Amazon.AppSync.Model
         internal bool IsSetAuthenticationType()
         {
             return this._authenticationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaAuthorizerConfig.  
+        /// <para>
+        /// Configuration for AWS Lambda function authorization.
+        /// </para>
+        /// </summary>
+        public LambdaAuthorizerConfig LambdaAuthorizerConfig
+        {
+            get { return this._lambdaAuthorizerConfig; }
+            set { this._lambdaAuthorizerConfig = value; }
+        }
+
+        // Check to see if LambdaAuthorizerConfig property is set
+        internal bool IsSetLambdaAuthorizerConfig()
+        {
+            return this._lambdaAuthorizerConfig != null;
         }
 
         /// <summary>
@@ -231,8 +250,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property WafWebAclArn. 
         /// <para>
-        /// The ARN of the AWS Web Application Firewall (WAF) ACL associated with this <code>GraphqlApi</code>,
-        /// if one exists.
+        /// The ARN of the WAF ACL associated with this <code>GraphqlApi</code>, if one exists.
         /// </para>
         /// </summary>
         public string WafWebAclArn

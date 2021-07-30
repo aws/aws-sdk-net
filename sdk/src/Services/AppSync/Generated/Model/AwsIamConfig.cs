@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// The AWS IAM configuration.
+    /// The Identity and Access Management configuration.
     /// </summary>
     public partial class AwsIamConfig
     {
@@ -39,7 +39,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property SigningRegion. 
         /// <para>
-        /// The signing region for AWS IAM authorization.
+        /// The signing region for Identity and Access Management authorization.
         /// </para>
         /// </summary>
         public string SigningRegion
@@ -57,7 +57,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property SigningServiceName. 
         /// <para>
-        /// The signing service name for AWS IAM authorization.
+        /// The signing service name for Identity and Access Management authorization.
         /// </para>
         /// </summary>
         public string SigningServiceName

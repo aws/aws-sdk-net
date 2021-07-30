@@ -61,7 +61,7 @@ namespace Amazon.AppSync.Model
         /// <para>
         /// The client identifier of the Relying party at the OpenID identity provider. This identifier
         /// is typically obtained when the Relying party is registered with the OpenID identity
-        /// provider. You can specify a regular expression so the AWS AppSync can validate against
+        /// provider. You can specify a regular expression so the AppSync can validate against
         /// multiple client identifiers at a time.
         /// </para>
         /// </summary>

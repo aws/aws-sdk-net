@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AdditionalAuthenticationProvider Object
+    /// Response Unmarshaller for LambdaAuthorizerConfig Object
     /// </summary>  
-    public class AdditionalAuthenticationProviderUnmarshaller : IUnmarshaller<AdditionalAuthenticationProvider, XmlUnmarshallerContext>, IUnmarshaller<AdditionalAuthenticationProvider, JsonUnmarshallerContext>
+    public class LambdaAuthorizerConfigUnmarshaller : IUnmarshaller<LambdaAuthorizerConfig, XmlUnmarshallerContext>, IUnmarshaller<LambdaAuthorizerConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AdditionalAuthenticationProvider IUnmarshaller<AdditionalAuthenticationProvider, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LambdaAuthorizerConfig IUnmarshaller<LambdaAuthorizerConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AdditionalAuthenticationProvider Unmarshall(JsonUnmarshallerContext context)
+        public LambdaAuthorizerConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AdditionalAuthenticationProvider unmarshalledObject = new AdditionalAuthenticationProvider();
+            LambdaAuthorizerConfig unmarshalledObject = new LambdaAuthorizerConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("authenticationType", targetDepth))
+                if (context.TestExpression("authorizerResultTtlInSeconds", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.AuthorizerResultTtlInSeconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("authorizerUri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuthorizerUri = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("lambdaAuthorizerConfig", targetDepth))
+                if (context.TestExpression("identityValidationExpression", targetDepth))
                 {
-                    var unmarshaller = LambdaAuthorizerConfigUnmarshaller.Instance;
-                    unmarshalledObject.LambdaAuthorizerConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("openIDConnectConfig", targetDepth))
-                {
-                    var unmarshaller = OpenIDConnectConfigUnmarshaller.Instance;
-                    unmarshalledObject.OpenIDConnectConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("userPoolConfig", targetDepth))
-                {
-                    var unmarshaller = CognitoUserPoolConfigUnmarshaller.Instance;
-                    unmarshalledObject.UserPoolConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IdentityValidationExpression = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         }
 
 
-        private static AdditionalAuthenticationProviderUnmarshaller _instance = new AdditionalAuthenticationProviderUnmarshaller();        
+        private static LambdaAuthorizerConfigUnmarshaller _instance = new LambdaAuthorizerConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AdditionalAuthenticationProviderUnmarshaller Instance
+        public static LambdaAuthorizerConfigUnmarshaller Instance
         {
             get
             {

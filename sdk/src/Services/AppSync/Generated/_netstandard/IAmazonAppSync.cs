@@ -31,7 +31,7 @@ namespace Amazon.AppSync
     /// <summary>
     /// Interface for accessing AppSync
     ///
-    /// AWS AppSync provides API actions for creating and interacting with data sources using
+    /// AppSync provides API actions for creating and interacting with data sources using
     /// GraphQL from your application.
     /// </summary>
     public partial interface IAmazonAppSync : IAmazonService, IDisposable
@@ -59,7 +59,7 @@ namespace Amazon.AppSync
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -98,7 +98,7 @@ namespace Amazon.AppSync
         /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
         /// The request exceeded a limit. Try your request again.
@@ -137,7 +137,7 @@ namespace Amazon.AppSync
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -175,7 +175,7 @@ namespace Amazon.AppSync
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -214,7 +214,7 @@ namespace Amazon.AppSync
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
         /// The request exceeded a limit. Try your request again.
@@ -251,7 +251,7 @@ namespace Amazon.AppSync
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -287,7 +287,7 @@ namespace Amazon.AppSync
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -323,7 +323,7 @@ namespace Amazon.AppSync
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -355,7 +355,7 @@ namespace Amazon.AppSync
         /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -391,7 +391,7 @@ namespace Amazon.AppSync
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -423,7 +423,7 @@ namespace Amazon.AppSync
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -462,7 +462,7 @@ namespace Amazon.AppSync
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -494,7 +494,7 @@ namespace Amazon.AppSync
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -530,7 +530,7 @@ namespace Amazon.AppSync
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -566,7 +566,7 @@ namespace Amazon.AppSync
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -602,7 +602,7 @@ namespace Amazon.AppSync
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -638,7 +638,7 @@ namespace Amazon.AppSync
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -702,7 +702,7 @@ namespace Amazon.AppSync
         /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -733,7 +733,7 @@ namespace Amazon.AppSync
         /// The GraphQL schema is not valid.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -794,7 +794,7 @@ namespace Amazon.AppSync
         /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -830,7 +830,7 @@ namespace Amazon.AppSync
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -871,7 +871,7 @@ namespace Amazon.AppSync
         /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -903,7 +903,7 @@ namespace Amazon.AppSync
         /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -935,7 +935,7 @@ namespace Amazon.AppSync
         /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -967,7 +967,7 @@ namespace Amazon.AppSync
         /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -995,7 +995,7 @@ namespace Amazon.AppSync
         /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -1027,7 +1027,7 @@ namespace Amazon.AppSync
         /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -1062,7 +1062,7 @@ namespace Amazon.AppSync
         /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
         /// The request exceeded a limit. Try your request again.
@@ -1101,7 +1101,7 @@ namespace Amazon.AppSync
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -1142,7 +1142,7 @@ namespace Amazon.AppSync
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -1177,7 +1177,7 @@ namespace Amazon.AppSync
         /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
         /// The request exceeded a limit. Try your request again.
@@ -1215,7 +1215,7 @@ namespace Amazon.AppSync
         /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
         /// The request exceeded a limit. Try your request again.
@@ -1254,7 +1254,7 @@ namespace Amazon.AppSync
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -1290,7 +1290,7 @@ namespace Amazon.AppSync
         /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
         /// The request exceeded a limit. Try your request again.
@@ -1329,7 +1329,7 @@ namespace Amazon.AppSync
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -1361,7 +1361,7 @@ namespace Amazon.AppSync
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -1400,7 +1400,7 @@ namespace Amazon.AppSync
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -1432,7 +1432,7 @@ namespace Amazon.AppSync
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
@@ -1468,7 +1468,7 @@ namespace Amazon.AppSync
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
-        /// An internal AWS AppSync error occurred. Try your request again.
+        /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then

@@ -139,7 +139,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property LambdaConfig. 
         /// <para>
-        /// The new AWS Lambda configuration.
+        /// The new Amazon Web Services Lambda configuration.
         /// </para>
         /// </summary>
         public LambdaDataSourceConfig LambdaConfig

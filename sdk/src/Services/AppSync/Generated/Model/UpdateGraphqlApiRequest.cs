@@ -37,6 +37,7 @@ namespace Amazon.AppSync.Model
         private List<AdditionalAuthenticationProvider> _additionalAuthenticationProviders = new List<AdditionalAuthenticationProvider>();
         private string _apiId;
         private AuthenticationType _authenticationType;
+        private LambdaAuthorizerConfig _lambdaAuthorizerConfig;
         private LogConfig _logConfig;
         private string _name;
         private OpenIDConnectConfig _openidConnectConfig;
@@ -96,6 +97,24 @@ namespace Amazon.AppSync.Model
         internal bool IsSetAuthenticationType()
         {
             return this._authenticationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaAuthorizerConfig. 
+        /// <para>
+        /// Configuration for AWS Lambda function authorization.
+        /// </para>
+        /// </summary>
+        public LambdaAuthorizerConfig LambdaAuthorizerConfig
+        {
+            get { return this._lambdaAuthorizerConfig; }
+            set { this._lambdaAuthorizerConfig = value; }
+        }
+
+        // Check to see if LambdaAuthorizerConfig property is set
+        internal bool IsSetLambdaAuthorizerConfig()
+        {
+            return this._lambdaAuthorizerConfig != null;
         }
 
         /// <summary>

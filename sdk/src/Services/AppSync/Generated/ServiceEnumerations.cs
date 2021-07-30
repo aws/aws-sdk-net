@@ -257,6 +257,10 @@ namespace Amazon.AppSync
         /// </summary>
         public static readonly AuthenticationType AWS_IAM = new AuthenticationType("AWS_IAM");
         /// <summary>
+        /// Constant AWS_LAMBDA for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType AWS_LAMBDA = new AuthenticationType("AWS_LAMBDA");
+        /// <summary>
         /// Constant OPENID_CONNECT for AuthenticationType
         /// </summary>
         public static readonly AuthenticationType OPENID_CONNECT = new AuthenticationType("OPENID_CONNECT");

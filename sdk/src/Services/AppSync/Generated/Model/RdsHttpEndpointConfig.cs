@@ -42,7 +42,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property AwsRegion. 
         /// <para>
-        /// AWS Region for RDS HTTP endpoint.
+        /// Amazon Web Services Region for RDS HTTP endpoint.
         /// </para>
         /// </summary>
         public string AwsRegion
@@ -60,7 +60,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property AwsSecretStoreArn. 
         /// <para>
-        /// AWS secret store ARN for database credentials.
+        /// Amazon Web Services secret store ARN for database credentials.
         /// </para>
         /// </summary>
         public string AwsSecretStoreArn

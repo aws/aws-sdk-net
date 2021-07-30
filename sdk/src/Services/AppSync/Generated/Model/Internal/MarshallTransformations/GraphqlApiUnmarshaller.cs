@@ -88,6 +88,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("lambdaAuthorizerConfig", targetDepth))
+                {
+                    var unmarshaller = LambdaAuthorizerConfigUnmarshaller.Instance;
+                    unmarshalledObject.LambdaAuthorizerConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("logConfig", targetDepth))
                 {
                     var unmarshaller = LogConfigUnmarshaller.Instance;

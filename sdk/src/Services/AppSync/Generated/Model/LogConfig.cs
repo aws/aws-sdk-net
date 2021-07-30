@@ -40,8 +40,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLogsRoleArn. 
         /// <para>
-        /// The service role that AWS AppSync will assume to publish to Amazon CloudWatch logs
-        /// in your account. 
+        /// The service role that AppSync will assume to publish to Amazon CloudWatch logs in
+        /// your account. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

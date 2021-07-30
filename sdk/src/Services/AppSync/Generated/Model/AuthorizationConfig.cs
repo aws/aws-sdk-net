@@ -63,7 +63,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property AwsIamConfig. 
         /// <para>
-        /// The AWS IAM settings.
+        /// The Identity and Access Management settings.
         /// </para>
         /// </summary>
         public AwsIamConfig AwsIamConfig
