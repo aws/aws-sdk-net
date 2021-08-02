@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
-    /// Contains information about an AWS Lambda function to import to create a component.
+    /// Contains information about an Lambda function to import to create a component.
     /// </summary>
     public partial class LambdaFunctionRecipeSource
     {
@@ -61,8 +61,8 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property ComponentLambdaParameters. 
         /// <para>
-        /// The system and runtime parameters for the Lambda function as it runs on the AWS IoT
-        /// Greengrass core device.
+        /// The system and runtime parameters for the Lambda function as it runs on the Greengrass
+        /// core device.
         /// </para>
         /// </summary>
         public LambdaExecutionParameters ComponentLambdaParameters

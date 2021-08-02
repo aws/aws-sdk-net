@@ -30,7 +30,7 @@ namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCoreDevice operation.
-    /// Retrieves metadata for a AWS IoT Greengrass core device.
+    /// Retrieves metadata for a Greengrass core device.
     /// </summary>
     public partial class GetCoreDeviceRequest : AmazonGreengrassV2Request
     {
@@ -39,7 +39,7 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property CoreDeviceThingName. 
         /// <para>
-        /// The name of the core device. This is also the name of the AWS IoT thing.
+        /// The name of the core device. This is also the name of the IoT thing.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

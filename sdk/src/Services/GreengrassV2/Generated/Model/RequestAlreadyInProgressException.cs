@@ -29,42 +29,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
-    /// IoT Greengrass can't process your request right now. Try again later.
+    /// The request is already in progress. This exception occurs when you use a client token
+    /// for multiple requests while IoT Greengrass is still processing an earlier request
+    /// that uses the same client token.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class InternalServerException : AmazonGreengrassV2Exception
+    public partial class RequestAlreadyInProgressException : AmazonGreengrassV2Exception
     {
-        private int? _retryAfterSeconds;
 
         /// <summary>
-        /// Constructs a new InternalServerException with the specified error
+        /// Constructs a new RequestAlreadyInProgressException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public InternalServerException(string message) 
+        public RequestAlreadyInProgressException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of InternalServerException
+        /// Construct instance of RequestAlreadyInProgressException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public InternalServerException(string message, Exception innerException) 
+        public RequestAlreadyInProgressException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of InternalServerException
+        /// Construct instance of RequestAlreadyInProgressException
         /// </summary>
         /// <param name="innerException"></param>
-        public InternalServerException(Exception innerException) 
+        public RequestAlreadyInProgressException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of InternalServerException
+        /// Construct instance of RequestAlreadyInProgressException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -72,33 +73,32 @@ namespace Amazon.GreengrassV2.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public InternalServerException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public RequestAlreadyInProgressException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of InternalServerException
+        /// Construct instance of RequestAlreadyInProgressException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public InternalServerException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public RequestAlreadyInProgressException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the InternalServerException class with serialized data.
+        /// Constructs a new instance of the RequestAlreadyInProgressException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected InternalServerException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected RequestAlreadyInProgressException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
-            this.RetryAfterSeconds = (int)info.GetValue("RetryAfterSeconds", typeof(int));
         }
 
         /// <summary>
@@ -119,27 +119,8 @@ namespace Amazon.GreengrassV2.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
-            info.AddValue("RetryAfterSeconds", this.RetryAfterSeconds);
         }
 #endif
-
-        /// <summary>
-        /// Gets and sets the property RetryAfterSeconds. 
-        /// <para>
-        /// The amount of time to wait before you retry the request.
-        /// </para>
-        /// </summary>
-        public int RetryAfterSeconds
-        {
-            get { return this._retryAfterSeconds.GetValueOrDefault(); }
-            set { this._retryAfterSeconds = value; }
-        }
-
-        // Check to see if RetryAfterSeconds property is set
-        internal bool IsSetRetryAfterSeconds()
-        {
-            return this._retryAfterSeconds.HasValue; 
-        }
 
     }
 }

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
-    /// Contains information about an event source for an AWS Lambda function. The event source
+    /// Contains information about an event source for an Lambda function. The event source
     /// defines the topics on which this Lambda function subscribes to receive messages that
     /// run the function.
     /// </summary>
@@ -70,9 +70,9 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IOT_CORE</code> – Subscribe to AWS IoT Core MQTT messages. This event source
-        /// type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source
-        /// topic.
+        ///  <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages.
+        /// This event source type supports MQTT wildcards (<code>+</code> and <code>#</code>)
+        /// in the event source topic.
         /// </para>
         ///  </li> </ul>
         /// </summary>

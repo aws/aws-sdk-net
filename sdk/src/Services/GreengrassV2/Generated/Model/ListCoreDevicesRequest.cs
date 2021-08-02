@@ -30,7 +30,7 @@ namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCoreDevices operation.
-    /// Retrieves a paginated list of AWS IoT Greengrass core devices.
+    /// Retrieves a paginated list of Greengrass core devices.
     /// </summary>
     public partial class ListCoreDevicesRequest : AmazonGreengrassV2Request
     {
@@ -84,13 +84,13 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>HEALTHY</code> – The AWS IoT Greengrass Core software and all components run
-        /// on the core device without issue.
+        ///  <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on
+        /// the core device without issue.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UNHEALTHY</code> – The AWS IoT Greengrass Core software or a component is in
-        /// a failed state on the core device.
+        ///  <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a
+        /// failed state on the core device.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -110,8 +110,8 @@ namespace Amazon.GreengrassV2.Model
         /// Gets and sets the property ThingGroupArn. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-        /// of the AWS IoT thing group by which to filter. If you specify this parameter, the
-        /// list includes only core devices that are members of this thing group.
+        /// of the IoT thing group by which to filter. If you specify this parameter, the list
+        /// includes only core devices that are members of this thing group.
         /// </para>
         /// </summary>
         public string ThingGroupArn

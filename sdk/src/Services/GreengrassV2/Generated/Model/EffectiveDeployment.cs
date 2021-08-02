@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
-    /// Contains information about a deployment job that AWS IoT Greengrass sends to a AWS
-    /// IoT Greengrass core device.
+    /// Contains information about a deployment job that IoT Greengrass sends to a Greengrass
+    /// core device.
     /// </summary>
     public partial class EffectiveDeployment
     {
@@ -48,7 +48,7 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property CoreDeviceExecutionStatus. 
         /// <para>
-        /// The status of the deployment job on the AWS IoT Greengrass core device.
+        /// The status of the deployment job on the Greengrass core device.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -107,13 +107,6 @@ namespace Amazon.GreengrassV2.Model
         /// <para>
         /// The name of the deployment.
         /// </para>
-        ///  
-        /// <para>
-        /// You can create deployments without names. If you create a deployment without a name,
-        /// the AWS IoT Greengrass V2 console shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-        /// where <code>targetType</code> and <code>targetName</code> are the type and name of
-        /// the deployment target.
-        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string DeploymentName
@@ -151,7 +144,7 @@ namespace Amazon.GreengrassV2.Model
         /// Gets and sets the property IotJobArn. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-        /// of the AWS IoT job that applies the deployment to target devices.
+        /// of the IoT job that applies the deployment to target devices.
         /// </para>
         /// </summary>
         public string IotJobArn
@@ -169,7 +162,7 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property IotJobId. 
         /// <para>
-        /// The ID of the AWS IoT job that applies the deployment to target devices.
+        /// The ID of the IoT job that applies the deployment to target devices.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -226,7 +219,7 @@ namespace Amazon.GreengrassV2.Model
         /// Gets and sets the property TargetArn. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-        /// of the target AWS IoT thing or thing group.
+        /// of the target IoT thing or thing group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

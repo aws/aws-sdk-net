@@ -30,8 +30,8 @@ namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEffectiveDeployments operation.
-    /// Retrieves a paginated list of deployment jobs that AWS IoT Greengrass sends to AWS
-    /// IoT Greengrass core devices.
+    /// Retrieves a paginated list of deployment jobs that IoT Greengrass sends to Greengrass
+    /// core devices.
     /// </summary>
     public partial class ListEffectiveDeploymentsRequest : AmazonGreengrassV2Request
     {
@@ -42,7 +42,7 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property CoreDeviceThingName. 
         /// <para>
-        /// The name of the core device. This is also the name of the AWS IoT thing.
+        /// The name of the core device. This is also the name of the IoT thing.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

@@ -39,7 +39,7 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property ThingName. 
         /// <para>
-        /// The name of the AWS IoT thing that represents the client device to disassociate.
+        /// The name of the IoT thing that represents the client device to disassociate.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

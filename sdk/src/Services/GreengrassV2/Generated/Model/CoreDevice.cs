@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
-    /// Contains information about a AWS IoT Greengrass core device, which is an AWS IoT thing
-    /// that runs the AWS IoT Greengrass Core software.
+    /// Contains information about a Greengrass core device, which is an IoT thing that runs
+    /// the IoT Greengrass Core software.
     /// </summary>
     public partial class CoreDevice
     {
@@ -41,7 +41,7 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property CoreDeviceThingName. 
         /// <para>
-        /// The name of the core device. This is also the name of the AWS IoT thing.
+        /// The name of the core device. This is also the name of the IoT thing.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -82,13 +82,13 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>HEALTHY</code> – The AWS IoT Greengrass Core software and all components run
-        /// on the core device without issue.
+        ///  <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on
+        /// the core device without issue.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UNHEALTHY</code> – The AWS IoT Greengrass Core software or a component is in
-        /// a failed state on the core device.
+        ///  <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a
+        /// failed state on the core device.
         /// </para>
         ///  </li> </ul>
         /// </summary>

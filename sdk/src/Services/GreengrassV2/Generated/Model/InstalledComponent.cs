@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
-    /// Contains information about a component on a AWS IoT Greengrass core device.
+    /// Contains information about a component on a Greengrass core device.
     /// </summary>
     public partial class InstalledComponent
     {

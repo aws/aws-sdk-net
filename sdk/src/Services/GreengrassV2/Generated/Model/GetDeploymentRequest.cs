@@ -30,8 +30,7 @@ namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDeployment operation.
-    /// Gets a deployment. Deployments define the components that run on AWS IoT Greengrass
-    /// core devices.
+    /// Gets a deployment. Deployments define the components that run on Greengrass core devices.
     /// </summary>
     public partial class GetDeploymentRequest : AmazonGreengrassV2Request
     {

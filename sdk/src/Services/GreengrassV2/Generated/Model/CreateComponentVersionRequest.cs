@@ -30,10 +30,10 @@ namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateComponentVersion operation.
-    /// Creates a component. Components are software that run on AWS IoT Greengrass core devices.
+    /// Creates a component. Components are software that run on Greengrass core devices.
     /// After you develop and test a component on your core device, you can use this operation
-    /// to upload your component to AWS IoT Greengrass. Then, you can deploy the component
-    /// to other core devices.
+    /// to upload your component to IoT Greengrass. Then, you can deploy the component to
+    /// other core devices.
     /// 
     ///  
     /// <para>
@@ -47,9 +47,8 @@ namespace Amazon.GreengrassV2.Model
     /// <para>
     /// Create a component from a recipe, which is a file that defines the component's metadata,
     /// parameters, dependencies, lifecycle, artifacts, and platform capability. For more
-    /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/component-recipe-reference.html">AWS
-    /// IoT Greengrass component recipe reference</a> in the <i>AWS IoT Greengrass V2 Developer
-    /// Guide</i>.
+    /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/component-recipe-reference.html">IoT
+    /// Greengrass component recipe reference</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -62,10 +61,10 @@ namespace Amazon.GreengrassV2.Model
     /// </para>
     ///  
     /// <para>
-    /// Create a component from an AWS Lambda function that runs on AWS IoT Greengrass. This
-    /// creates a recipe and artifacts from the Lambda function's deployment package. You
-    /// can use this operation to migrate Lambda functions from AWS IoT Greengrass V1 to AWS
-    /// IoT Greengrass V2.
+    /// Create a component from an Lambda function that runs on IoT Greengrass. This creates
+    /// a recipe and artifacts from the Lambda function's deployment package. You can use
+    /// this operation to migrate Lambda functions from IoT Greengrass V1 to IoT Greengrass
+    /// V2.
     /// </para>
     ///  
     /// <para>
@@ -104,9 +103,34 @@ namespace Amazon.GreengrassV2.Model
     /// </summary>
     public partial class CreateComponentVersionRequest : AmazonGreengrassV2Request
     {
+        private string _clientToken;
         private MemoryStream _inlineRecipe;
         private LambdaFunctionRecipeSource _lambdaFunction;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier that you can provide to ensure that the request
+        /// is idempotent. Idempotency means that the request is successfully processed only once,
+        /// even if you send the request multiple times. When a request succeeds, and you specify
+        /// the same client token for subsequent successful requests, the IoT Greengrass V2 service
+        /// returns the successful response that it caches from the previous request. IoT Greengrass
+        /// V2 caches successful responses for idempotent requests for up to 8 hours.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InlineRecipe. 
@@ -158,7 +182,7 @@ namespace Amazon.GreengrassV2.Model
         /// <para>
         /// A list of key-value pairs that contain metadata for the resource. For more information,
         /// see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-        /// your resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+        /// your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

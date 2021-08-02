@@ -30,7 +30,7 @@ namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Retrieves the list of tags for an AWS IoT Greengrass resource.
+    /// Retrieves the list of tags for an IoT Greengrass resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonGreengrassV2Request
     {

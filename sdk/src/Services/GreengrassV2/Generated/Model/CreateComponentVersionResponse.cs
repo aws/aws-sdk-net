@@ -118,7 +118,7 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the component version in AWS IoT Greengrass V2. This status is different
+        /// The status of the component version in IoT Greengrass V2. This status is different
         /// from the status of the component on a core device.
         /// </para>
         /// </summary>

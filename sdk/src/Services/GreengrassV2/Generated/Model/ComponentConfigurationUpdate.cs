@@ -31,7 +31,7 @@ namespace Amazon.GreengrassV2.Model
     /// <summary>
     /// Contains information about a deployment's update to a component's configuration on
     /// Greengrass core devices. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html">Update
-    /// component configurations</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+    /// component configurations</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
     /// </summary>
     public partial class ComponentConfigurationUpdate
     {
@@ -47,7 +47,7 @@ namespace Amazon.GreengrassV2.Model
         /// this configuration with the component's default configuration. This means that the
         /// core device keeps it's existing configuration for keys and values that you don't specify
         /// in this object. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#merge-configuration-update">Merge
-        /// configuration updates</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+        /// configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65536)]
@@ -71,7 +71,7 @@ namespace Amazon.GreengrassV2.Model
         /// (<code>/</code>) and use forward slashes to separate the key for each level in the
         /// object. For more information, see the <a href="https://tools.ietf.org/html/rfc6901">JSON
         /// pointer specification</a> and <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#reset-configuration-update">Reset
-        /// configuration updates</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+        /// configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
         /// </para>
         /// </summary>
         public List<string> Reset

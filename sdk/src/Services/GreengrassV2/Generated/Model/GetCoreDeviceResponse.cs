@@ -63,7 +63,7 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property CoreDeviceThingName. 
         /// <para>
-        /// The name of the core device. This is also the name of the AWS IoT thing.
+        /// The name of the core device. This is also the name of the IoT thing.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -82,10 +82,10 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property CoreVersion. 
         /// <para>
-        /// The version of the AWS IoT Greengrass Core software that the core device runs. This
-        /// version is equivalent to the version of the AWS IoT Greengrass nucleus component that
-        /// runs on the core device. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">AWS
-        /// IoT Greengrass nucleus component</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+        /// The version of the IoT Greengrass Core software that the core device runs. This version
+        /// is equivalent to the version of the Greengrass nucleus component that runs on the
+        /// core device. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass
+        /// nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -145,13 +145,13 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>HEALTHY</code> – The AWS IoT Greengrass Core software and all components run
-        /// on the core device without issue.
+        ///  <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on
+        /// the core device without issue.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UNHEALTHY</code> – The AWS IoT Greengrass Core software or a component is in
-        /// a failed state on the core device.
+        ///  <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a
+        /// failed state on the core device.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -172,7 +172,7 @@ namespace Amazon.GreengrassV2.Model
         /// <para>
         /// A list of key-value pairs that contain metadata for the resource. For more information,
         /// see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-        /// your resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+        /// your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

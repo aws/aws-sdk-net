@@ -110,7 +110,7 @@ namespace Amazon.GreengrassV2.Model
         /// Gets and sets the property TargetArn. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-        /// of the target AWS IoT thing or thing group.
+        /// of the target IoT thing or thing group.
         /// </para>
         /// </summary>
         public string TargetArn

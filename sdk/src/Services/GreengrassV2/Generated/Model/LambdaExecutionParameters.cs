@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
-    /// Contains parameters for a Lambda function that runs on AWS IoT Greengrass.
+    /// Contains parameters for a Lambda function that runs on IoT Greengrass.
     /// </summary>
     public partial class LambdaExecutionParameters
     {
@@ -69,7 +69,8 @@ namespace Amazon.GreengrassV2.Model
         /// <para>
         /// The list of event sources to which to subscribe to receive work messages. The Lambda
         /// function runs when it receives a message from an event source. You can subscribe this
-        /// function to local publish/subscribe messages and AWS IoT Core MQTT messages.
+        /// function to local publish/subscribe messages and Amazon Web Services IoT Core MQTT
+        /// messages.
         /// </para>
         /// </summary>
         public List<LambdaEventSource> EventSources
@@ -146,7 +147,7 @@ namespace Amazon.GreengrassV2.Model
         /// Gets and sets the property MaxIdleTimeInSeconds. 
         /// <para>
         /// The maximum amount of time in seconds that a non-pinned Lambda function can idle before
-        /// the AWS IoT Greengrass Core software stops its process.
+        /// the IoT Greengrass Core software stops its process.
         /// </para>
         /// </summary>
         public int MaxIdleTimeInSeconds
@@ -183,9 +184,9 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property MaxQueueSize. 
         /// <para>
-        /// The maximum size of the message queue for the Lambda function component. The AWS IoT
-        /// Greengrass core stores messages in a FIFO (first-in-first-out) queue until it can
-        /// run the Lambda function to consume each message.
+        /// The maximum size of the message queue for the Lambda function component. The IoT Greengrass
+        /// core stores messages in a FIFO (first-in-first-out) queue until it can run the Lambda
+        /// function to consume each message.
         /// </para>
         /// </summary>
         public int MaxQueueSize
@@ -207,14 +208,14 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// A pinned Lambda function starts when AWS IoT Greengrass starts and keeps running in
-        /// its own container.
+        /// A pinned Lambda function starts when IoT Greengrass starts and keeps running in its
+        /// own container.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// A non-pinned Lambda function starts only when it receives a work item and exists after
         /// it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work
-        /// items, the AWS IoT Greengrass Core software creates multiple instances of the function.
+        /// items, the IoT Greengrass Core software creates multiple instances of the function.
         /// </para>
         ///  </li> </ul> 
         /// <para>

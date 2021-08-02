@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
-    /// Contains information about a component that is a candidate to deploy to a AWS IoT
-    /// Greengrass core device.
+    /// Contains information about a component that is a candidate to deploy to a Greengrass
+    /// core device.
     /// </summary>
     public partial class ComponentCandidate
     {
@@ -79,13 +79,13 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property VersionRequirements. 
         /// <para>
-        /// The version requirements for the component's dependencies. AWS IoT Greengrass core
-        /// devices get the version requirements from component recipes.
+        /// The version requirements for the component's dependencies. Greengrass core devices
+        /// get the version requirements from component recipes.
         /// </para>
         ///  
         /// <para>
-        /// AWS IoT Greengrass V2 uses semantic version constraints. For more information, see
-        /// <a href="https://semver.org/">Semantic Versioning</a>.
+        /// IoT Greengrass V2 uses semantic version constraints. For more information, see <a
+        /// href="https://semver.org/">Semantic Versioning</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> VersionRequirements

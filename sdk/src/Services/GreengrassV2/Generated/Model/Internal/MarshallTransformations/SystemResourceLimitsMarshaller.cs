@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ComponentRunWith Marshaller
+    /// SystemResourceLimits Marshaller
     /// </summary>       
-    public class ComponentRunWithMarshaller : IRequestMarshaller<ComponentRunWith, JsonMarshallerContext> 
+    public class SystemResourceLimitsMarshaller : IRequestMarshaller<SystemResourceLimits, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,18 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ComponentRunWith requestObject, JsonMarshallerContext context)
+        public void Marshall(SystemResourceLimits requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetPosixUser())
+            if(requestObject.IsSetCpus())
             {
-                context.Writer.WritePropertyName("posixUser");
-                context.Writer.Write(requestObject.PosixUser);
+                context.Writer.WritePropertyName("cpus");
+                context.Writer.Write(requestObject.Cpus);
             }
 
-            if(requestObject.IsSetSystemResourceLimits())
+            if(requestObject.IsSetMemory())
             {
-                context.Writer.WritePropertyName("systemResourceLimits");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SystemResourceLimitsMarshaller.Instance;
-                marshaller.Marshall(requestObject.SystemResourceLimits, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("memory");
+                context.Writer.Write(requestObject.Memory);
             }
 
         }
@@ -67,7 +62,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static ComponentRunWithMarshaller Instance = new ComponentRunWithMarshaller();
+        public readonly static SystemResourceLimitsMarshaller Instance = new SystemResourceLimitsMarshaller();
 
     }
 }

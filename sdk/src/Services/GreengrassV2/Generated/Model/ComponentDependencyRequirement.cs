@@ -73,8 +73,8 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         ///  
         /// <para>
-        /// AWS IoT Greengrass V2 uses semantic version constraints. For more information, see
-        /// <a href="https://semver.org/">Semantic Versioning</a>.
+        /// IoT Greengrass V2 uses semantic version constraints. For more information, see <a
+        /// href="https://semver.org/">Semantic Versioning</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

@@ -30,11 +30,10 @@ namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCoreDevice operation.
-    /// Deletes a AWS IoT Greengrass core device, which is an AWS IoT thing. This operation
-    /// removes the core device from the list of core devices. This operation doesn't delete
-    /// the AWS IoT thing. For more information about how to delete the AWS IoT thing, see
-    /// <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteThing.html">DeleteThing</a>
-    /// in the <i>AWS IoT API Reference</i>.
+    /// Deletes a Greengrass core device, which is an IoT thing. This operation removes the
+    /// core device from the list of core devices. This operation doesn't delete the IoT thing.
+    /// For more information about how to delete the IoT thing, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteThing.html">DeleteThing</a>
+    /// in the <i>IoT API Reference</i>.
     /// </summary>
     public partial class DeleteCoreDeviceRequest : AmazonGreengrassV2Request
     {
@@ -43,7 +42,7 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property CoreDeviceThingName. 
         /// <para>
-        /// The name of the core device. This is also the name of the AWS IoT thing.
+        /// The name of the core device. This is also the name of the IoT thing.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
-    /// Contains the status of a component in the AWS IoT Greengrass service.
+    /// Contains the status of a component in the IoT Greengrass service.
     /// </summary>
     public partial class CloudComponentStatus
     {
@@ -59,7 +59,7 @@ namespace Amazon.GreengrassV2.Model
         /// Gets and sets the property Errors. 
         /// <para>
         /// A dictionary of errors that communicate why the component is in an error state. For
-        /// example, if AWS IoT Greengrass can't access an artifact for the component, then <code>errors</code>
+        /// example, if IoT Greengrass can't access an artifact for the component, then <code>errors</code>
         /// contains the artifact's URI as a key, and the error message as the value for that
         /// key.
         /// </para>

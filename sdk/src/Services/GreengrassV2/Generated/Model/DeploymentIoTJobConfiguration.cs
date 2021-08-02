@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
-    /// Contains information about an AWS IoT job configuration.
+    /// Contains information about an IoT job configuration.
     /// </summary>
     public partial class DeploymentIoTJobConfiguration
     {

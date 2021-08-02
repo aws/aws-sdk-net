@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
-    /// Contains information about a component version that is compatible to run on a AWS
-    /// IoT Greengrass core device.
+    /// Contains information about a component version that is compatible to run on a Greengrass
+    /// core device.
     /// </summary>
     public partial class ResolvedComponentVersion
     {

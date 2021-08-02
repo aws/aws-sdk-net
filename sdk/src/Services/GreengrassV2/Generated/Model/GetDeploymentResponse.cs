@@ -108,13 +108,6 @@ namespace Amazon.GreengrassV2.Model
         /// <para>
         /// The name of the deployment.
         /// </para>
-        ///  
-        /// <para>
-        /// You can create deployments without names. If you create a deployment without a name,
-        /// the AWS IoT Greengrass V2 console shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-        /// where <code>targetType</code> and <code>targetName</code> are the type and name of
-        /// the deployment target.
-        /// </para>
         /// </summary>
         public string DeploymentName
         {
@@ -169,7 +162,7 @@ namespace Amazon.GreengrassV2.Model
         /// Gets and sets the property IotJobArn. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-        /// of the AWS IoT job that applies the deployment to target devices.
+        /// of the IoT job that applies the deployment to target devices.
         /// </para>
         /// </summary>
         public string IotJobArn
@@ -206,7 +199,7 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property IotJobId. 
         /// <para>
-        /// The ID of the AWS IoT job that applies the deployment to target devices.
+        /// The ID of the IoT job that applies the deployment to target devices.
         /// </para>
         /// </summary>
         public string IotJobId
@@ -263,7 +256,7 @@ namespace Amazon.GreengrassV2.Model
         /// <para>
         /// A list of key-value pairs that contain metadata for the resource. For more information,
         /// see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-        /// your resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+        /// your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -283,7 +276,7 @@ namespace Amazon.GreengrassV2.Model
         /// Gets and sets the property TargetArn. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-        /// of the target AWS IoT thing or thing group.
+        /// of the target IoT thing or thing group.
         /// </para>
         /// </summary>
         public string TargetArn

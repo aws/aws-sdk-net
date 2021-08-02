@@ -30,7 +30,7 @@ namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
     /// Contains information about a volume that Linux processes in a container can access.
-    /// When you define a volume, the AWS IoT Greengrass Core software mounts the source files
+    /// When you define a volume, the IoT Greengrass Core software mounts the source files
     /// to the destination inside the container.
     /// </summary>
     public partial class LambdaVolumeMount
@@ -43,7 +43,7 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property AddGroupOwner. 
         /// <para>
-        /// Whether or not to add the AWS IoT Greengrass user group as an owner of the volume.
+        /// Whether or not to add the IoT Greengrass user group as an owner of the volume.
         /// </para>
         ///  
         /// <para>

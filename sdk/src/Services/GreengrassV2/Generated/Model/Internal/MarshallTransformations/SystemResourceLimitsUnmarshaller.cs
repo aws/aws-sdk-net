@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ComponentRunWith Object
+    /// Response Unmarshaller for SystemResourceLimits Object
     /// </summary>  
-    public class ComponentRunWithUnmarshaller : IUnmarshaller<ComponentRunWith, XmlUnmarshallerContext>, IUnmarshaller<ComponentRunWith, JsonUnmarshallerContext>
+    public class SystemResourceLimitsUnmarshaller : IUnmarshaller<SystemResourceLimits, XmlUnmarshallerContext>, IUnmarshaller<SystemResourceLimits, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ComponentRunWith IUnmarshaller<ComponentRunWith, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SystemResourceLimits IUnmarshaller<SystemResourceLimits, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ComponentRunWith Unmarshall(JsonUnmarshallerContext context)
+        public SystemResourceLimits Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ComponentRunWith unmarshalledObject = new ComponentRunWith();
+            SystemResourceLimits unmarshalledObject = new SystemResourceLimits();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("posixUser", targetDepth))
+                if (context.TestExpression("cpus", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PosixUser = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Cpus = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("systemResourceLimits", targetDepth))
+                if (context.TestExpression("memory", targetDepth))
                 {
-                    var unmarshaller = SystemResourceLimitsUnmarshaller.Instance;
-                    unmarshalledObject.SystemResourceLimits = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Memory = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static ComponentRunWithUnmarshaller _instance = new ComponentRunWithUnmarshaller();        
+        private static SystemResourceLimitsUnmarshaller _instance = new SystemResourceLimitsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ComponentRunWithUnmarshaller Instance
+        public static SystemResourceLimitsUnmarshaller Instance
         {
             get
             {

@@ -29,22 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
-    /// Contains information system user and group that the AWS IoT Greengrass Core software
-    /// uses to run component processes on the core device. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure
-    /// the user and group that run components</a> in the <i>AWS IoT Greengrass V2 Developer
-    /// Guide</i>.
+    /// Contains information system user and group that the IoT Greengrass Core software uses
+    /// to run component processes on the core device. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure
+    /// the user and group that run components</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
     /// </summary>
     public partial class ComponentRunWith
     {
         private string _posixUser;
+        private SystemResourceLimits _systemResourceLimits;
 
         /// <summary>
         /// Gets and sets the property PosixUser. 
         /// <para>
         /// The POSIX system user and (optional) group to use to run this component. Specify the
         /// user and group separated by a colon (<code>:</code>) in the following format: <code>user:group</code>.
-        /// The group is optional. If you don't specify a group, the AWS IoT Greengrass Core software
+        /// The group is optional. If you don't specify a group, the IoT Greengrass Core software
         /// uses the primary user for the group.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit this parameter, the IoT Greengrass Core software uses the default system
+        /// user and group that you configure on the Greengrass nucleus component. For more information,
+        /// see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure
+        /// the user and group that run components</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -58,6 +65,31 @@ namespace Amazon.GreengrassV2.Model
         internal bool IsSetPosixUser()
         {
             return this._posixUser != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SystemResourceLimits. 
+        /// <para>
+        /// The system resource limits to apply to this component's process on the core device.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit this parameter, the IoT Greengrass Core software uses the default system
+        /// resource limits that you configure on the Greengrass nucleus component. For more information,
+        /// see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure
+        /// system resource limits for components</a>.
+        /// </para>
+        /// </summary>
+        public SystemResourceLimits SystemResourceLimits
+        {
+            get { return this._systemResourceLimits; }
+            set { this._systemResourceLimits = value; }
+        }
+
+        // Check to see if SystemResourceLimits property is set
+        internal bool IsSetSystemResourceLimits()
+        {
+            return this._systemResourceLimits != null;
         }
 
     }

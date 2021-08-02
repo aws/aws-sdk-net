@@ -30,16 +30,15 @@ namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDeployment operation.
-    /// Creates a continuous deployment for a target, which is a AWS IoT Greengrass core device
-    /// or group of core devices. When you add a new core device to a group of core devices
-    /// that has a deployment, AWS IoT Greengrass deploys that group's deployment to the new
-    /// device.
+    /// Creates a continuous deployment for a target, which is a Greengrass core device or
+    /// group of core devices. When you add a new core device to a group of core devices that
+    /// has a deployment, IoT Greengrass deploys that group's deployment to the new device.
     /// 
     ///  
     /// <para>
     /// You can define one deployment for each target. When you create a new deployment for
-    /// a target that has an existing deployment, you replace the previous deployment. AWS
-    /// IoT Greengrass applies the new deployment to the target devices.
+    /// a target that has an existing deployment, you replace the previous deployment. IoT
+    /// Greengrass applies the new deployment to the target devices.
     /// </para>
     ///  
     /// <para>
@@ -51,17 +50,42 @@ namespace Amazon.GreengrassV2.Model
     ///  
     /// <para>
     /// For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create
-    /// deployments</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+    /// deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateDeploymentRequest : AmazonGreengrassV2Request
     {
+        private string _clientToken;
         private Dictionary<string, ComponentDeploymentSpecification> _components = new Dictionary<string, ComponentDeploymentSpecification>();
         private string _deploymentName;
         private DeploymentPolicies _deploymentPolicies;
         private DeploymentIoTJobConfiguration _iotJobConfiguration;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _targetArn;
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier that you can provide to ensure that the request
+        /// is idempotent. Idempotency means that the request is successfully processed only once,
+        /// even if you send the request multiple times. When a request succeeds, and you specify
+        /// the same client token for subsequent successful requests, the IoT Greengrass V2 service
+        /// returns the successful response that it caches from the previous request. IoT Greengrass
+        /// V2 caches successful responses for idempotent requests for up to 8 hours.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Components. 
@@ -86,13 +110,6 @@ namespace Amazon.GreengrassV2.Model
         /// Gets and sets the property DeploymentName. 
         /// <para>
         /// The name of the deployment.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can create deployments without names. If you create a deployment without a name,
-        /// the AWS IoT Greengrass V2 console shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-        /// where <code>targetType</code> and <code>targetName</code> are the type and name of
-        /// the deployment target.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -151,7 +168,7 @@ namespace Amazon.GreengrassV2.Model
         /// <para>
         /// A list of key-value pairs that contain metadata for the resource. For more information,
         /// see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-        /// your resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+        /// your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -171,7 +188,7 @@ namespace Amazon.GreengrassV2.Model
         /// Gets and sets the property TargetArn. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-        /// of the target AWS IoT thing or thing group.
+        /// of the target IoT thing or thing group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

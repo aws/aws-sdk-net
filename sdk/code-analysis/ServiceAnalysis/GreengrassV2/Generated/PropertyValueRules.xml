@@ -19,6 +19,12 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.CreateComponentVersionRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GreengrassV2.Model.CreateComponentVersionResponse.Arn</property>
     <pattern>arn:aws(-cn|-us-gov)?:greengrass:[^:]+:(aws|[0-9]+):components:[^:]+:versions:[^:]+</pattern>
   </property-value-rule>
@@ -33,6 +39,12 @@
     <min>1</min>
     <max>64</max>
     <pattern>[0-9a-zA-Z-.+]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.CreateDeploymentRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.CreateDeploymentRequest.DeploymentName</property>
@@ -460,5 +472,14 @@
     <min>1</min>
     <max>64</max>
     <pattern>[0-9a-zA-Z-.+]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.SystemResourceLimits.Cpus</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.SystemResourceLimits.Memory</property>
+    <min>0</min>
+    <max>9223372036854771712</max>
   </property-value-rule>
 </property-value-rules>

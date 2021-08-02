@@ -58,7 +58,7 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property ThingName. 
         /// <para>
-        /// The name of the AWS IoT thing that represents the associated client device.
+        /// The name of the IoT thing that represents the associated client device.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

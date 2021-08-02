@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
-    /// Contains parameters for a Linux process that contains an AWS Lambda function.
+    /// Contains parameters for a Linux process that contains an Lambda function.
     /// </summary>
     public partial class LambdaLinuxProcessParams
     {
@@ -58,8 +58,8 @@ namespace Amazon.GreengrassV2.Model
         /// Gets and sets the property IsolationMode. 
         /// <para>
         /// The isolation mode for the process that contains the Lambda function. The process
-        /// can run in an isolated runtime environment inside the AWS IoT Greengrass container,
-        /// or as a regular process outside any container.
+        /// can run in an isolated runtime environment inside the IoT Greengrass container, or
+        /// as a regular process outside any container.
         /// </para>
         ///  
         /// <para>

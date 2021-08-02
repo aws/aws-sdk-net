@@ -30,7 +30,7 @@ namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds tags to an AWS IoT Greengrass resource. If a tag already exists for the resource,
+    /// Adds tags to an IoT Greengrass resource. If a tag already exists for the resource,
     /// this operation updates the tag's value.
     /// </summary>
     public partial class TagResourceRequest : AmazonGreengrassV2Request
@@ -63,7 +63,7 @@ namespace Amazon.GreengrassV2.Model
         /// <para>
         /// A list of key-value pairs that contain metadata for the resource. For more information,
         /// see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-        /// your resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+        /// your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

@@ -30,7 +30,7 @@ namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes a tag from an AWS IoT Greengrass resource.
+    /// Removes a tag from an IoT Greengrass resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonGreengrassV2Request
     {

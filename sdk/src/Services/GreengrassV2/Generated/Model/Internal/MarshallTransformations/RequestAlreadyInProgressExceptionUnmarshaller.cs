@@ -34,60 +34,47 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ComponentRunWith Object
+    /// Response Unmarshaller for RequestAlreadyInProgressException Object
     /// </summary>  
-    public class ComponentRunWithUnmarshaller : IUnmarshaller<ComponentRunWith, XmlUnmarshallerContext>, IUnmarshaller<ComponentRunWith, JsonUnmarshallerContext>
+    public class RequestAlreadyInProgressExceptionUnmarshaller : IErrorResponseUnmarshaller<RequestAlreadyInProgressException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ComponentRunWith IUnmarshaller<ComponentRunWith, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public RequestAlreadyInProgressException Unmarshall(JsonUnmarshallerContext context)
         {
-            throw new NotImplementedException();
+            return this.Unmarshall(context, new ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public ComponentRunWith Unmarshall(JsonUnmarshallerContext context)
+        public RequestAlreadyInProgressException Unmarshall(JsonUnmarshallerContext context, ErrorResponse errorResponse)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
-                return null;
 
-            ComponentRunWith unmarshalledObject = new ComponentRunWith();
+            RequestAlreadyInProgressException unmarshalledObject = new RequestAlreadyInProgressException(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("posixUser", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PosixUser = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("systemResourceLimits", targetDepth))
-                {
-                    var unmarshaller = SystemResourceLimitsUnmarshaller.Instance;
-                    unmarshalledObject.SystemResourceLimits = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
-
-        private static ComponentRunWithUnmarshaller _instance = new ComponentRunWithUnmarshaller();        
+        private static RequestAlreadyInProgressExceptionUnmarshaller _instance = new RequestAlreadyInProgressExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ComponentRunWithUnmarshaller Instance
+        public static RequestAlreadyInProgressExceptionUnmarshaller Instance
         {
             get
             {

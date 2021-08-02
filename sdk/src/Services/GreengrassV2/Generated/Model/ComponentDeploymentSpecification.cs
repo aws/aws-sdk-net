@@ -62,10 +62,10 @@ namespace Amazon.GreengrassV2.Model
         /// The configuration updates to deploy for the component. You can define <i>reset</i>
         /// updates and <i>merge</i> updates. A reset updates the keys that you specify to the
         /// default configuration for the component. A merge updates the core device's component
-        /// configuration with the keys and values that you specify. The AWS IoT Greengrass Core
-        /// software applies reset updates before it applies merge updates. For more information,
-        /// see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html">Update
-        /// component configurations</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+        /// configuration with the keys and values that you specify. The IoT Greengrass Core software
+        /// applies reset updates before it applies merge updates. For more information, see <a
+        /// href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html">Update
+        /// component configurations</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
         /// </para>
         /// </summary>
         public ComponentConfigurationUpdate ConfigurationUpdate
@@ -83,12 +83,11 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property RunWith. 
         /// <para>
-        /// The system user and group that the AWS IoT Greengrass Core software uses to run component
-        /// processes on the core device. If you omit this parameter, the AWS IoT Greengrass Core
+        /// The system user and group that the IoT Greengrass Core software uses to run component
+        /// processes on the core device. If you omit this parameter, the IoT Greengrass Core
         /// software uses the system user and group that you configure for the core device. For
         /// more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure
-        /// the user and group that run components</a> in the <i>AWS IoT Greengrass V2 Developer
-        /// Guide</i>.
+        /// the user and group that run components</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
         /// </para>
         /// </summary>
         public ComponentRunWith RunWith

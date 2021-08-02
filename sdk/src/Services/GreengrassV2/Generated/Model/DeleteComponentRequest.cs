@@ -30,7 +30,7 @@ namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteComponent operation.
-    /// Deletes a version of a component from AWS IoT Greengrass.
+    /// Deletes a version of a component from IoT Greengrass.
     /// 
     ///  <note> 
     /// <para>

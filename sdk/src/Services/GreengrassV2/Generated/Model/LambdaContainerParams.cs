@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
-    /// Contains information about a container in which AWS Lambda functions run on AWS IoT
-    /// Greengrass core devices.
+    /// Contains information about a container in which Lambda functions run on Greengrass
+    /// core devices.
     /// </summary>
     public partial class LambdaContainerParams
     {

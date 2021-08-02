@@ -31,8 +31,8 @@ namespace Amazon.GreengrassV2.Model
     /// <summary>
     /// Container for the parameters to the ResolveComponentCandidates operation.
     /// Retrieves a list of components that meet the component, version, and platform requirements
-    /// of a deployment. AWS IoT Greengrass core devices call this operation when they receive
-    /// a deployment to identify the components to install.
+    /// of a deployment. Greengrass core devices call this operation when they receive a deployment
+    /// to identify the components to install.
     /// 
     ///  
     /// <para>
@@ -44,16 +44,16 @@ namespace Amazon.GreengrassV2.Model
     /// </para>
     ///  
     /// <para>
-    /// When you specify the component candidates to resolve, AWS IoT Greengrass compares
-    /// each component's digest from the core device with the component's digest in the AWS
-    /// Cloud. If the digests don't match, then AWS IoT Greengrass specifies to use the version
-    /// from the AWS Cloud.
+    /// When you specify the component candidates to resolve, IoT Greengrass compares each
+    /// component's digest from the core device with the component's digest in the Amazon
+    /// Web Services Cloud. If the digests don't match, then IoT Greengrass specifies to use
+    /// the version from the Amazon Web Services Cloud.
     /// </para>
     ///  <important> 
     /// <para>
     /// To use this operation, you must use the data plane API endpoint and authenticate with
-    /// an AWS IoT device certificate. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/greengrass.html">AWS
-    /// IoT Greengrass endpoints and quotas</a>.
+    /// an IoT device certificate. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/greengrass.html">IoT
+    /// Greengrass endpoints and quotas</a>.
     /// </para>
     ///  </important>
     /// </summary>

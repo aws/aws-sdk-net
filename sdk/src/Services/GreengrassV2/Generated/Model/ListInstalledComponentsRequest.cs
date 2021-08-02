@@ -30,8 +30,7 @@ namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListInstalledComponents operation.
-    /// Retrieves a paginated list of the components that a AWS IoT Greengrass core device
-    /// runs.
+    /// Retrieves a paginated list of the components that a Greengrass core device runs.
     /// </summary>
     public partial class ListInstalledComponentsRequest : AmazonGreengrassV2Request
     {
@@ -42,7 +41,7 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property CoreDeviceThingName. 
         /// <para>
-        /// The name of the core device. This is also the name of the AWS IoT thing.
+        /// The name of the core device. This is also the name of the IoT thing.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

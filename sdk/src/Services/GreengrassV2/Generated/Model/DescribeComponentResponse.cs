@@ -175,7 +175,7 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the component version in AWS IoT Greengrass V2. This status is different
+        /// The status of the component version in IoT Greengrass V2. This status is different
         /// from the status of the component on a core device.
         /// </para>
         /// </summary>
@@ -196,7 +196,7 @@ namespace Amazon.GreengrassV2.Model
         /// <para>
         /// A list of key-value pairs that contain metadata for the resource. For more information,
         /// see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-        /// your resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+        /// your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
