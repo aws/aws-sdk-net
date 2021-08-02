@@ -1,3 +1,9 @@
+### 3.7.86.0 (2021-08-02 18:16 UTC)
+* GreengrassV2 (3.7.2.0)
+	* This release adds support for component system resource limits and idempotent Create operations. You can now specify the maximum amount of CPU and memory resources that each component can use.
+* SSMContacts (3.7.2.0)
+	* Added new attribute in AcceptCode API. AcceptCodeValidation takes in two values - ENFORCE, IGNORE. ENFORCE forces validation of accept code and IGNORE ignores it which is also the default behavior; Corrected TagKeyList length from 200 to 50
+
 ### 3.7.85.0 (2021-07-30 18:30 UTC)
 * AppSync (3.7.1.0)
 	* AWS AppSync now supports a new authorization mode allowing you to define your own authorization logic using an AWS Lambda function.
