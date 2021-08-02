@@ -73,6 +73,12 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AcceptCode);
                 }
 
+                if(publicRequest.IsSetAcceptCodeValidation())
+                {
+                    context.Writer.WritePropertyName("AcceptCodeValidation");
+                    context.Writer.Write(publicRequest.AcceptCodeValidation);
+                }
+
                 if(publicRequest.IsSetAcceptType())
                 {
                     context.Writer.WritePropertyName("AcceptType");

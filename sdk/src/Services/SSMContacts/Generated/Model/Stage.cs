@@ -40,7 +40,8 @@ namespace Amazon.SSMContacts.Model
         /// <summary>
         /// Gets and sets the property DurationInMinutes. 
         /// <para>
-        /// The time to wait until beginning the next stage.
+        /// The time to wait until beginning the next stage. The duration can only be set to 0
+        /// if a target is specified.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=30)]

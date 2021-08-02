@@ -35,6 +35,7 @@ namespace Amazon.SSMContacts.Model
     public partial class AcceptPageRequest : AmazonSSMContactsRequest
     {
         private string _acceptCode;
+        private AcceptCodeValidation _acceptCodeValidation;
         private AcceptType _acceptType;
         private string _contactChannelId;
         private string _note;
@@ -57,6 +58,34 @@ namespace Amazon.SSMContacts.Model
         internal bool IsSetAcceptCode()
         {
             return this._acceptCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AcceptCodeValidation. 
+        /// <para>
+        /// An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code>
+        /// validation when acknowledging an page. Acknowledgement can occur by replying to a
+        /// page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation
+        /// causes Incident Manager to verify that the code entered by the user matches the code
+        /// sent by Incident Manager with the page.
+        /// </para>
+        ///  
+        /// <para>
+        /// Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation.
+        /// Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any
+        /// value entered for the <code>AcceptCode</code>.
+        /// </para>
+        /// </summary>
+        public AcceptCodeValidation AcceptCodeValidation
+        {
+            get { return this._acceptCodeValidation; }
+            set { this._acceptCodeValidation = value; }
+        }
+
+        // Check to see if AcceptCodeValidation property is set
+        internal bool IsSetAcceptCodeValidation()
+        {
+            return this._acceptCodeValidation != null;
         }
 
         /// <summary>

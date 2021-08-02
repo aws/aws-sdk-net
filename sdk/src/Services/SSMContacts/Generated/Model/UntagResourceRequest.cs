@@ -62,7 +62,7 @@ namespace Amazon.SSMContacts.Model
         /// The key of the tag that you want to remove.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=200)]
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }
