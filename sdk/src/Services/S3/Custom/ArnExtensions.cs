@@ -88,6 +88,28 @@ namespace Amazon.S3
         }
 
         /// <summary>
+        /// Determines whether an ARN is for a multi-region access point 
+        /// </summary>
+        /// <param name="arn">An AWS ARN to parse</param>
+        /// <returns>True if the ARN is for a multi-region access point</returns>
+        public static bool IsMRAPArn(this Arn arn)
+        {
+            if (string.IsNullOrEmpty(arn.Resource))
+            {
+                return false;
+            }
+            
+            // The resource of MRAP ARNs must begin with a resource-type of `accesspoint`
+            if (!(arn.Resource.StartsWith(ResourceTypeAccessPoint + ":", StringComparison.Ordinal) || 
+                  arn.Resource.StartsWith(ResourceTypeAccessPoint + "/", StringComparison.Ordinal)))
+            {
+                return false;
+            }
+
+            return string.IsNullOrEmpty(arn.Region);
+        }
+
+        /// <summary>
         /// Parse an Arn to extract information on S3 outpost access point
         /// and if it is not found or properly formatted, throw an exception
         /// </summary>

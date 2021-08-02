@@ -108,7 +108,7 @@ namespace Amazon.S3.Internal
 
                         if (serviceException.Message.Contains(AWS_KMS_Signature_Error))
                         {
-                            r.UseSigV4 = true;
+                            r.SignatureVersion = SignatureVersion.SigV4;
                             r.AuthenticationRegion = RegionEndpoint.USEast1.SystemName;
                             executionContext.RequestContext.IsSigned = false;
                         }

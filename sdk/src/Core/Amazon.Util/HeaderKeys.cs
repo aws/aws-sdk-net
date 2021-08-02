@@ -64,6 +64,7 @@ namespace Amazon.Util
         public const string XAmzDecodedContentLengthHeader = "X-Amz-Decoded-Content-Length";
         public const string XAmzSecurityTokenHeader = "x-amz-security-token";
         public const string XAmzAuthorizationHeader = "X-Amzn-Authorization";
+        public const string XAmzRegionSetHeader = "X-Amz-Region-Set";
         public const string XAmzNonceHeader = "x-amz-nonce";
         public const string XAmzServerSideEncryptionHeader = "x-amz-server-side-encryption";
         public const string XAmzServerSideEncryptionAwsKmsKeyIdHeader = "x-amz-server-side-encryption-aws-kms-key-id";
@@ -71,6 +72,10 @@ namespace Amazon.Util
         public const string XAmzAccountId = "x-amz-account-id";
         public const string XAmzOutpostId = "x-amz-outpost-id";
         public const string XAmzApiVersion = "x-amz-api-version";
+        public const string XAmzExpires = "X-Amz-Expires";
+        public const string XAmzSignature = "X-Amz-Signature";
+        public const string XAmzAlgorithm = "X-Amz-Algorithm";
+        public const string XAmzCredential = "X-Amz-Credential";
 
         public const string XAmzSSECustomerAlgorithmHeader = "x-amz-server-side-encryption-customer-algorithm";
         public const string XAmzSSECustomerKeyHeader = "x-amz-server-side-encryption-customer-key";

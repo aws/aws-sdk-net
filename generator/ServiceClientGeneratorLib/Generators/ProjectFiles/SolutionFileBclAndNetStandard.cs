@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+    #line 1 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class SolutionFileBclAndNetStandard : SolutionFileBclAndNetStandardBase
     {
@@ -36,7 +36,7 @@ Project(""{2150E333-8FDC-42A3-9474-1A3956D46DE8}"") = ""Core"", ""Core"", ""{986
 EndProject
 ");
             
-            #line 12 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 12 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
 
     foreach(var project in (IList<SolutionFileCreator.Project>)this.Session["CoreProjects"])
     {
@@ -46,28 +46,28 @@ EndProject
             #line hidden
             this.Write("Project(\"{9A19103F-16F7-4668-BE54-9A1E7A4F7556}\") = \"");
             
-            #line 16 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 16 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.Name));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 16 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 16 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectPath));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 16 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 16 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("\"\r\nEndProject\r\n");
             
-            #line 18 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 18 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
 
     }
 
@@ -77,7 +77,7 @@ EndProject
             this.Write("Project(\"{2150E333-8FDC-42A3-9474-1A3956D46DE8}\") = \"Services\", \"Services\", \"{939" +
                     "EC5C2-8345-43E2-8F97-72EEEBEEA0AB}\"\r\nEndProject\r\n");
             
-            #line 23 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 23 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
 
     foreach(var folder in (List<SolutionFileCreator.ServiceSolutionFolder>)this.Session["ServiceSolutionFolders"])
     {
@@ -87,28 +87,28 @@ EndProject
             #line hidden
             this.Write("Project(\"{2150E333-8FDC-42A3-9474-1A3956D46DE8}\") = \"");
             
-            #line 27 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 27 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(folder.Name));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 27 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 27 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(folder.Name));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 27 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 27 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(folder.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("\"\r\nEndProject\r\n");
             
-            #line 29 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 29 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
 
 
         foreach(var project in folder.Projects)
@@ -119,28 +119,28 @@ EndProject
             #line hidden
             this.Write("Project(\"{9A19103F-16F7-4668-BE54-9A1E7A4F7556}\") = \"");
             
-            #line 34 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 34 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.Name));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 34 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 34 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectPath));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 34 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 34 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("\"\r\nEndProject\r\n");
             
-            #line 36 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 36 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
 
         }
     }
@@ -151,7 +151,7 @@ EndProject
             this.Write("Project(\"{2150E333-8FDC-42A3-9474-1A3956D46DE8}\") = \"Test\", \"Test\", \"{12EC4E4B-7E" +
                     "2C-4B63-8EF9-7B959F82A89B}\"\r\nEndProject\r\n");
             
-            #line 42 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 42 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
 
     foreach(var project in (IList<SolutionFileCreator.Project>)this.Session["TestProjects"])
     {
@@ -164,28 +164,28 @@ EndProject
             #line hidden
             this.Write("Project(\"{9A19103F-16F7-4668-BE54-9A1E7A4F7556}\") = \"");
             
-            #line 49 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 49 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.Name));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 49 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 49 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectPath));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 49 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 49 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("\"\r\nEndProject\r\n");
             
-            #line 51 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 51 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
 
         }
         else
@@ -196,28 +196,28 @@ EndProject
             #line hidden
             this.Write("Project(\"{9A19103F-16F7-4668-BE54-9A1E7A4F7556}\") = \"");
             
-            #line 56 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 56 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.Name));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 56 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 56 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.RelativePath));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 56 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 56 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("\"\r\nEndProject\r\n");
             
-            #line 58 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 58 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
 
         }
     }
@@ -231,7 +231,7 @@ if(this.Session.ContainsKey("IntegrationTestDependencies"))
                     ", \"IntegrationTestDependencies\", \"{939EC5C2-8345-43E2-8F97-72EEEBEEA0AC}\"\r\nEndPr" +
                     "oject\r\n");
             
-            #line 66 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 66 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
 
     foreach(var project in (List<SolutionFileCreator.Project>)this.Session["IntegrationTestDependencies"])
     {
@@ -241,28 +241,28 @@ if(this.Session.ContainsKey("IntegrationTestDependencies"))
             #line hidden
             this.Write("Project(\"{9A19103F-16F7-4668-BE54-9A1E7A4F7556}\") = \"");
             
-            #line 70 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 70 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.Name));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 70 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 70 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectPath));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 70 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 70 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("\"\r\nEndProject\r\n");
             
-            #line 72 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 72 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
 
     }
 }
@@ -274,7 +274,7 @@ if(this.Session.ContainsKey("IntegrationTestDependencies"))
                     " CPU = Debug|Any CPU\r\n\t\tRelease|Any CPU = Release|Any CPU\r\n\tEndGlobalSection\r\n\tG" +
                     "lobalSection(ProjectConfigurationPlatforms) = postSolution\r\n");
             
-            #line 82 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 82 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
 
     foreach(var project in (IList<SolutionFileCreator.Project>)this.Session["CoreProjects"])
     {
@@ -284,35 +284,35 @@ if(this.Session.ContainsKey("IntegrationTestDependencies"))
             #line hidden
             this.Write("\t\t");
             
-            #line 86 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 86 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(".Debug|Any CPU.ActiveCfg = Debug|Any CPU\r\n\t\t");
             
-            #line 87 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 87 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(".Debug|Any CPU.Build.0 = Debug|Any CPU\r\n\t\t");
             
-            #line 88 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 88 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(".Release|Any CPU.ActiveCfg = Release|Any CPU\r\n\t\t");
             
-            #line 89 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 89 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(".Release|Any CPU.Build.0 = Release|Any CPU\r\n");
             
-            #line 90 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 90 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
 
     }
     foreach(var folder in (List<SolutionFileCreator.ServiceSolutionFolder>)this.Session["ServiceSolutionFolders"])
@@ -325,35 +325,35 @@ if(this.Session.ContainsKey("IntegrationTestDependencies"))
             #line hidden
             this.Write("\t\t");
             
-            #line 97 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 97 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(".Debug|Any CPU.ActiveCfg = Debug|Any CPU\r\n\t\t");
             
-            #line 98 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 98 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(".Debug|Any CPU.Build.0 = Debug|Any CPU\r\n\t\t");
             
-            #line 99 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 99 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(".Release|Any CPU.ActiveCfg = Release|Any CPU\r\n\t\t");
             
-            #line 100 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 100 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(".Release|Any CPU.Build.0 = Release|Any CPU\r\n");
             
-            #line 101 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 101 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
 
         }
     }
@@ -365,35 +365,74 @@ if(this.Session.ContainsKey("IntegrationTestDependencies"))
             #line hidden
             this.Write("\t\t");
             
-            #line 107 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 107 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(".Debug|Any CPU.ActiveCfg = Debug|Any CPU\r\n\t\t");
             
-            #line 108 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 108 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(".Debug|Any CPU.Build.0 = Debug|Any CPU\r\n\t\t");
             
-            #line 109 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 109 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(".Release|Any CPU.ActiveCfg = Release|Any CPU\r\n\t\t");
             
-            #line 110 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 110 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(".Release|Any CPU.Build.0 = Release|Any CPU\r\n");
             
-            #line 111 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 111 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+
+    }
+    foreach(var project in (IList<SolutionFileCreator.Project>)this.Session["IntegrationTestDependencies"])
+    {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t");
+            
+            #line 116 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
+            
+            #line default
+            #line hidden
+            this.Write(".Debug|Any CPU.ActiveCfg = Debug|Any CPU\r\n\t\t");
+            
+            #line 117 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
+            
+            #line default
+            #line hidden
+            this.Write(".Debug|Any CPU.Build.0 = Debug|Any CPU\r\n\t\t");
+            
+            #line 118 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
+            
+            #line default
+            #line hidden
+            this.Write(".Release|Any CPU.ActiveCfg = Release|Any CPU\r\n\t\t");
+            
+            #line 119 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
+            
+            #line default
+            #line hidden
+            this.Write(".Release|Any CPU.Build.0 = Release|Any CPU\r\n");
+            
+            #line 120 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
 
     }
 
@@ -404,7 +443,7 @@ if(this.Session.ContainsKey("IntegrationTestDependencies"))
                     "onNode = FALSE\r\n\tEndGlobalSection\r\n\tGlobalSection(NestedProjects) = preSolution\r" +
                     "\n");
             
-            #line 119 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 128 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
 
     foreach(var project in (IList<SolutionFileCreator.Project>)this.Session["CoreProjects"])
     {
@@ -414,14 +453,14 @@ if(this.Session.ContainsKey("IntegrationTestDependencies"))
             #line hidden
             this.Write("\t\t");
             
-            #line 123 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 132 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(" = {9863FCB3-BFA4-4B9C-B8F6-302BA5F660B8}\r\n");
             
-            #line 124 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 133 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
 
     }
 
@@ -433,14 +472,14 @@ if(this.Session.ContainsKey("IntegrationTestDependencies"))
             #line hidden
             this.Write("\t\t");
             
-            #line 130 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 139 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(folder.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(" = {939EC5C2-8345-43E2-8F97-72EEEBEEA0AB}\r\n");
             
-            #line 131 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 140 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
 
         foreach(var project in folder.Projects)
         { 
@@ -450,21 +489,21 @@ if(this.Session.ContainsKey("IntegrationTestDependencies"))
             #line hidden
             this.Write("\t\t");
             
-            #line 135 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 144 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 135 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 144 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(folder.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 136 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 145 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
 
         }
     }
@@ -476,14 +515,14 @@ if(this.Session.ContainsKey("IntegrationTestDependencies"))
             #line hidden
             this.Write("\t\t");
             
-            #line 142 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 151 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(" = {12EC4E4B-7E2C-4B63-8EF9-7B959F82A89B}\r\n");
             
-            #line 143 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 152 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
 
     }
 	if(this.Session.ContainsKey("IntegrationTestDependencies"))
@@ -496,14 +535,14 @@ if(this.Session.ContainsKey("IntegrationTestDependencies"))
             #line hidden
             this.Write("\t\t");
             
-            #line 150 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 159 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(" = {939EC5C2-8345-43E2-8F97-72EEEBEEA0AC}\r\n");
             
-            #line 151 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 160 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
 
 		}
 	}
@@ -515,7 +554,7 @@ if(this.Session.ContainsKey("IntegrationTestDependencies"))
             this.Write("\tEndGlobalSection\r\n\tGlobalSection(ExtensibilityGlobals) = postSolution\r\n\t\tSolutio" +
                     "nGuid = {");
             
-            #line 158 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
+            #line 167 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["SolutionGuid"]));
             
             #line default

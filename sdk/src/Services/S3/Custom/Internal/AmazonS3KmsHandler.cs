@@ -79,12 +79,18 @@ namespace Amazon.S3.Internal
 
         internal static void EvaluateIfSigV4Required(IRequest request)
         {
+            // Skip this if the request has already been "upgraded" to SigV4a
+            if (request.SignatureVersion == SignatureVersion.SigV4a)
+            {
+                return;
+            }
+
             // Skip this for S3-compatible storage provider endpoints
             if (request.OriginalRequest is S3.Model.GetObjectRequest && 
                 AmazonS3Uri.TryParseAmazonS3Uri(request.Endpoint, out var amazonS3Uri) && 
                 amazonS3Uri.Region?.SystemName != RegionEndpoint.USEast1.SystemName)     
             {
-                request.UseSigV4 = true;
+                request.SignatureVersion = SignatureVersion.SigV4;
             }
         }
     }

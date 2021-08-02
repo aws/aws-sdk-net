@@ -86,51 +86,56 @@ namespace Amazon.S3
             if (!request.IsSetExpires())
                 throw new InvalidOperationException("The Expires specified is null!");
 
-            var aws4Signing = AWSConfigsS3.UseSignatureVersion4;
+            var signatureVersionToUse = AWSConfigsS3.UseSignatureVersion4 ? SignatureVersion.SigV4 : SignatureVersion.SigV2;
 
             Arn arn;
             string accessPoint;
             if (Arn.TryParse(request.BucketName, out arn) && 
                 (arn.TryParseAccessPoint(out accessPoint) || arn.IsOutpostArn()))
             {
-                aws4Signing = true;
+                signatureVersionToUse = SignatureVersion.SigV4;
+
+                if (arn.IsMRAPArn())
+                {
+                    signatureVersionToUse = SignatureVersion.SigV4a;
+                }
             }
             else
             {
                 var region = AWS4Signer.DetermineSigningRegion(Config, "s3", alternateEndpoint: null, request: null);
-                if (aws4Signing && string.IsNullOrEmpty(region))
+                if (signatureVersionToUse == SignatureVersion.SigV4 && string.IsNullOrEmpty(region))
                     throw new InvalidOperationException("To use AWS4 signing, a region must be specified in the client configuration using the AuthenticationRegion or Region properties, or be determinable from the service URL.");
 
                 RegionEndpoint endpoint = RegionEndpoint.GetBySystemName(region);
                 var s3SignatureVersionOverride = endpoint.GetEndpointForService("s3").SignatureVersionOverride;
                 if (s3SignatureVersionOverride == "4" || s3SignatureVersionOverride == null)
                 {
-                    aws4Signing = true;
+                    signatureVersionToUse = SignatureVersion.SigV4;
                 }
 
                 var fallbackToSigV2 = useSigV2Fallback && !AWSConfigsS3.UseSigV4SetExplicitly;
                 if (endpoint?.SystemName == RegionEndpoint.USEast1.SystemName && fallbackToSigV2)
                 {
-                    aws4Signing = false;
+                    signatureVersionToUse = SignatureVersion.SigV2;
                 }
 
                 // If the expiration is longer than SigV4 will allow then automatically use SigV2 instead.
                 // But only if the region we're signing for allows SigV2.
-                if (aws4Signing)
+                if (signatureVersionToUse == SignatureVersion.SigV4)
                 {
-                    var secondsUntilExpiration = GetSecondsUntilExpiration(this.Config, request, aws4Signing);
+                    var secondsUntilExpiration = GetSecondsUntilExpiration(this.Config, request, signatureVersionToUse);
 
                     if (secondsUntilExpiration > AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry &&
                         s3SignatureVersionOverride == "2")
                     {
-                        aws4Signing = false;
+                        signatureVersionToUse = SignatureVersion.SigV2;
                     }
                 }
             }
 
 
             var immutableCredentials = Credentials.GetCredentials();
-            var irequest = Marshall(this.Config, request, immutableCredentials.AccessKey, immutableCredentials.Token, aws4Signing);
+            var irequest = Marshall(this.Config, request, immutableCredentials.AccessKey, immutableCredentials.Token, signatureVersionToUse);
 
             irequest.Endpoint = EndpointResolver.DetermineEndpoint(this.Config, irequest);
 
@@ -138,28 +143,39 @@ namespace Amazon.S3
             AmazonS3PostMarshallHandler.ProcessRequestHandlers(context);
 
             var metrics = new RequestMetrics();
-
+            string result;
             string authorization;
-            if (aws4Signing)
+
+            switch (signatureVersionToUse)
             {
-                var aws4Signer = new AWS4PreSignedUrlSigner();
-                var signingResult = aws4Signer.SignRequest(irequest,
-                                                           this.Config,
+                case SignatureVersion.SigV4a:
+                    var aws4aSigner = new AWS4aSignerCRTWrapper();
+                    var signingResult4a = aws4aSigner.Presign4a(irequest,
+                                                            Config,
+                                                            metrics,
+                                                            immutableCredentials,
+                                                            "s3",
+                                                            arn.IsMRAPArn() ? "*" : "");
+                    result = signingResult4a.PresignedUri;
+                    break;
+                case SignatureVersion.SigV4:
+                    var aws4Signer = new AWS4PreSignedUrlSigner();
+                    var signingResult4 = aws4Signer.SignRequest(irequest,
+                                                           Config,
                                                            metrics,
                                                            immutableCredentials.AccessKey,
                                                            immutableCredentials.SecretKey);
-                authorization = "&" + signingResult.ForQueryParameters;
+                    authorization = "&" + signingResult4.ForQueryParameters;
+                    result = ComposeUrl(irequest).AbsoluteUri + authorization;
+                    break;
+                default: // SigV2
+                    Amazon.S3.Internal.S3Signer.SignRequest(irequest, metrics, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
+                    authorization = irequest.Headers[HeaderKeys.AuthorizationHeader];
+                    authorization = authorization.Substring(authorization.IndexOf(":", StringComparison.Ordinal) + 1);
+                    authorization = "&Signature=" + AmazonS3Util.UrlEncode(authorization, false);
+                    result = ComposeUrl(irequest).AbsoluteUri + authorization;
+                    break;
             }
-            else
-            {
-                Amazon.S3.Internal.S3Signer.SignRequest(irequest, metrics, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
-                authorization = irequest.Headers[HeaderKeys.AuthorizationHeader];
-                authorization = authorization.Substring(authorization.IndexOf(":", StringComparison.Ordinal) + 1);
-                authorization = "&Signature=" + AmazonS3Util.UrlEncode(authorization, false);
-            }
-
-            Uri url = AmazonServiceClient.ComposeUrl(irequest);
-            string result = url.AbsoluteUri + authorization;
 
             Protocol protocol = DetermineProtocol();
             if (request.Protocol != protocol)
@@ -180,19 +196,20 @@ namespace Amazon.S3
         /// <summary>
         /// Marshalls the parameters for a presigned url for a preferred signing protocol.
         /// </summary>
+        /// <param name="config">service client configuration</param>
         /// <param name="getPreSignedUrlRequest"></param>
         /// <param name="accessKey"></param>
         /// <param name="token"></param>
-        /// <param name="aws4Signing">
-        /// True if AWS4 signing will be used; if the expiry period in the request exceeds the
+        /// <param name="signatureVersion">Signature version to use.
+        /// If AWS4 signing will be used and if the expiry period in the request exceeds the
         /// maximum allowed for AWS4 (one week), an ArgumentException is thrown.
         /// </param>
-        /// <returns></returns>
+        /// <returns>Internal request</returns>
         private static IRequest Marshall(IClientConfig config, 
                                          GetPreSignedUrlRequest getPreSignedUrlRequest,
                                          string accessKey,
                                          string token,
-                                         bool aws4Signing)
+                                         SignatureVersion signatureVersion)
         {
             IRequest request = new DefaultRequest(getPreSignedUrlRequest, "AmazonS3");
             request.HttpMethod = getPreSignedUrlRequest.Verb.ToString();
@@ -225,24 +242,32 @@ namespace Amazon.S3
                 uriResourcePath.Append(S3Transforms.ToStringValue(getPreSignedUrlRequest.Key));
             }
 
-            var expires = GetSecondsUntilExpiration(config, getPreSignedUrlRequest, aws4Signing);
+            var expires = GetSecondsUntilExpiration(config, getPreSignedUrlRequest, signatureVersion);
 
-            if (aws4Signing && expires > AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry)
+            if ((signatureVersion == SignatureVersion.SigV4 || signatureVersion == SignatureVersion.SigV4a)
+                    && expires > AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry)
             {
                 var msg = string.Format(CultureInfo.InvariantCulture, "The maximum expiry period for a presigned url using AWS4 signing is {0} seconds",
                                         AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry);
                 throw new ArgumentException(msg);
             }
 
-            queryParameters.Add(aws4Signing ? "X-Amz-Expires" : "Expires", expires.ToString(CultureInfo.InvariantCulture));
-
-            if (!string.IsNullOrEmpty(token))
-                queryParameters.Add(aws4Signing ? "X-Amz-Security-Token" : "x-amz-security-token", token);
-            if (!aws4Signing)
+            if (signatureVersion == SignatureVersion.SigV2)
+            {
+                queryParameters.Add("Expires", expires.ToString(CultureInfo.InvariantCulture));
                 queryParameters.Add("AWSAccessKeyId", accessKey);
+                if (!string.IsNullOrEmpty(token))
+                    queryParameters.Add("x-amz-security-token", token);
+            }
+            else // SigV4 or SigV4a
+            {
+                queryParameters.Add(HeaderKeys.XAmzExpires, expires.ToString(CultureInfo.InvariantCulture));
+                if (!string.IsNullOrEmpty(token))
+                    queryParameters.Add("X-Amz-Security-Token", token);
+            }
+
             if (getPreSignedUrlRequest.IsSetVersionId())
                 request.AddSubResource("versionId", S3Transforms.ToStringValue(getPreSignedUrlRequest.VersionId));
-
             if (getPreSignedUrlRequest.IsSetUploadId())
                 request.AddSubResource("uploadId", S3Transforms.ToStringValue(getPreSignedUrlRequest.UploadId));
             if (getPreSignedUrlRequest.IsSetPartNumber())
@@ -272,9 +297,17 @@ namespace Amazon.S3
             return request;
         }
 
-        private static long GetSecondsUntilExpiration(IClientConfig config, GetPreSignedUrlRequest request, bool aws4Signing)
+        private static long GetSecondsUntilExpiration(IClientConfig config, GetPreSignedUrlRequest request, SignatureVersion signatureVersion)
         {
-            var baselineTime = aws4Signing ? config.CorrectedUtcNow : new DateTime(1970, 1, 1);
+            DateTime baselineTime;
+            if (signatureVersion == SignatureVersion.SigV2)
+            {
+                baselineTime = new DateTime(1970, 1, 1);
+            }
+            else // SigV4 or SigV4a
+            {
+                baselineTime = config.CorrectedUtcNow;
+            }
             return Convert.ToInt64((request.Expires.ToUniversalTime() - baselineTime).TotalSeconds);
         }
 

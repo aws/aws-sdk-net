@@ -12,6 +12,7 @@
   * express or implied. See the License for the specific language governing
   * permissions and limitations under the License.
   */
+using Amazon;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
@@ -44,7 +45,7 @@ namespace AWSSDK.UnitTests
                 }
             };
 
-            var internalRequest = S3ArnTestUtils.RunMockRequest(request, DeleteObjectsRequestMarshaller.Instance, new AmazonS3Config());
+            var internalRequest = S3ArnTestUtils.RunMockRequest(request, DeleteObjectsRequestMarshaller.Instance, new AmazonS3Config { RegionEndpoint = RegionEndpoint.USEast1 });
             var content = System.Text.Encoding.UTF8.GetString(internalRequest.Content);
 
             Assert.IsFalse(content.Contains(objectKey));

@@ -347,7 +347,7 @@ namespace TestWrapper.TestRunners
             else
             {
                 // assume no "." means it's a test method name
-                return string.Format("Name={0}", QuoteArg(testName));
+                return string.Format("Name={0}", QuoteArg(testName.Trim(' ')));
             }
         }
 

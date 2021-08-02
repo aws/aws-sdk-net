@@ -54,6 +54,8 @@ namespace Amazon.Runtime.CredentialManagement
 
         private const string S3RegionalEndpointField = "S3RegionalEndpoint";
 
+        private const string S3DisableMultiRegionAccessPointsField = "S3DisableMultiRegionAccessPoints";
+
         private const string RetryModeField = "RetryMode";
         private const string MaxAttemptsField = "MaxAttempts";
 
@@ -71,6 +73,7 @@ namespace Amazon.Runtime.CredentialManagement
             S3UseArnRegionField,
             StsRegionalEndpointsField,
             S3RegionalEndpointField,
+            S3DisableMultiRegionAccessPointsField,
             RetryModeField,
             MaxAttemptsField,
             SsoAccountId,
@@ -216,6 +219,20 @@ namespace Amazon.Runtime.CredentialManagement
 
                         s3UseArnRegion = s3UseArnRegionOut;
                     }
+
+                    string s3DisableMultiRegionAccessPointsString;
+                    bool? s3DisableMultiRegionAccessPoints = null;
+                    if (reservedProperties.TryGetValue(S3DisableMultiRegionAccessPointsField, out s3DisableMultiRegionAccessPointsString))
+                    {
+                        bool s3DisableMultiRegionAccessPointsOut;
+                        if (!bool.TryParse(s3DisableMultiRegionAccessPointsString, out s3DisableMultiRegionAccessPointsOut))
+                        {
+                            profile = null;
+                            return false;
+                        }
+
+                        s3DisableMultiRegionAccessPoints = s3DisableMultiRegionAccessPointsOut;
+                    }
                     
                     S3UsEast1RegionalEndpointValue? s3RegionalEndpoint = null;
                     if (reservedProperties.TryGetValue(S3RegionalEndpointField, out var s3RegionalEndpointString))
@@ -286,6 +303,7 @@ namespace Amazon.Runtime.CredentialManagement
                         StsRegionalEndpoints = stsRegionalEndpoints,
                         S3UseArnRegion = s3UseArnRegion,
                         S3RegionalEndpoint = s3RegionalEndpoint,
+                        S3DisableMultiRegionAccessPoints = s3DisableMultiRegionAccessPoints,
                         RetryMode = requestRetryMode,
                         MaxAttempts = maxAttempts
                     };
@@ -334,6 +352,9 @@ namespace Amazon.Runtime.CredentialManagement
                     
                 if (profile.S3RegionalEndpoint != null)
                     reservedProperties[S3RegionalEndpointField] = profile.S3RegionalEndpoint.ToString().ToLowerInvariant();
+
+                if (profile.S3DisableMultiRegionAccessPoints != null)
+                    reservedProperties[S3DisableMultiRegionAccessPointsField] = profile.S3DisableMultiRegionAccessPoints.ToString().ToLowerInvariant();
 
                 if (profile.RetryMode != null)
                     reservedProperties[RetryModeField] = profile.RetryMode.ToString().ToLowerInvariant();

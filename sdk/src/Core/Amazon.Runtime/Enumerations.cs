@@ -118,4 +118,23 @@ namespace Amazon.Runtime
         /// </summary>
         IPv6
     }
+
+    /// <summary>
+    /// SignatureVersion determines which signature version is used for the request
+    /// </summary>
+    public enum SignatureVersion
+    {
+        /// <summary>
+        /// Signature Version 2
+        /// </summary>
+        SigV2,
+        /// <summary>
+        /// Signature Version 4
+        /// </summary>
+        SigV4,
+        /// <summary>
+        /// Asymmetric Signature Version 4
+        /// </summary>
+        SigV4a
+    }
 }

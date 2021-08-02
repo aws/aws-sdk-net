@@ -44,6 +44,24 @@ namespace Amazon.Runtime.Internal.Auth
             }
         }
 
+        private AWS4aSignerCRTWrapper _aws4aSignerCRTWrapper;
+        private AWS4aSignerCRTWrapper AWS4aSignerCRTWrapperInstance
+        {
+            get
+            {
+                if (_aws4aSignerCRTWrapper == null)
+                {
+                    lock (this)
+                    {
+                        if (_aws4aSignerCRTWrapper == null)
+                            _aws4aSignerCRTWrapper = new AWS4aSignerCRTWrapper();
+                    }
+                }
+
+                return _aws4aSignerCRTWrapper;
+            }
+        }
+
         /// <summary>
         /// Computes RFC 2104-compliant HMAC signature.
         /// </summary>
@@ -77,21 +95,25 @@ namespace Amazon.Runtime.Internal.Auth
                 throw new Amazon.Runtime.SignatureException("Failed to generate signature: " + e.Message, e);
             }
         }
-
         public abstract void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey);
+
+        public virtual void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, ImmutableCredentials credentials)
+        {
+            Sign(request, clientConfig, metrics, credentials.AccessKey, credentials.SecretKey);
+        }
 
         public abstract ClientProtocol Protocol { get; }
 
         /// <summary>
-        /// Inspects the supplied evidence to return the signer appropriate for the operation
+        /// Inspects the supplied evidence to determine if sigv4 or sigv2 signing should be used
         /// </summary>
         /// <param name="useSigV4Setting">Global setting for the service</param>
         /// <param name="request">The request.</param>
         /// <param name="config">Configuration for the client</param>
-        /// <returns>True if signature v4 request signing should be used</returns>
+        /// <returns>True if signature v4 request signing should be used, false if v2 signing should be used</returns>
         protected static bool UseV4Signing(bool useSigV4Setting, IRequest request, IClientConfig config)
         {
-            if (request.UseSigV4 ||
+            if (request.SignatureVersion == SignatureVersion.SigV4 ||
                 config.SignatureVersion == "4" ||
                 (useSigV4Setting && config.SignatureVersion != "2"))
             {
@@ -135,9 +157,9 @@ namespace Amazon.Runtime.Internal.Auth
         protected AbstractAWSSigner SelectSigner(AbstractAWSSigner defaultSigner,bool useSigV4Setting, 
             IRequest request, IClientConfig config)
         {
-            bool usev4Signing = UseV4Signing(useSigV4Setting, request, config);
-
-            if (usev4Signing)
+            if (request.SignatureVersion == SignatureVersion.SigV4a)
+                return AWS4aSignerCRTWrapperInstance;
+            else if (UseV4Signing(useSigV4Setting, request, config))
                 return AWS4SignerInstance;
             else
                 return defaultSigner;

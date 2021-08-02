@@ -104,7 +104,7 @@ namespace Amazon.S3.Internal
             if (request.Headers.TryGetValue(HeaderKeys.XAmzServerSideEncryptionHeader, out sseHeaderValue) &&
                 string.Equals(sseHeaderValue, ServerSideEncryptionMethod.AWSKMS.Value, StringComparison.Ordinal))
             {
-                request.UseSigV4 = true;
+                request.SignatureVersion = SignatureVersion.SigV4;
             }
             var bucketResourcePathToken = GetBucketName(request.ResourcePath);
             if (string.IsNullOrEmpty(bucketResourcePathToken))
@@ -125,27 +125,42 @@ namespace Amazon.S3.Internal
 
             bool isHttp;
             bool removeBucketFromResourcePath = false;
-            
+
             if (Arn.IsArn(bucketResourcePathToken))
             {
                 string accessPoint;
+                UriBuilder ub;
                 Arn s3Arn = Arn.Parse(bucketResourcePathToken);
                 if (s3Arn.IsService("s3") && s3Arn.TryParseAccessPoint(out accessPoint))
                 {
-                    ValidateS3AccessPoint(s3Arn, s3Config, regionEndpoint);
-                    UriBuilder ub;
-                    if (!string.IsNullOrEmpty(config.ServiceURL))
+                    if (s3Arn.IsMRAPArn())
                     {
-                        ub = new UriBuilder(EndpointResolver.DetermineEndpoint(s3Config, request));
-                        isHttp = string.Equals(ub.Scheme, "http", StringComparison.OrdinalIgnoreCase);
-                        ub.Host = string.Concat($"{accessPoint}-{s3Arn.AccountId}.", ub.Host);                        
-                    }
-                    else
-                    {
+                        var partitionDnsSuffix = RegionEndpoint.GetDnsSuffixForPartition(s3Arn.Partition);
+                        ValidateMRAPAccessPoint(s3Arn, s3Config, accessPoint, partitionDnsSuffix);
+
+                        request.SignatureVersion = SignatureVersion.SigV4a;
+                        request.AuthenticationRegion = "*";
+
                         isHttp = config.UseHttp;
                         var scheme = isHttp ? "http" : "https";
-                        var fipsSuffix = regionEndpoint?.SystemName?.ToLower().Contains("fips") == true ? "-fips" : "";
-                        ub = new UriBuilder($"{scheme}://{accessPoint}-{s3Arn.AccountId}.s3-accesspoint{fipsSuffix}{(config.UseDualstackEndpoint ? ".dualstack" : "")}.{s3Arn.Region}.{config.RegionEndpoint.PartitionDnsSuffix}");
+                        ub = new UriBuilder($"{scheme}://{accessPoint}.accesspoint.s3-global.{partitionDnsSuffix}");
+                    }
+                    else // Non-MRAP access point
+                    {
+                        ValidateS3AccessPoint(s3Arn, s3Config, regionEndpoint);
+                        if (!string.IsNullOrEmpty(config.ServiceURL))
+                        {
+                            ub = new UriBuilder(EndpointResolver.DetermineEndpoint(s3Config, request));
+                            isHttp = string.Equals(ub.Scheme, "http", StringComparison.OrdinalIgnoreCase);
+                            ub.Host = string.Concat($"{accessPoint}-{s3Arn.AccountId}.", ub.Host);
+                        }
+                        else
+                        {
+                            isHttp = config.UseHttp;
+                            var scheme = isHttp ? "http" : "https";
+                            var fipsSuffix = regionEndpoint?.SystemName?.ToLower().Contains("fips") == true ? "-fips" : "";
+                            ub = new UriBuilder($"{scheme}://{accessPoint}-{s3Arn.AccountId}.s3-accesspoint{fipsSuffix}{(config.UseDualstackEndpoint ? ".dualstack" : "")}.{s3Arn.Region}.{config.RegionEndpoint.PartitionDnsSuffix}");
+                        }
                     }
                     
                     request.Endpoint = ub.Uri;
@@ -153,7 +168,6 @@ namespace Amazon.S3.Internal
                 else if (s3Arn.IsService(s3ObjectLambdaServiceName) && s3Arn.TryParseAccessPoint(out accessPoint))
                 {
                     ValidateS3ObjectLambdaAccessPoint(s3Arn, s3Config, regionEndpoint);
-                    UriBuilder ub;
 
                     if (!string.IsNullOrEmpty(config.ServiceURL))
                     {
@@ -176,22 +190,21 @@ namespace Amazon.S3.Internal
                     var outpost = s3Arn.ParseOutpost();
                     ValidateOutpostAccessPoint(s3Arn, s3Config, regionEndpoint);
                     var region = s3Config.UseArnRegion ? s3Arn.Region : regionEndpoint.SystemName;
-                    bucketResourcePathToken = outpost.FullAccessPointName;                    
+                    bucketResourcePathToken = outpost.FullAccessPointName;
 
-                    UriBuilder ub;
                     if (!string.IsNullOrEmpty(config.ServiceURL))
                     {
                         ub = new UriBuilder(EndpointResolver.DetermineEndpoint(s3Config, request));
                         isHttp = string.Equals(ub.Scheme, "http", StringComparison.OrdinalIgnoreCase);
                         ub.Host = string.Concat($"{outpost.AccessPointName}-{s3Arn.AccountId}.{outpost.OutpostId}.", ub.Host);
-                    }                    
+                    }
                     else
                     {
                         isHttp = config.UseHttp;
                         var scheme = isHttp ? "http" : "https";
                         ub = new UriBuilder($"{scheme}://{outpost.AccessPointName}-{s3Arn.AccountId}.{outpost.OutpostId}.s3-outposts.{region}.{config.RegionEndpoint.PartitionDnsSuffix}");
                     }
-                    
+
                     request.Endpoint = ub.Uri;
                 }
                 else
@@ -201,11 +214,15 @@ namespace Amazon.S3.Internal
                 request.OverrideSigningServiceName = s3Arn.Service;
                 // The access point arn can be using a region different from the configured region for the service client.
                 // If so be sure to set the authentication region so the signer will use the correct region.
-                request.AuthenticationRegion = s3Arn.Region;
-                request.UseSigV4 = true;
+                if (!s3Arn.IsMRAPArn())    // Except for MRAP where signing region and ARN region diverge
+                {
+                    request.AuthenticationRegion = s3Arn.Region;
+                    request.SignatureVersion = SignatureVersion.SigV4;
+                }
+
                 removeBucketFromResourcePath = true;
             }
-            else
+            else // not an arn
             {
                 // If path style is not forced and the bucket name is DNS
                 // compatible modify the endpoint to use virtual host style
@@ -243,7 +260,7 @@ namespace Amazon.S3.Internal
 
                     request.Endpoint = ub.Uri;
                     request.OverrideSigningServiceName = s3ObjectLambdaServiceName;
-                    request.UseSigV4 = true;
+                    request.SignatureVersion = SignatureVersion.SigV4;
                 }
 
                 if (s3Config.UseAccelerateEndpoint)
@@ -267,7 +284,7 @@ namespace Amazon.S3.Internal
                     {
                         request.Endpoint = GetAccelerateEndpoint(bucketResourcePathToken, s3Config);
 
-                        if (request.UseSigV4 && s3Config.RegionEndpoint != null)
+                        if (request.SignatureVersion == SignatureVersion.SigV4 && s3Config.RegionEndpoint != null)
                         {
                             request.AlternateEndpoint = s3Config.RegionEndpoint;
                         }
@@ -377,6 +394,42 @@ namespace Amazon.S3.Internal
                 && !string.Equals(arn.Region, region.SystemName, StringComparison.Ordinal))
             {
                 throw new AmazonClientException("Invalid configuration, cross region S3ObjectLambda access point ARN");
+            }
+        }
+
+        /// <summary>
+        /// Validate Multi-Region Access Points
+        /// </summary>
+        private static Regex mrapAliasSegmentRegex = new Regex(@"^[a-zA-Z0-9\-]{1,63}$", RegexOptions.Compiled);
+        private static void ValidateMRAPAccessPoint(Arn arn, AmazonS3Config s3Config, string mrapAlias, string partitionDnsSuffix)
+        {
+            if (s3Config.DisableMultiregionAccessPoints)
+            {
+                throw new AmazonClientException("Invalid configuration, multi-region access point ARNs are disabled.");
+            }
+            if (s3Config.UseAccelerateEndpoint)
+            {
+                throw new AmazonClientException("Invalid configuration, multi-region access points do not support accelerate");
+            }
+            if (s3Config.UseDualstackEndpoint)
+            {
+                throw new AmazonClientException("Invalid configuration, multi-region access points do not support dualstack");
+            }
+            if (!s3Config.UseArnRegion && s3Config.RegionEndpoint != null && s3Config.RegionEndpoint.SystemName.StartsWith("fips-"))
+            {
+                throw new AmazonClientException("Invalid configuration, multi-region access points do not support Fips- regions");
+            }
+            if (String.IsNullOrEmpty(partitionDnsSuffix))
+            {
+                throw new AmazonClientException($"Failed to determine a DNS suffix for partition {arn.Partition}");
+            }
+
+            foreach (var aliasSegment in mrapAlias.Split('.'))
+            {
+                if (!mrapAliasSegmentRegex.IsMatch(aliasSegment))
+                {
+                    throw new AmazonClientException($"{mrapAlias} is not a valid multi-region access point. The alias must consist of valid RFC 3986 host labels");
+                }
             }
         }
 

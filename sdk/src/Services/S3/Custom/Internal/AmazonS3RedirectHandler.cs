@@ -50,7 +50,7 @@ namespace Amazon.S3.Internal
 
             var redirect = new AmazonS3Uri(redirectedLocation);
             if (AWSConfigsS3.UseSignatureVersion4 ||
-                request.UseSigV4 ||
+                request.SignatureVersion == SignatureVersion.SigV4 ||
                 redirect.Region.GetEndpointForService("s3").SignatureVersionOverride == "4" ||
                 redirect.Region.GetEndpointForService("s3").SignatureVersionOverride == null)
             {

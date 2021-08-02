@@ -65,5 +65,19 @@ namespace Amazon.Runtime.Internal.Auth
             string auth = ComputeHash(toSign, awsSecretAccessKey, clientConfig.SignatureMethod);
             request.Parameters["Signature"] = auth;
         }
+
+        /// <summary>
+        /// Signs the specified request with the AWS2 signing protocol by using the
+        /// AWS account credentials given in the method parameters.
+        /// </summary>
+        /// <param name="request">The request to have the signature compute for</param>
+        /// <param name="clientConfig">The configuration that specifies which hashing algorithm to use</param>
+        /// <param name="metrics">Request metrics</param>
+        /// <param name="credentials">AWS credentials for the account making the request</param>
+        /// <exception cref="Amazon.Runtime.SignatureException">If any problems are encountered while signing the request</exception>
+        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, ImmutableCredentials credentials)
+        {
+            Sign(request, clientConfig, metrics, credentials.AccessKey, credentials.SecretKey);
+        }
     }
 }

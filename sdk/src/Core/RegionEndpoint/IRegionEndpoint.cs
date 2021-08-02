@@ -34,5 +34,7 @@ namespace Amazon.Internal
         IEnumerable<IRegionEndpoint> AllRegionEndpoints { get; }
 
         IRegionEndpoint GetRegionEndpoint(string regionName);
+
+        string GetDnsSuffixForPartition(string partition);
     }
 }

@@ -45,7 +45,12 @@ namespace Amazon.S3.Internal
 
         public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
         {
-            _s3Signer.Sign(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey);
+            Sign(request, clientConfig, metrics, new ImmutableCredentials(awsAccessKeyId, awsSecretAccessKey, ""));
+        }
+
+        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, ImmutableCredentials credentials)
+        {
+            _s3Signer.Sign(request, clientConfig, metrics, credentials);
         }
 
         internal static void SignRequest(IRequest request, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)

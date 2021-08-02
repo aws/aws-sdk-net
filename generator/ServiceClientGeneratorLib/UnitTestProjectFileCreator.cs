@@ -34,7 +34,7 @@ namespace ServiceClientGenerator
         {
             foreach (var configuration in _configurations)
             {
-                IList<ProjectFileCreator.ProjectReference> commonReferences;
+                IList<ProjectFileCreator.ProjectReference> projectReferences;
                 IList<ProjectFileCreator.ProjectReference> serviceProjectReferences;
                 string projectName;
                 if (_isLegacyProj)
@@ -56,7 +56,7 @@ namespace ServiceClientGenerator
                     
                 string projectGuid = Utils.GetProjectGuid(Path.Combine(unitTestRoot, projectName));
 
-                commonReferences = GetCommonReferences(unitTestRoot, configuration.Name, useDllReference);
+                projectReferences = GetCommonReferences(unitTestRoot, configuration.Name, useDllReference);
 
                 var projectProperties = new Project()
                 {
@@ -91,16 +91,40 @@ namespace ServiceClientGenerator
                     projectProperties.FxcopAnalyzerRuleSetFilePath = @"..\..\..\..\AWSDotNetSDK.ruleset";
                     projectProperties.FxcopAnalyzerRuleSetFilePathForBuild = @"..\..\..\..\AWSDotNetSDKForBuild.ruleset";
                 }
-                                
+
                 if (serviceProjectReferences != null)
                 {
-                    projectProperties.ProjectReferences = commonReferences.Concat(serviceProjectReferences).ToList();
-                }
-                else
-                {
-                    projectProperties.ProjectReferences = commonReferences;
+                    Array.ForEach(serviceProjectReferences.ToArray(), x => projectReferences.Add(x));
                 }
 
+                // For S3's Multi-Region Access Points, multiple unit tests rely on SigV4a signing provided by the CRT,
+                // which is not a dependency for all users of S3 so we must add this directly to the generated UnitTest projects
+                // (either the full ones or S3-specific UnitTest.csprojs).
+                //
+                // Once CRT integration is more widespread, this should likely be done for all services
+                // via _manifest.json and this S3-specific case removed.
+                if (_serviceName == "S3")
+                {
+                    var crtExtensionAsProjectReference = new ProjectFileCreator.ProjectReference
+                    {
+                        Name = string.Format("AWSSDK.Extensions.CrtIntegration.{0}", configuration.Name),
+                        IncludePath = Path.Combine(new string[] {"..", "..", "..", "..", "..", "extensions", "src",
+                            "AWSSDK.Extensions.CrtIntegration", $"AWSSDK.Extensions.CrtIntegration.{configuration.Name}.csproj"})
+                    };
+                    projectReferences.Add(crtExtensionAsProjectReference);
+                }
+                else if (_isLegacyProj) // unit test projects with all services, which need CRT also but have a different relative path
+                {
+                    var crtExtensionAsProjectReference = new ProjectFileCreator.ProjectReference
+                    {
+                        Name = string.Format("AWSSDK.Extensions.CrtIntegration.{0}", configuration.Name),
+                        IncludePath = Path.Combine(new string[] { "..", "..", "..", "extensions", "src", 
+                            "AWSSDK.Extensions.CrtIntegration", $"AWSSDK.Extensions.CrtIntegration.{configuration.Name}.csproj" })
+                    };
+                    projectReferences.Add(crtExtensionAsProjectReference);
+                }
+
+                projectProperties.ProjectReferences = projectReferences;
                 GenerateProjectFile(projectProperties, unitTestRoot, projectName);
             }
         }

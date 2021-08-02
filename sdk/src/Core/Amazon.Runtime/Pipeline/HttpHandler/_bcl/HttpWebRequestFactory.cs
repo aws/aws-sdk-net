@@ -590,7 +590,7 @@ namespace Amazon.Runtime.Internal
                     else if (string.Equals(kvp.Key, HeaderKeys.IfModifiedSinceHeader, StringComparison.OrdinalIgnoreCase))
                         _addWithoutValidateHeadersMethod.Invoke(request.Headers, new[] { kvp.Key, kvp.Value });
                     else
-                        throw new NotSupportedException("Header with name " + kvp.Key + " is not suppored");
+                        throw new NotSupportedException("Header with name " + kvp.Key + " is not supported");
                 }
                 else
                 {

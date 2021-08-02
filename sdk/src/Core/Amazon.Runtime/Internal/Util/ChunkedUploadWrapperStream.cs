@@ -1,23 +1,16 @@
-﻿/*******************************************************************************
- *  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- *  this file except in compliance with the License. A copy of the License is located at
- *
+﻿/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
  *  http://aws.amazon.com/apache2.0
- *
- *  or in the "license" file accompanying this file.
- *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
- *  CONDITIONS OF ANY KIND, either express or implied. See the License for the
- *  specific language governing permissions and limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2006-03-01
- *
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
 
 using System;
@@ -36,7 +29,7 @@ namespace Amazon.Runtime.Internal.Util
     /// <summary>
     /// Stream wrapper that double-buffers from a wrapped stream and
     /// returns the buffered content as a series of signed 'chunks'
-    /// for the AWS4 ('Signature V4') protocol.
+    /// for the AWS4 ('Signature V4') protocol or the asymmetric Sigv4 (Sigv4a) protocol.
     /// </summary>
     public class ChunkedUploadWrapperStream : WrapperStream
     {
@@ -45,7 +38,8 @@ namespace Amazon.Runtime.Internal.Util
         private const string CLRF = "\r\n";
         private const string CHUNK_STRING_TO_SIGN_PREFIX = "AWS4-HMAC-SHA256-PAYLOAD";
         private const string CHUNK_SIGNATURE_HEADER = ";chunk-signature=";
-        private const int SIGNATURE_LENGTH = 64;
+        public const int V4_SIGNATURE_LENGTH = 64;
+        public const int V4A_SIGNATURE_LENGTH = 144;
 
         private byte[] _inputBuffer;
         
@@ -73,27 +67,41 @@ namespace Amazon.Runtime.Internal.Util
 
         private readonly ReadStrategy _readStrategy = ReadStrategy.ReadDirect;
 
-        internal ChunkedUploadWrapperStream(Stream stream, int wrappedStreamBufferSize, AWS4SigningResult headerSigningResult)
-            : base(stream)
+        /// <summary>
+        /// Initializes a chunked upload stream
+        /// </summary>
+        /// <param name="stream">stream to wrap</param>
+        /// <param name="wrappedStreamBufferSize">Size of buffer used for reading from stream</param>
+        /// <param name="headerSigningResult">SigV4 or SigV4a signing result for the request's headers</param>
+        internal ChunkedUploadWrapperStream(Stream stream, int wrappedStreamBufferSize, AWSSigningResultBase headerSigningResult) : base(stream)
         {
+            if (!(headerSigningResult is AWS4aSigningResult || headerSigningResult is AWS4SigningResult ))
+            {
+                throw new AmazonClientException($"{nameof(ChunkedUploadWrapperStream)} was initialized without a SigV4 or SigV4a signing result.");
+            }
+            else if (headerSigningResult is AWS4aSigningResult)
+            {
+                Sigv4aSigner = new AWS4aSignerCRTWrapper();
+            }
+
             HeaderSigningResult = headerSigningResult;
             PreviousChunkSignature = headerSigningResult?.Signature;
 
             _wrappedStreamBufferSize = wrappedStreamBufferSize;
             _inputBuffer = new byte[DefaultChunkSize];
-            _outputBuffer = new byte[CalculateChunkHeaderLength(DefaultChunkSize)]; // header+data
+            _outputBuffer = new byte[CalculateChunkHeaderLength(DefaultChunkSize, HeaderSigningResult is AWS4aSigningResult ? V4A_SIGNATURE_LENGTH : V4_SIGNATURE_LENGTH)]; // header+data
 
             // if the wrapped stream implements encryption, switch to a read-and-copy
             // strategy for filling the chunk buffer
             var encryptionStream = SearchWrappedStream(s =>
-                {
-                    var encryptUploadPartStream = s as EncryptUploadPartStream;
-                    if (encryptUploadPartStream != null)
-                        return true;
+            {
+                var encryptUploadPartStream = s as EncryptUploadPartStream;
+                if (encryptUploadPartStream != null)
+                    return true;
 
-                    var encryptStream = s as EncryptStream;
-                    return encryptStream != null;
-                });
+                var encryptStream = s as EncryptStream;
+                return encryptStream != null;
+            });
 
             if (encryptionStream != null)
                 _readStrategy = ReadStrategy.ReadAndCopy;
@@ -214,13 +222,18 @@ namespace Amazon.Runtime.Internal.Util
 #endif
 
         /// <summary>
-        /// Results of the header-signing portion of the request
+        /// Results of the header-signing portion of the request when using SigV4 signing
         /// </summary>
-        private AWS4SigningResult HeaderSigningResult { get; set; }
+        private AWSSigningResultBase HeaderSigningResult { get; set; }
 
         /// <summary>
-        /// Computed signature of the chunk prior to the one in-flight, in
-        /// hex
+        /// SigV4a signer
+        /// </summary>
+        private AWS4aSignerCRTWrapper Sigv4aSigner { get; set; }
+
+        /// <summary>
+        /// Computed signature of the chunk prior to the one in-flight in hex,
+        /// for either SigV4 or SigV4a
         /// </summary>
         private string PreviousChunkSignature { get; set; }
 
@@ -247,26 +260,37 @@ namespace Amazon.Runtime.Internal.Util
             // variable-length size of the embedded chunk data in hex
             chunkHeader.Append(dataLen.ToString("X", CultureInfo.InvariantCulture));
 
-            if (HeaderSigningResult != null)
+            string chunkSignature = "";
+            if (HeaderSigningResult is AWS4aSigningResult v4aHeaderSigningResult)
             {
-                const string nonsigExtension = "";
+                if (dataLen == 0)   // _inputBuffer still contains previous chunk, but this is the final 0 content chunk so sign null
+                {
+                    chunkSignature = Sigv4aSigner.SignChunk(null, PreviousChunkSignature, v4aHeaderSigningResult);
+                }
+                else
+                {
+                    chunkSignature = Sigv4aSigner.SignChunk(new MemoryStream(_inputBuffer), PreviousChunkSignature, v4aHeaderSigningResult);
+                }
+            }
+            else if (HeaderSigningResult is AWS4SigningResult v4HeaderSingingResult) // SigV4
+            {
+                var chunkStringToSign = BuildChunkedStringToSign(CHUNK_STRING_TO_SIGN_PREFIX, v4HeaderSingingResult.ISO8601DateTime,
+                                                                    v4HeaderSingingResult.Scope,  PreviousChunkSignature, dataLen, _inputBuffer);
 
-                // signature-extension
-                var chunkStringToSign =
-                    CHUNK_STRING_TO_SIGN_PREFIX + "\n" +
-                    HeaderSigningResult.ISO8601DateTime + "\n" +
-                    HeaderSigningResult.Scope + "\n" +
-                    PreviousChunkSignature + "\n" +
-                    AWSSDKUtils.ToHex(AWS4Signer.ComputeHash(nonsigExtension), true) + "\n" +
-                    (dataLen > 0
-                        ? AWSSDKUtils.ToHex(AWS4Signer.ComputeHash(_inputBuffer), true)
-                        : AWS4Signer.EmptyBodySha256);
-
-                var chunkSignature = AWSSDKUtils.ToHex(AWS4Signer.SignBlob(HeaderSigningResult.SigningKey, chunkStringToSign), true);
-                PreviousChunkSignature = chunkSignature;
-                chunkHeader.Append(nonsigExtension + CHUNK_SIGNATURE_HEADER + chunkSignature);
+                chunkSignature = AWSSDKUtils.ToHex(AWS4Signer.SignBlob(v4HeaderSingingResult.GetSigningKey(), chunkStringToSign), true);
             }
 
+            // For Sigv4a the chunk signature must be padded when being appended to the chunk metadata,
+            // but not when being used as the input for the next chunk
+            PreviousChunkSignature = chunkSignature;
+            if (HeaderSigningResult is AWS4aSigningResult)
+            {
+                chunkHeader.Append(CHUNK_SIGNATURE_HEADER + chunkSignature.PadRight(V4A_SIGNATURE_LENGTH, '*'));
+            }
+            else // SigV4
+            {
+                chunkHeader.Append(CHUNK_SIGNATURE_HEADER + chunkSignature);
+            }
             chunkHeader.Append(CLRF);
 
             try
@@ -301,7 +325,11 @@ namespace Amazon.Runtime.Internal.Util
         {
             get
             {
-                return BaseStream == null ? 0 : ComputeChunkedContentLength(BaseStream.Length);
+                if (BaseStream == null)
+                {
+                    return 0;
+                }
+                return ComputeChunkedContentLength(BaseStream.Length, HeaderSigningResult is AWS4aSigningResult ? V4A_SIGNATURE_LENGTH : V4_SIGNATURE_LENGTH);
             }
         }
 
@@ -319,32 +347,56 @@ namespace Amazon.Runtime.Internal.Util
         /// value.
         /// </summary>
         /// <param name="originalLength"></param>
+        /// <param name="signatureLength">Length of the signature for each chunk, in bytes</param>
         /// <returns></returns>
-        public static long ComputeChunkedContentLength(long originalLength)
+        public static long ComputeChunkedContentLength(long originalLength, int signatureLength)
         {
             if (originalLength < 0)
                 throw new ArgumentOutOfRangeException("originalLength", "Expected 0 or greater value for originalLength.");
 
             if (originalLength == 0)
-                return CalculateChunkHeaderLength(0);
+                return CalculateChunkHeaderLength(0, signatureLength);
 
             var maxSizeChunks = originalLength / DefaultChunkSize;
             var remainingBytes = originalLength % DefaultChunkSize;
-            return maxSizeChunks * CalculateChunkHeaderLength(DefaultChunkSize)
-                   + (remainingBytes > 0 ? CalculateChunkHeaderLength(remainingBytes) : 0)
-                   + CalculateChunkHeaderLength(0);
+            return maxSizeChunks * CalculateChunkHeaderLength(DefaultChunkSize, signatureLength)
+                   + (remainingBytes > 0 ? CalculateChunkHeaderLength(remainingBytes, signatureLength) : 0)
+                   + CalculateChunkHeaderLength(0, signatureLength);
+        }
+
+        /// <summary>
+        /// Builds the string to sign for a single V4/V4a chunk
+        /// </summary>
+        /// <param name="prefix">Algorithm being used</param>
+        /// <param name="dateTime">ISO8601DateTime that we're signing the request for</param>
+        /// <param name="scope">Signing scope (date/region/service/aws4_request)</param>
+        /// <param name="previousSignature">Previous chunk's unpadded signature</param>
+        /// <param name="dataLength">Length of the content for this chunk</param>
+        /// <param name="inputBuffer">Content of this chunk</param>
+        /// <returns>The string to sign for this chunk</returns>
+        public static string BuildChunkedStringToSign(string prefix, string dateTime, string scope, string previousSignature, int dataLength, byte[] inputBuffer)
+        {
+            return prefix + "\n" +
+                   dateTime + "\n" +
+                   scope + "\n" +
+                   previousSignature + "\n" +
+                   AWSSDKUtils.ToHex(AWS4Signer.ComputeHash(""), true) + "\n" +
+                   (dataLength > 0
+                       ? AWSSDKUtils.ToHex(AWS4Signer.ComputeHash(inputBuffer), true)
+                       : AWS4Signer.EmptyBodySha256);
         }
 
         /// <summary>
         /// Computes the size of the header data for each chunk.
         /// </summary>
-        /// <param name="chunkDataSize"></param>
+        /// <param name="chunkDataSize">Payload size of each chunk, in bytes</param>
+        /// <param name="signatureLength">Length of the signature for each chunk, in bytes</param>
         /// <returns></returns>
-        private static long CalculateChunkHeaderLength(long chunkDataSize)
+        private static long CalculateChunkHeaderLength(long chunkDataSize, int signatureLength)
         {
             return chunkDataSize.ToString("X", CultureInfo.InvariantCulture).Length
                    + CHUNK_SIGNATURE_HEADER.Length
-                   + SIGNATURE_LENGTH
+                   + signatureLength
                    + CLRF.Length
                    + chunkDataSize
                    + CLRF.Length;

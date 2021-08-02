@@ -147,5 +147,16 @@ namespace AWSSDK.UnitTests
         {
             Arn.Parse(input).ParseOutpost();
         }
+
+        [DataTestMethod]
+        [TestCategory("S3")]
+        [DataRow("arn:aws:s3::123456789012:accesspoint:myendpoint", true)]
+        [DataRow("arn:aws:s3::123456789012:accesspoint/myendpoint", true)]
+        [DataRow("arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint", false)] // Contains a region, so not MRAP
+        [DataRow("arn:aws:s3::123456789012:invalid-accesspoint:myendpoint", false)]  // Resource doesn't begin with "accesspoint"
+        public void ParseMRAPArn(string input, bool expectedResult)
+        {
+            Assert.AreEqual(Arn.Parse(input).IsMRAPArn(), expectedResult);
+        }
     }
 }

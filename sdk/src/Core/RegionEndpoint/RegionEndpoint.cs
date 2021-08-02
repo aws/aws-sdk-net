@@ -175,6 +175,17 @@ namespace Amazon
             }
         }
 
+        /// <summary>
+        /// Returns the DNS suffix for the given partition, or
+        /// an empty string if a matching partition was not found in endpoints.json
+        /// </summary>
+        /// <param name="partition">partition</param>
+        /// <returns>DNS suffix for the given partition, empty string if a matching partition was not found</returns>
+        public static string GetDnsSuffixForPartition(string partition)
+        {
+            return RegionEndpointProvider.GetDnsSuffixForPartition(partition);
+        }
+
         private static RegionEndpoint GetEndpoint(string systemName, string displayName)
         {
             RegionEndpoint regionEndpoint = null;

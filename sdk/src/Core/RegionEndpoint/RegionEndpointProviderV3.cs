@@ -646,5 +646,23 @@ namespace Amazon.Internal
             Dispose(disposing: true);
             GC.SuppressFinalize(this);
         }
+
+        /// <summary>
+        /// Returns the DNS suffix for the given partition, or
+        /// an empty string if a matching partition was not found in endpoints.json
+        /// </summary>
+        /// <param name="partition">partition</param>
+        /// <returns>DNS suffix for the given partition, empty string if a matching partition was not found</returns>
+        public string GetDnsSuffixForPartition(string partition)
+        {
+            foreach (JsonData currentPartition in _root["partitions"])
+            {
+                if ((string)currentPartition["partition"] == partition)
+                {
+                    return (string)currentPartition["dnsSuffix"];
+                }
+            }
+            return "";
+        }
     }
 }

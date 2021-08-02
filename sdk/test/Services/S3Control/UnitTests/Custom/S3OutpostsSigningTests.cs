@@ -18,6 +18,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Amazon;
+using Amazon.Runtime;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Util;
 using Amazon.S3Control;
@@ -50,7 +51,7 @@ namespace AWSSDK.UnitTests
             };
             var originalAuthService = config.AuthenticationServiceName;
             var iRequest = S3ControlArnTestUtils.RunMockRequest(getAccessPointRequest, GetAccessPointRequestMarshaller.Instance, config);
-            signer.Sign(iRequest, config, new RequestMetrics(), "ACCESS", "SECRET");
+            signer.Sign(iRequest, config, new RequestMetrics(), new ImmutableCredentials("ACCESS", "SECRET",""));
             Assert.IsTrue(iRequest.Headers.ContainsKey(HeaderKeys.AuthorizationHeader));
             Assert.IsTrue((iRequest.Headers["Authorization"]).Contains("s3-outposts"));
             Assert.IsTrue(config.AuthenticationServiceName == originalAuthService);
@@ -74,7 +75,7 @@ namespace AWSSDK.UnitTests
             };
             var originalAuthService = config.AuthenticationServiceName;
             var iRequest = S3ControlArnTestUtils.RunMockRequest(getBucketRequest, GetBucketRequestMarshaller.Instance, config);
-            signer.Sign(iRequest, config, new RequestMetrics(), "ACCESS", "SECRET");
+            signer.Sign(iRequest, config, new RequestMetrics(), new ImmutableCredentials("ACCESS", "SECRET", ""));
             Assert.IsTrue(iRequest.Headers.ContainsKey(HeaderKeys.AuthorizationHeader));
             Assert.IsTrue((iRequest.Headers["Authorization"]).Contains("s3-outposts"));
             Assert.IsTrue(config.AuthenticationServiceName == originalAuthService);
@@ -99,7 +100,7 @@ namespace AWSSDK.UnitTests
             };
             var originalAuthService = config.AuthenticationServiceName;
             var iRequest = S3ControlArnTestUtils.RunMockRequest(createBucketRequest, CreateBucketRequestMarshaller.Instance, config);            
-            signer.Sign(iRequest, config, new RequestMetrics(), "ACCESS", "SECRET");
+            signer.Sign(iRequest, config, new RequestMetrics(), new ImmutableCredentials("ACCESS", "SECRET", ""));
             Assert.IsTrue(iRequest.Headers.ContainsKey(HeaderKeys.AuthorizationHeader));
             Assert.IsTrue((iRequest.Headers["Authorization"]).Contains("s3-outposts"));
             Assert.IsTrue(config.AuthenticationServiceName == originalAuthService);
@@ -122,7 +123,7 @@ namespace AWSSDK.UnitTests
             };
             var originalAuthService = config.AuthenticationServiceName;
             var iRequest = S3ControlArnTestUtils.RunMockRequest(createAccessPointRequest, CreateAccessPointRequestMarshaller.Instance, config);            
-            signer.Sign(iRequest, config, new RequestMetrics(), "ACCESS", "SECRET");
+            signer.Sign(iRequest, config, new RequestMetrics(), new ImmutableCredentials("ACCESS", "SECRET", ""));
 
             Assert.IsTrue(iRequest.Headers.ContainsKey(HeaderKeys.AuthorizationHeader));
             Assert.IsTrue((iRequest.Headers["Authorization"]).Contains("s3-outposts"));

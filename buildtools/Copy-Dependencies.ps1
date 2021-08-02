@@ -13,7 +13,8 @@ Function Copy-Dependencies
         # the corresponding copy-license-and-notice task as well.
         [Parameter()]
         [string[]]
-        $DependencyNames = @("microsoft.bcl.asyncinterfaces", "system.runtime.compilerservices.unsafe", "system.threading.tasks.extensions"),
+        $DependencyNames = @("microsoft.bcl.asyncinterfaces", "system.runtime.compilerservices.unsafe", "system.threading.tasks.extensions", 
+                             "awscrt", "awscrt-auth", "awscrt-http"),
 
         # The location to copy the built dlls to
         [Parameter(Mandatory=$true, Position=1)]
@@ -38,7 +39,8 @@ Function Copy-Dependencies
         # The supported platforms in .NET SDK
         [Parameter()]
         [string[]]
-        $ProjectFiles =  @("AWSSDK.Core.Net35.csproj", "AWSSDK.Core.Net45.csproj", "AWSSDK.Core.NetStandard.csproj")
+        $ProjectFiles =  @("AWSSDK.Core.Net35.csproj", "AWSSDK.Core.Net45.csproj", "AWSSDK.Core.NetStandard.csproj", "AWSSDK.Extensions.CrtIntegration.Net35.csproj",
+                           "AWSSDK.Extensions.CrtIntegration.Net45.csproj", "AWSSDK.Extensions.CrtIntegration.NetStandard.csproj")
 
     )
 
@@ -46,12 +48,21 @@ Function Copy-Dependencies
     {
         foreach ($project in $ProjectFiles) 
         {
+            # Check two paths to support running in either the root or /buildtools folders
             if (Test-Path sdk/src/core/$project) {
                 dotnet restore -f --packages $TempRestoreFolder sdk/src/core/$project
             }
             elseif (Test-Path ../sdk/src/core/$project) 
             {
                 dotnet restore -f --packages $TempRestoreFolder ../sdk/src/core/$project
+            }
+            elseif (Test-Path extensions/src/AWSSDK.Extensions.CrtIntegration/$project) 
+            {
+                dotnet restore -f --packages $TempRestoreFolder extensions/src/AWSSDK.Extensions.CrtIntegration/$project
+            }
+            elseif (Test-Path ../extensions/src/AWSSDK.Extensions.CrtIntegration/$project) 
+            {
+                dotnet restore -f --packages $TempRestoreFolder ../extensions/src/AWSSDK.Extensions.CrtIntegration/$project
             }
         }
 

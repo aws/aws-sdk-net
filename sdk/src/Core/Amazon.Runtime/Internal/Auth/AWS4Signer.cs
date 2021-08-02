@@ -31,8 +31,10 @@ namespace Amazon.Runtime.Internal.Auth
         
         public const string Scheme = "AWS4";
         public const string Algorithm = "HMAC-SHA256";
+        public const string Sigv4aAlgorithm = "ECDSA-P256-SHA256";
 
         public const string AWS4AlgorithmTag = Scheme + "-" + Algorithm;
+        public const string AWS4aAlgorithmTag = Scheme + "-" + Sigv4aAlgorithm;
 
         public const string Terminator = "aws4_request";
         public static readonly byte[] TerminatorBytes = Encoding.UTF8.GetBytes(Terminator);
@@ -43,6 +45,7 @@ namespace Amazon.Runtime.Internal.Auth
 
         public const string EmptyBodySha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
         public const string StreamingBodySha256 = "STREAMING-AWS4-HMAC-SHA256-PAYLOAD";
+        public const string V4aStreamingBodySha256 = "STREAMING-AWS4-ECDSA-P256-SHA256-PAYLOAD";
         public const string AWSChunkedEncoding = "aws-chunked";
 
         public const string UnsignedPayload = "UNSIGNED-PAYLOAD";
@@ -116,6 +119,38 @@ namespace Amazon.Runtime.Internal.Auth
 
         /// <summary>
         /// Calculates and signs the specified request using the AWS4 signing protocol by using the
+        /// AWS account credentials given in the method parameters. The resulting signature is added
+        /// to the request headers as 'Authorization'. Parameters supplied in the request, either in
+        /// the resource path as a query string or in the Parameters collection must not have been
+        /// uri encoded. If they have, use the SignRequest method to obtain a signature.
+        /// </summary>
+        /// <param name="request">
+        /// The request to compute the signature for. Additional headers mandated by the AWS4 protocol 
+        /// ('host' and 'x-amz-date') will be added to the request before signing.
+        /// </param>
+        /// <param name="clientConfig">
+        /// Client configuration data encompassing the service call (notably authentication
+        /// region, endpoint and service name).
+        /// </param>
+        /// <param name="metrics">
+        /// Metrics for the request
+        /// </param>
+        /// <param name="credentials">
+        /// The AWS credentials for the account making the service call.
+        /// </param>
+        /// <exception cref="Amazon.Runtime.SignatureException">
+        /// If any problems are encountered while signing the request.
+        /// </exception>
+        public override void Sign(IRequest request, 
+                                  IClientConfig clientConfig, 
+                                  RequestMetrics metrics, 
+                                  ImmutableCredentials credentials)
+        {
+            Sign(request, clientConfig, metrics, credentials.AccessKey, credentials.SecretKey);
+        }
+
+        /// <summary>
+        /// Calculates and signs the specified request using the AWS4 signing protocol by using the
         /// AWS account credentials given in the method parameters.
         /// </summary>
         /// <param name="request">
@@ -157,7 +192,7 @@ namespace Amazon.Runtime.Internal.Auth
 
             var parametersToCanonicalize = GetParametersToCanonicalize(request);
             var canonicalParameters = CanonicalizeQueryParameters(parametersToCanonicalize);
-            var bodyHash = SetRequestBodyHash(request, SignPayload);
+            var bodyHash = SetRequestBodyHash(request, SignPayload, StreamingBodySha256, ChunkedUploadWrapperStream.V4_SIGNATURE_LENGTH);
             var sortedHeaders = SortAndPruneHeaders(request.Headers);
 
             var canonicalRequest = CanonicalizeRequest(request.Endpoint,
@@ -390,14 +425,16 @@ namespace Amazon.Runtime.Internal.Auth
         /// If not set as a header or in the request, attempt to compute a hash based on
         /// inspection of the style of the request content.
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="request">Request to sign</param>
+        /// <param name="chunkedBodyHash">The fixed value to set for the x-amz-content-sha256 header for chunked requests</param>
+        /// <param name="signatureLength">Length of the signature for each chunk in a chuncked request, in bytes</param>
         /// <returns>
         /// The computed hash, whether already set in headers or computed here. Null
         /// if we were not able to compute a hash.
         /// </returns>
-        public static string SetRequestBodyHash(IRequest request)
+        public static string SetRequestBodyHash(IRequest request, string chunkedBodyHash, int signatureLength)
         {
-            return SetRequestBodyHash(request, true);
+            return SetRequestBodyHash(request, true, chunkedBodyHash, signatureLength);
         }
 
         /// <summary>
@@ -409,13 +446,15 @@ namespace Amazon.Runtime.Internal.Auth
         /// If not set as a header or in the request, attempt to compute a hash based on
         /// inspection of the style of the request content.
         /// </summary>
-        /// <param name="request"></param>
-        /// <param name="signPayload"></param>
+        /// <param name="request">Request to sign</param>
+        /// <param name="signPayload">Whether to sign the payload</param>
+        /// <param name="chunkedBodyHash">The fixed value to set for the x-amz-content-sha256 header for chunked requests</param>
+        /// <param name="signatureLength">Length of the signature for each chunk in a chuncked request, in bytes</param>
         /// <returns>
         /// The computed hash, whether already set in headers or computed here. Null
         /// if we were not able to compute a hash.
         /// </returns>
-        public static string SetRequestBodyHash(IRequest request, bool signPayload)
+        public static string SetRequestBodyHash(IRequest request, bool signPayload, string chunkedBodyHash, int signatureLength)
         {
             // if unsigned payload, set the magic string in the header and return it
             if (request.DisablePayloadSigning != null ? request.DisablePayloadSigning.Value : !signPayload)
@@ -430,7 +469,8 @@ namespace Amazon.Runtime.Internal.Auth
             // otherwise continue to calculate the hash and set it in the headers before returning
             if (request.UseChunkEncoding)
             {
-                computedContentHash = StreamingBodySha256;
+                computedContentHash = chunkedBodyHash;
+
                 if (request.Headers.ContainsKey(HeaderKeys.ContentLengthHeader))
                 {
                     // substitute the originally declared content length with the true size of
@@ -438,7 +478,7 @@ namespace Amazon.Runtime.Internal.Auth
                     request.Headers[HeaderKeys.XAmzDecodedContentLengthHeader] = request.Headers[HeaderKeys.ContentLengthHeader];
                     var originalContentLength = long.Parse(request.Headers[HeaderKeys.ContentLengthHeader], CultureInfo.InvariantCulture);
                     request.Headers[HeaderKeys.ContentLengthHeader]
-                        = ChunkedUploadWrapperStream.ComputeChunkedContentLength(originalContentLength).ToString(CultureInfo.InvariantCulture);
+                        = ChunkedUploadWrapperStream.ComputeChunkedContentLength(originalContentLength, signatureLength).ToString(CultureInfo.InvariantCulture);
                 }
 
                 if (request.Headers.ContainsKey(HeaderKeys.ContentEncodingHeader))
@@ -595,7 +635,7 @@ namespace Amazon.Runtime.Internal.Auth
             return string.Empty;
         }
 
-        internal static string DetermineService(IClientConfig clientConfig)
+        public static string DetermineService(IClientConfig clientConfig)
         {
             return (!string.IsNullOrEmpty(clientConfig.AuthenticationServiceName)) 
                 ? clientConfig.AuthenticationServiceName 
@@ -957,12 +997,7 @@ namespace Amazon.Runtime.Internal.Auth
         // 7 days is the maximum period for presigned url expiry with AWS4
         public const Int64 MaxAWS4PreSignedUrlExpiry = 7 * 24 * 60 * 60;
 
-        internal const string XAmzSignature = "X-Amz-Signature";
-        internal const string XAmzAlgorithm = "X-Amz-Algorithm";
-        internal const string XAmzCredential = "X-Amz-Credential";
-        internal const string XAmzExpires = "X-Amz-Expires";
-
-        private static HashSet<string> ServicesUsingUnsignedPayload = new HashSet<string>()
+        public static readonly IEnumerable<string> ServicesUsingUnsignedPayload = new HashSet<string>()
         {
             "s3",
             "s3-object-lambda"
@@ -998,6 +1033,36 @@ namespace Amazon.Runtime.Internal.Auth
                                   RequestMetrics metrics,
                                   string awsAccessKeyId,
                                   string awsSecretAccessKey)
+        {
+            throw new InvalidOperationException("PreSignedUrl signature computation is not supported by this method; use SignRequest instead.");
+        }
+
+        /// <summary>
+        /// Calculates and signs the specified request using the AWS4 signing protocol by using the
+        /// AWS account credentials given in the method parameters. The resulting signature is added
+        /// to the request headers as 'Authorization'.
+        /// </summary>
+        /// <param name="request">
+        /// The request to compute the signature for. Additional headers mandated by the AWS4 protocol 
+        /// ('host' and 'x-amz-date') will be added to the request before signing.
+        /// </param>
+        /// <param name="clientConfig">
+        /// Adding supporting data for the service call required by the signer (notably authentication
+        /// region, endpoint and service name).
+        /// </param>
+        /// <param name="metrics">
+        /// Metrics for the request
+        /// </param>
+        /// <param name="credentials">
+        /// The AWS credentials for the account making the service call.
+        /// </param>
+        /// <exception cref="Amazon.Runtime.SignatureException">
+        /// If any problems are encountered while signing the request.
+        /// </exception>
+        public override void Sign(IRequest request,
+                                  IClientConfig clientConfig,
+                                  RequestMetrics metrics,
+                                  ImmutableCredentials credentials)
         {
             throw new InvalidOperationException("PreSignedUrl signature computation is not supported by this method; use SignRequest instead.");
         }
@@ -1114,14 +1179,14 @@ namespace Amazon.Runtime.Internal.Auth
             var canonicalizedHeaderNames = CanonicalizeHeaderNames(sortedHeaders);
 
             var parametersToCanonicalize = GetParametersToCanonicalize(request);
-            parametersToCanonicalize.Add(new KeyValuePair<string,string>(XAmzAlgorithm, AWS4AlgorithmTag));
+            parametersToCanonicalize.Add(new KeyValuePair<string,string>(HeaderKeys.XAmzAlgorithm, AWS4AlgorithmTag));
             var xAmzCredentialValue = string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}/{3}/{4}",
                                                        awsAccessKeyId,
                                                        FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateFormat),
                                                        region,
                                                        service,
                                                        Terminator);
-            parametersToCanonicalize.Add(new KeyValuePair<string,string>(XAmzCredential, xAmzCredentialValue));
+            parametersToCanonicalize.Add(new KeyValuePair<string,string>(HeaderKeys.XAmzCredential, xAmzCredentialValue));
 
             parametersToCanonicalize.Add(new KeyValuePair<string,string>(HeaderKeys.XAmzDateHeader, FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateTimeFormat)));
             parametersToCanonicalize.Add(new KeyValuePair<string,string>(HeaderKeys.XAmzSignedHeadersHeader, canonicalizedHeaderNames));
@@ -1148,166 +1213,6 @@ namespace Amazon.Runtime.Internal.Auth
                                     canonicalizedHeaderNames,
                                     canonicalRequest,
                                     metrics);
-        }
-    }
-
-    /// <summary>
-    /// Encapsulates the various fields and eventual signing value that makes up 
-    /// an AWS4 signature. This can be used to retrieve the required authorization string
-    /// or authorization query parameters for the final request as well as hold ongoing
-    /// signature computations for subsequent calls related to the initial signing.
-    /// </summary>
-    public class AWS4SigningResult
-    {
-        private readonly string _awsAccessKeyId;
-        private readonly DateTime _originalDateTime;
-        private readonly string _signedHeaders; 
-        private readonly string _scope;
-        private readonly byte[] _signingKey;
-        private readonly byte[] _signature;
-
-        /// <summary>
-        /// Constructs a new signing result instance for a computed signature
-        /// </summary>
-        /// <param name="awsAccessKeyId">The access key that was included in the signature</param>
-        /// <param name="signedAt">Date/time (UTC) that the signature was computed</param>
-        /// <param name="signedHeaders">The collection of headers names that were included in the signature</param>
-        /// <param name="scope">Formatted 'scope' value for signing (YYYYMMDD/region/service/aws4_request)</param>
-        /// <param name="signingKey">Returns the key that was used to compute the signature</param>
-        /// <param name="signature">Computed signature</param>
-        public AWS4SigningResult(string awsAccessKeyId, 
-                                 DateTime signedAt, 
-                                 string signedHeaders, 
-                                 string scope, 
-                                 byte[] signingKey, 
-                                 byte[] signature)
-        {
-            this._awsAccessKeyId = awsAccessKeyId;
-            this._originalDateTime = signedAt;
-            this._signedHeaders = signedHeaders;
-            this._scope = scope;
-            this._signingKey = signingKey;
-            this._signature = signature;
-        }
-
-        /// <summary>
-        /// The access key that was used in signature computation.
-        /// </summary>
-        public string AccessKeyId
-        {
-            get { return _awsAccessKeyId; }
-        }
-
-        /// <summary>
-        /// ISO8601 formatted date/time that the signature was computed
-        /// </summary>
-        public string ISO8601DateTime
-        {
-            get { return AWS4Signer.FormatDateTime(_originalDateTime, AWSSDKUtils.ISO8601BasicDateTimeFormat); }
-        }
-
-        /// <summary>
-        /// ISO8601 formatted date that the signature was computed
-        /// </summary>
-        public string ISO8601Date
-        {
-            get { return AWS4Signer.FormatDateTime(_originalDateTime, AWSSDKUtils.ISO8601BasicDateFormat); }
-        }
-
-        /// <summary>
-        /// The ;-delimited collection of header names that were included in the signature computation
-        /// </summary>
-        public string SignedHeaders
-        {
-            get
-            {
-                return _signedHeaders;                
-            }
-        }
-
-        /// <summary>
-        /// Formatted 'scope' value for signing (YYYYMMDD/region/service/aws4_request)
-        /// </summary>
-        public string Scope
-        {
-            get { return _scope; }
-        }
-
-        /// <summary>
-        /// Returns a copy of the key that was used to compute the signature
-        /// </summary>
-        public byte[] SigningKey
-        {
-            get
-            {
-                var kSigningCopy = new byte[_signingKey.Length];
-                _signingKey.CopyTo(kSigningCopy, 0);
-                return kSigningCopy;
-            }
-        }
-
-        /// <summary>
-        /// Returns the hex string representing the signature
-        /// </summary>
-        public string Signature
-        {
-            get
-            {
-                return AWSSDKUtils.ToHex(_signature, true);
-            }
-        }
-
-        /// <summary>
-        /// Returns a copy of the byte array containing the signature
-        /// </summary>
-        public byte[] SignatureBytes
-        {
-            get
-            {
-                var signatureCopy = new byte[_signature.Length];
-                _signature.CopyTo(signatureCopy, 0);
-                return signatureCopy;
-            }
-        }
-
-        /// <summary>
-        /// Returns the signature in a form usable as an 'Authorization' header value.
-        /// </summary>
-        public string ForAuthorizationHeader
-        {
-            get
-            {
-                var authorizationHeader = new StringBuilder();
-                authorizationHeader.Append(AWS4Signer.AWS4AlgorithmTag);
-                authorizationHeader.AppendFormat(" {0}={1}/{2},", AWS4Signer.Credential, AccessKeyId, Scope);
-                authorizationHeader.AppendFormat(" {0}={1},", AWS4Signer.SignedHeaders, SignedHeaders);
-                authorizationHeader.AppendFormat(" {0}={1}", AWS4Signer.Signature, Signature);
-
-                return authorizationHeader.ToString();
-            }
-        }
-
-        /// <summary>
-        /// Returns the signature in a form usable as a set of query string parameters.
-        /// </summary>
-        public string ForQueryParameters
-        {
-            get
-            {
-                var authParams = new StringBuilder();
-
-                authParams.AppendFormat("{0}={1}",
-                                        AWS4PreSignedUrlSigner.XAmzAlgorithm,
-                                        AWS4Signer.AWS4AlgorithmTag);
-                authParams.AppendFormat("&{0}={1}",
-                                        AWS4PreSignedUrlSigner.XAmzCredential,
-                                        string.Format(CultureInfo.InvariantCulture, "{0}/{1}", AccessKeyId, Scope));
-                authParams.AppendFormat("&{0}={1}", HeaderKeys.XAmzDateHeader, ISO8601DateTime);
-                authParams.AppendFormat("&{0}={1}", HeaderKeys.XAmzSignedHeadersHeader, SignedHeaders);
-                authParams.AppendFormat("&{0}={1}", AWS4PreSignedUrlSigner.XAmzSignature, Signature);
-
-                return authParams.ToString();
-            }
         }
     }
 }

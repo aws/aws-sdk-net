@@ -48,7 +48,7 @@ namespace Amazon.RDS.Util
         {
             public GenerateRDSAuthTokenRequest()
             {
-                ((IAmazonWebServiceRequest)this).UseSigV4 = true;
+                ((IAmazonWebServiceRequest)this).SignatureVersion = SignatureVersion.SigV4;
             }
         }
 

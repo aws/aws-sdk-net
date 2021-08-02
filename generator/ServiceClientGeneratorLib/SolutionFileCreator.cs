@@ -541,6 +541,7 @@ namespace ServiceClientGenerator
             }
 
             IList<Project> testProjects = new List<Project>();
+            IList<Project> integrationTestDependencies = new List<Project>();
             if (includeTests)
             {
                 var testProjectsRoot = Path.Combine(Options.SdkRootFolder, GeneratorDriver.TestsSubFoldername);
@@ -571,9 +572,25 @@ namespace ServiceClientGenerator
                         testProjects.Add(CommonTestProject);
                         SelectBuildConfigurationsForProject(CommonTestProjectName, buildConfigurations);
                     }
+
+                    // We must add the CrtIntegration extension to the target framework-specific solutions (at this point there should only be a single projectFileConfiguration)
+                    var platformSpecificCRTName = string.Format("AWSSDK.Extensions.CrtIntegration.{0}", projectFileConfigurations.First().Name);
+                    var crtProject = new Project
+                    {
+                        Name = platformSpecificCRTName,
+                        ProjectPath = $"..\\extensions\\src\\AWSSDK.Extensions.CrtIntegration\\{platformSpecificCRTName}.csproj",
+                        ProjectGuid = projectGuidDictionary.ContainsKey(platformSpecificCRTName) ? projectGuidDictionary[platformSpecificCRTName] : Guid.NewGuid().ToString("B").ToUpper()
+                    };
+                    integrationTestDependencies.Add(crtProject);
+                    solutionProjects.Add(platformSpecificCRTName, new ProjectFileCreator.ProjectConfigurationData
+                    {
+                        ProjectGuid = crtProject.ProjectGuid,
+                        ConfigurationPlatforms = StandardPlatformConfigurations
+                    });
                 }
             }
             session["TestProjects"] = testProjects;
+            session["IntegrationTestDependencies"] = integrationTestDependencies;
             session["CoreProjects"] = coreProjects;
             session["ServiceSolutionFolders"] = serviceSolutionFolders;
             session["SolutionGuid"] = solutionGuid;
@@ -861,10 +878,23 @@ namespace ServiceClientGenerator
                     var fileName = matches.ToString().Replace("\"", "");
                     if (!(fileName.Contains("\\Core\\") || fileName.Contains(serviceName) || fileName.Contains("Test") || depsProjects.Contains(fileName)))
                     {
-                        var split = fileName.Split('\\');
-                        var deps = Path.Combine("..", split[split.Length - 2], split[split.Length - 1]);
-                        depsProjects.Add(deps);
-                        AddProjectDependencies(Path.Combine(Options.SdkRootFolder, @"src\Services", split[split.Length - 2], split[split.Length - 1]), split[split.Length - 2], depsProjects);
+                        // This is in a different folder in than the usual service dependencies.
+                        // Also skipping the recursion since this does not currently have any ProjectReferences beyond Core
+                        if (fileName.Contains("AWSSDK.Extensions.CrtIntegration"))
+                        {
+                            var split = fileName.Split('\\');
+                            // Build the relative path to \extensions\src\AWSSDK.Extensions.CrtIntegration\AWSSDK.Extensions.CrtIntegration.<target framework>.csproj
+                            var deps = Path.Combine("..", "..", "..", "..", split[split.Length - 4], split[split.Length - 3], split[split.Length - 2], split[split.Length - 1]);
+                            depsProjects.Add(deps);
+                        }
+                        else
+                        {
+                            var split = fileName.Split('\\');
+                            // Build the relative path to \<service folder>\AWSSDK.<service>.<target framework>.csproj
+                            var deps = Path.Combine("..", split[split.Length - 2], split[split.Length - 1]);
+                            depsProjects.Add(deps);
+                            AddProjectDependencies(Path.Combine(Options.SdkRootFolder, @"src\Services", split[split.Length - 2], split[split.Length - 1]), split[split.Length - 2], depsProjects);
+                        }
                     }
                 }
             }

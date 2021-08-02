@@ -32,6 +32,7 @@
     <ProjectReference Include="..\Common\AWSSDK.CommonTest.csproj"/>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj"/>
     <ProjectReference Include="..\..\src\Services\*\*.Net45.csproj"/>
+    <ProjectReference Include="..\..\..\extensions\src\AWSSDK.Extensions.CrtIntegration\AWSSDK.Extensions.CrtIntegration.Net45.csproj"/>
   </ItemGroup>
 
   <ItemGroup Condition="$(RunAnalyzersDuringBuild)">

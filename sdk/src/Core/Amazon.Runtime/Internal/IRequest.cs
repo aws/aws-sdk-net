@@ -287,6 +287,17 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
+        /// If using SigV4a signing protocol, contains the resultant parts of the
+        /// signature that we may need to make use of if we elect to do a chunked
+        /// encoding upload.
+        /// </summary>
+        AWS4aSigningResult AWS4aSignerResult
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Determine whether to use a chunked encoding upload for the request
         /// (applies to Amazon S3 PutObject and UploadPart requests only). If 
         /// DisablePayloadSigning is true, UseChunkEncoding will be automatically 
@@ -314,7 +325,13 @@ namespace Amazon.Runtime.Internal
         /// <summary>
         /// This flag specifies if SigV4 is required for the current request.
         /// </summary>
+        [Obsolete("UseSigV4 is deprecated. Use SignatureVersion directly instead.")]
         bool UseSigV4 { get; set; }
+
+        /// <summary>
+        /// Specifies which signature version shall be used for the current request.
+        /// </summary>
+        SignatureVersion SignatureVersion { get; set; }
 
         /// <summary>
         /// The authentication region to use for the request.

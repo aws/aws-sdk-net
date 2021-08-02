@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
@@ -531,14 +532,25 @@ namespace Amazon.Runtime.Internal
 
         private static System.IO.Stream GetInputStream(IRequestContext requestContext, System.IO.Stream originalStream, IRequest wrappedRequest)
         {
-            var requestHasConfigForChunkStream = wrappedRequest.UseChunkEncoding && wrappedRequest.AWS4SignerResult != null;
+            var requestHasConfigForChunkStream = wrappedRequest.UseChunkEncoding && (wrappedRequest.AWS4SignerResult != null || wrappedRequest.AWS4aSignerResult != null);
             var hasTransferEncodingHeader = wrappedRequest.Headers.ContainsKey(HeaderKeys.TransferEncodingHeader);
             var isTransferEncodingHeaderChunked = hasTransferEncodingHeader && wrappedRequest.Headers[HeaderKeys.TransferEncodingHeader] == "chunked";
-            return requestHasConfigForChunkStream || isTransferEncodingHeaderChunked
-                ? new ChunkedUploadWrapperStream(originalStream,
-                                                 requestContext.ClientConfig.BufferSize,
-                                                 wrappedRequest.AWS4SignerResult)
-                : originalStream;
+
+            if (requestHasConfigForChunkStream || isTransferEncodingHeaderChunked)
+            {
+                if (wrappedRequest.AWS4SignerResult != null)
+                {
+                    return new ChunkedUploadWrapperStream(originalStream, requestContext.ClientConfig.BufferSize, wrappedRequest.AWS4SignerResult);
+                }
+                else // SigV4a
+                {
+                    return new ChunkedUploadWrapperStream(originalStream, requestContext.ClientConfig.BufferSize, wrappedRequest.AWS4aSignerResult);
+                }
+            }
+            else
+            {
+                return originalStream;
+            }
         }
     }
 }

@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using Amazon;
+using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.S3;
@@ -21,7 +22,6 @@ using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
 using Amazon.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 
 namespace AWSSDK.UnitTests
 {
@@ -30,33 +30,15 @@ namespace AWSSDK.UnitTests
     {
         [TestMethod]
         [TestCategory("S3")]
-        public void TestS3SignerSignatureVersion()
+        public void TestS3SignerDefaultConfigs()
         {
-            var defaultClientConfigSignatureVersion = (new AmazonS3Config{
-                                                            RegionEndpoint = RegionEndpoint.USEast1
-                                                        }).SignatureVersion;
+            // can't test these cases as DataRows because the input isn't static
+            var defaultClientConfigSignatureVersion = new AmazonS3Config { RegionEndpoint = RegionEndpoint.USEast1 }.SignatureVersion;
             var defaultAWSConfigsS3UseSignatureVersion4 = AWSConfigsS3.UseSignatureVersion4;
             
             // customers don't control IRequest.UseSigV4 because it's in the Internal namespace
-            TestS3Signer(false, defaultClientConfigSignatureVersion, defaultAWSConfigsS3UseSignatureVersion4, true);
-            TestS3Signer(true, defaultClientConfigSignatureVersion, defaultAWSConfigsS3UseSignatureVersion4, true);
-
-            TestS3Signer(false, null, false, false);
-            TestS3Signer(false, null, true, true);
-            TestS3Signer(false, "2", false, false);
-            TestS3Signer(false, "2", true, false);
-            TestS3Signer(false, "4", false, true);
-            TestS3Signer(false, "4", true, true);
-            TestS3Signer(false, "garbage", false, false);
-            TestS3Signer(false, "garbage", true, true);
-            TestS3Signer(true, null, false, true);
-            TestS3Signer(true, null, true, true);
-            TestS3Signer(true, "2", false, true);
-            TestS3Signer(true, "2", true, true);
-            TestS3Signer(true, "4", false, true);
-            TestS3Signer(true, "4", true, true);
-            TestS3Signer(true, "garbage", false, true);
-            TestS3Signer(true, "garbage", true, true);
+            TestS3SignerSignatureVersion(SignatureVersion.SigV2, defaultClientConfigSignatureVersion, defaultAWSConfigsS3UseSignatureVersion4, SignatureVersion.SigV4);
+            TestS3SignerSignatureVersion(SignatureVersion.SigV4, defaultClientConfigSignatureVersion, defaultAWSConfigsS3UseSignatureVersion4, SignatureVersion.SigV4);
         }
 
         [TestMethod]
@@ -78,14 +60,42 @@ namespace AWSSDK.UnitTests
                 RegionEndpoint = RegionEndpoint.USWest2
             };
             var iRequest = S3ArnTestUtils.RunMockRequest(putObjectRequest, PutObjectRequestMarshaller.Instance, config);
-            signer.Sign(iRequest, config, new RequestMetrics(), "ACCESS", "SECRET");
+            signer.Sign(iRequest, config, new RequestMetrics(), new ImmutableCredentials("ACCESS", "SECRET", ""));
 
             Assert.IsTrue(iRequest.Headers.ContainsKey(HeaderKeys.AuthorizationHeader));
             Assert.IsTrue((iRequest.Headers["Authorization"]).Contains("s3-outposts"));
         }
 
-        private void TestS3Signer(bool requestUseSigV4, string clientConfigSignatureVersion,
-            bool awsConfigsS3UseSignatureVersion4, bool expectSigV4)
+        [DataTestMethod]
+        [TestCategory("S3")]
+        [DataRow(SignatureVersion.SigV2, null, false, SignatureVersion.SigV2)]
+        [DataRow(SignatureVersion.SigV2, null, true, SignatureVersion.SigV4)]
+        [DataRow(SignatureVersion.SigV2, "2", false, SignatureVersion.SigV2)]
+        [DataRow(SignatureVersion.SigV2, "2", true, SignatureVersion.SigV2)]
+        [DataRow(SignatureVersion.SigV2, "4", false, SignatureVersion.SigV4)]
+        [DataRow(SignatureVersion.SigV2, "4", true, SignatureVersion.SigV4)]
+        [DataRow(SignatureVersion.SigV2, "garbage", false, SignatureVersion.SigV2)]
+        [DataRow(SignatureVersion.SigV2, "garbage", true, SignatureVersion.SigV4)]
+        [DataRow(SignatureVersion.SigV4, null, false, SignatureVersion.SigV4)]
+        [DataRow(SignatureVersion.SigV4, null, true, SignatureVersion.SigV4)]
+        [DataRow(SignatureVersion.SigV4, "2", false, SignatureVersion.SigV4)]
+        [DataRow(SignatureVersion.SigV4, "2", true, SignatureVersion.SigV4)]
+        [DataRow(SignatureVersion.SigV4, "4", false, SignatureVersion.SigV4)]
+        [DataRow(SignatureVersion.SigV4, "4", true, SignatureVersion.SigV4)]
+        [DataRow(SignatureVersion.SigV4, "garbage", false, SignatureVersion.SigV4)]
+        [DataRow(SignatureVersion.SigV4, "garbage", true, SignatureVersion.SigV4)]
+        // Currently SigV4a is only used by S3 MRAP so once an internal request is "upgraded" to SigV4a,
+        // verify that the other signing version settings will never "downgrade" it back to V4 or V2
+        [DataRow(SignatureVersion.SigV4a, null, false, SignatureVersion.SigV4a)]
+        [DataRow(SignatureVersion.SigV4a, null, true, SignatureVersion.SigV4a)]
+        [DataRow(SignatureVersion.SigV4a, "2", false, SignatureVersion.SigV4a)]
+        [DataRow(SignatureVersion.SigV4a, "2", true, SignatureVersion.SigV4a)]
+        [DataRow(SignatureVersion.SigV4a, "4", false, SignatureVersion.SigV4a)]
+        [DataRow(SignatureVersion.SigV4a, "4", true, SignatureVersion.SigV4a)]
+        [DataRow(SignatureVersion.SigV4a, "garbage", false, SignatureVersion.SigV4a)]
+        [DataRow(SignatureVersion.SigV4a, "garbage", true, SignatureVersion.SigV4a)]
+        public void TestS3SignerSignatureVersion(SignatureVersion signatureVersion, string clientConfigSignatureVersion,
+            bool awsConfigsS3UseSignatureVersion4, SignatureVersion expectedSignatureVersion)
         {
             var originalAWSConfigsS3UseSignatureVersion4 = AWSConfigsS3.UseSignatureVersion4;
             try
@@ -96,7 +106,7 @@ namespace AWSSDK.UnitTests
                 var putObjectRequest = new PutObjectRequest();
                 var iRequest = new DefaultRequest(putObjectRequest, "s3")
                 {
-                    UseSigV4 = requestUseSigV4,
+                    SignatureVersion = signatureVersion,
                     Endpoint = new System.Uri("https://does_not_matter.com")
                 };
                 var config = new AmazonS3Config
@@ -105,10 +115,22 @@ namespace AWSSDK.UnitTests
                     RegionEndpoint = RegionEndpoint.USWest1
                 };
 
-                signer.Sign(iRequest, config, new RequestMetrics(), "ACCESS", "SECRET");
+                signer.Sign(iRequest, config, new RequestMetrics(), new ImmutableCredentials("ACCESS", "SECRET", ""));
 
                 Assert.IsTrue(iRequest.Headers.ContainsKey(HeaderKeys.AuthorizationHeader));
-                Assert.AreEqual(expectSigV4, iRequest.Headers[HeaderKeys.AuthorizationHeader].Contains("aws4_request"));
+
+                if (expectedSignatureVersion == SignatureVersion.SigV4a)
+                {
+                    Assert.IsTrue(iRequest.Headers[HeaderKeys.AuthorizationHeader].Contains("AWS4-ECDSA-P256-SHA256"));
+                }
+                else if (expectedSignatureVersion == SignatureVersion.SigV4)
+                {
+                    Assert.IsTrue(iRequest.Headers[HeaderKeys.AuthorizationHeader].Contains("AWS4-HMAC-SHA256"));
+                }
+                else if (expectedSignatureVersion == SignatureVersion.SigV2)
+                {
+                    Assert.IsTrue(iRequest.Headers[HeaderKeys.AuthorizationHeader].Contains("AWS ACCESS"));
+                }
             }
             finally
             {

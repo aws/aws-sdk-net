@@ -130,16 +130,18 @@ namespace Amazon.Runtime.Internal
 
         private static ITypeInfo LoadServiceClientType(string assemblyName, string serviceClientClassName)
         {
-            var assembly = GetSDKAssembly(assemblyName);
-            var type = assembly.GetType(serviceClientClassName);
-
-            return TypeFactory.GetTypeInfo(type);
+            return LoadTypeFromAssembly(assemblyName, serviceClientClassName);
         }
 
         private static ITypeInfo LoadServiceConfigType(string assemblyName, string serviceConfigClassName)
         {
+            return LoadTypeFromAssembly(assemblyName, serviceConfigClassName);
+        }
+
+        internal static ITypeInfo LoadTypeFromAssembly(string assemblyName, string className)
+        {
             var assembly = GetSDKAssembly(assemblyName);
-            var type = assembly.GetType(serviceConfigClassName);
+            var type = assembly.GetType(className);
 
             return TypeFactory.GetTypeInfo(type);
         }

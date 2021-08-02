@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 namespace AWSSDK.UnitTests
 {
     [Flags]
-    public enum S3ConfigFlags { None=0, ArnRegion = 2, Accelerate=4, Dualstack=8, Fips=16 }    
+    public enum S3ConfigFlags { None=0, ArnRegion = 2, Accelerate=4, Dualstack=8, Fips=16, DisableMRAP=32 }
 
     public class S3ArnTestUtils
     {
@@ -27,6 +27,7 @@ namespace AWSSDK.UnitTests
                 UseArnRegion = (flags & S3ConfigFlags.ArnRegion) != 0,
                 UseDualstackEndpoint = (flags & S3ConfigFlags.Dualstack) != 0,
                 UseAccelerateEndpoint = (flags & S3ConfigFlags.Accelerate) != 0,
+                DisableMultiregionAccessPoints = (flags & S3ConfigFlags.DisableMRAP) != 0
             };
         }
 
@@ -45,19 +46,21 @@ namespace AWSSDK.UnitTests
             var pipeline = new RuntimePipeline(new List<IPipelineHandler>
             {
                 new NoopPipelineHandler(),
+                new Signer(),
                 new EndpointResolver(),
                 new AmazonS3PostMarshallHandler(),
                 new Marshaller(),
-                new AmazonS3PreMarshallHandler()
+                new AmazonS3PreMarshallHandler(),
             });
 
-            var requestContext = new RequestContext(config.LogMetrics, new AWS4Signer())
+            var requestContext = new RequestContext(config.LogMetrics, new Amazon.Runtime.Internal.Auth.S3Signer())
             {
                 ClientConfig = config,
                 Marshaller = marshaller,
                 OriginalRequest = request,
                 Unmarshaller = null,
-                IsAsync = false
+                IsAsync = false,
+                ImmutableCredentials = new ImmutableCredentials("access key", "secret", "token")
             };
             var executionContext = new ExecutionContext(
                 requestContext,

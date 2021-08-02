@@ -125,7 +125,7 @@ namespace AWSSDK.UnitTests
             var uploadPartRequest = new UploadPartRequest();
             var request = new DefaultRequest(uploadPartRequest, "s3")
             {
-                UseSigV4 = useSigV4,
+                SignatureVersion = SignatureVersion.SigV4,
                 Endpoint = new System.Uri(url),
                 DisablePayloadSigning = disablePayloadSigning
             };
@@ -135,7 +135,7 @@ namespace AWSSDK.UnitTests
                 RegionEndpoint = RegionEndpoint.USWest1
             };
 
-            signer.Sign(request, config, new RequestMetrics(), "ACCESS", "SECRET");
+            signer.Sign(request, config, new RequestMetrics(), new ImmutableCredentials("ACCESS", "SECRET", ""));
             return request;
         }
 

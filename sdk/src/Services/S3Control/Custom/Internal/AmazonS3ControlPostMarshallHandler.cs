@@ -119,7 +119,7 @@ namespace Amazon.S3Control.Internal
                     {                        
                         request.Endpoint = new Uri(config.ServiceURL);
                     }
-                    request.UseSigV4 = true;
+                    request.SignatureVersion = SignatureVersion.SigV4;
                     request.CanonicalResourcePrefix = string.Concat("/", s3Resource.FullResourceName);
                     request.OverrideSigningServiceName = s3Arn.Service;
                     // The access point arn can be using a region different from the configured region for the service client.

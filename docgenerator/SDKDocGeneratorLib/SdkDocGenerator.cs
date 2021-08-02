@@ -13,6 +13,13 @@ namespace SDKDocGenerator
     public class SdkDocGenerator
     {
         private long? _startTimeTicks;
+        // These may be packaged in the assemblies folder for non-NuGet users,
+        // but shouldn't appear in the SDK's API reference
+        private static readonly IEnumerable<string> _assembliesToSkip = new HashSet<string> 
+        { 
+            "AWSSDK.Extensions.CrtIntegration.dll",
+            "AWSSDK.Extensions.NETCore.Setup.dll"
+        };
 
         public GeneratorOptions Options { get; private set; }
         
@@ -218,11 +225,15 @@ namespace SDKDocGenerator
             {
                 var namePattern = $"{GenerationManifest.AWSAssemblyNamePrefix}.{service}.dll";
                 var assemblies = Directory.GetFiles(assemblySourcePath, namePattern);
-                foreach (var a in assemblies)
+                foreach (var assembly in assemblies)
                 {
+                    if (_assembliesToSkip.Any(toSkip => assembly.Contains(toSkip)))
+                    {
+                        continue;
+                    }
                     // keep items as the root for content, but a further subfolder of the root namespace
                     // will be added for the artifacts
-                    var artifactManifest = new GenerationManifest(a, Options.ComputedContentFolder, availablePlatforms, Options, true);
+                    var artifactManifest = new GenerationManifest(assembly, Options.ComputedContentFolder, availablePlatforms, Options, true);
                     manifests.Add(artifactManifest);
                 }
             }

@@ -36,6 +36,7 @@
     <ProjectReference Include="..\..\src\Core\AWSSDK.Core.Net45.csproj" />
     <ProjectReference Include="..\Common\AWSSDK.CommonTest.csproj" />
     <ProjectReference Include="..\..\src\Services\*\*.Net45.csproj"/>
+    <ProjectReference Include="..\..\..\extensions\src\AWSSDK.Extensions.CrtIntegration\AWSSDK.Extensions.CrtIntegration.Net45.csproj"/>
   </ItemGroup>
   
   <ItemGroup>

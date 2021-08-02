@@ -29,6 +29,7 @@
     <ProjectReference Include="..\..\..\Common\AWSSDK.CommonTest.csproj"/>
     <ProjectReference Include="..\..\..\UnitTests\Custom\AWSSDK.UnitTestUtilities.Net45.csproj"/>
     <ProjectReference Include="..\..\..\..\src\Services\S3\AWSSDK.S3.Net45.csproj"/>
+    <ProjectReference Include="..\..\..\..\..\extensions\src\AWSSDK.Extensions.CrtIntegration\AWSSDK.Extensions.CrtIntegration.Net45.csproj"/>
   </ItemGroup>
 
   <ItemGroup Condition="$(RunAnalyzersDuringBuild)">

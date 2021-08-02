@@ -101,8 +101,13 @@ Function Copy-SdkAssemblies
             {
                 New-Item $platformDestination -ItemType Directory
             }
-                        
-            $filter = "bin\$BuildType\$p\AWSSDK.$servicename.*"
+        
+            if ($servicename.StartsWith("AWSSDK")) {
+                $filter = "bin\$BuildType\$p\$servicename.*"
+            }
+            else {
+                $filter = "bin\$BuildType\$p\AWSSDK.$servicename.*"
+            }
 			
 			$sourceDirectory = $null
 			$sourceDirectory = [System.IO.Path]::Combine($dir.FullName, 'bin', $BuildType, $p)
@@ -233,3 +238,6 @@ foreach ($s in $services)
     }
 }
 
+Write-Verbose "Copying $BuildType AWSSDK.Extensions assemblies to deployment folders"
+Copy-SDKAssemblies -SourceRoot ..\extensions\src\AWSSDK.Extensions.CrtIntegration -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck -BuildType $BuildType
+Copy-SDKAssemblies -SourceRoot ..\extensions\src\AWSSDK.Extensions.NETCore.Setup -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck -BuildType $BuildType

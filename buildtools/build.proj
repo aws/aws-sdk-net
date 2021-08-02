@@ -410,24 +410,32 @@
               Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1 -PackageList &quot;$(ServiceList)&quot;"/>
     </Target>
 
-    <Target Name="build-netcore-extensions" >
+    <Target Name="package-extensions" DependsOnTargets="init;package-netcore-extensions;package-crt-extensions"/>
+
+    <Target Name="build-extensions" >
         <!-- depends: restore-nuget;run-generator -->
-        <Exec Command="dotnet restore -f  AWSSDK.Extensions.sln"  WorkingDirectory="..\extensions"/>
-        <Exec Command="dotnet clean AWSSDK.Extensions.sln"    WorkingDirectory="..\extensions"/>
+        <Exec Command="dotnet restore -f  AWSSDK.Extensions.sln" WorkingDirectory="..\extensions"/>
+        <Exec Command="dotnet clean AWSSDK.Extensions.sln" WorkingDirectory="..\extensions"/>
         <Exec Command="dotnet build -c $(Configuration) AWSSDK.Extensions.sln /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)"  WorkingDirectory="..\extensions"/>
 
-    <Message Text="Build and Test .NET Core Setup Extension"/>
-    <Exec Command="dotnet test -c $(Configuration) --no-build NETCore.SetupTests.csproj" WorkingDirectory="..\extensions\test\NETCore.SetupTests"/>
-  </Target>
+        <Message Text="Build and Test .NET Core Setup Extension"/>
+        <Exec Command="dotnet test -c $(Configuration) --no-build NETCore.SetupTests.csproj" WorkingDirectory="..\extensions\test\NETCore.SetupTests"/>
+        
+        <Message Text="Build and Test Crt Integration Extension"/>
+        <Exec Command="dotnet test -c $(Configuration) --no-build CrtIntegrationTests.csproj" WorkingDirectory="..\extensions\test\CrtIntegrationTests"/>
+    </Target>
 
-    <Target Name="package-extensions" DependsOnTargets="init;package-netcore-extensions"/>
-
-  <Target Name="package-netcore-extensions" DependsOnTargets="build-netcore-extensions">
+    <Target Name="package-netcore-extensions" DependsOnTargets="build-extensions">
         <MakeDir Directories="..\Deployment\nuget" />
-    <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack .\AWSSDK.Extensions.NETCore.Setup.nuspec -BasePath . -OutputDirectory ..\..\..\Deployment\nuget" WorkingDirectory="..\extensions\src\AWSSDK.Extensions.NETCore.Setup" />
-  </Target>
+        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack .\AWSSDK.Extensions.NETCore.Setup.nuspec -BasePath . -OutputDirectory ..\..\..\Deployment\nuget" WorkingDirectory="..\extensions\src\AWSSDK.Extensions.NETCore.Setup" />
+    </Target>
 
-    <Target Name="copy-assemblies" DependsOnTargets="nuget-pack">
+    <Target Name="package-crt-extensions" DependsOnTargets="build-extensions">
+        <MakeDir Directories="..\Deployment\nuget" />
+        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack .\AWSSDK.Extensions.CrtIntegration.nuspec -BasePath . -OutputDirectory ..\..\..\Deployment\nuget" WorkingDirectory="..\extensions\src\AWSSDK.Extensions.CrtIntegration" />
+    </Target>
+
+    <Target Name="copy-assemblies" DependsOnTargets="nuget-pack;build-extensions">
         <Message Text="Collating assemblies for downstream doc generation" />
         <PropertyGroup>
             <CustomSnkPublicKeyToken Condition="'$(CustomSnkPublicKeyToken)' == '' ">71c852f8be1c371d</CustomSnkPublicKeyToken>

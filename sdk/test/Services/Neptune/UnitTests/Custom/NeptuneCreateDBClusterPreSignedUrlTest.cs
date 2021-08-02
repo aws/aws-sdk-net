@@ -26,6 +26,19 @@ namespace AWSSDK.UnitTests
         private static readonly bool storageEncrypted = true;
         private static readonly string replicationSourceIdentifier = "arn:aws:rds:us-east-1:123456789012:cluster:source-db-cluster";
 
+        [ClassInitialize]
+        public static void SetFixedSigningDate(TestContext context)
+        {
+            SetUtcNowSource(ReturnFixedDate);
+        }
+
+        [ClassCleanup]
+        public static void ResetFixedSigningDate()
+        {
+            SetUtcNowSource((Func<DateTime>)Delegate.CreateDelegate(typeof(Func<DateTime>),
+                typeof(AWSConfigs).GetMethod("GetUtcNow", BindingFlags.Static | BindingFlags.NonPublic)));
+        }
+
         [TestMethod]
         [TestCategory("Neptune")]
         public void HandleNonPreSignedUrlRequest()
@@ -39,7 +52,6 @@ namespace AWSSDK.UnitTests
                 ReplicationSourceIdentifier = replicationSourceIdentifier
             };
 
-            SetUtcNowSource(ReturnFixedDate);
             RunPreInvoke(request);
             Assert.IsNull(request.PreSignedUrl);
         }
@@ -58,7 +70,6 @@ namespace AWSSDK.UnitTests
                 PreSignedUrl = "https://aws.com"
             };
 
-            SetUtcNowSource(ReturnFixedDate);
             RunPreInvoke(request);
             Assert.AreEqual("https://aws.com", request.PreSignedUrl);
         }
@@ -77,7 +88,6 @@ namespace AWSSDK.UnitTests
                 SourceRegion = sourceRegion
             };
 
-            SetUtcNowSource(ReturnFixedDate);
             RunPreInvoke(request);
 
             Assert.IsNotNull(request.PreSignedUrl);

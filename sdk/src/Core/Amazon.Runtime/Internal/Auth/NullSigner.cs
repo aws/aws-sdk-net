@@ -31,6 +31,12 @@ namespace Amazon.Runtime.Internal.Auth
             return;
         }
 
+        public override void Sign(IRequest request, IClientConfig clientConfig, Util.RequestMetrics metrics, ImmutableCredentials credentials)
+        {
+            // This is a null signer which does no-op
+            return;
+        }
+
         public override ClientProtocol Protocol
         {
             get { return ClientProtocol.Unknown; }

@@ -482,10 +482,27 @@ namespace Amazon.Runtime
             // Apply global pipeline customizations
             RuntimePipelineCustomizerRegistry.Instance.ApplyCustomizations(this.GetType(), this.RuntimePipeline);
         }
+
+        /// <summary>
+        /// Assembles the Uri for a given SDK request
+        /// </summary>
+        /// <param name="iRequest">Request to compute Uri for</param>
+        /// <returns>Uri for the given SDK request</returns>
         public static Uri ComposeUrl(IRequest iRequest)
         {
-            Uri url = iRequest.Endpoint;
-            var resourcePath = iRequest.ResourcePath;
+            return ComposeUrl(iRequest, true);
+        }
+
+        /// <summary>
+        /// Assembles the Uri for a given SDK request
+        /// </summary>
+        /// <param name="internalRequest">Request to compute Uri for</param>
+        /// <param name="skipEncodingValidPathChars">If true the accepted path characters {/+:} are not encoded.</param>
+        /// <returns>Uri for the given SDK request</returns>
+        public static Uri ComposeUrl(IRequest internalRequest, bool skipEncodingValidPathChars)
+        { 
+            Uri url = internalRequest.Endpoint;
+            var resourcePath = internalRequest.ResourcePath;
             if (resourcePath == null)
                 resourcePath = string.Empty;
             else
@@ -493,15 +510,16 @@ namespace Amazon.Runtime
                 if (resourcePath.StartsWith("/", StringComparison.Ordinal))
                     resourcePath = resourcePath.Substring(1);
 
-                if (AWSSDKUtils.HasBidiControlCharacters(resourcePath) || iRequest.PathResources.Any(v => AWSSDKUtils.HasBidiControlCharacters(v.Value)))
+                if (AWSSDKUtils.HasBidiControlCharacters(resourcePath) || 
+                    (internalRequest.PathResources?.Any(v => AWSSDKUtils.HasBidiControlCharacters(v.Value)) == true))
                 {
-                    resourcePath = string.Join("/", AWSSDKUtils.SplitResourcePathIntoSegments(resourcePath, iRequest.PathResources).ToArray());
+                    resourcePath = string.Join("/", AWSSDKUtils.SplitResourcePathIntoSegments(resourcePath, internalRequest.PathResources).ToArray());
                     throw new AmazonClientException(string.Format(CultureInfo.InvariantCulture,
                         "Target resource path [{0}] has bidirectional characters, which are not supported" +
                         "by System.Uri and thus cannot be handled by the .NET SDK.", resourcePath));
-                }                    
+                }
 
-                resourcePath = AWSSDKUtils.ResolveResourcePath(resourcePath, iRequest.PathResources);
+                resourcePath = AWSSDKUtils.ResolveResourcePath(resourcePath, internalRequest.PathResources, skipEncodingValidPathChars);
             }
 
             // Construct any sub resource/query parameter additions to append to the
@@ -512,9 +530,9 @@ namespace Amazon.Runtime
             var delim = "?";
             var sb = new StringBuilder();
 
-            if (iRequest.SubResources.Count > 0)
+            if (internalRequest.SubResources?.Count > 0)
             {
-                foreach (var subResource in iRequest.SubResources)
+                foreach (var subResource in internalRequest.SubResources)
                 {
                     sb.AppendFormat("{0}{1}", delim, subResource.Key);
                     if (subResource.Value != null)
@@ -523,14 +541,27 @@ namespace Amazon.Runtime
                 }
             }
 
-            if (iRequest.UseQueryString && iRequest.Parameters.Count > 0)
+            if (internalRequest.UseQueryString && internalRequest.Parameters?.Count > 0)
             {
-                var queryString = AWSSDKUtils.GetParametersAsString(iRequest);
+                var queryString = AWSSDKUtils.GetParametersAsString(internalRequest);
                 sb.AppendFormat("{0}{1}", delim, queryString);
             }
 
-            var parameterizedPath = string.Concat(resourcePath, sb);
+            var parameterizedPath = string.Empty;
+            if(internalRequest.MarshallerVersion >= 2)
+            {
+                parameterizedPath = string.Concat(resourcePath, sb);
+            }
+            else
+            {
+                if (AWSSDKUtils.HasBidiControlCharacters(resourcePath))                
+                        throw new AmazonClientException(string.Format(CultureInfo.InvariantCulture,
+                            "Target resource path [{0}] has bidirectional characters, which are not supported" +
+                            "by System.Uri and thus cannot be handled by the .NET SDK.", resourcePath));
 
+                parameterizedPath = string.Concat(AWSSDKUtils.ProtectEncodedSlashUrlEncode(resourcePath, skipEncodingValidPathChars), sb);
+            }
+            
             var hasSlash = url.AbsoluteUri.EndsWith("/", StringComparison.Ordinal) || parameterizedPath.StartsWith("/", StringComparison.Ordinal);
             var uri = hasSlash
                 ? new Uri(url.AbsoluteUri + parameterizedPath)

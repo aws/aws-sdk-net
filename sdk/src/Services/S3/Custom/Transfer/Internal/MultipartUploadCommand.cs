@@ -215,7 +215,7 @@ namespace Amazon.S3.Transfer.Internal
             // using KMS, force SigV4 for each UploadPart request
             bool useSigV4 = initResponse.ServerSideEncryptionMethod == ServerSideEncryptionMethod.AWSKMS;
             if (useSigV4)
-                ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)uploadRequest).UseSigV4 = true;
+                ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)uploadRequest).SignatureVersion = SignatureVersion.SigV4;
 
             uploadRequest.CalculateContentMD5Header = this._fileTransporterRequest.CalculateContentMD5Header;
 

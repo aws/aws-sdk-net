@@ -358,12 +358,13 @@ namespace AWSSDK.UnitTests
         }
 
 
-        [TestMethod]
+        [DataTestMethod]
+        [DataRow("arn:aws:s3:us-east-1:000011112222:accesspoint/testpoint", S3ConfigFlags.None, "testpoint-000011112222.s3-accesspoint.us-east-1.amazonaws.com", "X-Amz-Algorithm=AWS4-HMAC-SHA256", "")]
+        [DataRow("arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", S3ConfigFlags.None, "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com", "X-Amz-Region-Set=%2A", "")]
+        [DataRow("arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", S3ConfigFlags.DisableMRAP, "", "", "Invalid configuration, multi-region access point ARNs are disabled.")]
         [TestCategory("S3")]
-        public void PreSignedUrlTest()
+        public void PreSignedUrlTest(string accessPointArn, S3ConfigFlags flags, string expectedHost, string expectedQueryStringPiece, string expectedErrorMessage)
         {
-            var accessPointArn = "arn:aws:s3:us-east-1:000011112222:accesspoint/testpoint";
-
             var request = new GetPreSignedUrlRequest
             {
                 BucketName = accessPointArn,
@@ -372,16 +373,44 @@ namespace AWSSDK.UnitTests
                 Verb = HttpVerb.GET
             };
 
-            var s3Client = new AmazonS3Client("access", "secret", RegionEndpoint.USEast1);
+            var config = S3ArnTestUtils.BuildFromRegionSystemName("us-east-1", flags);
+            var s3Client = new AmazonS3Client("access", "secret", config);
 
-            var uri = new Uri(s3Client.GetPreSignedURL(request));
+            Exception exception = null;
+            Uri uri = null;
 
-            Assert.AreEqual("testpoint-000011112222.s3-accesspoint.us-east-1.amazonaws.com", uri.Host);
-            Assert.AreEqual("/foo.txt", uri.AbsolutePath);
-            Assert.IsTrue(uri.Query.Contains("X-Amz-Algorithm=AWS4-HMAC-SHA256"));
+            try
+            {
+                uri = new Uri(s3Client.GetPreSignedURL(request));
+            }
+            catch (AmazonClientException e)
+            {
+                exception = e;
+            }
+
+            if (!string.IsNullOrEmpty(expectedHost))
+            {
+                Assert.IsNull(exception, "Unexpected exception was thrown: " + exception?.Message);
+
+                Assert.IsNotNull(uri);
+                Assert.AreEqual(expectedHost, uri.Host);
+                Assert.AreEqual("/foo.txt", uri.AbsolutePath);
+                Assert.IsTrue(uri.Query.Contains(expectedQueryStringPiece), $"Expected to find {expectedQueryStringPiece} in {uri.Query}");
+            }
+            else if (!string.IsNullOrEmpty(expectedErrorMessage))
+            {
+                Assert.IsNotNull(exception);
+                Assert.IsInstanceOfType(exception, typeof(AmazonClientException));
+                Assert.AreEqual(expectedErrorMessage, exception.Message);
+            }
+            else
+            {
+                Assert.Fail($"Bad test setup, {nameof(expectedHost)} or {nameof(expectedErrorMessage)} must be provided");
+            }
         }
 
-        [DataTestMethod]
+
+        [TestMethod]
         [TestCategory("S3")]
         [DataRow("arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint", "us-west-2", S3ConfigFlags.None, "myendpoint-123456789012.s3-accesspoint.us-west-2.amazonaws.com", "")]
         [DataRow("arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint", "us-west-2", S3ConfigFlags.ArnRegion, "myendpoint-123456789012.s3-accesspoint.us-east-1.amazonaws.com", "")]
@@ -394,7 +423,6 @@ namespace AWSSDK.UnitTests
         [DataRow("arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint", "us-west-2", S3ConfigFlags.Accelerate, "", "The request is using an access point ARN for the bucket name and the S3 service client is configured to use accelerate endpoints which is not supported. To use this access point create a new S3 service client with the UseAccelerateEndpoint property set to false.")]
         [DataRow("arn:aws:sqs:us-west-2:123456789012:someresource", "us-west-2", S3ConfigFlags.None, "", "Invalid ARN specified for bucket name. Only access point ARNs are allowed for the value of bucket name.")] 
         [DataRow("arn:aws:s3:us-west-2:123456789012:bucket_name:mybucket", "us-west-2", S3ConfigFlags.None, "", "Invalid ARN specified for bucket name. Only access point ARNs are allowed for the value of bucket name.")]
-        [DataRow("arn:aws:s3::123456789012:accesspoint:myendpoint", "us-west-2", S3ConfigFlags.None, "", "AWS region is missing in access point ARN")] 
         [DataRow("arn:aws:s3:us-west-2::accesspoint:myendpoint", "us-west-2", S3ConfigFlags.None, "", "Account ID is missing in access point ARN")] 
         [DataRow("arn:aws:s3:us-west-2:123.45678.9012:accesspoint:mybucket", "us-west-2", S3ConfigFlags.None, "", "AccountId is invalid. The AccountId length should be 12 and only contain numeric characters with no spaces or periods.")]
         [DataRow("arn:aws-us-gov:s3:us-gov-east-1:123456789012:accesspoint:myendpoint","fips-us-gov-east-1", S3ConfigFlags.None, "myendpoint-123456789012.s3-accesspoint-fips.us-gov-east-1.amazonaws.com", "")]
@@ -406,7 +434,49 @@ namespace AWSSDK.UnitTests
         [DataRow("arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint","s3-external-1", S3ConfigFlags.None, "", "The S3 service client is configured for region s3-external-1 but the access point is in us-east-1. By default the SDK doesn't allow cross region calls. If you want to enable cross region calls set the environment AWS_S3_USE_ARN_REGION or the AmazonS3Config.UseArnRegion property to value \"true\".")]
         [DataRow("arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint","aws-global", S3ConfigFlags.ArnRegion, "myendpoint-123456789012.s3-accesspoint.us-east-1.amazonaws.com", "")]
         [DataRow("arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint","aws-global", S3ConfigFlags.None, "", "The S3 service client is configured for region aws-global but the access point is in us-east-1. By default the SDK doesn't allow cross region calls. If you want to enable cross region calls set the environment AWS_S3_USE_ARN_REGION or the AmazonS3Config.UseArnRegion property to value \"true\".")]
+        [DataRow("arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", "us-west-2", S3ConfigFlags.DisableMRAP, "", "Invalid configuration, multi-region access point ARNs are disabled.")]
+        [DataRow("arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", "aws-global", S3ConfigFlags.DisableMRAP, "", "Invalid configuration, multi-region access point ARNs are disabled.")]
+        [DataRow("arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", "us-west-2", S3ConfigFlags.Dualstack, "", "Invalid configuration, multi-region access points do not support dualstack")]
+        [DataRow("arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", "us-west-2", S3ConfigFlags.Accelerate, "", "Invalid configuration, multi-region access points do not support accelerate")]
+        [DataRow("arn:aws:s3::123456789012:accesspoint:myendpoint", "us-west-2", S3ConfigFlags.DisableMRAP, "", "Invalid configuration, multi-region access point ARNs are disabled.")]
+        [DataRow("arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", "us-west-2", S3ConfigFlags.DisableMRAP, "", "Invalid configuration, multi-region access point ARNs are disabled.")]
+        [DataRow("arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", "aws-global", S3ConfigFlags.DisableMRAP, "", "Invalid configuration, multi-region access point ARNs are disabled.")]
+        [DataRow("arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", "us-west-2", S3ConfigFlags.Dualstack, "", "Invalid configuration, multi-region access points do not support dualstack")]
+        [DataRow("arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", "us-west-2", S3ConfigFlags.Accelerate, "", "Invalid configuration, multi-region access points do not support accelerate")]
+        [DataRow("arn:aws:s3::123456789012:accesspoint:myendpoint", "us-west-2", S3ConfigFlags.DisableMRAP, "", "Invalid configuration, multi-region access point ARNs are disabled.")]
+        [DataRow("arn:aws:s3::123456789012:accesspoint:myendpoint", "us-west-2", S3ConfigFlags.None, "myendpoint.accesspoint.s3-global.amazonaws.com", "")]
+        [DataRow("arn:aws:s3::123456789012:accesspoint:my.bucket", "us-west-2", S3ConfigFlags.None, "my.bucket.accesspoint.s3-global.amazonaws.com", "")]
         public void TestAccessPointArnVariations(string accessPointArn, string region, S3ConfigFlags flags, string host, string errorMessage)
+        {
+            TestAccessPointArnVariationHelper(accessPointArn, region, flags, host, errorMessage);
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        [DataRow("arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", "us-east-1", S3ConfigFlags.None, "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com", HeaderKeys.XAmzRegionSetHeader, "*")]
+        [DataRow("arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", "us-west-2", S3ConfigFlags.None, "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com", HeaderKeys.XAmzRegionSetHeader, "*")]
+        [DataRow("arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", "aws-global", S3ConfigFlags.None, "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com", HeaderKeys.XAmzRegionSetHeader, "*")]
+        [DataRow("arn:aws-cn:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", "cn-north-1", S3ConfigFlags.None, "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com.cn", HeaderKeys.XAmzRegionSetHeader, "*")]
+        [DataRow("arn:aws:s3::123456789012:accesspoint:myendpoint", "us-west-2", S3ConfigFlags.None, "myendpoint.accesspoint.s3-global.amazonaws.com", HeaderKeys.XAmzRegionSetHeader, "*")]
+        [DataRow("arn:aws:s3::123456789012:accesspoint:my.bucket", "us-west-2", S3ConfigFlags.None, "my.bucket.accesspoint.s3-global.amazonaws.com", HeaderKeys.XAmzRegionSetHeader, "*")]
+        public void TestAccessPointArnVariationsWithHeader(string accessPointArn, string region, S3ConfigFlags flags, string host, string expectedHeaderKey, string expectedHeaderValue)
+        {
+            var internalRequest = TestAccessPointArnVariationHelper(accessPointArn, region, flags, host, "");
+
+            Assert.IsTrue(internalRequest.Headers.ContainsKey(expectedHeaderKey));
+            Assert.AreEqual(expectedHeaderValue, internalRequest.Headers[expectedHeaderKey]);
+        }
+
+        /// <summary>
+        /// Test helper for S3 access point tests
+        /// </summary>
+        /// <param name="accessPointArn">Access point ARN (BucketName on the request)</param>
+        /// <param name="region">Region, to be set on AmazonS3Config's RegionEndpoint</param>
+        /// <param name="flags">Bit field of additional AmazonS3Config settings</param>
+        /// <param name="host">Expected hostname, will be asserted for valid test cases</param>
+        /// <param name="errorMessage">Expected error message, will be asserted for invalid test cases</param>
+        /// <returns></returns>
+        private IRequest TestAccessPointArnVariationHelper(string accessPointArn, string region, S3ConfigFlags flags, string host, string errorMessage)
         {
             var request = new PutObjectRequest
             {
@@ -418,11 +488,11 @@ namespace AWSSDK.UnitTests
             var config = S3ArnTestUtils.BuildFromRegionSystemName(region, flags);
 
             Exception exception = null;
-            IRequest result = null;
+            IRequest marshalledRequest = null;
 
             try
             {
-                result = S3ArnTestUtils.RunMockRequest(request, PutObjectRequestMarshaller.Instance, config);
+                marshalledRequest = S3ArnTestUtils.RunMockRequest(request, PutObjectRequestMarshaller.Instance, config);
             }
             catch (Exception e)
             {
@@ -433,12 +503,12 @@ namespace AWSSDK.UnitTests
             {
                 Assert.IsNull(exception, "Exception was thrown: " + exception?.Message);
 
-                Assert.AreEqual(new Uri($"https://{host}"), result.Endpoint);
-                Assert.AreEqual("/foo.txt", result.ResourcePath);
+                Assert.AreEqual(new Uri($"https://{host}"), marshalledRequest.Endpoint);
+                Assert.AreEqual("/foo.txt", marshalledRequest.ResourcePath);
             }
             else if (!string.IsNullOrEmpty(errorMessage))
             {
-                Assert.IsNotNull(exception, "Expected exception, but got result " + result?.Endpoint);
+                Assert.IsNotNull(exception, "Expected exception, but got result " + marshalledRequest?.Endpoint);
                 Assert.IsInstanceOfType(exception, typeof(AmazonClientException));
                 Assert.AreEqual(errorMessage, exception.Message);
             }
@@ -446,6 +516,7 @@ namespace AWSSDK.UnitTests
             {
                 Assert.Fail($"Bad Test Data, you must provide either {nameof(host)} or {nameof(errorMessage)}");
             }
+            return marshalledRequest;
         }
     }
 }

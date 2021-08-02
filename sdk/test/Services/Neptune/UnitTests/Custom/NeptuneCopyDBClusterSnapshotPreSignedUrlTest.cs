@@ -24,6 +24,19 @@ namespace AWSSDK.UnitTests
         private static readonly string sourceDBClusterSnapshotIdentifier = "arn:aws:rds:us-east-1:123456789012:cluster-snapshot:source-db-cluster-snapshot";
         private static readonly string targetDBClusterSnapshotIdentifier = "target-db-cluster-snapshot";
 
+        [ClassInitialize]
+        public static void SetFixedSigningDate(TestContext context)
+        {
+            SetUtcNowSource(ReturnFixedDate);
+        }
+
+        [ClassCleanup]
+        public static void ResetFixedSigningDate()
+        {
+            SetUtcNowSource((Func<DateTime>)Delegate.CreateDelegate(typeof(Func<DateTime>),
+                typeof(AWSConfigs).GetMethod("GetUtcNow", BindingFlags.Static | BindingFlags.NonPublic)));
+        }
+
         [TestMethod]
         [TestCategory("Neptune")]
         public void HandleNonPreSignedUrlRequest()
@@ -35,7 +48,6 @@ namespace AWSSDK.UnitTests
                 TargetDBClusterSnapshotIdentifier = targetDBClusterSnapshotIdentifier
             };
 
-            SetUtcNowSource(ReturnFixedDate);
             RunPreInvoke(request);
             Assert.IsNull(request.PreSignedUrl);
         }
@@ -52,7 +64,6 @@ namespace AWSSDK.UnitTests
                 PreSignedUrl = "https://aws.com"
             };
 
-            SetUtcNowSource(ReturnFixedDate);
             RunPreInvoke(request);
             Assert.AreEqual("https://aws.com", request.PreSignedUrl);
         }
@@ -69,7 +80,6 @@ namespace AWSSDK.UnitTests
                 SourceRegion = sourceRegion
             };
 
-            SetUtcNowSource(ReturnFixedDate);
             RunPreInvoke(request);
 
             Assert.IsNotNull(request.PreSignedUrl);

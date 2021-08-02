@@ -31,6 +31,7 @@ namespace Amazon.S3
         private const string AwsProfileEnvironmentVariable = "AWS_PROFILE";
         private const string DefaultProfileName = "default";
         private const string AwsS3UsEast1RegionalEndpointsEnvironmentVariable = "AWS_S3_US_EAST_1_REGIONAL_ENDPOINT";
+        private const string DisableMRAPEnvName = "AWS_S3_DISABLE_MULTIREGION_ACCESS_POINTS";
 
         private bool forcePathStyle = false;
         private bool useAccelerateEndpoint = false;
@@ -105,8 +106,31 @@ namespace Amazon.S3
             set { this._useArnRegion = value; }
         }
 
+        bool? _disableMultiregionAccessPoints;
         /// <summary>
-        /// USEast1RegionalEndpointValue determines wheter or not
+        /// If set to true, prevents calls to multi-region access points.
+        /// If not explicitly set here it will fallback first to the value of 
+        /// AWS_S3_DISABLE_MULTIREGION_ACCESS_POINTS environment variable, then to 
+        /// s3_disable_multiregion_access_points in the shared configuration file.
+        /// Once a valid value is found in the environment variable or configuration file 
+        /// it will be cached for this AmazonS3Config instance.
+        /// </summary>
+        public bool DisableMultiregionAccessPoints
+        {
+            get
+            {
+                if (_disableMultiregionAccessPoints == null)
+                {
+                    _disableMultiregionAccessPoints = CheckDisableMRAPEnvironmentVariable() ?? CheckDisableMRAPCredentialsFile();
+                }
+                return _disableMultiregionAccessPoints.GetValueOrDefault();
+            }
+
+            set { _disableMultiregionAccessPoints = value; }
+        }
+
+        /// <summary>
+        /// USEast1RegionalEndpointValue determines whether or not
         /// to send the us-east-1 s3 requests to the regional endpoint or to
         /// the legacy global endpoint.
         /// This flags takes precedence over the AWS_S3_US_EAST_1_REGIONAL_ENDPOINT
@@ -264,6 +288,42 @@ namespace Amazon.S3
             var profileName = Environment.GetEnvironmentVariable(AwsProfileEnvironmentVariable) ?? DefaultProfileName;
             credentialProfileChain.TryGetProfile(profileName, out profile);
             return profile?.S3RegionalEndpoint;
+        }
+
+        /// <summary>
+        /// Validates and returns the value of AWS_S3_DISABLE_MULTIREGION_ACCESS_POINTS
+        /// </summary>
+        /// <returns>Value of AWS_S3_DISABLE_MULTIREGION_ACCESS_POINTS if it is set and valid, else null</returns>
+        private static bool? CheckDisableMRAPEnvironmentVariable()
+        {
+            bool? disableMultiregionAccessPoints = null;
+            if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable(DisableMRAPEnvName)))
+            {
+                if (bool.TryParse(Environment.GetEnvironmentVariable(DisableMRAPEnvName), out var value))
+                {
+                    disableMultiregionAccessPoints = value;
+                }
+                else
+                {
+                    throw new InvalidOperationException($"Invalid value for {DisableMRAPEnvName} environment variable. true/false is expected.");
+                }
+            }
+            return disableMultiregionAccessPoints;
+        }
+
+        /// <summary>
+        /// Returns the value of s3_disable_multiregion_access_points for the current profile
+        /// </summary>
+        /// <returns>Value of s3_disable_multiregion_access_points if it is set, else null</returns>
+        private static bool? CheckDisableMRAPCredentialsFile()
+        {
+            bool? disableMultiregionAccessPoints = null;
+            var profileName = Environment.GetEnvironmentVariable(AwsProfileEnvironmentVariable) ?? DefaultProfileName;
+            if (credentialProfileChain.TryGetProfile(profileName, out var profile))
+            {
+                disableMultiregionAccessPoints = profile.S3DisableMultiRegionAccessPoints;
+            }
+            return disableMultiregionAccessPoints;
         }
 
         internal string AccelerateEndpoint

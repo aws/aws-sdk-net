@@ -46,5 +46,10 @@ namespace Amazon.Runtime.Internal.Auth
 
             request.Headers.Add(HeaderKeys.AuthorizationHeader, "AWS " + awsAccessKeyId + ":" + signature);
         }
+
+        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, ImmutableCredentials credentials)
+        {
+            Sign(request, clientConfig, metrics, credentials.AccessKey, credentials.SecretKey);
+        }
     }
 }

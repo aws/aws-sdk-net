@@ -1128,6 +1128,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceClientGeneratorLib",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CommonTest", "..\sdk\test\Common\AWSSDK.CommonTest.csproj", "{66F78F86-68D7-4538-8EA5-A669A08E1C19}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTestDependencies", "IntegrationTestDependencies", "{939EC5C2-8345-43E2-8F97-72EEEBEEA0AC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Extensions.CrtIntegration.Net45", "..\extensions\src\AWSSDK.Extensions.CrtIntegration\AWSSDK.Extensions.CrtIntegration.Net45.csproj", "{C4B9F493-4070-4BF3-9037-392B511BD518}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2266,6 +2270,10 @@ Global
 		{66F78F86-68D7-4538-8EA5-A669A08E1C19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66F78F86-68D7-4538-8EA5-A669A08E1C19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66F78F86-68D7-4538-8EA5-A669A08E1C19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4B9F493-4070-4BF3-9037-392B511BD518}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4B9F493-4070-4BF3-9037-392B511BD518}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4B9F493-4070-4BF3-9037-392B511BD518}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4B9F493-4070-4BF3-9037-392B511BD518}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2831,6 +2839,7 @@ Global
 		{E42C446D-663C-4BB4-B136-791D4057DC88} = {12EC4E4B-7E2C-4B63-8EF9-7B959F82A89B}
 		{7BEE7C44-BE12-43CC-AFB9-B5852A1F43C8} = {12EC4E4B-7E2C-4B63-8EF9-7B959F82A89B}
 		{66F78F86-68D7-4538-8EA5-A669A08E1C19} = {12EC4E4B-7E2C-4B63-8EF9-7B959F82A89B}
+		{C4B9F493-4070-4BF3-9037-392B511BD518} = {939EC5C2-8345-43E2-8F97-72EEEBEEA0AC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2EE21A01-997F-42DF-93D4-766BFC717DA0}

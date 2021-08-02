@@ -448,12 +448,25 @@ namespace Amazon.Util
         /// <returns>A segmented encoded URL</returns>
         public static string ResolveResourcePath(string resourcePath, IDictionary<string, string> pathResources)
         {
+            return ResolveResourcePath(resourcePath, pathResources, true);
+        }
+
+        /// <summary>
+        /// Takes a patterned resource path and resolves it using the key/value path resources into
+        /// a segmented encoded URL.
+        /// </summary>
+        /// <param name="resourcePath">The patterned resourcePath</param>
+        /// <param name="pathResources">The key/value lookup for the patterned resourcePath</param>
+        /// <param name="skipEncodingValidPathChars">If true valid path characters {/+:} are not encoded</param>
+        /// <returns>A segmented encoded URL</returns>
+        public static string ResolveResourcePath(string resourcePath, IDictionary<string, string> pathResources, bool skipEncodingValidPathChars)
+        {
             if (string.IsNullOrEmpty(resourcePath))
             {
                 return resourcePath;
             }
 
-            return JoinResourcePathSegments(SplitResourcePathIntoSegments(resourcePath, pathResources), true);
+            return JoinResourcePathSegments(SplitResourcePathIntoSegments(resourcePath, pathResources), skipEncodingValidPathChars);
         }
 
         /// <summary>

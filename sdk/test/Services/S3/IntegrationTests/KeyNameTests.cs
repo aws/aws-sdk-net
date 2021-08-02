@@ -93,7 +93,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        static void PutAndGetObjectWithQuestionableKey(IAmazonS3 s3Client, string bucketName, string keyName)
+        internal static void PutAndGetObjectWithQuestionableKey(IAmazonS3 s3Client, string bucketName, string keyName, bool useChunkEncoding = true)
         {
             const string testContent = "Some stuff to write as content";
 
@@ -101,7 +101,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 BucketName = bucketName,
                 Key = keyName,
-                ContentBody = testContent
+                ContentBody = testContent,
+                UseChunkEncoding = useChunkEncoding
             });
 
             var response = s3Client.GetObject(new GetObjectRequest
