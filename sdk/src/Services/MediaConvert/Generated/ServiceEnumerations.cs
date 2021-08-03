@@ -4523,6 +4523,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type CopyProtectionAction.
+    /// </summary>
+    public class CopyProtectionAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PASSTHROUGH for CopyProtectionAction
+        /// </summary>
+        public static readonly CopyProtectionAction PASSTHROUGH = new CopyProtectionAction("PASSTHROUGH");
+        /// <summary>
+        /// Constant STRIP for CopyProtectionAction
+        /// </summary>
+        public static readonly CopyProtectionAction STRIP = new CopyProtectionAction("STRIP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CopyProtectionAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CopyProtectionAction FindValue(string value)
+        {
+            return FindValue<CopyProtectionAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CopyProtectionAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DashIsoGroupAudioChannelConfigSchemeIdUri.
     /// </summary>
     public class DashIsoGroupAudioChannelConfigSchemeIdUri : ConstantClass
@@ -18072,6 +18122,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Vc3Telecine(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VchipAction.
+    /// </summary>
+    public class VchipAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PASSTHROUGH for VchipAction
+        /// </summary>
+        public static readonly VchipAction PASSTHROUGH = new VchipAction("PASSTHROUGH");
+        /// <summary>
+        /// Constant STRIP for VchipAction
+        /// </summary>
+        public static readonly VchipAction STRIP = new VchipAction("STRIP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VchipAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VchipAction FindValue(string value)
+        {
+            return FindValue<VchipAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VchipAction(string value)
         {
             return FindValue(value);
         }

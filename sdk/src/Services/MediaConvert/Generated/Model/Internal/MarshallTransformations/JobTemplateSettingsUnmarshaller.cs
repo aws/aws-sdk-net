@@ -82,6 +82,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Esam = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("extendedDataServices", targetDepth))
+                {
+                    var unmarshaller = ExtendedDataServicesUnmarshaller.Instance;
+                    unmarshalledObject.ExtendedDataServices = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("inputs", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<InputTemplate, InputTemplateUnmarshaller>(InputTemplateUnmarshaller.Instance);

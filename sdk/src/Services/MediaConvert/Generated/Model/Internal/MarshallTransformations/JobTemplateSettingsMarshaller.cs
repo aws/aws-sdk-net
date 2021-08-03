@@ -73,6 +73,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetExtendedDataServices())
+            {
+                context.Writer.WritePropertyName("extendedDataServices");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ExtendedDataServicesMarshaller.Instance;
+                marshaller.Marshall(requestObject.ExtendedDataServices, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInputs())
             {
                 context.Writer.WritePropertyName("inputs");

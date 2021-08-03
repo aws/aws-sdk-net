@@ -37,6 +37,7 @@ namespace Amazon.MediaConvert.Model
         private int? _adAvailOffset;
         private AvailBlanking _availBlanking;
         private EsamSettings _esam;
+        private ExtendedDataServices _extendedDataServices;
         private List<InputTemplate> _inputs = new List<InputTemplate>();
         private KantarWatermarkSettings _kantarWatermark;
         private MotionImageInserter _motionImageInserter;
@@ -94,6 +95,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetEsam()
         {
             return this._esam != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExtendedDataServices. Hexadecimal value as per EIA-608
+        /// Line 21 Data Services, section 9.5.1.5 05h Content Advisory.
+        /// </summary>
+        public ExtendedDataServices ExtendedDataServices
+        {
+            get { return this._extendedDataServices; }
+            set { this._extendedDataServices = value; }
+        }
+
+        // Check to see if ExtendedDataServices property is set
+        internal bool IsSetExtendedDataServices()
+        {
+            return this._extendedDataServices != null;
         }
 
         /// <summary>
