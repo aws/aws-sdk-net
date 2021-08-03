@@ -73,6 +73,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     return AlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentModificationException"))
+                {
+                    return ConcurrentModificationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("GlueEncryptionException"))
                 {
                     return GlueEncryptionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
