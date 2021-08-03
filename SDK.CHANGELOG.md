@@ -1,3 +1,15 @@
+### 3.7.87.0 (2021-08-03 18:19 UTC)
+* Glue (3.7.6.0)
+	* Add ConcurrentModificationException to create-table, delete-table, create-database, update-database, delete-database
+* IoTSiteWise (3.7.6.0)
+	* My AWS Service (placeholder) - This release introduces custom Intervals and offset for tumbling window in metric for AWS IoT SiteWise.
+* MediaConvert (3.7.5.0)
+	* AWS Elemental MediaConvert SDK has added control over the passthrough of XDS captions metadata to outputs.
+* Proton (3.7.1.15)
+	* Docs only add idempotent create apis
+* Redshift (3.7.8.0)
+	* API support for Redshift Data Sharing feature.
+
 ### 3.7.86.0 (2021-08-02 18:16 UTC)
 * GreengrassV2 (3.7.2.0)
 	* This release adds support for component system resource limits and idempotent Create operations. You can now specify the maximum amount of CPU and memory resources that each component can use.
