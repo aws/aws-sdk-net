@@ -30,7 +30,7 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the AuthorizeSnapshotAccess operation.
-    /// Authorizes the specified account to restore the specified snapshot.
+    /// Authorizes the specified Amazon Web Services account to restore the specified snapshot.
     /// 
     ///  
     /// <para>
@@ -47,7 +47,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AccountWithRestoreAccess. 
         /// <para>
-        /// The identifier of the account authorized to restore the specified snapshot.
+        /// The identifier of the Amazon Web Services account authorized to restore the specified
+        /// snapshot.
         /// </para>
         ///  
         /// <para>

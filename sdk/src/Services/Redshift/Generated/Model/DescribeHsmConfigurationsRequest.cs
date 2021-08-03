@@ -32,7 +32,7 @@ namespace Amazon.Redshift.Model
     /// Container for the parameters to the DescribeHsmConfigurations operation.
     /// Returns information about the specified Amazon Redshift HSM configuration. If no configuration
     /// ID is specified, returns information about all the HSM configurations owned by your
-    /// account.
+    /// Amazon Web Services account.
     /// 
     ///  
     /// <para>
@@ -61,7 +61,7 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// The identifier of a specific Amazon Redshift HSM configuration to be described. If
         /// no identifier is specified, information is returned for all HSM configurations owned
-        /// by your account.
+        /// by your Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

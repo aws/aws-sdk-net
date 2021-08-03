@@ -166,7 +166,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must be unique for the account that is making the request.
+        /// Must be unique for the Amazon Web Services account that is making the request.
         /// </para>
         ///  </li> </ul>
         /// </summary>

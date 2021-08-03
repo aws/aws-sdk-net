@@ -71,7 +71,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property SnapshotCopyGrantName. 
         /// <para>
         /// The name of the snapshot copy grant. This name must be unique in the region for the
-        /// account.
+        /// Amazon Web Services account.
         /// </para>
         ///  
         /// <para>
@@ -95,7 +95,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must be unique for all clusters within an account.
+        /// Must be unique for all clusters within an Amazon Web Services account.
         /// </para>
         ///  </li> </ul>
         /// </summary>

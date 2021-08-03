@@ -608,7 +608,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must be unique for all clusters within an account.
+        /// Must be unique for all clusters within an Amazon Web Services account.
         /// </para>
         ///  </li> </ul> 
         /// <para>

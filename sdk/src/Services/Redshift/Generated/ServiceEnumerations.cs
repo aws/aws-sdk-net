@@ -237,6 +237,184 @@ namespace Amazon.Redshift
 
 
     /// <summary>
+    /// Constants used for properties of type DataShareStatus.
+    /// </summary>
+    public class DataShareStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for DataShareStatus
+        /// </summary>
+        public static readonly DataShareStatus ACTIVE = new DataShareStatus("ACTIVE");
+        /// <summary>
+        /// Constant AUTHORIZED for DataShareStatus
+        /// </summary>
+        public static readonly DataShareStatus AUTHORIZED = new DataShareStatus("AUTHORIZED");
+        /// <summary>
+        /// Constant AVAILABLE for DataShareStatus
+        /// </summary>
+        public static readonly DataShareStatus AVAILABLE = new DataShareStatus("AVAILABLE");
+        /// <summary>
+        /// Constant DEAUTHORIZED for DataShareStatus
+        /// </summary>
+        public static readonly DataShareStatus DEAUTHORIZED = new DataShareStatus("DEAUTHORIZED");
+        /// <summary>
+        /// Constant PENDING_AUTHORIZATION for DataShareStatus
+        /// </summary>
+        public static readonly DataShareStatus PENDING_AUTHORIZATION = new DataShareStatus("PENDING_AUTHORIZATION");
+        /// <summary>
+        /// Constant REJECTED for DataShareStatus
+        /// </summary>
+        public static readonly DataShareStatus REJECTED = new DataShareStatus("REJECTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataShareStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataShareStatus FindValue(string value)
+        {
+            return FindValue<DataShareStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataShareStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataShareStatusForConsumer.
+    /// </summary>
+    public class DataShareStatusForConsumer : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for DataShareStatusForConsumer
+        /// </summary>
+        public static readonly DataShareStatusForConsumer ACTIVE = new DataShareStatusForConsumer("ACTIVE");
+        /// <summary>
+        /// Constant AVAILABLE for DataShareStatusForConsumer
+        /// </summary>
+        public static readonly DataShareStatusForConsumer AVAILABLE = new DataShareStatusForConsumer("AVAILABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataShareStatusForConsumer(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataShareStatusForConsumer FindValue(string value)
+        {
+            return FindValue<DataShareStatusForConsumer>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataShareStatusForConsumer(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataShareStatusForProducer.
+    /// </summary>
+    public class DataShareStatusForProducer : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for DataShareStatusForProducer
+        /// </summary>
+        public static readonly DataShareStatusForProducer ACTIVE = new DataShareStatusForProducer("ACTIVE");
+        /// <summary>
+        /// Constant AUTHORIZED for DataShareStatusForProducer
+        /// </summary>
+        public static readonly DataShareStatusForProducer AUTHORIZED = new DataShareStatusForProducer("AUTHORIZED");
+        /// <summary>
+        /// Constant DEAUTHORIZED for DataShareStatusForProducer
+        /// </summary>
+        public static readonly DataShareStatusForProducer DEAUTHORIZED = new DataShareStatusForProducer("DEAUTHORIZED");
+        /// <summary>
+        /// Constant PENDING_AUTHORIZATION for DataShareStatusForProducer
+        /// </summary>
+        public static readonly DataShareStatusForProducer PENDING_AUTHORIZATION = new DataShareStatusForProducer("PENDING_AUTHORIZATION");
+        /// <summary>
+        /// Constant REJECTED for DataShareStatusForProducer
+        /// </summary>
+        public static readonly DataShareStatusForProducer REJECTED = new DataShareStatusForProducer("REJECTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataShareStatusForProducer(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataShareStatusForProducer FindValue(string value)
+        {
+            return FindValue<DataShareStatusForProducer>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataShareStatusForProducer(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Mode.
     /// </summary>
     public class Mode : ConstantClass

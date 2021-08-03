@@ -32,8 +32,8 @@ namespace Amazon.Redshift.Model
     /// Container for the parameters to the DescribeClusterSnapshots operation.
     /// Returns one or more snapshot objects, which contain metadata about your cluster snapshots.
     /// By default, this operation returns information about all snapshots of all clusters
-    /// that are owned by your account. No information is returned for snapshots owned by
-    /// inactive accounts.
+    /// that are owned by your Amazon Web Services account. No information is returned for
+    /// snapshots owned by inactive Amazon Web Services accounts.
     /// 
     ///  
     /// <para>
@@ -208,9 +208,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        /// The account used to create or copy the snapshot. Use this field to filter the results
-        /// to snapshots owned by a particular account. To describe snapshots you own, either
-        /// specify your account, or do not specify the parameter.
+        /// The Amazon Web Services account used to create or copy the snapshot. Use this field
+        /// to filter the results to snapshots owned by a particular account. To describe snapshots
+        /// you own, either specify your Amazon Web Services account, or do not specify the parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

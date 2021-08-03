@@ -107,10 +107,11 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property EC2SecurityGroupOwnerId. 
         /// <para>
-        /// The account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code>
-        /// parameter. The Amazon Web Services access key ID is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code>
-        /// is specified, <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code>
-        /// cannot be provided. 
+        /// The Amazon Web Services account number of the owner of the security group specified
+        /// in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access
+        /// key ID is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is specified,
+        /// <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code> cannot
+        /// be provided. 
         /// </para>
         ///  
         /// <para>

@@ -30,7 +30,8 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSnapshotCopyGrants operation.
-    /// Returns a list of snapshot copy grants owned by the account in the destination region.
+    /// Returns a list of snapshot copy grants owned by the Amazon Web Services account in
+    /// the destination region.
     /// 
     ///  
     /// <para>

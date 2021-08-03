@@ -318,6 +318,74 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void AssociateDataShareConsumerMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssociateDataShareConsumer");
+
+            var request = InstantiateClassGenerator.Execute<AssociateDataShareConsumerRequest>();
+            var marshaller = new AssociateDataShareConsumerRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = AssociateDataShareConsumerResponseUnmarshaller.Instance.Unmarshall(context)
+                as AssociateDataShareConsumerResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void AssociateDataShareConsumer_InvalidDataShareExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssociateDataShareConsumer");
+
+            var request = InstantiateClassGenerator.Execute<AssociateDataShareConsumerRequest>();
+            var marshaller = new AssociateDataShareConsumerRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDataShareException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = AssociateDataShareConsumerResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void AssociateDataShareConsumer_InvalidNamespaceExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssociateDataShareConsumer");
+
+            var request = InstantiateClassGenerator.Execute<AssociateDataShareConsumerRequest>();
+            var marshaller = new AssociateDataShareConsumerRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidNamespaceException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = AssociateDataShareConsumerResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void AuthorizeClusterSecurityGroupIngressMarshallTest()
         {
             var operation = service_model.FindOperation("AuthorizeClusterSecurityGroupIngress");
@@ -424,6 +492,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = AuthorizeClusterSecurityGroupIngressResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void AuthorizeDataShareMarshallTest()
+        {
+            var operation = service_model.FindOperation("AuthorizeDataShare");
+
+            var request = InstantiateClassGenerator.Execute<AuthorizeDataShareRequest>();
+            var marshaller = new AuthorizeDataShareRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = AuthorizeDataShareResponseUnmarshaller.Instance.Unmarshall(context)
+                as AuthorizeDataShareResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void AuthorizeDataShare_InvalidDataShareExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AuthorizeDataShare");
+
+            var request = InstantiateClassGenerator.Execute<AuthorizeDataShareRequest>();
+            var marshaller = new AuthorizeDataShareRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDataShareException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = AuthorizeDataShareResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3879,6 +3992,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void DeauthorizeDataShareMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeauthorizeDataShare");
+
+            var request = InstantiateClassGenerator.Execute<DeauthorizeDataShareRequest>();
+            var marshaller = new DeauthorizeDataShareRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeauthorizeDataShareResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeauthorizeDataShareResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DeauthorizeDataShare_InvalidDataShareExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeauthorizeDataShare");
+
+            var request = InstantiateClassGenerator.Execute<DeauthorizeDataShareRequest>();
+            var marshaller = new DeauthorizeDataShareRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDataShareException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeauthorizeDataShareResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void DeleteAuthenticationProfileMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteAuthenticationProfile");
@@ -5752,6 +5910,141 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void DescribeDataSharesMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeDataShares");
+
+            var request = InstantiateClassGenerator.Execute<DescribeDataSharesRequest>();
+            var marshaller = new DescribeDataSharesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeDataSharesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeDataSharesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DescribeDataShares_InvalidDataShareExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeDataShares");
+
+            var request = InstantiateClassGenerator.Execute<DescribeDataSharesRequest>();
+            var marshaller = new DescribeDataSharesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDataShareException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeDataSharesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DescribeDataSharesForConsumerMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeDataSharesForConsumer");
+
+            var request = InstantiateClassGenerator.Execute<DescribeDataSharesForConsumerRequest>();
+            var marshaller = new DescribeDataSharesForConsumerRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeDataSharesForConsumerResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeDataSharesForConsumerResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DescribeDataSharesForConsumer_InvalidNamespaceExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeDataSharesForConsumer");
+
+            var request = InstantiateClassGenerator.Execute<DescribeDataSharesForConsumerRequest>();
+            var marshaller = new DescribeDataSharesForConsumerRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidNamespaceException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeDataSharesForConsumerResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DescribeDataSharesForProducerMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeDataSharesForProducer");
+
+            var request = InstantiateClassGenerator.Execute<DescribeDataSharesForProducerRequest>();
+            var marshaller = new DescribeDataSharesForProducerRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeDataSharesForProducerResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeDataSharesForProducerResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DescribeDataSharesForProducer_InvalidNamespaceExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeDataSharesForProducer");
+
+            var request = InstantiateClassGenerator.Execute<DescribeDataSharesForProducerRequest>();
+            var marshaller = new DescribeDataSharesForProducerRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidNamespaceException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeDataSharesForProducerResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void DescribeDefaultClusterParametersMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeDefaultClusterParameters");
@@ -7215,6 +7508,74 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = DisableSnapshotCopyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DisassociateDataShareConsumerMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisassociateDataShareConsumer");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateDataShareConsumerRequest>();
+            var marshaller = new DisassociateDataShareConsumerRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DisassociateDataShareConsumerResponseUnmarshaller.Instance.Unmarshall(context)
+                as DisassociateDataShareConsumerResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DisassociateDataShareConsumer_InvalidDataShareExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisassociateDataShareConsumer");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateDataShareConsumerRequest>();
+            var marshaller = new DisassociateDataShareConsumerRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDataShareException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DisassociateDataShareConsumerResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DisassociateDataShareConsumer_InvalidNamespaceExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisassociateDataShareConsumer");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateDataShareConsumerRequest>();
+            var marshaller = new DisassociateDataShareConsumerRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidNamespaceException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DisassociateDataShareConsumerResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -10246,6 +10607,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = RebootClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void RejectDataShareMarshallTest()
+        {
+            var operation = service_model.FindOperation("RejectDataShare");
+
+            var request = InstantiateClassGenerator.Execute<RejectDataShareRequest>();
+            var marshaller = new RejectDataShareRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = RejectDataShareResponseUnmarshaller.Instance.Unmarshall(context)
+                as RejectDataShareResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void RejectDataShare_InvalidDataShareExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RejectDataShare");
+
+            var request = InstantiateClassGenerator.Execute<RejectDataShareRequest>();
+            var marshaller = new RejectDataShareRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDataShareException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RejectDataShareResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

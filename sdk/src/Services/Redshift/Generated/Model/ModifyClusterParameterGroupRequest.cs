@@ -30,7 +30,8 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyClusterParameterGroup operation.
-    /// Modifies the parameters of a parameter group.
+    /// Modifies the parameters of a parameter group. For the parameters parameter, it can't
+    /// contain ASCII characters.
     /// 
     ///  
     /// <para>

@@ -159,8 +159,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        /// The account used to create or copy the snapshot. Required if you are restoring a snapshot
-        /// you do not own, optional if you own the snapshot.
+        /// The Amazon Web Services account used to create or copy the snapshot. Required if you
+        /// are restoring a snapshot you do not own, optional if you own the snapshot.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

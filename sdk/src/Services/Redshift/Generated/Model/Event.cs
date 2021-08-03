@@ -66,7 +66,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Values: Configuration, Management, Monitoring, Security
+        /// Values: Configuration, Management, Monitoring, Security, Pending
         /// </para>
         /// </summary>
         public List<string> EventCategories

@@ -41,7 +41,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Account. 
         /// <para>
-        /// The account ID to grant access to.
+        /// The Amazon Web Services account ID to grant access to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=2147483647)]

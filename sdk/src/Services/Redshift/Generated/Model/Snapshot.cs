@@ -71,8 +71,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AccountsWithRestoreAccess. 
         /// <para>
-        /// A list of the accounts authorized to restore the snapshot. Returns <code>null</code>
-        /// if no accounts are authorized. Visible only to the snapshot owner. 
+        /// A list of the Amazon Web Services accounts authorized to restore the snapshot. Returns
+        /// <code>null</code> if no accounts are authorized. Visible only to the snapshot owner.
+        /// 
         /// </para>
         /// </summary>
         public List<AccountWithRestoreAccess> AccountsWithRestoreAccess
@@ -500,9 +501,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        /// For manual snapshots, the account used to create or copy the snapshot. For automatic
-        /// snapshots, the owner of the cluster. The owner can perform all snapshot actions, such
-        /// as sharing a manual snapshot.
+        /// For manual snapshots, the Amazon Web Services account used to create or copy the snapshot.
+        /// For automatic snapshots, the owner of the cluster. The owner can perform all snapshot
+        /// actions, such as sharing a manual snapshot.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

@@ -30,7 +30,8 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// The authentication profile request is not valid. The profile name can't be null or
-    /// empty. The authentication profile API operation must be available in the Region.
+    /// empty. The authentication profile API operation must be available in the Amazon Web
+    /// Services Region.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

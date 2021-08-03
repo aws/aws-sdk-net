@@ -53,7 +53,8 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, resize operations for all clusters defined for an account are returned.
+        /// By default, resize operations for all clusters defined for an Amazon Web Services
+        /// account are returned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=2147483647)]
