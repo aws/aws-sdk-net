@@ -169,6 +169,49 @@ namespace Amazon.Proton
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    ///  <b>Idempotent create APIs</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// Given a request action that has succeeded:
+    /// </para>
+    ///  
+    /// <para>
+    /// If you retry the request with an API from this group, and the original resource <i>hasn't</i>
+    /// been modified, the retry succeeds without performing any further actions other than
+    /// returning the original resource detail data in the response.
+    /// </para>
+    ///  
+    /// <para>
+    /// If the original resource has been modified, the retry throws a <code>ConflictException</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you retry with different input parameters, the retry throws a <code>ValidationException</code>
+    /// with an <code>IdempotentParameterMismatch</code> error.
+    /// </para>
+    ///  
+    /// <para>
+    /// Idempotent create APIs:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// CreateEnvironmentTemplate
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// CreateServiceTemplate
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// CreateEnvironment
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// CreateService
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     ///  <b>Idempotent delete APIs</b> 
     /// </para>
     ///  
