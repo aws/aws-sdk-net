@@ -30,21 +30,39 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Contains a tumbling window, which is a repeating fixed-sized, non-overlapping, and
-    /// contiguous time interval. This window is used in metric and aggregation computations.
+    /// contiguous time window. You use this window in metrics to aggregate data from properties
+    /// and other assets.
+    /// 
+    ///  
+    /// <para>
+    /// You can use <code>m</code>, <code>h</code>, <code>d</code>, and <code>w</code> when
+    /// you specify an interval or offset. Note that <code>m</code> represents minutes, and
+    /// <code>w</code> represents weeks. You can also use <code>s</code> to represent seconds
+    /// in <code>offset</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// The <code>interval</code> and <code>offset</code> parameters support the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO
+    /// 8601 format</a>. For example, <code>PT5S</code> represents five seconds, <code>PT5M</code>
+    /// represents five minutes, and <code>PT5H</code> represents five hours.
+    /// </para>
     /// </summary>
     public partial class TumblingWindow
     {
         private string _interval;
+        private string _offset;
 
         /// <summary>
         /// Gets and sets the property Interval. 
         /// <para>
-        /// The time interval for the tumbling window. Note that <code>w</code> represents weeks,
-        /// <code>d</code> represents days, <code>h</code> represents hours, and <code>m</code>
-        /// represents minutes. IoT SiteWise computes the <code>1w</code> interval the end of
-        /// Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each
-        /// day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so
-        /// on. 
+        /// The time interval for the tumbling window. The interval time must be between 1 minute
+        /// and 1 week.
+        /// </para>
+        ///  
+        /// <para>
+        /// IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each
+        /// week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC),
+        /// the <code>1h</code> interval at the end of each hour, and so on. 
         /// </para>
         ///  
         /// <para>
@@ -53,7 +71,7 @@ namespace Amazon.IoTSiteWise.Model
         /// the computed data point at the end of the interval.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=3)]
+        [AWSProperty(Required=true, Min=2, Max=23)]
         public string Interval
         {
             get { return this._interval; }
@@ -64,6 +82,96 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetInterval()
         {
             return this._interval != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Offset. 
+        /// <para>
+        /// The offset for the tumbling window. The <code>offset</code> parameter accepts the
+        /// following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The offset time.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you specify <code>18h</code> for <code>offset</code> and <code>1d</code>
+        /// for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you create the metric before or at 6:00 p.m. (UTC), you get the first aggregation
+        /// result at 6 p.m. (UTC) on the day when you create the metric.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you create the metric after 6:00 p.m. (UTC), you get the first aggregation result
+        /// at 6 p.m. (UTC) the next day.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// The ISO 8601 format.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you specify <code>PT18H</code> for <code>offset</code> and <code>1d</code>
+        /// for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you create the metric before or at 6:00 p.m. (UTC), you get the first aggregation
+        /// result at 6 p.m. (UTC) on the day when you create the metric.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you create the metric after 6:00 p.m. (UTC), you get the first aggregation result
+        /// at 6 p.m. (UTC) the next day.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// The 24-hour clock.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you specify <code>00:03:00</code> for <code>offset</code> and <code>5m</code>
+        /// for <code>interval</code>, and you create the metric at 2 p.m. (UTC), you get the
+        /// first aggregation result at 2:03 p.m. (UTC). You get the second aggregation result
+        /// at 2:08 p.m. (UTC). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The offset time zone.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code>
+        /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one
+        /// of the following ways:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you create the metric before or at 6:00 p.m. (PST), you get the first aggregation
+        /// result at 6 p.m. (PST) on the day when you create the metric.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you create the metric after 6:00 p.m. (PST), you get the first aggregation result
+        /// at 6 p.m. (PST) the next day.
+        /// </para>
+        ///  </li> </ul> </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=2, Max=25)]
+        public string Offset
+        {
+            get { return this._offset; }
+            set { this._offset = value; }
+        }
+
+        // Check to see if Offset property is set
+        internal bool IsSetOffset()
+        {
+            return this._offset != null;
         }
 
     }

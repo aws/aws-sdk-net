@@ -51,6 +51,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Interval);
             }
 
+            if(requestObject.IsSetOffset())
+            {
+                context.Writer.WritePropertyName("offset");
+                context.Writer.Write(requestObject.Offset);
+            }
+
         }
 
         /// <summary>

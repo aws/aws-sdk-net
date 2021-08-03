@@ -31,14 +31,6 @@ namespace Amazon.IoTSiteWise.Model
     /// <summary>
     /// Container for the parameters to the DescribeStorageConfiguration operation.
     /// Retrieves information about the storage configuration for IoT SiteWise.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Exporting data to Amazon S3 is currently in preview release and is subject to change.
-    /// We recommend that you use this feature only with test data, and not in production
-    /// environments.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class DescribeStorageConfigurationRequest : AmazonIoTSiteWiseRequest
     {

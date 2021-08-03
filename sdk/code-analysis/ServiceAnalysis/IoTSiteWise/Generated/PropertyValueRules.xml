@@ -1851,8 +1851,12 @@
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.TumblingWindow.Interval</property>
     <min>2</min>
-    <max>3</max>
-    <pattern>1w|1d|1h|15m|5m|1m</pattern>
+    <max>23</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.TumblingWindow.Offset</property>
+    <min>2</min>
+    <max>25</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.UserIdentity.Id</property>
