@@ -153,8 +153,8 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// The name of the medical transcription job. You can't use the strings "<code>.</code>"
         /// or "<code>..</code>" by themselves as the job name. The name must also be unique within
-        /// an AWS account. If you try to create a medical transcription job with the same name
-        /// as a previous medical transcription job, you get a <code>ConflictException</code>
+        /// an Amazon Web Services account. If you try to create a medical transcription job with
+        /// the same name as a previous medical transcription job, you get a <code>ConflictException</code>
         /// error.
         /// </para>
         /// </summary>
@@ -188,10 +188,10 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// You can specify an AWS Key Management Service (KMS) key to encrypt the output of your
-        /// transcription using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't
-        /// specify a KMS key, Amazon Transcribe Medical uses the default Amazon S3 key for server-side
-        /// encryption of transcripts that are placed in your S3 bucket.
+        /// You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt
+        /// the output of your transcription using the <code>OutputEncryptionKMSKeyId</code> parameter.
+        /// If you don't specify a KMS key, Amazon Transcribe Medical uses the default Amazon
+        /// S3 key for server-side encryption of transcripts that are placed in your S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -210,8 +210,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property OutputEncryptionKMSKeyId. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key used to
-        /// encrypt the output of the transcription job. The user calling the <a>StartMedicalTranscriptionJob</a>
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service (KMS)
+        /// key used to encrypt the output of the transcription job. The user calling the <a>StartMedicalTranscriptionJob</a>
         /// operation must have permission to use the specified KMS key.
         /// </para>
         ///  

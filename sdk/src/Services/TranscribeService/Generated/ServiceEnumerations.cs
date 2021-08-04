@@ -75,6 +75,64 @@ namespace Amazon.TranscribeService
 
 
     /// <summary>
+    /// Constants used for properties of type CallAnalyticsJobStatus.
+    /// </summary>
+    public class CallAnalyticsJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for CallAnalyticsJobStatus
+        /// </summary>
+        public static readonly CallAnalyticsJobStatus COMPLETED = new CallAnalyticsJobStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for CallAnalyticsJobStatus
+        /// </summary>
+        public static readonly CallAnalyticsJobStatus FAILED = new CallAnalyticsJobStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for CallAnalyticsJobStatus
+        /// </summary>
+        public static readonly CallAnalyticsJobStatus IN_PROGRESS = new CallAnalyticsJobStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant QUEUED for CallAnalyticsJobStatus
+        /// </summary>
+        public static readonly CallAnalyticsJobStatus QUEUED = new CallAnalyticsJobStatus("QUEUED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CallAnalyticsJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CallAnalyticsJobStatus FindValue(string value)
+        {
+            return FindValue<CallAnalyticsJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CallAnalyticsJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CLMLanguageCode.
     /// </summary>
     public class CLMLanguageCode : ConstantClass
@@ -543,6 +601,56 @@ namespace Amazon.TranscribeService
 
 
     /// <summary>
+    /// Constants used for properties of type ParticipantRole.
+    /// </summary>
+    public class ParticipantRole : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AGENT for ParticipantRole
+        /// </summary>
+        public static readonly ParticipantRole AGENT = new ParticipantRole("AGENT");
+        /// <summary>
+        /// Constant CUSTOMER for ParticipantRole
+        /// </summary>
+        public static readonly ParticipantRole CUSTOMER = new ParticipantRole("CUSTOMER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ParticipantRole(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParticipantRole FindValue(string value)
+        {
+            return FindValue<ParticipantRole>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParticipantRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RedactionOutput.
     /// </summary>
     public class RedactionOutput : ConstantClass
@@ -639,6 +747,64 @@ namespace Amazon.TranscribeService
 
 
     /// <summary>
+    /// Constants used for properties of type SentimentValue.
+    /// </summary>
+    public class SentimentValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MIXED for SentimentValue
+        /// </summary>
+        public static readonly SentimentValue MIXED = new SentimentValue("MIXED");
+        /// <summary>
+        /// Constant NEGATIVE for SentimentValue
+        /// </summary>
+        public static readonly SentimentValue NEGATIVE = new SentimentValue("NEGATIVE");
+        /// <summary>
+        /// Constant NEUTRAL for SentimentValue
+        /// </summary>
+        public static readonly SentimentValue NEUTRAL = new SentimentValue("NEUTRAL");
+        /// <summary>
+        /// Constant POSITIVE for SentimentValue
+        /// </summary>
+        public static readonly SentimentValue POSITIVE = new SentimentValue("POSITIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SentimentValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SentimentValue FindValue(string value)
+        {
+            return FindValue<SentimentValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SentimentValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Specialty.
     /// </summary>
     public class Specialty : ConstantClass
@@ -678,6 +844,52 @@ namespace Amazon.TranscribeService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Specialty(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TranscriptFilterType.
+    /// </summary>
+    public class TranscriptFilterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXACT for TranscriptFilterType
+        /// </summary>
+        public static readonly TranscriptFilterType EXACT = new TranscriptFilterType("EXACT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TranscriptFilterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TranscriptFilterType FindValue(string value)
+        {
+            return FindValue<TranscriptFilterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TranscriptFilterType(string value)
         {
             return FindValue(value);
         }

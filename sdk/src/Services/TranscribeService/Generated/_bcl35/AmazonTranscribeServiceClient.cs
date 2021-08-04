@@ -237,6 +237,80 @@ namespace Amazon.TranscribeService
         #endregion
 
 
+        #region  CreateCallAnalyticsCategory
+
+        /// <summary>
+        /// Creates an analytics category. Amazon Transcribe applies the conditions specified
+        /// by your analytics categories to your call analytics jobs. For each analytics category,
+        /// you specify one or more rules. For example, you can specify a rule that the customer
+        /// sentiment was neutral or negative within that category. If you start a call analytics
+        /// job, Amazon Transcribe applies the category to the analytics job that you've specified.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCallAnalyticsCategory service method.</param>
+        /// 
+        /// <returns>The response from the CreateCallAnalyticsCategory service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
+        /// There is already a resource with that name.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateCallAnalyticsCategory">REST API Reference for CreateCallAnalyticsCategory Operation</seealso>
+        public virtual CreateCallAnalyticsCategoryResponse CreateCallAnalyticsCategory(CreateCallAnalyticsCategoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCallAnalyticsCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCallAnalyticsCategoryResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCallAnalyticsCategoryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCallAnalyticsCategory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCallAnalyticsCategory operation on AmazonTranscribeServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCallAnalyticsCategory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateCallAnalyticsCategory">REST API Reference for CreateCallAnalyticsCategory Operation</seealso>
+        public virtual IAsyncResult BeginCreateCallAnalyticsCategory(CreateCallAnalyticsCategoryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCallAnalyticsCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCallAnalyticsCategoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCallAnalyticsCategory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCallAnalyticsCategory.</param>
+        /// 
+        /// <returns>Returns a  CreateCallAnalyticsCategoryResult from TranscribeService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateCallAnalyticsCategory">REST API Reference for CreateCallAnalyticsCategory Operation</seealso>
+        public virtual CreateCallAnalyticsCategoryResponse EndCreateCallAnalyticsCategory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateCallAnalyticsCategoryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateLanguageModel
 
         /// <summary>
@@ -518,6 +592,143 @@ namespace Amazon.TranscribeService
         public virtual CreateVocabularyFilterResponse EndCreateVocabularyFilter(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateVocabularyFilterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteCallAnalyticsCategory
+
+        /// <summary>
+        /// Deletes a call analytics category using its name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCallAnalyticsCategory service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCallAnalyticsCategory service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check the name and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteCallAnalyticsCategory">REST API Reference for DeleteCallAnalyticsCategory Operation</seealso>
+        public virtual DeleteCallAnalyticsCategoryResponse DeleteCallAnalyticsCategory(DeleteCallAnalyticsCategoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCallAnalyticsCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCallAnalyticsCategoryResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCallAnalyticsCategoryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCallAnalyticsCategory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCallAnalyticsCategory operation on AmazonTranscribeServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCallAnalyticsCategory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteCallAnalyticsCategory">REST API Reference for DeleteCallAnalyticsCategory Operation</seealso>
+        public virtual IAsyncResult BeginDeleteCallAnalyticsCategory(DeleteCallAnalyticsCategoryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCallAnalyticsCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCallAnalyticsCategoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCallAnalyticsCategory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCallAnalyticsCategory.</param>
+        /// 
+        /// <returns>Returns a  DeleteCallAnalyticsCategoryResult from TranscribeService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteCallAnalyticsCategory">REST API Reference for DeleteCallAnalyticsCategory Operation</seealso>
+        public virtual DeleteCallAnalyticsCategoryResponse EndDeleteCallAnalyticsCategory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteCallAnalyticsCategoryResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteCallAnalyticsJob
+
+        /// <summary>
+        /// Deletes a call analytics job using its name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCallAnalyticsJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCallAnalyticsJob service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteCallAnalyticsJob">REST API Reference for DeleteCallAnalyticsJob Operation</seealso>
+        public virtual DeleteCallAnalyticsJobResponse DeleteCallAnalyticsJob(DeleteCallAnalyticsJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCallAnalyticsJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCallAnalyticsJobResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCallAnalyticsJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCallAnalyticsJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCallAnalyticsJob operation on AmazonTranscribeServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCallAnalyticsJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteCallAnalyticsJob">REST API Reference for DeleteCallAnalyticsJob Operation</seealso>
+        public virtual IAsyncResult BeginDeleteCallAnalyticsJob(DeleteCallAnalyticsJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCallAnalyticsJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCallAnalyticsJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCallAnalyticsJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCallAnalyticsJob.</param>
+        /// 
+        /// <returns>Returns a  DeleteCallAnalyticsJobResult from TranscribeService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteCallAnalyticsJob">REST API Reference for DeleteCallAnalyticsJob Operation</seealso>
+        public virtual DeleteCallAnalyticsJobResponse EndDeleteCallAnalyticsJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteCallAnalyticsJobResponse>(asyncResult);
         }
 
         #endregion
@@ -939,11 +1150,11 @@ namespace Amazon.TranscribeService
 
         /// <summary>
         /// Gets information about a single custom language model. Use this information to see
-        /// details about the language model in your AWS account. You can also see whether the
-        /// base language model used to create your custom language model has been updated. If
-        /// Amazon Transcribe has updated the base model, you can create a new custom language
-        /// model using the updated base model. If the language model wasn't created, you can
-        /// use this operation to understand why Amazon Transcribe couldn't create it.
+        /// details about the language model in your Amazon Web Services account. You can also
+        /// see whether the base language model used to create your custom language model has
+        /// been updated. If Amazon Transcribe has updated the base model, you can create a new
+        /// custom language model using the updated base model. If the language model wasn't created,
+        /// you can use this operation to understand why Amazon Transcribe couldn't create it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLanguageModel service method.</param>
         /// 
@@ -1006,6 +1217,151 @@ namespace Amazon.TranscribeService
         public virtual DescribeLanguageModelResponse EndDescribeLanguageModel(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeLanguageModelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetCallAnalyticsCategory
+
+        /// <summary>
+        /// Retrieves information about a call analytics category.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCallAnalyticsCategory service method.</param>
+        /// 
+        /// <returns>The response from the GetCallAnalyticsCategory service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check the name and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetCallAnalyticsCategory">REST API Reference for GetCallAnalyticsCategory Operation</seealso>
+        public virtual GetCallAnalyticsCategoryResponse GetCallAnalyticsCategory(GetCallAnalyticsCategoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCallAnalyticsCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCallAnalyticsCategoryResponseUnmarshaller.Instance;
+
+            return Invoke<GetCallAnalyticsCategoryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCallAnalyticsCategory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCallAnalyticsCategory operation on AmazonTranscribeServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCallAnalyticsCategory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetCallAnalyticsCategory">REST API Reference for GetCallAnalyticsCategory Operation</seealso>
+        public virtual IAsyncResult BeginGetCallAnalyticsCategory(GetCallAnalyticsCategoryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCallAnalyticsCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCallAnalyticsCategoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCallAnalyticsCategory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCallAnalyticsCategory.</param>
+        /// 
+        /// <returns>Returns a  GetCallAnalyticsCategoryResult from TranscribeService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetCallAnalyticsCategory">REST API Reference for GetCallAnalyticsCategory Operation</seealso>
+        public virtual GetCallAnalyticsCategoryResponse EndGetCallAnalyticsCategory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCallAnalyticsCategoryResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetCallAnalyticsJob
+
+        /// <summary>
+        /// Returns information about a call analytics job. To see the status of the job, check
+        /// the <code>CallAnalyticsJobStatus</code> field. If the status is <code>COMPLETED</code>,
+        /// the job is finished and you can find the results at the location specified in the
+        /// <code>TranscriptFileUri</code> field. If you enable personally identifiable information
+        /// (PII) redaction, the redacted transcript appears in the <code>RedactedTranscriptFileUri</code>
+        /// field.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCallAnalyticsJob service method.</param>
+        /// 
+        /// <returns>The response from the GetCallAnalyticsJob service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check the name and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetCallAnalyticsJob">REST API Reference for GetCallAnalyticsJob Operation</seealso>
+        public virtual GetCallAnalyticsJobResponse GetCallAnalyticsJob(GetCallAnalyticsJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCallAnalyticsJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCallAnalyticsJobResponseUnmarshaller.Instance;
+
+            return Invoke<GetCallAnalyticsJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCallAnalyticsJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCallAnalyticsJob operation on AmazonTranscribeServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCallAnalyticsJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetCallAnalyticsJob">REST API Reference for GetCallAnalyticsJob Operation</seealso>
+        public virtual IAsyncResult BeginGetCallAnalyticsJob(GetCallAnalyticsJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCallAnalyticsJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCallAnalyticsJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCallAnalyticsJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCallAnalyticsJob.</param>
+        /// 
+        /// <returns>Returns a  GetCallAnalyticsJobResult from TranscribeService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetCallAnalyticsJob">REST API Reference for GetCallAnalyticsJob Operation</seealso>
+        public virtual GetCallAnalyticsJobResponse EndGetCallAnalyticsJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCallAnalyticsJobResponse>(asyncResult);
         }
 
         #endregion
@@ -1363,6 +1719,142 @@ namespace Amazon.TranscribeService
         public virtual GetVocabularyFilterResponse EndGetVocabularyFilter(IAsyncResult asyncResult)
         {
             return EndInvoke<GetVocabularyFilterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListCallAnalyticsCategories
+
+        /// <summary>
+        /// Provides more information about the call analytics categories that you've created.
+        /// You can use the information in this list to find a specific category. You can then
+        /// use the operation to get more information about it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCallAnalyticsCategories service method.</param>
+        /// 
+        /// <returns>The response from the ListCallAnalyticsCategories service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListCallAnalyticsCategories">REST API Reference for ListCallAnalyticsCategories Operation</seealso>
+        public virtual ListCallAnalyticsCategoriesResponse ListCallAnalyticsCategories(ListCallAnalyticsCategoriesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCallAnalyticsCategoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCallAnalyticsCategoriesResponseUnmarshaller.Instance;
+
+            return Invoke<ListCallAnalyticsCategoriesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCallAnalyticsCategories operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCallAnalyticsCategories operation on AmazonTranscribeServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCallAnalyticsCategories
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListCallAnalyticsCategories">REST API Reference for ListCallAnalyticsCategories Operation</seealso>
+        public virtual IAsyncResult BeginListCallAnalyticsCategories(ListCallAnalyticsCategoriesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCallAnalyticsCategoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCallAnalyticsCategoriesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCallAnalyticsCategories operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCallAnalyticsCategories.</param>
+        /// 
+        /// <returns>Returns a  ListCallAnalyticsCategoriesResult from TranscribeService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListCallAnalyticsCategories">REST API Reference for ListCallAnalyticsCategories Operation</seealso>
+        public virtual ListCallAnalyticsCategoriesResponse EndListCallAnalyticsCategories(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCallAnalyticsCategoriesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListCallAnalyticsJobs
+
+        /// <summary>
+        /// List call analytics jobs with a specified status or substring that matches their names.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCallAnalyticsJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListCallAnalyticsJobs service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListCallAnalyticsJobs">REST API Reference for ListCallAnalyticsJobs Operation</seealso>
+        public virtual ListCallAnalyticsJobsResponse ListCallAnalyticsJobs(ListCallAnalyticsJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCallAnalyticsJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCallAnalyticsJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCallAnalyticsJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCallAnalyticsJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCallAnalyticsJobs operation on AmazonTranscribeServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCallAnalyticsJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListCallAnalyticsJobs">REST API Reference for ListCallAnalyticsJobs Operation</seealso>
+        public virtual IAsyncResult BeginListCallAnalyticsJobs(ListCallAnalyticsJobsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCallAnalyticsJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCallAnalyticsJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCallAnalyticsJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCallAnalyticsJobs.</param>
+        /// 
+        /// <returns>Returns a  ListCallAnalyticsJobsResult from TranscribeService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListCallAnalyticsJobs">REST API Reference for ListCallAnalyticsJobs Operation</seealso>
+        public virtual ListCallAnalyticsJobsResponse EndListCallAnalyticsJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCallAnalyticsJobsResponse>(asyncResult);
         }
 
         #endregion
@@ -1774,6 +2266,81 @@ namespace Amazon.TranscribeService
 
         #endregion
         
+        #region  StartCallAnalyticsJob
+
+        /// <summary>
+        /// Starts an asynchronous analytics job that not only transcribes the audio recording
+        /// of a caller and agent, but also returns additional insights. These insights include
+        /// how quickly or loudly the caller or agent was speaking. To retrieve additional insights
+        /// with your analytics jobs, create categories. A category is a way to classify analytics
+        /// jobs based on attributes, such as a customer's sentiment or a particular phrase being
+        /// used during the call. For more information, see the operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCallAnalyticsJob service method.</param>
+        /// 
+        /// <returns>The response from the StartCallAnalyticsJob service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
+        /// There is already a resource with that name.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartCallAnalyticsJob">REST API Reference for StartCallAnalyticsJob Operation</seealso>
+        public virtual StartCallAnalyticsJobResponse StartCallAnalyticsJob(StartCallAnalyticsJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartCallAnalyticsJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCallAnalyticsJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartCallAnalyticsJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartCallAnalyticsJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartCallAnalyticsJob operation on AmazonTranscribeServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartCallAnalyticsJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartCallAnalyticsJob">REST API Reference for StartCallAnalyticsJob Operation</seealso>
+        public virtual IAsyncResult BeginStartCallAnalyticsJob(StartCallAnalyticsJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartCallAnalyticsJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCallAnalyticsJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartCallAnalyticsJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartCallAnalyticsJob.</param>
+        /// 
+        /// <returns>Returns a  StartCallAnalyticsJobResult from TranscribeService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartCallAnalyticsJob">REST API Reference for StartCallAnalyticsJob Operation</seealso>
+        public virtual StartCallAnalyticsJobResponse EndStartCallAnalyticsJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartCallAnalyticsJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartMedicalTranscriptionJob
 
         /// <summary>
@@ -1910,6 +2477,81 @@ namespace Amazon.TranscribeService
         public virtual StartTranscriptionJobResponse EndStartTranscriptionJob(IAsyncResult asyncResult)
         {
             return EndInvoke<StartTranscriptionJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateCallAnalyticsCategory
+
+        /// <summary>
+        /// Updates the call analytics category with new values. The <code>UpdateCallAnalyticsCategory</code>
+        /// operation overwrites all of the existing information with the values that you provide
+        /// in the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCallAnalyticsCategory service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCallAnalyticsCategory service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
+        /// There is already a resource with that name.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check the name and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateCallAnalyticsCategory">REST API Reference for UpdateCallAnalyticsCategory Operation</seealso>
+        public virtual UpdateCallAnalyticsCategoryResponse UpdateCallAnalyticsCategory(UpdateCallAnalyticsCategoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCallAnalyticsCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCallAnalyticsCategoryResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCallAnalyticsCategoryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCallAnalyticsCategory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCallAnalyticsCategory operation on AmazonTranscribeServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCallAnalyticsCategory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateCallAnalyticsCategory">REST API Reference for UpdateCallAnalyticsCategory Operation</seealso>
+        public virtual IAsyncResult BeginUpdateCallAnalyticsCategory(UpdateCallAnalyticsCategoryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCallAnalyticsCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCallAnalyticsCategoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateCallAnalyticsCategory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCallAnalyticsCategory.</param>
+        /// 
+        /// <returns>Returns a  UpdateCallAnalyticsCategoryResult from TranscribeService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateCallAnalyticsCategory">REST API Reference for UpdateCallAnalyticsCategory Operation</seealso>
+        public virtual UpdateCallAnalyticsCategoryResponse EndUpdateCallAnalyticsCategory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateCallAnalyticsCategoryResponse>(asyncResult);
         }
 
         #endregion

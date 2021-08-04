@@ -98,8 +98,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyName. 
         /// <para>
-        /// The name of the vocabulary. The name must be unique within an AWS account and is case
-        /// sensitive.
+        /// The name of the vocabulary. The name must be unique within an Amazon Web Services
+        /// account and is case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

@@ -26,6 +26,16 @@ namespace Amazon.TranscribeService.Model
     {
 
         /// <summary>
+        /// Paginator for ListCallAnalyticsCategories operation
+        ///</summary>
+        IListCallAnalyticsCategoriesPaginator ListCallAnalyticsCategories(ListCallAnalyticsCategoriesRequest request);
+
+        /// <summary>
+        /// Paginator for ListCallAnalyticsJobs operation
+        ///</summary>
+        IListCallAnalyticsJobsPaginator ListCallAnalyticsJobs(ListCallAnalyticsJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListLanguageModels operation
         ///</summary>
         IListLanguageModelsPaginator ListLanguageModels(ListLanguageModelsRequest request);

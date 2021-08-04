@@ -87,12 +87,12 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about S3 object names, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+        /// For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
         /// Keys</a> in the <i>Amazon S3 Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For more information about custom vocabularies, see <a href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
+        /// For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
         /// Vocabularies</a>.
         /// </para>
         /// </summary>
@@ -112,9 +112,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyName. 
         /// <para>
-        /// The name of the vocabulary. The name must be unique within an AWS account. The name
-        /// is case sensitive. If you try to create a vocabulary with the same name as a previous
-        /// vocabulary you will receive a <code>ConflictException</code> error.
+        /// The name of the vocabulary. The name must be unique within an Amazon Web Services
+        /// account. The name is case sensitive. If you try to create a vocabulary with the same
+        /// name as a previous vocabulary you will receive a <code>ConflictException</code> error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

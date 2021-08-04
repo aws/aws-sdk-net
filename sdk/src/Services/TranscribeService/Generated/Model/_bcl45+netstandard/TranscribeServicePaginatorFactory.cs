@@ -36,6 +36,22 @@ namespace Amazon.TranscribeService.Model
         }
 
         /// <summary>
+        /// Paginator for ListCallAnalyticsCategories operation
+        ///</summary>
+        public IListCallAnalyticsCategoriesPaginator ListCallAnalyticsCategories(ListCallAnalyticsCategoriesRequest request) 
+        {
+            return new ListCallAnalyticsCategoriesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCallAnalyticsJobs operation
+        ///</summary>
+        public IListCallAnalyticsJobsPaginator ListCallAnalyticsJobs(ListCallAnalyticsJobsRequest request) 
+        {
+            return new ListCallAnalyticsJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListLanguageModels operation
         ///</summary>
         public IListLanguageModelsPaginator ListLanguageModels(ListLanguageModelsRequest request) 

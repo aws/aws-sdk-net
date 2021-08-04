@@ -34,6 +34,7 @@ namespace Amazon.TranscribeService.Model
     public partial class Media
     {
         private string _mediaFileUri;
+        private string _redactedMediaFileUri;
 
         /// <summary>
         /// Gets and sets the property MediaFileUri. 
@@ -47,7 +48,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about S3 object names, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+        /// For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
         /// Keys</a> in the <i>Amazon S3 Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -62,6 +63,26 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetMediaFileUri()
         {
             return this._mediaFileUri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedactedMediaFileUri. 
+        /// <para>
+        ///  The S3 object location for your redacted output media file. This is only supported
+        /// for call analytics jobs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2000)]
+        public string RedactedMediaFileUri
+        {
+            get { return this._redactedMediaFileUri; }
+            set { this._redactedMediaFileUri = value; }
+        }
+
+        // Check to see if RedactedMediaFileUri property is set
+        internal bool IsSetRedactedMediaFileUri()
+        {
+            return this._redactedMediaFileUri != null;
         }
 
     }

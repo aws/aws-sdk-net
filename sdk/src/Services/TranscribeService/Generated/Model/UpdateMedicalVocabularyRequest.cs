@@ -65,8 +65,8 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property VocabularyFileUri. 
         /// <para>
         /// The location in Amazon S3 of the text file that contains the you use for your custom
-        /// vocabulary. The URI must be in the same AWS Region as the resource that you are calling.
-        /// The following is the format for a URI:
+        /// vocabulary. The URI must be in the same Amazon Web Services Region as the resource
+        /// that you are calling. The following is the format for a URI:
         /// </para>
         ///  
         /// <para>
@@ -83,13 +83,13 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about Amazon S3 object names, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+        /// For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
         /// Keys</a> in the <i>Amazon S3 Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information about custom vocabularies in Amazon Transcribe Medical, see <a
-        /// href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Medical
+        /// href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Medical
         /// Custom Vocabularies</a>.
         /// </para>
         /// </summary>

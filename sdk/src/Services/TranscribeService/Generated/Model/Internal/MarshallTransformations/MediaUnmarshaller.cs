@@ -70,6 +70,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     unmarshalledObject.MediaFileUri = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RedactedMediaFileUri", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RedactedMediaFileUri = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

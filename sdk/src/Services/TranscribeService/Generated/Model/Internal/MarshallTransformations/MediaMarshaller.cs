@@ -51,6 +51,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MediaFileUri);
             }
 
+            if(requestObject.IsSetRedactedMediaFileUri())
+            {
+                context.Writer.WritePropertyName("RedactedMediaFileUri");
+                context.Writer.Write(requestObject.RedactedMediaFileUri);
+            }
+
         }
 
         /// <summary>

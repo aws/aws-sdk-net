@@ -232,7 +232,7 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// If you don't specify the sample rate, Amazon Transcribe Medical determines it for
         /// you. If you choose to specify the sample rate, it must match the rate detected by
-        /// Amazon Transcribe Medical. In most cases, you should leave the <code>MediaSampleHertz</code>
+        /// Amazon Transcribe Medical. In most cases, you should leave the <code>MedicalMediaSampleHertz</code>
         /// blank and let Amazon Transcribe Medical determine the sample rate.
         /// </para>
         /// </summary>
@@ -371,8 +371,8 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// The type of speech in the transcription job. <code>CONVERSATION</code> is generally
         /// used for patient-physician dialogues. <code>DICTATION</code> is the setting for physicians
-        /// speaking their notes after seeing a patient. For more information, see <a>how-it-works-med</a>
-        /// 
+        /// speaking their notes after seeing a patient. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/what-is-transcribe-med.html">What
+        /// is Amazon Transcribe Medical?</a>.
         /// </para>
         /// </summary>
         public Type Type

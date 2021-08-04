@@ -252,7 +252,7 @@ namespace Amazon.TranscribeService.Model
         /// with automatic language identification enabled.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2)]
+        [AWSProperty(Min=1)]
         public List<string> LanguageOptions
         {
             get { return this._languageOptions; }
