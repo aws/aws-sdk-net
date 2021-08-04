@@ -79,8 +79,8 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// AWS resources, identified by Amazon Resource Name (ARN), which the event primarily
-        /// concerns. Any number, including zero, may be present.
+        /// Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the
+        /// event primarily concerns. Any number, including zero, may be present.
         /// </para>
         /// </summary>
         public List<string> Resources
@@ -98,7 +98,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The event source that is generating the evntry.
+        /// The event source that is generating the entry.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

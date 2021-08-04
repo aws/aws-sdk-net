@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// The custom parameters to be used when the target is an AWS Batch job.
+    /// The custom parameters to be used when the target is an Batch job.
     /// </summary>
     public partial class BatchParameters
     {
@@ -43,7 +43,7 @@ namespace Amazon.EventBridge.Model
         /// <para>
         /// The array properties for the submitted job, such as the size of the array. The array
         /// size can be between 2 and 10,000. If you specify array properties for a job, it becomes
-        /// an array job. This parameter is used only if the target is an AWS Batch job.
+        /// an array job. This parameter is used only if the target is an Batch job.
         /// </para>
         /// </summary>
         public BatchArrayProperties ArrayProperties
@@ -61,7 +61,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property JobDefinition. 
         /// <para>
-        /// The ARN or name of the job definition to use if the event target is an AWS Batch job.
+        /// The ARN or name of the job definition to use if the event target is an Batch job.
         /// This job definition must already exist.
         /// </para>
         /// </summary>
@@ -81,7 +81,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name to use for this execution of the job, if the target is an AWS Batch job.
+        /// The name to use for this execution of the job, if the target is an Batch job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,10 +100,10 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property RetryStrategy. 
         /// <para>
-        /// The retry strategy to use for failed jobs, if the target is an AWS Batch job. The
-        /// retry strategy is the number of times to retry the failed job execution. Valid values
-        /// are 1–10. When you specify a retry strategy here, it overrides the retry strategy
-        /// defined in the job definition.
+        /// The retry strategy to use for failed jobs, if the target is an Batch job. The retry
+        /// strategy is the number of times to retry the failed job execution. Valid values are
+        /// 1–10. When you specify a retry strategy here, it overrides the retry strategy defined
+        /// in the job definition.
         /// </para>
         /// </summary>
         public BatchRetryStrategy RetryStrategy

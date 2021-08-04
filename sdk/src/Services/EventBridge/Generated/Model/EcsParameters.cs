@@ -138,9 +138,9 @@ namespace Amazon.EventBridge.Model
         /// <para>
         /// Specifies the launch type on which your task is running. The launch type that you
         /// specify here must match one of the launch type (compatibilities) of the target task.
-        /// The <code>FARGATE</code> value is supported only in the Regions where AWS Fargate
-        /// with Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">AWS
-        /// Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// The <code>FARGATE</code> value is supported only in the Regions where Fargate witt
+        /// Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate
+        /// on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public LaunchType LaunchType
@@ -158,8 +158,8 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
-        /// Use this structure if the ECS task uses the <code>awsvpc</code> network mode. This
-        /// structure specifies the VPC subnets and security groups associated with the task,
+        /// Use this structure if the Amazon ECS task uses the <code>awsvpc</code> network mode.
+        /// This structure specifies the VPC subnets and security groups associated with the task,
         /// and whether a public IP address is to be used. This structure is required if <code>LaunchType</code>
         /// is <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate
         /// tasks.
@@ -232,9 +232,8 @@ namespace Amazon.EventBridge.Model
         ///  
         /// <para>
         /// This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>. For
-        /// more information about valid platform versions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-        /// Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
-        /// Guide</i>.
+        /// more information about valid platform versions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+        /// Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string PlatformVersion

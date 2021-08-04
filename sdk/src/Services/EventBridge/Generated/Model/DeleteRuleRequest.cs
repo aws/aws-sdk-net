@@ -34,7 +34,7 @@ namespace Amazon.EventBridge.Model
     /// 
     ///  
     /// <para>
-    /// Before you can delete the rule, you must remove all targets, using <a>RemoveTargets</a>.
+    /// Before you can delete the rule, you must remove all targets, using <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemoveTargets.html">RemoveTargets</a>.
     /// </para>
     ///  
     /// <para>
@@ -49,10 +49,11 @@ namespace Amazon.EventBridge.Model
     /// </para>
     ///  
     /// <para>
-    /// Managed rules are rules created and managed by another AWS service on your behalf.
-    /// These rules are created by those other AWS services to support functionality in those
-    /// services. You can delete these rules using the <code>Force</code> option, but you
-    /// should do so only if you are sure the other service is not still using that rule.
+    /// Managed rules are rules created and managed by another Amazon Web Services service
+    /// on your behalf. These rules are created by those other Amazon Web Services services
+    /// to support functionality in those services. You can delete these rules using the <code>Force</code>
+    /// option, but you should do so only if you are sure the other service is not still using
+    /// that rule.
     /// </para>
     /// </summary>
     public partial class DeleteRuleRequest : AmazonEventBridgeRequest
@@ -84,11 +85,11 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property Force. 
         /// <para>
-        /// If this is a managed rule, created by an AWS service on your behalf, you must specify
-        /// <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored
-        /// for rules that are not managed rules. You can check whether a rule is a managed rule
-        /// by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code>
-        /// field of the response.
+        /// If this is a managed rule, created by an Amazon Web Services service on your behalf,
+        /// you must specify <code>Force</code> as <code>True</code> to delete the rule. This
+        /// parameter is ignored for rules that are not managed rules. You can check whether a
+        /// rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code>
+        /// and checking the <code>ManagedBy</code> field of the response.
         /// </para>
         /// </summary>
         public bool Force

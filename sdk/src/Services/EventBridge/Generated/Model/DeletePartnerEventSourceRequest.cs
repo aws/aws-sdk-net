@@ -31,12 +31,12 @@ namespace Amazon.EventBridge.Model
     /// <summary>
     /// Container for the parameters to the DeletePartnerEventSource operation.
     /// This operation is used by SaaS partners to delete a partner event source. This operation
-    /// is not used by AWS customers.
+    /// is not used by Amazon Web Services customers.
     /// 
     ///  
     /// <para>
     /// When you delete an event source, the status of the corresponding partner event bus
-    /// in the AWS customer account becomes DELETED.
+    /// in the Amazon Web Services customer account becomes DELETED.
     /// </para>
     /// </summary>
     public partial class DeletePartnerEventSourceRequest : AmazonEventBridgeRequest
@@ -47,7 +47,8 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property Account. 
         /// <para>
-        /// The AWS account ID of the AWS customer that the event source was created for.
+        /// The Amazon Web Services account ID of the Amazon Web Services customer that the event
+        /// source was created for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

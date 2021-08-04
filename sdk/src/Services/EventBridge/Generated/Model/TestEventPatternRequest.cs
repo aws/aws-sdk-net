@@ -34,10 +34,10 @@ namespace Amazon.EventBridge.Model
     /// 
     ///  
     /// <para>
-    /// Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs).
-    /// However, EventBridge uses an exact match in event patterns and rules. Be sure to use
-    /// the correct ARN characters when creating event patterns so that they match the ARN
-    /// syntax in the event you want to match.
+    /// Most services in Amazon Web Services treat : or / as the same character in Amazon
+    /// Resource Names (ARNs). However, EventBridge uses an exact match in event patterns
+    /// and rules. Be sure to use the correct ARN characters when creating event patterns
+    /// so that they match the ARN syntax in the event you want to match.
     /// </para>
     /// </summary>
     public partial class TestEventPatternRequest : AmazonEventBridgeRequest
@@ -49,8 +49,8 @@ namespace Amazon.EventBridge.Model
         /// Gets and sets the property Event. 
         /// <para>
         /// The event, in JSON format, to test against the event pattern. The JSON must follow
-        /// the format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">AWS
-        /// Events</a>, and the following fields are mandatory:
+        /// the format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">Amazon
+        /// Web Services Events</a>, and the following fields are mandatory:
         /// </para>
         ///  <ul> <li> 
         /// <para>

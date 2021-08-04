@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// The retry strategy to use for failed jobs, if the target is an AWS Batch job. If you
-    /// specify a retry strategy here, it overrides the retry strategy defined in the job
-    /// definition.
+    /// The retry strategy to use for failed jobs, if the target is an Batch job. If you specify
+    /// a retry strategy here, it overrides the retry strategy defined in the job definition.
     /// </summary>
     public partial class BatchRetryStrategy
     {

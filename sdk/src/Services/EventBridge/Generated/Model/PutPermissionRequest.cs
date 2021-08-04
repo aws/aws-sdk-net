@@ -30,10 +30,10 @@ namespace Amazon.EventBridge.Model
 {
     /// <summary>
     /// Container for the parameters to the PutPermission operation.
-    /// Running <code>PutPermission</code> permits the specified AWS account or AWS organization
-    /// to put events to the specified <i>event bus</i>. Amazon EventBridge (CloudWatch Events)
-    /// rules in your account are triggered by these events arriving to an event bus in your
-    /// account. 
+    /// Running <code>PutPermission</code> permits the specified Amazon Web Services account
+    /// or Amazon Web Services organization to put events to the specified <i>event bus</i>.
+    /// Amazon EventBridge (CloudWatch Events) rules in your account are triggered by these
+    /// events arriving to an event bus in your account. 
     /// 
     ///  
     /// <para>
@@ -42,22 +42,24 @@ namespace Amazon.EventBridge.Model
     /// </para>
     ///  
     /// <para>
-    /// To enable multiple AWS accounts to put events to your event bus, run <code>PutPermission</code>
-    /// once for each of these accounts. Or, if all the accounts are members of the same AWS
-    /// organization, you can run <code>PutPermission</code> once specifying <code>Principal</code>
-    /// as "*" and specifying the AWS organization ID in <code>Condition</code>, to grant
-    /// permissions to all accounts in that organization.
+    /// To enable multiple Amazon Web Services accounts to put events to your event bus, run
+    /// <code>PutPermission</code> once for each of these accounts. Or, if all the accounts
+    /// are members of the same Amazon Web Services organization, you can run <code>PutPermission</code>
+    /// once specifying <code>Principal</code> as "*" and specifying the Amazon Web Services
+    /// organization ID in <code>Condition</code>, to grant permissions to all accounts in
+    /// that organization.
     /// </para>
     ///  
     /// <para>
     /// If you grant permissions using an organization, then accounts in that organization
     /// must specify a <code>RoleArn</code> with proper permissions when they use <code>PutTarget</code>
     /// to add your account's event bus as a target. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending
-    /// and Receiving Events Between AWS Accounts</a> in the <i>Amazon EventBridge User Guide</i>.
+    /// and Receiving Events Between Amazon Web Services Accounts</a> in the <i>Amazon EventBridge
+    /// User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// The permission policy on the default event bus cannot exceed 10 KB in size.
+    /// The permission policy on the event bus cannot exceed 10 KB in size.
     /// </para>
     /// </summary>
     public partial class PutPermissionRequest : AmazonEventBridgeRequest
@@ -72,8 +74,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action that you are enabling the other account to perform. Currently, this must
-        /// be <code>events:PutEvents</code>.
+        /// The action that you are enabling the other account to perform.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -93,15 +94,16 @@ namespace Amazon.EventBridge.Model
         /// Gets and sets the property Condition. 
         /// <para>
         /// This parameter enables you to limit the permission to accounts that fulfill a certain
-        /// condition, such as being a member of a certain AWS organization. For more information
-        /// about AWS Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
-        /// Is AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// condition, such as being a member of a certain Amazon Web Services organization. For
+        /// more information about Amazon Web Services Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
+        /// Is Amazon Web Services Organizations</a> in the <i>Amazon Web Services Organizations
+        /// User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>Condition</code> with an AWS organization ID, and specify "*"
-        /// as the value for <code>Principal</code>, you grant permission to all the accounts
-        /// in the named organization.
+        /// If you specify <code>Condition</code> with an Amazon Web Services organization ID,
+        /// and specify "*" as the value for <code>Principal</code>, you grant permission to all
+        /// the accounts in the named organization.
         /// </para>
         ///  
         /// <para>
@@ -164,8 +166,9 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property Principal. 
         /// <para>
-        /// The 12-digit AWS account ID that you are permitting to put events to your default
-        /// event bus. Specify "*" to permit any account to put events to your default event bus.
+        /// The 12-digit Amazon Web Services account ID that you are permitting to put events
+        /// to your default event bus. Specify "*" to permit any account to put events to your
+        /// default event bus.
         /// </para>
         ///  
         /// <para>
@@ -194,7 +197,7 @@ namespace Amazon.EventBridge.Model
         /// <para>
         /// An identifier string for the external account that you are granting permissions to.
         /// If you later want to revoke the permission for this external account, specify this
-        /// <code>StatementId</code> when you run <a>RemovePermission</a>.
+        /// <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

@@ -146,8 +146,9 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property ManagedBy. 
         /// <para>
-        /// If this is a managed rule, created by an AWS service on your behalf, this field displays
-        /// the principal name of the AWS service that created the rule.
+        /// If this is a managed rule, created by an Amazon Web Services service on your behalf,
+        /// this field displays the principal name of the Amazon Web Services service that created
+        /// the rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

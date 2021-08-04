@@ -31,7 +31,7 @@ namespace Amazon.EventBridge.Model
     /// <summary>
     /// Container for the parameters to the ListPartnerEventSources operation.
     /// An SaaS partner can use this operation to list all the partner event source names
-    /// that they have created. This operation is not used by AWS customers.
+    /// that they have created. This operation is not used by Amazon Web Services customers.
     /// </summary>
     public partial class ListPartnerEventSourcesRequest : AmazonEventBridgeRequest
     {

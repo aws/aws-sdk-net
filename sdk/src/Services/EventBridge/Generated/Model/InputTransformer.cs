@@ -52,7 +52,7 @@ namespace Amazon.EventBridge.Model
         /// </para>
         ///  
         /// <para>
-        /// The keys cannot start with "AWS." 
+        /// The keys cannot start with "Amazon Web Services." 
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]

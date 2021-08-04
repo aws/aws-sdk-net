@@ -30,8 +30,8 @@ namespace Amazon.EventBridge.Model
 {
     /// <summary>
     /// Container for the parameters to the PutPartnerEvents operation.
-    /// This is used by SaaS partners to write events to a customer's partner event bus. AWS
-    /// customers do not use this operation.
+    /// This is used by SaaS partners to write events to a customer's partner event bus. Amazon
+    /// Web Services customers do not use this operation.
     /// </summary>
     public partial class PutPartnerEventsRequest : AmazonEventBridgeRequest
     {
