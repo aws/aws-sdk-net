@@ -45,6 +45,7 @@ namespace Amazon.RDS.Model
         private ActivityStreamStatus _activityStreamStatus;
         private int? _allocatedStorage;
         private List<DBClusterRole> _associatedRoles = new List<DBClusterRole>();
+        private DateTime? _automaticRestartTime;
         private List<string> _availabilityZones = new List<string>();
         private long? _backtrackConsumedChangeRecords;
         private long? _backtrackWindow;
@@ -215,6 +216,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetAssociatedRoles()
         {
             return this._associatedRoles != null && this._associatedRoles.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutomaticRestartTime. 
+        /// <para>
+        /// The time when a stopped DB cluster is restarted automatically.
+        /// </para>
+        /// </summary>
+        public DateTime AutomaticRestartTime
+        {
+            get { return this._automaticRestartTime.GetValueOrDefault(); }
+            set { this._automaticRestartTime = value; }
+        }
+
+        // Check to see if AutomaticRestartTime property is set
+        internal bool IsSetAutomaticRestartTime()
+        {
+            return this._automaticRestartTime.HasValue; 
         }
 
         /// <summary>

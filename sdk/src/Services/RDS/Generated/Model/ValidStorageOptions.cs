@@ -81,7 +81,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageSize. 
         /// <para>
-        /// The valid range of storage in gibibytes. For example, 100 to 16384. 
+        /// The valid range of storage in gibibytes (GiB). For example, 100 to 16384. 
         /// </para>
         /// </summary>
         public List<Range> StorageSize

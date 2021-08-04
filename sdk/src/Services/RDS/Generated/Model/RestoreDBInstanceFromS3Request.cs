@@ -617,8 +617,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MaxAllocatedStorage. 
         /// <para>
-        /// The upper limit to which Amazon RDS can automatically scale the storage of the DB
-        /// instance.
+        /// The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the
+        /// storage of the DB instance.
         /// </para>
         ///  
         /// <para>

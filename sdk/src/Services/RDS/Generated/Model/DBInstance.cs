@@ -46,6 +46,7 @@ namespace Amazon.RDS.Model
         private ActivityStreamStatus _activityStreamStatus;
         private int? _allocatedStorage;
         private List<DBInstanceRole> _associatedRoles = new List<DBInstanceRole>();
+        private DateTime? _automaticRestartTime;
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
         private string _awsBackupRecoveryPointArn;
@@ -206,7 +207,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        /// Specifies the allocated storage size specified in gibibytes.
+        /// Specifies the allocated storage size specified in gibibytes (GiB).
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -238,6 +239,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetAssociatedRoles()
         {
             return this._associatedRoles != null && this._associatedRoles.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutomaticRestartTime. 
+        /// <para>
+        /// The time when a stopped DB instance is restarted automatically.
+        /// </para>
+        /// </summary>
+        public DateTime AutomaticRestartTime
+        {
+            get { return this._automaticRestartTime.GetValueOrDefault(); }
+            set { this._automaticRestartTime = value; }
+        }
+
+        // Check to see if AutomaticRestartTime property is set
+        internal bool IsSetAutomaticRestartTime()
+        {
+            return this._automaticRestartTime.HasValue; 
         }
 
         /// <summary>
@@ -731,6 +750,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Specifies the connection endpoint.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The endpoint might not be shown for instances whose status is <code>creating</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public Endpoint Endpoint
         {
@@ -971,8 +995,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MaxAllocatedStorage. 
         /// <para>
-        /// The upper limit to which Amazon RDS can automatically scale the storage of the DB
-        /// instance.
+        /// The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the
+        /// storage of the DB instance.
         /// </para>
         /// </summary>
         public int MaxAllocatedStorage
