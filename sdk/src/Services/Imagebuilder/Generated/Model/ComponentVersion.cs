@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// The defining characteristics of a specific version of an TOE component.
+    /// The defining characteristics of a specific version of an Amazon Web Services TOE component.
     /// </summary>
     public partial class ComponentVersion
     {

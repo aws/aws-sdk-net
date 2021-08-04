@@ -62,7 +62,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property UserIds. 
         /// <para>
-        /// The account ID.
+        /// The Amazon Web Services account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1536)]

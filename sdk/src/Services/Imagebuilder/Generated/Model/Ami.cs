@@ -119,7 +119,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The Region of the Amazon EC2 AMI.
+        /// The Amazon Web Services Region of the Amazon EC2 AMI.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

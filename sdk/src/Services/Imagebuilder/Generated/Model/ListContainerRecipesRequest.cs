@@ -42,8 +42,25 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Request filters that are used to narrow the list of container images that are returned.
+        /// Use the following filters to streamline results:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>containerType</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>name</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>parentImage</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>platform</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<Filter> Filters

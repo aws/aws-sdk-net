@@ -41,7 +41,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The filters.
+        /// You can filter on <code>name</code> to streamline results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

@@ -41,13 +41,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The filters.
+        /// You can filter on <code>name</code> to streamline results.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>name</code> - The name of this distribution configuration.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<Filter> Filters

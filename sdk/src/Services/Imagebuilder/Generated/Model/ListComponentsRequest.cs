@@ -77,8 +77,33 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The filters.
+        /// Use the following filters to streamline results:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>description</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>name</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>platform</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>supportedOsVersion</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>type</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>version</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<Filter> Filters
