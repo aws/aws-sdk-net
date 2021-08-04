@@ -1,3 +1,20 @@
+### 3.7.88.0 (2021-08-04 18:13 UTC)
+* EventBridge (3.7.3.15)
+	* Documentation updates to add EC2 Image Builder as a target on PutTargets.
+* Imagebuilder (3.7.2.13)
+	* Updated list actions to include a list of valid filters that can be used in the request.
+* RDS (3.7.4.0)
+	* This release adds AutomaticRestartTime to the DescribeDBInstances and DescribeDBClusters operations. AutomaticRestartTime indicates the time when a stopped DB instance or DB cluster is restarted automatically.
+* SSMIncidents (3.7.1.0)
+	* Documentation updates for Incident Manager.
+* TranscribeService (3.7.4.0)
+	* This release adds support for call analytics (batch) within Amazon Transcribe.
+* Core 3.7.1.4
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.87.0 (2021-08-03 18:19 UTC)
 * Glue (3.7.6.0)
 	* Add ConcurrentModificationException to create-table, delete-table, create-database, update-database, delete-database
