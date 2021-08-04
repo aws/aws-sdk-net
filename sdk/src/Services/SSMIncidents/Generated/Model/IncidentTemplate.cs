@@ -82,9 +82,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property NotificationTargets. 
         /// <para>
-        /// The SNS targets that AWS Chatbot uses to notify the chat channel of updates to an
-        /// incident. You can also make updates to the incident through the chat channel using
-        /// the SNS topics. 
+        /// The SNS targets that are notified when updates are made to an incident.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]

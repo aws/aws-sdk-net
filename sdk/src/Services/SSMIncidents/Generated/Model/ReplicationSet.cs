@@ -34,6 +34,7 @@ namespace Amazon.SSMIncidents.Model
     /// </summary>
     public partial class ReplicationSet
     {
+        private string _arn;
         private string _createdBy;
         private DateTime? _createdTime;
         private bool? _deletionProtected;
@@ -41,6 +42,25 @@ namespace Amazon.SSMIncidents.Model
         private DateTime? _lastModifiedTime;
         private Dictionary<string, RegionInfo> _regionMap = new Dictionary<string, RegionInfo>();
         private ReplicationSetStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the replication set.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedBy. 

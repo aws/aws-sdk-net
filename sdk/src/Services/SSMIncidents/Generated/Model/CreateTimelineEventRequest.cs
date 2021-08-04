@@ -65,7 +65,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property EventData. 
         /// <para>
-        /// A short description of the event.
+        /// A valid JSON string. There is no other schema imposed. A short description of the
+        /// event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=6000)]

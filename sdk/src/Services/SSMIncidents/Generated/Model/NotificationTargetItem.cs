@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
-    /// The SNS topic that's used by AWS Chatbot to notify the incidents chat channel.
+    /// The SNS targets that are notified when updates are made to an incident.
     /// </summary>
     public partial class NotificationTargetItem
     {

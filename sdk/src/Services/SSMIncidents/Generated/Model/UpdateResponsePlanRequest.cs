@@ -89,6 +89,10 @@ namespace Amazon.SSMIncidents.Model
         /// <para>
         /// The AWS Chatbot chat channel used for collaboration during an incident.
         /// </para>
+        ///  
+        /// <para>
+        /// Use the empty structure to remove the chat channel from the response plan.
+        /// </para>
         /// </summary>
         public ChatChannel ChatChannel
         {
@@ -225,8 +229,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property IncidentTemplateNotificationTargets. 
         /// <para>
-        /// The SNS targets that AWS Chatbot uses to notify the chat channels and perform actions
-        /// on the incident record.
+        /// The SNS targets that are notified when updates are made to an incident.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
