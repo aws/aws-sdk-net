@@ -30,14 +30,19 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the StartInstanceRefresh operation.
-    /// Starts a new instance refresh operation, which triggers a rolling replacement of previously
-    /// launched instances in the Auto Scaling group with a new group of instances.
+    /// Starts a new instance refresh operation. An instance refresh performs a rolling replacement
+    /// of all or some instances in an Auto Scaling group. Each instance is terminated first
+    /// and then replaced, which temporarily reduces the capacity available within your Auto
+    /// Scaling group.
     /// 
     ///  
     /// <para>
     /// This operation is part of the <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">instance
     /// refresh feature</a> in Amazon EC2 Auto Scaling, which helps you update instances in
-    /// your Auto Scaling group after you make configuration changes.
+    /// your Auto Scaling group. This feature is helpful, for example, when you have a new
+    /// AMI or a new user data script. You just need to create a new launch template that
+    /// specifies the new AMI or user data script. Then start an instance refresh to immediately
+    /// begin the process of updating instances in the group. 
     /// </para>
     ///  
     /// <para>
@@ -51,6 +56,7 @@ namespace Amazon.AutoScaling.Model
     public partial class StartInstanceRefreshRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
+        private DesiredConfiguration _desiredConfiguration;
         private RefreshPreferences _preferences;
         private RefreshStrategy _strategy;
 
@@ -74,21 +80,43 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DesiredConfiguration. 
+        /// <para>
+        /// The desired configuration. For example, the desired configuration can specify a new
+        /// launch template or a new version of the current launch template.
+        /// </para>
+        ///  
+        /// <para>
+        /// Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of
+        /// the Auto Scaling group to reflect the new desired configuration. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you specify a new launch template or a new version of the current launch template
+        /// for your desired configuration, consider enabling the <code>SkipMatching</code> property
+        /// in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances
+        /// that already use the specified launch template and version. This can help you reduce
+        /// the number of replacements that are required to apply updates. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public DesiredConfiguration DesiredConfiguration
+        {
+            get { return this._desiredConfiguration; }
+            set { this._desiredConfiguration = value; }
+        }
+
+        // Check to see if DesiredConfiguration property is set
+        internal bool IsSetDesiredConfiguration()
+        {
+            return this._desiredConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Preferences. 
         /// <para>
-        /// Set of preferences associated with the instance refresh request.
-        /// </para>
-        ///  
-        /// <para>
-        /// If not provided, the default values are used. For <code>MinHealthyPercentage</code>,
-        /// the default value is <code>90</code>. For <code>InstanceWarmup</code>, the default
-        /// is to use the value specified for the health check grace period for the Auto Scaling
-        /// group.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html">RefreshPreferences</a>
-        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+        /// Set of preferences associated with the instance refresh request. If not provided,
+        /// the default values are used.
         /// </para>
         /// </summary>
         public RefreshPreferences Preferences
@@ -110,10 +138,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// A rolling update is an update that is applied to all instances in an Auto Scaling
-        /// group until all instances have been updated. A rolling update can fail due to failed
-        /// health checks or if instances are on standby or are protected from scale in. If the
-        /// rolling update process fails, any instances that were already replaced are not rolled
+        /// A rolling update helps you update your instances gradually. A rolling update can fail
+        /// due to failed health checks or if instances are on standby or are protected from scale
+        /// in. If the rolling update process fails, any instances that are replaced are not rolled
         /// back to their previous configuration. 
         /// </para>
         /// </summary>

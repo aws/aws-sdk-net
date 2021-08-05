@@ -29,18 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes a mixed instances policy for an Auto Scaling group. With mixed instances,
-    /// your Auto Scaling group can provision a combination of On-Demand Instances and Spot
-    /// Instances across multiple instance types. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
+    /// Describes a mixed instances policy. A mixed instances policy contains the instance
+    /// types Amazon EC2 Auto Scaling can launch, and other information Amazon EC2 Auto Scaling
+    /// can use to launch instances to help you optimize your costs. For more information,
+    /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
     /// Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon
     /// EC2 Auto Scaling User Guide</i>.
-    /// 
-    ///  
-    /// <para>
-    /// You can create a mixed instances policy for a new Auto Scaling group, or you can create
-    /// it for an existing group by updating the group to specify <code>MixedInstancesPolicy</code>
-    /// as the top-level property instead of a launch configuration or launch template.
-    /// </para>
     /// </summary>
     public partial class MixedInstancesPolicy
     {
@@ -69,9 +63,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplate. 
         /// <para>
-        /// Specifies the launch template to use and optionally the instance types (overrides)
-        /// that are used to provision EC2 instances to fulfill On-Demand and Spot capacities.
-        /// Required when creating a mixed instances policy.
+        /// Specifies the launch template to use and the instance types (overrides) that are used
+        /// to provision EC2 instances to fulfill On-Demand and Spot capacities. Required when
+        /// creating a mixed instances policy.
         /// </para>
         /// </summary>
         public LaunchTemplate LaunchTemplate

@@ -34,10 +34,12 @@ namespace Amazon.AutoScaling.Model
     public partial class InstanceRefresh
     {
         private string _autoScalingGroupName;
+        private DesiredConfiguration _desiredConfiguration;
         private DateTime? _endTime;
         private string _instanceRefreshId;
         private int? _instancesToUpdate;
         private int? _percentageComplete;
+        private RefreshPreferences _preferences;
         private InstanceRefreshProgressDetails _progressDetails;
         private DateTime? _startTime;
         private InstanceRefreshStatus _status;
@@ -60,6 +62,24 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetAutoScalingGroupName()
         {
             return this._autoScalingGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DesiredConfiguration. 
+        /// <para>
+        /// Describes the specific update you want to deploy.
+        /// </para>
+        /// </summary>
+        public DesiredConfiguration DesiredConfiguration
+        {
+            get { return this._desiredConfiguration; }
+            set { this._desiredConfiguration = value; }
+        }
+
+        // Check to see if DesiredConfiguration property is set
+        internal bool IsSetDesiredConfiguration()
+        {
+            return this._desiredConfiguration != null;
         }
 
         /// <summary>
@@ -138,6 +158,21 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetPercentageComplete()
         {
             return this._percentageComplete.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Preferences.
+        /// </summary>
+        public RefreshPreferences Preferences
+        {
+            get { return this._preferences; }
+            set { this._preferences = value; }
+        }
+
+        // Check to see if Preferences property is set
+        internal bool IsSetPreferences()
+        {
+            return this._preferences != null;
         }
 
         /// <summary>

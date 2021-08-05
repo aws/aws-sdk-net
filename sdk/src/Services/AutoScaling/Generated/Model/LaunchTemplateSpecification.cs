@@ -29,16 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes the Amazon EC2 launch template and the launch template version that can
-    /// be used by an Auto Scaling group to configure Amazon EC2 instances.
-    /// 
-    ///  
-    /// <para>
-    /// The launch template that is specified must be configured for use with an Auto Scaling
-    /// group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating
-    /// a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling
-    /// User Guide</i>.
-    /// </para>
+    /// Describes the launch template and the version of the launch template that Amazon EC2
+    /// Auto Scaling uses to launch Amazon EC2 instances. For more information about launch
+    /// templates, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchTemplates.html">Launch
+    /// templates</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </summary>
     public partial class LaunchTemplateSpecification
     {

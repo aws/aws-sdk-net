@@ -60,6 +60,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.AutoScalingGroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DesiredConfiguration", targetDepth))
+                    {
+                        var unmarshaller = DesiredConfigurationUnmarshaller.Instance;
+                        unmarshalledObject.DesiredConfiguration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("EndTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -82,6 +88,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
                         unmarshalledObject.PercentageComplete = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Preferences", targetDepth))
+                    {
+                        var unmarshaller = RefreshPreferencesUnmarshaller.Instance;
+                        unmarshalledObject.Preferences = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ProgressDetails", targetDepth))

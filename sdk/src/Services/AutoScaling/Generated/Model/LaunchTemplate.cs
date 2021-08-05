@@ -37,10 +37,11 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// When you update the launch template or overrides, existing Amazon EC2 instances continue
-    /// to run. When scale out occurs, Amazon EC2 Auto Scaling launches instances to match
-    /// the new settings. When scale in occurs, Amazon EC2 Auto Scaling terminates instances
-    /// according to the group's termination policies.
+    /// When you update the launch template or overrides in the <a>UpdateAutoScalingGroup</a>
+    /// API call, existing Amazon EC2 instances continue to run. When scale out occurs, Amazon
+    /// EC2 Auto Scaling launches instances to match the new settings. When scale in occurs,
+    /// Amazon EC2 Auto Scaling terminates instances according to the group's termination
+    /// policies.
     /// </para>
     /// </summary>
     public partial class LaunchTemplate

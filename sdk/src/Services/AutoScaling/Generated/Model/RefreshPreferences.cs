@@ -29,13 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes information used to start an instance refresh. 
-    /// 
-    ///  
-    /// <para>
-    /// All properties are optional. However, if you specify a value for <code>CheckpointDelay</code>,
-    /// you must also provide a value for <code>CheckpointPercentages</code>. 
-    /// </para>
+    /// Describes the preferences for an instance refresh.
     /// </summary>
     public partial class RefreshPreferences
     {
@@ -43,6 +37,7 @@ namespace Amazon.AutoScaling.Model
         private List<int> _checkpointPercentages = new List<int>();
         private int? _instanceWarmup;
         private int? _minHealthyPercentage;
+        private bool? _skipMatching;
 
         /// <summary>
         /// Gets and sets the property CheckpointDelay. 
@@ -118,9 +113,15 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property MinHealthyPercentage. 
         /// <para>
         /// The amount of capacity in the Auto Scaling group that must remain healthy during an
-        /// instance refresh to allow the operation to continue, as a percentage of the desired
-        /// capacity of the Auto Scaling group (rounded up to the nearest integer). The default
-        /// is <code>90</code>. 
+        /// instance refresh to allow the operation to continue. The value is expressed as a percentage
+        /// of the desired capacity of the Auto Scaling group (rounded up to the nearest integer).
+        /// The default is <code>90</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Setting the minimum healthy percentage to 100 percent limits the rate of replacement
+        /// to one instance at a time. In contrast, setting it to 0 percent has the effect of
+        /// replacing all instances at the same time. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -134,6 +135,27 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetMinHealthyPercentage()
         {
             return this._minHealthyPercentage.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SkipMatching. 
+        /// <para>
+        /// A boolean value that indicates whether skip matching is enabled. If true, then Amazon
+        /// EC2 Auto Scaling skips replacing instances that match the desired configuration. If
+        /// no desired configuration is specified, then it skips replacing instances that have
+        /// the same configuration that is already set on the group. The default is <code>false</code>.
+        /// </para>
+        /// </summary>
+        public bool SkipMatching
+        {
+            get { return this._skipMatching.GetValueOrDefault(); }
+            set { this._skipMatching = value; }
+        }
+
+        // Check to see if SkipMatching property is set
+        internal bool IsSetSkipMatching()
+        {
+            return this._skipMatching.HasValue; 
         }
 
     }
