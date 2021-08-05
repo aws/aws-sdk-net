@@ -64,6 +64,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("active", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Active = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("declinationResponse", targetDepth))
                 {
                     var unmarshaller = ResponseSpecificationUnmarshaller.Instance;

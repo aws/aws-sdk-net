@@ -45,6 +45,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IntentClosingSetting requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetActive())
+            {
+                context.Writer.WritePropertyName("active");
+                context.Writer.Write(requestObject.Active);
+            }
+
             if(requestObject.IsSetClosingResponse())
             {
                 context.Writer.WritePropertyName("closingResponse");

@@ -33,8 +33,30 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class IntentConfirmationSetting
     {
+        private bool? _active;
         private ResponseSpecification _declinationResponse;
         private PromptSpecification _promptSpecification;
+
+        /// <summary>
+        /// Gets and sets the property Active. 
+        /// <para>
+        /// Specifies whether the intent's confirmation is sent to the user. When this field is
+        /// false, confirmation and declination responses aren't sent and processing continues
+        /// as if the responses aren't present. If the <code>active</code> field isn't specified,
+        /// the default is true.
+        /// </para>
+        /// </summary>
+        public bool Active
+        {
+            get { return this._active.GetValueOrDefault(); }
+            set { this._active = value; }
+        }
+
+        // Check to see if Active property is set
+        internal bool IsSetActive()
+        {
+            return this._active.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DeclinationResponse. 

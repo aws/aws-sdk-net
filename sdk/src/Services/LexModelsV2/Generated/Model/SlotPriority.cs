@@ -42,7 +42,7 @@ namespace Amazon.LexModelsV2.Model
         /// The priority that a slot should be elicited.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=25)]
+        [AWSProperty(Required=true, Min=0, Max=100)]
         public int Priority
         {
             get { return this._priority.GetValueOrDefault(); }

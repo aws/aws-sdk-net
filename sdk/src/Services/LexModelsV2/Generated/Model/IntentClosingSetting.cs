@@ -34,7 +34,28 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class IntentClosingSetting
     {
+        private bool? _active;
         private ResponseSpecification _closingResponse;
+
+        /// <summary>
+        /// Gets and sets the property Active. 
+        /// <para>
+        /// Specifies whether an intent's closing response is used. When this field is false,
+        /// the closing response isn't sent to the user and no closing input from the user is
+        /// used. If the <code>active</code> field isn't specified, the default is true.
+        /// </para>
+        /// </summary>
+        public bool Active
+        {
+            get { return this._active.GetValueOrDefault(); }
+            set { this._active = value; }
+        }
+
+        // Check to see if Active property is set
+        internal bool IsSetActive()
+        {
+            return this._active.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ClosingResponse. 

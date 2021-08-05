@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// Provided the identity of a the bot that was exported.
+    /// Provides the identity of a the bot that was exported.
     /// </summary>
     public partial class BotExportSpecification
     {

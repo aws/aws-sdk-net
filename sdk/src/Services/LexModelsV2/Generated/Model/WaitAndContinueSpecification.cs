@@ -33,9 +33,31 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class WaitAndContinueSpecification
     {
+        private bool? _active;
         private ResponseSpecification _continueResponse;
         private StillWaitingResponseSpecification _stillWaitingResponse;
         private ResponseSpecification _waitingResponse;
+
+        /// <summary>
+        /// Gets and sets the property Active. 
+        /// <para>
+        /// Specifies whether the bot will wait for a user to respond. When this field is false,
+        /// wait and continue responses for a slot aren't used and the bot expects an appropriate
+        /// response within the configured timeout. If the <code>active</code> field isn't specified,
+        /// the default is true.
+        /// </para>
+        /// </summary>
+        public bool Active
+        {
+            get { return this._active.GetValueOrDefault(); }
+            set { this._active = value; }
+        }
+
+        // Check to see if Active property is set
+        internal bool IsSetActive()
+        {
+            return this._active.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ContinueResponse. 
