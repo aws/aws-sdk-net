@@ -1,3 +1,7 @@
+### 3.7.90.0 (2021-08-05 21:31 UTC)
+* Core 3.7.2.0
+	* Add support for Document Types
+
 ### 3.7.89.0 (2021-08-05 18:12 UTC)
 * AutoScaling (3.7.5.0)
 	* EC2 Auto Scaling adds configuration checks and Launch Template validation to Instance Refresh.
