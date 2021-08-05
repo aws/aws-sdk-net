@@ -1,3 +1,9 @@
+### 3.7.89.0 (2021-08-05 18:12 UTC)
+* AutoScaling (3.7.5.0)
+	* EC2 Auto Scaling adds configuration checks and Launch Template validation to Instance Refresh.
+* LexModelsV2 (3.7.5.0)
+	* Customers can now toggle the active field on prompts and responses.
+
 ### 3.7.88.0 (2021-08-04 18:13 UTC)
 * EventBridge (3.7.3.15)
 	* Documentation updates to add EC2 Image Builder as a target on PutTargets.
