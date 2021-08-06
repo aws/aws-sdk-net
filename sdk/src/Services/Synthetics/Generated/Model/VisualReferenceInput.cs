@@ -29,7 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Synthetics.Model
 {
     /// <summary>
+    /// An object that specifies what screenshots to use as a baseline for visual monitoring
+    /// by this canary, and optionally the parts of the screenshots to ignore during the visual
+    /// monitoring comparison.
     /// 
+    ///  
+    /// <para>
+    /// Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b>
+    /// runtime or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html">
+    /// Visual monitoring</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html">
+    /// Visual monitoring blueprint</a> 
+    /// </para>
     /// </summary>
     public partial class VisualReferenceInput
     {
@@ -37,7 +47,15 @@ namespace Amazon.Synthetics.Model
         private List<BaseScreenshot> _baseScreenshots = new List<BaseScreenshot>();
 
         /// <summary>
-        /// Gets and sets the property BaseCanaryRunId.
+        /// Gets and sets the property BaseCanaryRunId. 
+        /// <para>
+        /// Specifies which canary run to use the screenshots from as the baseline for future
+        /// visual monitoring with this canary. Valid values are <code>nextrun</code> to use the
+        /// screenshots from the next run after this update is made, <code>lastrun</code> to use
+        /// the screenshots from the most recent run before this update was made, or the value
+        /// of <code>Id</code> in the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRun.html">
+        /// CanaryRun</a> from any past run of this canary.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
         public string BaseCanaryRunId
@@ -53,7 +71,12 @@ namespace Amazon.Synthetics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BaseScreenshots.
+        /// Gets and sets the property BaseScreenshots. 
+        /// <para>
+        /// An array of screenshots that will be used as the baseline for visual monitoring in
+        /// future runs of this canary. If there is a screenshot that you don't want to be used
+        /// for visual monitoring, remove it from this array.
+        /// </para>
         /// </summary>
         public List<BaseScreenshot> BaseScreenshots
         {

@@ -243,7 +243,19 @@ namespace Amazon.Synthetics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VisualReference.
+        /// Gets and sets the property VisualReference. 
+        /// <para>
+        /// Defines the screenshots to use as the baseline for comparisons during visual monitoring
+        /// comparisons during future runs of this canary. If you omit this parameter, no changes
+        /// are made to any baseline screenshots that the canary might be using already.
+        /// </para>
+        ///  
+        /// <para>
+        /// Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b>
+        /// runtime or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html">
+        /// Visual monitoring</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html">
+        /// Visual monitoring blueprint</a> 
+        /// </para>
         /// </summary>
         public VisualReferenceInput VisualReference
         {

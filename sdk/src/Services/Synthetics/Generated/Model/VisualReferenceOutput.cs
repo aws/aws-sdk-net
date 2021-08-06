@@ -29,7 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Synthetics.Model
 {
     /// <summary>
+    /// If this canary performs visual monitoring by comparing screenshots, this structure
+    /// contains the ID of the canary run that is used as the baseline for screenshots, and
+    /// the coordinates of any parts of those screenshots that are ignored during visual monitoring
+    /// comparison.
     /// 
+    ///  
+    /// <para>
+    /// Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b>
+    /// runtime or later.
+    /// </para>
     /// </summary>
     public partial class VisualReferenceOutput
     {
@@ -37,7 +46,11 @@ namespace Amazon.Synthetics.Model
         private List<BaseScreenshot> _baseScreenshots = new List<BaseScreenshot>();
 
         /// <summary>
-        /// Gets and sets the property BaseCanaryRunId.
+        /// Gets and sets the property BaseCanaryRunId. 
+        /// <para>
+        /// The ID of the canary run that produced the screenshots that are used as the baseline
+        /// for visual monitoring comparisons during future runs of this canary.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
         public string BaseCanaryRunId
@@ -53,7 +66,11 @@ namespace Amazon.Synthetics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BaseScreenshots.
+        /// Gets and sets the property BaseScreenshots. 
+        /// <para>
+        /// An array of screenshots that are used as the baseline for comparisons during visual
+        /// monitoring.
+        /// </para>
         /// </summary>
         public List<BaseScreenshot> BaseScreenshots
         {

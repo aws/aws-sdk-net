@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Synthetics.Model
 {
     /// <summary>
-    /// 
+    /// A structure representing a screenshot that is used as a baseline during visual monitoring
+    /// comparisons made by the canary.
     /// </summary>
     public partial class BaseScreenshot
     {
@@ -37,7 +38,12 @@ namespace Amazon.Synthetics.Model
         private string _screenshotName;
 
         /// <summary>
-        /// Gets and sets the property IgnoreCoordinates.
+        /// Gets and sets the property IgnoreCoordinates. 
+        /// <para>
+        /// Coordinates that define the part of a screen to ignore during screenshot comparisons.
+        /// To obtain the coordinates to use here, use the CloudWatch Logs console to draw the
+        /// boundaries on the screen. For more information, see {LINK}
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
         public List<string> IgnoreCoordinates
@@ -53,7 +59,12 @@ namespace Amazon.Synthetics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScreenshotName.
+        /// Gets and sets the property ScreenshotName. 
+        /// <para>
+        /// The name of the screenshot. This is generated the first time the canary is run after
+        /// the <code>UpdateCanary</code> operation that specified for this canary to perform
+        /// visual monitoring.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
         public string ScreenshotName

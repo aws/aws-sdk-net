@@ -313,7 +313,12 @@ namespace Amazon.Synthetics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VisualReference.
+        /// Gets and sets the property VisualReference. 
+        /// <para>
+        /// If this canary performs visual monitoring by comparing screenshots, this structure
+        /// contains the ID of the canary run to use as the baseline for screenshots, and the
+        /// coordinates of any parts of the screen to ignore during the visual monitoring comparison.
+        /// </para>
         /// </summary>
         public VisualReferenceOutput VisualReference
         {
