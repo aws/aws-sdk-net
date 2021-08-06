@@ -53,6 +53,7 @@ namespace Amazon.Lightsail.Model
     {
         private string _accessKeyId;
         private DateTime? _createdAt;
+        private AccessKeyLastUsed _lastUsed;
         private string _secretAccessKey;
         private StatusType _status;
 
@@ -91,6 +92,31 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastUsed. 
+        /// <para>
+        /// An object that describes the last time the access key was used.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This object does not include data in the response of a <a>CreateBucketAccessKey</a>
+        /// action. If the access key has not been used, the <code>region</code> and <code>serviceName</code>
+        /// values are <code>N/A</code>, and the <code>lastUsedDate</code> value is null.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public AccessKeyLastUsed LastUsed
+        {
+            get { return this._lastUsed; }
+            set { this._lastUsed = value; }
+        }
+
+        // Check to see if LastUsed property is set
+        internal bool IsSetLastUsed()
+        {
+            return this._lastUsed != null;
         }
 
         /// <summary>

@@ -112,8 +112,8 @@ namespace Amazon.Lightsail.Model
         ///  
         /// <para>
         /// For more information about versioning, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning">Enabling
-        /// and suspending bucket object versioning in Amazon Lightsail</a> in the <i>Amazon Lightsail
-        /// Developer Guide</i>.
+        /// and suspending object versioning in a bucket in Amazon Lightsail</a> in the <i>Amazon
+        /// Lightsail Developer Guide</i>.
         /// </para>
         /// </summary>
         public bool EnableObjectVersioning

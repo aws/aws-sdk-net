@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AccessKey Object
+    /// Response Unmarshaller for AccessKeyLastUsed Object
     /// </summary>  
-    public class AccessKeyUnmarshaller : IUnmarshaller<AccessKey, XmlUnmarshallerContext>, IUnmarshaller<AccessKey, JsonUnmarshallerContext>
+    public class AccessKeyLastUsedUnmarshaller : IUnmarshaller<AccessKeyLastUsed, XmlUnmarshallerContext>, IUnmarshaller<AccessKeyLastUsed, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AccessKey IUnmarshaller<AccessKey, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AccessKeyLastUsed IUnmarshaller<AccessKeyLastUsed, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,33 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AccessKey Unmarshall(JsonUnmarshallerContext context)
+        public AccessKeyLastUsed Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AccessKey unmarshalledObject = new AccessKey();
+            AccessKeyLastUsed unmarshalledObject = new AccessKeyLastUsed();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("accessKeyId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccessKeyId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("lastUsedDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastUsedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("lastUsed", targetDepth))
-                {
-                    var unmarshaller = AccessKeyLastUsedUnmarshaller.Instance;
-                    unmarshalledObject.LastUsed = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("secretAccessKey", targetDepth))
+                if (context.TestExpression("region", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SecretAccessKey = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Region = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("serviceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +88,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         }
 
 
-        private static AccessKeyUnmarshaller _instance = new AccessKeyUnmarshaller();        
+        private static AccessKeyLastUsedUnmarshaller _instance = new AccessKeyLastUsedUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AccessKeyUnmarshaller Instance
+        public static AccessKeyLastUsedUnmarshaller Instance
         {
             get
             {
