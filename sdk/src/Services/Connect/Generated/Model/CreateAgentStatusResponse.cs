@@ -29,49 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The start time or end time for an hours of operation.
+    /// This is the response object from the CreateAgentStatus operation.
     /// </summary>
-    public partial class HoursOfOperationTimeSlice
+    public partial class CreateAgentStatusResponse : AmazonWebServiceResponse
     {
-        private int? _hours;
-        private int? _minutes;
+        private string _agentStatusARN;
+        private string _agentStatusId;
 
         /// <summary>
-        /// Gets and sets the property Hours. 
+        /// Gets and sets the property AgentStatusARN. 
         /// <para>
-        /// The hours.
+        /// The Amazon Resource Name (ARN) of the agent status.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=23)]
-        public int Hours
+        public string AgentStatusARN
         {
-            get { return this._hours.GetValueOrDefault(); }
-            set { this._hours = value; }
+            get { return this._agentStatusARN; }
+            set { this._agentStatusARN = value; }
         }
 
-        // Check to see if Hours property is set
-        internal bool IsSetHours()
+        // Check to see if AgentStatusARN property is set
+        internal bool IsSetAgentStatusARN()
         {
-            return this._hours.HasValue; 
+            return this._agentStatusARN != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Minutes. 
+        /// Gets and sets the property AgentStatusId. 
         /// <para>
-        /// The minutes.
+        /// The identifier of the agent status.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=59)]
-        public int Minutes
+        public string AgentStatusId
         {
-            get { return this._minutes.GetValueOrDefault(); }
-            set { this._minutes = value; }
+            get { return this._agentStatusId; }
+            set { this._agentStatusId = value; }
         }
 
-        // Check to see if Minutes property is set
-        internal bool IsSetMinutes()
+        // Check to see if AgentStatusId property is set
+        internal bool IsSetAgentStatusId()
         {
-            return this._minutes.HasValue; 
+            return this._agentStatusId != null;
         }
 
     }

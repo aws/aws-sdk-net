@@ -36,6 +36,11 @@ namespace Amazon.Connect.Model
         IGetMetricDataPaginator GetMetricData(GetMetricDataRequest request);
 
         /// <summary>
+        /// Paginator for ListAgentStatuses operation
+        ///</summary>
+        IListAgentStatusesPaginator ListAgentStatuses(ListAgentStatusesRequest request);
+
+        /// <summary>
         /// Paginator for ListApprovedOrigins operation
         ///</summary>
         IListApprovedOriginsPaginator ListApprovedOrigins(ListApprovedOriginsRequest request);

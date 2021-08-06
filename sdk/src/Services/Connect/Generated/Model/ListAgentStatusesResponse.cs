@@ -29,49 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The start time or end time for an hours of operation.
+    /// This is the response object from the ListAgentStatuses operation.
     /// </summary>
-    public partial class HoursOfOperationTimeSlice
+    public partial class ListAgentStatusesResponse : AmazonWebServiceResponse
     {
-        private int? _hours;
-        private int? _minutes;
+        private List<AgentStatusSummary> _agentStatusSummaryList = new List<AgentStatusSummary>();
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Hours. 
+        /// Gets and sets the property AgentStatusSummaryList. 
         /// <para>
-        /// The hours.
+        /// A summary of agent statuses.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=23)]
-        public int Hours
+        public List<AgentStatusSummary> AgentStatusSummaryList
         {
-            get { return this._hours.GetValueOrDefault(); }
-            set { this._hours = value; }
+            get { return this._agentStatusSummaryList; }
+            set { this._agentStatusSummaryList = value; }
         }
 
-        // Check to see if Hours property is set
-        internal bool IsSetHours()
+        // Check to see if AgentStatusSummaryList property is set
+        internal bool IsSetAgentStatusSummaryList()
         {
-            return this._hours.HasValue; 
+            return this._agentStatusSummaryList != null && this._agentStatusSummaryList.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property Minutes. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The minutes.
+        /// If there are additional results, this is the token for the next set of results.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=59)]
-        public int Minutes
+        public string NextToken
         {
-            get { return this._minutes.GetValueOrDefault(); }
-            set { this._minutes = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Minutes property is set
-        internal bool IsSetMinutes()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._minutes.HasValue; 
+            return this._nextToken != null;
         }
 
     }

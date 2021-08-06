@@ -29,14 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Information about of the hours of operation.
+    /// Container for the parameters to the CreateHoursOfOperation operation.
+    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// 
+    ///  
+    /// <para>
+    /// Creates hours of operation. 
+    /// </para>
     /// </summary>
-    public partial class HoursOfOperation
+    public partial class CreateHoursOfOperationRequest : AmazonConnectRequest
     {
         private List<HoursOfOperationConfig> _config = new List<HoursOfOperationConfig>();
         private string _description;
-        private string _hoursOfOperationArn;
-        private string _hoursOfOperationId;
+        private string _instanceId;
         private string _name;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _timeZone;
@@ -44,10 +49,10 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Config. 
         /// <para>
-        /// Configuration information for the hours of operation.
+        /// Configuration information for the hours of operation: day, start time, and end time.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Required=true, Min=0, Max=100)]
         public List<HoursOfOperationConfig> Config
         {
             get { return this._config; }
@@ -63,7 +68,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description for the hours of operation.
+        /// The description of the hours of operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=250)]
@@ -80,48 +85,32 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HoursOfOperationArn. 
+        /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the hours of operation.
+        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
+        /// ARN of the instance.
         /// </para>
         /// </summary>
-        public string HoursOfOperationArn
+        [AWSProperty(Required=true, Min=1, Max=100)]
+        public string InstanceId
         {
-            get { return this._hoursOfOperationArn; }
-            set { this._hoursOfOperationArn = value; }
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
         }
 
-        // Check to see if HoursOfOperationArn property is set
-        internal bool IsSetHoursOfOperationArn()
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
         {
-            return this._hoursOfOperationArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property HoursOfOperationId. 
-        /// <para>
-        /// The identifier for the hours of operation.
-        /// </para>
-        /// </summary>
-        public string HoursOfOperationId
-        {
-            get { return this._hoursOfOperationId; }
-            set { this._hoursOfOperationId = value; }
-        }
-
-        // Check to see if HoursOfOperationId property is set
-        internal bool IsSetHoursOfOperationId()
-        {
-            return this._hoursOfOperationId != null;
+            return this._instanceId != null;
         }
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name for the hours of operation.
+        /// The name of the hours of operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=127)]
+        [AWSProperty(Required=true, Min=1, Max=127)]
         public string Name
         {
             get { return this._name; }
@@ -156,9 +145,10 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property TimeZone. 
         /// <para>
-        /// The time zone for the hours of operation.
+        /// The time zone of the hours of operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TimeZone
         {
             get { return this._timeZone; }

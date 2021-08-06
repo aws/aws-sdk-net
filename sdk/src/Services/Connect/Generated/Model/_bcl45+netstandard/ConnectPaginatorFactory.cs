@@ -52,6 +52,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListAgentStatuses operation
+        ///</summary>
+        public IListAgentStatusesPaginator ListAgentStatuses(ListAgentStatusesRequest request) 
+        {
+            return new ListAgentStatusesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListApprovedOrigins operation
         ///</summary>
         public IListApprovedOriginsPaginator ListApprovedOrigins(ListApprovedOriginsRequest request) 

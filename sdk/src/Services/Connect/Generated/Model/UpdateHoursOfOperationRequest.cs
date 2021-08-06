@@ -29,22 +29,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Information about of the hours of operation.
+    /// Container for the parameters to the UpdateHoursOfOperation operation.
+    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// 
+    ///  
+    /// <para>
+    /// Updates the hours of operation.
+    /// </para>
     /// </summary>
-    public partial class HoursOfOperation
+    public partial class UpdateHoursOfOperationRequest : AmazonConnectRequest
     {
         private List<HoursOfOperationConfig> _config = new List<HoursOfOperationConfig>();
         private string _description;
-        private string _hoursOfOperationArn;
         private string _hoursOfOperationId;
+        private string _instanceId;
         private string _name;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _timeZone;
 
         /// <summary>
         /// Gets and sets the property Config. 
         /// <para>
-        /// Configuration information for the hours of operation.
+        /// Configuration information of the hours of operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -63,10 +68,10 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description for the hours of operation.
+        /// The description of the hours of operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=250)]
+        [AWSProperty(Min=0, Max=250)]
         public string Description
         {
             get { return this._description; }
@@ -80,29 +85,12 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HoursOfOperationArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) for the hours of operation.
-        /// </para>
-        /// </summary>
-        public string HoursOfOperationArn
-        {
-            get { return this._hoursOfOperationArn; }
-            set { this._hoursOfOperationArn = value; }
-        }
-
-        // Check to see if HoursOfOperationArn property is set
-        internal bool IsSetHoursOfOperationArn()
-        {
-            return this._hoursOfOperationArn != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property HoursOfOperationId. 
         /// <para>
-        /// The identifier for the hours of operation.
+        /// The identifier of the hours of operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string HoursOfOperationId
         {
             get { return this._hoursOfOperationId; }
@@ -116,9 +104,29 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
+        /// ARN of the instance.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
+        public string InstanceId
+        {
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this._instanceId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name for the hours of operation.
+        /// The name of the hours of operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=127)]
@@ -135,28 +143,9 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// One or more tags.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=50)]
-        public Dictionary<string, string> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
-        }
-
-        /// <summary>
         /// Gets and sets the property TimeZone. 
         /// <para>
-        /// The time zone for the hours of operation.
+        /// The time zone of the hours of operation.
         /// </para>
         /// </summary>
         public string TimeZone

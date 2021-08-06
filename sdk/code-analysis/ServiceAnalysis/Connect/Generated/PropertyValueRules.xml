@@ -65,6 +65,26 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.CreateAgentStatusRequest.Description</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateAgentStatusRequest.DisplayOrder</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateAgentStatusRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateAgentStatusRequest.Name</property>
+    <min>1</min>
+    <max>127</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.CreateContactFlowRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -76,6 +96,21 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateContactFlowResponse.ContactFlowId</property>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateHoursOfOperationRequest.Description</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateHoursOfOperationRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateHoursOfOperationRequest.Name</property>
+    <min>1</min>
+    <max>127</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateInstanceRequest.ClientToken</property>
@@ -203,6 +238,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteHoursOfOperationRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.DeleteInstanceRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -244,6 +284,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DeleteUserHierarchyGroupRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DescribeAgentStatusRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
@@ -412,6 +457,16 @@
     <property>Amazon.Connect.Model.GetMetricDataRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListAgentStatusesRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListAgentStatusesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListApprovedOriginsRequest.InstanceId</property>
@@ -783,6 +838,26 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateAgentStatusRequest.Description</property>
+    <min>0</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateAgentStatusRequest.DisplayOrder</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateAgentStatusRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateAgentStatusRequest.Name</property>
+    <min>1</min>
+    <max>127</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.UpdateContactAttributesRequest.InitialContactId</property>
     <min>1</min>
     <max>256</max>
@@ -813,6 +888,21 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateContactFlowNameRequest.Name</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateHoursOfOperationRequest.Description</property>
+    <min>0</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateHoursOfOperationRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateHoursOfOperationRequest.Name</property>
+    <min>1</min>
+    <max>127</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateInstanceAttributeRequest.InstanceId</property>
@@ -959,6 +1049,26 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AgentStatus.Description</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AgentStatus.DisplayOrder</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AgentStatus.Name</property>
+    <min>1</min>
+    <max>127</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AgentStatusSummary.Name</property>
+    <min>1</min>
+    <max>127</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.Attribute.Value</property>
     <min>1</min>
     <max>100</max>
@@ -996,7 +1106,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.HoursOfOperation.Description</property>
-    <min>0</min>
+    <min>1</min>
     <max>250</max>
   </property-value-rule>
   <property-value-rule>

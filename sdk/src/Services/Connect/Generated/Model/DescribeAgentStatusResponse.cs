@@ -29,49 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The start time or end time for an hours of operation.
+    /// This is the response object from the DescribeAgentStatus operation.
     /// </summary>
-    public partial class HoursOfOperationTimeSlice
+    public partial class DescribeAgentStatusResponse : AmazonWebServiceResponse
     {
-        private int? _hours;
-        private int? _minutes;
+        private AgentStatus _agentStatus;
 
         /// <summary>
-        /// Gets and sets the property Hours. 
+        /// Gets and sets the property AgentStatus. 
         /// <para>
-        /// The hours.
+        /// The agent status.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=23)]
-        public int Hours
+        public AgentStatus AgentStatus
         {
-            get { return this._hours.GetValueOrDefault(); }
-            set { this._hours = value; }
+            get { return this._agentStatus; }
+            set { this._agentStatus = value; }
         }
 
-        // Check to see if Hours property is set
-        internal bool IsSetHours()
+        // Check to see if AgentStatus property is set
+        internal bool IsSetAgentStatus()
         {
-            return this._hours.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Minutes. 
-        /// <para>
-        /// The minutes.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=59)]
-        public int Minutes
-        {
-            get { return this._minutes.GetValueOrDefault(); }
-            set { this._minutes = value; }
-        }
-
-        // Check to see if Minutes property is set
-        internal bool IsSetMinutes()
-        {
-            return this._minutes.HasValue; 
+            return this._agentStatus != null;
         }
 
     }

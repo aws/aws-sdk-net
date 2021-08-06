@@ -29,49 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The start time or end time for an hours of operation.
+    /// This is the response object from the CreateHoursOfOperation operation.
     /// </summary>
-    public partial class HoursOfOperationTimeSlice
+    public partial class CreateHoursOfOperationResponse : AmazonWebServiceResponse
     {
-        private int? _hours;
-        private int? _minutes;
+        private string _hoursOfOperationArn;
+        private string _hoursOfOperationId;
 
         /// <summary>
-        /// Gets and sets the property Hours. 
+        /// Gets and sets the property HoursOfOperationArn. 
         /// <para>
-        /// The hours.
+        /// The Amazon Resource Name (ARN) for the hours of operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=23)]
-        public int Hours
+        public string HoursOfOperationArn
         {
-            get { return this._hours.GetValueOrDefault(); }
-            set { this._hours = value; }
+            get { return this._hoursOfOperationArn; }
+            set { this._hoursOfOperationArn = value; }
         }
 
-        // Check to see if Hours property is set
-        internal bool IsSetHours()
+        // Check to see if HoursOfOperationArn property is set
+        internal bool IsSetHoursOfOperationArn()
         {
-            return this._hours.HasValue; 
+            return this._hoursOfOperationArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Minutes. 
+        /// Gets and sets the property HoursOfOperationId. 
         /// <para>
-        /// The minutes.
+        /// The identifier for the hours of operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=59)]
-        public int Minutes
+        public string HoursOfOperationId
         {
-            get { return this._minutes.GetValueOrDefault(); }
-            set { this._minutes = value; }
+            get { return this._hoursOfOperationId; }
+            set { this._hoursOfOperationId = value; }
         }
 
-        // Check to see if Minutes property is set
-        internal bool IsSetMinutes()
+        // Check to see if HoursOfOperationId property is set
+        internal bool IsSetHoursOfOperationId()
         {
-            return this._minutes.HasValue; 
+            return this._hoursOfOperationId != null;
         }
 
     }

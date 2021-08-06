@@ -43,6 +43,7 @@ namespace Amazon.Connect.Model
         /// The day that the hours of operation applies to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HoursOfOperationDays Day
         {
             get { return this._day; }
@@ -61,6 +62,7 @@ namespace Amazon.Connect.Model
         /// The end time that your contact center is closes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HoursOfOperationTimeSlice EndTime
         {
             get { return this._endTime; }
@@ -79,6 +81,7 @@ namespace Amazon.Connect.Model
         /// The start time that your contact center is open.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HoursOfOperationTimeSlice StartTime
         {
             get { return this._startTime; }
