@@ -32,7 +32,7 @@ namespace Amazon.AppStream
     public partial class AmazonAppStreamConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.39");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.40");
 
         private string _userAgent = UserAgentString;
 

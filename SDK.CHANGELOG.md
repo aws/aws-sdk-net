@@ -1,3 +1,22 @@
+### 3.7.91.0 (2021-08-06 18:18 UTC)
+* Athena (3.7.0.49)
+	* Documentation updates for Athena.
+* ChimeSDKIdentity (3.7.0.0)
+	* The Amazon Chime SDK Identity APIs allow software developers to create and manage unique instances of their messaging applications.
+* ChimeSDKMessaging (3.7.0.0)
+	* The Amazon Chime SDK Messaging APIs allow software developers to send and receive messages in custom messaging applications.
+* Connect (3.7.4.0)
+	* This release adds support for agent status and hours of operation. For details, see the Release Notes in the Amazon Connect Administrator Guide.
+* Lightsail (3.7.3.0)
+	* This release adds support to track when a bucket access key was last used.
+* Synthetics (3.7.1.5)
+	* Documentation updates for Visual Monitoring feature and other doc ticket fixes.
+* Core 3.7.2.1
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.90.0 (2021-08-05 21:31 UTC)
 * Core 3.7.2.0
 	* Add support for Document Types
