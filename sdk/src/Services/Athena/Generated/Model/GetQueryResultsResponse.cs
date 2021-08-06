@@ -79,7 +79,8 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property UpdateCount. 
         /// <para>
-        /// The number of rows inserted with a CREATE TABLE AS SELECT statement. 
+        /// The number of rows inserted with a <code>CREATE TABLE AS SELECT</code> statement.
+        /// 
         /// </para>
         /// </summary>
         public long UpdateCount

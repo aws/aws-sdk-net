@@ -30,7 +30,7 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDataCatalogs operation.
-    /// Lists the data catalogs in the current AWS account.
+    /// Lists the data catalogs in the current Amazon Web Services account.
     /// </summary>
     public partial class ListDataCatalogsRequest : AmazonAthenaRequest
     {

@@ -144,7 +144,7 @@ namespace Amazon.Athena.Model
         /// <code>DML</code> indicates DML (Data Manipulation Language) query statements, such
         /// as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements
         /// other than DDL and DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE
-        /// &lt;table&gt;</code>.
+        /// TABLE</code>.
         /// </para>
         /// </summary>
         public StatementType StatementType

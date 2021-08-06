@@ -35,7 +35,7 @@ namespace Amazon.Athena.Model
     /// 
     ///  
     /// <para>
-    /// For code samples using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
+    /// For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
     /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
     /// </para>
     /// </summary>
@@ -58,9 +58,10 @@ namespace Amazon.Athena.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// This token is listed as not required because AWS SDKs (for example the AWS SDK for
-        /// Java) auto-generate the token for users. If you are not using the AWS SDK or the AWS
-        /// CLI, you must provide this token or the action will fail.
+        /// This token is listed as not required because Amazon Web Services SDKs (for example
+        /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
+        /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
+        /// this token or the action will fail.
         /// </para>
         ///  </important>
         /// </summary>

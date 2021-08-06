@@ -48,7 +48,7 @@ namespace Amazon.Athena
     /// </para>
     ///  
     /// <para>
-    /// For code samples using the AWS SDK for Java, see <a href="https://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
+    /// For code samples using the Amazon Web Services SDK for Java, see <a href="https://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
     /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
     /// </para>
     /// </summary>
@@ -172,7 +172,7 @@ namespace Amazon.Athena
 
         /// <summary>
         /// Creates (registers) a data catalog with the specified name and properties. Catalogs
-        /// created are visible to all users of the same AWS account.
+        /// created are visible to all users of the same Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataCatalog service method.</param>
         /// 
@@ -191,7 +191,7 @@ namespace Amazon.Athena
 
         /// <summary>
         /// Creates (registers) a data catalog with the specified name and properties. Catalogs
-        /// created are visible to all users of the same AWS account.
+        /// created are visible to all users of the same Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataCatalog service method.</param>
         /// <param name="cancellationToken">
@@ -220,7 +220,7 @@ namespace Amazon.Athena
         /// 
         ///  
         /// <para>
-        /// For code samples using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
+        /// For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
         /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
         /// </para>
         /// </summary>
@@ -245,7 +245,7 @@ namespace Amazon.Athena
         /// 
         ///  
         /// <para>
-        /// For code samples using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
+        /// For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
         /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
         /// </para>
         /// </summary>
@@ -402,7 +402,7 @@ namespace Amazon.Athena
         /// 
         ///  
         /// <para>
-        /// For code samples using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
+        /// For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
         /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
         /// </para>
         /// </summary>
@@ -427,7 +427,7 @@ namespace Amazon.Athena
         /// 
         ///  
         /// <para>
-        /// For code samples using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
+        /// For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
         /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
         /// </para>
         /// </summary>
@@ -1015,7 +1015,7 @@ namespace Amazon.Athena
 
 
         /// <summary>
-        /// Lists the data catalogs in the current AWS account.
+        /// Lists the data catalogs in the current Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataCatalogs service method.</param>
         /// 
@@ -1033,7 +1033,7 @@ namespace Amazon.Athena
 
 
         /// <summary>
-        /// Lists the data catalogs in the current AWS account.
+        /// Lists the data catalogs in the current Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataCatalogs service method.</param>
         /// <param name="cancellationToken">
@@ -1107,7 +1107,7 @@ namespace Amazon.Athena
         /// 
         ///  
         /// <para>
-        /// For code samples using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
+        /// For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
         /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
         /// </para>
         /// </summary>
@@ -1133,7 +1133,7 @@ namespace Amazon.Athena
         /// 
         ///  
         /// <para>
-        /// For code samples using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
+        /// For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
         /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
         /// </para>
         /// </summary>
@@ -1208,7 +1208,7 @@ namespace Amazon.Athena
         /// 
         ///  
         /// <para>
-        /// For code samples using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
+        /// For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
         /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
         /// </para>
         /// </summary>
@@ -1235,7 +1235,7 @@ namespace Amazon.Athena
         /// 
         ///  
         /// <para>
-        /// For code samples using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
+        /// For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
         /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
         /// </para>
         /// </summary>
@@ -1410,7 +1410,7 @@ namespace Amazon.Athena
         /// Runs the SQL query statements contained in the <code>Query</code>. Requires you to
         /// have access to the workgroup in which the query ran. Running queries against an external
         /// catalog requires <a>GetDataCatalog</a> permission to the catalog. For code samples
-        /// using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
+        /// using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
         /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartQueryExecution service method.</param>
@@ -1435,7 +1435,7 @@ namespace Amazon.Athena
         /// Runs the SQL query statements contained in the <code>Query</code>. Requires you to
         /// have access to the workgroup in which the query ran. Running queries against an external
         /// catalog requires <a>GetDataCatalog</a> permission to the catalog. For code samples
-        /// using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
+        /// using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
         /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartQueryExecution service method.</param>
@@ -1468,7 +1468,7 @@ namespace Amazon.Athena
         /// 
         ///  
         /// <para>
-        /// For code samples using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
+        /// For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
         /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
         /// </para>
         /// </summary>
@@ -1493,7 +1493,7 @@ namespace Amazon.Athena
         /// 
         ///  
         /// <para>
-        /// For code samples using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
+        /// For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
         /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
         /// </para>
         /// </summary>

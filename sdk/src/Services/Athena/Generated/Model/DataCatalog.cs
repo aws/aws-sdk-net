@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Athena.Model
 {
     /// <summary>
-    /// Contains information about a data catalog in an AWS account.
+    /// Contains information about a data catalog in an Amazon Web Services account.
     /// </summary>
     public partial class DataCatalog
     {
@@ -60,8 +60,9 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the data catalog. The catalog name must be unique for the AWS account
-        /// and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
+        /// The name of the data catalog. The catalog name must be unique for the Amazon Web Services
+        /// account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen
+        /// characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -118,6 +119,26 @@ namespace Amazon.Athena.Model
         /// <para>
         ///  <code>function=<i>lambda_arn</i> </code> 
         /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// The <code>GLUE</code> type takes a catalog ID parameter and is required. The <code>
+        /// <i>catalog_id</i> </code> is the account ID of the Amazon Web Services account to
+        /// which the Glue catalog belongs.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>catalog-id=<i>catalog_id</i> </code> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code>
+        /// that already exists in your account, of which you can have only one and cannot modify.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code>
+        /// must be run on Athena engine version 2.
+        /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
         public Dictionary<string, string> Parameters
@@ -135,9 +156,8 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of data catalog: <code>LAMBDA</code> for a federated catalog or <code>HIVE</code>
-        /// for an external hive metastore. <code>GLUE</code> refers to the <code>AwsDataCatalog</code>
-        /// that already exists in your account, of which you can have only one.
+        /// The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code>
+        /// for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

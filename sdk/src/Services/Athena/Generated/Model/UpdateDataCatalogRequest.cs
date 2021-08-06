@@ -61,9 +61,9 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the data catalog to update. The catalog name must be unique for the AWS
-        /// account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen
-        /// characters.
+        /// The name of the data catalog to update. The catalog name must be unique for the Amazon
+        /// Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign,
+        /// or hyphen characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -138,15 +138,9 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated
-        /// catalog or <code>HIVE</code> for an external hive metastore.
+        /// catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for
+        /// an Glue Data Catalog.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code>
-        /// that already exists in your account, of which you can have only one. Specifying the
-        /// <code>GLUE</code> type will result in an <code>INVALID_INPUT</code> error.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public DataCatalogType Type

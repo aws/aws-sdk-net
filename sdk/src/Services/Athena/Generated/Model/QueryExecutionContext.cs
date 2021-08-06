@@ -58,7 +58,8 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property Database. 
         /// <para>
-        /// The name of the database used in the query execution.
+        /// The name of the database used in the query execution. The database must exist in the
+        /// catalog.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

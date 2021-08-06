@@ -34,7 +34,8 @@ namespace Amazon.Athena.Model
     /// the Amazon CloudWatch Metrics are enabled for the workgroup and whether workgroup
     /// settings override query settings, and the data usage limits for the amount of data
     /// scanned per query or per workgroup. The workgroup settings override is specified in
-    /// EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
+    /// <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>.
+    /// See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
     /// </summary>
     public partial class WorkGroupConfiguration
     {
