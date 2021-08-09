@@ -119,7 +119,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The Region with the S3 bucket targeted by the resource data sync.
+        /// The Amazon Web Services Region with the S3 bucket targeted by the resource data sync.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

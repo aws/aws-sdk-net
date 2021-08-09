@@ -759,7 +759,7 @@ namespace Amazon.SimpleSystemsManagement
         /// then the association might instruct State Manager to start the service.
         /// </summary>
         /// <param name="instanceId">The instance ID. <note>  <code>InstanceId</code> has been deprecated. To specify an instance ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter. </note></param>
-        /// <param name="name">The name of the SSM Command document or Automation runbook that contains the configuration information for the instance. You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another account. For Systems Manager documents (SSM documents) that are shared with you from other accounts, you must specify the complete SSM document ARN, in the following format:  <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>  For example:  <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>  For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</param>
+        /// <param name="name">The name of the SSM Command document or Automation runbook that contains the configuration information for the instance. You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another account. For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you must specify the complete SSM document ARN, in the following format:  <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>  For example:  <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>  For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1382,8 +1382,9 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// You can configure Systems Manager Inventory to use the <code>SyncToDestination</code>
-        /// type to synchronize Inventory data from multiple Regions to a single Amazon Simple
-        /// Storage Service (Amazon S3) bucket. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
+        /// type to synchronize Inventory data from multiple Amazon Web Services Regions to a
+        /// single Amazon Simple Storage Service (Amazon S3) bucket. For more information, see
+        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
         /// resource data sync for Inventory</a> in the <i>Amazon Web Services Systems Manager
         /// User Guide</i>.
         /// </para>
@@ -1391,9 +1392,10 @@ namespace Amazon.SimpleSystemsManagement
         /// <para>
         /// You can configure Systems Manager Explorer to use the <code>SyncFromSource</code>
         /// type to synchronize operational work items (OpsItems) and operational data (OpsData)
-        /// from multiple Regions to a single Amazon S3 bucket. This type can synchronize OpsItems
-        /// and OpsData from multiple accounts and Regions or <code>EntireOrganization</code>
-        /// by using Organizations. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting
+        /// from multiple Amazon Web Services Regions to a single Amazon S3 bucket. This type
+        /// can synchronize OpsItems and OpsData from multiple Amazon Web Services accounts and
+        /// Amazon Web Services Regions or <code>EntireOrganization</code> by using Organizations.
+        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting
         /// up Systems Manager Explorer to display data from multiple accounts and Regions</a>
         /// in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
@@ -1506,7 +1508,8 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Disassociates the specified Amazon Web Services Systems Manager document (SSM document)
-        /// from the specified instance.
+        /// from the specified instance. If you created the association by using the <code>Targets</code>
+        /// parameter, then you must delete the association by using the association ID.
         /// 
         ///  
         /// <para>
@@ -1516,7 +1519,7 @@ namespace Amazon.SimpleSystemsManagement
         /// it with the instance.
         /// </para>
         /// </summary>
-        /// <param name="instanceId">The ID of the instance.</param>
+        /// <param name="instanceId">The instance ID. <note>  <code>InstanceId</code> has been deprecated. To specify an instance ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter. </note></param>
         /// <param name="name">The name of the SSM document.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1572,7 +1575,8 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Disassociates the specified Amazon Web Services Systems Manager document (SSM document)
-        /// from the specified instance.
+        /// from the specified instance. If you created the association by using the <code>Targets</code>
+        /// parameter, then you must delete the association by using the association ID.
         /// 
         ///  
         /// <para>
@@ -1874,7 +1878,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Delete a parameter from the system.
+        /// Delete a parameter from the system. After deleting a parameter, wait for at least
+        /// 30 seconds to create a parameter with the same name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteParameter service method.</param>
         /// <param name="cancellationToken">
@@ -1914,7 +1919,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Delete a list of parameters.
+        /// Delete a list of parameters. After deleting a parameter, wait for at least 30 seconds
+        /// to create a parameter with the same name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteParameters service method.</param>
         /// <param name="cancellationToken">
@@ -2287,10 +2293,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Describes the association for the specified target or instance. If you created the
         /// association by using the <code>Targets</code> parameter, then you must retrieve the
-        /// association by using the association ID. If you created the association by specifying
-        /// an instance ID and an Amazon Web Services Systems Manager document (SSM document),
-        /// then you retrieve the association by specifying the document name and the instance
-        /// ID.
+        /// association by using the association ID.
         /// </summary>
         /// <param name="instanceId">The instance ID.</param>
         /// <param name="name">The name of the SSM document.</param>
@@ -2351,10 +2354,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Describes the association for the specified target or instance. If you created the
         /// association by using the <code>Targets</code> parameter, then you must retrieve the
-        /// association by using the association ID. If you created the association by specifying
-        /// an instance ID and an Amazon Web Services Systems Manager document (SSM document),
-        /// then you retrieve the association by specifying the document name and the instance
-        /// ID.
+        /// association by using the association ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -2720,8 +2720,8 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Describes the permissions for a Amazon Web Services Systems Manager document (SSM
         /// document). If you created the document, you are the owner. If a document is shared,
-        /// it can either be shared privately (by specifying a user's account ID) or publicly
-        /// (<i>All</i>).
+        /// it can either be shared privately (by specifying a user's Amazon Web Services account
+        /// ID) or publicly (<i>All</i>).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDocumentPermission service method.</param>
         /// <param name="cancellationToken">
@@ -3446,7 +3446,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Retrieves the maintenance windows in an account.
+        /// Retrieves the maintenance windows in an Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindows service method.</param>
         /// <param name="cancellationToken">
@@ -3782,7 +3782,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Lists the patch baselines in your account.
+        /// Lists the patch baselines in your Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePatchBaselines service method.</param>
         /// <param name="cancellationToken">
@@ -4359,12 +4359,12 @@ namespace Amazon.SimpleSystemsManagement
         ///  <note> 
         /// <para>
         /// If you run the command locally, such as with the Command Line Interface (CLI), the
-        /// system attempts to use your local AWS credentials and the operation fails. To avoid
-        /// this, you can run the command in the Amazon Web Services Systems Manager console.
-        /// Use Run Command, a capability of Amazon Web Services Systems Manager, with an SSM
-        /// document that enables you to target an instance with a script or command. For example,
-        /// run the command using the <code>AWS-RunShellScript</code> document or the <code>AWS-RunPowerShellScript</code>
-        /// document.
+        /// system attempts to use your local Amazon Web Services credentials and the operation
+        /// fails. To avoid this, you can run the command in the Amazon Web Services Systems Manager
+        /// console. Use Run Command, a capability of Amazon Web Services Systems Manager, with
+        /// an SSM document that enables you to target an instance with a script or command. For
+        /// example, run the command using the <code>AWS-RunShellScript</code> document or the
+        /// <code>AWS-RunPowerShellScript</code> document.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4487,7 +4487,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Query inventory information.
+        /// Query inventory information. This includes instance status, such as <code>Stopped</code>
+        /// or <code>Terminated</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInventory service method.</param>
         /// <param name="cancellationToken">
@@ -4987,8 +4988,14 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Get information about a parameter by using the parameter name. Don't confuse this
-        /// API operation with the <a>GetParameters</a> API operation.
+        /// Get information about a single parameter by specifying the parameter name.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To get information about more than one parameter at a time, use the <a>GetParameters</a>
+        /// operation.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParameter service method.</param>
         /// <param name="cancellationToken">
@@ -5081,8 +5088,14 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Get details of a parameter. Don't confuse this API operation with the <a>GetParameter</a>
-        /// API operation.
+        /// Get information about one or more parameters by specifying multiple parameter names.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To get information about a single parameter, you can use the <a>GetParameter</a> operation
+        /// instead.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParameters service method.</param>
         /// <param name="cancellationToken">
@@ -5294,7 +5307,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// Query the current service setting for the account. 
+        /// Query the current service setting for the Amazon Web Services account. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceSetting service method.</param>
@@ -5434,10 +5447,10 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Returns all State Manager associations in the current account and Region. You can
-        /// limit the results to a specific State Manager association document or instance by
-        /// specifying a filter. State Manager is a capability of Amazon Web Services Systems
-        /// Manager.
+        /// Returns all State Manager associations in the current Amazon Web Services account
+        /// and Amazon Web Services Region. You can limit the results to a specific State Manager
+        /// association document or instance by specifying a filter. State Manager is a capability
+        /// of Amazon Web Services Systems Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -5714,7 +5727,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Lists the commands requested by users of the account.
+        /// Lists the commands requested by users of the Amazon Web Services account.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -5765,7 +5778,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Lists the commands requested by users of the account.
+        /// Lists the commands requested by users of the Amazon Web Services account.
         /// </summary>
         /// <param name="commandId">(Optional) If provided, lists only the specified command.</param>
         /// <param name="cancellationToken">
@@ -5820,7 +5833,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Lists the commands requested by users of the account.
+        /// Lists the commands requested by users of the Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCommands service method.</param>
         /// <param name="cancellationToken">
@@ -5987,7 +6000,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Information about approval reviews for a version of an SSM document.
+        /// Information about approval reviews for a version of a change template in Change Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDocumentMetadataHistory service method.</param>
         /// <param name="cancellationToken">
@@ -6036,8 +6049,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Returns all Systems Manager (SSM) documents in the current account and Region. You
-        /// can limit the results of this request by using a filter.
+        /// Returns all Systems Manager (SSM) documents in the current Amazon Web Services account
+        /// and Amazon Web Services Region. You can limit the results of this request by using
+        /// a filter.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -6062,8 +6076,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Returns all Systems Manager (SSM) documents in the current account and Region. You
-        /// can limit the results of this request by using a filter.
+        /// Returns all Systems Manager (SSM) documents in the current Amazon Web Services account
+        /// and Amazon Web Services Region. You can limit the results of this request by using
+        /// a filter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDocuments service method.</param>
         /// <param name="cancellationToken">
@@ -6219,8 +6234,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Returns a list of all OpsItem events in the current Region and account. You can limit
-        /// the results to events associated with specific OpsItems by specifying a filter.
+        /// Returns a list of all OpsItem events in the current Amazon Web Services Region and
+        /// Amazon Web Services account. You can limit the results to events associated with specific
+        /// OpsItems by specifying a filter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOpsItemEvents service method.</param>
         /// <param name="cancellationToken">
@@ -6825,8 +6841,8 @@ namespace Amazon.SimpleSystemsManagement
         /// The parameter already exists. You can't create duplicate parameters.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterLimitExceededException">
-        /// You have exceeded the number of parameters for this account. Delete one or more parameters
-        /// and try again.
+        /// You have exceeded the number of parameters for this Amazon Web Services account. Delete
+        /// one or more parameters and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterMaxVersionLimitExceededException">
         /// Parameter Store retains the 100 most recently created versions of a parameter. After
@@ -8001,6 +8017,14 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Updates the status of the Amazon Web Services Systems Manager document (SSM document)
         /// associated with the specified instance.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>UpdateAssociationStatus</code> is primarily used by the Amazon Web Services
+        /// Systems Manager Agent (SSM Agent) to report status updates about your associations
+        /// and is only used for associations created with the <code>InstanceId</code> legacy
+        /// parameter.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssociationStatus service method.</param>
         /// <param name="cancellationToken">
@@ -8186,7 +8210,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Updates information related to approval reviews for a specific version of a document.
+        /// Updates information related to approval reviews for a specific version of a change
+        /// template in Change Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentMetadata service method.</param>
         /// <param name="cancellationToken">

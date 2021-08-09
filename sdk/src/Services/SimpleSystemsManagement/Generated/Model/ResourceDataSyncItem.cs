@@ -214,7 +214,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>,
         /// then the resource data sync synchronizes data to an S3 bucket. If the <code>SyncType</code>
         /// is <code>SyncFromSource</code> then the resource data sync synchronizes data from
-        /// Organizations or from multiple Regions.
+        /// Organizations or from multiple Amazon Web Services Regions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

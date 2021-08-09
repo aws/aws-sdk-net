@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePatchBaselines operation.
-    /// Lists the patch baselines in your account.
+    /// Lists the patch baselines in your Amazon Web Services account.
     /// </summary>
     public partial class DescribePatchBaselinesRequest : AmazonSimpleSystemsManagementRequest
     {

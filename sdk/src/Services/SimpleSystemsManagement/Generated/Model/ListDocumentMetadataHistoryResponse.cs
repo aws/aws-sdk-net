@@ -42,7 +42,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Author. 
         /// <para>
-        /// The user ID of the person in the organization who requested the document review.
+        /// The user ID of the person in the organization who requested the review of the change
+        /// template.
         /// </para>
         /// </summary>
         public string Author
@@ -60,7 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentVersion. 
         /// <para>
-        /// The version of the document.
+        /// The version of the change template.
         /// </para>
         /// </summary>
         public string DocumentVersion
@@ -78,7 +79,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// Information about the response to the document approval request.
+        /// Information about the response to the change template approval request.
         /// </para>
         /// </summary>
         public DocumentMetadataResponseInfo Metadata
@@ -96,7 +97,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the document.
+        /// The name of the change template.
         /// </para>
         /// </summary>
         public string Name

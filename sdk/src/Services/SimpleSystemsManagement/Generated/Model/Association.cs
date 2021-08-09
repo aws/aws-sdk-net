@@ -121,7 +121,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The ID of the instance.
+        /// The instance ID.
         /// </para>
         /// </summary>
         public string InstanceId

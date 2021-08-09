@@ -41,7 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property AccountIds. 
         /// <para>
         /// The account IDs that have permission to use this document. The ID can be either an
-        /// account or <i>All</i>.
+        /// Amazon Web Services account or <i>All</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=20)]
@@ -60,8 +60,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AccountSharingInfoList. 
         /// <para>
-        /// A list of accounts where the current document is shared and the version shared with
-        /// each account.
+        /// A list of Amazon Web Services accounts where the current document is shared and the
+        /// version shared with each account.
         /// </para>
         /// </summary>
         public List<AccountSharingInfo> AccountSharingInfoList

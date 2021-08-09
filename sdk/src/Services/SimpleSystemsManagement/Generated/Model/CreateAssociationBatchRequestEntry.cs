@@ -171,8 +171,19 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The ID of the instance. 
+        /// The instance ID.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>InstanceId</code> has been deprecated. To specify an instance ID for an association,
+        /// use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code>
+        /// with Systems Manager documents (SSM documents) that use schema version 2.0 or later
+        /// will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't
+        /// use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>,
+        /// <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>.
+        /// To use these parameters, you must use the <code>Targets</code> parameter.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string InstanceId
         {
@@ -260,8 +271,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// For SSM documents that are shared with you from other accounts, you must specify the
-        /// complete SSM document ARN, in the following format:
+        /// For SSM documents that are shared with you from other Amazon Web Services accounts,
+        /// you must specify the complete SSM document ARN, in the following format:
         /// </para>
         ///  
         /// <para>

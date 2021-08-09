@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Synchronize Amazon Web Services Systems Manager Inventory data from multiple accounts
-    /// defined in Organizations to a centralized Amazon S3 bucket. Data is synchronized to
-    /// individual key prefixes in the central bucket. Each key prefix represents a different
-    /// account ID.
+    /// Synchronize Amazon Web Services Systems Manager Inventory data from multiple Amazon
+    /// Web Services accounts defined in Organizations to a centralized Amazon S3 bucket.
+    /// Data is synchronized to individual key prefixes in the central bucket. Each key prefix
+    /// represents a different Amazon Web Services account ID.
     /// </summary>
     public partial class ResourceDataSyncDestinationDataSharing
     {

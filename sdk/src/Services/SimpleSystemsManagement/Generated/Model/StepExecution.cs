@@ -389,7 +389,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TargetLocation. 
         /// <para>
-        /// The combination of Regions and accounts targeted by the current Automation execution.
+        /// The combination of Amazon Web Services Regions and Amazon Web Services accounts targeted
+        /// by the current Automation execution.
         /// </para>
         /// </summary>
         public TargetLocation TargetLocation

@@ -30,7 +30,8 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDocumentMetadata operation.
-    /// Updates information related to approval reviews for a specific version of a document.
+    /// Updates information related to approval reviews for a specific version of a change
+    /// template in Change Manager.
     /// </summary>
     public partial class UpdateDocumentMetadataRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -41,7 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentReviews. 
         /// <para>
-        /// The document review details to update.
+        /// The change template review details to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentVersion. 
         /// <para>
-        /// The version of a document to update.
+        /// The version of a change template in which to update approval metadata.
         /// </para>
         /// </summary>
         public string DocumentVersion
@@ -78,7 +79,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the document for which a version is to be updated.
+        /// The name of the change template for which a version's metadata is to be updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -90,7 +90,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>,
         /// Amazon Web Services Systems Manager validates the parameter value is in the required
         /// format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is
-        /// available in your account. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+        /// available in your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
         /// parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services
         /// Systems Manager User Guide</i>.
         /// </para>
@@ -136,13 +136,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property KeyId. 
         /// <para>
         /// The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Either
-        /// the default KMS key automatically assigned to your account or a custom key. Required
-        /// for parameters that use the <code>SecureString</code> data type.
+        /// the default KMS key automatically assigned to your Amazon Web Services account or
+        /// a custom key. Required for parameters that use the <code>SecureString</code> data
+        /// type.
         /// </para>
         ///  
         /// <para>
         /// If you don't specify a key ID, the system uses the default key associated with your
-        /// account.
+        /// Amazon Web Services account.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -189,7 +190,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A parameter name must be unique within an Region
+        /// A parameter name must be unique within an Amazon Web Services Region
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -361,14 +362,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Parameter Store offers a standard tier and an advanced tier for parameters. Standard
         /// parameters have a content size limit of 4 KB and can't be configured to use parameter
         /// policies. You can create a maximum of 10,000 standard parameters for each Region in
-        /// an account. Standard parameters are offered at no additional cost. 
+        /// an Amazon Web Services account. Standard parameters are offered at no additional cost.
+        /// 
         /// </para>
         ///  
         /// <para>
         /// Advanced parameters have a content size limit of 8 KB and can be configured to use
         /// parameter policies. You can create a maximum of 100,000 advanced parameters for each
-        /// Region in an account. Advanced parameters incur a charge. For more information, see
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
+        /// Region in an Amazon Web Services account. Advanced parameters incur a charge. For
+        /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
         /// and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager User
         /// Guide</i>.
         /// </para>
@@ -441,7 +443,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// More than 10,000 parameters already exist in your account in the current Region.
+        /// More than 10,000 parameters already exist in your Amazon Web Services account in the
+        /// current Amazon Web Services Region.
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -374,8 +374,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TargetLocations. 
         /// <para>
-        /// The combination of Regions and accounts where you wanted to run the association when
-        /// this association version was created.
+        /// The combination of Amazon Web Services Regions and Amazon Web Services accounts where
+        /// you wanted to run the association when this association version was created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

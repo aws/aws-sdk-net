@@ -31,7 +31,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Information about the <code>AwsOrganizationsSource</code> resource data sync source.
     /// A sync source of this type can synchronize data from Organizations or, if an Amazon
-    /// Web Services organization isn't present, from multiple Regions.
+    /// Web Services organization isn't present, from multiple Amazon Web Services Regions.
     /// </summary>
     public partial class ResourceDataSyncAwsOrganizationsSource
     {

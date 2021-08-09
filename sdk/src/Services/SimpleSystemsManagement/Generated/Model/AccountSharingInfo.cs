@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Information includes the account ID where the current document is shared and the version
-    /// shared with that account.
+    /// Information includes the Amazon Web Services account ID where the current document
+    /// is shared and the version shared with that account.
     /// </summary>
     public partial class AccountSharingInfo
     {
@@ -40,7 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account ID where the current document is shared.
+        /// The Amazon Web Services account ID where the current document is shared.
         /// </para>
         /// </summary>
         public string AccountId

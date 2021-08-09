@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCommands operation.
-    /// Lists the commands requested by users of the account.
+    /// Lists the commands requested by users of the Amazon Web Services account.
     /// </summary>
     public partial class ListCommandsRequest : AmazonSimpleSystemsManagementRequest
     {

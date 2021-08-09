@@ -40,7 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Target. 
         /// <para>
-        /// The ID of the instance.
+        /// The instance ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=400)]

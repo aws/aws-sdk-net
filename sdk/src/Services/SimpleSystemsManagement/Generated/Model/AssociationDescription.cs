@@ -232,7 +232,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The ID of the instance.
+        /// The instance ID.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -507,7 +507,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TargetLocations. 
         /// <para>
-        /// The combination of Regions and accounts where you want to run the association.
+        /// The combination of Amazon Web Services Regions and Amazon Web Services accounts where
+        /// you want to run the association.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

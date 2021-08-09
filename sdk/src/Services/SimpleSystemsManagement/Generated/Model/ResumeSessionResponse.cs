@@ -64,10 +64,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>region</b> represents the Region identifier for an Region supported by Amazon
-        /// Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio)
-        /// Region. For a list of supported <b>region</b> values, see the <b>Region</b> column
-        /// in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems
+        ///  <b>region</b> represents the Region identifier for an Amazon Web Services Region
+        /// supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for
+        /// the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b>
+        /// column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems
         /// Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         ///  

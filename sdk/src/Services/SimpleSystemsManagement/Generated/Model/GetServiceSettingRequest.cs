@@ -50,7 +50,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// Query the current service setting for the account. 
+    /// Query the current service setting for the Amazon Web Services account. 
     /// </para>
     /// </summary>
     public partial class GetServiceSettingRequest : AmazonSimpleSystemsManagementRequest

@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDocumentMetadataHistory operation.
-    /// Information about approval reviews for a version of an SSM document.
+    /// Information about approval reviews for a version of a change template in Change Manager.
     /// </summary>
     public partial class ListDocumentMetadataHistoryRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentVersion. 
         /// <para>
-        /// The version of the document.
+        /// The version of the change template.
         /// </para>
         /// </summary>
         public string DocumentVersion
@@ -101,7 +101,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the document.
+        /// The name of the change template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

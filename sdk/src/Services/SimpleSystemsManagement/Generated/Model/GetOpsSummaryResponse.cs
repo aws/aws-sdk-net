@@ -39,7 +39,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Entities. 
         /// <para>
-        /// The list of aggregated and filtered OpsData.
+        /// The list of aggregated details and filtered OpsData.
         /// </para>
         /// </summary>
         public List<OpsEntity> Entities

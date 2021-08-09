@@ -150,7 +150,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TargetLocations. 
         /// <para>
-        /// Information about the Regions and accounts targeted by the current Runbook operation.
+        /// Information about the Amazon Web Services Regions and Amazon Web Services accounts
+        /// targeted by the current Runbook operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

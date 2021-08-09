@@ -30,8 +30,9 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListOpsItemEvents operation.
-    /// Returns a list of all OpsItem events in the current Region and account. You can limit
-    /// the results to events associated with specific OpsItems by specifying a filter.
+    /// Returns a list of all OpsItem events in the current Amazon Web Services Region and
+    /// Amazon Web Services account. You can limit the results to events associated with specific
+    /// OpsItems by specifying a filter.
     /// </summary>
     public partial class ListOpsItemEventsRequest : AmazonSimpleSystemsManagementRequest
     {

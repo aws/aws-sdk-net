@@ -84,9 +84,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property EnableAllOpsDataSources. 
         /// <para>
         /// When you create a resource data sync, if you choose one of the Organizations options,
-        /// then Systems Manager automatically enables all OpsData sources in the selected Regions
-        /// for all accounts in your organization (or in the selected organization units). For
-        /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About
+        /// then Systems Manager automatically enables all OpsData sources in the selected Amazon
+        /// Web Services Regions for all Amazon Web Services accounts in your organization (or
+        /// in the selected organization units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About
         /// multiple account and Region resource data syncs</a> in the <i>Amazon Web Services
         /// Systems Manager User Guide</i>.
         /// </para>
@@ -106,8 +106,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property IncludeFutureRegions. 
         /// <para>
-        /// Whether to automatically synchronize and aggregate data from new Regions when those
-        /// Regions come online.
+        /// Whether to automatically synchronize and aggregate data from new Amazon Web Services
+        /// Regions when those Regions come online.
         /// </para>
         /// </summary>
         public bool IncludeFutureRegions
@@ -125,7 +125,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SourceRegions. 
         /// <para>
-        /// The <code>SyncSource</code> Regions included in the resource data sync.
+        /// The <code>SyncSource</code> Amazon Web Services Regions included in the resource data
+        /// sync.
         /// </para>
         /// </summary>
         public List<string> SourceRegions

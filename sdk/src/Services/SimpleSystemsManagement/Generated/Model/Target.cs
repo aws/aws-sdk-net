@@ -123,8 +123,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// This example demonstrates how to target all managed instances in the Region where
-    /// the association was created.
+    /// This example demonstrates how to target all managed instances in the Amazon Web Services
+    /// Region where the association was created.
     /// </para>
     ///  </li> </ul> 
     /// <para>

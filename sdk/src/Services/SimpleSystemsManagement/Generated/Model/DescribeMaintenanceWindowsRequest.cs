@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeMaintenanceWindows operation.
-    /// Retrieves the maintenance windows in an account.
+    /// Retrieves the maintenance windows in an Amazon Web Services account.
     /// </summary>
     public partial class DescribeMaintenanceWindowsRequest : AmazonSimpleSystemsManagementRequest
     {

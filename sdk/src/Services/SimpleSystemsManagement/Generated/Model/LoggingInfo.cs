@@ -89,7 +89,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property S3Region. 
         /// <para>
-        /// The Region where the S3 bucket is located.
+        /// The Amazon Web Services Region where the S3 bucket is located.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=20)]

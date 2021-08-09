@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// You have exceeded the number of parameters for this account. Delete one or more parameters
-    /// and try again.
+    /// You have exceeded the number of parameters for this Amazon Web Services account. Delete
+    /// one or more parameters and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

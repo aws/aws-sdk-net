@@ -30,7 +30,8 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetInventory operation.
-    /// Query inventory information.
+    /// Query inventory information. This includes instance status, such as <code>Stopped</code>
+    /// or <code>Terminated</code>.
     /// </summary>
     public partial class GetInventoryRequest : AmazonSimpleSystemsManagementRequest
     {

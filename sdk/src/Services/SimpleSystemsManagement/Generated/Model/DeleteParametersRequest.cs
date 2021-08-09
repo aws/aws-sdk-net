@@ -30,7 +30,8 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteParameters operation.
-    /// Delete a list of parameters.
+    /// Delete a list of parameters. After deleting a parameter, wait for at least 30 seconds
+    /// to create a parameter with the same name.
     /// </summary>
     public partial class DeleteParametersRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -39,7 +40,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Names. 
         /// <para>
-        /// The names of the parameters to delete.
+        /// The names of the parameters to delete. After deleting a parameter, wait for at least
+        /// 30 seconds to create a parameter with the same name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
