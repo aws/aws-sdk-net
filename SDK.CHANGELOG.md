@@ -1,3 +1,11 @@
+### 3.7.92.0 (2021-08-09 18:27 UTC)
+* Rekognition (3.7.2.0)
+	* This release adds support for four new types of segments (opening credits, content segments, slates, and studio logos), improved accuracy for credits and shot detection and new filters to control black frame detection.
+* SimpleSystemsManagement (3.7.4.8)
+	* Documentation updates for AWS Systems Manager.
+* WAFV2 (3.7.4.0)
+	* This release adds APIs to support versioning feature of AWS WAF Managed rule groups
+
 ### 3.7.91.0 (2021-08-06 18:18 UTC)
 * Athena (3.7.0.49)
 	* Documentation updates for Athena.
