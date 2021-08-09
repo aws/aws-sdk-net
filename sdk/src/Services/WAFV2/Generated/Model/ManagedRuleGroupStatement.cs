@@ -46,6 +46,7 @@ namespace Amazon.WAFV2.Model
         private string _name;
         private Statement _scopeDownStatement;
         private string _vendorName;
+        private string _version;
 
         /// <summary>
         /// Gets and sets the property ExcludedRules. 
@@ -127,6 +128,28 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetVendorName()
         {
             return this._vendorName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The version of the managed rule group to use. If you specify this, the version setting
+        /// is fixed until you change it. If you don't specify this, WAF uses the vendor's default
+        /// version, and then keeps the version at the vendor's default when the vendor updates
+        /// the managed rule group settings. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string Version
+        {
+            get { return this._version; }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version != null;
         }
 
     }

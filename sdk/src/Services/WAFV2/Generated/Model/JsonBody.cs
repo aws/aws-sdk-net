@@ -74,8 +74,8 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// WAF does its best to parse the entire JSON body, but might be forced to stop for reasons
-        /// such as characters that aren't valid, duplicate keys, truncation, and any content
-        /// whose root node isn't an object or an array. 
+        /// such as invalid characters, duplicate keys, truncation, and any content whose root
+        /// node isn't an object or an array. 
         /// </para>
         ///  
         /// <para>

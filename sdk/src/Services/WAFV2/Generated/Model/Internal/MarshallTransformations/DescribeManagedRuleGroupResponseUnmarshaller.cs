@@ -81,6 +81,18 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     response.Rules = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SnsTopicArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SnsTopicArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VersionName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VersionName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
@@ -104,6 +116,10 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("WAFExpiredManagedRuleGroupVersionException"))
+                {
+                    return WAFExpiredManagedRuleGroupVersionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInternalErrorException"))
                 {
                     return WAFInternalErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

@@ -66,13 +66,13 @@ namespace Amazon.WAFV2
     /// <para>
     /// This API guide is for developers who need detailed information about WAF API actions,
     /// data types, and errors. For detailed information about WAF features and an overview
-    /// of how to use WAF, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF
+    /// of how to use WAF, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
     /// Developer Guide</a>.
     /// </para>
     ///  
     /// <para>
-    /// You can make calls using the endpoints listed in <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#waf_region">Amazon
-    /// Web Services Service Endpoints for WAF</a>. 
+    /// You can make calls using the endpoints listed in <a href="https://docs.aws.amazon.com/general/latest/gr/waf.html">WAF
+    /// endpoints and quotas</a>. 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -233,6 +233,11 @@ namespace Amazon.WAFV2
         /// <param name="request">Container for the necessary parameters to execute the CheckCapacity service method.</param>
         /// 
         /// <returns>The response from the CheckCapacity service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFExpiredManagedRuleGroupVersionException">
+        /// The operation failed because the specified version for the managed rule group has
+        /// expired. You can retrieve the available versions for the managed rule group by calling
+        /// <a>ListAvailableManagedRuleGroupVersions</a>.
+        /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
         /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
@@ -268,9 +273,9 @@ namespace Amazon.WAFV2
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
         /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
-        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
-        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>WAF Developer Guide</i>.
+        /// the maximum number of <code>WebACL</code> objects that you can create for an Amazon
+        /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
+        /// quotas</a> in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
         /// WAF couldn’t perform the operation because your resource doesn’t exist.
@@ -363,9 +368,9 @@ namespace Amazon.WAFV2
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
         /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
-        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
-        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>WAF Developer Guide</i>.
+        /// the maximum number of <code>WebACL</code> objects that you can create for an Amazon
+        /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
+        /// quotas</a> in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
         /// WAF couldn’t save your changes because you tried to update or delete a resource that
@@ -458,9 +463,9 @@ namespace Amazon.WAFV2
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
         /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
-        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
-        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>WAF Developer Guide</i>.
+        /// the maximum number of <code>WebACL</code> objects that you can create for an Amazon
+        /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
+        /// quotas</a> in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
         /// WAF couldn’t save your changes because you tried to update or delete a resource that
@@ -561,9 +566,9 @@ namespace Amazon.WAFV2
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
         /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
-        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
-        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>WAF Developer Guide</i>.
+        /// the maximum number of <code>WebACL</code> objects that you can create for an Amazon
+        /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
+        /// quotas</a> in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
         /// WAF couldn’t perform the operation because your resource doesn’t exist.
@@ -681,9 +686,9 @@ namespace Amazon.WAFV2
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
         /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
-        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
-        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>WAF Developer Guide</i>.
+        /// the maximum number of <code>WebACL</code> objects that you can create for an Amazon
+        /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
+        /// quotas</a> in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
         /// WAF couldn’t perform the operation because your resource doesn’t exist.
@@ -1362,6 +1367,11 @@ namespace Amazon.WAFV2
         /// <param name="request">Container for the necessary parameters to execute the DescribeManagedRuleGroup service method.</param>
         /// 
         /// <returns>The response from the DescribeManagedRuleGroup service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFExpiredManagedRuleGroupVersionException">
+        /// The operation failed because the specified version for the managed rule group has
+        /// expired. You can retrieve the available versions for the managed rule group by calling
+        /// <a>ListAvailableManagedRuleGroupVersions</a>.
+        /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
         /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
@@ -1663,6 +1673,94 @@ namespace Amazon.WAFV2
         /// <returns>Returns a  GetLoggingConfigurationResult from WAFV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetLoggingConfiguration">REST API Reference for GetLoggingConfiguration Operation</seealso>
         GetLoggingConfigurationResponse EndGetLoggingConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetManagedRuleSet
+
+
+        /// <summary>
+        /// Retrieves the specified managed rule set. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This is intended for use only by vendors of managed rule sets. Vendors are Amazon
+        /// Web Services and Marketplace sellers. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Vendors, you can use the managed rule set APIs to provide controlled rollout of your
+        /// versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>,
+        /// <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the GetManagedRuleSet service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't
+        /// among the types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetManagedRuleSet">REST API Reference for GetManagedRuleSet Operation</seealso>
+        GetManagedRuleSetResponse GetManagedRuleSet(GetManagedRuleSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetManagedRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedRuleSet operation on AmazonWAFV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetManagedRuleSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetManagedRuleSet">REST API Reference for GetManagedRuleSet Operation</seealso>
+        IAsyncResult BeginGetManagedRuleSet(GetManagedRuleSetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetManagedRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetManagedRuleSet.</param>
+        /// 
+        /// <returns>Returns a  GetManagedRuleSetResult from WAFV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetManagedRuleSet">REST API Reference for GetManagedRuleSet Operation</seealso>
+        GetManagedRuleSetResponse EndGetManagedRuleSet(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2212,7 +2310,7 @@ namespace Amazon.WAFV2
 
         /// <summary>
         /// Retrieves an array of managed rule groups that are available for you to use. This
-        /// list includes all Amazon Web Services Managed Rules rule groups and the Marketplace
+        /// list includes all Amazon Web Services Managed Rules rule groups and all of the Marketplace
         /// managed rule groups that you're subscribed to.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAvailableManagedRuleGroups service method.</param>
@@ -2278,6 +2376,78 @@ namespace Amazon.WAFV2
         /// <returns>Returns a  ListAvailableManagedRuleGroupsResult from WAFV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAvailableManagedRuleGroups">REST API Reference for ListAvailableManagedRuleGroups Operation</seealso>
         ListAvailableManagedRuleGroupsResponse EndListAvailableManagedRuleGroups(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListAvailableManagedRuleGroupVersions
+
+
+        /// <summary>
+        /// Returns a list of the available versions for the specified managed rule group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAvailableManagedRuleGroupVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListAvailableManagedRuleGroupVersions service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't
+        /// among the types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAvailableManagedRuleGroupVersions">REST API Reference for ListAvailableManagedRuleGroupVersions Operation</seealso>
+        ListAvailableManagedRuleGroupVersionsResponse ListAvailableManagedRuleGroupVersions(ListAvailableManagedRuleGroupVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAvailableManagedRuleGroupVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAvailableManagedRuleGroupVersions operation on AmazonWAFV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAvailableManagedRuleGroupVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAvailableManagedRuleGroupVersions">REST API Reference for ListAvailableManagedRuleGroupVersions Operation</seealso>
+        IAsyncResult BeginListAvailableManagedRuleGroupVersions(ListAvailableManagedRuleGroupVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAvailableManagedRuleGroupVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAvailableManagedRuleGroupVersions.</param>
+        /// 
+        /// <returns>Returns a  ListAvailableManagedRuleGroupVersionsResult from WAFV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAvailableManagedRuleGroupVersions">REST API Reference for ListAvailableManagedRuleGroupVersions Operation</seealso>
+        ListAvailableManagedRuleGroupVersionsResponse EndListAvailableManagedRuleGroupVersions(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2422,6 +2592,91 @@ namespace Amazon.WAFV2
         /// <returns>Returns a  ListLoggingConfigurationsResult from WAFV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListLoggingConfigurations">REST API Reference for ListLoggingConfigurations Operation</seealso>
         ListLoggingConfigurationsResponse EndListLoggingConfigurations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListManagedRuleSets
+
+
+        /// <summary>
+        /// Retrieves the managed rule sets that you own. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This is intended for use only by vendors of managed rule sets. Vendors are Amazon
+        /// Web Services and Marketplace sellers. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Vendors, you can use the managed rule set APIs to provide controlled rollout of your
+        /// versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>,
+        /// <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedRuleSets service method.</param>
+        /// 
+        /// <returns>The response from the ListManagedRuleSets service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't
+        /// among the types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListManagedRuleSets">REST API Reference for ListManagedRuleSets Operation</seealso>
+        ListManagedRuleSetsResponse ListManagedRuleSets(ListManagedRuleSetsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListManagedRuleSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedRuleSets operation on AmazonWAFV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListManagedRuleSets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListManagedRuleSets">REST API Reference for ListManagedRuleSets Operation</seealso>
+        IAsyncResult BeginListManagedRuleSets(ListManagedRuleSetsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListManagedRuleSets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListManagedRuleSets.</param>
+        /// 
+        /// <returns>Returns a  ListManagedRuleSetsResult from WAFV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListManagedRuleSets">REST API Reference for ListManagedRuleSets Operation</seealso>
+        ListManagedRuleSetsResponse EndListManagedRuleSets(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2903,9 +3158,9 @@ namespace Amazon.WAFV2
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
         /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
-        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
-        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>WAF Developer Guide</i>.
+        /// the maximum number of <code>WebACL</code> objects that you can create for an Amazon
+        /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
+        /// quotas</a> in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
         /// WAF couldn’t perform the operation because your resource doesn’t exist.
@@ -2952,6 +3207,112 @@ namespace Amazon.WAFV2
         /// <returns>Returns a  PutLoggingConfigurationResult from WAFV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PutLoggingConfiguration">REST API Reference for PutLoggingConfiguration Operation</seealso>
         PutLoggingConfigurationResponse EndPutLoggingConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutManagedRuleSetVersions
+
+
+        /// <summary>
+        /// Defines the versions of your managed rule set that you are offering to the customers.
+        /// Customers see your offerings as managed rule groups with versioning.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This is intended for use only by vendors of managed rule sets. Vendors are Amazon
+        /// Web Services and Marketplace sellers. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Vendors, you can use the managed rule set APIs to provide controlled rollout of your
+        /// versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>,
+        /// <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Customers retrieve their managed rule group list by calling <a>ListAvailableManagedRuleGroups</a>.
+        /// The name that you provide here for your managed rule set is the name the customer
+        /// sees for the corresponding managed rule group. Customers can retrieve the available
+        /// versions for a managed rule group by calling <a>ListAvailableManagedRuleGroupVersions</a>.
+        /// You provide a rule group specification for each version. For each managed rule set,
+        /// you must specify a version that you recommend using. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To initiate the expiration of a managed rule group version, use <a>UpdateManagedRuleSetVersionExpiryDate</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutManagedRuleSetVersions service method.</param>
+        /// 
+        /// <returns>The response from the PutManagedRuleSetVersions service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't
+        /// among the types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
+        /// you need to make to the new copy, and retry your operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PutManagedRuleSetVersions">REST API Reference for PutManagedRuleSetVersions Operation</seealso>
+        PutManagedRuleSetVersionsResponse PutManagedRuleSetVersions(PutManagedRuleSetVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutManagedRuleSetVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutManagedRuleSetVersions operation on AmazonWAFV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutManagedRuleSetVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PutManagedRuleSetVersions">REST API Reference for PutManagedRuleSetVersions Operation</seealso>
+        IAsyncResult BeginPutManagedRuleSetVersions(PutManagedRuleSetVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutManagedRuleSetVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutManagedRuleSetVersions.</param>
+        /// 
+        /// <returns>Returns a  PutManagedRuleSetVersionsResult from WAFV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PutManagedRuleSetVersions">REST API Reference for PutManagedRuleSetVersions Operation</seealso>
+        PutManagedRuleSetVersionsResponse EndPutManagedRuleSetVersions(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3141,9 +3502,9 @@ namespace Amazon.WAFV2
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
         /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
-        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
-        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>WAF Developer Guide</i>.
+        /// the maximum number of <code>WebACL</code> objects that you can create for an Amazon
+        /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
+        /// quotas</a> in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
         /// WAF couldn’t perform the operation because your resource doesn’t exist.
@@ -3328,9 +3689,9 @@ namespace Amazon.WAFV2
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
         /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
-        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
-        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>WAF Developer Guide</i>.
+        /// the maximum number of <code>WebACL</code> objects that you can create for an Amazon
+        /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
+        /// quotas</a> in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
         /// WAF couldn’t perform the operation because your resource doesn’t exist.
@@ -3368,6 +3729,102 @@ namespace Amazon.WAFV2
         /// <returns>Returns a  UpdateIPSetResult from WAFV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateIPSet">REST API Reference for UpdateIPSet Operation</seealso>
         UpdateIPSetResponse EndUpdateIPSet(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateManagedRuleSetVersionExpiryDate
+
+
+        /// <summary>
+        /// Updates the expiration information for your managed rule set. Use this to initiate
+        /// the expiration of a managed rule group version. After you initiate expiration for
+        /// a version, WAF excludes it from the reponse to <a>ListAvailableManagedRuleGroupVersions</a>
+        /// for the managed rule group. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This is intended for use only by vendors of managed rule sets. Vendors are Amazon
+        /// Web Services and Marketplace sellers. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Vendors, you can use the managed rule set APIs to provide controlled rollout of your
+        /// versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>,
+        /// <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateManagedRuleSetVersionExpiryDate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateManagedRuleSetVersionExpiryDate service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't
+        /// among the types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
+        /// you need to make to the new copy, and retry your operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateManagedRuleSetVersionExpiryDate">REST API Reference for UpdateManagedRuleSetVersionExpiryDate Operation</seealso>
+        UpdateManagedRuleSetVersionExpiryDateResponse UpdateManagedRuleSetVersionExpiryDate(UpdateManagedRuleSetVersionExpiryDateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateManagedRuleSetVersionExpiryDate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateManagedRuleSetVersionExpiryDate operation on AmazonWAFV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateManagedRuleSetVersionExpiryDate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateManagedRuleSetVersionExpiryDate">REST API Reference for UpdateManagedRuleSetVersionExpiryDate Operation</seealso>
+        IAsyncResult BeginUpdateManagedRuleSetVersionExpiryDate(UpdateManagedRuleSetVersionExpiryDateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateManagedRuleSetVersionExpiryDate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateManagedRuleSetVersionExpiryDate.</param>
+        /// 
+        /// <returns>Returns a  UpdateManagedRuleSetVersionExpiryDateResult from WAFV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateManagedRuleSetVersionExpiryDate">REST API Reference for UpdateManagedRuleSetVersionExpiryDate Operation</seealso>
+        UpdateManagedRuleSetVersionExpiryDateResponse EndUpdateManagedRuleSetVersionExpiryDate(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3427,9 +3884,9 @@ namespace Amazon.WAFV2
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
         /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
-        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
-        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>WAF Developer Guide</i>.
+        /// the maximum number of <code>WebACL</code> objects that you can create for an Amazon
+        /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
+        /// quotas</a> in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
         /// WAF couldn’t perform the operation because your resource doesn’t exist.
@@ -3533,9 +3990,9 @@ namespace Amazon.WAFV2
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
         /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
-        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
-        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>WAF Developer Guide</i>.
+        /// the maximum number of <code>WebACL</code> objects that you can create for an Amazon
+        /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
+        /// quotas</a> in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
         /// WAF couldn’t perform the operation because your resource doesn’t exist.
@@ -3615,6 +4072,11 @@ namespace Amazon.WAFV2
         /// WAF couldn’t perform the operation because the resource that you tried to save is
         /// a duplicate of an existing one.
         /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFExpiredManagedRuleGroupVersionException">
+        /// The operation failed because the specified version for the managed rule group has
+        /// expired. You can retrieve the available versions for the managed rule group by calling
+        /// <a>ListAvailableManagedRuleGroupVersions</a>.
+        /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
         /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
@@ -3653,9 +4115,9 @@ namespace Amazon.WAFV2
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
         /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
-        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
-        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>WAF Developer Guide</i>.
+        /// the maximum number of <code>WebACL</code> objects that you can create for an Amazon
+        /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
+        /// quotas</a> in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
         /// WAF couldn’t perform the operation because your resource doesn’t exist.

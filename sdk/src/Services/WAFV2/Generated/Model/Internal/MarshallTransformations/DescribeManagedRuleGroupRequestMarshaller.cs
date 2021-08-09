@@ -85,6 +85,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.VendorName);
                 }
 
+                if(publicRequest.IsSetVersionName())
+                {
+                    context.Writer.WritePropertyName("VersionName");
+                    context.Writer.Write(publicRequest.VersionName);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

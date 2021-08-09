@@ -55,7 +55,10 @@ namespace Amazon.WAFV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IPAddressVersion.
+        /// Gets and sets the property IPAddressVersion. 
+        /// <para>
+        /// The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. 
+        /// </para>
         /// </summary>
         public IPAddressVersion IPAddressVersion
         {

@@ -38,8 +38,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property NextLockToken. 
         /// <para>
-        /// A token used for optimistic locking. WAF returns this token to your update requests.
-        /// You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>.
+        /// A token used for optimistic locking. WAF returns this token to your <code>update</code>
+        /// requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>.
         /// 
         /// </para>
         /// </summary>

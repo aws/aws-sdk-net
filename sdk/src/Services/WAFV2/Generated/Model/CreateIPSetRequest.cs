@@ -117,7 +117,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property IPAddressVersion. 
         /// <para>
-        /// Specify IPV4 or IPV6. 
+        /// The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

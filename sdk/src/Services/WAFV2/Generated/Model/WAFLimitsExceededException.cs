@@ -30,9 +30,9 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
-    /// the maximum number of <code>WebACL</code> objects that you can create for an account.
-    /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-    /// in the <i>WAF Developer Guide</i>.
+    /// the maximum number of <code>WebACL</code> objects that you can create for an Amazon
+    /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
+    /// quotas</a> in the <i>WAF Developer Guide</i>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

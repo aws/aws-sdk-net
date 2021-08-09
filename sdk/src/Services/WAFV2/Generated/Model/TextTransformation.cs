@@ -234,11 +234,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>SQL_HEX_DECODE</b> - Decode the following ANSI C escape sequences: <code>\a</code>,
-        /// <code>\b</code>, <code>\f</code>, <code>\n</code>, <code>\r</code>, <code>\t</code>,
-        /// <code>\v</code>, <code>\\</code>, <code>\?</code>, <code>\'</code>, <code>\"</code>,
-        /// <code>\xHH</code> (hexadecimal), <code>\0OOO</code> (octal). Encodings that aren't
-        /// valid remain in the output.
+        ///  <b>SQL_HEX_DECODE</b> - Decode SQL hex data. Example (<code>0x414243</code>) will
+        /// be decoded to (<code>ABC</code>).
         /// </para>
         ///  
         /// <para>

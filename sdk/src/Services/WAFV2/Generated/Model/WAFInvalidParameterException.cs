@@ -152,7 +152,10 @@ namespace Amazon.WAFV2.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property Field.
+        /// Gets and sets the property Field. 
+        /// <para>
+        /// The settings where the invalid parameter was found. 
+        /// </para>
         /// </summary>
         public ParameterExceptionField Field
         {
@@ -167,7 +170,10 @@ namespace Amazon.WAFV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Parameter.
+        /// Gets and sets the property Parameter. 
+        /// <para>
+        /// The invalid parameter that resulted in the exception. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public string Parameter
@@ -183,7 +189,10 @@ namespace Amazon.WAFV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Reason.
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// Additional information about the exception.
+        /// </para>
         /// </summary>
         public string Reason
         {

@@ -38,6 +38,7 @@ namespace Amazon.WAFV2.Model
         private string _name;
         private Scope _scope;
         private string _vendorName;
+        private string _versionName;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -113,6 +114,26 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetVendorName()
         {
             return this._vendorName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionName. 
+        /// <para>
+        /// The version of the rule group. You can only use a version that is not scheduled for
+        /// expiration. If you don't provide this, WAF uses the vendor's default version. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string VersionName
+        {
+            get { return this._versionName; }
+            set { this._versionName = value; }
+        }
+
+        // Check to see if VersionName property is set
+        internal bool IsSetVersionName()
+        {
+            return this._versionName != null;
         }
 
     }

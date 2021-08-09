@@ -183,6 +183,12 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.DescribeManagedRuleGroupRequest.VersionName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w#:\.\-/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.DescribeManagedRuleGroupResponse.Capacity</property>
     <min>1</min>
   </property-value-rule>
@@ -191,6 +197,18 @@
     <min>1</min>
     <max>1024</max>
     <pattern>^[0-9A-Za-z_\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.DescribeManagedRuleGroupResponse.SnsTopicArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.DescribeManagedRuleGroupResponse.VersionName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w#:\.\-/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.DisassociateWebACLRequest.ResourceArn</property>
@@ -221,6 +239,24 @@
     <min>20</min>
     <max>2048</max>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetManagedRuleSetRequest.Id</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetManagedRuleSetRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetManagedRuleSetResponse.LockToken</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.GetPermissionPolicyRequest.ResourceArn</property>
@@ -353,6 +389,35 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListAvailableManagedRuleGroupVersionsRequest.Limit</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListAvailableManagedRuleGroupVersionsRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListAvailableManagedRuleGroupVersionsRequest.NextMarker</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListAvailableManagedRuleGroupVersionsRequest.VendorName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListAvailableManagedRuleGroupVersionsResponse.NextMarker</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.ListIPSetsRequest.Limit</property>
     <min>1</min>
     <max>100</max>
@@ -382,6 +447,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.ListLoggingConfigurationsResponse.NextMarker</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListManagedRuleSetsRequest.Limit</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListManagedRuleSetsRequest.NextMarker</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListManagedRuleSetsResponse.NextMarker</property>
     <min>1</min>
     <max>256</max>
     <pattern>.*\S.*</pattern>
@@ -467,6 +549,36 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.PutManagedRuleSetVersionsRequest.Id</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.PutManagedRuleSetVersionsRequest.LockToken</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.PutManagedRuleSetVersionsRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.PutManagedRuleSetVersionsRequest.RecommendedVersion</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w#:\.\-/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.PutManagedRuleSetVersionsResponse.NextLockToken</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.PutPermissionPolicyRequest.Policy</property>
     <min>1</min>
     <max>395000</max>
@@ -516,6 +628,42 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.UpdateIPSetResponse.NextLockToken</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.UpdateManagedRuleSetVersionExpiryDateRequest.Id</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.UpdateManagedRuleSetVersionExpiryDateRequest.LockToken</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.UpdateManagedRuleSetVersionExpiryDateRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.UpdateManagedRuleSetVersionExpiryDateRequest.VersionToExpire</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w#:\.\-/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.UpdateManagedRuleSetVersionExpiryDateResponse.ExpiringVersion</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w#:\.\-/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.UpdateManagedRuleSetVersionExpiryDateResponse.NextLockToken</property>
     <min>1</min>
     <max>36</max>
     <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
@@ -770,6 +918,12 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedRuleGroupStatement.Version</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w#:\.\-/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.ManagedRuleGroupSummary.Description</property>
     <min>1</min>
     <max>256</max>
@@ -786,6 +940,98 @@
     <min>1</min>
     <max>128</max>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedRuleGroupVersion.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w#:\.\-/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedRuleSet.ARN</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedRuleSet.Description</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedRuleSet.Id</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedRuleSet.LabelNamespace</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[0-9A-Za-z_\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedRuleSet.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedRuleSet.RecommendedVersion</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w#:\.\-/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedRuleSetSummary.ARN</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedRuleSetSummary.Description</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedRuleSetSummary.Id</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedRuleSetSummary.LabelNamespace</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[0-9A-Za-z_\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedRuleSetSummary.LockToken</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedRuleSetSummary.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedRuleSetVersion.AssociatedRuleGroupArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedRuleSetVersion.Capacity</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedRuleSetVersion.ForecastedLifetime</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.RateBasedStatement.Limit</property>
@@ -997,6 +1243,16 @@
   <property-value-rule>
     <property>Amazon.WAFV2.Model.TextTransformation.Priority</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.VersionToPublish.AssociatedRuleGroupArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.VersionToPublish.ForecastedLifetime</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.VisibilityConfig.MetricName</property>
