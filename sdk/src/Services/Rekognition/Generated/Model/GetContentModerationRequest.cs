@@ -30,17 +30,20 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the GetContentModeration operation.
-    /// Gets the unsafe content analysis results for a Amazon Rekognition Video analysis started
-    /// by <a>StartContentModeration</a>.
+    /// Gets the inappropriate, unwanted, or offensive content analysis results for a Amazon
+    /// Rekognition Video analysis started by <a>StartContentModeration</a>. For a list of
+    /// moderation labels in Amazon Rekognition, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html#moderation-api">Using
+    /// the image and video moderation APIs</a>.
     /// 
     ///  
     /// <para>
-    /// Unsafe content analysis of a video is an asynchronous operation. You start analysis
-    /// by calling <a>StartContentModeration</a> which returns a job identifier (<code>JobId</code>).
-    /// When analysis finishes, Amazon Rekognition Video publishes a completion status to
-    /// the Amazon Simple Notification Service topic registered in the initial call to <code>StartContentModeration</code>.
-    /// To get the results of the unsafe content analysis, first check that the status value
-    /// published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetContentModeration</code>
+    /// Amazon Rekognition Video inappropriate or offensive content detection in a stored
+    /// video is an asynchronous operation. You start analysis by calling <a>StartContentModeration</a>
+    /// which returns a job identifier (<code>JobId</code>). When analysis finishes, Amazon
+    /// Rekognition Video publishes a completion status to the Amazon Simple Notification
+    /// Service topic registered in the initial call to <code>StartContentModeration</code>.
+    /// To get the results of the content analysis, first check that the status value published
+    /// to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetContentModeration</code>
     /// and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartContentModeration</code>.
     /// 
     /// </para>
@@ -51,9 +54,9 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>GetContentModeration</code> returns detected unsafe content labels, and the
-    /// time they are detected, in an array, <code>ModerationLabels</code>, of <a>ContentModerationDetection</a>
-    /// objects. 
+    ///  <code>GetContentModeration</code> returns detected inappropriate, unwanted, or offensive
+    /// content moderation labels, and the time they are detected, in an array, <code>ModerationLabels</code>,
+    /// of <a>ContentModerationDetection</a> objects. 
     /// </para>
     ///  
     /// <para>
@@ -73,8 +76,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see Detecting Unsafe Content in the Amazon Rekognition Developer
-    /// Guide.
+    /// For more information, see Content moderation in the Amazon Rekognition Developer Guide.
     /// </para>
     /// </summary>
     public partial class GetContentModerationRequest : AmazonRekognitionRequest
@@ -87,8 +89,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The identifier for the unsafe content job. Use <code>JobId</code> to identify the
-        /// job in a subsequent call to <code>GetContentModeration</code>.
+        /// The identifier for the inappropriate, unwanted, or offensive content moderation job.
+        /// Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -130,7 +132,7 @@ namespace Amazon.Rekognition.Model
         /// <para>
         /// If the previous response was incomplete (because there is more data to retrieve),
         /// Amazon Rekognition returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of unsafe content labels.
+        /// token to retrieve the next set of content moderation labels.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

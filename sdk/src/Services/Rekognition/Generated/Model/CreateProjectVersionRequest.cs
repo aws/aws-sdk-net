@@ -68,13 +68,33 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The identifier for your AWS Key Management Service (AWS KMS) customer master key (CMK).
-        /// You can supply the Amazon Resource Name (ARN) of your CMK, the ID of your CMK, or
-        /// an alias for your CMK. The key is used to encrypt training and test images copied
-        /// into the service for model training. Your source images are unaffected. The key is
-        /// also used to encrypt training results and manifest files written to the output Amazon
-        /// S3 bucket (<code>OutputConfig</code>).
+        /// You can supply the Amazon Resource Name (ARN) of your CMK, the ID of your CMK, an
+        /// alias for your CMK, or an alias ARN. The key is used to encrypt training and test
+        /// images copied into the service for model training. Your source images are unaffected.
+        /// The key is also used to encrypt training results and manifest files written to the
+        /// output Amazon S3 bucket (<code>OutputConfig</code>).
         /// </para>
         ///  
+        /// <para>
+        /// If you choose to use your own CMK, you need the following permissions on the CMK.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// kms:CreateGrant
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// kms:DescribeKey
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// kms:GenerateDataKey
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// kms:Decrypt
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// If you don't specify a value for <code>KmsKeyId</code>, images copied into the service
         /// are encrypted using a key that AWS owns and manages.
@@ -96,7 +116,9 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property OutputConfig. 
         /// <para>
-        /// The Amazon S3 location to store the results of training.
+        /// The Amazon S3 bucket location to store the results of training. The S3 bucket can
+        /// be in any AWS account as long as the caller has <code>s3:PutObject</code> permissions
+        /// on the S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

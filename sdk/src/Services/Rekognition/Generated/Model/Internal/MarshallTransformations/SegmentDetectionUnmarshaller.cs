@@ -64,6 +64,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("DurationFrames", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.DurationFrames = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DurationMillis", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
@@ -74,6 +80,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DurationSMPTE = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EndFrameNumber", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.EndFrameNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EndTimecodeSMPTE", targetDepth))
@@ -92,6 +104,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ShotSegmentUnmarshaller.Instance;
                     unmarshalledObject.ShotSegment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartFrameNumber", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.StartFrameNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StartTimecodeSMPTE", targetDepth))

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StartTechnicalCueDetectionFilter Marshaller
+    /// BlackFrame Marshaller
     /// </summary>       
-    public class StartTechnicalCueDetectionFilterMarshaller : IRequestMarshaller<StartTechnicalCueDetectionFilter, JsonMarshallerContext> 
+    public class BlackFrameMarshaller : IRequestMarshaller<BlackFrame, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,18 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(StartTechnicalCueDetectionFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(BlackFrame requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetBlackFrame())
+            if(requestObject.IsSetMaxPixelThreshold())
             {
-                context.Writer.WritePropertyName("BlackFrame");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = BlackFrameMarshaller.Instance;
-                marshaller.Marshall(requestObject.BlackFrame, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("MaxPixelThreshold");
+                context.Writer.Write(requestObject.MaxPixelThreshold);
             }
 
-            if(requestObject.IsSetMinSegmentConfidence())
+            if(requestObject.IsSetMinCoveragePercentage())
             {
-                context.Writer.WritePropertyName("MinSegmentConfidence");
-                context.Writer.Write(requestObject.MinSegmentConfidence);
+                context.Writer.WritePropertyName("MinCoveragePercentage");
+                context.Writer.Write(requestObject.MinCoveragePercentage);
             }
 
         }
@@ -67,7 +62,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static StartTechnicalCueDetectionFilterMarshaller Instance = new StartTechnicalCueDetectionFilterMarshaller();
+        public readonly static BlackFrameMarshaller Instance = new BlackFrameMarshaller();
 
     }
 }

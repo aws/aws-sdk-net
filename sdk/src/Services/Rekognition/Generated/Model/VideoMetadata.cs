@@ -35,6 +35,7 @@ namespace Amazon.Rekognition.Model
     public partial class VideoMetadata
     {
         private string _codec;
+        private VideoColorRange _colorRange;
         private long? _durationMillis;
         private string _format;
         private long? _frameHeight;
@@ -57,6 +58,25 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetCodec()
         {
             return this._codec != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ColorRange. 
+        /// <para>
+        ///  A description of the range of luminance values in a video, either LIMITED (16 to
+        /// 235) or FULL (0 to 255). 
+        /// </para>
+        /// </summary>
+        public VideoColorRange ColorRange
+        {
+            get { return this._colorRange; }
+            set { this._colorRange = value; }
+        }
+
+        // Check to see if ColorRange property is set
+        internal bool IsSetColorRange()
+        {
+            return this._colorRange != null;
         }
 
         /// <summary>

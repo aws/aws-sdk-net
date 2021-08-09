@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Information about an unsafe content label detection in a stored video.
+    /// Information about an inappropriate, unwanted, or offensive content label detection
+    /// in a stored video.
     /// </summary>
     public partial class ContentModerationDetection
     {
@@ -39,7 +40,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property ModerationLabel. 
         /// <para>
-        /// The unsafe content label detected by in the stored video.
+        /// The content moderation label detected by in the stored video.
         /// </para>
         /// </summary>
         public ModerationLabel ModerationLabel
@@ -57,8 +58,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// Time, in milliseconds from the beginning of the video, that the unsafe content label
-        /// was detected.
+        /// Time, in milliseconds from the beginning of the video, that the content moderation
+        /// label was detected.
         /// </para>
         /// </summary>
         public long Timestamp

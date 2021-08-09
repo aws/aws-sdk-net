@@ -34,15 +34,37 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class SegmentDetection
     {
+        private long? _durationFrames;
         private long? _durationMillis;
         private string _durationSMPTE;
+        private long? _endFrameNumber;
         private string _endTimecodeSMPTE;
         private long? _endTimestampMillis;
         private ShotSegment _shotSegment;
+        private long? _startFrameNumber;
         private string _startTimecodeSMPTE;
         private long? _startTimestampMillis;
         private TechnicalCueSegment _technicalCueSegment;
         private SegmentType _type;
+
+        /// <summary>
+        /// Gets and sets the property DurationFrames. 
+        /// <para>
+        ///  The duration of a video segment, expressed in frames. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long DurationFrames
+        {
+            get { return this._durationFrames.GetValueOrDefault(); }
+            set { this._durationFrames = value; }
+        }
+
+        // Check to see if DurationFrames property is set
+        internal bool IsSetDurationFrames()
+        {
+            return this._durationFrames.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DurationMillis. 
@@ -79,6 +101,26 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetDurationSMPTE()
         {
             return this._durationSMPTE != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndFrameNumber. 
+        /// <para>
+        ///  The frame number at the end of a video segment, using a frame index that starts with
+        /// 0. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long EndFrameNumber
+        {
+            get { return this._endFrameNumber.GetValueOrDefault(); }
+            set { this._endFrameNumber = value; }
+        }
+
+        // Check to see if EndFrameNumber property is set
+        internal bool IsSetEndFrameNumber()
+        {
+            return this._endFrameNumber.HasValue; 
         }
 
         /// <summary>
@@ -136,6 +178,26 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetShotSegment()
         {
             return this._shotSegment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartFrameNumber. 
+        /// <para>
+        ///  The frame number of the start of a video segment, using a frame index that starts
+        /// with 0. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long StartFrameNumber
+        {
+            get { return this._startFrameNumber.GetValueOrDefault(); }
+            set { this._startFrameNumber = value; }
+        }
+
+        // Check to see if StartFrameNumber property is set
+        internal bool IsSetStartFrameNumber()
+        {
+            return this._startFrameNumber.HasValue; 
         }
 
         /// <summary>

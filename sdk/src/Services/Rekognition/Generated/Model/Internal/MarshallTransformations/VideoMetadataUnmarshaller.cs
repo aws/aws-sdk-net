@@ -70,6 +70,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     unmarshalledObject.Codec = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ColorRange", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ColorRange = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DurationMillis", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

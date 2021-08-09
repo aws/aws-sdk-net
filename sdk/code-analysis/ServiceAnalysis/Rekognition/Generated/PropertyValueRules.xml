@@ -673,6 +673,16 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.BlackFrame.MaxPixelThreshold</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.BlackFrame.MinCoveragePercentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.Celebrity.Id</property>
     <pattern>[0-9A-Za-z]*</pattern>
   </property-value-rule>
@@ -946,7 +956,19 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.SegmentDetection.DurationFrames</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.SegmentDetection.DurationMillis</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.SegmentDetection.EndFrameNumber</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.SegmentDetection.StartFrameNumber</property>
     <min>0</min>
   </property-value-rule>
   <property-value-rule>

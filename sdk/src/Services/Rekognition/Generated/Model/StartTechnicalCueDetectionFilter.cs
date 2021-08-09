@@ -34,7 +34,29 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class StartTechnicalCueDetectionFilter
     {
+        private BlackFrame _blackFrame;
         private float? _minSegmentConfidence;
+
+        /// <summary>
+        /// Gets and sets the property BlackFrame. 
+        /// <para>
+        ///  A filter that allows you to control the black frame detection by specifying the black
+        /// levels and pixel coverage of black pixels in a frame. Videos can come from multiple
+        /// sources, formats, and time periods, with different standards and varying noise levels
+        /// for black frames that need to be accounted for. 
+        /// </para>
+        /// </summary>
+        public BlackFrame BlackFrame
+        {
+            get { return this._blackFrame; }
+            set { this._blackFrame = value; }
+        }
+
+        // Check to see if BlackFrame property is set
+        internal bool IsSetBlackFrame()
+        {
+            return this._blackFrame != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MinSegmentConfidence. 

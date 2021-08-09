@@ -131,7 +131,9 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property NotificationChannel. 
         /// <para>
         /// The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish
-        /// the completion status of the face detection operation.
+        /// the completion status of the face detection operation. The Amazon SNS topic must have
+        /// a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole
+        /// permissions policy.
         /// </para>
         /// </summary>
         public NotificationChannel NotificationChannel

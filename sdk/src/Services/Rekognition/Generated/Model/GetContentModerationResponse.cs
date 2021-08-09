@@ -43,7 +43,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property JobStatus. 
         /// <para>
-        /// The current status of the unsafe content analysis job.
+        /// The current status of the content moderation analysis job.
         /// </para>
         /// </summary>
         public VideoJobStatus JobStatus
@@ -61,7 +61,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property ModerationLabels. 
         /// <para>
-        /// The detected unsafe content labels and the time(s) they were detected.
+        /// The detected inappropriate, unwanted, or offensive content moderation labels and the
+        /// time(s) they were detected.
         /// </para>
         /// </summary>
         public List<ContentModerationDetection> ModerationLabels
@@ -79,7 +80,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property ModerationModelVersion. 
         /// <para>
-        /// Version number of the moderation detection model that was used to detect unsafe content.
+        /// Version number of the moderation detection model that was used to detect inappropriate,
+        /// unwanted, or offensive content.
         /// </para>
         /// </summary>
         public string ModerationModelVersion
@@ -98,7 +100,7 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the response is truncated, Amazon Rekognition Video returns this token that you
-        /// can use in the subsequent request to retrieve the next set of unsafe content labels.
+        /// can use in the subsequent request to retrieve the next set of content moderation labels.
         /// 
         /// </para>
         /// </summary>
