@@ -290,6 +290,7 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("<script type=\"text/javascript\">jQuery.noConflict();</script>");
             writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/parseuri.js\"></script>", RootRelativePath);
             writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/pagescript.js\"></script>", RootRelativePath);
+            writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/parentloader.js\"></script>", RootRelativePath);
             writer.WriteLine("<!-- BEGIN-SECTION -->");
             writer.WriteLine("<script type=\"text/javascript\">");
             writer.WriteLine("jQuery(function ($) {");

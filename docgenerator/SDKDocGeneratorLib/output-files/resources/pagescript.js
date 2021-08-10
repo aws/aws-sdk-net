@@ -149,7 +149,10 @@
 	AWSHelpObj.addEvent(document.body, 'click', function (evt) {
 		var tgt = evt.target ? evt.target : evt.srcElement;
 		if (!AWSHelpObj.isParentOf(tgt, clickable)) {
-			document.getElementById('vsPanel').style.display = 'none';
+			var panel = document.getElementById('vsPanel');
+			if (panel != null) {
+				panel.style.display = 'none';
+			}
 		}
 	});
 })();
