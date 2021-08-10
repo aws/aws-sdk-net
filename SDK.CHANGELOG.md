@@ -1,3 +1,12 @@
+### 3.7.93.0 (2021-08-10 18:14 UTC)
+* Chime (3.7.10.0)
+	* Add support for "auto" in Region field of StartMeetingTranscription API request.
+* Core 3.7.2.2
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.92.0 (2021-08-09 18:27 UTC)
 * Rekognition (3.7.2.0)
 	* This release adds support for four new types of segments (opening credits, content segments, slates, and studio logos), improved accuracy for credits and shot detection and new filters to control black frame detection.
