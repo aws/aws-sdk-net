@@ -59,7 +59,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InvitedBy.
+        /// Gets and sets the property InvitedBy. 
+        /// <para>
+        /// The identifier of the member who invited another member.
+        /// </para>
         /// </summary>
         public Identity InvitedBy
         {

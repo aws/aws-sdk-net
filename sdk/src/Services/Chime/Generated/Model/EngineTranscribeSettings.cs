@@ -62,7 +62,7 @@ namespace Amazon.Chime.Model
         /// Gets and sets the property Region. 
         /// <para>
         /// The AWS Region passed to Amazon Transcribe. If you don't specify a Region, Amazon
-        /// Chime uses the Region closest to the meeting's Region.
+        /// Chime uses the meeting's Region.
         /// </para>
         /// </summary>
         public TranscribeRegion Region

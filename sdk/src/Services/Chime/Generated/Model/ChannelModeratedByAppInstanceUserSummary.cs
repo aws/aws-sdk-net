@@ -36,7 +36,10 @@ namespace Amazon.Chime.Model
         private ChannelSummary _channelSummary;
 
         /// <summary>
-        /// Gets and sets the property ChannelSummary.
+        /// Gets and sets the property ChannelSummary. 
+        /// <para>
+        /// Summary of the details of a <code>Channel</code>.
+        /// </para>
         /// </summary>
         public ChannelSummary ChannelSummary
         {

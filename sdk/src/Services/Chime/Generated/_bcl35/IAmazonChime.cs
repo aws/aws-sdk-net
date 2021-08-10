@@ -4501,7 +4501,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Returns the full details of an <code>AppInstanceUser</code> .
+        /// Returns the full details of an <code>AppInstanceUser</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAppInstanceUser service method.</param>
         /// 

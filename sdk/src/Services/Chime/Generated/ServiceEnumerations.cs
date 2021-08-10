@@ -2023,6 +2023,10 @@ namespace Amazon.Chime
         /// </summary>
         public static readonly TranscribeMedicalRegion ApSoutheast2 = new TranscribeMedicalRegion("ap-southeast-2");
         /// <summary>
+        /// Constant Auto for TranscribeMedicalRegion
+        /// </summary>
+        public static readonly TranscribeMedicalRegion Auto = new TranscribeMedicalRegion("auto");
+        /// <summary>
         /// Constant CaCentral1 for TranscribeMedicalRegion
         /// </summary>
         public static readonly TranscribeMedicalRegion CaCentral1 = new TranscribeMedicalRegion("ca-central-1");
@@ -2212,6 +2216,10 @@ namespace Amazon.Chime
         /// Constant ApSoutheast2 for TranscribeRegion
         /// </summary>
         public static readonly TranscribeRegion ApSoutheast2 = new TranscribeRegion("ap-southeast-2");
+        /// <summary>
+        /// Constant Auto for TranscribeRegion
+        /// </summary>
+        public static readonly TranscribeRegion Auto = new TranscribeRegion("auto");
         /// <summary>
         /// Constant CaCentral1 for TranscribeRegion
         /// </summary>

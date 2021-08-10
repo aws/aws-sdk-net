@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAppInstanceUser operation.
-    /// Returns the full details of an <code>AppInstanceUser</code> .
+    /// Returns the full details of an <code>AppInstanceUser</code>.
     /// </summary>
     public partial class DescribeAppInstanceUserRequest : AmazonChimeRequest
     {
