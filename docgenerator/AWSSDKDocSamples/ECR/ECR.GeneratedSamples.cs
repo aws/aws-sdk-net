@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.ECR.Generated
 {
     class ECRSamples : ISample
     {
-        static IAmazonECR client = new AmazonECRClient();
         public void ECRBatchDeleteImage()
         {
             #region batchdeleteimages-example-1470860541707
 
+            var client = new AmazonECRClient();
             var response = client.BatchDeleteImage(new BatchDeleteImageRequest 
             {
                 ImageIds = new List<ImageIdentifier> {
@@ -34,6 +34,7 @@ namespace AWSSDKDocSamples.Amazon.ECR.Generated
         {
             #region batchgetimage-example-1470862771437
 
+            var client = new AmazonECRClient();
             var response = client.BatchGetImage(new BatchGetImageRequest 
             {
                 ImageIds = new List<ImageIdentifier> {
@@ -52,6 +53,7 @@ namespace AWSSDKDocSamples.Amazon.ECR.Generated
         {
             #region createrepository-example-1470863688724
 
+            var client = new AmazonECRClient();
             var response = client.CreateRepository(new CreateRepositoryRequest 
             {
                 RepositoryName = "project-a/nginx-web-app"
@@ -66,6 +68,7 @@ namespace AWSSDKDocSamples.Amazon.ECR.Generated
         {
             #region deleterepository-example-1470863805703
 
+            var client = new AmazonECRClient();
             var response = client.DeleteRepository(new DeleteRepositoryRequest 
             {
                 Force = true,
@@ -81,6 +84,7 @@ namespace AWSSDKDocSamples.Amazon.ECR.Generated
         {
             #region deleterepositorypolicy-example-1470866943748
 
+            var client = new AmazonECRClient();
             var response = client.DeleteRepositoryPolicy(new DeleteRepositoryPolicyRequest 
             {
                 RepositoryName = "ubuntu"
@@ -97,6 +101,7 @@ namespace AWSSDKDocSamples.Amazon.ECR.Generated
         {
             #region describe-repositories-1470856017467
 
+            var client = new AmazonECRClient();
             var response = client.DescribeRepositories(new DescribeRepositoriesRequest 
             {
             });
@@ -110,6 +115,7 @@ namespace AWSSDKDocSamples.Amazon.ECR.Generated
         {
             #region getauthorizationtoken-example-1470867047084
 
+            var client = new AmazonECRClient();
             var response = client.GetAuthorizationToken(new GetAuthorizationTokenRequest 
             {
             });
@@ -123,6 +129,7 @@ namespace AWSSDKDocSamples.Amazon.ECR.Generated
         {
             #region getrepositorypolicy-example-1470867669211
 
+            var client = new AmazonECRClient();
             var response = client.GetRepositoryPolicy(new GetRepositoryPolicyRequest 
             {
                 RepositoryName = "ubuntu"
@@ -139,6 +146,7 @@ namespace AWSSDKDocSamples.Amazon.ECR.Generated
         {
             #region listimages-example-1470868161594
 
+            var client = new AmazonECRClient();
             var response = client.ListImages(new ListImagesRequest 
             {
                 RepositoryName = "ubuntu"

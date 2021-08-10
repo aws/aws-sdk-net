@@ -234,7 +234,7 @@ namespace Amazon.CloudFront
         /// <param name="keyPairId">Identifier of a public/private certificate keypair already configured in your Amazon Web Services account.</param>
         /// <param name="privateKey">The RSA private key data that corresponding to the certificate keypair identified by keyPairId.</param>
         /// <param name="policy">A policy document that describes the access permissions that will be applied by 
-        /// the signed URL. To generate a custom policy use</param>
+        /// the signed URL.</param>
         /// <returns>A signed URL that will permit access to distribution and resource path as specified in the policy document.</returns>
         public static string SignUrl(string resourceUrlOrPath, string keyPairId, FileInfo privateKey, string policy)
         {
@@ -261,7 +261,7 @@ namespace Amazon.CloudFront
         /// <param name="keyPairId">Identifier of a public/private certificate keypair already configured in your Amazon Web Services account.</param>
         /// <param name="privateKey">The RSA private key data that corresponding to the certificate keypair identified by keyPairId.</param>
         /// <param name="policy">A policy document that describes the access permissions that will be applied by 
-        /// the signed URL. To generate a custom policy use</param>
+        /// the signed URL.</param>
         /// <returns>A signed URL that will permit access to distribution and S3 objects as specified in the policy document.</returns>
         public static string SignUrl(string resourceUrlOrPath, string keyPairId, TextReader privateKey, string policy)
         {

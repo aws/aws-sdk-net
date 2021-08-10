@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.LexModelBuildingService.Generated
 {
     class LexModelBuildingServiceSamples : ISample
     {
-        static IAmazonLexModelBuildingService client = new AmazonLexModelBuildingServiceClient();
         public void LexModelBuildingServiceGetBot()
         {
             #region to-get-information-about-a-bot-1494431724188
 
+            var client = new AmazonLexModelBuildingServiceClient();
             var response = client.GetBot(new GetBotRequest 
             {
                 Name = "DocOrderPizza",
@@ -43,6 +43,7 @@ namespace AWSSDKDocSamples.Amazon.LexModelBuildingService.Generated
         {
             #region to-get-a-list-of-bots-1494432220036
 
+            var client = new AmazonLexModelBuildingServiceClient();
             var response = client.GetBots(new GetBotsRequest 
             {
                 MaxResults = 5,
@@ -58,6 +59,7 @@ namespace AWSSDKDocSamples.Amazon.LexModelBuildingService.Generated
         {
             #region to-get-a-information-about-an-intent-1494432574147
 
+            var client = new AmazonLexModelBuildingServiceClient();
             var response = client.GetIntent(new GetIntentRequest 
             {
                 Version = "$LATEST",
@@ -84,6 +86,7 @@ namespace AWSSDKDocSamples.Amazon.LexModelBuildingService.Generated
         {
             #region to-get-a-list-of-intents-1494432416363
 
+            var client = new AmazonLexModelBuildingServiceClient();
             var response = client.GetIntents(new GetIntentsRequest 
             {
                 MaxResults = 10,
@@ -99,6 +102,7 @@ namespace AWSSDKDocSamples.Amazon.LexModelBuildingService.Generated
         {
             #region to-get-information-about-a-slot-type-1494432961004
 
+            var client = new AmazonLexModelBuildingServiceClient();
             var response = client.GetSlotType(new GetSlotTypeRequest 
             {
                 Version = "$LATEST",
@@ -120,6 +124,7 @@ namespace AWSSDKDocSamples.Amazon.LexModelBuildingService.Generated
         {
             #region to-get-a-list-of-slot-types-1494432757458
 
+            var client = new AmazonLexModelBuildingServiceClient();
             var response = client.GetSlotTypes(new GetSlotTypesRequest 
             {
                 MaxResults = 10,
@@ -135,6 +140,7 @@ namespace AWSSDKDocSamples.Amazon.LexModelBuildingService.Generated
         {
             #region to-create-a-bot-1494360003886
 
+            var client = new AmazonLexModelBuildingServiceClient();
             var response = client.PutBot(new PutBotRequest 
             {
                 Name = "DocOrderPizzaBot",
@@ -195,6 +201,7 @@ namespace AWSSDKDocSamples.Amazon.LexModelBuildingService.Generated
         {
             #region to-create-an-intent-1494358144659
 
+            var client = new AmazonLexModelBuildingServiceClient();
             var response = client.PutIntent(new PutIntentRequest 
             {
                 Name = "DocOrderPizza",
@@ -342,6 +349,7 @@ namespace AWSSDKDocSamples.Amazon.LexModelBuildingService.Generated
         {
             #region to-create-a-slot-type-1494357262258
 
+            var client = new AmazonLexModelBuildingServiceClient();
             var response = client.PutSlotType(new PutSlotTypeRequest 
             {
                 Name = "PizzaSauceType",

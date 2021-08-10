@@ -454,6 +454,8 @@ namespace SDKDocGenerator
                                         var isHref = string.Equals(attributeName, hrefAttributeName, StringComparison.Ordinal);
                                         var isName = string.Equals(attributeName, nameAttributeName, StringComparison.Ordinal);
 
+                                        var writeAttribute = true;
+
                                         if (isCref)
                                         {
                                             // replace cref with href
@@ -465,8 +467,15 @@ namespace SDKDocGenerator
                                                 throw new InvalidOperationException();
                                             var typeName = crefParts[1];
                                             var targetType = typeProvider.GetType(typeName);
-                                            if (targetType == null)
+                                            if (targetType == null) 
+                                            {
                                                 emptyElementContents = typeName;
+                                                //If the type cannot be found do not render out the href attribute.
+                                                //This will make it so things such as properties which we do not have
+                                                //specific doc pages for do not render as a broken link but we can still
+                                                //use the crefs in the code correctly.
+                                                writeAttribute = false;
+                                            }
                                             else
                                                 emptyElementContents = targetType.CreateReferenceHtml(fullTypeName: true);
                                         }
@@ -480,7 +489,10 @@ namespace SDKDocGenerator
                                             emptyElementContents = attributeValue;
                                         }
 
-                                        writer.WriteAttributeString(attributeName, attributeValue);
+                                        if(writeAttribute)
+                                        {
+                                            writer.WriteAttributeString(attributeName, attributeValue);
+                                        }                                        
                                     }
                                 }
 
@@ -554,7 +566,7 @@ namespace SDKDocGenerator
                 }
                 else
                 {
-                    processedCodeSample = codeNode.Value;
+                    processedCodeSample = HttpUtility.HtmlEncode(codeNode.Value);
                 }
 
                 if (processedCodeSample != null && processedCodeSample.IndexOf('\n') > -1)

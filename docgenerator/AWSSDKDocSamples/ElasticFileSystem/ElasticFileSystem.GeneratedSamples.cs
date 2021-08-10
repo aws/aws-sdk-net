@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.ElasticFileSystem.Generated
 {
     class ElasticFileSystemSamples : ISample
     {
-        static IAmazonElasticFileSystem client = new AmazonElasticFileSystemClient();
         public void ElasticFileSystemCreateFileSystem()
         {
             #region to-create-a-new-file-system-1481840798547
 
+            var client = new AmazonElasticFileSystemClient();
             var response = client.CreateFileSystem(new CreateFileSystemRequest 
             {
                 Backup = true,
@@ -48,6 +48,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticFileSystem.Generated
         {
             #region to-create-a-new-mount-target-1481842289329
 
+            var client = new AmazonElasticFileSystemClient();
             var response = client.CreateMountTarget(new CreateMountTargetRequest 
             {
                 FileSystemId = "fs-01234567",
@@ -69,6 +70,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticFileSystem.Generated
         {
             #region to-create-a-new-tag-1481843409357
 
+            var client = new AmazonElasticFileSystemClient();
             var response = client.CreateTags(new CreateTagsRequest 
             {
                 FileSystemId = "fs-01234567",
@@ -88,6 +90,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticFileSystem.Generated
         {
             #region to-delete-a-file-system-1481847318348
 
+            var client = new AmazonElasticFileSystemClient();
             var response = client.DeleteFileSystem(new DeleteFileSystemRequest 
             {
                 FileSystemId = "fs-01234567"
@@ -101,6 +104,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticFileSystem.Generated
         {
             #region to-delete-a-mount-target-1481847635607
 
+            var client = new AmazonElasticFileSystemClient();
             var response = client.DeleteMountTarget(new DeleteMountTargetRequest 
             {
                 MountTargetId = "fsmt-12340abc"
@@ -114,6 +118,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticFileSystem.Generated
         {
             #region to-delete-tags-for-an-efs-file-system-1481848189061
 
+            var client = new AmazonElasticFileSystemClient();
             var response = client.DeleteTags(new DeleteTagsRequest 
             {
                 FileSystemId = "fs-01234567",
@@ -130,6 +135,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticFileSystem.Generated
         {
             #region to-describe-an-efs-file-system-1481848448460
 
+            var client = new AmazonElasticFileSystemClient();
             var response = client.DescribeFileSystems(new DescribeFileSystemsRequest 
             {
             });
@@ -143,6 +149,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticFileSystem.Generated
         {
             #region to-describe-the-lifecycle-configuration-for-a-file-system-1551200664502
 
+            var client = new AmazonElasticFileSystemClient();
             var response = client.DescribeLifecycleConfiguration(new DescribeLifecycleConfigurationRequest 
             {
                 FileSystemId = "fs-01234567"
@@ -157,6 +164,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticFileSystem.Generated
         {
             #region to-describe-the-mount-targets-for-a-file-system-1481849958584
 
+            var client = new AmazonElasticFileSystemClient();
             var response = client.DescribeMountTargets(new DescribeMountTargetsRequest 
             {
                 FileSystemId = "fs-01234567"
@@ -171,6 +179,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticFileSystem.Generated
         {
             #region to-describe-the-security-groups-for-a-mount-target-1481849317823
 
+            var client = new AmazonElasticFileSystemClient();
             var response = client.DescribeMountTargetSecurityGroups(new DescribeMountTargetSecurityGroupsRequest 
             {
                 MountTargetId = "fsmt-12340abc"
@@ -185,6 +194,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticFileSystem.Generated
         {
             #region to-describe-the-tags-for-a-file-system-1481850497090
 
+            var client = new AmazonElasticFileSystemClient();
             var response = client.DescribeTags(new DescribeTagsRequest 
             {
                 FileSystemId = "fs-01234567"
@@ -199,6 +209,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticFileSystem.Generated
         {
             #region to-modify-the-security-groups-associated-with-a-mount-target-for-a-file-system-1481850772562
 
+            var client = new AmazonElasticFileSystemClient();
             var response = client.ModifyMountTargetSecurityGroups(new ModifyMountTargetSecurityGroupsRequest 
             {
                 MountTargetId = "fsmt-12340abc",
@@ -215,6 +226,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticFileSystem.Generated
         {
             #region creates-a-new-lifecycleconfiguration-object-for-a-file-system-1551201594692
 
+            var client = new AmazonElasticFileSystemClient();
             var response = client.PutLifecycleConfiguration(new PutLifecycleConfigurationRequest 
             {
                 FileSystemId = "fs-01234567",

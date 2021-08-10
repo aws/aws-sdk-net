@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
 {
     class WAFSamples : ISample
     {
-        static IAmazonWAF client = new AmazonWAFClient();
         public void WAFCreateIPSet()
         {
             #region createipset-1472501003122
 
+            var client = new AmazonWAFClient();
             var response = client.CreateIPSet(new CreateIPSetRequest 
             {
                 ChangeToken = "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",
@@ -32,6 +32,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region createrule-1474072675555
 
+            var client = new AmazonWAFClient();
             var response = client.CreateRule(new CreateRuleRequest 
             {
                 ChangeToken = "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",
@@ -49,6 +50,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region createsizeconstraint-1474299140754
 
+            var client = new AmazonWAFClient();
             var response = client.CreateSizeConstraintSet(new CreateSizeConstraintSetRequest 
             {
                 ChangeToken = "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",
@@ -65,6 +67,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region createsqlinjectionmatchset-1474492796105
 
+            var client = new AmazonWAFClient();
             var response = client.CreateSqlInjectionMatchSet(new CreateSqlInjectionMatchSetRequest 
             {
                 ChangeToken = "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",
@@ -81,6 +84,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region createwebacl-1472061481310
 
+            var client = new AmazonWAFClient();
             var response = client.CreateWebACL(new CreateWebACLRequest 
             {
                 ChangeToken = "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",
@@ -99,6 +103,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region createxssmatchset-1474560868500
 
+            var client = new AmazonWAFClient();
             var response = client.CreateXssMatchSet(new CreateXssMatchSetRequest 
             {
                 ChangeToken = "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",
@@ -115,6 +120,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region deletebytematchset-1473367566229
 
+            var client = new AmazonWAFClient();
             var response = client.DeleteByteMatchSet(new DeleteByteMatchSetRequest 
             {
                 ByteMatchSetId = "exampleIDs3t-46da-4fdb-b8d5-abc321j569j5",
@@ -130,6 +136,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region deleteipset-1472767434306
 
+            var client = new AmazonWAFClient();
             var response = client.DeleteIPSet(new DeleteIPSetRequest 
             {
                 ChangeToken = "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",
@@ -145,6 +152,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region deleterule-1474073108749
 
+            var client = new AmazonWAFClient();
             var response = client.DeleteRule(new DeleteRuleRequest 
             {
                 ChangeToken = "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",
@@ -160,6 +168,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region deletesizeconstraintset-1474299857905
 
+            var client = new AmazonWAFClient();
             var response = client.DeleteSizeConstraintSet(new DeleteSizeConstraintSetRequest 
             {
                 ChangeToken = "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",
@@ -175,6 +184,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region deletesqlinjectionmatchset-1474493373197
 
+            var client = new AmazonWAFClient();
             var response = client.DeleteSqlInjectionMatchSet(new DeleteSqlInjectionMatchSetRequest 
             {
                 ChangeToken = "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",
@@ -190,6 +200,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region deletewebacl-1472767755931
 
+            var client = new AmazonWAFClient();
             var response = client.DeleteWebACL(new DeleteWebACLRequest 
             {
                 ChangeToken = "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",
@@ -205,6 +216,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region deletexssmatchset-1474561302618
 
+            var client = new AmazonWAFClient();
             var response = client.DeleteXssMatchSet(new DeleteXssMatchSetRequest 
             {
                 ChangeToken = "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",
@@ -220,6 +232,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region getbytematchset-1473273311532
 
+            var client = new AmazonWAFClient();
             var response = client.GetByteMatchSet(new GetByteMatchSetRequest 
             {
                 ByteMatchSetId = "exampleIDs3t-46da-4fdb-b8d5-abc321j569j5"
@@ -234,6 +247,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region get-change-token-example-1471635120794
 
+            var client = new AmazonWAFClient();
             var response = client.GetChangeToken(new GetChangeTokenRequest 
             {
             });
@@ -247,6 +261,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region getchangetokenstatus-1474658417107
 
+            var client = new AmazonWAFClient();
             var response = client.GetChangeTokenStatus(new GetChangeTokenStatusRequest 
             {
                 ChangeToken = "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
@@ -261,6 +276,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region getipset-1474658688675
 
+            var client = new AmazonWAFClient();
             var response = client.GetIPSet(new GetIPSetRequest 
             {
                 IPSetId = "example1ds3t-46da-4fdb-b8d5-abc321j569j5"
@@ -275,6 +291,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region getrule-1474659238790
 
+            var client = new AmazonWAFClient();
             var response = client.GetRule(new GetRuleRequest 
             {
                 RuleId = "example1ds3t-46da-4fdb-b8d5-abc321j569j5"
@@ -289,6 +306,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region getsampledrequests-1474927997195
 
+            var client = new AmazonWAFClient();
             var response = client.GetSampledRequests(new GetSampledRequestsRequest 
             {
                 MaxItems = 100,
@@ -311,6 +329,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region getsizeconstraintset-1475005422493
 
+            var client = new AmazonWAFClient();
             var response = client.GetSizeConstraintSet(new GetSizeConstraintSetRequest 
             {
                 SizeConstraintSetId = "example1ds3t-46da-4fdb-b8d5-abc321j569j5"
@@ -325,6 +344,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region getsqlinjectionmatchset-1475005940137
 
+            var client = new AmazonWAFClient();
             var response = client.GetSqlInjectionMatchSet(new GetSqlInjectionMatchSetRequest 
             {
                 SqlInjectionMatchSetId = "example1ds3t-46da-4fdb-b8d5-abc321j569j5"
@@ -339,6 +359,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region getwebacl-1475006348525
 
+            var client = new AmazonWAFClient();
             var response = client.GetWebACL(new GetWebACLRequest 
             {
                 WebACLId = "createwebacl-1472061481310"
@@ -353,6 +374,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region getxssmatchset-1475187879017
 
+            var client = new AmazonWAFClient();
             var response = client.GetXssMatchSet(new GetXssMatchSetRequest 
             {
                 XssMatchSetId = "example1ds3t-46da-4fdb-b8d5-abc321j569j5"
@@ -367,6 +389,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region listipsets-1472235676229
 
+            var client = new AmazonWAFClient();
             var response = client.ListIPSets(new ListIPSetsRequest 
             {
                 Limit = 100
@@ -381,6 +404,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region listrules-1475258406433
 
+            var client = new AmazonWAFClient();
             var response = client.ListRules(new ListRulesRequest 
             {
                 Limit = 100
@@ -395,6 +419,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region listsizeconstraintsets-1474300067597
 
+            var client = new AmazonWAFClient();
             var response = client.ListSizeConstraintSets(new ListSizeConstraintSetsRequest 
             {
                 Limit = 100
@@ -409,6 +434,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region listsqlinjectionmatchset-1474493560103
 
+            var client = new AmazonWAFClient();
             var response = client.ListSqlInjectionMatchSets(new ListSqlInjectionMatchSetsRequest 
             {
                 Limit = 100
@@ -423,6 +449,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region listwebacls-1475258732691
 
+            var client = new AmazonWAFClient();
             var response = client.ListWebACLs(new ListWebACLsRequest 
             {
                 Limit = 100
@@ -437,6 +464,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region listxssmatchsets-1474561481168
 
+            var client = new AmazonWAFClient();
             var response = client.ListXssMatchSets(new ListXssMatchSetsRequest 
             {
                 Limit = 100
@@ -451,6 +479,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region updatebytematchset-1475259074558
 
+            var client = new AmazonWAFClient();
             var response = client.UpdateByteMatchSet(new UpdateByteMatchSetRequest 
             {
                 ByteMatchSetId = "exampleIDs3t-46da-4fdb-b8d5-abc321j569j5",
@@ -479,6 +508,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region updateipset-1475259733625
 
+            var client = new AmazonWAFClient();
             var response = client.UpdateIPSet(new UpdateIPSetRequest 
             {
                 ChangeToken = "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",
@@ -503,6 +533,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region updaterule-1475260064720
 
+            var client = new AmazonWAFClient();
             var response = client.UpdateRule(new UpdateRuleRequest 
             {
                 ChangeToken = "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",
@@ -528,6 +559,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region updatesizeconstraintset-1475531697891
 
+            var client = new AmazonWAFClient();
             var response = client.UpdateSizeConstraintSet(new UpdateSizeConstraintSetRequest 
             {
                 ChangeToken = "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",
@@ -554,6 +586,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region updatesqlinjectionmatchset-1475532094686
 
+            var client = new AmazonWAFClient();
             var response = client.UpdateSqlInjectionMatchSet(new UpdateSqlInjectionMatchSetRequest 
             {
                 ChangeToken = "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",
@@ -578,6 +611,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region updatewebacl-1475533627385
 
+            var client = new AmazonWAFClient();
             var response = client.UpdateWebACL(new UpdateWebACLRequest 
             {
                 ChangeToken = "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",
@@ -604,6 +638,7 @@ namespace AWSSDKDocSamples.Amazon.WAF.Generated
         {
             #region updatexssmatchset-1475534098881
 
+            var client = new AmazonWAFClient();
             var response = client.UpdateXssMatchSet(new UpdateXssMatchSetRequest 
             {
                 ChangeToken = "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",

@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 {
     class ECSSamples : ISample
     {
-        static IAmazonECS client = new AmazonECSClient();
         public void ECSCreateCluster()
         {
             #region to-create-a-new-cluster-1472514079365
 
+            var client = new AmazonECSClient();
             var response = client.CreateCluster(new CreateClusterRequest 
             {
                 ClusterName = "my_cluster"
@@ -30,6 +30,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region to-create-a-new-service-1472512584282
 
+            var client = new AmazonECSClient();
             var response = client.CreateService(new CreateServiceRequest 
             {
                 DesiredCount = 10,
@@ -46,6 +47,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region to-create-a-new-service-behind-a-load-balancer-1472512484823
 
+            var client = new AmazonECSClient();
             var response = client.CreateService(new CreateServiceRequest 
             {
                 DesiredCount = 10,
@@ -70,6 +72,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region to-delete-the-account-setting-for-your-user-account-1549524548115
 
+            var client = new AmazonECSClient();
             var response = client.DeleteAccountSetting(new DeleteAccountSettingRequest 
             {
                 Name = "serviceLongArnFormat"
@@ -84,6 +87,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region to-delete-the-account-setting-for-a-specific-iam-user-or-iam-role-1549524612917
 
+            var client = new AmazonECSClient();
             var response = client.DeleteAccountSetting(new DeleteAccountSettingRequest 
             {
                 Name = "containerInstanceLongArnFormat",
@@ -99,6 +103,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region to-delete-an-empty-cluster-1472512705352
 
+            var client = new AmazonECSClient();
             var response = client.DeleteCluster(new DeleteClusterRequest 
             {
                 Cluster = "my_cluster"
@@ -113,6 +118,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region e8183e38-f86e-4390-b811-f74f30a6007d
 
+            var client = new AmazonECSClient();
             var response = client.DeleteService(new DeleteServiceRequest 
             {
                 Service = "my-http-service"
@@ -126,6 +132,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region bf624927-cf64-4f4b-8b7e-c024a4e682f6
 
+            var client = new AmazonECSClient();
             var response = client.DeregisterContainerInstance(new DeregisterContainerInstanceRequest 
             {
                 Cluster = "default",
@@ -141,6 +148,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region ba88d100-9672-4231-80da-a4bd210bf728
 
+            var client = new AmazonECSClient();
             var response = client.DescribeClusters(new DescribeClustersRequest 
             {
                 Clusters = new List<string> {
@@ -158,6 +166,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region c8f439de-eb27-4269-8ca7-2c0a7ba75ab0
 
+            var client = new AmazonECSClient();
             var response = client.DescribeContainerInstances(new DescribeContainerInstancesRequest 
             {
                 Cluster = "default",
@@ -176,6 +185,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region to-describe-a-service-1472513256350
 
+            var client = new AmazonECSClient();
             var response = client.DescribeServices(new DescribeServicesRequest 
             {
                 Services = new List<string> {
@@ -193,6 +203,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region 4c21eeb1-f1da-4a08-8c44-297fc8d0ea88
 
+            var client = new AmazonECSClient();
             var response = client.DescribeTaskDefinition(new DescribeTaskDefinitionRequest 
             {
                 TaskDefinition = "hello_world:8"
@@ -207,6 +218,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region a90b0cde-f965-4946-b55e-cfd8cc54e827
 
+            var client = new AmazonECSClient();
             var response = client.DescribeTasks(new DescribeTasksRequest 
             {
                 Tasks = new List<string> {
@@ -224,6 +236,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region to-view-your-account-settings-1549524118170
 
+            var client = new AmazonECSClient();
             var response = client.ListAccountSettings(new ListAccountSettingsRequest 
             {
                 EffectiveSettings = true
@@ -238,6 +251,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region to-view-the-account-settings-for-a-specific-iam-user-or-iam-role-1549524237932
 
+            var client = new AmazonECSClient();
             var response = client.ListAccountSettings(new ListAccountSettingsRequest 
             {
                 EffectiveSettings = true,
@@ -253,6 +267,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region e337d059-134f-4125-ba8e-4f499139facf
 
+            var client = new AmazonECSClient();
             var response = client.ListClusters(new ListClustersRequest 
             {
             });
@@ -266,6 +281,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region 62a82a94-713c-4e18-8420-1d2b2ba9d484
 
+            var client = new AmazonECSClient();
             var response = client.ListContainerInstances(new ListContainerInstancesRequest 
             {
                 Cluster = "default"
@@ -280,6 +296,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region 1d9a8037-4e0e-4234-a528-609656809a3a
 
+            var client = new AmazonECSClient();
             var response = client.ListServices(new ListServicesRequest 
             {
             });
@@ -293,6 +310,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region to-list-the-tags-for-a-cluster-1540582700259
 
+            var client = new AmazonECSClient();
             var response = client.ListTagsForResource(new ListTagsForResourceRequest 
             {
                 ResourceArn = "arn:aws:ecs:region:aws_account_id:cluster/dev"
@@ -307,6 +325,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region b5c89769-1d94-4ca2-a79e-8069103c7f75
 
+            var client = new AmazonECSClient();
             var response = client.ListTaskDefinitionFamilies(new ListTaskDefinitionFamiliesRequest 
             {
             });
@@ -320,6 +339,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region 8a4cf9a6-42c1-4fe3-852d-99ac8968e11b
 
+            var client = new AmazonECSClient();
             var response = client.ListTaskDefinitionFamilies(new ListTaskDefinitionFamiliesRequest 
             {
                 FamilyPrefix = "hpcc"
@@ -334,6 +354,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region b381ebaf-7eba-4d60-b99b-7f6ae49d3d60
 
+            var client = new AmazonECSClient();
             var response = client.ListTaskDefinitions(new ListTaskDefinitionsRequest 
             {
             });
@@ -347,6 +368,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region 734e7afd-753a-4bc2-85d0-badddce10910
 
+            var client = new AmazonECSClient();
             var response = client.ListTaskDefinitions(new ListTaskDefinitionsRequest 
             {
                 FamilyPrefix = "wordpress"
@@ -361,6 +383,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region 9a6ec707-1a77-45d0-b2eb-516b5dd9e924
 
+            var client = new AmazonECSClient();
             var response = client.ListTasks(new ListTasksRequest 
             {
                 Cluster = "default"
@@ -375,6 +398,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region 024bf3b7-9cbb-44e3-848f-9d074e1fecce
 
+            var client = new AmazonECSClient();
             var response = client.ListTasks(new ListTasksRequest 
             {
                 Cluster = "default",
@@ -390,6 +414,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region to-modify-the-account-settings-for-your-iam-user-account-1549523130939
 
+            var client = new AmazonECSClient();
             var response = client.PutAccountSetting(new PutAccountSettingRequest 
             {
                 Name = "serviceLongArnFormat",
@@ -405,6 +430,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region to-modify-the-account-settings-for-a-specific-iam-user-or-iam-role-1549523518390
 
+            var client = new AmazonECSClient();
             var response = client.PutAccountSetting(new PutAccountSettingRequest 
             {
                 Name = "containerInstanceLongArnFormat",
@@ -421,6 +447,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region to-modify-the-default-account-settings-for-all-iam-users-or-roles-on-your-account-1549523794603
 
+            var client = new AmazonECSClient();
             var response = client.PutAccountSettingDefault(new PutAccountSettingDefaultRequest 
             {
                 Name = "serviceLongArnFormat",
@@ -436,6 +463,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region to-register-a-task-definition-1470764550877
 
+            var client = new AmazonECSClient();
             var response = client.RegisterTaskDefinition(new RegisterTaskDefinitionRequest 
             {
                 ContainerDefinitions = new List<ContainerDefinition> {
@@ -467,6 +495,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region 6f238c83-a133-42cd-ab3d-abeca0560445
 
+            var client = new AmazonECSClient();
             var response = client.RunTask(new RunTaskRequest 
             {
                 Cluster = "default",
@@ -482,6 +511,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region to-tag-a-cluster-1540581863751
 
+            var client = new AmazonECSClient();
             var response = client.TagResource(new TagResourceRequest 
             {
                 ResourceArn = "arn:aws:ecs:region:aws_account_id:cluster/dev",
@@ -501,6 +531,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region to-untag-a-cluster-1540582546056
 
+            var client = new AmazonECSClient();
             var response = client.UntagResource(new UntagResourceRequest 
             {
                 ResourceArn = "arn:aws:ecs:region:aws_account_id:cluster/dev",
@@ -517,6 +548,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region cc9e8900-0cc2-44d2-8491-64d1d3d37887
 
+            var client = new AmazonECSClient();
             var response = client.UpdateService(new UpdateServiceRequest 
             {
                 Service = "my-http-service",
@@ -531,6 +563,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
         {
             #region 9581d6c5-02e3-4140-8cc1-5a4301586633
 
+            var client = new AmazonECSClient();
             var response = client.UpdateService(new UpdateServiceRequest 
             {
                 DesiredCount = 10,

@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.Polly.Generated
 {
     class PollySamples : ISample
     {
-        static IAmazonPolly client = new AmazonPollyClient();
         public void PollyDeleteLexicon()
         {
             #region to-delete-a-lexicon-1481922498332
 
+            var client = new AmazonPollyClient();
             var response = client.DeleteLexicon(new DeleteLexiconRequest 
             {
                 Name = "example"
@@ -29,6 +29,7 @@ namespace AWSSDKDocSamples.Amazon.Polly.Generated
         {
             #region to-describe-available-voices-1482180557753
 
+            var client = new AmazonPollyClient();
             var response = client.DescribeVoices(new DescribeVoicesRequest 
             {
                 LanguageCode = "en-GB"
@@ -43,6 +44,7 @@ namespace AWSSDKDocSamples.Amazon.Polly.Generated
         {
             #region to-retrieve-a-lexicon-1481912870836
 
+            var client = new AmazonPollyClient();
             var response = client.GetLexicon(new GetLexiconRequest 
             {
                 Name = ""
@@ -58,6 +60,7 @@ namespace AWSSDKDocSamples.Amazon.Polly.Generated
         {
             #region to-list-all-lexicons-in-a-region-1481842106487
 
+            var client = new AmazonPollyClient();
             var response = client.ListLexicons(new ListLexiconsRequest 
             {
             });
@@ -71,6 +74,7 @@ namespace AWSSDKDocSamples.Amazon.Polly.Generated
         {
             #region to-save-a-lexicon-1482272584088
 
+            var client = new AmazonPollyClient();
             var response = client.PutLexicon(new PutLexiconRequest 
             {
                 Content = "file://example.pls",
@@ -85,6 +89,7 @@ namespace AWSSDKDocSamples.Amazon.Polly.Generated
         {
             #region to-synthesize-speech-1482186064046
 
+            var client = new AmazonPollyClient();
             var response = client.SynthesizeSpeech(new SynthesizeSpeechRequest 
             {
                 LexiconNames = new List<string> {

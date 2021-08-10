@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.FSx.Generated
 {
     class FSxSamples : ISample
     {
-        static IAmazonFSx client = new AmazonFSxClient();
         public void FSxCopyBackup()
         {
             #region to-copy-a-backup-1481847318640
 
+            var client = new AmazonFSxClient();
             var response = client.CopyBackup(new CopyBackupRequest 
             {
                 SourceBackupId = "backup-03e3c82e0183b7b6b",
@@ -31,6 +31,7 @@ namespace AWSSDKDocSamples.Amazon.FSx.Generated
         {
             #region to-create-a-new-backup-1481840798597
 
+            var client = new AmazonFSxClient();
             var response = client.CreateBackup(new CreateBackupRequest 
             {
                 FileSystemId = "fs-0498eed5fe91001ec",
@@ -51,6 +52,7 @@ namespace AWSSDKDocSamples.Amazon.FSx.Generated
         {
             #region to-create-a-new-file-system-1481840798547
 
+            var client = new AmazonFSxClient();
             var response = client.CreateFileSystem(new CreateFileSystemRequest 
             {
                 ClientRequestToken = "a8ca07e4-61ec-4399-99f4-19853801bcd5",
@@ -91,6 +93,7 @@ namespace AWSSDKDocSamples.Amazon.FSx.Generated
         {
             #region to-create-a-new-file-system-from-backup-1481840798598
 
+            var client = new AmazonFSxClient();
             var response = client.CreateFileSystemFromBackup(new CreateFileSystemFromBackupRequest 
             {
                 BackupId = "backup-03e3c82e0183b7b6b",
@@ -119,6 +122,7 @@ namespace AWSSDKDocSamples.Amazon.FSx.Generated
         {
             #region to-delete-a-file-system-1481847318399
 
+            var client = new AmazonFSxClient();
             var response = client.DeleteBackup(new DeleteBackupRequest 
             {
                 BackupId = "backup-03e3c82e0183b7b6b"
@@ -134,6 +138,7 @@ namespace AWSSDKDocSamples.Amazon.FSx.Generated
         {
             #region to-delete-a-file-system-1481847318348
 
+            var client = new AmazonFSxClient();
             var response = client.DeleteFileSystem(new DeleteFileSystemRequest 
             {
                 FileSystemId = "fs-0498eed5fe91001ec"
@@ -149,6 +154,7 @@ namespace AWSSDKDocSamples.Amazon.FSx.Generated
         {
             #region to-describe-backups-1481848448499
 
+            var client = new AmazonFSxClient();
             var response = client.DescribeBackups(new DescribeBackupsRequest 
             {
             });
@@ -162,6 +168,7 @@ namespace AWSSDKDocSamples.Amazon.FSx.Generated
         {
             #region to-describe-a-file-systems-1481848448460
 
+            var client = new AmazonFSxClient();
             var response = client.DescribeFileSystems(new DescribeFileSystemsRequest 
             {
             });
@@ -175,6 +182,7 @@ namespace AWSSDKDocSamples.Amazon.FSx.Generated
         {
             #region to-list-tags-for-a-fsx-resource-1481847318372
 
+            var client = new AmazonFSxClient();
             var response = client.ListTagsForResource(new ListTagsForResourceRequest 
             {
                 ResourceARN = "arn:aws:fsx:us-east-1:012345678912:file-system/fs-0498eed5fe91001ec"
@@ -189,6 +197,7 @@ namespace AWSSDKDocSamples.Amazon.FSx.Generated
         {
             #region to-tag-a-fsx-resource-1481847318371
 
+            var client = new AmazonFSxClient();
             var response = client.TagResource(new TagResourceRequest 
             {
                 ResourceARN = "arn:aws:fsx:us-east-1:012345678912:file-system/fs-0498eed5fe91001ec",
@@ -208,6 +217,7 @@ namespace AWSSDKDocSamples.Amazon.FSx.Generated
         {
             #region to-untag-a-fsx-resource-1481847318373
 
+            var client = new AmazonFSxClient();
             var response = client.UntagResource(new UntagResourceRequest 
             {
                 ResourceARN = "arn:aws:fsx:us-east-1:012345678912:file-system/fs-0498eed5fe91001ec",
@@ -224,6 +234,7 @@ namespace AWSSDKDocSamples.Amazon.FSx.Generated
         {
             #region to-update-a-file-system-1481840798595
 
+            var client = new AmazonFSxClient();
             var response = client.UpdateFileSystem(new UpdateFileSystemRequest 
             {
                 FileSystemId = "fs-0498eed5fe91001ec",

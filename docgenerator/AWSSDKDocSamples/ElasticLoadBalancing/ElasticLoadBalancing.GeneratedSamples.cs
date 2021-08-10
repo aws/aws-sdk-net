@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
 {
     class ElasticLoadBalancingSamples : ISample
     {
-        static IAmazonElasticLoadBalancing client = new AmazonElasticLoadBalancingClient();
         public void ElasticLoadBalancingAddTags()
         {
             #region elb-add-tags-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.AddTags(new AddTagsRequest 
             {
                 LoadBalancerNames = new List<string> {
@@ -41,6 +41,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-apply-security-groups-to-load-balancer-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.ApplySecurityGroupsToLoadBalancer(new ApplySecurityGroupsToLoadBalancerRequest 
             {
                 LoadBalancerName = "my-load-balancer",
@@ -58,6 +59,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-attach-load-balancer-to-subnets-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.AttachLoadBalancerToSubnets(new AttachLoadBalancerToSubnetsRequest 
             {
                 LoadBalancerName = "my-load-balancer",
@@ -75,6 +77,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-configure-health-check-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.ConfigureHealthCheck(new ConfigureHealthCheckRequest 
             {
                 HealthCheck = new HealthCheck {
@@ -96,6 +99,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-create-app-cookie-stickiness-policy-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.CreateAppCookieStickinessPolicy(new CreateAppCookieStickinessPolicyRequest 
             {
                 CookieName = "my-app-cookie",
@@ -111,6 +115,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-create-lb-cookie-stickiness-policy-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.CreateLBCookieStickinessPolicy(new CreateLBCookieStickinessPolicyRequest 
             {
                 CookieExpirationPeriod = 60,
@@ -126,6 +131,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-create-load-balancer-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.CreateLoadBalancer(new CreateLoadBalancerRequest 
             {
                 Listeners = new List<Listener> {
@@ -154,6 +160,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-create-load-balancer-2
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.CreateLoadBalancer(new CreateLoadBalancerRequest 
             {
                 AvailabilityZones = new List<string> {
@@ -179,6 +186,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-create-load-balancer-3
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.CreateLoadBalancer(new CreateLoadBalancerRequest 
             {
                 Listeners = new List<Listener> {
@@ -214,6 +222,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-create-load-balancer-4
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.CreateLoadBalancer(new CreateLoadBalancerRequest 
             {
                 AvailabilityZones = new List<string> {
@@ -246,6 +255,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-create-load-balancer-5
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.CreateLoadBalancer(new CreateLoadBalancerRequest 
             {
                 Listeners = new List<Listener> {
@@ -275,6 +285,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-create-load-balancer-listeners-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.CreateLoadBalancerListeners(new CreateLoadBalancerListenersRequest 
             {
                 Listeners = new List<Listener> {
@@ -296,6 +307,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-create-load-balancer-listeners-2
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.CreateLoadBalancerListeners(new CreateLoadBalancerListenersRequest 
             {
                 Listeners = new List<Listener> {
@@ -318,6 +330,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-create-load-balancer-policy-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.CreateLoadBalancerPolicy(new CreateLoadBalancerPolicyRequest 
             {
                 LoadBalancerName = "my-load-balancer",
@@ -339,6 +352,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-create-load-balancer-policy-2
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.CreateLoadBalancerPolicy(new CreateLoadBalancerPolicyRequest 
             {
                 LoadBalancerName = "my-load-balancer",
@@ -360,6 +374,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-create-load-balancer-policy-3
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.CreateLoadBalancerPolicy(new CreateLoadBalancerPolicyRequest 
             {
                 LoadBalancerName = "my-load-balancer",
@@ -381,6 +396,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-delete-load-balancer-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.DeleteLoadBalancer(new DeleteLoadBalancerRequest 
             {
                 LoadBalancerName = "my-load-balancer"
@@ -394,6 +410,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-delete-load-balancer-listeners-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.DeleteLoadBalancerListeners(new DeleteLoadBalancerListenersRequest 
             {
                 LoadBalancerName = "my-load-balancer",
@@ -410,6 +427,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-delete-load-balancer-policy-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.DeleteLoadBalancerPolicy(new DeleteLoadBalancerPolicyRequest 
             {
                 LoadBalancerName = "my-load-balancer",
@@ -424,6 +442,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-deregister-instances-from-load-balancer-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.DeregisterInstancesFromLoadBalancer(new DeregisterInstancesFromLoadBalancerRequest 
             {
                 Instances = new List<Instance> {
@@ -441,6 +460,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-describe-instance-health-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.DescribeInstanceHealth(new DescribeInstanceHealthRequest 
             {
                 LoadBalancerName = "my-load-balancer"
@@ -455,6 +475,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-describe-load-balancer-attributes-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.DescribeLoadBalancerAttributes(new DescribeLoadBalancerAttributesRequest 
             {
                 LoadBalancerName = "my-load-balancer"
@@ -469,6 +490,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-describe-load-balancer-policies-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.DescribeLoadBalancerPolicies(new DescribeLoadBalancerPoliciesRequest 
             {
                 LoadBalancerName = "my-load-balancer",
@@ -486,6 +508,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-describe-load-balancer-policy-types-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.DescribeLoadBalancerPolicyTypes(new DescribeLoadBalancerPolicyTypesRequest 
             {
                 PolicyTypeNames = new List<string> {
@@ -502,6 +525,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-describe-load-balancers-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.DescribeLoadBalancers(new DescribeLoadBalancersRequest 
             {
                 LoadBalancerNames = new List<string> {
@@ -518,6 +542,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-describe-tags-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.DescribeTags(new DescribeTagsRequest 
             {
                 LoadBalancerNames = new List<string> {
@@ -534,6 +559,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-detach-load-balancer-from-subnets-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.DetachLoadBalancerFromSubnets(new DetachLoadBalancerFromSubnetsRequest 
             {
                 LoadBalancerName = "my-load-balancer",
@@ -551,6 +577,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-disable-availability-zones-for-load-balancer-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.DisableAvailabilityZonesForLoadBalancer(new DisableAvailabilityZonesForLoadBalancerRequest 
             {
                 AvailabilityZones = new List<string> {
@@ -568,6 +595,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-enable-availability-zones-for-load-balancer-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.EnableAvailabilityZonesForLoadBalancer(new EnableAvailabilityZonesForLoadBalancerRequest 
             {
                 AvailabilityZones = new List<string> {
@@ -585,6 +613,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-modify-load-balancer-attributes-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.ModifyLoadBalancerAttributes(new ModifyLoadBalancerAttributesRequest 
             {
                 LoadBalancerAttributes = new LoadBalancerAttributes { CrossZoneLoadBalancing = new CrossZoneLoadBalancing { Enabled = true } },
@@ -601,6 +630,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-modify-load-balancer-attributes-2
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.ModifyLoadBalancerAttributes(new ModifyLoadBalancerAttributesRequest 
             {
                 LoadBalancerAttributes = new LoadBalancerAttributes { ConnectionDraining = new ConnectionDraining {
@@ -620,6 +650,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-register-instances-with-load-balancer-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.RegisterInstancesWithLoadBalancer(new RegisterInstancesWithLoadBalancerRequest 
             {
                 Instances = new List<Instance> {
@@ -637,6 +668,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-remove-tags-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.RemoveTags(new RemoveTagsRequest 
             {
                 LoadBalancerNames = new List<string> {
@@ -655,6 +687,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-set-load-balancer-listener-ssl-certificate-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.SetLoadBalancerListenerSSLCertificate(new SetLoadBalancerListenerSSLCertificateRequest 
             {
                 LoadBalancerName = "my-load-balancer",
@@ -670,6 +703,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-set-load-balancer-policies-for-backend-server-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.SetLoadBalancerPoliciesForBackendServer(new SetLoadBalancerPoliciesForBackendServerRequest 
             {
                 InstancePort = 80,
@@ -687,6 +721,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
         {
             #region elb-set-load-balancer-policies-of-listener-1
 
+            var client = new AmazonElasticLoadBalancingClient();
             var response = client.SetLoadBalancerPoliciesOfListener(new SetLoadBalancerPoliciesOfListenerRequest 
             {
                 LoadBalancerName = "my-load-balancer",

@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.Snowball.Generated
 {
     class SnowballSamples : ISample
     {
-        static IAmazonSnowball client = new AmazonSnowballClient();
         public void SnowballCancelCluster()
         {
             #region to-cancel-a-cluster-job-1482533760554
 
+            var client = new AmazonSnowballClient();
             var response = client.CancelCluster(new CancelClusterRequest 
             {
                 ClusterId = "CID123e4567-e89b-12d3-a456-426655440000"
@@ -29,6 +29,7 @@ namespace AWSSDKDocSamples.Amazon.Snowball.Generated
         {
             #region to-cancel-a-job-for-a-snowball-device-1482534699477
 
+            var client = new AmazonSnowballClient();
             var response = client.CancelJob(new CancelJobRequest 
             {
                 JobId = "JID123e4567-e89b-12d3-a456-426655440000"
@@ -42,6 +43,7 @@ namespace AWSSDKDocSamples.Amazon.Snowball.Generated
         {
             #region to-create-an-address-for-a-job-1482535416294
 
+            var client = new AmazonSnowballClient();
             var response = client.CreateAddress(new CreateAddressRequest 
             {
                 Address = new Address {
@@ -65,6 +67,7 @@ namespace AWSSDKDocSamples.Amazon.Snowball.Generated
         {
             #region to-create-a-cluster-1482864724077
 
+            var client = new AmazonSnowballClient();
             var response = client.CreateCluster(new CreateClusterRequest 
             {
                 AddressId = "ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b",
@@ -97,6 +100,7 @@ namespace AWSSDKDocSamples.Amazon.Snowball.Generated
         {
             #region to-create-a-job-1482864834886
 
+            var client = new AmazonSnowballClient();
             var response = client.CreateJob(new CreateJobRequest 
             {
                 AddressId = "ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b",
@@ -130,6 +134,7 @@ namespace AWSSDKDocSamples.Amazon.Snowball.Generated
         {
             #region to-describe-an-address-for-a-job-1482538608745
 
+            var client = new AmazonSnowballClient();
             var response = client.DescribeAddress(new DescribeAddressRequest 
             {
                 AddressId = "ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b"
@@ -144,6 +149,7 @@ namespace AWSSDKDocSamples.Amazon.Snowball.Generated
         {
             #region to-describe-all-the-addresses-youve-created-for-aws-snowball-1482538936603
 
+            var client = new AmazonSnowballClient();
             var response = client.DescribeAddresses(new DescribeAddressesRequest 
             {
             });
@@ -157,6 +163,7 @@ namespace AWSSDKDocSamples.Amazon.Snowball.Generated
         {
             #region to-describe-a-cluster-1482864218396
 
+            var client = new AmazonSnowballClient();
             var response = client.DescribeCluster(new DescribeClusterRequest 
             {
                 ClusterId = "CID123e4567-e89b-12d3-a456-426655440000"
@@ -171,6 +178,7 @@ namespace AWSSDKDocSamples.Amazon.Snowball.Generated
         {
             #region to-describe-a-job-youve-created-for-aws-snowball-1482539500180
 
+            var client = new AmazonSnowballClient();
             var response = client.DescribeJob(new DescribeJobRequest 
             {
                 JobId = "JID123e4567-e89b-12d3-a456-426655440000"
@@ -185,6 +193,7 @@ namespace AWSSDKDocSamples.Amazon.Snowball.Generated
         {
             #region to-get-the-manifest-for-a-job-youve-created-for-aws-snowball-1482540389246
 
+            var client = new AmazonSnowballClient();
             var response = client.GetJobManifest(new GetJobManifestRequest 
             {
                 JobId = "JID123e4567-e89b-12d3-a456-426655440000"
@@ -199,6 +208,7 @@ namespace AWSSDKDocSamples.Amazon.Snowball.Generated
         {
             #region to-get-the-unlock-code-for-a-job-youve-created-for-aws-snowball-1482541987286
 
+            var client = new AmazonSnowballClient();
             var response = client.GetJobUnlockCode(new GetJobUnlockCodeRequest 
             {
                 JobId = "JID123e4567-e89b-12d3-a456-426655440000"
@@ -213,6 +223,7 @@ namespace AWSSDKDocSamples.Amazon.Snowball.Generated
         {
             #region to-see-your-snowball-service-limit-and-the-number-of-snowballs-you-have-in-use-1482863394588
 
+            var client = new AmazonSnowballClient();
             var response = client.GetSnowballUsage(new GetSnowballUsageRequest 
             {
             });
@@ -227,6 +238,7 @@ namespace AWSSDKDocSamples.Amazon.Snowball.Generated
         {
             #region to-get-a-list-of-jobs-in-a-cluster-that-youve-created-for-aws-snowball-1482863105773
 
+            var client = new AmazonSnowballClient();
             var response = client.ListClusterJobs(new ListClusterJobsRequest 
             {
                 ClusterId = "CID123e4567-e89b-12d3-a456-426655440000"
@@ -241,6 +253,7 @@ namespace AWSSDKDocSamples.Amazon.Snowball.Generated
         {
             #region to-get-a-list-of-clusters-that-youve-created-for-aws-snowball-1482862223003
 
+            var client = new AmazonSnowballClient();
             var response = client.ListClusters(new ListClustersRequest 
             {
             });
@@ -254,6 +267,7 @@ namespace AWSSDKDocSamples.Amazon.Snowball.Generated
         {
             #region to-get-a-list-of-jobs-that-youve-created-for-aws-snowball-1482542167627
 
+            var client = new AmazonSnowballClient();
             var response = client.ListJobs(new ListJobsRequest 
             {
             });
@@ -267,6 +281,7 @@ namespace AWSSDKDocSamples.Amazon.Snowball.Generated
         {
             #region to-update-a-cluster-1482863900595
 
+            var client = new AmazonSnowballClient();
             var response = client.UpdateCluster(new UpdateClusterRequest 
             {
                 AddressId = "ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b",
@@ -282,6 +297,7 @@ namespace AWSSDKDocSamples.Amazon.Snowball.Generated
         {
             #region to-update-a-job-1482863556886
 
+            var client = new AmazonSnowballClient();
             var response = client.UpdateJob(new UpdateJobRequest 
             {
                 AddressId = "ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b",

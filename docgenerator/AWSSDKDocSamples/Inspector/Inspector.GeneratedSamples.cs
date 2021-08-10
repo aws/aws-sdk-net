@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
 {
     class InspectorSamples : ISample
     {
-        static IAmazonInspector client = new AmazonInspectorClient();
         public void InspectorAddAttributesToFindings()
         {
             #region add-attributes-to-findings-1481063856401
 
+            var client = new AmazonInspectorClient();
             var response = client.AddAttributesToFindings(new AddAttributesToFindingsRequest 
             {
                 Attributes = new List<Attribute> {
@@ -38,6 +38,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region create-assessment-target-1481063953657
 
+            var client = new AmazonInspectorClient();
             var response = client.CreateAssessmentTarget(new CreateAssessmentTargetRequest 
             {
                 AssessmentTargetName = "ExampleAssessmentTarget",
@@ -53,6 +54,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region create-assessment-template-1481064046719
 
+            var client = new AmazonInspectorClient();
             var response = client.CreateAssessmentTemplate(new CreateAssessmentTemplateRequest 
             {
                 AssessmentTargetArn = "arn:aws:inspector:us-west-2:123456789012:target/0-nvgVhaxX",
@@ -78,6 +80,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region create-resource-group-1481064169037
 
+            var client = new AmazonInspectorClient();
             var response = client.CreateResourceGroup(new CreateResourceGroupRequest 
             {
                 ResourceGroupTags = new List<ResourceGroupTag> {
@@ -97,6 +100,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region delete-assessment-run-1481064251629
 
+            var client = new AmazonInspectorClient();
             var response = client.DeleteAssessmentRun(new DeleteAssessmentRunRequest 
             {
                 AssessmentRunArn = "arn:aws:inspector:us-west-2:123456789012:target/0-nvgVhaxX/template/0-it5r2S4T/run/0-11LMTAVe"
@@ -110,6 +114,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region delete-assessment-target-1481064309029
 
+            var client = new AmazonInspectorClient();
             var response = client.DeleteAssessmentTarget(new DeleteAssessmentTargetRequest 
             {
                 AssessmentTargetArn = "arn:aws:inspector:us-west-2:123456789012:target/0-0kFIPusq"
@@ -123,6 +128,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region delete-assessment-template-1481064364074
 
+            var client = new AmazonInspectorClient();
             var response = client.DeleteAssessmentTemplate(new DeleteAssessmentTemplateRequest 
             {
                 AssessmentTemplateArn = "arn:aws:inspector:us-west-2:123456789012:target/0-nvgVhaxX/template/0-it5r2S4T"
@@ -136,6 +142,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region describte-assessment-runs-1481064424352
 
+            var client = new AmazonInspectorClient();
             var response = client.DescribeAssessmentRuns(new DescribeAssessmentRunsRequest 
             {
                 AssessmentRunArns = new List<string> {
@@ -153,6 +160,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region describte-assessment-targets-1481064527735
 
+            var client = new AmazonInspectorClient();
             var response = client.DescribeAssessmentTargets(new DescribeAssessmentTargetsRequest 
             {
                 AssessmentTargetArns = new List<string> {
@@ -170,6 +178,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region describte-assessment-templates-1481064606829
 
+            var client = new AmazonInspectorClient();
             var response = client.DescribeAssessmentTemplates(new DescribeAssessmentTemplatesRequest 
             {
                 AssessmentTemplateArns = new List<string> {
@@ -187,6 +196,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region describte-cross-account-access-role-1481064682267
 
+            var client = new AmazonInspectorClient();
             var response = client.DescribeCrossAccountAccessRole(new DescribeCrossAccountAccessRoleRequest 
             {
             });
@@ -202,6 +212,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region describte-findings-1481064771803
 
+            var client = new AmazonInspectorClient();
             var response = client.DescribeFindings(new DescribeFindingsRequest 
             {
                 FindingArns = new List<string> {
@@ -219,6 +230,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region describe-resource-groups-1481065787743
 
+            var client = new AmazonInspectorClient();
             var response = client.DescribeResourceGroups(new DescribeResourceGroupsRequest 
             {
                 ResourceGroupArns = new List<string> {
@@ -236,6 +248,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region describe-rules-packages-1481069641979
 
+            var client = new AmazonInspectorClient();
             var response = client.DescribeRulesPackages(new DescribeRulesPackagesRequest 
             {
                 RulesPackageArns = new List<string> {
@@ -253,6 +266,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region get-telemetry-metadata-1481066021297
 
+            var client = new AmazonInspectorClient();
             var response = client.GetTelemetryMetadata(new GetTelemetryMetadataRequest 
             {
                 AssessmentRunArn = "arn:aws:inspector:us-west-2:123456789012:target/0-0kFIPusq/template/0-4r1V2mAw/run/0-MKkpXXPE"
@@ -267,6 +281,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region list-assessment-run-agents-1481918140642
 
+            var client = new AmazonInspectorClient();
             var response = client.ListAssessmentRunAgents(new ListAssessmentRunAgentsRequest 
             {
                 AssessmentRunArn = "arn:aws:inspector:us-west-2:123456789012:target/0-0kFIPusq/template/0-4r1V2mAw/run/0-MKkpXXPE",
@@ -283,6 +298,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region list-assessment-runs-1481066340844
 
+            var client = new AmazonInspectorClient();
             var response = client.ListAssessmentRuns(new ListAssessmentRunsRequest 
             {
                 AssessmentTemplateArns = new List<string> {
@@ -301,6 +317,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region list-assessment-targets-1481066540849
 
+            var client = new AmazonInspectorClient();
             var response = client.ListAssessmentTargets(new ListAssessmentTargetsRequest 
             {
                 MaxResults = 123
@@ -316,6 +333,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region list-assessment-templates-1481066623520
 
+            var client = new AmazonInspectorClient();
             var response = client.ListAssessmentTemplates(new ListAssessmentTemplatesRequest 
             {
                 AssessmentTargetArns = new List<string> {
@@ -334,6 +352,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region list-event-subscriptions-1481068376945
 
+            var client = new AmazonInspectorClient();
             var response = client.ListEventSubscriptions(new ListEventSubscriptionsRequest 
             {
                 MaxResults = 123,
@@ -350,6 +369,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region list-findings-1481066840611
 
+            var client = new AmazonInspectorClient();
             var response = client.ListFindings(new ListFindingsRequest 
             {
                 AssessmentRunArns = new List<string> {
@@ -368,6 +388,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region list-rules-packages-1481066954883
 
+            var client = new AmazonInspectorClient();
             var response = client.ListRulesPackages(new ListRulesPackagesRequest 
             {
                 MaxResults = 123
@@ -383,6 +404,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region list-tags-for-resource-1481067025240
 
+            var client = new AmazonInspectorClient();
             var response = client.ListTagsForResource(new ListTagsForResourceRequest 
             {
                 ResourceArn = "arn:aws:inspector:us-west-2:123456789012:target/0-0kFIPusq/template/0-gcwFliYu"
@@ -397,6 +419,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region preview-agents-1481067101888
 
+            var client = new AmazonInspectorClient();
             var response = client.PreviewAgents(new PreviewAgentsRequest 
             {
                 MaxResults = 123,
@@ -413,6 +436,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region register-cross-account-access-role-1481067178301
 
+            var client = new AmazonInspectorClient();
             var response = client.RegisterCrossAccountAccessRole(new RegisterCrossAccountAccessRoleRequest 
             {
                 RoleArn = "arn:aws:iam::123456789012:role/inspector"
@@ -426,6 +450,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region remove-attributes-from-findings-1481067246548
 
+            var client = new AmazonInspectorClient();
             var response = client.RemoveAttributesFromFindings(new RemoveAttributesFromFindingsRequest 
             {
                 AttributeKeys = new List<string> {
@@ -445,6 +470,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region set-tags-for-resource-1481067329646
 
+            var client = new AmazonInspectorClient();
             var response = client.SetTagsForResource(new SetTagsForResourceRequest 
             {
                 ResourceArn = "arn:aws:inspector:us-west-2:123456789012:target/0-nvgVhaxX/template/0-7sbz2Kz0",
@@ -464,6 +490,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region start-assessment-run-1481067407484
 
+            var client = new AmazonInspectorClient();
             var response = client.StartAssessmentRun(new StartAssessmentRunRequest 
             {
                 AssessmentRunName = "examplerun",
@@ -479,6 +506,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region stop-assessment-run-1481067502857
 
+            var client = new AmazonInspectorClient();
             var response = client.StopAssessmentRun(new StopAssessmentRunRequest 
             {
                 AssessmentRunArn = "arn:aws:inspector:us-west-2:123456789012:target/0-nvgVhaxX/template/0-it5r2S4T/run/0-11LMTAVe"
@@ -492,6 +520,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region subscribe-to-event-1481067686031
 
+            var client = new AmazonInspectorClient();
             var response = client.SubscribeToEvent(new SubscribeToEventRequest 
             {
                 Event = "ASSESSMENT_RUN_COMPLETED",
@@ -507,6 +536,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region unsubscribe-from-event-1481067781705
 
+            var client = new AmazonInspectorClient();
             var response = client.UnsubscribeFromEvent(new UnsubscribeFromEventRequest 
             {
                 Event = "ASSESSMENT_RUN_COMPLETED",
@@ -522,6 +552,7 @@ namespace AWSSDKDocSamples.Amazon.Inspector.Generated
         {
             #region update-assessment-target-1481067866692
 
+            var client = new AmazonInspectorClient();
             var response = client.UpdateAssessmentTarget(new UpdateAssessmentTargetRequest 
             {
                 AssessmentTargetArn = "arn:aws:inspector:us-west-2:123456789012:target/0-nvgVhaxX",

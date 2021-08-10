@@ -16,7 +16,6 @@ namespace AWSSDKDocSamples.<#=this.Config.Namespace#>.Generated
 {
 	class <#=this.Config.ClassName#>Samples : ISample
 	{
-		static IAmazon<#=this.Config.ClassName#> client = new Amazon<#=this.Config.ClassName#>Client();
 <#
 	foreach(var operation in this.Config.ServiceModel.Operations)
 	{
@@ -27,6 +26,7 @@ namespace AWSSDKDocSamples.<#=this.Config.Namespace#>.Generated
 		{
 			#region <#=example.Id#>
 
+			var client = new Amazon<#=this.Config.ClassName#>Client();
 			var response = client.<#=operation.Name#>(new <#=operation.Name#>Request 
 			{
 <#

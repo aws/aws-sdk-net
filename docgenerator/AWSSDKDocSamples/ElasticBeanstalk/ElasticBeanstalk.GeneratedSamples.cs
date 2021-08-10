@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
 {
     class ElasticBeanstalkSamples : ISample
     {
-        static IAmazonElasticBeanstalk client = new AmazonElasticBeanstalkClient();
         public void ElasticBeanstalkAbortEnvironmentUpdate()
         {
             #region to-abort-a-deployment-1456267848227
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.AbortEnvironmentUpdate(new AbortEnvironmentUpdateRequest 
             {
                 EnvironmentName = "my-env"
@@ -29,6 +29,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-check-the-availability-of-a-cname-1456268589537
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.CheckDNSAvailability(new CheckDNSAvailabilityRequest 
             {
                 CNAMEPrefix = "my-cname"
@@ -44,6 +45,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-create-a-new-application-1456268895683
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.CreateApplication(new CreateApplicationRequest 
             {
                 ApplicationName = "my-app",
@@ -59,6 +61,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-create-a-new-application-1456268895683
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.CreateApplicationVersion(new CreateApplicationVersionRequest 
             {
                 ApplicationName = "my-app",
@@ -81,6 +84,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-create-a-configuration-template-1456269283586
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.CreateConfigurationTemplate(new CreateConfigurationTemplateRequest 
             {
                 ApplicationName = "my-app",
@@ -101,6 +105,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-create-a-new-environment-for-an-application-1456269380396
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.CreateEnvironment(new CreateEnvironmentRequest 
             {
                 ApplicationName = "my-app",
@@ -129,6 +134,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-create-a-new-environment-for-an-application-1456269380396
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.CreateStorageLocation(new CreateStorageLocationRequest 
             {
             });
@@ -142,6 +148,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-delete-an-application-1456269699366
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.DeleteApplication(new DeleteApplicationRequest 
             {
                 ApplicationName = "my-app"
@@ -155,6 +162,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-delete-an-application-version-1456269792956
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.DeleteApplicationVersion(new DeleteApplicationVersionRequest 
             {
                 ApplicationName = "my-app",
@@ -170,6 +178,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-delete-a-configuration-template-1456269836701
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.DeleteConfigurationTemplate(new DeleteConfigurationTemplateRequest 
             {
                 ApplicationName = "my-app",
@@ -184,6 +193,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-delete-a-draft-configuration-1456269886654
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.DeleteEnvironmentConfiguration(new DeleteEnvironmentConfigurationRequest 
             {
                 ApplicationName = "my-app",
@@ -198,6 +208,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-view-a-list-of-applications-1456270027373
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.DescribeApplications(new DescribeApplicationsRequest 
             {
             });
@@ -211,6 +222,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-view-information-about-an-application-version-1456269947428
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.DescribeApplicationVersions(new DescribeApplicationVersionsRequest 
             {
                 ApplicationName = "my-app",
@@ -228,6 +240,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-view-configuration-options-for-an-environment-1456276763917
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.DescribeConfigurationOptions(new DescribeConfigurationOptionsRequest 
             {
                 ApplicationName = "my-app",
@@ -243,6 +256,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-view-configurations-settings-for-an-environment-1456276924537
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.DescribeConfigurationSettings(new DescribeConfigurationSettingsRequest 
             {
                 ApplicationName = "my-app",
@@ -258,6 +272,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-view-environment-health-1456277109510
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.DescribeEnvironmentHealth(new DescribeEnvironmentHealthRequest 
             {
                 AttributeNames = new List<string> {
@@ -281,6 +296,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-view-information-about-the-aws-resources-in-your-environment-1456277206232
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.DescribeEnvironmentResources(new DescribeEnvironmentResourcesRequest 
             {
                 EnvironmentName = "my-env"
@@ -295,6 +311,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-view-information-about-an-environment-1456277288662
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.DescribeEnvironments(new DescribeEnvironmentsRequest 
             {
                 EnvironmentNames = new List<string> {
@@ -311,6 +328,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-view-events-for-an-environment-1456277367589
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.DescribeEvents(new DescribeEventsRequest 
             {
                 EnvironmentName = "my-env"
@@ -325,6 +343,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-view-environment-health-1456277424757
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.DescribeInstancesHealth(new DescribeInstancesHealthRequest 
             {
                 AttributeNames = new List<string> {
@@ -343,6 +362,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-view-solution-stacks-1456277504811
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.ListAvailableSolutionStacks(new ListAvailableSolutionStacksRequest 
             {
             });
@@ -357,6 +377,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-rebuild-an-environment-1456277600918
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.RebuildEnvironment(new RebuildEnvironmentRequest 
             {
                 EnvironmentName = "my-env"
@@ -370,6 +391,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-request-tailed-logs-1456277657045
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.RequestEnvironmentInfo(new RequestEnvironmentInfoRequest 
             {
                 EnvironmentName = "my-env",
@@ -384,6 +406,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-restart-application-servers-1456277739302
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.RestartAppServer(new RestartAppServerRequest 
             {
                 EnvironmentName = "my-env"
@@ -397,6 +420,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-retrieve-tailed-logs-1456277792734
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.RetrieveEnvironmentInfo(new RetrieveEnvironmentInfoRequest 
             {
                 EnvironmentName = "my-env",
@@ -412,6 +436,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-swap-environment-cnames-1456277839438
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.SwapEnvironmentCNAMEs(new SwapEnvironmentCNAMEsRequest 
             {
                 DestinationEnvironmentName = "my-env-green",
@@ -426,6 +451,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-terminate-an-environment-1456277888556
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.TerminateEnvironment(new TerminateEnvironmentRequest 
             {
                 EnvironmentName = "my-env"
@@ -451,6 +477,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-change-an-applications-description-1456277957075
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.UpdateApplication(new UpdateApplicationRequest 
             {
                 ApplicationName = "my-app",
@@ -466,6 +493,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-change-an-application-versions-description-1456278019237
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.UpdateApplicationVersion(new UpdateApplicationVersionRequest 
             {
                 ApplicationName = "my-app",
@@ -482,6 +510,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-update-a-configuration-template-1456278075300
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.UpdateConfigurationTemplate(new UpdateConfigurationTemplateRequest 
             {
                 ApplicationName = "my-app",
@@ -507,6 +536,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-update-an-environment-to-a-new-version-1456278210718
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.UpdateEnvironment(new UpdateEnvironmentRequest 
             {
                 EnvironmentName = "my-env",
@@ -533,6 +563,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-configure-option-settings-1456278286349
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.UpdateEnvironment(new UpdateEnvironmentRequest 
             {
                 EnvironmentName = "my-env",
@@ -581,6 +612,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticBeanstalk.Generated
         {
             #region to-validate-configuration-settings-1456278393654
 
+            var client = new AmazonElasticBeanstalkClient();
             var response = client.ValidateConfigurationSettings(new ValidateConfigurationSettingsRequest 
             {
                 ApplicationName = "my-app",

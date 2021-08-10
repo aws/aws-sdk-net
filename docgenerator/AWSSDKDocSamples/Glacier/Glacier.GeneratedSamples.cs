@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
 {
     class GlacierSamples : ISample
     {
-        static IAmazonGlacier client = new AmazonGlacierClient();
         public void GlacierAbortMultipartUpload()
         {
             #region f3d907f6-e71c-420c-8f71-502346a2c48a
 
+            var client = new AmazonGlacierClient();
             var response = client.AbortMultipartUpload(new AbortMultipartUploadRequest 
             {
                 AccountId = "-",
@@ -31,6 +31,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region to-abort-a-vault-lock-1481839357947
 
+            var client = new AmazonGlacierClient();
             var response = client.AbortVaultLock(new AbortVaultLockRequest 
             {
                 AccountId = "-",
@@ -45,6 +46,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region add-tags-to-vault-post-tags-add-1481663457694
 
+            var client = new AmazonGlacierClient();
             var response = client.AddTagsToVault(new AddTagsToVaultRequest 
             {
                 Tags = new Dictionary<string, string> {
@@ -63,6 +65,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region 272aa0b8-e44c-4a64-add2-ad905a37984d
 
+            var client = new AmazonGlacierClient();
             var response = client.CompleteMultipartUpload(new CompleteMultipartUploadRequest 
             {
                 AccountId = "-",
@@ -83,6 +86,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region to-complete-a-vault-lock-1481839721312
 
+            var client = new AmazonGlacierClient();
             var response = client.CompleteVaultLock(new CompleteVaultLockRequest 
             {
                 AccountId = "-",
@@ -98,6 +102,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region 1dc0313d-ace1-4e6c-9d13-1ec7813b14b7
 
+            var client = new AmazonGlacierClient();
             var response = client.CreateVault(new CreateVaultRequest 
             {
                 AccountId = "-",
@@ -113,6 +118,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region delete-archive-1481667809463
 
+            var client = new AmazonGlacierClient();
             var response = client.DeleteArchive(new DeleteArchiveRequest 
             {
                 AccountId = "-",
@@ -128,6 +134,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region 7f7f000b-4bdb-40d2-91e6-7c902f60f60f
 
+            var client = new AmazonGlacierClient();
             var response = client.DeleteVault(new DeleteVaultRequest 
             {
                 AccountId = "-",
@@ -142,6 +149,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region to-delete-the-vault-access-policy-1481840424677
 
+            var client = new AmazonGlacierClient();
             var response = client.DeleteVaultAccessPolicy(new DeleteVaultAccessPolicyRequest 
             {
                 AccountId = "-",
@@ -156,6 +164,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region to-delete-the-notification-configuration-set-for-a-vault-1481840646090
 
+            var client = new AmazonGlacierClient();
             var response = client.DeleteVaultNotifications(new DeleteVaultNotificationsRequest 
             {
                 AccountId = "-",
@@ -170,6 +179,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region to-get-information-about-a-job-you-previously-initiated-1481840928592
 
+            var client = new AmazonGlacierClient();
             var response = client.DescribeJob(new DescribeJobRequest 
             {
                 AccountId = "-",
@@ -192,6 +202,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region 3c1c6e9d-f5a2-427a-aa6a-f439eacfc05f
 
+            var client = new AmazonGlacierClient();
             var response = client.DescribeVault(new DescribeVaultRequest 
             {
                 AccountId = "-",
@@ -211,6 +222,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region to-get-the-current-data-retrieval-policy-for-the-account-1481851580439
 
+            var client = new AmazonGlacierClient();
             var response = client.GetDataRetrievalPolicy(new GetDataRetrievalPolicyRequest 
             {
                 AccountId = "-"
@@ -225,6 +237,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region to-get-the-output-of-a-previously-initiated-job-1481848550859
 
+            var client = new AmazonGlacierClient();
             var response = client.GetJobOutput(new GetJobOutputRequest 
             {
                 AccountId = "-",
@@ -245,6 +258,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region to--get-the-access-policy-set-on-the-vault-1481936004590
 
+            var client = new AmazonGlacierClient();
             var response = client.GetVaultAccessPolicy(new GetVaultAccessPolicyRequest 
             {
                 AccountId = "-",
@@ -260,6 +274,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region to-retrieve-vault-lock-policy-related-attributes-that-are-set-on-a-vault-1481851363097
 
+            var client = new AmazonGlacierClient();
             var response = client.GetVaultLock(new GetVaultLockRequest 
             {
                 AccountId = "-",
@@ -278,6 +293,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region to-get-the-notification-configuration-for-the-specified-vault-1481918746677
 
+            var client = new AmazonGlacierClient();
             var response = client.GetVaultNotifications(new GetVaultNotificationsRequest 
             {
                 AccountId = "-",
@@ -293,6 +309,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region to-initiate-an-inventory-retrieval-job-1482186883826
 
+            var client = new AmazonGlacierClient();
             var response = client.InitiateJob(new InitiateJobRequest 
             {
                 AccountId = "-",
@@ -315,6 +332,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region 72f2db19-3d93-4c74-b2ed-38703baacf49
 
+            var client = new AmazonGlacierClient();
             var response = client.InitiateMultipartUpload(new InitiateMultipartUploadRequest 
             {
                 AccountId = "-",
@@ -332,6 +350,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region to-initiate-the-vault-locking-process-1481919693394
 
+            var client = new AmazonGlacierClient();
             var response = client.InitiateVaultLock(new InitiateVaultLockRequest 
             {
                 AccountId = "-",
@@ -348,6 +367,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region to-list-jobs-for-a-vault-1481920530537
 
+            var client = new AmazonGlacierClient();
             var response = client.ListJobs(new ListJobsRequest 
             {
                 AccountId = "-",
@@ -363,6 +383,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region to-list-all-the-in-progress-multipart-uploads-for-a-vault-1481935250590
 
+            var client = new AmazonGlacierClient();
             var response = client.ListMultipartUploads(new ListMultipartUploadsRequest 
             {
                 AccountId = "-",
@@ -379,6 +400,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region to-list-the-parts-of-an-archive-that-have-been-uploaded-in-a-multipart-upload-1481921767590
 
+            var client = new AmazonGlacierClient();
             var response = client.ListParts(new ListPartsRequest 
             {
                 AccountId = "-",
@@ -401,6 +423,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region to-list-the-provisioned-capacity-units-for-an-account-1481923656130
 
+            var client = new AmazonGlacierClient();
             var response = client.ListProvisionedCapacity(new ListProvisionedCapacityRequest 
             {
                 AccountId = "-"
@@ -415,6 +438,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region list-tags-for-vault-1481755839720
 
+            var client = new AmazonGlacierClient();
             var response = client.ListTagsForVault(new ListTagsForVaultRequest 
             {
                 AccountId = "-",
@@ -430,6 +454,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region list-vaults-1481753006990
 
+            var client = new AmazonGlacierClient();
             var response = client.ListVaults(new ListVaultsRequest 
             {
                 AccountId = "-",
@@ -446,6 +471,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region to-purchases-a-provisioned-capacity-unit-for-an-aws-account-1481927446662
 
+            var client = new AmazonGlacierClient();
             var response = client.PurchaseProvisionedCapacity(new PurchaseProvisionedCapacityRequest 
             {
                 AccountId = "-"
@@ -460,6 +486,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region remove-tags-from-vault-1481754998801
 
+            var client = new AmazonGlacierClient();
             var response = client.RemoveTagsFromVault(new RemoveTagsFromVaultRequest 
             {
                 TagKeys = new List<string> {
@@ -478,6 +505,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region to-set-and-then-enact-a-data-retrieval-policy--1481928352408
 
+            var client = new AmazonGlacierClient();
             var response = client.SetDataRetrievalPolicy(new SetDataRetrievalPolicyRequest 
             {
                 Policy = new DataRetrievalPolicy { Rules = new List<DataRetrievalRule> {
@@ -497,6 +525,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region to--set-the-access-policy-on-a-vault-1482185872517
 
+            var client = new AmazonGlacierClient();
             var response = client.SetVaultAccessPolicy(new SetVaultAccessPolicyRequest 
             {
                 AccountId = "-",
@@ -512,6 +541,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region to-configure-a-vault-to-post-a-message-to-an-amazon-simple-notification-service-amazon-sns-topic-when-jobs-complete-1482186397475
 
+            var client = new AmazonGlacierClient();
             var response = client.SetVaultNotifications(new SetVaultNotificationsRequest 
             {
                 AccountId = "-",
@@ -533,6 +563,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region upload-archive-1481668510494
 
+            var client = new AmazonGlacierClient();
             var response = client.UploadArchive(new UploadArchiveRequest 
             {
                 AccountId = "-",
@@ -553,6 +584,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
         {
             #region to-upload-the-first-part-of-an-archive-1481835899519
 
+            var client = new AmazonGlacierClient();
             var response = client.UploadMultipartPart(new UploadMultipartPartRequest 
             {
                 AccountId = "-",

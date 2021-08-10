@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
 {
     class RedshiftSamples : ISample
     {
-        static IAmazonRedshift client = new AmazonRedshiftClient();
         public void RedshiftAuthorizeClusterSecurityGroupIngress()
         {
             #region authorizing-access-to-an-ec2-security-group-1481675923213
 
+            var client = new AmazonRedshiftClient();
             var response = client.AuthorizeClusterSecurityGroupIngress(new AuthorizeClusterSecurityGroupIngressRequest 
             {
                 ClusterSecurityGroupName = "mysecuritygroup",
@@ -31,6 +31,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-authorize-an-aws-account-to-restore-from-snapshot-1482368189016
 
+            var client = new AmazonRedshiftClient();
             var response = client.AuthorizeSnapshotAccess(new AuthorizeSnapshotAccessRequest 
             {
                 AccountWithRestoreAccess = "444455556666",
@@ -45,6 +46,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to--creates-a-copy-of-a-snapshot-1482357194074
 
+            var client = new AmazonRedshiftClient();
             var response = client.CopyClusterSnapshot(new CopyClusterSnapshotRequest 
             {
                 SourceSnapshotIdentifier = "rs:mycluster-2016-12-21-20-40-51",
@@ -59,6 +61,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-create-a-cluster-with-minimal-parameters-1481678090203
 
+            var client = new AmazonRedshiftClient();
             var response = client.CreateCluster(new CreateClusterRequest 
             {
                 ClusterIdentifier = "mycluster",
@@ -75,6 +78,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-create-a-cluster-snapshot-1481844657333
 
+            var client = new AmazonRedshiftClient();
             var response = client.CreateClusterParameterGroup(new CreateClusterParameterGroupRequest 
             {
                 Description = "My first cluster parameter group",
@@ -90,6 +94,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-create-a-new-cluster-security-group-1481844171608
 
+            var client = new AmazonRedshiftClient();
             var response = client.CreateClusterSecurityGroup(new CreateClusterSecurityGroupRequest 
             {
                 ClusterSecurityGroupName = "mysecuritygroup",
@@ -104,6 +109,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-create-a-new-cluster-snapshot-1482180269983
 
+            var client = new AmazonRedshiftClient();
             var response = client.CreateClusterSnapshot(new CreateClusterSnapshotRequest 
             {
                 ClusterIdentifier = "mycluster",
@@ -118,6 +124,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-create-a-new-cluster-subnet-group-1482357950701
 
+            var client = new AmazonRedshiftClient();
             var response = client.CreateClusterSubnetGroup(new CreateClusterSubnetGroupRequest 
             {
                 ClusterSubnetGroupName = "mysubnetgroup",
@@ -135,6 +142,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-create-an-event-subscription-1483132129428
 
+            var client = new AmazonRedshiftClient();
             var response = client.CreateEventSubscription(new CreateEventSubscriptionRequest 
             {
                 SnsTopicArn = "arn:aws:sns:us-west-2:123456789101:my-sns-topic",
@@ -149,6 +157,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-create-a-new-hsm-certificate-1482359863292
 
+            var client = new AmazonRedshiftClient();
             var response = client.CreateHsmClientCertificate(new CreateHsmClientCertificateRequest 
             {
                 HsmClientCertificateIdentifier = "my-hsm"
@@ -162,6 +171,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-create-a-snapshot-copy-grant-1482180728699
 
+            var client = new AmazonRedshiftClient();
             var response = client.CreateSnapshotCopyGrant(new CreateSnapshotCopyGrantRequest 
             {
                 SnapshotCopyGrantName = "mycopygrant"
@@ -175,6 +185,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-create-tags--1482440094007
 
+            var client = new AmazonRedshiftClient();
             var response = client.CreateTags(new CreateTagsRequest 
             {
                 ResourceName = "arn:aws:redshift:us-west-2:644653688104:cluster:mycluster",
@@ -198,6 +209,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-delete-an-event-subscription-1483134357677
 
+            var client = new AmazonRedshiftClient();
             var response = client.DeleteEventSubscription(new DeleteEventSubscriptionRequest 
             {
                 SubscriptionName = "mysubscription"
@@ -211,6 +223,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-get-a-description-of-cluster-parameter-groups-1482361865953
 
+            var client = new AmazonRedshiftClient();
             var response = client.DescribeClusterParameterGroups(new DescribeClusterParameterGroupsRequest 
             {
                 Marker = "",
@@ -233,6 +246,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-get-the-parameters-for-a-parameter-group-1482362769122
 
+            var client = new AmazonRedshiftClient();
             var response = client.DescribeClusterParameters(new DescribeClusterParametersRequest 
             {
                 ParameterGroupName = "myclusterparametergroup"
@@ -247,6 +261,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-get-a-description-of-all-clusters-1475865512651
 
+            var client = new AmazonRedshiftClient();
             var response = client.DescribeClusters(new DescribeClustersRequest 
             {
             });
@@ -260,6 +275,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-get-a-description-of-cluster-security-groups-for-the-account-1482363060704
 
+            var client = new AmazonRedshiftClient();
             var response = client.DescribeClusterSecurityGroups(new DescribeClusterSecurityGroupsRequest 
             {
             });
@@ -273,6 +289,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-get-a-description-of-all-cluster-snapshots-1482181325771
 
+            var client = new AmazonRedshiftClient();
             var response = client.DescribeClusterSnapshots(new DescribeClusterSnapshotsRequest 
             {
             });
@@ -286,6 +303,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-get-a-description-of-all-cluster-subnet-groups-1481847412769
 
+            var client = new AmazonRedshiftClient();
             var response = client.DescribeClusterSubnetGroups(new DescribeClusterSubnetGroupsRequest 
             {
             });
@@ -299,6 +317,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-get-a-description-of-cluster-versions-1482363389639
 
+            var client = new AmazonRedshiftClient();
             var response = client.DescribeClusterVersions(new DescribeClusterVersionsRequest 
             {
             });
@@ -312,6 +331,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-get-a-description-of-cluster-default-parameters-1482365915635
 
+            var client = new AmazonRedshiftClient();
             var response = client.DescribeDefaultClusterParameters(new DescribeDefaultClusterParametersRequest 
             {
                 ParameterGroupFamily = "redshift-1.0"
@@ -325,6 +345,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-get-a-description-of-event-categories-1482366442369
 
+            var client = new AmazonRedshiftClient();
             var response = client.DescribeEventCategories(new DescribeEventCategoriesRequest 
             {
                 SourceType = "cluster"
@@ -339,6 +360,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-get-a-description-of-events-1482367106459
 
+            var client = new AmazonRedshiftClient();
             var response = client.DescribeEvents(new DescribeEventsRequest 
             {
                 Duration = 600
@@ -353,6 +375,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-describe-an-event-subscription-1483133239054
 
+            var client = new AmazonRedshiftClient();
             var response = client.DescribeEventSubscriptions(new DescribeEventSubscriptionsRequest 
             {
                 SubscriptionName = "mysubscription"
@@ -367,6 +390,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-get-a-description-of-hsm-certificates-1482367536680
 
+            var client = new AmazonRedshiftClient();
             var response = client.DescribeHsmClientCertificates(new DescribeHsmClientCertificatesRequest 
             {
             });
@@ -380,6 +404,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-describe-logging-status-1483134803712
 
+            var client = new AmazonRedshiftClient();
             var response = client.DescribeLoggingStatus(new DescribeLoggingStatusRequest 
             {
                 ClusterIdentifier = "mycluster"
@@ -396,6 +421,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-get-tags-for-a-resource-1482438593642
 
+            var client = new AmazonRedshiftClient();
             var response = client.DescribeTags(new DescribeTagsRequest 
             {
             });
@@ -409,6 +435,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-disable-logging-1483135106459
 
+            var client = new AmazonRedshiftClient();
             var response = client.DisableLogging(new DisableLoggingRequest 
             {
                 ClusterIdentifier = "mycluster"
@@ -425,6 +452,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-disable-snapshot-copy-1482435501112
 
+            var client = new AmazonRedshiftClient();
             var response = client.DisableSnapshotCopy(new DisableSnapshotCopyRequest 
             {
                 ClusterIdentifier = "mycluster"
@@ -438,6 +466,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-enable-logging-1482434657633
 
+            var client = new AmazonRedshiftClient();
             var response = client.EnableLogging(new EnableLoggingRequest 
             {
                 BucketName = "aws-logs-112233445566-us-west-2",
@@ -454,6 +483,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-enable-snapshot-copy-1482435074072
 
+            var client = new AmazonRedshiftClient();
             var response = client.EnableSnapshotCopy(new EnableSnapshotCopyRequest 
             {
                 ClusterIdentifier = "mycluster",
@@ -468,6 +498,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-modify-a-cluster-1482436093526
 
+            var client = new AmazonRedshiftClient();
             var response = client.ModifyCluster(new ModifyClusterRequest 
             {
                 ClusterIdentifier = "mycluster",
@@ -484,6 +515,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-modify-a-cluster-iam-roles-1482436895837
 
+            var client = new AmazonRedshiftClient();
             var response = client.ModifyClusterIamRoles(new ModifyClusterIamRolesRequest 
             {
                 AddIamRoles = new List<string> {
@@ -500,6 +532,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-modify-a-paramter-group-1483130143433
 
+            var client = new AmazonRedshiftClient();
             var response = client.ModifyClusterParameterGroup(new ModifyClusterParameterGroupRequest 
             {
                 ParameterGroupName = "myclusterparametergroup",
@@ -522,6 +555,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-modify-a-paramter-group-1483130143433
 
+            var client = new AmazonRedshiftClient();
             var response = client.ModifyClusterSubnetGroup(new ModifyClusterSubnetGroupRequest 
             {
                 ClusterSubnetGroupName = "mysubnetgroup",
@@ -540,6 +574,7 @@ namespace AWSSDKDocSamples.Amazon.Redshift.Generated
         {
             #region to-modify-an-event-subscription-1483132220470
 
+            var client = new AmazonRedshiftClient();
             var response = client.ModifyEventSubscription(new ModifyEventSubscriptionRequest 
             {
                 SourceType = "cluster",

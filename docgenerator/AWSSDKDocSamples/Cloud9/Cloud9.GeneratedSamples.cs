@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.Cloud9.Generated
 {
     class Cloud9Samples : ISample
     {
-        static IAmazonCloud9 client = new AmazonCloud9Client();
         public void Cloud9CreateEnvironmentEC2()
         {
             #region createenvironmentec2-1516821730547
 
+            var client = new AmazonCloud9Client();
             var response = client.CreateEnvironmentEC2(new CreateEnvironmentEC2Request 
             {
                 Name = "my-demo-environment",
@@ -35,6 +35,7 @@ namespace AWSSDKDocSamples.Amazon.Cloud9.Generated
         {
             #region createenvironmentmembership-1516822583452
 
+            var client = new AmazonCloud9Client();
             var response = client.CreateEnvironmentMembership(new CreateEnvironmentMembershipRequest 
             {
                 EnvironmentId = "8d9967e2f0624182b74e7690ad69ebEX",
@@ -51,6 +52,7 @@ namespace AWSSDKDocSamples.Amazon.Cloud9.Generated
         {
             #region deleteenvironment-1516822903149
 
+            var client = new AmazonCloud9Client();
             var response = client.DeleteEnvironment(new DeleteEnvironmentRequest 
             {
                 EnvironmentId = "8d9967e2f0624182b74e7690ad69ebEX"
@@ -64,6 +66,7 @@ namespace AWSSDKDocSamples.Amazon.Cloud9.Generated
         {
             #region deleteenvironmentmembership-1516822975655
 
+            var client = new AmazonCloud9Client();
             var response = client.DeleteEnvironmentMembership(new DeleteEnvironmentMembershipRequest 
             {
                 EnvironmentId = "8d9967e2f0624182b74e7690ad69ebEX",
@@ -78,6 +81,7 @@ namespace AWSSDKDocSamples.Amazon.Cloud9.Generated
         {
             #region describeenvironmentmemberships1-1516823070453
 
+            var client = new AmazonCloud9Client();
             var response = client.DescribeEnvironmentMemberships(new DescribeEnvironmentMembershipsRequest 
             {
                 EnvironmentId = "8d9967e2f0624182b74e7690ad69ebEX"
@@ -92,6 +96,7 @@ namespace AWSSDKDocSamples.Amazon.Cloud9.Generated
         {
             #region describeenvironmentmemberships2-1516823191355
 
+            var client = new AmazonCloud9Client();
             var response = client.DescribeEnvironmentMemberships(new DescribeEnvironmentMembershipsRequest 
             {
                 EnvironmentId = "8d9967e2f0624182b74e7690ad69ebEX",
@@ -109,6 +114,7 @@ namespace AWSSDKDocSamples.Amazon.Cloud9.Generated
         {
             #region describeenvironmentmemberships3-1516823268793
 
+            var client = new AmazonCloud9Client();
             var response = client.DescribeEnvironmentMemberships(new DescribeEnvironmentMembershipsRequest 
             {
                 UserArn = "arn:aws:iam::123456789012:user/MyDemoUser"
@@ -123,6 +129,7 @@ namespace AWSSDKDocSamples.Amazon.Cloud9.Generated
         {
             #region describeenvironments-1516823568291
 
+            var client = new AmazonCloud9Client();
             var response = client.DescribeEnvironments(new DescribeEnvironmentsRequest 
             {
                 EnvironmentIds = new List<string> {
@@ -140,6 +147,7 @@ namespace AWSSDKDocSamples.Amazon.Cloud9.Generated
         {
             #region describeenvironmentstatus-1516823462133
 
+            var client = new AmazonCloud9Client();
             var response = client.DescribeEnvironmentStatus(new DescribeEnvironmentStatusRequest 
             {
                 EnvironmentId = "8d9967e2f0624182b74e7690ad69ebEX"
@@ -155,6 +163,7 @@ namespace AWSSDKDocSamples.Amazon.Cloud9.Generated
         {
             #region listenvironments-1516823687205
 
+            var client = new AmazonCloud9Client();
             var response = client.ListEnvironments(new ListEnvironmentsRequest 
             {
             });
@@ -168,6 +177,7 @@ namespace AWSSDKDocSamples.Amazon.Cloud9.Generated
         {
             #region updateenvironment-1516823781910
 
+            var client = new AmazonCloud9Client();
             var response = client.UpdateEnvironment(new UpdateEnvironmentRequest 
             {
                 Name = "my-changed-demo-environment",
@@ -183,6 +193,7 @@ namespace AWSSDKDocSamples.Amazon.Cloud9.Generated
         {
             #region updateenvironmentmembership-1516823876645
 
+            var client = new AmazonCloud9Client();
             var response = client.UpdateEnvironmentMembership(new UpdateEnvironmentMembershipRequest 
             {
                 EnvironmentId = "8d9967e2f0624182b74e7690ad69ebEX",

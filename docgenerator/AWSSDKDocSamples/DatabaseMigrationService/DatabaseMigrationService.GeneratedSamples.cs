@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 {
     class DatabaseMigrationServiceSamples : ISample
     {
-        static IAmazonDatabaseMigrationService client = new AmazonDatabaseMigrationServiceClient();
         public void DatabaseMigrationServiceAddTagsToResource()
         {
             #region add-tags-to-resource-1481744141435
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.AddTagsToResource(new AddTagsToResourceRequest 
             {
                 ResourceArn = "arn:aws:dms:us-east-1:123456789012:endpoint:ASXWXJZLNWNT5HTWCGV2BUJQ7E", // Required. Use the ARN of the resource you want to tag.
@@ -35,6 +35,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region create-endpoint-1481746254348
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.CreateEndpoint(new CreateEndpointRequest 
             {
                 CertificateArn = "",
@@ -66,6 +67,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region create-replication-instance-1481746705295
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.CreateReplicationInstance(new CreateReplicationInstanceRequest 
             {
                 AllocatedStorage = 123,
@@ -99,6 +101,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region create-replication-subnet-group-1481747297930
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.CreateReplicationSubnetGroup(new CreateReplicationSubnetGroupRequest 
             {
                 ReplicationSubnetGroupDescription = "US West subnet group",
@@ -124,6 +127,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region create-replication-task-1481747646288
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.CreateReplicationTask(new CreateReplicationTaskRequest 
             {
                 CdcStartTime = new DateTime(2016, 12, 14, 10, 25, 43, DateTimeKind.Utc),
@@ -151,6 +155,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region delete-certificate-1481751957981
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.DeleteCertificate(new DeleteCertificateRequest 
             {
                 CertificateArn = "arn:aws:dms:us-east-1:123456789012:rep:6UTDJGBOUSM457DE6XFJCJQ"
@@ -165,6 +170,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region delete-connection-1481751957981
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.DeleteConnection(new DeleteConnectionRequest 
             {
                 EndpointArn = "arn:aws:dms:us-east-1:123456789012:endpoint:RAAR3R22XSH46S3PWLC3NJAWKM",
@@ -180,6 +186,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region delete-endpoint-1481752425530
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.DeleteEndpoint(new DeleteEndpointRequest 
             {
                 EndpointArn = "arn:aws:dms:us-east-1:123456789012:endpoint:RAAR3R22XSH46S3PWLC3NJAWKM"
@@ -194,6 +201,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region delete-replication-instance-1481752552839
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.DeleteReplicationInstance(new DeleteReplicationInstanceRequest 
             {
                 ReplicationInstanceArn = "arn:aws:dms:us-east-1:123456789012:rep:6UTDJGBOUS3VI3SUWA66XFJCJQ"
@@ -208,6 +216,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region delete-replication-subnet-group-1481752728597
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.DeleteReplicationSubnetGroup(new DeleteReplicationSubnetGroupRequest 
             {
                 ReplicationSubnetGroupIdentifier = "us-west-2ab-vpc-215ds366"
@@ -221,6 +230,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region delete-replication-task-1481752903506
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.DeleteReplicationTask(new DeleteReplicationTaskRequest 
             {
                 ReplicationTaskArn = "arn:aws:dms:us-east-1:123456789012:rep:6UTDJGBOUS3VI3SUWA66XFJCJQ"
@@ -235,6 +245,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region describe-acount-attributes-1481753085663
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.DescribeAccountAttributes(new DescribeAccountAttributesRequest 
             {
             });
@@ -248,6 +259,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region describe-certificates-1481753186244
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.DescribeCertificates(new DescribeCertificatesRequest 
             {
                 Filters = new List<Filter> {
@@ -273,6 +285,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region describe-connections-1481754477953
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.DescribeConnections(new DescribeConnectionsRequest 
             {
                 Filters = new List<Filter> {
@@ -298,6 +311,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region describe-endpoints-1481754926060
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.DescribeEndpoints(new DescribeEndpointsRequest 
             {
                 Filters = new List<Filter> {
@@ -323,6 +337,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region describe-endpoint-types-1481754742591
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.DescribeEndpointTypes(new DescribeEndpointTypesRequest 
             {
                 Filters = new List<Filter> {
@@ -348,6 +363,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region describe-orderable-replication-instances-1481755123669
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.DescribeOrderableReplicationInstances(new DescribeOrderableReplicationInstancesRequest 
             {
                 Marker = "",
@@ -364,6 +380,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region describe-refresh-schema-status-1481755303497
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.DescribeRefreshSchemasStatus(new DescribeRefreshSchemasStatusRequest 
             {
                 EndpointArn = ""
@@ -378,6 +395,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region describe-replication-instances-1481755443952
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.DescribeReplicationInstances(new DescribeReplicationInstancesRequest 
             {
                 Filters = new List<Filter> {
@@ -403,6 +421,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region describe-replication-subnet-groups-1481755621284
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.DescribeReplicationSubnetGroups(new DescribeReplicationSubnetGroupsRequest 
             {
                 Filters = new List<Filter> {
@@ -428,6 +447,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region describe-replication-tasks-1481755777563
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.DescribeReplicationTasks(new DescribeReplicationTasksRequest 
             {
                 Filters = new List<Filter> {
@@ -453,6 +473,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region describe-schemas-1481755933924
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.DescribeSchemas(new DescribeSchemasRequest 
             {
                 EndpointArn = "",
@@ -470,6 +491,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region describe-table-statistics-1481756071890
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.DescribeTableStatistics(new DescribeTableStatisticsRequest 
             {
                 Marker = "",
@@ -488,6 +510,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region import-certificate-1481756197206
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.ImportCertificate(new ImportCertificateRequest 
             {
                 CertificateIdentifier = "",
@@ -503,6 +526,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region list-tags-for-resource-1481761095501
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.ListTagsForResource(new ListTagsForResourceRequest 
             {
                 ResourceArn = ""
@@ -517,6 +541,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region modify-endpoint-1481761649937
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.ModifyEndpoint(new ModifyEndpointRequest 
             {
                 CertificateArn = "",
@@ -542,6 +567,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region modify-replication-instance-1481761784746
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.ModifyReplicationInstance(new ModifyReplicationInstanceRequest 
             {
                 AllocatedStorage = 123,
@@ -568,6 +594,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region modify-replication-subnet-group-1481762275392
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.ModifyReplicationSubnetGroup(new ModifyReplicationSubnetGroupRequest 
             {
                 ReplicationSubnetGroupDescription = "",
@@ -586,6 +613,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region refresh-schema-1481762399111
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.RefreshSchemas(new RefreshSchemasRequest 
             {
                 EndpointArn = "",
@@ -601,6 +629,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region remove-tags-from-resource-1481762571330
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.RemoveTagsFromResource(new RemoveTagsFromResourceRequest 
             {
                 ResourceArn = "arn:aws:dms:us-east-1:123456789012:endpoint:ASXWXJZLNWNT5HTWCGV2BUJQ7E",
@@ -617,6 +646,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region start-replication-task-1481762706778
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.StartReplicationTask(new StartReplicationTaskRequest 
             {
                 CdcStartTime = new DateTime(2016, 12, 14, 5, 33, 20, DateTimeKind.Utc),
@@ -633,6 +663,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region stop-replication-task-1481762924947
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.StopReplicationTask(new StopReplicationTaskRequest 
             {
                 ReplicationTaskArn = "arn:aws:dms:us-east-1:123456789012:endpoint:ASXWXJZLNWNT5HTWCGV2BUJQ7E"
@@ -647,6 +678,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
         {
             #region test-conection-1481763017636
 
+            var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.TestConnection(new TestConnectionRequest 
             {
                 EndpointArn = "arn:aws:dms:us-east-1:123456789012:endpoint:RAAR3R22XSH46S3PWLC3NJAWKM",

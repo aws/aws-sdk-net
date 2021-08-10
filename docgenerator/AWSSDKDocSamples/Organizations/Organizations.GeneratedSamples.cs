@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
 {
     class OrganizationsSamples : ISample
     {
-        static IAmazonOrganizations client = new AmazonOrganizationsClient();
         public void OrganizationsAcceptHandshake()
         {
             #region to-accept-a-handshake-from-another-account-1472500561150
 
+            var client = new AmazonOrganizationsClient();
             var response = client.AcceptHandshake(new AcceptHandshakeRequest 
             {
                 HandshakeId = "h-examplehandshakeid111"
@@ -30,6 +30,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-attach-a-policy-to-an-ou
 
+            var client = new AmazonOrganizationsClient();
             var response = client.AttachPolicy(new AttachPolicyRequest 
             {
                 PolicyId = "p-examplepolicyid111",
@@ -44,6 +45,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-attach-a-policy-to-an-account
 
+            var client = new AmazonOrganizationsClient();
             var response = client.AttachPolicy(new AttachPolicyRequest 
             {
                 PolicyId = "p-examplepolicyid111",
@@ -58,6 +60,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-cancel-a-handshake-sent-to-a-member-account-1472501320506
 
+            var client = new AmazonOrganizationsClient();
             var response = client.CancelHandshake(new CancelHandshakeRequest 
             {
                 HandshakeId = "h-examplehandshakeid111"
@@ -72,6 +75,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-create-a-new-account-that-is-automatically-part-of-the-organization-1472501463507
 
+            var client = new AmazonOrganizationsClient();
             var response = client.CreateAccount(new CreateAccountRequest 
             {
                 AccountName = "Production Account",
@@ -87,6 +91,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-create-a-new-organization-with-all-features enabled
 
+            var client = new AmazonOrganizationsClient();
             var response = client.CreateOrganization(new CreateOrganizationRequest 
             {
             });
@@ -100,6 +105,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-create-a-new-organization-with-consolidated-billing-features-only
 
+            var client = new AmazonOrganizationsClient();
             var response = client.CreateOrganization(new CreateOrganizationRequest 
             {
                 FeatureSet = "CONSOLIDATED_BILLING"
@@ -114,6 +120,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-create-a-new-organizational-unit
 
+            var client = new AmazonOrganizationsClient();
             var response = client.CreateOrganizationalUnit(new CreateOrganizationalUnitRequest 
             {
                 Name = "AccountingOU",
@@ -129,6 +136,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-create-a-service-control-policy
 
+            var client = new AmazonOrganizationsClient();
             var response = client.CreatePolicy(new CreatePolicyRequest 
             {
                 Content = "{\\"Version\\":\\"2012-10-17\\",\\"Statement\\":{\\"Effect\\":\\"Allow\\",\\"Action\\":\\"s3:*\\"}}",
@@ -146,6 +154,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-decline-a-handshake-sent-from-the-master-account-1472502666967
 
+            var client = new AmazonOrganizationsClient();
             var response = client.DeclineHandshake(new DeclineHandshakeRequest 
             {
                 HandshakeId = "h-examplehandshakeid111"
@@ -160,6 +169,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-delete-an-organizational-unit
 
+            var client = new AmazonOrganizationsClient();
             var response = client.DeleteOrganizationalUnit(new DeleteOrganizationalUnitRequest 
             {
                 OrganizationalUnitId = "ou-examplerootid111-exampleouid111"
@@ -173,6 +183,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-delete-a-policy
 
+            var client = new AmazonOrganizationsClient();
             var response = client.DeletePolicy(new DeletePolicyRequest 
             {
                 PolicyId = "p-examplepolicyid111"
@@ -186,6 +197,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-get-the-details-about-an-account-1472503166868
 
+            var client = new AmazonOrganizationsClient();
             var response = client.DescribeAccount(new DescribeAccountRequest 
             {
                 AccountId = "555555555555"
@@ -200,6 +212,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-get-information-about-a-request-to-create-an-account-1472503727223
 
+            var client = new AmazonOrganizationsClient();
             var response = client.DescribeCreateAccountStatus(new DescribeCreateAccountStatusRequest 
             {
                 CreateAccountRequestId = "car-exampleaccountcreationrequestid"
@@ -214,6 +227,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-get-information-about-a-handshake-1472503400505
 
+            var client = new AmazonOrganizationsClient();
             var response = client.DescribeHandshake(new DescribeHandshakeRequest 
             {
                 HandshakeId = "h-examplehandshakeid111"
@@ -228,6 +242,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-get-information-about-an-organization-1472503400505
 
+            var client = new AmazonOrganizationsClient();
             var response = client.DescribeOrganization(new DescribeOrganizationRequest 
             {
             });
@@ -241,6 +256,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-get-information-about-an-organizational-unit
 
+            var client = new AmazonOrganizationsClient();
             var response = client.DescribeOrganizationalUnit(new DescribeOrganizationalUnitRequest 
             {
                 OrganizationalUnitId = "ou-examplerootid111-exampleouid111"
@@ -255,6 +271,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-get-information-about-a-policy
 
+            var client = new AmazonOrganizationsClient();
             var response = client.DescribePolicy(new DescribePolicyRequest 
             {
                 PolicyId = "p-examplepolicyid111"
@@ -269,6 +286,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-detach-a-policy-from-a-root-ou-or-account
 
+            var client = new AmazonOrganizationsClient();
             var response = client.DetachPolicy(new DetachPolicyRequest 
             {
                 PolicyId = "p-examplepolicyid111",
@@ -283,6 +301,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-disable-a-policy-type-in-a-root
 
+            var client = new AmazonOrganizationsClient();
             var response = client.DisablePolicyType(new DisablePolicyTypeRequest 
             {
                 PolicyType = "SERVICE_CONTROL_POLICY",
@@ -298,6 +317,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-enable-all-features-in-an-organization
 
+            var client = new AmazonOrganizationsClient();
             var response = client.EnableAllFeatures(new EnableAllFeaturesRequest 
             {
             });
@@ -311,6 +331,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-enable-a-policy-type-in-a-root
 
+            var client = new AmazonOrganizationsClient();
             var response = client.EnablePolicyType(new EnablePolicyTypeRequest 
             {
                 PolicyType = "SERVICE_CONTROL_POLICY",
@@ -326,6 +347,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-invite-an-account-to-join-an-organization-1472508594110
 
+            var client = new AmazonOrganizationsClient();
             var response = client.InviteAccountToOrganization(new InviteAccountToOrganizationRequest 
             {
                 Notes = "This is a request for Juan's account to join Bill's organization",
@@ -344,6 +366,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-leave-an-organization-as-a-member-account-1472508784736
 
+            var client = new AmazonOrganizationsClient();
             var response = client.LeaveOrganization(new LeaveOrganizationRequest 
             {
             });
@@ -356,6 +379,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-retrieve-a-list-of-all-of-the-accounts-in-an-organization-1472509590974
 
+            var client = new AmazonOrganizationsClient();
             var response = client.ListAccounts(new ListAccountsRequest 
             {
             });
@@ -369,6 +393,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-retrieve-a-list-of-all-of-the-accounts-in-a-root-or-ou-1472509590974
 
+            var client = new AmazonOrganizationsClient();
             var response = client.ListAccountsForParent(new ListAccountsForParentRequest 
             {
                 ParentId = "ou-examplerootid111-exampleouid111"
@@ -383,6 +408,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-retrieve-a-list-of-all-of-the-child-accounts-and-OUs-in-a-parent-container
 
+            var client = new AmazonOrganizationsClient();
             var response = client.ListChildren(new ListChildrenRequest 
             {
                 ChildType = "ORGANIZATIONAL_UNIT",
@@ -398,6 +424,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-get-a-list-of-completed-account-creation-requests-made-in-the-organization
 
+            var client = new AmazonOrganizationsClient();
             var response = client.ListCreateAccountStatus(new ListCreateAccountStatusRequest 
             {
                 States = new List<string> {
@@ -414,6 +441,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-get-a-list-of-all-account-creation-requests-made-in-the-organization-1472509174532
 
+            var client = new AmazonOrganizationsClient();
             var response = client.ListCreateAccountStatus(new ListCreateAccountStatusRequest 
             {
                 States = new List<string> {
@@ -430,6 +458,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-retrieve-a-list-of-the-handshakes-sent-to-an-account-1472510214747
 
+            var client = new AmazonOrganizationsClient();
             var response = client.ListHandshakesForAccount(new ListHandshakesForAccountRequest 
             {
             });
@@ -443,6 +472,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-retrieve-a-list-of-the-handshakes-associated-with-an-organization-1472511206653
 
+            var client = new AmazonOrganizationsClient();
             var response = client.ListHandshakesForOrganization(new ListHandshakesForOrganizationRequest 
             {
             });
@@ -456,6 +486,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-retrieve-a-list-of-all-of-the-OUs-in-a-parent-container
 
+            var client = new AmazonOrganizationsClient();
             var response = client.ListOrganizationalUnitsForParent(new ListOrganizationalUnitsForParentRequest 
             {
                 ParentId = "r-examplerootid111"
@@ -470,6 +501,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-retrieve-a-list-of-all-of-the-parents-of-a-child-ou-or-account
 
+            var client = new AmazonOrganizationsClient();
             var response = client.ListParents(new ListParentsRequest 
             {
                 ChildId = "444444444444"
@@ -484,6 +516,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-retrieve-a-list-of--policies-in-the-organization
 
+            var client = new AmazonOrganizationsClient();
             var response = client.ListPolicies(new ListPoliciesRequest 
             {
                 Filter = "SERVICE_CONTROL_POLICY"
@@ -498,6 +531,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-retrieve-a-list-of-policies-attached-to-a-root-ou-or-account
 
+            var client = new AmazonOrganizationsClient();
             var response = client.ListPoliciesForTarget(new ListPoliciesForTargetRequest 
             {
                 Filter = "SERVICE_CONTROL_POLICY",
@@ -513,6 +547,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-retrieve-a-list-of-roots-in-the-organization
 
+            var client = new AmazonOrganizationsClient();
             var response = client.ListRoots(new ListRootsRequest 
             {
             });
@@ -526,6 +561,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-retrieve-a-list-of-roots-ous-and-accounts-to-which-a-policy-is-attached
 
+            var client = new AmazonOrganizationsClient();
             var response = client.ListTargetsForPolicy(new ListTargetsForPolicyRequest 
             {
                 PolicyId = "p-FullAWSAccess"
@@ -540,6 +576,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-move-an-ou-or-account-to-another-ou-or-the-root
 
+            var client = new AmazonOrganizationsClient();
             var response = client.MoveAccount(new MoveAccountRequest 
             {
                 AccountId = "333333333333",
@@ -555,6 +592,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-remove-an-account-from-an-organization-as-the-master-account
 
+            var client = new AmazonOrganizationsClient();
             var response = client.RemoveAccountFromOrganization(new RemoveAccountFromOrganizationRequest 
             {
                 AccountId = "333333333333"
@@ -568,6 +606,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-rename-an-organizational-unit
 
+            var client = new AmazonOrganizationsClient();
             var response = client.UpdateOrganizationalUnit(new UpdateOrganizationalUnitRequest 
             {
                 Name = "AccountingOU",
@@ -583,6 +622,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-update-the-details-of-a-policy
 
+            var client = new AmazonOrganizationsClient();
             var response = client.UpdatePolicy(new UpdatePolicyRequest 
             {
                 Description = "This description replaces the original.",
@@ -599,6 +639,7 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
         {
             #region to-update-the-content-of-a-policy
 
+            var client = new AmazonOrganizationsClient();
             var response = client.UpdatePolicy(new UpdatePolicyRequest 
             {
                 Content = "{ \\"Version\\": \\"2012-10-17\\", \\"Statement\\": {\\"Effect\\": \\"Allow\\", \\"Action\\": \\"s3:*\\", \\"Resource\\": \\"*\\" } }",

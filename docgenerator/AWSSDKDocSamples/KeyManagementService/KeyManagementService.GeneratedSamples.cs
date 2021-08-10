@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 {
     class KeyManagementServiceSamples : ISample
     {
-        static IAmazonKeyManagementService client = new AmazonKeyManagementServiceClient();
         public void KeyManagementServiceCancelKeyDeletion()
         {
             #region to-cancel-deletion-of-a-cmk-1477428535102
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.CancelKeyDeletion(new CancelKeyDeletionRequest 
             {
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the CMK whose deletion you are canceling. You can use the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -30,6 +30,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-create-an-alias-1477505685119
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.CreateAlias(new CreateAliasRequest 
             {
                 AliasName = "alias/ExampleAlias", // The alias to create. Aliases must begin with 'alias/'. Do not use aliases that begin with 'alias/aws' because they are reserved for use by AWS.
@@ -44,6 +45,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-create-a-grant-1477972226782
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.CreateGrant(new CreateGrantRequest 
             {
                 GranteePrincipal = "arn:aws:iam::111122223333:role/ExampleRole", // The identity that is given permission to perform the operations specified in the grant.
@@ -64,6 +66,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-create-a-cmk-1478028992966
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.CreateKey(new CreateKeyRequest 
             {
                 Tags = new List<Tag> {
@@ -83,6 +86,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-decrypt-data-1478281622886
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.Decrypt(new DecryptRequest 
             {
                 CiphertextBlob = new MemoryStream(<binary data>), // The encrypted data (ciphertext).
@@ -99,6 +103,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-delete-an-alias-1478285209338
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.DeleteAlias(new DeleteAliasRequest 
             {
                 AliasName = "alias/ExampleAlias" // The alias to delete.
@@ -112,6 +117,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-delete-imported-key-material-1478561674507
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.DeleteImportedKeyMaterial(new DeleteImportedKeyMaterialRequest 
             {
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the CMK whose imported key material you are deleting. You can use the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -125,6 +131,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region get-key-details-1478565820907
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.DescribeKey(new DescribeKeyRequest 
             {
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the CMK that you want information about. You can use the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -139,6 +146,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-disable-a-cmk-1478566583659
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.DisableKey(new DisableKeyRequest 
             {
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the CMK to disable. You can use the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -152,6 +160,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-disable-automatic-rotation-of-key-material-1478624396092
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.DisableKeyRotation(new DisableKeyRotationRequest 
             {
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the CMK whose key material will no longer be rotated. You can use the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -165,6 +174,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-enable-a-cmk-1478627501129
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.EnableKey(new EnableKeyRequest 
             {
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the CMK to enable. You can use the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -178,6 +188,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-enable-automatic-rotation-of-key-material-1478629109677
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.EnableKeyRotation(new EnableKeyRotationRequest 
             {
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the CMK whose key material will be rotated annually. You can use the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -191,6 +202,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-encrypt-data-1478906026012
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.Encrypt(new EncryptRequest 
             {
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the CMK to use for encryption. You can use the key ID or Amazon Resource Name (ARN) of the CMK, or the name or ARN of an alias that refers to the CMK.
@@ -207,6 +219,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-generate-a-data-key-1478912956062
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.GenerateDataKey(new GenerateDataKeyRequest 
             {
                 KeyId = "alias/ExampleAlias", // The identifier of the CMK to use to encrypt the data key. You can use the key ID or Amazon Resource Name (ARN) of the CMK, or the name or ARN of an alias that refers to the CMK.
@@ -224,6 +237,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-generate-an-encrypted-data-key-1478914121134
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.GenerateDataKeyWithoutPlaintext(new GenerateDataKeyWithoutPlaintextRequest 
             {
                 KeyId = "alias/ExampleAlias", // The identifier of the CMK to use to encrypt the data key. You can use the key ID or Amazon Resource Name (ARN) of the CMK, or the name or ARN of an alias that refers to the CMK.
@@ -240,6 +254,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-generate-random-data-1479163645600
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.GenerateRandom(new GenerateRandomRequest 
             {
                 NumberOfBytes = 32 // The length of the random data, specified in number of bytes.
@@ -254,6 +269,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-retrieve-a-key-policy-1479170128325
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.GetKeyPolicy(new GetKeyPolicyRequest 
             {
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the CMK whose key policy you want to retrieve. You can use the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -269,6 +285,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-retrieve-the-rotation-status-for-a-cmk-1479172287408
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.GetKeyRotationStatus(new GetKeyRotationStatusRequest 
             {
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the CMK whose key material rotation status you want to retrieve. You can use the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -283,6 +300,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-retrieve-the-public-key-and-import-token-for-a-cmk-1480626483211
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.GetParametersForImport(new GetParametersForImportRequest 
             {
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the CMK for which to retrieve the public key and import token. You can use the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -302,6 +320,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-import-key-material-into-a-cmk-1480630551969
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.ImportKeyMaterial(new ImportKeyMaterialRequest 
             {
                 EncryptedKeyMaterial = new MemoryStream(<binary data>), // The encrypted key material to import.
@@ -318,6 +337,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-list-aliases-1480729693349
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.ListAliases(new ListAliasesRequest 
             {
             });
@@ -332,6 +352,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-list-grants-for-a-cmk-1481067365389
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.ListGrants(new ListGrantsRequest 
             {
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the CMK whose grants you want to list. You can use the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -347,6 +368,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-list-key-policies-for-a-cmk-1481069780998
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.ListKeyPolicies(new ListKeyPoliciesRequest 
             {
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the CMK whose key policies you want to list. You can use the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -362,6 +384,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-list-cmks-1481071643069
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.ListKeys(new ListKeysRequest 
             {
             });
@@ -376,6 +399,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-list-tags-for-a-cmk-1483996855796
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.ListResourceTags(new ListResourceTagsRequest 
             {
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the CMK whose tags you are listing. You can use the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -391,6 +415,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-list-grants-that-the-specified-principal-can-retire-1481140499620
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.ListRetirableGrants(new ListRetirableGrantsRequest 
             {
                 RetiringPrincipal = "arn:aws:iam::111122223333:role/ExampleRole" // The retiring principal whose grants you want to list. Use the Amazon Resource Name (ARN) of an AWS principal such as an AWS account (root), IAM user, federated user, or assumed role user.
@@ -406,6 +431,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-attach-a-key-policy-to-a-cmk-1481147345018
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.PutKeyPolicy(new PutKeyPolicyRequest 
             {
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the CMK to attach the key policy to. You can use the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -494,6 +520,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-reencrypt-data-1481230358001
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.ReEncrypt(new ReEncryptRequest 
             {
                 CiphertextBlob = new MemoryStream(<binary data>), // The data to reencrypt.
@@ -511,6 +538,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-retire-a-grant-1481327028297
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.RetireGrant(new RetireGrantRequest 
             {
                 GrantId = "0c237476b39f8bc44e45212e08498fbe3151305030726c0590dd8d3e9f3d6a60", // The identifier of the grant to retire.
@@ -525,6 +553,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-revoke-a-grant-1481329549302
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.RevokeGrant(new RevokeGrantRequest 
             {
                 GrantId = "0c237476b39f8bc44e45212e08498fbe3151305030726c0590dd8d3e9f3d6a60", // The identifier of the grant to revoke.
@@ -539,6 +568,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-schedule-a-cmk-for-deletion-1481331111094
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.ScheduleKeyDeletion(new ScheduleKeyDeletionRequest 
             {
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the CMK to schedule for deletion. You can use the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -555,6 +585,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-tag-a-cmk-1483997246518
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.TagResource(new TagResourceRequest 
             {
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the CMK you are tagging. You can use the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -574,6 +605,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-remove-tags-from-a-cmk-1483997590962
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.UntagResource(new UntagResourceRequest 
             {
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the CMK whose tags you are removing.
@@ -591,6 +623,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-update-an-alias-1481572726920
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.UpdateAlias(new UpdateAliasRequest 
             {
                 AliasName = "alias/ExampleAlias", // The alias to update.
@@ -605,6 +638,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
         {
             #region to-update-the-description-of-a-cmk-1481574808619
 
+            var client = new AmazonKeyManagementServiceClient();
             var response = client.UpdateKeyDescription(new UpdateKeyDescriptionRequest 
             {
                 Description = "Example description that indicates the intended use of this CMK.", // The updated description.

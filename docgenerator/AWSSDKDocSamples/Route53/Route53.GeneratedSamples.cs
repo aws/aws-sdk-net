@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
 {
     class Route53Samples : ISample
     {
-        static IAmazonRoute53 client = new AmazonRoute53Client();
         public void Route53AssociateVPCWithHostedZone()
         {
             #region to-associate-a-vpc-with-a-hosted-zone-1484069228699
 
+            var client = new AmazonRoute53Client();
             var response = client.AssociateVPCWithHostedZone(new AssociateVPCWithHostedZoneRequest 
             {
                 Comment = "",
@@ -35,6 +35,7 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
         {
             #region to-create-update-or-delete-resource-record-sets-1484344703668
 
+            var client = new AmazonRoute53Client();
             var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest 
             {
                 ChangeBatch = new ChangeBatch {
@@ -65,6 +66,7 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
         {
             #region to-create-weighted-resource-record-sets-1484348208522
 
+            var client = new AmazonRoute53Client();
             var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest 
             {
                 ChangeBatch = new ChangeBatch {
@@ -112,6 +114,7 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
         {
             #region to-create-an-alias-resource-record-set-1484348404062
 
+            var client = new AmazonRoute53Client();
             var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest 
             {
                 ChangeBatch = new ChangeBatch {
@@ -143,6 +146,7 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
         {
             #region to-create-weighted-alias-resource-record-sets-1484349467416
 
+            var client = new AmazonRoute53Client();
             var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest 
             {
                 ChangeBatch = new ChangeBatch {
@@ -190,6 +194,7 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
         {
             #region to-create-latency-resource-record-sets-1484350219917
 
+            var client = new AmazonRoute53Client();
             var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest 
             {
                 ChangeBatch = new ChangeBatch {
@@ -237,6 +242,7 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
         {
             #region to-create-latency-alias-resource-record-sets-1484601774179
 
+            var client = new AmazonRoute53Client();
             var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest 
             {
                 ChangeBatch = new ChangeBatch {
@@ -284,6 +290,7 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
         {
             #region to-create-failover-resource-record-sets-1484604541740
 
+            var client = new AmazonRoute53Client();
             var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest 
             {
                 ChangeBatch = new ChangeBatch {
@@ -331,6 +338,7 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
         {
             #region to-create-failover-alias-resource-record-sets-1484607497724
 
+            var client = new AmazonRoute53Client();
             var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest 
             {
                 ChangeBatch = new ChangeBatch {
@@ -378,6 +386,7 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
         {
             #region to-create-geolocation-resource-record-sets-1484612462466
 
+            var client = new AmazonRoute53Client();
             var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest 
             {
                 ChangeBatch = new ChangeBatch {
@@ -449,6 +458,7 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
         {
             #region to-create-geolocation-alias-resource-record-sets-1484612871203
 
+            var client = new AmazonRoute53Client();
             var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest 
             {
                 ChangeBatch = new ChangeBatch {
@@ -524,6 +534,7 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
         {
             #region to-add-or-remove-tags-from-a-hosted-zone-or-health-check-1484084752409
 
+            var client = new AmazonRoute53Client();
             var response = client.ChangeTagsForResource(new ChangeTagsForResourceRequest 
             {
                 AddTags = new List<Tag> {
@@ -551,6 +562,7 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
         {
             #region to-get-information-about-a-hosted-zone-1481752361124
 
+            var client = new AmazonRoute53Client();
             var response = client.GetHostedZone(new GetHostedZoneRequest 
             {
                 Id = "Z3M3LMPEXAMPLE"

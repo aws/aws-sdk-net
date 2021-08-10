@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.ApplicationAutoScaling.Generated
 {
     class ApplicationAutoScalingSamples : ISample
     {
-        static IAmazonApplicationAutoScaling client = new AmazonApplicationAutoScalingClient();
         public void ApplicationAutoScalingDeleteScalingPolicy()
         {
             #region to-delete-a-scaling-policy-1470863892689
 
+            var client = new AmazonApplicationAutoScalingClient();
             var response = client.DeleteScalingPolicy(new DeleteScalingPolicyRequest 
             {
                 PolicyName = "web-app-cpu-lt-25",
@@ -32,6 +32,7 @@ namespace AWSSDKDocSamples.Amazon.ApplicationAutoScaling.Generated
         {
             #region to-deregister-a-scalable-target-1470864164895
 
+            var client = new AmazonApplicationAutoScalingClient();
             var response = client.DeregisterScalableTarget(new DeregisterScalableTargetRequest 
             {
                 ResourceId = "service/default/web-app",
@@ -47,6 +48,7 @@ namespace AWSSDKDocSamples.Amazon.ApplicationAutoScaling.Generated
         {
             #region to-describe-scalable-targets-1470864286961
 
+            var client = new AmazonApplicationAutoScalingClient();
             var response = client.DescribeScalableTargets(new DescribeScalableTargetsRequest 
             {
                 ServiceNamespace = "ecs"
@@ -61,6 +63,7 @@ namespace AWSSDKDocSamples.Amazon.ApplicationAutoScaling.Generated
         {
             #region to-describe-scaling-activities-for-a-scalable-target-1470864398629
 
+            var client = new AmazonApplicationAutoScalingClient();
             var response = client.DescribeScalingActivities(new DescribeScalingActivitiesRequest 
             {
                 ResourceId = "service/default/web-app",
@@ -77,6 +80,7 @@ namespace AWSSDKDocSamples.Amazon.ApplicationAutoScaling.Generated
         {
             #region to-describe-scaling-policies-1470864609734
 
+            var client = new AmazonApplicationAutoScalingClient();
             var response = client.DescribeScalingPolicies(new DescribeScalingPoliciesRequest 
             {
                 ServiceNamespace = "ecs"
@@ -92,6 +96,7 @@ namespace AWSSDKDocSamples.Amazon.ApplicationAutoScaling.Generated
         {
             #region to-apply-a-target-tracking-scaling-policy-with-a-predefined-metric-specification-1569364247984
 
+            var client = new AmazonApplicationAutoScalingClient();
             var response = client.PutScalingPolicy(new PutScalingPolicyRequest 
             {
                 PolicyName = "cpu75-target-tracking-scaling-policy",
@@ -117,6 +122,7 @@ namespace AWSSDKDocSamples.Amazon.ApplicationAutoScaling.Generated
         {
             #region to-register-a-new-scalable-target-1470864910380
 
+            var client = new AmazonApplicationAutoScalingClient();
             var response = client.RegisterScalableTarget(new RegisterScalableTargetRequest 
             {
                 MaxCapacity = 10,

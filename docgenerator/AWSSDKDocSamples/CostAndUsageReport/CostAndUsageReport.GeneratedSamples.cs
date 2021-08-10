@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.CostAndUsageReport.Generated
 {
     class CostAndUsageReportSamples : ISample
     {
-        static IAmazonCostAndUsageReport client = new AmazonCostAndUsageReportClient();
         public void CostAndUsageReportDeleteReportDefinition()
         {
             #region to-delete-a-report
 
+            var client = new AmazonCostAndUsageReportClient();
             var response = client.DeleteReportDefinition(new DeleteReportDefinitionRequest 
             {
                 ReportName = "ExampleReport"
@@ -29,6 +29,7 @@ namespace AWSSDKDocSamples.Amazon.CostAndUsageReport.Generated
         {
             #region to-retrieve-report-definitions
 
+            var client = new AmazonCostAndUsageReportClient();
             var response = client.DescribeReportDefinitions(new DescribeReportDefinitionsRequest 
             {
                 MaxResults = 5
@@ -43,6 +44,7 @@ namespace AWSSDKDocSamples.Amazon.CostAndUsageReport.Generated
         {
             #region to-create-a-report-definitions
 
+            var client = new AmazonCostAndUsageReportClient();
             var response = client.PutReportDefinition(new PutReportDefinitionRequest 
             {
                 ReportDefinition = new ReportDefinition {

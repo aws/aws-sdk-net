@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.EC2InstanceConnect.Generated
 {
     class EC2InstanceConnectSamples : ISample
     {
-        static IAmazonEC2InstanceConnect client = new AmazonEC2InstanceConnectClient();
         public void EC2InstanceConnectSendSSHPublicKey()
         {
             #region send-ssh-key-to-an-ec2-instance-1518124883100
 
+            var client = new AmazonEC2InstanceConnectClient();
             var response = client.SendSSHPublicKey(new SendSSHPublicKeyRequest 
             {
                 AvailabilityZone = "us-west-2a", // The zone where the instance was launched

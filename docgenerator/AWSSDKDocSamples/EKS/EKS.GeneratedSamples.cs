@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.EKS.Generated
 {
     class EKSSamples : ISample
     {
-        static IAmazonEKS client = new AmazonEKSClient();
         public void EKSCreateCluster()
         {
             #region to-create-a-new-cluster-1527868185648
 
+            var client = new AmazonEKSClient();
             var response = client.CreateCluster(new CreateClusterRequest 
             {
                 Version = "1.10",
@@ -41,6 +41,7 @@ namespace AWSSDKDocSamples.Amazon.EKS.Generated
         {
             #region to-delete-a-cluster-1527868641252
 
+            var client = new AmazonEKSClient();
             var response = client.DeleteCluster(new DeleteClusterRequest 
             {
                 Name = "devel"
@@ -54,6 +55,7 @@ namespace AWSSDKDocSamples.Amazon.EKS.Generated
         {
             #region to-describe-a-cluster-1527868708512
 
+            var client = new AmazonEKSClient();
             var response = client.DescribeCluster(new DescribeClusterRequest 
             {
                 Name = "devel"
@@ -68,6 +70,7 @@ namespace AWSSDKDocSamples.Amazon.EKS.Generated
         {
             #region to-list-your-available-clusters-1527868801040
 
+            var client = new AmazonEKSClient();
             var response = client.ListClusters(new ListClustersRequest 
             {
             });
@@ -81,6 +84,7 @@ namespace AWSSDKDocSamples.Amazon.EKS.Generated
         {
             #region to-list-tags-for-a-cluster-1568666903378
 
+            var client = new AmazonEKSClient();
             var response = client.ListTagsForResource(new ListTagsForResourceRequest 
             {
                 ResourceArn = "arn:aws:eks:us-west-2:012345678910:cluster/beta"

@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 {
     class RekognitionSamples : ISample
     {
-        static IAmazonRekognition client = new AmazonRekognitionClient();
         public void RekognitionCompareFaces()
         {
             #region to-compare-two-images-1482181985581
 
+            var client = new AmazonRekognitionClient();
             var response = client.CompareFaces(new CompareFacesRequest 
             {
                 SimilarityThreshold = 90,
@@ -39,6 +39,7 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
         {
             #region to-create-a-collection-1481833313674
 
+            var client = new AmazonRekognitionClient();
             var response = client.CreateCollection(new CreateCollectionRequest 
             {
                 CollectionId = "myphotos"
@@ -54,6 +55,7 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
         {
             #region to-delete-a-collection-1481838179973
 
+            var client = new AmazonRekognitionClient();
             var response = client.DeleteCollection(new DeleteCollectionRequest 
             {
                 CollectionId = "myphotos"
@@ -68,6 +70,7 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
         {
             #region to-delete-a-face-1482182799377
 
+            var client = new AmazonRekognitionClient();
             var response = client.DeleteFaces(new DeleteFacesRequest 
             {
                 CollectionId = "myphotos",
@@ -85,6 +88,7 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
         {
             #region to-detect-faces-in-an-image-1481841782793
 
+            var client = new AmazonRekognitionClient();
             var response = client.DetectFaces(new DetectFacesRequest 
             {
                 Image = new Image { S3Object = new S3Object {
@@ -103,6 +107,7 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
         {
             #region to-detect-labels-1481834255770
 
+            var client = new AmazonRekognitionClient();
             var response = client.DetectLabels(new DetectLabelsRequest 
             {
                 Image = new Image { S3Object = new S3Object {
@@ -122,6 +127,7 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
         {
             #region to-add-a-face-to-a-collection-1482179542923
 
+            var client = new AmazonRekognitionClient();
             var response = client.IndexFaces(new IndexFacesRequest 
             {
                 CollectionId = "myphotos",
@@ -145,6 +151,7 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
         {
             #region to-list-the-collections-1482179199088
 
+            var client = new AmazonRekognitionClient();
             var response = client.ListCollections(new ListCollectionsRequest 
             {
             });
@@ -158,6 +165,7 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
         {
             #region to-list-the-faces-in-a-collection-1482181416530
 
+            var client = new AmazonRekognitionClient();
             var response = client.ListFaces(new ListFacesRequest 
             {
                 CollectionId = "myphotos",
@@ -173,6 +181,7 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
         {
             #region to-delete-a-face-1482182799377
 
+            var client = new AmazonRekognitionClient();
             var response = client.SearchFaces(new SearchFacesRequest 
             {
                 CollectionId = "myphotos",
@@ -191,6 +200,7 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
         {
             #region to-search-for-faces-matching-a-supplied-image-1482175994491
 
+            var client = new AmazonRekognitionClient();
             var response = client.SearchFacesByImage(new SearchFacesByImageRequest 
             {
                 CollectionId = "myphotos",

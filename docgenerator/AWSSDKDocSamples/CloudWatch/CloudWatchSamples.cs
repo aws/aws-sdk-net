@@ -58,7 +58,7 @@ namespace AWSSDKDocSamples.CloudWatch
 
       var metric1 = new MetricDatum
       {
-        Dimensions = new List<Dimension>(),
+        Dimensions = new List<Dimension>() { dimension },
         MetricName = "Desktop Machines Online",
         StatisticValues = new StatisticSet(),
         Timestamp = DateTime.Today,
@@ -68,7 +68,7 @@ namespace AWSSDKDocSamples.CloudWatch
 
       var metric2 = new MetricDatum
       {
-        Dimensions = new List<Dimension>(),
+        Dimensions = new List<Dimension>() { dimension },
         MetricName = "Desktop Machines Offline",
         StatisticValues = new StatisticSet(),
         Timestamp = DateTime.Today,
@@ -78,7 +78,7 @@ namespace AWSSDKDocSamples.CloudWatch
 
       var metric3 = new MetricDatum
       {
-        Dimensions = new List<Dimension>(),
+        Dimensions = new List<Dimension>() { dimension },
         MetricName = "Desktop Machines Online",
         StatisticValues = new StatisticSet(),
         Timestamp = DateTime.Today,
@@ -88,7 +88,7 @@ namespace AWSSDKDocSamples.CloudWatch
 
       var metric4 = new MetricDatum
       {
-        Dimensions = new List<Dimension>(),
+        Dimensions = new List<Dimension>() { dimension },
         MetricName = "Desktop Machines Offline",
         StatisticValues = new StatisticSet(),
         Timestamp = DateTime.Today,

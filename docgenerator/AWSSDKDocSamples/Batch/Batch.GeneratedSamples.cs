@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 {
     class BatchSamples : ISample
     {
-        static IAmazonBatch client = new AmazonBatchClient();
         public void BatchCancelJob()
         {
             #region to-cancel-a-job-1481152314733
 
+            var client = new AmazonBatchClient();
             var response = client.CancelJob(new CancelJobRequest 
             {
                 JobId = "1d828f65-7a4d-42e8-996d-3b900ed59dc4",
@@ -30,6 +30,7 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
         {
             #region to-create-a-managed-ec2-compute-environment-1481152600017
 
+            var client = new AmazonBatchClient();
             var response = client.CreateComputeEnvironment(new CreateComputeEnvironmentRequest 
             {
                 Type = "MANAGED",
@@ -74,6 +75,7 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
         {
             #region to-create-a-managed-ec2-spot-compute-environment-1481152844190
 
+            var client = new AmazonBatchClient();
             var response = client.CreateComputeEnvironment(new CreateComputeEnvironmentRequest 
             {
                 Type = "MANAGED",
@@ -116,6 +118,7 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
         {
             #region to-create-a-job-queue-with-a-single-compute-environment-1481152967946
 
+            var client = new AmazonBatchClient();
             var response = client.CreateJobQueue(new CreateJobQueueRequest 
             {
                 ComputeEnvironmentOrder = new List<ComputeEnvironmentOrder> {
@@ -139,6 +142,7 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
         {
             #region to-create-a-job-queue-with-multiple-compute-environments-1481153027051
 
+            var client = new AmazonBatchClient();
             var response = client.CreateJobQueue(new CreateJobQueueRequest 
             {
                 ComputeEnvironmentOrder = new List<ComputeEnvironmentOrder> {
@@ -166,6 +170,7 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
         {
             #region to-delete-a-compute-environment-1481153105644
 
+            var client = new AmazonBatchClient();
             var response = client.DeleteComputeEnvironment(new DeleteComputeEnvironmentRequest 
             {
                 ComputeEnvironment = "P2OnDemand"
@@ -179,6 +184,7 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
         {
             #region to-delete-a-job-queue-1481153508134
 
+            var client = new AmazonBatchClient();
             var response = client.DeleteJobQueue(new DeleteJobQueueRequest 
             {
                 JobQueue = "GPGPU"
@@ -192,6 +198,7 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
         {
             #region to-deregister-a-job-definition-1481153579565
 
+            var client = new AmazonBatchClient();
             var response = client.DeregisterJobDefinition(new DeregisterJobDefinitionRequest 
             {
                 JobDefinition = "sleep10"
@@ -205,6 +212,7 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
         {
             #region to-describe-a-compute-environment-1481153713334
 
+            var client = new AmazonBatchClient();
             var response = client.DescribeComputeEnvironments(new DescribeComputeEnvironmentsRequest 
             {
                 ComputeEnvironments = new List<string> {
@@ -221,6 +229,7 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
         {
             #region to-describe-active-job-definitions-1481153895831
 
+            var client = new AmazonBatchClient();
             var response = client.DescribeJobDefinitions(new DescribeJobDefinitionsRequest 
             {
                 Status = "ACTIVE"
@@ -235,6 +244,7 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
         {
             #region to-describe-a-job-queue-1481153995804
 
+            var client = new AmazonBatchClient();
             var response = client.DescribeJobQueues(new DescribeJobQueuesRequest 
             {
                 JobQueues = new List<string> {
@@ -251,6 +261,7 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
         {
             #region to-describe-a-specific-job-1481154090490
 
+            var client = new AmazonBatchClient();
             var response = client.DescribeJobs(new DescribeJobsRequest 
             {
                 Jobs = new List<string> {
@@ -267,6 +278,7 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
         {
             #region to-list-running-jobs-1481154202164
 
+            var client = new AmazonBatchClient();
             var response = client.ListJobs(new ListJobsRequest 
             {
                 JobQueue = "HighPriority"
@@ -281,6 +293,7 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
         {
             #region to-list-submitted-jobs-1481154251623
 
+            var client = new AmazonBatchClient();
             var response = client.ListJobs(new ListJobsRequest 
             {
                 JobQueue = "HighPriority",
@@ -296,6 +309,7 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
         {
             #region listtagsforresource-example-1591293003710
 
+            var client = new AmazonBatchClient();
             var response = client.ListTagsForResource(new ListTagsForResourceRequest 
             {
                 ResourceArn = "arn:aws:batch:us-east-1:123456789012:job-definition/sleep30:1"
@@ -310,6 +324,7 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
         {
             #region to-register-a-job-definition-1481154325325
 
+            var client = new AmazonBatchClient();
             var response = client.RegisterJobDefinition(new RegisterJobDefinitionRequest 
             {
                 Type = "container",
@@ -336,6 +351,7 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
         {
             #region registerjobdefinition-with-tags-1591290509028
 
+            var client = new AmazonBatchClient();
             var response = client.RegisterJobDefinition(new RegisterJobDefinitionRequest 
             {
                 Type = "container",
@@ -366,6 +382,7 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
         {
             #region to-submit-a-job-to-a-queue-1481154481673
 
+            var client = new AmazonBatchClient();
             var response = client.SubmitJob(new SubmitJobRequest 
             {
                 JobDefinition = "sleep60",
@@ -383,6 +400,7 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
         {
             #region tagresource-example-1591291959952
 
+            var client = new AmazonBatchClient();
             var response = client.TagResource(new TagResourceRequest 
             {
                 ResourceArn = "arn:aws:batch:us-east-1:123456789012:job-definition/sleep30:1",
@@ -399,6 +417,7 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
         {
             #region to-terminate-a-job-1481154558276
 
+            var client = new AmazonBatchClient();
             var response = client.TerminateJob(new TerminateJobRequest 
             {
                 JobId = "61e743ed-35e4-48da-b2de-5c8333821c84",
@@ -413,6 +432,7 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
         {
             #region untagresource-example-1591292811042
 
+            var client = new AmazonBatchClient();
             var response = client.UntagResource(new UntagResourceRequest 
             {
                 ResourceArn = "arn:aws:batch:us-east-1:123456789012:job-definition/sleep30:1",
@@ -429,6 +449,7 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
         {
             #region to-update-a-compute-environment-1481154702731
 
+            var client = new AmazonBatchClient();
             var response = client.UpdateComputeEnvironment(new UpdateComputeEnvironmentRequest 
             {
                 ComputeEnvironment = "P2OnDemand",
@@ -445,6 +466,7 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
         {
             #region to-update-a-job-queue-1481154806981
 
+            var client = new AmazonBatchClient();
             var response = client.UpdateJobQueue(new UpdateJobQueueRequest 
             {
                 JobQueue = "GPGPU",

@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
 {
     class SecurityTokenServiceSamples : ISample
     {
-        static IAmazonSecurityTokenService client = new AmazonSecurityTokenServiceClient();
         public void SecurityTokenServiceAssumeRole()
         {
             #region to-assume-a-role-1480532402212
 
+            var client = new AmazonSecurityTokenServiceClient();
             var response = client.AssumeRole(new AssumeRoleRequest 
             {
                 ExternalId = "123ABC",
@@ -53,6 +53,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
         {
             #region to-assume-role-with-saml-14882749597814
 
+            var client = new AmazonSecurityTokenServiceClient();
             var response = client.AssumeRoleWithSAML(new AssumeRoleWithSAMLRequest 
             {
                 DurationSeconds = 3600,
@@ -77,6 +78,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
         {
             #region to-assume-a-role-as-an-openid-connect-federated-user-1480533445696
 
+            var client = new AmazonSecurityTokenServiceClient();
             var response = client.AssumeRoleWithWebIdentity(new AssumeRoleWithWebIdentityRequest 
             {
                 DurationSeconds = 3600,
@@ -101,6 +103,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
         {
             #region to-decode-information-about-an-authorization-status-of-a-request-1480533854499
 
+            var client = new AmazonSecurityTokenServiceClient();
             var response = client.DecodeAuthorizationMessage(new DecodeAuthorizationMessageRequest 
             {
                 EncodedMessage = "<encoded-message>"
@@ -115,6 +118,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
         {
             #region to-get-details-about-a-calling-iam-user-1480540050376
 
+            var client = new AmazonSecurityTokenServiceClient();
             var response = client.GetCallerIdentity(new GetCallerIdentityRequest 
             {
             });
@@ -130,6 +134,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
         {
             #region to-get-details-about-a-calling-user-federated-with-assumerole-1480540158545
 
+            var client = new AmazonSecurityTokenServiceClient();
             var response = client.GetCallerIdentity(new GetCallerIdentityRequest 
             {
             });
@@ -145,6 +150,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
         {
             #region to-get-details-about-a-calling-user-federated-with-getfederationtoken-1480540231316
 
+            var client = new AmazonSecurityTokenServiceClient();
             var response = client.GetCallerIdentity(new GetCallerIdentityRequest 
             {
             });
@@ -160,6 +166,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
         {
             #region to-get-temporary-credentials-for-a-role-by-using-getfederationtoken-1480540749900
 
+            var client = new AmazonSecurityTokenServiceClient();
             var response = client.GetFederationToken(new GetFederationTokenRequest 
             {
                 DurationSeconds = 3600,
@@ -188,6 +195,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
         {
             #region to-get-temporary-credentials-for-an-iam-user-or-an-aws-account-1480540814038
 
+            var client = new AmazonSecurityTokenServiceClient();
             var response = client.GetSessionToken(new GetSessionTokenRequest 
             {
                 DurationSeconds = 3600,

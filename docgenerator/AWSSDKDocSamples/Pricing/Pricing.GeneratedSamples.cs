@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.Pricing.Generated
 {
     class PricingSamples : ISample
     {
-        static IAmazonPricing client = new AmazonPricingClient();
         public void PricingDescribeServices()
         {
             #region to-retrieve-service-metadata
 
+            var client = new AmazonPricingClient();
             var response = client.DescribeServices(new DescribeServicesRequest 
             {
                 FormatVersion = "aws_v1",
@@ -34,6 +34,7 @@ namespace AWSSDKDocSamples.Amazon.Pricing.Generated
         {
             #region to-retreive-attribute-values
 
+            var client = new AmazonPricingClient();
             var response = client.GetAttributeValues(new GetAttributeValuesRequest 
             {
                 AttributeName = "volumeType",

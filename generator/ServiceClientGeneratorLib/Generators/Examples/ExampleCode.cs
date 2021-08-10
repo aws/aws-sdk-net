@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.Examples
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
+    #line 1 "C:\Dev\worktrees\docfixes\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class ExampleCode : Generators.BaseGenerator
     {
@@ -31,49 +31,35 @@ namespace ServiceClientGenerator.Generators.Examples
             this.Write("using System;\r\nusing System.Collections.Generic;\r\nusing System.Linq;\r\nusing Syste" +
                     "m.Text;\r\nusing System.Threading.Tasks;\r\n\r\nusing ");
             
-            #line 12 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
+            #line 12 "C:\Dev\worktrees\docfixes\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(";\r\nusing ");
             
-            #line 13 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
+            #line 13 "C:\Dev\worktrees\docfixes\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model;\r\n\r\nnamespace AWSSDKDocSamples.");
             
-            #line 15 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
+            #line 15 "C:\Dev\worktrees\docfixes\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Generated\r\n{\r\n\tclass ");
             
-            #line 17 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
+            #line 17 "C:\Dev\worktrees\docfixes\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
-            this.Write("Samples : ISample\r\n\t{\r\n\t\tstatic IAmazon");
+            this.Write("Samples : ISample\r\n\t{\r\n");
             
-            #line 19 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
-            
-            #line default
-            #line hidden
-            this.Write(" client = new Amazon");
-            
-            #line 19 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
-            
-            #line default
-            #line hidden
-            this.Write("Client();\r\n");
-            
-            #line 20 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
+            #line 19 "C:\Dev\worktrees\docfixes\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
 
 	foreach(var operation in this.Config.ServiceModel.Operations)
 	{
@@ -85,41 +71,48 @@ namespace ServiceClientGenerator.Generators.Examples
             #line hidden
             this.Write("\t\tpublic void ");
             
-            #line 26 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
+            #line 25 "C:\Dev\worktrees\docfixes\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             
-            #line 26 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
+            #line 25 "C:\Dev\worktrees\docfixes\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("()\r\n\t\t{\r\n\t\t\t#region ");
             
-            #line 28 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
+            #line 27 "C:\Dev\worktrees\docfixes\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(example.Id));
             
             #line default
             #line hidden
-            this.Write("\r\n\r\n\t\t\tvar response = client.");
+            this.Write("\r\n\r\n\t\t\tvar client = new Amazon");
             
-            #line 30 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
+            #line 29 "C:\Dev\worktrees\docfixes\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
+            
+            #line default
+            #line hidden
+            this.Write("Client();\r\n\t\t\tvar response = client.");
+            
+            #line 30 "C:\Dev\worktrees\docfixes\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(new ");
             
-            #line 30 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
+            #line 30 "C:\Dev\worktrees\docfixes\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request \r\n\t\t\t{\r\n");
             
-            #line 32 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
+            #line 32 "C:\Dev\worktrees\docfixes\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
 
 			var lines = example.GetRequestAssignments(currentIndent: 16);
 			foreach(var line in lines)
@@ -130,14 +123,14 @@ namespace ServiceClientGenerator.Generators.Examples
             #line hidden
             this.Write("\t\t\t\t");
             
-            #line 37 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
+            #line 37 "C:\Dev\worktrees\docfixes\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(line));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 38 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
+            #line 38 "C:\Dev\worktrees\docfixes\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
 		
 			}
 
@@ -146,7 +139,7 @@ namespace ServiceClientGenerator.Generators.Examples
             #line hidden
             this.Write("\t\t\t});\r\n\r\n");
             
-            #line 43 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
+            #line 43 "C:\Dev\worktrees\docfixes\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
 
 			var responses = example.GetResponseAssignments();
 			foreach(var resp in responses)
@@ -157,14 +150,14 @@ namespace ServiceClientGenerator.Generators.Examples
             #line hidden
             this.Write("\t\t\t");
             
-            #line 48 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
+            #line 48 "C:\Dev\worktrees\docfixes\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resp));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 49 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
+            #line 49 "C:\Dev\worktrees\docfixes\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
 		
 			}
 
@@ -173,7 +166,7 @@ namespace ServiceClientGenerator.Generators.Examples
             #line hidden
             this.Write("\r\n\t\t\t#endregion\r\n\t\t}\r\n\r\n");
             
-            #line 56 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
+            #line 56 "C:\Dev\worktrees\docfixes\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
 
 		}
 	}

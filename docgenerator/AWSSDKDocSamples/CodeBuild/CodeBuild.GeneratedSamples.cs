@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.CodeBuild.Generated
 {
     class CodeBuildSamples : ISample
     {
-        static IAmazonCodeBuild client = new AmazonCodeBuildClient();
         public void CodeBuildBatchGetBuilds()
         {
             #region to-get-information-about-builds-1501187184588
 
+            var client = new AmazonCodeBuildClient();
             var response = client.BatchGetBuilds(new BatchGetBuildsRequest 
             {
                 Ids = new List<string> {

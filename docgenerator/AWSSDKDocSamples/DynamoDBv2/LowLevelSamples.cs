@@ -762,7 +762,7 @@ namespace AWSSDKDocSamples.DynamoDBv2
 
                 // Pages attributes must be greater-than the numeric value "200"
                 Condition pagesCondition = new Condition();
-                pagesCondition.ComparisonOperator = ComparisonOperator.GT;;
+                pagesCondition.ComparisonOperator = ComparisonOperator.GT;
                 pagesCondition.AttributeValueList.Add(new AttributeValue { N = "200" });
                 conditions["Pages"] = pagesCondition;
 
