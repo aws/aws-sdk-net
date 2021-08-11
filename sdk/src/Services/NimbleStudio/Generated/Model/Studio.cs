@@ -127,7 +127,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property HomeRegion. 
         /// <para>
-        /// The AWS region where the studio resource is located.
+        /// The Amazon Web Services Region where the studio resource is located.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]
@@ -146,8 +146,8 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property SsoClientId. 
         /// <para>
-        /// The AWS SSO application client ID used to integrate with AWS SSO to enable AWS SSO
-        /// users to log in to Nimble portal.
+        /// The Amazon Web Services SSO application client ID used to integrate with Amazon Web
+        /// Services SSO to enable Amazon Web Services SSO users to log in to Nimble portal.
         /// </para>
         /// </summary>
         public string SsoClientId

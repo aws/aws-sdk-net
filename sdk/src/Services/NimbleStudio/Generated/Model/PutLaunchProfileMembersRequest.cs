@@ -108,7 +108,7 @@ namespace Amazon.NimbleStudio.Model
         /// A list of members.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=20)]
+        [AWSProperty(Required=true, Min=1, Max=20)]
         public List<NewLaunchProfileMember> Members
         {
             get { return this._members; }

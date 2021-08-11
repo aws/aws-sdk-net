@@ -36,13 +36,14 @@ namespace Amazon.NimbleStudio.Model
     {
         private string _createdBy;
         private string _nextToken;
+        private string _ownedBy;
         private string _sessionIds;
         private string _studioId;
 
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        /// The user ID.
+        /// The user ID of the user that created the streaming session.
         /// </para>
         /// </summary>
         public string CreatedBy
@@ -73,6 +74,24 @@ namespace Amazon.NimbleStudio.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnedBy. 
+        /// <para>
+        /// The user ID of the user that owns the streaming session.
+        /// </para>
+        /// </summary>
+        public string OwnedBy
+        {
+            get { return this._ownedBy; }
+            set { this._ownedBy = value; }
+        }
+
+        // Check to see if OwnedBy property is set
+        internal bool IsSetOwnedBy()
+        {
+            return this._ownedBy != null;
         }
 
         /// <summary>

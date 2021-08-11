@@ -94,6 +94,12 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                     unmarshalledObject.LaunchProfileId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ownedBy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OwnedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sessionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

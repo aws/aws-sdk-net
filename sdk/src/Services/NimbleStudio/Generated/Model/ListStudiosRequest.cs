@@ -30,7 +30,8 @@ namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
     /// Container for the parameters to the ListStudios operation.
-    /// List studios in your AWS account in the requested AWS Region.
+    /// List studios in your Amazon Web Services account in the requested Amazon Web Services
+    /// Region.
     /// </summary>
     public partial class ListStudiosRequest : AmazonNimbleStudioRequest
     {

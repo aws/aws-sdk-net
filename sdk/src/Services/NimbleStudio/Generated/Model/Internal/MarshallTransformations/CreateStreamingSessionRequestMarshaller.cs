@@ -80,6 +80,12 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.LaunchProfileId);
                 }
 
+                if(publicRequest.IsSetOwnedBy())
+                {
+                    context.Writer.WritePropertyName("ownedBy");
+                    context.Writer.Write(publicRequest.OwnedBy);
+                }
+
                 if(publicRequest.IsSetStreamingImageId())
                 {
                     context.Writer.WritePropertyName("streamingImageId");

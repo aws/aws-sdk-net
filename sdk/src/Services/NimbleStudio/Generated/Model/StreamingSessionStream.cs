@@ -36,6 +36,7 @@ namespace Amazon.NimbleStudio.Model
         private DateTime? _createdAt;
         private string _createdBy;
         private DateTime? _expiresAt;
+        private string _ownedBy;
         private StreamingSessionStreamState _state;
         private StreamingSessionStreamStatusCode _statusCode;
         private string _streamId;
@@ -93,6 +94,24 @@ namespace Amazon.NimbleStudio.Model
         internal bool IsSetExpiresAt()
         {
             return this._expiresAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnedBy. 
+        /// <para>
+        /// The user ID of the user that owns the streaming session.
+        /// </para>
+        /// </summary>
+        public string OwnedBy
+        {
+            get { return this._ownedBy; }
+            set { this._ownedBy = value; }
+        }
+
+        // Check to see if OwnedBy property is set
+        internal bool IsSetOwnedBy()
+        {
+            return this._ownedBy != null;
         }
 
         /// <summary>

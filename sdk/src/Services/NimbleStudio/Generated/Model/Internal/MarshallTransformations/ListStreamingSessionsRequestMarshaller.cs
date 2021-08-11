@@ -68,6 +68,9 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             
+            if (publicRequest.IsSetOwnedBy())
+                request.Parameters.Add("ownedBy", StringUtils.FromString(publicRequest.OwnedBy));
+            
             if (publicRequest.IsSetSessionIds())
                 request.Parameters.Add("sessionIds", StringUtils.FromString(publicRequest.SessionIds));
             request.ResourcePath = "/2020-08-01/studios/{studioId}/streaming-sessions";

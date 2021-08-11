@@ -722,13 +722,13 @@ namespace Amazon.NimbleStudio
         ///  
         /// <para>
         /// In Nimble Studio, resource names, descriptions, initialization scripts, and other
-        /// data you provide are always encrypted at rest using an AWS KMS key. By default, this
-        /// key is owned by AWS and managed on your behalf. You may provide your own AWS KMS key
-        /// when calling CreateStudio to encrypt this data using a key you own and manage.
+        /// data you provide are always encrypted at rest using an KMS key. By default, this key
+        /// is owned by Amazon Web Services and managed on your behalf. You may provide your own
+        /// KMS key when calling CreateStudio to encrypt this data using a key you own and manage.
         /// </para>
         ///  
         /// <para>
-        /// When providing an AWS KMS key during studio creation, Nimble Studio creates KMS grants
+        /// When providing an KMS key during studio creation, Nimble Studio creates KMS grants
         /// in your account to provide your studio user and admin roles access to these KMS keys.
         /// </para>
         ///  
@@ -801,13 +801,13 @@ namespace Amazon.NimbleStudio
         ///  
         /// <para>
         /// In Nimble Studio, resource names, descriptions, initialization scripts, and other
-        /// data you provide are always encrypted at rest using an AWS KMS key. By default, this
-        /// key is owned by AWS and managed on your behalf. You may provide your own AWS KMS key
-        /// when calling CreateStudio to encrypt this data using a key you own and manage.
+        /// data you provide are always encrypted at rest using an KMS key. By default, this key
+        /// is owned by Amazon Web Services and managed on your behalf. You may provide your own
+        /// KMS key when calling CreateStudio to encrypt this data using a key you own and manage.
         /// </para>
         ///  
         /// <para>
-        /// When providing an AWS KMS key during studio creation, Nimble Studio creates KMS grants
+        /// When providing an KMS key during studio creation, Nimble Studio creates KMS grants
         /// in your account to provide your studio user and admin roles access to these KMS keys.
         /// </para>
         ///  
@@ -2835,8 +2835,8 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// This list will contain both images provided by AWS, as well as streaming images that
-        /// you have created in your studio.
+        /// This list will contain both images provided by Amazon Web Services, as well as streaming
+        /// images that you have created in your studio.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStreamingImages service method.</param>
@@ -2879,8 +2879,8 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// This list will contain both images provided by AWS, as well as streaming images that
-        /// you have created in your studio.
+        /// This list will contain both images provided by Amazon Web Services, as well as streaming
+        /// images that you have created in your studio.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStreamingImages service method.</param>
@@ -3175,7 +3175,8 @@ namespace Amazon.NimbleStudio
 
 
         /// <summary>
-        /// List studios in your AWS account in the requested AWS Region.
+        /// List studios in your Amazon Web Services account in the requested Amazon Web Services
+        /// Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStudios service method.</param>
         /// 
@@ -3213,7 +3214,8 @@ namespace Amazon.NimbleStudio
 
 
         /// <summary>
-        /// List studios in your AWS account in the requested AWS Region.
+        /// List studios in your Amazon Web Services account in the requested Amazon Web Services
+        /// Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStudios service method.</param>
         /// <param name="cancellationToken">
@@ -3527,19 +3529,19 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// If the studio has a valid AWS SSO configuration currently associated with it, this
-        /// operation will fail with a validation error.
+        /// If the studio has a valid Amazon Web Services SSO configuration currently associated
+        /// with it, this operation will fail with a validation error.
         /// </para>
         ///  
         /// <para>
-        /// If the studio does not have a valid AWS SSO configuration currently associated with
-        /// it, then a new AWS SSO application is created for the studio and the studio is changed
-        /// to the READY state.
+        /// If the studio does not have a valid Amazon Web Services SSO configuration currently
+        /// associated with it, then a new Amazon Web Services SSO application is created for
+        /// the studio and the studio is changed to the READY state.
         /// </para>
         ///  
         /// <para>
-        /// After the AWS SSO application is repaired, you must use the Amazon Nimble Studio console
-        /// to add administrators and users to your studio.
+        /// After the Amazon Web Services SSO application is repaired, you must use the Amazon
+        /// Nimble Studio console to add administrators and users to your studio.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartStudioSSOConfigurationRepair service method.</param>
@@ -3582,19 +3584,19 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// If the studio has a valid AWS SSO configuration currently associated with it, this
-        /// operation will fail with a validation error.
+        /// If the studio has a valid Amazon Web Services SSO configuration currently associated
+        /// with it, this operation will fail with a validation error.
         /// </para>
         ///  
         /// <para>
-        /// If the studio does not have a valid AWS SSO configuration currently associated with
-        /// it, then a new AWS SSO application is created for the studio and the studio is changed
-        /// to the READY state.
+        /// If the studio does not have a valid Amazon Web Services SSO configuration currently
+        /// associated with it, then a new Amazon Web Services SSO application is created for
+        /// the studio and the studio is changed to the READY state.
         /// </para>
         ///  
         /// <para>
-        /// After the AWS SSO application is repaired, you must use the Amazon Nimble Studio console
-        /// to add administrators and users to your studio.
+        /// After the Amazon Web Services SSO application is repaired, you must use the Amazon
+        /// Nimble Studio console to add administrators and users to your studio.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartStudioSSOConfigurationRepair service method.</param>

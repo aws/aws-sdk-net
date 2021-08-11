@@ -405,10 +405,6 @@
     <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.NimbleStudio.Model.StreamingSession.SessionId</property>
-    <pattern>^[A-z0-9-_:]*\.{1}[A-z0-9-_]*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.NimbleStudio.Model.StreamingSession.StreamingImageId</property>
     <max>22</max>
     <pattern>^[a-zA-Z0-9-_]*$</pattern>

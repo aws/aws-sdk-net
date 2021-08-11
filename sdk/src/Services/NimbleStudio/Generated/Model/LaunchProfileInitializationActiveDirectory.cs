@@ -63,8 +63,8 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The directory ID of the AWS Directory Service for Microsoft AD to access using this
-        /// launch profile.
+        /// The directory ID of the Directory Service for Microsoft Active Directory to access
+        /// using this launch profile.
         /// </para>
         /// </summary>
         public string DirectoryId

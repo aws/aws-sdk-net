@@ -38,6 +38,7 @@ namespace Amazon.NimbleStudio.Model
         private string _createdBy;
         private string _ec2InstanceType;
         private string _launchProfileId;
+        private string _ownedBy;
         private string _sessionId;
         private StreamingSessionState _state;
         private StreamingSessionStatusCode _statusCode;
@@ -136,6 +137,24 @@ namespace Amazon.NimbleStudio.Model
         internal bool IsSetLaunchProfileId()
         {
             return this._launchProfileId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnedBy. 
+        /// <para>
+        /// The user ID of the user that owns the streaming session.
+        /// </para>
+        /// </summary>
+        public string OwnedBy
+        {
+            get { return this._ownedBy; }
+            set { this._ownedBy = value; }
+        }
+
+        // Check to see if OwnedBy property is set
+        internal bool IsSetOwnedBy()
+        {
+            return this._ownedBy != null;
         }
 
         /// <summary>
