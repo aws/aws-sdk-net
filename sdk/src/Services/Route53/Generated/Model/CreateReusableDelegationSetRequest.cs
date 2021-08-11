@@ -31,7 +31,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Container for the parameters to the CreateReusableDelegationSet operation.
     /// Creates a delegation set (a group of four name servers) that can be reused by multiple
-    /// hosted zones that were created by the same account. 
+    /// hosted zones that were created by the same Amazon Web Services account. 
     /// 
     ///  
     /// <para>

@@ -43,7 +43,7 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property HealthChecks. 
         /// <para>
         /// A complex type that contains one <code>HealthCheck</code> element for each health
-        /// check that is associated with the current account.
+        /// check that is associated with the current Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

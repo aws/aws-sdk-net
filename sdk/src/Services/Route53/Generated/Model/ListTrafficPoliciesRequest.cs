@@ -31,8 +31,8 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Container for the parameters to the ListTrafficPolicies operation.
     /// Gets information about the latest version for every traffic policy that is associated
-    /// with the current account. Policies are listed in the order that they were created
-    /// in. 
+    /// with the current Amazon Web Services account. Policies are listed in the order that
+    /// they were created in. 
     /// 
     ///  
     /// <para>

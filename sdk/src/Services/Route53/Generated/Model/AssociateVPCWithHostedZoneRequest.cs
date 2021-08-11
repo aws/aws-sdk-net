@@ -39,9 +39,9 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  </important> <note> 
     /// <para>
-    /// If you want to associate a VPC that was created by using one account with a private
-    /// hosted zone that was created by using a different account, the account that created
-    /// the private hosted zone must first submit a <code>CreateVPCAssociationAuthorization</code>
+    /// If you want to associate a VPC that was created by using one Amazon Web Services account
+    /// with a private hosted zone that was created by using a different account, the Amazon
+    /// Web Services account that created the private hosted zone must first submit a <code>CreateVPCAssociationAuthorization</code>
     /// request. Then the account that created the VPC must submit an <code>AssociateVPCWithHostedZone</code>
     /// request.
     /// </para>

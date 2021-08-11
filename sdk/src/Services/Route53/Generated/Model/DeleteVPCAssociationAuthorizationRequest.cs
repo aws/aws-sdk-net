@@ -37,11 +37,11 @@ namespace Amazon.Route53.Model
     /// 
     ///  <important> 
     /// <para>
-    /// Sending this request only prevents the account that created the VPC from associating
-    /// the VPC with the Amazon Route 53 hosted zone in the future. If the VPC is already
-    /// associated with the hosted zone, <code>DeleteVPCAssociationAuthorization</code> won't
-    /// disassociate the VPC from the hosted zone. If you want to delete an existing association,
-    /// use <code>DisassociateVPCFromHostedZone</code>.
+    /// Sending this request only prevents the Amazon Web Services account that created the
+    /// VPC from associating the VPC with the Amazon Route 53 hosted zone in the future. If
+    /// the VPC is already associated with the hosted zone, <code>DeleteVPCAssociationAuthorization</code>
+    /// won't disassociate the VPC from the hosted zone. If you want to delete an existing
+    /// association, use <code>DisassociateVPCFromHostedZone</code>.
     /// </para>
     ///  </important>
     /// </summary>
@@ -53,8 +53,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HostedZoneId. 
         /// <para>
-        /// When removing authorization to associate a VPC that was created by one account with
-        /// a hosted zone that was created with a different account, the ID of the hosted zone.
+        /// When removing authorization to associate a VPC that was created by one Amazon Web
+        /// Services account with a hosted zone that was created with a different Amazon Web Services
+        /// account, the ID of the hosted zone.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=32)]
@@ -73,9 +74,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property VPC. 
         /// <para>
-        /// When removing authorization to associate a VPC that was created by one account with
-        /// a hosted zone that was created with a different account, a complex type that includes
-        /// the ID and region of the VPC.
+        /// When removing authorization to associate a VPC that was created by one Amazon Web
+        /// Services account with a hosted zone that was created with a different Amazon Web Services
+        /// account, a complex type that includes the ID and region of the VPC.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

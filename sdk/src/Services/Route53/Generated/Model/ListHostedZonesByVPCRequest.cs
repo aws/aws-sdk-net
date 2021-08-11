@@ -31,14 +31,15 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Container for the parameters to the ListHostedZonesByVPC operation.
     /// Lists all the private hosted zones that a specified VPC is associated with, regardless
-    /// of which account or Amazon Web Services service owns the hosted zones. The <code>HostedZoneOwner</code>
-    /// structure in the response contains one of the following values:
+    /// of which Amazon Web Services account or Amazon Web Services service owns the hosted
+    /// zones. The <code>HostedZoneOwner</code> structure in the response contains one of
+    /// the following values:
     /// 
     ///  <ul> <li> 
     /// <para>
     /// An <code>OwningAccount</code> element, which contains the account number of either
-    /// the current account or another account. Some services, such as Cloud Map, create hosted
-    /// zones using the current account. 
+    /// the current Amazon Web Services account or another Amazon Web Services account. Some
+    /// services, such as Cloud Map, create hosted zones using the current account. 
     /// </para>
     ///  </li> <li> 
     /// <para>

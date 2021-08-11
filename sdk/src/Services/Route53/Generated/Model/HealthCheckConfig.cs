@@ -734,8 +734,13 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property RoutingControlArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for Route53 Application Recovery Controller routing
+        /// The Amazon Resource Name (ARN) for the Route 53 Application Recovery Controller routing
         /// control.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about Route 53 Application Recovery Controller, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route
+        /// 53 Application Recovery Controller Developer Guide.</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

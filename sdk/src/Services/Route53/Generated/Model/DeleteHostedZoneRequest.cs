@@ -86,7 +86,7 @@ namespace Amazon.Route53.Model
     ///  </li> <li> 
     /// <para>
     /// Use the <code>ListHostedZones</code> action to get a list of the hosted zones associated
-    /// with the current account.
+    /// with the current Amazon Web Services account.
     /// </para>
     ///  </li> </ul>
     /// </summary>

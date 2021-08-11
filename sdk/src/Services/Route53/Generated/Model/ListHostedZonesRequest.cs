@@ -31,8 +31,8 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Container for the parameters to the ListHostedZones operation.
     /// Retrieves a list of the public and private hosted zones that are associated with the
-    /// current account. The response includes a <code>HostedZones</code> child element for
-    /// each hosted zone.
+    /// current Amazon Web Services account. The response includes a <code>HostedZones</code>
+    /// child element for each hosted zone.
     /// 
     ///  
     /// <para>

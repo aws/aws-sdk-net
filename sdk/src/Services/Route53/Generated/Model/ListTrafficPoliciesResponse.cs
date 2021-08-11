@@ -42,7 +42,7 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property TrafficPolicySummaries. 
         /// <para>
         /// A list that contains one <code>TrafficPolicySummary</code> element for each traffic
-        /// policy that was created by the current account.
+        /// policy that was created by the current Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

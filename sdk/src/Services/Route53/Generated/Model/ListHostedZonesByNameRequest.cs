@@ -32,7 +32,7 @@ namespace Amazon.Route53.Model
     /// Container for the parameters to the ListHostedZonesByName operation.
     /// Retrieves a list of your hosted zones in lexicographic order. The response includes
     /// a <code>HostedZones</code> child element for each hosted zone created by the current
-    /// account. 
+    /// Amazon Web Services account. 
     /// 
     ///  
     /// <para>
@@ -88,7 +88,7 @@ namespace Amazon.Route53.Model
     ///  </li> <li> 
     /// <para>
     /// If the value of <code>IsTruncated</code> in the response is true, there are more hosted
-    /// zones associated with the current account. 
+    /// zones associated with the current Amazon Web Services account. 
     /// </para>
     ///  
     /// <para>
@@ -100,10 +100,10 @@ namespace Amazon.Route53.Model
     /// <para>
     /// The <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements in the response
     /// contain the domain name and the hosted zone ID of the next hosted zone that is associated
-    /// with the current account. If you want to list more hosted zones, make another call
-    /// to <code>ListHostedZonesByName</code>, and specify the value of <code>NextDNSName</code>
-    /// and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code>
-    /// parameters, respectively.
+    /// with the current Amazon Web Services account. If you want to list more hosted zones,
+    /// make another call to <code>ListHostedZonesByName</code>, and specify the value of
+    /// <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the <code>dnsname</code>
+    /// and <code>hostedzoneid</code> parameters, respectively.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -119,10 +119,10 @@ namespace Amazon.Route53.Model
         /// (Optional) For your first request to <code>ListHostedZonesByName</code>, include the
         /// <code>dnsname</code> parameter only if you want to specify the name of the first hosted
         /// zone in the response. If you don't include the <code>dnsname</code> parameter, Amazon
-        /// Route 53 returns all of the hosted zones that were created by the current account,
-        /// in ASCII order. For subsequent requests, include both <code>dnsname</code> and <code>hostedzoneid</code>
-        /// parameters. For <code>dnsname</code>, specify the value of <code>NextDNSName</code>
-        /// from the previous response.
+        /// Route 53 returns all of the hosted zones that were created by the current Amazon Web
+        /// Services account, in ASCII order. For subsequent requests, include both <code>dnsname</code>
+        /// and <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the value
+        /// of <code>NextDNSName</code> from the previous response.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

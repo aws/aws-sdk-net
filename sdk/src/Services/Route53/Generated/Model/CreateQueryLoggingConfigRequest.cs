@@ -74,8 +74,8 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You must use the same account to create the log group and the hosted zone that you
-    /// want to configure query logging for.
+    /// You must use the same Amazon Web Services account to create the log group and the
+    /// hosted zone that you want to configure query logging for.
     /// </para>
     ///  </li> <li> 
     /// <para>

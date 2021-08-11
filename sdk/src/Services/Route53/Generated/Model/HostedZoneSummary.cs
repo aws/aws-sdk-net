@@ -83,7 +83,7 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property Owner. 
         /// <para>
         /// The owner of a private hosted zone that the specified VPC is associated with. The
-        /// owner can be either an account or an Amazon Web Services service.
+        /// owner can be either an Amazon Web Services account or an Amazon Web Services service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

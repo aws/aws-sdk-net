@@ -125,9 +125,9 @@ namespace Amazon.Route53
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// If you want to associate a VPC that was created by using one account with a private
-        /// hosted zone that was created by using a different account, the account that created
-        /// the private hosted zone must first submit a <code>CreateVPCAssociationAuthorization</code>
+        /// If you want to associate a VPC that was created by using one Amazon Web Services account
+        /// with a private hosted zone that was created by using a different account, the Amazon
+        /// Web Services account that created the private hosted zone must first submit a <code>CreateVPCAssociationAuthorization</code>
         /// request. Then the account that created the VPC must submit an <code>AssociateVPCWithHostedZone</code>
         /// request.
         /// </para>
@@ -209,9 +209,9 @@ namespace Amazon.Route53
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// If you want to associate a VPC that was created by using one account with a private
-        /// hosted zone that was created by using a different account, the account that created
-        /// the private hosted zone must first submit a <code>CreateVPCAssociationAuthorization</code>
+        /// If you want to associate a VPC that was created by using one Amazon Web Services account
+        /// with a private hosted zone that was created by using a different account, the Amazon
+        /// Web Services account that created the private hosted zone must first submit a <code>CreateVPCAssociationAuthorization</code>
         /// request. Then the account that created the VPC must submit an <code>AssociateVPCWithHostedZone</code>
         /// request.
         /// </para>
@@ -770,9 +770,9 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
-        /// You have reached the maximum number of active health checks for an account. To request
-        /// a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a>
-        /// with the Amazon Web Services Support Center.
+        /// You have reached the maximum number of active health checks for an Amazon Web Services
+        /// account. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// a case</a> with the Amazon Web Services Support Center.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheck">REST API Reference for CreateHealthCheck Operation</seealso>
@@ -874,9 +874,9 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
-        /// You have reached the maximum number of active health checks for an account. To request
-        /// a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a>
-        /// with the Amazon Web Services Support Center.
+        /// You have reached the maximum number of active health checks for an Amazon Web Services
+        /// account. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// a case</a> with the Amazon Web Services Support Center.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheck">REST API Reference for CreateHealthCheck Operation</seealso>
@@ -1324,8 +1324,8 @@ namespace Amazon.Route53
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You must use the same account to create the log group and the hosted zone that you
-        /// want to configure query logging for.
+        /// You must use the same Amazon Web Services account to create the log group and the
+        /// hosted zone that you want to configure query logging for.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1519,8 +1519,8 @@ namespace Amazon.Route53
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You must use the same account to create the log group and the hosted zone that you
-        /// want to configure query logging for.
+        /// You must use the same Amazon Web Services account to create the log group and the
+        /// hosted zone that you want to configure query logging for.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1677,7 +1677,7 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Creates a delegation set (a group of four name servers) that can be reused by multiple
-        /// hosted zones that were created by the same account. 
+        /// hosted zones that were created by the same Amazon Web Services account. 
         /// 
         ///  
         /// <para>
@@ -1793,7 +1793,7 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Creates a delegation set (a group of four name servers) that can be reused by multiple
-        /// hosted zones that were created by the same account. 
+        /// hosted zones that were created by the same Amazon Web Services account. 
         /// 
         ///  
         /// <para>
@@ -2196,11 +2196,11 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Authorizes the account that created a specified VPC to submit an <code>AssociateVPCWithHostedZone</code>
-        /// request to associate the VPC with a specified hosted zone that was created by a different
-        /// account. To submit a <code>CreateVPCAssociationAuthorization</code> request, you must
-        /// use the account that created the hosted zone. After you authorize the association,
-        /// use the account that created the VPC to submit an <code>AssociateVPCWithHostedZone</code>
+        /// Authorizes the Amazon Web Services account that created a specified VPC to submit
+        /// an <code>AssociateVPCWithHostedZone</code> request to associate the VPC with a specified
+        /// hosted zone that was created by a different account. To submit a <code>CreateVPCAssociationAuthorization</code>
+        /// request, you must use the account that created the hosted zone. After you authorize
+        /// the association, use the account that created the VPC to submit an <code>AssociateVPCWithHostedZone</code>
         /// request.
         /// 
         ///  <note> 
@@ -2241,11 +2241,11 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Authorizes the account that created a specified VPC to submit an <code>AssociateVPCWithHostedZone</code>
-        /// request to associate the VPC with a specified hosted zone that was created by a different
-        /// account. To submit a <code>CreateVPCAssociationAuthorization</code> request, you must
-        /// use the account that created the hosted zone. After you authorize the association,
-        /// use the account that created the VPC to submit an <code>AssociateVPCWithHostedZone</code>
+        /// Authorizes the Amazon Web Services account that created a specified VPC to submit
+        /// an <code>AssociateVPCWithHostedZone</code> request to associate the VPC with a specified
+        /// hosted zone that was created by a different account. To submit a <code>CreateVPCAssociationAuthorization</code>
+        /// request, you must use the account that created the hosted zone. After you authorize
+        /// the association, use the account that created the VPC to submit an <code>AssociateVPCWithHostedZone</code>
         /// request.
         /// 
         ///  <note> 
@@ -2510,7 +2510,7 @@ namespace Amazon.Route53
         ///  </li> <li> 
         /// <para>
         /// Use the <code>ListHostedZones</code> action to get a list of the hosted zones associated
-        /// with the current account.
+        /// with the current Amazon Web Services account.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2598,7 +2598,7 @@ namespace Amazon.Route53
         ///  </li> <li> 
         /// <para>
         /// Use the <code>ListHostedZones</code> action to get a list of the hosted zones associated
-        /// with the current account.
+        /// with the current Amazon Web Services account.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3019,11 +3019,11 @@ namespace Amazon.Route53
         /// 
         ///  <important> 
         /// <para>
-        /// Sending this request only prevents the account that created the VPC from associating
-        /// the VPC with the Amazon Route 53 hosted zone in the future. If the VPC is already
-        /// associated with the hosted zone, <code>DeleteVPCAssociationAuthorization</code> won't
-        /// disassociate the VPC from the hosted zone. If you want to delete an existing association,
-        /// use <code>DisassociateVPCFromHostedZone</code>.
+        /// Sending this request only prevents the Amazon Web Services account that created the
+        /// VPC from associating the VPC with the Amazon Route 53 hosted zone in the future. If
+        /// the VPC is already associated with the hosted zone, <code>DeleteVPCAssociationAuthorization</code>
+        /// won't disassociate the VPC from the hosted zone. If you want to delete an existing
+        /// association, use <code>DisassociateVPCFromHostedZone</code>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -3060,11 +3060,11 @@ namespace Amazon.Route53
         /// 
         ///  <important> 
         /// <para>
-        /// Sending this request only prevents the account that created the VPC from associating
-        /// the VPC with the Amazon Route 53 hosted zone in the future. If the VPC is already
-        /// associated with the hosted zone, <code>DeleteVPCAssociationAuthorization</code> won't
-        /// disassociate the VPC from the hosted zone. If you want to delete an existing association,
-        /// use <code>DisassociateVPCFromHostedZone</code>.
+        /// Sending this request only prevents the Amazon Web Services account that created the
+        /// VPC from associating the VPC with the Amazon Route 53 hosted zone in the future. If
+        /// the VPC is already associated with the hosted zone, <code>DeleteVPCAssociationAuthorization</code>
+        /// won't disassociate the VPC from the hosted zone. If you want to delete an existing
+        /// association, use <code>DisassociateVPCFromHostedZone</code>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -3400,7 +3400,8 @@ namespace Amazon.Route53
         ///  <note> 
         /// <para>
         /// You can also view account limits in Amazon Web Services Trusted Advisor. Sign in to
-        /// the Management Console and open the Trusted Advisor console at <a href="https://console.aws.amazon.com/trustedadvisor">https://console.aws.amazon.com/trustedadvisor/</a>.
+        /// the Amazon Web Services Management Console and open the Trusted Advisor console at
+        /// <a href="https://console.aws.amazon.com/trustedadvisor">https://console.aws.amazon.com/trustedadvisor/</a>.
         /// Then choose <b>Service limits</b> in the navigation pane.
         /// </para>
         ///  </note>
@@ -3429,7 +3430,8 @@ namespace Amazon.Route53
         ///  <note> 
         /// <para>
         /// You can also view account limits in Amazon Web Services Trusted Advisor. Sign in to
-        /// the Management Console and open the Trusted Advisor console at <a href="https://console.aws.amazon.com/trustedadvisor">https://console.aws.amazon.com/trustedadvisor/</a>.
+        /// the Amazon Web Services Management Console and open the Trusted Advisor console at
+        /// <a href="https://console.aws.amazon.com/trustedadvisor">https://console.aws.amazon.com/trustedadvisor/</a>.
         /// Then choose <b>Service limits</b> in the navigation pane.
         /// </para>
         ///  </note>
@@ -3778,7 +3780,8 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Retrieves the number of health checks that are associated with the current account.
+        /// Retrieves the number of health checks that are associated with the current Amazon
+        /// Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckCount service method.</param>
         /// 
@@ -3789,7 +3792,8 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Retrieves the number of health checks that are associated with the current account.
+        /// Retrieves the number of health checks that are associated with the current Amazon
+        /// Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckCount service method.</param>
         /// <param name="cancellationToken">
@@ -3942,7 +3946,8 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Retrieves the number of hosted zones that are associated with the current account.
+        /// Retrieves the number of hosted zones that are associated with the current Amazon Web
+        /// Services account.
         /// </summary>
         /// 
         /// <returns>The response from the GetHostedZoneCount service method, as returned by Route53.</returns>
@@ -3954,7 +3959,8 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Retrieves the number of hosted zones that are associated with the current account.
+        /// Retrieves the number of hosted zones that are associated with the current Amazon Web
+        /// Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetHostedZoneCount service method.</param>
         /// 
@@ -3967,7 +3973,8 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Retrieves the number of hosted zones that are associated with the current account.
+        /// Retrieves the number of hosted zones that are associated with the current Amazon Web
+        /// Services account.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -3983,7 +3990,8 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Retrieves the number of hosted zones that are associated with the current account.
+        /// Retrieves the number of hosted zones that are associated with the current Amazon Web
+        /// Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetHostedZoneCount service method.</param>
         /// <param name="cancellationToken">
@@ -4343,7 +4351,8 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Gets the number of traffic policy instances that are associated with the current account.
+        /// Gets the number of traffic policy instances that are associated with the current Amazon
+        /// Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTrafficPolicyInstanceCount service method.</param>
         /// 
@@ -4354,7 +4363,8 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Gets the number of traffic policy instances that are associated with the current account.
+        /// Gets the number of traffic policy instances that are associated with the current Amazon
+        /// Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTrafficPolicyInstanceCount service method.</param>
         /// <param name="cancellationToken">
@@ -4504,7 +4514,8 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Retrieve a list of the health checks that are associated with the current account.
+        /// Retrieve a list of the health checks that are associated with the current Amazon Web
+        /// Services account.
         /// </summary>
         /// 
         /// <returns>The response from the ListHealthChecks service method, as returned by Route53.</returns>
@@ -4519,7 +4530,8 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Retrieve a list of the health checks that are associated with the current account.
+        /// Retrieve a list of the health checks that are associated with the current Amazon Web
+        /// Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHealthChecks service method.</param>
         /// 
@@ -4535,7 +4547,8 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Retrieve a list of the health checks that are associated with the current account.
+        /// Retrieve a list of the health checks that are associated with the current Amazon Web
+        /// Services account.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -4554,7 +4567,8 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Retrieve a list of the health checks that are associated with the current account.
+        /// Retrieve a list of the health checks that are associated with the current Amazon Web
+        /// Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHealthChecks service method.</param>
         /// <param name="cancellationToken">
@@ -4578,8 +4592,8 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Retrieves a list of the public and private hosted zones that are associated with the
-        /// current account. The response includes a <code>HostedZones</code> child element for
-        /// each hosted zone.
+        /// current Amazon Web Services account. The response includes a <code>HostedZones</code>
+        /// child element for each hosted zone.
         /// 
         ///  
         /// <para>
@@ -4605,8 +4619,8 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Retrieves a list of the public and private hosted zones that are associated with the
-        /// current account. The response includes a <code>HostedZones</code> child element for
-        /// each hosted zone.
+        /// current Amazon Web Services account. The response includes a <code>HostedZones</code>
+        /// child element for each hosted zone.
         /// 
         ///  
         /// <para>
@@ -4633,8 +4647,8 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Retrieves a list of the public and private hosted zones that are associated with the
-        /// current account. The response includes a <code>HostedZones</code> child element for
-        /// each hosted zone.
+        /// current Amazon Web Services account. The response includes a <code>HostedZones</code>
+        /// child element for each hosted zone.
         /// 
         ///  
         /// <para>
@@ -4664,8 +4678,8 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Retrieves a list of the public and private hosted zones that are associated with the
-        /// current account. The response includes a <code>HostedZones</code> child element for
-        /// each hosted zone.
+        /// current Amazon Web Services account. The response includes a <code>HostedZones</code>
+        /// child element for each hosted zone.
         /// 
         ///  
         /// <para>
@@ -4700,7 +4714,7 @@ namespace Amazon.Route53
         /// <summary>
         /// Retrieves a list of your hosted zones in lexicographic order. The response includes
         /// a <code>HostedZones</code> child element for each hosted zone created by the current
-        /// account. 
+        /// Amazon Web Services account. 
         /// 
         ///  
         /// <para>
@@ -4756,7 +4770,7 @@ namespace Amazon.Route53
         ///  </li> <li> 
         /// <para>
         /// If the value of <code>IsTruncated</code> in the response is true, there are more hosted
-        /// zones associated with the current account. 
+        /// zones associated with the current Amazon Web Services account. 
         /// </para>
         ///  
         /// <para>
@@ -4768,10 +4782,10 @@ namespace Amazon.Route53
         /// <para>
         /// The <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements in the response
         /// contain the domain name and the hosted zone ID of the next hosted zone that is associated
-        /// with the current account. If you want to list more hosted zones, make another call
-        /// to <code>ListHostedZonesByName</code>, and specify the value of <code>NextDNSName</code>
-        /// and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code>
-        /// parameters, respectively.
+        /// with the current Amazon Web Services account. If you want to list more hosted zones,
+        /// make another call to <code>ListHostedZonesByName</code>, and specify the value of
+        /// <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the <code>dnsname</code>
+        /// and <code>hostedzoneid</code> parameters, respectively.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4792,7 +4806,7 @@ namespace Amazon.Route53
         /// <summary>
         /// Retrieves a list of your hosted zones in lexicographic order. The response includes
         /// a <code>HostedZones</code> child element for each hosted zone created by the current
-        /// account. 
+        /// Amazon Web Services account. 
         /// 
         ///  
         /// <para>
@@ -4848,7 +4862,7 @@ namespace Amazon.Route53
         ///  </li> <li> 
         /// <para>
         /// If the value of <code>IsTruncated</code> in the response is true, there are more hosted
-        /// zones associated with the current account. 
+        /// zones associated with the current Amazon Web Services account. 
         /// </para>
         ///  
         /// <para>
@@ -4860,10 +4874,10 @@ namespace Amazon.Route53
         /// <para>
         /// The <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements in the response
         /// contain the domain name and the hosted zone ID of the next hosted zone that is associated
-        /// with the current account. If you want to list more hosted zones, make another call
-        /// to <code>ListHostedZonesByName</code>, and specify the value of <code>NextDNSName</code>
-        /// and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code>
-        /// parameters, respectively.
+        /// with the current Amazon Web Services account. If you want to list more hosted zones,
+        /// make another call to <code>ListHostedZonesByName</code>, and specify the value of
+        /// <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the <code>dnsname</code>
+        /// and <code>hostedzoneid</code> parameters, respectively.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4889,14 +4903,15 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Lists all the private hosted zones that a specified VPC is associated with, regardless
-        /// of which account or Amazon Web Services service owns the hosted zones. The <code>HostedZoneOwner</code>
-        /// structure in the response contains one of the following values:
+        /// of which Amazon Web Services account or Amazon Web Services service owns the hosted
+        /// zones. The <code>HostedZoneOwner</code> structure in the response contains one of
+        /// the following values:
         /// 
         ///  <ul> <li> 
         /// <para>
         /// An <code>OwningAccount</code> element, which contains the account number of either
-        /// the current account or another account. Some services, such as Cloud Map, create hosted
-        /// zones using the current account. 
+        /// the current Amazon Web Services account or another Amazon Web Services account. Some
+        /// services, such as Cloud Map, create hosted zones using the current account. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4923,14 +4938,15 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Lists all the private hosted zones that a specified VPC is associated with, regardless
-        /// of which account or Amazon Web Services service owns the hosted zones. The <code>HostedZoneOwner</code>
-        /// structure in the response contains one of the following values:
+        /// of which Amazon Web Services account or Amazon Web Services service owns the hosted
+        /// zones. The <code>HostedZoneOwner</code> structure in the response contains one of
+        /// the following values:
         /// 
         ///  <ul> <li> 
         /// <para>
         /// An <code>OwningAccount</code> element, which contains the account number of either
-        /// the current account or another account. Some services, such as Cloud Map, create hosted
-        /// zones using the current account. 
+        /// the current Amazon Web Services account or another Amazon Web Services account. Some
+        /// services, such as Cloud Map, create hosted zones using the current account. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4963,7 +4979,8 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Lists the configurations for DNS query logging that are associated with the current
-        /// account or the configuration that is associated with a specified hosted zone.
+        /// Amazon Web Services account or the configuration that is associated with a specified
+        /// hosted zone.
         /// 
         ///  
         /// <para>
@@ -4991,7 +5008,8 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Lists the configurations for DNS query logging that are associated with the current
-        /// account or the configuration that is associated with a specified hosted zone.
+        /// Amazon Web Services account or the configuration that is associated with a specified
+        /// hosted zone.
         /// 
         ///  
         /// <para>
@@ -5251,7 +5269,7 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Retrieves a list of the reusable delegation sets that are associated with the current
-        /// account.
+        /// Amazon Web Services account.
         /// </summary>
         /// 
         /// <returns>The response from the ListReusableDelegationSets service method, as returned by Route53.</returns>
@@ -5264,7 +5282,7 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Retrieves a list of the reusable delegation sets that are associated with the current
-        /// account.
+        /// Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReusableDelegationSets service method.</param>
         /// 
@@ -5278,7 +5296,7 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Retrieves a list of the reusable delegation sets that are associated with the current
-        /// account.
+        /// Amazon Web Services account.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -5295,7 +5313,7 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Retrieves a list of the reusable delegation sets that are associated with the current
-        /// account.
+        /// Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReusableDelegationSets service method.</param>
         /// <param name="cancellationToken">
@@ -5472,8 +5490,8 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Gets information about the latest version for every traffic policy that is associated
-        /// with the current account. Policies are listed in the order that they were created
-        /// in. 
+        /// with the current Amazon Web Services account. Policies are listed in the order that
+        /// they were created in. 
         /// 
         ///  
         /// <para>
@@ -5495,8 +5513,8 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Gets information about the latest version for every traffic policy that is associated
-        /// with the current account. Policies are listed in the order that they were created
-        /// in. 
+        /// with the current Amazon Web Services account. Policies are listed in the order that
+        /// they were created in. 
         /// 
         ///  
         /// <para>
@@ -5524,7 +5542,7 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Gets information about the traffic policy instances that you created by using the
-        /// current account.
+        /// current Amazon Web Services account.
         /// 
         ///  <note> 
         /// <para>
@@ -5556,7 +5574,7 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Gets information about the traffic policy instances that you created by using the
-        /// current account.
+        /// current Amazon Web Services account.
         /// 
         ///  <note> 
         /// <para>

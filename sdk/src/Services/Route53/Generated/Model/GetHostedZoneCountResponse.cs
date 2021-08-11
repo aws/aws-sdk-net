@@ -39,7 +39,7 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property HostedZoneCount. 
         /// <para>
         /// The total number of public and private hosted zones that are associated with the current
-        /// account.
+        /// Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

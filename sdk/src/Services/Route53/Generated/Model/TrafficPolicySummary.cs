@@ -30,7 +30,7 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// A complex type that contains information about the latest version of one traffic policy
-    /// that is associated with the current account.
+    /// that is associated with the current Amazon Web Services account.
     /// </summary>
     public partial class TrafficPolicySummary
     {
@@ -120,7 +120,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property TrafficPolicyCount. 
         /// <para>
-        /// The number of traffic policies that are associated with the current account.
+        /// The number of traffic policies that are associated with the current Amazon Web Services
+        /// account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]

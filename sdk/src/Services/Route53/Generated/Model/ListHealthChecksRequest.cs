@@ -30,7 +30,8 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the ListHealthChecks operation.
-    /// Retrieve a list of the health checks that are associated with the current account.
+    /// Retrieve a list of the health checks that are associated with the current Amazon Web
+    /// Services account.
     /// </summary>
     public partial class ListHealthChecksRequest : AmazonRoute53Request
     {
