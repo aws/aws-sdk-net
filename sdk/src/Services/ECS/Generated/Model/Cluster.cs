@@ -145,8 +145,9 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ClusterArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code>
-        /// namespace, followed by the Region of the cluster, the account ID of the cluster owner,
-        /// the <code>cluster</code> namespace, and then the cluster name. For example, <code>arn:aws:ecs:region:012345678910:cluster/test</code>.
+        /// namespace, followed by the Region of the cluster, the Amazon Web Services account
+        /// ID of the cluster owner, the <code>cluster</code> namespace, and then the cluster
+        /// name. For example, <code>arn:aws:ecs:region:012345678910:cluster/test</code>.
         /// </para>
         /// </summary>
         public string ClusterArn

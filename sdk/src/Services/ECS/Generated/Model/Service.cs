@@ -526,8 +526,9 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ServiceArn. 
         /// <para>
         /// The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code>
-        /// namespace, followed by the Region of the service, the account ID of the service owner,
-        /// the <code>service</code> namespace, and then the service name. For example, <code>arn:aws:ecs:region:012345678910:service/my-service</code>.
+        /// namespace, followed by the Region of the service, the Amazon Web Services account
+        /// ID of the service owner, the <code>service</code> namespace, and then the service
+        /// name. For example, <code>arn:aws:ecs:region:012345678910:service/my-service</code>.
         /// </para>
         /// </summary>
         public string ServiceArn

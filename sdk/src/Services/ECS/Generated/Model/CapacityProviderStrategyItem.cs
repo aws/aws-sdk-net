@@ -51,6 +51,10 @@ namespace Amazon.ECS.Model
     /// capacity providers. The Fargate capacity providers are available to all accounts and
     /// only need to be associated with a cluster to be used in a capacity provider strategy.
     /// </para>
+    ///  
+    /// <para>
+    /// A capacity provider strategy may contain a maximum of 6 capacity providers.
+    /// </para>
     /// </summary>
     public partial class CapacityProviderStrategyItem
     {

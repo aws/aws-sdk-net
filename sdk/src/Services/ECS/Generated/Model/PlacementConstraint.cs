@@ -47,10 +47,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Expression. 
         /// <para>
-        /// A cluster query language expression to apply to the constraint. You cannot specify
-        /// an expression if the constraint type is <code>distinctInstance</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-        /// Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// A cluster query language expression to apply to the constraint. The expression can
+        /// have a maximum length of 2000 characters. You can't specify an expression if the constraint
+        /// type is <code>distinctInstance</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+        /// query language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string Expression

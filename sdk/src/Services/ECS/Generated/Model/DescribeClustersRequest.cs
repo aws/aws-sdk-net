@@ -73,6 +73,11 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
+        /// If <code>CONFIGURATIONS</code> is specified, the configuration for the cluster is
+        /// included.
+        /// </para>
+        ///  
+        /// <para>
         /// If <code>STATISTICS</code> is specified, the task and service count is included, separated
         /// by launch type.
         /// </para>

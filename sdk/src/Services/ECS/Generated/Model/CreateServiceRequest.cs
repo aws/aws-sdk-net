@@ -199,6 +199,10 @@ namespace Amazon.ECS.Model
         /// is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is
         /// used.
         /// </para>
+        ///  
+        /// <para>
+        /// A capacity provider strategy may contain a maximum of 6 capacity providers.
+        /// </para>
         /// </summary>
         public List<CapacityProviderStrategyItem> CapacityProviderStrategy
         {
@@ -529,7 +533,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// An array of placement constraint objects to use for tasks in your service. You can
         /// specify a maximum of 10 constraints per task (this limit includes constraints in the
-        /// task definition and those specified at runtime). 
+        /// task definition and those specified at runtime).
         /// </para>
         /// </summary>
         public List<PlacementConstraint> PlacementConstraints
@@ -548,7 +552,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property PlacementStrategy. 
         /// <para>
         /// The placement strategy objects to use for tasks in your service. You can specify a
-        /// maximum of five strategy rules per service.
+        /// maximum of 5 strategy rules per service.
         /// </para>
         /// </summary>
         public List<PlacementStrategy> PlacementStrategy
