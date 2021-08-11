@@ -60,7 +60,7 @@ namespace Amazon.EBS.Model
         /// <summary>
         /// Gets and sets the property BlockSize. 
         /// <para>
-        /// The size of the block.
+        /// The size of the blocks in the snapshot, in bytes.
         /// </para>
         /// </summary>
         public int BlockSize

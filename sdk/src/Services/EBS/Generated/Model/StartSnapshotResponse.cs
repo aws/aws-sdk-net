@@ -84,8 +84,8 @@ namespace Amazon.EBS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer
-        /// master key (CMK) used to encrypt the snapshot.
+        /// The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt
+        /// the snapshot.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -104,7 +104,7 @@ namespace Amazon.EBS.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The AWS account ID of the snapshot owner.
+        /// The Amazon Web Services account ID of the snapshot owner.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=24)]

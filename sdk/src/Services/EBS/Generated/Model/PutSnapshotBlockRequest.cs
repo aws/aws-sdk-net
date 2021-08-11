@@ -36,7 +36,7 @@ namespace Amazon.EBS.Model
     /// 
     ///  
     /// <para>
-    /// Data written to a snapshot must be aligned with 512-byte sectors.
+    /// Data written to a snapshot must be aligned with 512-KiB sectors.
     /// </para>
     /// </summary>
     public partial class PutSnapshotBlockRequest : AmazonEBSRequest
@@ -146,7 +146,7 @@ namespace Amazon.EBS.Model
         /// Gets and sets the property DataLength. 
         /// <para>
         /// The size of the data to write to the block, in bytes. Currently, the only supported
-        /// size is <code>524288</code>.
+        /// size is <code>524288</code> bytes.
         /// </para>
         ///  
         /// <para>
