@@ -1,3 +1,17 @@
+### 3.7.94.0 (2021-08-11 18:43 UTC)
+* CodeBuild (3.7.4.0)
+	* CodeBuild now allows you to make the build results for your build projects available to the public without requiring access to an AWS account.
+* EBS (3.7.0.51)
+	* Documentation updates for Amazon EBS direct APIs.
+* ECS (3.7.2.26)
+	* Documentation updates for ECS.
+* NimbleStudio (3.7.1.0)
+	* Add new attribute 'ownedBy' in Streaming Session APIs. 'ownedBy' represents the AWS SSO Identity Store User ID of the owner of the Streaming Session resource.
+* Route53 (3.7.1.6)
+	* Documentation updates for route53
+* SnowDeviceManagement (3.7.0.0)
+	* AWS Snow Family customers can remotely monitor and operate their connected AWS Snowcone devices.
+
 ### 3.7.93.0 (2021-08-10 18:14 UTC)
 * Chime (3.7.10.0)
 	* Add support for "auto" in Region field of StartMeetingTranscription API request.
