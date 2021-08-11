@@ -41,7 +41,7 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// An array of strings that specify the compute types that are allowed for the batch
         /// build. See <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-        /// environment compute types</a> in the <i>AWS CodeBuild User Guide</i> for these values.
+        /// environment compute types</a> in the <i>CodeBuild User Guide</i> for these values.
         /// 
         /// </para>
         /// </summary>

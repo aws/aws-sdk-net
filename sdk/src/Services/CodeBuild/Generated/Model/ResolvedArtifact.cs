@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// Represents a resolved build artifact. A resolve artifact is an artifact that is built
+    /// Represents a resolved build artifact. A resolved artifact is an artifact that is built
     /// and deployed to the destination, such as Amazon S3.
     /// </summary>
     public partial class ResolvedArtifact

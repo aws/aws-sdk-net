@@ -148,10 +148,28 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("projectVisibility", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProjectVisibility = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("publicProjectAlias", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PublicProjectAlias = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("queuedTimeoutInMinutes", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.QueuedTimeoutInMinutes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("resourceAccessRole", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceAccessRole = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("secondaryArtifacts", targetDepth))

@@ -64,7 +64,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For AWS CodeCommit: the commit ID, branch, or Git tag to use.
+        /// For CodeCommit: the commit ID, branch, or Git tag to use.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -88,7 +88,7 @@ namespace Amazon.CodeBuild.Model
         ///  </li> </ul> 
         /// <para>
         ///  For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-        /// Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. 
+        /// Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

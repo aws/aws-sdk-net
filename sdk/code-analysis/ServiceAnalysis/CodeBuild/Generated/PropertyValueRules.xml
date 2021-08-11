@@ -298,6 +298,22 @@
     <max>480</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.UpdateProjectVisibilityRequest.ProjectArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.UpdateProjectVisibilityRequest.ResourceAccessRole</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.UpdateProjectVisibilityResponse.ProjectArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.UpdateProjectVisibilityResponse.PublicProjectAlias</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.UpdateReportGroupRequest.Arn</property>
     <min>1</min>
   </property-value-rule>
@@ -467,9 +483,17 @@
     <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,254}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.Project.PublicProjectAlias</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.Project.QueuedTimeoutInMinutes</property>
     <min>5</min>
     <max>480</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.Project.ResourceAccessRole</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.Project.ServiceRole</property>

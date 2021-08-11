@@ -62,7 +62,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property ReportGroups. 
         /// <para>
-        ///  The list of ARNs for the report groups in the current AWS account. 
+        ///  The list of ARNs for the report groups in the current Amazon Web Services account.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

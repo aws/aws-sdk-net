@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// The specified AWS resource cannot be created, because an AWS resource with the same
-    /// settings already exists.
+    /// The specified Amazon Web Services resource cannot be created, because an Amazon Web
+    /// Services resource with the same settings already exists.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

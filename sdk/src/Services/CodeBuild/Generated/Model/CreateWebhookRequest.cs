@@ -30,19 +30,18 @@ namespace Amazon.CodeBuild.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateWebhook operation.
-    /// For an existing AWS CodeBuild build project that has its source code stored in a GitHub
-    /// or Bitbucket repository, enables AWS CodeBuild to start rebuilding the source code
-    /// every time a code change is pushed to the repository.
+    /// For an existing CodeBuild build project that has its source code stored in a GitHub
+    /// or Bitbucket repository, enables CodeBuild to start rebuilding the source code every
+    /// time a code change is pushed to the repository.
     /// 
     ///  <important> 
     /// <para>
-    /// If you enable webhooks for an AWS CodeBuild project, and the project is used as a
-    /// build step in AWS CodePipeline, then two identical builds are created for each commit.
-    /// One build is triggered through webhooks, and one through AWS CodePipeline. Because
-    /// billing is on a per-build basis, you are billed for both builds. Therefore, if you
-    /// are using AWS CodePipeline, we recommend that you disable webhooks in AWS CodeBuild.
-    /// In the AWS CodeBuild console, clear the Webhook box. For more information, see step
-    /// 5 in <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
+    /// If you enable webhooks for an CodeBuild project, and the project is used as a build
+    /// step in CodePipeline, then two identical builds are created for each commit. One build
+    /// is triggered through webhooks, and one through CodePipeline. Because billing is on
+    /// a per-build basis, you are billed for both builds. Therefore, if you are using CodePipeline,
+    /// we recommend that you disable webhooks in CodeBuild. In the CodeBuild console, clear
+    /// the Webhook box. For more information, see step 5 in <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
     /// a Build Project's Settings</a>.
     /// </para>
     ///  </important>
@@ -126,7 +125,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property ProjectName. 
         /// <para>
-        /// The name of the AWS CodeBuild project.
+        /// The name of the CodeBuild project.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=255)]

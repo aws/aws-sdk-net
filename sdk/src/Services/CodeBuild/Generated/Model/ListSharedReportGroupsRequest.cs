@@ -30,7 +30,8 @@ namespace Amazon.CodeBuild.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSharedReportGroups operation.
-    /// Gets a list of report groups that are shared with other AWS accounts or users.
+    /// Gets a list of report groups that are shared with other Amazon Web Services accounts
+    /// or users.
     /// </summary>
     public partial class ListSharedReportGroupsRequest : AmazonCodeBuildRequest
     {
@@ -86,8 +87,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        ///  The criterion to be used to list report groups shared with the current AWS account
-        /// or user. Valid values include: 
+        ///  The criterion to be used to list report groups shared with the current Amazon Web
+        /// Services account or user. Valid values include: 
         /// </para>
         ///  <ul> <li> 
         /// <para>

@@ -30,7 +30,7 @@ namespace Amazon.CodeBuild.Model
 {
     /// <summary>
     /// Container for the parameters to the ListReports operation.
-    /// Returns a list of ARNs for the reports in the current AWS account.
+    /// Returns a list of ARNs for the reports in the current Amazon Web Services account.
     /// </summary>
     public partial class ListReportsRequest : AmazonCodeBuildRequest
     {

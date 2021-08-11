@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// The specified AWS resource cannot be found.
+    /// The specified Amazon Web Services resource cannot be found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
