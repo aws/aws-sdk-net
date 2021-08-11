@@ -515,6 +515,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.SimpleWorkflow.CodeAnalysis" Path="|AWSSDK.SimpleWorkflow.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Snowball.CodeAnalysis" Path="|AWSSDK.Snowball.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Snowball.CodeAnalysis" Path="|AWSSDK.Snowball.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.SnowDeviceManagement.CodeAnalysis" Path="|AWSSDK.SnowDeviceManagement.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.SnowDeviceManagement.CodeAnalysis" Path="|AWSSDK.SnowDeviceManagement.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.SQS.CodeAnalysis" Path="|AWSSDK.SQS.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.SQS.CodeAnalysis" Path="|AWSSDK.SQS.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.SSMContacts.CodeAnalysis" Path="|AWSSDK.SSMContacts.CodeAnalysis|"/>

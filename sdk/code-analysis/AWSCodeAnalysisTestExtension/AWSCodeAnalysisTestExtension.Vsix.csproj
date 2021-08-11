@@ -1052,6 +1052,10 @@
       <Project>{54A63ED2-11F0-4F76-8F5B-B7016E94AF86}</Project>
       <Name>AWSSDK.Snowball.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/SnowDeviceManagement/AWSSDK.SnowDeviceManagement.CodeAnalysis.csproj">
+      <Project>{94E03276-400A-4F34-B8D7-53749617D2D1}</Project>
+      <Name>AWSSDK.SnowDeviceManagement.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/SQS/AWSSDK.SQS.CodeAnalysis.csproj">
       <Project>{DC3A5D55-1333-440D-9A0F-CE4841E19E9A}</Project>
       <Name>AWSSDK.SQS.CodeAnalysis</Name>

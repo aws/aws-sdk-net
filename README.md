@@ -585,6 +585,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon SWF helps developers build, run, and scale background jobs that have parallel or sequential steps. You can think of Amazon SWF as a fully-managed state tracker and task coordinator in the Cloud.
 * [AWSSDK.Snowball](https://www.nuget.org/packages/AWSSDK.Snowball/)
 	* Amazon Snowball is a petabyte-scale data transport solution that uses secure appliances to transfer large amounts of data into and out of the AWS cloud
+* [AWSSDK.SnowDeviceManagement](https://www.nuget.org/packages/AWSSDK.SnowDeviceManagement/)
+	* AWS Snow Family customers can remotely monitor and operate their connected AWS Snowcone devices.
 * [AWSSDK.SQS](https://www.nuget.org/packages/AWSSDK.SQS/)
 	* Amazon Simple Queue Service (SQS) is a fast, reliable, scalable, fully managed message queuing service. SQS makes it simple and cost-effective to decouple the components of a cloud application.
 * [AWSSDK.SSMContacts](https://www.nuget.org/packages/AWSSDK.SSMContacts/)
