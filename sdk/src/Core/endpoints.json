@@ -11296,6 +11296,11 @@
           "endpoints": {
             "us-isob-east-1": {}
           }
+        },
+        "tagging": {
+          "endpoints": {
+            "us-isob-east-1": {}
+          }
         }
       }
     }
