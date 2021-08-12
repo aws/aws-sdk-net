@@ -553,6 +553,10 @@ namespace Amazon.GlueDataBrew
         /// </summary>
         public static readonly OutputFormat PARQUET = new OutputFormat("PARQUET");
         /// <summary>
+        /// Constant TABLEAUHYPER for OutputFormat
+        /// </summary>
+        public static readonly OutputFormat TABLEAUHYPER = new OutputFormat("TABLEAUHYPER");
+        /// <summary>
         /// Constant XML for OutputFormat
         /// </summary>
         public static readonly OutputFormat XML = new OutputFormat("XML");
