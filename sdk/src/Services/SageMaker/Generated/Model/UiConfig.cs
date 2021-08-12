@@ -29,7 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Provided configuration information for the worker UI for a labeling job.
+    /// Provided configuration information for the worker UI for a labeling job. Provide either
+    /// <code>HumanTaskUiArn</code> or <code>UiTemplateS3Uri</code>.
+    /// 
+    ///  
+    /// <para>
+    /// For named entity recognition, 3D point cloud and video frame labeling jobs, use <code>HumanTaskUiArn</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For all other Ground Truth built-in task types and custom task types, use <code>UiTemplateS3Uri</code>
+    /// to specify the location of a worker task template in Amazon S3.
+    /// </para>
     /// </summary>
     public partial class UiConfig
     {
@@ -44,10 +55,26 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// Use this parameter when you are creating a labeling job for 3D point cloud and video
-        /// fram labeling jobs. Use your labeling job task type to select one of the following
-        /// ARNs and use it with this parameter when you create a labeling job. Replace <code>aws-region</code>
-        /// with the Amazon Web Services region you are creating your labeling job in.
+        /// Use this parameter when you are creating a labeling job for named entity recognition,
+        /// 3D point cloud and video frame labeling jobs. Use your labeling job task type to select
+        /// one of the following ARNs and use it with this parameter when you create a labeling
+        /// job. Replace <code>aws-region</code> with the Amazon Web Services Region you are creating
+        /// your labeling job in. For example, replace <code>aws-region</code> with <code>us-west-1</code>
+        /// if you create a labeling job in US West (N. California).
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Named Entity Recognition</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the following <code>HumanTaskUiArn</code> for named entity recognition labeling
+        /// jobs:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/NamedEntityRecognition</code>
+        /// 
         /// </para>
         ///  
         /// <para>

@@ -304,7 +304,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>rn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code> 
+        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// An Autopilot job returns recommendations, or candidates. Each candidate has futher
-    /// details about the steps involved and the status.
+    /// Information about a candidate produced by an AutoML training job, including its status,
+    /// steps, and other properties.
     /// </summary>
     public partial class AutoMLCandidate
     {
@@ -68,7 +68,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CandidateProperties. 
         /// <para>
-        /// The AutoML candidate's properties.
+        /// The properties of an AutoML candidate job.
         /// </para>
         /// </summary>
         public CandidateProperties CandidateProperties

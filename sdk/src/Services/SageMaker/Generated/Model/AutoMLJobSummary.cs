@@ -65,7 +65,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLJobName. 
         /// <para>
-        /// The name of the AutoML you are requesting.
+        /// The name of the AutoML job you are requesting.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

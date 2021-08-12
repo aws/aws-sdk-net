@@ -34,6 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class CandidateProperties
     {
         private CandidateArtifactLocations _candidateArtifactLocations;
+        private List<MetricDatum> _candidateMetrics = new List<MetricDatum>();
 
         /// <summary>
         /// Gets and sets the property CandidateArtifactLocations. 
@@ -51,6 +52,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCandidateArtifactLocations()
         {
             return this._candidateArtifactLocations != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CandidateMetrics. 
+        /// <para>
+        /// Information about the candidate metrics for an AutoML job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=40)]
+        public List<MetricDatum> CandidateMetrics
+        {
+            get { return this._candidateMetrics; }
+            set { this._candidateMetrics = value; }
+        }
+
+        // Check to see if CandidateMetrics property is set
+        internal bool IsSetCandidateMetrics()
+        {
+            return this._candidateMetrics != null && this._candidateMetrics.Count > 0; 
         }
 
     }

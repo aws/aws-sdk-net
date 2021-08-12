@@ -60,7 +60,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Image. 
         /// <para>
-        /// The ECR path of the container. For more information, see .
+        /// The Amazon Elastic Container Registry (Amazon ECR) path of the container. For more
+        /// information, see .
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]

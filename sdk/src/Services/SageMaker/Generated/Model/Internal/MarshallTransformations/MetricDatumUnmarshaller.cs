@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CandidateProperties Object
+    /// Response Unmarshaller for MetricDatum Object
     /// </summary>  
-    public class CandidatePropertiesUnmarshaller : IUnmarshaller<CandidateProperties, XmlUnmarshallerContext>, IUnmarshaller<CandidateProperties, JsonUnmarshallerContext>
+    public class MetricDatumUnmarshaller : IUnmarshaller<MetricDatum, XmlUnmarshallerContext>, IUnmarshaller<MetricDatum, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CandidateProperties IUnmarshaller<CandidateProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MetricDatum IUnmarshaller<MetricDatum, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,33 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CandidateProperties Unmarshall(JsonUnmarshallerContext context)
+        public MetricDatum Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CandidateProperties unmarshalledObject = new CandidateProperties();
+            MetricDatum unmarshalledObject = new MetricDatum();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CandidateArtifactLocations", targetDepth))
+                if (context.TestExpression("MetricName", targetDepth))
                 {
-                    var unmarshaller = CandidateArtifactLocationsUnmarshaller.Instance;
-                    unmarshalledObject.CandidateArtifactLocations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MetricName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CandidateMetrics", targetDepth))
+                if (context.TestExpression("Set", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<MetricDatum, MetricDatumUnmarshaller>(MetricDatumUnmarshaller.Instance);
-                    unmarshalledObject.CandidateMetrics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Set = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Value", targetDepth))
+                {
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +88,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static CandidatePropertiesUnmarshaller _instance = new CandidatePropertiesUnmarshaller();        
+        private static MetricDatumUnmarshaller _instance = new MetricDatumUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CandidatePropertiesUnmarshaller Instance
+        public static MetricDatumUnmarshaller Instance
         {
             get
             {

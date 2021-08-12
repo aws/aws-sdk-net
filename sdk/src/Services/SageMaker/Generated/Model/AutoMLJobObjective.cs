@@ -51,8 +51,8 @@ namespace Amazon.SageMaker.Model
         ///  <code>MSE</code>: The mean squared error (MSE) is the average of the squared differences
         /// between the predicted and actual values. It is used for regression. MSE values are
         /// always positive: the better a model is at predicting the actual values, the smaller
-        /// the MSE value. When the data contains outliers, they tend to dominate the MSE, which
-        /// might cause subpar prediction performance.
+        /// the MSE value is. When the data contains outliers, they tend to dominate the MSE,
+        /// which might cause subpar prediction performance.
         /// </para>
         ///  </li> <li> 
         /// <para>

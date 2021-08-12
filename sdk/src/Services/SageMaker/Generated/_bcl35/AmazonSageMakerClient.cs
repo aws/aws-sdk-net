@@ -790,7 +790,7 @@ namespace Amazon.SageMaker
         /// 
         ///  
         /// <para>
-        /// Find the best performing model after you run an Autopilot job by calling .
+        /// Find the best-performing model after you run an Autopilot job by calling .
         /// </para>
         ///  
         /// <para>
@@ -13168,6 +13168,10 @@ namespace Amazon.SageMaker
         /// 
         ///  
         /// <para>
+        ///  <b>Callback Step</b> 
+        /// </para>
+        ///  
+        /// <para>
         /// A pipeline execution won't stop while a callback step is running. When you call <code>StopPipelineExecution</code>
         /// on a pipeline execution with a running callback step, SageMaker Pipelines sends an
         /// additional Amazon SQS message to the specified SQS queue. The body of the SQS message
@@ -13183,6 +13187,19 @@ namespace Amazon.SageMaker
         /// <para>
         /// Only when SageMaker Pipelines receives one of these calls will it stop the pipeline
         /// execution.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Lambda Step</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A pipeline execution can't be stopped while a lambda step is running because the Lambda
+        /// function invoked by the lambda step can't be stopped. If you attempt to stop the execution
+        /// while the Lambda function is running, the pipeline waits for the Lambda function to
+        /// finish or until the timeout is hit, whichever occurs first, and then stops. If the
+        /// Lambda function finishes, the pipeline execution status is <code>Stopped</code>. If
+        /// the timeout is hit the pipeline execution status is <code>Failed</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopPipelineExecution service method.</param>

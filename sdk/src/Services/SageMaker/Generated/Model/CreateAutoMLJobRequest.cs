@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// Find the best performing model after you run an Autopilot job by calling .
+    /// Find the best-performing model after you run an Autopilot job by calling .
     /// </para>
     ///  
     /// <para>
