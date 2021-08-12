@@ -42,6 +42,7 @@ namespace Amazon.APIGateway.Model
         private string _domainName;
         private EndpointConfiguration _endpointConfiguration;
         private MutualTlsAuthenticationInput _mutualTlsAuthentication;
+        private string _ownershipVerificationCertificateArn;
         private string _regionalCertificateArn;
         private string _regionalCertificateName;
         private SecurityPolicy _securityPolicy;
@@ -196,6 +197,26 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetMutualTlsAuthentication()
         {
             return this._mutualTlsAuthentication != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnershipVerificationCertificateArn. 
+        /// <para>
+        /// The ARN of the public certificate issued by ACM to validate ownership of your custom
+        /// domain. Only required when configuring mutual TLS and using an ACM imported or private
+        /// CA certificate ARN as the regionalCertificateArn.
+        /// </para>
+        /// </summary>
+        public string OwnershipVerificationCertificateArn
+        {
+            get { return this._ownershipVerificationCertificateArn; }
+            set { this._ownershipVerificationCertificateArn = value; }
+        }
+
+        // Check to see if OwnershipVerificationCertificateArn property is set
+        internal bool IsSetOwnershipVerificationCertificateArn()
+        {
+            return this._ownershipVerificationCertificateArn != null;
         }
 
         /// <summary>

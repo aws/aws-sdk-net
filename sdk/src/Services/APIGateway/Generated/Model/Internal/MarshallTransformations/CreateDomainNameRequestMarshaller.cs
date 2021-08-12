@@ -123,6 +123,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetOwnershipVerificationCertificateArn())
+                {
+                    context.Writer.WritePropertyName("ownershipVerificationCertificateArn");
+                    context.Writer.Write(publicRequest.OwnershipVerificationCertificateArn);
+                }
+
                 if(publicRequest.IsSetRegionalCertificateArn())
                 {
                     context.Writer.WritePropertyName("regionalCertificateArn");

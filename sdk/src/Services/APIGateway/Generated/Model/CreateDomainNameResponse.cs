@@ -57,6 +57,7 @@ namespace Amazon.APIGateway.Model
         private EndpointConfiguration _endpointConfiguration;
         private MutualTlsAuthentication _mutualTlsAuthentication;
         private string _name;
+        private string _ownershipVerificationCertificateArn;
         private string _regionalCertificateArn;
         private string _regionalCertificateName;
         private string _regionalDomainName;
@@ -168,10 +169,11 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DomainNameStatus. 
         /// <para>
-        /// The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>
-        /// and <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot
-        /// be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>,
-        /// the domain can be updated.
+        /// The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>,
+        /// <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>.
+        /// If the status is <code>UPDATING</code>, the domain cannot be modified further until
+        /// the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can
+        /// be updated.
         /// </para>
         /// </summary>
         public DomainNameStatus DomainNameStatus
@@ -260,6 +262,26 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnershipVerificationCertificateArn. 
+        /// <para>
+        /// The ARN of the public certificate issued by ACM to validate ownership of your custom
+        /// domain. Only required when configuring mutual TLS and using an ACM imported or private
+        /// CA certificate ARN as the regionalCertificateArn.
+        /// </para>
+        /// </summary>
+        public string OwnershipVerificationCertificateArn
+        {
+            get { return this._ownershipVerificationCertificateArn; }
+            set { this._ownershipVerificationCertificateArn = value; }
+        }
+
+        // Check to see if OwnershipVerificationCertificateArn property is set
+        internal bool IsSetOwnershipVerificationCertificateArn()
+        {
+            return this._ownershipVerificationCertificateArn != null;
         }
 
         /// <summary>

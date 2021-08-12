@@ -124,6 +124,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ownershipVerificationCertificateArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OwnershipVerificationCertificateArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("regionalCertificateArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
