@@ -44,16 +44,27 @@
 
             if (params && params.page) {
                 var page = tocItem.attr('href');
+                var contentPage = params.page;
                 if (page) {
                     page = page.substr(('./items/').length, page.length);
-                    // Code to check if customer's bookmark has been deprecated. If so, he customer will be
-                    // redirected to the correct page
-                    if (page != params.page) {
+                    // Code to check if customer's bookmark has been deprecated. If so, the customer will be
+                    // redirected to the correct page.
+                    if (page != contentPage) {
+                        var fileStartIndex = page.lastIndexOf('/');
+                        if (fileStartIndex == -1 || params.page.length == 0 || params.page[0] != 'M') {
+                            contentPage = page;
+                        }
+                        else {
+                            //Handle the method pages that exist but don't exist in the TOC.
+                            contentPage = page.substring(0, fileStartIndex + 1);
+                            contentPage += params.page;
+                        }
+
                         params.page = page;
                     }
                 }
 
-                AWSTOCObj.setContentPane("./items/" + params.page.replace(/_/g, ""));
+                AWSTOCObj.setContentPane("./items/" + contentPage.replace(/_/g, ""));
             }
             else {
                 AWSTOCObj.setContentPane("./items/sdk-api-home.html");
@@ -61,7 +72,7 @@
 
             if (params && params.tocid) {
                 // If the page is not a namespace page then we need to expand the namespace node
-                if (params.page[0] != 'N') {
+                if (params.page.length > 0 && params.page[0] != 'N') {
                     var pos = params.tocid.lastIndexOf('_');
                     if (pos > 0) {
 
