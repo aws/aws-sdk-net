@@ -705,6 +705,10 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly Runtime Python38 = new Runtime("python3.8");
         /// <summary>
+        /// Constant Python39 for Runtime
+        /// </summary>
+        public static readonly Runtime Python39 = new Runtime("python3.9");
+        /// <summary>
         /// Constant Ruby25 for Runtime
         /// </summary>
         public static readonly Runtime Ruby25 = new Runtime("ruby2.5");
