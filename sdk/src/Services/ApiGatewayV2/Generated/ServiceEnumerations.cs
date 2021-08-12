@@ -297,6 +297,14 @@ namespace Amazon.ApiGatewayV2
         /// </summary>
         public static readonly DomainNameStatus AVAILABLE = new DomainNameStatus("AVAILABLE");
         /// <summary>
+        /// Constant PENDING_CERTIFICATE_REIMPORT for DomainNameStatus
+        /// </summary>
+        public static readonly DomainNameStatus PENDING_CERTIFICATE_REIMPORT = new DomainNameStatus("PENDING_CERTIFICATE_REIMPORT");
+        /// <summary>
+        /// Constant PENDING_OWNERSHIP_VERIFICATION for DomainNameStatus
+        /// </summary>
+        public static readonly DomainNameStatus PENDING_OWNERSHIP_VERIFICATION = new DomainNameStatus("PENDING_OWNERSHIP_VERIFICATION");
+        /// <summary>
         /// Constant UPDATING for DomainNameStatus
         /// </summary>
         public static readonly DomainNameStatus UPDATING = new DomainNameStatus("UPDATING");

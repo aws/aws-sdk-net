@@ -41,6 +41,7 @@ namespace Amazon.ApiGatewayV2.Model
         private string _domainNameStatusMessage;
         private EndpointType _endpointType;
         private string _hostedZoneId;
+        private string _ownershipVerificationCertificateArn;
         private SecurityPolicy _securityPolicy;
 
         /// <summary>
@@ -121,9 +122,10 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property DomainNameStatus. 
         /// <para>
-        /// The status of the domain name migration. The valid values are AVAILABLE and UPDATING.
-        /// If the status is UPDATING, the domain cannot be modified further until the existing
-        /// operation is complete. If it is AVAILABLE, the domain can be updated.
+        /// The status of the domain name migration. The valid values are AVAILABLE, UPDATING,
+        /// PENDING_CERTIFICATE_REIMPORT, and PENDING_OWNERSHIP_VERIFICATION. If the status is
+        /// UPDATING, the domain cannot be modified further until the existing operation is complete.
+        /// If it is AVAILABLE, the domain can be updated.
         /// </para>
         /// </summary>
         public DomainNameStatus DomainNameStatus
@@ -191,6 +193,26 @@ namespace Amazon.ApiGatewayV2.Model
         internal bool IsSetHostedZoneId()
         {
             return this._hostedZoneId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnershipVerificationCertificateArn. 
+        /// <para>
+        /// The ARN of the public certificate issued by ACM to validate ownership of your custom
+        /// domain. Only required when configuring mutual TLS and using an ACM imported or private
+        /// CA certificate ARN as the regionalCertificateArn
+        /// </para>
+        /// </summary>
+        public string OwnershipVerificationCertificateArn
+        {
+            get { return this._ownershipVerificationCertificateArn; }
+            set { this._ownershipVerificationCertificateArn = value; }
+        }
+
+        // Check to see if OwnershipVerificationCertificateArn property is set
+        internal bool IsSetOwnershipVerificationCertificateArn()
+        {
+            return this._ownershipVerificationCertificateArn != null;
         }
 
         /// <summary>

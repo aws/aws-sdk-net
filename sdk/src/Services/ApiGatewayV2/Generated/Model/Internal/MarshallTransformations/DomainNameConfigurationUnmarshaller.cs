@@ -112,6 +112,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.HostedZoneId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ownershipVerificationCertificateArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OwnershipVerificationCertificateArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("securityPolicy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

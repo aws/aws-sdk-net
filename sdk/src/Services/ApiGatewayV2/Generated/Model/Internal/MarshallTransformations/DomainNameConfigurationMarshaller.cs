@@ -93,6 +93,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.HostedZoneId);
             }
 
+            if(requestObject.IsSetOwnershipVerificationCertificateArn())
+            {
+                context.Writer.WritePropertyName("ownershipVerificationCertificateArn");
+                context.Writer.Write(requestObject.OwnershipVerificationCertificateArn);
+            }
+
             if(requestObject.IsSetSecurityPolicy())
             {
                 context.Writer.WritePropertyName("securityPolicy");
