@@ -891,6 +891,14 @@ namespace Amazon.CustomerProfiles
     {
 
         /// <summary>
+        /// Constant ASSET for StandardIdentifier
+        /// </summary>
+        public static readonly StandardIdentifier ASSET = new StandardIdentifier("ASSET");
+        /// <summary>
+        /// Constant CASE for StandardIdentifier
+        /// </summary>
+        public static readonly StandardIdentifier CASE = new StandardIdentifier("CASE");
+        /// <summary>
         /// Constant LOOKUP_ONLY for StandardIdentifier
         /// </summary>
         public static readonly StandardIdentifier LOOKUP_ONLY = new StandardIdentifier("LOOKUP_ONLY");

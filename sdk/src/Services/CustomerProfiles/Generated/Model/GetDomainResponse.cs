@@ -163,7 +163,10 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property Matching. 
         /// <para>
-        /// The process of matching duplicate profiles. This process runs every Saturday at 12AM.
+        /// The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer
+        /// Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate
+        /// profiles in your domains. After that batch process completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+        /// API to return and review the results. 
         /// </para>
         /// </summary>
         public MatchingResponse Matching

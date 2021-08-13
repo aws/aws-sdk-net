@@ -37,6 +37,7 @@ namespace Amazon.CustomerProfiles.Model
         private string _domainName;
         private int? _maxResults;
         private string _nextToken;
+        private ObjectFilter _objectFilter;
         private string _objectTypeName;
         private string _profileId;
 
@@ -95,6 +96,25 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectFilter. 
+        /// <para>
+        /// Applies a filter to the response to include profile objects with the specified index
+        /// values. This filter is only supported for ObjectTypeName _asset and _case.
+        /// </para>
+        /// </summary>
+        public ObjectFilter ObjectFilter
+        {
+            get { return this._objectFilter; }
+            set { this._objectFilter = value; }
+        }
+
+        // Check to see if ObjectFilter property is set
+        internal bool IsSetObjectFilter()
+        {
+            return this._objectFilter != null;
         }
 
         /// <summary>

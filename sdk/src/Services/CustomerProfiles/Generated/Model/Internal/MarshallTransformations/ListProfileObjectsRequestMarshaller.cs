@@ -74,6 +74,17 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetObjectFilter())
+                {
+                    context.Writer.WritePropertyName("ObjectFilter");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ObjectFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ObjectFilter, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetObjectTypeName())
                 {
                     context.Writer.WritePropertyName("ObjectTypeName");
