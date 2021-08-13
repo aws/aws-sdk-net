@@ -1,3 +1,13 @@
+### 3.7.96.0 (2021-08-13 18:11 UTC)
+* CustomerProfiles (3.7.3.0)
+	* This release introduces Standard Profile Objects, namely Asset and Case which contain values populated by data from third party systems and belong to a specific profile. This release adds an optional parameter, ObjectFilter to the ListProfileObjects API in order to search for these Standard Objects.
+* ElastiCache (3.7.3.0)
+	* This release adds ReplicationGroupCreateTime field to ReplicationGroup which indicates the UTC time when ElastiCache ReplicationGroup is created
+* ElasticMapReduce (3.7.2.0)
+	* Amazon EMR customers can now specify custom AMIs at the instance level in their clusters. This allows using custom AMIs in clusters that have instances with different instruction set architectures, e.g. m5.xlarge (x86) and m6g.xlarge (ARM).
+* QuickSight (3.7.4.7)
+	* Documentation updates for QuickSight.
+
 ### 3.7.95.0 (2021-08-12 18:14 UTC)
 * APIGateway (3.7.1.0)
 	* Adding support for ACM imported or private CA certificates for mTLS enabled domain names
