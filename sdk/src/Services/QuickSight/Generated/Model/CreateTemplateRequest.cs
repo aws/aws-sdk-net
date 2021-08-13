@@ -120,7 +120,7 @@ namespace Amazon.QuickSight.Model
         /// an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of
         /// the source template. For <code>SourceAnalysis</code>, specify the ARN of the source
         /// analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services
-        /// account; and any QuickSight-supported Region;. 
+        /// account; and any QuickSight-supported Amazon Web Services Region;. 
         /// </para>
         ///  
         /// <para>
@@ -165,8 +165,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property TemplateId. 
         /// <para>
-        /// An ID for the template that you want to create. This template is unique per Region;
-        /// in each Amazon Web Services account;.
+        /// An ID for the template that you want to create. This template is unique per Amazon
+        /// Web Services Region; in each Amazon Web Services account;.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

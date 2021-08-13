@@ -135,7 +135,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ThemeId. 
         /// <para>
-        /// The ID of the theme. This ID is unique per Region; for each Amazon Web Services account;.
+        /// The ID of the theme. This ID is unique per Amazon Web Services Region; for each Amazon
+        /// Web Services account;.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

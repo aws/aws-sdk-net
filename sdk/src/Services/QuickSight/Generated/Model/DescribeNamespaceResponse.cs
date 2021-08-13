@@ -41,10 +41,10 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property Namespace. 
         /// <para>
         /// The information about the namespace that you're describing. The response includes
-        /// the namespace ARN, name, Region;, creation status, and identity store. <code>DescribeNamespace</code>
-        /// also works for namespaces that are in the process of being created. For incomplete
-        /// namespaces, this API operation lists the namespace error types and messages associated
-        /// with the creation process.
+        /// the namespace ARN, name, Amazon Web Services Region;, creation status, and identity
+        /// store. <code>DescribeNamespace</code> also works for namespaces that are in the process
+        /// of being created. For incomplete namespaces, this API operation lists the namespace
+        /// error types and messages associated with the creation process.
         /// </para>
         /// </summary>
         public NamespaceInfoV2 Namespace

@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// The Amazon QuickSight customizations associated with your Amazon Web Services account;
-    /// or a QuickSight namespace in a specific Region;.
+    /// or a QuickSight namespace in a specific Amazon Web Services Region;.
     /// </summary>
     public partial class AccountCustomization
     {

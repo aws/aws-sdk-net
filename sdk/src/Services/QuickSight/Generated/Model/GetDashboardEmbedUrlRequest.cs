@@ -58,8 +58,8 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
-    /// Analytics</a> in the <i>Amazon QuickSight User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-deprecated.html">Embedding
+    /// Analytics Using GetDashboardEmbedUrl</a> in the <i>Amazon QuickSight User Guide</i>.
     /// </para>
     ///  
     /// <para>

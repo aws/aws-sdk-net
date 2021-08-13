@@ -206,8 +206,8 @@ namespace Amazon.QuickSight.Model
         /// a dashboard from an analysis, first convert the analysis to a template by using the
         /// <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify the
         /// Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN
-        /// can contain any Amazon Web Services account; and any QuickSight-supported Region;.
-        /// 
+        /// can contain any Amazon Web Services account; and any QuickSight-supported Amazon Web
+        /// Services Region;. 
         /// </para>
         ///  
         /// <para>

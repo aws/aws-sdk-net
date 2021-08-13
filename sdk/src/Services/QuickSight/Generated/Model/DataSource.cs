@@ -112,8 +112,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSourceId. 
         /// <para>
-        /// The ID of the data source. This ID is unique per Region; for each Amazon Web Services
-        /// account;.
+        /// The ID of the data source. This ID is unique per Amazon Web Services Region; for each
+        /// Amazon Web Services account;.
         /// </para>
         /// </summary>
         public string DataSourceId
