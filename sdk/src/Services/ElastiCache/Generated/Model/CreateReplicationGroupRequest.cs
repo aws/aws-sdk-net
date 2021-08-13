@@ -64,7 +64,7 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  
     /// <para>
-    /// To request a limit increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
+    /// To request a limit increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">Amazon
     /// Service Limits</a> and choose the limit type <b>Nodes per cluster per instance type</b>.
     /// 
     /// </para>

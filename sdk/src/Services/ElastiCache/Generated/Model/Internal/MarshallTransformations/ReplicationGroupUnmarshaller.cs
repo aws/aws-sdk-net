@@ -160,6 +160,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.PendingModifiedValues = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ReplicationGroupCreateTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.ReplicationGroupCreateTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ReplicationGroupId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

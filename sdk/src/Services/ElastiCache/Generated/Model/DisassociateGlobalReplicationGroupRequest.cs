@@ -32,7 +32,7 @@ namespace Amazon.ElastiCache.Model
     /// Container for the parameters to the DisassociateGlobalReplicationGroup operation.
     /// Remove a secondary cluster from the Global datastore using the Global datastore name.
     /// The secondary cluster will no longer receive updates from the primary cluster, but
-    /// will remain as a standalone cluster in that AWS region.
+    /// will remain as a standalone cluster in that Amazon region.
     /// </summary>
     public partial class DisassociateGlobalReplicationGroupRequest : AmazonElastiCacheRequest
     {
@@ -81,7 +81,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ReplicationGroupRegion. 
         /// <para>
-        /// The AWS region of secondary cluster you wish to remove from the Global datastore
+        /// The Amazon region of secondary cluster you wish to remove from the Global datastore
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

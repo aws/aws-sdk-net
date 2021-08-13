@@ -63,7 +63,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property EC2SecurityGroupOwnerId. 
         /// <para>
-        /// The AWS account ID of the Amazon EC2 security group owner.
+        /// The Amazon account ID of the Amazon EC2 security group owner.
         /// </para>
         /// </summary>
         public string EC2SecurityGroupOwnerId

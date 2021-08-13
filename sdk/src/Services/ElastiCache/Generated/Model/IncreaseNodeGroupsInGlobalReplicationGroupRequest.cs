@@ -100,8 +100,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property RegionalConfigurations. 
         /// <para>
-        /// Describes the replication group IDs, the AWS regions where they are stored and the
-        /// shard configuration for each that comprise the Global datastore
+        /// Describes the replication group IDs, the Amazon regions where they are stored and
+        /// the shard configuration for each that comprise the Global datastore
         /// </para>
         /// </summary>
         public List<RegionalConfiguration> RegionalConfigurations

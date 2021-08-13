@@ -59,7 +59,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ReplicationGroupRegion. 
         /// <para>
-        /// The AWS region where the cluster is stored
+        /// The Amazon region where the cluster is stored
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -39,7 +39,7 @@ namespace Amazon.ElastiCache.Model
     ///  <ul> <li> 
     /// <para>
     /// A customer can use this operation to test automatic failover on up to 5 shards (called
-    /// node groups in the ElastiCache API and AWS CLI) in any rolling 24-hour period.
+    /// node groups in the ElastiCache API and Amazon CLI) in any rolling 24-hour period.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -59,7 +59,7 @@ namespace Amazon.ElastiCache.Model
     ///  </li> <li> 
     /// <para>
     /// To determine whether the node replacement is complete you can check Events using the
-    /// Amazon ElastiCache console, the AWS CLI, or the ElastiCache API. Look for the following
+    /// Amazon ElastiCache console, the Amazon CLI, or the ElastiCache API. Look for the following
     /// automatic failover related events, listed here in order of occurrance:
     /// </para>
     ///  <ol> <li> 

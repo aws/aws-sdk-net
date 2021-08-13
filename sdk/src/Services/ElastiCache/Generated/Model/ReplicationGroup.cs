@@ -50,6 +50,7 @@ namespace Amazon.ElastiCache.Model
         private MultiAZStatus _multiAZ;
         private List<NodeGroup> _nodeGroups = new List<NodeGroup>();
         private ReplicationGroupPendingModifiedValues _pendingModifiedValues;
+        private DateTime? _replicationGroupCreateTime;
         private string _replicationGroupId;
         private int? _snapshotRetentionLimit;
         private string _snapshottingClusterId;
@@ -395,6 +396,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetPendingModifiedValues()
         {
             return this._pendingModifiedValues != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationGroupCreateTime. 
+        /// <para>
+        /// The date and time when the cluster was created.
+        /// </para>
+        /// </summary>
+        public DateTime ReplicationGroupCreateTime
+        {
+            get { return this._replicationGroupCreateTime.GetValueOrDefault(); }
+            set { this._replicationGroupCreateTime = value; }
+        }
+
+        // Check to see if ReplicationGroupCreateTime property is set
+        internal bool IsSetReplicationGroupCreateTime()
+        {
+            return this._replicationGroupCreateTime.HasValue; 
         }
 
         /// <summary>

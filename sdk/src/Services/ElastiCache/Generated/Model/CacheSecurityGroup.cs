@@ -129,7 +129,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The AWS account ID of the cache security group owner.
+        /// The Amazon account ID of the cache security group owner.
         /// </para>
         /// </summary>
         public string OwnerId

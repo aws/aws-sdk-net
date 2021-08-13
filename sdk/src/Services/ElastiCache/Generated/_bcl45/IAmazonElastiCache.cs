@@ -72,7 +72,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  
         /// <para>
-        ///  For example, you can use cost-allocation tags to your ElastiCache resources, AWS
+        ///  For example, you can use cost-allocation tags to your ElastiCache resources, Amazon
         /// generates a cost allocation report as a comma-separated value (CSV) file with your
         /// usage and costs aggregated by your tags. You can apply tags that represent business
         /// categories (such as cost centers, application names, or owners) to organize your costs
@@ -142,7 +142,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  
         /// <para>
-        ///  For example, you can use cost-allocation tags to your ElastiCache resources, AWS
+        ///  For example, you can use cost-allocation tags to your ElastiCache resources, Amazon
         /// generates a cost allocation report as a comma-separated value (CSV) file with your
         /// usage and costs aggregated by your tags. You can apply tags that represent business
         /// categories (such as cost centers, application names, or owners) to organize your costs
@@ -1253,7 +1253,7 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  
         /// <para>
-        /// To request a limit increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
+        /// To request a limit increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">Amazon
         /// Service Limits</a> and choose the limit type <b>Nodes per cluster per instance type</b>.
         /// 
         /// </para>
@@ -1382,7 +1382,7 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  
         /// <para>
-        /// To request a limit increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
+        /// To request a limit increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">Amazon
         /// Service Limits</a> and choose the limit type <b>Nodes per cluster per instance type</b>.
         /// 
         /// </para>
@@ -4025,7 +4025,7 @@ namespace Amazon.ElastiCache
         /// <summary>
         /// Remove a secondary cluster from the Global datastore using the Global datastore name.
         /// The secondary cluster will no longer receive updates from the primary cluster, but
-        /// will remain as a standalone cluster in that AWS region.
+        /// will remain as a standalone cluster in that Amazon region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateGlobalReplicationGroup service method.</param>
         /// 
@@ -4050,7 +4050,7 @@ namespace Amazon.ElastiCache
         /// <summary>
         /// Remove a secondary cluster from the Global datastore using the Global datastore name.
         /// The secondary cluster will no longer receive updates from the primary cluster, but
-        /// will remain as a standalone cluster in that AWS region.
+        /// will remain as a standalone cluster in that Amazon region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateGlobalReplicationGroup service method.</param>
         /// <param name="cancellationToken">
@@ -5682,7 +5682,7 @@ namespace Amazon.ElastiCache
         ///  <ul> <li> 
         /// <para>
         /// A customer can use this operation to test automatic failover on up to 5 shards (called
-        /// node groups in the ElastiCache API and AWS CLI) in any rolling 24-hour period.
+        /// node groups in the ElastiCache API and Amazon CLI) in any rolling 24-hour period.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5702,7 +5702,7 @@ namespace Amazon.ElastiCache
         ///  </li> <li> 
         /// <para>
         /// To determine whether the node replacement is complete you can check Events using the
-        /// Amazon ElastiCache console, the AWS CLI, or the ElastiCache API. Look for the following
+        /// Amazon ElastiCache console, the Amazon CLI, or the ElastiCache API. Look for the following
         /// automatic failover related events, listed here in order of occurrance:
         /// </para>
         ///  <ol> <li> 
@@ -5796,7 +5796,7 @@ namespace Amazon.ElastiCache
         ///  <ul> <li> 
         /// <para>
         /// A customer can use this operation to test automatic failover on up to 5 shards (called
-        /// node groups in the ElastiCache API and AWS CLI) in any rolling 24-hour period.
+        /// node groups in the ElastiCache API and Amazon CLI) in any rolling 24-hour period.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5816,7 +5816,7 @@ namespace Amazon.ElastiCache
         ///  </li> <li> 
         /// <para>
         /// To determine whether the node replacement is complete you can check Events using the
-        /// Amazon ElastiCache console, the AWS CLI, or the ElastiCache API. Look for the following
+        /// Amazon ElastiCache console, the Amazon CLI, or the ElastiCache API. Look for the following
         /// automatic failover related events, listed here in order of occurrance:
         /// </para>
         ///  <ol> <li> 

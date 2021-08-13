@@ -53,7 +53,7 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a>.
+        /// Resource Names (ARNs) and Amazon Service Namespaces</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
