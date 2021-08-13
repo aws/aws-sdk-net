@@ -707,7 +707,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// Set this value to <code>true</code> so that IAM principals in the account associated
         /// with the cluster can perform EMR actions on the cluster that their IAM policies allow.
-        /// This value defaults to <code>false</code> for clusters created using the EMR API or
+        /// This value defaults to <code>true</code> for clusters created using the EMR API or
         /// the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
         /// command.
         /// </para>
@@ -717,7 +717,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// the account root user can perform EMR actions for the cluster, regardless of the IAM
         /// permissions policies attached to other IAM principals. For more information, see <a
         /// href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
-        /// the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management Guide</i>.
+        /// the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.
         /// </para>
         /// </summary>
         public bool VisibleToAllUsers

@@ -35,6 +35,7 @@ namespace Amazon.ElasticMapReduce.Model
     {
         private string _bidPrice;
         private DateTime? _creationDateTime;
+        private string _customAmiId;
         private DateTime? _endDateTime;
         private string _instanceGroupId;
         private int? _instanceRequestCount;
@@ -110,6 +111,25 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetCreationDateTime()
         {
             return this._creationDateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomAmiId. 
+        /// <para>
+        /// The custom AMI ID to use for the provisioned instance group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string CustomAmiId
+        {
+            get { return this._customAmiId; }
+            set { this._customAmiId = value; }
+        }
+
+        // Check to see if CustomAmiId property is set
+        internal bool IsSetCustomAmiId()
+        {
+            return this._customAmiId != null;
         }
 
         /// <summary>

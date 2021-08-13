@@ -36,6 +36,7 @@ namespace Amazon.ElasticMapReduce.Model
         private AutoScalingPolicy _autoScalingPolicy;
         private string _bidPrice;
         private List<Configuration> _configurations = new List<Configuration>();
+        private string _customAmiId;
         private EbsConfiguration _ebsConfiguration;
         private int? _instanceCount;
         private InstanceRoleType _instanceRole;
@@ -124,6 +125,25 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetConfigurations()
         {
             return this._configurations != null && this._configurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomAmiId. 
+        /// <para>
+        /// The custom AMI ID to use for the provisioned instance group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string CustomAmiId
+        {
+            get { return this._customAmiId; }
+            set { this._customAmiId = value; }
+        }
+
+        // Check to see if CustomAmiId property is set
+        internal bool IsSetCustomAmiId()
+        {
+            return this._customAmiId != null;
         }
 
         /// <summary>

@@ -38,6 +38,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string _bidPrice;
         private List<Configuration> _configurations = new List<Configuration>();
         private long? _configurationsVersion;
+        private string _customAmiId;
         private List<EbsBlockDevice> _ebsBlockDevices = new List<EbsBlockDevice>();
         private bool? _ebsOptimized;
         private string _id;
@@ -133,6 +134,25 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetConfigurationsVersion()
         {
             return this._configurationsVersion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomAmiId. 
+        /// <para>
+        /// The custom AMI ID to use for the provisioned instance group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string CustomAmiId
+        {
+            get { return this._customAmiId; }
+            set { this._customAmiId = value; }
+        }
+
+        // Check to see if CustomAmiId property is set
+        internal bool IsSetCustomAmiId()
+        {
+            return this._customAmiId != null;
         }
 
         /// <summary>

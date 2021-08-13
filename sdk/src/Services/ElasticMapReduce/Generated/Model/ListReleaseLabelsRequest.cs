@@ -84,7 +84,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Specifies the next page of results. If <code>NextToken</code> is not specified, which
         /// is usually the case for the first request of ListReleaseLabels, the first page of
         /// results are determined by other filtering parameters or by the latest version. The
-        /// <code>ListReleaseLabels</code> request fails if the identity (AWS AccountID) and all
+        /// <code>ListReleaseLabels</code> request fails if the identity (account ID) and all
         /// filtering parameters are different from the original request, or if the <code>NextToken</code>
         /// is expired or tampered with.
         /// </para>

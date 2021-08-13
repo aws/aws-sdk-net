@@ -82,6 +82,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.Configurations = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CustomAmiId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomAmiId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EbsBlockDevices", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<EbsBlockDevice, EbsBlockDeviceUnmarshaller>(EbsBlockDeviceUnmarshaller.Instance);

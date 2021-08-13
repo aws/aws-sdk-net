@@ -76,6 +76,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CustomAmiId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomAmiId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EndDateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

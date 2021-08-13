@@ -78,6 +78,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetCustomAmiId())
+            {
+                context.Writer.WritePropertyName("CustomAmiId");
+                context.Writer.Write(requestObject.CustomAmiId);
+            }
+
             if(requestObject.IsSetEbsConfiguration())
             {
                 context.Writer.WritePropertyName("EbsConfiguration");

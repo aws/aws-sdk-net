@@ -360,13 +360,12 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>false</code> if a value is not provided when creating a
-        /// cluster using the EMR API <a>RunJobFlow</a> command or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
-        /// command. The default value is <code>true</code> when a cluster is created using the
-        /// Management Console. IAM principals that are authorized to perform actions on the cluster
-        /// can use the <a>SetVisibleToAllUsers</a> action to change the value on a running cluster.
-        /// For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
-        /// the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management Guide</i>.
+        /// The default value is <code>true</code> if a value is not provided when creating a
+        /// cluster using the EMR API <a>RunJobFlow</a> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
+        /// command, or the Management Console. IAM principals that are authorized to perform
+        /// actions on the cluster can use the <a>SetVisibleToAllUsers</a> action to change the
+        /// value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
+        /// the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.
         /// </para>
         /// </summary>
         public bool VisibleToAllUsers
