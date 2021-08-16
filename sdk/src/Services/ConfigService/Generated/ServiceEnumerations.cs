@@ -1517,6 +1517,22 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSAutoScalingScheduledAction = new ResourceType("AWS::AutoScaling::ScheduledAction");
         /// <summary>
+        /// Constant AWSBackupBackupPlan for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSBackupBackupPlan = new ResourceType("AWS::Backup::BackupPlan");
+        /// <summary>
+        /// Constant AWSBackupBackupSelection for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSBackupBackupSelection = new ResourceType("AWS::Backup::BackupSelection");
+        /// <summary>
+        /// Constant AWSBackupBackupVault for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSBackupBackupVault = new ResourceType("AWS::Backup::BackupVault");
+        /// <summary>
+        /// Constant AWSBackupRecoveryPoint for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSBackupRecoveryPoint = new ResourceType("AWS::Backup::RecoveryPoint");
+        /// <summary>
         /// Constant AWSCloudFormationStack for ResourceType
         /// </summary>
         public static readonly ResourceType AWSCloudFormationStack = new ResourceType("AWS::CloudFormation::Stack");
@@ -1640,6 +1656,34 @@ namespace Amazon.ConfigService
         /// Constant AWSEC2VPNGateway for ResourceType
         /// </summary>
         public static readonly ResourceType AWSEC2VPNGateway = new ResourceType("AWS::EC2::VPNGateway");
+        /// <summary>
+        /// Constant AWSECRRepository for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSECRRepository = new ResourceType("AWS::ECR::Repository");
+        /// <summary>
+        /// Constant AWSECSCluster for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSECSCluster = new ResourceType("AWS::ECS::Cluster");
+        /// <summary>
+        /// Constant AWSECSService for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSECSService = new ResourceType("AWS::ECS::Service");
+        /// <summary>
+        /// Constant AWSECSTaskDefinition for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSECSTaskDefinition = new ResourceType("AWS::ECS::TaskDefinition");
+        /// <summary>
+        /// Constant AWSEFSAccessPoint for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSEFSAccessPoint = new ResourceType("AWS::EFS::AccessPoint");
+        /// <summary>
+        /// Constant AWSEFSFileSystem for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSEFSFileSystem = new ResourceType("AWS::EFS::FileSystem");
+        /// <summary>
+        /// Constant AWSEKSCluster for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSEKSCluster = new ResourceType("AWS::EKS::Cluster");
         /// <summary>
         /// Constant AWSElasticBeanstalkApplication for ResourceType
         /// </summary>
