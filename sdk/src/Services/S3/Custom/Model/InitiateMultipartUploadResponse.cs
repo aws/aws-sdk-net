@@ -90,7 +90,7 @@ namespace Amazon.S3.Model
         /// Gets and sets the property BucketKeyEnabled. 
         /// <para>
         /// Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption
-        /// with AWS KMS (SSE-KMS).
+        /// with Amazon Web Services KMS (SSE-KMS).
         /// </para>
         /// </summary>
         public bool BucketKeyEnabled
@@ -108,24 +108,25 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property BucketName. 
         /// <para>
-        /// The name of the bucket to which the multipart upload was initiated. 
+        /// The name of the bucket to which the multipart upload was initiated. Does not return
+        /// the access point ARN or access point alias if used.
         /// </para>
         ///  
         /// <para>
         /// When using this action with an access point, you must direct requests to the access
         /// point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-        /// When using this action with an access point through the AWS SDKs, you provide the
-        /// access point ARN in place of the bucket name. For more information about access point
-        /// ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+        /// When using this action with an access point through the Amazon Web Services SDKs,
+        /// you provide the access point ARN in place of the bucket name. For more information
+        /// about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
         /// access points</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// When using this action with Amazon S3 on Outposts, you must direct requests to the
         /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-        /// When using this action using S3 on Outposts through the AWS SDKs, you provide the
-        /// Outposts bucket ARN in place of the bucket name. For more information about S3 on
-        /// Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+        /// When using this action using S3 on Outposts through the Amazon Web Services SDKs,
+        /// you provide the Outposts bucket ARN in place of the bucket name. For more information
+        /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
         /// S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
@@ -208,6 +209,11 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// The id of the AWS Key Management Service key that Amazon S3 uses to encrypt and decrypt the object.
+        /// <para>
+        /// If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon
+        /// Web Services KMS) symmetric customer managed customer master key (CMK) that was used
+        /// for the object.
+        /// </para>
         /// </summary>
         public string ServerSideEncryptionKeyManagementServiceKeyId
         {
@@ -227,6 +233,11 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Specifies the AWS KMS Encryption Context to use for object encryption.
         /// The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.
+        /// <para>
+        /// If present, specifies the Amazon Web Services KMS Encryption Context to use for object
+        /// encryption. The value of this header is a base64-encoded UTF-8 string holding JSON
+        /// with the encryption context key-value pairs.
+        /// </para>
         /// </summary>
         public string ServerSideEncryptionKeyManagementServiceEncryptionContext
         {

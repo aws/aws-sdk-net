@@ -31,13 +31,14 @@ namespace Amazon.S3.Model
     {
         private string serverSideEncryptionKeyManagementServiceKeyId;
         private ServerSideEncryptionMethod serverSideEncryptionAlgorithm;
-        
+
         /// <summary>
         /// KMS master key ID to use for the default encryption. 
         /// This parameter is allowed if SSEAlgorithm is aws:kms.
         /// <para>
-        /// AWS Key Management Service (KMS) customer AWS KMS key ID to use for the default encryption.
-        /// This parameter is allowed if and only if <code>ServerSideEncryptionAlgorithm</code> is set to <code>aws:kms</code>.
+        /// Amazon Web Services Key Management Service (KMS) customer Amazon Web Services KMS
+        /// key ID to use for the default encryption. This parameter is allowed if and only if
+        /// <code>SSEAlgorithm</code> is set to <code>aws:kms</code>.
         /// </para>
         ///  
         /// <para>
@@ -63,7 +64,8 @@ namespace Amazon.S3.Model
         /// <para>
         /// Amazon S3 only supports symmetric KMS keys and not asymmetric KMS keys. For more information,
         /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-        /// symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>

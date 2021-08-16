@@ -25,7 +25,34 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBucketLocation operation.
-    /// <para>Returns the region the bucket resides in.</para>
+    /// Returns the Region the bucket resides in. You set the bucket's Region using the <code>LocationConstraint</code>
+    /// request parameter in a <code>CreateBucket</code> request. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>.
+    /// 
+    ///  
+    /// <para>
+    /// To use this implementation of the operation, you must be the bucket owner.
+    /// </para>
+    ///  
+    /// <para>
+    /// To use this API against an access point, provide the alias of the access point in
+    /// place of the bucket name.
+    /// </para>
+    ///  
+    /// <para>
+    /// The following operations are related to <code>GetBucketLocation</code>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetBucketLocationRequest : AmazonWebServiceRequest
     {

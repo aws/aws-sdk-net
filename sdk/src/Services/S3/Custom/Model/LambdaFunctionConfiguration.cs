@@ -39,6 +39,10 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// Gets and sets the FunctionArn property. This is the Amazon Lambda cloud function to which Amazon S3 will invoke with the events.
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Lambda function that Amazon S3 invokes when
+        /// the specified event type occurs.
+        /// </para>
         /// </summary>
         public string FunctionArn { get; set; }
 

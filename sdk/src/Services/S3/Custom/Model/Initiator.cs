@@ -46,8 +46,11 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// If the principal is an AWS account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.
-        ///  
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// If the principal is an Amazon Web Services account, it provides the Canonical User
+        /// ID. If the principal is an IAM User, it provides a user ARN value.
+        /// </para>
         /// </summary>
         public string Id
         {

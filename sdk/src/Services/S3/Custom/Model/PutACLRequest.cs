@@ -73,11 +73,11 @@ namespace Amazon.S3.Model
     /// <para>
     /// Specify access permissions explicitly with the <code>x-amz-grant-read</code>, <code>x-amz-grant-read-acp</code>,
     /// <code>x-amz-grant-write-acp</code>, and <code>x-amz-grant-full-control</code> headers.
-    /// When using these headers, you specify explicit access permissions and grantees (AWS
-    /// accounts or Amazon S3 groups) who will receive the permission. If you use these ACL-specific
-    /// headers, you cannot use the <code>x-amz-acl</code> header to set a canned ACL. These
-    /// parameters map to the set of permissions that Amazon S3 supports in an ACL. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+    /// When using these headers, you specify explicit access permissions and grantees (Amazon
+    /// Web Services accounts or Amazon S3 groups) who will receive the permission. If you
+    /// use these ACL-specific headers, you cannot use the <code>x-amz-acl</code> header to
+    /// set a canned ACL. These parameters map to the set of permissions that Amazon S3 supports
+    /// in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
     /// Control List (ACL) Overview</a>.
     /// </para>
     ///  
@@ -86,7 +86,8 @@ namespace Amazon.S3.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
+    ///  <code>id</code> – if the value specified is the canonical user ID of an Amazon Web
+    /// Services account
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -94,13 +95,13 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
-    /// account
+    ///  <code>emailAddress</code> – if the value specified is the email address of an Amazon
+    /// Web Services account
     /// </para>
     ///  <note> 
     /// <para>
-    /// Using email addresses to specify a grantee is only supported in the following AWS
-    /// Regions: 
+    /// Using email addresses to specify a grantee is only supported in the following Amazon
+    /// Web Services Regions: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -137,13 +138,13 @@ namespace Amazon.S3.Model
     ///  </li> </ul> 
     /// <para>
     /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-    /// and Endpoints</a> in the AWS General Reference.
+    /// and Endpoints</a> in the Amazon Web Services General Reference.
     /// </para>
     ///  </note> </li> </ul> 
     /// <para>
     /// For example, the following <code>x-amz-grant-write</code> header grants create, overwrite,
     /// and delete objects permission to LogDelivery group predefined by Amazon S3 and two
-    /// AWS accounts identified by their email addresses.
+    /// Amazon Web Services accounts identified by their email addresses.
     /// </para>
     ///  
     /// <para>
@@ -202,8 +203,8 @@ namespace Amazon.S3.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// Using email addresses to specify a grantee is only supported in the following AWS
-    /// Regions: 
+    /// Using email addresses to specify a grantee is only supported in the following Amazon
+    /// Web Services Regions: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -240,7 +241,7 @@ namespace Amazon.S3.Model
     ///  </li> </ul> 
     /// <para>
     /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-    /// and Endpoints</a> in the AWS General Reference.
+    /// and Endpoints</a> in the Amazon Web Services General Reference.
     /// </para>
     ///  </note> </li> </ul> <p class="title"> <b>Related Resources</b> 
     /// </para>

@@ -25,7 +25,44 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the PutBucketPolicy operation.
-    /// <para>Replaces a policy on a bucket. If the bucket already has a policy, the one in this request completely replaces it.</para>
+    /// Applies an Amazon S3 bucket policy to an Amazon S3 bucket. If you are using an identity
+    /// other than the root user of the Amazon Web Services account that owns the bucket,
+    /// the calling identity must have the <code>PutBucketPolicy</code> permissions on the
+    /// specified bucket and belong to the bucket owner's account in order to use this operation.
+    /// 
+    ///  
+    /// <para>
+    /// If you don't have <code>PutBucketPolicy</code> permissions, Amazon S3 returns a <code>403
+    /// Access Denied</code> error. If you have the correct permissions, but you're not using
+    /// an identity that belongs to the bucket owner's account, Amazon S3 returns a <code>405
+    /// Method Not Allowed</code> error.
+    /// </para>
+    ///  <important> 
+    /// <para>
+    ///  As a security precaution, the root user of the Amazon Web Services account that owns
+    /// a bucket can always use this operation, even if the policy explicitly denies the root
+    /// user the ability to perform this action. 
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html">Bucket
+    /// policy examples</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// The following operations are related to <code>PutBucketPolicy</code>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class PutBucketPolicyRequest : AmazonWebServiceRequest
     {
@@ -43,12 +80,16 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The base64 encoded 128-bit MD5 digest of the message (without the headers) according to RFC 1864. 
+        /// Gets and sets the property ContentMD5. 
+        /// <para>
+        /// The MD5 hash of the request body.
+        /// </para>
+        ///  
+        /// <para>
+        /// For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon
+        /// Web Services SDKs, this field is calculated automatically.
+        /// </para>
         /// </summary>
-        /// <remarks>
-        /// This header can be used as a message integrity check to verify that the data is the same data that was originally sent. 
-        /// Although it is optional, we recommend using the Content-MD5 mechanism as an end-to-end integrity check. 
-        /// </remarks>
         public string ContentMD5 { get; set; }
 
         // Check to see if ContentMD5 property is set

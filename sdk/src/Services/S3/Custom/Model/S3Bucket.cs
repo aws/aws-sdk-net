@@ -20,8 +20,9 @@ using System.IO;
 
 namespace Amazon.S3.Model
 {
-    /// <summary>Bucket
-    /// Represents an S3 bucket, contains the name of the S3 bucket and the date that the bucket was created.
+    /// <summary>
+    /// In terms of implementation, a Bucket is a resource. An Amazon S3 bucket name is globally
+    /// unique, and the namespace is shared by all Amazon Web Services accounts.
     /// </summary>
     public class S3Bucket
     {

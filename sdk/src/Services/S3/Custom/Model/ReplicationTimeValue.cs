@@ -13,7 +13,14 @@ namespace Amazon.S3.Model
         private int? minutes;
 
         /// <summary>
-        /// Contains an integer specifying time in minutes.
+        /// Gets and sets the property Minutes. 
+        /// <para>
+        ///  Contains an integer specifying time in minutes. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Valid value: 15
+        /// </para>
         /// </summary>
         public int Minutes
         {

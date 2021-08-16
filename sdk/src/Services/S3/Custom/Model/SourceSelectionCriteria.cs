@@ -22,7 +22,11 @@ using System.IO;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// SourceSelectionCriteria class
+    /// A container that describes additional filters for identifying the source objects that
+    /// you want to replicate. You can choose to enable or disable the replication of these
+    /// objects. Currently, Amazon S3 supports only the filter that you can specify for objects
+    /// created with server-side encryption using a customer master key (CMK) stored in Amazon
+    /// Web Services Key Management Service (SSE-KMS).
     /// </summary>
     public class SourceSelectionCriteria
     {
@@ -30,10 +34,12 @@ namespace Amazon.S3.Model
         private ReplicaModifications replicaModifications;
 
         /// <summary>
-        /// Container for filter information of selection of KMS Encrypted
-        /// S3 objects. The element is required if you include
-        /// <code>SourceSelectionCriteria</code> in the replication
-        /// configuration.
+        /// Gets and sets the property SseKmsEncryptedObjects. 
+        /// <para>
+        ///  A container for filter information for the selection of Amazon S3 objects encrypted
+        /// with Amazon Web Services KMS. If you include <code>SourceSelectionCriteria</code>
+        /// in the replication configuration, this element is required. 
+        /// </para>
         /// </summary>
         public SseKmsEncryptedObjects SseKmsEncryptedObjects
         {

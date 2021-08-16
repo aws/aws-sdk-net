@@ -24,9 +24,108 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Container for the parameters to the PutBucketLoggingRequest operation.
-    /// <para>Set the logging parameters for a bucket and to specify permissions for who can view and modify the logging parameters. To set the
-    /// logging status of a bucket, you must be the bucket owner.</para>
+    /// Container for the parameters to the PutBucketLogging operation.
+    /// Set the logging parameters for a bucket and to specify permissions for who can view
+    /// and modify the logging parameters. All logs are saved to buckets in the same Amazon
+    /// Web Services Region as the source bucket. To set the logging status of a bucket, you
+    /// must be the bucket owner.
+    /// 
+    ///  
+    /// <para>
+    /// The bucket owner is automatically granted FULL_CONTROL to all logs. You use the <code>Grantee</code>
+    /// request element to grant access to other people. The <code>Permissions</code> request
+    /// element specifies the kind of access the grantee has to the logs.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Grantee Values</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can specify the person (grantee) to whom you're assigning access rights (using
+    /// request elements) in the following ways:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// By the person's ID:
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>&lt;Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CanonicalUser"&gt;&lt;ID&gt;&lt;&gt;ID&lt;&gt;&lt;/ID&gt;&lt;DisplayName&gt;&lt;&gt;GranteesEmail&lt;&gt;&lt;/DisplayName&gt;
+    /// &lt;/Grantee&gt;</code> 
+    /// </para>
+    ///  
+    /// <para>
+    /// DisplayName is optional and ignored in the request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// By Email address:
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code> &lt;Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="AmazonCustomerByEmail"&gt;&lt;EmailAddress&gt;&lt;&gt;Grantees@email.com&lt;&gt;&lt;/EmailAddress&gt;&lt;/Grantee&gt;</code>
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// The grantee is resolved to the CanonicalUser and, in a response to a GET Object acl
+    /// request, appears as the CanonicalUser.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// By URI:
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>&lt;Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Group"&gt;&lt;URI&gt;&lt;&gt;http://acs.amazonaws.com/groups/global/AuthenticatedUsers&lt;&gt;&lt;/URI&gt;&lt;/Grantee&gt;</code>
+    /// 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// To enable logging, you use LoggingEnabled and its children request elements. To disable
+    /// logging, you use an empty BucketLoggingStatus request element:
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>&lt;BucketLoggingStatus xmlns="http://doc.s3.amazonaws.com/2006-03-01" /&gt;</code>
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about server access logging, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerLogs.html">Server
+    /// Access Logging</a>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about creating a bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>.
+    /// For more information about returning the logging status of a bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLogging.html">GetBucketLogging</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// The following operations are related to <code>PutBucketLogging</code>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLogging.html">GetBucketLogging</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class PutBucketLoggingRequest : AmazonWebServiceRequest
     {

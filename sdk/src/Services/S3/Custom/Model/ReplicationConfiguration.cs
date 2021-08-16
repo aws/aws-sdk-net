@@ -28,7 +28,12 @@ namespace Amazon.S3.Model
         private List<ReplicationRule> rules = new List<ReplicationRule>();
 
         /// <summary>
-        /// Indicates the ARN of the role to assume.
+        /// Gets and sets the property Role. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that
+        /// Amazon S3 assumes when replicating objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How
+        /// to Set Up Replication</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
         /// </summary>
         public string Role
         {

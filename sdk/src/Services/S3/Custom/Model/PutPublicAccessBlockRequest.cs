@@ -56,7 +56,12 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ContentMD5. 
         /// <para>
-        ///  The MD5 hash of the <code>PutPublicBlock</code> request body. 
+        /// The MD5 hash of the <code>PutPublicAccessBlock</code> request body. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon
+        /// Web Services SDKs, this field is calculated automatically.
         /// </para>
         /// </summary>
         public string ContentMD5

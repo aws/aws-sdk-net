@@ -164,11 +164,11 @@ namespace Amazon.S3.Model
     ///  
     /// <para>
     /// When you perform a CopyObject operation, you can optionally use the appropriate encryption-related
-    /// headers to encrypt the object using server-side encryption with AWS managed encryption
-    /// keys (SSE-S3 or SSE-KMS) or a customer-provided encryption key. With server-side encryption,
-    /// Amazon S3 encrypts your data as it writes it to disks in its data centers and decrypts
-    /// the data when you access it. For more information about server-side encryption, see
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
+    /// headers to encrypt the object using server-side encryption with Amazon Web Services
+    /// managed encryption keys (SSE-S3 or SSE-KMS) or a customer-provided encryption key.
+    /// With server-side encryption, Amazon S3 encrypts your data as it writes it to disks
+    /// in its data centers and decrypts the data when you access it. For more information
+    /// about server-side encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
     /// Server-Side Encryption</a>.
     /// </para>
     ///  
@@ -185,9 +185,9 @@ namespace Amazon.S3.Model
     /// <para>
     /// When copying an object, you can optionally use headers to grant ACL-based permissions.
     /// By default, all objects are private. Only the owner has full access control. When
-    /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
-    /// groups defined by Amazon S3. These permissions are then added to the ACL on the object.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+    /// adding a new object, you can grant permissions to individual Amazon Web Services accounts
+    /// or to predefined groups defined by Amazon S3. These permissions are then added to
+    /// the ACL on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
     /// Control List (ACL) Overview</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing
     /// ACLs Using the REST API</a>. 
     /// </para>
@@ -854,9 +854,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property SSEKMSEncryptionContext. 
         /// <para>
-        /// Specifies the AWS KMS Encryption Context to use for object encryption. The value of
-        /// this header is a base64-encoded UTF-8 string holding JSON with the encryption context
-        /// key-value pairs.
+        /// Specifies the Amazon Web Services KMS Encryption Context to use for object encryption.
+        /// The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
+        /// context key-value pairs.
         /// </para>
         /// </summary>
         public string ServerSideEncryptionKeyManagementServiceEncryptionContext
@@ -877,10 +877,10 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property SSEKMSKeyId. 
         /// <para>
-        /// Specifies the AWS KMS key ID to use for object encryption. All GET and PUT requests
-        /// for an object protected by AWS KMS will fail if not made via SSL or using SigV4. For
-        /// information about configuring using any of the officially supported AWS SDKs and AWS
-        /// CLI, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+        /// Specifies the Amazon Web Services KMS key ID to use for object encryption. All GET
+        /// and PUT requests for an object protected by Amazon Web Services KMS will fail if not
+        /// made via SSL or using SigV4. For information about configuring using any of the officially
+        /// supported Amazon Web Services SDKs and Amazon Web Services CLI, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
         /// the Signature Version in Request Authentication</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>

@@ -23,7 +23,7 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// A container for filter information for the selection of S3 objects encrypted with
-    /// AWS KMS.
+    /// Amazon Web Services KMS.
     /// </summary>
     public class SseKmsEncryptedObjects
     {
@@ -31,6 +31,11 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// The replication for KMS encrypted S3 objects is disabled if status is not Enabled.
+        /// <para>
+        /// Specifies whether Amazon S3 replicates objects created with server-side encryption
+        /// using an Amazon Web Services KMS key stored in Amazon Web Services Key Management
+        /// Service.
+        /// </para>
         /// </summary>
         public SseKmsEncryptedObjectsStatus SseKmsEncryptedObjectsStatus
         {

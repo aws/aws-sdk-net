@@ -32,11 +32,12 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ReplicaKmsKeyID. 
         /// <para>
-        /// Specifies the ID (Key ARN or Alias ARN) of the customer managed AWS KMS key stored
-        /// in AWS Key Management Service (KMS) for the destination bucket. Amazon S3 uses this
-        /// key to encrypt replica objects. Amazon S3 only supports symmetric, customer managed
-        /// KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-        /// symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// Specifies the ID (Key ARN or Alias ARN) of the customer managed Amazon Web Services
+        /// KMS key stored in Amazon Web Services Key Management Service (KMS) for the destination
+        /// bucket. Amazon S3 uses this key to encrypt replica objects. Amazon S3 only supports
+        /// symmetric, customer managed KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+        /// symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         public string ReplicaKmsKeyID

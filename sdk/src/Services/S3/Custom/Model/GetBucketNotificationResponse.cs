@@ -69,8 +69,10 @@ namespace Amazon.S3.Model
 
         List<LambdaFunctionConfiguration> _lambdaFunctionConfigurations;
         /// <summary>
-        /// Gets and sets the LambdaFunctionConfigurations property. LambdaFunctionConfigurations are configuration 
-        /// for Amazon S3 events to be sent to an Amazon Lambda cloud function.
+        /// Gets and sets the property LambdaFunctionConfigurations. 
+        /// <para>
+        /// Describes the Lambda functions to invoke and the events for which to invoke them.
+        /// </para>
         /// </summary>
         public List<LambdaFunctionConfiguration> LambdaFunctionConfigurations
         {

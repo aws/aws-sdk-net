@@ -285,7 +285,12 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// The Server-side encryption algorithm used when storing this object in S3.
-        ///  
+        /// <para>
+        /// If the object is stored using server-side encryption either with an Amazon Web Services
+        /// KMS customer master key (CMK) or an Amazon S3-managed encryption key, the response
+        /// includes this header with the value of the server-side encryption algorithm used when
+        /// storing this object in Amazon S3 (for example, AES256, aws:kms).
+        /// </para>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
         {
@@ -330,6 +335,11 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// The id of the AWS Key Management Service key that Amazon S3 uses to encrypt and decrypt the object.
+        /// <para>
+        /// If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon
+        /// Web Services KMS) symmetric customer managed customer master key (CMK) that was used
+        /// for the object.
+        /// </para>
         /// </summary>
         public string ServerSideEncryptionKeyManagementServiceKeyId
         {
@@ -499,8 +509,11 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <para>Indicates whether the object uses bucket key for 
-        /// server-side encryption with AWS KMS (SSE-KMS).</para>
+        /// Gets and sets the property BucketKeyEnabled. 
+        /// <para>
+        /// Indicates whether the object uses an S3 Bucket Key for server-side encryption with
+        /// Amazon Web Services KMS (SSE-KMS).
+        /// </para>
         /// </summary>
         public bool BucketKeyEnabled
         {

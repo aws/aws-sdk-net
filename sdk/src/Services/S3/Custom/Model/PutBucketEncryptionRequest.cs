@@ -22,8 +22,47 @@ using Amazon.Runtime;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Container for the parameters to the PutBucketRequestPayment operation.
-    /// <para>Creates a new server-side encryption configuration (or replaces an existing one, if present).</para>
+    /// Container for the parameters to the PutBucketEncryption operation.
+    /// This action uses the <code>encryption</code> subresource to configure default encryption
+    /// and Amazon S3 Bucket Key for an existing bucket.
+    /// 
+    ///  
+    /// <para>
+    /// Default encryption for a bucket can use server-side encryption with Amazon S3-managed
+    /// keys (SSE-S3) or Amazon Web Services KMS customer master keys (SSE-KMS). If you specify
+    /// default encryption using SSE-KMS, you can also configure Amazon S3 Bucket Key. For
+    /// information about default encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
+    /// S3 default bucket encryption</a> in the <i>Amazon S3 User Guide</i>. For more information
+    /// about S3 Bucket Keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon
+    /// S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  <important> 
+    /// <para>
+    /// This action requires Amazon Web Services Signature Version 4. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">
+    /// Authenticating Requests (Amazon Web Services Signature Version 4)</a>. 
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// To use this operation, you must have permissions to perform the <code>s3:PutEncryptionConfiguration</code>
+    /// action. The bucket owner has this permission by default. The bucket owner can grant
+    /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+    /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+    /// Access Permissions to Your Amazon S3 Resources</a> in the Amazon S3 User Guide. 
+    /// </para>
+    ///  <p class="title"> <b>Related Resources</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html">GetBucketEncryption</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketEncryption.html">DeleteBucketEncryption</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public class PutBucketEncryptionRequest : AmazonWebServiceRequest
     {
@@ -33,7 +72,14 @@ namespace Amazon.S3.Model
         private string expectedBucketOwner;
 
         /// <summary>
-        /// The name of the bucket for which the server-side encryption configuration is set.
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// Specifies default encryption for a bucket using server-side encryption with Amazon
+        /// S3-managed keys (SSE-S3) or customer master keys stored in Amazon Web Services KMS
+        /// (SSE-KMS). For information about the Amazon S3 default encryption feature, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
+        /// S3 Default Bucket Encryption</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
         /// </summary>
         public string BucketName
         {
@@ -48,12 +94,16 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ContentMD5. 
+        /// <para>
         /// The base64-encoded 128-bit MD5 digest of the server-side encryption configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon
+        /// Web Services SDKs, this field is calculated automatically.
+        /// </para>
         /// </summary>
-        /// <remarks>
-        /// This header can be used as a message integrity check to verify that the data is the same data that was originally sent. 
-        /// Although it is optional, we recommend using the Content-MD5 mechanism as an end-to-end integrity check. 
-        /// </remarks>
         public string ContentMD5
         {
             get { return this.contentMD5; }

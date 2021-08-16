@@ -38,9 +38,10 @@ namespace Amazon.S3.Model
         /// Gets and sets the property AccessControlTranslation. 
         /// <para>
         /// Specify this only in a cross-account scenario (where source and destination bucket
-        /// owners are not the same), and you want to change replica ownership to the AWS account
-        /// that owns the destination bucket. If this is not specified in the replication configuration,
-        /// the replicas are owned by same AWS account that owns the source object.
+        /// owners are not the same), and you want to change replica ownership to the Amazon Web
+        /// Services account that owns the destination bucket. If this is not specified in the
+        /// replication configuration, the replicas are owned by same Amazon Web Services account
+        /// that owns the source object.
         /// </para>
         /// </summary>
         public AccessControlTranslation AccessControlTranslation
@@ -59,9 +60,9 @@ namespace Amazon.S3.Model
         /// Gets and sets the property AccountId. 
         /// <para>
         /// Destination bucket owner account ID. In a cross-account scenario, if you direct Amazon
-        /// S3 to change replica ownership to the AWS account that owns the destination bucket
-        /// by specifying the <code>AccessControlTranslation</code> property, this is the account
-        /// ID of the destination bucket owner. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
+        /// S3 to change replica ownership to the Amazon Web Services account that owns the destination
+        /// bucket by specifying the <code>AccessControlTranslation</code> property, this is the
+        /// account ID of the destination bucket owner. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
         /// Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon S3 User
         /// Guide</i>.
         /// </para>

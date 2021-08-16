@@ -87,8 +87,11 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <para>Indicates whether the multipart upload uses bucket 
-        /// key for server-side encryption with AWS KMS (SSE-KMS).</para>
+        /// Gets and sets the property BucketKeyEnabled. 
+        /// <para>
+        /// Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption
+        /// with Amazon Web Services KMS (SSE-KMS).
+        /// </para>
         /// </summary>
         public bool BucketKeyEnabled
         {

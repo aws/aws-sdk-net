@@ -25,7 +25,45 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteBucketPolicy operation.
-    /// <para>Deletes the policy from the bucket.</para>
+    /// This implementation of the DELETE action uses the policy subresource to delete the
+    /// policy of a specified bucket. If you are using an identity other than the root user
+    /// of the Amazon Web Services account that owns the bucket, the calling identity must
+    /// have the <code>DeleteBucketPolicy</code> permissions on the specified bucket and belong
+    /// to the bucket owner's account to use this operation. 
+    /// 
+    ///  
+    /// <para>
+    /// If you don't have <code>DeleteBucketPolicy</code> permissions, Amazon S3 returns a
+    /// <code>403 Access Denied</code> error. If you have the correct permissions, but you're
+    /// not using an identity that belongs to the bucket owner's account, Amazon S3 returns
+    /// a <code>405 Method Not Allowed</code> error. 
+    /// </para>
+    ///  <important> 
+    /// <para>
+    /// As a security precaution, the root user of the Amazon Web Services account that owns
+    /// a bucket can always use this operation, even if the policy explicitly denies the root
+    /// user the ability to perform this action.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// For more information about bucket policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
+    /// Bucket Policies and UserPolicies</a>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// The following operations are related to <code>DeleteBucketPolicy</code> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DeleteBucketPolicyRequest : AmazonWebServiceRequest
     {

@@ -153,12 +153,14 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <para> Container that describes additional filters in identifying source objects that
-        /// you want to replicate. Currently, Amazon S3 supports only the filter that you can
-        /// specify for objects created with server-side encryption using an AWS KMS-managed
-        /// key. You can choose to enable or disable replication of these objects. </para> <para> if
-        /// you want Amazon S3 to replicate objects created with server-side encryption using
-        /// AWS KMS-managed keys. </para>
+        /// Gets and sets the property SourceSelectionCriteria. 
+        /// <para>
+        /// A container that describes additional filters for identifying the source objects that
+        /// you want to replicate. You can choose to enable or disable the replication of these
+        /// objects. Currently, Amazon S3 supports only the filter that you can specify for objects
+        /// created with server-side encryption using a customer master key (CMK) stored in Amazon
+        /// Web Services Key Management Service (SSE-KMS).
+        /// </para>
         /// </summary>
         public SourceSelectionCriteria SourceSelectionCriteria
         {

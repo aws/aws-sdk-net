@@ -111,6 +111,11 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// The id of the AWS Key Management Service key that Amazon S3 uses to encrypt and decrypt the object.
+        /// <para>
+        /// If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon
+        /// Web Services KMS) symmetric customer managed customer master key (CMK) that was used
+        /// for the object.
+        /// </para>
         /// </summary>
         public string ServerSideEncryptionKeyManagementServiceKeyId
         {

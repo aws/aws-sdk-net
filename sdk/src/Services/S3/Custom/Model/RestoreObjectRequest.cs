@@ -69,10 +69,11 @@ namespace Amazon.S3.Model
     ///  <ul> <li> 
     /// <para>
     /// Define an output location for the select query's output. This must be an Amazon S3
-    /// bucket in the same AWS Region as the bucket that contains the archive object that
-    /// is being queried. The AWS account that initiates the job must have permissions to
-    /// write to the S3 bucket. You can specify the storage class and encryption for the output
-    /// objects stored in the bucket. For more information about output, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
+    /// bucket in the same Amazon Web Services Region as the bucket that contains the archive
+    /// object that is being queried. The Amazon Web Services account that initiates the job
+    /// must have permissions to write to the S3 bucket. You can specify the storage class
+    /// and encryption for the output objects stored in the bucket. For more information about
+    /// output, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
     /// Archived Objects</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  
@@ -167,7 +168,7 @@ namespace Amazon.S3.Model
     ///  </li> <li> 
     /// <para>
     ///  Amazon S3 accepts a select request even if the object has already been restored.
-    /// A select request doesn't return error response <code>409</code>.
+    /// A select request doesn’t return error response <code>409</code>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -284,7 +285,7 @@ namespace Amazon.S3.Model
     /// If the object is previously restored, Amazon S3 returns <code>200 OK</code> in the
     /// response. 
     /// </para>
-    ///  </li> </ul> <p class="title"> <b>Special Errors</b> 
+    ///  </li> </ul> <para class="title"> <b>Special Errors</b> 
     /// </para>
     ///  <ul> <li> <ul> <li> 
     /// <para>
@@ -321,7 +322,7 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <i>SOAP Fault Code Prefix: N/A</i> 
     /// </para>
-    ///  </li> </ul> </li> </ul> <p class="title"> <b>Related Resources</b> 
+    ///  </li> </ul> </li> </ul> <para class="title"> <b>Related Resources</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -365,18 +366,18 @@ namespace Amazon.S3.Model
         /// <para>
         /// When using this action with an access point, you must direct requests to the access
         /// point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-        /// When using this action with an access point through the AWS SDKs, you provide the
-        /// access point ARN in place of the bucket name. For more information about access point
-        /// ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+        /// When using this action with an access point through the Amazon Web Services SDKs,
+        /// you provide the access point ARN in place of the bucket name. For more information
+        /// about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
         /// access points</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// When using this action with Amazon S3 on Outposts, you must direct requests to the
         /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-        /// When using this action using S3 on Outposts through the AWS SDKs, you provide the
-        /// Outposts bucket ARN in place of the bucket name. For more information about S3 on
-        /// Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+        /// When using this action using S3 on Outposts through the Amazon Web Services SDKs,
+        /// you provide the Outposts bucket ARN in place of the bucket name. For more information
+        /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
         /// S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>

@@ -95,7 +95,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name to which the upload was taking place.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name to which the upload was taking place.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object for which the multipart upload was initiated.</param>
         /// <param name="uploadId">Upload ID that identifies the multipart upload.</param>
         /// 
@@ -210,7 +210,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name to which the upload was taking place.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name to which the upload was taking place.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object for which the multipart upload was initiated.</param>
         /// <param name="uploadId">Upload ID that identifies the multipart upload.</param>
         /// <param name="cancellationToken">
@@ -704,11 +704,11 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// When you perform a CopyObject operation, you can optionally use the appropriate encryption-related
-        /// headers to encrypt the object using server-side encryption with AWS managed encryption
-        /// keys (SSE-S3 or SSE-KMS) or a customer-provided encryption key. With server-side encryption,
-        /// Amazon S3 encrypts your data as it writes it to disks in its data centers and decrypts
-        /// the data when you access it. For more information about server-side encryption, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
+        /// headers to encrypt the object using server-side encryption with Amazon Web Services
+        /// managed encryption keys (SSE-S3 or SSE-KMS) or a customer-provided encryption key.
+        /// With server-side encryption, Amazon S3 encrypts your data as it writes it to disks
+        /// in its data centers and decrypts the data when you access it. For more information
+        /// about server-side encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
         /// Server-Side Encryption</a>.
         /// </para>
         ///  
@@ -725,9 +725,9 @@ namespace Amazon.S3
         /// <para>
         /// When copying an object, you can optionally use headers to grant ACL-based permissions.
         /// By default, all objects are private. Only the owner has full access control. When
-        /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
-        /// groups defined by Amazon S3. These permissions are then added to the ACL on the object.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+        /// adding a new object, you can grant permissions to individual Amazon Web Services accounts
+        /// or to predefined groups defined by Amazon S3. These permissions are then added to
+        /// the ACL on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing
         /// ACLs Using the REST API</a>. 
         /// </para>
@@ -939,11 +939,11 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// When you perform a CopyObject operation, you can optionally use the appropriate encryption-related
-        /// headers to encrypt the object using server-side encryption with AWS managed encryption
-        /// keys (SSE-S3 or SSE-KMS) or a customer-provided encryption key. With server-side encryption,
-        /// Amazon S3 encrypts your data as it writes it to disks in its data centers and decrypts
-        /// the data when you access it. For more information about server-side encryption, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
+        /// headers to encrypt the object using server-side encryption with Amazon Web Services
+        /// managed encryption keys (SSE-S3 or SSE-KMS) or a customer-provided encryption key.
+        /// With server-side encryption, Amazon S3 encrypts your data as it writes it to disks
+        /// in its data centers and decrypts the data when you access it. For more information
+        /// about server-side encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
         /// Server-Side Encryption</a>.
         /// </para>
         ///  
@@ -960,9 +960,9 @@ namespace Amazon.S3
         /// <para>
         /// When copying an object, you can optionally use headers to grant ACL-based permissions.
         /// By default, all objects are private. Only the owner has full access control. When
-        /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
-        /// groups defined by Amazon S3. These permissions are then added to the ACL on the object.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+        /// adding a new object, you can grant permissions to individual Amazon Web Services accounts
+        /// or to predefined groups defined by Amazon S3. These permissions are then added to
+        /// the ACL on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing
         /// ACLs Using the REST API</a>. 
         /// </para>
@@ -1175,11 +1175,11 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// When you perform a CopyObject operation, you can optionally use the appropriate encryption-related
-        /// headers to encrypt the object using server-side encryption with AWS managed encryption
-        /// keys (SSE-S3 or SSE-KMS) or a customer-provided encryption key. With server-side encryption,
-        /// Amazon S3 encrypts your data as it writes it to disks in its data centers and decrypts
-        /// the data when you access it. For more information about server-side encryption, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
+        /// headers to encrypt the object using server-side encryption with Amazon Web Services
+        /// managed encryption keys (SSE-S3 or SSE-KMS) or a customer-provided encryption key.
+        /// With server-side encryption, Amazon S3 encrypts your data as it writes it to disks
+        /// in its data centers and decrypts the data when you access it. For more information
+        /// about server-side encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
         /// Server-Side Encryption</a>.
         /// </para>
         ///  
@@ -1196,9 +1196,9 @@ namespace Amazon.S3
         /// <para>
         /// When copying an object, you can optionally use headers to grant ACL-based permissions.
         /// By default, all objects are private. Only the owner has full access control. When
-        /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
-        /// groups defined by Amazon S3. These permissions are then added to the ACL on the object.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+        /// adding a new object, you can grant permissions to individual Amazon Web Services accounts
+        /// or to predefined groups defined by Amazon S3. These permissions are then added to
+        /// the ACL on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing
         /// ACLs Using the REST API</a>. 
         /// </para>
@@ -1408,11 +1408,11 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// When you perform a CopyObject operation, you can optionally use the appropriate encryption-related
-        /// headers to encrypt the object using server-side encryption with AWS managed encryption
-        /// keys (SSE-S3 or SSE-KMS) or a customer-provided encryption key. With server-side encryption,
-        /// Amazon S3 encrypts your data as it writes it to disks in its data centers and decrypts
-        /// the data when you access it. For more information about server-side encryption, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
+        /// headers to encrypt the object using server-side encryption with Amazon Web Services
+        /// managed encryption keys (SSE-S3 or SSE-KMS) or a customer-provided encryption key.
+        /// With server-side encryption, Amazon S3 encrypts your data as it writes it to disks
+        /// in its data centers and decrypts the data when you access it. For more information
+        /// about server-side encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
         /// Server-Side Encryption</a>.
         /// </para>
         ///  
@@ -1429,9 +1429,9 @@ namespace Amazon.S3
         /// <para>
         /// When copying an object, you can optionally use headers to grant ACL-based permissions.
         /// By default, all objects are private. Only the owner has full access control. When
-        /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
-        /// groups defined by Amazon S3. These permissions are then added to the ACL on the object.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+        /// adding a new object, you can grant permissions to individual Amazon Web Services accounts
+        /// or to predefined groups defined by Amazon S3. These permissions are then added to
+        /// the ACL on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing
         /// ACLs Using the REST API</a>. 
         /// </para>
@@ -1646,11 +1646,11 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// When you perform a CopyObject operation, you can optionally use the appropriate encryption-related
-        /// headers to encrypt the object using server-side encryption with AWS managed encryption
-        /// keys (SSE-S3 or SSE-KMS) or a customer-provided encryption key. With server-side encryption,
-        /// Amazon S3 encrypts your data as it writes it to disks in its data centers and decrypts
-        /// the data when you access it. For more information about server-side encryption, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
+        /// headers to encrypt the object using server-side encryption with Amazon Web Services
+        /// managed encryption keys (SSE-S3 or SSE-KMS) or a customer-provided encryption key.
+        /// With server-side encryption, Amazon S3 encrypts your data as it writes it to disks
+        /// in its data centers and decrypts the data when you access it. For more information
+        /// about server-side encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
         /// Server-Side Encryption</a>.
         /// </para>
         ///  
@@ -1667,9 +1667,9 @@ namespace Amazon.S3
         /// <para>
         /// When copying an object, you can optionally use headers to grant ACL-based permissions.
         /// By default, all objects are private. Only the owner has full access control. When
-        /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
-        /// groups defined by Amazon S3. These permissions are then added to the ACL on the object.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+        /// adding a new object, you can grant permissions to individual Amazon Web Services accounts
+        /// or to predefined groups defined by Amazon S3. These permissions are then added to
+        /// the ACL on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing
         /// ACLs Using the REST API</a>. 
         /// </para>
@@ -1886,11 +1886,11 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// When you perform a CopyObject operation, you can optionally use the appropriate encryption-related
-        /// headers to encrypt the object using server-side encryption with AWS managed encryption
-        /// keys (SSE-S3 or SSE-KMS) or a customer-provided encryption key. With server-side encryption,
-        /// Amazon S3 encrypts your data as it writes it to disks in its data centers and decrypts
-        /// the data when you access it. For more information about server-side encryption, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
+        /// headers to encrypt the object using server-side encryption with Amazon Web Services
+        /// managed encryption keys (SSE-S3 or SSE-KMS) or a customer-provided encryption key.
+        /// With server-side encryption, Amazon S3 encrypts your data as it writes it to disks
+        /// in its data centers and decrypts the data when you access it. For more information
+        /// about server-side encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
         /// Server-Side Encryption</a>.
         /// </para>
         ///  
@@ -1907,9 +1907,9 @@ namespace Amazon.S3
         /// <para>
         /// When copying an object, you can optionally use headers to grant ACL-based permissions.
         /// By default, all objects are private. Only the owner has full access control. When
-        /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
-        /// groups defined by Amazon S3. These permissions are then added to the ACL on the object.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+        /// adding a new object, you can grant permissions to individual Amazon Web Services accounts
+        /// or to predefined groups defined by Amazon S3. These permissions are then added to
+        /// the ACL on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing
         /// ACLs Using the REST API</a>. 
         /// </para>
@@ -3844,9 +3844,9 @@ namespace Amazon.S3
         /// <summary>
         /// This implementation of the DELETE action uses the policy subresource to delete the
         /// policy of a specified bucket. If you are using an identity other than the root user
-        /// of the AWS account that owns the bucket, the calling identity must have the <code>DeleteBucketPolicy</code>
-        /// permissions on the specified bucket and belong to the bucket owner's account to use
-        /// this operation. 
+        /// of the Amazon Web Services account that owns the bucket, the calling identity must
+        /// have the <code>DeleteBucketPolicy</code> permissions on the specified bucket and belong
+        /// to the bucket owner's account to use this operation. 
         /// 
         ///  
         /// <para>
@@ -3857,9 +3857,9 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// As a security precaution, the root user of the AWS account that owns a bucket can
-        /// always use this operation, even if the policy explicitly denies the root user the
-        /// ability to perform this action.
+        /// As a security precaution, the root user of the Amazon Web Services account that owns
+        /// a bucket can always use this operation, even if the policy explicitly denies the root
+        /// user the ability to perform this action.
         /// </para>
         ///  </important> 
         /// <para>
@@ -3891,9 +3891,9 @@ namespace Amazon.S3
         /// <summary>
         /// This implementation of the DELETE action uses the policy subresource to delete the
         /// policy of a specified bucket. If you are using an identity other than the root user
-        /// of the AWS account that owns the bucket, the calling identity must have the <code>DeleteBucketPolicy</code>
-        /// permissions on the specified bucket and belong to the bucket owner's account to use
-        /// this operation. 
+        /// of the Amazon Web Services account that owns the bucket, the calling identity must
+        /// have the <code>DeleteBucketPolicy</code> permissions on the specified bucket and belong
+        /// to the bucket owner's account to use this operation. 
         /// 
         ///  
         /// <para>
@@ -3904,9 +3904,9 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// As a security precaution, the root user of the AWS account that owns a bucket can
-        /// always use this operation, even if the policy explicitly denies the root user the
-        /// ability to perform this action.
+        /// As a security precaution, the root user of the Amazon Web Services account that owns
+        /// a bucket can always use this operation, even if the policy explicitly denies the root
+        /// user the ability to perform this action.
         /// </para>
         ///  </important> 
         /// <para>
@@ -3939,9 +3939,9 @@ namespace Amazon.S3
         /// <summary>
         /// This implementation of the DELETE action uses the policy subresource to delete the
         /// policy of a specified bucket. If you are using an identity other than the root user
-        /// of the AWS account that owns the bucket, the calling identity must have the <code>DeleteBucketPolicy</code>
-        /// permissions on the specified bucket and belong to the bucket owner's account to use
-        /// this operation. 
+        /// of the Amazon Web Services account that owns the bucket, the calling identity must
+        /// have the <code>DeleteBucketPolicy</code> permissions on the specified bucket and belong
+        /// to the bucket owner's account to use this operation. 
         /// 
         ///  
         /// <para>
@@ -3952,9 +3952,9 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// As a security precaution, the root user of the AWS account that owns a bucket can
-        /// always use this operation, even if the policy explicitly denies the root user the
-        /// ability to perform this action.
+        /// As a security precaution, the root user of the Amazon Web Services account that owns
+        /// a bucket can always use this operation, even if the policy explicitly denies the root
+        /// user the ability to perform this action.
         /// </para>
         ///  </important> 
         /// <para>
@@ -3990,9 +3990,9 @@ namespace Amazon.S3
         /// <summary>
         /// This implementation of the DELETE action uses the policy subresource to delete the
         /// policy of a specified bucket. If you are using an identity other than the root user
-        /// of the AWS account that owns the bucket, the calling identity must have the <code>DeleteBucketPolicy</code>
-        /// permissions on the specified bucket and belong to the bucket owner's account to use
-        /// this operation. 
+        /// of the Amazon Web Services account that owns the bucket, the calling identity must
+        /// have the <code>DeleteBucketPolicy</code> permissions on the specified bucket and belong
+        /// to the bucket owner's account to use this operation. 
         /// 
         ///  
         /// <para>
@@ -4003,9 +4003,9 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// As a security precaution, the root user of the AWS account that owns a bucket can
-        /// always use this operation, even if the policy explicitly denies the root user the
-        /// ability to perform this action.
+        /// As a security precaution, the root user of the Amazon Web Services account that owns
+        /// a bucket can always use this operation, even if the policy explicitly denies the root
+        /// user the ability to perform this action.
         /// </para>
         ///  </important> 
         /// <para>
@@ -4837,7 +4837,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name of the bucket containing the object.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name of the bucket containing the object.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key name of the object to delete.</param>
         /// 
         /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
@@ -4889,7 +4889,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name of the bucket containing the object.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name of the bucket containing the object.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key name of the object to delete.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
@@ -4994,7 +4994,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name of the bucket containing the object.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name of the bucket containing the object.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key name of the object to delete.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -5049,7 +5049,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name of the bucket containing the object.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name of the bucket containing the object.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key name of the object to delete.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// <param name="cancellationToken">
@@ -6159,7 +6159,12 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        ///  To use this implementation of the operation, you must be the bucket owner.
+        /// To use this implementation of the operation, you must be the bucket owner.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this API against an access point, provide the alias of the access point in
+        /// place of the bucket name.
         /// </para>
         ///  
         /// <para>
@@ -6190,7 +6195,12 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        ///  To use this implementation of the operation, you must be the bucket owner.
+        /// To use this implementation of the operation, you must be the bucket owner.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this API against an access point, provide the alias of the access point in
+        /// place of the bucket name.
         /// </para>
         ///  
         /// <para>
@@ -6222,7 +6232,12 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        ///  To use this implementation of the operation, you must be the bucket owner.
+        /// To use this implementation of the operation, you must be the bucket owner.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this API against an access point, provide the alias of the access point in
+        /// place of the bucket name.
         /// </para>
         ///  
         /// <para>
@@ -6257,7 +6272,12 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        ///  To use this implementation of the operation, you must be the bucket owner.
+        /// To use this implementation of the operation, you must be the bucket owner.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this API against an access point, provide the alias of the access point in
+        /// place of the bucket name.
         /// </para>
         ///  
         /// <para>
@@ -6761,9 +6781,9 @@ namespace Amazon.S3
 
         /// <summary>
         /// Returns the policy of a specified bucket. If you are using an identity other than
-        /// the root user of the AWS account that owns the bucket, the calling identity must have
-        /// the <code>GetBucketPolicy</code> permissions on the specified bucket and belong to
-        /// the bucket owner's account in order to use this operation.
+        /// the root user of the Amazon Web Services account that owns the bucket, the calling
+        /// identity must have the <code>GetBucketPolicy</code> permissions on the specified bucket
+        /// and belong to the bucket owner's account in order to use this operation.
         /// 
         ///  
         /// <para>
@@ -6774,9 +6794,9 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// As a security precaution, the root user of the AWS account that owns a bucket can
-        /// always use this operation, even if the policy explicitly denies the root user the
-        /// ability to perform this action.
+        /// As a security precaution, the root user of the Amazon Web Services account that owns
+        /// a bucket can always use this operation, even if the policy explicitly denies the root
+        /// user the ability to perform this action.
         /// </para>
         ///  </important> 
         /// <para>
@@ -6802,9 +6822,9 @@ namespace Amazon.S3
 
         /// <summary>
         /// Returns the policy of a specified bucket. If you are using an identity other than
-        /// the root user of the AWS account that owns the bucket, the calling identity must have
-        /// the <code>GetBucketPolicy</code> permissions on the specified bucket and belong to
-        /// the bucket owner's account in order to use this operation.
+        /// the root user of the Amazon Web Services account that owns the bucket, the calling
+        /// identity must have the <code>GetBucketPolicy</code> permissions on the specified bucket
+        /// and belong to the bucket owner's account in order to use this operation.
         /// 
         ///  
         /// <para>
@@ -6815,9 +6835,9 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// As a security precaution, the root user of the AWS account that owns a bucket can
-        /// always use this operation, even if the policy explicitly denies the root user the
-        /// ability to perform this action.
+        /// As a security precaution, the root user of the Amazon Web Services account that owns
+        /// a bucket can always use this operation, even if the policy explicitly denies the root
+        /// user the ability to perform this action.
         /// </para>
         ///  </important> 
         /// <para>
@@ -6844,9 +6864,9 @@ namespace Amazon.S3
 
         /// <summary>
         /// Returns the policy of a specified bucket. If you are using an identity other than
-        /// the root user of the AWS account that owns the bucket, the calling identity must have
-        /// the <code>GetBucketPolicy</code> permissions on the specified bucket and belong to
-        /// the bucket owner's account in order to use this operation.
+        /// the root user of the Amazon Web Services account that owns the bucket, the calling
+        /// identity must have the <code>GetBucketPolicy</code> permissions on the specified bucket
+        /// and belong to the bucket owner's account in order to use this operation.
         /// 
         ///  
         /// <para>
@@ -6857,9 +6877,9 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// As a security precaution, the root user of the AWS account that owns a bucket can
-        /// always use this operation, even if the policy explicitly denies the root user the
-        /// ability to perform this action.
+        /// As a security precaution, the root user of the Amazon Web Services account that owns
+        /// a bucket can always use this operation, even if the policy explicitly denies the root
+        /// user the ability to perform this action.
         /// </para>
         ///  </important> 
         /// <para>
@@ -6889,9 +6909,9 @@ namespace Amazon.S3
 
         /// <summary>
         /// Returns the policy of a specified bucket. If you are using an identity other than
-        /// the root user of the AWS account that owns the bucket, the calling identity must have
-        /// the <code>GetBucketPolicy</code> permissions on the specified bucket and belong to
-        /// the bucket owner's account in order to use this operation.
+        /// the root user of the Amazon Web Services account that owns the bucket, the calling
+        /// identity must have the <code>GetBucketPolicy</code> permissions on the specified bucket
+        /// and belong to the bucket owner's account in order to use this operation.
         /// 
         ///  
         /// <para>
@@ -6902,9 +6922,9 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// As a security precaution, the root user of the AWS account that owns a bucket can
-        /// always use this operation, even if the policy explicitly denies the root user the
-        /// ability to perform this action.
+        /// As a security precaution, the root user of the Amazon Web Services account that owns
+        /// a bucket can always use this operation, even if the policy explicitly denies the root
+        /// user the ability to perform this action.
         /// </para>
         ///  </important> 
         /// <para>
@@ -8076,9 +8096,9 @@ namespace Amazon.S3
         /// <para>
         /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
         /// not be sent for GET requests if your object uses server-side encryption with CMKs
-        /// stored in AWS KMS (SSE-KMS) or server-side encryption with Amazon S3–managed encryption
-        /// keys (SSE-S3). If your object does use these types of keys, you’ll get an HTTP 400
-        /// BadRequest error.
+        /// stored in Amazon Web Services KMS (SSE-KMS) or server-side encryption with Amazon
+        /// S3–managed encryption keys (SSE-S3). If your object does use these types of keys,
+        /// you’ll get an HTTP 400 BadRequest error.
         /// </para>
         ///  
         /// <para>
@@ -8140,12 +8160,17 @@ namespace Amazon.S3
         /// By default, the GET action returns the current version of an object. To return a different
         /// version, use the <code>versionId</code> subresource.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// You need the <code>s3:GetObjectVersion</code> permission to access a specific version
+        /// of an object. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// If the current version of the object is a delete marker, Amazon S3 behaves as if the
         /// object was deleted and includes <code>x-amz-delete-marker: true</code> in the response.
         /// </para>
-        ///  </note> 
+        ///  </li> </ul> </note> 
         /// <para>
         /// For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.
         /// 
@@ -8239,7 +8264,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
         /// 
         /// <returns>The response from the GetObject service method, as returned by S3.</returns>
@@ -8289,9 +8314,9 @@ namespace Amazon.S3
         /// <para>
         /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
         /// not be sent for GET requests if your object uses server-side encryption with CMKs
-        /// stored in AWS KMS (SSE-KMS) or server-side encryption with Amazon S3–managed encryption
-        /// keys (SSE-S3). If your object does use these types of keys, you’ll get an HTTP 400
-        /// BadRequest error.
+        /// stored in Amazon Web Services KMS (SSE-KMS) or server-side encryption with Amazon
+        /// S3–managed encryption keys (SSE-S3). If your object does use these types of keys,
+        /// you’ll get an HTTP 400 BadRequest error.
         /// </para>
         ///  
         /// <para>
@@ -8353,12 +8378,17 @@ namespace Amazon.S3
         /// By default, the GET action returns the current version of an object. To return a different
         /// version, use the <code>versionId</code> subresource.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// You need the <code>s3:GetObjectVersion</code> permission to access a specific version
+        /// of an object. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// If the current version of the object is a delete marker, Amazon S3 behaves as if the
         /// object was deleted and includes <code>x-amz-delete-marker: true</code> in the response.
         /// </para>
-        ///  </note> 
+        ///  </li> </ul> </note> 
         /// <para>
         /// For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.
         /// 
@@ -8452,7 +8482,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
@@ -8503,9 +8533,9 @@ namespace Amazon.S3
         /// <para>
         /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
         /// not be sent for GET requests if your object uses server-side encryption with CMKs
-        /// stored in AWS KMS (SSE-KMS) or server-side encryption with Amazon S3–managed encryption
-        /// keys (SSE-S3). If your object does use these types of keys, you’ll get an HTTP 400
-        /// BadRequest error.
+        /// stored in Amazon Web Services KMS (SSE-KMS) or server-side encryption with Amazon
+        /// S3–managed encryption keys (SSE-S3). If your object does use these types of keys,
+        /// you’ll get an HTTP 400 BadRequest error.
         /// </para>
         ///  
         /// <para>
@@ -8567,12 +8597,17 @@ namespace Amazon.S3
         /// By default, the GET action returns the current version of an object. To return a different
         /// version, use the <code>versionId</code> subresource.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// You need the <code>s3:GetObjectVersion</code> permission to access a specific version
+        /// of an object. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// If the current version of the object is a delete marker, Amazon S3 behaves as if the
         /// object was deleted and includes <code>x-amz-delete-marker: true</code> in the response.
         /// </para>
-        ///  </note> 
+        ///  </li> </ul> </note> 
         /// <para>
         /// For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.
         /// 
@@ -8716,9 +8751,9 @@ namespace Amazon.S3
         /// <para>
         /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
         /// not be sent for GET requests if your object uses server-side encryption with CMKs
-        /// stored in AWS KMS (SSE-KMS) or server-side encryption with Amazon S3–managed encryption
-        /// keys (SSE-S3). If your object does use these types of keys, you’ll get an HTTP 400
-        /// BadRequest error.
+        /// stored in Amazon Web Services KMS (SSE-KMS) or server-side encryption with Amazon
+        /// S3–managed encryption keys (SSE-S3). If your object does use these types of keys,
+        /// you’ll get an HTTP 400 BadRequest error.
         /// </para>
         ///  
         /// <para>
@@ -8780,12 +8815,17 @@ namespace Amazon.S3
         /// By default, the GET action returns the current version of an object. To return a different
         /// version, use the <code>versionId</code> subresource.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// You need the <code>s3:GetObjectVersion</code> permission to access a specific version
+        /// of an object. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// If the current version of the object is a delete marker, Amazon S3 behaves as if the
         /// object was deleted and includes <code>x-amz-delete-marker: true</code> in the response.
         /// </para>
-        ///  </note> 
+        ///  </li> </ul> </note> 
         /// <para>
         /// For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.
         /// 
@@ -8879,7 +8919,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -8932,9 +8972,9 @@ namespace Amazon.S3
         /// <para>
         /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
         /// not be sent for GET requests if your object uses server-side encryption with CMKs
-        /// stored in AWS KMS (SSE-KMS) or server-side encryption with Amazon S3–managed encryption
-        /// keys (SSE-S3). If your object does use these types of keys, you’ll get an HTTP 400
-        /// BadRequest error.
+        /// stored in Amazon Web Services KMS (SSE-KMS) or server-side encryption with Amazon
+        /// S3–managed encryption keys (SSE-S3). If your object does use these types of keys,
+        /// you’ll get an HTTP 400 BadRequest error.
         /// </para>
         ///  
         /// <para>
@@ -8996,12 +9036,17 @@ namespace Amazon.S3
         /// By default, the GET action returns the current version of an object. To return a different
         /// version, use the <code>versionId</code> subresource.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// You need the <code>s3:GetObjectVersion</code> permission to access a specific version
+        /// of an object. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// If the current version of the object is a delete marker, Amazon S3 behaves as if the
         /// object was deleted and includes <code>x-amz-delete-marker: true</code> in the response.
         /// </para>
-        ///  </note> 
+        ///  </li> </ul> </note> 
         /// <para>
         /// For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.
         /// 
@@ -9095,7 +9140,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// <param name="cancellationToken">
@@ -9150,9 +9195,9 @@ namespace Amazon.S3
         /// <para>
         /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
         /// not be sent for GET requests if your object uses server-side encryption with CMKs
-        /// stored in AWS KMS (SSE-KMS) or server-side encryption with Amazon S3–managed encryption
-        /// keys (SSE-S3). If your object does use these types of keys, you’ll get an HTTP 400
-        /// BadRequest error.
+        /// stored in Amazon Web Services KMS (SSE-KMS) or server-side encryption with Amazon
+        /// S3–managed encryption keys (SSE-S3). If your object does use these types of keys,
+        /// you’ll get an HTTP 400 BadRequest error.
         /// </para>
         ///  
         /// <para>
@@ -9214,12 +9259,17 @@ namespace Amazon.S3
         /// By default, the GET action returns the current version of an object. To return a different
         /// version, use the <code>versionId</code> subresource.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// You need the <code>s3:GetObjectVersion</code> permission to access a specific version
+        /// of an object. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// If the current version of the object is a delete marker, Amazon S3 behaves as if the
         /// object was deleted and includes <code>x-amz-delete-marker: true</code> in the response.
         /// </para>
-        ///  </note> 
+        ///  </li> </ul> </note> 
         /// <para>
         /// For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.
         /// 
@@ -9441,9 +9491,9 @@ namespace Amazon.S3
         /// <para>
         /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
         /// not be sent for GET requests if your object uses server-side encryption with CMKs
-        /// stored in AWS KMS (SSE-KMS) or server-side encryption with Amazon S3–managed encryption
-        /// keys (SSE-S3). If your object does use these types of keys, you’ll get an HTTP 400
-        /// BadRequest error.
+        /// stored in Amazon Web Services KMS (SSE-KMS) or server-side encryption with Amazon
+        /// S3–managed encryption keys (SSE-S3). If your object does use these types of keys,
+        /// you’ll get an HTTP 400 BadRequest error.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9529,7 +9579,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket containing the object. When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket containing the object. When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">The object key.</param>
         /// 
         /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
@@ -9576,9 +9626,9 @@ namespace Amazon.S3
         /// <para>
         /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
         /// not be sent for GET requests if your object uses server-side encryption with CMKs
-        /// stored in AWS KMS (SSE-KMS) or server-side encryption with Amazon S3–managed encryption
-        /// keys (SSE-S3). If your object does use these types of keys, you’ll get an HTTP 400
-        /// BadRequest error.
+        /// stored in Amazon Web Services KMS (SSE-KMS) or server-side encryption with Amazon
+        /// S3–managed encryption keys (SSE-S3). If your object does use these types of keys,
+        /// you’ll get an HTTP 400 BadRequest error.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9664,7 +9714,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket containing the object. When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket containing the object. When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">The object key.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
@@ -9712,9 +9762,9 @@ namespace Amazon.S3
         /// <para>
         /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
         /// not be sent for GET requests if your object uses server-side encryption with CMKs
-        /// stored in AWS KMS (SSE-KMS) or server-side encryption with Amazon S3–managed encryption
-        /// keys (SSE-S3). If your object does use these types of keys, you’ll get an HTTP 400
-        /// BadRequest error.
+        /// stored in Amazon Web Services KMS (SSE-KMS) or server-side encryption with Amazon
+        /// S3–managed encryption keys (SSE-S3). If your object does use these types of keys,
+        /// you’ll get an HTTP 400 BadRequest error.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9847,9 +9897,9 @@ namespace Amazon.S3
         /// <para>
         /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
         /// not be sent for GET requests if your object uses server-side encryption with CMKs
-        /// stored in AWS KMS (SSE-KMS) or server-side encryption with Amazon S3–managed encryption
-        /// keys (SSE-S3). If your object does use these types of keys, you’ll get an HTTP 400
-        /// BadRequest error.
+        /// stored in Amazon Web Services KMS (SSE-KMS) or server-side encryption with Amazon
+        /// S3–managed encryption keys (SSE-S3). If your object does use these types of keys,
+        /// you’ll get an HTTP 400 BadRequest error.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9935,7 +9985,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket containing the object. When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket containing the object. When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">The object key.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -9985,9 +10035,9 @@ namespace Amazon.S3
         /// <para>
         /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
         /// not be sent for GET requests if your object uses server-side encryption with CMKs
-        /// stored in AWS KMS (SSE-KMS) or server-side encryption with Amazon S3–managed encryption
-        /// keys (SSE-S3). If your object does use these types of keys, you’ll get an HTTP 400
-        /// BadRequest error.
+        /// stored in Amazon Web Services KMS (SSE-KMS) or server-side encryption with Amazon
+        /// S3–managed encryption keys (SSE-S3). If your object does use these types of keys,
+        /// you’ll get an HTTP 400 BadRequest error.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10073,7 +10123,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket containing the object. When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket containing the object. When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">The object key.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// <param name="cancellationToken">
@@ -10125,9 +10175,9 @@ namespace Amazon.S3
         /// <para>
         /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
         /// not be sent for GET requests if your object uses server-side encryption with CMKs
-        /// stored in AWS KMS (SSE-KMS) or server-side encryption with Amazon S3–managed encryption
-        /// keys (SSE-S3). If your object does use these types of keys, you’ll get an HTTP 400
-        /// BadRequest error.
+        /// stored in Amazon Web Services KMS (SSE-KMS) or server-side encryption with Amazon
+        /// S3–managed encryption keys (SSE-S3). If your object does use these types of keys,
+        /// you’ll get an HTTP 400 BadRequest error.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10669,7 +10719,7 @@ namespace Amazon.S3
         /// multipart upload process. You sign each request individually. There is nothing special
         /// about signing multipart upload requests. For more information about signing, see <a
         /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
-        /// Requests (AWS Signature Version 4)</a>.
+        /// Requests (Amazon Web Services Signature Version 4)</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -10682,18 +10732,18 @@ namespace Amazon.S3
         /// <para>
         /// You can optionally request server-side encryption. For server-side encryption, Amazon
         /// S3 encrypts your data as it writes it to disks in its data centers and decrypts it
-        /// when you access it. You can provide your own encryption key, or use AWS Key Management
-        /// Service (AWS KMS) customer master keys (CMKs) or Amazon S3-managed encryption keys.
-        /// If you choose to provide your own encryption key, the request headers you provide
-        /// in <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// when you access it. You can provide your own encryption key, or use Amazon Web Services
+        /// Key Management Service (Amazon Web Services KMS) customer master keys (CMKs) or Amazon
+        /// S3-managed encryption keys. If you choose to provide your own encryption key, the
+        /// request headers you provide in <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
         /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>
         /// requests must match the headers you used in the request to initiate the upload by
         /// using <code>CreateMultipartUpload</code>. 
         /// </para>
         ///  
         /// <para>
-        /// To perform a multipart upload with encryption using an AWS KMS CMK, the requester
-        /// must have permission to the <code>kms:Decrypt</code> and <code>kms:GenerateDataKey*</code>
+        /// To perform a multipart upload with encryption using an Amazon Web Services KMS CMK,
+        /// the requester must have permission to the <code>kms:Decrypt</code> and <code>kms:GenerateDataKey*</code>
         /// actions on the key. These permissions are required because Amazon S3 must decrypt
         /// and read data from the encrypted file parts before it completes the multipart upload.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
@@ -10701,10 +10751,11 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// If your AWS Identity and Access Management (IAM) user or role is in the same AWS account
-        /// as the AWS KMS CMK, then you must have these permissions on the key policy. If your
-        /// IAM user or role belongs to a different account than the key, then you must have the
-        /// permissions on both the key policy and your IAM user or role.
+        /// If your Identity and Access Management (IAM) user or role is in the same Amazon Web
+        /// Services account as the Amazon Web Services KMS CMK, then you must have these permissions
+        /// on the key policy. If your IAM user or role belongs to a different account than the
+        /// key, then you must have the permissions on both the key policy and your IAM user or
+        /// role.
         /// </para>
         ///  
         /// <para>
@@ -10741,14 +10792,15 @@ namespace Amazon.S3
         /// You can optionally tell Amazon S3 to encrypt data at rest using server-side encryption.
         /// Server-side encryption is for data encryption at rest. Amazon S3 encrypts your data
         /// as it writes it to disks in its data centers and decrypts it when you access it. The
-        /// option you use depends on whether you want to use AWS managed encryption keys or provide
-        /// your own encryption key. 
+        /// option you use depends on whether you want to use Amazon Web Services managed encryption
+        /// keys or provide your own encryption key. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Use encryption keys managed by Amazon S3 or customer master keys (CMKs) stored in
-        /// AWS Key Management Service (AWS KMS) – If you want AWS to manage the keys used to
-        /// encrypt data, specify the following headers in the request.
+        /// Amazon Web Services Key Management Service (Amazon Web Services KMS) – If you want
+        /// Amazon Web Services to manage the keys used to encrypt data, specify the following
+        /// headers in the request.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -10765,19 +10817,19 @@ namespace Amazon.S3
         ///  </li> </ul> <note> 
         /// <para>
         /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
-        /// <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS managed
-        /// CMK in AWS KMS to protect the data.
+        /// <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
+        /// Web Services managed CMK in Amazon Web Services KMS to protect the data.
         /// </para>
         ///  </note> <important> 
         /// <para>
-        /// All GET and PUT requests for an object protected by AWS KMS fail if you don't make
-        /// them with SSL or by using SigV4.
+        /// All GET and PUT requests for an object protected by Amazon Web Services KMS fail if
+        /// you don't make them with SSL or by using SigV4.
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-        /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
+        /// For more information about server-side encryption with CMKs stored in Amazon Web Services
+        /// KMS (SSE-KMS), see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
+        /// Data Using Server-Side Encryption with CMKs stored in Amazon Web Services KMS</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10798,18 +10850,18 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-        /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
+        /// For more information about server-side encryption with CMKs stored in Amazon Web Services
+        /// KMS (SSE-KMS), see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
+        /// Data Using Server-Side Encryption with CMKs stored in Amazon Web Services KMS</a>.
         /// </para>
         ///  </li> </ul> </dd> <dt>Access-Control-List (ACL)-Specific Request Headers</dt> <dd>
         /// 
         /// <para>
         /// You also can use the following access control–related headers with this operation.
         /// By default, all objects are private. Only the owner has full access control. When
-        /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
-        /// groups defined by Amazon S3. These permissions are then added to the access control
-        /// list (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+        /// adding a new object, you can grant permissions to individual Amazon Web Services accounts
+        /// or to predefined groups defined by Amazon S3. These permissions are then added to
+        /// the access control list (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
         /// ACLs</a>. With this operation, you can grant access permissions using one of the following
         /// two methods:
         /// </para>
@@ -10823,8 +10875,9 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         /// Specify access permissions explicitly — To explicitly grant access permissions to
-        /// specific AWS accounts or groups, use the following headers. Each header maps to specific
-        /// permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+        /// specific Amazon Web Services accounts or groups, use the following headers. Each header
+        /// maps to specific permissions that Amazon S3 supports in an ACL. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a>. In the header, you specify a list of grantees who
         /// get the specific permission. To grant permissions explicitly, use:
         /// </para>
@@ -10854,7 +10907,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an Amazon Web
+        /// Services account
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10862,13 +10916,13 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
-        /// account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an Amazon
+        /// Web Services account
         /// </para>
         ///  <note> 
         /// <para>
-        /// Using email addresses to specify a grantee is only supported in the following AWS
-        /// Regions: 
+        /// Using email addresses to specify a grantee is only supported in the following Amazon
+        /// Web Services Regions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -10905,12 +10959,13 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-        /// and Endpoints</a> in the AWS General Reference.
+        /// and Endpoints</a> in the Amazon Web Services General Reference.
         /// </para>
         ///  </note> </li> </ul> 
         /// <para>
-        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
-        /// identified by account IDs permissions to read object data and its metadata:
+        /// For example, the following <code>x-amz-grant-read</code> header grants the Amazon
+        /// Web Services accounts identified by account IDs permissions to read object data and
+        /// its metadata:
         /// </para>
         ///  
         /// <para>
@@ -10947,7 +11002,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to which to initiate the upload When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which to initiate the upload When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the multipart upload is to be initiated.</param>
         /// 
         /// <returns>The response from the InitiateMultipartUpload service method, as returned by S3.</returns>
@@ -10987,7 +11042,7 @@ namespace Amazon.S3
         /// multipart upload process. You sign each request individually. There is nothing special
         /// about signing multipart upload requests. For more information about signing, see <a
         /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
-        /// Requests (AWS Signature Version 4)</a>.
+        /// Requests (Amazon Web Services Signature Version 4)</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -11000,18 +11055,18 @@ namespace Amazon.S3
         /// <para>
         /// You can optionally request server-side encryption. For server-side encryption, Amazon
         /// S3 encrypts your data as it writes it to disks in its data centers and decrypts it
-        /// when you access it. You can provide your own encryption key, or use AWS Key Management
-        /// Service (AWS KMS) customer master keys (CMKs) or Amazon S3-managed encryption keys.
-        /// If you choose to provide your own encryption key, the request headers you provide
-        /// in <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// when you access it. You can provide your own encryption key, or use Amazon Web Services
+        /// Key Management Service (Amazon Web Services KMS) customer master keys (CMKs) or Amazon
+        /// S3-managed encryption keys. If you choose to provide your own encryption key, the
+        /// request headers you provide in <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
         /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>
         /// requests must match the headers you used in the request to initiate the upload by
         /// using <code>CreateMultipartUpload</code>. 
         /// </para>
         ///  
         /// <para>
-        /// To perform a multipart upload with encryption using an AWS KMS CMK, the requester
-        /// must have permission to the <code>kms:Decrypt</code> and <code>kms:GenerateDataKey*</code>
+        /// To perform a multipart upload with encryption using an Amazon Web Services KMS CMK,
+        /// the requester must have permission to the <code>kms:Decrypt</code> and <code>kms:GenerateDataKey*</code>
         /// actions on the key. These permissions are required because Amazon S3 must decrypt
         /// and read data from the encrypted file parts before it completes the multipart upload.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
@@ -11019,10 +11074,11 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// If your AWS Identity and Access Management (IAM) user or role is in the same AWS account
-        /// as the AWS KMS CMK, then you must have these permissions on the key policy. If your
-        /// IAM user or role belongs to a different account than the key, then you must have the
-        /// permissions on both the key policy and your IAM user or role.
+        /// If your Identity and Access Management (IAM) user or role is in the same Amazon Web
+        /// Services account as the Amazon Web Services KMS CMK, then you must have these permissions
+        /// on the key policy. If your IAM user or role belongs to a different account than the
+        /// key, then you must have the permissions on both the key policy and your IAM user or
+        /// role.
         /// </para>
         ///  
         /// <para>
@@ -11059,14 +11115,15 @@ namespace Amazon.S3
         /// You can optionally tell Amazon S3 to encrypt data at rest using server-side encryption.
         /// Server-side encryption is for data encryption at rest. Amazon S3 encrypts your data
         /// as it writes it to disks in its data centers and decrypts it when you access it. The
-        /// option you use depends on whether you want to use AWS managed encryption keys or provide
-        /// your own encryption key. 
+        /// option you use depends on whether you want to use Amazon Web Services managed encryption
+        /// keys or provide your own encryption key. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Use encryption keys managed by Amazon S3 or customer master keys (CMKs) stored in
-        /// AWS Key Management Service (AWS KMS) – If you want AWS to manage the keys used to
-        /// encrypt data, specify the following headers in the request.
+        /// Amazon Web Services Key Management Service (Amazon Web Services KMS) – If you want
+        /// Amazon Web Services to manage the keys used to encrypt data, specify the following
+        /// headers in the request.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -11083,19 +11140,19 @@ namespace Amazon.S3
         ///  </li> </ul> <note> 
         /// <para>
         /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
-        /// <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS managed
-        /// CMK in AWS KMS to protect the data.
+        /// <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
+        /// Web Services managed CMK in Amazon Web Services KMS to protect the data.
         /// </para>
         ///  </note> <important> 
         /// <para>
-        /// All GET and PUT requests for an object protected by AWS KMS fail if you don't make
-        /// them with SSL or by using SigV4.
+        /// All GET and PUT requests for an object protected by Amazon Web Services KMS fail if
+        /// you don't make them with SSL or by using SigV4.
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-        /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
+        /// For more information about server-side encryption with CMKs stored in Amazon Web Services
+        /// KMS (SSE-KMS), see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
+        /// Data Using Server-Side Encryption with CMKs stored in Amazon Web Services KMS</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11116,18 +11173,18 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-        /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
+        /// For more information about server-side encryption with CMKs stored in Amazon Web Services
+        /// KMS (SSE-KMS), see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
+        /// Data Using Server-Side Encryption with CMKs stored in Amazon Web Services KMS</a>.
         /// </para>
         ///  </li> </ul> </dd> <dt>Access-Control-List (ACL)-Specific Request Headers</dt> <dd>
         /// 
         /// <para>
         /// You also can use the following access control–related headers with this operation.
         /// By default, all objects are private. Only the owner has full access control. When
-        /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
-        /// groups defined by Amazon S3. These permissions are then added to the access control
-        /// list (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+        /// adding a new object, you can grant permissions to individual Amazon Web Services accounts
+        /// or to predefined groups defined by Amazon S3. These permissions are then added to
+        /// the access control list (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
         /// ACLs</a>. With this operation, you can grant access permissions using one of the following
         /// two methods:
         /// </para>
@@ -11141,8 +11198,9 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         /// Specify access permissions explicitly — To explicitly grant access permissions to
-        /// specific AWS accounts or groups, use the following headers. Each header maps to specific
-        /// permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+        /// specific Amazon Web Services accounts or groups, use the following headers. Each header
+        /// maps to specific permissions that Amazon S3 supports in an ACL. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a>. In the header, you specify a list of grantees who
         /// get the specific permission. To grant permissions explicitly, use:
         /// </para>
@@ -11172,7 +11230,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an Amazon Web
+        /// Services account
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11180,13 +11239,13 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
-        /// account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an Amazon
+        /// Web Services account
         /// </para>
         ///  <note> 
         /// <para>
-        /// Using email addresses to specify a grantee is only supported in the following AWS
-        /// Regions: 
+        /// Using email addresses to specify a grantee is only supported in the following Amazon
+        /// Web Services Regions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -11223,12 +11282,13 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-        /// and Endpoints</a> in the AWS General Reference.
+        /// and Endpoints</a> in the Amazon Web Services General Reference.
         /// </para>
         ///  </note> </li> </ul> 
         /// <para>
-        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
-        /// identified by account IDs permissions to read object data and its metadata:
+        /// For example, the following <code>x-amz-grant-read</code> header grants the Amazon
+        /// Web Services accounts identified by account IDs permissions to read object data and
+        /// its metadata:
         /// </para>
         ///  
         /// <para>
@@ -11305,7 +11365,7 @@ namespace Amazon.S3
         /// multipart upload process. You sign each request individually. There is nothing special
         /// about signing multipart upload requests. For more information about signing, see <a
         /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
-        /// Requests (AWS Signature Version 4)</a>.
+        /// Requests (Amazon Web Services Signature Version 4)</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -11318,18 +11378,18 @@ namespace Amazon.S3
         /// <para>
         /// You can optionally request server-side encryption. For server-side encryption, Amazon
         /// S3 encrypts your data as it writes it to disks in its data centers and decrypts it
-        /// when you access it. You can provide your own encryption key, or use AWS Key Management
-        /// Service (AWS KMS) customer master keys (CMKs) or Amazon S3-managed encryption keys.
-        /// If you choose to provide your own encryption key, the request headers you provide
-        /// in <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// when you access it. You can provide your own encryption key, or use Amazon Web Services
+        /// Key Management Service (Amazon Web Services KMS) customer master keys (CMKs) or Amazon
+        /// S3-managed encryption keys. If you choose to provide your own encryption key, the
+        /// request headers you provide in <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
         /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>
         /// requests must match the headers you used in the request to initiate the upload by
         /// using <code>CreateMultipartUpload</code>. 
         /// </para>
         ///  
         /// <para>
-        /// To perform a multipart upload with encryption using an AWS KMS CMK, the requester
-        /// must have permission to the <code>kms:Decrypt</code> and <code>kms:GenerateDataKey*</code>
+        /// To perform a multipart upload with encryption using an Amazon Web Services KMS CMK,
+        /// the requester must have permission to the <code>kms:Decrypt</code> and <code>kms:GenerateDataKey*</code>
         /// actions on the key. These permissions are required because Amazon S3 must decrypt
         /// and read data from the encrypted file parts before it completes the multipart upload.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
@@ -11337,10 +11397,11 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// If your AWS Identity and Access Management (IAM) user or role is in the same AWS account
-        /// as the AWS KMS CMK, then you must have these permissions on the key policy. If your
-        /// IAM user or role belongs to a different account than the key, then you must have the
-        /// permissions on both the key policy and your IAM user or role.
+        /// If your Identity and Access Management (IAM) user or role is in the same Amazon Web
+        /// Services account as the Amazon Web Services KMS CMK, then you must have these permissions
+        /// on the key policy. If your IAM user or role belongs to a different account than the
+        /// key, then you must have the permissions on both the key policy and your IAM user or
+        /// role.
         /// </para>
         ///  
         /// <para>
@@ -11377,14 +11438,15 @@ namespace Amazon.S3
         /// You can optionally tell Amazon S3 to encrypt data at rest using server-side encryption.
         /// Server-side encryption is for data encryption at rest. Amazon S3 encrypts your data
         /// as it writes it to disks in its data centers and decrypts it when you access it. The
-        /// option you use depends on whether you want to use AWS managed encryption keys or provide
-        /// your own encryption key. 
+        /// option you use depends on whether you want to use Amazon Web Services managed encryption
+        /// keys or provide your own encryption key. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Use encryption keys managed by Amazon S3 or customer master keys (CMKs) stored in
-        /// AWS Key Management Service (AWS KMS) – If you want AWS to manage the keys used to
-        /// encrypt data, specify the following headers in the request.
+        /// Amazon Web Services Key Management Service (Amazon Web Services KMS) – If you want
+        /// Amazon Web Services to manage the keys used to encrypt data, specify the following
+        /// headers in the request.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -11401,19 +11463,19 @@ namespace Amazon.S3
         ///  </li> </ul> <note> 
         /// <para>
         /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
-        /// <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS managed
-        /// CMK in AWS KMS to protect the data.
+        /// <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
+        /// Web Services managed CMK in Amazon Web Services KMS to protect the data.
         /// </para>
         ///  </note> <important> 
         /// <para>
-        /// All GET and PUT requests for an object protected by AWS KMS fail if you don't make
-        /// them with SSL or by using SigV4.
+        /// All GET and PUT requests for an object protected by Amazon Web Services KMS fail if
+        /// you don't make them with SSL or by using SigV4.
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-        /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
+        /// For more information about server-side encryption with CMKs stored in Amazon Web Services
+        /// KMS (SSE-KMS), see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
+        /// Data Using Server-Side Encryption with CMKs stored in Amazon Web Services KMS</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11434,18 +11496,18 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-        /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
+        /// For more information about server-side encryption with CMKs stored in Amazon Web Services
+        /// KMS (SSE-KMS), see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
+        /// Data Using Server-Side Encryption with CMKs stored in Amazon Web Services KMS</a>.
         /// </para>
         ///  </li> </ul> </dd> <dt>Access-Control-List (ACL)-Specific Request Headers</dt> <dd>
         /// 
         /// <para>
         /// You also can use the following access control–related headers with this operation.
         /// By default, all objects are private. Only the owner has full access control. When
-        /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
-        /// groups defined by Amazon S3. These permissions are then added to the access control
-        /// list (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+        /// adding a new object, you can grant permissions to individual Amazon Web Services accounts
+        /// or to predefined groups defined by Amazon S3. These permissions are then added to
+        /// the access control list (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
         /// ACLs</a>. With this operation, you can grant access permissions using one of the following
         /// two methods:
         /// </para>
@@ -11459,8 +11521,9 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         /// Specify access permissions explicitly — To explicitly grant access permissions to
-        /// specific AWS accounts or groups, use the following headers. Each header maps to specific
-        /// permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+        /// specific Amazon Web Services accounts or groups, use the following headers. Each header
+        /// maps to specific permissions that Amazon S3 supports in an ACL. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a>. In the header, you specify a list of grantees who
         /// get the specific permission. To grant permissions explicitly, use:
         /// </para>
@@ -11490,7 +11553,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an Amazon Web
+        /// Services account
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11498,13 +11562,13 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
-        /// account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an Amazon
+        /// Web Services account
         /// </para>
         ///  <note> 
         /// <para>
-        /// Using email addresses to specify a grantee is only supported in the following AWS
-        /// Regions: 
+        /// Using email addresses to specify a grantee is only supported in the following Amazon
+        /// Web Services Regions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -11541,12 +11605,13 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-        /// and Endpoints</a> in the AWS General Reference.
+        /// and Endpoints</a> in the Amazon Web Services General Reference.
         /// </para>
         ///  </note> </li> </ul> 
         /// <para>
-        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
-        /// identified by account IDs permissions to read object data and its metadata:
+        /// For example, the following <code>x-amz-grant-read</code> header grants the Amazon
+        /// Web Services accounts identified by account IDs permissions to read object data and
+        /// its metadata:
         /// </para>
         ///  
         /// <para>
@@ -11583,7 +11648,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to which to initiate the upload When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which to initiate the upload When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the multipart upload is to be initiated.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -11627,7 +11692,7 @@ namespace Amazon.S3
         /// multipart upload process. You sign each request individually. There is nothing special
         /// about signing multipart upload requests. For more information about signing, see <a
         /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
-        /// Requests (AWS Signature Version 4)</a>.
+        /// Requests (Amazon Web Services Signature Version 4)</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -11640,18 +11705,18 @@ namespace Amazon.S3
         /// <para>
         /// You can optionally request server-side encryption. For server-side encryption, Amazon
         /// S3 encrypts your data as it writes it to disks in its data centers and decrypts it
-        /// when you access it. You can provide your own encryption key, or use AWS Key Management
-        /// Service (AWS KMS) customer master keys (CMKs) or Amazon S3-managed encryption keys.
-        /// If you choose to provide your own encryption key, the request headers you provide
-        /// in <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// when you access it. You can provide your own encryption key, or use Amazon Web Services
+        /// Key Management Service (Amazon Web Services KMS) customer master keys (CMKs) or Amazon
+        /// S3-managed encryption keys. If you choose to provide your own encryption key, the
+        /// request headers you provide in <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
         /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>
         /// requests must match the headers you used in the request to initiate the upload by
         /// using <code>CreateMultipartUpload</code>. 
         /// </para>
         ///  
         /// <para>
-        /// To perform a multipart upload with encryption using an AWS KMS CMK, the requester
-        /// must have permission to the <code>kms:Decrypt</code> and <code>kms:GenerateDataKey*</code>
+        /// To perform a multipart upload with encryption using an Amazon Web Services KMS CMK,
+        /// the requester must have permission to the <code>kms:Decrypt</code> and <code>kms:GenerateDataKey*</code>
         /// actions on the key. These permissions are required because Amazon S3 must decrypt
         /// and read data from the encrypted file parts before it completes the multipart upload.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
@@ -11659,10 +11724,11 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// If your AWS Identity and Access Management (IAM) user or role is in the same AWS account
-        /// as the AWS KMS CMK, then you must have these permissions on the key policy. If your
-        /// IAM user or role belongs to a different account than the key, then you must have the
-        /// permissions on both the key policy and your IAM user or role.
+        /// If your Identity and Access Management (IAM) user or role is in the same Amazon Web
+        /// Services account as the Amazon Web Services KMS CMK, then you must have these permissions
+        /// on the key policy. If your IAM user or role belongs to a different account than the
+        /// key, then you must have the permissions on both the key policy and your IAM user or
+        /// role.
         /// </para>
         ///  
         /// <para>
@@ -11699,14 +11765,15 @@ namespace Amazon.S3
         /// You can optionally tell Amazon S3 to encrypt data at rest using server-side encryption.
         /// Server-side encryption is for data encryption at rest. Amazon S3 encrypts your data
         /// as it writes it to disks in its data centers and decrypts it when you access it. The
-        /// option you use depends on whether you want to use AWS managed encryption keys or provide
-        /// your own encryption key. 
+        /// option you use depends on whether you want to use Amazon Web Services managed encryption
+        /// keys or provide your own encryption key. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Use encryption keys managed by Amazon S3 or customer master keys (CMKs) stored in
-        /// AWS Key Management Service (AWS KMS) – If you want AWS to manage the keys used to
-        /// encrypt data, specify the following headers in the request.
+        /// Amazon Web Services Key Management Service (Amazon Web Services KMS) – If you want
+        /// Amazon Web Services to manage the keys used to encrypt data, specify the following
+        /// headers in the request.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -11723,19 +11790,19 @@ namespace Amazon.S3
         ///  </li> </ul> <note> 
         /// <para>
         /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
-        /// <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS managed
-        /// CMK in AWS KMS to protect the data.
+        /// <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
+        /// Web Services managed CMK in Amazon Web Services KMS to protect the data.
         /// </para>
         ///  </note> <important> 
         /// <para>
-        /// All GET and PUT requests for an object protected by AWS KMS fail if you don't make
-        /// them with SSL or by using SigV4.
+        /// All GET and PUT requests for an object protected by Amazon Web Services KMS fail if
+        /// you don't make them with SSL or by using SigV4.
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-        /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
+        /// For more information about server-side encryption with CMKs stored in Amazon Web Services
+        /// KMS (SSE-KMS), see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
+        /// Data Using Server-Side Encryption with CMKs stored in Amazon Web Services KMS</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11756,18 +11823,18 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-        /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
+        /// For more information about server-side encryption with CMKs stored in Amazon Web Services
+        /// KMS (SSE-KMS), see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
+        /// Data Using Server-Side Encryption with CMKs stored in Amazon Web Services KMS</a>.
         /// </para>
         ///  </li> </ul> </dd> <dt>Access-Control-List (ACL)-Specific Request Headers</dt> <dd>
         /// 
         /// <para>
         /// You also can use the following access control–related headers with this operation.
         /// By default, all objects are private. Only the owner has full access control. When
-        /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
-        /// groups defined by Amazon S3. These permissions are then added to the access control
-        /// list (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+        /// adding a new object, you can grant permissions to individual Amazon Web Services accounts
+        /// or to predefined groups defined by Amazon S3. These permissions are then added to
+        /// the access control list (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
         /// ACLs</a>. With this operation, you can grant access permissions using one of the following
         /// two methods:
         /// </para>
@@ -11781,8 +11848,9 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         /// Specify access permissions explicitly — To explicitly grant access permissions to
-        /// specific AWS accounts or groups, use the following headers. Each header maps to specific
-        /// permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+        /// specific Amazon Web Services accounts or groups, use the following headers. Each header
+        /// maps to specific permissions that Amazon S3 supports in an ACL. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a>. In the header, you specify a list of grantees who
         /// get the specific permission. To grant permissions explicitly, use:
         /// </para>
@@ -11812,7 +11880,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an Amazon Web
+        /// Services account
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11820,13 +11889,13 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
-        /// account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an Amazon
+        /// Web Services account
         /// </para>
         ///  <note> 
         /// <para>
-        /// Using email addresses to specify a grantee is only supported in the following AWS
-        /// Regions: 
+        /// Using email addresses to specify a grantee is only supported in the following Amazon
+        /// Web Services Regions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -11863,12 +11932,13 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-        /// and Endpoints</a> in the AWS General Reference.
+        /// and Endpoints</a> in the Amazon Web Services General Reference.
         /// </para>
         ///  </note> </li> </ul> 
         /// <para>
-        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
-        /// identified by account IDs permissions to read object data and its metadata:
+        /// For example, the following <code>x-amz-grant-read</code> header grants the Amazon
+        /// Web Services accounts identified by account IDs permissions to read object data and
+        /// its metadata:
         /// </para>
         ///  
         /// <para>
@@ -12503,7 +12573,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
@@ -12572,7 +12642,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="prefix">Lists in-progress uploads only for those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different grouping of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.)</param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
@@ -12712,7 +12782,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -12784,7 +12854,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="prefix">Lists in-progress uploads only for those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different grouping of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.)</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -12915,7 +12985,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket containing the objects. When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket containing the objects. When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// 
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">REST API Reference for ListObjects Operation</seealso>
@@ -12964,7 +13034,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket containing the objects. When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket containing the objects. When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="prefix">Limits the response to keys that begin with the specified prefix.</param>
         /// 
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
@@ -13064,7 +13134,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket containing the objects. When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket containing the objects. When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -13116,7 +13186,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket containing the objects. When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket containing the objects. When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="prefix">Limits the response to keys that begin with the specified prefix.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -13199,9 +13269,9 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// To use this action in an AWS Identity and Access Management (IAM) policy, you must
-        /// have permissions to perform the <code>s3:ListBucket</code> action. The bucket owner
-        /// has this permission by default and can grant this permission to others. For more information
+        /// To use this action in an Identity and Access Management (IAM) policy, you must have
+        /// permissions to perform the <code>s3:ListBucket</code> action. The bucket owner has
+        /// this permission by default and can grant this permission to others. For more information
         /// about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
         /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a>.
@@ -13260,9 +13330,9 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// To use this action in an AWS Identity and Access Management (IAM) policy, you must
-        /// have permissions to perform the <code>s3:ListBucket</code> action. The bucket owner
-        /// has this permission by default and can grant this permission to others. For more information
+        /// To use this action in an Identity and Access Management (IAM) policy, you must have
+        /// permissions to perform the <code>s3:ListBucket</code> action. The bucket owner has
+        /// this permission by default and can grant this permission to others. For more information
         /// about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
         /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a>.
@@ -13366,7 +13436,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to which the parts are being uploaded.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which the parts are being uploaded.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the multipart upload was initiated.</param>
         /// <param name="uploadId">Upload ID identifying the multipart upload whose parts are being listed.</param>
         /// 
@@ -13489,7 +13559,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to which the parts are being uploaded.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which the parts are being uploaded.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the multipart upload was initiated.</param>
         /// <param name="uploadId">Upload ID identifying the multipart upload whose parts are being listed.</param>
         /// <param name="cancellationToken">
@@ -13966,11 +14036,11 @@ namespace Amazon.S3
         /// <para>
         /// Specify access permissions explicitly with the <code>x-amz-grant-read</code>, <code>x-amz-grant-read-acp</code>,
         /// <code>x-amz-grant-write-acp</code>, and <code>x-amz-grant-full-control</code> headers.
-        /// When using these headers, you specify explicit access permissions and grantees (AWS
-        /// accounts or Amazon S3 groups) who will receive the permission. If you use these ACL-specific
-        /// headers, you cannot use the <code>x-amz-acl</code> header to set a canned ACL. These
-        /// parameters map to the set of permissions that Amazon S3 supports in an ACL. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+        /// When using these headers, you specify explicit access permissions and grantees (Amazon
+        /// Web Services accounts or Amazon S3 groups) who will receive the permission. If you
+        /// use these ACL-specific headers, you cannot use the <code>x-amz-acl</code> header to
+        /// set a canned ACL. These parameters map to the set of permissions that Amazon S3 supports
+        /// in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a>.
         /// </para>
         ///  
@@ -13979,7 +14049,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an Amazon Web
+        /// Services account
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13987,13 +14058,13 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
-        /// account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an Amazon
+        /// Web Services account
         /// </para>
         ///  <note> 
         /// <para>
-        /// Using email addresses to specify a grantee is only supported in the following AWS
-        /// Regions: 
+        /// Using email addresses to specify a grantee is only supported in the following Amazon
+        /// Web Services Regions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -14030,13 +14101,13 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-        /// and Endpoints</a> in the AWS General Reference.
+        /// and Endpoints</a> in the Amazon Web Services General Reference.
         /// </para>
         ///  </note> </li> </ul> 
         /// <para>
         /// For example, the following <code>x-amz-grant-write</code> header grants create, overwrite,
         /// and delete objects permission to LogDelivery group predefined by Amazon S3 and two
-        /// AWS accounts identified by their email addresses.
+        /// Amazon Web Services accounts identified by their email addresses.
         /// </para>
         ///  
         /// <para>
@@ -14095,8 +14166,8 @@ namespace Amazon.S3
         /// </para>
         ///  <note> 
         /// <para>
-        /// Using email addresses to specify a grantee is only supported in the following AWS
-        /// Regions: 
+        /// Using email addresses to specify a grantee is only supported in the following Amazon
+        /// Web Services Regions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -14133,7 +14204,7 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-        /// and Endpoints</a> in the AWS General Reference.
+        /// and Endpoints</a> in the Amazon Web Services General Reference.
         /// </para>
         ///  </note> </li> </ul> <p class="title"> <b>Related Resources</b> 
         /// </para>
@@ -14211,11 +14282,11 @@ namespace Amazon.S3
         /// <para>
         /// Specify access permissions explicitly with the <code>x-amz-grant-read</code>, <code>x-amz-grant-read-acp</code>,
         /// <code>x-amz-grant-write-acp</code>, and <code>x-amz-grant-full-control</code> headers.
-        /// When using these headers, you specify explicit access permissions and grantees (AWS
-        /// accounts or Amazon S3 groups) who will receive the permission. If you use these ACL-specific
-        /// headers, you cannot use the <code>x-amz-acl</code> header to set a canned ACL. These
-        /// parameters map to the set of permissions that Amazon S3 supports in an ACL. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+        /// When using these headers, you specify explicit access permissions and grantees (Amazon
+        /// Web Services accounts or Amazon S3 groups) who will receive the permission. If you
+        /// use these ACL-specific headers, you cannot use the <code>x-amz-acl</code> header to
+        /// set a canned ACL. These parameters map to the set of permissions that Amazon S3 supports
+        /// in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a>.
         /// </para>
         ///  
@@ -14224,7 +14295,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an Amazon Web
+        /// Services account
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14232,13 +14304,13 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
-        /// account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an Amazon
+        /// Web Services account
         /// </para>
         ///  <note> 
         /// <para>
-        /// Using email addresses to specify a grantee is only supported in the following AWS
-        /// Regions: 
+        /// Using email addresses to specify a grantee is only supported in the following Amazon
+        /// Web Services Regions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -14275,13 +14347,13 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-        /// and Endpoints</a> in the AWS General Reference.
+        /// and Endpoints</a> in the Amazon Web Services General Reference.
         /// </para>
         ///  </note> </li> </ul> 
         /// <para>
         /// For example, the following <code>x-amz-grant-write</code> header grants create, overwrite,
         /// and delete objects permission to LogDelivery group predefined by Amazon S3 and two
-        /// AWS accounts identified by their email addresses.
+        /// Amazon Web Services accounts identified by their email addresses.
         /// </para>
         ///  
         /// <para>
@@ -14340,8 +14412,8 @@ namespace Amazon.S3
         /// </para>
         ///  <note> 
         /// <para>
-        /// Using email addresses to specify a grantee is only supported in the following AWS
-        /// Regions: 
+        /// Using email addresses to specify a grantee is only supported in the following Amazon
+        /// Web Services Regions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -14378,7 +14450,7 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-        /// and Endpoints</a> in the AWS General Reference.
+        /// and Endpoints</a> in the Amazon Web Services General Reference.
         /// </para>
         ///  </note> </li> </ul> <p class="title"> <b>Related Resources</b> 
         /// </para>
@@ -14415,8 +14487,9 @@ namespace Amazon.S3
 
         /// <summary>
         /// Creates a new S3 bucket. To create a bucket, you must register with Amazon S3 and
-        /// have a valid AWS Access Key ID to authenticate requests. Anonymous requests are never
-        /// allowed to create buckets. By creating the bucket, you become the bucket owner.
+        /// have a valid Amazon Web Services Access Key ID to authenticate requests. Anonymous
+        /// requests are never allowed to create buckets. By creating the bucket, you become the
+        /// bucket owner.
         /// 
         ///  
         /// <para>
@@ -14475,7 +14548,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an Amazon Web
+        /// Services account
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14483,13 +14557,13 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
-        /// account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an Amazon
+        /// Web Services account
         /// </para>
         ///  <note> 
         /// <para>
-        /// Using email addresses to specify a grantee is only supported in the following AWS
-        /// Regions: 
+        /// Using email addresses to specify a grantee is only supported in the following Amazon
+        /// Web Services Regions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -14526,12 +14600,13 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-        /// and Endpoints</a> in the AWS General Reference.
+        /// and Endpoints</a> in the Amazon Web Services General Reference.
         /// </para>
         ///  </note> </li> </ul> 
         /// <para>
-        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
-        /// identified by account IDs permissions to read object data and its metadata:
+        /// For example, the following <code>x-amz-grant-read</code> header grants the Amazon
+        /// Web Services accounts identified by account IDs permissions to read object data and
+        /// its metadata:
         /// </para>
         ///  
         /// <para>
@@ -14543,6 +14618,24 @@ namespace Amazon.S3
         /// do both.
         /// </para>
         ///  </note> 
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If your <code>CreateBucket</code> request specifies ACL permissions and the ACL is
+        /// public-read, public-read-write, authenticated-read, or if you specify access permissions
+        /// explicitly through any other ACL, both <code>s3:CreateBucket</code> and <code>s3:PutBucketAcl</code>
+        /// permissions are needed. If the ACL the <code>CreateBucket</code> request is private,
+        /// only <code>s3:CreateBucket</code> permission is needed. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>ObjectLockEnabledForBucket</code> is set to true in your <code>CreateBucket</code>
+        /// request, <code>s3:PutBucketObjectLockConfiguration</code> and <code>s3:PutBucketVersioning</code>
+        /// permissions are required.
+        /// </para>
+        ///  
         /// <para>
         /// The following operations are related to <code>CreateBucket</code>:
         /// </para>
@@ -14566,8 +14659,9 @@ namespace Amazon.S3
 
         /// <summary>
         /// Creates a new S3 bucket. To create a bucket, you must register with Amazon S3 and
-        /// have a valid AWS Access Key ID to authenticate requests. Anonymous requests are never
-        /// allowed to create buckets. By creating the bucket, you become the bucket owner.
+        /// have a valid Amazon Web Services Access Key ID to authenticate requests. Anonymous
+        /// requests are never allowed to create buckets. By creating the bucket, you become the
+        /// bucket owner.
         /// 
         ///  
         /// <para>
@@ -14626,7 +14720,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an Amazon Web
+        /// Services account
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14634,13 +14729,13 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
-        /// account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an Amazon
+        /// Web Services account
         /// </para>
         ///  <note> 
         /// <para>
-        /// Using email addresses to specify a grantee is only supported in the following AWS
-        /// Regions: 
+        /// Using email addresses to specify a grantee is only supported in the following Amazon
+        /// Web Services Regions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -14677,12 +14772,13 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-        /// and Endpoints</a> in the AWS General Reference.
+        /// and Endpoints</a> in the Amazon Web Services General Reference.
         /// </para>
         ///  </note> </li> </ul> 
         /// <para>
-        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
-        /// identified by account IDs permissions to read object data and its metadata:
+        /// For example, the following <code>x-amz-grant-read</code> header grants the Amazon
+        /// Web Services accounts identified by account IDs permissions to read object data and
+        /// its metadata:
         /// </para>
         ///  
         /// <para>
@@ -14694,6 +14790,24 @@ namespace Amazon.S3
         /// do both.
         /// </para>
         ///  </note> 
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If your <code>CreateBucket</code> request specifies ACL permissions and the ACL is
+        /// public-read, public-read-write, authenticated-read, or if you specify access permissions
+        /// explicitly through any other ACL, both <code>s3:CreateBucket</code> and <code>s3:PutBucketAcl</code>
+        /// permissions are needed. If the ACL the <code>CreateBucket</code> request is private,
+        /// only <code>s3:CreateBucket</code> permission is needed. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>ObjectLockEnabledForBucket</code> is set to true in your <code>CreateBucket</code>
+        /// request, <code>s3:PutBucketObjectLockConfiguration</code> and <code>s3:PutBucketVersioning</code>
+        /// permissions are required.
+        /// </para>
+        ///  
         /// <para>
         /// The following operations are related to <code>CreateBucket</code>:
         /// </para>
@@ -14718,8 +14832,9 @@ namespace Amazon.S3
 
         /// <summary>
         /// Creates a new S3 bucket. To create a bucket, you must register with Amazon S3 and
-        /// have a valid AWS Access Key ID to authenticate requests. Anonymous requests are never
-        /// allowed to create buckets. By creating the bucket, you become the bucket owner.
+        /// have a valid Amazon Web Services Access Key ID to authenticate requests. Anonymous
+        /// requests are never allowed to create buckets. By creating the bucket, you become the
+        /// bucket owner.
         /// 
         ///  
         /// <para>
@@ -14778,7 +14893,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an Amazon Web
+        /// Services account
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14786,13 +14902,13 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
-        /// account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an Amazon
+        /// Web Services account
         /// </para>
         ///  <note> 
         /// <para>
-        /// Using email addresses to specify a grantee is only supported in the following AWS
-        /// Regions: 
+        /// Using email addresses to specify a grantee is only supported in the following Amazon
+        /// Web Services Regions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -14829,12 +14945,13 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-        /// and Endpoints</a> in the AWS General Reference.
+        /// and Endpoints</a> in the Amazon Web Services General Reference.
         /// </para>
         ///  </note> </li> </ul> 
         /// <para>
-        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
-        /// identified by account IDs permissions to read object data and its metadata:
+        /// For example, the following <code>x-amz-grant-read</code> header grants the Amazon
+        /// Web Services accounts identified by account IDs permissions to read object data and
+        /// its metadata:
         /// </para>
         ///  
         /// <para>
@@ -14846,6 +14963,24 @@ namespace Amazon.S3
         /// do both.
         /// </para>
         ///  </note> 
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If your <code>CreateBucket</code> request specifies ACL permissions and the ACL is
+        /// public-read, public-read-write, authenticated-read, or if you specify access permissions
+        /// explicitly through any other ACL, both <code>s3:CreateBucket</code> and <code>s3:PutBucketAcl</code>
+        /// permissions are needed. If the ACL the <code>CreateBucket</code> request is private,
+        /// only <code>s3:CreateBucket</code> permission is needed. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>ObjectLockEnabledForBucket</code> is set to true in your <code>CreateBucket</code>
+        /// request, <code>s3:PutBucketObjectLockConfiguration</code> and <code>s3:PutBucketVersioning</code>
+        /// permissions are required.
+        /// </para>
+        ///  
         /// <para>
         /// The following operations are related to <code>CreateBucket</code>:
         /// </para>
@@ -14873,8 +15008,9 @@ namespace Amazon.S3
 
         /// <summary>
         /// Creates a new S3 bucket. To create a bucket, you must register with Amazon S3 and
-        /// have a valid AWS Access Key ID to authenticate requests. Anonymous requests are never
-        /// allowed to create buckets. By creating the bucket, you become the bucket owner.
+        /// have a valid Amazon Web Services Access Key ID to authenticate requests. Anonymous
+        /// requests are never allowed to create buckets. By creating the bucket, you become the
+        /// bucket owner.
         /// 
         ///  
         /// <para>
@@ -14933,7 +15069,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an Amazon Web
+        /// Services account
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14941,13 +15078,13 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
-        /// account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an Amazon
+        /// Web Services account
         /// </para>
         ///  <note> 
         /// <para>
-        /// Using email addresses to specify a grantee is only supported in the following AWS
-        /// Regions: 
+        /// Using email addresses to specify a grantee is only supported in the following Amazon
+        /// Web Services Regions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -14984,12 +15121,13 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-        /// and Endpoints</a> in the AWS General Reference.
+        /// and Endpoints</a> in the Amazon Web Services General Reference.
         /// </para>
         ///  </note> </li> </ul> 
         /// <para>
-        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
-        /// identified by account IDs permissions to read object data and its metadata:
+        /// For example, the following <code>x-amz-grant-read</code> header grants the Amazon
+        /// Web Services accounts identified by account IDs permissions to read object data and
+        /// its metadata:
         /// </para>
         ///  
         /// <para>
@@ -15001,6 +15139,24 @@ namespace Amazon.S3
         /// do both.
         /// </para>
         ///  </note> 
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If your <code>CreateBucket</code> request specifies ACL permissions and the ACL is
+        /// public-read, public-read-write, authenticated-read, or if you specify access permissions
+        /// explicitly through any other ACL, both <code>s3:CreateBucket</code> and <code>s3:PutBucketAcl</code>
+        /// permissions are needed. If the ACL the <code>CreateBucket</code> request is private,
+        /// only <code>s3:CreateBucket</code> permission is needed. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>ObjectLockEnabledForBucket</code> is set to true in your <code>CreateBucket</code>
+        /// request, <code>s3:PutBucketObjectLockConfiguration</code> and <code>s3:PutBucketVersioning</code>
+        /// permissions are required.
+        /// </para>
+        ///  
         /// <para>
         /// The following operations are related to <code>CreateBucket</code>:
         /// </para>
@@ -15385,17 +15541,18 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// Default encryption for a bucket can use server-side encryption with Amazon S3-managed
-        /// keys (SSE-S3) or AWS KMS customer master keys (SSE-KMS). If you specify default encryption
-        /// using SSE-KMS, you can also configure Amazon S3 Bucket Key. For information about
-        /// default encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
+        /// keys (SSE-S3) or Amazon Web Services KMS customer master keys (SSE-KMS). If you specify
+        /// default encryption using SSE-KMS, you can also configure Amazon S3 Bucket Key. For
+        /// information about default encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
         /// S3 default bucket encryption</a> in the <i>Amazon S3 User Guide</i>. For more information
         /// about S3 Bucket Keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon
         /// S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
-        /// This action requires AWS Signature Version 4. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">
-        /// Authenticating Requests (AWS Signature Version 4)</a>. 
+        /// This action requires Amazon Web Services Signature Version 4. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">
+        /// Authenticating Requests (Amazon Web Services Signature Version 4)</a>. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -15434,17 +15591,18 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// Default encryption for a bucket can use server-side encryption with Amazon S3-managed
-        /// keys (SSE-S3) or AWS KMS customer master keys (SSE-KMS). If you specify default encryption
-        /// using SSE-KMS, you can also configure Amazon S3 Bucket Key. For information about
-        /// default encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
+        /// keys (SSE-S3) or Amazon Web Services KMS customer master keys (SSE-KMS). If you specify
+        /// default encryption using SSE-KMS, you can also configure Amazon S3 Bucket Key. For
+        /// information about default encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
         /// S3 default bucket encryption</a> in the <i>Amazon S3 User Guide</i>. For more information
         /// about S3 Bucket Keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon
         /// S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
-        /// This action requires AWS Signature Version 4. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">
-        /// Authenticating Requests (AWS Signature Version 4)</a>. 
+        /// This action requires Amazon Web Services Signature Version 4. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">
+        /// Authenticating Requests (Amazon Web Services Signature Version 4)</a>. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -15691,7 +15849,8 @@ namespace Amazon.S3
         /// or weekly basis, and the results are published to a flat file. The bucket that is
         /// inventoried is called the <i>source</i> bucket, and the bucket where the inventory
         /// flat file is stored is called the <i>destination</i> bucket. The <i>destination</i>
-        /// bucket must be in the same AWS Region as the <i>source</i> bucket. 
+        /// bucket must be in the same Amazon Web Services Region as the <i>source</i> bucket.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -15790,7 +15949,8 @@ namespace Amazon.S3
         /// or weekly basis, and the results are published to a flat file. The bucket that is
         /// inventoried is called the <i>source</i> bucket, and the bucket where the inventory
         /// flat file is stored is called the <i>destination</i> bucket. The <i>destination</i>
-        /// bucket must be in the same AWS Region as the <i>source</i> bucket. 
+        /// bucket must be in the same Amazon Web Services Region as the <i>source</i> bucket.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -15886,9 +16046,9 @@ namespace Amazon.S3
 
         /// <summary>
         /// Set the logging parameters for a bucket and to specify permissions for who can view
-        /// and modify the logging parameters. All logs are saved to buckets in the same AWS Region
-        /// as the source bucket. To set the logging status of a bucket, you must be the bucket
-        /// owner.
+        /// and modify the logging parameters. All logs are saved to buckets in the same Amazon
+        /// Web Services Region as the source bucket. To set the logging status of a bucket, you
+        /// must be the bucket owner.
         /// 
         ///  
         /// <para>
@@ -15997,9 +16157,9 @@ namespace Amazon.S3
 
         /// <summary>
         /// Set the logging parameters for a bucket and to specify permissions for who can view
-        /// and modify the logging parameters. All logs are saved to buckets in the same AWS Region
-        /// as the source bucket. To set the logging status of a bucket, you must be the bucket
-        /// owner.
+        /// and modify the logging parameters. All logs are saved to buckets in the same Amazon
+        /// Web Services Region as the source bucket. To set the logging status of a bucket, you
+        /// must be the bucket owner.
         /// 
         ///  
         /// <para>
@@ -16285,9 +16445,9 @@ namespace Amazon.S3
         /// After Amazon S3 receives this request, it first verifies that any Amazon Simple Notification
         /// Service (Amazon SNS) or Amazon Simple Queue Service (Amazon SQS) destination exists,
         /// and that the bucket owner has permission to publish to it by sending a test notification.
-        /// In the case of AWS Lambda destinations, Amazon S3 verifies that the Lambda function
-        /// permissions grant Amazon S3 permission to invoke the function from the Amazon S3 bucket.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
+        /// In the case of Lambda destinations, Amazon S3 verifies that the Lambda function permissions
+        /// grant Amazon S3 permission to invoke the function from the Amazon S3 bucket. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
         /// Notifications for Amazon S3 Events</a>.
         /// </para>
         ///  
@@ -16373,9 +16533,9 @@ namespace Amazon.S3
         /// After Amazon S3 receives this request, it first verifies that any Amazon Simple Notification
         /// Service (Amazon SNS) or Amazon Simple Queue Service (Amazon SQS) destination exists,
         /// and that the bucket owner has permission to publish to it by sending a test notification.
-        /// In the case of AWS Lambda destinations, Amazon S3 verifies that the Lambda function
-        /// permissions grant Amazon S3 permission to invoke the function from the Amazon S3 bucket.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
+        /// In the case of Lambda destinations, Amazon S3 verifies that the Lambda function permissions
+        /// grant Amazon S3 permission to invoke the function from the Amazon S3 bucket. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
         /// Notifications for Amazon S3 Events</a>.
         /// </para>
         ///  
@@ -16506,9 +16666,9 @@ namespace Amazon.S3
 
         /// <summary>
         /// Applies an Amazon S3 bucket policy to an Amazon S3 bucket. If you are using an identity
-        /// other than the root user of the AWS account that owns the bucket, the calling identity
-        /// must have the <code>PutBucketPolicy</code> permissions on the specified bucket and
-        /// belong to the bucket owner's account in order to use this operation.
+        /// other than the root user of the Amazon Web Services account that owns the bucket,
+        /// the calling identity must have the <code>PutBucketPolicy</code> permissions on the
+        /// specified bucket and belong to the bucket owner's account in order to use this operation.
         /// 
         ///  
         /// <para>
@@ -16519,14 +16679,14 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        ///  As a security precaution, the root user of the AWS account that owns a bucket can
-        /// always use this operation, even if the policy explicitly denies the root user the
-        /// ability to perform this action. 
+        ///  As a security precaution, the root user of the Amazon Web Services account that owns
+        /// a bucket can always use this operation, even if the policy explicitly denies the root
+        /// user the ability to perform this action. 
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information about bucket policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
-        /// Bucket Policies and User Policies</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html">Bucket
+        /// policy examples</a>.
         /// </para>
         ///  
         /// <para>
@@ -16553,9 +16713,9 @@ namespace Amazon.S3
 
         /// <summary>
         /// Applies an Amazon S3 bucket policy to an Amazon S3 bucket. If you are using an identity
-        /// other than the root user of the AWS account that owns the bucket, the calling identity
-        /// must have the <code>PutBucketPolicy</code> permissions on the specified bucket and
-        /// belong to the bucket owner's account in order to use this operation.
+        /// other than the root user of the Amazon Web Services account that owns the bucket,
+        /// the calling identity must have the <code>PutBucketPolicy</code> permissions on the
+        /// specified bucket and belong to the bucket owner's account in order to use this operation.
         /// 
         ///  
         /// <para>
@@ -16566,14 +16726,14 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        ///  As a security precaution, the root user of the AWS account that owns a bucket can
-        /// always use this operation, even if the policy explicitly denies the root user the
-        /// ability to perform this action. 
+        ///  As a security precaution, the root user of the Amazon Web Services account that owns
+        /// a bucket can always use this operation, even if the policy explicitly denies the root
+        /// user the ability to perform this action. 
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information about bucket policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
-        /// Bucket Policies and User Policies</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html">Bucket
+        /// policy examples</a>.
         /// </para>
         ///  
         /// <para>
@@ -16593,7 +16753,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="bucketName">The name of the bucket.</param>
         /// <param name="policy">The bucket policy as a JSON document.</param>
-        /// <param name="contentMD5">The MD5 hash of the request body. For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is calculated automatically.</param>
+        /// <param name="contentMD5">The MD5 hash of the request body. For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</param>
         /// 
         /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">REST API Reference for PutBucketPolicy Operation</seealso>
@@ -16601,9 +16761,9 @@ namespace Amazon.S3
 
         /// <summary>
         /// Applies an Amazon S3 bucket policy to an Amazon S3 bucket. If you are using an identity
-        /// other than the root user of the AWS account that owns the bucket, the calling identity
-        /// must have the <code>PutBucketPolicy</code> permissions on the specified bucket and
-        /// belong to the bucket owner's account in order to use this operation.
+        /// other than the root user of the Amazon Web Services account that owns the bucket,
+        /// the calling identity must have the <code>PutBucketPolicy</code> permissions on the
+        /// specified bucket and belong to the bucket owner's account in order to use this operation.
         /// 
         ///  
         /// <para>
@@ -16614,14 +16774,14 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        ///  As a security precaution, the root user of the AWS account that owns a bucket can
-        /// always use this operation, even if the policy explicitly denies the root user the
-        /// ability to perform this action. 
+        ///  As a security precaution, the root user of the Amazon Web Services account that owns
+        /// a bucket can always use this operation, even if the policy explicitly denies the root
+        /// user the ability to perform this action. 
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information about bucket policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
-        /// Bucket Policies and User Policies</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html">Bucket
+        /// policy examples</a>.
         /// </para>
         ///  
         /// <para>
@@ -16648,9 +16808,9 @@ namespace Amazon.S3
 
         /// <summary>
         /// Applies an Amazon S3 bucket policy to an Amazon S3 bucket. If you are using an identity
-        /// other than the root user of the AWS account that owns the bucket, the calling identity
-        /// must have the <code>PutBucketPolicy</code> permissions on the specified bucket and
-        /// belong to the bucket owner's account in order to use this operation.
+        /// other than the root user of the Amazon Web Services account that owns the bucket,
+        /// the calling identity must have the <code>PutBucketPolicy</code> permissions on the
+        /// specified bucket and belong to the bucket owner's account in order to use this operation.
         /// 
         ///  
         /// <para>
@@ -16661,14 +16821,14 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        ///  As a security precaution, the root user of the AWS account that owns a bucket can
-        /// always use this operation, even if the policy explicitly denies the root user the
-        /// ability to perform this action. 
+        ///  As a security precaution, the root user of the Amazon Web Services account that owns
+        /// a bucket can always use this operation, even if the policy explicitly denies the root
+        /// user the ability to perform this action. 
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information about bucket policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
-        /// Bucket Policies and User Policies</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html">Bucket
+        /// policy examples</a>.
         /// </para>
         ///  
         /// <para>
@@ -16698,9 +16858,9 @@ namespace Amazon.S3
 
         /// <summary>
         /// Applies an Amazon S3 bucket policy to an Amazon S3 bucket. If you are using an identity
-        /// other than the root user of the AWS account that owns the bucket, the calling identity
-        /// must have the <code>PutBucketPolicy</code> permissions on the specified bucket and
-        /// belong to the bucket owner's account in order to use this operation.
+        /// other than the root user of the Amazon Web Services account that owns the bucket,
+        /// the calling identity must have the <code>PutBucketPolicy</code> permissions on the
+        /// specified bucket and belong to the bucket owner's account in order to use this operation.
         /// 
         ///  
         /// <para>
@@ -16711,14 +16871,14 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        ///  As a security precaution, the root user of the AWS account that owns a bucket can
-        /// always use this operation, even if the policy explicitly denies the root user the
-        /// ability to perform this action. 
+        ///  As a security precaution, the root user of the Amazon Web Services account that owns
+        /// a bucket can always use this operation, even if the policy explicitly denies the root
+        /// user the ability to perform this action. 
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information about bucket policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
-        /// Bucket Policies and User Policies</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html">Bucket
+        /// policy examples</a>.
         /// </para>
         ///  
         /// <para>
@@ -16738,7 +16898,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="bucketName">The name of the bucket.</param>
         /// <param name="policy">The bucket policy as a JSON document.</param>
-        /// <param name="contentMD5">The MD5 hash of the request body. For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is calculated automatically.</param>
+        /// <param name="contentMD5">The MD5 hash of the request body. For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -16750,9 +16910,9 @@ namespace Amazon.S3
 
         /// <summary>
         /// Applies an Amazon S3 bucket policy to an Amazon S3 bucket. If you are using an identity
-        /// other than the root user of the AWS account that owns the bucket, the calling identity
-        /// must have the <code>PutBucketPolicy</code> permissions on the specified bucket and
-        /// belong to the bucket owner's account in order to use this operation.
+        /// other than the root user of the Amazon Web Services account that owns the bucket,
+        /// the calling identity must have the <code>PutBucketPolicy</code> permissions on the
+        /// specified bucket and belong to the bucket owner's account in order to use this operation.
         /// 
         ///  
         /// <para>
@@ -16763,14 +16923,14 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        ///  As a security precaution, the root user of the AWS account that owns a bucket can
-        /// always use this operation, even if the policy explicitly denies the root user the
-        /// ability to perform this action. 
+        ///  As a security precaution, the root user of the Amazon Web Services account that owns
+        /// a bucket can always use this operation, even if the policy explicitly denies the root
+        /// user the ability to perform this action. 
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information about bucket policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
-        /// Bucket Policies and User Policies</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html">Bucket
+        /// policy examples</a>.
         /// </para>
         ///  
         /// <para>
@@ -16807,13 +16967,7 @@ namespace Amazon.S3
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a>
         /// in the <i>Amazon S3 User Guide</i>. 
         /// 
-        ///  <note> 
-        /// <para>
-        /// To perform this operation, the user or role performing the action must have the <a
-        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a>
-        /// permission.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// Specify the replication configuration in the request body. In the replication configuration,
         /// you provide the name of the destination bucket or buckets where you want Amazon S3
@@ -16848,24 +17002,16 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// By default, a resource owner, in this case the AWS account that created the bucket,
-        /// can perform this operation. The resource owner can also grant others permissions to
-        /// perform the operation. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
-        /// Permissions in a Policy</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
-        /// Access Permissions to Your Amazon S3 Resources</a>.
-        /// </para>
-        ///  
-        /// <para>
         ///  <b>Handling Replication of Encrypted Objects</b> 
         /// </para>
         ///  
         /// <para>
         /// By default, Amazon S3 doesn't replicate objects that are stored at rest using server-side
-        /// encryption with CMKs stored in AWS KMS. To replicate AWS KMS-encrypted objects, add
-        /// the following: <code>SourceSelectionCriteria</code>, <code>SseKmsEncryptedObjects</code>,
+        /// encryption with CMKs stored in Amazon Web Services KMS. To replicate Amazon Web Services
+        /// KMS-encrypted objects, add the following: <code>SourceSelectionCriteria</code>, <code>SseKmsEncryptedObjects</code>,
         /// <code>Status</code>, <code>EncryptionConfiguration</code>, and <code>ReplicaKmsKeyID</code>.
         /// For information about replication configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-config-for-kms-objects.html">Replicating
-        /// Objects Created with SSE Using CMKs stored in AWS KMS</a>.
+        /// Objects Created with SSE Using CMKs stored in Amazon Web Services KMS</a>.
         /// </para>
         ///  
         /// <para>
@@ -16873,6 +17019,29 @@ namespace Amazon.S3
         /// of replication-related error codes</a> 
         /// </para>
         ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a <code>PutBucketReplication</code> request, you must have <code>s3:PutReplicationConfiguration</code>
+        /// permissions for the bucket. 
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, a resource owner, in this case the Amazon Web Services account that created
+        /// the bucket, can perform this operation. The resource owner can also grant others permissions
+        /// to perform the operation. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
+        /// Permissions in a Policy</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+        /// Access Permissions to Your Amazon S3 Resources</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To perform this operation, the user or role performing the action must have the <a
+        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a>
+        /// permission.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The following operations are related to <code>PutBucketReplication</code>:
         /// </para>
@@ -16901,13 +17070,7 @@ namespace Amazon.S3
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a>
         /// in the <i>Amazon S3 User Guide</i>. 
         /// 
-        ///  <note> 
-        /// <para>
-        /// To perform this operation, the user or role performing the action must have the <a
-        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a>
-        /// permission.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// Specify the replication configuration in the request body. In the replication configuration,
         /// you provide the name of the destination bucket or buckets where you want Amazon S3
@@ -16942,24 +17105,16 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// By default, a resource owner, in this case the AWS account that created the bucket,
-        /// can perform this operation. The resource owner can also grant others permissions to
-        /// perform the operation. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
-        /// Permissions in a Policy</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
-        /// Access Permissions to Your Amazon S3 Resources</a>.
-        /// </para>
-        ///  
-        /// <para>
         ///  <b>Handling Replication of Encrypted Objects</b> 
         /// </para>
         ///  
         /// <para>
         /// By default, Amazon S3 doesn't replicate objects that are stored at rest using server-side
-        /// encryption with CMKs stored in AWS KMS. To replicate AWS KMS-encrypted objects, add
-        /// the following: <code>SourceSelectionCriteria</code>, <code>SseKmsEncryptedObjects</code>,
+        /// encryption with CMKs stored in Amazon Web Services KMS. To replicate Amazon Web Services
+        /// KMS-encrypted objects, add the following: <code>SourceSelectionCriteria</code>, <code>SseKmsEncryptedObjects</code>,
         /// <code>Status</code>, <code>EncryptionConfiguration</code>, and <code>ReplicaKmsKeyID</code>.
         /// For information about replication configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-config-for-kms-objects.html">Replicating
-        /// Objects Created with SSE Using CMKs stored in AWS KMS</a>.
+        /// Objects Created with SSE Using CMKs stored in Amazon Web Services KMS</a>.
         /// </para>
         ///  
         /// <para>
@@ -16967,6 +17122,29 @@ namespace Amazon.S3
         /// of replication-related error codes</a> 
         /// </para>
         ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a <code>PutBucketReplication</code> request, you must have <code>s3:PutReplicationConfiguration</code>
+        /// permissions for the bucket. 
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, a resource owner, in this case the Amazon Web Services account that created
+        /// the bucket, can perform this operation. The resource owner can also grant others permissions
+        /// to perform the operation. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
+        /// Permissions in a Policy</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+        /// Access Permissions to Your Amazon S3 Resources</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To perform this operation, the user or role performing the action must have the <a
+        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a>
+        /// permission.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The following operations are related to <code>PutBucketReplication</code>:
         /// </para>
@@ -17132,12 +17310,13 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// Use tags to organize your AWS bill to reflect your own cost structure. To do this,
-        /// sign up to get your AWS account bill with tag key values included. Then, to see the
-        /// cost of combined resources, organize your billing information according to resources
-        /// with the same tag key values. For example, you can tag several resources with a specific
-        /// application name, and then organize your billing information to see the total cost
-        /// of that application across several services. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
+        /// Use tags to organize your Amazon Web Services bill to reflect your own cost structure.
+        /// To do this, sign up to get your Amazon Web Services account bill with tag key values
+        /// included. Then, to see the cost of combined resources, organize your billing information
+        /// according to resources with the same tag key values. For example, you can tag several
+        /// resources with a specific application name, and then organize your billing information
+        /// to see the total cost of that application across several services. For more information,
+        /// see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
         /// Allocation and Tagging</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">Using
         /// Cost Allocation in Amazon S3 Bucket Tags</a>.
         /// </para>
@@ -17167,8 +17346,8 @@ namespace Amazon.S3
         /// <para>
         /// Description: The tag provided was not a valid tag. This error can occur if the tag
         /// did not pass input validation. For information about tag restrictions, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
-        /// Tag Restrictions</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/aws-tag-restrictions.html">AWS-Generated
-        /// Cost Allocation Tag Restrictions</a>.
+        /// Tag Restrictions</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/aws-tag-restrictions.html">Amazon
+        /// Web Services-Generated Cost Allocation Tag Restrictions</a>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -17223,12 +17402,13 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// Use tags to organize your AWS bill to reflect your own cost structure. To do this,
-        /// sign up to get your AWS account bill with tag key values included. Then, to see the
-        /// cost of combined resources, organize your billing information according to resources
-        /// with the same tag key values. For example, you can tag several resources with a specific
-        /// application name, and then organize your billing information to see the total cost
-        /// of that application across several services. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
+        /// Use tags to organize your Amazon Web Services bill to reflect your own cost structure.
+        /// To do this, sign up to get your Amazon Web Services account bill with tag key values
+        /// included. Then, to see the cost of combined resources, organize your billing information
+        /// according to resources with the same tag key values. For example, you can tag several
+        /// resources with a specific application name, and then organize your billing information
+        /// to see the total cost of that application across several services. For more information,
+        /// see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
         /// Allocation and Tagging</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">Using
         /// Cost Allocation in Amazon S3 Bucket Tags</a>.
         /// </para>
@@ -17258,8 +17438,8 @@ namespace Amazon.S3
         /// <para>
         /// Description: The tag provided was not a valid tag. This error can occur if the tag
         /// did not pass input validation. For information about tag restrictions, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
-        /// Tag Restrictions</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/aws-tag-restrictions.html">AWS-Generated
-        /// Cost Allocation Tag Restrictions</a>.
+        /// Tag Restrictions</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/aws-tag-restrictions.html">Amazon
+        /// Web Services-Generated Cost Allocation Tag Restrictions</a>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -17314,12 +17494,13 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// Use tags to organize your AWS bill to reflect your own cost structure. To do this,
-        /// sign up to get your AWS account bill with tag key values included. Then, to see the
-        /// cost of combined resources, organize your billing information according to resources
-        /// with the same tag key values. For example, you can tag several resources with a specific
-        /// application name, and then organize your billing information to see the total cost
-        /// of that application across several services. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
+        /// Use tags to organize your Amazon Web Services bill to reflect your own cost structure.
+        /// To do this, sign up to get your Amazon Web Services account bill with tag key values
+        /// included. Then, to see the cost of combined resources, organize your billing information
+        /// according to resources with the same tag key values. For example, you can tag several
+        /// resources with a specific application name, and then organize your billing information
+        /// to see the total cost of that application across several services. For more information,
+        /// see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
         /// Allocation and Tagging</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">Using
         /// Cost Allocation in Amazon S3 Bucket Tags</a>.
         /// </para>
@@ -17349,8 +17530,8 @@ namespace Amazon.S3
         /// <para>
         /// Description: The tag provided was not a valid tag. This error can occur if the tag
         /// did not pass input validation. For information about tag restrictions, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
-        /// Tag Restrictions</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/aws-tag-restrictions.html">AWS-Generated
-        /// Cost Allocation Tag Restrictions</a>.
+        /// Tag Restrictions</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/aws-tag-restrictions.html">Amazon
+        /// Web Services-Generated Cost Allocation Tag Restrictions</a>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -17409,12 +17590,13 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// Use tags to organize your AWS bill to reflect your own cost structure. To do this,
-        /// sign up to get your AWS account bill with tag key values included. Then, to see the
-        /// cost of combined resources, organize your billing information according to resources
-        /// with the same tag key values. For example, you can tag several resources with a specific
-        /// application name, and then organize your billing information to see the total cost
-        /// of that application across several services. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
+        /// Use tags to organize your Amazon Web Services bill to reflect your own cost structure.
+        /// To do this, sign up to get your Amazon Web Services account bill with tag key values
+        /// included. Then, to see the cost of combined resources, organize your billing information
+        /// according to resources with the same tag key values. For example, you can tag several
+        /// resources with a specific application name, and then organize your billing information
+        /// to see the total cost of that application across several services. For more information,
+        /// see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
         /// Allocation and Tagging</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">Using
         /// Cost Allocation in Amazon S3 Bucket Tags</a>.
         /// </para>
@@ -17444,8 +17626,8 @@ namespace Amazon.S3
         /// <para>
         /// Description: The tag provided was not a valid tag. This error can occur if the tag
         /// did not pass input validation. For information about tag restrictions, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
-        /// Tag Restrictions</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/aws-tag-restrictions.html">AWS-Generated
-        /// Cost Allocation Tag Restrictions</a>.
+        /// Tag Restrictions</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/aws-tag-restrictions.html">Amazon
+        /// Web Services-Generated Cost Allocation Tag Restrictions</a>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -18515,9 +18697,9 @@ namespace Amazon.S3
         /// <para>
         /// By default, all Amazon S3 resources are private, including buckets, objects, and related
         /// subresources (for example, lifecycle configuration and website configuration). Only
-        /// the resource owner (that is, the AWS account that created it) can access the resource.
-        /// The resource owner can optionally grant access permissions to others by writing an
-        /// access policy. For this operation, a user must get the s3:PutLifecycleConfiguration
+        /// the resource owner (that is, the Amazon Web Services account that created it) can
+        /// access the resource. The resource owner can optionally grant access permissions to
+        /// others by writing an access policy. For this operation, a user must get the s3:PutLifecycleConfiguration
         /// permission.
         /// </para>
         ///  
@@ -18624,9 +18806,9 @@ namespace Amazon.S3
         /// <para>
         /// By default, all Amazon S3 resources are private, including buckets, objects, and related
         /// subresources (for example, lifecycle configuration and website configuration). Only
-        /// the resource owner (that is, the AWS account that created it) can access the resource.
-        /// The resource owner can optionally grant access permissions to others by writing an
-        /// access policy. For this operation, a user must get the s3:PutLifecycleConfiguration
+        /// the resource owner (that is, the Amazon Web Services account that created it) can
+        /// access the resource. The resource owner can optionally grant access permissions to
+        /// others by writing an access policy. For this operation, a user must get the s3:PutLifecycleConfiguration
         /// permission.
         /// </para>
         ///  
@@ -18733,9 +18915,9 @@ namespace Amazon.S3
         /// <para>
         /// By default, all Amazon S3 resources are private, including buckets, objects, and related
         /// subresources (for example, lifecycle configuration and website configuration). Only
-        /// the resource owner (that is, the AWS account that created it) can access the resource.
-        /// The resource owner can optionally grant access permissions to others by writing an
-        /// access policy. For this operation, a user must get the s3:PutLifecycleConfiguration
+        /// the resource owner (that is, the Amazon Web Services account that created it) can
+        /// access the resource. The resource owner can optionally grant access permissions to
+        /// others by writing an access policy. For this operation, a user must get the s3:PutLifecycleConfiguration
         /// permission.
         /// </para>
         ///  
@@ -18846,9 +19028,9 @@ namespace Amazon.S3
         /// <para>
         /// By default, all Amazon S3 resources are private, including buckets, objects, and related
         /// subresources (for example, lifecycle configuration and website configuration). Only
-        /// the resource owner (that is, the AWS account that created it) can access the resource.
-        /// The resource owner can optionally grant access permissions to others by writing an
-        /// access policy. For this operation, a user must get the s3:PutLifecycleConfiguration
+        /// the resource owner (that is, the Amazon Web Services account that created it) can
+        /// access the resource. The resource owner can optionally grant access permissions to
+        /// others by writing an access policy. For this operation, a user must get the s3:PutLifecycleConfiguration
         /// permission.
         /// </para>
         ///  
@@ -18933,14 +19115,24 @@ namespace Amazon.S3
         /// the MD5 while putting an object to Amazon S3 and compare the returned ETag to the
         /// calculated MD5 value.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// To successfully complete the <code>PutObject</code> request, you must have the <code>s3:PutObject</code>
+        /// in your IAM permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To successfully change the objects acl of your <code>PutObject</code> request, you
+        /// must have the <code>s3:PutObjectAcl</code> in your IAM permissions.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  The <code>Content-MD5</code> header is required for any request to upload an object
         /// with a retention period configured using Amazon S3 Object Lock. For more information
         /// about Amazon S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html">Amazon
         /// S3 Object Lock Overview</a> in the <i>Amazon S3 User Guide</i>. 
         /// </para>
-        ///  </note> 
+        ///  </li> </ul> </note> 
         /// <para>
         ///  <b>Server-side Encryption</b> 
         /// </para>
@@ -18949,16 +19141,16 @@ namespace Amazon.S3
         /// You can optionally request server-side encryption. With server-side encryption, Amazon
         /// S3 encrypts your data as it writes it to disks in its data centers and decrypts the
         /// data when you access it. You have the option to provide your own encryption key or
-        /// use AWS managed encryption keys (SSE-S3 or SSE-KMS). For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
+        /// use Amazon Web Services managed encryption keys (SSE-S3 or SSE-KMS). For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
         /// Server-Side Encryption</a>.
         /// </para>
         ///  
         /// <para>
-        /// If you request server-side encryption using AWS Key Management Service (SSE-KMS),
-        /// you can enable an S3 Bucket Key at the object-level. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3 Bucket
-        /// Keys</a> in the <i>Amazon S3 User Guide</i>.
+        /// If you request server-side encryption using Amazon Web Services Key Management Service
+        /// (SSE-KMS), you can enable an S3 Bucket Key at the object-level. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon
+        /// S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -18968,8 +19160,9 @@ namespace Amazon.S3
         /// <para>
         /// You can use headers to grant ACL- based permissions. By default, all objects are private.
         /// Only the owner has full access control. When adding a new object, you can grant permissions
-        /// to individual AWS accounts or to predefined groups defined by Amazon S3. These permissions
-        /// are then added to the ACL on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+        /// to individual Amazon Web Services accounts or to predefined groups defined by Amazon
+        /// S3. These permissions are then added to the ACL on the object. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing
         /// ACLs Using the REST API</a>. 
         /// </para>
@@ -19049,14 +19242,24 @@ namespace Amazon.S3
         /// the MD5 while putting an object to Amazon S3 and compare the returned ETag to the
         /// calculated MD5 value.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// To successfully complete the <code>PutObject</code> request, you must have the <code>s3:PutObject</code>
+        /// in your IAM permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To successfully change the objects acl of your <code>PutObject</code> request, you
+        /// must have the <code>s3:PutObjectAcl</code> in your IAM permissions.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  The <code>Content-MD5</code> header is required for any request to upload an object
         /// with a retention period configured using Amazon S3 Object Lock. For more information
         /// about Amazon S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html">Amazon
         /// S3 Object Lock Overview</a> in the <i>Amazon S3 User Guide</i>. 
         /// </para>
-        ///  </note> 
+        ///  </li> </ul> </note> 
         /// <para>
         ///  <b>Server-side Encryption</b> 
         /// </para>
@@ -19065,16 +19268,16 @@ namespace Amazon.S3
         /// You can optionally request server-side encryption. With server-side encryption, Amazon
         /// S3 encrypts your data as it writes it to disks in its data centers and decrypts the
         /// data when you access it. You have the option to provide your own encryption key or
-        /// use AWS managed encryption keys (SSE-S3 or SSE-KMS). For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
+        /// use Amazon Web Services managed encryption keys (SSE-S3 or SSE-KMS). For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
         /// Server-Side Encryption</a>.
         /// </para>
         ///  
         /// <para>
-        /// If you request server-side encryption using AWS Key Management Service (SSE-KMS),
-        /// you can enable an S3 Bucket Key at the object-level. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3 Bucket
-        /// Keys</a> in the <i>Amazon S3 User Guide</i>.
+        /// If you request server-side encryption using Amazon Web Services Key Management Service
+        /// (SSE-KMS), you can enable an S3 Bucket Key at the object-level. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon
+        /// S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -19084,8 +19287,9 @@ namespace Amazon.S3
         /// <para>
         /// You can use headers to grant ACL- based permissions. By default, all objects are private.
         /// Only the owner has full access control. When adding a new object, you can grant permissions
-        /// to individual AWS accounts or to predefined groups defined by Amazon S3. These permissions
-        /// are then added to the ACL on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+        /// to individual Amazon Web Services accounts or to predefined groups defined by Amazon
+        /// S3. These permissions are then added to the ACL on the object. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing
         /// ACLs Using the REST API</a>. 
         /// </para>
@@ -19208,7 +19412,7 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         /// You can only enable Object Lock for new buckets. If you want to turn on Object Lock
-        /// for an existing bucket, contact AWS Support.
+        /// for an existing bucket, contact Amazon Web Services Support.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -19239,7 +19443,7 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         /// You can only enable Object Lock for new buckets. If you want to turn on Object Lock
-        /// for an existing bucket, contact AWS Support.
+        /// for an existing bucket, contact Amazon Web Services Support.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -19260,11 +19464,23 @@ namespace Amazon.S3
         /// <summary>
         /// Places an Object Retention configuration on an object. For more information, see <a
         /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking Objects</a>.
-        /// 
+        /// Users or accounts require the <code>s3:PutObjectRetention</code> permission in order
+        /// to place an Object Retention configuration on objects. Bypassing a Governance Retention
+        /// configuration requires the <code>s3:BypassGovernanceRetention</code> permission. 
         /// 
         ///  
         /// <para>
         /// This action is not supported by Amazon S3 on Outposts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// When the Object Lock retention mode is set to compliance, you need <code>s3:PutObjectRetention</code>
+        /// and <code>s3:BypassGovernanceRetention</code> permissions. For other requests to <code>PutObjectRetention</code>,
+        /// only <code>s3:PutObjectRetention</code> permissions are required.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutObjectRetention service method.</param>
@@ -19278,11 +19494,23 @@ namespace Amazon.S3
         /// <summary>
         /// Places an Object Retention configuration on an object. For more information, see <a
         /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking Objects</a>.
-        /// 
+        /// Users or accounts require the <code>s3:PutObjectRetention</code> permission in order
+        /// to place an Object Retention configuration on objects. Bypassing a Governance Retention
+        /// configuration requires the <code>s3:BypassGovernanceRetention</code> permission. 
         /// 
         ///  
         /// <para>
         /// This action is not supported by Amazon S3 on Outposts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// When the Object Lock retention mode is set to compliance, you need <code>s3:PutObjectRetention</code>
+        /// and <code>s3:BypassGovernanceRetention</code> permissions. For other requests to <code>PutObjectRetention</code>,
+        /// only <code>s3:PutObjectRetention</code> permissions are required.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutObjectRetention service method.</param>
@@ -19644,10 +19872,11 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         /// Define an output location for the select query's output. This must be an Amazon S3
-        /// bucket in the same AWS Region as the bucket that contains the archive object that
-        /// is being queried. The AWS account that initiates the job must have permissions to
-        /// write to the S3 bucket. You can specify the storage class and encryption for the output
-        /// objects stored in the bucket. For more information about output, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
+        /// bucket in the same Amazon Web Services Region as the bucket that contains the archive
+        /// object that is being queried. The Amazon Web Services account that initiates the job
+        /// must have permissions to write to the S3 bucket. You can specify the storage class
+        /// and encryption for the output objects stored in the bucket. For more information about
+        /// output, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
         /// Archived Objects</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
@@ -19916,7 +20145,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object to restore.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object to restore.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the action was initiated.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
@@ -19970,10 +20199,11 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         /// Define an output location for the select query's output. This must be an Amazon S3
-        /// bucket in the same AWS Region as the bucket that contains the archive object that
-        /// is being queried. The AWS account that initiates the job must have permissions to
-        /// write to the S3 bucket. You can specify the storage class and encryption for the output
-        /// objects stored in the bucket. For more information about output, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
+        /// bucket in the same Amazon Web Services Region as the bucket that contains the archive
+        /// object that is being queried. The Amazon Web Services account that initiates the job
+        /// must have permissions to write to the S3 bucket. You can specify the storage class
+        /// and encryption for the output objects stored in the bucket. For more information about
+        /// output, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
         /// Archived Objects</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
@@ -20242,7 +20472,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object to restore.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object to restore.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the action was initiated.</param>
         /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
         /// 
@@ -20297,10 +20527,11 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         /// Define an output location for the select query's output. This must be an Amazon S3
-        /// bucket in the same AWS Region as the bucket that contains the archive object that
-        /// is being queried. The AWS account that initiates the job must have permissions to
-        /// write to the S3 bucket. You can specify the storage class and encryption for the output
-        /// objects stored in the bucket. For more information about output, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
+        /// bucket in the same Amazon Web Services Region as the bucket that contains the archive
+        /// object that is being queried. The Amazon Web Services account that initiates the job
+        /// must have permissions to write to the S3 bucket. You can specify the storage class
+        /// and encryption for the output objects stored in the bucket. For more information about
+        /// output, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
         /// Archived Objects</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
@@ -20569,7 +20800,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object to restore.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object to restore.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the action was initiated.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
@@ -20624,10 +20855,11 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         /// Define an output location for the select query's output. This must be an Amazon S3
-        /// bucket in the same AWS Region as the bucket that contains the archive object that
-        /// is being queried. The AWS account that initiates the job must have permissions to
-        /// write to the S3 bucket. You can specify the storage class and encryption for the output
-        /// objects stored in the bucket. For more information about output, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
+        /// bucket in the same Amazon Web Services Region as the bucket that contains the archive
+        /// object that is being queried. The Amazon Web Services account that initiates the job
+        /// must have permissions to write to the S3 bucket. You can specify the storage class
+        /// and encryption for the output objects stored in the bucket. For more information about
+        /// output, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
         /// Archived Objects</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
@@ -20896,7 +21128,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object to restore.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object to restore.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the action was initiated.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
@@ -20952,10 +21184,11 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         /// Define an output location for the select query's output. This must be an Amazon S3
-        /// bucket in the same AWS Region as the bucket that contains the archive object that
-        /// is being queried. The AWS account that initiates the job must have permissions to
-        /// write to the S3 bucket. You can specify the storage class and encryption for the output
-        /// objects stored in the bucket. For more information about output, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
+        /// bucket in the same Amazon Web Services Region as the bucket that contains the archive
+        /// object that is being queried. The Amazon Web Services account that initiates the job
+        /// must have permissions to write to the S3 bucket. You can specify the storage class
+        /// and encryption for the output objects stored in the bucket. For more information about
+        /// output, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
         /// Archived Objects</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
@@ -21278,10 +21511,11 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         /// Define an output location for the select query's output. This must be an Amazon S3
-        /// bucket in the same AWS Region as the bucket that contains the archive object that
-        /// is being queried. The AWS account that initiates the job must have permissions to
-        /// write to the S3 bucket. You can specify the storage class and encryption for the output
-        /// objects stored in the bucket. For more information about output, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
+        /// bucket in the same Amazon Web Services Region as the bucket that contains the archive
+        /// object that is being queried. The Amazon Web Services account that initiates the job
+        /// must have permissions to write to the S3 bucket. You can specify the storage class
+        /// and encryption for the output objects stored in the bucket. For more information about
+        /// output, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
         /// Archived Objects</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
@@ -21550,7 +21784,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object to restore.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object to restore.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the action was initiated.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -21607,10 +21841,11 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         /// Define an output location for the select query's output. This must be an Amazon S3
-        /// bucket in the same AWS Region as the bucket that contains the archive object that
-        /// is being queried. The AWS account that initiates the job must have permissions to
-        /// write to the S3 bucket. You can specify the storage class and encryption for the output
-        /// objects stored in the bucket. For more information about output, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
+        /// bucket in the same Amazon Web Services Region as the bucket that contains the archive
+        /// object that is being queried. The Amazon Web Services account that initiates the job
+        /// must have permissions to write to the S3 bucket. You can specify the storage class
+        /// and encryption for the output objects stored in the bucket. For more information about
+        /// output, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
         /// Archived Objects</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
@@ -21879,7 +22114,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object to restore.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object to restore.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the action was initiated.</param>
         /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
         /// <param name="cancellationToken">
@@ -21937,10 +22172,11 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         /// Define an output location for the select query's output. This must be an Amazon S3
-        /// bucket in the same AWS Region as the bucket that contains the archive object that
-        /// is being queried. The AWS account that initiates the job must have permissions to
-        /// write to the S3 bucket. You can specify the storage class and encryption for the output
-        /// objects stored in the bucket. For more information about output, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
+        /// bucket in the same Amazon Web Services Region as the bucket that contains the archive
+        /// object that is being queried. The Amazon Web Services account that initiates the job
+        /// must have permissions to write to the S3 bucket. You can specify the storage class
+        /// and encryption for the output objects stored in the bucket. For more information about
+        /// output, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
         /// Archived Objects</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
@@ -22209,7 +22445,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object to restore.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object to restore.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the action was initiated.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// <param name="cancellationToken">
@@ -22267,10 +22503,11 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         /// Define an output location for the select query's output. This must be an Amazon S3
-        /// bucket in the same AWS Region as the bucket that contains the archive object that
-        /// is being queried. The AWS account that initiates the job must have permissions to
-        /// write to the S3 bucket. You can specify the storage class and encryption for the output
-        /// objects stored in the bucket. For more information about output, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
+        /// bucket in the same Amazon Web Services Region as the bucket that contains the archive
+        /// object that is being queried. The Amazon Web Services account that initiates the job
+        /// must have permissions to write to the S3 bucket. You can specify the storage class
+        /// and encryption for the output objects stored in the bucket. For more information about
+        /// output, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
         /// Archived Objects</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
@@ -22539,7 +22776,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object to restore.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object to restore.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the action was initiated.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
@@ -22599,10 +22836,11 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         /// Define an output location for the select query's output. This must be an Amazon S3
-        /// bucket in the same AWS Region as the bucket that contains the archive object that
-        /// is being queried. The AWS account that initiates the job must have permissions to
-        /// write to the S3 bucket. You can specify the storage class and encryption for the output
-        /// objects stored in the bucket. For more information about output, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
+        /// bucket in the same Amazon Web Services Region as the bucket that contains the archive
+        /// object that is being queried. The Amazon Web Services account that initiates the job
+        /// must have permissions to write to the S3 bucket. You can specify the storage class
+        /// and encryption for the output objects stored in the bucket. For more information about
+        /// output, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
         /// Archived Objects</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
@@ -22959,9 +23197,10 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// For objects that are encrypted with Amazon S3 managed encryption keys (SSE-S3) and
-        /// customer master keys (CMKs) stored in AWS Key Management Service (SSE-KMS), server-side
-        /// encryption is handled transparently, so you don't need to specify anything. For more
-        /// information about server-side encryption, including SSE-S3 and SSE-KMS, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
+        /// customer master keys (CMKs) stored in Amazon Web Services Key Management Service (SSE-KMS),
+        /// server-side encryption is handled transparently, so you don't need to specify anything.
+        /// For more information about server-side encryption, including SSE-S3 and SSE-KMS, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
         /// Data Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> 
@@ -22973,7 +23212,7 @@ namespace Amazon.S3
         /// Given the response size is unknown, Amazon S3 Select streams the response as a series
         /// of messages and includes a <code>Transfer-Encoding</code> header with <code>chunked</code>
         /// as its value in the response. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTSelectObjectAppendix.html">Appendix:
-        /// SelectObjectContent Response</a> .
+        /// SelectObjectContent Response</a>.
         /// </para>
         ///   
         /// <para>
@@ -23108,9 +23347,10 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// For objects that are encrypted with Amazon S3 managed encryption keys (SSE-S3) and
-        /// customer master keys (CMKs) stored in AWS Key Management Service (SSE-KMS), server-side
-        /// encryption is handled transparently, so you don't need to specify anything. For more
-        /// information about server-side encryption, including SSE-S3 and SSE-KMS, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
+        /// customer master keys (CMKs) stored in Amazon Web Services Key Management Service (SSE-KMS),
+        /// server-side encryption is handled transparently, so you don't need to specify anything.
+        /// For more information about server-side encryption, including SSE-S3 and SSE-KMS, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
         /// Data Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> 
@@ -23122,7 +23362,7 @@ namespace Amazon.S3
         /// Given the response size is unknown, Amazon S3 Select streams the response as a series
         /// of messages and includes a <code>Transfer-Encoding</code> header with <code>chunked</code>
         /// as its value in the response. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTSelectObjectAppendix.html">Appendix:
-        /// SelectObjectContent Response</a> .
+        /// SelectObjectContent Response</a>.
         /// </para>
         ///   
         /// <para>
@@ -23221,10 +23461,11 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// If the upload request is signed with Signature Version 4, then AWS S3 uses the <code>x-amz-content-sha256</code>
-        /// header as a checksum instead of <code>Content-MD5</code>. For more information see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html">Authenticating
-        /// Requests: Using the Authorization Header (AWS Signature Version 4)</a>. 
+        /// If the upload request is signed with Signature Version 4, then Amazon Web Services
+        /// S3 uses the <code>x-amz-content-sha256</code> header as a checksum instead of <code>Content-MD5</code>.
+        /// For more information see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html">Authenticating
+        /// Requests: Using the Authorization Header (Amazon Web Services Signature Version 4)</a>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -23248,10 +23489,10 @@ namespace Amazon.S3
         /// <para>
         /// You can optionally request server-side encryption where Amazon S3 encrypts your data
         /// as it writes it to disks in its data centers and decrypts it for you when you access
-        /// it. You have the option of providing your own encryption key, or you can use the AWS
-        /// managed encryption keys. If you choose to provide your own encryption key, the request
-        /// headers you provide in the request must match the headers you used in the request
-        /// to initiate the upload by using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>.
+        /// it. You have the option of providing your own encryption key, or you can use the Amazon
+        /// Web Services managed encryption keys. If you choose to provide your own encryption
+        /// key, the request headers you provide in the request must match the headers you used
+        /// in the request to initiate the upload by using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>.
         /// For more information, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
         /// Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
@@ -23369,10 +23610,11 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// If the upload request is signed with Signature Version 4, then AWS S3 uses the <code>x-amz-content-sha256</code>
-        /// header as a checksum instead of <code>Content-MD5</code>. For more information see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html">Authenticating
-        /// Requests: Using the Authorization Header (AWS Signature Version 4)</a>. 
+        /// If the upload request is signed with Signature Version 4, then Amazon Web Services
+        /// S3 uses the <code>x-amz-content-sha256</code> header as a checksum instead of <code>Content-MD5</code>.
+        /// For more information see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html">Authenticating
+        /// Requests: Using the Authorization Header (Amazon Web Services Signature Version 4)</a>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -23396,10 +23638,10 @@ namespace Amazon.S3
         /// <para>
         /// You can optionally request server-side encryption where Amazon S3 encrypts your data
         /// as it writes it to disks in its data centers and decrypts it for you when you access
-        /// it. You have the option of providing your own encryption key, or you can use the AWS
-        /// managed encryption keys. If you choose to provide your own encryption key, the request
-        /// headers you provide in the request must match the headers you used in the request
-        /// to initiate the upload by using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>.
+        /// it. You have the option of providing your own encryption key, or you can use the Amazon
+        /// Web Services managed encryption keys. If you choose to provide your own encryption
+        /// key, the request headers you provide in the request must match the headers you used
+        /// in the request to initiate the upload by using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>.
         /// For more information, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
         /// Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
@@ -23502,18 +23744,25 @@ namespace Amazon.S3
         /// in addition to <code>RequestRoute</code>, <code>RequestToken</code>, <code>StatusCode</code>,
         /// <code>ErrorCode</code>, and <code>ErrorMessage</code>. The <code>GetObject</code>
         /// response metadata is supported so that the <code>WriteGetObjectResponse</code> caller,
-        /// typically an AWS Lambda function, can provide the same metadata when it internally
-        /// invokes <code>GetObject</code>. When <code>WriteGetObjectResponse</code> is called
-        /// by a customer-owned Lambda function, the metadata returned to the end user <code>GetObject</code>
-        /// call might differ from what Amazon S3 would normally return.
+        /// typically an Lambda function, can provide the same metadata when it internally invokes
+        /// <code>GetObject</code>. When <code>WriteGetObjectResponse</code> is called by a customer-owned
+        /// Lambda function, the metadata returned to the end user <code>GetObject</code> call
+        /// might differ from what Amazon S3 would normally return.
         /// </para>
         ///  
         /// <para>
-        /// AWS provides some prebuilt Lambda functions that you can use with S3 Object Lambda
-        /// to detect and redact personally identifiable information (PII) and decompress S3 objects.
-        /// These Lambda functions are available in the AWS Serverless Application Repository,
-        /// and can be selected through the AWS Management Console when you create your Object
-        /// Lambda Access Point.
+        /// You can include any number of metadata headers. When including a metadata header,
+        /// it should be prefaced with <code>x-amz-meta</code>. For example, <code>x-amz-meta-my-custom-header:
+        /// MyCustomValue</code>. The primary use case for this is to forward <code>GetObject</code>
+        /// metadata.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Web Services provides some prebuilt Lambda functions that you can use with
+        /// S3 Object Lambda to detect and redact personally identifiable information (PII) and
+        /// decompress S3 objects. These Lambda functions are available in the Amazon Web Services
+        /// Serverless Application Repository, and can be selected through the Amazon Web Services
+        /// Management Console when you create your Object Lambda Access Point.
         /// </para>
         ///  
         /// <para>
@@ -23540,7 +23789,7 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// For information on how to view and use these functions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/olap-examples.html">Using
-        /// AWS built Lambda functions</a> in the <i>Amazon S3 User Guide</i>.
+        /// Amazon Web Services built Lambda functions</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the WriteGetObjectResponse service method.</param>
@@ -23562,18 +23811,25 @@ namespace Amazon.S3
         /// in addition to <code>RequestRoute</code>, <code>RequestToken</code>, <code>StatusCode</code>,
         /// <code>ErrorCode</code>, and <code>ErrorMessage</code>. The <code>GetObject</code>
         /// response metadata is supported so that the <code>WriteGetObjectResponse</code> caller,
-        /// typically an AWS Lambda function, can provide the same metadata when it internally
-        /// invokes <code>GetObject</code>. When <code>WriteGetObjectResponse</code> is called
-        /// by a customer-owned Lambda function, the metadata returned to the end user <code>GetObject</code>
-        /// call might differ from what Amazon S3 would normally return.
+        /// typically an Lambda function, can provide the same metadata when it internally invokes
+        /// <code>GetObject</code>. When <code>WriteGetObjectResponse</code> is called by a customer-owned
+        /// Lambda function, the metadata returned to the end user <code>GetObject</code> call
+        /// might differ from what Amazon S3 would normally return.
         /// </para>
         ///  
         /// <para>
-        /// AWS provides some prebuilt Lambda functions that you can use with S3 Object Lambda
-        /// to detect and redact personally identifiable information (PII) and decompress S3 objects.
-        /// These Lambda functions are available in the AWS Serverless Application Repository,
-        /// and can be selected through the AWS Management Console when you create your Object
-        /// Lambda Access Point.
+        /// You can include any number of metadata headers. When including a metadata header,
+        /// it should be prefaced with <code>x-amz-meta</code>. For example, <code>x-amz-meta-my-custom-header:
+        /// MyCustomValue</code>. The primary use case for this is to forward <code>GetObject</code>
+        /// metadata.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Web Services provides some prebuilt Lambda functions that you can use with
+        /// S3 Object Lambda to detect and redact personally identifiable information (PII) and
+        /// decompress S3 objects. These Lambda functions are available in the Amazon Web Services
+        /// Serverless Application Repository, and can be selected through the Amazon Web Services
+        /// Management Console when you create your Object Lambda Access Point.
         /// </para>
         ///  
         /// <para>
@@ -23600,7 +23856,7 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// For information on how to view and use these functions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/olap-examples.html">Using
-        /// AWS built Lambda functions</a> in the <i>Amazon S3 User Guide</i>.
+        /// Amazon Web Services built Lambda functions</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the WriteGetObjectResponse service method.</param>

@@ -35,8 +35,11 @@ namespace Amazon.S3.Model
         private bool? bucketKeyEnabled;
 
         /// <summary>
-        /// <para>Indicates whether the copied object uses bucket key for server-side 
-        /// encryption with AWS KMS (SSE-KMS).</para>
+        /// Gets and sets the property BucketKeyEnabled. 
+        /// <para>
+        /// Indicates whether the copied object uses an S3 Bucket Key for server-side encryption
+        /// with Amazon Web Services KMS (SSE-KMS).
+        /// </para>
         /// </summary>
         public bool BucketKeyEnabled
         {
@@ -120,6 +123,11 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Specifies the AWS KMS Encryption Context to use for object encryption.
         /// The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.
+        /// <para>
+        /// If present, specifies the Amazon Web Services KMS Encryption Context to use for object
+        /// encryption. The value of this header is a base64-encoded UTF-8 string holding JSON
+        /// with the encryption context key-value pairs.
+        /// </para>
         /// </summary>
         public string ServerSideEncryptionKeyManagementServiceEncryptionContext
         {
@@ -129,6 +137,11 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// The id of the AWS Key Management Service key that Amazon S3 uses to encrypt and decrypt the object.
+        /// <para>
+        /// If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon
+        /// Web Services KMS) symmetric customer managed customer master key (CMK) that was used
+        /// for the object.
+        /// </para>
         /// </summary>
         public string ServerSideEncryptionKeyManagementServiceKeyId
         {

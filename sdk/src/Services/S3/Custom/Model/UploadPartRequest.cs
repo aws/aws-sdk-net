@@ -56,10 +56,11 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
-    /// If the upload request is signed with Signature Version 4, then AWS S3 uses the <code>x-amz-content-sha256</code>
-    /// header as a checksum instead of <code>Content-MD5</code>. For more information see
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html">Authenticating
-    /// Requests: Using the Authorization Header (AWS Signature Version 4)</a>. 
+    /// If the upload request is signed with Signature Version 4, then Amazon Web Services
+    /// S3 uses the <code>x-amz-content-sha256</code> header as a checksum instead of <code>Content-MD5</code>.
+    /// For more information see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html">Authenticating
+    /// Requests: Using the Authorization Header (Amazon Web Services Signature Version 4)</a>.
+    /// 
     /// </para>
     ///  
     /// <para>
@@ -83,10 +84,10 @@ namespace Amazon.S3.Model
     /// <para>
     /// You can optionally request server-side encryption where Amazon S3 encrypts your data
     /// as it writes it to disks in its data centers and decrypts it for you when you access
-    /// it. You have the option of providing your own encryption key, or you can use the AWS
-    /// managed encryption keys. If you choose to provide your own encryption key, the request
-    /// headers you provide in the request must match the headers you used in the request
-    /// to initiate the upload by using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>.
+    /// it. You have the option of providing your own encryption key, or you can use the Amazon
+    /// Web Services managed encryption keys. If you choose to provide your own encryption
+    /// key, the request headers you provide in the request must match the headers you used
+    /// in the request to initiate the upload by using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>.
     /// For more information, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
     /// Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
@@ -116,7 +117,7 @@ namespace Amazon.S3.Model
     /// <para>
     /// x-amz-server-side-encryption-customer-key-MD5
     /// </para>
-    ///  </li> </ul> <p class="title"> <b>Special Errors</b> 
+    ///  </li> </ul> <para class="title"> <b>Special Errors</b> 
     /// </para>
     ///  <ul> <li> <ul> <li> 
     /// <para>
@@ -135,7 +136,7 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <i>SOAP Fault Code Prefix: Client</i> 
     /// </para>
-    ///  </li> </ul> </li> </ul> <p class="title"> <b>Related Resources</b> 
+    ///  </li> </ul> </li> </ul> <para class="title"> <b>Related Resources</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -208,18 +209,18 @@ namespace Amazon.S3.Model
         /// <para>
         /// When using this action with an access point, you must direct requests to the access
         /// point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-        /// When using this action with an access point through the AWS SDKs, you provide the
-        /// access point ARN in place of the bucket name. For more information about access point
-        /// ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+        /// When using this action with an access point through the Amazon Web Services SDKs,
+        /// you provide the access point ARN in place of the bucket name. For more information
+        /// about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
         /// access points</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// When using this action with Amazon S3 on Outposts, you must direct requests to the
         /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-        /// When using this action using S3 on Outposts through the AWS SDKs, you provide the
-        /// Outposts bucket ARN in place of the bucket name. For more information about S3 on
-        /// Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+        /// When using this action using S3 on Outposts through the Amazon Web Services SDKs,
+        /// you provide the Outposts bucket ARN in place of the bucket name. For more information
+        /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
         /// S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>

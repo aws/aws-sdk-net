@@ -31,7 +31,25 @@ namespace Amazon.S3.Model
     /// Container for the parameters to the PutObjectLockConfiguration operation.
     /// Places an Object Lock configuration on the specified bucket. The rule specified in
     /// the Object Lock configuration will be applied by default to every new object placed
-    /// in the specified bucket.
+    /// in the specified bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
+    /// Objects</a>. 
+    /// 
+    ///  <note> <ul> <li> 
+    /// <para>
+    /// The <code>DefaultRetention</code> settings require both a mode and a period.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The <code>DefaultRetention</code> period can be either <code>Days</code> or <code>Years</code>
+    /// but you must select one. You cannot specify <code>Days</code> and <code>Years</code>
+    /// at the same time.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You can only enable Object Lock for new buckets. If you want to turn on Object Lock
+    /// for an existing bucket, contact Amazon Web Services Support.
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class PutObjectLockConfigurationRequest : AmazonWebServiceRequest
     {
@@ -63,7 +81,12 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ContentMD5. 
         /// <para>
-        /// The MD5 signature for the configuration included in your request.
+        /// The MD5 hash for the request body.
+        /// </para>
+        ///  
+        /// <para>
+        /// For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon
+        /// Web Services SDKs, this field is calculated automatically.
         /// </para>
         /// </summary>
         public string ContentMD5

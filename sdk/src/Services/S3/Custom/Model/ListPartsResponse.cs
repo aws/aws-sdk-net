@@ -42,7 +42,11 @@ namespace Amazon.S3.Model
         private RequestCharged requestCharged;
 
         /// <summary>
-        /// <para>The name of the bucket to which the multipart upload was initiated.</para> 
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// The name of the bucket to which the multipart upload was initiated. Does not return
+        /// the access point ARN or access point alias if used.
+        /// </para>
         /// </summary>
         public string BucketName
         {
@@ -173,8 +177,13 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Identifies who initiated the multipart upload.
-        ///  
+        /// Gets and sets the property Initiator. 
+        /// <para>
+        /// Container element that identifies who initiated the multipart upload. If the initiator
+        /// is an Amazon Web Services account, this element provides the same information as the
+        /// <code>Owner</code> element. If the initiator is an IAM User, this element provides
+        /// the user ARN and display name.
+        /// </para>
         /// </summary>
         public Initiator Initiator
         {

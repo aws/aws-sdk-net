@@ -26,8 +26,9 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Container for the parameters to the PutBucket operation.
     /// Creates a new S3 bucket. To create a bucket, you must register with Amazon S3 and
-    /// have a valid AWS Access Key ID to authenticate requests. Anonymous requests are never
-    /// allowed to create buckets. By creating the bucket, you become the bucket owner.
+    /// have a valid Amazon Web Services Access Key ID to authenticate requests. Anonymous
+    /// requests are never allowed to create buckets. By creating the bucket, you become the
+    /// bucket owner.
     /// 
     ///  
     /// <para>
@@ -86,7 +87,8 @@ namespace Amazon.S3.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
+    ///  <code>id</code> – if the value specified is the canonical user ID of an Amazon Web
+    /// Services account
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -94,13 +96,13 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
-    /// account
+    ///  <code>emailAddress</code> – if the value specified is the email address of an Amazon
+    /// Web Services account
     /// </para>
     ///  <note> 
     /// <para>
-    /// Using email addresses to specify a grantee is only supported in the following AWS
-    /// Regions: 
+    /// Using email addresses to specify a grantee is only supported in the following Amazon
+    /// Web Services Regions: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -137,12 +139,13 @@ namespace Amazon.S3.Model
     ///  </li> </ul> 
     /// <para>
     /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-    /// and Endpoints</a> in the AWS General Reference.
+    /// and Endpoints</a> in the Amazon Web Services General Reference.
     /// </para>
     ///  </note> </li> </ul> 
     /// <para>
-    /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
-    /// identified by account IDs permissions to read object data and its metadata:
+    /// For example, the following <code>x-amz-grant-read</code> header grants the Amazon
+    /// Web Services accounts identified by account IDs permissions to read object data and
+    /// its metadata:
     /// </para>
     ///  
     /// <para>
@@ -154,6 +157,24 @@ namespace Amazon.S3.Model
     /// do both.
     /// </para>
     ///  </note> 
+    /// <para>
+    ///  <b>Permissions</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// If your <code>CreateBucket</code> request specifies ACL permissions and the ACL is
+    /// public-read, public-read-write, authenticated-read, or if you specify access permissions
+    /// explicitly through any other ACL, both <code>s3:CreateBucket</code> and <code>s3:PutBucketAcl</code>
+    /// permissions are needed. If the ACL the <code>CreateBucket</code> request is private,
+    /// only <code>s3:CreateBucket</code> permission is needed. 
+    /// </para>
+    ///  
+    /// <para>
+    /// If <code>ObjectLockEnabledForBucket</code> is set to true in your <code>CreateBucket</code>
+    /// request, <code>s3:PutBucketObjectLockConfiguration</code> and <code>s3:PutBucketVersioning</code>
+    /// permissions are required.
+    /// </para>
+    ///  
     /// <para>
     /// The following operations are related to <code>CreateBucket</code>:
     /// </para>

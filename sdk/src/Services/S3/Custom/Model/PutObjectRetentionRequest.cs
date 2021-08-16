@@ -31,11 +31,23 @@ namespace Amazon.S3.Model
     /// Container for the parameters to the PutObjectRetention operation.
     /// Places an Object Retention configuration on an object. For more information, see <a
     /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking Objects</a>.
-    /// 
+    /// Users or accounts require the <code>s3:PutObjectRetention</code> permission in order
+    /// to place an Object Retention configuration on objects. Bypassing a Governance Retention
+    /// configuration requires the <code>s3:BypassGovernanceRetention</code> permission. 
     /// 
     ///  
     /// <para>
     /// This action is not supported by Amazon S3 on Outposts.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Permissions</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// When the Object Lock retention mode is set to compliance, you need <code>s3:PutObjectRetention</code>
+    /// and <code>s3:BypassGovernanceRetention</code> permissions. For other requests to <code>PutObjectRetention</code>,
+    /// only <code>s3:PutObjectRetention</code> permissions are required.
     /// </para>
     /// </summary>
     public partial class PutObjectRetentionRequest : AmazonWebServiceRequest
@@ -59,9 +71,9 @@ namespace Amazon.S3.Model
         /// <para>
         /// When using this action with an access point, you must direct requests to the access
         /// point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-        /// When using this action with an access point through the AWS SDKs, you provide the
-        /// access point ARN in place of the bucket name. For more information about access point
-        /// ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+        /// When using this action with an access point through the Amazon Web Services SDKs,
+        /// you provide the access point ARN in place of the bucket name. For more information
+        /// about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
         /// access points</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
@@ -102,8 +114,8 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field
-        /// is calculated automatically.
+        /// For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon
+        /// Web Services SDKs, this field is calculated automatically.
         /// </para>
         /// </summary>
         public string ContentMD5

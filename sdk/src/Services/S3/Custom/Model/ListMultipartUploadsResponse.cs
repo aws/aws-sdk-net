@@ -40,7 +40,11 @@ namespace Amazon.S3.Model
         private string prefix;
 
         /// <summary>
-        /// <para>The name of the bucket to which the multipart upload was initiated.</para> 
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// The name of the bucket to which the multipart upload was initiated. Does not return
+        /// the access point ARN or access point alias if used.
+        /// </para>
         /// </summary>
         public string BucketName
         {
