@@ -805,6 +805,11 @@
     <max>320000000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.GetInterpolatedAssetPropertyValuesRequest.IntervalWindowInSeconds</property>
+    <min>1</min>
+    <max>320000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.GetInterpolatedAssetPropertyValuesRequest.MaxResults</property>
     <min>1</min>
   </property-value-rule>

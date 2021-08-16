@@ -71,6 +71,9 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetIntervalInSeconds())
                 request.Parameters.Add("intervalInSeconds", StringUtils.FromLong(publicRequest.IntervalInSeconds));
             
+            if (publicRequest.IsSetIntervalWindowInSeconds())
+                request.Parameters.Add("intervalWindowInSeconds", StringUtils.FromLong(publicRequest.IntervalWindowInSeconds));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
