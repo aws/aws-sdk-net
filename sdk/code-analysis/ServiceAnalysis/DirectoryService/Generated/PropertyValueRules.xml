@@ -56,7 +56,7 @@
     <property>Amazon.DirectoryService.Model.CreateAliasRequest.Alias</property>
     <min>1</min>
     <max>62</max>
-    <pattern>^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*</pattern>
+    <pattern>^(?!D-|d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.CreateAliasRequest.DirectoryId</property>
@@ -66,7 +66,7 @@
     <property>Amazon.DirectoryService.Model.CreateAliasResponse.Alias</property>
     <min>1</min>
     <max>62</max>
-    <pattern>^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*</pattern>
+    <pattern>^(?!D-|d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.CreateAliasResponse.DirectoryId</property>
@@ -247,6 +247,15 @@
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DescribeCertificateRequest.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DescribeClientAuthenticationSettingsRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DescribeClientAuthenticationSettingsRequest.Limit</property>
+    <min>1</min>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DescribeConditionalForwardersRequest.DirectoryId</property>
@@ -648,7 +657,7 @@
     <property>Amazon.DirectoryService.Model.DirectoryDescription.Alias</property>
     <min>1</min>
     <max>62</max>
-    <pattern>^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*</pattern>
+    <pattern>^(?!D-|d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DirectoryDescription.Description</property>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// The Region you specified is the same Region where the AWS Managed Microsoft AD directory
+    /// The Region you specified is the same Region where the Managed Microsoft AD directory
     /// was created. Specify a different Region and try again.
     /// </summary>
     #if !NETSTANDARD

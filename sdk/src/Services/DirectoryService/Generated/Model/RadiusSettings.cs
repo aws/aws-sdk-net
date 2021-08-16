@@ -82,8 +82,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property RadiusPort. 
         /// <para>
-        /// The port that your RADIUS server is using for communications. Your on-premises network
-        /// must allow inbound traffic over this port from the AWS Directory Service servers.
+        /// The port that your RADIUS server is using for communications. Your self-managed network
+        /// must allow inbound traffic over this port from the Directory Service servers.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1025, Max=65535)]

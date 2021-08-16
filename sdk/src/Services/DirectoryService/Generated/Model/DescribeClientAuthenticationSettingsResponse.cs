@@ -29,36 +29,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// This is the response object from the ListLogSubscriptions operation.
+    /// This is the response object from the DescribeClientAuthenticationSettings operation.
     /// </summary>
-    public partial class ListLogSubscriptionsResponse : AmazonWebServiceResponse
+    public partial class DescribeClientAuthenticationSettingsResponse : AmazonWebServiceResponse
     {
-        private List<LogSubscription> _logSubscriptions = new List<LogSubscription>();
+        private List<ClientAuthenticationSettingInfo> _clientAuthenticationSettingsInfo = new List<ClientAuthenticationSettingInfo>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property LogSubscriptions. 
+        /// Gets and sets the property ClientAuthenticationSettingsInfo. 
         /// <para>
-        /// A list of active <a>LogSubscription</a> objects for calling the Amazon Web Services
-        /// account.
+        /// Information about the type of client authentication for the specified directory. The
+        /// following information is retrieved: The date and time when the status of the client
+        /// authentication type was last updated, whether the client authentication type is enabled
+        /// or disabled, and the type of client authentication.
         /// </para>
         /// </summary>
-        public List<LogSubscription> LogSubscriptions
+        public List<ClientAuthenticationSettingInfo> ClientAuthenticationSettingsInfo
         {
-            get { return this._logSubscriptions; }
-            set { this._logSubscriptions = value; }
+            get { return this._clientAuthenticationSettingsInfo; }
+            set { this._clientAuthenticationSettingsInfo = value; }
         }
 
-        // Check to see if LogSubscriptions property is set
-        internal bool IsSetLogSubscriptions()
+        // Check to see if ClientAuthenticationSettingsInfo property is set
+        internal bool IsSetClientAuthenticationSettingsInfo()
         {
-            return this._logSubscriptions != null && this._logSubscriptions.Count > 0; 
+            return this._clientAuthenticationSettingsInfo != null && this._clientAuthenticationSettingsInfo.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next set of items to return.
+        /// The next token used to retrieve the client authentication settings if the number of
+        /// setting types exceeds page limit and there is another page.
         /// </para>
         /// </summary>
         public string NextToken

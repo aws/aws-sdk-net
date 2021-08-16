@@ -30,16 +30,16 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTrust operation.
-    /// AWS Directory Service for Microsoft Active Directory allows you to configure trust
-    /// relationships. For example, you can establish a trust between your AWS Managed Microsoft
-    /// AD directory, and your existing on-premises Microsoft Active Directory. This would
-    /// allow you to provide users and groups access to resources in either domain, with a
-    /// single set of credentials.
+    /// Directory Service for Microsoft Active Directory allows you to configure trust relationships.
+    /// For example, you can establish a trust between your Managed Microsoft AD directory,
+    /// and your existing self-managed Microsoft Active Directory. This would allow you to
+    /// provide users and groups access to resources in either domain, with a single set of
+    /// credentials.
     /// 
     ///  
     /// <para>
-    /// This action initiates the creation of the AWS side of a trust relationship between
-    /// an AWS Managed Microsoft AD directory and an external domain. You can create either
+    /// This action initiates the creation of the Amazon Web Services side of a trust relationship
+    /// between an Managed Microsoft AD directory and an external domain. You can create either
     /// a forest trust or an external trust.
     /// </para>
     /// </summary>
@@ -74,8 +74,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The Directory ID of the AWS Managed Microsoft AD directory for which to establish
-        /// the trust relationship.
+        /// The Directory ID of the Managed Microsoft AD directory for which to establish the
+        /// trust relationship.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

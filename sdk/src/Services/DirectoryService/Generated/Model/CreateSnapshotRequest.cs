@@ -30,7 +30,8 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSnapshot operation.
-    /// Creates a snapshot of a Simple AD or Microsoft AD directory in the AWS cloud.
+    /// Creates a snapshot of a Simple AD or Microsoft AD directory in the Amazon Web Services
+    /// cloud.
     /// 
     ///  <note> 
     /// <para>

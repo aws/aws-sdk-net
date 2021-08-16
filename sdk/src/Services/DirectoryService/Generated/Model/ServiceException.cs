@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// An exception has occurred in AWS Directory Service.
+    /// An exception has occurred in Directory Service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -30,9 +30,9 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateConditionalForwarder operation.
-    /// Creates a conditional forwarder associated with your AWS directory. Conditional forwarders
-    /// are required in order to set up a trust relationship with another domain. The conditional
-    /// forwarder points to the trusted domain.
+    /// Creates a conditional forwarder associated with your Amazon Web Services directory.
+    /// Conditional forwarders are required in order to set up a trust relationship with another
+    /// domain. The conditional forwarder points to the trusted domain.
     /// </summary>
     public partial class CreateConditionalForwarderRequest : AmazonDirectoryServiceRequest
     {
@@ -43,7 +43,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The directory ID of the AWS directory for which you are creating the conditional forwarder.
+        /// The directory ID of the Amazon Web Services directory for which you are creating the
+        /// conditional forwarder.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

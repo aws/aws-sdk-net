@@ -57,7 +57,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property PrimaryRegion. 
         /// <para>
-        /// The Region where the AWS Managed Microsoft AD directory was originally created.
+        /// The Region where the Managed Microsoft AD directory was originally created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=8, Max=32)]

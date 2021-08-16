@@ -30,18 +30,18 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the AddIpRoutes operation.
-    /// If the DNS server for your on-premises domain uses a publicly addressable IP address,
+    /// If the DNS server for your self-managed domain uses a publicly addressable IP address,
     /// you must add a CIDR address block to correctly route traffic to and from your Microsoft
     /// AD on Amazon Web Services. <i>AddIpRoutes</i> adds this address block. You can also
     /// use <i>AddIpRoutes</i> to facilitate routing traffic that uses public IP ranges from
-    /// your Microsoft AD on AWS to a peer VPC. 
+    /// your Microsoft AD on Amazon Web Services to a peer VPC. 
     /// 
     ///  
     /// <para>
     /// Before you call <i>AddIpRoutes</i>, ensure that all of the required permissions have
     /// been explicitly granted through a policy. For details about what permissions are required
-    /// to run the <i>AddIpRoutes</i> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
-    /// Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+    /// to run the <i>AddIpRoutes</i> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+    /// Service API Permissions: Actions, Resources, and Conditions Reference</a>.
     /// </para>
     /// </summary>
     public partial class AddIpRoutesRequest : AmazonDirectoryServiceRequest
@@ -73,7 +73,7 @@ namespace Amazon.DirectoryService.Model
         /// Gets and sets the property IpRoutes. 
         /// <para>
         /// IP address blocks, using CIDR format, of the traffic to route. This is often the IP
-        /// address block of the DNS server used for your on-premises domain.
+        /// address block of the DNS server used for your self-managed domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -93,8 +93,8 @@ namespace Amazon.DirectoryService.Model
         /// Gets and sets the property UpdateSecurityGroupForDirectoryControllers. 
         /// <para>
         /// If set to true, updates the inbound and outbound rules of the security group that
-        /// has the description: "AWS created security group for <i>directory ID</i> directory
-        /// controllers." Following are the new rules: 
+        /// has the description: "Amazon Web Services created security group for <i>directory
+        /// ID</i> directory controllers." Following are the new rules: 
         /// </para>
         ///  
         /// <para>

@@ -29,29 +29,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeTrusts operation.
-    /// Obtains information about the trust relationships for this account.
-    /// 
-    ///  
-    /// <para>
-    /// If no input parameters are provided, such as DirectoryId or TrustIds, this request
-    /// describes all the trust relationships belonging to the account.
-    /// </para>
+    /// Container for the parameters to the DescribeClientAuthenticationSettings operation.
+    /// Retrieves information about the type of client authentication for the specified directory,
+    /// if the type is specified. If no type is specified, information about all client authentication
+    /// types that are supported for the specified directory is retrieved. Currently, only
+    /// <code>SmartCard</code> is supported.
     /// </summary>
-    public partial class DescribeTrustsRequest : AmazonDirectoryServiceRequest
+    public partial class DescribeClientAuthenticationSettingsRequest : AmazonDirectoryServiceRequest
     {
         private string _directoryId;
         private int? _limit;
         private string _nextToken;
-        private List<string> _trustIds = new List<string>();
+        private ClientAuthenticationType _type;
 
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The Directory ID of the Amazon Web Services directory that is a part of the requested
-        /// trust relationship.
+        /// The identifier of the directory for which to retrieve information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }
@@ -67,10 +64,11 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of objects to return.
+        /// The maximum number of items to return. If this value is zero, the maximum number of
+        /// items is specified by the limitations of the operation. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Min=1, Max=50)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -86,8 +84,9 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <i>DescribeTrustsResult.NextToken</i> value from a previous call to <a>DescribeTrusts</a>.
-        /// Pass null if this is the first call.
+        /// The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous
+        /// call to <a>DescribeClientAuthenticationSettings</a>. Pass null if this is the first
+        /// call.
         /// </para>
         /// </summary>
         public string NextToken
@@ -103,27 +102,23 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrustIds. 
+        /// Gets and sets the property Type. 
         /// <para>
-        /// A list of identifiers of the trust relationships for which to obtain the information.
-        /// If this member is null, all trust relationships that belong to the current account
-        /// are returned.
-        /// </para>
-        ///  
-        /// <para>
-        /// An empty list results in an <code>InvalidParameterException</code> being thrown.
+        /// The type of client authentication for which to retrieve information. If no type is
+        /// specified, a list of all client authentication types that are supported for the specified
+        /// directory is retrieved.
         /// </para>
         /// </summary>
-        public List<string> TrustIds
+        public ClientAuthenticationType Type
         {
-            get { return this._trustIds; }
-            set { this._trustIds = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
-        // Check to see if TrustIds property is set
-        internal bool IsSetTrustIds()
+        // Check to see if Type property is set
+        internal bool IsSetType()
         {
-            return this._trustIds != null && this._trustIds.Count > 0; 
+            return this._type != null;
         }
 
     }

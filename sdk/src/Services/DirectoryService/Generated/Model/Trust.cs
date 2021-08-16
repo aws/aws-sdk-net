@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Describes a trust relationship between an AWS Managed Microsoft AD directory and an
-    /// external domain.
+    /// Describes a trust relationship between an Managed Microsoft AD directory and an external
+    /// domain.
     /// </summary>
     public partial class Trust
     {
@@ -67,7 +67,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The Directory ID of the AWS directory involved in the trust relationship.
+        /// The Directory ID of the Amazon Web Services directory involved in the trust relationship.
         /// </para>
         /// </summary>
         public string DirectoryId

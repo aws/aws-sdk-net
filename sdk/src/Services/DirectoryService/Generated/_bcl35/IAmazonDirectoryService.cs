@@ -29,23 +29,24 @@ namespace Amazon.DirectoryService
     /// <summary>
     /// Interface for accessing DirectoryService
     ///
-    /// AWS Directory Service 
+    /// Directory Service 
     /// <para>
-    /// AWS Directory Service is a web service that makes it easy for you to setup and run
-    /// directories in the AWS cloud, or connect your AWS resources with an existing on-premises
-    /// Microsoft Active Directory. This guide provides detailed information about AWS Directory
-    /// Service operations, data types, parameters, and errors. For information about AWS
-    /// Directory Services features, see <a href="https://aws.amazon.com/directoryservice/">AWS
-    /// Directory Service</a> and the <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html">AWS
-    /// Directory Service Administration Guide</a>.
+    /// Directory Service is a web service that makes it easy for you to setup and run directories
+    /// in the Amazon Web Services cloud, or connect your Amazon Web Services resources with
+    /// an existing self-managed Microsoft Active Directory. This guide provides detailed
+    /// information about Directory Service operations, data types, parameters, and errors.
+    /// For information about Directory Services features, see <a href="https://aws.amazon.com/directoryservice/">Directory
+    /// Service</a> and the <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html">Directory
+    /// Service Administration Guide</a>.
     /// </para>
     ///  <note> 
     /// <para>
-    /// AWS provides SDKs that consist of libraries and sample code for various programming
-    /// languages and platforms (Java, Ruby, .Net, iOS, Android, etc.). The SDKs provide a
-    /// convenient way to create programmatic access to AWS Directory Service and other AWS
-    /// services. For more information about the AWS SDKs, including how to download and install
-    /// them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
+    /// Amazon Web Services provides SDKs that consist of libraries and sample code for various
+    /// programming languages and platforms (Java, Ruby, .Net, iOS, Android, etc.). The SDKs
+    /// provide a convenient way to create programmatic access to Directory Service and other
+    /// Amazon Web Services services. For more information about the Amazon Web Services SDKs,
+    /// including how to download and install them, see <a href="http://aws.amazon.com/tools/">Tools
+    /// for Amazon Web Services</a>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -75,7 +76,7 @@ namespace Amazon.DirectoryService
         /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryAlreadySharedException">
-        /// The specified directory has already been shared with this AWS account.
+        /// The specified directory has already been shared with this Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
         /// The specified entity could not be found.
@@ -84,7 +85,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AcceptSharedDirectory">REST API Reference for AcceptSharedDirectory Operation</seealso>
         AcceptSharedDirectoryResponse AcceptSharedDirectory(AcceptSharedDirectoryRequest request);
@@ -121,18 +122,18 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// If the DNS server for your on-premises domain uses a publicly addressable IP address,
+        /// If the DNS server for your self-managed domain uses a publicly addressable IP address,
         /// you must add a CIDR address block to correctly route traffic to and from your Microsoft
         /// AD on Amazon Web Services. <i>AddIpRoutes</i> adds this address block. You can also
         /// use <i>AddIpRoutes</i> to facilitate routing traffic that uses public IP ranges from
-        /// your Microsoft AD on AWS to a peer VPC. 
+        /// your Microsoft AD on Amazon Web Services to a peer VPC. 
         /// 
         ///  
         /// <para>
         /// Before you call <i>AddIpRoutes</i>, ensure that all of the required permissions have
         /// been explicitly granted through a policy. For details about what permissions are required
-        /// to run the <i>AddIpRoutes</i> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
-        /// Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+        /// to run the <i>AddIpRoutes</i> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+        /// Service API Permissions: Actions, Resources, and Conditions Reference</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddIpRoutes service method.</param>
@@ -158,7 +159,7 @@ namespace Amazon.DirectoryService
         /// IP address blocks.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddIpRoutes">REST API Reference for AddIpRoutes Operation</seealso>
         AddIpRoutesResponse AddIpRoutes(AddIpRoutesRequest request);
@@ -207,7 +208,7 @@ namespace Amazon.DirectoryService
         /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryAlreadyInRegionException">
-        /// The Region you specified is the same Region where the AWS Managed Microsoft AD directory
+        /// The Region you specified is the same Region where the Managed Microsoft AD directory
         /// was created. Specify a different Region and try again.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
@@ -227,7 +228,7 @@ namespace Amazon.DirectoryService
         /// per directory.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -284,7 +285,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.TagLimitExceededException">
         /// The maximum allowed number of tags was exceeded.
@@ -339,7 +340,7 @@ namespace Amazon.DirectoryService
         /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CancelSchemaExtension">REST API Reference for CancelSchemaExtension Operation</seealso>
         CancelSchemaExtensionResponse CancelSchemaExtension(CancelSchemaExtensionRequest request);
@@ -376,14 +377,14 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Creates an AD Connector to connect to an on-premises directory.
+        /// Creates an AD Connector to connect to a self-managed directory.
         /// 
         ///  
         /// <para>
         /// Before you call <code>ConnectDirectory</code>, ensure that all of the required permissions
         /// have been explicitly granted through a policy. For details about what permissions
-        /// are required to run the <code>ConnectDirectory</code> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
-        /// Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+        /// are required to run the <code>ConnectDirectory</code> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+        /// Service API Permissions: Actions, Resources, and Conditions Reference</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConnectDirectory service method.</param>
@@ -400,7 +401,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ConnectDirectory">REST API Reference for ConnectDirectory Operation</seealso>
         ConnectDirectoryResponse ConnectDirectory(ConnectDirectoryRequest request);
@@ -463,7 +464,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         CreateAliasResponse CreateAlias(CreateAliasRequest request);
@@ -524,7 +525,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -564,9 +565,9 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Creates a conditional forwarder associated with your AWS directory. Conditional forwarders
-        /// are required in order to set up a trust relationship with another domain. The conditional
-        /// forwarder points to the trusted domain.
+        /// Creates a conditional forwarder associated with your Amazon Web Services directory.
+        /// Conditional forwarders are required in order to set up a trust relationship with another
+        /// domain. The conditional forwarder points to the trusted domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConditionalForwarder service method.</param>
         /// 
@@ -587,7 +588,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -628,14 +629,14 @@ namespace Amazon.DirectoryService
 
         /// <summary>
         /// Creates a Simple AD directory. For more information, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_simple_ad.html">Simple
-        /// Active Directory</a> in the <i>AWS Directory Service Admin Guide</i>.
+        /// Active Directory</a> in the <i>Directory Service Admin Guide</i>.
         /// 
         ///  
         /// <para>
         /// Before you call <code>CreateDirectory</code>, ensure that all of the required permissions
         /// have been explicitly granted through a policy. For details about what permissions
-        /// are required to run the <code>CreateDirectory</code> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
-        /// Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+        /// are required to run the <code>CreateDirectory</code> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+        /// Service API Permissions: Actions, Resources, and Conditions Reference</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDirectory service method.</param>
@@ -652,7 +653,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
         CreateDirectoryResponse CreateDirectory(CreateDirectoryRequest request);
@@ -690,7 +691,7 @@ namespace Amazon.DirectoryService
 
         /// <summary>
         /// Creates a subscription to forward real-time Directory Service domain controller security
-        /// logs to the specified Amazon CloudWatch log group in your AWS account.
+        /// logs to the specified Amazon CloudWatch log group in your Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLogSubscription service method.</param>
         /// 
@@ -708,7 +709,7 @@ namespace Amazon.DirectoryService
         /// The account does not have sufficient permission to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -748,15 +749,16 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Creates a Microsoft AD directory in the AWS Cloud. For more information, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS
-        /// Managed Microsoft AD</a> in the <i>AWS Directory Service Admin Guide</i>.
+        /// Creates a Microsoft AD directory in the Amazon Web Services Cloud. For more information,
+        /// see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">Managed
+        /// Microsoft AD</a> in the <i>Directory Service Admin Guide</i>.
         /// 
         ///  
         /// <para>
         /// Before you call <i>CreateMicrosoftAD</i>, ensure that all of the required permissions
         /// have been explicitly granted through a policy. For details about what permissions
-        /// are required to run the <i>CreateMicrosoftAD</i> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
-        /// Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+        /// are required to run the <i>CreateMicrosoftAD</i> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+        /// Service API Permissions: Actions, Resources, and Conditions Reference</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMicrosoftAD service method.</param>
@@ -773,7 +775,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -813,7 +815,8 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Creates a snapshot of a Simple AD or Microsoft AD directory in the AWS cloud.
+        /// Creates a snapshot of a Simple AD or Microsoft AD directory in the Amazon Web Services
+        /// cloud.
         /// 
         ///  <note> 
         /// <para>
@@ -834,7 +837,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.SnapshotLimitExceededException">
         /// The maximum number of manual snapshots for the directory has been reached. You can
@@ -876,16 +879,16 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// AWS Directory Service for Microsoft Active Directory allows you to configure trust
-        /// relationships. For example, you can establish a trust between your AWS Managed Microsoft
-        /// AD directory, and your existing on-premises Microsoft Active Directory. This would
-        /// allow you to provide users and groups access to resources in either domain, with a
-        /// single set of credentials.
+        /// Directory Service for Microsoft Active Directory allows you to configure trust relationships.
+        /// For example, you can establish a trust between your Managed Microsoft AD directory,
+        /// and your existing self-managed Microsoft Active Directory. This would allow you to
+        /// provide users and groups access to resources in either domain, with a single set of
+        /// credentials.
         /// 
         ///  
         /// <para>
-        /// This action initiates the creation of the AWS side of a trust relationship between
-        /// an AWS Managed Microsoft AD directory and an external domain. You can create either
+        /// This action initiates the creation of the Amazon Web Services side of a trust relationship
+        /// between an Managed Microsoft AD directory and an external domain. You can create either
         /// a forest trust or an external trust.
         /// </para>
         /// </summary>
@@ -905,7 +908,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -945,7 +948,8 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Deletes a conditional forwarder that has been set up for your AWS directory.
+        /// Deletes a conditional forwarder that has been set up for your Amazon Web Services
+        /// directory.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConditionalForwarder service method.</param>
         /// 
@@ -963,7 +967,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -1003,14 +1007,14 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Deletes an AWS Directory Service directory.
+        /// Deletes an Directory Service directory.
         /// 
         ///  
         /// <para>
         /// Before you call <code>DeleteDirectory</code>, ensure that all of the required permissions
         /// have been explicitly granted through a policy. For details about what permissions
-        /// are required to run the <code>DeleteDirectory</code> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
-        /// Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+        /// are required to run the <code>DeleteDirectory</code> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+        /// Service API Permissions: Actions, Resources, and Conditions Reference</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDirectory service method.</param>
@@ -1023,7 +1027,7 @@ namespace Amazon.DirectoryService
         /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
         DeleteDirectoryResponse DeleteDirectory(DeleteDirectoryRequest request);
@@ -1072,7 +1076,7 @@ namespace Amazon.DirectoryService
         /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -1127,7 +1131,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request);
@@ -1164,7 +1168,7 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Deletes an existing trust relationship between your AWS Managed Microsoft AD directory
+        /// Deletes an existing trust relationship between your Managed Microsoft AD directory
         /// and an external domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTrust service method.</param>
@@ -1180,7 +1184,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -1246,7 +1250,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -1286,7 +1290,7 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Removes the specified directory as a publisher to the specified SNS topic.
+        /// Removes the specified directory as a publisher to the specified Amazon SNS topic.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterEventTopic service method.</param>
         /// 
@@ -1301,7 +1305,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterEventTopic">REST API Reference for DeregisterEventTopic Operation</seealso>
         DeregisterEventTopicResponse DeregisterEventTopic(DeregisterEventTopicRequest request);
@@ -1357,7 +1361,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -1393,6 +1397,67 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  DescribeClientAuthenticationSettings
+
+
+        /// <summary>
+        /// Retrieves information about the type of client authentication for the specified directory,
+        /// if the type is specified. If no type is specified, information about all client authentication
+        /// types that are supported for the specified directory is retrieved. Currently, only
+        /// <code>SmartCard</code> is supported.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientAuthenticationSettings service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClientAuthenticationSettings service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
+        /// Client authentication is not available in this region at this time.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeClientAuthenticationSettings">REST API Reference for DescribeClientAuthenticationSettings Operation</seealso>
+        DescribeClientAuthenticationSettingsResponse DescribeClientAuthenticationSettings(DescribeClientAuthenticationSettingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClientAuthenticationSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientAuthenticationSettings operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClientAuthenticationSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeClientAuthenticationSettings">REST API Reference for DescribeClientAuthenticationSettings Operation</seealso>
+        IAsyncResult BeginDescribeClientAuthenticationSettings(DescribeClientAuthenticationSettingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeClientAuthenticationSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClientAuthenticationSettings.</param>
+        /// 
+        /// <returns>Returns a  DescribeClientAuthenticationSettingsResult from DirectoryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeClientAuthenticationSettings">REST API Reference for DescribeClientAuthenticationSettings Operation</seealso>
+        DescribeClientAuthenticationSettingsResponse EndDescribeClientAuthenticationSettings(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeConditionalForwarders
 
 
@@ -1421,7 +1486,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -1497,7 +1562,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectories">REST API Reference for DescribeDirectories Operation</seealso>
         DescribeDirectoriesResponse DescribeDirectories();
@@ -1540,7 +1605,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectories">REST API Reference for DescribeDirectories Operation</seealso>
         DescribeDirectoriesResponse DescribeDirectories(DescribeDirectoriesRequest request);
@@ -1595,7 +1660,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -1635,8 +1700,8 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Obtains information about which SNS topics receive status messages from the specified
-        /// directory.
+        /// Obtains information about which Amazon SNS topics receive status messages from the
+        /// specified directory.
         /// 
         ///  
         /// <para>
@@ -1657,7 +1722,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeEventTopics">REST API Reference for DescribeEventTopics Operation</seealso>
         DescribeEventTopicsResponse DescribeEventTopics(DescribeEventTopicsRequest request);
@@ -1712,7 +1777,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -1773,7 +1838,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -1831,7 +1896,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -1901,7 +1966,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request);
@@ -1962,7 +2027,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -2020,7 +2085,7 @@ namespace Amazon.DirectoryService
         /// Client authentication is already enabled.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -2081,7 +2146,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -2134,7 +2199,7 @@ namespace Amazon.DirectoryService
         /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableRadius">REST API Reference for DisableRadius Operation</seealso>
         DisableRadiusResponse DisableRadius(DisableRadiusRequest request);
@@ -2189,7 +2254,7 @@ namespace Amazon.DirectoryService
         /// The account does not have sufficient permission to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableSso">REST API Reference for DisableSso Operation</seealso>
         DisableSsoResponse DisableSso(DisableSsoRequest request);
@@ -2248,7 +2313,7 @@ namespace Amazon.DirectoryService
         /// must be registered in the system.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -2313,7 +2378,7 @@ namespace Amazon.DirectoryService
         /// must be registered in the system.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -2372,7 +2437,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableRadius">REST API Reference for EnableRadius Operation</seealso>
         EnableRadiusResponse EnableRadius(EnableRadiusRequest request);
@@ -2410,8 +2475,8 @@ namespace Amazon.DirectoryService
 
         /// <summary>
         /// Enables single sign-on for a directory. Single sign-on allows users in your directory
-        /// to access certain AWS services from a computer joined to the directory without having
-        /// to enter their credentials separately.
+        /// to access certain Amazon Web Services services from a computer joined to the directory
+        /// without having to enter their credentials separately.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableSso service method.</param>
         /// 
@@ -2429,7 +2494,7 @@ namespace Amazon.DirectoryService
         /// The account does not have sufficient permission to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSso">REST API Reference for EnableSso Operation</seealso>
         EnableSsoResponse EnableSso(EnableSsoRequest request);
@@ -2477,7 +2542,7 @@ namespace Amazon.DirectoryService
         /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetDirectoryLimits">REST API Reference for GetDirectoryLimits Operation</seealso>
         GetDirectoryLimitsResponse GetDirectoryLimits();
@@ -2495,7 +2560,7 @@ namespace Amazon.DirectoryService
         /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetDirectoryLimits">REST API Reference for GetDirectoryLimits Operation</seealso>
         GetDirectoryLimitsResponse GetDirectoryLimits(GetDirectoryLimitsRequest request);
@@ -2544,7 +2609,7 @@ namespace Amazon.DirectoryService
         /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetSnapshotLimits">REST API Reference for GetSnapshotLimits Operation</seealso>
         GetSnapshotLimitsResponse GetSnapshotLimits(GetSnapshotLimitsRequest request);
@@ -2600,7 +2665,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -2658,7 +2723,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListIpRoutes">REST API Reference for ListIpRoutes Operation</seealso>
         ListIpRoutesResponse ListIpRoutes(ListIpRoutesRequest request);
@@ -2695,7 +2760,7 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Lists the active log subscriptions for the AWS account.
+        /// Lists the active log subscriptions for the Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLogSubscriptions service method.</param>
         /// 
@@ -2710,7 +2775,7 @@ namespace Amazon.DirectoryService
         /// The <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListLogSubscriptions">REST API Reference for ListLogSubscriptions Operation</seealso>
         ListLogSubscriptionsResponse ListLogSubscriptions(ListLogSubscriptionsRequest request);
@@ -2762,7 +2827,7 @@ namespace Amazon.DirectoryService
         /// The <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListSchemaExtensions">REST API Reference for ListSchemaExtensions Operation</seealso>
         ListSchemaExtensionsResponse ListSchemaExtensions(ListSchemaExtensionsRequest request);
@@ -2817,7 +2882,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -2881,7 +2946,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -2921,11 +2986,11 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Associates a directory with an SNS topic. This establishes the directory as a publisher
-        /// to the specified SNS topic. You can then receive email or text (SMS) messages when
-        /// the status of your directory changes. You get notified if your directory goes from
-        /// an Active status to an Impaired or Inoperable status. You also receive a notification
-        /// when the directory returns to an Active status.
+        /// Associates a directory with an Amazon SNS topic. This establishes the directory as
+        /// a publisher to the specified Amazon SNS topic. You can then receive email or text
+        /// (SMS) messages when the status of your directory changes. You get notified if your
+        /// directory goes from an Active status to an Impaired or Inoperable status. You also
+        /// receive a notification when the directory returns to an Active status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterEventTopic service method.</param>
         /// 
@@ -2940,7 +3005,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterEventTopic">REST API Reference for RegisterEventTopic Operation</seealso>
         RegisterEventTopicResponse RegisterEventTopic(RegisterEventTopicRequest request);
@@ -2986,7 +3051,7 @@ namespace Amazon.DirectoryService
         /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryAlreadySharedException">
-        /// The specified directory has already been shared with this AWS account.
+        /// The specified directory has already been shared with this Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
         /// The specified entity could not be found.
@@ -2995,7 +3060,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RejectSharedDirectory">REST API Reference for RejectSharedDirectory Operation</seealso>
         RejectSharedDirectoryResponse RejectSharedDirectory(RejectSharedDirectoryRequest request);
@@ -3050,7 +3115,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveIpRoutes">REST API Reference for RemoveIpRoutes Operation</seealso>
         RemoveIpRoutesResponse RemoveIpRoutes(RemoveIpRoutesRequest request);
@@ -3107,7 +3172,7 @@ namespace Amazon.DirectoryService
         /// The specified directory is unavailable or could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -3162,7 +3227,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request);
@@ -3199,7 +3264,7 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Resets the password for any user in your AWS Managed Microsoft AD or Simple AD directory.
+        /// Resets the password for any user in your Managed Microsoft AD or Simple AD directory.
         /// 
         ///  
         /// <para>
@@ -3213,12 +3278,12 @@ namespace Amazon.DirectoryService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For AWS Managed Microsoft AD, you can only reset the password for a user that is in
-        /// an OU based off of the NetBIOS name that you typed when you created your directory.
-        /// For example, you cannot reset the password for a user in the <b>AWS Reserved</b> OU.
-        /// For more information about the OU structure for an AWS Managed Microsoft AD directory,
+        /// For Managed Microsoft AD, you can only reset the password for a user that is in an
+        /// OU based off of the NetBIOS name that you typed when you created your directory. For
+        /// example, you cannot reset the password for a user in the <b>Amazon Web Services Reserved</b>
+        /// OU. For more information about the OU structure for an Managed Microsoft AD directory,
         /// see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_getting_started_what_gets_created.html">What
-        /// Gets Created</a> in the <i>AWS Directory Service Administration Guide</i>.
+        /// Gets Created</a> in the <i>Directory Service Administration Guide</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3239,7 +3304,7 @@ namespace Amazon.DirectoryService
         /// defined in your directory.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -3310,7 +3375,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RestoreFromSnapshot">REST API Reference for RestoreFromSnapshot Operation</seealso>
         RestoreFromSnapshotResponse RestoreFromSnapshot(RestoreFromSnapshotRequest request);
@@ -3347,23 +3412,25 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Shares a specified directory (<code>DirectoryId</code>) in your AWS account (directory
-        /// owner) with another AWS account (directory consumer). With this operation you can
-        /// use your directory from any AWS account and from any Amazon VPC within an AWS Region.
+        /// Shares a specified directory (<code>DirectoryId</code>) in your Amazon Web Services
+        /// account (directory owner) with another Amazon Web Services account (directory consumer).
+        /// With this operation you can use your directory from any Amazon Web Services account
+        /// and from any Amazon VPC within an Amazon Web Services Region.
         /// 
         ///  
         /// <para>
-        /// When you share your AWS Managed Microsoft AD directory, AWS Directory Service creates
-        /// a shared directory in the directory consumer account. This shared directory contains
-        /// the metadata to provide access to the directory within the directory owner account.
-        /// The shared directory is visible in all VPCs in the directory consumer account.
+        /// When you share your Managed Microsoft AD directory, Directory Service creates a shared
+        /// directory in the directory consumer account. This shared directory contains the metadata
+        /// to provide access to the directory within the directory owner account. The shared
+        /// directory is visible in all VPCs in the directory consumer account.
         /// </para>
         ///  
         /// <para>
         /// The <code>ShareMethod</code> parameter determines whether the specified directory
-        /// can be shared between AWS accounts inside the same AWS organization (<code>ORGANIZATIONS</code>).
-        /// It also determines whether you can share the directory with any other AWS account
-        /// either inside or outside of the organization (<code>HANDSHAKE</code>).
+        /// can be shared between Amazon Web Services accounts inside the same Amazon Web Services
+        /// organization (<code>ORGANIZATIONS</code>). It also determines whether you can share
+        /// the directory with any other Amazon Web Services account either inside or outside
+        /// of the organization (<code>HANDSHAKE</code>).
         /// </para>
         ///  
         /// <para>
@@ -3381,7 +3448,7 @@ namespace Amazon.DirectoryService
         /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryAlreadySharedException">
-        /// The specified directory has already been shared with this AWS account.
+        /// The specified directory has already been shared with this Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
         /// The specified entity could not be found.
@@ -3393,14 +3460,14 @@ namespace Amazon.DirectoryService
         /// The specified shared target is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.OrganizationsException">
-        /// Exception encountered while trying to access your AWS organization.
+        /// Exception encountered while trying to access your Amazon Web Services organization.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ShareLimitExceededException">
-        /// The maximum number of AWS accounts that you can share with this directory has been
-        /// reached.
+        /// The maximum number of Amazon Web Services accounts that you can share with this directory
+        /// has been reached.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -3458,7 +3525,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.SnapshotLimitExceededException">
         /// The maximum number of manual snapshots for the directory has been reached. You can
@@ -3509,7 +3576,7 @@ namespace Amazon.DirectoryService
         /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryNotSharedException">
-        /// The specified directory has not been shared with this AWS account.
+        /// The specified directory has not been shared with this Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
         /// The specified entity could not be found.
@@ -3518,7 +3585,7 @@ namespace Amazon.DirectoryService
         /// The specified shared target is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UnshareDirectory">REST API Reference for UnshareDirectory Operation</seealso>
         UnshareDirectoryResponse UnshareDirectory(UnshareDirectoryRequest request);
@@ -3555,7 +3622,8 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Updates a conditional forwarder that has been set up for your AWS directory.
+        /// Updates a conditional forwarder that has been set up for your Amazon Web Services
+        /// directory.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateConditionalForwarder service method.</param>
         /// 
@@ -3573,7 +3641,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -3639,7 +3707,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.
@@ -3695,7 +3763,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateRadius">REST API Reference for UpdateRadius Operation</seealso>
         UpdateRadiusResponse UpdateRadius(UpdateRadiusRequest request);
@@ -3732,8 +3800,8 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Updates the trust that has been set up between your AWS Managed Microsoft AD directory
-        /// and an on-premises Active Directory.
+        /// Updates the trust that has been set up between your Managed Microsoft AD directory
+        /// and an self-managed Active Directory.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrust service method.</param>
         /// 
@@ -3748,7 +3816,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateTrust">REST API Reference for UpdateTrust Operation</seealso>
         UpdateTrustResponse UpdateTrust(UpdateTrustRequest request);
@@ -3785,12 +3853,12 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// AWS Directory Service for Microsoft Active Directory allows you to configure and verify
+        /// Directory Service for Microsoft Active Directory allows you to configure and verify
         /// trust relationships.
         /// 
         ///  
         /// <para>
-        /// This action verifies a trust relationship between your AWS Managed Microsoft AD directory
+        /// This action verifies a trust relationship between your Managed Microsoft AD directory
         /// and an external domain.
         /// </para>
         /// </summary>
@@ -3807,7 +3875,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// An exception has occurred in AWS Directory Service.
+        /// An exception has occurred in Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
         /// The operation is not supported.

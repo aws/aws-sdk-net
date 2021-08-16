@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// The specified directory has not been shared with this AWS account.
+    /// The specified directory has not been shared with this Amazon Web Services account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

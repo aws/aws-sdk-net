@@ -30,7 +30,7 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// IP address block. This is often the address block of the DNS server used for your
-    /// on-premises domain.
+    /// self-managed domain.
     /// </summary>
     public partial class IpRoute
     {
@@ -41,7 +41,7 @@ namespace Amazon.DirectoryService.Model
         /// Gets and sets the property CidrIp. 
         /// <para>
         /// IP address block using CIDR format, for example 10.0.0.0/24. This is often the address
-        /// block of the DNS server used for your on-premises domain. For a single IP address
+        /// block of the DNS server used for your self-managed domain. For a single IP address
         /// use a CIDR address block with /32. For example 10.0.0.0/32.
         /// </para>
         /// </summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Information about SNS topic and AWS Directory Service directory associations.
+    /// Information about Amazon SNS topic and Directory Service directory associations.
     /// </summary>
     public partial class EventTopic
     {
@@ -42,7 +42,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property CreatedDateTime. 
         /// <para>
-        /// The date and time of when you associated your directory with the SNS topic.
+        /// The date and time of when you associated your directory with the Amazon SNS topic.
         /// </para>
         /// </summary>
         public DateTime CreatedDateTime
@@ -60,8 +60,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The Directory ID of an AWS Directory Service directory that will publish status messages
-        /// to an SNS topic.
+        /// The Directory ID of an Directory Service directory that will publish status messages
+        /// to an Amazon SNS topic.
         /// </para>
         /// </summary>
         public string DirectoryId
@@ -97,7 +97,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property TopicArn. 
         /// <para>
-        /// The SNS topic ARN (Amazon Resource Name).
+        /// The Amazon SNS topic ARN (Amazon Resource Name).
         /// </para>
         /// </summary>
         public string TopicArn
@@ -115,7 +115,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property TopicName. 
         /// <para>
-        /// The name of an AWS SNS topic the receives status messages from the directory.
+        /// The name of an Amazon SNS topic the receives status messages from the directory.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

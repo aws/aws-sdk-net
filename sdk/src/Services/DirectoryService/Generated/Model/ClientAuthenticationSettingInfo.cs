@@ -29,43 +29,58 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the EnableClientAuthentication operation.
-    /// Enables alternative client authentication methods for the specified directory.
+    /// Contains information about a client authentication method for a directory.
     /// </summary>
-    public partial class EnableClientAuthenticationRequest : AmazonDirectoryServiceRequest
+    public partial class ClientAuthenticationSettingInfo
     {
-        private string _directoryId;
+        private DateTime? _lastUpdatedDateTime;
+        private ClientAuthenticationStatus _status;
         private ClientAuthenticationType _type;
 
         /// <summary>
-        /// Gets and sets the property DirectoryId. 
+        /// Gets and sets the property LastUpdatedDateTime. 
         /// <para>
-        /// The identifier of the specified directory. 
+        /// The date and time when the status of the client authentication type was last updated.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string DirectoryId
+        public DateTime LastUpdatedDateTime
         {
-            get { return this._directoryId; }
-            set { this._directoryId = value; }
+            get { return this._lastUpdatedDateTime.GetValueOrDefault(); }
+            set { this._lastUpdatedDateTime = value; }
         }
 
-        // Check to see if DirectoryId property is set
-        internal bool IsSetDirectoryId()
+        // Check to see if LastUpdatedDateTime property is set
+        internal bool IsSetLastUpdatedDateTime()
         {
-            return this._directoryId != null;
+            return this._lastUpdatedDateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// Whether the client authentication type is enabled or disabled for the specified directory.
+        /// </para>
+        /// </summary>
+        public ClientAuthenticationStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of client authentication to enable. Currently only the value <code>SmartCard</code>
-        /// is supported. Smart card authentication in AD Connector requires that you enable Kerberos
-        /// Constrained Delegation for the Service User to the LDAP service in your self-managed
-        /// AD. 
+        /// The type of client authentication for the specified directory. If no type is specified,
+        /// a list of all client authentication types that are supported for the directory is
+        /// retrieved. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ClientAuthenticationType Type
         {
             get { return this._type; }

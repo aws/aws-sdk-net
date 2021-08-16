@@ -30,7 +30,8 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteConditionalForwarder operation.
-    /// Deletes a conditional forwarder that has been set up for your AWS directory.
+    /// Deletes a conditional forwarder that has been set up for your Amazon Web Services
+    /// directory.
     /// </summary>
     public partial class DeleteConditionalForwarderRequest : AmazonDirectoryServiceRequest
     {

@@ -40,7 +40,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The identifier of the AWS Managed Microsoft AD directory that you want to stop sharing.
+        /// The identifier of the Managed Microsoft AD directory that you want to stop sharing.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

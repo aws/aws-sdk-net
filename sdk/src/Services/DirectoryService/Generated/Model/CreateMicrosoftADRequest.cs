@@ -30,15 +30,16 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateMicrosoftAD operation.
-    /// Creates a Microsoft AD directory in the AWS Cloud. For more information, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS
-    /// Managed Microsoft AD</a> in the <i>AWS Directory Service Admin Guide</i>.
+    /// Creates a Microsoft AD directory in the Amazon Web Services Cloud. For more information,
+    /// see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">Managed
+    /// Microsoft AD</a> in the <i>Directory Service Admin Guide</i>.
     /// 
     ///  
     /// <para>
     /// Before you call <i>CreateMicrosoftAD</i>, ensure that all of the required permissions
     /// have been explicitly granted through a policy. For details about what permissions
-    /// are required to run the <i>CreateMicrosoftAD</i> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
-    /// Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+    /// are required to run the <i>CreateMicrosoftAD</i> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+    /// Service API Permissions: Actions, Resources, and Conditions Reference</a>.
     /// </para>
     /// </summary>
     public partial class CreateMicrosoftADRequest : AmazonDirectoryServiceRequest
@@ -54,8 +55,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description for the directory. This label will appear on the AWS console <code>Directory
-        /// Details</code> page after the directory is created.
+        /// A description for the directory. This label will appear on the Amazon Web Services
+        /// console <code>Directory Details</code> page after the directory is created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
@@ -74,7 +75,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Edition. 
         /// <para>
-        /// AWS Managed Microsoft AD is available in two editions: <code>Standard</code> and <code>Enterprise</code>.
+        /// Managed Microsoft AD is available in two editions: <code>Standard</code> and <code>Enterprise</code>.
         /// <code>Enterprise</code> is the default.
         /// </para>
         /// </summary>
@@ -93,9 +94,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The fully qualified domain name for the AWS Managed Microsoft AD directory, such as
-        /// <code>corp.example.com</code>. This name will resolve inside your VPC only. It does
-        /// not need to be publicly resolvable.
+        /// The fully qualified domain name for the Managed Microsoft AD directory, such as <code>corp.example.com</code>.
+        /// This name will resolve inside your VPC only. It does not need to be publicly resolvable.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -158,7 +158,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to be assigned to the AWS Managed Microsoft AD directory.
+        /// The tags to be assigned to the Managed Microsoft AD directory.
         /// </para>
         /// </summary>
         public List<Tag> Tags

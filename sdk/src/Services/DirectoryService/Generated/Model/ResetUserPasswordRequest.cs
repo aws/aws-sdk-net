@@ -30,7 +30,7 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the ResetUserPassword operation.
-    /// Resets the password for any user in your AWS Managed Microsoft AD or Simple AD directory.
+    /// Resets the password for any user in your Managed Microsoft AD or Simple AD directory.
     /// 
     ///  
     /// <para>
@@ -44,12 +44,12 @@ namespace Amazon.DirectoryService.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For AWS Managed Microsoft AD, you can only reset the password for a user that is in
-    /// an OU based off of the NetBIOS name that you typed when you created your directory.
-    /// For example, you cannot reset the password for a user in the <b>AWS Reserved</b> OU.
-    /// For more information about the OU structure for an AWS Managed Microsoft AD directory,
+    /// For Managed Microsoft AD, you can only reset the password for a user that is in an
+    /// OU based off of the NetBIOS name that you typed when you created your directory. For
+    /// example, you cannot reset the password for a user in the <b>Amazon Web Services Reserved</b>
+    /// OU. For more information about the OU structure for an Managed Microsoft AD directory,
     /// see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_getting_started_what_gets_created.html">What
-    /// Gets Created</a> in the <i>AWS Directory Service Administration Guide</i>.
+    /// Gets Created</a> in the <i>Directory Service Administration Guide</i>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -62,8 +62,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// Identifier of the AWS Managed Microsoft AD or Simple AD directory in which the user
-        /// resides.
+        /// Identifier of the Managed Microsoft AD or Simple AD directory in which the user resides.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

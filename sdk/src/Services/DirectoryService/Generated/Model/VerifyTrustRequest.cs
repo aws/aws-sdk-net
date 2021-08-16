@@ -30,12 +30,12 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the VerifyTrust operation.
-    /// AWS Directory Service for Microsoft Active Directory allows you to configure and verify
+    /// Directory Service for Microsoft Active Directory allows you to configure and verify
     /// trust relationships.
     /// 
     ///  
     /// <para>
-    /// This action verifies a trust relationship between your AWS Managed Microsoft AD directory
+    /// This action verifies a trust relationship between your Managed Microsoft AD directory
     /// and an external domain.
     /// </para>
     /// </summary>

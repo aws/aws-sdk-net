@@ -30,8 +30,8 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEventTopics operation.
-    /// Obtains information about which SNS topics receive status messages from the specified
-    /// directory.
+    /// Obtains information about which Amazon SNS topics receive status messages from the
+    /// specified directory.
     /// 
     ///  
     /// <para>
@@ -47,8 +47,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The Directory ID for which to get the list of associated SNS topics. If this member
-        /// is null, associations for all Directory IDs are returned.
+        /// The Directory ID for which to get the list of associated Amazon SNS topics. If this
+        /// member is null, associations for all Directory IDs are returned.
         /// </para>
         /// </summary>
         public string DirectoryId
@@ -66,8 +66,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property TopicNames. 
         /// <para>
-        /// A list of SNS topic names for which to obtain the information. If this member is null,
-        /// all associations for the specified Directory ID are returned.
+        /// A list of Amazon SNS topic names for which to obtain the information. If this member
+        /// is null, all associations for the specified Directory ID are returned.
         /// </para>
         ///  
         /// <para>

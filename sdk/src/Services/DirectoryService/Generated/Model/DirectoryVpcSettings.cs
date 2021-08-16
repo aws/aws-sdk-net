@@ -41,8 +41,8 @@ namespace Amazon.DirectoryService.Model
         /// Gets and sets the property SubnetIds. 
         /// <para>
         /// The identifiers of the subnets for the directory servers. The two subnets must be
-        /// in different Availability Zones. AWS Directory Service creates a directory server
-        /// and a DNS server in each of these subnets.
+        /// in different Availability Zones. Directory Service creates a directory server and
+        /// a DNS server in each of these subnets.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

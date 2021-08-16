@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Contains information about an AWS Directory Service directory.
+    /// Contains information about an Directory Service directory.
     /// </summary>
     public partial class DirectoryDescription
     {
@@ -183,7 +183,8 @@ namespace Amazon.DirectoryService.Model
         /// The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft
         /// AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory
         /// servers. For an AD Connector directory, these are the IP addresses of the DNS servers
-        /// or domain controllers in the on-premises directory to which the AD Connector is connected.
+        /// or domain controllers in your self-managed directory to which the AD Connector is
+        /// connected.
         /// </para>
         /// </summary>
         public List<string> DnsIpAddrs
@@ -255,7 +256,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property OwnerDirectoryDescription. 
         /// <para>
-        /// Describes the AWS Managed Microsoft AD directory in the directory owner account.
+        /// Describes the Managed Microsoft AD directory in the directory owner account.
         /// </para>
         /// </summary>
         public OwnerDirectoryDescription OwnerDirectoryDescription
@@ -329,8 +330,8 @@ namespace Amazon.DirectoryService.Model
         /// Gets and sets the property ShareMethod. 
         /// <para>
         /// The method used when sharing a directory to determine whether the directory should
-        /// be shared within your AWS organization (<code>ORGANIZATIONS</code>) or with any AWS
-        /// account by sending a shared directory request (<code>HANDSHAKE</code>).
+        /// be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>)
+        /// or with any Amazon Web Services account by sending a shared directory request (<code>HANDSHAKE</code>).
         /// </para>
         /// </summary>
         public ShareMethod ShareMethod
@@ -369,7 +370,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property ShareStatus. 
         /// <para>
-        /// Current directory status of the shared AWS Managed Microsoft AD directory.
+        /// Current directory status of the shared Managed Microsoft AD directory.
         /// </para>
         /// </summary>
         public ShareStatus ShareStatus
@@ -516,7 +517,7 @@ namespace Amazon.DirectoryService.Model
         /// <para>
         /// A <a>DirectoryVpcSettingsDescription</a> object that contains additional information
         /// about a directory. This member is only present if the directory is a Simple AD or
-        /// Managed AD directory.
+        /// Managed Microsoft AD directory.
         /// </para>
         /// </summary>
         public DirectoryVpcSettingsDescription VpcSettings

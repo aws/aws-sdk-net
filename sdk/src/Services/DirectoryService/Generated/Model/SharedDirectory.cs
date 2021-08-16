@@ -159,8 +159,8 @@ namespace Amazon.DirectoryService.Model
         /// Gets and sets the property ShareMethod. 
         /// <para>
         /// The method used when sharing a directory to determine whether the directory should
-        /// be shared within your AWS organization (<code>ORGANIZATIONS</code>) or with any AWS
-        /// account by sending a shared directory request (<code>HANDSHAKE</code>).
+        /// be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>)
+        /// or with any Amazon Web Services account by sending a shared directory request (<code>HANDSHAKE</code>).
         /// </para>
         /// </summary>
         public ShareMethod ShareMethod
@@ -199,7 +199,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property ShareStatus. 
         /// <para>
-        /// Current directory status of the shared AWS Managed Microsoft AD directory.
+        /// Current directory status of the shared Managed Microsoft AD directory.
         /// </para>
         /// </summary>
         public ShareStatus ShareStatus

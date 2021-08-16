@@ -30,11 +30,11 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterEventTopic operation.
-    /// Associates a directory with an SNS topic. This establishes the directory as a publisher
-    /// to the specified SNS topic. You can then receive email or text (SMS) messages when
-    /// the status of your directory changes. You get notified if your directory goes from
-    /// an Active status to an Impaired or Inoperable status. You also receive a notification
-    /// when the directory returns to an Active status.
+    /// Associates a directory with an Amazon SNS topic. This establishes the directory as
+    /// a publisher to the specified Amazon SNS topic. You can then receive email or text
+    /// (SMS) messages when the status of your directory changes. You get notified if your
+    /// directory goes from an Active status to an Impaired or Inoperable status. You also
+    /// receive a notification when the directory returns to an Active status.
     /// </summary>
     public partial class RegisterEventTopicRequest : AmazonDirectoryServiceRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The Directory ID that will publish status messages to the SNS topic.
+        /// The Directory ID that will publish status messages to the Amazon SNS topic.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,8 +63,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property TopicName. 
         /// <para>
-        /// The SNS topic name to which the directory will publish status messages. This SNS topic
-        /// must be in the same region as the specified Directory ID.
+        /// The Amazon SNS topic name to which the directory will publish status messages. This
+        /// Amazon SNS topic must be in the same region as the specified Directory ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

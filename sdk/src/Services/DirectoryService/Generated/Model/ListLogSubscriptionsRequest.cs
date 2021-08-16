@@ -30,7 +30,7 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListLogSubscriptions operation.
-    /// Lists the active log subscriptions for the AWS account.
+    /// Lists the active log subscriptions for the Amazon Web Services account.
     /// </summary>
     public partial class ListLogSubscriptionsRequest : AmazonDirectoryServiceRequest
     {
@@ -43,8 +43,8 @@ namespace Amazon.DirectoryService.Model
         /// <para>
         /// If a <i>DirectoryID</i> is provided, lists only the log subscription associated with
         /// that directory. If no <i>DirectoryId</i> is provided, lists all log subscriptions
-        /// associated with your AWS account. If there are no log subscriptions for the AWS account
-        /// or the directory, an empty list will be returned.
+        /// associated with your Amazon Web Services account. If there are no log subscriptions
+        /// for the Amazon Web Services account or the directory, an empty list will be returned.
         /// </para>
         /// </summary>
         public string DirectoryId

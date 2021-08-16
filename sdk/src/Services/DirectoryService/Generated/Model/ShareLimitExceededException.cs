@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// The maximum number of AWS accounts that you can share with this directory has been
-    /// reached.
+    /// The maximum number of Amazon Web Services accounts that you can share with this directory
+    /// has been reached.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

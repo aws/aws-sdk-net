@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Exception encountered while trying to access your AWS organization.
+    /// Exception encountered while trying to access your Amazon Web Services organization.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

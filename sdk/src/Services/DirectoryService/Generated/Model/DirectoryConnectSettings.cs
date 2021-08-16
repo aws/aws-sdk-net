@@ -42,7 +42,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property CustomerDnsIps. 
         /// <para>
-        /// A list of one or more IP addresses of DNS servers or domain controllers in the on-premises
+        /// A list of one or more IP addresses of DNS servers or domain controllers in your self-managed
         /// directory.
         /// </para>
         /// </summary>
@@ -62,8 +62,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property CustomerUserName. 
         /// <para>
-        /// The user name of an account in the on-premises directory that is used to connect to
-        /// the directory. This account must have the following permissions:
+        /// The user name of an account in your self-managed directory that is used to connect
+        /// to the directory. This account must have the following permissions:
         /// </para>
         ///  <ul> <li> 
         /// <para>

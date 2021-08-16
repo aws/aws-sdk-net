@@ -31,7 +31,7 @@ namespace Amazon.DirectoryService.Model
     /// <summary>
     /// Container for the parameters to the CreateLogSubscription operation.
     /// Creates a subscription to forward real-time Directory Service domain controller security
-    /// logs to the specified Amazon CloudWatch log group in your AWS account.
+    /// logs to the specified Amazon CloudWatch log group in your Amazon Web Services account.
     /// </summary>
     public partial class CreateLogSubscriptionRequest : AmazonDirectoryServiceRequest
     {

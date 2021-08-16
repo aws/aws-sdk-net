@@ -38,7 +38,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property EventTopics. 
         /// <para>
-        /// A list of SNS topic names that receive status messages from the specified Directory
+        /// A list of Amazon SNS topic names that receive status messages from the specified Directory
         /// ID.
         /// </para>
         /// </summary>

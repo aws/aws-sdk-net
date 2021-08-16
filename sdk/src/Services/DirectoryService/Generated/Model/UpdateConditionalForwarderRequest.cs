@@ -30,7 +30,8 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateConditionalForwarder operation.
-    /// Updates a conditional forwarder that has been set up for your AWS directory.
+    /// Updates a conditional forwarder that has been set up for your Amazon Web Services
+    /// directory.
     /// </summary>
     public partial class UpdateConditionalForwarderRequest : AmazonDirectoryServiceRequest
     {
@@ -41,7 +42,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The directory ID of the AWS directory for which to update the conditional forwarder.
+        /// The directory ID of the Amazon Web Services directory for which to update the conditional
+        /// forwarder.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

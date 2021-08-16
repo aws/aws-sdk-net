@@ -62,7 +62,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// Identifier of the AWS Managed Microsoft AD directory in the directory owner account.
+        /// Identifier of the Managed Microsoft AD directory in the directory owner account.
         /// </para>
         /// </summary>
         public string DirectoryId

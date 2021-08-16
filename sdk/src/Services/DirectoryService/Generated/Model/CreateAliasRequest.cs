@@ -52,8 +52,8 @@ namespace Amazon.DirectoryService.Model
         /// </para>
         ///  
         /// <para>
-        /// The alias must be unique amongst all aliases in AWS. This operation throws an <code>EntityAlreadyExistsException</code>
-        /// error if the alias already exists.
+        /// The alias must be unique amongst all aliases in Amazon Web Services. This operation
+        /// throws an <code>EntityAlreadyExistsException</code> error if the alias already exists.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=62)]

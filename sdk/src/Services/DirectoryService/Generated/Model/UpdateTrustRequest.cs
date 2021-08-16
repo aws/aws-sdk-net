@@ -30,8 +30,8 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateTrust operation.
-    /// Updates the trust that has been set up between your AWS Managed Microsoft AD directory
-    /// and an on-premises Active Directory.
+    /// Updates the trust that has been set up between your Managed Microsoft AD directory
+    /// and an self-managed Active Directory.
     /// </summary>
     public partial class UpdateTrustRequest : AmazonDirectoryServiceRequest
     {

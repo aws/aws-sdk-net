@@ -30,7 +30,7 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterEventTopic operation.
-    /// Removes the specified directory as a publisher to the specified SNS topic.
+    /// Removes the specified directory as a publisher to the specified Amazon SNS topic.
     /// </summary>
     public partial class DeregisterEventTopicRequest : AmazonDirectoryServiceRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.DirectoryService.Model
         /// Gets and sets the property DirectoryId. 
         /// <para>
         /// The Directory ID to remove as a publisher. This directory will no longer send messages
-        /// to the specified SNS topic.
+        /// to the specified Amazon SNS topic.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property TopicName. 
         /// <para>
-        /// The name of the SNS topic from which to remove the directory as a publisher.
+        /// The name of the Amazon SNS topic from which to remove the directory as a publisher.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

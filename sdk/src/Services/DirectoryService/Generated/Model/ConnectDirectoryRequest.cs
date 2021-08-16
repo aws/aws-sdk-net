@@ -30,14 +30,14 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the ConnectDirectory operation.
-    /// Creates an AD Connector to connect to an on-premises directory.
+    /// Creates an AD Connector to connect to a self-managed directory.
     /// 
     ///  
     /// <para>
     /// Before you call <code>ConnectDirectory</code>, ensure that all of the required permissions
     /// have been explicitly granted through a policy. For details about what permissions
-    /// are required to run the <code>ConnectDirectory</code> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
-    /// Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+    /// are required to run the <code>ConnectDirectory</code> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+    /// Service API Permissions: Actions, Resources, and Conditions Reference</a>.
     /// </para>
     /// </summary>
     public partial class ConnectDirectoryRequest : AmazonDirectoryServiceRequest
@@ -92,7 +92,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The fully qualified name of the on-premises directory, such as <code>corp.example.com</code>.
+        /// The fully qualified name of your self-managed directory, such as <code>corp.example.com</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -111,7 +111,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
-        /// The password for the on-premises user account.
+        /// The password for your self-managed user account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -130,7 +130,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property ShortName. 
         /// <para>
-        /// The NetBIOS name of the on-premises directory, such as <code>CORP</code>.
+        /// The NetBIOS name of your self-managed directory, such as <code>CORP</code>.
         /// </para>
         /// </summary>
         public string ShortName

@@ -79,7 +79,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property CustomerUserName. 
         /// <para>
-        /// The user name of the service account in the on-premises directory.
+        /// The user name of the service account in your self-managed directory.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
