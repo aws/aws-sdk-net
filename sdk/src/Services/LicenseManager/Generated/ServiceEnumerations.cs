@@ -101,6 +101,10 @@ namespace Amazon.LicenseManager
     {
 
         /// <summary>
+        /// Constant PERPETUAL for CheckoutType
+        /// </summary>
+        public static readonly CheckoutType PERPETUAL = new CheckoutType("PERPETUAL");
+        /// <summary>
         /// Constant PROVISIONAL for CheckoutType
         /// </summary>
         public static readonly CheckoutType PROVISIONAL = new CheckoutType("PROVISIONAL");
