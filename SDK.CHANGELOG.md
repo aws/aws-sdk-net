@@ -1,3 +1,22 @@
+### 3.7.97.0 (2021-08-16 18:14 UTC)
+* CodeBuild (3.7.5.0)
+	* CodeBuild now allows you to select how batch build statuses are sent to the source provider for a project.
+* ConfigService (3.7.4.0)
+	* Update ResourceType enum with values for Backup Plan, Selection, Vault, RecoveryPoint; ECS Cluster, Service, TaskDefinition; EFS AccessPoint, FileSystem; EKS Cluster; ECR Repository resources
+* DirectoryService (3.7.1.0)
+	* This release adds support for describing client authentication settings.
+* IoTSiteWise (3.7.7.0)
+	* AWS IoT SiteWise added query window for the interpolation interval. AWS IoT SiteWise computes each interpolated value by using data points from the timestamp of each interval minus the window to the timestamp of each interval plus the window.
+* LicenseManager (3.7.3.0)
+	* AWS License Manager now allows end users to call CheckoutLicense API using new CheckoutType PERPETUAL. Perpetual checkouts allow sellers to check out a quantity of entitlements to be drawn down for consumption.
+* S3 (3.7.1.24)
+	* Documentation updates for Amazon S3
+* Core 3.7.2.4
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.96.0 (2021-08-13 18:11 UTC)
 * CustomerProfiles (3.7.3.0)
 	* This release introduces Standard Profile Objects, namely Asset and Case which contain values populated by data from third party systems and belong to a specific profile. This release adds an optional parameter, ObjectFilter to the ListProfileObjects API in order to search for these Standard Objects.
