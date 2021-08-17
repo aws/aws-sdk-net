@@ -216,7 +216,10 @@ namespace Amazon.CloudDirectory.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ListObjectParents.
+        /// Gets and sets the property ListObjectParents. 
+        /// <para>
+        /// The list of parent objects to retrieve.
+        /// </para>
         /// </summary>
         public BatchListObjectParentsResponse ListObjectParents
         {

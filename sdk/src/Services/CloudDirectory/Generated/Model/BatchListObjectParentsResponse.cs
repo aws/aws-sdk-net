@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// 
+    /// Represents the output of a <a>ListObjectParents</a> response operation.
     /// </summary>
     public partial class BatchListObjectParentsResponse
     {
@@ -37,7 +37,10 @@ namespace Amazon.CloudDirectory.Model
         private List<ObjectIdentifierAndLinkNameTuple> _parentLinks = new List<ObjectIdentifierAndLinkNameTuple>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The pagination token.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -52,7 +55,10 @@ namespace Amazon.CloudDirectory.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ParentLinks.
+        /// Gets and sets the property ParentLinks. 
+        /// <para>
+        /// Returns a list of parent reference and LinkName Tuples.
+        /// </para>
         /// </summary>
         public List<ObjectIdentifierAndLinkNameTuple> ParentLinks
         {

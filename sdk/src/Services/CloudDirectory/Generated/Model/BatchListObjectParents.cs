@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// 
+    /// Lists parent objects that are associated with a given object in pagination fashion.
     /// </summary>
     public partial class BatchListObjectParents
     {
@@ -38,7 +38,11 @@ namespace Amazon.CloudDirectory.Model
         private ObjectReference _objectReference;
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of items to be retrieved in a single call. This is an approximate
+        /// number.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public int MaxResults
@@ -54,7 +58,10 @@ namespace Amazon.CloudDirectory.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The pagination token.
+        /// </para>
         /// </summary>
         public string NextToken
         {

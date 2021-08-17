@@ -216,7 +216,10 @@ namespace Amazon.CloudDirectory.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ListObjectParents.
+        /// Gets and sets the property ListObjectParents. 
+        /// <para>
+        /// Lists parent objects that are associated with a given object in pagination fashion.
+        /// </para>
         /// </summary>
         public BatchListObjectParents ListObjectParents
         {

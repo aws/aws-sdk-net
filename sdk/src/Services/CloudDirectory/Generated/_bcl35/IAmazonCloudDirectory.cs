@@ -64,7 +64,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the AddFacetToObject service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -142,7 +144,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the ApplySchema service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -231,7 +235,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the AttachObject service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -318,7 +324,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the AttachPolicy service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -394,7 +402,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the AttachToIndex service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -485,7 +495,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the AttachTypedLink service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -567,7 +579,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the BatchRead service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -638,7 +652,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the BatchWrite service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.BatchWriteException">
         /// A <code>BatchWrite</code> exception has occurred.
@@ -719,7 +735,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the CreateDirectory service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryAlreadyExistsException">
         /// Indicates that a <a>Directory</a> could not be created due to a naming conflict. Choose
@@ -794,7 +812,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the CreateFacet service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetAlreadyExistsException">
         /// A facet with the same name already exists.
@@ -875,7 +895,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the CreateIndex service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -962,7 +984,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the CreateObject service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -1064,7 +1088,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the CreateSchema service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -1136,7 +1162,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the CreateTypedLinkFacet service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetAlreadyExistsException">
         /// A facet with the same name already exists.
@@ -1217,7 +1245,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the DeleteDirectory service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryDeletedException">
         /// A directory that has been deleted and to which access has been attempted. Note: The
@@ -1295,7 +1325,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the DeleteFacet service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetInUseException">
         /// Occurs when deleting a facet that contains an attribute that is a target to an attribute
@@ -1375,7 +1407,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the DeleteObject service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -1452,7 +1486,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the DeleteSchema service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -1527,7 +1563,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the DeleteTypedLinkFacet service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetNotFoundException">
         /// The specified <a>Facet</a> could not be found.
@@ -1600,7 +1638,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the DetachFromIndex service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -1680,7 +1720,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the DetachObject service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -1757,7 +1799,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the DetachPolicy service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -1835,7 +1879,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the DetachTypedLink service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -1913,7 +1959,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the DisableDirectory service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryDeletedException">
         /// A directory that has been deleted and to which access has been attempted. Note: The
@@ -1988,7 +2036,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the EnableDirectory service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryDeletedException">
         /// A directory that has been deleted and to which access has been attempted. Note: The
@@ -2062,7 +2112,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the GetAppliedSchemaVersion service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -2132,7 +2184,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the GetDirectory service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -2201,7 +2255,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the GetFacet service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetNotFoundException">
         /// The specified <a>Facet</a> could not be found.
@@ -2274,7 +2330,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the GetLinkAttributes service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -2351,7 +2409,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the GetObjectAttributes service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -2428,7 +2488,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the GetObjectInformation service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -2502,7 +2564,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the GetSchemaAsJson service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -2574,7 +2638,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the GetTypedLinkFacetInformation service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetNotFoundException">
         /// The specified <a>Facet</a> could not be found.
@@ -2651,7 +2717,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the ListAppliedSchemaArns service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -2724,7 +2792,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the ListAttachedIndices service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -2797,7 +2867,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the ListDevelopmentSchemaArns service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -2870,7 +2942,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the ListDirectories service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -2940,7 +3014,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the ListFacetAttributes service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetNotFoundException">
         /// The specified <a>Facet</a> could not be found.
@@ -3016,7 +3092,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the ListFacetNames service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -3092,7 +3170,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the ListIncomingTypedLinks service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -3172,7 +3252,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the ListIndex service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -3256,7 +3338,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the ListManagedSchemaArns service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -3317,7 +3401,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the ListObjectAttributes service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -3397,7 +3483,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the ListObjectChildren service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -3489,7 +3577,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the ListObjectParentPaths service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -3565,7 +3655,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the ListObjectParents service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.CannotListParentOfRootException">
         /// Cannot list the parents of a <a>Directory</a> root.
@@ -3644,7 +3736,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the ListObjectPolicies service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -3723,7 +3817,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the ListOutgoingTypedLinks service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -3803,7 +3899,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the ListPolicyAttachments service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -3884,7 +3982,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the ListPublishedSchemaArns service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -3959,7 +4059,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -4036,7 +4138,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the ListTypedLinkFacetAttributes service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetNotFoundException">
         /// The specified <a>Facet</a> could not be found.
@@ -4114,7 +4218,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the ListTypedLinkFacetNames service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -4192,7 +4298,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the LookupPolicy service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -4268,7 +4376,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the PublishSchema service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -4343,7 +4453,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the PutSchemaFromJson service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -4416,7 +4528,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the RemoveFacetFromObject service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -4493,7 +4607,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the TagResource service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -4568,7 +4684,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the UntagResource service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -4657,7 +4775,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the UpdateFacet service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetNotFoundException">
         /// The specified <a>Facet</a> could not be found.
@@ -4741,7 +4861,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the UpdateLinkAttributes service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -4818,7 +4940,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the UpdateObjectAttributes service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -4899,7 +5023,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the UpdateSchema service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -4970,7 +5096,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the UpdateTypedLinkFacet service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetNotFoundException">
         /// The specified <a>Facet</a> could not be found.
@@ -5058,7 +5186,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the UpgradeAppliedSchema service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.IncompatibleSchemaException">
         /// Indicates a failure occurred while performing a check for backward compatibility between
@@ -5138,7 +5268,9 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>The response from the UpgradePublishedSchema service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
+        /// Access denied or directory not found. Either you don't have permissions for this directory
+        /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+        /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.IncompatibleSchemaException">
         /// Indicates a failure occurred while performing a check for backward compatibility between

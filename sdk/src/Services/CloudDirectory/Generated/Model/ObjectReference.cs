@@ -49,7 +49,8 @@ namespace Amazon.CloudDirectory.Model
         ///  <i>$ObjectIdentifier</i> - An object identifier is an opaque string provided by Amazon
         /// Cloud Directory. When creating objects, the system will provide you with the identifier
         /// of the created object. An object’s identifier is immutable and no two objects will
-        /// ever share the same object identifier
+        /// ever share the same object identifier. To identify an object with ObjectIdentifier,
+        /// the ObjectIdentifier must be wrapped in double quotes. 
         /// </para>
         ///  </li> <li> 
         /// <para>

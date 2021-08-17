@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Access denied. Check your permissions.
+    /// Access denied or directory not found. Either you don't have permissions for this directory
+    /// or the directory does not exist. Try calling <a>ListDirectories</a> and check your
+    /// permissions.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
