@@ -79,6 +79,12 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EnvironmentId);
                 }
 
+                if(publicRequest.IsSetManagedCredentialsAction())
+                {
+                    context.Writer.WritePropertyName("managedCredentialsAction");
+                    context.Writer.Write(publicRequest.ManagedCredentialsAction);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");

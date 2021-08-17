@@ -91,6 +91,12 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetDryRun())
+                {
+                    context.Writer.WritePropertyName("dryRun");
+                    context.Writer.Write(publicRequest.DryRun);
+                }
+
                 if(publicRequest.IsSetImageId())
                 {
                     context.Writer.WritePropertyName("imageId");

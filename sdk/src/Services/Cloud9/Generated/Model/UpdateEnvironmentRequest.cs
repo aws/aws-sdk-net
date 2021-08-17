@@ -36,6 +36,7 @@ namespace Amazon.Cloud9.Model
     {
         private string _description;
         private string _environmentId;
+        private ManagedCredentialsAction _managedCredentialsAction;
         private string _name;
 
         /// <summary>
@@ -74,6 +75,40 @@ namespace Amazon.Cloud9.Model
         internal bool IsSetEnvironmentId()
         {
             return this._environmentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedCredentialsAction. 
+        /// <para>
+        /// Allows the environment owner to turn on or turn off the Amazon Web Services managed
+        /// temporary credentials for an Cloud9 environment by using one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ENABLE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DISABLE</code> 
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Only the environment owner can change the status of managed temporary credentials.
+        /// An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off
+        /// managed temporary credentials is made by an account that's not the environment owner.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ManagedCredentialsAction ManagedCredentialsAction
+        {
+            get { return this._managedCredentialsAction; }
+            set { this._managedCredentialsAction = value; }
+        }
+
+        // Check to see if ManagedCredentialsAction property is set
+        internal bool IsSetManagedCredentialsAction()
+        {
+            return this._managedCredentialsAction != null;
         }
 
         /// <summary>

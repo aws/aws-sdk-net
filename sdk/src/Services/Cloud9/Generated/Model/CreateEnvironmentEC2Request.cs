@@ -39,6 +39,7 @@ namespace Amazon.Cloud9.Model
         private string _clientRequestToken;
         private ConnectionType _connectionType;
         private string _description;
+        private bool? _dryRun;
         private string _imageId;
         private string _instanceType;
         private string _name;
@@ -133,6 +134,26 @@ namespace Amazon.Cloud9.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required permissions,
+        /// the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.
+        /// </para>
+        /// </summary>
+        public bool DryRun
+        {
+            get { return this._dryRun.GetValueOrDefault(); }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
         }
 
         /// <summary>
