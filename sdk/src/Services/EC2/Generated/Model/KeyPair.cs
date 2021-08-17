@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property KeyMaterial. 
         /// <para>
-        /// An unencrypted PEM encoded RSA private key.
+        /// An unencrypted PEM encoded RSA or ED25519 private key.
         /// </para>
         /// </summary>
         public string KeyMaterial

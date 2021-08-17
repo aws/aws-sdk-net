@@ -36,9 +36,9 @@ namespace Amazon.EC2.Model
     /// <para>
     /// A security group acts as a virtual firewall for your instance to control inbound and
     /// outbound traffic. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
-    /// EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and
+    /// EC2 security groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and
     /// <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
-    /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// groups for your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </para>
     ///  
     /// <para>

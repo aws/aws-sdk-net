@@ -36,16 +36,41 @@ namespace Amazon.EC2.Model
         private string _keyFingerprint;
         private string _keyName;
         private string _keyPairId;
+        private KeyType _keyType;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property KeyFingerprint. 
         /// <para>
-        /// If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1 digest
-        /// of the DER encoded private key. If you used <a>ImportKeyPair</a> to provide Amazon
-        /// Web Services the public key, this is the MD5 public key fingerprint as specified in
-        /// section 4 of RFC4716.
+        /// If you used <a>CreateKeyPair</a> to create the key pair:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private
+        /// key. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which
+        /// is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH
+        /// 6.8</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you used <a>ImportKeyPair</a> to provide Amazon Web Services the public key:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified
+        /// in section 4 of RFC4716.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which
+        /// is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH
+        /// 6.8</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string KeyFingerprint
         {
@@ -93,6 +118,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetKeyPairId()
         {
             return this._keyPairId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyType. 
+        /// <para>
+        /// The type of key pair.
+        /// </para>
+        /// </summary>
+        public KeyType KeyType
+        {
+            get { return this._keyType; }
+            set { this._keyType = value; }
+        }
+
+        // Check to see if KeyType property is set
+        internal bool IsSetKeyType()
+        {
+            return this._keyType != null;
         }
 
         /// <summary>

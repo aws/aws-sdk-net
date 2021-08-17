@@ -62,6 +62,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("KeyName", StringUtils.FromString(publicRequest.KeyName));
                 }
+                if(publicRequest.IsSetKeyType())
+                {
+                    request.Parameters.Add("KeyType", StringUtils.FromString(publicRequest.KeyType));
+                }
                 if(publicRequest.IsSetTagSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;

@@ -3491,25 +3491,25 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a 2048-bit RSA key pair with the specified name. Amazon EC2 stores the public
-        /// key and displays the private key for you to save to a file. The private key is returned
-        /// as an unencrypted PEM encoded PKCS#1 private key. If a key with the specified name
-        /// already exists, Amazon EC2 returns an error.
+        /// Creates an ED25519 or 2048-bit RSA key pair with the specified name. Amazon EC2 stores
+        /// the public key and displays the private key for you to save to a file. The private
+        /// key is returned as an unencrypted PEM encoded PKCS#1 private key. If a key with the
+        /// specified name already exists, Amazon EC2 returns an error.
         /// 
         ///  
         /// <para>
-        /// You can have up to five thousand key pairs per Region.
+        /// The key pair returned to you is available only in the Amazon Web Services Region in
+        /// which you create it. If you prefer, you can create your own key pair using a third-party
+        /// tool and upload it to any Region using <a>ImportKeyPair</a>.
         /// </para>
         ///  
         /// <para>
-        /// The key pair returned to you is available only in the Region in which you create it.
-        /// If you prefer, you can create your own key pair using a third-party tool and upload
-        /// it to any Region using <a>ImportKeyPair</a>.
+        /// You can have up to 5,000 key pairs per Amazon Web Services Region.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-        /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
+        /// EC2 key pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateKeyPair service method.</param>
@@ -3521,25 +3521,25 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a 2048-bit RSA key pair with the specified name. Amazon EC2 stores the public
-        /// key and displays the private key for you to save to a file. The private key is returned
-        /// as an unencrypted PEM encoded PKCS#1 private key. If a key with the specified name
-        /// already exists, Amazon EC2 returns an error.
+        /// Creates an ED25519 or 2048-bit RSA key pair with the specified name. Amazon EC2 stores
+        /// the public key and displays the private key for you to save to a file. The private
+        /// key is returned as an unencrypted PEM encoded PKCS#1 private key. If a key with the
+        /// specified name already exists, Amazon EC2 returns an error.
         /// 
         ///  
         /// <para>
-        /// You can have up to five thousand key pairs per Region.
+        /// The key pair returned to you is available only in the Amazon Web Services Region in
+        /// which you create it. If you prefer, you can create your own key pair using a third-party
+        /// tool and upload it to any Region using <a>ImportKeyPair</a>.
         /// </para>
         ///  
         /// <para>
-        /// The key pair returned to you is available only in the Region in which you create it.
-        /// If you prefer, you can create your own key pair using a third-party tool and upload
-        /// it to any Region using <a>ImportKeyPair</a>.
+        /// You can have up to 5,000 key pairs per Amazon Web Services Region.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-        /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
+        /// EC2 key pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateKeyPair service method.</param>
@@ -4441,9 +4441,9 @@ namespace Amazon.EC2
         /// <para>
         /// A security group acts as a virtual firewall for your instance to control inbound and
         /// outbound traffic. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
-        /// EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and
+        /// EC2 security groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and
         /// <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
-        /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// groups for your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -4486,9 +4486,9 @@ namespace Amazon.EC2
         /// <para>
         /// A security group acts as a virtual firewall for your instance to control inbound and
         /// outbound traffic. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
-        /// EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and
+        /// EC2 security groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and
         /// <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
-        /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// groups for your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -11028,8 +11028,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about key pairs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-        /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information about key pairs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
+        /// EC2 key pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -11043,8 +11043,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about key pairs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-        /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information about key pairs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
+        /// EC2 key pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeKeyPairs service method.</param>
@@ -11059,8 +11059,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about key pairs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-        /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information about key pairs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
+        /// EC2 key pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -11078,8 +11078,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about key pairs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-        /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information about key pairs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
+        /// EC2 key pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeKeyPairs service method.</param>
@@ -12652,9 +12652,9 @@ namespace Amazon.EC2
         /// <para>
         /// A security group is for use with instances either in the EC2-Classic platform or in
         /// a specific VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
-        /// EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and
+        /// EC2 security groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and
         /// <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
-        /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// groups for your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -12670,9 +12670,9 @@ namespace Amazon.EC2
         /// <para>
         /// A security group is for use with instances either in the EC2-Classic platform or in
         /// a specific VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
-        /// EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and
+        /// EC2 security groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and
         /// <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
-        /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// groups for your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroups service method.</param>
@@ -12689,9 +12689,9 @@ namespace Amazon.EC2
         /// <para>
         /// A security group is for use with instances either in the EC2-Classic platform or in
         /// a specific VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
-        /// EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and
+        /// EC2 security groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and
         /// <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
-        /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// groups for your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -12711,9 +12711,9 @@ namespace Amazon.EC2
         /// <para>
         /// A security group is for use with instances either in the EC2-Classic platform or in
         /// a specific VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
-        /// EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and
+        /// EC2 security groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and
         /// <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
-        /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// groups for your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroups service method.</param>
@@ -17613,16 +17613,16 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Imports the public key from an RSA key pair that you created with a third-party tool.
-        /// Compare this with <a>CreateKeyPair</a>, in which Amazon Web Services creates the key
-        /// pair and gives the keys to you (Amazon Web Services keeps a copy of the public key).
-        /// With ImportKeyPair, you create the key pair and give Amazon Web Services just the
-        /// public key. The private key is never transferred between you and Amazon Web Services.
+        /// Imports the public key from an RSA or ED25519 key pair that you created with a third-party
+        /// tool. Compare this with <a>CreateKeyPair</a>, in which Amazon Web Services creates
+        /// the key pair and gives the keys to you (Amazon Web Services keeps a copy of the public
+        /// key). With ImportKeyPair, you create the key pair and give Amazon Web Services just
+        /// the public key. The private key is never transferred between you and Amazon Web Services.
         /// 
         ///  
         /// <para>
-        /// For more information about key pairs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-        /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information about key pairs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
+        /// EC2 key pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportKeyPair service method.</param>
@@ -17634,16 +17634,16 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Imports the public key from an RSA key pair that you created with a third-party tool.
-        /// Compare this with <a>CreateKeyPair</a>, in which Amazon Web Services creates the key
-        /// pair and gives the keys to you (Amazon Web Services keeps a copy of the public key).
-        /// With ImportKeyPair, you create the key pair and give Amazon Web Services just the
-        /// public key. The private key is never transferred between you and Amazon Web Services.
+        /// Imports the public key from an RSA or ED25519 key pair that you created with a third-party
+        /// tool. Compare this with <a>CreateKeyPair</a>, in which Amazon Web Services creates
+        /// the key pair and gives the keys to you (Amazon Web Services keeps a copy of the public
+        /// key). With ImportKeyPair, you create the key pair and give Amazon Web Services just
+        /// the public key. The private key is never transferred between you and Amazon Web Services.
         /// 
         ///  
         /// <para>
-        /// For more information about key pairs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-        /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information about key pairs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
+        /// EC2 key pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportKeyPair service method.</param>

@@ -30,30 +30,31 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateKeyPair operation.
-    /// Creates a 2048-bit RSA key pair with the specified name. Amazon EC2 stores the public
-    /// key and displays the private key for you to save to a file. The private key is returned
-    /// as an unencrypted PEM encoded PKCS#1 private key. If a key with the specified name
-    /// already exists, Amazon EC2 returns an error.
+    /// Creates an ED25519 or 2048-bit RSA key pair with the specified name. Amazon EC2 stores
+    /// the public key and displays the private key for you to save to a file. The private
+    /// key is returned as an unencrypted PEM encoded PKCS#1 private key. If a key with the
+    /// specified name already exists, Amazon EC2 returns an error.
     /// 
     ///  
     /// <para>
-    /// You can have up to five thousand key pairs per Region.
+    /// The key pair returned to you is available only in the Amazon Web Services Region in
+    /// which you create it. If you prefer, you can create your own key pair using a third-party
+    /// tool and upload it to any Region using <a>ImportKeyPair</a>.
     /// </para>
     ///  
     /// <para>
-    /// The key pair returned to you is available only in the Region in which you create it.
-    /// If you prefer, you can create your own key pair using a third-party tool and upload
-    /// it to any Region using <a>ImportKeyPair</a>.
+    /// You can have up to 5,000 key pairs per Amazon Web Services Region.
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-    /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
+    /// EC2 key pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateKeyPairRequest : AmazonEC2Request
     {
         private string _keyName;
+        private KeyType _keyType;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
 
         /// <summary>
@@ -91,6 +92,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetKeyName()
         {
             return this._keyName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyType. 
+        /// <para>
+        /// The type of key pair. Note that ED25519 keys are not supported for Windows instances,
+        /// EC2 Instance Connect, and EC2 Serial Console.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>rsa</code> 
+        /// </para>
+        /// </summary>
+        public KeyType KeyType
+        {
+            get { return this._keyType; }
+            set { this._keyType = value; }
+        }
+
+        // Check to see if KeyType property is set
+        internal bool IsSetKeyType()
+        {
+            return this._keyType != null;
         }
 
         /// <summary>
