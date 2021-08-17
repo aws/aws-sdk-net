@@ -1,3 +1,15 @@
+### 3.7.98.0 (2021-08-17 19:18 UTC)
+* Cloud9 (3.7.2.0)
+	* Added DryRun parameter to CreateEnvironmentEC2 API. Added ManagedCredentialsActions parameter to UpdateEnvironment API
+* CloudDirectory (3.7.0.53)
+	* Documentation updates for clouddirectory
+* CloudWatchLogs (3.7.1.27)
+	* Documentation-only update for CloudWatch Logs
+* CostExplorer (3.7.3.0)
+	* This release is a new feature for Cost Categories: Split charge rules. Split charge rules enable you to allocate shared costs between your cost category values.
+* EC2 (3.7.21.0)
+	* This release adds support for EC2 ED25519 key pairs for authentication
+
 ### 3.7.97.0 (2021-08-16 18:14 UTC)
 * CodeBuild (3.7.5.0)
 	* CodeBuild now allows you to select how batch build statuses are sent to the source provider for a project.

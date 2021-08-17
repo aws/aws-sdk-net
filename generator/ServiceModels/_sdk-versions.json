@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.97.0",
+    "ProductVersion" : "3.7.98.0",
     "CoreVersion"    : "3.7.2.4",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -86,7 +86,7 @@
             "InPreview"               : false
         },
         "CloudWatchLogs"    : {
-            "Version" : "3.7.1.26",
+            "Version" : "3.7.1.27",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.2.4"
@@ -152,7 +152,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.7.20.6",
+            "Version" : "3.7.21.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.2.4"
@@ -722,7 +722,7 @@
             "InPreview"               : false
         },
         "CloudDirectory"                  : {
-            "Version" : "3.7.0.52",
+            "Version" : "3.7.0.53",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.2.4"
@@ -858,7 +858,7 @@
             "InPreview"               : false
         },
         "CostExplorer"                    : {
-            "Version" : "3.7.2.26",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.2.4"
@@ -1018,7 +1018,7 @@
             "InPreview"               : false
         },
         "Cloud9"                          : {
-            "Version" : "3.7.1.50",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.2.4"
