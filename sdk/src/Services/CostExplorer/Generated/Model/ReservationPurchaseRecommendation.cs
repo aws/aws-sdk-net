@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// A specific reservation that AWS recommends for purchase.
+    /// A specific reservation that Amazon Web Services recommends for purchase.
     /// </summary>
     public partial class ReservationPurchaseRecommendation
     {
@@ -44,8 +44,9 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property AccountScope. 
         /// <para>
-        /// The account scope that AWS recommends that you purchase this instance for. For example,
-        /// you can purchase this reservation for an entire organization in AWS Organizations.
+        /// The account scope that Amazon Web Services recommends that you purchase this instance
+        /// for. For example, you can purchase this reservation for an entire organization in
+        /// Amazon Web Services Organizations.
         /// </para>
         /// </summary>
         public AccountScope AccountScope
@@ -63,7 +64,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property LookbackPeriodInDays. 
         /// <para>
-        /// How many days of previous usage that AWS considers when making this recommendation.
+        /// How many days of previous usage that Amazon Web Services considers when making this
+        /// recommendation.
         /// </para>
         /// </summary>
         public LookbackPeriodInDays LookbackPeriodInDays
@@ -81,7 +83,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property PaymentOption. 
         /// <para>
-        /// The payment option for the reservation. For example, <code>AllUpfront</code> or <code>NoUpfront</code>.
+        /// The payment option for the reservation (for example, <code>AllUpfront</code> or <code>NoUpfront</code>).
         /// </para>
         /// </summary>
         public PaymentOption PaymentOption

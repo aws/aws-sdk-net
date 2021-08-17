@@ -38,7 +38,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MonitorArn. 
         /// <para>
-        ///  The unique identifier of your newly created cost anomaly detection monitor.
+        /// The unique identifier of your newly created cost anomaly detection monitor.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1024)]

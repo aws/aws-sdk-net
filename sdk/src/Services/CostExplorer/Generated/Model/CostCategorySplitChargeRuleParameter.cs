@@ -29,48 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// The dollar value of the anomaly.
+    /// The parameters for a split charge method.
     /// </summary>
-    public partial class Impact
+    public partial class CostCategorySplitChargeRuleParameter
     {
-        private double? _maxImpact;
-        private double? _totalImpact;
+        private CostCategorySplitChargeRuleParameterType _type;
+        private List<string> _values = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property MaxImpact. 
+        /// Gets and sets the property Type. 
         /// <para>
-        /// The maximum dollar value that's observed for an anomaly. 
+        /// The parameter type. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double MaxImpact
+        public CostCategorySplitChargeRuleParameterType Type
         {
-            get { return this._maxImpact.GetValueOrDefault(); }
-            set { this._maxImpact = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
-        // Check to see if MaxImpact property is set
-        internal bool IsSetMaxImpact()
+        // Check to see if Type property is set
+        internal bool IsSetType()
         {
-            return this._maxImpact.HasValue; 
+            return this._type != null;
         }
 
         /// <summary>
-        /// Gets and sets the property TotalImpact. 
+        /// Gets and sets the property Values. 
         /// <para>
-        /// The cumulative dollar value that's observed for an anomaly. 
+        /// The parameter values. 
         /// </para>
         /// </summary>
-        public double TotalImpact
+        [AWSProperty(Required=true, Min=1, Max=500)]
+        public List<string> Values
         {
-            get { return this._totalImpact.GetValueOrDefault(); }
-            set { this._totalImpact = value; }
+            get { return this._values; }
+            set { this._values = value; }
         }
 
-        // Check to see if TotalImpact property is set
-        internal bool IsSetTotalImpact()
+        // Check to see if Values property is set
+        internal bool IsSetValues()
         {
-            return this._totalImpact.HasValue; 
+            return this._values != null && this._values.Count > 0; 
         }
 
     }

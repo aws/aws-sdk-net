@@ -42,8 +42,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property InheritedValue. 
         /// <para>
-        /// The value the line item will be categorized as, if the line item contains the matched
-        /// dimension.
+        /// The value the line item is categorized as if the line item contains the matched dimension.
         /// </para>
         /// </summary>
         public CostCategoryInheritedValueDimension InheritedValue
@@ -68,7 +67,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        /// Root level <code>OR</code> is not supported. We recommend that you create a separate
+        /// Root level <code>OR</code> isn't supported. We recommend that you create a separate
         /// rule instead.
         /// </para>
         ///  
@@ -77,7 +76,7 @@ namespace Amazon.CostExplorer.Model
         /// supported for Cost Category expressions. This dimension uses different terms, depending
         /// on whether you're using the console or API/JSON editor. For a detailed comparison,
         /// see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html#cost-categories-terms">Term
-        /// Comparisons</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+        /// Comparisons</a> in the <i>Billing and Cost Management User Guide</i>.
         /// </para>
         /// </summary>
         public Expression Rule
@@ -99,9 +98,9 @@ namespace Amazon.CostExplorer.Model
         /// or <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the
         /// flexibility of defining a rule that dynamically inherits the cost category value from
         /// the dimension value defined by <code>CostCategoryInheritedValueDimension</code>. For
-        /// example, if you wanted to dynamically group costs based on the value of a specific
-        /// tag key, you would first choose an inherited value rule type, then choose the tag
-        /// dimension and specify the tag key to use.
+        /// example, if you want to dynamically group costs based on the value of a specific tag
+        /// key, first choose an inherited value rule type, then choose the tag dimension and
+        /// specify the tag key to use.
         /// </para>
         /// </summary>
         public CostCategoryRuleType Type

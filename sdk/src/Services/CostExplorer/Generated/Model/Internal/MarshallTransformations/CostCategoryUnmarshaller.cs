@@ -112,6 +112,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     unmarshalledObject.RuleVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SplitChargeRules", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CostCategorySplitChargeRule, CostCategorySplitChargeRuleUnmarshaller>(CostCategorySplitChargeRuleUnmarshaller.Instance);
+                    unmarshalledObject.SplitChargeRules = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

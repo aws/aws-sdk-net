@@ -31,7 +31,7 @@ namespace Amazon.CostExplorer.Model
     /// <summary>
     /// Container for the parameters to the UpdateAnomalyMonitor operation.
     /// Updates an existing cost anomaly monitor. The changes made are applied going forward,
-    /// and does not change anomalies detected in the past.
+    /// and doesn'tt change anomalies detected in the past.
     /// </summary>
     public partial class UpdateAnomalyMonitorRequest : AmazonCostExplorerRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MonitorArn. 
         /// <para>
-        ///  Cost anomaly monitor Amazon Resource Names (ARNs). 
+        /// Cost anomaly monitor Amazon Resource Names (ARNs). 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1024)]
@@ -60,7 +60,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MonitorName. 
         /// <para>
-        ///  The new name for the cost anomaly monitor. 
+        /// The new name for the cost anomaly monitor. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

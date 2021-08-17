@@ -76,7 +76,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property AverageNormalizedUnitsUsedPerHour. 
         /// <para>
         /// The average number of normalized units that you used in an hour during the historical
-        /// period. AWS uses this to calculate your recommended reservation purchases.
+        /// period. Amazon Web Services uses this to calculate your recommended reservation purchases.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -96,7 +96,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property AverageNumberOfInstancesUsedPerHour. 
         /// <para>
         /// The average number of instances that you used in an hour during the historical period.
-        /// AWS uses this to calculate your recommended reservation purchases.
+        /// Amazon Web Services uses this to calculate your recommended reservation purchases.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -115,8 +115,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property AverageUtilization. 
         /// <para>
-        /// The average utilization of your instances. AWS uses this to calculate your recommended
-        /// reservation purchases.
+        /// The average utilization of your instances. Amazon Web Services uses this to calculate
+        /// your recommended reservation purchases.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -135,7 +135,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// The currency code that AWS used to calculate the costs for this instance.
+        /// The currency code that Amazon Web Services used to calculate the costs for this instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -154,8 +154,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedBreakEvenInMonths. 
         /// <para>
-        /// How long AWS estimates that it takes for this instance to start saving you money,
-        /// in months.
+        /// How long Amazon Web Services estimates that it takes for this instance to start saving
+        /// you money, in months.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -174,7 +174,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedMonthlyOnDemandCost. 
         /// <para>
-        /// How much AWS estimates that you spend on On-Demand Instances in a month.
+        /// How much Amazon Web Services estimates that you spend on On-Demand Instances in a
+        /// month.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -193,7 +194,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedMonthlySavingsAmount. 
         /// <para>
-        /// How much AWS estimates that this specific recommendation could save you in a month.
+        /// How much Amazon Web Services estimates that this specific recommendation could save
+        /// you in a month.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -212,8 +214,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedMonthlySavingsPercentage. 
         /// <para>
-        /// How much AWS estimates that this specific recommendation could save you in a month,
-        /// as a percentage of your overall costs.
+        /// How much Amazon Web Services estimates that this specific recommendation could save
+        /// you in a month, as a percentage of your overall costs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -232,8 +234,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedReservationCostForLookbackPeriod. 
         /// <para>
-        /// How much AWS estimates that you would have spent for all usage during the specified
-        /// historical period if you had a reservation.
+        /// How much Amazon Web Services estimates that you would have spent for all usage during
+        /// the specified historical period if you had a reservation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -252,7 +254,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property InstanceDetails. 
         /// <para>
-        /// Details about the instances that AWS recommends that you purchase.
+        /// Details about the instances that Amazon Web Services recommends that you purchase.
         /// </para>
         /// </summary>
         public InstanceDetails InstanceDetails
@@ -271,7 +273,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property MaximumNormalizedUnitsUsedPerHour. 
         /// <para>
         /// The maximum number of normalized units that you used in an hour during the historical
-        /// period. AWS uses this to calculate your recommended reservation purchases.
+        /// period. Amazon Web Services uses this to calculate your recommended reservation purchases.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -291,7 +293,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property MaximumNumberOfInstancesUsedPerHour. 
         /// <para>
         /// The maximum number of instances that you used in an hour during the historical period.
-        /// AWS uses this to calculate your recommended reservation purchases.
+        /// Amazon Web Services uses this to calculate your recommended reservation purchases.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -311,7 +313,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property MinimumNormalizedUnitsUsedPerHour. 
         /// <para>
         /// The minimum number of normalized units that you used in an hour during the historical
-        /// period. AWS uses this to calculate your recommended reservation purchases.
+        /// period. Amazon Web Services uses this to calculate your recommended reservation purchases.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -331,7 +333,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property MinimumNumberOfInstancesUsedPerHour. 
         /// <para>
         /// The minimum number of instances that you used in an hour during the historical period.
-        /// AWS uses this to calculate your recommended reservation purchases.
+        /// Amazon Web Services uses this to calculate your recommended reservation purchases.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -350,7 +352,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property RecommendedNormalizedUnitsToPurchase. 
         /// <para>
-        /// The number of normalized units that AWS recommends that you purchase.
+        /// The number of normalized units that Amazon Web Services recommends that you purchase.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -369,7 +371,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property RecommendedNumberOfInstancesToPurchase. 
         /// <para>
-        /// The number of instances that AWS recommends that you purchase.
+        /// The number of instances that Amazon Web Services recommends that you purchase.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

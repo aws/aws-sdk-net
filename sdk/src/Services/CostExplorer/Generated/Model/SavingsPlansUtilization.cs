@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// The measurement of how well you are using your existing Savings Plans.
+    /// The measurement of how well you're using your existing Savings Plans.
     /// </summary>
     public partial class SavingsPlansUtilization
     {
@@ -61,7 +61,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property UnusedCommitment. 
         /// <para>
-        /// The amount of your Savings Plans commitment that was not consumed from Savings Plans
+        /// The amount of your Savings Plans commitment that wasn't consumed from Savings Plans
         /// eligible usage in a specific period.
         /// </para>
         /// </summary>

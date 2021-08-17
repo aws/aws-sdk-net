@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Information about this specific recommendation, such as the timestamp for when AWS
-    /// made a specific recommendation.
+    /// Information about this specific recommendation, such as the timestamp for when Amazon
+    /// Web Services made a specific recommendation.
     /// </summary>
     public partial class ReservationPurchaseRecommendationMetadata
     {
@@ -40,7 +40,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property GenerationTimestamp. 
         /// <para>
-        /// The timestamp for when AWS made this recommendation.
+        /// The timestamp for when Amazon Web Services made this recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

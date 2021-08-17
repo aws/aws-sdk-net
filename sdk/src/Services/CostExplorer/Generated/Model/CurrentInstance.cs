@@ -48,7 +48,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        ///  The currency code that AWS used to calculate the costs for this instance.
+        ///  The currency code that Amazon Web Services used to calculate the costs for this instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -67,7 +67,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property InstanceName. 
         /// <para>
-        /// The name you've given an instance. This field will show as blank if you haven't given
+        /// The name that you given an instance. This field shows as blank if you haven't given
         /// the instance a name.
         /// </para>
         /// </summary>
@@ -87,7 +87,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MonthlyCost. 
         /// <para>
-        ///  Current On-Demand cost of operating this instance on a monthly basis.
+        /// The current On-Demand cost of operating this instance on a monthly basis.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -106,7 +106,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property OnDemandHoursInLookbackPeriod. 
         /// <para>
-        ///  Number of hours during the lookback period billed at On-Demand rates.
+        ///  The number of hours during the lookback period that's billed at On-Demand rates.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -125,7 +125,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property ReservationCoveredHoursInLookbackPeriod. 
         /// <para>
-        ///  Number of hours during the lookback period covered by reservations.
+        ///  The number of hours during the lookback period that's covered by reservations.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -144,7 +144,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property ResourceDetails. 
         /// <para>
-        ///  Details about the resource and utilization.
+        /// Details about the resource and utilization.
         /// </para>
         /// </summary>
         public ResourceDetails ResourceDetails
@@ -181,7 +181,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property ResourceUtilization. 
         /// <para>
-        ///  Utilization information of the current instance during the lookback period.
+        /// Utilization information of the current instance during the lookback period.
         /// </para>
         /// </summary>
         public ResourceUtilization ResourceUtilization
@@ -199,7 +199,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SavingsPlansCoveredHoursInLookbackPeriod. 
         /// <para>
-        /// Number of hours during the lookback period covered by Savings Plans.
+        /// The number of hours during the lookback period that's covered by Savings Plans.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -218,7 +218,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Cost allocation resource tags applied to the instance.
+        /// Cost allocation resource tags that are applied to the instance.
         /// </para>
         /// </summary>
         public List<TagValues> Tags
@@ -236,7 +236,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TotalRunningHoursInLookbackPeriod. 
         /// <para>
-        ///  The total number of hours the instance ran during the lookback period.
+        /// The total number of hours that the instance ran during the lookback period.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

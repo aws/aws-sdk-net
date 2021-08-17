@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// The Amazon EC2 hardware specifications that you want AWS to provide recommendations
-    /// for.
+    /// The Amazon EC2 hardware specifications that you want Amazon Web Services to provide
+    /// recommendations for.
     /// </summary>
     public partial class EC2Specification
     {
@@ -39,7 +39,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property OfferingClass. 
         /// <para>
-        /// Whether you want a recommendation for standard or convertible reservations.
+        /// Indicates whether you want a recommendation for standard or convertible reservations.
         /// </para>
         /// </summary>
         public OfferingClass OfferingClass

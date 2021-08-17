@@ -84,8 +84,8 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property NextPageToken. 
         /// <para>
         /// If the number of objects that are still available for retrieval exceeds the limit,
-        /// AWS returns a NextPageToken value in the response. To retrieve the next batch of objects,
-        /// provide the marker from the prior call in your next request.
+        /// Amazon Web Services returns a NextPageToken value in the response. To retrieve the
+        /// next batch of objects, provide the marker from the prior call in your next request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=8192)]

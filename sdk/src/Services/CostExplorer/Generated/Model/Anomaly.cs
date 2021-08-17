@@ -47,7 +47,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property AnomalyEndDate. 
         /// <para>
-        ///  The last day the anomaly is detected. 
+        /// The last day the anomaly is detected. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=40)]
@@ -66,7 +66,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property AnomalyId. 
         /// <para>
-        ///  The unique identifier for the anomaly. 
+        /// The unique identifier for the anomaly. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1024)]
@@ -85,7 +85,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property AnomalyScore. 
         /// <para>
-        ///  The latest and maximum score for the anomaly. 
+        /// The latest and maximum score for the anomaly. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -104,7 +104,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property AnomalyStartDate. 
         /// <para>
-        ///  The first day the anomaly is detected. 
+        /// The first day the anomaly is detected. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=40)]
@@ -123,8 +123,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property DimensionValue. 
         /// <para>
-        ///  The dimension for the anomaly. For example, an AWS service in a service monitor.
-        /// 
+        /// The dimension for the anomaly (for example, an Amazon Web Services service in a service
+        /// monitor). 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -143,7 +143,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Feedback. 
         /// <para>
-        ///  The feedback value. 
+        /// The feedback value. 
         /// </para>
         /// </summary>
         public AnomalyFeedbackType Feedback
@@ -161,7 +161,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Impact. 
         /// <para>
-        ///  The dollar impact for the anomaly. 
+        /// The dollar impact for the anomaly. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -180,8 +180,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MonitorArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) for the cost monitor that generated this anomaly.
-        /// 
+        /// The Amazon Resource Name (ARN) for the cost monitor that generated this anomaly. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1024)]
@@ -200,7 +199,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property RootCauses. 
         /// <para>
-        ///  The list of identified root causes for the anomaly. 
+        /// The list of identified root causes for the anomaly. 
         /// </para>
         /// </summary>
         public List<RootCause> RootCauses

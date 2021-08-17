@@ -35,10 +35,10 @@ namespace Amazon.CostExplorer
     /// <summary>
     /// Implementation for accessing CostExplorer
     ///
-    /// The Cost Explorer API enables you to programmatically query your cost and usage data.
+    /// You can use the Cost Explorer API to programmatically query your cost and usage data.
     /// You can query for aggregated data such as total monthly costs or total daily usage.
-    /// You can also query for granular data, such as the number of daily write operations
-    /// for Amazon DynamoDB database tables in your production environment. 
+    /// You can also query for granular data. This might include the number of daily write
+    /// operations for Amazon DynamoDB database tables in your production environment. 
     /// 
     ///  
     /// <para>
@@ -54,8 +54,9 @@ namespace Amazon.CostExplorer
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For information about costs associated with the Cost Explorer API, see <a href="http://aws.amazon.com/aws-cost-management/pricing/">AWS
-    /// Cost Management Pricing</a>.
+    /// For information about the costs that are associated with the Cost Explorer API, see
+    /// <a href="http://aws.amazon.com/aws-cost-management/pricing/">Amazon Web Services Cost
+    /// Management Pricing</a>.
     /// </para>
     /// </summary>
     public partial class AmazonCostExplorerClient : AmazonServiceClient, IAmazonCostExplorer
@@ -691,8 +692,8 @@ namespace Amazon.CostExplorer
         #region  GetAnomalies
 
         /// <summary>
-        /// Retrieves all of the cost anomalies detected on your account, during the time period
-        /// specified by the <code>DateInterval</code> object.
+        /// Retrieves all of the cost anomalies detected on your account during the time period
+        /// that's specified by the <code>DateInterval</code> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAnomalies service method.</param>
         /// 
@@ -881,12 +882,12 @@ namespace Amazon.CostExplorer
 
         /// <summary>
         /// Retrieves cost and usage metrics for your account. You can specify which cost and
-        /// usage-related metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>,
-        /// that you want the request to return. You can also filter and group your data by various
-        /// dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range.
-        /// For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-        /// operation. Management account in an organization in AWS Organizations have access
-        /// to all member accounts.
+        /// usage-related metric that you want the request to return. For example, you can specify
+        /// <code>BlendedCosts</code> or <code>UsageQuantity</code>. You can also filter and group
+        /// your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>,
+        /// in a specific time range. For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
+        /// operation. Management account in an organization in Organizations have access to all
+        /// member accounts.
         /// 
         ///  
         /// <para>
@@ -967,15 +968,15 @@ namespace Amazon.CostExplorer
         /// that you want the request to return. You can also filter and group your data by various
         /// dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range.
         /// For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-        /// operation. Management account in an organization in AWS Organizations have access
-        /// to all member accounts. This API is currently available for the Amazon Elastic Compute
-        /// Cloud – Compute service only.
+        /// operation. Management account in an organization in Organizations have access to all
+        /// member accounts. This API is currently available for the Amazon Elastic Compute Cloud
+        /// – Compute service only.
         /// 
         ///  <note> 
         /// <para>
         /// This is an opt-in only feature. You can enable this feature from the Cost Explorer
         /// Settings page. For information on how to access the Settings page, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling
-        /// Access for Cost Explorer</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+        /// Access for Cost Explorer</a> in the <i>Billing and Cost Management User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1384,22 +1385,22 @@ namespace Amazon.CostExplorer
         /// 
         ///  
         /// <para>
-        /// AWS generates your recommendations by identifying your On-Demand usage during a specific
-        /// time period and collecting your usage into categories that are eligible for a reservation.
-        /// After AWS has these categories, it simulates every combination of reservations in
-        /// each category of usage to identify the best number of each type of RI to purchase
-        /// to maximize your estimated savings. 
+        /// Amazon Web Services generates your recommendations by identifying your On-Demand usage
+        /// during a specific time period and collecting your usage into categories that are eligible
+        /// for a reservation. After Amazon Web Services has these categories, it simulates every
+        /// combination of reservations in each category of usage to identify the best number
+        /// of each type of RI to purchase to maximize your estimated savings. 
         /// </para>
         ///  
         /// <para>
-        /// For example, AWS automatically aggregates your Amazon EC2 Linux, shared tenancy, and
-        /// c4 family usage in the US West (Oregon) Region and recommends that you buy size-flexible
-        /// regional reservations to apply to the c4 family usage. AWS recommends the smallest
-        /// size instance in an instance family. This makes it easier to purchase a size-flexible
-        /// RI. AWS also shows the equal number of normalized units so that you can purchase any
-        /// instance size that you want. For this example, your RI recommendation would be for
-        /// <code>c4.large</code> because that is the smallest size instance in the c4 instance
-        /// family.
+        /// For example, Amazon Web Services automatically aggregates your Amazon EC2 Linux, shared
+        /// tenancy, and c4 family usage in the US West (Oregon) Region and recommends that you
+        /// buy size-flexible regional reservations to apply to the c4 family usage. Amazon Web
+        /// Services recommends the smallest size instance in an instance family. This makes it
+        /// easier to purchase a size-flexible RI. Amazon Web Services also shows the equal number
+        /// of normalized units so that you can purchase any instance size that you want. For
+        /// this example, your RI recommendation would be for <code>c4.large</code> because that
+        /// is the smallest size instance in the c4 instance family.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReservationPurchaseRecommendation service method.</param>
@@ -1537,7 +1538,7 @@ namespace Amazon.CostExplorer
         /// Recommendations are generated to either downsize or terminate instances, along with
         /// providing savings detail and metrics. For details on calculation and function, see
         /// <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing
-        /// Your Cost with Rightsizing Recommendations</a> in the <i>AWS Billing and Cost Management
+        /// Your Cost with Rightsizing Recommendations</a> in the <i>Billing and Cost Management
         /// User Guide</i>.
         /// </para>
         /// </summary>
@@ -2148,7 +2149,7 @@ namespace Amazon.CostExplorer
 
         /// <summary>
         /// Updates an existing cost anomaly monitor. The changes made are applied going forward,
-        /// and does not change anomalies detected in the past.
+        /// and doesn'tt change anomalies detected in the past.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAnomalyMonitor service method.</param>
         /// 

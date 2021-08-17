@@ -186,8 +186,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Granularity. 
         /// <para>
-        /// The granularity of the AWS cost data for the reservation. Valid values are <code>MONTHLY</code>
-        /// and <code>DAILY</code>.
+        /// The granularity of the Amazon Web Services cost data for the reservation. Valid values
+        /// are <code>MONTHLY</code> and <code>DAILY</code>.
         /// </para>
         ///  
         /// <para>
@@ -276,8 +276,8 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of objects that you returned for this request. If more objects
-        /// are available, in the response, AWS provides a NextPageToken value that you can use
-        /// in a subsequent call to get the next batch of objects.
+        /// are available, in the response, Amazon Web Services provides a NextPageToken value
+        /// that you can use in a subsequent call to get the next batch of objects.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -319,8 +319,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        /// The token to retrieve the next set of results. AWS provides the token when the response
-        /// from a previous call has more results than the maximum page size.
+        /// The token to retrieve the next set of results. Amazon Web Services provides the token
+        /// when the response from a previous call has more results than the maximum page size.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=8192)]

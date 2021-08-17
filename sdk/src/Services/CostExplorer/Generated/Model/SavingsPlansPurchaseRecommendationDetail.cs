@@ -72,7 +72,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// The currency code AWS used to generate the recommendations and present potential savings.
+        /// The currency code that Amazon Web Services used to generate the recommendations and
+        /// present potential savings.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -170,7 +171,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedMonthlySavingsAmount. 
         /// <para>
-        /// The estimated monthly savings amount, based on the recommended Savings Plans.
+        /// The estimated monthly savings amount based on the recommended Savings Plans.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -229,8 +230,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedROI. 
         /// <para>
-        /// The estimated return on investment based on the recommended Savings Plans purchased.
-        /// This is calculated as <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.
+        /// The estimated return on investment that's based on the recommended Savings Plans that
+        /// you purchased. This is calculated as <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -249,8 +250,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedSavingsAmount. 
         /// <para>
-        /// The estimated savings amount based on the recommended Savings Plans over the length
-        /// of the lookback period.
+        /// The estimated savings amount that's based on the recommended Savings Plans over the
+        /// length of the lookback period.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -308,8 +309,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property HourlyCommitmentToPurchase. 
         /// <para>
-        /// The recommended hourly commitment level for the Savings Plans type, and configuration
-        /// based on the usage during the lookback period.
+        /// The recommended hourly commitment level for the Savings Plans type and the configuration
+        /// that's based on the usage during the lookback period.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

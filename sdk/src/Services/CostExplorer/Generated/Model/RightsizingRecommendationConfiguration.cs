@@ -29,10 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Enables you to customize recommendations across two attributes. You can choose to
-    /// view recommendations for instances within the same instance families or across different
-    /// instance families. You can also choose to view your estimated savings associated with
-    /// recommendations with consideration of existing Savings Plans or RI benefits, or neither.
+    /// You can use <code>RightsizingRecommendationConfiguration</code> to customize recommendations
+    /// across two attributes. You can choose to view recommendations for instances within
+    /// the same instance families or across different instance families. You can also choose
+    /// to view your estimated savings that are associated with recommendations with consideration
+    /// of existing Savings Plans or RI benefits, or neither.
     /// </summary>
     public partial class RightsizingRecommendationConfiguration
     {
@@ -42,7 +43,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property BenefitsConsidered. 
         /// <para>
-        ///  The option to consider RI or Savings Plans discount benefits in your savings calculation.
+        /// The option to consider RI or Savings Plans discount benefits in your savings calculation.
         /// The default value is <code>TRUE</code>. 
         /// </para>
         /// </summary>
@@ -62,7 +63,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property RecommendationTarget. 
         /// <para>
-        ///  The option to see recommendations within the same instance family, or recommendations
+        /// The option to see recommendations within the same instance family or recommendations
         /// for instances across other families. The default value is <code>SAME_INSTANCE_FAMILY</code>.
         /// 
         /// </para>

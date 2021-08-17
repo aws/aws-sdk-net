@@ -62,7 +62,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CurrentInstance. 
         /// <para>
-        ///  Context regarding the current instance.
+        /// Context regarding the current instance.
         /// </para>
         /// </summary>
         public CurrentInstance CurrentInstance
@@ -99,7 +99,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property ModifyRecommendationDetail. 
         /// <para>
-        ///  Details for modification recommendations. 
+        /// The details for the modification recommendations. 
         /// </para>
         /// </summary>
         public ModifyRecommendationDetail ModifyRecommendationDetail
@@ -117,7 +117,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property RightsizingType. 
         /// <para>
-        /// Recommendation to either terminate or modify the resource.
+        /// A recommendation to either terminate or modify the resource.
         /// </para>
         /// </summary>
         public RightsizingType RightsizingType
@@ -135,7 +135,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TerminateRecommendationDetail. 
         /// <para>
-        /// Details for termination recommendations.
+        /// The details for termination recommendations.
         /// </para>
         /// </summary>
         public TerminateRecommendationDetail TerminateRecommendationDetail

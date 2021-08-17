@@ -44,8 +44,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Frequency. 
         /// <para>
-        ///  The update to the frequency value at which subscribers will receive notifications.
-        /// 
+        /// The update to the frequency value that subscribers receive notifications. 
         /// </para>
         /// </summary>
         public AnomalySubscriptionFrequency Frequency
@@ -63,7 +62,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MonitorArnList. 
         /// <para>
-        ///  A list of cost anomaly monitor ARNs. 
+        /// A list of cost anomaly monitor ARNs. 
         /// </para>
         /// </summary>
         public List<string> MonitorArnList
@@ -81,7 +80,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Subscribers. 
         /// <para>
-        ///  The update to the subscriber list. 
+        /// The update to the subscriber list. 
         /// </para>
         /// </summary>
         public List<Subscriber> Subscribers
@@ -99,7 +98,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SubscriptionArn. 
         /// <para>
-        ///  A cost anomaly subscription Amazon Resource Name (ARN). 
+        /// A cost anomaly subscription Amazon Resource Name (ARN). 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1024)]
@@ -118,7 +117,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SubscriptionName. 
         /// <para>
-        ///  The subscription's new name. 
+        /// The new name of the subscription. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -137,7 +136,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Threshold. 
         /// <para>
-        ///  The update to the threshold value for receiving notifications. 
+        /// The update to the threshold value for receiving notifications. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

@@ -38,7 +38,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SubscriptionArn. 
         /// <para>
-        ///  A cost anomaly subscription ARN. 
+        /// A cost anomaly subscription ARN. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1024)]

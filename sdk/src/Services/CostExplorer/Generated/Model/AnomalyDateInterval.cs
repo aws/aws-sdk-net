@@ -39,7 +39,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EndDate. 
         /// <para>
-        ///  The last date an anomaly was observed. 
+        /// The last date an anomaly was observed. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=40)]
@@ -58,7 +58,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property StartDate. 
         /// <para>
-        ///  The first date an anomaly was observed. 
+        /// The first date an anomaly was observed. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=40)]

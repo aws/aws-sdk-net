@@ -40,7 +40,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Address. 
         /// <para>
-        ///  The email address or SNS Amazon Resource Name (ARN), depending on the <code>Type</code>.
+        /// The email address or SNS Amazon Resource Name (ARN). This depends on the <code>Type</code>.
         /// 
         /// </para>
         /// </summary>
@@ -60,7 +60,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  Indicates if the subscriber accepts the notifications. 
+        /// Indicates if the subscriber accepts the notifications. 
         /// </para>
         /// </summary>
         public SubscriberStatus Status
@@ -78,7 +78,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The notification delivery channel. 
+        /// The notification delivery channel. 
         /// </para>
         /// </summary>
         public SubscriberType Type

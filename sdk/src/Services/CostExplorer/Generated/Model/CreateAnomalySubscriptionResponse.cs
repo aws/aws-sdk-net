@@ -38,7 +38,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SubscriptionArn. 
         /// <para>
-        ///  The unique identifier of your newly created cost anomaly subscription. 
+        /// The unique identifier of your newly created cost anomaly subscription. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1024)]

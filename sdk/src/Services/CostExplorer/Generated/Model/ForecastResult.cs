@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// The forecast created for your query.
+    /// The forecast that's created for your query.
     /// </summary>
     public partial class ForecastResult
     {

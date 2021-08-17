@@ -38,6 +38,7 @@ namespace Amazon.CostExplorer.Model
         private string _name;
         private List<CostCategoryRule> _rules = new List<CostCategoryRule>();
         private CostCategoryRuleVersion _ruleVersion;
+        private List<CostCategorySplitChargeRule> _splitChargeRules = new List<CostCategorySplitChargeRule>();
 
         /// <summary>
         /// Gets and sets the property DefaultValue.
@@ -104,6 +105,26 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetRuleVersion()
         {
             return this._ruleVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SplitChargeRules. 
+        /// <para>
+        ///  The split charge rules used to allocate your charges between your Cost Category values.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<CostCategorySplitChargeRule> SplitChargeRules
+        {
+            get { return this._splitChargeRules; }
+            set { this._splitChargeRules = value; }
+        }
+
+        // Check to see if SplitChargeRules property is set
+        internal bool IsSetSplitChargeRules()
+        {
+            return this._splitChargeRules != null && this._splitChargeRules.Count > 0; 
         }
 
     }

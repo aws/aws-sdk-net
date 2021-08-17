@@ -43,8 +43,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property DiskResourceUtilization. 
         /// <para>
-        ///  The field that contains a list of disk (local storage) metrics associated with the
-        /// current instance. 
+        ///  The field that contains a list of disk (local storage) metrics that are associated
+        /// with the current instance. 
         /// </para>
         /// </summary>
         public DiskResourceUtilization DiskResourceUtilization
@@ -62,8 +62,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EBSResourceUtilization. 
         /// <para>
-        ///  The EBS field that contains a list of EBS metrics associated with the current instance.
-        /// 
+        /// The EBS field that contains a list of EBS metrics that are associated with the current
+        /// instance. 
         /// </para>
         /// </summary>
         public EBSResourceUtilization EBSResourceUtilization
@@ -81,7 +81,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MaxCpuUtilizationPercentage. 
         /// <para>
-        ///  Maximum observed or expected CPU utilization of the instance.
+        ///  The maximum observed or expected CPU utilization of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -100,7 +100,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MaxMemoryUtilizationPercentage. 
         /// <para>
-        ///  Maximum observed or expected memory utilization of the instance.
+        ///  The maximum observed or expected memory utilization of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -119,8 +119,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MaxStorageUtilizationPercentage. 
         /// <para>
-        ///  Maximum observed or expected storage utilization of the instance (does not measure
-        /// EBS storage).
+        ///  The maximum observed or expected storage utilization of the instance. This doesn't
+        /// include EBS storage.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -139,8 +139,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property NetworkResourceUtilization. 
         /// <para>
-        ///  The network field that contains a list of network metrics associated with the current
-        /// instance. 
+        ///  The network field that contains a list of network metrics that are associated with
+        /// the current instance. 
         /// </para>
         /// </summary>
         public NetworkResourceUtilization NetworkResourceUtilization

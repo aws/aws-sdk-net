@@ -40,7 +40,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property AdditionalMetadata. 
         /// <para>
-        /// Additional metadata that may be applicable to the recommendation.
+        /// Additional metadata that might be applicable to the recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

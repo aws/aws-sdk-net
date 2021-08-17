@@ -40,7 +40,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EndValue. 
         /// <para>
-        ///  The upper bound dollar value used in the filter. 
+        /// The upper bound dollar value that's used in the filter. 
         /// </para>
         /// </summary>
         public double EndValue
@@ -58,7 +58,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property NumericOperator. 
         /// <para>
-        ///  The comparing value used in the filter. 
+        /// The comparing value that's used in the filter. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -77,7 +77,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property StartValue. 
         /// <para>
-        ///  The lower bound dollar value used in the filter. 
+        /// The lower bound dollar value that's used in the filter. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

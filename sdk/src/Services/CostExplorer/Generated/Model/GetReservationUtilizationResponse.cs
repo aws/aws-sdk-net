@@ -40,8 +40,9 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        /// The token for the next set of retrievable results. AWS provides the token when the
-        /// response from a previous call has more results than the maximum page size.
+        /// The token for the next set of retrievable results. Amazon Web Services provides the
+        /// token when the response from a previous call has more results than the maximum page
+        /// size.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=8192)]

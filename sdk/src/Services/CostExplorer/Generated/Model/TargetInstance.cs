@@ -44,7 +44,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        ///  The currency code that AWS used to calculate the costs for this instance.
+        /// The currency code that Amazon Web Services used to calculate the costs for this instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -63,7 +63,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property DefaultTargetInstance. 
         /// <para>
-        ///  Indicates whether this recommendation is the defaulted AWS recommendation.
+        /// Determines whether this recommendation is the defaulted Amazon Web Services recommendation.
         /// </para>
         /// </summary>
         public bool DefaultTargetInstance
@@ -81,7 +81,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedMonthlyCost. 
         /// <para>
-        ///  Expected cost to operate this instance type on a monthly basis.
+        /// The expected cost to operate this instance type on a monthly basis.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -100,7 +100,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedMonthlySavings. 
         /// <para>
-        ///  Estimated savings resulting from modification, on a monthly basis.
+        /// The estimated savings that result from modification, on a monthly basis.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -119,7 +119,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property ExpectedResourceUtilization. 
         /// <para>
-        ///  Expected utilization metrics for target instance type.
+        /// The expected utilization metrics for target instance type.
         /// </para>
         /// </summary>
         public ResourceUtilization ExpectedResourceUtilization
@@ -156,7 +156,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property ResourceDetails. 
         /// <para>
-        ///  Details on the target instance type. 
+        /// Details on the target instance type. 
         /// </para>
         /// </summary>
         public ResourceDetails ResourceDetails

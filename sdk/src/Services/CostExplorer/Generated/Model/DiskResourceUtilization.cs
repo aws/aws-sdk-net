@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// The field that contains a list of disk (local storage) metrics associated with the
-    /// current instance.
+    /// The field that contains a list of disk (local storage) metrics that are associated
+    /// with the current instance.
     /// </summary>
     public partial class DiskResourceUtilization
     {

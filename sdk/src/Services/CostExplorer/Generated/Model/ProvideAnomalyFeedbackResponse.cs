@@ -38,7 +38,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property AnomalyId. 
         /// <para>
-        ///  The ID of the modified cost anomaly. 
+        /// The ID of the modified cost anomaly. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1024)]

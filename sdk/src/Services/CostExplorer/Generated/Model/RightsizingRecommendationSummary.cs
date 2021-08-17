@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Summary of rightsizing recommendations
+    /// The summary of rightsizing recommendations
     /// </summary>
     public partial class RightsizingRecommendationSummary
     {
@@ -41,7 +41,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedTotalMonthlySavingsAmount. 
         /// <para>
-        ///  Estimated total savings resulting from modifications, on a monthly basis.
+        /// The estimated total savings resulting from modifications, on a monthly basis.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -60,7 +60,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SavingsCurrencyCode. 
         /// <para>
-        ///  The currency code that AWS used to calculate the savings.
+        /// The currency code that Amazon Web Services used to calculate the savings.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -79,8 +79,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SavingsPercentage. 
         /// <para>
-        ///  Savings percentage based on the recommended modifications, relative to the total
-        /// On-Demand costs associated with these instances.
+        ///  The savings percentage based on the recommended modifications. It's relative to the
+        /// total On-Demand costs that are associated with these instances.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -99,7 +99,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TotalRecommendationCount. 
         /// <para>
-        ///  Total number of instance recommendations.
+        /// The total number of instance recommendations.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

@@ -39,7 +39,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Anomalies. 
         /// <para>
-        ///  A list of cost anomalies. 
+        /// A list of cost anomalies. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,8 +58,9 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        ///  The token to retrieve the next set of results. AWS provides the token when the response
-        /// from a previous call has more results than the maximum page size. 
+        /// The token to retrieve the next set of results. Amazon Web Services provides the token
+        /// when the response from a previous call has more results than the maximum page size.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=8192)]

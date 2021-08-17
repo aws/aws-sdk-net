@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// The amount of savings you're accumulating, against the public On-Demand rate of the
-    /// usage accrued in an account.
+    /// The amount of savings that you're accumulating, against the public On-Demand rate
+    /// of the usage accrued in an account.
     /// </summary>
     public partial class SavingsPlansSavings
     {
@@ -40,7 +40,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property NetSavings. 
         /// <para>
-        /// The savings amount that you are accumulating for the usage that is covered by a Savings
+        /// The savings amount that you're accumulating for the usage that's covered by a Savings
         /// Plans, when compared to the On-Demand equivalent of the same usage.
         /// </para>
         /// </summary>

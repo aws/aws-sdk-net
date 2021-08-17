@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Quantifies the anomaly. The higher score means that it is more anomalous.
+    /// Quantifies the anomaly. The higher score means that it's more anomalous.
     /// </summary>
     public partial class AnomalyScore
     {
@@ -39,7 +39,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CurrentScore. 
         /// <para>
-        ///  The last observed score. 
+        /// The last observed score. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MaxScore. 
         /// <para>
-        ///  The maximum score observed during the <code>AnomalyDateInterval</code>. 
+        /// The maximum score that's observed during the <code>AnomalyDateInterval</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

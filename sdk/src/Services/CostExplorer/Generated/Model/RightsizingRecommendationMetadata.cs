@@ -41,7 +41,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property AdditionalMetadata. 
         /// <para>
-        /// Additional metadata that may be applicable to the recommendation.
+        /// Additional metadata that might be applicable to the recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -60,7 +60,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property GenerationTimestamp. 
         /// <para>
-        ///  The timestamp for when AWS made this recommendation.
+        /// The timestamp for when Amazon Web Services made this recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -79,7 +79,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property LookbackPeriodInDays. 
         /// <para>
-        ///  How many days of previous usage that AWS considers when making this recommendation.
+        /// The number of days of previous usage that Amazon Web Services considers when making
+        /// this recommendation.
         /// </para>
         /// </summary>
         public LookbackPeriodInDays LookbackPeriodInDays
@@ -97,7 +98,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property RecommendationId. 
         /// <para>
-        ///  The ID for this specific recommendation.
+        /// The ID for this specific recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

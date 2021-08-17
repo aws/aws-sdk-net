@@ -30,8 +30,8 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAnomalies operation.
-    /// Retrieves all of the cost anomalies detected on your account, during the time period
-    /// specified by the <code>DateInterval</code> object.
+    /// Retrieves all of the cost anomalies detected on your account during the time period
+    /// that's specified by the <code>DateInterval</code> object.
     /// </summary>
     public partial class GetAnomaliesRequest : AmazonCostExplorerRequest
     {
@@ -83,7 +83,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The number of entries a paginated response contains. 
+        /// The number of entries a paginated response contains. 
         /// </para>
         /// </summary>
         public int MaxResults
@@ -121,8 +121,9 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        ///  The token to retrieve the next set of results. AWS provides the token when the response
-        /// from a previous call has more results than the maximum page size. 
+        /// The token to retrieve the next set of results. Amazon Web Services provides the token
+        /// when the response from a previous call has more results than the maximum page size.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=8192)]

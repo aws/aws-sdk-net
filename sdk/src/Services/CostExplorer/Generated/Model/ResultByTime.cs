@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// The result that is associated with a time period.
+    /// The result that's associated with a time period.
     /// </summary>
     public partial class ResultByTime
     {
@@ -41,7 +41,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Estimated. 
         /// <para>
-        /// Whether the result is estimated.
+        /// Determines whether the result is estimated.
         /// </para>
         /// </summary>
         public bool Estimated

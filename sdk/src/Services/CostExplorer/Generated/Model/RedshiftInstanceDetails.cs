@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Details about the Amazon Redshift instances that AWS recommends that you purchase.
+    /// Details about the Amazon Redshift instances that Amazon Web Services recommends that
+    /// you purchase.
     /// </summary>
     public partial class RedshiftInstanceDetails
     {
@@ -42,7 +43,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CurrentGeneration. 
         /// <para>
-        /// Whether the recommendation is for a current-generation instance.
+        /// Determines whether the recommendation is for a current-generation instance.
         /// </para>
         /// </summary>
         public bool CurrentGeneration
@@ -79,7 +80,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property NodeType. 
         /// <para>
-        /// The type of node that AWS recommends.
+        /// The type of node that Amazon Web Services recommends.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -98,7 +99,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS Region of the recommended reservation.
+        /// The Amazon Web Services Region of the recommended reservation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -117,7 +118,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SizeFlexEligible. 
         /// <para>
-        /// Whether the recommended reservation is size flexible.
+        /// Determines whether the recommended reservation is size flexible.
         /// </para>
         /// </summary>
         public bool SizeFlexEligible

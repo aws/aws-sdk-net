@@ -39,7 +39,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key by which to sort the data.
+        /// The key that's used to sort the data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1024)]
@@ -58,7 +58,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The order in which to sort the data.
+        /// The order that's used to sort the data.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

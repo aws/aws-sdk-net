@@ -48,7 +48,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// The currency code AWS used to generate the recommendations and present potential savings.
+        /// The currency code that Amazon Web Services used to generate the recommendations and
+        /// present potential savings.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -106,7 +107,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedMonthlySavingsAmount. 
         /// <para>
-        /// The estimated monthly savings amount, based on the recommended Savings Plans purchase.
+        /// The estimated monthly savings amount that's based on the recommended Savings Plans
+        /// purchase.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -125,8 +127,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedOnDemandCostWithCurrentCommitment. 
         /// <para>
-        ///  The estimated On-Demand costs you would expect with no additional commitment, based
-        /// on your usage of the selected time period and the Savings Plans you own. 
+        ///  The estimated On-Demand costs you would expect with no additional commitment. It's
+        /// based on your usage of the selected time period and the Savings Plans you own. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -145,8 +147,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedROI. 
         /// <para>
-        /// The estimated return on investment based on the recommended Savings Plans and estimated
-        /// savings.
+        /// The estimated return on investment that's based on the recommended Savings Plans and
+        /// estimated savings.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -226,7 +228,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property HourlyCommitmentToPurchase. 
         /// <para>
-        /// The recommended hourly commitment based on the recommendation parameters.
+        /// The recommended hourly commitment that's based on the recommendation parameters.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

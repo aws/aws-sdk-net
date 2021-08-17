@@ -33,15 +33,15 @@ namespace Amazon.CostExplorer.Model
     /// 
     ///  
     /// <para>
-    /// If <code>Values</code> and <code>Key</code> are not specified, the <code>ABSENT</code>
-    /// <code>MatchOption</code> is applied to all tags. That is, filtering on resources with
-    /// no tags.
+    /// If <code>Values</code> and <code>Key</code> aren't specified, the <code>ABSENT</code>
+    /// <code>MatchOption</code> is applied to all tags. That is, it's filtered on resources
+    /// with no tags.
     /// </para>
     ///  
     /// <para>
-    /// If <code>Values</code> is provided and <code>Key</code> is not specified, the <code>ABSENT</code>
-    /// <code>MatchOption</code> is applied to the tag <code>Key</code> only. That is, filtering
-    /// on resources without the given tag key.
+    /// If <code>Values</code> is provided and <code>Key</code> isn't specified, the <code>ABSENT</code>
+    /// <code>MatchOption</code> is applied to the tag <code>Key</code> only. That is, it's
+    /// filtered on resources without the given tag key.
     /// </para>
     /// </summary>
     public partial class TagValues

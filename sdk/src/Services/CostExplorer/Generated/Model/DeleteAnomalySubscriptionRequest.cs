@@ -39,7 +39,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SubscriptionArn. 
         /// <para>
-        ///  The unique identifier of the cost anomaly subscription that you want to delete. 
+        /// The unique identifier of the cost anomaly subscription that you want to delete. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1024)]

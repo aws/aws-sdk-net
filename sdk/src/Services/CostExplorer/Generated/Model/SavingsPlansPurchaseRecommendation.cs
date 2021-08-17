@@ -45,7 +45,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property AccountScope. 
         /// <para>
         /// The account scope that you want your recommendations for. Amazon Web Services calculates
-        /// recommendations including the management account and member accounts if the value
+        /// recommendations that include the management account and member accounts if the value
         /// is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations
         /// are calculated for individual member accounts only.
         /// </para>
@@ -156,7 +156,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TermInYears. 
         /// <para>
-        /// The Savings Plans recommendation term in years, used to generate the recommendation.
+        /// The Savings Plans recommendation term in years. It's used to generate the recommendation.
         /// </para>
         /// </summary>
         public TermInYears TermInYears

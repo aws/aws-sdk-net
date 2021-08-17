@@ -47,7 +47,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        ///  Your unique account identifier. 
+        /// Your unique account identifier. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -66,7 +66,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Frequency. 
         /// <para>
-        ///  The frequency at which anomaly reports are sent over email. 
+        /// The frequency that anomaly reports are sent over email. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -85,7 +85,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MonitorArnList. 
         /// <para>
-        ///  A list of cost anomaly monitors. 
+        /// A list of cost anomaly monitors. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -104,7 +104,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Subscribers. 
         /// <para>
-        ///  A list of subscribers to notify. 
+        /// A list of subscribers to notify. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -123,7 +123,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SubscriptionArn. 
         /// <para>
-        ///  The <code>AnomalySubscription</code> Amazon Resource Name (ARN). 
+        /// The <code>AnomalySubscription</code> Amazon Resource Name (ARN). 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -142,7 +142,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SubscriptionName. 
         /// <para>
-        ///  The name for the subscription. 
+        /// The name for the subscription. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1024)]
@@ -161,7 +161,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Threshold. 
         /// <para>
-        ///  The dollar value that triggers a notification if the threshold is exceeded. 
+        /// The dollar value that triggers a notification if the threshold is exceeded. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

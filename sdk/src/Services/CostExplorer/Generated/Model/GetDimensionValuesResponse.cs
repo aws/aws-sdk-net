@@ -64,13 +64,14 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// LEGAL_ENTITY_NAME - The name of the organization that sells you AWS services, such
-        /// as Amazon Web Services.
+        /// LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services
+        /// services, such as Amazon Web Services.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// LINKED_ACCOUNT - The description in the attribute map that includes the full name
-        /// of the member account. The value field contains the AWS ID of the member account.
+        /// of the member account. The value field contains the Amazon Web Services ID of the
+        /// member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -91,7 +92,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE - The AWS service such as Amazon DynamoDB.
+        /// SERVICE - The Amazon Web Services service such as Amazon DynamoDB.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -139,7 +140,8 @@ namespace Amazon.CostExplorer.Model
         ///  </li> <li> 
         /// <para>
         /// LINKED_ACCOUNT - The description in the attribute map that includes the full name
-        /// of the member account. The value field contains the AWS ID of the member account.
+        /// of the member account. The value field contains the Amazon Web Services ID of the
+        /// member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -147,7 +149,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// REGION - The AWS Region.
+        /// REGION - The Amazon Web Services Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -177,7 +179,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// REGION - The AWS Region.
+        /// REGION - The Amazon Web Services Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -186,7 +188,8 @@ namespace Amazon.CostExplorer.Model
         ///  </li> <li> 
         /// <para>
         /// LINKED_ACCOUNT - The description in the attribute map that includes the full name
-        /// of the member account. The value field contains the AWS ID of the member account.
+        /// of the member account. The value field contains the Amazon Web Services ID of the
+        /// member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -210,8 +213,9 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        /// The token for the next set of retrievable results. AWS provides the token when the
-        /// response from a previous call has more results than the maximum page size.
+        /// The token for the next set of retrievable results. Amazon Web Services provides the
+        /// token when the response from a previous call has more results than the maximum page
+        /// size.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=8192)]
@@ -230,7 +234,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property ReturnSize. 
         /// <para>
-        /// The number of results that AWS returned at one time.
+        /// The number of results that Amazon Web Services returned at one time.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

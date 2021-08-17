@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// A summary about this recommendation, such as the currency code, the amount that AWS
-    /// estimates that you could save, and the total amount of reservation to purchase.
+    /// A summary about this recommendation, such as the currency code, the amount that Amazon
+    /// Web Services estimates that you could save, and the total amount of reservation to
+    /// purchase.
     /// </summary>
     public partial class ReservationPurchaseRecommendationSummary
     {
@@ -60,7 +61,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TotalEstimatedMonthlySavingsAmount. 
         /// <para>
-        /// The total amount that AWS estimates that this recommendation could save you in a month.
+        /// The total amount that Amazon Web Services estimates that this recommendation could
+        /// save you in a month.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -79,8 +81,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TotalEstimatedMonthlySavingsPercentage. 
         /// <para>
-        /// The total amount that AWS estimates that this recommendation could save you in a month,
-        /// as a percentage of your costs.
+        /// The total amount that Amazon Web Services estimates that this recommendation could
+        /// save you in a month, as a percentage of your costs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

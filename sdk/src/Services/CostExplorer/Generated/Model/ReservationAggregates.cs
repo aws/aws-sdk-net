@@ -54,7 +54,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property AmortizedRecurringFee. 
         /// <para>
-        /// The monthly cost of your reservation, amortized over the reservation period.
+        /// The monthly cost of your reservation. It's amortized over the reservation period.
         /// </para>
         /// </summary>
         public string AmortizedRecurringFee
@@ -72,7 +72,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property AmortizedUpfrontFee. 
         /// <para>
-        /// The upfront cost of your reservation, amortized over the reservation period.
+        /// The upfront cost of your reservation. It's amortized over the reservation period.
         /// </para>
         /// </summary>
         public string AmortizedUpfrontFee
@@ -90,8 +90,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property NetRISavings. 
         /// <para>
-        /// How much you saved due to purchasing and utilizing reservation. AWS calculates this
-        /// by subtracting <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.
+        /// How much you saved due to purchasing and utilizing reservation. Amazon Web Services
+        /// calculates this by subtracting <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.
         /// </para>
         /// </summary>
         public string NetRISavings
@@ -109,7 +109,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property OnDemandCostOfRIHoursUsed. 
         /// <para>
-        /// How much your reservation would cost if charged On-Demand rates.
+        /// How much your reservation costs if charged On-Demand rates.
         /// </para>
         /// </summary>
         public string OnDemandCostOfRIHoursUsed
@@ -145,7 +145,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property PurchasedUnits. 
         /// <para>
-        /// How many Amazon EC2 reservation hours that you purchased, converted to normalized
+        /// The number of Amazon EC2 reservation hours that you purchased. It's converted to normalized
         /// units. Normalized units are available only for Amazon EC2 usage after November 11,
         /// 2017.
         /// </para>
@@ -165,7 +165,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property RealizedSavings. 
         /// <para>
-        /// The realized savings due to purchasing and using a reservation.
+        /// The realized savings because of purchasing and using a reservation.
         /// </para>
         /// </summary>
         public string RealizedSavings
@@ -219,9 +219,9 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TotalActualUnits. 
         /// <para>
-        /// The total number of Amazon EC2 reservation hours that you used, converted to normalized
-        /// units. Normalized units are available only for Amazon EC2 usage after November 11,
-        /// 2017.
+        /// The total number of Amazon EC2 reservation hours that you used. It's converted to
+        /// normalized units. Normalized units are available only for Amazon EC2 usage after November
+        /// 11, 2017.
         /// </para>
         /// </summary>
         public string TotalActualUnits
@@ -239,7 +239,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TotalAmortizedFee. 
         /// <para>
-        /// The total cost of your reservation, amortized over the reservation period.
+        /// The total cost of your reservation. It's amortized over the reservation period.
         /// </para>
         /// </summary>
         public string TotalAmortizedFee
@@ -257,7 +257,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TotalPotentialRISavings. 
         /// <para>
-        /// How much you could save if you use your entire reservation.
+        /// How much you might save if you use your entire reservation.
         /// </para>
         /// </summary>
         public string TotalPotentialRISavings
@@ -275,7 +275,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property UnrealizedSavings. 
         /// <para>
-        /// The unrealized savings due to purchasing and using a reservation.
+        /// The unrealized savings because of purchasing and using a reservation.
         /// </para>
         /// </summary>
         public string UnrealizedSavings
@@ -311,9 +311,9 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property UnusedUnits. 
         /// <para>
-        /// The number of Amazon EC2 reservation hours that you didn't use, converted to normalized
-        /// units. Normalized units are available only for Amazon EC2 usage after November 11,
-        /// 2017.
+        /// The number of Amazon EC2 reservation hours that you didn't use. It's converted to
+        /// normalized units. Normalized units are available only for Amazon EC2 usage after November
+        /// 11, 2017.
         /// </para>
         /// </summary>
         public string UnusedUnits
@@ -349,7 +349,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property UtilizationPercentageInUnits. 
         /// <para>
-        /// The percentage of Amazon EC2 reservation time that you used, converted to normalized
+        /// The percentage of Amazon EC2 reservation time that you used. It's converted to normalized
         /// units. Normalized units are available only for Amazon EC2 usage after November 11,
         /// 2017.
         /// </para>

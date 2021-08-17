@@ -74,13 +74,14 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// LEGAL_ENTITY_NAME - The name of the organization that sells you AWS services, such
-        /// as Amazon Web Services.
+        /// LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services
+        /// services, such as Amazon Web Services.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// LINKED_ACCOUNT - The description in the attribute map that includes the full name
-        /// of the member account. The value field contains the AWS ID of the member account.
+        /// of the member account. The value field contains the Amazon Web Services ID of the
+        /// member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -101,7 +102,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE - The AWS service such as Amazon DynamoDB.
+        /// SERVICE - The Amazon Web Services service such as Amazon DynamoDB.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -116,7 +117,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// REGION - The AWS Region.
+        /// REGION - The Amazon Web Services Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -153,7 +154,8 @@ namespace Amazon.CostExplorer.Model
         ///  </li> <li> 
         /// <para>
         /// LINKED_ACCOUNT - The description in the attribute map that includes the full name
-        /// of the member account. The value field contains the AWS ID of the member account.
+        /// of the member account. The value field contains the Amazon Web Services ID of the
+        /// member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -161,7 +163,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// REGION - The AWS Region.
+        /// REGION - The Amazon Web Services Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -191,7 +193,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// REGION - The AWS Region.
+        /// REGION - The Amazon Web Services Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -200,7 +202,8 @@ namespace Amazon.CostExplorer.Model
         ///  </li> <li> 
         /// <para>
         /// LINKED_ACCOUNT - The description in the attribute map that includes the full name
-        /// of the member account. The value field contains the AWS ID of the member account.
+        /// of the member account. The value field contains the Amazon Web Services ID of the
+        /// member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -283,8 +286,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        /// The token to retrieve the next set of results. AWS provides the token when the response
-        /// from a previous call has more results than the maximum page size.
+        /// The token to retrieve the next set of results. Amazon Web Services provides the token
+        /// when the response from a previous call has more results than the maximum page size.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=8192)]
@@ -382,8 +385,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TimePeriod. 
         /// <para>
-        /// The start and end dates for retrieving the dimension values. The start date is inclusive,
-        /// but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code>
+        /// The start date and end date for retrieving the dimension values. The start date is
+        /// inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code>
         /// and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved
         /// from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
         /// <code>2017-05-01</code>.

@@ -642,6 +642,12 @@
     <pattern>^(?! )[\p{L}\p{N}\p{Z}-_]*(?&lt;! )$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.CostCategorySplitChargeRule.Source</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.CostCategoryValues.Key</property>
     <min>1</min>
     <max>50</max>

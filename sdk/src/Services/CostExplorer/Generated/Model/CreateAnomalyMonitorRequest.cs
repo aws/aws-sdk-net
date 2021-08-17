@@ -39,7 +39,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property AnomalyMonitor. 
         /// <para>
-        ///  The cost anomaly detection monitor object that you want to create.
+        /// The cost anomaly detection monitor object that you want to create.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

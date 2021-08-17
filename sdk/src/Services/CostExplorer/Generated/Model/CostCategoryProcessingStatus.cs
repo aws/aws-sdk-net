@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// The list of processing statuses for Cost Management products for a specific cost
-    /// category.
+    /// The list of processing statuses for Cost Management products for a specific cost category.
     /// </summary>
     public partial class CostCategoryProcessingStatus
     {
@@ -40,7 +39,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Component. 
         /// <para>
-        ///  The Cost Management product name of the applied status. 
+        /// The Cost Management product name of the applied status. 
         /// </para>
         /// </summary>
         public CostCategoryStatusComponent Component
@@ -58,7 +57,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The process status for a specific cost category. 
+        /// The process status for a specific cost category. 
         /// </para>
         /// </summary>
         public CostCategoryStatus Status

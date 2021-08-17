@@ -101,6 +101,22 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RuleVersion);
                 }
 
+                if(publicRequest.IsSetSplitChargeRules())
+                {
+                    context.Writer.WritePropertyName("SplitChargeRules");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSplitChargeRulesListValue in publicRequest.SplitChargeRules)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CostCategorySplitChargeRuleMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSplitChargeRulesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

@@ -52,7 +52,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CostCategoryArn. 
         /// <para>
-        ///  The unique identifier for your Cost Category. 
+        /// The unique identifier for your Cost Category. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -87,7 +87,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EffectiveEnd. 
         /// <para>
-        ///  The Cost Category's effective end date.
+        /// The Cost Category's effective end date.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=25)]
@@ -106,7 +106,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EffectiveStart. 
         /// <para>
-        ///  The Cost Category's effective start date.
+        /// The Cost Category's effective start date.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=25)]
@@ -141,7 +141,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property NumberOfRules. 
         /// <para>
-        ///  The number of rules associated with a specific Cost Category. 
+        /// The number of rules that are associated with a specific Cost Category. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -160,8 +160,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property ProcessingStatus. 
         /// <para>
-        ///  The list of processing statuses for Cost Management products for a specific cost
-        /// category. 
+        /// The list of processing statuses for Cost Management products for a specific cost category.
+        /// 
         /// </para>
         /// </summary>
         public List<CostCategoryProcessingStatus> ProcessingStatus
@@ -179,7 +179,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        ///  A list of unique cost category values in a specific cost category. 
+        /// A list of unique cost category values in a specific cost category. 
         /// </para>
         /// </summary>
         public List<string> Values

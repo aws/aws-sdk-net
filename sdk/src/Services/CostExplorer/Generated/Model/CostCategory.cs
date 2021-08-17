@@ -42,11 +42,12 @@ namespace Amazon.CostExplorer.Model
         private List<CostCategoryProcessingStatus> _processingStatus = new List<CostCategoryProcessingStatus>();
         private List<CostCategoryRule> _rules = new List<CostCategoryRule>();
         private CostCategoryRuleVersion _ruleVersion;
+        private List<CostCategorySplitChargeRule> _splitChargeRules = new List<CostCategorySplitChargeRule>();
 
         /// <summary>
         /// Gets and sets the property CostCategoryArn. 
         /// <para>
-        ///  The unique identifier for your Cost Category. 
+        /// The unique identifier for your Cost Category. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -81,7 +82,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EffectiveEnd. 
         /// <para>
-        ///  The Cost Category's effective end date.
+        ///  The effective end data of your Cost Category.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=25)]
@@ -100,7 +101,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EffectiveStart. 
         /// <para>
-        ///  The Cost Category's effective start date.
+        /// The effective state data of your Cost Category.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=25)]
@@ -135,8 +136,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property ProcessingStatus. 
         /// <para>
-        ///  The list of processing statuses for Cost Management products for a specific cost
-        /// category. 
+        /// The list of processing statuses for Cost Management products for a specific cost category.
+        /// 
         /// </para>
         /// </summary>
         public List<CostCategoryProcessingStatus> ProcessingStatus
@@ -154,8 +155,9 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Rules. 
         /// <para>
-        ///  Rules are processed in order. If there are multiple rules that match the line item,
-        /// then the first rule to match is used to determine that Cost Category value. 
+        /// The rules are processed in order. If there are multiple rules that match the line
+        /// item, then the first rule to match is used to determine that Cost Category value.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=500)]
@@ -185,6 +187,26 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetRuleVersion()
         {
             return this._ruleVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SplitChargeRules. 
+        /// <para>
+        ///  The split charge rules that are used to allocate your charges between your Cost Category
+        /// values. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<CostCategorySplitChargeRule> SplitChargeRules
+        {
+            get { return this._splitChargeRules; }
+            set { this._splitChargeRules = value; }
+        }
+
+        // Check to see if SplitChargeRules property is set
+        internal bool IsSetSplitChargeRules()
+        {
+            return this._splitChargeRules != null && this._splitChargeRules.Count > 0; 
         }
 
     }

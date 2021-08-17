@@ -41,7 +41,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property AnomalySubscription. 
         /// <para>
-        ///  The cost anomaly subscription object that you want to create. 
+        /// The cost anomaly subscription object that you want to create. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// The EBS field that contains a list of EBS metrics associated with the current instance.
+    /// The EBS field that contains a list of EBS metrics that are associated with the current
+    /// instance.
     /// </summary>
     public partial class EBSResourceUtilization
     {
@@ -41,7 +42,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EbsReadBytesPerSecond. 
         /// <para>
-        ///  The maximum size of read operations per second 
+        /// The maximum size of read operations per second 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -60,7 +61,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EbsReadOpsPerSecond. 
         /// <para>
-        ///  The maximum number of read operations per second. 
+        /// The maximum number of read operations per second. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -79,7 +80,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EbsWriteBytesPerSecond. 
         /// <para>
-        ///  The maximum size of write operations per second. 
+        /// The maximum size of write operations per second. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -98,7 +99,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EbsWriteOpsPerSecond. 
         /// <para>
-        ///  The maximum number of write operations per second. 
+        /// The maximum number of write operations per second. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

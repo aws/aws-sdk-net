@@ -42,7 +42,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The number of entries a paginated response contains. 
+        /// The number of entries that a paginated response contains. 
         /// </para>
         /// </summary>
         public int MaxResults
@@ -60,7 +60,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MonitorArnList. 
         /// <para>
-        ///  A list of cost anomaly monitor ARNs. 
+        /// A list of cost anomaly monitor ARNs. 
         /// </para>
         /// </summary>
         public List<string> MonitorArnList
@@ -78,8 +78,9 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        ///  The token to retrieve the next set of results. AWS provides the token when the response
-        /// from a previous call has more results than the maximum page size. 
+        /// The token to retrieve the next set of results. Amazon Web Services provides the token
+        /// when the response from a previous call has more results than the maximum page size.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=8192)]

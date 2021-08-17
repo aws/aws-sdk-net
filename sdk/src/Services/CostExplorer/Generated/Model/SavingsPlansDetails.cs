@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Attribute details on a specific Savings Plan.
+    /// The attribute details on a specific Savings Plan.
     /// </summary>
     public partial class SavingsPlansDetails
     {
@@ -59,7 +59,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property OfferingId. 
         /// <para>
-        /// The unique ID used to distinguish Savings Plans from one another.
+        /// The unique ID that's used to distinguish Savings Plans from one another.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -78,8 +78,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// A collection of AWS resources in a geographic area. Each AWS Region is isolated and
-        /// independent of the other Regions.
+        /// A collection of Amazon Web Services resources in a geographic area. Each Amazon Web
+        /// Services Region is isolated and independent of the other Regions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

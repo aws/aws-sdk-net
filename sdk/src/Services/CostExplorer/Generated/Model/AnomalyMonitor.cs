@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// This object continuously inspects your account's cost data for anomalies, based on
-    /// <code>MonitorType</code> and <code>MonitorSpecification</code>. The content consists
+    /// This object continuously inspects your account's cost data for anomalies. It's based
+    /// on <code>MonitorType</code> and <code>MonitorSpecification</code>. The content consists
     /// of detailed metadata and the current status of the monitor object.
     /// </summary>
     public partial class AnomalyMonitor
@@ -48,7 +48,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        ///  The date when the monitor was created. 
+        /// The date when the monitor was created. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=40)]
@@ -67,7 +67,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property DimensionalValueCount. 
         /// <para>
-        ///  The value for evaluated dimensions. 
+        /// The value for evaluated dimensions. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -86,7 +86,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property LastEvaluatedDate. 
         /// <para>
-        ///  The date when the monitor last evaluated for anomalies. 
+        /// The date when the monitor last evaluated for anomalies. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=40)]
@@ -105,7 +105,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedDate. 
         /// <para>
-        ///  The date when the monitor was last updated. 
+        /// The date when the monitor was last updated. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=40)]
@@ -124,7 +124,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MonitorArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) value. 
+        /// The Amazon Resource Name (ARN) value. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -143,7 +143,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MonitorDimension. 
         /// <para>
-        ///  The dimensions to evaluate. 
+        /// The dimensions to evaluate. 
         /// </para>
         /// </summary>
         public MonitorDimension MonitorDimension
@@ -161,7 +161,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MonitorName. 
         /// <para>
-        ///  The name of the monitor. 
+        /// The name of the monitor. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1024)]
@@ -195,7 +195,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MonitorType. 
         /// <para>
-        ///  The possible type values. 
+        /// The possible type values. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
