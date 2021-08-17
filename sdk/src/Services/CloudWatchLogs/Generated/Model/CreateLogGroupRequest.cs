@@ -39,7 +39,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Log group names must be unique within a region for an AWS account.
+    /// Log group names must be unique within a region for an Amazon Web Services account.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -58,10 +58,10 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
-    /// If you associate a AWS Key Management Service (AWS KMS) customer master key (CMK)
-    /// with the log group, ingested data is encrypted using the CMK. This association is
-    /// stored as long as the data encrypted with the CMK is still within Amazon CloudWatch
-    /// Logs. This enables Amazon CloudWatch Logs to decrypt this data whenever it is requested.
+    /// If you associate a Key Management Service customer master key (CMK) with the log group,
+    /// ingested data is encrypted using the CMK. This association is stored as long as the
+    /// data encrypted with the CMK is still within CloudWatch Logs. This enables CloudWatch
+    /// Logs to decrypt this data whenever it is requested.
     /// </para>
     ///  
     /// <para>
@@ -71,8 +71,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  <important> 
     /// <para>
-    ///  CloudWatch Logs supports only symmetric CMKs. Do not associate an asymmetric CMK
-    /// with your log group. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+    /// CloudWatch Logs supports only symmetric CMKs. Do not associate an asymmetric CMK with
+    /// your log group. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
     /// Symmetric and Asymmetric Keys</a>.
     /// </para>
     ///  </important>
@@ -102,7 +102,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more
         /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-        /// Resource Names - AWS Key Management Service (AWS KMS)</a>.
+        /// Resource Names - Key Management Service</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -141,6 +141,13 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The key-value pairs to use for the tags.
+        /// </para>
+        ///  
+        /// <para>
+        /// CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified
+        /// tags to log groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code>
+        /// condition keys. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+        /// access to Amazon Web Services resources using tags</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

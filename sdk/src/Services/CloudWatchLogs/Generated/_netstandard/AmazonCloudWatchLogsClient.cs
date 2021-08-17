@@ -39,9 +39,9 @@ namespace Amazon.CloudWatchLogs
     /// Implementation for accessing CloudWatchLogs
     ///
     /// You can use Amazon CloudWatch Logs to monitor, store, and access your log files from
-    /// EC2 instances, AWS CloudTrail, and other sources. You can then retrieve the associated
+    /// EC2 instances, CloudTrail, and other sources. You can then retrieve the associated
     /// log data from CloudWatch Logs using the CloudWatch console, CloudWatch Logs commands
-    /// in the AWS CLI, CloudWatch Logs API, or CloudWatch Logs SDK.
+    /// in the Amazon Web Services CLI, CloudWatch Logs API, or CloudWatch Logs SDK.
     /// 
     ///  
     /// <para>
@@ -61,9 +61,9 @@ namespace Amazon.CloudWatchLogs
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Monitor AWS CloudTrail logged events</b>: You can create alarms in CloudWatch
-    /// and receive notifications of particular API activity as captured by CloudTrail. You
-    /// can use the notification to perform troubleshooting.
+    ///  <b>Monitor CloudTrail logged events</b>: You can create alarms in CloudWatch and
+    /// receive notifications of particular API activity as captured by CloudTrail. You can
+    /// use the notification to perform troubleshooting.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -307,16 +307,16 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Associates the specified AWS Key Management Service (AWS KMS) customer master key
-        /// (CMK) with the specified log group.
+        /// Associates the specified Key Management Service customer master key (CMK) with the
+        /// specified log group.
         /// 
         ///  
         /// <para>
-        /// Associating an AWS KMS CMK with a log group overrides any existing associations between
+        /// Associating an KMS CMK with a log group overrides any existing associations between
         /// the log group and a CMK. After a CMK is associated with a log group, all newly ingested
         /// data for the log group is encrypted using the CMK. This association is stored as long
-        /// as the data encrypted with the CMK is still within Amazon CloudWatch Logs. This enables
-        /// Amazon CloudWatch Logs to decrypt this data whenever it is requested.
+        /// as the data encrypted with the CMK is still within CloudWatch Logs. This enables CloudWatch
+        /// Logs to decrypt this data whenever it is requested.
         /// </para>
         ///  <important> 
         /// <para>
@@ -513,7 +513,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Log group names must be unique within a region for an AWS account.
+        /// Log group names must be unique within a region for an Amazon Web Services account.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -532,10 +532,10 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// If you associate a AWS Key Management Service (AWS KMS) customer master key (CMK)
-        /// with the log group, ingested data is encrypted using the CMK. This association is
-        /// stored as long as the data encrypted with the CMK is still within Amazon CloudWatch
-        /// Logs. This enables Amazon CloudWatch Logs to decrypt this data whenever it is requested.
+        /// If you associate a Key Management Service customer master key (CMK) with the log group,
+        /// ingested data is encrypted using the CMK. This association is stored as long as the
+        /// data encrypted with the CMK is still within CloudWatch Logs. This enables CloudWatch
+        /// Logs to decrypt this data whenever it is requested.
         /// </para>
         ///  
         /// <para>
@@ -545,8 +545,8 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  <important> 
         /// <para>
-        ///  CloudWatch Logs supports only symmetric CMKs. Do not associate an asymmetric CMK
-        /// with your log group. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+        /// CloudWatch Logs supports only symmetric CMKs. Do not associate an asymmetric CMK with
+        /// your log group. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
         /// Symmetric and Asymmetric Keys</a>.
         /// </para>
         ///  </important>
@@ -1139,6 +1139,16 @@ namespace Amazon.CloudWatchLogs
         /// <summary>
         /// Lists the specified log groups. You can list all your log groups or filter the results
         /// by prefix. The results are ASCII-sorted by log group name.
+        /// 
+        ///  
+        /// <para>
+        /// CloudWatch Logs doesn’t support IAM policies that control access to the <code>DescribeLogGroups</code>
+        /// action by using the <code>aws:ResourceTag/<i>key-name</i> </code> condition key. Other
+        /// CloudWatch Logs actions do support the use of the <code>aws:ResourceTag/<i>key-name</i>
+        /// </code> condition key to control access. For more information about using tags to
+        /// control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+        /// access to Amazon Web Services resources using tags</a>.
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1162,6 +1172,16 @@ namespace Amazon.CloudWatchLogs
         /// <summary>
         /// Lists the specified log groups. You can list all your log groups or filter the results
         /// by prefix. The results are ASCII-sorted by log group name.
+        /// 
+        ///  
+        /// <para>
+        /// CloudWatch Logs doesn’t support IAM policies that control access to the <code>DescribeLogGroups</code>
+        /// action by using the <code>aws:ResourceTag/<i>key-name</i> </code> condition key. Other
+        /// CloudWatch Logs actions do support the use of the <code>aws:ResourceTag/<i>key-name</i>
+        /// </code> condition key to control access. For more information about using tags to
+        /// control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+        /// access to Amazon Web Services resources using tags</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLogGroups service method.</param>
         /// <param name="cancellationToken">
@@ -1472,15 +1492,15 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Disassociates the associated AWS Key Management Service (AWS KMS) customer master
-        /// key (CMK) from the specified log group.
+        /// Disassociates the associated Key Management Service customer master key (CMK) from
+        /// the specified log group.
         /// 
         ///  
         /// <para>
-        /// After the AWS KMS CMK is disassociated from the log group, AWS CloudWatch Logs stops
-        /// encrypting newly ingested data for the log group. All previously ingested data remains
-        /// encrypted, and AWS CloudWatch Logs requires permissions for the CMK whenever the encrypted
-        /// data is requested.
+        /// After the KMS CMK is disassociated from the log group, CloudWatch Logs stops encrypting
+        /// newly ingested data for the log group. All previously ingested data remains encrypted,
+        /// and CloudWatch Logs requires permissions for the CMK whenever the encrypted data is
+        /// requested.
         /// </para>
         ///  
         /// <para>
@@ -1929,9 +1949,10 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// If multiple AWS accounts are sending logs to this destination, each sender account
-        /// must be listed separately in the policy. The policy does not support specifying <code>*</code>
-        /// as the Principal or the use of the <code>aws:PrincipalOrgId</code> global key.
+        /// If multiple Amazon Web Services accounts are sending logs to this destination, each
+        /// sender account must be listed separately in the policy. The policy does not support
+        /// specifying <code>*</code> as the Principal or the use of the <code>aws:PrincipalOrgId</code>
+        /// global key.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDestinationPolicy service method.</param>
@@ -2008,9 +2029,9 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// The log events in the batch must be in chronological order by their timestamp. The
         /// timestamp is the time the event occurred, expressed as the number of milliseconds
-        /// after Jan 1, 1970 00:00:00 UTC. (In AWS Tools for PowerShell and the AWS SDK for .NET,
-        /// the timestamp is specified in .NET format: yyyy-mm-ddThh:mm:ss. For example, 2017-09-15T13:45:30.)
-        /// 
+        /// after Jan 1, 1970 00:00:00 UTC. (In Amazon Web Services Tools for PowerShell and the
+        /// Amazon Web Services SDK for .NET, the timestamp is specified in .NET format: yyyy-mm-ddThh:mm:ss.
+        /// For example, 2017-09-15T13:45:30.) 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2029,7 +2050,7 @@ namespace Amazon.CloudWatchLogs
         ///  </li> </ul> 
         /// <para>
         /// If a call to <code>PutLogEvents</code> returns "UnrecognizedClientException" the most
-        /// likely cause is an invalid AWS access key ID or secret key. 
+        /// likely cause is an invalid Amazon Web Services access key ID or secret key. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLogEvents service method.</param>
@@ -2055,7 +2076,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.UnrecognizedClientException">
-        /// The most likely cause is an invalid AWS access key ID or secret key.
+        /// The most likely cause is an invalid Amazon Web Services access key ID or secret key.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutLogEvents">REST API Reference for PutLogEvents Operation</seealso>
         public virtual Task<PutLogEventsResponse> PutLogEventsAsync(PutLogEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2113,7 +2134,8 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// You can also set up a billing alarm to alert you if your charges are higher than expected.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
-        /// Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>. 
+        /// Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>.
+        /// 
         /// </para>
         ///  </important>
         /// </summary>
@@ -2225,9 +2247,9 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Creates or updates a resource policy allowing other AWS services to put log events
-        /// to this account, such as Amazon Route 53. An account can have up to 10 resource policies
-        /// per AWS Region.
+        /// Creates or updates a resource policy allowing other Amazon Web Services services to
+        /// put log events to this account, such as Amazon Route 53. An account can have up to
+        /// 10 resource policies per Amazon Web Services Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2343,8 +2365,8 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An AWS Lambda function that belongs to the same account as the subscription filter,
-        /// for same-account delivery.
+        /// An Lambda function that belongs to the same account as the subscription filter, for
+        /// same-account delivery.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2529,6 +2551,13 @@ namespace Amazon.CloudWatchLogs
         /// For more information about tags, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html#log-group-tagging">Tag
         /// Log Groups in Amazon CloudWatch Logs</a> in the <i>Amazon CloudWatch Logs User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified
+        /// tags to log groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code>
+        /// condition keys. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+        /// access to Amazon Web Services resources using tags</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagLogGroup service method.</param>
         /// <param name="cancellationToken">
@@ -2615,6 +2644,12 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// To list the tags for a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html">ListTagsLogGroup</a>.
         /// To add tags, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagLogGroup.html">TagLogGroup</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified
+        /// tags to log groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code>
+        /// condition keys. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagLogGroup service method.</param>

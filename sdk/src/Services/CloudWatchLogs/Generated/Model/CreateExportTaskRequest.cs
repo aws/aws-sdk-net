@@ -68,8 +68,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// The name of S3 bucket for the exported log data. The bucket must be in the same AWS
-        /// region.
+        /// The name of S3 bucket for the exported log data. The bucket must be in the same Amazon
+        /// Web Services region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]

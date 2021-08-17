@@ -56,8 +56,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// An AWS Lambda function that belongs to the same account as the subscription filter,
-    /// for same-account delivery.
+    /// An Lambda function that belongs to the same account as the subscription filter, for
+    /// same-account delivery.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -109,8 +109,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An AWS Lambda function belonging to the same account as the subscription filter, for
-        /// same-account delivery.
+        /// A Lambda function belonging to the same account as the subscription filter, for same-account
+        /// delivery.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -32,6 +32,16 @@ namespace Amazon.CloudWatchLogs.Model
     /// Container for the parameters to the DescribeLogGroups operation.
     /// Lists the specified log groups. You can list all your log groups or filter the results
     /// by prefix. The results are ASCII-sorted by log group name.
+    /// 
+    ///  
+    /// <para>
+    /// CloudWatch Logs doesn’t support IAM policies that control access to the <code>DescribeLogGroups</code>
+    /// action by using the <code>aws:ResourceTag/<i>key-name</i> </code> condition key. Other
+    /// CloudWatch Logs actions do support the use of the <code>aws:ResourceTag/<i>key-name</i>
+    /// </code> condition key to control access. For more information about using tags to
+    /// control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+    /// access to Amazon Web Services resources using tags</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeLogGroupsRequest : AmazonCloudWatchLogsRequest
     {

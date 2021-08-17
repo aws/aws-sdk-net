@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// The most likely cause is an invalid AWS access key ID or secret key.
+    /// The most likely cause is an invalid Amazon Web Services access key ID or secret key.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -37,9 +37,10 @@ namespace Amazon.CloudWatchLogs.Model
     /// 
     ///  
     /// <para>
-    /// If multiple AWS accounts are sending logs to this destination, each sender account
-    /// must be listed separately in the policy. The policy does not support specifying <code>*</code>
-    /// as the Principal or the use of the <code>aws:PrincipalOrgId</code> global key.
+    /// If multiple Amazon Web Services accounts are sending logs to this destination, each
+    /// sender account must be listed separately in the policy. The policy does not support
+    /// specifying <code>*</code> as the Principal or the use of the <code>aws:PrincipalOrgId</code>
+    /// global key.
     /// </para>
     /// </summary>
     public partial class PutDestinationPolicyRequest : AmazonCloudWatchLogsRequest

@@ -30,9 +30,9 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the PutResourcePolicy operation.
-    /// Creates or updates a resource policy allowing other AWS services to put log events
-    /// to this account, such as Amazon Route 53. An account can have up to 10 resource policies
-    /// per AWS Region.
+    /// Creates or updates a resource policy allowing other Amazon Web Services services to
+    /// put log events to this account, such as Amazon Route 53. An account can have up to
+    /// 10 resource policies per Amazon Web Services Region.
     /// </summary>
     public partial class PutResourcePolicyRequest : AmazonCloudWatchLogsRequest
     {
@@ -54,9 +54,24 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
+        /// CloudWatch Logs also supports <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn">aws:SourceArn</a>
+        /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount">aws:SourceAccount</a>
+        /// condition context keys.
+        /// </para>
+        ///  
+        /// <para>
+        /// In the example resource policy, you would replace the value of <code>SourceArn</code>
+        /// with the resource making the call from Route 53 to CloudWatch Logs and replace the
+        /// value of <code>SourceAccount</code> with the Amazon Web Services account ID making
+        /// that call.
+        /// </para>
+        ///   
+        /// <para>
         ///  <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs",
-        /// "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action":"logs:PutLogEvents",
-        /// "Resource": "logArn" } ] } </code> 
+        /// "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action":
+        /// "logs:PutLogEvents", "Resource": "logArn", "Condition": { "ArnLike": { "aws:SourceArn":
+        /// "myRoute53ResourceArn" }, "StringEquals": { "aws:SourceAccount": "myAwsAccountId"
+        /// } } } ] }</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5120)]

@@ -151,10 +151,6 @@ namespace Amazon.CloudWatchLogs.Model
         /// The token for the next set of items to return. (You received this token from a previous
         /// call.)
         /// </para>
-        ///  
-        /// <para>
-        /// Using this token works only when you specify <code>true</code> for <code>startFromHead</code>.
-        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public string NextToken
@@ -177,8 +173,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        /// If you are using <code>nextToken</code> in this operation, you must specify <code>true</code>
-        /// for <code>startFromHead</code>.
+        /// If you are using a previous <code>nextForwardToken</code> value as the <code>nextToken</code>
+        /// in this operation, you must specify <code>true</code> for <code>startFromHead</code>.
         /// </para>
         /// </summary>
         public bool StartFromHead
