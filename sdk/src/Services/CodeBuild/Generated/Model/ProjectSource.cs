@@ -263,12 +263,16 @@ namespace Amazon.CodeBuild.Model
         /// href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
         /// provider access</a> in the <i>CodeBuild User Guide</i>.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        ///  The status of a build triggered by a webhook is always reported to your source provider.
+        /// The status of a build triggered by a webhook is always reported to your source provider.
         /// 
         /// </para>
-        ///  </note>
+        ///  
+        /// <para>
+        /// If your project's builds are triggered by a webhook, you must push a new commit to
+        /// the repo for a change to this property to take effect.
+        /// </para>
         /// </summary>
         public bool ReportBuildStatus
         {

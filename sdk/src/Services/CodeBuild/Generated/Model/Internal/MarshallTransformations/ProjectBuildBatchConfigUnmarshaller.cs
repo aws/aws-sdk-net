@@ -64,12 +64,6 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("batchReportMode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BatchReportMode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("combineArtifacts", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
