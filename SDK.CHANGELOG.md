@@ -1,3 +1,15 @@
+### 3.7.99.0 (2021-08-18 19:21 UTC)
+* CodeBuild (3.7.6.0)
+	* CodeBuild now allows you to make the build results for your build projects available to the public without requiring access to an AWS account.
+* Route53 (3.7.1.9)
+	* Documentation updates for route53
+* Route53Resolver (3.7.1.48)
+	* Documentation updates for Route 53 Resolver
+* SageMaker (3.7.12.0)
+	* Amazon SageMaker now supports Asynchronous Inference endpoints. Adds PlatformIdentifier field that allows Notebook Instance creation with different platform selections. Increases the maximum number of containers in multi-container endpoints to 15. Adds more instance types to InstanceType field.
+* SageMakerRuntime (3.7.1.0)
+	* Amazon SageMaker Runtime now supports InvokeEndpointAsync to asynchronously invoke endpoints that were created with the AsyncInferenceConfig object in the EndpointConfig. Asynchronous invocations support larger payload sizes in Amazon S3 and longer processing times.
+
 ### 3.7.98.0 (2021-08-17 19:18 UTC)
 * Cloud9 (3.7.2.0)
 	* Added DryRun parameter to CreateEnvironmentEC2 API. Added ManagedCredentialsActions parameter to UpdateEnvironment API
