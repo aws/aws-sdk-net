@@ -150,7 +150,7 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property ManagedOwnerName. 
         /// <para>
         /// The owner of the association, used only for associations that are not managed by you.
-        /// If you use AWS Firewall Manager to manage your DNS Firewalls, then this reports Firewall
+        /// If you use Firewall Manager to manage your DNS Firewalls, then this reports Firewall
         /// Manager as the managed owner.
         /// </para>
         /// </summary>

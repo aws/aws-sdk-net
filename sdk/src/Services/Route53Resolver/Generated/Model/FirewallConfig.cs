@@ -97,8 +97,8 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The AWS account ID of the owner of the VPC that this firewall configuration applies
-        /// to.
+        /// The Amazon Web Services account ID of the owner of the VPC that this firewall configuration
+        /// applies to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=32)]

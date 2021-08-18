@@ -162,13 +162,14 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OwnerId</code>: The AWS account number of the account that created the configuration
+        ///  <code>OwnerId</code>: The Amazon Web Services account number of the account that
+        /// created the configuration
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ShareStatus</code>: Whether the configuration is shared with other AWS accounts
-        /// or shared with the current account by another AWS account. Sharing is configured through
-        /// AWS Resource Access Manager (AWS RAM).
+        ///  <code>ShareStatus</code>: Whether the configuration is shared with other Amazon Web
+        /// Services accounts or shared with the current account by another Amazon Web Services
+        /// account. Sharing is configured through Resource Access Manager (RAM).
         /// </para>
         ///  </li> <li> 
         /// <para>

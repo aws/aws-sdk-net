@@ -31,7 +31,7 @@ namespace Amazon.Route53Resolver.Model
     /// <summary>
     /// Container for the parameters to the ListResolverRuleAssociations operation.
     /// Lists the associations that were created between Resolver rules and VPCs using the
-    /// current AWS account.
+    /// current Amazon Web Services account.
     /// </summary>
     public partial class ListResolverRuleAssociationsRequest : AmazonRoute53ResolverRequest
     {

@@ -31,8 +31,8 @@ namespace Amazon.Route53Resolver.Model
     /// <summary>
     /// Container for the parameters to the GetResolverQueryLogConfigPolicy operation.
     /// Gets information about a query logging policy. A query logging policy specifies the
-    /// Resolver query logging operations and resources that you want to allow another AWS
-    /// account to be able to use.
+    /// Resolver query logging operations and resources that you want to allow another Amazon
+    /// Web Services account to be able to use.
     /// </summary>
     public partial class GetResolverQueryLogConfigPolicyRequest : AmazonRoute53ResolverRequest
     {

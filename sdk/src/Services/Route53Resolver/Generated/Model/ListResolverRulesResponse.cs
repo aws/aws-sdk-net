@@ -80,8 +80,8 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ResolverRules. 
         /// <para>
-        /// The Resolver rules that were created using the current AWS account and that match
-        /// the specified filters, if any.
+        /// The Resolver rules that were created using the current Amazon Web Services account
+        /// and that match the specified filters, if any.
         /// </para>
         /// </summary>
         public List<ResolverRule> ResolverRules

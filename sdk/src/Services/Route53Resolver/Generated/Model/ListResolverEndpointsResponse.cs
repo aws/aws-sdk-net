@@ -80,8 +80,8 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ResolverEndpoints. 
         /// <para>
-        /// The Resolver endpoints that were created by using the current AWS account, and that
-        /// match the specified filters, if any.
+        /// The Resolver endpoints that were created by using the current Amazon Web Services
+        /// account, and that match the specified filters, if any.
         /// </para>
         /// </summary>
         public List<ResolverEndpoint> ResolverEndpoints

@@ -56,9 +56,9 @@ namespace Amazon.Route53Resolver
     ///  
     /// <para>
     /// DNS resolvers on your network can forward DNS queries to Resolver in a specified VPC.
-    /// This allows your DNS resolvers to easily resolve domain names for AWS resources such
-    /// as EC2 instances or records in a Route 53 private hosted zone. For more information,
-    /// see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html#resolver-overview-forward-network-to-vpc">How
+    /// This allows your DNS resolvers to easily resolve domain names for Amazon Web Services
+    /// resources such as EC2 instances or records in a Route 53 private hosted zone. For
+    /// more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html#resolver-overview-forward-network-to-vpc">How
     /// DNS Resolvers on Your Network Forward DNS Queries to Route 53 Resolver</a> in the
     /// <i>Amazon Route 53 Developer Guide</i>.
     /// </para>
@@ -809,8 +809,8 @@ namespace Amazon.Route53Resolver
         /// </para>
         ///  
         /// <para>
-        /// You can optionally use AWS Resource Access Manager (AWS RAM) to share a query logging
-        /// configuration with other AWS accounts. The other accounts can then associate VPCs
+        /// You can optionally use Resource Access Manager (RAM) to share a query logging configuration
+        /// with other Amazon Web Services accounts. The other accounts can then associate VPCs
         /// with the configuration. The query logs that Resolver creates for a configuration include
         /// all DNS queries that originate in all VPCs that are associated with the configuration.
         /// </para>
@@ -1145,8 +1145,8 @@ namespace Amazon.Route53Resolver
         /// <summary>
         /// Deletes a query logging configuration. When you delete a configuration, Resolver stops
         /// logging DNS queries for all of the Amazon VPCs that are associated with the configuration.
-        /// This also applies if the query logging configuration is shared with other AWS accounts,
-        /// and the other accounts have associated VPCs with the shared configuration.
+        /// This also applies if the query logging configuration is shared with other Amazon Web
+        /// Services accounts, and the other accounts have associated VPCs with the shared configuration.
         /// 
         ///  
         /// <para>
@@ -1383,9 +1383,9 @@ namespace Amazon.Route53Resolver
         ///  <note> 
         /// <para>
         /// Before you can delete a query logging configuration, you must first disassociate all
-        /// VPCs from the configuration. If you used AWS Resource Access Manager (AWS RAM) to
-        /// share a query logging configuration with other accounts, VPCs can be disassociated
-        /// from the configuration in the following ways:
+        /// VPCs from the configuration. If you used Resource Access Manager (RAM) to share a
+        /// query logging configuration with other accounts, VPCs can be disassociated from the
+        /// configuration in the following ways:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1696,9 +1696,9 @@ namespace Amazon.Route53Resolver
 
 
         /// <summary>
-        /// Returns the AWS Identity and Access Management (AWS IAM) policy for sharing the specified
-        /// rule group. You can use the policy to share the rule group using AWS Resource Access
-        /// Manager (AWS RAM).
+        /// Returns the Identity and Access Management (Amazon Web Services IAM) policy for sharing
+        /// the specified rule group. You can use the policy to share the rule group using Resource
+        /// Access Manager (RAM).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFirewallRuleGroupPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -1959,8 +1959,8 @@ namespace Amazon.Route53Resolver
 
         /// <summary>
         /// Gets information about a query logging policy. A query logging policy specifies the
-        /// Resolver query logging operations and resources that you want to allow another AWS
-        /// account to be able to use.
+        /// Resolver query logging operations and resources that you want to allow another Amazon
+        /// Web Services account to be able to use.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResolverQueryLogConfigPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2561,7 +2561,7 @@ namespace Amazon.Route53Resolver
 
         /// <summary>
         /// Lists the configurations for DNSSEC validation that are associated with the current
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResolverDnssecConfigs service method.</param>
         /// <param name="cancellationToken">
@@ -2665,7 +2665,8 @@ namespace Amazon.Route53Resolver
 
 
         /// <summary>
-        /// Lists all the Resolver endpoints that were created using the current AWS account.
+        /// Lists all the Resolver endpoints that were created using the current Amazon Web Services
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResolverEndpoints service method.</param>
         /// <param name="cancellationToken">
@@ -2825,7 +2826,7 @@ namespace Amazon.Route53Resolver
 
         /// <summary>
         /// Lists the associations that were created between Resolver rules and VPCs using the
-        /// current AWS account.
+        /// current Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResolverRuleAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -2875,7 +2876,7 @@ namespace Amazon.Route53Resolver
 
 
         /// <summary>
-        /// Lists the Resolver rules that were created using the current AWS account.
+        /// Lists the Resolver rules that were created using the current Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResolverRules service method.</param>
         /// <param name="cancellationToken">
@@ -2978,9 +2979,9 @@ namespace Amazon.Route53Resolver
 
 
         /// <summary>
-        /// Attaches an AWS Identity and Access Management (AWS IAM) policy for sharing the rule
-        /// group. You can use the policy to share the rule group using AWS Resource Access Manager
-        /// (AWS RAM).
+        /// Attaches an Identity and Access Management (Amazon Web Services IAM) policy for sharing
+        /// the rule group. You can use the policy to share the rule group using Resource Access
+        /// Manager (RAM).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutFirewallRuleGroupPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -3030,9 +3031,9 @@ namespace Amazon.Route53Resolver
 
 
         /// <summary>
-        /// Specifies an AWS account that you want to share a query logging configuration with,
-        /// the query logging configuration that you want to share, and the operations that you
-        /// want the account to be able to perform on the configuration.
+        /// Specifies an Amazon Web Services account that you want to share a query logging configuration
+        /// with, the query logging configuration that you want to share, and the operations that
+        /// you want the account to be able to perform on the configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResolverQueryLogConfigPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -3085,9 +3086,9 @@ namespace Amazon.Route53Resolver
 
 
         /// <summary>
-        /// Specifies an AWS rule that you want to share with another account, the account that
-        /// you want to share the rule with, and the operations that you want the account to be
-        /// able to perform on the rule.
+        /// Specifies an Amazon Web Services rule that you want to share with another account,
+        /// the account that you want to share the rule with, and the operations that you want
+        /// the account to be able to perform on the rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResolverRulePolicy service method.</param>
         /// <param name="cancellationToken">

@@ -38,9 +38,9 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property FirewallRuleGroupPolicy. 
         /// <para>
-        /// The AWS Identity and Access Management (AWS IAM) policy for sharing the specified
-        /// rule group. You can use the policy to share the rule group using AWS Resource Access
-        /// Manager (AWS RAM). 
+        /// The Identity and Access Management (Amazon Web Services IAM) policy for sharing the
+        /// specified rule group. You can use the policy to share the rule group using Resource
+        /// Access Manager (RAM). 
         /// </para>
         /// </summary>
         [AWSProperty(Max=5000)]

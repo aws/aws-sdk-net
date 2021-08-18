@@ -128,9 +128,9 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The AWS account ID for the account that created the rule group. When a rule group
-        /// is shared with your account, this is the account that has shared the rule group with
-        /// you. 
+        /// The Amazon Web Services account ID for the account that created the rule group. When
+        /// a rule group is shared with your account, this is the account that has shared the
+        /// rule group with you. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=32)]
@@ -149,9 +149,9 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ShareStatus. 
         /// <para>
-        /// Whether the rule group is shared with other AWS accounts, or was shared with the current
-        /// account by another AWS account. Sharing is configured through AWS Resource Access
-        /// Manager (AWS RAM).
+        /// Whether the rule group is shared with other Amazon Web Services accounts, or was shared
+        /// with the current account by another Amazon Web Services account. Sharing is configured
+        /// through Resource Access Manager (RAM).
         /// </para>
         /// </summary>
         public ShareStatus ShareStatus

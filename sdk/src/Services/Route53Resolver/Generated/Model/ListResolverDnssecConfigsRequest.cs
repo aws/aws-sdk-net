@@ -31,7 +31,7 @@ namespace Amazon.Route53Resolver.Model
     /// <summary>
     /// Container for the parameters to the ListResolverDnssecConfigs operation.
     /// Lists the configurations for DNSSEC validation that are associated with the current
-    /// AWS account.
+    /// Amazon Web Services account.
     /// </summary>
     public partial class ListResolverDnssecConfigsRequest : AmazonRoute53ResolverRequest
     {
@@ -81,9 +81,9 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// (Optional) If the current AWS account has more than <code>MaxResults</code> DNSSEC
-        /// configurations, use <code>NextToken</code> to get the second and subsequent pages
-        /// of results.
+        /// (Optional) If the current Amazon Web Services account has more than <code>MaxResults</code>
+        /// DNSSEC configurations, use <code>NextToken</code> to get the second and subsequent
+        /// pages of results.
         /// </para>
         ///  
         /// <para>

@@ -32,8 +32,8 @@ namespace Amazon.Route53Resolver.Model
     /// Container for the parameters to the DeleteResolverQueryLogConfig operation.
     /// Deletes a query logging configuration. When you delete a configuration, Resolver stops
     /// logging DNS queries for all of the Amazon VPCs that are associated with the configuration.
-    /// This also applies if the query logging configuration is shared with other AWS accounts,
-    /// and the other accounts have associated VPCs with the shared configuration.
+    /// This also applies if the query logging configuration is shared with other Amazon Web
+    /// Services accounts, and the other accounts have associated VPCs with the shared configuration.
     /// 
     ///  
     /// <para>

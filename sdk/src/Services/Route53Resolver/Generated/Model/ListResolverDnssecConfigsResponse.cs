@@ -40,7 +40,8 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If a response includes the last of the DNSSEC configurations that are associated with
-        /// the current AWS account, <code>NextToken</code> doesn't appear in the response.
+        /// the current Amazon Web Services account, <code>NextToken</code> doesn't appear in
+        /// the response.
         /// </para>
         ///  
         /// <para>
@@ -67,7 +68,7 @@ namespace Amazon.Route53Resolver.Model
         /// <para>
         /// An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a>
         /// element for each configuration for DNSSEC validation that is associated with the current
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </para>
         /// </summary>
         public List<ResolverDnssecConfig> ResolverDnssecConfigs

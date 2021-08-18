@@ -30,7 +30,7 @@ namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
     /// Container for the parameters to the ListResolverRules operation.
-    /// Lists the Resolver rules that were created using the current AWS account.
+    /// Lists the Resolver rules that were created using the current Amazon Web Services account.
     /// </summary>
     public partial class ListResolverRulesRequest : AmazonRoute53ResolverRequest
     {

@@ -92,7 +92,7 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HostVpcId</code>: The ID of the VPC that inbound DNS queries pass through on
+        ///  <code>HostVPCId</code>: The ID of the VPC that inbound DNS queries pass through on
         /// the way from your network to your VPCs in a region, or the VPC that outbound queries
         /// pass through on the way from your VPCs to your network. In a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a>
         /// request, <code>SubnetId</code> indirectly identifies the VPC. In a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>
@@ -227,8 +227,8 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Destination</code>: The AWS service that you want to forward query logs to.
-        /// Valid values include the following:
+        ///  <code>Destination</code>: The Amazon Web Services service that you want to forward
+        /// query logs to. Valid values include the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -258,15 +258,15 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OwnerId</code>: The AWS account ID for the account that created the query logging
-        /// configuration.
+        ///  <code>OwnerId</code>: The Amazon Web Services account ID for the account that created
+        /// the query logging configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>ShareStatus</code>: An indication of whether the query logging configuration
-        /// is shared with other AWS accounts, or was shared with the current account by another
-        /// AWS account. Valid values include: <code>NOT_SHARED</code>, <code>SHARED_WITH_ME</code>,
-        /// or <code>SHARED_BY_ME</code>.
+        /// is shared with other Amazon Web Services accounts, or was shared with the current
+        /// account by another Amazon Web Services account. Valid values include: <code>NOT_SHARED</code>,
+        /// <code>SHARED_WITH_ME</code>, or <code>SHARED_BY_ME</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

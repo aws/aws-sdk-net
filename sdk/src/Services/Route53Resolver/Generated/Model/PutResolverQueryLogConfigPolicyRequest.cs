@@ -30,9 +30,9 @@ namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
     /// Container for the parameters to the PutResolverQueryLogConfigPolicy operation.
-    /// Specifies an AWS account that you want to share a query logging configuration with,
-    /// the query logging configuration that you want to share, and the operations that you
-    /// want the account to be able to perform on the configuration.
+    /// Specifies an Amazon Web Services account that you want to share a query logging configuration
+    /// with, the query logging configuration that you want to share, and the operations that
+    /// you want the account to be able to perform on the configuration.
     /// </summary>
     public partial class PutResolverQueryLogConfigPolicyRequest : AmazonRoute53ResolverRequest
     {
@@ -61,8 +61,8 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ResolverQueryLogConfigPolicy. 
         /// <para>
-        /// An AWS Identity and Access Management policy statement that lists the query logging
-        /// configurations that you want to share with another AWS account and the operations
+        /// An Identity and Access Management policy statement that lists the query logging configurations
+        /// that you want to share with another Amazon Web Services account and the operations
         /// that you want the account to be able to perform. You can specify the following operations
         /// in the <code>Actions</code> section of the statement:
         /// </para>

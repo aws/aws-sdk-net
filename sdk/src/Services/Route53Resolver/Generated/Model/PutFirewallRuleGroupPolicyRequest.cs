@@ -30,9 +30,9 @@ namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
     /// Container for the parameters to the PutFirewallRuleGroupPolicy operation.
-    /// Attaches an AWS Identity and Access Management (AWS IAM) policy for sharing the rule
-    /// group. You can use the policy to share the rule group using AWS Resource Access Manager
-    /// (AWS RAM).
+    /// Attaches an Identity and Access Management (Amazon Web Services IAM) policy for sharing
+    /// the rule group. You can use the policy to share the rule group using Resource Access
+    /// Manager (RAM).
     /// </summary>
     public partial class PutFirewallRuleGroupPolicyRequest : AmazonRoute53ResolverRequest
     {
@@ -61,7 +61,8 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property FirewallRuleGroupPolicy. 
         /// <para>
-        /// The AWS Identity and Access Management (AWS IAM) policy to attach to the rule group.
+        /// The Identity and Access Management (Amazon Web Services IAM) policy to attach to the
+        /// rule group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=5000)]

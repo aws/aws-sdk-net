@@ -199,8 +199,8 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// When a rule is shared with another AWS account, the account ID of the account that
-        /// the rule is shared with.
+        /// When a rule is shared with another Amazon Web Services account, the account ID of
+        /// the account that the rule is shared with.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=32)]

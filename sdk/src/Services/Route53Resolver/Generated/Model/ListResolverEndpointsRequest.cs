@@ -30,7 +30,8 @@ namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
     /// Container for the parameters to the ListResolverEndpoints operation.
-    /// Lists all the Resolver endpoints that were created using the current AWS account.
+    /// Lists all the Resolver endpoints that were created using the current Amazon Web Services
+    /// account.
     /// </summary>
     public partial class ListResolverEndpointsRequest : AmazonRoute53ResolverRequest
     {
