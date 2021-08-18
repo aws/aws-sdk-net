@@ -312,7 +312,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>If you don't specify a value for <code>IPAddress</code> </b>:
+        ///  <b>If you don't specify a value for</b> <code>IPAddress</code>:
         /// </para>
         ///  
         /// <para>
