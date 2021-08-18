@@ -646,6 +646,11 @@
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateNotebookInstanceRequest.PlatformIdentifier</property>
+    <max>15</max>
+    <pattern>^(notebook-al1-v1|notebook-al2-v1)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateNotebookInstanceRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
@@ -2166,6 +2171,11 @@
     <property>Amazon.SageMaker.Model.DescribeNotebookInstanceResponse.NotebookInstanceName</property>
     <max>63</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeNotebookInstanceResponse.PlatformIdentifier</property>
+    <max>15</max>
+    <pattern>^(notebook-al1-v1|notebook-al2-v1)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeNotebookInstanceResponse.RoleArn</property>
@@ -4550,6 +4560,31 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.AsyncInferenceClientConfig.MaxConcurrentInvocationsPerInstance</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.AsyncInferenceNotificationConfig.ErrorTopic</property>
+    <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:sns:[a-z0-9\-]*:[0-9]{12}:[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.AsyncInferenceNotificationConfig.SuccessTopic</property>
+    <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:sns:[a-z0-9\-]*:[0-9]{12}:[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.AsyncInferenceOutputConfig.KmsKeyId</property>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.AsyncInferenceOutputConfig.S3OutputPath</property>
+    <max>512</max>
+    <pattern>^(https|s3)://([^/])/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.AthenaDatasetDefinition.Catalog</property>
     <min>1</min>
     <max>256</max>
@@ -5037,7 +5072,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DesiredWeightAndCapacity.DesiredInstanceCount</property>
-    <min>1</min>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DesiredWeightAndCapacity.DesiredWeight</property>
@@ -6819,7 +6854,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ProductionVariantSummary.CurrentInstanceCount</property>
-    <min>1</min>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ProductionVariantSummary.CurrentWeight</property>
@@ -6827,7 +6862,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ProductionVariantSummary.DesiredInstanceCount</property>
-    <min>1</min>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ProductionVariantSummary.DesiredWeight</property>

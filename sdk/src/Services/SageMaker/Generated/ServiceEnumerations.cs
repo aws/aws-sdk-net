@@ -4341,6 +4341,30 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly InstanceType MlC5Xlarge = new InstanceType("ml.c5.xlarge");
         /// <summary>
+        /// Constant MlG4dn12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG4dn12xlarge = new InstanceType("ml.g4dn.12xlarge");
+        /// <summary>
+        /// Constant MlG4dn16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG4dn16xlarge = new InstanceType("ml.g4dn.16xlarge");
+        /// <summary>
+        /// Constant MlG4dn2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG4dn2xlarge = new InstanceType("ml.g4dn.2xlarge");
+        /// <summary>
+        /// Constant MlG4dn4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG4dn4xlarge = new InstanceType("ml.g4dn.4xlarge");
+        /// <summary>
+        /// Constant MlG4dn8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG4dn8xlarge = new InstanceType("ml.g4dn.8xlarge");
+        /// <summary>
+        /// Constant MlG4dnXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG4dnXlarge = new InstanceType("ml.g4dn.xlarge");
+        /// <summary>
         /// Constant MlM410xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType MlM410xlarge = new InstanceType("ml.m4.10xlarge");
@@ -4377,6 +4401,38 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly InstanceType MlM54xlarge = new InstanceType("ml.m5.4xlarge");
         /// <summary>
+        /// Constant MlM5d12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlM5d12xlarge = new InstanceType("ml.m5d.12xlarge");
+        /// <summary>
+        /// Constant MlM5d16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlM5d16xlarge = new InstanceType("ml.m5d.16xlarge");
+        /// <summary>
+        /// Constant MlM5d24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlM5d24xlarge = new InstanceType("ml.m5d.24xlarge");
+        /// <summary>
+        /// Constant MlM5d2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlM5d2xlarge = new InstanceType("ml.m5d.2xlarge");
+        /// <summary>
+        /// Constant MlM5d4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlM5d4xlarge = new InstanceType("ml.m5d.4xlarge");
+        /// <summary>
+        /// Constant MlM5d8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlM5d8xlarge = new InstanceType("ml.m5d.8xlarge");
+        /// <summary>
+        /// Constant MlM5dLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlM5dLarge = new InstanceType("ml.m5d.large");
+        /// <summary>
+        /// Constant MlM5dXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlM5dXlarge = new InstanceType("ml.m5d.xlarge");
+        /// <summary>
         /// Constant MlM5Xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType MlM5Xlarge = new InstanceType("ml.m5.xlarge");
@@ -4404,6 +4460,42 @@ namespace Amazon.SageMaker
         /// Constant MlP38xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType MlP38xlarge = new InstanceType("ml.p3.8xlarge");
+        /// <summary>
+        /// Constant MlP3dn24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlP3dn24xlarge = new InstanceType("ml.p3dn.24xlarge");
+        /// <summary>
+        /// Constant MlR512xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlR512xlarge = new InstanceType("ml.r5.12xlarge");
+        /// <summary>
+        /// Constant MlR516xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlR516xlarge = new InstanceType("ml.r5.16xlarge");
+        /// <summary>
+        /// Constant MlR524xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlR524xlarge = new InstanceType("ml.r5.24xlarge");
+        /// <summary>
+        /// Constant MlR52xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlR52xlarge = new InstanceType("ml.r5.2xlarge");
+        /// <summary>
+        /// Constant MlR54xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlR54xlarge = new InstanceType("ml.r5.4xlarge");
+        /// <summary>
+        /// Constant MlR58xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlR58xlarge = new InstanceType("ml.r5.8xlarge");
+        /// <summary>
+        /// Constant MlR5Large for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlR5Large = new InstanceType("ml.r5.large");
+        /// <summary>
+        /// Constant MlR5Xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlR5Xlarge = new InstanceType("ml.r5.xlarge");
         /// <summary>
         /// Constant MlT22xlarge for InstanceType
         /// </summary>

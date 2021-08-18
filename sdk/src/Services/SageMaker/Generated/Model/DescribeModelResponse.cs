@@ -49,7 +49,7 @@ namespace Amazon.SageMaker.Model
         /// The containers in the inference pipeline.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=5)]
+        [AWSProperty(Max=15)]
         public List<ContainerDefinition> Containers
         {
             get { return this._containers; }

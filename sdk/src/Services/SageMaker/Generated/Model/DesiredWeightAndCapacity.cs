@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The variant's capacity.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=0)]
         public int DesiredInstanceCount
         {
             get { return this._desiredInstanceCount.GetValueOrDefault(); }

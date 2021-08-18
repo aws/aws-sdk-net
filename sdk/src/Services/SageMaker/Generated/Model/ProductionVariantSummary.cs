@@ -49,7 +49,7 @@ namespace Amazon.SageMaker.Model
         /// The number of instances associated with the variant.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=0)]
         public int CurrentInstanceCount
         {
             get { return this._currentInstanceCount.GetValueOrDefault(); }
@@ -107,7 +107,7 @@ namespace Amazon.SageMaker.Model
         /// request. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=0)]
         public int DesiredInstanceCount
         {
             get { return this._desiredInstanceCount.GetValueOrDefault(); }

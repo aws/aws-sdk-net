@@ -29,28 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Configures Amazon SNS notifications of available or expiring work items for work teams.
+    /// Configures the behavior of the client used by Amazon SageMaker to interact with the
+    /// model container during asynchronous inference.
     /// </summary>
-    public partial class NotificationConfiguration
+    public partial class AsyncInferenceClientConfig
     {
-        private string _notificationTopicArn;
+        private int? _maxConcurrentInvocationsPerInstance;
 
         /// <summary>
-        /// Gets and sets the property NotificationTopicArn. 
+        /// Gets and sets the property MaxConcurrentInvocationsPerInstance. 
         /// <para>
-        /// The ARN for the Amazon SNS topic to which notifications should be published.
+        /// The maximum number of concurrent requests sent by the SageMaker client to the model
+        /// container. If no value is provided, Amazon SageMaker will choose an optimal value
+        /// for you.
         /// </para>
         /// </summary>
-        public string NotificationTopicArn
+        [AWSProperty(Min=1, Max=1000)]
+        public int MaxConcurrentInvocationsPerInstance
         {
-            get { return this._notificationTopicArn; }
-            set { this._notificationTopicArn = value; }
+            get { return this._maxConcurrentInvocationsPerInstance.GetValueOrDefault(); }
+            set { this._maxConcurrentInvocationsPerInstance = value; }
         }
 
-        // Check to see if NotificationTopicArn property is set
-        internal bool IsSetNotificationTopicArn()
+        // Check to see if MaxConcurrentInvocationsPerInstance property is set
+        internal bool IsSetMaxConcurrentInvocationsPerInstance()
         {
-            return this._notificationTopicArn != null;
+            return this._maxConcurrentInvocationsPerInstance.HasValue; 
         }
 
     }

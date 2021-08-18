@@ -135,6 +135,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.NotebookInstanceStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PlatformIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PlatformIdentifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

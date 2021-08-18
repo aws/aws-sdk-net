@@ -67,6 +67,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAsyncInferenceConfig())
+                {
+                    context.Writer.WritePropertyName("AsyncInferenceConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AsyncInferenceConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AsyncInferenceConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDataCaptureConfig())
                 {
                     context.Writer.WritePropertyName("DataCaptureConfig");

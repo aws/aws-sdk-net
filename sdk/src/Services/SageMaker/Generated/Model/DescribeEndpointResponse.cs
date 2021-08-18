@@ -33,6 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class DescribeEndpointResponse : AmazonWebServiceResponse
     {
+        private AsyncInferenceConfig _asyncInferenceConfig;
         private DateTime? _creationTime;
         private DataCaptureConfigSummary _dataCaptureConfig;
         private string _endpointArn;
@@ -43,6 +44,25 @@ namespace Amazon.SageMaker.Model
         private DeploymentConfig _lastDeploymentConfig;
         private DateTime? _lastModifiedTime;
         private List<ProductionVariantSummary> _productionVariants = new List<ProductionVariantSummary>();
+
+        /// <summary>
+        /// Gets and sets the property AsyncInferenceConfig. 
+        /// <para>
+        /// Returns the description of an endpoint configuration created using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">
+        /// <code>CreateEndpointConfig</code> </a> API.
+        /// </para>
+        /// </summary>
+        public AsyncInferenceConfig AsyncInferenceConfig
+        {
+            get { return this._asyncInferenceConfig; }
+            set { this._asyncInferenceConfig = value; }
+        }
+
+        // Check to see if AsyncInferenceConfig property is set
+        internal bool IsSetAsyncInferenceConfig()
+        {
+            return this._asyncInferenceConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreationTime. 

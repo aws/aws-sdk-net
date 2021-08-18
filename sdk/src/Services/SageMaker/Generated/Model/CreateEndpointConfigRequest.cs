@@ -79,11 +79,32 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class CreateEndpointConfigRequest : AmazonSageMakerRequest
     {
+        private AsyncInferenceConfig _asyncInferenceConfig;
         private DataCaptureConfig _dataCaptureConfig;
         private string _endpointConfigName;
         private string _kmsKeyId;
         private List<ProductionVariant> _productionVariants = new List<ProductionVariant>();
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property AsyncInferenceConfig. 
+        /// <para>
+        /// Specifies configuration for how an endpoint performs asynchronous inference. This
+        /// is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">
+        /// <code>InvokeEndpointAsync</code> </a>.
+        /// </para>
+        /// </summary>
+        public AsyncInferenceConfig AsyncInferenceConfig
+        {
+            get { return this._asyncInferenceConfig; }
+            set { this._asyncInferenceConfig = value; }
+        }
+
+        // Check to see if AsyncInferenceConfig property is set
+        internal bool IsSetAsyncInferenceConfig()
+        {
+            return this._asyncInferenceConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DataCaptureConfig.
