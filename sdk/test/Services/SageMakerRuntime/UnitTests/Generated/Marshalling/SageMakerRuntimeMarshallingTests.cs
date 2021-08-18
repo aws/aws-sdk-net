@@ -214,5 +214,136 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SageMakerRuntime")]
+        public void InvokeEndpointAsyncMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeEndpointAsync");
+
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointAsyncRequest>();
+            var marshaller = new InvokeEndpointAsyncRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("InvokeEndpointAsync", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amzn-SageMaker-OutputLocation","X-Amzn-SageMaker-OutputLocation_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = InvokeEndpointAsyncResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as InvokeEndpointAsyncResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SageMakerRuntime")]
+        public void InvokeEndpointAsync_InternalFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeEndpointAsync");
+
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointAsyncRequest>();
+            var marshaller = new InvokeEndpointAsyncRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeEndpointAsync", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amzn-SageMaker-OutputLocation","X-Amzn-SageMaker-OutputLocation_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeEndpointAsyncResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SageMakerRuntime")]
+        public void InvokeEndpointAsync_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeEndpointAsync");
+
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointAsyncRequest>();
+            var marshaller = new InvokeEndpointAsyncRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeEndpointAsync", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amzn-SageMaker-OutputLocation","X-Amzn-SageMaker-OutputLocation_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeEndpointAsyncResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SageMakerRuntime")]
+        public void InvokeEndpointAsync_ValidationErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeEndpointAsync");
+
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointAsyncRequest>();
+            var marshaller = new InvokeEndpointAsyncRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeEndpointAsync", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationErrorException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amzn-SageMaker-OutputLocation","X-Amzn-SageMaker-OutputLocation_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationErrorException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeEndpointAsyncResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
     }
 }

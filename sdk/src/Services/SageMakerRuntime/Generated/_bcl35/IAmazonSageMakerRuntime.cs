@@ -124,5 +124,76 @@ namespace Amazon.SageMakerRuntime
 
         #endregion
         
+        #region  InvokeEndpointAsync
+
+
+        /// <summary>
+        /// After you deploy a model into production using Amazon SageMaker hosting services,
+        /// your client applications use this API to get inferences from the model hosted at the
+        /// specified endpoint in an asynchronous manner.
+        /// 
+        ///  
+        /// <para>
+        /// Inference requests sent to this API are enqueued for asynchronous processing. The
+        /// processing of the inference request may or may not complete before the you receive
+        /// a response from this API. The response from this API will not contain the result of
+        /// the inference request but contain information about where you can locate it.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon SageMaker strips all <code>POST</code> headers except those supported by the
+        /// API. Amazon SageMaker might add additional headers. You should not rely on the behavior
+        /// of headers outside those enumerated in the request syntax.
+        /// </para>
+        ///  
+        /// <para>
+        /// Calls to <code>InvokeEndpointAsync</code> are authenticated by using AWS Signature
+        /// Version 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+        /// Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvokeEndpointAsync service method.</param>
+        /// 
+        /// <returns>The response from the InvokeEndpointAsync service method, as returned by SageMakerRuntime.</returns>
+        /// <exception cref="Amazon.SageMakerRuntime.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerRuntime.Model.ServiceUnavailableException">
+        /// The service is unavailable. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerRuntime.Model.ValidationErrorException">
+        /// Inspect your request and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpointAsync">REST API Reference for InvokeEndpointAsync Operation</seealso>
+        InvokeEndpointAsyncResponse InvokeEndpointAsync(InvokeEndpointAsyncRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the InvokeEndpointAsync operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the InvokeEndpointAsync operation on AmazonSageMakerRuntimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInvokeEndpointAsync
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpointAsync">REST API Reference for InvokeEndpointAsync Operation</seealso>
+        IAsyncResult BeginInvokeEndpointAsync(InvokeEndpointAsyncRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  InvokeEndpointAsync operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInvokeEndpointAsync.</param>
+        /// 
+        /// <returns>Returns a  InvokeEndpointAsyncResult from SageMakerRuntime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpointAsync">REST API Reference for InvokeEndpointAsync Operation</seealso>
+        InvokeEndpointAsyncResponse EndInvokeEndpointAsync(IAsyncResult asyncResult);
+
+        #endregion
+        
     }
 }

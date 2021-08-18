@@ -158,5 +158,95 @@ namespace Amazon.SageMakerRuntime
 
         #endregion
         
+        #region  InvokeEndpointAsync
+
+
+        /// <summary>
+        /// After you deploy a model into production using Amazon SageMaker hosting services,
+        /// your client applications use this API to get inferences from the model hosted at the
+        /// specified endpoint in an asynchronous manner.
+        /// 
+        ///  
+        /// <para>
+        /// Inference requests sent to this API are enqueued for asynchronous processing. The
+        /// processing of the inference request may or may not complete before the you receive
+        /// a response from this API. The response from this API will not contain the result of
+        /// the inference request but contain information about where you can locate it.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon SageMaker strips all <code>POST</code> headers except those supported by the
+        /// API. Amazon SageMaker might add additional headers. You should not rely on the behavior
+        /// of headers outside those enumerated in the request syntax.
+        /// </para>
+        ///  
+        /// <para>
+        /// Calls to <code>InvokeEndpointAsync</code> are authenticated by using AWS Signature
+        /// Version 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+        /// Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvokeEndpointAsync service method.</param>
+        /// 
+        /// <returns>The response from the InvokeEndpointAsync service method, as returned by SageMakerRuntime.</returns>
+        /// <exception cref="Amazon.SageMakerRuntime.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerRuntime.Model.ServiceUnavailableException">
+        /// The service is unavailable. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerRuntime.Model.ValidationErrorException">
+        /// Inspect your request and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpointAsync">REST API Reference for InvokeEndpointAsync Operation</seealso>
+        InvokeEndpointAsyncResponse InvokeEndpointAsync(InvokeEndpointAsyncRequest request);
+
+
+
+        /// <summary>
+        /// After you deploy a model into production using Amazon SageMaker hosting services,
+        /// your client applications use this API to get inferences from the model hosted at the
+        /// specified endpoint in an asynchronous manner.
+        /// 
+        ///  
+        /// <para>
+        /// Inference requests sent to this API are enqueued for asynchronous processing. The
+        /// processing of the inference request may or may not complete before the you receive
+        /// a response from this API. The response from this API will not contain the result of
+        /// the inference request but contain information about where you can locate it.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon SageMaker strips all <code>POST</code> headers except those supported by the
+        /// API. Amazon SageMaker might add additional headers. You should not rely on the behavior
+        /// of headers outside those enumerated in the request syntax.
+        /// </para>
+        ///  
+        /// <para>
+        /// Calls to <code>InvokeEndpointAsync</code> are authenticated by using AWS Signature
+        /// Version 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+        /// Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvokeEndpointAsync service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the InvokeEndpointAsync service method, as returned by SageMakerRuntime.</returns>
+        /// <exception cref="Amazon.SageMakerRuntime.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerRuntime.Model.ServiceUnavailableException">
+        /// The service is unavailable. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerRuntime.Model.ValidationErrorException">
+        /// Inspect your request and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpointAsync">REST API Reference for InvokeEndpointAsync Operation</seealso>
+        Task<InvokeEndpointAsyncResponse> InvokeEndpointAsyncAsync(InvokeEndpointAsyncRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
     }
 }
