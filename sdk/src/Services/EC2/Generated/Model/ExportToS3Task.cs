@@ -79,7 +79,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property S3Bucket. 
         /// <para>
         /// The Amazon S3 bucket for the destination image. The destination bucket must exist
-        /// and grant WRITE and READ_ACP permissions to the AWS account <code>vm-import-export@amazon.com</code>.
+        /// and grant WRITE and READ_ACP permissions to the Amazon Web Services account <code>vm-import-export@amazon.com</code>.
         /// </para>
         /// </summary>
         public string S3Bucket

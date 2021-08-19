@@ -48,6 +48,7 @@ namespace Amazon.EC2.Model
         private string _status;
         private string _statusMessage;
         private List<Tag> _tags = new List<Tag>();
+        private string _usageOperation;
 
         /// <summary>
         /// Gets and sets the property Architecture. 
@@ -160,8 +161,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The identifier for the symmetric AWS Key Management Service (AWS KMS) customer master
-        /// key (CMK) that was used to create the encrypted AMI.
+        /// The identifier for the symmetric KMS key that was used to create the encrypted AMI.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -318,6 +318,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsageOperation. 
+        /// <para>
+        /// The usage operation value.
+        /// </para>
+        /// </summary>
+        public string UsageOperation
+        {
+            get { return this._usageOperation; }
+            set { this._usageOperation = value; }
+        }
+
+        // Check to see if UsageOperation property is set
+        internal bool IsSetUsageOperation()
+        {
+            return this._usageOperation != null;
         }
 
     }

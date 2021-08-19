@@ -39,8 +39,8 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// This API action is not supported by the AWS Command Line Interface (AWS CLI). For
-    /// information about using the Amazon EC2 CLI, which is deprecated, see <a href="https://awsdocs.s3.amazonaws.com/EC2/ec2-clt.pdf#importing-your-volumes-into-amazon-ebs">Importing
+    /// This API action is not supported by the Command Line Interface (CLI). For information
+    /// about using the Amazon EC2 CLI, which is deprecated, see <a href="https://awsdocs.s3.amazonaws.com/EC2/ec2-clt.pdf#importing-your-volumes-into-amazon-ebs">Importing
     /// Disks to Amazon EBS</a> in the <i>Amazon EC2 CLI Reference</i> PDF file.
     /// </para>
     ///  

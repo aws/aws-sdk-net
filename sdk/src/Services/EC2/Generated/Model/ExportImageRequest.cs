@@ -141,7 +141,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property S3ExportLocation. 
         /// <para>
         /// Information about the destination Amazon S3 bucket. The bucket must exist and grant
-        /// WRITE and READ_ACP permissions to the AWS account vm-import-export@amazon.com.
+        /// WRITE and READ_ACP permissions to the Amazon Web Services account vm-import-export@amazon.com.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

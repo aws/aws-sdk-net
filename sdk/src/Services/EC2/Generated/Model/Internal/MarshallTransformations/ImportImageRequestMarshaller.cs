@@ -192,6 +192,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetUsageOperation())
+                {
+                    request.Parameters.Add("UsageOperation", StringUtils.FromString(publicRequest.UsageOperation));
+                }
             }
             return request;
         }

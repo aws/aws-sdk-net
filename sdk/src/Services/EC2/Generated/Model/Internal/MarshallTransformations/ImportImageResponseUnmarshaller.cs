@@ -148,6 +148,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         response.Tags.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("usageOperation", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.UsageOperation = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
             }
 
