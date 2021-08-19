@@ -443,6 +443,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Elemental MediaStore Data is an AWS storage service optimized for media. It gives you the performance, consistency, and low latency required to deliver live and on-demand video content. AWS Elemental MediaStore Data acts as the origin store in your video workflow.
 * [AWSSDK.MediaTailor](https://www.nuget.org/packages/AWSSDK.MediaTailor/)
 	* AWS Elemental MediaTailor is a personalization and monetization service that allows scalable server-side ad insertion. The service enables you to serve targeted ads to viewers while maintaining broadcast quality in over-the-top (OTT) video applications. This SDK allows user access to the AWS Elemental MediaTailor configuration interface.
+* [AWSSDK.MemoryDB](https://www.nuget.org/packages/AWSSDK.MemoryDB/)
+	* AWS MemoryDB  SDK now supports all APIs for newly launched MemoryDB service.
 * [AWSSDK.Mgn](https://www.nuget.org/packages/AWSSDK.Mgn/)
 	* Add new service - Application Migration Service.
 * [AWSSDK.MigrationHub](https://www.nuget.org/packages/AWSSDK.MigrationHub/)

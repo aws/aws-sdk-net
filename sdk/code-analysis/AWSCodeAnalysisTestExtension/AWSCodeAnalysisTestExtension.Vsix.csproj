@@ -768,6 +768,10 @@
       <Project>{ABC55026-9712-485F-9999-8833BA451E9D}</Project>
       <Name>AWSSDK.MediaTailor.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/MemoryDB/AWSSDK.MemoryDB.CodeAnalysis.csproj">
+      <Project>{4F0AE39E-C0AC-47C7-A3B6-214CD59BD0FF}</Project>
+      <Name>AWSSDK.MemoryDB.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Mgn/AWSSDK.Mgn.CodeAnalysis.csproj">
       <Project>{98619D2E-9751-49BC-97FA-CC2CCEBEF5A6}</Project>
       <Name>AWSSDK.Mgn.CodeAnalysis</Name>
