@@ -144,6 +144,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSAPOData())
+            {
+                context.Writer.WritePropertyName("SAPOData");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SAPODataConnectorProfileCredentialsMarshaller.Instance;
+                marshaller.Marshall(requestObject.SAPOData, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetServiceNow())
             {
                 context.Writer.WritePropertyName("ServiceNow");

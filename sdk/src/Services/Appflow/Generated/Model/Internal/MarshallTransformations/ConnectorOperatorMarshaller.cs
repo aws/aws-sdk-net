@@ -93,6 +93,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Salesforce);
             }
 
+            if(requestObject.IsSetSAPOData())
+            {
+                context.Writer.WritePropertyName("SAPOData");
+                context.Writer.Write(requestObject.SAPOData);
+            }
+
             if(requestObject.IsSetServiceNow())
             {
                 context.Writer.WritePropertyName("ServiceNow");

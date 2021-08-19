@@ -45,6 +45,7 @@ namespace Amazon.Appflow.Model
         private DateTime? _createdAt;
         private string _credentialsArn;
         private DateTime? _lastUpdatedAt;
+        private PrivateConnectionProvisioningState _privateConnectionProvisioningState;
 
         /// <summary>
         /// Gets and sets the property ConnectionMode. 
@@ -87,7 +88,7 @@ namespace Amazon.Appflow.Model
         /// Gets and sets the property ConnectorProfileName. 
         /// <para>
         ///  The name of the connector profile. The name is unique for each <code>ConnectorProfile</code>
-        /// in the AWS account. 
+        /// in the Amazon Web Services account. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -192,6 +193,24 @@ namespace Amazon.Appflow.Model
         internal bool IsSetLastUpdatedAt()
         {
             return this._lastUpdatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateConnectionProvisioningState. 
+        /// <para>
+        ///  Specifies the private connection provisioning state. 
+        /// </para>
+        /// </summary>
+        public PrivateConnectionProvisioningState PrivateConnectionProvisioningState
+        {
+            get { return this._privateConnectionProvisioningState; }
+            set { this._privateConnectionProvisioningState = value; }
+        }
+
+        // Check to see if PrivateConnectionProvisioningState property is set
+        internal bool IsSetPrivateConnectionProvisioningState()
+        {
+            return this._privateConnectionProvisioningState != null;
         }
 
     }

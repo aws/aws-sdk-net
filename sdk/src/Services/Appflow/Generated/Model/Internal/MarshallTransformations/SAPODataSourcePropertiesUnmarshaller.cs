@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VeevaSourceProperties Object
+    /// Response Unmarshaller for SAPODataSourceProperties Object
     /// </summary>  
-    public class VeevaSourcePropertiesUnmarshaller : IUnmarshaller<VeevaSourceProperties, XmlUnmarshallerContext>, IUnmarshaller<VeevaSourceProperties, JsonUnmarshallerContext>
+    public class SAPODataSourcePropertiesUnmarshaller : IUnmarshaller<SAPODataSourceProperties, XmlUnmarshallerContext>, IUnmarshaller<SAPODataSourceProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        VeevaSourceProperties IUnmarshaller<VeevaSourceProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SAPODataSourceProperties IUnmarshaller<SAPODataSourceProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VeevaSourceProperties Unmarshall(JsonUnmarshallerContext context)
+        public SAPODataSourceProperties Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            VeevaSourceProperties unmarshalledObject = new VeevaSourceProperties();
+            SAPODataSourceProperties unmarshalledObject = new SAPODataSourceProperties();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("documentType", targetDepth))
+                if (context.TestExpression("objectPath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DocumentType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("includeAllVersions", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.IncludeAllVersions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("includeRenditions", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.IncludeRenditions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("includeSourceFiles", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.IncludeSourceFiles = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("object", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Object = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ObjectPath = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +76,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         }
 
 
-        private static VeevaSourcePropertiesUnmarshaller _instance = new VeevaSourcePropertiesUnmarshaller();        
+        private static SAPODataSourcePropertiesUnmarshaller _instance = new SAPODataSourcePropertiesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VeevaSourcePropertiesUnmarshaller Instance
+        public static SAPODataSourcePropertiesUnmarshaller Instance
         {
             get
             {

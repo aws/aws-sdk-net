@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// VeevaSourceProperties Marshaller
+    /// SAPODataConnectorProfileCredentials Marshaller
     /// </summary>       
-    public class VeevaSourcePropertiesMarshaller : IRequestMarshaller<VeevaSourceProperties, JsonMarshallerContext> 
+    public class SAPODataConnectorProfileCredentialsMarshaller : IRequestMarshaller<SAPODataConnectorProfileCredentials, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,36 +43,28 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(VeevaSourceProperties requestObject, JsonMarshallerContext context)
+        public void Marshall(SAPODataConnectorProfileCredentials requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDocumentType())
+            if(requestObject.IsSetBasicAuthCredentials())
             {
-                context.Writer.WritePropertyName("documentType");
-                context.Writer.Write(requestObject.DocumentType);
+                context.Writer.WritePropertyName("basicAuthCredentials");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BasicAuthCredentialsMarshaller.Instance;
+                marshaller.Marshall(requestObject.BasicAuthCredentials, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetIncludeAllVersions())
+            if(requestObject.IsSetOAuthCredentials())
             {
-                context.Writer.WritePropertyName("includeAllVersions");
-                context.Writer.Write(requestObject.IncludeAllVersions);
-            }
+                context.Writer.WritePropertyName("oAuthCredentials");
+                context.Writer.WriteObjectStart();
 
-            if(requestObject.IsSetIncludeRenditions())
-            {
-                context.Writer.WritePropertyName("includeRenditions");
-                context.Writer.Write(requestObject.IncludeRenditions);
-            }
+                var marshaller = OAuthCredentialsMarshaller.Instance;
+                marshaller.Marshall(requestObject.OAuthCredentials, context);
 
-            if(requestObject.IsSetIncludeSourceFiles())
-            {
-                context.Writer.WritePropertyName("includeSourceFiles");
-                context.Writer.Write(requestObject.IncludeSourceFiles);
-            }
-
-            if(requestObject.IsSetObject())
-            {
-                context.Writer.WritePropertyName("object");
-                context.Writer.Write(requestObject.Object);
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -80,7 +72,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static VeevaSourcePropertiesMarshaller Instance = new VeevaSourcePropertiesMarshaller();
+        public readonly static SAPODataConnectorProfileCredentialsMarshaller Instance = new SAPODataConnectorProfileCredentialsMarshaller();
 
     }
 }

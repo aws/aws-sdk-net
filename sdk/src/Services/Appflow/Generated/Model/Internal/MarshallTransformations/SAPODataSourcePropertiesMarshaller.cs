@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// VeevaSourceProperties Marshaller
+    /// SAPODataSourceProperties Marshaller
     /// </summary>       
-    public class VeevaSourcePropertiesMarshaller : IRequestMarshaller<VeevaSourceProperties, JsonMarshallerContext> 
+    public class SAPODataSourcePropertiesMarshaller : IRequestMarshaller<SAPODataSourceProperties, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,36 +43,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(VeevaSourceProperties requestObject, JsonMarshallerContext context)
+        public void Marshall(SAPODataSourceProperties requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDocumentType())
+            if(requestObject.IsSetObjectPath())
             {
-                context.Writer.WritePropertyName("documentType");
-                context.Writer.Write(requestObject.DocumentType);
-            }
-
-            if(requestObject.IsSetIncludeAllVersions())
-            {
-                context.Writer.WritePropertyName("includeAllVersions");
-                context.Writer.Write(requestObject.IncludeAllVersions);
-            }
-
-            if(requestObject.IsSetIncludeRenditions())
-            {
-                context.Writer.WritePropertyName("includeRenditions");
-                context.Writer.Write(requestObject.IncludeRenditions);
-            }
-
-            if(requestObject.IsSetIncludeSourceFiles())
-            {
-                context.Writer.WritePropertyName("includeSourceFiles");
-                context.Writer.Write(requestObject.IncludeSourceFiles);
-            }
-
-            if(requestObject.IsSetObject())
-            {
-                context.Writer.WritePropertyName("object");
-                context.Writer.Write(requestObject.Object);
+                context.Writer.WritePropertyName("objectPath");
+                context.Writer.Write(requestObject.ObjectPath);
             }
 
         }
@@ -80,7 +56,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static VeevaSourcePropertiesMarshaller Instance = new VeevaSourcePropertiesMarshaller();
+        public readonly static SAPODataSourcePropertiesMarshaller Instance = new SAPODataSourcePropertiesMarshaller();
 
     }
 }

@@ -103,6 +103,7 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property SourceFlowConfig.
         /// </summary>
+        [AWSProperty(Required=true)]
         public SourceFlowConfig SourceFlowConfig
         {
             get { return this._sourceFlowConfig; }

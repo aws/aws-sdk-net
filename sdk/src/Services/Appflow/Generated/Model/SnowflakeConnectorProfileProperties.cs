@@ -120,7 +120,7 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        ///  The AWS Region of the Snowflake account. 
+        ///  The Amazon Web Services Region of the Snowflake account. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]

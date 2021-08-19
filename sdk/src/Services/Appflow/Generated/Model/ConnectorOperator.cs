@@ -41,6 +41,7 @@ namespace Amazon.Appflow.Model
         private MarketoConnectorOperator _marketo;
         private S3ConnectorOperator _s3;
         private SalesforceConnectorOperator _salesforce;
+        private SAPODataConnectorOperator _sapoData;
         private ServiceNowConnectorOperator _serviceNow;
         private SingularConnectorOperator _singular;
         private SlackConnectorOperator _slack;
@@ -190,6 +191,24 @@ namespace Amazon.Appflow.Model
         internal bool IsSetSalesforce()
         {
             return this._salesforce != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SAPOData. 
+        /// <para>
+        ///  The operation to be performed on the provided SAPOData source fields. 
+        /// </para>
+        /// </summary>
+        public SAPODataConnectorOperator SAPOData
+        {
+            get { return this._sapoData; }
+            set { this._sapoData = value; }
+        }
+
+        // Check to see if SAPOData property is set
+        internal bool IsSetSAPOData()
+        {
+            return this._sapoData != null;
         }
 
         /// <summary>

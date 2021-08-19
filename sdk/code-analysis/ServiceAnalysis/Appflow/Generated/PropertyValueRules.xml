@@ -244,6 +244,16 @@
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Appflow.Model.BasicAuthCredentials.Password</property>
+    <max>512</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.BasicAuthCredentials.Username</property>
+    <max>512</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorEntity.Label</property>
     <max>128</max>
     <pattern>.*</pattern>
@@ -500,6 +510,41 @@
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Appflow.Model.OAuthCredentials.AccessToken</property>
+    <max>512</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.OAuthCredentials.ClientId</property>
+    <max>512</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.OAuthCredentials.ClientSecret</property>
+    <max>512</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.OAuthCredentials.RefreshToken</property>
+    <max>512</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.OAuthProperties.AuthCodeUrl</property>
+    <max>256</max>
+    <pattern>^(https?)://[-a-zA-Z0-9+&amp;@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&amp;@#/%=~_|]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.OAuthProperties.TokenUrl</property>
+    <max>256</max>
+    <pattern>^(https?)://[-a-zA-Z0-9+&amp;@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&amp;@#/%=~_|]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.PrivateConnectionProvisioningState.FailureMessage</property>
+    <max>2048</max>
+    <pattern>[\s\w/!@#+=.-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Appflow.Model.RedshiftConnectorProfileCredentials.Password</property>
     <max>512</max>
     <pattern>.*</pattern>
@@ -596,6 +641,42 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SalesforceSourceProperties.Object</property>
+    <max>512</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.SAPODataConnectorProfileProperties.ApplicationHostUrl</property>
+    <max>256</max>
+    <pattern>^(https?)://[-a-zA-Z0-9+&amp;@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&amp;@#/%=~_|]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.SAPODataConnectorProfileProperties.ApplicationServicePath</property>
+    <max>512</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.SAPODataConnectorProfileProperties.ClientNumber</property>
+    <min>3</min>
+    <max>3</max>
+    <pattern>^\d{3}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.SAPODataConnectorProfileProperties.LogonLanguage</property>
+    <max>2</max>
+    <pattern>^[a-zA-Z0-9_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.SAPODataConnectorProfileProperties.PortNumber</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.SAPODataConnectorProfileProperties.PrivateLinkServiceName</property>
+    <max>512</max>
+    <pattern>^$|com.amazonaws.vpce.[\w/!:@#.\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.SAPODataSourceProperties.ObjectPath</property>
     <max>512</max>
     <pattern>\S+</pattern>
   </property-value-rule>
@@ -698,7 +779,7 @@
   <property-value-rule>
     <property>Amazon.Appflow.Model.SnowflakeConnectorProfileProperties.PrivateLinkServiceName</property>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^$|com.amazonaws.vpce.[\w/!:@#.\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SnowflakeConnectorProfileProperties.Region</property>
@@ -776,6 +857,11 @@
     <property>Amazon.Appflow.Model.VeevaConnectorProfileProperties.InstanceUrl</property>
     <max>256</max>
     <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.VeevaSourceProperties.DocumentType</property>
+    <max>512</max>
+    <pattern>[\s\w_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.VeevaSourceProperties.Object</property>

@@ -51,7 +51,7 @@ namespace Amazon.Appflow.Model
         /// Gets and sets the property ConnectorProfileNames. 
         /// <para>
         ///  The name of the connector profile. The name is unique for each <code>ConnectorProfile</code>
-        /// in the AWS account. 
+        /// in the Amazon Web Services account. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

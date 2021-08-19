@@ -229,6 +229,10 @@ namespace Amazon.Appflow
         /// </summary>
         public static readonly ConnectorType Salesforce = new ConnectorType("Salesforce");
         /// <summary>
+        /// Constant SAPOData for ConnectorType
+        /// </summary>
+        public static readonly ConnectorType SAPOData = new ConnectorType("SAPOData");
+        /// <summary>
         /// Constant Servicenow for ConnectorType
         /// </summary>
         public static readonly ConnectorType Servicenow = new ConnectorType("Servicenow");
@@ -1327,6 +1331,122 @@ namespace Amazon.Appflow
 
 
     /// <summary>
+    /// Constants used for properties of type PrivateConnectionProvisioningFailureCause.
+    /// </summary>
+    public class PrivateConnectionProvisioningFailureCause : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCESS_DENIED for PrivateConnectionProvisioningFailureCause
+        /// </summary>
+        public static readonly PrivateConnectionProvisioningFailureCause ACCESS_DENIED = new PrivateConnectionProvisioningFailureCause("ACCESS_DENIED");
+        /// <summary>
+        /// Constant CONNECTOR_AUTHENTICATION for PrivateConnectionProvisioningFailureCause
+        /// </summary>
+        public static readonly PrivateConnectionProvisioningFailureCause CONNECTOR_AUTHENTICATION = new PrivateConnectionProvisioningFailureCause("CONNECTOR_AUTHENTICATION");
+        /// <summary>
+        /// Constant CONNECTOR_SERVER for PrivateConnectionProvisioningFailureCause
+        /// </summary>
+        public static readonly PrivateConnectionProvisioningFailureCause CONNECTOR_SERVER = new PrivateConnectionProvisioningFailureCause("CONNECTOR_SERVER");
+        /// <summary>
+        /// Constant INTERNAL_SERVER for PrivateConnectionProvisioningFailureCause
+        /// </summary>
+        public static readonly PrivateConnectionProvisioningFailureCause INTERNAL_SERVER = new PrivateConnectionProvisioningFailureCause("INTERNAL_SERVER");
+        /// <summary>
+        /// Constant VALIDATION for PrivateConnectionProvisioningFailureCause
+        /// </summary>
+        public static readonly PrivateConnectionProvisioningFailureCause VALIDATION = new PrivateConnectionProvisioningFailureCause("VALIDATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PrivateConnectionProvisioningFailureCause(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PrivateConnectionProvisioningFailureCause FindValue(string value)
+        {
+            return FindValue<PrivateConnectionProvisioningFailureCause>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PrivateConnectionProvisioningFailureCause(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PrivateConnectionProvisioningStatus.
+    /// </summary>
+    public class PrivateConnectionProvisioningStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATED for PrivateConnectionProvisioningStatus
+        /// </summary>
+        public static readonly PrivateConnectionProvisioningStatus CREATED = new PrivateConnectionProvisioningStatus("CREATED");
+        /// <summary>
+        /// Constant FAILED for PrivateConnectionProvisioningStatus
+        /// </summary>
+        public static readonly PrivateConnectionProvisioningStatus FAILED = new PrivateConnectionProvisioningStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for PrivateConnectionProvisioningStatus
+        /// </summary>
+        public static readonly PrivateConnectionProvisioningStatus PENDING = new PrivateConnectionProvisioningStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PrivateConnectionProvisioningStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PrivateConnectionProvisioningStatus FindValue(string value)
+        {
+            return FindValue<PrivateConnectionProvisioningStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PrivateConnectionProvisioningStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type S3ConnectorOperator.
     /// </summary>
     public class S3ConnectorOperator : ConstantClass
@@ -1568,6 +1688,132 @@ namespace Amazon.Appflow
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SalesforceConnectorOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SAPODataConnectorOperator.
+    /// </summary>
+    public class SAPODataConnectorOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADDITION for SAPODataConnectorOperator
+        /// </summary>
+        public static readonly SAPODataConnectorOperator ADDITION = new SAPODataConnectorOperator("ADDITION");
+        /// <summary>
+        /// Constant BETWEEN for SAPODataConnectorOperator
+        /// </summary>
+        public static readonly SAPODataConnectorOperator BETWEEN = new SAPODataConnectorOperator("BETWEEN");
+        /// <summary>
+        /// Constant CONTAINS for SAPODataConnectorOperator
+        /// </summary>
+        public static readonly SAPODataConnectorOperator CONTAINS = new SAPODataConnectorOperator("CONTAINS");
+        /// <summary>
+        /// Constant DIVISION for SAPODataConnectorOperator
+        /// </summary>
+        public static readonly SAPODataConnectorOperator DIVISION = new SAPODataConnectorOperator("DIVISION");
+        /// <summary>
+        /// Constant EQUAL_TO for SAPODataConnectorOperator
+        /// </summary>
+        public static readonly SAPODataConnectorOperator EQUAL_TO = new SAPODataConnectorOperator("EQUAL_TO");
+        /// <summary>
+        /// Constant GREATER_THAN for SAPODataConnectorOperator
+        /// </summary>
+        public static readonly SAPODataConnectorOperator GREATER_THAN = new SAPODataConnectorOperator("GREATER_THAN");
+        /// <summary>
+        /// Constant GREATER_THAN_OR_EQUAL_TO for SAPODataConnectorOperator
+        /// </summary>
+        public static readonly SAPODataConnectorOperator GREATER_THAN_OR_EQUAL_TO = new SAPODataConnectorOperator("GREATER_THAN_OR_EQUAL_TO");
+        /// <summary>
+        /// Constant LESS_THAN for SAPODataConnectorOperator
+        /// </summary>
+        public static readonly SAPODataConnectorOperator LESS_THAN = new SAPODataConnectorOperator("LESS_THAN");
+        /// <summary>
+        /// Constant LESS_THAN_OR_EQUAL_TO for SAPODataConnectorOperator
+        /// </summary>
+        public static readonly SAPODataConnectorOperator LESS_THAN_OR_EQUAL_TO = new SAPODataConnectorOperator("LESS_THAN_OR_EQUAL_TO");
+        /// <summary>
+        /// Constant MASK_ALL for SAPODataConnectorOperator
+        /// </summary>
+        public static readonly SAPODataConnectorOperator MASK_ALL = new SAPODataConnectorOperator("MASK_ALL");
+        /// <summary>
+        /// Constant MASK_FIRST_N for SAPODataConnectorOperator
+        /// </summary>
+        public static readonly SAPODataConnectorOperator MASK_FIRST_N = new SAPODataConnectorOperator("MASK_FIRST_N");
+        /// <summary>
+        /// Constant MASK_LAST_N for SAPODataConnectorOperator
+        /// </summary>
+        public static readonly SAPODataConnectorOperator MASK_LAST_N = new SAPODataConnectorOperator("MASK_LAST_N");
+        /// <summary>
+        /// Constant MULTIPLICATION for SAPODataConnectorOperator
+        /// </summary>
+        public static readonly SAPODataConnectorOperator MULTIPLICATION = new SAPODataConnectorOperator("MULTIPLICATION");
+        /// <summary>
+        /// Constant NO_OP for SAPODataConnectorOperator
+        /// </summary>
+        public static readonly SAPODataConnectorOperator NO_OP = new SAPODataConnectorOperator("NO_OP");
+        /// <summary>
+        /// Constant NOT_EQUAL_TO for SAPODataConnectorOperator
+        /// </summary>
+        public static readonly SAPODataConnectorOperator NOT_EQUAL_TO = new SAPODataConnectorOperator("NOT_EQUAL_TO");
+        /// <summary>
+        /// Constant PROJECTION for SAPODataConnectorOperator
+        /// </summary>
+        public static readonly SAPODataConnectorOperator PROJECTION = new SAPODataConnectorOperator("PROJECTION");
+        /// <summary>
+        /// Constant SUBTRACTION for SAPODataConnectorOperator
+        /// </summary>
+        public static readonly SAPODataConnectorOperator SUBTRACTION = new SAPODataConnectorOperator("SUBTRACTION");
+        /// <summary>
+        /// Constant VALIDATE_NON_NEGATIVE for SAPODataConnectorOperator
+        /// </summary>
+        public static readonly SAPODataConnectorOperator VALIDATE_NON_NEGATIVE = new SAPODataConnectorOperator("VALIDATE_NON_NEGATIVE");
+        /// <summary>
+        /// Constant VALIDATE_NON_NULL for SAPODataConnectorOperator
+        /// </summary>
+        public static readonly SAPODataConnectorOperator VALIDATE_NON_NULL = new SAPODataConnectorOperator("VALIDATE_NON_NULL");
+        /// <summary>
+        /// Constant VALIDATE_NON_ZERO for SAPODataConnectorOperator
+        /// </summary>
+        public static readonly SAPODataConnectorOperator VALIDATE_NON_ZERO = new SAPODataConnectorOperator("VALIDATE_NON_ZERO");
+        /// <summary>
+        /// Constant VALIDATE_NUMERIC for SAPODataConnectorOperator
+        /// </summary>
+        public static readonly SAPODataConnectorOperator VALIDATE_NUMERIC = new SAPODataConnectorOperator("VALIDATE_NUMERIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SAPODataConnectorOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SAPODataConnectorOperator FindValue(string value)
+        {
+            return FindValue<SAPODataConnectorOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SAPODataConnectorOperator(string value)
         {
             return FindValue(value);
         }

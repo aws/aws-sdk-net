@@ -46,6 +46,7 @@ namespace Amazon.Appflow.Model
         private RedshiftMetadata _redshift;
         private S3Metadata _s3;
         private SalesforceMetadata _salesforce;
+        private SAPODataMetadata _sapoData;
         private ServiceNowMetadata _serviceNow;
         private SingularMetadata _singular;
         private SlackMetadata _slack;
@@ -269,6 +270,21 @@ namespace Amazon.Appflow.Model
         internal bool IsSetSalesforce()
         {
             return this._salesforce != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SAPOData.
+        /// </summary>
+        public SAPODataMetadata SAPOData
+        {
+            get { return this._sapoData; }
+            set { this._sapoData = value; }
+        }
+
+        // Check to see if SAPOData property is set
+        internal bool IsSetSAPOData()
+        {
+            return this._sapoData != null;
         }
 
         /// <summary>

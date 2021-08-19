@@ -33,7 +33,84 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class VeevaSourceProperties
     {
+        private string _documentType;
+        private bool? _includeAllVersions;
+        private bool? _includeRenditions;
+        private bool? _includeSourceFiles;
         private string _object;
+
+        /// <summary>
+        /// Gets and sets the property DocumentType. 
+        /// <para>
+        /// The document type specified in the Veeva document extract flow.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=512)]
+        public string DocumentType
+        {
+            get { return this._documentType; }
+            set { this._documentType = value; }
+        }
+
+        // Check to see if DocumentType property is set
+        internal bool IsSetDocumentType()
+        {
+            return this._documentType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeAllVersions. 
+        /// <para>
+        /// Boolean value to include All Versions of files in Veeva document extract flow.
+        /// </para>
+        /// </summary>
+        public bool IncludeAllVersions
+        {
+            get { return this._includeAllVersions.GetValueOrDefault(); }
+            set { this._includeAllVersions = value; }
+        }
+
+        // Check to see if IncludeAllVersions property is set
+        internal bool IsSetIncludeAllVersions()
+        {
+            return this._includeAllVersions.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeRenditions. 
+        /// <para>
+        /// Boolean value to include file renditions in Veeva document extract flow.
+        /// </para>
+        /// </summary>
+        public bool IncludeRenditions
+        {
+            get { return this._includeRenditions.GetValueOrDefault(); }
+            set { this._includeRenditions = value; }
+        }
+
+        // Check to see if IncludeRenditions property is set
+        internal bool IsSetIncludeRenditions()
+        {
+            return this._includeRenditions.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeSourceFiles. 
+        /// <para>
+        /// Boolean value to include source files in Veeva document extract flow.
+        /// </para>
+        /// </summary>
+        public bool IncludeSourceFiles
+        {
+            get { return this._includeSourceFiles.GetValueOrDefault(); }
+            set { this._includeSourceFiles = value; }
+        }
+
+        // Check to see if IncludeSourceFiles property is set
+        internal bool IsSetIncludeSourceFiles()
+        {
+            return this._includeSourceFiles.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Object. 

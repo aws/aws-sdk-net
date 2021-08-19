@@ -43,7 +43,8 @@ namespace Amazon.Appflow
     /// <para>
     /// Amazon AppFlow is a fully managed integration service that enables you to securely
     /// transfer data between software as a service (SaaS) applications like Salesforce, Marketo,
-    /// Slack, and ServiceNow, and AWS services like Amazon S3 and Amazon Redshift. 
+    /// Slack, and ServiceNow, and Amazon Web Services like Amazon S3 and Amazon Redshift.
+    /// 
     /// </para>
     ///  
     /// <para>
@@ -287,10 +288,10 @@ namespace Amazon.Appflow
         #region  CreateConnectorProfile
 
         /// <summary>
-        /// Creates a new connector profile associated with your AWS account. There is a soft
-        /// quota of 100 connector profiles per AWS account. If you need more connector profiles
-        /// than this quota allows, you can submit a request to the Amazon AppFlow team through
-        /// the Amazon AppFlow support channel.
+        /// Creates a new connector profile associated with your Amazon Web Services account.
+        /// There is a soft quota of 100 connector profiles per Amazon Web Services account. If
+        /// you need more connector profiles than this quota allows, you can submit a request
+        /// to the Amazon AppFlow team through the Amazon AppFlow support channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConnectorProfile service method.</param>
         /// 

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConnectorProfile Object
+    /// Response Unmarshaller for SAPODataConnectorProfileProperties Object
     /// </summary>  
-    public class ConnectorProfileUnmarshaller : IUnmarshaller<ConnectorProfile, XmlUnmarshallerContext>, IUnmarshaller<ConnectorProfile, JsonUnmarshallerContext>
+    public class SAPODataConnectorProfilePropertiesUnmarshaller : IUnmarshaller<SAPODataConnectorProfileProperties, XmlUnmarshallerContext>, IUnmarshaller<SAPODataConnectorProfileProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ConnectorProfile IUnmarshaller<ConnectorProfile, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SAPODataConnectorProfileProperties IUnmarshaller<SAPODataConnectorProfileProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,69 +53,57 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ConnectorProfile Unmarshall(JsonUnmarshallerContext context)
+        public SAPODataConnectorProfileProperties Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ConnectorProfile unmarshalledObject = new ConnectorProfile();
+            SAPODataConnectorProfileProperties unmarshalledObject = new SAPODataConnectorProfileProperties();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("connectionMode", targetDepth))
+                if (context.TestExpression("applicationHostUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApplicationHostUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("connectorProfileArn", targetDepth))
+                if (context.TestExpression("applicationServicePath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectorProfileArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApplicationServicePath = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("connectorProfileName", targetDepth))
+                if (context.TestExpression("clientNumber", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectorProfileName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClientNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("connectorProfileProperties", targetDepth))
-                {
-                    var unmarshaller = ConnectorProfilePropertiesUnmarshaller.Instance;
-                    unmarshalledObject.ConnectorProfileProperties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("connectorType", targetDepth))
+                if (context.TestExpression("logonLanguage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectorType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogonLanguage = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("oAuthProperties", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    var unmarshaller = OAuthPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.OAuthProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("credentialsArn", targetDepth))
+                if (context.TestExpression("portNumber", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.PortNumber = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("privateLinkServiceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CredentialsArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lastUpdatedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("privateConnectionProvisioningState", targetDepth))
-                {
-                    var unmarshaller = PrivateConnectionProvisioningStateUnmarshaller.Instance;
-                    unmarshalledObject.PrivateConnectionProvisioningState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrivateLinkServiceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -124,12 +112,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         }
 
 
-        private static ConnectorProfileUnmarshaller _instance = new ConnectorProfileUnmarshaller();        
+        private static SAPODataConnectorProfilePropertiesUnmarshaller _instance = new SAPODataConnectorProfilePropertiesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConnectorProfileUnmarshaller Instance
+        public static SAPODataConnectorProfilePropertiesUnmarshaller Instance
         {
             get
             {

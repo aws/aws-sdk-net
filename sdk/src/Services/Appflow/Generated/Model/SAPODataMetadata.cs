@@ -29,29 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Appflow.Model
 {
     /// <summary>
-    /// The connector metadata specific to Snowflake.
+    /// The connector metadata specific to SAPOData.
     /// </summary>
-    public partial class SnowflakeMetadata
+    public partial class SAPODataMetadata
     {
-        private List<string> _supportedRegions = new List<string>();
-
-        /// <summary>
-        /// Gets and sets the property SupportedRegions. 
-        /// <para>
-        ///  Specifies the supported Amazon Web Services Regions when using Snowflake. 
-        /// </para>
-        /// </summary>
-        public List<string> SupportedRegions
-        {
-            get { return this._supportedRegions; }
-            set { this._supportedRegions = value; }
-        }
-
-        // Check to see if SupportedRegions property is set
-        internal bool IsSetSupportedRegions()
-        {
-            return this._supportedRegions != null && this._supportedRegions.Count > 0; 
-        }
 
     }
 }

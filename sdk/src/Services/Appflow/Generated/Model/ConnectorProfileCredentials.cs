@@ -42,6 +42,7 @@ namespace Amazon.Appflow.Model
         private MarketoConnectorProfileCredentials _marketo;
         private RedshiftConnectorProfileCredentials _redshift;
         private SalesforceConnectorProfileCredentials _salesforce;
+        private SAPODataConnectorProfileCredentials _sapoData;
         private ServiceNowConnectorProfileCredentials _serviceNow;
         private SingularConnectorProfileCredentials _singular;
         private SlackConnectorProfileCredentials _slack;
@@ -210,6 +211,21 @@ namespace Amazon.Appflow.Model
         internal bool IsSetSalesforce()
         {
             return this._salesforce != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SAPOData.
+        /// </summary>
+        public SAPODataConnectorProfileCredentials SAPOData
+        {
+            get { return this._sapoData; }
+            set { this._sapoData = value; }
+        }
+
+        // Check to see if SAPOData property is set
+        internal bool IsSetSAPOData()
+        {
+            return this._sapoData != null;
         }
 
         /// <summary>

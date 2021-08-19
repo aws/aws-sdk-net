@@ -136,6 +136,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.Salesforce = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SAPOData", targetDepth))
+                {
+                    var unmarshaller = SAPODataMetadataUnmarshaller.Instance;
+                    unmarshalledObject.SAPOData = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ServiceNow", targetDepth))
                 {
                     var unmarshaller = ServiceNowMetadataUnmarshaller.Instance;
