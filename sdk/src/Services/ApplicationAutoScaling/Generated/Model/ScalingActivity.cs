@@ -219,6 +219,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Amazon MSK cluster - The resource type and unique identifier are specified using the
         /// cluster ARN. Example: <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon ElastiCache replication group - The resource type is <code>replication-group</code>
+        /// and the unique identifier is the replication group name. Example: <code>replication-group/mycluster</code>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]
@@ -246,13 +251,13 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot
-        /// Fleet request.
+        ///  <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of
+        /// an EMR Instance Group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of
-        /// an EMR Instance Group.
+        ///  <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot
+        /// Fleet request.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -325,6 +330,16 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB)
         /// for brokers in an Amazon MSK cluster.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>elasticache:replication-group:NodeGroups</code> - The number of node groups
+        /// for an Amazon ElastiCache replication group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>elasticache:replication-group:Replicas</code> - The number of replicas per
+        /// node group for an Amazon ElastiCache replication group.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -343,7 +358,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ServiceNamespace. 
         /// <para>
-        /// The namespace of the AWS service that provides the resource, or a <code>custom-resource</code>.
+        /// The namespace of the Amazon Web Services service that provides the resource, or a
+        /// <code>custom-resource</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

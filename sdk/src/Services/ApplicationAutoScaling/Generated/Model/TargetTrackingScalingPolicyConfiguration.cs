@@ -115,8 +115,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Application Auto Scaling provides a default value of 300 for the following scalable
-        /// targets:
+        /// Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication
+        /// groups and a default value of 300 for the following scalable targets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -206,8 +206,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Application Auto Scaling provides a default value of 300 for the following scalable
-        /// targets:
+        /// Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication
+        /// groups and a default value of 300 for the following scalable targets:
         /// </para>
         ///  <ul> <li> 
         /// <para>

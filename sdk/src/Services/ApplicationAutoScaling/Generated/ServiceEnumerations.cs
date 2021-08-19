@@ -249,6 +249,18 @@ namespace Amazon.ApplicationAutoScaling
         /// </summary>
         public static readonly MetricType ECSServiceAverageMemoryUtilization = new MetricType("ECSServiceAverageMemoryUtilization");
         /// <summary>
+        /// Constant ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage for MetricType
+        /// </summary>
+        public static readonly MetricType ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage = new MetricType("ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage");
+        /// <summary>
+        /// Constant ElastiCachePrimaryEngineCPUUtilization for MetricType
+        /// </summary>
+        public static readonly MetricType ElastiCachePrimaryEngineCPUUtilization = new MetricType("ElastiCachePrimaryEngineCPUUtilization");
+        /// <summary>
+        /// Constant ElastiCacheReplicaEngineCPUUtilization for MetricType
+        /// </summary>
+        public static readonly MetricType ElastiCacheReplicaEngineCPUUtilization = new MetricType("ElastiCacheReplicaEngineCPUUtilization");
+        /// <summary>
         /// Constant KafkaBrokerStorageUtilization for MetricType
         /// </summary>
         public static readonly MetricType KafkaBrokerStorageUtilization = new MetricType("KafkaBrokerStorageUtilization");
@@ -409,6 +421,14 @@ namespace Amazon.ApplicationAutoScaling
         /// </summary>
         public static readonly ScalableDimension EcsServiceDesiredCount = new ScalableDimension("ecs:service:DesiredCount");
         /// <summary>
+        /// Constant ElasticacheReplicationGroupNodeGroups for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension ElasticacheReplicationGroupNodeGroups = new ScalableDimension("elasticache:replication-group:NodeGroups");
+        /// <summary>
+        /// Constant ElasticacheReplicationGroupReplicas for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension ElasticacheReplicationGroupReplicas = new ScalableDimension("elasticache:replication-group:Replicas");
+        /// <summary>
         /// Constant ElasticmapreduceInstancegroupInstanceCount for ScalableDimension
         /// </summary>
         public static readonly ScalableDimension ElasticmapreduceInstancegroupInstanceCount = new ScalableDimension("elasticmapreduce:instancegroup:InstanceCount");
@@ -564,6 +584,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant Ecs for ServiceNamespace
         /// </summary>
         public static readonly ServiceNamespace Ecs = new ServiceNamespace("ecs");
+        /// <summary>
+        /// Constant Elasticache for ServiceNamespace
+        /// </summary>
+        public static readonly ServiceNamespace Elasticache = new ServiceNamespace("elasticache");
         /// <summary>
         /// Constant Elasticmapreduce for ServiceNamespace
         /// </summary>

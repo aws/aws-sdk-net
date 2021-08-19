@@ -36,23 +36,7 @@ namespace Amazon.ApplicationAutoScaling
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Amazon ECS services
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Amazon EC2 Spot Fleet requests
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Amazon EMR clusters
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     /// Amazon AppStream 2.0 fleets
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Amazon DynamoDB tables and global secondary indexes throughput capacity
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -60,19 +44,23 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon SageMaker endpoint variants
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Custom resources provided by your own applications or services
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     /// Amazon Comprehend document classification and entity recognizer endpoints
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// AWS Lambda function provisioned concurrency
+    /// Amazon DynamoDB tables and global secondary indexes throughput capacity
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Amazon ECS services
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Amazon ElastiCache for Redis clusters (replication groups)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Amazon EMR clusters
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -80,7 +68,23 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// Lambda function provisioned concurrency
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Amazon Managed Streaming for Apache Kafka broker storage
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Amazon SageMaker endpoint variants
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Spot Fleet (Amazon EC2) requests
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Custom resources provided by your own applications or services
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -92,9 +96,9 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Register and manage scalable targets - Register AWS or custom resources as scalable
-    /// targets (a resource that Application Auto Scaling can scale), set minimum and maximum
-    /// capacity limits, and retrieve information on existing scalable targets.
+    /// Register and manage scalable targets - Register Amazon Web Services or custom resources
+    /// as scalable targets (a resource that Application Auto Scaling can scale), set minimum
+    /// and maximum capacity limits, and retrieve information on existing scalable targets.
     /// </para>
     ///  </li> <li> 
     /// <para>
