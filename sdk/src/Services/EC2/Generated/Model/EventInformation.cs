@@ -118,7 +118,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>modify_successful</code> - The EC2 Fleet or Spot Fleet request was modified.
+        ///  <code>modify_succeeded</code> - The EC2 Fleet or Spot Fleet request was modified.
         /// </para>
         ///  </li> <li> 
         /// <para>

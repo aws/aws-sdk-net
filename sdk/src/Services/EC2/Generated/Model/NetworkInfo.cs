@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private EfaInfo _efaInfo;
         private bool? _efaSupported;
         private EnaSupport _enaSupport;
+        private bool? _encryptionInTransitSupported;
         private int? _ipv4AddressesPerInterface;
         private int? _ipv6AddressesPerInterface;
         private bool? _ipv6Supported;
@@ -115,6 +116,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetEnaSupport()
         {
             return this._enaSupport != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionInTransitSupported. 
+        /// <para>
+        /// Indicates whether the instance type automatically encrypts in-transit traffic between
+        /// instances.
+        /// </para>
+        /// </summary>
+        public bool EncryptionInTransitSupported
+        {
+            get { return this._encryptionInTransitSupported.GetValueOrDefault(); }
+            set { this._encryptionInTransitSupported = value; }
+        }
+
+        // Check to see if EncryptionInTransitSupported property is set
+        internal bool IsSetEncryptionInTransitSupported()
+        {
+            return this._encryptionInTransitSupported.HasValue; 
         }
 
         /// <summary>

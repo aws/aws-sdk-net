@@ -660,6 +660,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeTrunkInterfaceAssociations operation
+        ///</summary>
+        public IDescribeTrunkInterfaceAssociationsPaginator DescribeTrunkInterfaceAssociations(DescribeTrunkInterfaceAssociationsRequest request) 
+        {
+            return new DescribeTrunkInterfaceAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeVolumes operation
         ///</summary>
         public IDescribeVolumesPaginator DescribeVolumes(DescribeVolumesRequest request) 

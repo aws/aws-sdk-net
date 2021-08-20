@@ -416,6 +416,11 @@ namespace Amazon.EC2.Model
         IDescribeTransitGatewayVpcAttachmentsPaginator DescribeTransitGatewayVpcAttachments(DescribeTransitGatewayVpcAttachmentsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeTrunkInterfaceAssociations operation
+        ///</summary>
+        IDescribeTrunkInterfaceAssociationsPaginator DescribeTrunkInterfaceAssociations(DescribeTrunkInterfaceAssociationsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeVolumes operation
         ///</summary>
         IDescribeVolumesPaginator DescribeVolumes(DescribeVolumesRequest request);

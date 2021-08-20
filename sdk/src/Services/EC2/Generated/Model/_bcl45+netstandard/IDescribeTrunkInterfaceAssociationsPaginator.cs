@@ -16,42 +16,23 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
-using System.Net;
-
 using Amazon.Runtime;
-using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Information about an IPv6 prefix.
-    /// </summary>
-    public partial class InstanceIpv6Prefix
+    /// Paginator for the DescribeTrunkInterfaceAssociations operation
+    ///</summary>
+    public interface IDescribeTrunkInterfaceAssociationsPaginator
     {
-        private string _ipv6Prefix;
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<DescribeTrunkInterfaceAssociationsResponse> Responses { get; }
 
         /// <summary>
-        /// Gets and sets the property Ipv6Prefix. 
-        /// <para>
-        /// One or more IPv6 prefixes assigned to the network interface.
-        /// </para>
+        /// Enumerable containing all of the InterfaceAssociations
         /// </summary>
-        public string Ipv6Prefix
-        {
-            get { return this._ipv6Prefix; }
-            set { this._ipv6Prefix = value; }
-        }
-
-        // Check to see if Ipv6Prefix property is set
-        internal bool IsSetIpv6Prefix()
-        {
-            return this._ipv6Prefix != null;
-        }
-
+        IPaginatedEnumerable<TrunkInterfaceAssociation> InterfaceAssociations { get; }
     }
 }

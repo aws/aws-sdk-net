@@ -181,6 +181,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>network-info.encryption-in-transit-supported</code> - Indicates whether the
+        /// instance type automatically encrypts in-transit traffic between instances.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>network-info.ipv4-addresses-per-interface</code> - The maximum number of private
         /// IPv4 addresses per network interface.
         /// </para>

@@ -78,6 +78,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.EnaSupport = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("encryptionInTransitSupported", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.EncryptionInTransitSupported = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ipv4AddressesPerInterface", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

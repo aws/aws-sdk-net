@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Information about an IPv4 delegated prefix.
+    /// Information about an IPv4 prefix.
     /// </summary>
     public partial class InstanceIpv4Prefix
     {
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv4Prefix. 
         /// <para>
-        /// One or more IPv4 delegated prefixes assigned to the network interface.
+        /// One or more IPv4 prefixes assigned to the network interface.
         /// </para>
         /// </summary>
         public string Ipv4Prefix

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a block device mapping.
+    /// Describes a block device mapping, which defines the EBS volumes and instance store
+    /// volumes to attach to an instance at launch.
     /// </summary>
     public partial class BlockDeviceMapping
     {
@@ -77,7 +78,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NoDevice. 
         /// <para>
-        /// To omit the device from the block device mapping, specify an empty string.
+        /// To omit the device from the block device mapping, specify an empty string. When this
+        /// property is specified, the device is removed from the block device mapping regardless
+        /// of the assigned value.
         /// </para>
         /// </summary>
         public string NoDevice

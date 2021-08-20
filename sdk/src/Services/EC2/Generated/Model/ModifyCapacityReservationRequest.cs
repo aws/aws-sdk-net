@@ -150,6 +150,10 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The number of instances for which to reserve capacity.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid range: 1 - 1000
+        /// </para>
         /// </summary>
         public int InstanceCount
         {
