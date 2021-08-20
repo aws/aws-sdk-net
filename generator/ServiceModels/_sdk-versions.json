@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.100.0",
+    "ProductVersion" : "3.7.101.0",
     "CoreVersion"    : "3.7.2.5",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -152,7 +152,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.7.22.0",
+            "Version" : "3.7.23.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.2.5"
@@ -962,7 +962,7 @@
             "InPreview"               : false
         },
         "Comprehend"                      : {
-            "Version" : "3.7.1.49",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.2.5"
@@ -1138,7 +1138,7 @@
             "InPreview"               : false
         },
         "EKS"                             : {
-            "Version" : "3.7.6.14",
+            "Version" : "3.7.7.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.2.5"
@@ -1242,7 +1242,7 @@
             "InPreview"               : false
         },
         "RoboMaker"                       : {
-            "Version" : "3.7.3.10",
+            "Version" : "3.7.3.11",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.2.5"

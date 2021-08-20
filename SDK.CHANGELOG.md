@@ -1,3 +1,13 @@
+### 3.7.101.0 (2021-08-20 18:41 UTC)
+* Comprehend (3.7.2.0)
+	* Add tagging support for Comprehend async inference job.
+* EC2 (3.7.23.0)
+	* encryptionInTransitSupported added to DescribeInstanceTypes API
+* EKS (3.7.7.0)
+	* Adds support for EKS add-ons "preserve" flag, which allows customers to maintain software on their EKS clusters after removing it from EKS add-ons management.
+* RoboMaker (3.7.3.11)
+	* Documentation updates for RoboMaker
+
 ### 3.7.100.0 (2021-08-19 18:13 UTC)
 * Appflow (3.7.3.0)
 	* This release adds support for SAPOData connector and extends Veeva connector for document extraction.
