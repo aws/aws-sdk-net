@@ -55,6 +55,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly AddonIssueCode InternalFailure = new AddonIssueCode("InternalFailure");
         /// <summary>
+        /// Constant K8sResourceNotFound for AddonIssueCode
+        /// </summary>
+        public static readonly AddonIssueCode K8sResourceNotFound = new AddonIssueCode("K8sResourceNotFound");
+        /// <summary>
         /// Constant UnsupportedAddonModification for AddonIssueCode
         /// </summary>
         public static readonly AddonIssueCode UnsupportedAddonModification = new AddonIssueCode("UnsupportedAddonModification");
@@ -426,6 +430,10 @@ namespace Amazon.EKS
         /// Constant IpNotAvailable for ErrorCode
         /// </summary>
         public static readonly ErrorCode IpNotAvailable = new ErrorCode("IpNotAvailable");
+        /// <summary>
+        /// Constant K8sResourceNotFound for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode K8sResourceNotFound = new ErrorCode("K8sResourceNotFound");
         /// <summary>
         /// Constant NodeCreationFailure for ErrorCode
         /// </summary>

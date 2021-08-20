@@ -42,6 +42,7 @@ namespace Amazon.EKS.Model
     {
         private string _addonName;
         private string _clusterName;
+        private bool? _preserve;
 
         /// <summary>
         /// Gets and sets the property AddonName. 
@@ -80,6 +81,26 @@ namespace Amazon.EKS.Model
         internal bool IsSetClusterName()
         {
             return this._clusterName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Preserve. 
+        /// <para>
+        /// Specifying this option preserves the add-on software on your cluster but Amazon EKS
+        /// stops managing any settings for the add-on. If an IAM account is associated with the
+        /// add-on, it is not removed.
+        /// </para>
+        /// </summary>
+        public bool Preserve
+        {
+            get { return this._preserve.GetValueOrDefault(); }
+            set { this._preserve = value; }
+        }
+
+        // Check to see if Preserve property is set
+        internal bool IsSetPreserve()
+        {
+            return this._preserve.HasValue; 
         }
 
     }
