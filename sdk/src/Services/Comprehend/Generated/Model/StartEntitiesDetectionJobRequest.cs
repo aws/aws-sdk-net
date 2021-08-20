@@ -50,6 +50,7 @@ namespace Amazon.Comprehend.Model
         private string _jobName;
         private LanguageCode _languageCode;
         private OutputDataConfig _outputDataConfig;
+        private List<Tag> _tags = new List<Tag>();
         private string _volumeKmsKeyId;
         private VpcConfig _vpcConfig;
 
@@ -192,6 +193,26 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetOutputDataConfig()
         {
             return this._outputDataConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags to be associated with the entities detection job. A tag is a key-value pair that
+        /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales"
+        /// as the key might be added to a resource to indicate its use by the sales department.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

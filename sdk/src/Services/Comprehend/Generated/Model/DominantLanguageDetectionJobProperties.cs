@@ -36,6 +36,7 @@ namespace Amazon.Comprehend.Model
         private string _dataAccessRoleArn;
         private DateTime? _endTime;
         private InputDataConfig _inputDataConfig;
+        private string _jobArn;
         private string _jobId;
         private string _jobName;
         private JobStatus _jobStatus;
@@ -100,6 +101,41 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetInputDataConfig()
         {
             return this._inputDataConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the dominant language detection job. It is a unique,
+        /// fully qualified identifier for the job. It includes the AWS account, Region, and the
+        /// job ID. The format of the ARN is as follows:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:dominant-language-detection-job/&lt;job-id&gt;</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is an example job ARN:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:comprehend:us-west-2:111122223333:dominant-language-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string JobArn
+        {
+            get { return this._jobArn; }
+            set { this._jobArn = value; }
+        }
+
+        // Check to see if JobArn property is set
+        internal bool IsSetJobArn()
+        {
+            return this._jobArn != null;
         }
 
         /// <summary>

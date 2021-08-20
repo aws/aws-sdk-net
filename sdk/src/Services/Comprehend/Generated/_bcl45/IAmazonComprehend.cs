@@ -2596,6 +2596,11 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartDocumentClassificationJob">REST API Reference for StartDocumentClassificationJob Operation</seealso>
         StartDocumentClassificationJobResponse StartDocumentClassificationJob(StartDocumentClassificationJobRequest request);
 
@@ -2630,6 +2635,11 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartDocumentClassificationJob">REST API Reference for StartDocumentClassificationJob Operation</seealso>
         Task<StartDocumentClassificationJobResponse> StartDocumentClassificationJobAsync(StartDocumentClassificationJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -2658,6 +2668,11 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartDominantLanguageDetectionJob">REST API Reference for StartDominantLanguageDetectionJob Operation</seealso>
         StartDominantLanguageDetectionJobResponse StartDominantLanguageDetectionJob(StartDominantLanguageDetectionJobRequest request);
 
@@ -2685,6 +2700,11 @@ namespace Amazon.Comprehend
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartDominantLanguageDetectionJob">REST API Reference for StartDominantLanguageDetectionJob Operation</seealso>
         Task<StartDominantLanguageDetectionJobResponse> StartDominantLanguageDetectionJobAsync(StartDominantLanguageDetectionJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2728,6 +2748,11 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEntitiesDetectionJob">REST API Reference for StartEntitiesDetectionJob Operation</seealso>
         StartEntitiesDetectionJobResponse StartEntitiesDetectionJob(StartEntitiesDetectionJobRequest request);
 
@@ -2770,6 +2795,11 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEntitiesDetectionJob">REST API Reference for StartEntitiesDetectionJob Operation</seealso>
         Task<StartEntitiesDetectionJobResponse> StartEntitiesDetectionJobAsync(StartEntitiesDetectionJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -2797,6 +2827,11 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEventsDetectionJob">REST API Reference for StartEventsDetectionJob Operation</seealso>
         StartEventsDetectionJobResponse StartEventsDetectionJob(StartEventsDetectionJobRequest request);
 
@@ -2823,6 +2858,11 @@ namespace Amazon.Comprehend
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEventsDetectionJob">REST API Reference for StartEventsDetectionJob Operation</seealso>
         Task<StartEventsDetectionJobResponse> StartEventsDetectionJobAsync(StartEventsDetectionJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2852,6 +2892,11 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartKeyPhrasesDetectionJob">REST API Reference for StartKeyPhrasesDetectionJob Operation</seealso>
         StartKeyPhrasesDetectionJobResponse StartKeyPhrasesDetectionJob(StartKeyPhrasesDetectionJobRequest request);
 
@@ -2880,6 +2925,11 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartKeyPhrasesDetectionJob">REST API Reference for StartKeyPhrasesDetectionJob Operation</seealso>
         Task<StartKeyPhrasesDetectionJobResponse> StartKeyPhrasesDetectionJobAsync(StartKeyPhrasesDetectionJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -2907,6 +2957,11 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartPiiEntitiesDetectionJob">REST API Reference for StartPiiEntitiesDetectionJob Operation</seealso>
         StartPiiEntitiesDetectionJobResponse StartPiiEntitiesDetectionJob(StartPiiEntitiesDetectionJobRequest request);
 
@@ -2933,6 +2988,11 @@ namespace Amazon.Comprehend
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartPiiEntitiesDetectionJob">REST API Reference for StartPiiEntitiesDetectionJob Operation</seealso>
         Task<StartPiiEntitiesDetectionJobResponse> StartPiiEntitiesDetectionJobAsync(StartPiiEntitiesDetectionJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2962,6 +3022,11 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartSentimentDetectionJob">REST API Reference for StartSentimentDetectionJob Operation</seealso>
         StartSentimentDetectionJobResponse StartSentimentDetectionJob(StartSentimentDetectionJobRequest request);
 
@@ -2989,6 +3054,11 @@ namespace Amazon.Comprehend
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartSentimentDetectionJob">REST API Reference for StartSentimentDetectionJob Operation</seealso>
         Task<StartSentimentDetectionJobResponse> StartSentimentDetectionJobAsync(StartSentimentDetectionJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3018,6 +3088,11 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartTopicsDetectionJob">REST API Reference for StartTopicsDetectionJob Operation</seealso>
         StartTopicsDetectionJobResponse StartTopicsDetectionJob(StartTopicsDetectionJobRequest request);
 
@@ -3045,6 +3120,11 @@ namespace Amazon.Comprehend
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartTopicsDetectionJob">REST API Reference for StartTopicsDetectionJob Operation</seealso>
         Task<StartTopicsDetectionJobResponse> StartTopicsDetectionJobAsync(StartTopicsDetectionJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
