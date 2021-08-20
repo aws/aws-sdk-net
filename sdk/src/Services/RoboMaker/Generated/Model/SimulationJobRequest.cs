@@ -98,7 +98,8 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         ///  <dl> <dt>Continue</dt> <dd> 
         /// <para>
-        /// Restart the simulation job in the same host instance.
+        /// Leaves the host running for its maximum timeout duration after a <code>4XX</code>
+        /// error code.
         /// </para>
         ///  </dd> <dt>Fail</dt> <dd> 
         /// <para>
