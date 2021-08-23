@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VariableImportanceMetrics Object
+    /// Response Unmarshaller for LogOddsMetric Object
     /// </summary>  
-    public class VariableImportanceMetricsUnmarshaller : IUnmarshaller<VariableImportanceMetrics, XmlUnmarshallerContext>, IUnmarshaller<VariableImportanceMetrics, JsonUnmarshallerContext>
+    public class LogOddsMetricUnmarshaller : IUnmarshaller<LogOddsMetric, XmlUnmarshallerContext>, IUnmarshaller<LogOddsMetric, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        VariableImportanceMetrics IUnmarshaller<VariableImportanceMetrics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LogOddsMetric IUnmarshaller<LogOddsMetric, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,21 +53,33 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VariableImportanceMetrics Unmarshall(JsonUnmarshallerContext context)
+        public LogOddsMetric Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            VariableImportanceMetrics unmarshalledObject = new VariableImportanceMetrics();
+            LogOddsMetric unmarshalledObject = new LogOddsMetric();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("logOddsMetrics", targetDepth))
+                if (context.TestExpression("variableImportance", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<LogOddsMetric, LogOddsMetricUnmarshaller>(LogOddsMetricUnmarshaller.Instance);
-                    unmarshalledObject.LogOddsMetrics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.VariableImportance = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("variableName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VariableName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("variableType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VariableType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -76,12 +88,12 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         }
 
 
-        private static VariableImportanceMetricsUnmarshaller _instance = new VariableImportanceMetricsUnmarshaller();        
+        private static LogOddsMetricUnmarshaller _instance = new LogOddsMetricUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VariableImportanceMetricsUnmarshaller Instance
+        public static LogOddsMetricUnmarshaller Instance
         {
             get
             {

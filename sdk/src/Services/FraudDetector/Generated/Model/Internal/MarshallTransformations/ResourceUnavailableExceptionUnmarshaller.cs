@@ -34,66 +34,47 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LogitMetric Object
+    /// Response Unmarshaller for ResourceUnavailableException Object
     /// </summary>  
-    public class LogitMetricUnmarshaller : IUnmarshaller<LogitMetric, XmlUnmarshallerContext>, IUnmarshaller<LogitMetric, JsonUnmarshallerContext>
+    public class ResourceUnavailableExceptionUnmarshaller : IErrorResponseUnmarshaller<ResourceUnavailableException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LogitMetric IUnmarshaller<LogitMetric, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public ResourceUnavailableException Unmarshall(JsonUnmarshallerContext context)
         {
-            throw new NotImplementedException();
+            return this.Unmarshall(context, new ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public LogitMetric Unmarshall(JsonUnmarshallerContext context)
+        public ResourceUnavailableException Unmarshall(JsonUnmarshallerContext context, ErrorResponse errorResponse)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
-                return null;
 
-            LogitMetric unmarshalledObject = new LogitMetric();
+            ResourceUnavailableException unmarshalledObject = new ResourceUnavailableException(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("variableImportance", targetDepth))
-                {
-                    var unmarshaller = FloatUnmarshaller.Instance;
-                    unmarshalledObject.VariableImportance = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("variableName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VariableName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("variableType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VariableType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
-
-        private static LogitMetricUnmarshaller _instance = new LogitMetricUnmarshaller();        
+        private static ResourceUnavailableExceptionUnmarshaller _instance = new ResourceUnavailableExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LogitMetricUnmarshaller Instance
+        public static ResourceUnavailableExceptionUnmarshaller Instance
         {
             get
             {

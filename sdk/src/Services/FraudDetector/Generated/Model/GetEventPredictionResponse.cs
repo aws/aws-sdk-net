@@ -61,7 +61,7 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property RuleResults. 
         /// <para>
-        /// The results.
+        /// The results from the rules.
         /// </para>
         /// </summary>
         public List<RuleResult> RuleResults

@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
-    /// The logit metric details.
+    /// The log odds metric details.
     /// </summary>
-    public partial class LogitMetric
+    public partial class LogOddsMetric
     {
         private float? _variableImportance;
         private string _variableName;
@@ -40,7 +40,8 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property VariableImportance. 
         /// <para>
-        /// The relative importance of the variable.
+        /// The relative importance of the variable. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/model-variable-importance.html">Model
+        /// variable importance</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

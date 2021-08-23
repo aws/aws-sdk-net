@@ -127,7 +127,7 @@ namespace Amazon.FraudDetector.Model
         /// Timestamp that defines when the event under evaluation occurred.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=10, Max=30)]
         public string EventTimestamp
         {
             get { return this._eventTimestamp; }

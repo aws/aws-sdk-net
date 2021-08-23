@@ -327,6 +327,11 @@
     <pattern>^([1-9][0-9]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetEventPredictionRequest.EventTimestamp</property>
+    <min>10</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FraudDetector.Model.GetEventTypesRequest.MaxResults</property>
     <min>5</min>
     <max>10</max>

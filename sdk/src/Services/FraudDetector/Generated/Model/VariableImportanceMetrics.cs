@@ -33,24 +33,24 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class VariableImportanceMetrics
     {
-        private List<LogitMetric> _logitMetrics = new List<LogitMetric>();
+        private List<LogOddsMetric> _logOddsMetrics = new List<LogOddsMetric>();
 
         /// <summary>
-        /// Gets and sets the property LogitMetrics. 
+        /// Gets and sets the property LogOddsMetrics. 
         /// <para>
         /// List of variable metrics.
         /// </para>
         /// </summary>
-        public List<LogitMetric> LogitMetrics
+        public List<LogOddsMetric> LogOddsMetrics
         {
-            get { return this._logitMetrics; }
-            set { this._logitMetrics = value; }
+            get { return this._logOddsMetrics; }
+            set { this._logOddsMetrics = value; }
         }
 
-        // Check to see if LogitMetrics property is set
-        internal bool IsSetLogitMetrics()
+        // Check to see if LogOddsMetrics property is set
+        internal bool IsSetLogOddsMetrics()
         {
-            return this._logitMetrics != null && this._logitMetrics.Count > 0; 
+            return this._logOddsMetrics != null && this._logOddsMetrics.Count > 0; 
         }
 
     }

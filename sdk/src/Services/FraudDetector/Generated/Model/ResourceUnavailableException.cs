@@ -29,43 +29,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
-    /// An exception indicating the specified resource was not found. This can occur if you
-    /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-    /// name or version does not exist.
+    /// An exception indicating that the attached customer-owned (external) model threw an
+    /// exception when Amazon Fraud Detector invoked the model.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class ResourceNotFoundException : AmazonFraudDetectorException
+    public partial class ResourceUnavailableException : AmazonFraudDetectorException
     {
 
         /// <summary>
-        /// Constructs a new ResourceNotFoundException with the specified error
+        /// Constructs a new ResourceUnavailableException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public ResourceNotFoundException(string message) 
+        public ResourceUnavailableException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of ResourceNotFoundException
+        /// Construct instance of ResourceUnavailableException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public ResourceNotFoundException(string message, Exception innerException) 
+        public ResourceUnavailableException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of ResourceNotFoundException
+        /// Construct instance of ResourceUnavailableException
         /// </summary>
         /// <param name="innerException"></param>
-        public ResourceNotFoundException(Exception innerException) 
+        public ResourceUnavailableException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of ResourceNotFoundException
+        /// Construct instance of ResourceUnavailableException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -73,30 +72,30 @@ namespace Amazon.FraudDetector.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ResourceNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ResourceUnavailableException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of ResourceNotFoundException
+        /// Construct instance of ResourceUnavailableException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ResourceNotFoundException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ResourceUnavailableException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the ResourceNotFoundException class with serialized data.
+        /// Constructs a new instance of the ResourceUnavailableException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected ResourceNotFoundException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected ResourceUnavailableException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
         }
