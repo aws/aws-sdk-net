@@ -1,3 +1,24 @@
+### 3.7.102.0 (2021-08-23 18:19 UTC)
+* APIGateway (3.7.2.0)
+	* Adding some of the pending releases (1) Adding WAF Filter to GatewayResponseType enum (2) Ensuring consistent error model for all operations (3) Add missing BRE to GetVpcLink operation
+* Backup (3.7.1.0)
+	* AWS Backup - Features: Evaluate your backup activity and generate audit reports.
+* DatabaseMigrationService (3.7.3.0)
+	* Amazon AWS DMS service now support Redis target endpoint migration. Now S3 endpoint setting is capable to setup features which are used to be configurable only in extract connection attributes.
+* DLM (3.7.1.0)
+	* Added AMI deprecation support for Amazon Data Lifecycle Manager EBS-backed AMI policies.
+* FraudDetector (3.7.3.0)
+	* Updated an element of the DescribeModelVersion API response (LogitMetrics -> logOddsMetrics) for clarity. Added new exceptions to several APIs to protect against unlikely scenarios.
+* Glue (3.7.7.0)
+	* Add support for Custom Blueprints
+* IoTSiteWise (3.7.7.2)
+	* Documentation updates for AWS IoT SiteWise
+* Core 3.7.2.6
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.101.0 (2021-08-20 18:41 UTC)
 * Comprehend (3.7.2.0)
 	* Add tagging support for Comprehend async inference job.
