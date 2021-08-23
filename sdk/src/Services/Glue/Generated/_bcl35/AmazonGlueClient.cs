@@ -587,6 +587,69 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  BatchGetBlueprints
+
+        /// <summary>
+        /// Retrieves information about a list of blueprints.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetBlueprints service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetBlueprints service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetBlueprints">REST API Reference for BatchGetBlueprints Operation</seealso>
+        public virtual BatchGetBlueprintsResponse BatchGetBlueprints(BatchGetBlueprintsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetBlueprintsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetBlueprintsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetBlueprintsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetBlueprints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetBlueprints operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetBlueprints
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetBlueprints">REST API Reference for BatchGetBlueprints Operation</seealso>
+        public virtual IAsyncResult BeginBatchGetBlueprints(BatchGetBlueprintsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetBlueprintsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetBlueprintsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetBlueprints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetBlueprints.</param>
+        /// 
+        /// <returns>Returns a  BatchGetBlueprintsResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetBlueprints">REST API Reference for BatchGetBlueprints Operation</seealso>
+        public virtual BatchGetBlueprintsResponse EndBatchGetBlueprints(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchGetBlueprintsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchGetCrawlers
 
         /// <summary>
@@ -1248,6 +1311,75 @@ namespace Amazon.Glue
         public virtual CheckSchemaVersionValidityResponse EndCheckSchemaVersionValidity(IAsyncResult asyncResult)
         {
             return EndInvoke<CheckSchemaVersionValidityResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateBlueprint
+
+        /// <summary>
+        /// Registers a blueprint with Glue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBlueprint service method.</param>
+        /// 
+        /// <returns>The response from the CreateBlueprint service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateBlueprint">REST API Reference for CreateBlueprint Operation</seealso>
+        public virtual CreateBlueprintResponse CreateBlueprint(CreateBlueprintRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBlueprintResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBlueprintResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBlueprint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBlueprint operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBlueprint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateBlueprint">REST API Reference for CreateBlueprint Operation</seealso>
+        public virtual IAsyncResult BeginCreateBlueprint(CreateBlueprintRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBlueprintResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateBlueprint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateBlueprint.</param>
+        /// 
+        /// <returns>Returns a  CreateBlueprintResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateBlueprint">REST API Reference for CreateBlueprint Operation</seealso>
+        public virtual CreateBlueprintResponse EndCreateBlueprint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateBlueprintResponse>(asyncResult);
         }
 
         #endregion
@@ -2514,6 +2646,69 @@ namespace Amazon.Glue
         public virtual CreateWorkflowResponse EndCreateWorkflow(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateWorkflowResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteBlueprint
+
+        /// <summary>
+        /// Deletes an existing blueprint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBlueprint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBlueprint service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteBlueprint">REST API Reference for DeleteBlueprint Operation</seealso>
+        public virtual DeleteBlueprintResponse DeleteBlueprint(DeleteBlueprintRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBlueprintResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBlueprintResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBlueprint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBlueprint operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBlueprint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteBlueprint">REST API Reference for DeleteBlueprint Operation</seealso>
+        public virtual IAsyncResult BeginDeleteBlueprint(DeleteBlueprintRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBlueprintResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBlueprint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBlueprint.</param>
+        /// 
+        /// <returns>Returns a  DeleteBlueprintResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteBlueprint">REST API Reference for DeleteBlueprint Operation</seealso>
+        public virtual DeleteBlueprintResponse EndDeleteBlueprint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteBlueprintResponse>(asyncResult);
         }
 
         #endregion
@@ -3986,6 +4181,201 @@ namespace Amazon.Glue
         public virtual DeleteWorkflowResponse EndDeleteWorkflow(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteWorkflowResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetBlueprint
+
+        /// <summary>
+        /// Retrieves the details of a blueprint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBlueprint service method.</param>
+        /// 
+        /// <returns>The response from the GetBlueprint service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetBlueprint">REST API Reference for GetBlueprint Operation</seealso>
+        public virtual GetBlueprintResponse GetBlueprint(GetBlueprintRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBlueprintResponseUnmarshaller.Instance;
+
+            return Invoke<GetBlueprintResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBlueprint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBlueprint operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBlueprint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetBlueprint">REST API Reference for GetBlueprint Operation</seealso>
+        public virtual IAsyncResult BeginGetBlueprint(GetBlueprintRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBlueprintResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBlueprint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBlueprint.</param>
+        /// 
+        /// <returns>Returns a  GetBlueprintResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetBlueprint">REST API Reference for GetBlueprint Operation</seealso>
+        public virtual GetBlueprintResponse EndGetBlueprint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetBlueprintResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetBlueprintRun
+
+        /// <summary>
+        /// Retrieves the details of a blueprint run.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBlueprintRun service method.</param>
+        /// 
+        /// <returns>The response from the GetBlueprintRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetBlueprintRun">REST API Reference for GetBlueprintRun Operation</seealso>
+        public virtual GetBlueprintRunResponse GetBlueprintRun(GetBlueprintRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBlueprintRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBlueprintRunResponseUnmarshaller.Instance;
+
+            return Invoke<GetBlueprintRunResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBlueprintRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBlueprintRun operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBlueprintRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetBlueprintRun">REST API Reference for GetBlueprintRun Operation</seealso>
+        public virtual IAsyncResult BeginGetBlueprintRun(GetBlueprintRunRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBlueprintRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBlueprintRunResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBlueprintRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBlueprintRun.</param>
+        /// 
+        /// <returns>Returns a  GetBlueprintRunResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetBlueprintRun">REST API Reference for GetBlueprintRun Operation</seealso>
+        public virtual GetBlueprintRunResponse EndGetBlueprintRun(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetBlueprintRunResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetBlueprintRuns
+
+        /// <summary>
+        /// Retrieves the details of blueprint runs for a specified blueprint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBlueprintRuns service method.</param>
+        /// 
+        /// <returns>The response from the GetBlueprintRuns service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetBlueprintRuns">REST API Reference for GetBlueprintRuns Operation</seealso>
+        public virtual GetBlueprintRunsResponse GetBlueprintRuns(GetBlueprintRunsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBlueprintRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBlueprintRunsResponseUnmarshaller.Instance;
+
+            return Invoke<GetBlueprintRunsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBlueprintRuns operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBlueprintRuns operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBlueprintRuns
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetBlueprintRuns">REST API Reference for GetBlueprintRuns Operation</seealso>
+        public virtual IAsyncResult BeginGetBlueprintRuns(GetBlueprintRunsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBlueprintRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBlueprintRunsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBlueprintRuns operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBlueprintRuns.</param>
+        /// 
+        /// <returns>Returns a  GetBlueprintRunsResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetBlueprintRuns">REST API Reference for GetBlueprintRuns Operation</seealso>
+        public virtual GetBlueprintRunsResponse EndGetBlueprintRuns(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetBlueprintRunsResponse>(asyncResult);
         }
 
         #endregion
@@ -7536,6 +7926,69 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  ListBlueprints
+
+        /// <summary>
+        /// Lists all the blueprint names in an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBlueprints service method.</param>
+        /// 
+        /// <returns>The response from the ListBlueprints service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListBlueprints">REST API Reference for ListBlueprints Operation</seealso>
+        public virtual ListBlueprintsResponse ListBlueprints(ListBlueprintsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBlueprintsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBlueprintsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBlueprintsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBlueprints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBlueprints operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBlueprints
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListBlueprints">REST API Reference for ListBlueprints Operation</seealso>
+        public virtual IAsyncResult BeginListBlueprints(ListBlueprintsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBlueprintsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBlueprintsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBlueprints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBlueprints.</param>
+        /// 
+        /// <returns>Returns a  ListBlueprintsResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListBlueprints">REST API Reference for ListBlueprints Operation</seealso>
+        public virtual ListBlueprintsResponse EndListBlueprints(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListBlueprintsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListCrawlers
 
         /// <summary>
@@ -8878,6 +9331,78 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  StartBlueprintRun
+
+        /// <summary>
+        /// Starts a new run of the specified blueprint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartBlueprintRun service method.</param>
+        /// 
+        /// <returns>The response from the StartBlueprintRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IllegalBlueprintStateException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartBlueprintRun">REST API Reference for StartBlueprintRun Operation</seealso>
+        public virtual StartBlueprintRunResponse StartBlueprintRun(StartBlueprintRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartBlueprintRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartBlueprintRunResponseUnmarshaller.Instance;
+
+            return Invoke<StartBlueprintRunResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartBlueprintRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartBlueprintRun operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartBlueprintRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartBlueprintRun">REST API Reference for StartBlueprintRun Operation</seealso>
+        public virtual IAsyncResult BeginStartBlueprintRun(StartBlueprintRunRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartBlueprintRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartBlueprintRunResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartBlueprintRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartBlueprintRun.</param>
+        /// 
+        /// <returns>Returns a  StartBlueprintRunResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartBlueprintRun">REST API Reference for StartBlueprintRun Operation</seealso>
+        public virtual StartBlueprintRunResponse EndStartBlueprintRun(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartBlueprintRunResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartCrawler
 
         /// <summary>
@@ -9979,6 +10504,78 @@ namespace Amazon.Glue
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateBlueprint
+
+        /// <summary>
+        /// Updates a registered blueprint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBlueprint service method.</param>
+        /// 
+        /// <returns>The response from the UpdateBlueprint service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IllegalBlueprintStateException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateBlueprint">REST API Reference for UpdateBlueprint Operation</seealso>
+        public virtual UpdateBlueprintResponse UpdateBlueprint(UpdateBlueprintRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBlueprintResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateBlueprintResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateBlueprint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBlueprint operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateBlueprint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateBlueprint">REST API Reference for UpdateBlueprint Operation</seealso>
+        public virtual IAsyncResult BeginUpdateBlueprint(UpdateBlueprintRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBlueprintResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateBlueprint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateBlueprint.</param>
+        /// 
+        /// <returns>Returns a  UpdateBlueprintResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateBlueprint">REST API Reference for UpdateBlueprint Operation</seealso>
+        public virtual UpdateBlueprintResponse EndUpdateBlueprint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateBlueprintResponse>(asyncResult);
         }
 
         #endregion

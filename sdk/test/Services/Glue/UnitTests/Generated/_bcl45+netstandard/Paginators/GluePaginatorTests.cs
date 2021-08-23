@@ -42,6 +42,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Glue")]
+        public void GetBlueprintRunsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetBlueprintRunsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetBlueprintRunsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetBlueprintRunsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetBlueprintRuns(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetBlueprintRuns(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Glue")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetBlueprintRunsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetBlueprintRunsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetBlueprintRunsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetBlueprintRuns(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetBlueprintRuns(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Glue")]
         public void GetClassifiersTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<GetClassifiersRequest>();
@@ -771,6 +810,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.GetWorkflowRuns(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.GetWorkflowRuns(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Glue")]
+        public void ListBlueprintsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListBlueprintsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListBlueprintsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListBlueprintsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListBlueprints(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListBlueprints(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Glue")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListBlueprintsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListBlueprintsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListBlueprintsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListBlueprints(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListBlueprints(request);
 
             // Should work the first time
             paginator.Responses.ToList();

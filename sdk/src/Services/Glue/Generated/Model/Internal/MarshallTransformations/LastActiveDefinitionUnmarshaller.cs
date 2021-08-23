@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Workflow Object
+    /// Response Unmarshaller for LastActiveDefinition Object
     /// </summary>  
-    public class WorkflowUnmarshaller : IUnmarshaller<Workflow, XmlUnmarshallerContext>, IUnmarshaller<Workflow, JsonUnmarshallerContext>
+    public class LastActiveDefinitionUnmarshaller : IUnmarshaller<LastActiveDefinition, XmlUnmarshallerContext>, IUnmarshaller<LastActiveDefinition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Workflow IUnmarshaller<Workflow, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LastActiveDefinition IUnmarshaller<LastActiveDefinition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Workflow Unmarshall(JsonUnmarshallerContext context)
+        public LastActiveDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Workflow unmarshalledObject = new Workflow();
+            LastActiveDefinition unmarshalledObject = new LastActiveDefinition();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("BlueprintDetails", targetDepth))
+                if (context.TestExpression("BlueprintLocation", targetDepth))
                 {
-                    var unmarshaller = BlueprintDetailsUnmarshaller.Instance;
-                    unmarshalledObject.BlueprintDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BlueprintLocation = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CreatedOn", targetDepth))
+                if (context.TestExpression("BlueprintServiceLocation", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedOn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DefaultRunProperties", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.DefaultRunProperties = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BlueprintServiceLocation = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Description", targetDepth))
@@ -88,34 +82,16 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Graph", targetDepth))
-                {
-                    var unmarshaller = WorkflowGraphUnmarshaller.Instance;
-                    unmarshalledObject.Graph = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("LastModifiedOn", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedOn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LastRun", targetDepth))
-                {
-                    var unmarshaller = WorkflowRunUnmarshaller.Instance;
-                    unmarshalledObject.LastRun = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MaxConcurrentRuns", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaxConcurrentRuns = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("ParameterSpec", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ParameterSpec = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -124,12 +100,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static WorkflowUnmarshaller _instance = new WorkflowUnmarshaller();        
+        private static LastActiveDefinitionUnmarshaller _instance = new LastActiveDefinitionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static WorkflowUnmarshaller Instance
+        public static LastActiveDefinitionUnmarshaller Instance
         {
             get
             {

@@ -35,6 +35,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class Workflow
     {
+        private BlueprintDetails _blueprintDetails;
         private DateTime? _createdOn;
         private Dictionary<string, string> _defaultRunProperties = new Dictionary<string, string>();
         private string _description;
@@ -43,6 +44,25 @@ namespace Amazon.Glue.Model
         private WorkflowRun _lastRun;
         private int? _maxConcurrentRuns;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property BlueprintDetails. 
+        /// <para>
+        /// This structure indicates the details of the blueprint that this particular workflow
+        /// is created from.
+        /// </para>
+        /// </summary>
+        public BlueprintDetails BlueprintDetails
+        {
+            get { return this._blueprintDetails; }
+            set { this._blueprintDetails = value; }
+        }
+
+        // Check to see if BlueprintDetails property is set
+        internal bool IsSetBlueprintDetails()
+        {
+            return this._blueprintDetails != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedOn. 

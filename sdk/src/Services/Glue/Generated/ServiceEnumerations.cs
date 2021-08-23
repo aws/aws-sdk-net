@@ -87,6 +87,122 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type BlueprintRunState.
+    /// </summary>
+    public class BlueprintRunState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for BlueprintRunState
+        /// </summary>
+        public static readonly BlueprintRunState FAILED = new BlueprintRunState("FAILED");
+        /// <summary>
+        /// Constant ROLLING_BACK for BlueprintRunState
+        /// </summary>
+        public static readonly BlueprintRunState ROLLING_BACK = new BlueprintRunState("ROLLING_BACK");
+        /// <summary>
+        /// Constant RUNNING for BlueprintRunState
+        /// </summary>
+        public static readonly BlueprintRunState RUNNING = new BlueprintRunState("RUNNING");
+        /// <summary>
+        /// Constant SUCCEEDED for BlueprintRunState
+        /// </summary>
+        public static readonly BlueprintRunState SUCCEEDED = new BlueprintRunState("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BlueprintRunState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BlueprintRunState FindValue(string value)
+        {
+            return FindValue<BlueprintRunState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BlueprintRunState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BlueprintStatus.
+    /// </summary>
+    public class BlueprintStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for BlueprintStatus
+        /// </summary>
+        public static readonly BlueprintStatus ACTIVE = new BlueprintStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for BlueprintStatus
+        /// </summary>
+        public static readonly BlueprintStatus CREATING = new BlueprintStatus("CREATING");
+        /// <summary>
+        /// Constant FAILED for BlueprintStatus
+        /// </summary>
+        public static readonly BlueprintStatus FAILED = new BlueprintStatus("FAILED");
+        /// <summary>
+        /// Constant UPDATING for BlueprintStatus
+        /// </summary>
+        public static readonly BlueprintStatus UPDATING = new BlueprintStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BlueprintStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BlueprintStatus FindValue(string value)
+        {
+            return FindValue<BlueprintStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BlueprintStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CatalogEncryptionMode.
     /// </summary>
     public class CatalogEncryptionMode : ConstantClass

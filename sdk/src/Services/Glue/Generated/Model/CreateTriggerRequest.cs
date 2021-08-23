@@ -84,7 +84,11 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EventBatchingCondition.
+        /// Gets and sets the property EventBatchingCondition. 
+        /// <para>
+        /// Batch condition that must be met (specified number of events received or batch time
+        /// window expired) before EventBridge event trigger fires.
+        /// </para>
         /// </summary>
         public EventBatchingCondition EventBatchingCondition
         {

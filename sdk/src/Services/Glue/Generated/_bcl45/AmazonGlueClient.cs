@@ -616,6 +616,65 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  BatchGetBlueprints
+
+
+        /// <summary>
+        /// Retrieves information about a list of blueprints.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetBlueprints service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetBlueprints service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetBlueprints">REST API Reference for BatchGetBlueprints Operation</seealso>
+        public virtual BatchGetBlueprintsResponse BatchGetBlueprints(BatchGetBlueprintsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetBlueprintsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetBlueprintsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetBlueprintsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about a list of blueprints.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetBlueprints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetBlueprints service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetBlueprints">REST API Reference for BatchGetBlueprints Operation</seealso>
+        public virtual Task<BatchGetBlueprintsResponse> BatchGetBlueprintsAsync(BatchGetBlueprintsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetBlueprintsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetBlueprintsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetBlueprintsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchGetCrawlers
 
 
@@ -1272,6 +1331,77 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = CheckSchemaVersionValidityResponseUnmarshaller.Instance;
             
             return InvokeAsync<CheckSchemaVersionValidityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateBlueprint
+
+
+        /// <summary>
+        /// Registers a blueprint with Glue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBlueprint service method.</param>
+        /// 
+        /// <returns>The response from the CreateBlueprint service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateBlueprint">REST API Reference for CreateBlueprint Operation</seealso>
+        public virtual CreateBlueprintResponse CreateBlueprint(CreateBlueprintRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBlueprintResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBlueprintResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Registers a blueprint with Glue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBlueprint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateBlueprint service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateBlueprint">REST API Reference for CreateBlueprint Operation</seealso>
+        public virtual Task<CreateBlueprintResponse> CreateBlueprintAsync(CreateBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBlueprintResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateBlueprintResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2665,6 +2795,65 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = CreateWorkflowResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateWorkflowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteBlueprint
+
+
+        /// <summary>
+        /// Deletes an existing blueprint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBlueprint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBlueprint service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteBlueprint">REST API Reference for DeleteBlueprint Operation</seealso>
+        public virtual DeleteBlueprintResponse DeleteBlueprint(DeleteBlueprintRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBlueprintResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBlueprintResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an existing blueprint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBlueprint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteBlueprint service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteBlueprint">REST API Reference for DeleteBlueprint Operation</seealso>
+        public virtual Task<DeleteBlueprintResponse> DeleteBlueprintAsync(DeleteBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBlueprintResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteBlueprintResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4202,6 +4391,195 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = DeleteWorkflowResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteWorkflowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetBlueprint
+
+
+        /// <summary>
+        /// Retrieves the details of a blueprint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBlueprint service method.</param>
+        /// 
+        /// <returns>The response from the GetBlueprint service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetBlueprint">REST API Reference for GetBlueprint Operation</seealso>
+        public virtual GetBlueprintResponse GetBlueprint(GetBlueprintRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBlueprintResponseUnmarshaller.Instance;
+
+            return Invoke<GetBlueprintResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the details of a blueprint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBlueprint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBlueprint service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetBlueprint">REST API Reference for GetBlueprint Operation</seealso>
+        public virtual Task<GetBlueprintResponse> GetBlueprintAsync(GetBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBlueprintResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetBlueprintResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetBlueprintRun
+
+
+        /// <summary>
+        /// Retrieves the details of a blueprint run.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBlueprintRun service method.</param>
+        /// 
+        /// <returns>The response from the GetBlueprintRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetBlueprintRun">REST API Reference for GetBlueprintRun Operation</seealso>
+        public virtual GetBlueprintRunResponse GetBlueprintRun(GetBlueprintRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBlueprintRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBlueprintRunResponseUnmarshaller.Instance;
+
+            return Invoke<GetBlueprintRunResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the details of a blueprint run.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBlueprintRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBlueprintRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetBlueprintRun">REST API Reference for GetBlueprintRun Operation</seealso>
+        public virtual Task<GetBlueprintRunResponse> GetBlueprintRunAsync(GetBlueprintRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBlueprintRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBlueprintRunResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetBlueprintRunResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetBlueprintRuns
+
+
+        /// <summary>
+        /// Retrieves the details of blueprint runs for a specified blueprint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBlueprintRuns service method.</param>
+        /// 
+        /// <returns>The response from the GetBlueprintRuns service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetBlueprintRuns">REST API Reference for GetBlueprintRuns Operation</seealso>
+        public virtual GetBlueprintRunsResponse GetBlueprintRuns(GetBlueprintRunsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBlueprintRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBlueprintRunsResponseUnmarshaller.Instance;
+
+            return Invoke<GetBlueprintRunsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the details of blueprint runs for a specified blueprint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBlueprintRuns service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBlueprintRuns service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetBlueprintRuns">REST API Reference for GetBlueprintRuns Operation</seealso>
+        public virtual Task<GetBlueprintRunsResponse> GetBlueprintRunsAsync(GetBlueprintRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBlueprintRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBlueprintRunsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetBlueprintRunsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7747,6 +8125,65 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  ListBlueprints
+
+
+        /// <summary>
+        /// Lists all the blueprint names in an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBlueprints service method.</param>
+        /// 
+        /// <returns>The response from the ListBlueprints service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListBlueprints">REST API Reference for ListBlueprints Operation</seealso>
+        public virtual ListBlueprintsResponse ListBlueprints(ListBlueprintsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBlueprintsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBlueprintsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBlueprintsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all the blueprint names in an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBlueprints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBlueprints service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListBlueprints">REST API Reference for ListBlueprints Operation</seealso>
+        public virtual Task<ListBlueprintsResponse> ListBlueprintsAsync(ListBlueprintsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBlueprintsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBlueprintsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListBlueprintsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListCrawlers
 
 
@@ -9158,6 +9595,83 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  StartBlueprintRun
+
+
+        /// <summary>
+        /// Starts a new run of the specified blueprint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartBlueprintRun service method.</param>
+        /// 
+        /// <returns>The response from the StartBlueprintRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IllegalBlueprintStateException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartBlueprintRun">REST API Reference for StartBlueprintRun Operation</seealso>
+        public virtual StartBlueprintRunResponse StartBlueprintRun(StartBlueprintRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartBlueprintRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartBlueprintRunResponseUnmarshaller.Instance;
+
+            return Invoke<StartBlueprintRunResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a new run of the specified blueprint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartBlueprintRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartBlueprintRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IllegalBlueprintStateException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartBlueprintRun">REST API Reference for StartBlueprintRun Operation</seealso>
+        public virtual Task<StartBlueprintRunResponse> StartBlueprintRunAsync(StartBlueprintRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartBlueprintRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartBlueprintRunResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartBlueprintRunResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartCrawler
 
 
@@ -10359,6 +10873,83 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateBlueprint
+
+
+        /// <summary>
+        /// Updates a registered blueprint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBlueprint service method.</param>
+        /// 
+        /// <returns>The response from the UpdateBlueprint service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IllegalBlueprintStateException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateBlueprint">REST API Reference for UpdateBlueprint Operation</seealso>
+        public virtual UpdateBlueprintResponse UpdateBlueprint(UpdateBlueprintRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBlueprintResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateBlueprintResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a registered blueprint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBlueprint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateBlueprint service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IllegalBlueprintStateException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateBlueprint">REST API Reference for UpdateBlueprint Operation</seealso>
+        public virtual Task<UpdateBlueprintResponse> UpdateBlueprintAsync(UpdateBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBlueprintResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateBlueprintResponse>(request, options, cancellationToken);
         }
 
         #endregion

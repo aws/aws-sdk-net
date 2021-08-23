@@ -26,6 +26,11 @@ namespace Amazon.Glue.Model
     {
 
         /// <summary>
+        /// Paginator for GetBlueprintRuns operation
+        ///</summary>
+        IGetBlueprintRunsPaginator GetBlueprintRuns(GetBlueprintRunsRequest request);
+
+        /// <summary>
         /// Paginator for GetClassifiers operation
         ///</summary>
         IGetClassifiersPaginator GetClassifiers(GetClassifiersRequest request);
@@ -119,6 +124,11 @@ namespace Amazon.Glue.Model
         /// Paginator for GetWorkflowRuns operation
         ///</summary>
         IGetWorkflowRunsPaginator GetWorkflowRuns(GetWorkflowRunsRequest request);
+
+        /// <summary>
+        /// Paginator for ListBlueprints operation
+        ///</summary>
+        IListBlueprintsPaginator ListBlueprints(ListBlueprintsRequest request);
 
         /// <summary>
         /// Paginator for ListCrawlers operation
