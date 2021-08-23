@@ -96,7 +96,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CloudwatchRoleArn. 
         /// <para>
-        /// The ARN of an Amazon CloudWatch role for the current <a>Account</a>. 
+        /// The ARN of an Amazon CloudWatch role for the current <a>Account</a>.
         /// </para>
         /// </summary>
         public string CloudwatchRoleArn

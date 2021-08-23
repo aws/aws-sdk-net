@@ -702,6 +702,10 @@ namespace Amazon.APIGateway
         /// Constant UNSUPPORTED_MEDIA_TYPE for GatewayResponseType
         /// </summary>
         public static readonly GatewayResponseType UNSUPPORTED_MEDIA_TYPE = new GatewayResponseType("UNSUPPORTED_MEDIA_TYPE");
+        /// <summary>
+        /// Constant WAF_FILTERED for GatewayResponseType
+        /// </summary>
+        public static readonly GatewayResponseType WAF_FILTERED = new GatewayResponseType("WAF_FILTERED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

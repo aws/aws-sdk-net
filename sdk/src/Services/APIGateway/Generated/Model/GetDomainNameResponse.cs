@@ -151,7 +151,7 @@ namespace Amazon.APIGateway.Model
         /// The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information,
         /// see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
         /// up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-        /// Regions and Endpoints for API Gateway</a>. 
+        /// Regions and Endpoints for API Gateway</a>.
         /// </para>
         /// </summary>
         public string DistributionHostedZoneId
@@ -348,7 +348,7 @@ namespace Amazon.APIGateway.Model
         /// The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more
         /// information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
         /// up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-        /// Regions and Endpoints for API Gateway</a>. 
+        /// Regions and Endpoints for API Gateway</a>.
         /// </para>
         /// </summary>
         public string RegionalHostedZoneId

@@ -369,6 +369,9 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
         /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
@@ -407,6 +410,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
         /// The request exceeded the rate limit. Retry after the specified time period.
@@ -448,6 +454,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -483,6 +492,9 @@ namespace Amazon.APIGateway
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -768,6 +780,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
@@ -800,6 +815,9 @@ namespace Amazon.APIGateway
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// The request has reached its throttling limit. Retry after the specified time period.
@@ -911,6 +929,9 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
         /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
@@ -946,6 +967,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
         /// The request exceeded the rate limit. Retry after the specified time period.
@@ -1063,6 +1087,9 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
         /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
@@ -1095,6 +1122,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
         /// The request exceeded the rate limit. Retry after the specified time period.
@@ -1295,6 +1325,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -1330,6 +1363,9 @@ namespace Amazon.APIGateway
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -1367,6 +1403,12 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
@@ -1399,6 +1441,12 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
@@ -1426,6 +1474,13 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the DeleteApiKey service method.</param>
         /// 
         /// <returns>The response from the DeleteApiKey service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -1455,6 +1510,13 @@ namespace Amazon.APIGateway
         /// </param>
         /// 
         /// <returns>The response from the DeleteApiKey service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -1641,6 +1703,9 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -1673,6 +1738,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -1709,6 +1777,12 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -1742,6 +1816,12 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -1923,6 +2003,9 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -1955,6 +2038,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -2061,6 +2147,10 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntegration service method.</param>
         /// 
         /// <returns>The response from the DeleteIntegration service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
@@ -2093,6 +2183,10 @@ namespace Amazon.APIGateway
         /// </param>
         /// 
         /// <returns>The response from the DeleteIntegration service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
@@ -2560,6 +2654,9 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -2592,6 +2689,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -2627,6 +2727,12 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -2659,6 +2765,12 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -2694,6 +2806,9 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -2726,6 +2841,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -2836,6 +2954,9 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -2868,6 +2989,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -2903,6 +3027,12 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -2935,6 +3065,12 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -2970,6 +3106,12 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -3003,6 +3145,12 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -3033,6 +3181,13 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GenerateClientCertificate service method.</param>
         /// 
         /// <returns>The response from the GenerateClientCertificate service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
         /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
@@ -3062,6 +3217,13 @@ namespace Amazon.APIGateway
         /// </param>
         /// 
         /// <returns>The response from the GenerateClientCertificate service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
         /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
@@ -3092,6 +3254,10 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetAccount service method.</param>
         /// 
         /// <returns>The response from the GetAccount service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -3121,6 +3287,10 @@ namespace Amazon.APIGateway
         /// </param>
         /// 
         /// <returns>The response from the GetAccount service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -3151,6 +3321,10 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetApiKey service method.</param>
         /// 
         /// <returns>The response from the GetApiKey service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -3180,6 +3354,10 @@ namespace Amazon.APIGateway
         /// </param>
         /// 
         /// <returns>The response from the GetApiKey service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -3214,6 +3392,9 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
@@ -3243,6 +3424,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// The request has reached its throttling limit. Retry after the specified time period.
@@ -3274,6 +3458,10 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetAuthorizer service method.</param>
         /// 
         /// <returns>The response from the GetAuthorizer service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -3306,6 +3494,10 @@ namespace Amazon.APIGateway
         /// </param>
         /// 
         /// <returns>The response from the GetAuthorizer service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -3409,6 +3601,10 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetBasePathMapping service method.</param>
         /// 
         /// <returns>The response from the GetBasePathMapping service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -3438,6 +3634,10 @@ namespace Amazon.APIGateway
         /// </param>
         /// 
         /// <returns>The response from the GetBasePathMapping service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -3468,6 +3668,10 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetBasePathMappings service method.</param>
         /// 
         /// <returns>The response from the GetBasePathMappings service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -3497,6 +3701,10 @@ namespace Amazon.APIGateway
         /// </param>
         /// 
         /// <returns>The response from the GetBasePathMappings service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -3527,6 +3735,10 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetClientCertificate service method.</param>
         /// 
         /// <returns>The response from the GetClientCertificate service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -3556,6 +3768,10 @@ namespace Amazon.APIGateway
         /// </param>
         /// 
         /// <returns>The response from the GetClientCertificate service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -3590,6 +3806,9 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
@@ -3620,6 +3839,9 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
@@ -3647,6 +3869,10 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetDeployment service method.</param>
         /// 
         /// <returns>The response from the GetDeployment service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -3680,6 +3906,10 @@ namespace Amazon.APIGateway
         /// </param>
         /// 
         /// <returns>The response from the GetDeployment service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -3789,6 +4019,10 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetDocumentationPart service method.</param>
         /// 
         /// <returns>The response from the GetDocumentationPart service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -3818,6 +4052,10 @@ namespace Amazon.APIGateway
         /// </param>
         /// 
         /// <returns>The response from the GetDocumentationPart service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -4042,12 +4280,12 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetDomainName service method.</param>
         /// 
         /// <returns>The response from the GetDomainName service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
-        /// </exception>
-        /// <exception cref="Amazon.APIGateway.Model.ServiceUnavailableException">
-        /// The requested service is not available. For details see the accompanying error message.
-        /// Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// The request has reached its throttling limit. Retry after the specified time period.
@@ -4076,12 +4314,12 @@ namespace Amazon.APIGateway
         /// </param>
         /// 
         /// <returns>The response from the GetDomainName service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
-        /// </exception>
-        /// <exception cref="Amazon.APIGateway.Model.ServiceUnavailableException">
-        /// The requested service is not available. For details see the accompanying error message.
-        /// Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// The request has reached its throttling limit. Retry after the specified time period.
@@ -4114,6 +4352,9 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
@@ -4143,6 +4384,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// The request has reached its throttling limit. Retry after the specified time period.
@@ -4177,6 +4421,9 @@ namespace Amazon.APIGateway
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -4214,6 +4461,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -4244,6 +4494,10 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetGatewayResponse service method.</param>
         /// 
         /// <returns>The response from the GetGatewayResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -4273,6 +4527,10 @@ namespace Amazon.APIGateway
         /// </param>
         /// 
         /// <returns>The response from the GetGatewayResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -4376,6 +4634,10 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetIntegration service method.</param>
         /// 
         /// <returns>The response from the GetIntegration service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -4405,6 +4667,10 @@ namespace Amazon.APIGateway
         /// </param>
         /// 
         /// <returns>The response from the GetIntegration service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -4435,6 +4701,10 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetIntegrationResponse service method.</param>
         /// 
         /// <returns>The response from the GetIntegrationResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -4464,6 +4734,10 @@ namespace Amazon.APIGateway
         /// </param>
         /// 
         /// <returns>The response from the GetIntegrationResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -4612,6 +4886,10 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetModel service method.</param>
         /// 
         /// <returns>The response from the GetModel service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -4641,6 +4919,10 @@ namespace Amazon.APIGateway
         /// </param>
         /// 
         /// <returns>The response from the GetModel service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -4807,6 +5089,10 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetRequestValidator service method.</param>
         /// 
         /// <returns>The response from the GetRequestValidator service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -4836,6 +5122,10 @@ namespace Amazon.APIGateway
         /// </param>
         /// 
         /// <returns>The response from the GetRequestValidator service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -5059,6 +5349,10 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetRestApi service method.</param>
         /// 
         /// <returns>The response from the GetRestApi service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -5088,6 +5382,10 @@ namespace Amazon.APIGateway
         /// </param>
         /// 
         /// <returns>The response from the GetRestApi service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -5122,6 +5420,9 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
@@ -5151,6 +5452,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// The request has reached its throttling limit. Retry after the specified time period.
@@ -5185,6 +5489,9 @@ namespace Amazon.APIGateway
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -5222,6 +5529,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -5252,6 +5562,10 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetSdkType service method.</param>
         /// 
         /// <returns>The response from the GetSdkType service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -5281,6 +5595,10 @@ namespace Amazon.APIGateway
         /// </param>
         /// 
         /// <returns>The response from the GetSdkType service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -5311,6 +5629,13 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetSdkTypes service method.</param>
         /// 
         /// <returns>The response from the GetSdkTypes service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
@@ -5337,6 +5662,13 @@ namespace Amazon.APIGateway
         /// </param>
         /// 
         /// <returns>The response from the GetSdkTypes service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
@@ -5364,6 +5696,16 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetStage service method.</param>
         /// 
         /// <returns>The response from the GetStage service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -5393,6 +5735,16 @@ namespace Amazon.APIGateway
         /// </param>
         /// 
         /// <returns>The response from the GetStage service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -5423,6 +5775,16 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetStages service method.</param>
         /// 
         /// <returns>The response from the GetStages service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -5452,6 +5814,16 @@ namespace Amazon.APIGateway
         /// </param>
         /// 
         /// <returns>The response from the GetStages service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -5486,9 +5858,6 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
-        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
-        /// The request exceeded the rate limit. Retry after the specified time period.
-        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -5521,9 +5890,6 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
-        /// </exception>
-        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
-        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -5829,9 +6195,6 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
-        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// The request configuration has conflicts. For details, see the accompanying error message.
-        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -5865,9 +6228,6 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
-        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// The request configuration has conflicts. For details, see the accompanying error message.
-        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -5898,6 +6258,10 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetVpcLink service method.</param>
         /// 
         /// <returns>The response from the GetVpcLink service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -5927,6 +6291,10 @@ namespace Amazon.APIGateway
         /// </param>
         /// 
         /// <returns>The response from the GetVpcLink service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -5961,6 +6329,9 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
@@ -5990,6 +6361,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// The request has reached its throttling limit. Retry after the specified time period.
@@ -6101,6 +6475,9 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
         /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
@@ -6136,6 +6513,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
         /// The request exceeded the rate limit. Retry after the specified time period.
@@ -6181,6 +6561,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
         /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
@@ -6218,6 +6601,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
         /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
@@ -6249,6 +6635,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
         /// The request exceeded the rate limit. Retry after the specified time period.
@@ -6286,6 +6675,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
         /// The request exceeded the rate limit. Retry after the specified time period.
@@ -6327,6 +6719,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -6362,6 +6757,9 @@ namespace Amazon.APIGateway
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -6945,6 +7343,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -6981,6 +7382,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -7015,6 +7419,12 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -7047,6 +7457,12 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -7085,6 +7501,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -7120,6 +7539,9 @@ namespace Amazon.APIGateway
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -7158,6 +7580,12 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -7193,6 +7621,12 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -7231,6 +7665,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -7267,6 +7704,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -7301,6 +7741,12 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -7333,6 +7779,12 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -7367,6 +7819,12 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -7404,6 +7862,12 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -7525,6 +7989,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -7560,6 +8027,9 @@ namespace Amazon.APIGateway
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -7598,6 +8068,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -7634,6 +8107,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -7668,6 +8144,12 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -7700,6 +8182,12 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -7738,6 +8226,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -7773,6 +8264,9 @@ namespace Amazon.APIGateway
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -7811,6 +8305,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -7846,6 +8343,9 @@ namespace Amazon.APIGateway
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -8036,6 +8536,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -8072,6 +8575,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -8106,6 +8612,12 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -8138,6 +8650,12 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -8249,6 +8767,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -8284,6 +8805,9 @@ namespace Amazon.APIGateway
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -8322,6 +8846,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -8358,6 +8885,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -8393,6 +8923,12 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -8426,6 +8962,12 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -8464,6 +9006,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -8499,6 +9044,9 @@ namespace Amazon.APIGateway
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
@@ -8537,6 +9085,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -8572,6 +9123,9 @@ namespace Amazon.APIGateway
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
