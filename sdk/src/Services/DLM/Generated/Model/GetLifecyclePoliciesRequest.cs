@@ -111,7 +111,8 @@ namespace Amazon.DLM.Model
         /// </para>
         ///  
         /// <para>
-        /// These user-defined tags are added in addition to the AWS-added lifecycle tags.
+        /// These user-defined tags are added in addition to the Amazon Web Services-added lifecycle
+        /// tags.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

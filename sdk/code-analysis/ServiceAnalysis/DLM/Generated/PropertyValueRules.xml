@@ -89,6 +89,10 @@
     <pattern>^[\w:\-\/\*]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DLM.Model.CrossRegionCopyDeprecateRule.Interval</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DLM.Model.CrossRegionCopyRetainRule.Interval</property>
     <min>1</min>
   </property-value-rule>
@@ -109,6 +113,15 @@
     <min>0</min>
     <max>16</max>
     <pattern>([a-z]+-){2,3}\d</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.DeprecateRule.Count</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.DeprecateRule.Interval</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.EncryptionConfiguration.CmkArn</property>

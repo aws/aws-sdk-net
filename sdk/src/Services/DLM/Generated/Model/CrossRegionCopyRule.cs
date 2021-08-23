@@ -35,6 +35,7 @@ namespace Amazon.DLM.Model
     {
         private string _cmkArn;
         private bool? _copyTags;
+        private CrossRegionCopyDeprecateRule _deprecateRule;
         private bool? _encrypted;
         private CrossRegionCopyRetainRule _retainRule;
         private string _target;
@@ -43,9 +44,8 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property CmkArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS KMS customer master key (CMK) to use for
-        /// EBS encryption. If this parameter is not specified, your AWS managed CMK for EBS is
-        /// used.
+        /// The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this parameter
+        /// is not specified, the default KMS key for the account is used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -64,7 +64,8 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property CopyTags. 
         /// <para>
-        /// Copy all user-defined tags from the source snapshot to the copied snapshot.
+        /// Indicates whether to copy all user-defined tags from the source snapshot to the cross-Region
+        /// snapshot copy.
         /// </para>
         /// </summary>
         public bool CopyTags
@@ -77,6 +78,24 @@ namespace Amazon.DLM.Model
         internal bool IsSetCopyTags()
         {
             return this._copyTags.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeprecateRule. 
+        /// <para>
+        /// The AMI deprecation rule for cross-Region AMI copies created by the rule.
+        /// </para>
+        /// </summary>
+        public CrossRegionCopyDeprecateRule DeprecateRule
+        {
+            get { return this._deprecateRule; }
+            set { this._deprecateRule = value; }
+        }
+
+        // Check to see if DeprecateRule property is set
+        internal bool IsSetDeprecateRule()
+        {
+            return this._deprecateRule != null;
         }
 
         /// <summary>
@@ -103,7 +122,8 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property RetainRule. 
         /// <para>
-        /// The retention rule.
+        /// The retention rule that indicates how long snapshot copies are to be retained in the
+        /// destination Region.
         /// </para>
         /// </summary>
         public CrossRegionCopyRetainRule RetainRule
@@ -121,12 +141,12 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property Target. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the target AWS Outpost for the snapshot copies.
+        /// The target Region or the Amazon Resource Name (ARN) of the target Outpost for the
+        /// snapshot copies.
         /// </para>
         ///  
         /// <para>
-        /// If you specify an ARN, you must omit <b>TargetRegion</b>. You cannot specify a target
-        /// Region and a target Outpost in the same rule.
+        /// Use this parameter instead of <b>TargetRegion</b>. Do not specify both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -145,12 +165,13 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property TargetRegion. 
         /// <para>
-        /// The target Region for the snapshot copies.
+        /// Avoid using this parameter when creating new policies. Instead, use <b>Target</b>
+        /// to specify a target Region or a target Outpost for snapshot copies.
         /// </para>
         ///  
         /// <para>
-        /// If you specify a target Region, you must omit <b>Target</b>. You cannot specify a
-        /// target Region and a target Outpost in the same rule.
+        /// For policies created before the <b>Target</b> parameter was introduced, this parameter
+        /// indicates the target Region for snapshot copies.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=16)]

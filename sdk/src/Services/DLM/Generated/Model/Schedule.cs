@@ -36,6 +36,7 @@ namespace Amazon.DLM.Model
         private bool? _copyTags;
         private CreateRule _createRule;
         private List<CrossRegionCopyRule> _crossRegionCopyRules = new List<CrossRegionCopyRule>();
+        private DeprecateRule _deprecateRule;
         private FastRestoreRule _fastRestoreRule;
         private string _name;
         private RetainRule _retainRule;
@@ -107,6 +108,24 @@ namespace Amazon.DLM.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeprecateRule. 
+        /// <para>
+        /// The AMI deprecation rule for the schedule.
+        /// </para>
+        /// </summary>
+        public DeprecateRule DeprecateRule
+        {
+            get { return this._deprecateRule; }
+            set { this._deprecateRule = value; }
+        }
+
+        // Check to see if DeprecateRule property is set
+        internal bool IsSetDeprecateRule()
+        {
+            return this._deprecateRule != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FastRestoreRule. 
         /// <para>
         /// The rule for enabling fast snapshot restore.
@@ -164,7 +183,7 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property ShareRules. 
         /// <para>
-        /// The rule for sharing snapshots with other AWS accounts.
+        /// The rule for sharing snapshots with other Amazon Web Services accounts.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -184,7 +203,7 @@ namespace Amazon.DLM.Model
         /// Gets and sets the property TagsToAdd. 
         /// <para>
         /// The tags to apply to policy-created resources. These user-defined tags are in addition
-        /// to the AWS-added lifecycle tags.
+        /// to the Amazon Web Services-added lifecycle tags.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=45)]

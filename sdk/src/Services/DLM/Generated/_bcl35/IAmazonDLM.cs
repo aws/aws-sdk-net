@@ -31,9 +31,9 @@ namespace Amazon.DLM
     ///
     /// Amazon Data Lifecycle Manager 
     /// <para>
-    /// With Amazon Data Lifecycle Manager, you can manage the lifecycle of your AWS resources.
-    /// You create lifecycle policies, which are used to automate operations on the specified
-    /// resources.
+    /// With Amazon Data Lifecycle Manager, you can manage the lifecycle of your Amazon Web
+    /// Services resources. You create lifecycle policies, which are used to automate operations
+    /// on the specified resources.
     /// </para>
     ///  
     /// <para>
@@ -53,8 +53,8 @@ namespace Amazon.DLM
 
 
         /// <summary>
-        /// Creates a policy to manage the lifecycle of the specified AWS resources. You can create
-        /// up to 100 lifecycle policies.
+        /// Creates a policy to manage the lifecycle of the specified Amazon Web Services resources.
+        /// You can create up to 100 lifecycle policies.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLifecyclePolicy service method.</param>
         /// 

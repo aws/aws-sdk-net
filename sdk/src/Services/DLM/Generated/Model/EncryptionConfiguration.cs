@@ -39,9 +39,8 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property CmkArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS KMS customer master key (CMK) to use for
-        /// EBS encryption. If this parameter is not specified, your AWS managed CMK for EBS is
-        /// used.
+        /// The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this parameter
+        /// is not specified, the default KMS key for the account is used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

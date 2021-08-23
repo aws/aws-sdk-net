@@ -114,8 +114,8 @@ namespace Amazon.DLM.Model
         /// </para>
         ///  
         /// <para>
-        /// If the policy targets resources in an AWS Region, then you must create snapshots in
-        /// the same Region as the source resource. 
+        /// If the policy targets resources in an Amazon Web Services Region, then you must create
+        /// snapshots in the same Region as the source resource.
         /// </para>
         ///  
         /// <para>

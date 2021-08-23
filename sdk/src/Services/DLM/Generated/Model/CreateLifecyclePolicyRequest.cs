@@ -30,8 +30,8 @@ namespace Amazon.DLM.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLifecyclePolicy operation.
-    /// Creates a policy to manage the lifecycle of the specified AWS resources. You can create
-    /// up to 100 lifecycle policies.
+    /// Creates a policy to manage the lifecycle of the specified Amazon Web Services resources.
+    /// You can create up to 100 lifecycle policies.
     /// </summary>
     public partial class CreateLifecyclePolicyRequest : AmazonDLMRequest
     {

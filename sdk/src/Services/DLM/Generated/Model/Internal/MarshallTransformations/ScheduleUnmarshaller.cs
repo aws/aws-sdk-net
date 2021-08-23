@@ -82,6 +82,12 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                     unmarshalledObject.CrossRegionCopyRules = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeprecateRule", targetDepth))
+                {
+                    var unmarshaller = DeprecateRuleUnmarshaller.Instance;
+                    unmarshalledObject.DeprecateRule = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FastRestoreRule", targetDepth))
                 {
                     var unmarshaller = FastRestoreRuleUnmarshaller.Instance;

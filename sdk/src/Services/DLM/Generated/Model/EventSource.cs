@@ -57,7 +57,7 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The source of the event. Currently only managed AWS CloudWatch Events rules are supported.
+        /// The source of the event. Currently only managed CloudWatch Events rules are supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

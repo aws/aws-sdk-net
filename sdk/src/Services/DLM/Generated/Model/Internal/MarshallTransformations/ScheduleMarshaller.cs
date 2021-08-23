@@ -78,6 +78,17 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetDeprecateRule())
+            {
+                context.Writer.WritePropertyName("DeprecateRule");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DeprecateRuleMarshaller.Instance;
+                marshaller.Marshall(requestObject.DeprecateRule, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFastRestoreRule())
             {
                 context.Writer.WritePropertyName("FastRestoreRule");

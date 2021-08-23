@@ -86,9 +86,9 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property SnapshotOwner. 
         /// <para>
-        /// The IDs of the AWS accounts that can trigger policy by sharing snapshots with your
-        /// account. The policy only runs if one of the specified AWS accounts shares a snapshot
-        /// with your account.
+        /// The IDs of the Amazon Web Services accounts that can trigger policy by sharing snapshots
+        /// with your account. The policy only runs if one of the specified Amazon Web Services
+        /// accounts shares a snapshot with your account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

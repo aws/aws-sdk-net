@@ -57,6 +57,17 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CopyTags);
             }
 
+            if(requestObject.IsSetDeprecateRule())
+            {
+                context.Writer.WritePropertyName("DeprecateRule");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CrossRegionCopyDeprecateRuleMarshaller.Instance;
+                marshaller.Marshall(requestObject.DeprecateRule, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEncrypted())
             {
                 context.Writer.WritePropertyName("Encrypted");

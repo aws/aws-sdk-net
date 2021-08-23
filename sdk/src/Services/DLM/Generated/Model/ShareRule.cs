@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// Specifies a rule for sharing snapshots across AWS accounts.
+    /// Specifies a rule for sharing snapshots across Amazon Web Services accounts.
     /// </summary>
     public partial class ShareRule
     {
@@ -40,7 +40,7 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property TargetAccounts. 
         /// <para>
-        /// The IDs of the AWS accounts with which to share the snapshots.
+        /// The IDs of the Amazon Web Services accounts with which to share the snapshots.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -59,8 +59,8 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property UnshareInterval. 
         /// <para>
-        /// The period after which snapshots that are shared with other AWS accounts are automatically
-        /// unshared.
+        /// The period after which snapshots that are shared with other Amazon Web Services accounts
+        /// are automatically unshared.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

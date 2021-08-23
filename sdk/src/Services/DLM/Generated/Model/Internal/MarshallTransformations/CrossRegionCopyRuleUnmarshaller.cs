@@ -76,6 +76,12 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                     unmarshalledObject.CopyTags = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeprecateRule", targetDepth))
+                {
+                    var unmarshaller = CrossRegionCopyDeprecateRuleUnmarshaller.Instance;
+                    unmarshalledObject.DeprecateRule = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Encrypted", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

@@ -120,7 +120,8 @@ namespace Amazon.DLM.Model
         /// to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify
         /// <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle
         /// of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code> to create an event-based
-        /// policy that performs specific actions when a defined event occurs in your AWS account.
+        /// policy that performs specific actions when a defined event occurs in your Amazon Web
+        /// Services account.
         /// </para>
         ///  
         /// <para>
@@ -143,8 +144,8 @@ namespace Amazon.DLM.Model
         /// Gets and sets the property ResourceLocations. 
         /// <para>
         /// The location of the resources to backup. If the source resources are located in an
-        /// AWS Region, specify <code>CLOUD</code>. If the source resources are located on an
-        /// AWS Outpost in your account, specify <code>OUTPOST</code>. 
+        /// Amazon Web Services Region, specify <code>CLOUD</code>. If the source resources are
+        /// located on an Outpost in your account, specify <code>OUTPOST</code>. 
         /// </para>
         ///  
         /// <para>
