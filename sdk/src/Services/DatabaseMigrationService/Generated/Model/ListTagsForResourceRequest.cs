@@ -37,14 +37,16 @@ namespace Amazon.DatabaseMigrationService.Model
     public partial class ListTagsForResourceRequest : AmazonDatabaseMigrationServiceRequest
     {
         private string _resourceArn;
+        private List<string> _resourceArnList = new List<string>();
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource.
+        /// The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource to
+        /// list tags for. This returns a list of keys (names of tags) created for the resource
+        /// and their associated tag values.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -55,6 +57,27 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetResourceArn()
         {
             return this._resourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceArnList. 
+        /// <para>
+        /// List of ARNs that identify multiple DMS resources that you want to list tags for.
+        /// This returns a list of keys (tag names) and their associated tag values. It also returns
+        /// each tag's associated <code>ResourceArn</code> value, which is the ARN of the resource
+        /// for which each listed tag is created. 
+        /// </para>
+        /// </summary>
+        public List<string> ResourceArnList
+        {
+            get { return this._resourceArnList; }
+            set { this._resourceArnList = value; }
+        }
+
+        // Check to see if ResourceArnList property is set
+        internal bool IsSetResourceArnList()
+        {
+            return this._resourceArnList != null && this._resourceArnList.Count > 0; 
         }
 
     }

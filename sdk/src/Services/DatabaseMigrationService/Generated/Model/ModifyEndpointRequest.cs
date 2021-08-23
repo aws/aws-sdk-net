@@ -68,6 +68,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _password;
         private int? _port;
         private PostgreSQLSettings _postgreSQLSettings;
+        private RedisSettings _redisSettings;
         private RedshiftSettings _redshiftSettings;
         private S3Settings _s3Settings;
         private string _serverName;
@@ -608,6 +609,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetPostgreSQLSettings()
         {
             return this._postgreSQLSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedisSettings. 
+        /// <para>
+        /// Settings in JSON format for the Redis target endpoint.
+        /// </para>
+        /// </summary>
+        public RedisSettings RedisSettings
+        {
+            get { return this._redisSettings; }
+            set { this._redisSettings = value; }
+        }
+
+        // Check to see if RedisSettings property is set
+        internal bool IsSetRedisSettings()
+        {
+            return this._redisSettings != null;
         }
 
         /// <summary>

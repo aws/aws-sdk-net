@@ -216,9 +216,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property NoHexPrefix. 
         /// <para>
-        /// If this attribute is Y, it allows hexadecimal values that don't have the <code>0x</code>
-        /// prefix when migrated to a Kafka target. If this attribute is N, all hexadecimal values
-        /// include this prefix when migrated to Kafka.
+        /// Set this optional parameter to <code>true</code> to avoid adding a '0x' prefix to
+        /// raw data in hexadecimal format. For example, by default, DMS adds a '0x' prefix to
+        /// the LOB column type in hexadecimal format moving from an Oracle source to a Kafka
+        /// target. Use the <code>NoHexPrefix</code> endpoint setting to enable migration of RAW
+        /// data type columns without adding the '0x' prefix.
         /// </para>
         /// </summary>
         public bool NoHexPrefix
@@ -319,8 +321,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SslCaCertificateArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert
-        /// that DMS uses to securely connect to your Kafka target endpoint.
+        ///  The Amazon Resource Name (ARN) for the private certificate authority (CA) cert that
+        /// DMS uses to securely connect to your Kafka target endpoint.
         /// </para>
         /// </summary>
         public string SslCaCertificateArn

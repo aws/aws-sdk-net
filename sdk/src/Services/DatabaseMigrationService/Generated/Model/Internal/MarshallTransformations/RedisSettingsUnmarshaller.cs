@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Tag Object
+    /// Response Unmarshaller for RedisSettings Object
     /// </summary>  
-    public class TagUnmarshaller : IUnmarshaller<Tag, XmlUnmarshallerContext>, IUnmarshaller<Tag, JsonUnmarshallerContext>
+    public class RedisSettingsUnmarshaller : IUnmarshaller<RedisSettings, XmlUnmarshallerContext>, IUnmarshaller<RedisSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Tag IUnmarshaller<Tag, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RedisSettings IUnmarshaller<RedisSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,57 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Tag Unmarshall(JsonUnmarshallerContext context)
+        public RedisSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Tag unmarshalledObject = new Tag();
+            RedisSettings unmarshalledObject = new RedisSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Key", targetDepth))
+                if (context.TestExpression("AuthPassword", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Key = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuthPassword = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ResourceArn", targetDepth))
+                if (context.TestExpression("AuthType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuthType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Value", targetDepth))
+                if (context.TestExpression("AuthUserName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuthUserName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Port", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Port = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ServerName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServerName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SslCaCertificateArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SslCaCertificateArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SslSecurityProtocol", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SslSecurityProtocol = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +112,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         }
 
 
-        private static TagUnmarshaller _instance = new TagUnmarshaller();        
+        private static RedisSettingsUnmarshaller _instance = new RedisSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TagUnmarshaller Instance
+        public static RedisSettingsUnmarshaller Instance
         {
             get
             {

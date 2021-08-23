@@ -47,6 +47,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private bool? _directPathNoLog;
         private bool? _directPathParallelLoad;
         private bool? _enableHomogenousTablespace;
+        private List<int> _extraArchivedLogDestIds = new List<int>();
         private bool? _failTasksOnLobTruncation;
         private int? _numberDatatypeScale;
         private string _oraclePathPrefix;
@@ -373,6 +374,55 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetEnableHomogenousTablespace()
         {
             return this._enableHomogenousTablespace.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExtraArchivedLogDestIds. 
+        /// <para>
+        /// Specifies the IDs of one more destinations for one or more archived redo logs. These
+        /// IDs are the values of the <code>dest_id</code> column in the <code>v$archived_log</code>
+        /// view. Use this setting with the <code>archivedLogDestId</code> extra connection attribute
+        /// in a primary-to-single setup or a primary-to-multiple-standby setup. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is useful in a switchover when you use an Oracle Data Guard database
+        /// as a source. In this case, DMS needs information about what destination to get archive
+        /// redo logs from to read changes. DMS needs this because after the switchover the previous
+        /// primary is a standby instance. For example, in a primary-to-single standby setup you
+        /// might apply the following settings. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2]</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// In a primary-to-multiple-standby setup, you might apply the following settings.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2,3,4]</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to open
+        /// the database, never use <code>RESETLOGS</code> unless it's necessary. For more information
+        /// about <code>RESETLOGS</code>, see <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B">
+        /// RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        public List<int> ExtraArchivedLogDestIds
+        {
+            get { return this._extraArchivedLogDestIds; }
+            set { this._extraArchivedLogDestIds = value; }
+        }
+
+        // Check to see if ExtraArchivedLogDestIds property is set
+        internal bool IsSetExtraArchivedLogDestIds()
+        {
+            return this._extraArchivedLogDestIds != null && this._extraArchivedLogDestIds.Count > 0; 
         }
 
         /// <summary>

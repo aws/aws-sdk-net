@@ -64,6 +64,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AddColumnName", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AddColumnName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BucketFolder", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -76,6 +82,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.BucketName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CannedAclForObjects", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CannedAclForObjects = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CdcInsertsAndUpdates", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -86,6 +98,18 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.CdcInsertsOnly = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CdcMaxBatchInterval", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.CdcMaxBatchInterval = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CdcMinFileSize", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.CdcMinFileSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CdcPath", targetDepth))
@@ -110,6 +134,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CsvNoSupValue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CsvNullValue", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CsvNullValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CsvRowDelimiter", targetDepth))
@@ -178,10 +208,22 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExternalTableDefinition = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IgnoreHeaderRows", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.IgnoreHeaderRows = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IncludeOpForFullLoad", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeOpForFullLoad = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MaxFileSize", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxFileSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ParquetTimestampInMillisecond", targetDepth))
@@ -200,6 +242,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.PreserveTransactions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Rfc4180", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Rfc4180 = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RowGroupLength", targetDepth))

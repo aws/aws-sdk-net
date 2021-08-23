@@ -270,6 +270,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetRedisSettings())
+                {
+                    context.Writer.WritePropertyName("RedisSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RedisSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RedisSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRedshiftSettings())
                 {
                     context.Writer.WritePropertyName("RedshiftSettings");

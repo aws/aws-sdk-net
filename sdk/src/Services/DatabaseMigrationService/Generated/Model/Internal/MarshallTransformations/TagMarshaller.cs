@@ -51,6 +51,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Key);
             }
 
+            if(requestObject.IsSetResourceArn())
+            {
+                context.Writer.WritePropertyName("ResourceArn");
+                context.Writer.Write(requestObject.ResourceArn);
+            }
+
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("Value");

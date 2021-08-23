@@ -33,14 +33,19 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class S3Settings
     {
+        private bool? _addColumnName;
         private string _bucketFolder;
         private string _bucketName;
+        private CannedAclForObjectsValue _cannedAclForObjects;
         private bool? _cdcInsertsAndUpdates;
         private bool? _cdcInsertsOnly;
+        private int? _cdcMaxBatchInterval;
+        private int? _cdcMinFileSize;
         private string _cdcPath;
         private CompressionTypeValue _compressionType;
         private string _csvDelimiter;
         private string _csvNoSupValue;
+        private string _csvNullValue;
         private string _csvRowDelimiter;
         private DataFormatValue _dataFormat;
         private int? _dataPageSize;
@@ -52,15 +57,42 @@ namespace Amazon.DatabaseMigrationService.Model
         private EncodingTypeValue _encodingType;
         private EncryptionModeValue _encryptionMode;
         private string _externalTableDefinition;
+        private int? _ignoreHeaderRows;
         private bool? _includeOpForFullLoad;
+        private int? _maxFileSize;
         private bool? _parquetTimestampInMillisecond;
         private ParquetVersionValue _parquetVersion;
         private bool? _preserveTransactions;
+        private bool? _rfc4180;
         private int? _rowGroupLength;
         private string _serverSideEncryptionKmsKeyId;
         private string _serviceAccessRoleArn;
         private string _timestampColumnName;
         private bool? _useCsvNoSupValue;
+
+        /// <summary>
+        /// Gets and sets the property AddColumnName. 
+        /// <para>
+        /// An optional parameter that, when set to <code>true</code> or <code>y</code>, you can
+        /// use to add column name information to the .csv output file.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <code>false</code>. Valid values are <code>true</code>, <code>false</code>,
+        /// <code>y</code>, and <code>n</code>.
+        /// </para>
+        /// </summary>
+        public bool AddColumnName
+        {
+            get { return this._addColumnName.GetValueOrDefault(); }
+            set { this._addColumnName = value; }
+        }
+
+        // Check to see if AddColumnName property is set
+        internal bool IsSetAddColumnName()
+        {
+            return this._addColumnName.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property BucketFolder. 
@@ -99,6 +131,32 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetBucketName()
         {
             return this._bucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CannedAclForObjects. 
+        /// <para>
+        /// A value that enables DMS to specify a predefined (canned) access control list for
+        /// objects created in an Amazon S3 bucket as .csv or .parquet files. For more information
+        /// about Amazon S3 canned ACLs, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+        /// ACL</a> in the <i>Amazon S3 Developer Guide.</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is NONE. Valid values include NONE, PRIVATE, PUBLIC_READ, PUBLIC_READ_WRITE,
+        /// AUTHENTICATED_READ, AWS_EXEC_READ, BUCKET_OWNER_READ, and BUCKET_OWNER_FULL_CONTROL.
+        /// </para>
+        /// </summary>
+        public CannedAclForObjectsValue CannedAclForObjects
+        {
+            get { return this._cannedAclForObjects; }
+            set { this._cannedAclForObjects = value; }
+        }
+
+        // Check to see if CannedAclForObjects property is set
+        internal bool IsSetCannedAclForObjects()
+        {
+            return this._cannedAclForObjects != null;
         }
 
         /// <summary>
@@ -194,6 +252,63 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetCdcInsertsOnly()
         {
             return this._cdcInsertsOnly.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CdcMaxBatchInterval. 
+        /// <para>
+        /// Maximum length of the interval, defined in seconds, after which to output a file to
+        /// Amazon S3.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <code>CdcMaxBatchInterval</code> and <code>CdcMinFileSize</code> are both specified,
+        /// the file write is triggered by whichever parameter condition is met first within an
+        /// DMS CloudFormation template.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is 60 seconds.
+        /// </para>
+        /// </summary>
+        public int CdcMaxBatchInterval
+        {
+            get { return this._cdcMaxBatchInterval.GetValueOrDefault(); }
+            set { this._cdcMaxBatchInterval = value; }
+        }
+
+        // Check to see if CdcMaxBatchInterval property is set
+        internal bool IsSetCdcMaxBatchInterval()
+        {
+            return this._cdcMaxBatchInterval.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CdcMinFileSize. 
+        /// <para>
+        /// Minimum file size, defined in megabytes, to reach for a file output to Amazon S3.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code> are both specified,
+        /// the file write is triggered by whichever parameter condition is met first within an
+        /// DMS CloudFormation template.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is 32 MB.
+        /// </para>
+        /// </summary>
+        public int CdcMinFileSize
+        {
+            get { return this._cdcMinFileSize.GetValueOrDefault(); }
+            set { this._cdcMinFileSize = value; }
+        }
+
+        // Check to see if CdcMinFileSize property is set
+        internal bool IsSetCdcMinFileSize()
+        {
+            return this._cdcMinFileSize.HasValue; 
         }
 
         /// <summary>
@@ -311,6 +426,33 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetCsvNoSupValue()
         {
             return this._csvNoSupValue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CsvNullValue. 
+        /// <para>
+        /// An optional parameter that specifies how DMS treats null values. While handling the
+        /// null value, you can use this parameter to pass a user-defined string as null when
+        /// writing to the target. For example, when target columns are not nullable, you can
+        /// use this option to differentiate between the empty string value and the null value.
+        /// So, if you set this parameter value to the empty string ("" or ''), DMS treats the
+        /// empty string as the null value instead of <code>NULL</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <code>NULL</code>. Valid values include any valid string.
+        /// </para>
+        /// </summary>
+        public string CsvNullValue
+        {
+            get { return this._csvNullValue; }
+            set { this._csvNullValue = value; }
+        }
+
+        // Check to see if CsvNullValue property is set
+        internal bool IsSetCsvNullValue()
+        {
+            return this._csvNullValue != null;
         }
 
         /// <summary>
@@ -614,6 +756,29 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IgnoreHeaderRows. 
+        /// <para>
+        /// When this value is set to 1, DMS ignores the first row header in a .csv file. A value
+        /// of 1 turns on the feature; a value of 0 turns off the feature.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default is 0.
+        /// </para>
+        /// </summary>
+        public int IgnoreHeaderRows
+        {
+            get { return this._ignoreHeaderRows.GetValueOrDefault(); }
+            set { this._ignoreHeaderRows = value; }
+        }
+
+        // Check to see if IgnoreHeaderRows property is set
+        internal bool IsSetIgnoreHeaderRows()
+        {
+            return this._ignoreHeaderRows.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property IncludeOpForFullLoad. 
         /// <para>
         /// A value that enables a full load to write INSERT operations to the comma-separated
@@ -653,6 +818,29 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetIncludeOpForFullLoad()
         {
             return this._includeOpForFullLoad.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxFileSize. 
+        /// <para>
+        /// A value that specifies the maximum size (in KB) of any .csv file to be created while
+        /// migrating to an S3 target during full load.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is 1,048,576 KB (1 GB). Valid values include 1 to 1,048,576.
+        /// </para>
+        /// </summary>
+        public int MaxFileSize
+        {
+            get { return this._maxFileSize.GetValueOrDefault(); }
+            set { this._maxFileSize = value; }
+        }
+
+        // Check to see if MaxFileSize property is set
+        internal bool IsSetMaxFileSize()
+        {
+            return this._maxFileSize.HasValue; 
         }
 
         /// <summary>
@@ -747,6 +935,43 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetPreserveTransactions()
         {
             return this._preserveTransactions.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Rfc4180. 
+        /// <para>
+        /// For an S3 source, when this value is set to <code>true</code> or <code>y</code>, each
+        /// leading double quotation mark has to be followed by an ending double quotation mark.
+        /// This formatting complies with RFC 4180. When this value is set to <code>false</code>
+        /// or <code>n</code>, string literals are copied to the target as is. In this case, a
+        /// delimiter (row or column) signals the end of the field. Thus, you can't use a delimiter
+        /// as part of the string, because it signals the end of the value.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an S3 target, an optional parameter used to set behavior to comply with RFC 4180
+        /// for data migrated to Amazon S3 using .csv file format only. When this value is set
+        /// to <code>true</code> or <code>y</code> using Amazon S3 as a target, if the data has
+        /// quotation marks or newline characters in it, DMS encloses the entire column with an
+        /// additional pair of double quotation marks ("). Every quotation mark within the data
+        /// is repeated twice.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <code>true</code>. Valid values include <code>true</code>, <code>false</code>,
+        /// <code>y</code>, and <code>n</code>.
+        /// </para>
+        /// </summary>
+        public bool Rfc4180
+        {
+            get { return this._rfc4180.GetValueOrDefault(); }
+            set { this._rfc4180 = value; }
+        }
+
+        // Check to see if Rfc4180 property is set
+        internal bool IsSetRfc4180()
+        {
+            return this._rfc4180.HasValue; 
         }
 
         /// <summary>

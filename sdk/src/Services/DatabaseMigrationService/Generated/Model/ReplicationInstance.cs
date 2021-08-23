@@ -208,8 +208,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// KMS creates the default encryption key for your account. Your account has a different
-        /// default encryption key for each Region.
+        /// KMS creates the default encryption key for your Amazon Web Services account. Your
+        /// Amazon Web Services account has a different default encryption key for each Amazon
+        /// Web Services Region.
         /// </para>
         /// </summary>
         public string KmsKeyId

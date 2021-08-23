@@ -67,6 +67,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _password;
         private int? _port;
         private PostgreSQLSettings _postgreSQLSettings;
+        private RedisSettings _redisSettings;
         private RedshiftSettings _redshiftSettings;
         private string _resourceIdentifier;
         private S3Settings _s3Settings;
@@ -392,8 +393,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// KMS creates the default encryption key for your account. Your account has a different
-        /// default encryption key for each Region.
+        /// KMS creates the default encryption key for your Amazon Web Services account. Your
+        /// Amazon Web Services account has a different default encryption key for each Amazon
+        /// Web Services Region.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -572,6 +574,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetPostgreSQLSettings()
         {
             return this._postgreSQLSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedisSettings. 
+        /// <para>
+        /// Settings in JSON format for the target Redis endpoint.
+        /// </para>
+        /// </summary>
+        public RedisSettings RedisSettings
+        {
+            get { return this._redisSettings; }
+            set { this._redisSettings = value; }
+        }
+
+        // Check to see if RedisSettings property is set
+        internal bool IsSetRedisSettings()
+        {
+            return this._redisSettings != null;
         }
 
         /// <summary>

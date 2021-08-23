@@ -31,7 +31,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the DescribeReplicationTaskAssessmentResults operation.
     /// Returns the task assessment results from the Amazon S3 bucket that DMS creates in
-    /// your account. This action always returns the latest results.
+    /// your Amazon Web Services account. This action always returns the latest results.
     /// 
     ///  
     /// <para>

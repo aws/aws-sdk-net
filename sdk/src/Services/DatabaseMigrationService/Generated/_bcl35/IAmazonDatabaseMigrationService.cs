@@ -1699,7 +1699,7 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Returns the task assessment results from the Amazon S3 bucket that DMS creates in
-        /// your account. This action always returns the latest results.
+        /// your Amazon Web Services account. This action always returns the latest results.
         /// 
         ///  
         /// <para>
@@ -2430,6 +2430,9 @@ namespace Amazon.DatabaseMigrationService
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
+        /// The quota for this resource quota has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/MoveReplicationTask">REST API Reference for MoveReplicationTask Operation</seealso>
         MoveReplicationTaskResponse MoveReplicationTask(MoveReplicationTaskRequest request);

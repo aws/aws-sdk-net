@@ -107,8 +107,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
         /// The Availability Zone where the replication instance will be created. The default
-        /// value is a random, system-chosen Availability Zone in the endpoint's Region, for example:
-        /// <code>us-east-1d</code> 
+        /// value is a random, system-chosen Availability Zone in the endpoint's Amazon Web Services
+        /// Region, for example: <code>us-east-1d</code> 
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -180,8 +180,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// KMS creates the default encryption key for your account. Your account has a different
-        /// default encryption key for each Region.
+        /// KMS creates the default encryption key for your Amazon Web Services account. Your
+        /// Amazon Web Services account has a different default encryption key for each Amazon
+        /// Web Services Region.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -228,8 +229,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: A 30-minute window selected at random from an 8-hour block of time per Region,
-        /// occurring on a random day of the week.
+        /// Default: A 30-minute window selected at random from an 8-hour block of time per Amazon
+        /// Web Services Region, occurring on a random day of the week.
         /// </para>
         ///  
         /// <para>

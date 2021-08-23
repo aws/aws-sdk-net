@@ -148,6 +148,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnableHomogenousTablespace = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ExtraArchivedLogDestIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
+                    unmarshalledObject.ExtraArchivedLogDestIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FailTasksOnLobTruncation", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

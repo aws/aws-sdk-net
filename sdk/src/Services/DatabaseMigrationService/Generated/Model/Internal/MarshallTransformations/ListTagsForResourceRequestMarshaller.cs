@@ -73,6 +73,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ResourceArn);
                 }
 
+                if(publicRequest.IsSetResourceArnList())
+                {
+                    context.Writer.WritePropertyName("ResourceArnList");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestResourceArnListListValue in publicRequest.ResourceArnList)
+                    {
+                            context.Writer.Write(publicRequestResourceArnListListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

@@ -214,6 +214,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.PostgreSQLSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RedisSettings", targetDepth))
+                {
+                    var unmarshaller = RedisSettingsUnmarshaller.Instance;
+                    unmarshalledObject.RedisSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RedshiftSettings", targetDepth))
                 {
                     var unmarshaller = RedshiftSettingsUnmarshaller.Instance;

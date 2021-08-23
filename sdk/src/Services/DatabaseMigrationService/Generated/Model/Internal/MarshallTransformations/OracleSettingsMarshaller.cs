@@ -129,6 +129,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EnableHomogenousTablespace);
             }
 
+            if(requestObject.IsSetExtraArchivedLogDestIds())
+            {
+                context.Writer.WritePropertyName("ExtraArchivedLogDestIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectExtraArchivedLogDestIdsListValue in requestObject.ExtraArchivedLogDestIds)
+                {
+                        context.Writer.Write(requestObjectExtraArchivedLogDestIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetFailTasksOnLobTruncation())
             {
                 context.Writer.WritePropertyName("FailTasksOnLobTruncation");

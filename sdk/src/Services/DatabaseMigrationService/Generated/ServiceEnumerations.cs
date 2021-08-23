@@ -129,6 +129,80 @@ namespace Amazon.DatabaseMigrationService
 
 
     /// <summary>
+    /// Constants used for properties of type CannedAclForObjectsValue.
+    /// </summary>
+    public class CannedAclForObjectsValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AuthenticatedRead for CannedAclForObjectsValue
+        /// </summary>
+        public static readonly CannedAclForObjectsValue AuthenticatedRead = new CannedAclForObjectsValue("authenticated-read");
+        /// <summary>
+        /// Constant AwsExecRead for CannedAclForObjectsValue
+        /// </summary>
+        public static readonly CannedAclForObjectsValue AwsExecRead = new CannedAclForObjectsValue("aws-exec-read");
+        /// <summary>
+        /// Constant BucketOwnerFullControl for CannedAclForObjectsValue
+        /// </summary>
+        public static readonly CannedAclForObjectsValue BucketOwnerFullControl = new CannedAclForObjectsValue("bucket-owner-full-control");
+        /// <summary>
+        /// Constant BucketOwnerRead for CannedAclForObjectsValue
+        /// </summary>
+        public static readonly CannedAclForObjectsValue BucketOwnerRead = new CannedAclForObjectsValue("bucket-owner-read");
+        /// <summary>
+        /// Constant None for CannedAclForObjectsValue
+        /// </summary>
+        public static readonly CannedAclForObjectsValue None = new CannedAclForObjectsValue("none");
+        /// <summary>
+        /// Constant Private for CannedAclForObjectsValue
+        /// </summary>
+        public static readonly CannedAclForObjectsValue Private = new CannedAclForObjectsValue("private");
+        /// <summary>
+        /// Constant PublicRead for CannedAclForObjectsValue
+        /// </summary>
+        public static readonly CannedAclForObjectsValue PublicRead = new CannedAclForObjectsValue("public-read");
+        /// <summary>
+        /// Constant PublicReadWrite for CannedAclForObjectsValue
+        /// </summary>
+        public static readonly CannedAclForObjectsValue PublicReadWrite = new CannedAclForObjectsValue("public-read-write");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CannedAclForObjectsValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CannedAclForObjectsValue FindValue(string value)
+        {
+            return FindValue<CannedAclForObjectsValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CannedAclForObjectsValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CharLengthSemantics.
     /// </summary>
     public class CharLengthSemantics : ConstantClass
@@ -939,6 +1013,60 @@ namespace Amazon.DatabaseMigrationService
 
 
     /// <summary>
+    /// Constants used for properties of type RedisAuthTypeValue.
+    /// </summary>
+    public class RedisAuthTypeValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AuthRole for RedisAuthTypeValue
+        /// </summary>
+        public static readonly RedisAuthTypeValue AuthRole = new RedisAuthTypeValue("auth-role");
+        /// <summary>
+        /// Constant AuthToken for RedisAuthTypeValue
+        /// </summary>
+        public static readonly RedisAuthTypeValue AuthToken = new RedisAuthTypeValue("auth-token");
+        /// <summary>
+        /// Constant None for RedisAuthTypeValue
+        /// </summary>
+        public static readonly RedisAuthTypeValue None = new RedisAuthTypeValue("none");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RedisAuthTypeValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RedisAuthTypeValue FindValue(string value)
+        {
+            return FindValue<RedisAuthTypeValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RedisAuthTypeValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RefreshSchemasStatusTypeValue.
     /// </summary>
     public class RefreshSchemasStatusTypeValue : ConstantClass
@@ -1232,6 +1360,56 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SslSecurityProtocolValue.
+    /// </summary>
+    public class SslSecurityProtocolValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Plaintext for SslSecurityProtocolValue
+        /// </summary>
+        public static readonly SslSecurityProtocolValue Plaintext = new SslSecurityProtocolValue("plaintext");
+        /// <summary>
+        /// Constant SslEncryption for SslSecurityProtocolValue
+        /// </summary>
+        public static readonly SslSecurityProtocolValue SslEncryption = new SslSecurityProtocolValue("ssl-encryption");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SslSecurityProtocolValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SslSecurityProtocolValue FindValue(string value)
+        {
+            return FindValue<SslSecurityProtocolValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SslSecurityProtocolValue(string value)
         {
             return FindValue(value);
         }
