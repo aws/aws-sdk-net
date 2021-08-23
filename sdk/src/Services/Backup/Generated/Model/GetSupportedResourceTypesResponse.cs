@@ -38,7 +38,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceTypes. 
         /// <para>
-        /// Contains a string with the supported AWS resource types:
+        /// Contains a string with the supported Amazon Web Services resource types:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -66,7 +66,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Storage Gateway</code> for AWS Storage Gateway
+        ///  <code>Storage Gateway</code> for Storage Gateway
         /// </para>
         ///  </li> </ul>
         /// </summary>

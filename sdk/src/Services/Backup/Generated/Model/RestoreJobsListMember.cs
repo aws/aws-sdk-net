@@ -224,7 +224,8 @@ namespace Amazon.Backup.Model
         /// <para>
         /// The resource type of the listed restore jobs; for example, an Amazon Elastic Block
         /// Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.
-        /// For VSS Windows backups, the only supported resource type is Amazon EC2.
+        /// For Windows Volume Shadow Copy Service (VSS) backups, the only supported resource
+        /// type is Amazon EC2.
         /// </para>
         /// </summary>
         public string ResourceType
@@ -260,8 +261,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// A status code specifying the state of the job initiated by AWS Backup to restore a
-        /// recovery point.
+        /// A status code specifying the state of the job initiated by Backup to restore a recovery
+        /// point.
         /// </para>
         /// </summary>
         public RestoreJobStatus Status

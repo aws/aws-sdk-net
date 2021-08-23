@@ -30,8 +30,7 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the ListBackupPlans operation.
-    /// Returns a list of existing backup plans for an authenticated account. The list is
-    /// populated only if the advanced option is set for the backup plan. The list contains
+    /// Returns a list of all active backup plans for an authenticated account. The list contains
     /// information such as Amazon Resource Names (ARNs), plan IDs, creation and deletion
     /// dates, version IDs, plan names, and creator request IDs.
     /// </summary>

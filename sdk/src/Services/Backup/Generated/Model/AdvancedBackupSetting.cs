@@ -48,12 +48,12 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// Set to <code>"WindowsVSS":"enabled"</code> to enable the WindowsVSS backup option
-        /// and create a VSS Windows backup. 
+        /// Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup
+        /// option and create a Windows VSS backup. 
         /// </para>
         ///  
         /// <para>
-        /// Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. The WindowsVSS
+        /// Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. The <code>WindowsVSS</code>
         /// option is not enabled by default.
         /// </para>
         ///  
@@ -83,9 +83,9 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// Specifies an object containing resource type and backup options. The only supported
-        /// resource type is Amazon EC2 instances with Windows VSS. For an CloudFormation example,
-        /// see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html">sample
-        /// CloudFormation template to enable Windows VSS</a> in the <i>AWS Backup User Guide</i>.
+        /// resource type is Amazon EC2 instances with Windows Volume Shadow Copy Service (VSS).
+        /// For a CloudFormation example, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html">sample
+        /// CloudFormation template to enable Windows VSS</a> in the <i>Backup User Guide</i>.
         /// </para>
         ///  
         /// <para>

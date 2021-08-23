@@ -7,13 +7,61 @@
     <property>Amazon.Backup.Model.CreateBackupVaultResponse.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.CreateFrameworkRequest.FrameworkDescription</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.CreateFrameworkRequest.FrameworkName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.CreateFrameworkResponse.FrameworkName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.CreateReportPlanRequest.ReportPlanDescription</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.CreateReportPlanRequest.ReportPlanName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.CreateReportPlanResponse.ReportPlanName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.DeleteBackupVaultAccessPolicyRequest.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.DeleteBackupVaultNotificationsRequest.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.DeleteFrameworkRequest.FrameworkName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.DeleteRecoveryPointRequest.BackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.DeleteReportPlanRequest.ReportPlanName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.DescribeBackupJobResponse.AccountId</property>
@@ -26,6 +74,24 @@
     <property>Amazon.Backup.Model.DescribeBackupJobResponse.ResourceType</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.DescribeFrameworkRequest.FrameworkName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.DescribeFrameworkResponse.FrameworkDescription</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.DescribeFrameworkResponse.FrameworkName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.DescribeProtectedResourceResponse.ResourceType</property>
   </property-value-rule>
   <property-value-rule>
@@ -36,6 +102,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.DescribeRecoveryPointResponse.ResourceType</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.DescribeReportPlanRequest.ReportPlanName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.DescribeRestoreJobResponse.AccountId</property>
@@ -115,6 +187,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.ListFrameworksRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.ListProtectedResourcesRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -132,6 +209,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ListRecoveryPointsByResourceRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListReportJobsRequest.ByReportPlanName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListReportJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListReportPlansRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
@@ -162,10 +255,52 @@
     <property>Amazon.Backup.Model.StartCopyJobRequest.SourceBackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.StartReportJobRequest.ReportPlanName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.StartRestoreJobRequest.ResourceType</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.UpdateFrameworkRequest.FrameworkDescription</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.UpdateFrameworkRequest.FrameworkName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.UpdateFrameworkResponse.FrameworkName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.UpdateRecoveryPointLifecycleRequest.BackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.UpdateReportPlanRequest.ReportPlanDescription</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.UpdateReportPlanRequest.ReportPlanName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.UpdateReportPlanResponse.ReportPlanName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.AdvancedBackupSetting.ResourceType</property>
@@ -209,6 +344,18 @@
     <property>Amazon.Backup.Model.CopyJob.ResourceType</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.Framework.FrameworkDescription</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.Framework.FrameworkName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.ProtectedResource.ResourceType</property>
   </property-value-rule>
   <property-value-rule>
@@ -219,6 +366,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.RecoveryPointByResource.BackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ReportPlan.ReportPlanDescription</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ReportPlan.ReportPlanName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.RestoreJobsListMember.AccountId</property>

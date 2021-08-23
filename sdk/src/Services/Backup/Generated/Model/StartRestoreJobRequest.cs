@@ -43,8 +43,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property IamRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role that AWS Backup uses to create the
-        /// target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
+        /// The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target
+        /// recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +63,9 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property IdempotencyToken. 
         /// <para>
-        /// A customer chosen string that can be used to distinguish between calls to <code>StartRestoreJob</code>.
+        /// A customer-chosen string that you can use to distinguish between otherwise identical
+        /// calls to <code>StartRestoreJob</code>. Retrying a successful request with the same
+        /// idempotency token results in a success message with no action taken.
         /// </para>
         /// </summary>
         public string IdempotencyToken
@@ -100,7 +102,7 @@ namespace Amazon.Backup.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed
-        /// up by AWS Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.
+        /// up by Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -110,9 +112,10 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored
-        /// file system. You can specify a key from another AWS account provided that key it is
-        /// properly shared with your account via AWS KMS.
+        ///  <code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to
+        /// encrypt the restored file system. You can specify a key from another Amazon Web Services
+        /// account provided that key it is properly shared with your account via Amazon Web Services
+        /// KMS.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -130,7 +133,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ItemsToRestore </code>: An array of one to five strings where each string is
+        ///  <code>ItemsToRestore</code>: An array of one to five strings where each string is
         /// a file path. Use <code>ItemsToRestore</code> to restore specific files or directories
         /// rather than the entire file system. This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.
         /// </para>
@@ -199,7 +202,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Storage Gateway</code> for AWS Storage Gateway
+        ///  <code>Storage Gateway</code> for Storage Gateway
         /// </para>
         ///  </li> </ul>
         /// </summary>

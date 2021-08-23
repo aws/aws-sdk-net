@@ -75,7 +75,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupJobId. 
         /// <para>
-        /// Uniquely identifies a request to AWS Backup to back up a resource.
+        /// Uniquely identifies a request to Backup to back up a resource.
         /// </para>
         /// </summary>
         public string BackupJobId
@@ -94,13 +94,13 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property BackupOptions. 
         /// <para>
         /// Specifies the backup option for a selected resource. This option is only available
-        /// for Windows VSS backup jobs.
+        /// for Windows Volume Shadow Copy Service (VSS) backup jobs.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup
-        /// option and create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a
-        /// regular backup. If you specify an invalid option, you get an <code>InvalidParameterValueException</code>
+        /// Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code>
+        /// backup option and create a Windows VSS backup. Set to <code>"WindowsVSS":"disabled"</code>
+        /// to create a regular backup. If you specify an invalid option, you get an <code>InvalidParameterValueException</code>
         /// exception.
         /// </para>
         /// </summary>
@@ -175,8 +175,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property BackupVaultName. 
         /// <para>
         /// The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the AWS Region where
-        /// they are created. They consist of lowercase letters, numbers, and hyphens.
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and hyphens.
         /// </para>
         /// </summary>
         public string BackupVaultName
@@ -373,9 +373,10 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of AWS resource to be backed up; for example, an Amazon Elastic Block Store
-        /// (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.
-        /// For VSS Windows backups, the only supported resource type is Amazon EC2.
+        /// The type of Amazon Web Services resource to be backed up; for example, an Amazon Elastic
+        /// Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS)
+        /// database. For Windows Volume Shadow Copy Service (VSS) backups, the only supported
+        /// resource type is Amazon EC2.
         /// </para>
         /// </summary>
         public string ResourceType

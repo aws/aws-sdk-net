@@ -41,7 +41,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property IamRoleArn. 
         /// <para>
-        /// The ARN of the IAM role that AWS Backup uses to authenticate when backing up the target
+        /// The ARN of the IAM role that Backup uses to authenticate when backing up the target
         /// resource; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
         /// </para>
         /// </summary>

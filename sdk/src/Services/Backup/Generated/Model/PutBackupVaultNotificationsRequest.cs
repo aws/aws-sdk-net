@@ -44,6 +44,32 @@ namespace Amazon.Backup.Model
         /// An array of events that indicate the status of jobs to back up resources to the backup
         /// vault.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The following events are supported:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>BACKUP_JOB_STARTED</code>, <code>BACKUP_JOB_COMPLETED</code>,
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>COPY_JOB_STARTED</code>, <code>COPY_JOB_SUCCESSFUL</code>, <code>COPY_JOB_FAILED</code>,
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>RESTORE_JOB_STARTED</code>, <code>RESTORE_JOB_COMPLETED</code>, and <code>RECOVERY_POINT_MODIFIED</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To find failed backup jobs, use <code>BACKUP_JOB_COMPLETED</code> and filter using
+        /// event metadata.
+        /// </para>
+        ///  
+        /// <para>
+        /// Other events in the following list are deprecated.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> BackupVaultEvents
@@ -62,8 +88,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property BackupVaultName. 
         /// <para>
         /// The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the AWS Region where
-        /// they are created. They consist of lowercase letters, numbers, and hyphens.
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and hyphens.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

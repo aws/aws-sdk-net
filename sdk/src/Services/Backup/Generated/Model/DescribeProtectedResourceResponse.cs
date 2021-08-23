@@ -80,8 +80,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of AWS resource saved as a recovery point; for example, an EBS volume or
-        /// an Amazon RDS database.
+        /// The type of Amazon Web Services resource saved as a recovery point; for example, an
+        /// Amazon EBS volume or an Amazon RDS database.
         /// </para>
         /// </summary>
         public string ResourceType

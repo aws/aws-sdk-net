@@ -48,13 +48,13 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property BackupOptions. 
         /// <para>
         /// Specifies the backup option for a selected resource. This option is only available
-        /// for Windows VSS backup jobs.
+        /// for Windows Volume Shadow Copy Service (VSS) backup jobs.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup
-        /// option and create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a
-        /// regular backup. The WindowsVSS option is not enabled by default.
+        /// Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code>
+        /// backup option and create a Windows VSS backup. Set to <code>"WindowsVSS""disabled"</code>
+        /// to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.
         /// </para>
         /// </summary>
         public Dictionary<string, string> BackupOptions
@@ -73,8 +73,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property BackupVaultName. 
         /// <para>
         /// The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the AWS Region where
-        /// they are created. They consist of lowercase letters, numbers, and hyphens.
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and hyphens.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -134,7 +134,9 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property IdempotencyToken. 
         /// <para>
-        /// A customer chosen string that can be used to distinguish between calls to <code>StartBackupJob</code>.
+        /// A customer-chosen string that you can use to distinguish between otherwise identical
+        /// calls to <code>StartBackupJob</code>. Retrying a successful request with the same
+        /// idempotency token results in a success message with no action taken.
         /// </para>
         /// </summary>
         public string IdempotencyToken
@@ -153,7 +155,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property Lifecycle. 
         /// <para>
         /// The lifecycle defines when a protected resource is transitioned to cold storage and
-        /// when it expires. AWS Backup will transition and expire backups automatically according
+        /// when it expires. Backup will transition and expire backups automatically according
         /// to the lifecycle that you define. 
         /// </para>
         ///  

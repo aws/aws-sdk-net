@@ -50,6 +50,7 @@ namespace Amazon.Backup.Model
         private string _resourceType;
         private string _sourceBackupVaultArn;
         private RecoveryPointStatus _status;
+        private string _statusMessage;
 
         /// <summary>
         /// Gets and sets the property BackupSizeInBytes. 
@@ -91,8 +92,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property BackupVaultName. 
         /// <para>
         /// The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the AWS Region where
-        /// they are created. They consist of lowercase letters, numbers, and hyphens.
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and hyphens.
         /// </para>
         /// </summary>
         public string BackupVaultName
@@ -270,8 +271,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property Lifecycle. 
         /// <para>
         /// The lifecycle defines when a protected resource is transitioned to cold storage and
-        /// when it expires. AWS Backup transitions and expires backups automatically according
-        /// to the lifecycle that you define. 
+        /// when it expires. Backup transitions and expires backups automatically according to
+        /// the lifecycle that you define. 
         /// </para>
         ///  
         /// <para>
@@ -338,9 +339,10 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of AWS resource saved as a recovery point; for example, an Amazon Elastic
-        /// Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS)
-        /// database. For VSS Windows backups, the only supported resource type is Amazon EC2.
+        /// The type of Amazon Web Services resource saved as a recovery point; for example, an
+        /// Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
+        /// (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only
+        /// supported resource type is Amazon EC2.
         /// </para>
         /// </summary>
         public string ResourceType
@@ -390,6 +392,24 @@ namespace Amazon.Backup.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// A message explaining the reason of the recovery point deletion failure.
+        /// </para>
+        /// </summary>
+        public string StatusMessage
+        {
+            get { return this._statusMessage; }
+            set { this._statusMessage = value; }
+        }
+
+        // Check to see if StatusMessage property is set
+        internal bool IsSetStatusMessage()
+        {
+            return this._statusMessage != null;
         }
 
     }

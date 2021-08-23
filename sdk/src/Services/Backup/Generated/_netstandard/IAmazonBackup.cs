@@ -31,11 +31,11 @@ namespace Amazon.Backup
     /// <summary>
     /// Interface for accessing Backup
     ///
-    /// AWS Backup 
+    /// Backup 
     /// <para>
-    /// AWS Backup is a unified backup service designed to protect AWS services and their
-    /// associated data. AWS Backup simplifies the creation, migration, restoration, and deletion
-    /// of backups, while also providing reporting and auditing.
+    /// Backup is a unified backup service designed to protect Amazon Web Services services
+    /// and their associated data. Backup simplifies the creation, migration, restoration,
+    /// and deletion of backups, while also providing reporting and auditing.
     /// </para>
     /// </summary>
     public partial interface IAmazonBackup : IAmazonService, IDisposable
@@ -53,13 +53,13 @@ namespace Amazon.Backup
 
         /// <summary>
         /// Creates a backup plan using a backup plan name and backup rules. A backup plan is
-        /// a document that contains information that AWS Backup uses to schedule tasks that create
+        /// a document that contains information that Backup uses to schedule tasks that create
         /// recovery points for resources.
         /// 
         ///  
         /// <para>
-        /// If you call <code>CreateBackupPlan</code> with a plan that already exists, an <code>AlreadyExistsException</code>
-        /// is returned.
+        /// If you call <code>CreateBackupPlan</code> with a plan that already exists, you receive
+        /// an <code>AlreadyExistsException</code> exception.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBackupPlan service method.</param>
@@ -184,8 +184,7 @@ namespace Amazon.Backup
         /// 
         ///  <note> 
         /// <para>
-        /// Sensitive data, such as passport numbers, should not be included the name of a backup
-        /// vault.
+        /// Do not include sensitive data, such as passport numbers, in the name of a backup vault.
         /// </para>
         ///  </note>
         /// </summary>
@@ -214,6 +213,87 @@ namespace Amazon.Backup
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateBackupVault">REST API Reference for CreateBackupVault Operation</seealso>
         Task<CreateBackupVaultResponse> CreateBackupVaultAsync(CreateBackupVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateFramework
+
+
+
+        /// <summary>
+        /// Creates a framework with one or more controls. A framework is a collection of controls
+        /// that you can use to evaluate your backup practices. By using pre-built customizable
+        /// controls to define your policies, you can evaluate whether your backup practices comply
+        /// with your policies. To get insights into the compliance status of your frameworks,
+        /// you can set up automatic daily reports.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFramework service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateFramework service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.AlreadyExistsException">
+        /// The required resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateFramework">REST API Reference for CreateFramework Operation</seealso>
+        Task<CreateFrameworkResponse> CreateFrameworkAsync(CreateFrameworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateReportPlan
+
+
+
+        /// <summary>
+        /// Creates a report plan. A report plan is a document that contains information about
+        /// the contents of the report and where Backup will deliver it.
+        /// 
+        ///  
+        /// <para>
+        /// If you call <code>CreateReportPlan</code> with a plan that already exists, you receive
+        /// an <code>AlreadyExistsException</code> exception.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReportPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateReportPlan service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.AlreadyExistsException">
+        /// The required resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateReportPlan">REST API Reference for CreateReportPlan Operation</seealso>
+        Task<CreateReportPlanResponse> CreateReportPlanAsync(CreateReportPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -384,6 +464,41 @@ namespace Amazon.Backup
 
         #endregion
                 
+        #region  DeleteFramework
+
+
+
+        /// <summary>
+        /// Deletes the framework specified by a framework name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFramework service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteFramework service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.ConflictException">
+        /// Backup can't perform the action that you requested until it finishes performing a
+        /// previous action. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteFramework">REST API Reference for DeleteFramework Operation</seealso>
+        Task<DeleteFrameworkResponse> DeleteFrameworkAsync(DeleteFrameworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteRecoveryPoint
 
 
@@ -412,8 +527,8 @@ namespace Amazon.Backup
         /// is of the wrong type.
         /// </exception>
         /// <exception cref="Amazon.Backup.Model.InvalidResourceStateException">
-        /// AWS Backup is already performing an action on this recovery point. It can't perform
-        /// the action you requested until the first action finishes. Try again later.
+        /// Backup is already performing an action on this recovery point. It can't perform the
+        /// action you requested until the first action finishes. Try again later.
         /// </exception>
         /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
         /// Indicates that a required parameter is missing.
@@ -426,6 +541,41 @@ namespace Amazon.Backup
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteRecoveryPoint">REST API Reference for DeleteRecoveryPoint Operation</seealso>
         Task<DeleteRecoveryPointResponse> DeleteRecoveryPointAsync(DeleteRecoveryPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteReportPlan
+
+
+
+        /// <summary>
+        /// Deletes the report plan specified by a report plan name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReportPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteReportPlan service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.ConflictException">
+        /// Backup can't perform the action that you requested until it finishes performing a
+        /// previous action. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteReportPlan">REST API Reference for DeleteReportPlan Operation</seealso>
+        Task<DeleteReportPlanResponse> DeleteReportPlanAsync(DeleteReportPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -443,8 +593,8 @@ namespace Amazon.Backup
         /// 
         /// <returns>The response from the DescribeBackupJob service method, as returned by Backup.</returns>
         /// <exception cref="Amazon.Backup.Model.DependencyFailureException">
-        /// A dependent AWS service or resource returned an error to the AWS Backup service, and
-        /// the action cannot be completed.
+        /// A dependent Amazon Web Services service or resource returned an error to the Backup
+        /// service, and the action cannot be completed.
         /// </exception>
         /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
         /// Indicates that something is wrong with a parameter's value. For example, the value
@@ -526,13 +676,45 @@ namespace Amazon.Backup
 
         #endregion
                 
+        #region  DescribeFramework
+
+
+
+        /// <summary>
+        /// Returns the framework details for the specified <code>FrameworkName</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFramework service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeFramework service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeFramework">REST API Reference for DescribeFramework Operation</seealso>
+        Task<DescribeFrameworkResponse> DescribeFrameworkAsync(DescribeFrameworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeGlobalSettings
 
 
 
         /// <summary>
-        /// Describes the global settings of the AWS account, including whether it is opted in
-        /// to cross-account backup.
+        /// Describes whether the Amazon Web Services account is opted in to cross-account backup.
+        /// Returns an error if the account is not a member of an Organizations organization.
+        /// Example: <code>describe-global-settings --region us-west-2</code>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalSettings service method.</param>
         /// <param name="cancellationToken">
@@ -558,7 +740,8 @@ namespace Amazon.Backup
 
         /// <summary>
         /// Returns information about a saved resource, including the last time it was backed
-        /// up, its Amazon Resource Name (ARN), and the AWS service type of the saved resource.
+        /// up, its Amazon Resource Name (ARN), and the Amazon Web Services service type of the
+        /// saved resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProtectedResource service method.</param>
         /// <param name="cancellationToken">
@@ -621,11 +804,10 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns the current service opt-in settings for the Region. If service-opt-in is enabled
-        /// for a service, AWS Backup tries to protect that service's resources in this Region,
-        /// when the resource is included in an on-demand backup or scheduled backup plan. Otherwise,
-        /// AWS Backup does not try to protect that service's resources in this Region, AWS Backup
-        /// does not try to protect that service's resources in this Region.
+        /// Returns the current service opt-in settings for the Region. If service opt-in is enabled
+        /// for a service, Backup tries to protect that service's resources in this Region, when
+        /// the resource is included in an on-demand backup or scheduled backup plan. Otherwise,
+        /// Backup does not try to protect that service's resources in this Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRegionSettings service method.</param>
         /// <param name="cancellationToken">
@@ -638,6 +820,65 @@ namespace Amazon.Backup
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRegionSettings">REST API Reference for DescribeRegionSettings Operation</seealso>
         Task<DescribeRegionSettingsResponse> DescribeRegionSettingsAsync(DescribeRegionSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeReportJob
+
+
+
+        /// <summary>
+        /// Returns the details associated with creating a report as specified by its <code>ReportJobId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeReportJob service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeReportJob">REST API Reference for DescribeReportJob Operation</seealso>
+        Task<DescribeReportJobResponse> DescribeReportJobAsync(DescribeReportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeReportPlan
+
+
+
+        /// <summary>
+        /// Returns a list of all report plans for an Amazon Web Services account and Amazon Web
+        /// Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReportPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeReportPlan service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeReportPlan">REST API Reference for DescribeReportPlan Operation</seealso>
+        Task<DescribeReportPlanResponse> DescribeReportPlanAsync(DescribeReportPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -655,8 +896,8 @@ namespace Amazon.Backup
         /// 
         /// <returns>The response from the DescribeRestoreJob service method, as returned by Backup.</returns>
         /// <exception cref="Amazon.Backup.Model.DependencyFailureException">
-        /// A dependent AWS service or resource returned an error to the AWS Backup service, and
-        /// the action cannot be completed.
+        /// A dependent Amazon Web Services service or resource returned an error to the Backup
+        /// service, and the action cannot be completed.
         /// </exception>
         /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
         /// Indicates that something is wrong with a parameter's value. For example, the value
@@ -681,10 +922,10 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Deletes the specified continuous backup recovery point from AWS Backup and releases
-        /// control of that continuous backup to the source service, such as Amazon RDS. The source
-        /// service will continue to create and retain continuous backups using the lifecycle
-        /// that you specified in your original backup plan.
+        /// Deletes the specified continuous backup recovery point from Backup and releases control
+        /// of that continuous backup to the source service, such as Amazon RDS. The source service
+        /// will continue to create and retain continuous backups using the lifecycle that you
+        /// specified in your original backup plan.
         /// 
         ///  
         /// <para>
@@ -706,8 +947,8 @@ namespace Amazon.Backup
         /// is of the wrong type.
         /// </exception>
         /// <exception cref="Amazon.Backup.Model.InvalidResourceStateException">
-        /// AWS Backup is already performing an action on this recovery point. It can't perform
-        /// the action you requested until the first action finishes. Try again later.
+        /// Backup is already performing an action on this recovery point. It can't perform the
+        /// action you requested until the first action finishes. Try again later.
         /// </exception>
         /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
         /// Indicates that a required parameter is missing.
@@ -983,7 +1224,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns the AWS resource types supported by AWS Backup.
+        /// Returns the Amazon Web Services resource types supported by Backup.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSupportedResourceTypes service method.</param>
         /// <param name="cancellationToken">
@@ -1031,8 +1272,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns a list of existing backup plans for an authenticated account. The list is
-        /// populated only if the advanced option is set for the backup plan. The list contains
+        /// Returns a list of all active backup plans for an authenticated account. The list contains
         /// information such as Amazon Resource Names (ARNs), plan IDs, creation and deletion
         /// dates, version IDs, plan names, and creator request IDs.
         /// </summary>
@@ -1212,14 +1452,40 @@ namespace Amazon.Backup
 
         #endregion
                 
+        #region  ListFrameworks
+
+
+
+        /// <summary>
+        /// Returns a list of all frameworks for an Amazon Web Services account and Amazon Web
+        /// Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFrameworks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFrameworks service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListFrameworks">REST API Reference for ListFrameworks Operation</seealso>
+        Task<ListFrameworksResponse> ListFrameworksAsync(ListFrameworksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListProtectedResources
 
 
 
         /// <summary>
-        /// Returns an array of resources successfully backed up by AWS Backup, including the
-        /// time the resource was saved, an Amazon Resource Name (ARN) of the resource, and a
-        /// resource type.
+        /// Returns an array of resources successfully backed up by Backup, including the time
+        /// the resource was saved, an Amazon Resource Name (ARN) of the resource, and a resource
+        /// type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProtectedResources service method.</param>
         /// <param name="cancellationToken">
@@ -1275,8 +1541,14 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns detailed information about recovery points of the type specified by a resource
-        /// Amazon Resource Name (ARN).
+        /// Returns detailed information about all the recovery points of the type specified by
+        /// a resource Amazon Resource Name (ARN).
+        /// 
+        ///  <note> 
+        /// <para>
+        /// For Amazon EFS and Amazon EC2, this action only lists recovery points created by Backup.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRecoveryPointsByResource service method.</param>
         /// <param name="cancellationToken">
@@ -1302,13 +1574,64 @@ namespace Amazon.Backup
 
         #endregion
                 
+        #region  ListReportJobs
+
+
+
+        /// <summary>
+        /// Returns details about your report jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReportJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListReportJobs service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListReportJobs">REST API Reference for ListReportJobs Operation</seealso>
+        Task<ListReportJobsResponse> ListReportJobsAsync(ListReportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListReportPlans
+
+
+
+        /// <summary>
+        /// Returns a list of your report plans. For detailed information about a single report
+        /// plan, use <code>DescribeReportPlan</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReportPlans service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListReportPlans service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListReportPlans">REST API Reference for ListReportPlans Operation</seealso>
+        Task<ListReportPlansResponse> ListReportPlansAsync(ListReportPlansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListRestoreJobs
 
 
 
         /// <summary>
-        /// Returns a list of jobs that AWS Backup initiated to restore a saved resource, including
-        /// metadata about the recovery process.
+        /// Returns a list of jobs that Backup initiated to restore a saved resource, including
+        /// details about the recovery process.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRestoreJobs service method.</param>
         /// <param name="cancellationToken">
@@ -1518,6 +1841,37 @@ namespace Amazon.Backup
 
         #endregion
                 
+        #region  StartReportJob
+
+
+
+        /// <summary>
+        /// Starts an on-demand report job for the specified report plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartReportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartReportJob service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartReportJob">REST API Reference for StartReportJob Operation</seealso>
+        Task<StartReportJobResponse> StartReportJobAsync(StartReportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  StartRestoreJob
 
 
@@ -1684,13 +2038,54 @@ namespace Amazon.Backup
 
         #endregion
                 
+        #region  UpdateFramework
+
+
+
+        /// <summary>
+        /// Updates an existing framework identified by its <code>FrameworkName</code> with the
+        /// input document in JSON format.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFramework service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateFramework service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.ConflictException">
+        /// Backup can't perform the action that you requested until it finishes performing a
+        /// previous action. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateFramework">REST API Reference for UpdateFramework Operation</seealso>
+        Task<UpdateFrameworkResponse> UpdateFrameworkAsync(UpdateFrameworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateGlobalSettings
 
 
 
         /// <summary>
-        /// Updates the current global settings for the AWS account. Use the <code>DescribeGlobalSettings</code>
-        /// API to determine the current settings.
+        /// Updates whether the Amazon Web Services account is opted in to cross-account backup.
+        /// Returns an error if the account is not an Organizations management account. Use the
+        /// <code>DescribeGlobalSettings</code> API to determine the current settings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalSettings service method.</param>
         /// <param name="cancellationToken">
@@ -1727,8 +2122,8 @@ namespace Amazon.Backup
         ///  
         /// <para>
         /// The lifecycle defines when a protected resource is transitioned to cold storage and
-        /// when it expires. AWS Backup transitions and expires backups automatically according
-        /// to the lifecycle that you define.
+        /// when it expires. Backup transitions and expires backups automatically according to
+        /// the lifecycle that you define.
         /// </para>
         ///  
         /// <para>
@@ -1776,10 +2171,10 @@ namespace Amazon.Backup
 
         /// <summary>
         /// Updates the current service opt-in settings for the Region. If service-opt-in is enabled
-        /// for a service, AWS Backup tries to protect that service's resources in this Region,
-        /// when the resource is included in an on-demand backup or scheduled backup plan. Otherwise,
-        /// AWS Backup does not try to protect that service's resources in this Region. Use the
-        /// <code>DescribeRegionSettings</code> API to determine the resource types that are supported.
+        /// for a service, Backup tries to protect that service's resources in this Region, when
+        /// the resource is included in an on-demand backup or scheduled backup plan. Otherwise,
+        /// Backup does not try to protect that service's resources in this Region. Use the <code>DescribeRegionSettings</code>
+        /// API to determine the resource types that are supported.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRegionSettings service method.</param>
         /// <param name="cancellationToken">
@@ -1799,6 +2194,42 @@ namespace Amazon.Backup
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRegionSettings">REST API Reference for UpdateRegionSettings Operation</seealso>
         Task<UpdateRegionSettingsResponse> UpdateRegionSettingsAsync(UpdateRegionSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateReportPlan
+
+
+
+        /// <summary>
+        /// Updates an existing report plan identified by its <code>ReportPlanName</code> with
+        /// the input document in JSON format.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateReportPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateReportPlan service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.ConflictException">
+        /// Backup can't perform the action that you requested until it finishes performing a
+        /// previous action. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateReportPlan">REST API Reference for UpdateReportPlan Operation</seealso>
+        Task<UpdateReportPlanResponse> UpdateReportPlanAsync(UpdateReportPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

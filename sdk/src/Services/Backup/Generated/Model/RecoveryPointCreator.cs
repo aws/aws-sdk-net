@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Backup.Model
 {
     /// <summary>
-    /// Contains information about the backup plan and rule that AWS Backup used to initiate
-    /// the recovery point backup.
+    /// Contains information about the backup plan and rule that Backup used to initiate the
+    /// recovery point backup.
     /// </summary>
     public partial class RecoveryPointCreator
     {

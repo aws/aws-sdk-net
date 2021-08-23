@@ -61,6 +61,11 @@ namespace Amazon.Backup.Model
         IListCopyJobsPaginator ListCopyJobs(ListCopyJobsRequest request);
 
         /// <summary>
+        /// Paginator for ListFrameworks operation
+        ///</summary>
+        IListFrameworksPaginator ListFrameworks(ListFrameworksRequest request);
+
+        /// <summary>
         /// Paginator for ListProtectedResources operation
         ///</summary>
         IListProtectedResourcesPaginator ListProtectedResources(ListProtectedResourcesRequest request);
@@ -74,6 +79,16 @@ namespace Amazon.Backup.Model
         /// Paginator for ListRecoveryPointsByResource operation
         ///</summary>
         IListRecoveryPointsByResourcePaginator ListRecoveryPointsByResource(ListRecoveryPointsByResourceRequest request);
+
+        /// <summary>
+        /// Paginator for ListReportJobs operation
+        ///</summary>
+        IListReportJobsPaginator ListReportJobs(ListReportJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListReportPlans operation
+        ///</summary>
+        IListReportPlansPaginator ListReportPlans(ListReportPlansRequest request);
 
         /// <summary>
         /// Paginator for ListRestoreJobs operation

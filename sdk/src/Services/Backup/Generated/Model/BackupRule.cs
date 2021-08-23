@@ -48,7 +48,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CompletionWindowMinutes. 
         /// <para>
         /// A value in minutes after a backup job is successfully started before it must be completed
-        /// or it will be canceled by AWS Backup. This value is optional.
+        /// or it will be canceled by Backup. This value is optional.
         /// </para>
         /// </summary>
         public long CompletionWindowMinutes
@@ -85,9 +85,9 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property EnableContinuousBackup. 
         /// <para>
-        /// Specifies whether AWS Backup creates continuous backups. True causes AWS Backup to
-        /// create continuous backups capable of point-in-time restore (PITR). False (or not specified)
-        /// causes AWS Backup to create snapshot backups.
+        /// Specifies whether Backup creates continuous backups. True causes Backup to create
+        /// continuous backups capable of point-in-time restore (PITR). False (or not specified)
+        /// causes Backup to create snapshot backups.
         /// </para>
         /// </summary>
         public bool EnableContinuousBackup
@@ -106,8 +106,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property Lifecycle. 
         /// <para>
         /// The lifecycle defines when a protected resource is transitioned to cold storage and
-        /// when it expires. AWS Backup transitions and expires backups automatically according
-        /// to the lifecycle that you define. 
+        /// when it expires. Backup transitions and expires backups automatically according to
+        /// the lifecycle that you define. 
         /// </para>
         ///  
         /// <para>
@@ -192,7 +192,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
-        /// A CRON expression specifying when AWS Backup initiates a backup job. For more information
+        /// A cron expression in UTC specifying when Backup initiates a backup job. For more information
         /// about cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
         /// Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Prior
         /// to specifying a value for this parameter, we recommend testing your cron expression
@@ -234,8 +234,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property TargetBackupVaultName. 
         /// <para>
         /// The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the AWS Region where
-        /// they are created. They consist of lowercase letters, numbers, and hyphens.
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and hyphens.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

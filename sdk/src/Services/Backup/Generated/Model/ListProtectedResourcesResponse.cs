@@ -60,9 +60,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Results. 
         /// <para>
-        /// An array of resources successfully backed up by AWS Backup including the time the
-        /// resource was saved, an Amazon Resource Name (ARN) of the resource, and a resource
-        /// type.
+        /// An array of resources successfully backed up by Backup including the time the resource
+        /// was saved, an Amazon Resource Name (ARN) of the resource, and a resource type.
         /// </para>
         /// </summary>
         public List<ProtectedResource> Results

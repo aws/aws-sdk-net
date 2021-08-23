@@ -259,7 +259,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Status code specifying the state of the job that is initiated by AWS Backup to restore
+        /// Status code specifying the state of the job that is initiated by Backup to restore
         /// a recovery point.
         /// </para>
         /// </summary>

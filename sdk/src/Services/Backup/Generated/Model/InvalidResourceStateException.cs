@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Backup.Model
 {
     /// <summary>
-    /// AWS Backup is already performing an action on this recovery point. It can't perform
-    /// the action you requested until the first action finishes. Try again later.
+    /// Backup is already performing an action on this recovery point. It can't perform the
+    /// action you requested until the first action finishes. Try again later.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

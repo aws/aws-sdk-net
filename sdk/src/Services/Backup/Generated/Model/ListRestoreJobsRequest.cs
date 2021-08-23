@@ -30,8 +30,8 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRestoreJobs operation.
-    /// Returns a list of jobs that AWS Backup initiated to restore a saved resource, including
-    /// metadata about the recovery process.
+    /// Returns a list of jobs that Backup initiated to restore a saved resource, including
+    /// details about the recovery process.
     /// </summary>
     public partial class ListRestoreJobsRequest : AmazonBackupRequest
     {

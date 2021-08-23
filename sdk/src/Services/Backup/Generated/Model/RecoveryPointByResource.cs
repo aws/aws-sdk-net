@@ -39,6 +39,7 @@ namespace Amazon.Backup.Model
         private string _encryptionKeyArn;
         private string _recoveryPointArn;
         private RecoveryPointStatus _status;
+        private string _statusMessage;
 
         /// <summary>
         /// Gets and sets the property BackupSizeBytes. 
@@ -62,8 +63,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property BackupVaultName. 
         /// <para>
         /// The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the AWS Region where
-        /// they are created. They consist of lowercase letters, numbers, and hyphens.
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and hyphens.
         /// </para>
         /// </summary>
         public string BackupVaultName
@@ -153,6 +154,24 @@ namespace Amazon.Backup.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// A message explaining the reason of the recovery point deletion failure.
+        /// </para>
+        /// </summary>
+        public string StatusMessage
+        {
+            get { return this._statusMessage; }
+            set { this._statusMessage = value; }
+        }
+
+        // Check to see if StatusMessage property is set
+        internal bool IsSetStatusMessage()
+        {
+            return this._statusMessage != null;
         }
 
     }

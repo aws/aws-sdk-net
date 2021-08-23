@@ -30,11 +30,10 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeRegionSettings operation.
-    /// Returns the current service opt-in settings for the Region. If service-opt-in is enabled
-    /// for a service, AWS Backup tries to protect that service's resources in this Region,
-    /// when the resource is included in an on-demand backup or scheduled backup plan. Otherwise,
-    /// AWS Backup does not try to protect that service's resources in this Region, AWS Backup
-    /// does not try to protect that service's resources in this Region.
+    /// Returns the current service opt-in settings for the Region. If service opt-in is enabled
+    /// for a service, Backup tries to protect that service's resources in this Region, when
+    /// the resource is included in an on-demand backup or scheduled backup plan. Otherwise,
+    /// Backup does not try to protect that service's resources in this Region.
     /// </summary>
     public partial class DescribeRegionSettingsRequest : AmazonBackupRequest
     {

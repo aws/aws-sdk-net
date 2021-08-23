@@ -218,8 +218,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The AWS resource to be copied; for example, an Amazon Elastic Block Store (Amazon
-        /// EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.
+        /// The Amazon Web Services resource to be copied; for example, an Amazon Elastic Block
+        /// Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.
         /// </para>
         /// </summary>
         public string ResourceArn
@@ -237,8 +237,9 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of AWS resource to be copied; for example, an Amazon Elastic Block Store
-        /// (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.
+        /// The type of Amazon Web Services resource to be copied; for example, an Amazon Elastic
+        /// Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS)
+        /// database.
         /// </para>
         /// </summary>
         public string ResourceType

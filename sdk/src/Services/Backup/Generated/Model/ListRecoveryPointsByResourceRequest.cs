@@ -30,8 +30,14 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRecoveryPointsByResource operation.
-    /// Returns detailed information about recovery points of the type specified by a resource
-    /// Amazon Resource Name (ARN).
+    /// Returns detailed information about all the recovery points of the type specified by
+    /// a resource Amazon Resource Name (ARN).
+    /// 
+    ///  <note> 
+    /// <para>
+    /// For Amazon EFS and Amazon EC2, this action only lists recovery points created by Backup.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListRecoveryPointsByResourceRequest : AmazonBackupRequest
     {
@@ -44,6 +50,11 @@ namespace Amazon.Backup.Model
         /// <para>
         /// The maximum number of items to be returned.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon RDS requires a value of at least 20.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
         public int MaxResults

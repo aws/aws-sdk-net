@@ -75,7 +75,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupJobId. 
         /// <para>
-        /// Uniquely identifies a request to AWS Backup to back up a resource.
+        /// Uniquely identifies a request to Backup to back up a resource.
         /// </para>
         /// </summary>
         public string BackupJobId
@@ -130,8 +130,9 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property BackupType. 
         /// <para>
         /// Represents the actual backup type selected for a backup job. For example, if a successful
-        /// WindowsVSS backup was taken, <code>BackupType</code> returns "WindowsVSS". If <code>BackupType</code>
-        /// is empty, then the backup type that was is a regular backup.
+        /// Windows Volume Shadow Copy Service (VSS) backup was taken, <code>BackupType</code>
+        /// returns <code>"WindowsVSS"</code>. If <code>BackupType</code> is empty, then the backup
+        /// type was a regular backup.
         /// </para>
         /// </summary>
         public string BackupType
@@ -169,8 +170,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property BackupVaultName. 
         /// <para>
         /// The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the AWS Region where
-        /// they are created. They consist of lowercase letters, numbers, and hyphens.
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and hyphens.
         /// </para>
         /// </summary>
         public string BackupVaultName
@@ -365,8 +366,9 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of AWS resource to be backed up; for example, an Amazon Elastic Block Store
-        /// (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.
+        /// The type of Amazon Web Services resource to be backed up; for example, an Amazon Elastic
+        /// Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS)
+        /// database.
         /// </para>
         /// </summary>
         public string ResourceType

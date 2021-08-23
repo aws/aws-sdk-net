@@ -63,6 +63,11 @@ namespace Amazon.Backup.Model
         /// An array of objects that contain detailed information about recovery points of the
         /// specified resource type.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Only Amazon EFS and Amazon EC2 recovery points return BackupVaultName.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<RecoveryPointByResource> RecoveryPoints
         {

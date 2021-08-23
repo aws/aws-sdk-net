@@ -30,7 +30,7 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSupportedResourceTypes operation.
-    /// Returns the AWS resource types supported by AWS Backup.
+    /// Returns the Amazon Web Services resource types supported by Backup.
     /// </summary>
     public partial class GetSupportedResourceTypesRequest : AmazonBackupRequest
     {

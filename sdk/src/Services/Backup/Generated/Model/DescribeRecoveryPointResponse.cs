@@ -50,6 +50,7 @@ namespace Amazon.Backup.Model
         private string _resourceType;
         private string _sourceBackupVaultArn;
         private RecoveryPointStatus _status;
+        private string _statusMessage;
         private StorageClass _storageClass;
 
         /// <summary>
@@ -270,8 +271,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property Lifecycle. 
         /// <para>
         /// The lifecycle defines when a protected resource is transitioned to cold storage and
-        /// when it expires. AWS Backup transitions and expires backups automatically according
-        /// to the lifecycle that you define. 
+        /// when it expires. Backup transitions and expires backups automatically according to
+        /// the lifecycle that you define. 
         /// </para>
         ///  
         /// <para>
@@ -337,9 +338,9 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of AWS resource to save as a recovery point; for example, an Amazon Elastic
-        /// Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS)
-        /// database.
+        /// The type of Amazon Web Services resource to save as a recovery point; for example,
+        /// an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database
+        /// Service (Amazon RDS) database.
         /// </para>
         /// </summary>
         public string ResourceType
@@ -359,8 +360,8 @@ namespace Amazon.Backup.Model
         /// <para>
         /// An Amazon Resource Name (ARN) that uniquely identifies the source vault where the
         /// resource was originally backed up in; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>.
-        /// If the recovery is restored to the same AWS account or Region, this value will be
-        /// <code>null</code>.
+        /// If the recovery is restored to the same Amazon Web Services account or Region, this
+        /// value will be <code>null</code>.
         /// </para>
         /// </summary>
         public string SourceBackupVaultArn
@@ -380,12 +381,22 @@ namespace Amazon.Backup.Model
         /// <para>
         /// A status code specifying the state of the recovery point.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// A partial status indicates that the recovery point was not successfully re-created
-        /// and must be retried.
+        ///  <code>PARTIAL</code> status indicates Backup could not create the recovery point
+        /// before the backup window closed. To increase your backup plan window using the API,
+        /// see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html">UpdateBackupPlan</a>.
+        /// You can also increase your backup plan window using the Console by choosing and editing
+        /// your backup plan.
         /// </para>
-        ///  </note>
+        ///  
+        /// <para>
+        ///  <code>EXPIRED</code> status indicates that the recovery point has exceeded its retention
+        /// period, but Backup lacks permission or is otherwise unable to delete it. To manually
+        /// delete these recovery points, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups">
+        /// Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of
+        /// <i>Getting started</i>.
+        /// </para>
         /// </summary>
         public RecoveryPointStatus Status
         {
@@ -397,6 +408,24 @@ namespace Amazon.Backup.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// A status message explaining the reason for the recovery point deletion failure.
+        /// </para>
+        /// </summary>
+        public string StatusMessage
+        {
+            get { return this._statusMessage; }
+            set { this._statusMessage = value; }
+        }
+
+        // Check to see if StatusMessage property is set
+        internal bool IsSetStatusMessage()
+        {
+            return this._statusMessage != null;
         }
 
         /// <summary>

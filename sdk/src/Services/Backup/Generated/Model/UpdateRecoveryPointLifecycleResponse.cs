@@ -79,8 +79,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property Lifecycle. 
         /// <para>
         /// The lifecycle defines when a protected resource is transitioned to cold storage and
-        /// when it expires. AWS Backup transitions and expires backups automatically according
-        /// to the lifecycle that you define. 
+        /// when it expires. Backup transitions and expires backups automatically according to
+        /// the lifecycle that you define. 
         /// </para>
         ///  
         /// <para>

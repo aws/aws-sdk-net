@@ -153,6 +153,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     response.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StatusMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StatusMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StorageClass", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

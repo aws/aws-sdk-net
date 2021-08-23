@@ -169,7 +169,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Storage Gateway</code> for AWS Storage Gateway
+        ///  <code>Storage Gateway</code> for Storage Gateway
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -80,9 +80,10 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of AWS resource; for example, an Amazon Elastic Block Store (Amazon EBS)
-        /// volume or an Amazon Relational Database Service (Amazon RDS) database. For VSS Windows
-        /// backups, the only supported resource type is Amazon EC2.
+        /// The type of Amazon Web Services resource; for example, an Amazon Elastic Block Store
+        /// (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.
+        /// For Windows Volume Shadow Copy Service (VSS) backups, the only supported resource
+        /// type is Amazon EC2.
         /// </para>
         /// </summary>
         public string ResourceType
