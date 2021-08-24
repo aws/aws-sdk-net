@@ -1,3 +1,15 @@
+### 3.7.103.0 (2021-08-24 18:18 UTC)
+* IotData (3.7.1.0)
+	* Updated Publish with support for new Retain flag and added two new API operations: GetRetainedMessage, ListRetainedMessages.
+* MediaConvert (3.7.6.0)
+	* AWS Elemental MediaConvert SDK has added MBAFF encoding support for AVC video and the ability to pass encryption context from the job settings to S3.
+* Polly (3.7.2.0)
+	* Amazon Polly adds new New Zealand English voice - Aria. Aria is available as Neural voice only.
+* SimpleSystemsManagement (3.7.5.0)
+	* Updated Parameter Store property for logging improvements.
+* TranscribeService (3.7.5.0)
+	* This release adds support for feature tagging with Amazon Transcribe batch jobs.
+
 ### 3.7.102.0 (2021-08-23 18:19 UTC)
 * APIGateway (3.7.2.0)
 	* Adding some of the pending releases (1) Adding WAF Filter to GatewayResponseType enum (2) Ensuring consistent error model for all operations (3) Add missing BRE to GetVpcLink operation
