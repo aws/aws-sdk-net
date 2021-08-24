@@ -111,9 +111,9 @@ namespace Amazon.Polly.Model
         /// </para>
         ///  
         /// <para>
-        /// If a bilingual voice is used and no language code is specified, Amazon Polly will
-        /// use the default language of the bilingual voice. The default language for any voice
-        /// is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a>
+        /// If a bilingual voice is used and no language code is specified, Amazon Polly uses
+        /// the default language of the bilingual voice. The default language for any voice is
+        /// the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a>
         /// operation for the <code>LanguageCode</code> parameter. For example, if no language
         /// code is specified, Aditi will use Indian English rather than Hindi.
         /// </para>
