@@ -47,6 +47,7 @@ namespace Amazon.TranscribeService.Model
         private string _outputEncryptionKMSKeyId;
         private string _outputKey;
         private Settings _settings;
+        private List<Tag> _tags = new List<Tag>();
         private string _transcriptionJobName;
 
         /// <summary>
@@ -115,7 +116,7 @@ namespace Amazon.TranscribeService.Model
         ///  
         /// <para>
         /// To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must
-        /// be encoded at a sample rate of 16000 Hz or higher.
+        /// be encoded at a sample rate of 16,000 Hz or higher.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -140,7 +141,7 @@ namespace Amazon.TranscribeService.Model
         ///  
         /// <para>
         /// To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must
-        /// be encoded at a sample rate of 16000 Hz or higher.
+        /// be encoded at a sample rate of 16,000 Hz or higher.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -317,7 +318,7 @@ namespace Amazon.TranscribeService.Model
         ///  </li> </ul> 
         /// <para>
         /// If you don't specify an encryption key, the output of the transcription job is encrypted
-        /// with the default Amazon S3 key (SSE-S3). 
+        /// with the default Amazon S3 key (SSE-S3).
         /// </para>
         ///  
         /// <para>
@@ -394,6 +395,25 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetSettings()
         {
             return this._settings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Add tags to an Amazon Transcribe transcription job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

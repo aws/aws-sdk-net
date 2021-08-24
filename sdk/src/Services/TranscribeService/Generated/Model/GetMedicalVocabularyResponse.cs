@@ -140,7 +140,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property VocabularyState. 
         /// <para>
         /// The processing state of the vocabulary. If the <code>VocabularyState</code> is <code>READY</code>
-        /// then you can use it in the <code>StartMedicalTranscriptionJob</code> operation. 
+        /// then you can use it in the <code>StartMedicalTranscriptionJob</code> operation.
         /// </para>
         /// </summary>
         public VocabularyState VocabularyState

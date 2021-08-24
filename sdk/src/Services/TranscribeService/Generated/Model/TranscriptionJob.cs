@@ -49,6 +49,7 @@ namespace Amazon.TranscribeService.Model
         private ModelSettings _modelSettings;
         private Settings _settings;
         private DateTime? _startTime;
+        private List<Tag> _tags = new List<Tag>();
         private Transcript _transcript;
         private string _transcriptionJobName;
         private TranscriptionJobStatus _transcriptionJobStatus;
@@ -134,7 +135,7 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         ///  <code>Invalid sample rate for audio file</code> - The sample rate specified in the
         /// <code>MediaSampleRateHertz</code> of the request isn't valid. The sample rate must
-        /// be between 8000 and 48000 Hertz.
+        /// be between 8,000 and 48,000 Hertz.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -361,7 +362,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// A timestamp that shows with the job was started processing.
+        /// A timestamp that shows when the job started processing.
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -374,6 +375,25 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetStartTime()
         {
             return this._startTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A key:value pair assigned to a given transcription job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

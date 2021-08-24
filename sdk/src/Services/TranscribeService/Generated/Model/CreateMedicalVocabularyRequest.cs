@@ -30,12 +30,13 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateMedicalVocabulary operation.
-    /// Creates a new custom vocabulary that you can use to change how Amazon Transcribe Medical
+    /// Creates a new custom vocabulary that you can use to modify how Amazon Transcribe Medical
     /// transcribes your audio file.
     /// </summary>
     public partial class CreateMedicalVocabularyRequest : AmazonTranscribeServiceRequest
     {
         private LanguageCode _languageCode;
+        private List<Tag> _tags = new List<Tag>();
         private string _vocabularyFileUri;
         private string _vocabularyName;
 
@@ -59,6 +60,26 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetLanguageCode()
         {
             return this._languageCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Adds one or more tags, each in the form of a key:value pair, to a new medical vocabulary
+        /// at the time you create this new vocabulary.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

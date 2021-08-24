@@ -45,6 +45,7 @@ namespace Amazon.TranscribeService.Model
         private MedicalTranscriptionSetting _settings;
         private Specialty _specialty;
         private DateTime? _startTime;
+        private List<Tag> _tags = new List<Tag>();
         private MedicalTranscript _transcript;
         private TranscriptionJobStatus _transcriptionJobStatus;
         private Type _type;
@@ -132,7 +133,7 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         ///  <code>Invalid sample rate for audio file</code>- The sample rate specified in the
         /// <code>MediaSampleRateHertz</code> of the request isn't valid. The sample rate must
-        /// be between 8000 and 48000 Hertz.
+        /// be between 8,000 and 48,000 Hertz.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -290,14 +291,9 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property Specialty. 
         /// <para>
         /// The medical specialty of any clinicians providing a dictation or having a conversation.
-        /// <code>PRIMARYCARE</code> is the only available setting for this object. This specialty
-        /// enables you to generate transcriptions for the following medical fields:
+        /// Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-medical-conversation.html">Transcribing
+        /// a medical conversation</a>for a list of supported specialties.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Family Medicine
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public Specialty Specialty
         {
@@ -327,6 +323,25 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetStartTime()
         {
             return this._startTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A key:value pair assigned to a given medical transcription job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

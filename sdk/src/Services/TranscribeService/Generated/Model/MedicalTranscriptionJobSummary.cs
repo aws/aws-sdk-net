@@ -160,12 +160,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property OutputLocationType. 
         /// <para>
-        /// Indicates the location of the transcription job's output.
-        /// </para>
-        ///  
-        /// <para>
-        /// The <code>CUSTOMER_BUCKET</code> is the S3 location provided in the <code>OutputBucketName</code>
-        /// field when the 
+        /// Indicates the location of the transcription job's output. This field must be the path
+        /// of an S3 bucket; if you don't already have an S3 bucket, one is created based on the
+        /// path you add.
         /// </para>
         /// </summary>
         public OutputLocationType OutputLocationType
@@ -183,8 +180,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Specialty. 
         /// <para>
-        /// The medical specialty of the transcription job. <code>Primary care</code> is the only
-        /// valid value.
+        /// The medical specialty of the transcription job. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-medical-conversation.html">Transcribing
+        /// a medical conversation</a>for a list of supported specialties.
         /// </para>
         /// </summary>
         public Specialty Specialty

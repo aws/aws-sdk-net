@@ -51,9 +51,9 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property CallAnalyticsJobName. 
         /// <para>
         /// The name of the call analytics job. You can't use the string "." or ".." by themselves
-        /// as the job name. The name must also be unique within an AWS account. If you try to
-        /// create a call analytics job with the same name as a previous call analytics job, you
-        /// get a <code>ConflictException</code> error.
+        /// as the job name. The name must also be unique within an Amazon Web Services account.
+        /// If you try to create a call analytics job with the same name as a previous call analytics
+        /// job, you get a <code>ConflictException</code> error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
@@ -132,13 +132,14 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property OutputEncryptionKMSKeyId. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Key Management Service key used to encrypt
-        /// the output of the call analytics job. The user calling the operation must have permission
-        /// to use the specified KMS key.
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service key
+        /// used to encrypt the output of the call analytics job. The user calling the operation
+        /// must have permission to use the specified KMS key.
         /// </para>
         ///  
         /// <para>
-        /// You use either of the following to identify an AWS KMS key in the current account:
+        /// You use either of the following to identify an Amazon Web Services KMS key in the
+        /// current account:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -224,10 +225,10 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You can specify an AWS Key Management Service key to encrypt the output of our analytics
-        /// job using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify
-        /// a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption
-        /// of the analytics job output that is placed in your S3 bucket. 
+        /// You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt
+        /// the output of our analytics job using the <code>OutputEncryptionKMSKeyId</code> parameter.
+        /// If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for
+        /// server-side encryption of the analytics job output that is placed in your S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]

@@ -139,7 +139,6 @@ namespace Amazon.TranscribeService.Model
         /// This looks at the time range starting from 10% of the way into the call to 50% of
         /// the way through the call. For a call that lasts 100,000 milliseconds, this example
         /// range would apply from the 10,000 millisecond mark to the 50,000 millisecond mark.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

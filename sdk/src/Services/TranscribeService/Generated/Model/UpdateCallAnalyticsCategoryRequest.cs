@@ -44,7 +44,7 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// The name of the analytics category to update. The name is case sensitive. If you try
         /// to update a call analytics category with the same name as a previous category you
-        /// will receive a <code>ConflictException</code> error. 
+        /// will receive a <code>ConflictException</code> error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

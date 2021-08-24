@@ -37,6 +37,7 @@ namespace Amazon.TranscribeService.Model
     {
         private LanguageCode _languageCode;
         private List<string> _phrases = new List<string>();
+        private List<Tag> _tags = new List<Tag>();
         private string _vocabularyFileUri;
         private string _vocabularyName;
 
@@ -44,7 +45,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property LanguageCode. 
         /// <para>
         /// The language code of the vocabulary entries. For a list of languages and their corresponding
-        /// language codes, see <a>what-is-transcribe</a>.
+        /// language codes, see <a>transcribe-whatis</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,11 +80,31 @@ namespace Amazon.TranscribeService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Adds one or more tags, each in the form of a key:value pair, to a new Amazon Transcribe
+        /// vocabulary at the time you create this new vocabulary.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property VocabularyFileUri. 
         /// <para>
         /// The S3 location of the text file that contains the definition of the custom vocabulary.
         /// The URI must be in the same region as the API endpoint that you are calling. The general
-        /// form is 
+        /// form is:
         /// </para>
         ///  
         /// <para>
@@ -93,7 +114,7 @@ namespace Amazon.TranscribeService.Model
         ///  
         /// <para>
         /// For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
-        /// Vocabularies</a>.
+        /// vocabularies</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]

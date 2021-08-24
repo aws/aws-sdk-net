@@ -189,7 +189,7 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         ///  <code>Invalid sample rate for audio file</code>: The sample rate specified in the
         /// <code>MediaSampleRateHertz</code> of the request isn't valid. The sample rate must
-        /// be between 8000 and 48000 Hertz.
+        /// be between 8,000 and 48,000 Hertz.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -202,7 +202,7 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         ///  <code>Invalid file size: file size too large</code>: The size of your audio file
         /// is larger than what Amazon Transcribe Medical can process. For more information, see
-        /// <i>Guidelines and Quotas</i> in the Amazon Transcribe Medical Guide
+        /// <i>Guidelines and Quotas</i> in the Amazon Transcribe Medical Guide.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -258,98 +258,9 @@ namespace Amazon.TranscribeService.Model
         /// If you don't know the language, you can leave this field blank, and Amazon Transcribe
         /// will use machine learning to automatically identify the language. To improve the accuracy
         /// of language identification, you can provide an array containing the possible language
-        /// codes for the language spoken in your audio.
+        /// codes for the language spoken in your audio. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
+        /// languages and language-specific features</a> for additional information.
         /// </para>
-        ///  
-        /// <para>
-        /// The following list shows the supported languages and corresponding language codes
-        /// for call analytics jobs:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Gulf Arabic (ar-AE)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Mandarin Chinese, Mainland (zh-CN)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Australian English (en-AU)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// British English (en-GB)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Indian English (en-IN)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Irish English (en-IE)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Scottish English (en-AB)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// US English (en-US)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Welsh English (en-WL)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Spanish (es-ES)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// US Spanish (es-US)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// French (fr-FR)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Canadian French (fr-CA)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// German (de-DE)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Swiss German (de-CH)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Indian Hindi (hi-IN)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Italian (it-IT)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Japanese (ja-JP)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Korean (ko-KR)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Portuguese (pt-PT)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Brazilian Portuguese (pt-BR)
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public LanguageCode LanguageCode
         {

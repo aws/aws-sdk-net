@@ -45,6 +45,7 @@ namespace Amazon.TranscribeService.Model
         private string _outputKey;
         private MedicalTranscriptionSetting _settings;
         private Specialty _specialty;
+        private List<Tag> _tags = new List<Tag>();
         private Type _type;
 
         /// <summary>
@@ -342,11 +343,30 @@ namespace Amazon.TranscribeService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Add tags to an Amazon Transcribe medical transcription job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of speech in the input audio. <code>CONVERSATION</code> refers to conversations
         /// between two or more speakers, e.g., a conversations between doctors and patients.
-        /// <code>DICTATION</code> refers to single-speaker dictated speech, e.g., for clinical
+        /// <code>DICTATION</code> refers to single-speaker dictated speech, such as clinical
         /// notes.
         /// </para>
         /// </summary>

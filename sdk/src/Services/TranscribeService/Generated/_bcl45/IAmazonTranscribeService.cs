@@ -178,7 +178,7 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Creates a new custom vocabulary that you can use to change how Amazon Transcribe Medical
+        /// Creates a new custom vocabulary that you can use to modify how Amazon Transcribe Medical
         /// transcribes your audio file.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMedicalVocabulary service method.</param>
@@ -206,7 +206,7 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Creates a new custom vocabulary that you can use to change how Amazon Transcribe Medical
+        /// Creates a new custom vocabulary that you can use to modify how Amazon Transcribe Medical
         /// transcribes your audio file.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMedicalVocabulary service method.</param>
@@ -1616,6 +1616,66 @@ namespace Amazon.TranscribeService
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Lists all tags associated with a given transcription job, vocabulary, or resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check the name and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+
+
+        /// <summary>
+        /// Lists all tags associated with a given transcription job, vocabulary, or resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check the name and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListTranscriptionJobs
 
 
@@ -1967,6 +2027,138 @@ namespace Amazon.TranscribeService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartTranscriptionJob">REST API Reference for StartTranscriptionJob Operation</seealso>
         Task<StartTranscriptionJobResponse> StartTranscriptionJobAsync(StartTranscriptionJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Tags a Amazon Transcribe resource with the given list of tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
+        /// There is already a resource with that name.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check the name and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Tags a Amazon Transcribe resource with the given list of tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
+        /// There is already a resource with that name.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check the name and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes specified tags from a specified Amazon Transcribe resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
+        /// There is already a resource with that name.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check the name and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Removes specified tags from a specified Amazon Transcribe resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
+        /// There is already a resource with that name.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check the name and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

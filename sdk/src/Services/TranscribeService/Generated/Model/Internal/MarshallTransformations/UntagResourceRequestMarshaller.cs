@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateVocabularyFilter Request Marshaller
+    /// UntagResource Request Marshaller
     /// </summary>       
-    public class CreateVocabularyFilterRequestMarshaller : IMarshaller<IRequest, CreateVocabularyFilterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UntagResourceRequestMarshaller : IMarshaller<IRequest, UntagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateVocabularyFilterRequest)input);
+            return this.Marshall((UntagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateVocabularyFilterRequest publicRequest)
+        public IRequest Marshall(UntagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.TranscribeService");
-            string target = "Transcribe.CreateVocabularyFilter";
+            string target = "Transcribe.UntagResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-26";            
@@ -67,47 +67,19 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLanguageCode())
+                if(publicRequest.IsSetResourceArn())
                 {
-                    context.Writer.WritePropertyName("LanguageCode");
-                    context.Writer.Write(publicRequest.LanguageCode);
+                    context.Writer.WritePropertyName("ResourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
                 }
 
-                if(publicRequest.IsSetTags())
+                if(publicRequest.IsSetTagKeys())
                 {
-                    context.Writer.WritePropertyName("Tags");
+                    context.Writer.WritePropertyName("TagKeys");
                     context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    foreach(var publicRequestTagKeysListValue in publicRequest.TagKeys)
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetVocabularyFilterFileUri())
-                {
-                    context.Writer.WritePropertyName("VocabularyFilterFileUri");
-                    context.Writer.Write(publicRequest.VocabularyFilterFileUri);
-                }
-
-                if(publicRequest.IsSetVocabularyFilterName())
-                {
-                    context.Writer.WritePropertyName("VocabularyFilterName");
-                    context.Writer.Write(publicRequest.VocabularyFilterName);
-                }
-
-                if(publicRequest.IsSetWords())
-                {
-                    context.Writer.WritePropertyName("Words");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestWordsListValue in publicRequest.Words)
-                    {
-                            context.Writer.Write(publicRequestWordsListValue);
+                            context.Writer.Write(publicRequestTagKeysListValue);
                     }
                     context.Writer.WriteArrayEnd();
                 }
@@ -121,9 +93,9 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateVocabularyFilterRequestMarshaller _instance = new CreateVocabularyFilterRequestMarshaller();        
+        private static UntagResourceRequestMarshaller _instance = new UntagResourceRequestMarshaller();        
 
-        internal static CreateVocabularyFilterRequestMarshaller GetInstance()
+        internal static UntagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -131,7 +103,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateVocabularyFilterRequestMarshaller Instance
+        public static UntagResourceRequestMarshaller Instance
         {
             get
             {

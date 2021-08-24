@@ -40,6 +40,7 @@ namespace Amazon.TranscribeService.Model
         private InputDataConfig _inputDataConfig;
         private CLMLanguageCode _languageCode;
         private string _modelName;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property BaseModelName. 
@@ -50,12 +51,12 @@ namespace Amazon.TranscribeService.Model
         ///  
         /// <para>
         /// If you want to use your custom language model to transcribe audio with a sample rate
-        /// of 16 kHz or greater, choose <code>Wideband</code>.
+        /// of 16,000 Hz or greater, choose <code>Wideband</code>.
         /// </para>
         ///  
         /// <para>
         /// If you want to use your custom language model to transcribe audio with a sample rate
-        /// that is less than 16 kHz, choose <code>Narrowband</code>.
+        /// that is less than 16,000 Hz, choose <code>Narrowband</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -127,6 +128,26 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetModelName()
         {
             return this._modelName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Adds one or more tags, each in the form of a key:value pair, to a new language model
+        /// at the time you create this new model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }
