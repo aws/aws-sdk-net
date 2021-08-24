@@ -29,41 +29,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IotData.Model
 {
     /// <summary>
-    /// Container for the parameters to the Publish operation.
-    /// Publishes an MQTT message.
-    /// 
-    ///  
-    /// <para>
-    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">Publish</a>
-    /// action.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information about MQTT messages, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html">MQTT
-    /// Protocol</a> in the IoT Developer Guide.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">IoT
-    /// Core pricing - Messaging</a>.
-    /// </para>
+    /// The output from the GetRetainedMessage operation.
     /// </summary>
-    public partial class PublishRequest : AmazonIotDataRequest
+    public partial class GetRetainedMessageResponse : AmazonWebServiceResponse
     {
+        private long? _lastModifiedTime;
         private MemoryStream _payload;
         private int? _qos;
-        private bool? _retain;
         private string _topic;
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// The Epoch date and time, in milliseconds, when the retained message was stored by
+        /// IoT.
+        /// </para>
+        /// </summary>
+        public long LastModifiedTime
+        {
+            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            set { this._lastModifiedTime = value; }
+        }
+
+        // Check to see if LastModifiedTime property is set
+        internal bool IsSetLastModifiedTime()
+        {
+            return this._lastModifiedTime.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Payload. 
         /// <para>
-        /// The message body. MQTT accepts text, binary, and empty (null) message payloads.
-        /// </para>
-        ///  
-        /// <para>
-        /// Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes
-        /// the retained message identified by <b>topic</b> from IoT Core.
+        /// The Base64-encoded message payload of the retained message body.
         /// </para>
         /// </summary>
         public MemoryStream Payload
@@ -81,7 +78,7 @@ namespace Amazon.IotData.Model
         /// <summary>
         /// Gets and sets the property Qos. 
         /// <para>
-        /// The Quality of Service (QoS) level.
+        /// The quality of service (QoS) level used to publish the retained message.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -98,44 +95,11 @@ namespace Amazon.IotData.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Retain. 
-        /// <para>
-        /// A Boolean value that determines whether to set the RETAIN flag when the message is
-        /// published.
-        /// </para>
-        ///  
-        /// <para>
-        /// Setting the RETAIN flag causes the message to be retained and sent to new subscribers
-        /// to the topic.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: <code>true</code> | <code>false</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Default value: <code>false</code> 
-        /// </para>
-        /// </summary>
-        public bool Retain
-        {
-            get { return this._retain.GetValueOrDefault(); }
-            set { this._retain = value; }
-        }
-
-        // Check to see if Retain property is set
-        internal bool IsSetRetain()
-        {
-            return this._retain.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property Topic. 
         /// <para>
-        /// The name of the MQTT topic.
+        /// The topic name to which the retained message was published.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Topic
         {
             get { return this._topic; }

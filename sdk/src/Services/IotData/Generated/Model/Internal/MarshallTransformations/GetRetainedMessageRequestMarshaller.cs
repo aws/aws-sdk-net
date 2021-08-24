@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IotData.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Publish Request Marshaller
+    /// GetRetainedMessage Request Marshaller
     /// </summary>       
-    public class PublishRequestMarshaller : IMarshaller<IRequest, PublishRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetRetainedMessageRequestMarshaller : IMarshaller<IRequest, GetRetainedMessageRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((PublishRequest)input);
+            return this.Marshall((GetRetainedMessageRequest)input);
         }
 
         /// <summary>
@@ -52,34 +52,22 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(PublishRequest publicRequest)
+        public IRequest Marshall(GetRetainedMessageRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IotData");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
-            request.HttpMethod = "POST";
+            request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetTopic())
                 throw new AmazonIotDataException("Request object does not have required field Topic set");
             request.AddPathResource("{topic}", StringUtils.FromString(publicRequest.Topic));
-            
-            if (publicRequest.IsSetQos())
-                request.Parameters.Add("qos", StringUtils.FromInt(publicRequest.Qos));
-            
-            if (publicRequest.IsSetRetain())
-                request.Parameters.Add("retain", StringUtils.FromBool(publicRequest.Retain));
-            request.ResourcePath = "/topics/{topic}";
-            request.ContentStream =  publicRequest.Payload ?? new MemoryStream();
-            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
-                request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
-            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
-            request.UseQueryString = true;
+            request.ResourcePath = "/retainedMessage/{topic}";
 
             return request;
         }
-        private static PublishRequestMarshaller _instance = new PublishRequestMarshaller();        
+        private static GetRetainedMessageRequestMarshaller _instance = new GetRetainedMessageRequestMarshaller();        
 
-        internal static PublishRequestMarshaller GetInstance()
+        internal static GetRetainedMessageRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -87,7 +75,7 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PublishRequestMarshaller Instance
+        public static GetRetainedMessageRequestMarshaller Instance
         {
             get
             {

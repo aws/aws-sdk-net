@@ -34,8 +34,13 @@ namespace Amazon.IotData.Model
     /// 
     ///  
     /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetThingShadow</a>
+    /// action.
+    /// </para>
+    ///  
+    /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html">GetThingShadow</a>
-    /// in the AWS IoT Developer Guide.
+    /// in the IoT Developer Guide.
     /// </para>
     /// </summary>
     public partial class GetThingShadowRequest : AmazonIotDataRequest

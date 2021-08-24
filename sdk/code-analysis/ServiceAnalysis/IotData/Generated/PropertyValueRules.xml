@@ -13,6 +13,11 @@
     <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IotData.Model.GetRetainedMessageResponse.Qos</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IotData.Model.GetThingShadowRequest.ShadowName</property>
     <min>1</min>
     <max>64</max>
@@ -36,6 +41,11 @@
     <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IotData.Model.ListRetainedMessagesRequest.MaxResults</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IotData.Model.PublishRequest.Qos</property>
     <min>0</min>
     <max>1</max>
@@ -51,5 +61,10 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IotData.Model.RetainedMessageSummary.Qos</property>
+    <min>0</min>
+    <max>1</max>
   </property-value-rule>
 </property-value-rules>
