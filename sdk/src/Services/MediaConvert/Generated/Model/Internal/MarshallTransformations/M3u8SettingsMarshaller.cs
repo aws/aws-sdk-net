@@ -68,6 +68,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetDataPTSControl())
+            {
+                context.Writer.WritePropertyName("dataPTSControl");
+                context.Writer.Write(requestObject.DataPTSControl);
+            }
+
             if(requestObject.IsSetMaxPcrInterval())
             {
                 context.Writer.WritePropertyName("maxPcrInterval");

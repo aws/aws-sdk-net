@@ -51,6 +51,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EncryptionType);
             }
 
+            if(requestObject.IsSetKmsEncryptionContext())
+            {
+                context.Writer.WritePropertyName("kmsEncryptionContext");
+                context.Writer.Write(requestObject.KmsEncryptionContext);
+            }
+
             if(requestObject.IsSetKmsKeyArn())
             {
                 context.Writer.WritePropertyName("kmsKeyArn");

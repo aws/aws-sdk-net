@@ -167,6 +167,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SegmentLength);
             }
 
+            if(requestObject.IsSetSegmentLengthControl())
+            {
+                context.Writer.WritePropertyName("segmentLengthControl");
+                context.Writer.Write(requestObject.SegmentLengthControl);
+            }
+
             if(requestObject.IsSetStreamInfResolution())
             {
                 context.Writer.WritePropertyName("streamInfResolution");

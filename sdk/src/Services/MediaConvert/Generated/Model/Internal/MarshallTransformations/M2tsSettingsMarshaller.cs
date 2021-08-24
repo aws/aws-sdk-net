@@ -86,6 +86,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.BufferModel);
             }
 
+            if(requestObject.IsSetDataPTSControl())
+            {
+                context.Writer.WritePropertyName("dataPTSControl");
+                context.Writer.Write(requestObject.DataPTSControl);
+            }
+
             if(requestObject.IsSetDvbNitSettings())
             {
                 context.Writer.WritePropertyName("dvbNitSettings");

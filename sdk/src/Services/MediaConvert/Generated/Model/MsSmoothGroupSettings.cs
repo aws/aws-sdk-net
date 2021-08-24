@@ -42,6 +42,7 @@ namespace Amazon.MediaConvert.Model
         private DestinationSettings _destinationSettings;
         private MsSmoothEncryptionSettings _encryption;
         private int? _fragmentLength;
+        private MsSmoothFragmentLengthControl _fragmentLengthControl;
         private MsSmoothManifestEncoding _manifestEncoding;
 
         /// <summary>
@@ -132,9 +133,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FragmentLength. Use Fragment length (FragmentLength) to
-        /// specify the mp4 fragment sizes in seconds. Fragment length must be compatible with
-        /// GOP size and frame rate.
+        /// Gets and sets the property FragmentLength. Specify how you want MediaConvert to determine
+        /// the fragment length. Choose Exact (EXACT) to have the encoder use the exact length
+        /// that you specify with the setting Fragment length (FragmentLength). This might result
+        /// in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round
+        /// up the segment lengths to match the next GOP boundary.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
         public int FragmentLength
@@ -147,6 +150,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetFragmentLength()
         {
             return this._fragmentLength.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FragmentLengthControl. Specify how you want MediaConvert
+        /// to determine the fragment length. Choose Exact (EXACT) to have the encoder use the
+        /// exact length that you specify with the setting Fragment length (FragmentLength). This
+        /// might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the
+        /// encoder round up the segment lengths to match the next GOP boundary.
+        /// </summary>
+        public MsSmoothFragmentLengthControl FragmentLengthControl
+        {
+            get { return this._fragmentLengthControl; }
+            set { this._fragmentLengthControl = value; }
+        }
+
+        // Check to see if FragmentLengthControl property is set
+        internal bool IsSetFragmentLengthControl()
+        {
+            return this._fragmentLengthControl != null;
         }
 
         /// <summary>

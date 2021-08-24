@@ -100,6 +100,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.BufferModel = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dataPTSControl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataPTSControl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("dvbNitSettings", targetDepth))
                 {
                     var unmarshaller = DvbNitSettingsUnmarshaller.Instance;

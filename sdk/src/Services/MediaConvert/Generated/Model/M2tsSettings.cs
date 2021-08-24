@@ -47,6 +47,7 @@ namespace Amazon.MediaConvert.Model
         private List<int> _audioPids = new List<int>();
         private int? _bitrate;
         private M2tsBufferModel _bufferModel;
+        private M2tsDataPtsControl _dataPTSControl;
         private DvbNitSettings _dvbNitSettings;
         private DvbSdtSettings _dvbSdtSettings;
         private List<int> _dvbSubPids = new List<int>();
@@ -189,6 +190,24 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetBufferModel()
         {
             return this._bufferModel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataPTSControl. If you select ALIGN_TO_VIDEO, MediaConvert
+        /// writes captions and data packets with Presentation Timestamp (PTS) values greater
+        /// than or equal to the first video packet PTS (MediaConvert drops captions and data
+        /// packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+        /// </summary>
+        public M2tsDataPtsControl DataPTSControl
+        {
+            get { return this._dataPTSControl; }
+            set { this._dataPTSControl = value; }
+        }
+
+        // Check to see if DataPTSControl property is set
+        internal bool IsSetDataPTSControl()
+        {
+            return this._dataPTSControl != null;
         }
 
         /// <summary>

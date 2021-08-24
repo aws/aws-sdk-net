@@ -3613,6 +3613,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type CmafSegmentLengthControl.
+    /// </summary>
+    public class CmafSegmentLengthControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXACT for CmafSegmentLengthControl
+        /// </summary>
+        public static readonly CmafSegmentLengthControl EXACT = new CmafSegmentLengthControl("EXACT");
+        /// <summary>
+        /// Constant GOP_MULTIPLE for CmafSegmentLengthControl
+        /// </summary>
+        public static readonly CmafSegmentLengthControl GOP_MULTIPLE = new CmafSegmentLengthControl("GOP_MULTIPLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafSegmentLengthControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafSegmentLengthControl FindValue(string value)
+        {
+            return FindValue<CmafSegmentLengthControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafSegmentLengthControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CmafStreamInfResolution.
     /// </summary>
     public class CmafStreamInfResolution : ConstantClass
@@ -4920,6 +4970,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DashIsoSegmentControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DashIsoSegmentLengthControl.
+    /// </summary>
+    public class DashIsoSegmentLengthControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXACT for DashIsoSegmentLengthControl
+        /// </summary>
+        public static readonly DashIsoSegmentLengthControl EXACT = new DashIsoSegmentLengthControl("EXACT");
+        /// <summary>
+        /// Constant GOP_MULTIPLE for DashIsoSegmentLengthControl
+        /// </summary>
+        public static readonly DashIsoSegmentLengthControl GOP_MULTIPLE = new DashIsoSegmentLengthControl("GOP_MULTIPLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DashIsoSegmentLengthControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashIsoSegmentLengthControl FindValue(string value)
+        {
+            return FindValue<DashIsoSegmentLengthControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashIsoSegmentLengthControl(string value)
         {
             return FindValue(value);
         }
@@ -7770,6 +7870,10 @@ namespace Amazon.MediaConvert
         /// Constant FORCE_FIELD for H264FieldEncoding
         /// </summary>
         public static readonly H264FieldEncoding FORCE_FIELD = new H264FieldEncoding("FORCE_FIELD");
+        /// <summary>
+        /// Constant MBAFF for H264FieldEncoding
+        /// </summary>
+        public static readonly H264FieldEncoding MBAFF = new H264FieldEncoding("MBAFF");
         /// <summary>
         /// Constant PAFF for H264FieldEncoding
         /// </summary>
@@ -11133,6 +11237,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type HlsSegmentLengthControl.
+    /// </summary>
+    public class HlsSegmentLengthControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXACT for HlsSegmentLengthControl
+        /// </summary>
+        public static readonly HlsSegmentLengthControl EXACT = new HlsSegmentLengthControl("EXACT");
+        /// <summary>
+        /// Constant GOP_MULTIPLE for HlsSegmentLengthControl
+        /// </summary>
+        public static readonly HlsSegmentLengthControl GOP_MULTIPLE = new HlsSegmentLengthControl("GOP_MULTIPLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HlsSegmentLengthControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HlsSegmentLengthControl FindValue(string value)
+        {
+            return FindValue<HlsSegmentLengthControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HlsSegmentLengthControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HlsStreamInfResolution.
     /// </summary>
     public class HlsStreamInfResolution : ConstantClass
@@ -12887,6 +13041,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type M2tsDataPtsControl.
+    /// </summary>
+    public class M2tsDataPtsControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALIGN_TO_VIDEO for M2tsDataPtsControl
+        /// </summary>
+        public static readonly M2tsDataPtsControl ALIGN_TO_VIDEO = new M2tsDataPtsControl("ALIGN_TO_VIDEO");
+        /// <summary>
+        /// Constant AUTO for M2tsDataPtsControl
+        /// </summary>
+        public static readonly M2tsDataPtsControl AUTO = new M2tsDataPtsControl("AUTO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public M2tsDataPtsControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static M2tsDataPtsControl FindValue(string value)
+        {
+            return FindValue<M2tsDataPtsControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator M2tsDataPtsControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type M2tsEbpAudioInterval.
     /// </summary>
     public class M2tsEbpAudioInterval : ConstantClass
@@ -13446,6 +13650,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator M3u8AudioDuration(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type M3u8DataPtsControl.
+    /// </summary>
+    public class M3u8DataPtsControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALIGN_TO_VIDEO for M3u8DataPtsControl
+        /// </summary>
+        public static readonly M3u8DataPtsControl ALIGN_TO_VIDEO = new M3u8DataPtsControl("ALIGN_TO_VIDEO");
+        /// <summary>
+        /// Constant AUTO for M3u8DataPtsControl
+        /// </summary>
+        public static readonly M3u8DataPtsControl AUTO = new M3u8DataPtsControl("AUTO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public M3u8DataPtsControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static M3u8DataPtsControl FindValue(string value)
+        {
+            return FindValue<M3u8DataPtsControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator M3u8DataPtsControl(string value)
         {
             return FindValue(value);
         }
@@ -15448,6 +15702,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MsSmoothAudioDeduplication(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MsSmoothFragmentLengthControl.
+    /// </summary>
+    public class MsSmoothFragmentLengthControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXACT for MsSmoothFragmentLengthControl
+        /// </summary>
+        public static readonly MsSmoothFragmentLengthControl EXACT = new MsSmoothFragmentLengthControl("EXACT");
+        /// <summary>
+        /// Constant GOP_MULTIPLE for MsSmoothFragmentLengthControl
+        /// </summary>
+        public static readonly MsSmoothFragmentLengthControl GOP_MULTIPLE = new MsSmoothFragmentLengthControl("GOP_MULTIPLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MsSmoothFragmentLengthControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MsSmoothFragmentLengthControl FindValue(string value)
+        {
+            return FindValue<MsSmoothFragmentLengthControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MsSmoothFragmentLengthControl(string value)
         {
             return FindValue(value);
         }

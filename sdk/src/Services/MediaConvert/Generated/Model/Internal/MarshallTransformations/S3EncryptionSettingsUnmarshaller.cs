@@ -70,6 +70,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.EncryptionType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("kmsEncryptionContext", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KmsEncryptionContext = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("kmsKeyArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

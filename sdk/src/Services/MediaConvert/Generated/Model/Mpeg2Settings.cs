@@ -265,8 +265,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GopSize. GOP Length (keyframe interval) in frames or seconds.
-        /// Must be greater than zero.
+        /// Gets and sets the property GopSize. Specify the interval between keyframes, in seconds
+        /// or frames, for this output. Default: 12 Related settings: When you specify the GOP
+        /// size in seconds, set GOP mode control (GopSizeUnits) to Specified, seconds (SECONDS).
+        /// The default value for GOP mode control (GopSizeUnits) is Frames (FRAMES).
         /// </summary>
         public double GopSize
         {
@@ -281,9 +283,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GopSizeUnits. Indicates if the GOP Size in MPEG2 is specified
-        /// in frames or seconds. If seconds the system will convert the GOP Size into a frame
-        /// count at run time.
+        /// Gets and sets the property GopSizeUnits. Specify the units for GOP size (GopSize).
+        /// If you don't specify a value here, by default the encoder measures GOP size in frames.
         /// </summary>
         public Mpeg2GopSizeUnits GopSizeUnits
         {
@@ -414,8 +415,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NumberBFramesBetweenReferenceFrames. Number of B-frames
-        /// between reference frames.
+        /// Gets and sets the property NumberBFramesBetweenReferenceFrames. Specify the number
+        /// of B-frames that MediaConvert puts between reference frames in this output. Valid
+        /// values are whole numbers from 0 through 7. When you don't specify a value, MediaConvert
+        /// defaults to 2.
         /// </summary>
         [AWSProperty(Min=0, Max=7)]
         public int NumberBFramesBetweenReferenceFrames

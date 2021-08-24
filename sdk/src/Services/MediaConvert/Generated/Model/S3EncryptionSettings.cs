@@ -34,6 +34,7 @@ namespace Amazon.MediaConvert.Model
     public partial class S3EncryptionSettings
     {
         private S3ServerSideEncryptionType _encryptionType;
+        private string _kmsEncryptionContext;
         private string _kmsKeyArn;
 
         /// <summary>
@@ -58,6 +59,27 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetEncryptionType()
         {
             return this._encryptionType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsEncryptionContext. Optionally, specify the encryption
+        /// context that you want to use alongside your KMS key. AWS KMS uses this encryption
+        /// context as additional authenticated data (AAD) to support authenticated encryption.
+        /// This value must be a base64-encoded UTF-8 string holding JSON which represents a string-string
+        /// map. To use this setting, you must also set Server-side encryption (S3ServerSideEncryptionType)
+        /// to AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). For more information about encryption context,
+        /// see: https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context.
+        /// </summary>
+        public string KmsEncryptionContext
+        {
+            get { return this._kmsEncryptionContext; }
+            set { this._kmsEncryptionContext = value; }
+        }
+
+        // Check to see if KmsEncryptionContext property is set
+        internal bool IsSetKmsEncryptionContext()
+        {
+            return this._kmsEncryptionContext != null;
         }
 
         /// <summary>

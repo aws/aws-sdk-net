@@ -101,6 +101,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.FragmentLength);
             }
 
+            if(requestObject.IsSetFragmentLengthControl())
+            {
+                context.Writer.WritePropertyName("fragmentLengthControl");
+                context.Writer.Write(requestObject.FragmentLengthControl);
+            }
+
             if(requestObject.IsSetManifestEncoding())
             {
                 context.Writer.WritePropertyName("manifestEncoding");

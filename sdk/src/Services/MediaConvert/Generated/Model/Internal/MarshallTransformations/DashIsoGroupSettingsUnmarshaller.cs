@@ -154,6 +154,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.SegmentLength = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("segmentLengthControl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SegmentLengthControl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("writeSegmentTimelineInRepresentation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

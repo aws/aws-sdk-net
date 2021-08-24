@@ -50,6 +50,7 @@ namespace Amazon.MediaConvert.Model
         private DashIsoPtsOffsetHandlingForBFrames _ptsOffsetHandlingForBFrames;
         private DashIsoSegmentControl _segmentControl;
         private int? _segmentLength;
+        private DashIsoSegmentLengthControl _segmentLengthControl;
         private DashIsoWriteSegmentTimelineInRepresentation _writeSegmentTimelineInRepresentation;
 
         /// <summary>
@@ -321,11 +322,12 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentLength. Length of mpd segments to create (in seconds).
-        /// Note that segments will end on the next keyframe after this number of seconds, so
-        /// actual segment length may be longer. When Emit Single File is checked, the segmentation
-        /// is internal to a single output file and it does not cause the creation of many output
-        /// files as in other output types.
+        /// Gets and sets the property SegmentLength. Specify the length, in whole seconds, of
+        /// each segment. When you don't specify a value, MediaConvert defaults to 30. Related
+        /// settings: Use Segment length control (SegmentLengthControl) to specify whether the
+        /// encoder enforces this value strictly. Use Segment control (DashIsoSegmentControl)
+        /// to specify whether MediaConvert creates separate segment files or one content file
+        /// that has metadata to mark the segment boundaries.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
         public int SegmentLength
@@ -338,6 +340,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetSegmentLength()
         {
             return this._segmentLength.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SegmentLengthControl. Specify how you want MediaConvert
+        /// to determine the segment length. Choose Exact (EXACT) to have the encoder use the
+        /// exact length that you specify with the setting Segment length (SegmentLength). This
+        /// might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the
+        /// encoder round up the segment lengths to match the next GOP boundary.
+        /// </summary>
+        public DashIsoSegmentLengthControl SegmentLengthControl
+        {
+            get { return this._segmentLengthControl; }
+            set { this._segmentLengthControl = value; }
+        }
+
+        // Check to see if SegmentLengthControl property is set
+        internal bool IsSetSegmentLengthControl()
+        {
+            return this._segmentLengthControl != null;
         }
 
         /// <summary>

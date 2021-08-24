@@ -100,6 +100,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.FragmentLength = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fragmentLengthControl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FragmentLengthControl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("manifestEncoding", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

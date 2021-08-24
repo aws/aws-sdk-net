@@ -37,6 +37,7 @@ namespace Amazon.MediaConvert.Model
         private M3u8AudioDuration _audioDuration;
         private int? _audioFramesPerPes;
         private List<int> _audioPids = new List<int>();
+        private M3u8DataPtsControl _dataPTSControl;
         private int? _maxPcrInterval;
         private M3u8NielsenId3 _nielsenId3;
         private int? _patInterval;
@@ -111,6 +112,24 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetAudioPids()
         {
             return this._audioPids != null && this._audioPids.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataPTSControl. If you select ALIGN_TO_VIDEO, MediaConvert
+        /// writes captions and data packets with Presentation Timestamp (PTS) values greater
+        /// than or equal to the first video packet PTS (MediaConvert drops captions and data
+        /// packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+        /// </summary>
+        public M3u8DataPtsControl DataPTSControl
+        {
+            get { return this._dataPTSControl; }
+            set { this._dataPTSControl = value; }
+        }
+
+        // Check to see if DataPTSControl property is set
+        internal bool IsSetDataPTSControl()
+        {
+            return this._dataPTSControl != null;
         }
 
         /// <summary>

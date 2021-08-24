@@ -459,8 +459,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NumberBFramesBetweenReferenceFrames. Number of B-frames
-        /// between reference frames.
+        /// Gets and sets the property NumberBFramesBetweenReferenceFrames. Specify the number
+        /// of B-frames that MediaConvert puts between reference frames in this output. Valid
+        /// values are whole numbers from 0 through 7. When you don't specify a value, MediaConvert
+        /// defaults to 2.
         /// </summary>
         [AWSProperty(Min=0, Max=7)]
         public int NumberBFramesBetweenReferenceFrames
