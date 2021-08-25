@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv4Prefixes. 
         /// <para>
-        /// The IPv4 Prefix Delegation prefixes to unassign from the network interface.
+        /// The IPv4 prefixes to unassign from the network interface.
         /// </para>
         /// </summary>
         public List<string> Ipv4Prefixes

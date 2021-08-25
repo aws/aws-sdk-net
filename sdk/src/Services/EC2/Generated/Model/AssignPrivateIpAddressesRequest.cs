@@ -61,8 +61,9 @@ namespace Amazon.EC2.Model
     /// <para>
     /// You can optionally use Prefix Delegation on the network interface. You must specify
     /// either the IPv4 Prefix Delegation prefixes, or the IPv4 Prefix Delegation count. For
-    /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
-    /// Delegation</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
+    /// Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute
+    /// Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class AssignPrivateIpAddressesRequest : AmazonEC2Request
@@ -96,7 +97,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv4PrefixCount. 
         /// <para>
-        /// The number of IPv4 Prefix Delegation prefixes that AWS automatically assigns to the
+        /// The number of IPv4 prefixes that Amazon Web Services automatically assigns to the
         /// network interface. You cannot use this option if you use the <code>Ipv4 Prefixes</code>
         /// option.
         /// </para>
@@ -116,8 +117,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv4Prefixes. 
         /// <para>
-        /// One or more IPv4 Prefix Delegation prefixes assigned to the network interface. You
-        /// cannot use this option if you use the <code>Ipv4PrefixCount</code> option.
+        /// One or more IPv4 prefixes assigned to the network interface. You cannot use this option
+        /// if you use the <code>Ipv4PrefixCount</code> option.
         /// </para>
         /// </summary>
         public List<string> Ipv4Prefixes

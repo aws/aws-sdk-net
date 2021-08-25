@@ -60,6 +60,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.HttpEndpoint = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("httpProtocolIpv6", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HttpProtocolIpv6 = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("httpPutResponseHopLimit", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

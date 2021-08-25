@@ -30,19 +30,21 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateTrunkInterface operation.
+    /// <note> 
+    /// <para>
+    /// This API action is currently in <b>limited preview only</b>. If you are interested
+    /// in using this feature, contact your account manager.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Associates a branch network interface with a trunk network interface.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Before you create the association, run the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">create-network-interface</a>
     /// command and set <code>--interface-type</code> to <code>trunk</code>. You must also
     /// create a network interface for each branch network interface that you want to associate
     /// with the trunk network interface.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/eni-trunking.html">
-    /// Network interface trunking</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class AssociateTrunkInterfaceRequest : AmazonEC2Request

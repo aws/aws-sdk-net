@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the IPv4 Prefix Delegation option for a network interface.
+    /// Describes the IPv4 prefix option for a network interface.
     /// </summary>
     public partial class Ipv4PrefixSpecificationRequest
     {
@@ -38,8 +38,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv4Prefix. 
         /// <para>
-        /// The IPv4 Prefix Delegation prefix. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
-        /// Delegation</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// The IPv4 prefix. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
+        /// Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i>.
         /// </para>
         /// </summary>
         public string Ipv4Prefix

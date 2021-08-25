@@ -334,6 +334,12 @@ namespace Amazon.EC2.Model
         /// The primary network interface must be assigned to network card index 0. The default
         /// is network card index 0.
         /// </para>
+        ///  
+        /// <para>
+        /// If you are using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>
+        /// to create Spot Instances, omit this parameter because you can’t specify the network
+        /// card index when using this API. To specify the network card index, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.
+        /// </para>
         /// </summary>
         public int NetworkCardIndex
         {

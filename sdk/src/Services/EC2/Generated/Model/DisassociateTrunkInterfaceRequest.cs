@@ -30,7 +30,15 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateTrunkInterface operation.
+    /// <note> 
+    /// <para>
+    /// This API action is currently in <b>limited preview only</b>. If you are interested
+    /// in using this feature, contact your account manager.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Removes an association between a branch network interface with a trunk network interface.
+    /// </para>
     /// </summary>
     public partial class DisassociateTrunkInterfaceRequest : AmazonEC2Request
     {

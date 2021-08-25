@@ -29,8 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
+    /// <note> 
+    /// <para>
+    /// Currently available in <b>limited preview only</b>. If you are interested in using
+    /// this feature, contact your account manager.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Information about an association between a branch network interface with a trunk network
     /// interface.
+    /// </para>
     /// </summary>
     public partial class TrunkInterfaceAssociation
     {
@@ -117,7 +125,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  The tags.
+        /// The tags for the trunk interface associaton.
         /// </para>
         /// </summary>
         public List<Tag> Tags

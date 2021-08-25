@@ -329,6 +329,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("MetadataOptions" + "." + "HttpEndpoint", StringUtils.FromString(publicRequest.MetadataOptions.HttpEndpoint));
                     }
+                    if(publicRequest.MetadataOptions.IsSetHttpProtocolIpv6())
+                    {
+                        request.Parameters.Add("MetadataOptions" + "." + "HttpProtocolIpv6", StringUtils.FromString(publicRequest.MetadataOptions.HttpProtocolIpv6));
+                    }
                     if(publicRequest.MetadataOptions.IsSetHttpPutResponseHopLimit())
                     {
                         request.Parameters.Add("MetadataOptions" + "." + "HttpPutResponseHopLimit", StringUtils.FromInt(publicRequest.MetadataOptions.HttpPutResponseHopLimit));

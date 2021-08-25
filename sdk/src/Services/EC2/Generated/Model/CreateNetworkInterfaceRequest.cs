@@ -138,7 +138,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv4PrefixCount. 
         /// <para>
-        /// The number of IPv4 Prefix Delegation prefixes that AWS automatically assigns to the
+        /// The number of IPv4 prefixes that Amazon Web Services automatically assigns to the
         /// network interface. You cannot use this option if you use the <code>Ipv4 Prefixes</code>
         /// option.
         /// </para>
@@ -158,8 +158,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv4Prefixes. 
         /// <para>
-        /// One or moreIPv4 Prefix Delegation prefixes assigned to the network interface. You
-        /// cannot use this option if you use the <code>Ipv4PrefixCount</code> option.
+        /// One or more IPv4 prefixes assigned to the network interface. You cannot use this option
+        /// if you use the <code>Ipv4PrefixCount</code> option.
         /// </para>
         /// </summary>
         public List<Ipv4PrefixSpecificationRequest> Ipv4Prefixes
@@ -218,7 +218,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6PrefixCount. 
         /// <para>
-        /// The number of IPv6 Prefix Delegation prefixes that AWS automatically assigns to the
+        /// The number of IPv6 prefixes that Amazon Web Services automatically assigns to the
         /// network interface. You cannot use this option if you use the <code>Ipv6Prefixes</code>
         /// option.
         /// </para>
@@ -238,8 +238,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6Prefixes. 
         /// <para>
-        /// One or moreIPv6 Prefix Delegation prefixes assigned to the network interface. You
-        /// cannot use this option if you use the <code>Ipv6PrefixCount</code> option.
+        /// One or more IPv6 prefixes assigned to the network interface. You cannot use this option
+        /// if you use the <code>Ipv6PrefixCount</code> option.
         /// </para>
         /// </summary>
         public List<Ipv6PrefixSpecificationRequest> Ipv6Prefixes

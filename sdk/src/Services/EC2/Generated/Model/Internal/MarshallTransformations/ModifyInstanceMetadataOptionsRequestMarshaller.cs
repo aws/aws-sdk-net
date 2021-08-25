@@ -62,6 +62,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("HttpEndpoint", StringUtils.FromString(publicRequest.HttpEndpoint));
                 }
+                if(publicRequest.IsSetHttpProtocolIpv6())
+                {
+                    request.Parameters.Add("HttpProtocolIpv6", StringUtils.FromString(publicRequest.HttpProtocolIpv6));
+                }
                 if(publicRequest.IsSetHttpPutResponseHopLimit())
                 {
                     request.Parameters.Add("HttpPutResponseHopLimit", StringUtils.FromInt(publicRequest.HttpPutResponseHopLimit));

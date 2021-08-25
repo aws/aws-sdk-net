@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the IPv4 Prefix Delegation option for a network interface.
+    /// Describes the IPv4 prefix option for a network interface.
     /// </summary>
     public partial class Ipv6PrefixSpecificationRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6Prefix. 
         /// <para>
-        /// The IPv6 Prefix Delegation prefix.
+        /// The IPv6 prefix.
         /// </para>
         /// </summary>
         public string Ipv6Prefix

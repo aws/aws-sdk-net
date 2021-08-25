@@ -47,8 +47,9 @@ namespace Amazon.EC2.Model
     /// <para>
     /// You can optionally use Prefix Delegation on the network interface. You must specify
     /// either the IPV6 Prefix Delegation prefixes, or the IPv6 Prefix Delegation count. For
-    /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
-    /// Delegation</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
+    /// Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute
+    /// Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class AssignIpv6AddressesRequest : AmazonEC2Request
@@ -103,7 +104,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6PrefixCount. 
         /// <para>
-        /// The number of IPv6 Prefix Delegation prefixes that AWS automatically assigns to the
+        /// The number of IPv6 prefixes that Amazon Web Services automatically assigns to the
         /// network interface. You cannot use this option if you use the <code>Ipv6Prefixes</code>
         /// option.
         /// </para>
@@ -123,8 +124,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6Prefixes. 
         /// <para>
-        /// One or more IPv6 Prefix Delegation prefixes assigned to the network interface. You
-        /// cannot use this option if you use the <code>Ipv6PrefixCount</code> option.
+        /// One or more IPv6 prefixes assigned to the network interface. You cannot use this option
+        /// if you use the <code>Ipv6PrefixCount</code> option.
         /// </para>
         /// </summary>
         public List<string> Ipv6Prefixes

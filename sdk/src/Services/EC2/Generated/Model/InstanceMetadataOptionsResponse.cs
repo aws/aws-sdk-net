@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class InstanceMetadataOptionsResponse
     {
         private InstanceMetadataEndpointState _httpEndpoint;
+        private InstanceMetadataProtocolState _httpProtocolIpv6;
         private int? _httpPutResponseHopLimit;
         private HttpTokensState _httpTokens;
         private InstanceMetadataOptionsState _state;
@@ -61,6 +62,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetHttpEndpoint()
         {
             return this._httpEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HttpProtocolIpv6. 
+        /// <para>
+        /// Whether or not the IPv6 endpoint for the instance metadata service is enabled or disabled.
+        /// </para>
+        /// </summary>
+        public InstanceMetadataProtocolState HttpProtocolIpv6
+        {
+            get { return this._httpProtocolIpv6; }
+            set { this._httpProtocolIpv6 = value; }
+        }
+
+        // Check to see if HttpProtocolIpv6 property is set
+        internal bool IsSetHttpProtocolIpv6()
+        {
+            return this._httpProtocolIpv6 != null;
         }
 
         /// <summary>

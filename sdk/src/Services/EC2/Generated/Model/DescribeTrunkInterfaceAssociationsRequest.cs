@@ -30,7 +30,15 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTrunkInterfaceAssociations operation.
+    /// <note> 
+    /// <para>
+    /// This API action is currently in <b>limited preview only</b>. If you are interested
+    /// in using this feature, contact your account manager.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Describes one or more network interface trunk associations.
+    /// </para>
     /// </summary>
     public partial class DescribeTrunkInterfaceAssociationsRequest : AmazonEC2Request
     {

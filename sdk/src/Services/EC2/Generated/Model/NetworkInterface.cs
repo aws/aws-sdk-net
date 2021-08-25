@@ -169,7 +169,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv4Prefixes. 
         /// <para>
-        /// The IPv4 Prefix Delegation prefixes that are assigned to the network interface.
+        /// The IPv4 prefixes that are assigned to the network interface.
         /// </para>
         /// </summary>
         public List<Ipv4PrefixSpecification> Ipv4Prefixes
@@ -205,7 +205,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6Prefixes. 
         /// <para>
-        /// The IPv6 Prefix Delegation prefixes that are assigned to the network interface.
+        /// The IPv6 prefixes that are assigned to the network interface.
         /// </para>
         /// </summary>
         public List<Ipv6PrefixSpecification> Ipv6Prefixes

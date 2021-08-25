@@ -1010,8 +1010,9 @@ namespace Amazon.EC2
         /// <para>
         /// You can optionally use Prefix Delegation on the network interface. You must specify
         /// either the IPV6 Prefix Delegation prefixes, or the IPv6 Prefix Delegation count. For
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
-        /// Delegation</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
+        /// Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssignIpv6Addresses service method.</param>
@@ -1046,8 +1047,9 @@ namespace Amazon.EC2
         /// <para>
         /// You can optionally use Prefix Delegation on the network interface. You must specify
         /// either the IPV6 Prefix Delegation prefixes, or the IPv6 Prefix Delegation count. For
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
-        /// Delegation</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
+        /// Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssignIpv6Addresses service method.</param>
@@ -1103,8 +1105,9 @@ namespace Amazon.EC2
         /// <para>
         /// You can optionally use Prefix Delegation on the network interface. You must specify
         /// either the IPv4 Prefix Delegation prefixes, or the IPv4 Prefix Delegation count. For
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
-        /// Delegation</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
+        /// Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssignPrivateIpAddresses service method.</param>
@@ -1153,8 +1156,9 @@ namespace Amazon.EC2
         /// <para>
         /// You can optionally use Prefix Delegation on the network interface. You must specify
         /// either the IPv4 Prefix Delegation prefixes, or the IPv4 Prefix Delegation count. For
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
-        /// Delegation</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
+        /// Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssignPrivateIpAddresses service method.</param>
@@ -1825,19 +1829,21 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This API action is currently in <b>limited preview only</b>. If you are interested
+        /// in using this feature, contact your account manager.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Associates a branch network interface with a trunk network interface.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Before you create the association, run the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">create-network-interface</a>
         /// command and set <code>--interface-type</code> to <code>trunk</code>. You must also
         /// create a network interface for each branch network interface that you want to associate
         /// with the trunk network interface.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/eni-trunking.html">
-        /// Network interface trunking</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateTrunkInterface service method.</param>
@@ -1855,19 +1861,21 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This API action is currently in <b>limited preview only</b>. If you are interested
+        /// in using this feature, contact your account manager.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Associates a branch network interface with a trunk network interface.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Before you create the association, run the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">create-network-interface</a>
         /// command and set <code>--interface-type</code> to <code>trunk</code>. You must also
         /// create a network interface for each branch network interface that you want to associate
         /// with the trunk network interface.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/eni-trunking.html">
-        /// Network interface trunking</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateTrunkInterface service method.</param>
@@ -18076,7 +18084,15 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This API action is currently in <b>limited preview only</b>. If you are interested
+        /// in using this feature, contact your account manager.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Describes one or more network interface trunk associations.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrunkInterfaceAssociations service method.</param>
         /// 
@@ -18093,7 +18109,15 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This API action is currently in <b>limited preview only</b>. If you are interested
+        /// in using this feature, contact your account manager.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Describes one or more network interface trunk associations.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrunkInterfaceAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -20484,7 +20508,15 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This API action is currently in <b>limited preview only</b>. If you are interested
+        /// in using this feature, contact your account manager.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Removes an association between a branch network interface with a trunk network interface.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateTrunkInterface service method.</param>
         /// 
@@ -20501,7 +20533,15 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This API action is currently in <b>limited preview only</b>. If you are interested
+        /// in using this feature, contact your account manager.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Removes an association between a branch network interface with a trunk network interface.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateTrunkInterface service method.</param>
         /// <param name="cancellationToken">

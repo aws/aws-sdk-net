@@ -76,7 +76,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UnassignedIpv6Prefixes. 
         /// <para>
-        /// The IPv4 Prefix Delegation prefixes that have been unassigned from the network interface.
+        /// The IPv4 prefixes that have been unassigned from the network interface.
         /// </para>
         /// </summary>
         public List<string> UnassignedIpv6Prefixes
