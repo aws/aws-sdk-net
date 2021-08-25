@@ -43,10 +43,10 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AgentArns. 
         /// <para>
-        /// If you are using DataSync on an AWS Outpost, the Amazon Resource Name (ARNs) of the
-        /// EC2 agents deployed on your Outpost. For more information about launching a DataSync
-        /// agent on an AWS Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
-        /// your DataSync agent on AWS Outposts</a>.
+        /// If you are using DataSync on an Amazon Web Services Outpost, the Amazon Resource Name
+        /// (ARNs) of the EC2 agents deployed on your Outpost. For more information about launching
+        /// a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
+        /// your DataSync agent on Outposts</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4)]

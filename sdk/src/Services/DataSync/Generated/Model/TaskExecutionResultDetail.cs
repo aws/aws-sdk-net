@@ -48,8 +48,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// Errors that AWS DataSync encountered during execution of the task. You can use this
-        /// error code to help troubleshoot issues.
+        /// Errors that DataSync encountered during execution of the task. You can use this error
+        /// code to help troubleshoot issues.
         /// </para>
         /// </summary>
         public string ErrorCode
@@ -86,7 +86,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property PrepareDuration. 
         /// <para>
-        /// The total time in milliseconds that AWS DataSync spent in the PREPARING phase. 
+        /// The total time in milliseconds that DataSync spent in the PREPARING phase. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -123,8 +123,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property TotalDuration. 
         /// <para>
-        /// The total time in milliseconds that AWS DataSync took to transfer the file from the
-        /// source to the destination location.
+        /// The total time in milliseconds that DataSync took to transfer the file from the source
+        /// to the destination location.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -143,7 +143,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property TransferDuration. 
         /// <para>
-        /// The total time in milliseconds that AWS DataSync spent in the TRANSFERRING phase.
+        /// The total time in milliseconds that DataSync spent in the TRANSFERRING phase.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -180,7 +180,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property VerifyDuration. 
         /// <para>
-        /// The total time in milliseconds that AWS DataSync spent in the VERIFYING phase.
+        /// The total time in milliseconds that DataSync spent in the VERIFYING phase.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

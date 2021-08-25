@@ -30,7 +30,7 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Applies a key-value pair to an AWS resource.
+    /// Applies a key-value pair to an Amazon Web Services resource.
     /// </summary>
     public partial class TagResourceRequest : AmazonDataSyncRequest
     {

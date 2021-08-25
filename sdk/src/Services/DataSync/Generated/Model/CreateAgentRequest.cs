@@ -30,11 +30,12 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAgent operation.
-    /// Activates an AWS DataSync agent that you have deployed on your host. The activation
-    /// process associates your agent with your account. In the activation process, you specify
-    /// information such as the AWS Region that you want to activate the agent in. You activate
-    /// the agent in the AWS Region where your target locations (in Amazon S3 or Amazon EFS)
-    /// reside. Your tasks are created in this AWS Region.
+    /// Activates an DataSync agent that you have deployed on your host. The activation process
+    /// associates your agent with your account. In the activation process, you specify information
+    /// such as the Amazon Web Services Region that you want to activate the agent in. You
+    /// activate the agent in the Amazon Web Services Region where your target locations (in
+    /// Amazon S3 or Amazon EFS) reside. Your tasks are created in this Amazon Web Services
+    /// Region.
     /// 
     ///  
     /// <para>
@@ -50,8 +51,8 @@ namespace Amazon.DataSync.Model
     /// </para>
     ///  
     /// <para>
-    /// Agents are automatically updated by AWS on a regular basis, using a mechanism that
-    /// ensures minimal interruption to your tasks.
+    /// Agents are automatically updated by Amazon Web Services on a regular basis, using
+    /// a mechanism that ensures minimal interruption to your tasks.
     /// </para>
     /// </summary>
     public partial class CreateAgentRequest : AmazonDataSyncRequest
@@ -68,7 +69,7 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// Your agent activation key. You can get the activation key either by sending an HTTP
         /// GET request with redirects that enable you to get the agent IP address (port 80).
-        /// Alternatively, you can get it from the AWS DataSync console.
+        /// Alternatively, you can get it from the DataSync console.
         /// </para>
         ///  
         /// <para>
@@ -79,8 +80,7 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see Activating an Agent in the <i>AWS DataSync User Guide.</i>
-        /// 
+        /// For more information, see Activating an Agent in the <i>DataSync User Guide.</i> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=29)]

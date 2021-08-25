@@ -31,9 +31,9 @@ namespace Amazon.DataSync.Model
     /// <summary>
     /// Container for the parameters to the DeleteAgent operation.
     /// Deletes an agent. To specify which agent to delete, use the Amazon Resource Name (ARN)
-    /// of the agent in your request. The operation disassociates the agent from your AWS
-    /// account. However, it doesn't delete the agent virtual machine (VM) from your on-premises
-    /// environment.
+    /// of the agent in your request. The operation disassociates the agent from your Amazon
+    /// Web Services account. However, it doesn't delete the agent virtual machine (VM) from
+    /// your on-premises environment.
     /// </summary>
     public partial class DeleteAgentRequest : AmazonDataSyncRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property AgentArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code>
-        /// operation to return a list of agents for your account and AWS Region.
+        /// operation to return a list of agents for your account and Amazon Web Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

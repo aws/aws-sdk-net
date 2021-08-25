@@ -99,6 +99,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     response.Excludes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Includes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<FilterRule, FilterRuleUnmarshaller>(FilterRuleUnmarshaller.Instance);
+                    response.Includes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

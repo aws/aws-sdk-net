@@ -30,7 +30,7 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLocation operation.
-    /// Deletes the configuration of a location used by AWS DataSync.
+    /// Deletes the configuration of a location used by DataSync.
     /// </summary>
     public partial class DeleteLocationRequest : AmazonDataSyncRequest
     {

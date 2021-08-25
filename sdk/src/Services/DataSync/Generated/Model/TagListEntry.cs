@@ -41,7 +41,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key for an AWS resource tag.
+        /// The key for an Amazon Web Services resource tag.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -60,7 +60,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value for an AWS resource tag.
+        /// The value for an Amazon Web Services resource tag.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

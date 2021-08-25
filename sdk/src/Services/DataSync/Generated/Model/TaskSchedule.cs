@@ -40,8 +40,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
-        /// A cron expression that specifies when AWS DataSync initiates a scheduled transfer
-        /// from a source to a destination location. 
+        /// A cron expression that specifies when DataSync initiates a scheduled transfer from
+        /// a source to a destination location. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

@@ -31,16 +31,16 @@ namespace Amazon.DataSync
     /// <summary>
     /// Interface for accessing DataSync
     ///
-    /// AWS DataSync 
+    /// DataSync 
     /// <para>
-    /// AWS DataSync is a managed data transfer service that makes it simpler for you to automate
+    /// DataSync is a managed data transfer service that makes it simpler for you to automate
     /// moving data between on-premises storage and Amazon Simple Storage Service (Amazon
     /// S3) or Amazon Elastic File System (Amazon EFS). 
     /// </para>
     ///  
     /// <para>
-    /// This API interface reference for AWS DataSync contains documentation for a programming
-    /// interface that you can use to manage AWS DataSync.
+    /// This API interface reference for DataSync contains documentation for a programming
+    /// interface that you can use to manage DataSync.
     /// </para>
     /// </summary>
     public partial interface IAmazonDataSync : IAmazonService, IDisposable
@@ -65,15 +65,15 @@ namespace Amazon.DataSync
         /// or inconsistent with the source files. However, if you start a new task execution
         /// on the same task and you allow the task execution to complete, file content on the
         /// destination is complete and consistent. This applies to other unexpected failures
-        /// that interrupt a task execution. In all of these cases, AWS DataSync successfully
-        /// complete the transfer when you start the next task execution.
+        /// that interrupt a task execution. In all of these cases, DataSync successfully complete
+        /// the transfer when you start the next task execution.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelTaskExecution service method.</param>
         /// 
         /// <returns>The response from the CancelTaskExecution service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -93,8 +93,8 @@ namespace Amazon.DataSync
         /// or inconsistent with the source files. However, if you start a new task execution
         /// on the same task and you allow the task execution to complete, file content on the
         /// destination is complete and consistent. This applies to other unexpected failures
-        /// that interrupt a task execution. In all of these cases, AWS DataSync successfully
-        /// complete the transfer when you start the next task execution.
+        /// that interrupt a task execution. In all of these cases, DataSync successfully complete
+        /// the transfer when you start the next task execution.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelTaskExecution service method.</param>
@@ -104,7 +104,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the CancelTaskExecution service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -118,11 +118,12 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Activates an AWS DataSync agent that you have deployed on your host. The activation
-        /// process associates your agent with your account. In the activation process, you specify
-        /// information such as the AWS Region that you want to activate the agent in. You activate
-        /// the agent in the AWS Region where your target locations (in Amazon S3 or Amazon EFS)
-        /// reside. Your tasks are created in this AWS Region.
+        /// Activates an DataSync agent that you have deployed on your host. The activation process
+        /// associates your agent with your account. In the activation process, you specify information
+        /// such as the Amazon Web Services Region that you want to activate the agent in. You
+        /// activate the agent in the Amazon Web Services Region where your target locations (in
+        /// Amazon S3 or Amazon EFS) reside. Your tasks are created in this Amazon Web Services
+        /// Region.
         /// 
         ///  
         /// <para>
@@ -138,15 +139,15 @@ namespace Amazon.DataSync
         /// </para>
         ///  
         /// <para>
-        /// Agents are automatically updated by AWS on a regular basis, using a mechanism that
-        /// ensures minimal interruption to your tasks.
+        /// Agents are automatically updated by Amazon Web Services on a regular basis, using
+        /// a mechanism that ensures minimal interruption to your tasks.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAgent service method.</param>
         /// 
         /// <returns>The response from the CreateAgent service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -157,11 +158,12 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Activates an AWS DataSync agent that you have deployed on your host. The activation
-        /// process associates your agent with your account. In the activation process, you specify
-        /// information such as the AWS Region that you want to activate the agent in. You activate
-        /// the agent in the AWS Region where your target locations (in Amazon S3 or Amazon EFS)
-        /// reside. Your tasks are created in this AWS Region.
+        /// Activates an DataSync agent that you have deployed on your host. The activation process
+        /// associates your agent with your account. In the activation process, you specify information
+        /// such as the Amazon Web Services Region that you want to activate the agent in. You
+        /// activate the agent in the Amazon Web Services Region where your target locations (in
+        /// Amazon S3 or Amazon EFS) reside. Your tasks are created in this Amazon Web Services
+        /// Region.
         /// 
         ///  
         /// <para>
@@ -177,8 +179,8 @@ namespace Amazon.DataSync
         /// </para>
         ///  
         /// <para>
-        /// Agents are automatically updated by AWS on a regular basis, using a mechanism that
-        /// ensures minimal interruption to your tasks.
+        /// Agents are automatically updated by Amazon Web Services on a regular basis, using
+        /// a mechanism that ensures minimal interruption to your tasks.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAgent service method.</param>
@@ -188,7 +190,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the CreateAgent service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -208,7 +210,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the CreateLocationEfs service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -228,7 +230,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the CreateLocationEfs service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -248,7 +250,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the CreateLocationFsxWindows service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -268,7 +270,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the CreateLocationFsxWindows service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -289,7 +291,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the CreateLocationNfs service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -310,7 +312,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the CreateLocationNfs service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -332,7 +334,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the CreateLocationObjectStorage service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -354,7 +356,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the CreateLocationObjectStorage service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -372,15 +374,15 @@ namespace Amazon.DataSync
         /// 
         ///  
         /// <para>
-        /// For more information, see https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli
-        /// in the <i>AWS DataSync User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli">Create
+        /// an Amazon S3 location</a> in the <i>DataSync User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationS3 service method.</param>
         /// 
         /// <returns>The response from the CreateLocationS3 service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -395,8 +397,8 @@ namespace Amazon.DataSync
         /// 
         ///  
         /// <para>
-        /// For more information, see https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli
-        /// in the <i>AWS DataSync User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli">Create
+        /// an Amazon S3 location</a> in the <i>DataSync User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationS3 service method.</param>
@@ -406,7 +408,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the CreateLocationS3 service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -427,7 +429,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the CreateLocationSmb service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -448,7 +450,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the CreateLocationSmb service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -474,20 +476,21 @@ namespace Amazon.DataSync
         /// </para>
         ///  
         /// <para>
-        /// When you create a task that transfers data between AWS services in different AWS Regions,
-        /// one of the two locations that you specify must reside in the Region where DataSync
-        /// is being used. The other location must be specified in a different Region.
+        /// When you create a task that transfers data between Amazon Web Services services in
+        /// different Amazon Web Services Regions, one of the two locations that you specify must
+        /// reside in the Region where DataSync is being used. The other location must be specified
+        /// in a different Region.
         /// </para>
         ///  
         /// <para>
-        /// You can transfer data between commercial AWS Regions except for China, or between
-        /// AWS GovCloud (US-East and US-West) Regions.
+        /// You can transfer data between commercial Amazon Web Services Regions except for China,
+        /// or between Amazon Web Services GovCloud (US) Regions.
         /// </para>
         ///  <important> 
         /// <para>
-        /// When you use DataSync to copy files or objects between AWS Regions, you pay for data
-        /// transfer between Regions. This is billed as data transfer OUT from your source Region
-        /// to your destination Region. For more information, see <a href="http://aws.amazon.com/ec2/pricing/on-demand/#Data_Transfer">Data
+        /// When you use DataSync to copy files or objects between Amazon Web Services Regions,
+        /// you pay for data transfer between Regions. This is billed as data transfer OUT from
+        /// your source Region to your destination Region. For more information, see <a href="http://aws.amazon.com/ec2/pricing/on-demand/#Data_Transfer">Data
         /// Transfer pricing</a>. 
         /// </para>
         ///  </important>
@@ -496,7 +499,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the CreateTask service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -519,20 +522,21 @@ namespace Amazon.DataSync
         /// </para>
         ///  
         /// <para>
-        /// When you create a task that transfers data between AWS services in different AWS Regions,
-        /// one of the two locations that you specify must reside in the Region where DataSync
-        /// is being used. The other location must be specified in a different Region.
+        /// When you create a task that transfers data between Amazon Web Services services in
+        /// different Amazon Web Services Regions, one of the two locations that you specify must
+        /// reside in the Region where DataSync is being used. The other location must be specified
+        /// in a different Region.
         /// </para>
         ///  
         /// <para>
-        /// You can transfer data between commercial AWS Regions except for China, or between
-        /// AWS GovCloud (US-East and US-West) Regions.
+        /// You can transfer data between commercial Amazon Web Services Regions except for China,
+        /// or between Amazon Web Services GovCloud (US) Regions.
         /// </para>
         ///  <important> 
         /// <para>
-        /// When you use DataSync to copy files or objects between AWS Regions, you pay for data
-        /// transfer between Regions. This is billed as data transfer OUT from your source Region
-        /// to your destination Region. For more information, see <a href="http://aws.amazon.com/ec2/pricing/on-demand/#Data_Transfer">Data
+        /// When you use DataSync to copy files or objects between Amazon Web Services Regions,
+        /// you pay for data transfer between Regions. This is billed as data transfer OUT from
+        /// your source Region to your destination Region. For more information, see <a href="http://aws.amazon.com/ec2/pricing/on-demand/#Data_Transfer">Data
         /// Transfer pricing</a>. 
         /// </para>
         ///  </important>
@@ -544,7 +548,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the CreateTask service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -559,15 +563,15 @@ namespace Amazon.DataSync
 
         /// <summary>
         /// Deletes an agent. To specify which agent to delete, use the Amazon Resource Name (ARN)
-        /// of the agent in your request. The operation disassociates the agent from your AWS
-        /// account. However, it doesn't delete the agent virtual machine (VM) from your on-premises
-        /// environment.
+        /// of the agent in your request. The operation disassociates the agent from your Amazon
+        /// Web Services account. However, it doesn't delete the agent virtual machine (VM) from
+        /// your on-premises environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAgent service method.</param>
         /// 
         /// <returns>The response from the DeleteAgent service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -579,9 +583,9 @@ namespace Amazon.DataSync
 
         /// <summary>
         /// Deletes an agent. To specify which agent to delete, use the Amazon Resource Name (ARN)
-        /// of the agent in your request. The operation disassociates the agent from your AWS
-        /// account. However, it doesn't delete the agent virtual machine (VM) from your on-premises
-        /// environment.
+        /// of the agent in your request. The operation disassociates the agent from your Amazon
+        /// Web Services account. However, it doesn't delete the agent virtual machine (VM) from
+        /// your on-premises environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAgent service method.</param>
         /// <param name="cancellationToken">
@@ -590,7 +594,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the DeleteAgent service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -604,13 +608,13 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Deletes the configuration of a location used by AWS DataSync.
+        /// Deletes the configuration of a location used by DataSync.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLocation service method.</param>
         /// 
         /// <returns>The response from the DeleteLocation service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -621,7 +625,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Deletes the configuration of a location used by AWS DataSync.
+        /// Deletes the configuration of a location used by DataSync.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLocation service method.</param>
         /// <param name="cancellationToken">
@@ -630,7 +634,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the DeleteLocation service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -650,7 +654,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the DeleteTask service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -670,7 +674,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the DeleteTask service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -692,7 +696,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the DescribeAgent service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -714,7 +718,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the DescribeAgent service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -734,7 +738,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the DescribeLocationEfs service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -754,7 +758,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the DescribeLocationEfs service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -775,7 +779,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the DescribeLocationFsxWindows service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -796,7 +800,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the DescribeLocationFsxWindows service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -816,7 +820,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the DescribeLocationNfs service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -836,7 +840,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the DescribeLocationNfs service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -858,7 +862,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the DescribeLocationObjectStorage service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -880,7 +884,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the DescribeLocationObjectStorage service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -900,7 +904,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the DescribeLocationS3 service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -920,7 +924,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the DescribeLocationS3 service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -940,7 +944,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the DescribeLocationSmb service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -960,7 +964,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the DescribeLocationSmb service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -980,7 +984,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the DescribeTask service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1000,7 +1004,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the DescribeTask service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1020,7 +1024,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the DescribeTaskExecution service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1040,7 +1044,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the DescribeTaskExecution service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1054,8 +1058,9 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns a list of agents owned by an AWS account in the AWS Region specified in the
-        /// request. The returned list is ordered by agent Amazon Resource Name (ARN).
+        /// Returns a list of agents owned by an Amazon Web Services account in the Amazon Web
+        /// Services Region specified in the request. The returned list is ordered by agent Amazon
+        /// Resource Name (ARN).
         /// 
         ///  
         /// <para>
@@ -1074,7 +1079,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the ListAgents service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1085,8 +1090,9 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns a list of agents owned by an AWS account in the AWS Region specified in the
-        /// request. The returned list is ordered by agent Amazon Resource Name (ARN).
+        /// Returns a list of agents owned by an Amazon Web Services account in the Amazon Web
+        /// Services Region specified in the request. The returned list is ordered by agent Amazon
+        /// Resource Name (ARN).
         /// 
         ///  
         /// <para>
@@ -1108,7 +1114,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the ListAgents service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1135,7 +1141,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the ListLocations service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1162,7 +1168,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the ListLocations service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1182,7 +1188,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1202,7 +1208,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1222,7 +1228,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the ListTaskExecutions service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1242,7 +1248,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the ListTaskExecutions service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1262,7 +1268,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the ListTasks service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1282,7 +1288,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the ListTasks service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1308,14 +1314,14 @@ namespace Amazon.DataSync
         ///  
         /// <para>
         /// For detailed information, see the Task Execution section in the Components and Terminology
-        /// topic in the <i>AWS DataSync User Guide</i>.
+        /// topic in the <i>DataSync User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTaskExecution service method.</param>
         /// 
         /// <returns>The response from the StartTaskExecution service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1338,7 +1344,7 @@ namespace Amazon.DataSync
         ///  
         /// <para>
         /// For detailed information, see the Task Execution section in the Components and Terminology
-        /// topic in the <i>AWS DataSync User Guide</i>.
+        /// topic in the <i>DataSync User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTaskExecution service method.</param>
@@ -1348,7 +1354,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the StartTaskExecution service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1362,13 +1368,13 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Applies a key-value pair to an AWS resource.
+        /// Applies a key-value pair to an Amazon Web Services resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1379,7 +1385,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Applies a key-value pair to an AWS resource.
+        /// Applies a key-value pair to an Amazon Web Services resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1388,7 +1394,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the TagResource service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1402,13 +1408,13 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Removes a tag from an AWS resource.
+        /// Removes a tag from an Amazon Web Services resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1419,7 +1425,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Removes a tag from an AWS resource.
+        /// Removes a tag from an Amazon Web Services resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1428,7 +1434,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the UntagResource service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1448,7 +1454,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the UpdateAgent service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1468,7 +1474,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the UpdateAgent service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1490,7 +1496,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the UpdateLocationNfs service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1512,7 +1518,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the UpdateLocationNfs service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1535,7 +1541,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the UpdateLocationObjectStorage service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1558,7 +1564,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the UpdateLocationObjectStorage service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1581,7 +1587,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the UpdateLocationSmb service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1604,7 +1610,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the UpdateLocationSmb service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1624,7 +1630,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the UpdateTask service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1644,7 +1650,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the UpdateTask service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1678,7 +1684,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the UpdateTaskExecution service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1712,7 +1718,7 @@ namespace Amazon.DataSync
         /// 
         /// <returns>The response from the UpdateTaskExecution service method, as returned by DataSync.</returns>
         /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// This exception is thrown when an error occurs in the DataSync service.
         /// </exception>
         /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.

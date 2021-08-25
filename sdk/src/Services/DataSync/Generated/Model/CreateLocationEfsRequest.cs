@@ -108,7 +108,7 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// A subdirectory in the location’s path. This subdirectory in the EFS file system is
         /// used to read data from the EFS source location or write data to the EFS destination.
-        /// By default, AWS DataSync uses the root directory.
+        /// By default, DataSync uses the root directory.
         /// </para>
         ///  <note> 
         /// <para>

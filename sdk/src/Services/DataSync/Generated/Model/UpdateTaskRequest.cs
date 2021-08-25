@@ -36,6 +36,7 @@ namespace Amazon.DataSync.Model
     {
         private string _cloudWatchLogGroupArn;
         private List<FilterRule> _excludes = new List<FilterRule>();
+        private List<FilterRule> _includes = new List<FilterRule>();
         private string _name;
         private Options _options;
         private TaskSchedule _schedule;
@@ -84,6 +85,27 @@ namespace Amazon.DataSync.Model
         internal bool IsSetExcludes()
         {
             return this._excludes != null && this._excludes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Includes. 
+        /// <para>
+        /// A list of filter rules that determines which files to include when running a task.
+        /// The pattern should contain a single filter string that consists of the patterns to
+        /// include. The patterns are delimited by "|" (that is, a pipe). For example: <code>"/folder1|/folder2</code>"
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<FilterRule> Includes
+        {
+            get { return this._includes; }
+            set { this._includes = value; }
+        }
+
+        // Check to see if Includes property is set
+        internal bool IsSetIncludes()
+        {
+            return this._includes != null && this._includes.Count > 0; 
         }
 
         /// <summary>

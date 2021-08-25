@@ -40,8 +40,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property FilterType. 
         /// <para>
-        /// The type of filter rule to apply. AWS DataSync only supports the SIMPLE_PATTERN rule
-        /// type.
+        /// The type of filter rule to apply. DataSync only supports the SIMPLE_PATTERN rule type.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

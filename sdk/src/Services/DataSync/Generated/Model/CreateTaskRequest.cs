@@ -42,20 +42,21 @@ namespace Amazon.DataSync.Model
     /// </para>
     ///  
     /// <para>
-    /// When you create a task that transfers data between AWS services in different AWS Regions,
-    /// one of the two locations that you specify must reside in the Region where DataSync
-    /// is being used. The other location must be specified in a different Region.
+    /// When you create a task that transfers data between Amazon Web Services services in
+    /// different Amazon Web Services Regions, one of the two locations that you specify must
+    /// reside in the Region where DataSync is being used. The other location must be specified
+    /// in a different Region.
     /// </para>
     ///  
     /// <para>
-    /// You can transfer data between commercial AWS Regions except for China, or between
-    /// AWS GovCloud (US-East and US-West) Regions.
+    /// You can transfer data between commercial Amazon Web Services Regions except for China,
+    /// or between Amazon Web Services GovCloud (US) Regions.
     /// </para>
     ///  <important> 
     /// <para>
-    /// When you use DataSync to copy files or objects between AWS Regions, you pay for data
-    /// transfer between Regions. This is billed as data transfer OUT from your source Region
-    /// to your destination Region. For more information, see <a href="http://aws.amazon.com/ec2/pricing/on-demand/#Data_Transfer">Data
+    /// When you use DataSync to copy files or objects between Amazon Web Services Regions,
+    /// you pay for data transfer between Regions. This is billed as data transfer OUT from
+    /// your source Region to your destination Region. For more information, see <a href="http://aws.amazon.com/ec2/pricing/on-demand/#Data_Transfer">Data
     /// Transfer pricing</a>. 
     /// </para>
     ///  </important>
@@ -65,6 +66,7 @@ namespace Amazon.DataSync.Model
         private string _cloudWatchLogGroupArn;
         private string _destinationLocationArn;
         private List<FilterRule> _excludes = new List<FilterRule>();
+        private List<FilterRule> _includes = new List<FilterRule>();
         private string _name;
         private Options _options;
         private TaskSchedule _schedule;
@@ -94,7 +96,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property DestinationLocationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an AWS storage resource's location. 
+        /// The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's location.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]
@@ -134,6 +137,27 @@ namespace Amazon.DataSync.Model
         internal bool IsSetExcludes()
         {
             return this._excludes != null && this._excludes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Includes. 
+        /// <para>
+        /// A list of filter rules that determines which files to include when running a task.
+        /// The pattern should contain a single filter string that consists of the patterns to
+        /// include. The patterns are delimited by "|" (that is, a pipe). For example: <code>"/folder1|/folder2</code>"
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<FilterRule> Includes
+        {
+            get { return this._includes; }
+            set { this._includes = value; }
+        }
+
+        // Check to see if Includes property is set
+        internal bool IsSetIncludes()
+        {
+            return this._includes != null && this._includes.Count > 0; 
         }
 
         /// <summary>

@@ -67,7 +67,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property BytesWritten. 
         /// <para>
-        /// The number of logical bytes written to the destination AWS storage resource.
+        /// The number of logical bytes written to the destination Amazon Web Services storage
+        /// resource.
         /// </para>
         /// </summary>
         public long BytesWritten
@@ -260,7 +261,7 @@ namespace Amazon.DataSync.Model
         ///  
         /// <para>
         /// For detailed information about task execution statuses, see Understanding Task Statuses
-        /// in the <i>AWS DataSync User Guide.</i> 
+        /// in the <i>DataSync User Guide.</i> 
         /// </para>
         /// </summary>
         public TaskExecutionStatus Status

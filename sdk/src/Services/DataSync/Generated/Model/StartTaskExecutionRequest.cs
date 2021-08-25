@@ -42,14 +42,37 @@ namespace Amazon.DataSync.Model
     ///  
     /// <para>
     /// For detailed information, see the Task Execution section in the Components and Terminology
-    /// topic in the <i>AWS DataSync User Guide</i>.
+    /// topic in the <i>DataSync User Guide</i>.
     /// </para>
     /// </summary>
     public partial class StartTaskExecutionRequest : AmazonDataSyncRequest
     {
+        private List<FilterRule> _excludes = new List<FilterRule>();
         private List<FilterRule> _includes = new List<FilterRule>();
         private Options _overrideOptions;
         private string _taskArn;
+
+        /// <summary>
+        /// Gets and sets the property Excludes. 
+        /// <para>
+        /// A list of filter rules that determines which files to exclude from a task. The list
+        /// should contain a single filter string that consists of the patterns to exclude. The
+        /// patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<FilterRule> Excludes
+        {
+            get { return this._excludes; }
+            set { this._excludes = value; }
+        }
+
+        // Check to see if Excludes property is set
+        internal bool IsSetExcludes()
+        {
+            return this._excludes != null && this._excludes.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Includes. 

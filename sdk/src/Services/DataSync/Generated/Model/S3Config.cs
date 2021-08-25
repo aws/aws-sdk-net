@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-    /// that is used to access an Amazon S3 bucket.
+    /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that
+    /// is used to access an Amazon S3 bucket.
     /// 
     ///  
     /// <para>
     /// For detailed information about using such a role, see Creating a Location for Amazon
-    /// S3 in the <i>AWS DataSync User Guide</i>.
+    /// S3 in the <i>DataSync User Guide</i>.
     /// </para>
     /// </summary>
     public partial class S3Config

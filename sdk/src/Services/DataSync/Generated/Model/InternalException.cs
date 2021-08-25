@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// This exception is thrown when an error occurs in the AWS DataSync service.
+    /// This exception is thrown when an error occurs in the DataSync service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

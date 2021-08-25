@@ -39,7 +39,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property AgentArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the agent. Use the <code>ListAgents</code> operation
-        /// to return a list of agents for your account and AWS Region.
+        /// to return a list of agents for your account and Amazon Web Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

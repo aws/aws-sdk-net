@@ -34,8 +34,8 @@ namespace Amazon.DataSync.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli
-    /// in the <i>AWS DataSync User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli">Create
+    /// an Amazon S3 location</a> in the <i>DataSync User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateLocationS3Request : AmazonDataSyncRequest
@@ -50,10 +50,10 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AgentArns. 
         /// <para>
-        /// If you are using DataSync on an AWS Outpost, specify the Amazon Resource Names (ARNs)
-        /// of the DataSync agents deployed on your Outpost. For more information about launching
-        /// a DataSync agent on an AWS Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
-        /// your DataSync agent on AWS Outposts</a>.
+        /// If you are using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource
+        /// Names (ARNs) of the DataSync agents deployed on your Outpost. For more information
+        /// about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
+        /// your DataSync agent on Outposts</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
@@ -72,8 +72,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property S3BucketArn. 
         /// <para>
-        /// The ARN of the Amazon S3 bucket. If the bucket is on an AWS Outpost, this must be
-        /// an access point ARN.
+        /// The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost,
+        /// this must be an access point ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=156)]
@@ -109,8 +109,9 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property S3StorageClass. 
         /// <para>
         /// The Amazon S3 storage class that you want to store your files in when this location
-        /// is used as a task destination. For buckets in AWS Regions, the storage class defaults
-        /// to Standard. For buckets on AWS Outposts, the storage class defaults to AWS S3 Outposts.
+        /// is used as a task destination. For buckets in Amazon Web Services Regions, the storage
+        /// class defaults to Standard. For buckets on Outposts, the storage class defaults to
+        /// Amazon Web Services S3 Outposts.
         /// </para>
         ///  
         /// <para>
