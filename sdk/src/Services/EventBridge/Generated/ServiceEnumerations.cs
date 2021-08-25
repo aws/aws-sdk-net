@@ -503,6 +503,10 @@ namespace Amazon.EventBridge
         /// </summary>
         public static readonly LaunchType EC2 = new LaunchType("EC2");
         /// <summary>
+        /// Constant EXTERNAL for LaunchType
+        /// </summary>
+        public static readonly LaunchType EXTERNAL = new LaunchType("EXTERNAL");
+        /// <summary>
         /// Constant FARGATE for LaunchType
         /// </summary>
         public static readonly LaunchType FARGATE = new LaunchType("FARGATE");

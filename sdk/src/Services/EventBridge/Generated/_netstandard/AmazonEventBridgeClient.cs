@@ -2368,10 +2368,6 @@ namespace Amazon.EventBridge
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// EC2 Image Builder
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// Amazon EC2 <code>RebootInstances</code> API call
         /// </para>
         ///  </li> <li> 
