@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// These are custom parameters to be used when the target is a Redshift cluster to invoke
-    /// the Redshift Data API ExecuteStatement based on EventBridge events.
+    /// These are custom parameters to be used when the target is a Amazon Redshift cluster
+    /// to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.
     /// </summary>
     public partial class RedshiftDataParameters
     {
@@ -83,7 +83,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// Gets and sets the property SecretManagerArn. 
         /// <para>
         /// The name or ARN of the secret that enables access to the database. Required when authenticating
-        /// using AWS Secrets Manager.
+        /// using Amazon Web Services Secrets Manager.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]

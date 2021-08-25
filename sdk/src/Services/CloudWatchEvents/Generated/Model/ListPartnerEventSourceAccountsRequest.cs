@@ -30,8 +30,9 @@ namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPartnerEventSourceAccounts operation.
-    /// An SaaS partner can use this operation to display the AWS account ID that a particular
-    /// partner event source name is associated with. This operation is not used by AWS customers.
+    /// An SaaS partner can use this operation to display the Amazon Web Services account
+    /// ID that a particular partner event source name is associated with. This operation
+    /// is not used by Amazon Web Services customers.
     /// </summary>
     public partial class ListPartnerEventSourceAccountsRequest : AmazonCloudWatchEventsRequest
     {

@@ -30,8 +30,8 @@ namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
     /// A partner event source is created by an SaaS partner. If a customer creates a partner
-    /// event bus that matches this event source, that AWS account can receive events from
-    /// the partner's applications or services.
+    /// event bus that matches this event source, that Amazon Web Services account can receive
+    /// events from the partner's applications or services.
     /// </summary>
     public partial class PartnerEventSource
     {

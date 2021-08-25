@@ -102,8 +102,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// AWS resources, identified by Amazon Resource Name (ARN), which the event primarily
-        /// concerns. Any number, including zero, may be present.
+        /// Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the
+        /// event primarily concerns. Any number, including zero, may be present.
         /// </para>
         /// </summary>
         public List<string> Resources
@@ -140,7 +140,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// Gets and sets the property Time. 
         /// <para>
         /// The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>.
-        /// If no time stamp is provided, the time stamp of the <a>PutEvents</a> call is used.
+        /// If no time stamp is provided, the time stamp of the <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">PutEvents</a>
+        /// call is used.
         /// </para>
         /// </summary>
         public DateTime Time
@@ -158,13 +159,13 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property TraceHeader. 
         /// <para>
-        /// An AWS X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains
-        /// the trace-id associated with the event.
+        /// An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains the
+        /// trace-id associated with the event.
         /// </para>
         ///  
         /// <para>
         /// To learn more about X-Ray trace headers, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
-        /// header</a> in the AWS X-Ray Developer Guide.
+        /// header</a> in the X-Ray Developer Guide.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]

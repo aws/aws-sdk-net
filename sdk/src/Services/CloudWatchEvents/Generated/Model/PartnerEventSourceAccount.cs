@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// The AWS account that a partner event source has been offered to.
+    /// The Amazon Web Services account that a partner event source has been offered to.
     /// </summary>
     public partial class PartnerEventSourceAccount
     {
@@ -41,7 +41,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Account. 
         /// <para>
-        /// The AWS account ID that the partner event source was offered to.
+        /// The Amazon Web Services account ID that the partner event source was offered to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -78,8 +78,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property ExpirationTime. 
         /// <para>
-        /// The date and time that the event source will expire, if the AWS account doesn't create
-        /// a matching event bus for it.
+        /// The date and time that the event source will expire, if the Amazon Web Services account
+        /// doesn't create a matching event bus for it.
         /// </para>
         /// </summary>
         public DateTime ExpirationTime

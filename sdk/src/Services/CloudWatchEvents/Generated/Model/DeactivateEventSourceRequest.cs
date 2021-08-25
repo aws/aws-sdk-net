@@ -40,7 +40,7 @@ namespace Amazon.CloudWatchEvents.Model
     /// </para>
     ///  
     /// <para>
-    /// To activate a deactivated partner event source, use <a>ActivateEventSource</a>.
+    /// To activate a deactivated partner event source, use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ActivateEventSource.html">ActivateEventSource</a>.
     /// </para>
     /// </summary>
     public partial class DeactivateEventSourceRequest : AmazonCloudWatchEventsRequest

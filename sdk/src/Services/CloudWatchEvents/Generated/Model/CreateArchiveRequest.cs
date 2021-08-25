@@ -103,7 +103,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property EventSourceArn. 
         /// <para>
-        /// The ARN of the event source associated with the archive.
+        /// The ARN of the event bus that sends events to the archive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]

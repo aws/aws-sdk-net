@@ -56,7 +56,7 @@ namespace Amazon.CloudWatchEvents.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// AWS Batch job queue
+    /// Batch job queue
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -68,7 +68,7 @@ namespace Amazon.CloudWatchEvents.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// CodePineline
+    /// CodePipeline
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -92,7 +92,7 @@ namespace Amazon.CloudWatchEvents.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Event bus in a different AWS account or Region.
+    /// Event bus in a different Amazon Web Services account or Region.
     /// </para>
     ///  
     /// <para>
@@ -113,7 +113,7 @@ namespace Amazon.CloudWatchEvents.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// AWS Lambda function
+    /// Lambda function
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -145,7 +145,7 @@ namespace Amazon.CloudWatchEvents.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Creating rules with built-in targets is supported only in the AWS Management Console.
+    /// Creating rules with built-in targets is supported only in the Management Console.
     /// The built-in targets are <code>EC2 CreateSnapshot API call</code>, <code>EC2 RebootInstances
     /// API call</code>, <code>EC2 StopInstances API call</code>, and <code>EC2 TerminateInstances
     /// API call</code>. 
@@ -161,30 +161,30 @@ namespace Amazon.CloudWatchEvents.Model
     ///  
     /// <para>
     /// To be able to make API calls against the resources that you own, Amazon EventBridge
-    /// (CloudWatch Events) needs the appropriate permissions. For AWS Lambda and Amazon SNS
-    /// resources, EventBridge relies on resource-based policies. For EC2 instances, Kinesis
-    /// data streams, AWS Step Functions state machines and API Gateway REST APIs, EventBridge
-    /// relies on IAM roles that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>.
-    /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
+    /// needs the appropriate permissions. For Lambda and Amazon SNS resources, EventBridge
+    /// relies on resource-based policies. For EC2 instances, Kinesis Data Streams, Step Functions
+    /// state machines and API Gateway REST APIs, EventBridge relies on IAM roles that you
+    /// specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more
+    /// information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
     /// and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// If another AWS account is in the same region and has granted you permission (using
-    /// <code>PutPermission</code>), you can send events to that account. Set that account's
-    /// event bus as a target of the rules in your account. To send the matched events to
-    /// the other account, specify that account's event bus as the <code>Arn</code> value
-    /// when you run <code>PutTargets</code>. If your account sends events to another account,
-    /// your account is charged for each sent event. Each event sent to another account is
-    /// charged as a custom event. The account receiving the event is not charged. For more
-    /// information, see <a href="https://aws.amazon.com/eventbridge/pricing/">Amazon EventBridge
-    /// (CloudWatch Events) Pricing</a>.
+    /// If another Amazon Web Services account is in the same region and has granted you permission
+    /// (using <code>PutPermission</code>), you can send events to that account. Set that
+    /// account's event bus as a target of the rules in your account. To send the matched
+    /// events to the other account, specify that account's event bus as the <code>Arn</code>
+    /// value when you run <code>PutTargets</code>. If your account sends events to another
+    /// account, your account is charged for each sent event. Each event sent to another account
+    /// is charged as a custom event. The account receiving the event is not charged. For
+    /// more information, see <a href="http://aws.amazon.com/eventbridge/pricing/">Amazon
+    /// EventBridge Pricing</a>.
     /// </para>
     ///  <note> 
     /// <para>
     ///  <code>Input</code>, <code>InputPath</code>, and <code>InputTransformer</code> are
     /// not available with <code>PutTarget</code> if the target is an event bus of a different
-    /// AWS account.
+    /// Amazon Web Services account.
     /// </para>
     ///  </note> 
     /// <para>
@@ -192,11 +192,12 @@ namespace Amazon.CloudWatchEvents.Model
     /// granted permission to your account through an organization instead of directly by
     /// the account ID, then you must specify a <code>RoleArn</code> with proper permissions
     /// in the <code>Target</code> structure. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending
-    /// and Receiving Events Between AWS Accounts</a> in the <i>Amazon EventBridge User Guide</i>.
+    /// and Receiving Events Between Amazon Web Services Accounts</a> in the <i>Amazon EventBridge
+    /// User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// For more information about enabling cross-account events, see <a>PutPermission</a>.
+    /// For more information about enabling cross-account events, see <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutPermission.html">PutPermission</a>.
     /// </para>
     ///  
     /// <para>

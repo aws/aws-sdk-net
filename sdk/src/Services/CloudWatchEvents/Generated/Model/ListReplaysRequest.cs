@@ -44,7 +44,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property EventSourceArn. 
         /// <para>
-        /// The ARN of the event source associated with the replay.
+        /// The ARN of the archive from which the events are replayed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// A key-value pair associated with an AWS resource. In EventBridge, rules and event
-    /// buses support tagging.
+    /// A key-value pair associated with an Amazon Web Services resource. In EventBridge,
+    /// rules and event buses support tagging.
     /// </summary>
     public partial class Tag
     {

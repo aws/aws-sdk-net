@@ -30,7 +30,7 @@ namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
     /// Targets are the resources to be invoked when a rule is triggered. For a complete list
-    /// of services and resources that can be set as a target, see <a>PutTargets</a>.
+    /// of services and resources that can be set as a target, see <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutTargets.html">PutTargets</a>.
     /// 
     ///  
     /// <para>
@@ -38,7 +38,8 @@ namespace Amazon.CloudWatchEvents.Model
     /// granted permission to your account through an organization instead of directly by
     /// the account ID, then you must specify a <code>RoleArn</code> with proper permissions
     /// in the <code>Target</code> structure. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending
-    /// and Receiving Events Between AWS Accounts</a> in the <i>Amazon EventBridge User Guide</i>.
+    /// and Receiving Events Between Amazon Web Services Accounts</a> in the <i>Amazon EventBridge
+    /// User Guide</i>.
     /// </para>
     /// </summary>
     public partial class Target
@@ -82,9 +83,9 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property BatchParameters. 
         /// <para>
-        /// If the event target is an AWS Batch job, this contains the job definition, job name,
-        /// and other parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a>
-        /// in the <i>AWS Batch User Guide</i>.
+        /// If the event target is an Batch job, this contains the job definition, job name, and
+        /// other parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a>
+        /// in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
         public BatchParameters BatchParameters
@@ -168,7 +169,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the target.
+        /// The ID of the target. We recommend using a memorable and unique string.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -269,12 +270,14 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property RedshiftDataParameters. 
         /// <para>
-        /// Contains the Redshift Data API parameters to use when the target is a Redshift cluster.
+        /// Contains the Amazon Redshift Data API parameters to use when the target is a Amazon
+        /// Redshift cluster.
         /// </para>
         ///  
         /// <para>
-        /// If you specify a Redshift Cluster as a Target, you can use this to specify parameters
-        /// to invoke the Redshift Data API ExecuteStatement based on EventBridge events.
+        /// If you specify a Amazon Redshift Cluster as a Target, you can use this to specify
+        /// parameters to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge
+        /// events.
         /// </para>
         /// </summary>
         public RedshiftDataParameters RedshiftDataParameters

@@ -30,8 +30,8 @@ namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
     /// A partner event source is created by an SaaS partner. If a customer creates a partner
-    /// event bus that matches this event source, that AWS account can receive events from
-    /// the partner's applications or services.
+    /// event bus that matches this event source, that Amazon Web Services account can receive
+    /// events from the partner's applications or services.
     /// </summary>
     public partial class EventSource
     {
@@ -99,8 +99,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property ExpirationTime. 
         /// <para>
-        /// The date and time that the event source will expire, if the AWS account doesn't create
-        /// a matching event bus for it.
+        /// The date and time that the event source will expire, if the Amazon Web Services account
+        /// doesn't create a matching event bus for it.
         /// </para>
         /// </summary>
         public DateTime ExpirationTime
