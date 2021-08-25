@@ -45,6 +45,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Policy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDeleteUnusedFMManagedResources())
+            {
+                context.Writer.WritePropertyName("DeleteUnusedFMManagedResources");
+                context.Writer.Write(requestObject.DeleteUnusedFMManagedResources);
+            }
+
             if(requestObject.IsSetExcludeMap())
             {
                 context.Writer.WritePropertyName("ExcludeMap");

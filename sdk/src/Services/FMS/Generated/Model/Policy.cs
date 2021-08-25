@@ -33,6 +33,7 @@ namespace Amazon.FMS.Model
     /// </summary>
     public partial class Policy
     {
+        private bool? _deleteUnusedFMManagedResources;
         private Dictionary<string, List<string>> _excludeMap = new Dictionary<string, List<string>>();
         private bool? _excludeResourceTags;
         private Dictionary<string, List<string>> _includeMap = new Dictionary<string, List<string>>();
@@ -44,6 +45,27 @@ namespace Amazon.FMS.Model
         private string _resourceType;
         private List<string> _resourceTypeList = new List<string>();
         private SecurityServicePolicyData _securityServicePolicyData;
+
+        /// <summary>
+        /// Gets and sets the property DeleteUnusedFMManagedResources. 
+        /// <para>
+        /// Indicates whether Firewall Manager should delete Firewall Manager managed resources,
+        /// such as web ACLs and security groups, when they are not in use by the Firewall Manager
+        /// policy. By default, Firewall Manager doesn't delete unused Firewall Manager managed
+        /// resources. This option is not available for Shield Advanced or WAF Classic policies.
+        /// </para>
+        /// </summary>
+        public bool DeleteUnusedFMManagedResources
+        {
+            get { return this._deleteUnusedFMManagedResources.GetValueOrDefault(); }
+            set { this._deleteUnusedFMManagedResources = value; }
+        }
+
+        // Check to see if DeleteUnusedFMManagedResources property is set
+        internal bool IsSetDeleteUnusedFMManagedResources()
+        {
+            return this._deleteUnusedFMManagedResources.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ExcludeMap. 
