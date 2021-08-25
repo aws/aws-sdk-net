@@ -32,7 +32,7 @@ namespace Amazon.ConnectContactLens
     public partial class AmazonConnectContactLensConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.54");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.55");
 
         private string _userAgent = UserAgentString;
 
