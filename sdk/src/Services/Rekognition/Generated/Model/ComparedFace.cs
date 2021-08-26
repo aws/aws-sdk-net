@@ -36,9 +36,11 @@ namespace Amazon.Rekognition.Model
     {
         private BoundingBox _boundingBox;
         private float? _confidence;
+        private List<Emotion> _emotions = new List<Emotion>();
         private List<Landmark> _landmarks = new List<Landmark>();
         private Pose _pose;
         private ImageQuality _quality;
+        private Smile _smile;
 
         /// <summary>
         /// Gets and sets the property BoundingBox. 
@@ -75,6 +77,26 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetConfidence()
         {
             return this._confidence.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Emotions. 
+        /// <para>
+        ///  The emotions that appear to be expressed on the face, and the confidence level in
+        /// the determination. Valid values include "Happy", "Sad", "Angry", "Confused", "Disgusted",
+        /// "Surprised", "Calm", "Unknown", and "Fear". 
+        /// </para>
+        /// </summary>
+        public List<Emotion> Emotions
+        {
+            get { return this._emotions; }
+            set { this._emotions = value; }
+        }
+
+        // Check to see if Emotions property is set
+        internal bool IsSetEmotions()
+        {
+            return this._emotions != null && this._emotions.Count > 0; 
         }
 
         /// <summary>
@@ -129,6 +151,25 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetQuality()
         {
             return this._quality != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Smile. 
+        /// <para>
+        ///  Indicates whether or not the face is smiling, and the confidence level in the determination.
+        /// 
+        /// </para>
+        /// </summary>
+        public Smile Smile
+        {
+            get { return this._smile; }
+            set { this._smile = value; }
+        }
+
+        // Check to see if Smile property is set
+        internal bool IsSetSmile()
+        {
+            return this._smile != null;
         }
 
     }

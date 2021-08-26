@@ -36,6 +36,7 @@ namespace Amazon.Rekognition.Model
     {
         private ComparedFace _face;
         private string _id;
+        private KnownGender _knownGender;
         private float? _matchConfidence;
         private string _name;
         private List<string> _urls = new List<string>();
@@ -74,6 +75,21 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KnownGender.
+        /// </summary>
+        public KnownGender KnownGender
+        {
+            get { return this._knownGender; }
+            set { this._knownGender = value; }
+        }
+
+        // Check to see if KnownGender property is set
+        internal bool IsSetKnownGender()
+        {
+            return this._knownGender != null;
         }
 
         /// <summary>
@@ -121,6 +137,7 @@ namespace Amazon.Rekognition.Model
         /// is no additional information about the celebrity, this list is empty.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public List<string> Urls
         {
             get { return this._urls; }

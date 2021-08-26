@@ -76,6 +76,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     unmarshalledObject.Confidence = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Emotions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Emotion, EmotionUnmarshaller>(EmotionUnmarshaller.Instance);
+                    unmarshalledObject.Emotions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Landmarks", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Landmark, LandmarkUnmarshaller>(LandmarkUnmarshaller.Instance);
@@ -92,6 +98,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ImageQualityUnmarshaller.Instance;
                     unmarshalledObject.Quality = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Smile", targetDepth))
+                {
+                    var unmarshaller = SmileUnmarshaller.Instance;
+                    unmarshalledObject.Smile = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -33,8 +33,27 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class GetCelebrityInfoResponse : AmazonWebServiceResponse
     {
+        private KnownGender _knownGender;
         private string _name;
         private List<string> _urls = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property KnownGender. 
+        /// <para>
+        /// Retrieves the known gender for the celebrity.
+        /// </para>
+        /// </summary>
+        public KnownGender KnownGender
+        {
+            get { return this._knownGender; }
+            set { this._knownGender = value; }
+        }
+
+        // Check to see if KnownGender property is set
+        internal bool IsSetKnownGender()
+        {
+            return this._knownGender != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -60,6 +79,7 @@ namespace Amazon.Rekognition.Model
         /// An array of URLs pointing to additional celebrity information. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public List<string> Urls
         {
             get { return this._urls; }

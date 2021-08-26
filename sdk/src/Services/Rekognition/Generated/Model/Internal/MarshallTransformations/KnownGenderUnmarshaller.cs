@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Celebrity Object
+    /// Response Unmarshaller for KnownGender Object
     /// </summary>  
-    public class CelebrityUnmarshaller : IUnmarshaller<Celebrity, XmlUnmarshallerContext>, IUnmarshaller<Celebrity, JsonUnmarshallerContext>
+    public class KnownGenderUnmarshaller : IUnmarshaller<KnownGender, XmlUnmarshallerContext>, IUnmarshaller<KnownGender, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Celebrity IUnmarshaller<Celebrity, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        KnownGender IUnmarshaller<KnownGender, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,21 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Celebrity Unmarshall(JsonUnmarshallerContext context)
+        public KnownGender Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Celebrity unmarshalledObject = new Celebrity();
+            KnownGender unmarshalledObject = new KnownGender();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Face", targetDepth))
-                {
-                    var unmarshaller = ComparedFaceUnmarshaller.Instance;
-                    unmarshalledObject.Face = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("KnownGender", targetDepth))
-                {
-                    var unmarshaller = KnownGenderUnmarshaller.Instance;
-                    unmarshalledObject.KnownGender = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MatchConfidence", targetDepth))
-                {
-                    var unmarshaller = FloatUnmarshaller.Instance;
-                    unmarshalledObject.MatchConfidence = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Urls", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Urls = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +76,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         }
 
 
-        private static CelebrityUnmarshaller _instance = new CelebrityUnmarshaller();        
+        private static KnownGenderUnmarshaller _instance = new KnownGenderUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CelebrityUnmarshaller Instance
+        public static KnownGenderUnmarshaller Instance
         {
             get
             {

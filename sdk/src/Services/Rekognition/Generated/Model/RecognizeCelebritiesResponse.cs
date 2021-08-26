@@ -41,7 +41,10 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property CelebrityFaces. 
         /// <para>
         /// Details about each celebrity found in the image. Amazon Rekognition can detect a maximum
-        /// of 64 celebrities in an image.
+        /// of 64 celebrities in an image. Each celebrity object includes the following attributes:
+        /// <code>Face</code>, <code>Confidence</code>, <code>Emotions</code>, <code>Landmarks</code>,
+        /// <code>Pose</code>, <code>Quality</code>, <code>Smile</code>, <code>Id</code>, <code>KnownGender</code>,
+        /// <code>MatchConfidence</code>, <code>Name</code>, <code>Urls</code>.
         /// </para>
         /// </summary>
         public List<Celebrity> CelebrityFaces
@@ -57,7 +60,13 @@ namespace Amazon.Rekognition.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OrientationCorrection. 
+        /// Gets and sets the property OrientationCorrection. <note> 
+        /// <para>
+        /// Support for estimating image orientation using the the OrientationCorrection field
+        /// has ceased as of August 2021. Any returned values for this field included in an API
+        /// response will always be NULL.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The orientation of the input image (counterclockwise direction). If your application
         /// displays the image, you can use this value to correct the orientation. The bounding

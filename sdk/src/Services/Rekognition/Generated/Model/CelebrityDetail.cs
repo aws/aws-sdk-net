@@ -138,6 +138,7 @@ namespace Amazon.Rekognition.Model
         /// An array of URLs pointing to additional celebrity information. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public List<string> Urls
         {
             get { return this._urls; }
