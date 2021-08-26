@@ -1,3 +1,13 @@
+### 3.7.105.0 (2021-08-26 21:56 UTC)
+* ComputeOptimizer (3.7.3.0)
+	* Adds support for 1) the AWS Graviton (AWS_ARM64) recommendation preference for Amazon EC2 instance and Auto Scaling group recommendations, and 2) the ability to get the enrollment statuses for all member accounts of an organization.
+* EC2 (3.7.25.0)
+	* Support added for resizing VPC prefix lists
+* Rekognition (3.7.3.0)
+	* This release added new attributes to Rekognition RecognizeCelebities and GetCelebrityInfo API operations.
+* TranscribeService (3.7.6.0)
+	* This release adds support for batch transcription in six new languages - Afrikaans, Danish, Mandarin Chinese (Taiwan), New Zealand English, South African English, and Thai.
+
 ### 3.7.104.0 (2021-08-25 18:15 UTC)
 * CloudWatchEvents (3.7.4.0)
 	* AWS CWEvents adds an enum of EXTERNAL for EcsParameters LaunchType for PutTargets API

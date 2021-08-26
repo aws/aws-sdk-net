@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.104.0",
+    "ProductVersion" : "3.7.105.0",
     "CoreVersion"    : "3.7.2.7",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -152,7 +152,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.7.24.0",
+            "Version" : "3.7.25.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.2.7"
@@ -610,7 +610,7 @@
             "InPreview"               : false
         },
         "Rekognition"                     : {
-            "Version" : "3.7.2.6",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.2.7"
@@ -1050,7 +1050,7 @@
             "InPreview"               : false
         },
         "TranscribeService"               : {
-            "Version" : "3.7.5.1",
+            "Version" : "3.7.6.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.2.7"
@@ -1666,7 +1666,7 @@
             "InPreview"               : false
         },
         "ComputeOptimizer"                : {
-            "Version" : "3.7.2.30",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.2.7"
