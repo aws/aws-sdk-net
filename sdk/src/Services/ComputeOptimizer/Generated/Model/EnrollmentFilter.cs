@@ -29,20 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Describes a filter that returns a more specific list of Lambda function recommendations.
-    /// Use this filter with the <a>GetLambdaFunctionRecommendations</a> action.
-    /// 
-    ///  
-    /// <para>
-    /// You can use <code>EBSFilter</code> with the <a>GetEBSVolumeRecommendations</a> action,
-    /// <code>JobFilter</code> with the <a>DescribeRecommendationExportJobs</a> action, and
-    /// <code>Filter</code> with the <a>GetAutoScalingGroupRecommendations</a> and <a>GetEC2InstanceRecommendations</a>
-    /// actions.
-    /// </para>
+    /// Describes a filter that returns a more specific list of account enrollment statuses.
+    /// Use this filter with the <a>GetEnrollmentStatusesForOrganization</a> action.
     /// </summary>
-    public partial class LambdaFunctionRecommendationFilter
+    public partial class EnrollmentFilter
     {
-        private LambdaFunctionRecommendationFilterName _name;
+        private EnrollmentFilterName _name;
         private List<string> _values = new List<string>();
 
         /// <summary>
@@ -52,16 +44,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify <code>Finding</code> to return recommendations with a specific finding classification
-        /// (for example, <code>NotOptimized</code>).
-        /// </para>
-        ///  
-        /// <para>
-        /// Specify <code>FindingReasonCode</code> to return recommendations with a specific finding
-        /// reason code (for example, <code>MemoryUnderprovisioned</code>).
+        /// Specify <code>Status</code> to return accounts with a specific enrollment status (for
+        /// example, <code>Active</code>).
         /// </para>
         /// </summary>
-        public LambdaFunctionRecommendationFilterName Name
+        public EnrollmentFilterName Name
         {
             get { return this._name; }
             set { this._name = value; }
@@ -80,20 +67,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// The valid values for this parameter are as follows, depending on what you specify
-        /// for the <code>name</code> parameter:
+        /// The valid values are <code>Active</code>, <code>Inactive</code>, <code>Pending</code>,
+        /// and <code>Failed</code>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code>
-        /// if you specify the <code>name</code> parameter as <code>Finding</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify <code>MemoryOverprovisioned</code>, <code>MemoryUnderprovisioned</code>, <code>InsufficientData</code>,
-        /// or <code>Inconclusive</code> if you specify the <code>name</code> parameter as <code>FindingReasonCode</code>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public List<string> Values
         {

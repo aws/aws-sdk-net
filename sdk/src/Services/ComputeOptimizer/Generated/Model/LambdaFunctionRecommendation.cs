@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Describes an AWS Lambda function recommendation.
+    /// Describes an Lambda function recommendation.
     /// </summary>
     public partial class LambdaFunctionRecommendation
     {
@@ -48,7 +48,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID of the function.
+        /// The Amazon Web Services account ID of the function.
         /// </para>
         /// </summary>
         public string AccountId
@@ -167,8 +167,8 @@ namespace Amazon.ComputeOptimizer.Model
         ///  <b> <code>InsufficientData</code> </b> — The function does not have sufficient metric
         /// data for Compute Optimizer to generate a recommendation. For more information, see
         /// the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-        /// resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>. This
-        /// finding reason code is part of the <code>Unavailable</code> finding classification.
+        /// resources and requirements</a> in the <i>Compute Optimizer User Guide</i>. This finding
+        /// reason code is part of the <code>Unavailable</code> finding classification.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -229,7 +229,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property LastRefreshTimestamp. 
         /// <para>
-        /// The time stamp of when the function recommendation was last refreshed.
+        /// The timestamp of when the function recommendation was last refreshed.
         /// </para>
         /// </summary>
         public DateTime LastRefreshTimestamp
@@ -284,7 +284,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property NumberOfInvocations. 
         /// <para>
-        /// The number of times your function code was executed during the look-back period.
+        /// The number of times your function code was applied during the look-back period.
         /// </para>
         /// </summary>
         public long NumberOfInvocations

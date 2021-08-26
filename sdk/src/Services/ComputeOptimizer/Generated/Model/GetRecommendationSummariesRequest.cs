@@ -64,7 +64,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// The ID of the AWS account for which to return recommendation summaries.
+        /// The ID of the Amazon Web Services account for which to return recommendation summaries.
         /// </para>
         ///  
         /// <para>
@@ -95,7 +95,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// To retrieve the remaining results, make another request with the returned <code>NextToken</code>
+        /// To retrieve the remaining results, make another request with the returned <code>nextToken</code>
         /// value.
         /// </para>
         /// </summary>

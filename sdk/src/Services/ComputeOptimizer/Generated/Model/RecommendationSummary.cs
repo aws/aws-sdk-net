@@ -40,7 +40,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID of the recommendation summary.
+        /// The Amazon Web Services account ID of the recommendation summary.
         /// </para>
         /// </summary>
         public string AccountId

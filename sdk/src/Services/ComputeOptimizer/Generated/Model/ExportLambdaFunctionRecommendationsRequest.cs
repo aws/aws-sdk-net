@@ -30,18 +30,20 @@ namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
     /// Container for the parameters to the ExportLambdaFunctionRecommendations operation.
-    /// Exports optimization recommendations for AWS Lambda functions.
+    /// Exports optimization recommendations for Lambda functions.
     /// 
     ///  
     /// <para>
     /// Recommendations are exported in a comma-separated values (.csv) file, and its metadata
-    /// in a JavaScript Object Notation (.json) file, to an existing Amazon Simple Storage
-    /// Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+    /// in a JavaScript Object Notation (JSON) (.json) file, to an existing Amazon Simple
+    /// Storage Service (Amazon S3) bucket that you specify. For more information, see <a
+    /// href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
     /// Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// You can have only one Lambda function export job in progress per AWS Region.
+    /// You can have only one Lambda function export job in progress per Amazon Web Services
+    /// Region.
     /// </para>
     /// </summary>
     public partial class ExportLambdaFunctionRecommendationsRequest : AmazonComputeOptimizerRequest
@@ -56,7 +58,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// The IDs of the AWS accounts for which to export Lambda function recommendations.
+        /// The IDs of the Amazon Web Services accounts for which to export Lambda function recommendations.
         /// </para>
         ///  
         /// <para>
@@ -135,7 +137,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// An array of objects that describe a filter to export a more specific set of Lambda
+        /// An array of objects to specify a filter that exports a more specific set of Lambda
         /// function recommendations.
         /// </para>
         /// </summary>
@@ -162,8 +164,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// The member accounts must also be opted in to Compute Optimizer, and trusted access
         /// for Compute Optimizer must be enabled in the organization account. For more information,
         /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute
-        /// Optimizer and AWS Organizations trusted access</a> in the <i>AWS Compute Optimizer
-        /// User Guide</i>.
+        /// Optimizer and Amazon Web Services Organizations trusted access</a> in the <i>Compute
+        /// Optimizer User Guide</i>.
         /// </para>
         ///  
         /// <para>

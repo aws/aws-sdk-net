@@ -25,6 +25,56 @@ namespace Amazon.ComputeOptimizer
 {
 
     /// <summary>
+    /// Constants used for properties of type CpuVendorArchitecture.
+    /// </summary>
+    public class CpuVendorArchitecture : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_ARM64 for CpuVendorArchitecture
+        /// </summary>
+        public static readonly CpuVendorArchitecture AWS_ARM64 = new CpuVendorArchitecture("AWS_ARM64");
+        /// <summary>
+        /// Constant CURRENT for CpuVendorArchitecture
+        /// </summary>
+        public static readonly CpuVendorArchitecture CURRENT = new CpuVendorArchitecture("CURRENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CpuVendorArchitecture(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CpuVendorArchitecture FindValue(string value)
+        {
+            return FindValue<CpuVendorArchitecture>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CpuVendorArchitecture(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EBSFilterName.
     /// </summary>
     public class EBSFilterName : ConstantClass
@@ -172,6 +222,52 @@ namespace Amazon.ComputeOptimizer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EBSMetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EnrollmentFilterName.
+    /// </summary>
+    public class EnrollmentFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Status for EnrollmentFilterName
+        /// </summary>
+        public static readonly EnrollmentFilterName Status = new EnrollmentFilterName("Status");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EnrollmentFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EnrollmentFilterName FindValue(string value)
+        {
+            return FindValue<EnrollmentFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EnrollmentFilterName(string value)
         {
             return FindValue(value);
         }
@@ -1820,6 +1916,10 @@ namespace Amazon.ComputeOptimizer
     public class PlatformDifference : ConstantClass
     {
 
+        /// <summary>
+        /// Constant Architecture for PlatformDifference
+        /// </summary>
+        public static readonly PlatformDifference Architecture = new PlatformDifference("Architecture");
         /// <summary>
         /// Constant Hypervisor for PlatformDifference
         /// </summary>

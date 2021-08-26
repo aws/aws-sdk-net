@@ -45,7 +45,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID of the volume.
+        /// The Amazon Web Services account ID of the volume.
         /// </para>
         /// </summary>
         public string AccountId
@@ -89,9 +89,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>NotOptimized</code> </b>—A volume is considered not optimized when AWS
-        /// Compute Optimizer identifies a recommendation that can provide better performance
-        /// for your workload.
+        ///  <b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute
+        /// Optimizer identifies a recommendation that can provide better performance for your
+        /// workload.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -117,7 +117,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property LastRefreshTimestamp. 
         /// <para>
-        /// The time stamp of when the volume recommendation was last refreshed.
+        /// The timestamp of when the volume recommendation was last refreshed.
         /// </para>
         /// </summary>
         public DateTime LastRefreshTimestamp

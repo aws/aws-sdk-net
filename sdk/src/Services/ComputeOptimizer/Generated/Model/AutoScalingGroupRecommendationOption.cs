@@ -79,7 +79,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// your resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=5)]
+        [AWSProperty(Min=0, Max=4)]
         public double PerformanceRisk
         {
             get { return this._performanceRisk.GetValueOrDefault(); }

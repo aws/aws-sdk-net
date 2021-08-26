@@ -35,18 +35,18 @@ namespace Amazon.ComputeOptimizer
     /// <summary>
     /// Implementation for accessing ComputeOptimizer
     ///
-    /// AWS Compute Optimizer is a service that analyzes the configuration and utilization
-    /// metrics of your AWS compute resources, such as EC2 instances, Auto Scaling groups,
-    /// AWS Lambda functions, and Amazon EBS volumes. It reports whether your resources are
-    /// optimal, and generates optimization recommendations to reduce the cost and improve
-    /// the performance of your workloads. Compute Optimizer also provides recent utilization
-    /// metric data, as well as projected utilization metric data for the recommendations,
-    /// which you can use to evaluate which recommendation provides the best price-performance
-    /// trade-off. The analysis of your usage patterns can help you decide when to move or
-    /// resize your running resources, and still meet your performance and capacity requirements.
-    /// For more information about Compute Optimizer, including the required permissions to
-    /// use the service, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS
-    /// Compute Optimizer User Guide</a>.
+    /// Compute Optimizer is a service that analyzes the configuration and utilization metrics
+    /// of your Amazon Web Services compute resources, such as Amazon EC2 instances, Amazon
+    /// EC2 Auto Scaling groups, Lambda functions, and Amazon EBS volumes. It reports whether
+    /// your resources are optimal, and generates optimization recommendations to reduce the
+    /// cost and improve the performance of your workloads. Compute Optimizer also provides
+    /// recent utilization metric data, in addition to projected utilization metric data for
+    /// the recommendations, which you can use to evaluate which recommendation provides the
+    /// best price-performance trade-off. The analysis of your usage patterns can help you
+    /// decide when to move or resize your running resources, and still meet your performance
+    /// and capacity requirements. For more information about Compute Optimizer, including
+    /// the required permissions to use the service, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">Compute
+    /// Optimizer User Guide</a>.
     /// </summary>
     public partial class AmazonComputeOptimizerClient : AmazonServiceClient, IAmazonComputeOptimizer
     {
@@ -255,8 +255,8 @@ namespace Amazon.ComputeOptimizer
         /// 
         ///  
         /// <para>
-        /// Use the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code>
-        /// actions to request an export of your recommendations. Then use the <code>DescribeRecommendationExportJobs</code>
+        /// Use the <a>ExportAutoScalingGroupRecommendations</a> or <a>ExportEC2InstanceRecommendations</a>
+        /// actions to request an export of your recommendations. Then use the <a>DescribeRecommendationExportJobs</a>
         /// action to view your export jobs.
         /// </para>
         /// </summary>
@@ -270,13 +270,14 @@ namespace Amazon.ComputeOptimizer
         /// An internal error has occurred. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
-        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// The value supplied for the input parameter is out of range or not valid.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
-        /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
-        /// The account is not opted in to AWS Compute Optimizer.
+        /// The account is not opted in to Compute Optimizer.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ResourceNotFoundException">
         /// A resource that is required for the action doesn't exist.
@@ -341,13 +342,15 @@ namespace Amazon.ComputeOptimizer
         ///  
         /// <para>
         /// Recommendations are exported in a comma-separated values (.csv) file, and its metadata
-        /// in a JavaScript Object Notation (.json) file, to an existing Amazon Simple Storage
-        /// Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+        /// in a JavaScript Object Notation (JSON) (.json) file, to an existing Amazon Simple
+        /// Storage Service (Amazon S3) bucket that you specify. For more information, see <a
+        /// href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
         /// Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// You can have only one Auto Scaling group export job in progress per AWS Region.
+        /// You can have only one Auto Scaling group export job in progress per Amazon Web Services
+        /// Region.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExportAutoScalingGroupRecommendations service method.</param>
@@ -360,16 +363,17 @@ namespace Amazon.ComputeOptimizer
         /// An internal error has occurred. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
-        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// The value supplied for the input parameter is out of range or not valid.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.LimitExceededException">
         /// The request exceeds a limit of the service.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
-        /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
-        /// The account is not opted in to AWS Compute Optimizer.
+        /// The account is not opted in to Compute Optimizer.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
         /// The request has failed due to a temporary failure of the server.
@@ -431,13 +435,15 @@ namespace Amazon.ComputeOptimizer
         ///  
         /// <para>
         /// Recommendations are exported in a comma-separated values (.csv) file, and its metadata
-        /// in a JavaScript Object Notation (.json) file, to an existing Amazon Simple Storage
-        /// Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+        /// in a JavaScript Object Notation (JSON) (.json) file, to an existing Amazon Simple
+        /// Storage Service (Amazon S3) bucket that you specify. For more information, see <a
+        /// href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
         /// Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// You can have only one Amazon EBS volume export job in progress per AWS Region.
+        /// You can have only one Amazon EBS volume export job in progress per Amazon Web Services
+        /// Region.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExportEBSVolumeRecommendations service method.</param>
@@ -450,16 +456,17 @@ namespace Amazon.ComputeOptimizer
         /// An internal error has occurred. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
-        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// The value supplied for the input parameter is out of range or not valid.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.LimitExceededException">
         /// The request exceeds a limit of the service.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
-        /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
-        /// The account is not opted in to AWS Compute Optimizer.
+        /// The account is not opted in to Compute Optimizer.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
         /// The request has failed due to a temporary failure of the server.
@@ -521,13 +528,15 @@ namespace Amazon.ComputeOptimizer
         ///  
         /// <para>
         /// Recommendations are exported in a comma-separated values (.csv) file, and its metadata
-        /// in a JavaScript Object Notation (.json) file, to an existing Amazon Simple Storage
-        /// Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+        /// in a JavaScript Object Notation (JSON) (.json) file, to an existing Amazon Simple
+        /// Storage Service (Amazon S3) bucket that you specify. For more information, see <a
+        /// href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
         /// Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// You can have only one Amazon EC2 instance export job in progress per AWS Region.
+        /// You can have only one Amazon EC2 instance export job in progress per Amazon Web Services
+        /// Region.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExportEC2InstanceRecommendations service method.</param>
@@ -540,16 +549,17 @@ namespace Amazon.ComputeOptimizer
         /// An internal error has occurred. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
-        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// The value supplied for the input parameter is out of range or not valid.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.LimitExceededException">
         /// The request exceeds a limit of the service.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
-        /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
-        /// The account is not opted in to AWS Compute Optimizer.
+        /// The account is not opted in to Compute Optimizer.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
         /// The request has failed due to a temporary failure of the server.
@@ -606,18 +616,20 @@ namespace Amazon.ComputeOptimizer
         #region  ExportLambdaFunctionRecommendations
 
         /// <summary>
-        /// Exports optimization recommendations for AWS Lambda functions.
+        /// Exports optimization recommendations for Lambda functions.
         /// 
         ///  
         /// <para>
         /// Recommendations are exported in a comma-separated values (.csv) file, and its metadata
-        /// in a JavaScript Object Notation (.json) file, to an existing Amazon Simple Storage
-        /// Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+        /// in a JavaScript Object Notation (JSON) (.json) file, to an existing Amazon Simple
+        /// Storage Service (Amazon S3) bucket that you specify. For more information, see <a
+        /// href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
         /// Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// You can have only one Lambda function export job in progress per AWS Region.
+        /// You can have only one Lambda function export job in progress per Amazon Web Services
+        /// Region.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExportLambdaFunctionRecommendations service method.</param>
@@ -630,16 +642,17 @@ namespace Amazon.ComputeOptimizer
         /// An internal error has occurred. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
-        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// The value supplied for the input parameter is out of range or not valid.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.LimitExceededException">
         /// The request exceeds a limit of the service.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
-        /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
-        /// The account is not opted in to AWS Compute Optimizer.
+        /// The account is not opted in to Compute Optimizer.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
         /// The request has failed due to a temporary failure of the server.
@@ -700,9 +713,9 @@ namespace Amazon.ComputeOptimizer
         /// 
         ///  
         /// <para>
-        /// AWS Compute Optimizer generates recommendations for Amazon EC2 Auto Scaling groups
-        /// that meet a specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-        /// resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
+        /// Compute Optimizer generates recommendations for Amazon EC2 Auto Scaling groups that
+        /// meet a specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+        /// resources and requirements</a> in the <i>Compute Optimizer User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAutoScalingGroupRecommendations service method.</param>
@@ -715,13 +728,14 @@ namespace Amazon.ComputeOptimizer
         /// An internal error has occurred. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
-        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// The value supplied for the input parameter is out of range or not valid.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
-        /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
-        /// The account is not opted in to AWS Compute Optimizer.
+        /// The account is not opted in to Compute Optimizer.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ResourceNotFoundException">
         /// A resource that is required for the action doesn't exist.
@@ -785,9 +799,9 @@ namespace Amazon.ComputeOptimizer
         /// 
         ///  
         /// <para>
-        /// AWS Compute Optimizer generates recommendations for Amazon EBS volumes that meet a
-        /// specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-        /// resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
+        /// Compute Optimizer generates recommendations for Amazon EBS volumes that meet a specific
+        /// set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+        /// resources and requirements</a> in the <i>Compute Optimizer User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEBSVolumeRecommendations service method.</param>
@@ -800,13 +814,14 @@ namespace Amazon.ComputeOptimizer
         /// An internal error has occurred. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
-        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// The value supplied for the input parameter is out of range or not valid.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
-        /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
-        /// The account is not opted in to AWS Compute Optimizer.
+        /// The account is not opted in to Compute Optimizer.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ResourceNotFoundException">
         /// A resource that is required for the action doesn't exist.
@@ -870,10 +885,10 @@ namespace Amazon.ComputeOptimizer
         /// 
         ///  
         /// <para>
-        /// AWS Compute Optimizer generates recommendations for Amazon Elastic Compute Cloud (Amazon
+        /// Compute Optimizer generates recommendations for Amazon Elastic Compute Cloud (Amazon
         /// EC2) instances that meet a specific set of requirements. For more information, see
         /// the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-        /// resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
+        /// resources and requirements</a> in the <i>Compute Optimizer User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEC2InstanceRecommendations service method.</param>
@@ -886,13 +901,14 @@ namespace Amazon.ComputeOptimizer
         /// An internal error has occurred. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
-        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// The value supplied for the input parameter is out of range or not valid.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
-        /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
-        /// The account is not opted in to AWS Compute Optimizer.
+        /// The account is not opted in to Compute Optimizer.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ResourceNotFoundException">
         /// A resource that is required for the action doesn't exist.
@@ -974,13 +990,14 @@ namespace Amazon.ComputeOptimizer
         /// An internal error has occurred. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
-        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// The value supplied for the input parameter is out of range or not valid.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
-        /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
-        /// The account is not opted in to AWS Compute Optimizer.
+        /// The account is not opted in to Compute Optimizer.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ResourceNotFoundException">
         /// A resource that is required for the action doesn't exist.
@@ -1040,13 +1057,14 @@ namespace Amazon.ComputeOptimizer
         #region  GetEnrollmentStatus
 
         /// <summary>
-        /// Returns the enrollment (opt in) status of an account to the AWS Compute Optimizer
-        /// service.
+        /// Returns the enrollment (opt in) status of an account to the Compute Optimizer service.
         /// 
         ///  
         /// <para>
         /// If the account is the management account of an organization, this action also confirms
-        /// the enrollment status of member accounts within the organization.
+        /// the enrollment status of member accounts of the organization. Use the <a>GetEnrollmentStatusesForOrganization</a>
+        /// action to get detailed information about the enrollment status of member accounts
+        /// of an organization.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnrollmentStatus service method.</param>
@@ -1059,10 +1077,11 @@ namespace Amazon.ComputeOptimizer
         /// An internal error has occurred. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
-        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// The value supplied for the input parameter is out of range or not valid.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
-        /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
         /// The request has failed due to a temporary failure of the server.
@@ -1116,16 +1135,96 @@ namespace Amazon.ComputeOptimizer
 
         #endregion
         
-        #region  GetLambdaFunctionRecommendations
+        #region  GetEnrollmentStatusesForOrganization
 
         /// <summary>
-        /// Returns AWS Lambda function recommendations.
+        /// Returns the Compute Optimizer enrollment (opt-in) status of organization member accounts,
+        /// if your account is an organization management account.
         /// 
         ///  
         /// <para>
-        /// AWS Compute Optimizer generates recommendations for functions that meet a specific
-        /// set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-        /// resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
+        /// To get the enrollment status of standalone accounts, use the <a>GetEnrollmentStatus</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEnrollmentStatusesForOrganization service method.</param>
+        /// 
+        /// <returns>The response from the GetEnrollmentStatusesForOrganization service method, as returned by ComputeOptimizer.</returns>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
+        /// An internal error has occurred. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
+        /// The value supplied for the input parameter is out of range or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEnrollmentStatusesForOrganization">REST API Reference for GetEnrollmentStatusesForOrganization Operation</seealso>
+        public virtual GetEnrollmentStatusesForOrganizationResponse GetEnrollmentStatusesForOrganization(GetEnrollmentStatusesForOrganizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEnrollmentStatusesForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEnrollmentStatusesForOrganizationResponseUnmarshaller.Instance;
+
+            return Invoke<GetEnrollmentStatusesForOrganizationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEnrollmentStatusesForOrganization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEnrollmentStatusesForOrganization operation on AmazonComputeOptimizerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEnrollmentStatusesForOrganization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEnrollmentStatusesForOrganization">REST API Reference for GetEnrollmentStatusesForOrganization Operation</seealso>
+        public virtual IAsyncResult BeginGetEnrollmentStatusesForOrganization(GetEnrollmentStatusesForOrganizationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEnrollmentStatusesForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEnrollmentStatusesForOrganizationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEnrollmentStatusesForOrganization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEnrollmentStatusesForOrganization.</param>
+        /// 
+        /// <returns>Returns a  GetEnrollmentStatusesForOrganizationResult from ComputeOptimizer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEnrollmentStatusesForOrganization">REST API Reference for GetEnrollmentStatusesForOrganization Operation</seealso>
+        public virtual GetEnrollmentStatusesForOrganizationResponse EndGetEnrollmentStatusesForOrganization(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetEnrollmentStatusesForOrganizationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetLambdaFunctionRecommendations
+
+        /// <summary>
+        /// Returns Lambda function recommendations.
+        /// 
+        ///  
+        /// <para>
+        /// Compute Optimizer generates recommendations for functions that meet a specific set
+        /// of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+        /// resources and requirements</a> in the <i>Compute Optimizer User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLambdaFunctionRecommendations service method.</param>
@@ -1138,16 +1237,17 @@ namespace Amazon.ComputeOptimizer
         /// An internal error has occurred. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
-        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// The value supplied for the input parameter is out of range or not valid.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.LimitExceededException">
         /// The request exceeds a limit of the service.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
-        /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
-        /// The account is not opted in to AWS Compute Optimizer.
+        /// The account is not opted in to Compute Optimizer.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
         /// The request has failed due to a temporary failure of the server.
@@ -1239,13 +1339,14 @@ namespace Amazon.ComputeOptimizer
         /// An internal error has occurred. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
-        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// The value supplied for the input parameter is out of range or not valid.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
-        /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
-        /// The account is not opted in to AWS Compute Optimizer.
+        /// The account is not opted in to Compute Optimizer.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
         /// The request has failed due to a temporary failure of the server.
@@ -1302,27 +1403,26 @@ namespace Amazon.ComputeOptimizer
         #region  UpdateEnrollmentStatus
 
         /// <summary>
-        /// Updates the enrollment (opt in and opt out) status of an account to the AWS Compute
-        /// Optimizer service.
+        /// Updates the enrollment (opt in and opt out) status of an account to the Compute Optimizer
+        /// service.
         /// 
         ///  
         /// <para>
         /// If the account is a management account of an organization, this action can also be
-        /// used to enroll member accounts within the organization.
+        /// used to enroll member accounts of the organization.
         /// </para>
         ///  
         /// <para>
         /// You must have the appropriate permissions to opt in to Compute Optimizer, to view
         /// its recommendations, and to opt out. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html">Controlling
-        /// access with AWS Identity and Access Management</a> in the <i>AWS Compute Optimizer
-        /// User Guide</i>.
+        /// access with Amazon Web Services Identity and Access Management</a> in the <i>Compute
+        /// Optimizer User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// When you opt in, Compute Optimizer automatically creates a Service-Linked Role in
+        /// When you opt in, Compute Optimizer automatically creates a service-linked role in
         /// your account to access its data. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/using-service-linked-roles.html">Using
-        /// Service-Linked Roles for AWS Compute Optimizer</a> in the <i>AWS Compute Optimizer
-        /// User Guide</i>.
+        /// Service-Linked Roles for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEnrollmentStatus service method.</param>
@@ -1335,10 +1435,11 @@ namespace Amazon.ComputeOptimizer
         /// An internal error has occurred. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
-        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// The value supplied for the input parameter is out of range or not valid.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
-        /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
         /// The request has failed due to a temporary failure of the server.

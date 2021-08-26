@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Describes a utilization metric of an AWS Lambda function.
+    /// Describes a utilization metric of an Lambda function.
     /// </summary>
     public partial class LambdaFunctionUtilizationMetric
     {
@@ -76,7 +76,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// The Compute Optimizer API, AWS Command Line Interface (AWS CLI), and SDKs return utilization
+        /// The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization
         /// metrics using only the <code>Maximum</code> statistic, which is the highest value
         /// observed during the specified period.
         /// </para>
@@ -85,9 +85,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// The Compute Optimizer console displays graphs for some utilization metrics using the
         /// <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code>
         /// during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing
-        /// resource recommendations</a> in the <i>AWS Compute Optimizer User Guide</i>. You can
-        /// also get averaged utilization metric data for your resources using Amazon CloudWatch.
-        /// For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon
+        /// resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also
+        /// get averaged utilization metric data for your resources using Amazon CloudWatch. For
+        /// more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon
         /// CloudWatch User Guide</a>.
         /// </para>
         /// </summary>

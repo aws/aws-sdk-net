@@ -46,7 +46,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID of the Auto Scaling group.
+        /// The Amazon Web Services account ID of the Auto Scaling group.
         /// </para>
         /// </summary>
         public string AccountId
@@ -127,7 +127,7 @@ namespace Amazon.ComputeOptimizer.Model
         ///  <ul> <li> 
         /// <para>
         ///  <b> <code>NotOptimized</code> </b>—An Auto Scaling group is considered not optimized
-        /// when AWS Compute Optimizer identifies a recommendation that can provide better performance
+        /// when Compute Optimizer identifies a recommendation that can provide better performance
         /// for your workload.
         /// </para>
         ///  </li> <li> 
@@ -154,7 +154,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property LastRefreshTimestamp. 
         /// <para>
-        /// The time stamp of when the Auto Scaling group recommendation was last refreshed.
+        /// The timestamp of when the Auto Scaling group recommendation was last refreshed.
         /// </para>
         /// </summary>
         public DateTime LastRefreshTimestamp

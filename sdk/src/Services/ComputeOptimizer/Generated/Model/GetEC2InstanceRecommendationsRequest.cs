@@ -34,10 +34,10 @@ namespace Amazon.ComputeOptimizer.Model
     /// 
     ///  
     /// <para>
-    /// AWS Compute Optimizer generates recommendations for Amazon Elastic Compute Cloud (Amazon
+    /// Compute Optimizer generates recommendations for Amazon Elastic Compute Cloud (Amazon
     /// EC2) instances that meet a specific set of requirements. For more information, see
     /// the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-    /// resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
+    /// resources and requirements</a> in the <i>Compute Optimizer User Guide</i>.
     /// </para>
     /// </summary>
     public partial class GetEC2InstanceRecommendationsRequest : AmazonComputeOptimizerRequest
@@ -47,11 +47,12 @@ namespace Amazon.ComputeOptimizer.Model
         private List<string> _instanceArns = new List<string>();
         private int? _maxResults;
         private string _nextToken;
+        private RecommendationPreferences _recommendationPreferences;
 
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// The ID of the AWS account for which to return instance recommendations.
+        /// The ID of the Amazon Web Services account for which to return instance recommendations.
         /// </para>
         ///  
         /// <para>
@@ -78,7 +79,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// An array of objects that describe a filter that returns a more specific list of instance
+        /// An array of objects to specify a filter that returns a more specific list of instance
         /// recommendations.
         /// </para>
         /// </summary>
@@ -119,7 +120,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// To retrieve the remaining results, make another request with the returned <code>NextToken</code>
+        /// To retrieve the remaining results, make another request with the returned <code>nextToken</code>
         /// value.
         /// </para>
         /// </summary>
@@ -151,6 +152,25 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecommendationPreferences. 
+        /// <para>
+        /// An object to specify the preferences for the Amazon EC2 instance recommendations to
+        /// return in the response.
+        /// </para>
+        /// </summary>
+        public RecommendationPreferences RecommendationPreferences
+        {
+            get { return this._recommendationPreferences; }
+            set { this._recommendationPreferences = value; }
+        }
+
+        // Check to see if RecommendationPreferences property is set
+        internal bool IsSetRecommendationPreferences()
+        {
+            return this._recommendationPreferences != null;
         }
 
     }

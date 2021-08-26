@@ -38,7 +38,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property RecommendedOptionProjectedMetrics. 
         /// <para>
-        /// An array of objects that describe a projected metrics.
+        /// An array of objects that describes projected metrics.
         /// </para>
         /// </summary>
         public List<RecommendedOptionProjectedMetric> RecommendedOptionProjectedMetrics

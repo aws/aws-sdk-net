@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ExportAutoScalingGroupRecommendations Request Marshaller
+    /// GetEnrollmentStatusesForOrganization Request Marshaller
     /// </summary>       
-    public class ExportAutoScalingGroupRecommendationsRequestMarshaller : IMarshaller<IRequest, ExportAutoScalingGroupRecommendationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetEnrollmentStatusesForOrganizationRequestMarshaller : IMarshaller<IRequest, GetEnrollmentStatusesForOrganizationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ExportAutoScalingGroupRecommendationsRequest)input);
+            return this.Marshall((GetEnrollmentStatusesForOrganizationRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ExportAutoScalingGroupRecommendationsRequest publicRequest)
+        public IRequest Marshall(GetEnrollmentStatusesForOrganizationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ComputeOptimizer");
-            string target = "ComputeOptimizerService.ExportAutoScalingGroupRecommendations";
+            string target = "ComputeOptimizerService.GetEnrollmentStatusesForOrganization";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-01";            
@@ -67,34 +67,6 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccountIds())
-                {
-                    context.Writer.WritePropertyName("accountIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAccountIdsListValue in publicRequest.AccountIds)
-                    {
-                            context.Writer.Write(publicRequestAccountIdsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetFieldsToExport())
-                {
-                    context.Writer.WritePropertyName("fieldsToExport");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFieldsToExportListValue in publicRequest.FieldsToExport)
-                    {
-                            context.Writer.Write(publicRequestFieldsToExportListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetFileFormat())
-                {
-                    context.Writer.WritePropertyName("fileFormat");
-                    context.Writer.Write(publicRequest.FileFormat);
-                }
-
                 if(publicRequest.IsSetFilters())
                 {
                     context.Writer.WritePropertyName("filters");
@@ -103,7 +75,7 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     {
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = FilterMarshaller.Instance;
+                        var marshaller = EnrollmentFilterMarshaller.Instance;
                         marshaller.Marshall(publicRequestFiltersListValue, context);
 
                         context.Writer.WriteObjectEnd();
@@ -111,32 +83,16 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetIncludeMemberAccounts())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("includeMemberAccounts");
-                    context.Writer.Write(publicRequest.IncludeMemberAccounts);
+                    context.Writer.WritePropertyName("maxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetRecommendationPreferences())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("recommendationPreferences");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RecommendationPreferencesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RecommendationPreferences, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetS3DestinationConfig())
-                {
-                    context.Writer.WritePropertyName("s3DestinationConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3DestinationConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.S3DestinationConfig, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("nextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
         
@@ -148,9 +104,9 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ExportAutoScalingGroupRecommendationsRequestMarshaller _instance = new ExportAutoScalingGroupRecommendationsRequestMarshaller();        
+        private static GetEnrollmentStatusesForOrganizationRequestMarshaller _instance = new GetEnrollmentStatusesForOrganizationRequestMarshaller();        
 
-        internal static ExportAutoScalingGroupRecommendationsRequestMarshaller GetInstance()
+        internal static GetEnrollmentStatusesForOrganizationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -158,7 +114,7 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ExportAutoScalingGroupRecommendationsRequestMarshaller Instance
+        public static GetEnrollmentStatusesForOrganizationRequestMarshaller Instance
         {
             get
             {

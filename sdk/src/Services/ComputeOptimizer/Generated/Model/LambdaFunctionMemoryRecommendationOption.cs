@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Describes a recommendation option for an AWS Lambda function.
+    /// Describes a recommendation option for an Lambda function.
     /// </summary>
     public partial class LambdaFunctionMemoryRecommendationOption
     {

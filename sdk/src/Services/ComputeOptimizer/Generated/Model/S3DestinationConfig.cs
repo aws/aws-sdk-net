@@ -40,7 +40,7 @@ namespace Amazon.ComputeOptimizer.Model
     /// to allow Compute Optimizer to write the export file to it. If you plan to specify
     /// an object prefix when you create the export job, you must include the object prefix
     /// in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon
-    /// S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer user guide</i>.
+    /// S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
     /// </para>
     /// </summary>
     public partial class S3DestinationConfig

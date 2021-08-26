@@ -43,8 +43,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job
-        /// ID to view the status of an export job.
+        /// Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job ID to
+        /// view the status of an export job.
         /// </para>
         /// </summary>
         public string JobId

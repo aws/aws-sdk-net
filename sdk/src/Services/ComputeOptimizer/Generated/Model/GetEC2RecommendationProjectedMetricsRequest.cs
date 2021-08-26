@@ -47,13 +47,14 @@ namespace Amazon.ComputeOptimizer.Model
         private DateTime? _endTime;
         private string _instanceArn;
         private int? _period;
+        private RecommendationPreferences _recommendationPreferences;
         private DateTime? _startTime;
         private MetricStatistic _stat;
 
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The time stamp of the last projected metrics data point to return.
+        /// The timestamp of the last projected metrics data point to return.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -109,9 +110,28 @@ namespace Amazon.ComputeOptimizer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RecommendationPreferences. 
+        /// <para>
+        /// An object to specify the preferences for the Amazon EC2 recommendation projected metrics
+        /// to return in the response.
+        /// </para>
+        /// </summary>
+        public RecommendationPreferences RecommendationPreferences
+        {
+            get { return this._recommendationPreferences; }
+            set { this._recommendationPreferences = value; }
+        }
+
+        // Check to see if RecommendationPreferences property is set
+        internal bool IsSetRecommendationPreferences()
+        {
+            return this._recommendationPreferences != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The time stamp of the first projected metrics data point to return.
+        /// The timestamp of the first projected metrics data point to return.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

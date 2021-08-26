@@ -33,12 +33,12 @@ namespace Amazon.ComputeOptimizer.Model
     /// 
     ///  
     /// <para>
-    /// Use the <code>DescribeRecommendationExportJobs</code> action to view your recommendation
+    /// Use the <a>DescribeRecommendationExportJobs</a> action to view your recommendation
     /// export jobs.
     /// </para>
     ///  
     /// <para>
-    /// Use the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code>
+    /// Use the <a>ExportAutoScalingGroupRecommendations</a> or <a>ExportEC2InstanceRecommendations</a>
     /// actions to request an export of your recommendations.
     /// </para>
     /// </summary>

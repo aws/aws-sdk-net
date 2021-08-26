@@ -29,15 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// This is the response object from the GetEnrollmentStatus operation.
+    /// Describes the enrollment status of an organization's member accounts in Compute Optimizer.
     /// </summary>
-    public partial class GetEnrollmentStatusResponse : AmazonWebServiceResponse
+    public partial class AccountEnrollmentStatus
     {
+        private string _accountId;
         private DateTime? _lastUpdatedTimestamp;
-        private bool? _memberAccountsEnrolled;
-        private int? _numberOfMemberAccountsOptedIn;
         private Status _status;
         private string _statusReason;
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The Amazon Web Services account ID.
+        /// </para>
+        /// </summary>
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LastUpdatedTimestamp. 
@@ -59,47 +76,9 @@ namespace Amazon.ComputeOptimizer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MemberAccountsEnrolled. 
-        /// <para>
-        /// Confirms the enrollment status of member accounts of the organization, if the account
-        /// is a management account of an organization.
-        /// </para>
-        /// </summary>
-        public bool MemberAccountsEnrolled
-        {
-            get { return this._memberAccountsEnrolled.GetValueOrDefault(); }
-            set { this._memberAccountsEnrolled = value; }
-        }
-
-        // Check to see if MemberAccountsEnrolled property is set
-        internal bool IsSetMemberAccountsEnrolled()
-        {
-            return this._memberAccountsEnrolled.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property NumberOfMemberAccountsOptedIn. 
-        /// <para>
-        /// The count of organization member accounts that are opted in to the service, if your
-        /// account is an organization management account.
-        /// </para>
-        /// </summary>
-        public int NumberOfMemberAccountsOptedIn
-        {
-            get { return this._numberOfMemberAccountsOptedIn.GetValueOrDefault(); }
-            set { this._numberOfMemberAccountsOptedIn = value; }
-        }
-
-        // Check to see if NumberOfMemberAccountsOptedIn property is set
-        internal bool IsSetNumberOfMemberAccountsOptedIn()
-        {
-            return this._numberOfMemberAccountsOptedIn.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The enrollment status of the account.
+        /// The account enrollment status.
         /// </para>
         /// </summary>
         public Status Status
@@ -117,7 +96,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        /// The reason for the enrollment status of the account.
+        /// The reason for the account enrollment status.
         /// </para>
         ///  
         /// <para>

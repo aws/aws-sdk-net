@@ -48,7 +48,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID of the instance.
+        /// The Amazon Web Services account ID of the instance.
         /// </para>
         /// </summary>
         public string AccountId
@@ -109,8 +109,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         ///  <b> <code>Optimized</code> </b>—An instance is considered optimized when all specifications
         /// of your instance, such as CPU, memory, and network, meet the performance requirements
-        /// of your workload and is not over provisioned. For optimized resources, AWS Compute
-        /// Optimizer might recommend a new generation instance type.
+        /// of your workload and is not over provisioned. For optimized resources, Compute Optimizer
+        /// might recommend a new generation instance type.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -167,7 +167,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         /// Memory utilization is analyzed only for resources that have the unified CloudWatch
         /// agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
-        /// memory utilization with the Amazon CloudWatch Agent</a> in the <i>AWS Compute Optimizer
+        /// memory utilization with the Amazon CloudWatch Agent</a> in the <i>Compute Optimizer
         /// User Guide</i>. On Linux instances, Compute Optimizer analyses the <code>mem_used_percent</code>
         /// metric in the <code>CWAgent</code> namespace, or the legacy <code>MemoryUtilization</code>
         /// metric in the <code>System/Linux</code> namespace. On Windows instances, Compute Optimizer
@@ -329,7 +329,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property LastRefreshTimestamp. 
         /// <para>
-        /// The time stamp of when the instance recommendation was last refreshed.
+        /// The timestamp of when the instance recommendation was last refreshed.
         /// </para>
         /// </summary>
         public DateTime LastRefreshTimestamp

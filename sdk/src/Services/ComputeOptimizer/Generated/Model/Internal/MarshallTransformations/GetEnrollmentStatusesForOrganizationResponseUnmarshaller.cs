@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetEnrollmentStatus operation
+    /// Response Unmarshaller for GetEnrollmentStatusesForOrganization operation
     /// </summary>  
-    public class GetEnrollmentStatusResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetEnrollmentStatusesForOrganizationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,40 +45,22 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetEnrollmentStatusResponse response = new GetEnrollmentStatusResponse();
+            GetEnrollmentStatusesForOrganizationResponse response = new GetEnrollmentStatusesForOrganizationResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("lastUpdatedTimestamp", targetDepth))
+                if (context.TestExpression("accountEnrollmentStatuses", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.LastUpdatedTimestamp = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<AccountEnrollmentStatus, AccountEnrollmentStatusUnmarshaller>(AccountEnrollmentStatusUnmarshaller.Instance);
+                    response.AccountEnrollmentStatuses = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("memberAccountsEnrolled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.MemberAccountsEnrolled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("numberOfMemberAccountsOptedIn", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.NumberOfMemberAccountsOptedIn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("statusReason", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.StatusReason = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -132,9 +114,9 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
             return new AmazonComputeOptimizerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetEnrollmentStatusResponseUnmarshaller _instance = new GetEnrollmentStatusResponseUnmarshaller();        
+        private static GetEnrollmentStatusesForOrganizationResponseUnmarshaller _instance = new GetEnrollmentStatusesForOrganizationResponseUnmarshaller();        
 
-        internal static GetEnrollmentStatusResponseUnmarshaller GetInstance()
+        internal static GetEnrollmentStatusesForOrganizationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -142,7 +124,7 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetEnrollmentStatusResponseUnmarshaller Instance
+        public static GetEnrollmentStatusesForOrganizationResponseUnmarshaller Instance
         {
             get
             {

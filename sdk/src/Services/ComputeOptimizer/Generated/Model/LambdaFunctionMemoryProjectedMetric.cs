@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Describes a projected utilization metric of an AWS Lambda function recommendation
-    /// option.
+    /// Describes a projected utilization metric of an Lambda function recommendation option.
     /// </summary>
     public partial class LambdaFunctionMemoryProjectedMetric
     {

@@ -35,13 +35,15 @@ namespace Amazon.ComputeOptimizer.Model
     ///  
     /// <para>
     /// Recommendations are exported in a comma-separated values (.csv) file, and its metadata
-    /// in a JavaScript Object Notation (.json) file, to an existing Amazon Simple Storage
-    /// Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+    /// in a JavaScript Object Notation (JSON) (.json) file, to an existing Amazon Simple
+    /// Storage Service (Amazon S3) bucket that you specify. For more information, see <a
+    /// href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
     /// Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// You can have only one Amazon EC2 instance export job in progress per AWS Region.
+    /// You can have only one Amazon EC2 instance export job in progress per Amazon Web Services
+    /// Region.
     /// </para>
     /// </summary>
     public partial class ExportEC2InstanceRecommendationsRequest : AmazonComputeOptimizerRequest
@@ -51,12 +53,13 @@ namespace Amazon.ComputeOptimizer.Model
         private FileFormat _fileFormat;
         private List<Filter> _filters = new List<Filter>();
         private bool? _includeMemberAccounts;
+        private RecommendationPreferences _recommendationPreferences;
         private S3DestinationConfig _s3DestinationConfig;
 
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// The IDs of the AWS accounts for which to export instance recommendations.
+        /// The IDs of the Amazon Web Services accounts for which to export instance recommendations.
         /// </para>
         ///  
         /// <para>
@@ -135,7 +138,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// An array of objects that describe a filter to export a more specific set of instance
+        /// An array of objects to specify a filter that exports a more specific set of instance
         /// recommendations.
         /// </para>
         /// </summary>
@@ -162,8 +165,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// The member accounts must also be opted in to Compute Optimizer, and trusted access
         /// for Compute Optimizer must be enabled in the organization account. For more information,
         /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute
-        /// Optimizer and AWS Organizations trusted access</a> in the <i>AWS Compute Optimizer
-        /// User Guide</i>.
+        /// Optimizer and Amazon Web Services Organizations trusted access</a> in the <i>Compute
+        /// Optimizer User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -189,6 +192,25 @@ namespace Amazon.ComputeOptimizer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RecommendationPreferences. 
+        /// <para>
+        /// An object to specify the preferences for the Amazon EC2 instance recommendations to
+        /// export.
+        /// </para>
+        /// </summary>
+        public RecommendationPreferences RecommendationPreferences
+        {
+            get { return this._recommendationPreferences; }
+            set { this._recommendationPreferences = value; }
+        }
+
+        // Check to see if RecommendationPreferences property is set
+        internal bool IsSetRecommendationPreferences()
+        {
+            return this._recommendationPreferences != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property S3DestinationConfig. 
         /// <para>
         /// An object to specify the destination Amazon Simple Storage Service (Amazon S3) bucket
@@ -198,11 +220,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         /// You must create the destination Amazon S3 bucket for your recommendations export before
         /// you create the export job. Compute Optimizer does not create the S3 bucket for you.
-        /// After you create the S3 bucket, ensure that it has the required permission policy
-        /// to allow Compute Optimizer to write the export file to it. If you plan to specify
+        /// After you create the S3 bucket, ensure that it has the required permissions policy
+        /// policy to allow Compute Optimizer to write the export file to it. If you plan to specify
         /// an object prefix when you create the export job, you must include the object prefix
-        /// in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon
-        /// S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer user guide</i>.
+        /// in the that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon
+        /// S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

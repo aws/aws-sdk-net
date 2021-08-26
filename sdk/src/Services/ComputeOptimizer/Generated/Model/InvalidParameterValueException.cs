@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// An invalid or out-of-range value was supplied for the input parameter.
+    /// The value supplied for the input parameter is out of range or not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

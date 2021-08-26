@@ -30,14 +30,14 @@ namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
     /// Describes a filter that returns a more specific list of recommendation export jobs.
-    /// Use this filter with the <code>DescribeRecommendationExportJobs</code> action.
+    /// Use this filter with the <a>DescribeRecommendationExportJobs</a> action.
     /// 
     ///  
     /// <para>
-    /// You can use <code>EBSFilter</code> with the <code>GetEBSVolumeRecommendations</code>
-    /// action, <code>LambdaFunctionRecommendationFilter</code> with the <code>GetLambdaFunctionRecommendations</code>
-    /// action, and <code>Filter</code> with the <code>GetAutoScalingGroupRecommendations</code>
-    /// and <code>GetEC2InstanceRecommendations</code> actions.
+    /// You can use <code>EBSFilter</code> with the <a>GetEBSVolumeRecommendations</a> action,
+    /// <code>LambdaFunctionRecommendationFilter</code> with the <a>GetLambdaFunctionRecommendations</a>
+    /// action, and <code>Filter</code> with the <a>GetAutoScalingGroupRecommendations</a>
+    /// and <a>GetEC2InstanceRecommendations</a> actions.
     /// </para>
     /// </summary>
     public partial class JobFilter
@@ -53,7 +53,7 @@ namespace Amazon.ComputeOptimizer.Model
         ///  
         /// <para>
         /// Specify <code>ResourceType</code> to return export jobs of a specific resource type
-        /// (e.g., <code>Ec2Instance</code>).
+        /// (for example, <code>Ec2Instance</code>).
         /// </para>
         ///  
         /// <para>

@@ -34,9 +34,9 @@ namespace Amazon.ComputeOptimizer.Model
     /// 
     ///  
     /// <para>
-    /// AWS Compute Optimizer generates recommendations for Amazon EBS volumes that meet a
-    /// specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-    /// resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
+    /// Compute Optimizer generates recommendations for Amazon EBS volumes that meet a specific
+    /// set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+    /// resources and requirements</a> in the <i>Compute Optimizer User Guide</i>.
     /// </para>
     /// </summary>
     public partial class GetEBSVolumeRecommendationsRequest : AmazonComputeOptimizerRequest
@@ -50,7 +50,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// The ID of the AWS account for which to return volume recommendations.
+        /// The ID of the Amazon Web Services account for which to return volume recommendations.
         /// </para>
         ///  
         /// <para>
@@ -77,7 +77,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// An array of objects that describe a filter that returns a more specific list of volume
+        /// An array of objects to specify a filter that returns a more specific list of volume
         /// recommendations.
         /// </para>
         /// </summary>
@@ -100,7 +100,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// To retrieve the remaining results, make another request with the returned <code>NextToken</code>
+        /// To retrieve the remaining results, make another request with the returned <code>nextToken</code>
         /// value.
         /// </para>
         /// </summary>

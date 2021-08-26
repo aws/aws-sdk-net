@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+    /// The request must contain either a valid (registered) Amazon Web Services access key
+    /// ID or X.509 certificate.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

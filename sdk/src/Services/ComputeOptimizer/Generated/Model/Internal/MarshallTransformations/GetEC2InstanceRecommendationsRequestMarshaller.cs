@@ -117,6 +117,17 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetRecommendationPreferences())
+                {
+                    context.Writer.WritePropertyName("recommendationPreferences");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RecommendationPreferencesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RecommendationPreferences, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

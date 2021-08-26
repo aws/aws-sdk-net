@@ -30,14 +30,14 @@ namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
     /// Describes a filter that returns a more specific list of recommendations. Use this
-    /// filter with the <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code>
+    /// filter with the <a>GetAutoScalingGroupRecommendations</a> and <a>GetEC2InstanceRecommendations</a>
     /// actions.
     /// 
     ///  
     /// <para>
-    /// You can use <code>EBSFilter</code> with the <code>GetEBSVolumeRecommendations</code>
-    /// action, <code>LambdaFunctionRecommendationFilter</code> with the <code>GetLambdaFunctionRecommendations</code>
-    /// action, and <code>JobFilter</code> with the <code>DescribeRecommendationExportJobs</code>
+    /// You can use <code>EBSFilter</code> with the <a>GetEBSVolumeRecommendations</a> action,
+    /// <code>LambdaFunctionRecommendationFilter</code> with the <a>GetLambdaFunctionRecommendations</a>
+    /// action, and <code>JobFilter</code> with the <a>DescribeRecommendationExportJobs</a>
     /// action.
     /// </para>
     /// </summary>
@@ -54,17 +54,17 @@ namespace Amazon.ComputeOptimizer.Model
         ///  
         /// <para>
         /// Specify <code>Finding</code> to return recommendations with a specific finding classification
-        /// (e.g., <code>Underprovisioned</code>).
+        /// (for example, <code>Underprovisioned</code>).
         /// </para>
         ///  
         /// <para>
         /// Specify <code>RecommendationSourceType</code> to return recommendations of a specific
-        /// resource type (e.g., <code>Ec2Instance</code>).
+        /// resource type (for example, <code>Ec2Instance</code>).
         /// </para>
         ///  
         /// <para>
         /// Specify <code>FindingReasonCodes</code> to return recommendations with a specific
-        /// finding reason code (e.g., <code>CPUUnderprovisioned</code>).
+        /// finding reason code (for example, <code>CPUUnderprovisioned</code>).
         /// </para>
         /// </summary>
         public FilterName Name

@@ -30,15 +30,15 @@ namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
     /// Describes a filter that returns a more specific list of Amazon Elastic Block Store
-    /// (Amazon EBS) volume recommendations. Use this filter with the <code>GetEBSVolumeRecommendations</code>
+    /// (Amazon EBS) volume recommendations. Use this filter with the <a>GetEBSVolumeRecommendations</a>
     /// action.
     /// 
     ///  
     /// <para>
-    /// You can use <code>LambdaFunctionRecommendationFilter</code> with the <code>GetLambdaFunctionRecommendations</code>
-    /// action, <code>JobFilter</code> with the <code>DescribeRecommendationExportJobs</code>
-    /// action, and <code>Filter</code> with the <code>GetAutoScalingGroupRecommendations</code>
-    /// and <code>GetEC2InstanceRecommendations</code> actions.
+    /// You can use <code>LambdaFunctionRecommendationFilter</code> with the <a>GetLambdaFunctionRecommendations</a>
+    /// action, <code>JobFilter</code> with the <a>DescribeRecommendationExportJobs</a> action,
+    /// and <code>Filter</code> with the <a>GetAutoScalingGroupRecommendations</a> and <a>GetEC2InstanceRecommendations</a>
+    /// actions.
     /// </para>
     /// </summary>
     public partial class EBSFilter
@@ -54,7 +54,7 @@ namespace Amazon.ComputeOptimizer.Model
         ///  
         /// <para>
         /// Specify <code>Finding</code> to return recommendations with a specific finding classification
-        /// (e.g., <code>NotOptimized</code>).
+        /// (for example, <code>NotOptimized</code>).
         /// </para>
         /// </summary>
         public EBSFilterName Name
