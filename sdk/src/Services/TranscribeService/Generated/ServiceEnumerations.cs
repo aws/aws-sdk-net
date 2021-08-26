@@ -249,6 +249,10 @@ namespace Amazon.TranscribeService
         /// </summary>
         public static readonly LanguageCode EnIN = new LanguageCode("en-IN");
         /// <summary>
+        /// Constant EnNZ for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EnNZ = new LanguageCode("en-NZ");
+        /// <summary>
         /// Constant EnUS for LanguageCode
         /// </summary>
         public static readonly LanguageCode EnUS = new LanguageCode("en-US");
@@ -256,6 +260,10 @@ namespace Amazon.TranscribeService
         /// Constant EnWL for LanguageCode
         /// </summary>
         public static readonly LanguageCode EnWL = new LanguageCode("en-WL");
+        /// <summary>
+        /// Constant EnZA for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EnZA = new LanguageCode("en-ZA");
         /// <summary>
         /// Constant EsES for LanguageCode
         /// </summary>
@@ -337,6 +345,10 @@ namespace Amazon.TranscribeService
         /// </summary>
         public static readonly LanguageCode TeIN = new LanguageCode("te-IN");
         /// <summary>
+        /// Constant ThTH for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ThTH = new LanguageCode("th-TH");
+        /// <summary>
         /// Constant TrTR for LanguageCode
         /// </summary>
         public static readonly LanguageCode TrTR = new LanguageCode("tr-TR");
@@ -344,6 +356,10 @@ namespace Amazon.TranscribeService
         /// Constant ZhCN for LanguageCode
         /// </summary>
         public static readonly LanguageCode ZhCN = new LanguageCode("zh-CN");
+        /// <summary>
+        /// Constant ZhTW for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ZhTW = new LanguageCode("zh-TW");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -83,7 +83,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the result of the previous request to <code>ListTranscriptionJobs</code> was truncated,
+        /// If the result of the previous request to <code>ListTranscriptionJobs</code> is truncated,
         /// include the <code>NextToken</code> to fetch the next set of jobs.
         /// </para>
         /// </summary>

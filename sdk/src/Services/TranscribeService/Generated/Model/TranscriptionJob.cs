@@ -57,7 +57,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CompletionTime. 
         /// <para>
-        /// A timestamp that shows when the job was completed.
+        /// A timestamp that shows when the job completed.
         /// </para>
         /// </summary>
         public DateTime CompletionTime
