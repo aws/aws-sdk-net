@@ -62,7 +62,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>resource-owner-id</code> - The ID of the AWS account that owns the resource.
+        ///  <code>resource-owner-id</code> - The ID of the Amazon Web Services account that owns
+        /// the resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -87,8 +88,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>transit-gateway-owner-id</code> - The ID of the AWS account that owns the transit
-        /// gateway.
+        ///  <code>transit-gateway-owner-id</code> - The ID of the Amazon Web Services account
+        /// that owns the transit gateway.
         /// </para>
         ///  </li> </ul>
         /// </summary>

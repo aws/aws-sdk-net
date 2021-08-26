@@ -48,7 +48,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AssociationId. 
         /// <para>
-        /// The ID ofthe association
+        /// The ID of the association
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

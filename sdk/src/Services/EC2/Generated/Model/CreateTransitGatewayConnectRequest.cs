@@ -36,8 +36,8 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// A Connect attachment uses an existing VPC or AWS Direct Connect attachment as the
-    /// underlying transport mechanism. 
+    /// A Connect attachment uses an existing VPC or Amazon Web Services Direct Connect attachment
+    /// as the underlying transport mechanism.
     /// </para>
     /// </summary>
     public partial class CreateTransitGatewayConnectRequest : AmazonEC2Request
@@ -86,8 +86,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TransportTransitGatewayAttachmentId. 
         /// <para>
-        /// The ID of the transit gateway attachment. You can specify a VPC attachment or a AWS
-        /// Direct Connect attachment.
+        /// The ID of the transit gateway attachment. You can specify a VPC attachment or Amazon
+        /// Web Services Direct Connect attachment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

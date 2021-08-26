@@ -80,11 +80,6 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>state</code> - The state of the subnet association. Valid values are <code>associated</code>
-        /// | <code>associated</code> | <code>disassociated</code> | <code>disassociating</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>subnet-id</code> - The ID of the subnet.
         /// </para>
         ///  </li> <li> 

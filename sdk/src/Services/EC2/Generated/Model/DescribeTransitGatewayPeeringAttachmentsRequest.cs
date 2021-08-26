@@ -50,12 +50,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>local-owner-id</code> - The ID of your AWS account.
+        ///  <code>local-owner-id</code> - The ID of your Amazon Web Services account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>remote-owner-id</code> - The ID of the AWS account in the remote Region that
-        /// owns the transit gateway.
+        ///  <code>remote-owner-id</code> - The ID of the Amazon Web Services account in the remote
+        /// Region that owns the transit gateway.
         /// </para>
         ///  </li> <li> 
         /// <para>

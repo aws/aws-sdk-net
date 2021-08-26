@@ -125,7 +125,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags for the trunk interface associaton.
+        /// The tags for the trunk interface association.
         /// </para>
         /// </summary>
         public List<Tag> Tags

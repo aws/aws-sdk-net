@@ -47,6 +47,7 @@ namespace Amazon.EC2.Model
     {
         private List<AddPrefixListEntry> _addEntries = new List<AddPrefixListEntry>();
         private long? _currentVersion;
+        private int? _maxEntries;
         private string _prefixListId;
         private string _prefixListName;
         private List<RemovePrefixListEntry> _removeEntries = new List<RemovePrefixListEntry>();
@@ -86,6 +87,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetCurrentVersion()
         {
             return this._currentVersion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxEntries. 
+        /// <para>
+        /// The maximum number of entries for the prefix list. You cannot modify the entries of
+        /// a prefix list and modify the size of a prefix list at the same time.
+        /// </para>
+        /// </summary>
+        public int MaxEntries
+        {
+            get { return this._maxEntries.GetValueOrDefault(); }
+            set { this._maxEntries = value; }
+        }
+
+        // Check to see if MaxEntries property is set
+        internal bool IsSetMaxEntries()
+        {
+            return this._maxEntries.HasValue; 
         }
 
         /// <summary>

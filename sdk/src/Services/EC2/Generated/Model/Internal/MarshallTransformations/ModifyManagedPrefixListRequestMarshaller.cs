@@ -78,6 +78,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CurrentVersion", StringUtils.FromLong(publicRequest.CurrentVersion));
                 }
+                if(publicRequest.IsSetMaxEntries())
+                {
+                    request.Parameters.Add("MaxEntries", StringUtils.FromInt(publicRequest.MaxEntries));
+                }
                 if(publicRequest.IsSetPrefixListId())
                 {
                     request.Parameters.Add("PrefixListId", StringUtils.FromString(publicRequest.PrefixListId));

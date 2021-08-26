@@ -101,7 +101,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ResourceOwnerId. 
         /// <para>
-        /// The ID of the AWS account that owns the resource.
+        /// The ID of the Amazon Web Services account that owns the resource.
         /// </para>
         /// </summary>
         public string ResourceOwnerId
@@ -209,7 +209,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TransitGatewayOwnerId. 
         /// <para>
-        /// The ID of the AWS account that owns the transit gateway.
+        /// The ID of the Amazon Web Services account that owns the transit gateway.
         /// </para>
         /// </summary>
         public string TransitGatewayOwnerId

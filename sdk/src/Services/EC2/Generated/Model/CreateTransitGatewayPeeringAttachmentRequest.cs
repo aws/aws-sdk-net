@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// Requests a transit gateway peering attachment between the specified transit gateway
     /// (requester) and a peer transit gateway (accepter). The transit gateways must be in
     /// different Regions. The peer transit gateway can be in your account or a different
-    /// AWS account. 
+    /// Amazon Web Services account.
     /// 
     ///  
     /// <para>
@@ -52,7 +52,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PeerAccountId. 
         /// <para>
-        /// The AWS account ID of the owner of the peer transit gateway.
+        /// The ID of the Amazon Web Services account that owns the peer transit gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

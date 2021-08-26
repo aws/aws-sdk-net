@@ -5297,8 +5297,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// A Connect attachment uses an existing VPC or AWS Direct Connect attachment as the
-        /// underlying transport mechanism. 
+        /// A Connect attachment uses an existing VPC or Amazon Web Services Direct Connect attachment
+        /// as the underlying transport mechanism.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayConnect service method.</param>
@@ -5316,8 +5316,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// A Connect attachment uses an existing VPC or AWS Direct Connect attachment as the
-        /// underlying transport mechanism. 
+        /// A Connect attachment uses an existing VPC or Amazon Web Services Direct Connect attachment
+        /// as the underlying transport mechanism.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayConnect service method.</param>
@@ -5432,7 +5432,7 @@ namespace Amazon.EC2
         /// Requests a transit gateway peering attachment between the specified transit gateway
         /// (requester) and a peer transit gateway (accepter). The transit gateways must be in
         /// different Regions. The peer transit gateway can be in your account or a different
-        /// AWS account. 
+        /// Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -5452,7 +5452,7 @@ namespace Amazon.EC2
         /// Requests a transit gateway peering attachment between the specified transit gateway
         /// (requester) and a peer transit gateway (accepter). The transit gateways must be in
         /// different Regions. The peer transit gateway can be in your account or a different
-        /// AWS account. 
+        /// Amazon Web Services account.
         /// 
         ///  
         /// <para>
