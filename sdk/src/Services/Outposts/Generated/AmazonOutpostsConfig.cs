@@ -32,7 +32,7 @@ namespace Amazon.Outposts
     public partial class AmazonOutpostsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.16");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.17");
 
         private string _userAgent = UserAgentString;
 

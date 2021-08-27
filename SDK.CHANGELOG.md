@@ -1,3 +1,16 @@
+### 3.7.106.0 (2021-08-27 20:30 UTC)
+* EC2 (3.7.26.0)
+	* This release adds the BootMode flag to the ImportImage API and showing the detected BootMode of an ImportImage task.
+* ElasticMapReduce (3.7.3.0)
+	* Amazon EMR now supports auto-terminating idle EMR clusters. You can specify the idle timeout value when enabling auto-termination for both running and new clusters and Amazon EMR automatically terminates the cluster when idle timeout kicks in.
+* S3 (3.7.1.28)
+	* Documentation updates for Amazon S3.
+* Core 3.7.2.8
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.105.0 (2021-08-26 21:56 UTC)
 * ComputeOptimizer (3.7.3.0)
 	* Adds support for 1) the AWS Graviton (AWS_ARM64) recommendation preference for Amazon EC2 instance and Auto Scaling group recommendations, and 2) the ability to get the enrollment statuses for all member accounts of an organization.
