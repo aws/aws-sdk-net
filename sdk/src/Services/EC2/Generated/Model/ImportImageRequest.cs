@@ -42,6 +42,7 @@ namespace Amazon.EC2.Model
     public partial class ImportImageRequest : AmazonEC2Request
     {
         private string _architecture;
+        private BootModeValues _bootMode;
         private ClientData _clientData;
         private string _clientToken;
         private string _description;
@@ -76,6 +77,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetArchitecture()
         {
             return this._architecture != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BootMode. 
+        /// <para>
+        /// The boot mode of the virtual machine.
+        /// </para>
+        /// </summary>
+        public BootModeValues BootMode
+        {
+            get { return this._bootMode; }
+            set { this._bootMode = value; }
+        }
+
+        // Check to see if BootMode property is set
+        internal bool IsSetBootMode()
+        {
+            return this._bootMode != null;
         }
 
         /// <summary>

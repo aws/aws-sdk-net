@@ -62,6 +62,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Architecture", StringUtils.FromString(publicRequest.Architecture));
                 }
+                if(publicRequest.IsSetBootMode())
+                {
+                    request.Parameters.Add("BootMode", StringUtils.FromString(publicRequest.BootMode));
+                }
                 if(publicRequest.IsSetClientData())
                 {
                     if(publicRequest.ClientData.IsSetComment())
