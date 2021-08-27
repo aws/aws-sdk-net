@@ -29,31 +29,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListStudios operation.
-    /// Returns a list of all Amazon EMR Studios associated with the Amazon Web Services account.
-    /// The list includes details such as ID, Studio Access URL, and creation time for each
-    /// Studio.
+    /// An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines
+    /// the amount of idle time in seconds after which a cluster automatically terminates.
+    /// For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control
+    /// cluster termination</a>.
     /// </summary>
-    public partial class ListStudiosRequest : AmazonElasticMapReduceRequest
+    public partial class AutoTerminationPolicy
     {
-        private string _marker;
+        private long? _idleTimeout;
 
         /// <summary>
-        /// Gets and sets the property Marker. 
+        /// Gets and sets the property IdleTimeout. 
         /// <para>
-        /// The pagination token that indicates the set of results to retrieve.
+        /// Specifies the amount of idle time in seconds after which the cluster automatically
+        /// terminates. You can specify a minimum of 60 seconds and a maximum of 604800 seconds
+        /// (seven days).
         /// </para>
         /// </summary>
-        public string Marker
+        public long IdleTimeout
         {
-            get { return this._marker; }
-            set { this._marker = value; }
+            get { return this._idleTimeout.GetValueOrDefault(); }
+            set { this._idleTimeout = value; }
         }
 
-        // Check to see if Marker property is set
-        internal bool IsSetMarker()
+        // Check to see if IdleTimeout property is set
+        internal bool IsSetIdleTimeout()
         {
-            return this._marker != null;
+            return this._idleTimeout.HasValue; 
         }
 
     }

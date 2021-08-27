@@ -31,10 +31,11 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// Container for the parameters to the SetVisibleToAllUsers operation.
     /// Sets the <a>Cluster$VisibleToAllUsers</a> value for an EMR cluster. When <code>true</code>,
-    /// IAM principals in the account can perform EMR cluster actions that their IAM policies
-    /// allow. When <code>false</code>, only the IAM principal that created the cluster and
-    /// the account root user can perform EMR actions on the cluster, regardless of IAM permissions
-    /// policies attached to other IAM principals.
+    /// IAM principals in the Amazon Web Services account can perform EMR cluster actions
+    /// that their IAM policies allow. When <code>false</code>, only the IAM principal that
+    /// created the cluster and the Amazon Web Services account root user can perform EMR
+    /// actions on the cluster, regardless of IAM permissions policies attached to other IAM
+    /// principals.
     /// 
     ///  
     /// <para>
@@ -74,10 +75,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property VisibleToAllUsers. 
         /// <para>
-        /// A value of <code>true</code> indicates that an IAM principal in the account can perform
-        /// EMR actions on the cluster that the IAM policies attached to the principal allow.
-        /// A value of <code>false</code> indicates that only the IAM principal that created the
-        /// cluster and the Amazon Web Services root user can perform EMR actions on the cluster.
+        /// A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services
+        /// account can perform EMR actions on the cluster that the IAM policies attached to the
+        /// principal allow. A value of <code>false</code> indicates that only the IAM principal
+        /// that created the cluster and the Amazon Web Services root user can perform EMR actions
+        /// on the cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

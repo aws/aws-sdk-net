@@ -29,31 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListStudios operation.
-    /// Returns a list of all Amazon EMR Studios associated with the Amazon Web Services account.
-    /// The list includes details such as ID, Studio Access URL, and creation time for each
-    /// Studio.
+    /// This is the response object from the GetAutoTerminationPolicy operation.
     /// </summary>
-    public partial class ListStudiosRequest : AmazonElasticMapReduceRequest
+    public partial class GetAutoTerminationPolicyResponse : AmazonWebServiceResponse
     {
-        private string _marker;
+        private AutoTerminationPolicy _autoTerminationPolicy;
 
         /// <summary>
-        /// Gets and sets the property Marker. 
+        /// Gets and sets the property AutoTerminationPolicy. 
         /// <para>
-        /// The pagination token that indicates the set of results to retrieve.
+        /// Specifies the auto-termination policy that is attached to an Amazon EMR cluster. 
         /// </para>
         /// </summary>
-        public string Marker
+        public AutoTerminationPolicy AutoTerminationPolicy
         {
-            get { return this._marker; }
-            set { this._marker = value; }
+            get { return this._autoTerminationPolicy; }
+            set { this._autoTerminationPolicy = value; }
         }
 
-        // Check to see if Marker property is set
-        internal bool IsSetMarker()
+        // Check to see if AutoTerminationPolicy property is set
+        internal bool IsSetAutoTerminationPolicy()
         {
-            return this._marker != null;
+            return this._autoTerminationPolicy != null;
         }
 
     }

@@ -101,6 +101,17 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AutoScalingRole);
                 }
 
+                if(publicRequest.IsSetAutoTerminationPolicy())
+                {
+                    context.Writer.WritePropertyName("AutoTerminationPolicy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AutoTerminationPolicyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AutoTerminationPolicy, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetBootstrapActions())
                 {
                     context.Writer.WritePropertyName("BootstrapActions");

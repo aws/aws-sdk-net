@@ -1489,11 +1489,65 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  GetAutoTerminationPolicy
+
+        /// <summary>
+        /// Returns the auto-termination policy for an Amazon EMR cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutoTerminationPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetAutoTerminationPolicy service method, as returned by ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetAutoTerminationPolicy">REST API Reference for GetAutoTerminationPolicy Operation</seealso>
+        public virtual GetAutoTerminationPolicyResponse GetAutoTerminationPolicy(GetAutoTerminationPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAutoTerminationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutoTerminationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetAutoTerminationPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAutoTerminationPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAutoTerminationPolicy operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAutoTerminationPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetAutoTerminationPolicy">REST API Reference for GetAutoTerminationPolicy Operation</seealso>
+        public virtual IAsyncResult BeginGetAutoTerminationPolicy(GetAutoTerminationPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAutoTerminationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutoTerminationPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAutoTerminationPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAutoTerminationPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetAutoTerminationPolicyResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetAutoTerminationPolicy">REST API Reference for GetAutoTerminationPolicy Operation</seealso>
+        public virtual GetAutoTerminationPolicyResponse EndGetAutoTerminationPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAutoTerminationPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetBlockPublicAccessConfiguration
 
         /// <summary>
-        /// Returns the Amazon EMR block public access configuration for your account in the current
-        /// Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure
+        /// Returns the Amazon EMR block public access configuration for your Amazon Web Services
+        /// account in the current Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure
         /// Block Public Access for Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBlockPublicAccessConfiguration service method.</param>
@@ -1747,11 +1801,11 @@ namespace Amazon.ElasticMapReduce
         #region  ListClusters
 
         /// <summary>
-        /// Provides the status of all clusters visible to this account. Allows you to filter
-        /// the list of clusters based on certain criteria; for example, filtering by cluster
-        /// creation date and time or by status. This call returns a maximum of 50 clusters in
-        /// unsorted order per call, but returns a marker to track the paging of the cluster list
-        /// across multiple ListClusters calls.
+        /// Provides the status of all clusters visible to this Amazon Web Services account. Allows
+        /// you to filter the list of clusters based on certain criteria; for example, filtering
+        /// by cluster creation date and time or by status. This call returns a maximum of 50
+        /// clusters in unsorted order per call, but returns a marker to track the paging of the
+        /// cluster list across multiple ListClusters calls.
         /// </summary>
         /// 
         /// <returns>The response from the ListClusters service method, as returned by ElasticMapReduce.</returns>
@@ -1768,11 +1822,11 @@ namespace Amazon.ElasticMapReduce
         }
 
         /// <summary>
-        /// Provides the status of all clusters visible to this account. Allows you to filter
-        /// the list of clusters based on certain criteria; for example, filtering by cluster
-        /// creation date and time or by status. This call returns a maximum of 50 clusters in
-        /// unsorted order per call, but returns a marker to track the paging of the cluster list
-        /// across multiple ListClusters calls.
+        /// Provides the status of all clusters visible to this Amazon Web Services account. Allows
+        /// you to filter the list of clusters based on certain criteria; for example, filtering
+        /// by cluster creation date and time or by status. This call returns a maximum of 50
+        /// clusters in unsorted order per call, but returns a marker to track the paging of the
+        /// cluster list across multiple ListClusters calls.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListClusters service method.</param>
         /// 
@@ -2329,8 +2383,9 @@ namespace Amazon.ElasticMapReduce
         #region  ListStudios
 
         /// <summary>
-        /// Returns a list of all Amazon EMR Studios associated with the account. The list includes
-        /// details such as ID, Studio Access URL, and creation time for each Studio.
+        /// Returns a list of all Amazon EMR Studios associated with the Amazon Web Services account.
+        /// The list includes details such as ID, Studio Access URL, and creation time for each
+        /// Studio.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStudios service method.</param>
         /// 
@@ -2697,11 +2752,68 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  PutAutoTerminationPolicy
+
+        /// <summary>
+        /// Creates or updates an auto-termination policy for an Amazon EMR cluster. An auto-termination
+        /// policy defines the amount of idle time in seconds after which a cluster automatically
+        /// terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control
+        /// cluster termination</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAutoTerminationPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutAutoTerminationPolicy service method, as returned by ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutAutoTerminationPolicy">REST API Reference for PutAutoTerminationPolicy Operation</seealso>
+        public virtual PutAutoTerminationPolicyResponse PutAutoTerminationPolicy(PutAutoTerminationPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAutoTerminationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAutoTerminationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutAutoTerminationPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAutoTerminationPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAutoTerminationPolicy operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAutoTerminationPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutAutoTerminationPolicy">REST API Reference for PutAutoTerminationPolicy Operation</seealso>
+        public virtual IAsyncResult BeginPutAutoTerminationPolicy(PutAutoTerminationPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAutoTerminationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAutoTerminationPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAutoTerminationPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAutoTerminationPolicy.</param>
+        /// 
+        /// <returns>Returns a  PutAutoTerminationPolicyResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutAutoTerminationPolicy">REST API Reference for PutAutoTerminationPolicy Operation</seealso>
+        public virtual PutAutoTerminationPolicyResponse EndPutAutoTerminationPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutAutoTerminationPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutBlockPublicAccessConfiguration
 
         /// <summary>
-        /// Creates or updates an Amazon EMR block public access configuration for your account
-        /// in the current Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure
+        /// Creates or updates an Amazon EMR block public access configuration for your Amazon
+        /// Web Services account in the current Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure
         /// Block Public Access for Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBlockPublicAccessConfiguration service method.</param>
@@ -2867,6 +2979,60 @@ namespace Amazon.ElasticMapReduce
         public virtual RemoveAutoScalingPolicyResponse EndRemoveAutoScalingPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveAutoScalingPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RemoveAutoTerminationPolicy
+
+        /// <summary>
+        /// Removes an auto-termination policy from an Amazon EMR cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveAutoTerminationPolicy service method.</param>
+        /// 
+        /// <returns>The response from the RemoveAutoTerminationPolicy service method, as returned by ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveAutoTerminationPolicy">REST API Reference for RemoveAutoTerminationPolicy Operation</seealso>
+        public virtual RemoveAutoTerminationPolicyResponse RemoveAutoTerminationPolicy(RemoveAutoTerminationPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveAutoTerminationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveAutoTerminationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveAutoTerminationPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveAutoTerminationPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveAutoTerminationPolicy operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveAutoTerminationPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveAutoTerminationPolicy">REST API Reference for RemoveAutoTerminationPolicy Operation</seealso>
+        public virtual IAsyncResult BeginRemoveAutoTerminationPolicy(RemoveAutoTerminationPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveAutoTerminationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveAutoTerminationPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RemoveAutoTerminationPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveAutoTerminationPolicy.</param>
+        /// 
+        /// <returns>Returns a  RemoveAutoTerminationPolicyResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveAutoTerminationPolicy">REST API Reference for RemoveAutoTerminationPolicy Operation</seealso>
+        public virtual RemoveAutoTerminationPolicyResponse EndRemoveAutoTerminationPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RemoveAutoTerminationPolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -3171,10 +3337,11 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Sets the <a>Cluster$VisibleToAllUsers</a> value for an EMR cluster. When <code>true</code>,
-        /// IAM principals in the account can perform EMR cluster actions that their IAM policies
-        /// allow. When <code>false</code>, only the IAM principal that created the cluster and
-        /// the account root user can perform EMR actions on the cluster, regardless of IAM permissions
-        /// policies attached to other IAM principals.
+        /// IAM principals in the Amazon Web Services account can perform EMR cluster actions
+        /// that their IAM policies allow. When <code>false</code>, only the IAM principal that
+        /// created the cluster and the Amazon Web Services account root user can perform EMR
+        /// actions on the cluster, regardless of IAM permissions policies attached to other IAM
+        /// principals.
         /// 
         ///  
         /// <para>

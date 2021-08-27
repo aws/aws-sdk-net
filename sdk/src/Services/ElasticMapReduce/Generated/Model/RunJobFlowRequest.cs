@@ -74,6 +74,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string _amiVersion;
         private List<Application> _applications = new List<Application>();
         private string _autoScalingRole;
+        private AutoTerminationPolicy _autoTerminationPolicy;
         private List<BootstrapActionConfig> _bootstrapActions = new List<BootstrapActionConfig>();
         private List<Configuration> _configurations = new List<Configuration>();
         private string _customAmiId;
@@ -193,6 +194,21 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetAutoScalingRole()
         {
             return this._autoScalingRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoTerminationPolicy.
+        /// </summary>
+        public AutoTerminationPolicy AutoTerminationPolicy
+        {
+            get { return this._autoTerminationPolicy; }
+            set { this._autoTerminationPolicy = value; }
+        }
+
+        // Check to see if AutoTerminationPolicy property is set
+        internal bool IsSetAutoTerminationPolicy()
+        {
+            return this._autoTerminationPolicy != null;
         }
 
         /// <summary>
@@ -705,18 +721,18 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property VisibleToAllUsers. 
         /// <para>
-        /// Set this value to <code>true</code> so that IAM principals in the account associated
-        /// with the cluster can perform EMR actions on the cluster that their IAM policies allow.
-        /// This value defaults to <code>true</code> for clusters created using the EMR API or
-        /// the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
+        /// Set this value to <code>true</code> so that IAM principals in the Amazon Web Services
+        /// account associated with the cluster can perform EMR actions on the cluster that their
+        /// IAM policies allow. This value defaults to <code>true</code> for clusters created
+        /// using the EMR API or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
         /// command.
         /// </para>
         ///  
         /// <para>
         /// When set to <code>false</code>, only the IAM principal that created the cluster and
-        /// the account root user can perform EMR actions for the cluster, regardless of the IAM
-        /// permissions policies attached to other IAM principals. For more information, see <a
-        /// href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
+        /// the Amazon Web Services account root user can perform EMR actions for the cluster,
+        /// regardless of the IAM permissions policies attached to other IAM principals. For more
+        /// information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
         /// the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.
         /// </para>
         /// </summary>
