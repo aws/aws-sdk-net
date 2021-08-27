@@ -144,7 +144,8 @@ namespace Amazon.S3.Model
         /// Gets and sets the property BypassGovernanceRetention. 
         /// <para>
         /// Specifies whether you want to delete this object even if it has a Governance-type
-        /// Object Lock in place. You must have sufficient permissions to perform this operation.
+        /// Object Lock in place. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code>
+        /// permission.
         /// </para>
         /// </summary>
         public bool BypassGovernanceRetention

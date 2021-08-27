@@ -119,7 +119,8 @@ namespace Amazon.S3.Model
         /// Gets and sets the property BypassGovernanceRetention. 
         /// <para>
         /// Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process
-        /// this operation.
+        /// this operation. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code>
+        /// permission.
         /// </para>
         /// </summary>
         public bool BypassGovernanceRetention

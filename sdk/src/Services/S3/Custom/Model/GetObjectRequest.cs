@@ -96,9 +96,9 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
-    /// Assuming you have permission to read object tags (permission for the <code>s3:GetObjectVersionTagging</code>
-    /// action), the response also returns the <code>x-amz-tagging-count</code> header that
-    /// provides the count of number of tags associated with the object. You can use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
+    /// Assuming you have the relevant permission to read object tags, the response also returns
+    /// the <code>x-amz-tagging-count</code> header that provides the count of number of tags
+    /// associated with the object. You can use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
     /// to retrieve the tag set associated with an object.
     /// </para>
     ///  
@@ -107,8 +107,8 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
-    /// You need the <code>s3:GetObject</code> permission for this operation. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
+    /// You need the relevant read object (or version) permission for this operation. For
+    /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
     /// Permissions in a Policy</a>. If the object you request does not exist, the error Amazon
     /// S3 returns depends on whether you also have the <code>s3:ListBucket</code> permission.
     /// </para>
@@ -235,7 +235,6 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </li> </ul>
     /// </summary>
-
     public partial class GetObjectRequest : AmazonWebServiceRequest
     {
         private string bucketName;
