@@ -82,6 +82,13 @@ namespace Amazon.KinesisFirehose.Model
         /// <para>
         /// The URL of the HTTP endpoint selected as the destination.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you choose an HTTP endpoint as your destination, review and follow the instructions
+        /// in the <a href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix
+        /// - HTTP Endpoint Delivery Request and Response Specifications</a>.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
         public string Url

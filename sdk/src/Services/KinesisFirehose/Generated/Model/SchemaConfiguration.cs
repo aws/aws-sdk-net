@@ -68,6 +68,13 @@ namespace Amazon.KinesisFirehose.Model
         /// Specifies the name of the AWS Glue database that contains the schema for the output
         /// data.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If the <code>SchemaConfiguration</code> request parameter is used as part of invoking
+        /// the <code>CreateDeliveryStream</code> API, then the <code>DatabaseName</code> property
+        /// is required and its value must be specified.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
         public string DatabaseName
@@ -108,6 +115,13 @@ namespace Amazon.KinesisFirehose.Model
         /// in the same account you use for Kinesis Data Firehose. Cross-account roles aren't
         /// allowed.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If the <code>SchemaConfiguration</code> request parameter is used as part of invoking
+        /// the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property
+        /// is required and its value must be specified.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
         public string RoleARN
@@ -128,6 +142,13 @@ namespace Amazon.KinesisFirehose.Model
         /// Specifies the AWS Glue table that contains the column information that constitutes
         /// your data schema.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If the <code>SchemaConfiguration</code> request parameter is used as part of invoking
+        /// the <code>CreateDeliveryStream</code> API, then the <code>TableName</code> property
+        /// is required and its value must be specified.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
         public string TableName

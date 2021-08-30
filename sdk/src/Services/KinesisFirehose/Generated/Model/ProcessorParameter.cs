@@ -61,7 +61,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The parameter value.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=512)]
+        [AWSProperty(Required=true, Min=1, Max=5120)]
         public string ParameterValue
         {
             get { return this._parameterValue; }

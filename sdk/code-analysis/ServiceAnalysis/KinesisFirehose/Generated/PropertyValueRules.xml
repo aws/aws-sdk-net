@@ -531,7 +531,7 @@
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ProcessorParameter.ParameterValue</property>
     <min>1</min>
-    <max>512</max>
+    <max>5120</max>
     <pattern>^(?!\s*$).+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -547,7 +547,7 @@
     <property>Amazon.KinesisFirehose.Model.RedshiftDestinationConfiguration.ClusterJDBCURL</property>
     <min>1</min>
     <max>512</max>
-    <pattern>jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?&lt;!-)\.)+redshift\.([a-zA-Z0-9\.]+):\d{1,5}/[a-zA-Z0-9_$]+</pattern>
+    <pattern>jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?&lt;!-)\.)+redshift\.([a-zA-Z0-9\.]+):\d{1,5}/[a-zA-Z0-9_$-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.RedshiftDestinationConfiguration.Password</property>
@@ -571,7 +571,7 @@
     <property>Amazon.KinesisFirehose.Model.RedshiftDestinationDescription.ClusterJDBCURL</property>
     <min>1</min>
     <max>512</max>
-    <pattern>jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?&lt;!-)\.)+redshift\.([a-zA-Z0-9\.]+):\d{1,5}/[a-zA-Z0-9_$]+</pattern>
+    <pattern>jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?&lt;!-)\.)+redshift\.([a-zA-Z0-9\.]+):\d{1,5}/[a-zA-Z0-9_$-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.RedshiftDestinationDescription.RoleARN</property>
@@ -589,7 +589,7 @@
     <property>Amazon.KinesisFirehose.Model.RedshiftDestinationUpdate.ClusterJDBCURL</property>
     <min>1</min>
     <max>512</max>
-    <pattern>jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?&lt;!-)\.)+redshift\.([a-zA-Z0-9\.]+):\d{1,5}/[a-zA-Z0-9_$]+</pattern>
+    <pattern>jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?&lt;!-)\.)+redshift\.([a-zA-Z0-9\.]+):\d{1,5}/[a-zA-Z0-9_$-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.RedshiftDestinationUpdate.Password</property>
@@ -611,6 +611,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.RedshiftRetryOptions.DurationInSeconds</property>
+    <min>0</min>
+    <max>7200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.RetryOptions.DurationInSeconds</property>
     <min>0</min>
     <max>7200</max>
   </property-value-rule>

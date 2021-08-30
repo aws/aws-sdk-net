@@ -94,6 +94,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataFormatConversionConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DynamicPartitioningConfiguration", targetDepth))
+                {
+                    var unmarshaller = DynamicPartitioningConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DynamicPartitioningConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EncryptionConfiguration", targetDepth))
                 {
                     var unmarshaller = EncryptionConfigurationUnmarshaller.Instance;

@@ -947,9 +947,21 @@ namespace Amazon.KinesisFirehose
         /// </summary>
         public static readonly ProcessorParameterName BufferSizeInMBs = new ProcessorParameterName("BufferSizeInMBs");
         /// <summary>
+        /// Constant Delimiter for ProcessorParameterName
+        /// </summary>
+        public static readonly ProcessorParameterName Delimiter = new ProcessorParameterName("Delimiter");
+        /// <summary>
+        /// Constant JsonParsingEngine for ProcessorParameterName
+        /// </summary>
+        public static readonly ProcessorParameterName JsonParsingEngine = new ProcessorParameterName("JsonParsingEngine");
+        /// <summary>
         /// Constant LambdaArn for ProcessorParameterName
         /// </summary>
         public static readonly ProcessorParameterName LambdaArn = new ProcessorParameterName("LambdaArn");
+        /// <summary>
+        /// Constant MetadataExtractionQuery for ProcessorParameterName
+        /// </summary>
+        public static readonly ProcessorParameterName MetadataExtractionQuery = new ProcessorParameterName("MetadataExtractionQuery");
         /// <summary>
         /// Constant NumberOfRetries for ProcessorParameterName
         /// </summary>
@@ -958,6 +970,10 @@ namespace Amazon.KinesisFirehose
         /// Constant RoleArn for ProcessorParameterName
         /// </summary>
         public static readonly ProcessorParameterName RoleArn = new ProcessorParameterName("RoleArn");
+        /// <summary>
+        /// Constant SubRecordType for ProcessorParameterName
+        /// </summary>
+        public static readonly ProcessorParameterName SubRecordType = new ProcessorParameterName("SubRecordType");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1001,9 +1017,21 @@ namespace Amazon.KinesisFirehose
     {
 
         /// <summary>
+        /// Constant AppendDelimiterToRecord for ProcessorType
+        /// </summary>
+        public static readonly ProcessorType AppendDelimiterToRecord = new ProcessorType("AppendDelimiterToRecord");
+        /// <summary>
         /// Constant Lambda for ProcessorType
         /// </summary>
         public static readonly ProcessorType Lambda = new ProcessorType("Lambda");
+        /// <summary>
+        /// Constant MetadataExtraction for ProcessorType
+        /// </summary>
+        public static readonly ProcessorType MetadataExtraction = new ProcessorType("MetadataExtraction");
+        /// <summary>
+        /// Constant RecordDeAggregation for ProcessorType
+        /// </summary>
+        public static readonly ProcessorType RecordDeAggregation = new ProcessorType("RecordDeAggregation");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

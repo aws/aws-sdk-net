@@ -43,7 +43,7 @@ namespace Amazon.KinesisFirehose.Model
     ///  
     /// <para>
     /// Each <a>PutRecordBatch</a> request supports up to 500 records. Each record in the
-    /// request can be as large as 1,000 KB (before 64-bit encoding), up to a limit of 4 MB
+    /// request can be as large as 1,000 KB (before base64 encoding), up to a limit of 4 MB
     /// for the entire request. These limits cannot be changed.
     /// </para>
     ///  

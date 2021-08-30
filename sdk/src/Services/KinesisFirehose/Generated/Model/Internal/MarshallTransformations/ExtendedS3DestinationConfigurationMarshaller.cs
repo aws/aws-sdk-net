@@ -90,6 +90,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDynamicPartitioningConfiguration())
+            {
+                context.Writer.WritePropertyName("DynamicPartitioningConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DynamicPartitioningConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.DynamicPartitioningConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEncryptionConfiguration())
             {
                 context.Writer.WritePropertyName("EncryptionConfiguration");

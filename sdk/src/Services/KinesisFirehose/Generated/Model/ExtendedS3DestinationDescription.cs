@@ -38,6 +38,7 @@ namespace Amazon.KinesisFirehose.Model
         private CloudWatchLoggingOptions _cloudWatchLoggingOptions;
         private CompressionFormat _compressionFormat;
         private DataFormatConversionConfiguration _dataFormatConversionConfiguration;
+        private DynamicPartitioningConfiguration _dynamicPartitioningConfiguration;
         private EncryptionConfiguration _encryptionConfiguration;
         private string _errorOutputPrefix;
         private string _prefix;
@@ -139,6 +140,28 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetDataFormatConversionConfiguration()
         {
             return this._dataFormatConversionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DynamicPartitioningConfiguration. 
+        /// <para>
+        /// The configuration of the dynamic partitioning mechanism that creates smaller data
+        /// sets from the streaming data by partitioning it based on partition keys. Currently,
+        /// dynamic partitioning is only supported for Amazon S3 destinations. For more information,
+        /// see <a href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+        /// 
+        /// </para>
+        /// </summary>
+        public DynamicPartitioningConfiguration DynamicPartitioningConfiguration
+        {
+            get { return this._dynamicPartitioningConfiguration; }
+            set { this._dynamicPartitioningConfiguration = value; }
+        }
+
+        // Check to see if DynamicPartitioningConfiguration property is set
+        internal bool IsSetDynamicPartitioningConfiguration()
+        {
+            return this._dynamicPartitioningConfiguration != null;
         }
 
         /// <summary>
