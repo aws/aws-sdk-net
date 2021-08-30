@@ -39,7 +39,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Imports. 
         /// <para>
-        /// A list of stack names that are importing the specified exported output value. 
+        /// A list of stack names that are importing the specified exported output value.
         /// </para>
         /// </summary>
         public List<string> Imports

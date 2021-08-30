@@ -40,7 +40,7 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  <note> 
     /// <para>
-    ///  If the template does not exist, a <code>ValidationError</code> is returned. 
+    /// If the template does not exist, a <code>ValidationError</code> is returned.
     /// </para>
     ///  </note>
     /// </summary>
@@ -107,7 +107,6 @@ namespace Amazon.CloudFormation.Model
         /// For templates that include transforms, the stage of the template that CloudFormation
         /// returns. To get the user-submitted template, specify <code>Original</code>. To get
         /// the template after CloudFormation has processed all transforms, specify <code>Processed</code>.
-        /// 
         /// </para>
         ///  
         /// <para>

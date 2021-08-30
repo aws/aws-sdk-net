@@ -30,9 +30,9 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// A structure that contains information about a stack set. A stack set enables you to
-    /// provision stacks into accounts and across Regions by using a single CloudFormation
-    /// template. In the stack set, you specify the template to use, as well as any parameters
-    /// and capabilities that the template requires.
+    /// provision stacks into Amazon Web Services accounts and across Regions by using a single
+    /// CloudFormation template. In the stack set, you specify the template to use, as well
+    /// as any parameters and capabilities that the template requires.
     /// </summary>
     public partial class StackSet
     {
@@ -102,8 +102,9 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Capabilities. 
         /// <para>
         /// The capabilities that are allowed in the stack set. Some stack set templates might
-        /// include resources that can affect permissions in your account—for example, by creating
-        /// new Identity and Access Management (IAM) users. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+        /// include resources that can affect permissions in your Amazon Web Services account—for
+        /// example, by creating new Identity and Access Management (IAM) users. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
         /// IAM Resources in CloudFormation Templates.</a> 
         /// </para>
         /// </summary>

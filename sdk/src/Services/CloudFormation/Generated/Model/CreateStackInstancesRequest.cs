@@ -49,8 +49,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Accounts. 
         /// <para>
-        /// [Self-managed permissions] The names of one or more accounts that you want to create
-        /// stack instances in the specified Region(s) for.
+        /// [Self-managed permissions] The names of one or more Amazon Web Services accounts that
+        /// you want to create stack instances in the specified Region(s) for.
         /// </para>
         ///  
         /// <para>
@@ -91,8 +91,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Your account must be registered as a delegated administrator in the management account.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+        /// Your Amazon Web Services account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
         /// a delegated administrator</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         ///  </li> </ul>
@@ -135,7 +135,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OperationId. 
         /// <para>
-        /// The unique identifier for this stack set operation. 
+        /// The unique identifier for this stack set operation.
         /// </para>
         ///  
         /// <para>
@@ -146,12 +146,12 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify an operation ID, the SDK generates one automatically. 
+        /// If you don't specify an operation ID, the SDK generates one automatically.
         /// </para>
         ///  
         /// <para>
         /// Repeating this stack set operation with a new operation ID retries all stack instances
-        /// whose status is <code>OUTDATED</code>. 
+        /// whose status is <code>OUTDATED</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -246,7 +246,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Regions. 
         /// <para>
         /// The names of one or more Regions where you want to create stack instances using the
-        /// specified accounts. 
+        /// specified Amazon Web Services accounts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -734,8 +734,8 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Returns the stack instance that's associated with the specified stack set, account,
-        /// and Region.
+        /// Returns the stack instance that's associated with the specified stack set, Amazon
+        /// Web Services account, and Region.
         /// 
         ///  
         /// <para>
@@ -1290,7 +1290,7 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  <note> 
         /// <para>
-        ///  If the template does not exist, a <code>ValidationError</code> is returned. 
+        /// If the template does not exist, a <code>ValidationError</code> is returned.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1429,7 +1429,7 @@ namespace Amazon.CloudFormation
         /// Lists all exported output values in the account and Region in which you call this
         /// action. Use this action to see the exported output values that you can import into
         /// other stacks. To import values, use the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
-        /// <code>Fn::ImportValue</code> </a> function. 
+        /// <code>Fn::ImportValue</code> </a> function.
         /// 
         ///  
         /// <para>
@@ -1455,12 +1455,12 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Lists all stacks that are importing an exported output value. To modify or remove
         /// an exported output value, first use this action to see which stacks are using it.
-        /// To see the exported output values in your account, see <a>ListExports</a>. 
+        /// To see the exported output values in your account, see <a>ListExports</a>.
         /// 
         ///  
         /// <para>
         /// For more information about importing an exported output value, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
-        /// <code>Fn::ImportValue</code> </a> function. 
+        /// <code>Fn::ImportValue</code> </a> function.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImports service method.</param>
@@ -1481,7 +1481,7 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Returns summary information about stack instances that are associated with the specified
         /// stack set. You can filter for stack instances that are associated with a specific
-        /// account name or Region, or that have a specific status.
+        /// Amazon Web Services account name or Region, or that have a specific status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStackInstances service method.</param>
         /// <param name="cancellationToken">
@@ -1612,8 +1612,8 @@ namespace Amazon.CloudFormation
         ///  <ul> <li> 
         /// <para>
         /// [Self-managed permissions] If you set the <code>CallAs</code> parameter to <code>SELF</code>
-        /// while signed in to your account, <code>ListStackSets</code> returns all self-managed
-        /// stack sets in your account.
+        /// while signed in to your Amazon Web Services account, <code>ListStackSets</code> returns
+        /// all self-managed stack sets in your Amazon Web Services account.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1776,7 +1776,7 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Registers your account as a publisher of public extensions in the CloudFormation registry.
         /// Public extensions are available for use by all CloudFormation users. This publisher
-        /// ID applies to your account in all Regions.
+        /// ID applies to your account in all Amazon Web Services Regions.
         /// 
         ///  
         /// <para>
@@ -1806,7 +1806,8 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Registers an extension with the CloudFormation service. Registering an extension makes
-        /// it available for use in CloudFormation templates in your account, and includes:
+        /// it available for use in CloudFormation templates in your Amazon Web Services account,
+        /// and includes:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -1857,6 +1858,62 @@ namespace Amazon.CloudFormation
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterType">REST API Reference for RegisterType Operation</seealso>
         Task<RegisterTypeResponse> RegisterTypeAsync(RegisterTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RollbackStack
+
+
+
+        /// <summary>
+        /// When specifying <code>RollbackStack</code>, you preserve the state of previously provisioned
+        /// resources when an operation fails. You can check the status of the stack through the
+        /// <a>DescribeStacks</a> API.
+        /// 
+        ///  
+        /// <para>
+        /// Rolls back the specified stack to the last known stable state from <code>CREATE_FAILED</code>
+        /// or <code>UPDATE_FAILED</code> stack statuses.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation will delete a stack if it doesn't contain a last known stable state.
+        /// A last known stable state includes any status in a <code>*_COMPLETE</code>. This includes
+        /// the following stack statuses.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CREATE_COMPLETE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATE_COMPLETE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATE_ROLLBACK_COMPLETE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>IMPORT_COMPLETE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>IMPORT_ROLLBACK_COMPLETE</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RollbackStack service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RollbackStack service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.TokenAlreadyExistsException">
+        /// A client request token already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackStack">REST API Reference for RollbackStack Operation</seealso>
+        Task<RollbackStackResponse> RollbackStackAsync(RollbackStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2217,7 +2274,7 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        ///  For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+        /// For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
         /// stacks</a>, termination protection is set on the root stack and cannot be changed
         /// directly on the nested stack.
         /// </para>

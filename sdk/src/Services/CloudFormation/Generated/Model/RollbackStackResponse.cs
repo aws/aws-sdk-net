@@ -29,35 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// This is the response object from the DetectStackDrift operation.
+    /// This is the response object from the RollbackStack operation.
     /// </summary>
-    public partial class DetectStackDriftResponse : AmazonWebServiceResponse
+    public partial class RollbackStackResponse : AmazonWebServiceResponse
     {
-        private string _stackDriftDetectionId;
+        private string _stackId;
 
         /// <summary>
-        /// Gets and sets the property StackDriftDetectionId. 
+        /// Gets and sets the property StackId. 
         /// <para>
-        /// The ID of the drift detection results of this operation.
-        /// </para>
-        ///  
-        /// <para>
-        /// CloudFormation generates new results, with a new drift detection ID, each time this
-        /// operation is run. However, the number of drift results CloudFormation retains for
-        /// any given stack, and for how long, may vary.
+        /// Unique identifier of the stack.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=36)]
-        public string StackDriftDetectionId
+        public string StackId
         {
-            get { return this._stackDriftDetectionId; }
-            set { this._stackDriftDetectionId = value; }
+            get { return this._stackId; }
+            set { this._stackId = value; }
         }
 
-        // Check to see if StackDriftDetectionId property is set
-        internal bool IsSetStackDriftDetectionId()
+        // Check to see if StackId property is set
+        internal bool IsSetStackId()
         {
-            return this._stackDriftDetectionId != null;
+            return this._stackId != null;
         }
 
     }

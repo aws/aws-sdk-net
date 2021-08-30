@@ -81,7 +81,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property NoEcho. 
         /// <para>
         /// Flag that indicates whether the parameter value is shown as plain text in logs and
-        /// in the Management Console.
+        /// in the Amazon Web Services Management Console.
         /// </para>
         /// </summary>
         public bool NoEcho

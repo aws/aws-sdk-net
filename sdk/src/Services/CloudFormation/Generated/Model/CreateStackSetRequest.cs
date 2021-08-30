@@ -120,8 +120,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Your account must be registered as a delegated admin in the management account. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+        /// Your Amazon Web Services account must be registered as a delegated admin in the management
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
         /// a delegated administrator</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         ///  </li> </ul> 
@@ -155,9 +155,10 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Some stack templates might include resources that can affect permissions in your account;
-        /// for example, by creating new Identity and Access Management (IAM) users. For those
-        /// stack sets, you must explicitly acknowledge this by specifying one of these capabilities.
+        /// Some stack templates might include resources that can affect permissions in your Amazon
+        /// Web Services account; for example, by creating new Identity and Access Management
+        /// (IAM) users. For those stack sets, you must explicitly acknowledge this by specifying
+        /// one of these capabilities.
         /// </para>
         ///  
         /// <para>
@@ -166,12 +167,11 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you have IAM resources, you can specify either capability. 
+        /// If you have IAM resources, you can specify either capability.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you have IAM resources with custom names, you <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.
-        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -268,7 +268,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify an operation ID, the SDK generates one automatically. 
+        /// If you don't specify an operation ID, the SDK generates one automatically.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -333,7 +333,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// The input parameters for the stack set template. 
+        /// The input parameters for the stack set template.
         /// </para>
         /// </summary>
         public List<Parameter> Parameters

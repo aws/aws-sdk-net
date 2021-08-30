@@ -55,6 +55,7 @@ namespace Amazon.CloudFormation.Model
     {
         private string _changeSetName;
         private string _clientRequestToken;
+        private bool? _disableRollback;
         private string _stackName;
 
         /// <summary>
@@ -96,6 +97,28 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisableRollback. 
+        /// <para>
+        /// Preserves the state of previously provisioned resources when an operation fails.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>True</code> 
+        /// </para>
+        /// </summary>
+        public bool DisableRollback
+        {
+            get { return this._disableRollback.GetValueOrDefault(); }
+            set { this._disableRollback = value; }
+        }
+
+        // Check to see if DisableRollback property is set
+        internal bool IsSetDisableRollback()
+        {
+            return this._disableRollback.HasValue; 
         }
 
         /// <summary>

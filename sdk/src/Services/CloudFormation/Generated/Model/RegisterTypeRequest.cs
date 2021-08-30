@@ -31,7 +31,8 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Container for the parameters to the RegisterType operation.
     /// Registers an extension with the CloudFormation service. Registering an extension makes
-    /// it available for use in CloudFormation templates in your account, and includes:
+    /// it available for use in CloudFormation templates in your Amazon Web Services account,
+    /// and includes:
     /// 
     ///  <ul> <li> 
     /// <para>

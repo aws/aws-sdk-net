@@ -1617,6 +1617,18 @@ namespace Amazon.CloudFormation
         /// </summary>
         public static readonly ResourceStatus IMPORT_ROLLBACK_IN_PROGRESS = new ResourceStatus("IMPORT_ROLLBACK_IN_PROGRESS");
         /// <summary>
+        /// Constant ROLLBACK_COMPLETE for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus ROLLBACK_COMPLETE = new ResourceStatus("ROLLBACK_COMPLETE");
+        /// <summary>
+        /// Constant ROLLBACK_FAILED for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus ROLLBACK_FAILED = new ResourceStatus("ROLLBACK_FAILED");
+        /// <summary>
+        /// Constant ROLLBACK_IN_PROGRESS for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus ROLLBACK_IN_PROGRESS = new ResourceStatus("ROLLBACK_IN_PROGRESS");
+        /// <summary>
         /// Constant UPDATE_COMPLETE for ResourceStatus
         /// </summary>
         public static readonly ResourceStatus UPDATE_COMPLETE = new ResourceStatus("UPDATE_COMPLETE");
@@ -1628,6 +1640,18 @@ namespace Amazon.CloudFormation
         /// Constant UPDATE_IN_PROGRESS for ResourceStatus
         /// </summary>
         public static readonly ResourceStatus UPDATE_IN_PROGRESS = new ResourceStatus("UPDATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant UPDATE_ROLLBACK_COMPLETE for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus UPDATE_ROLLBACK_COMPLETE = new ResourceStatus("UPDATE_ROLLBACK_COMPLETE");
+        /// <summary>
+        /// Constant UPDATE_ROLLBACK_FAILED for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus UPDATE_ROLLBACK_FAILED = new ResourceStatus("UPDATE_ROLLBACK_FAILED");
+        /// <summary>
+        /// Constant UPDATE_ROLLBACK_IN_PROGRESS for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus UPDATE_ROLLBACK_IN_PROGRESS = new ResourceStatus("UPDATE_ROLLBACK_IN_PROGRESS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2426,6 +2450,10 @@ namespace Amazon.CloudFormation
         /// Constant UPDATE_COMPLETE_CLEANUP_IN_PROGRESS for StackStatus
         /// </summary>
         public static readonly StackStatus UPDATE_COMPLETE_CLEANUP_IN_PROGRESS = new StackStatus("UPDATE_COMPLETE_CLEANUP_IN_PROGRESS");
+        /// <summary>
+        /// Constant UPDATE_FAILED for StackStatus
+        /// </summary>
+        public static readonly StackStatus UPDATE_FAILED = new StackStatus("UPDATE_FAILED");
         /// <summary>
         /// Constant UPDATE_IN_PROGRESS for StackStatus
         /// </summary>

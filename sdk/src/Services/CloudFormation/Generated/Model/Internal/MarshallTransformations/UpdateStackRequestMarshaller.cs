@@ -71,6 +71,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientRequestToken", StringUtils.FromString(publicRequest.ClientRequestToken));
                 }
+                if(publicRequest.IsSetDisableRollback())
+                {
+                    request.Parameters.Add("DisableRollback", StringUtils.FromBool(publicRequest.DisableRollback));
+                }
                 if(publicRequest.IsSetNotificationARNs())
                 {
                     int publicRequestlistValueIndex = 1;

@@ -97,13 +97,13 @@ namespace Amazon.CloudFormation.Model
         /// be inconsistent with the state of the resources in the stack template. Before performing
         /// another stack update, you must update the stack or resources to be consistent with
         /// each other. If you don't, subsequent stack updates might fail, and the stack will
-        /// become unrecoverable. 
+        /// become unrecoverable.
         /// </para>
         ///  </important> 
         /// <para>
         /// Specify the minimum number of resources required to successfully roll back your stack.
         /// For example, a failed resource update might cause dependent resources to fail. In
-        /// this case, it might not be necessary to skip the dependent resources. 
+        /// this case, it might not be necessary to skip the dependent resources.
         /// </para>
         ///  
         /// <para>
@@ -111,14 +111,14 @@ namespace Amazon.CloudFormation.Model
         /// If you want to specify the logical ID of a stack resource (<code>Type: AWS::CloudFormation::Stack</code>)
         /// in the <code>ResourcesToSkip</code> list, then its corresponding embedded stack must
         /// be in one of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>,
-        /// or <code>DELETE_FAILED</code>. 
+        /// or <code>DELETE_FAILED</code>.
         /// </para>
         ///  <note> 
         /// <para>
         /// Don't confuse a child stack's name with its corresponding logical ID defined in the
         /// parent stack. For an example of a continue update rollback operation with nested stacks,
         /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using
-        /// ResourcesToSkip to recover a nested stacks hierarchy</a>. 
+        /// ResourcesToSkip to recover a nested stacks hierarchy</a>.
         /// </para>
         ///  </note>
         /// </summary>

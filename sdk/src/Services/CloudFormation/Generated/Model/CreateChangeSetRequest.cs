@@ -94,9 +94,10 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Some stack templates might include resources that can affect permissions in your account;
-        /// for example, by creating new Identity and Access Management (IAM) users. For those
-        /// stacks, you must explicitly acknowledge this by specifying one of these capabilities.
+        /// Some stack templates might include resources that can affect permissions in your Amazon
+        /// Web Services account; for example, by creating new Identity and Access Management
+        /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying
+        /// one of these capabilities.
         /// </para>
         ///  
         /// <para>
@@ -105,12 +106,11 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you have IAM resources, you can specify either capability. 
+        /// If you have IAM resources, you can specify either capability.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you have IAM resources with custom names, you <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.
-        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>

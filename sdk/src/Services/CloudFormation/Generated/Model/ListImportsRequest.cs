@@ -32,12 +32,12 @@ namespace Amazon.CloudFormation.Model
     /// Container for the parameters to the ListImports operation.
     /// Lists all stacks that are importing an exported output value. To modify or remove
     /// an exported output value, first use this action to see which stacks are using it.
-    /// To see the exported output values in your account, see <a>ListExports</a>. 
+    /// To see the exported output values in your account, see <a>ListExports</a>.
     /// 
     ///  
     /// <para>
     /// For more information about importing an exported output value, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
-    /// <code>Fn::ImportValue</code> </a> function. 
+    /// <code>Fn::ImportValue</code> </a> function.
     /// </para>
     /// </summary>
     public partial class ListImportsRequest : AmazonCloudFormationRequest
@@ -49,7 +49,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ExportName. 
         /// <para>
         /// The name of the exported output value. CloudFormation returns the stack names that
-        /// are importing this value. 
+        /// are importing this value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -69,7 +69,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A string (provided by the <a>ListImports</a> response output) that identifies the
-        /// next page of stacks that are importing the specified exported output value. 
+        /// next page of stacks that are importing the specified exported output value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

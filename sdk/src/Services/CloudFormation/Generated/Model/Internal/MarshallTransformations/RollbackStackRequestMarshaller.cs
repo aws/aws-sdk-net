@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ExecuteChangeSet Request Marshaller
+    /// RollbackStack Request Marshaller
     /// </summary>       
-    public class ExecuteChangeSetRequestMarshaller : IMarshaller<IRequest, ExecuteChangeSetRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class RollbackStackRequestMarshaller : IMarshaller<IRequest, RollbackStackRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ExecuteChangeSetRequest)input);
+            return this.Marshall((RollbackStackRequest)input);
         }
     
         /// <summary>
@@ -50,25 +50,21 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ExecuteChangeSetRequest publicRequest)
+        public IRequest Marshall(RollbackStackRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudFormation");
-            request.Parameters.Add("Action", "ExecuteChangeSet");
+            request.Parameters.Add("Action", "RollbackStack");
             request.Parameters.Add("Version", "2010-05-15");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetChangeSetName())
-                {
-                    request.Parameters.Add("ChangeSetName", StringUtils.FromString(publicRequest.ChangeSetName));
-                }
                 if(publicRequest.IsSetClientRequestToken())
                 {
                     request.Parameters.Add("ClientRequestToken", StringUtils.FromString(publicRequest.ClientRequestToken));
                 }
-                if(publicRequest.IsSetDisableRollback())
+                if(publicRequest.IsSetRoleARN())
                 {
-                    request.Parameters.Add("DisableRollback", StringUtils.FromBool(publicRequest.DisableRollback));
+                    request.Parameters.Add("RoleARN", StringUtils.FromString(publicRequest.RoleARN));
                 }
                 if(publicRequest.IsSetStackName())
                 {
@@ -77,9 +73,9 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             }
             return request;
         }
-                    private static ExecuteChangeSetRequestMarshaller _instance = new ExecuteChangeSetRequestMarshaller();        
+                    private static RollbackStackRequestMarshaller _instance = new RollbackStackRequestMarshaller();        
 
-        internal static ExecuteChangeSetRequestMarshaller GetInstance()
+        internal static RollbackStackRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -87,7 +83,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ExecuteChangeSetRequestMarshaller Instance
+        public static RollbackStackRequestMarshaller Instance
         {
             get
             {

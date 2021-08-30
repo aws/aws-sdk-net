@@ -50,6 +50,7 @@ namespace Amazon.CloudFormation.Model
     {
         private List<string> _capabilities = new List<string>();
         private string _clientRequestToken;
+        private bool? _disableRollback;
         private List<string> _notificationARNs = new List<string>();
         private List<Parameter> _parameters = new List<Parameter>();
         private List<string> _resourceTypes = new List<string>();
@@ -77,9 +78,10 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Some stack templates might include resources that can affect permissions in your account;
-        /// for example, by creating new Identity and Access Management (IAM) users. For those
-        /// stacks, you must explicitly acknowledge this by specifying one of these capabilities.
+        /// Some stack templates might include resources that can affect permissions in your Amazon
+        /// Web Services account; for example, by creating new Identity and Access Management
+        /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying
+        /// one of these capabilities.
         /// </para>
         ///  
         /// <para>
@@ -88,12 +90,11 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you have IAM resources, you can specify either capability. 
+        /// If you have IAM resources, you can specify either capability.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you have IAM resources with custom names, you <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.
-        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -219,7 +220,6 @@ namespace Amazon.CloudFormation.Model
         /// which helps you easily identify the stack operation . For example, if you create a
         /// stack using the console, each stack event would be assigned the same token in the
         /// following format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -233,6 +233,28 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisableRollback. 
+        /// <para>
+        /// Preserve the state of previously provisioned resources when an operation fails.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>False</code> 
+        /// </para>
+        /// </summary>
+        public bool DisableRollback
+        {
+            get { return this._disableRollback.GetValueOrDefault(); }
+            set { this._disableRollback = value; }
+        }
+
+        // Check to see if DisableRollback property is set
+        internal bool IsSetDisableRollback()
+        {
+            return this._disableRollback.HasValue; 
         }
 
         /// <summary>

@@ -125,7 +125,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackDriftDetectionId. 
         /// <para>
-        /// The ID of the drift detection results of this operation. 
+        /// The ID of the drift detection results of this operation.
         /// </para>
         ///  
         /// <para>
@@ -151,7 +151,6 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property StackDriftStatus. 
         /// <para>
         /// Status of the stack's actual configuration compared to its expected configuration.
-        /// 
         /// </para>
         ///  <ul> <li> 
         /// <para>

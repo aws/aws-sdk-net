@@ -167,7 +167,7 @@ namespace Amazon.CloudFormation.Model
         /// A list of resource identifier summaries that describe the target resources of an import
         /// operation and the properties you can provide during the import to identify the target
         /// resources. For example, <code>BucketName</code> is a possible identifier property
-        /// for an <code>AWS::S3::Bucket</code> resource. 
+        /// for an <code>AWS::S3::Bucket</code> resource.
         /// </para>
         /// </summary>
         public List<ResourceIdentifierSummary> ResourceIdentifierSummaries

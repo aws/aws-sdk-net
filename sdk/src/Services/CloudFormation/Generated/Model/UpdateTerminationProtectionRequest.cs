@@ -37,7 +37,7 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  
     /// <para>
-    ///  For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+    /// For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
     /// stacks</a>, termination protection is set on the root stack and cannot be changed
     /// directly on the nested stack.
     /// </para>

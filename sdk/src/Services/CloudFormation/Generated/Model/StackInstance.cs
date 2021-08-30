@@ -53,8 +53,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Account. 
         /// <para>
-        /// [Self-managed permissions] The name of the account that the stack instance is associated
-        /// with.
+        /// [Self-managed permissions] The name of the Amazon Web Services account that the stack
+        /// instance is associated with.
         /// </para>
         /// </summary>
         public string Account
@@ -170,7 +170,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The name of the Region that the stack instance is associated with.
+        /// The name of the Amazon Web Services Region that the stack instance is associated with.
         /// </para>
         /// </summary>
         public string Region

@@ -32,7 +32,7 @@ namespace Amazon.CloudFormation.Model
     /// Container for the parameters to the RegisterPublisher operation.
     /// Registers your account as a publisher of public extensions in the CloudFormation registry.
     /// Public extensions are available for use by all CloudFormation users. This publisher
-    /// ID applies to your account in all Regions.
+    /// ID applies to your account in all Amazon Web Services Regions.
     /// 
     ///  
     /// <para>

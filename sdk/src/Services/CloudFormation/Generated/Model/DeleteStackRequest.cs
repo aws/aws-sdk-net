@@ -63,7 +63,6 @@ namespace Amazon.CloudFormation.Model
         /// which helps you easily identify the stack operation . For example, if you create a
         /// stack using the console, each stack event would be assigned the same token in the
         /// following format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

@@ -49,7 +49,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Accounts. 
         /// <para>
-        /// The names of one or more accounts for which you want to deploy stack set updates.
+        /// The names of one or more Amazon Web Services accounts for which you want to deploy
+        /// stack set updates.
         /// </para>
         /// </summary>
         public List<string> Accounts

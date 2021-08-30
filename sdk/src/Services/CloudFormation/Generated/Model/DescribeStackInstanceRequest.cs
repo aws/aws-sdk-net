@@ -30,8 +30,8 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStackInstance operation.
-    /// Returns the stack instance that's associated with the specified stack set, account,
-    /// and Region.
+    /// Returns the stack instance that's associated with the specified stack set, Amazon
+    /// Web Services account, and Region.
     /// 
     ///  
     /// <para>
@@ -67,8 +67,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Your account must be registered as a delegated administrator in the management account.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+        /// Your Amazon Web Services account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
         /// a delegated administrator</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         ///  </li> </ul>
@@ -88,7 +88,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackInstanceAccount. 
         /// <para>
-        /// The ID of an account that's associated with this stack instance.
+        /// The ID of an Amazon Web Services account that's associated with this stack instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

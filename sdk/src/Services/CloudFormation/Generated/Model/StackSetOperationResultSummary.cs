@@ -44,7 +44,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Account. 
         /// <para>
-        /// [Self-managed permissions] The name of the account for this operation result.
+        /// [Self-managed permissions] The name of the Amazon Web Services account for this operation
+        /// result.
         /// </para>
         /// </summary>
         public string Account
@@ -100,7 +101,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The name of the Region for this operation result.
+        /// The name of the Amazon Web Services Region for this operation result.
         /// </para>
         /// </summary>
         public string Region

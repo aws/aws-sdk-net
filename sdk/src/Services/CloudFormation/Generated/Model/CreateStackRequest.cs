@@ -66,9 +66,10 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Some stack templates might include resources that can affect permissions in your account;
-        /// for example, by creating new Identity and Access Management (IAM) users. For those
-        /// stacks, you must explicitly acknowledge this by specifying one of these capabilities.
+        /// Some stack templates might include resources that can affect permissions in your Amazon
+        /// Web Services account; for example, by creating new Identity and Access Management
+        /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying
+        /// one of these capabilities.
         /// </para>
         ///  
         /// <para>
@@ -77,12 +78,11 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you have IAM resources, you can specify either capability. 
+        /// If you have IAM resources, you can specify either capability.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you have IAM resources with custom names, you <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.
-        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -255,11 +255,11 @@ namespace Amazon.CloudFormation.Model
         /// to delete a stack with termination protection enabled, the operation fails and the
         /// stack remains unchanged. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
         /// a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>. Termination
-        /// protection is disabled on stacks by default. 
+        /// protection is disabled on stacks by default.
         /// </para>
         ///  
         /// <para>
-        ///  For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+        /// For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
         /// stacks</a>, termination protection is set on the root stack and cannot be changed
         /// directly on the nested stack.
         /// </para>
@@ -432,7 +432,7 @@ namespace Amazon.CloudFormation.Model
         ///  <note> 
         /// <para>
         /// A stack name can contain only alphanumeric characters (case sensitive) and hyphens.
-        /// It must start with an alphabetic character and cannot be longer than 128 characters.
+        /// It must start with an alphabetical character and cannot be longer than 128 characters.
         /// </para>
         ///  </note>
         /// </summary>

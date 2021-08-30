@@ -92,7 +92,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The name of the stack for which you want to detect drift. 
+        /// The name of the stack for which you want to detect drift.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
