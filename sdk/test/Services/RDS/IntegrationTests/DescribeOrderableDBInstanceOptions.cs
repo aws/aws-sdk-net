@@ -139,7 +139,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
             catch (AmazonRDSException ex)
             {
                 Assert.IsNotNull(ex.Message);
-                Assert.IsTrue(ex.Message.IndexOf("Invalid DB engine", StringComparison.OrdinalIgnoreCase) >= 0);
                 return;
             }
             catch (Exception ex)
