@@ -112,10 +112,6 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// The build phase is still in progress.
         /// </para>
-        ///  </dd> <dt>QUEUED</dt> <dd> 
-        /// <para>
-        /// The build has been submitted and is queued behind other submitted builds.
-        /// </para>
         ///  </dd> <dt>STOPPED</dt> <dd> 
         /// <para>
         /// The build phase stopped.

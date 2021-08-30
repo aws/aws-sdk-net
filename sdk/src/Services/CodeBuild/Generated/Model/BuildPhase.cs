@@ -112,10 +112,6 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// The build phase is still in progress.
         /// </para>
-        ///  </dd> <dt>QUEUED</dt> <dd> 
-        /// <para>
-        /// The build has been submitted and is queued behind other submitted builds.
-        /// </para>
         ///  </dd> <dt>STOPPED</dt> <dd> 
         /// <para>
         /// The build phase stopped.
@@ -147,53 +143,51 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// The name of the build phase. Valid values include:
         /// </para>
-        ///  <ul> <li> 
+        ///  <dl> <dt>BUILD</dt> <dd> 
         /// <para>
-        ///  <code>BUILD</code>: Core build activities typically occur in this build phase.
+        /// Core build activities typically occur in this build phase.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>COMPLETED</dt> <dd> 
         /// <para>
-        ///  <code>COMPLETED</code>: The build has been completed.
+        /// The build has been completed.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>DOWNLOAD_SOURCE</dt> <dd> 
         /// <para>
-        ///  <code>DOWNLOAD_SOURCE</code>: Source code is being downloaded in this build phase.
+        /// Source code is being downloaded in this build phase.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>FINALIZING</dt> <dd> 
         /// <para>
-        ///  <code>FINALIZING</code>: The build process is completing in this build phase.
+        /// The build process is completing in this build phase.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>INSTALL</dt> <dd> 
         /// <para>
-        ///  <code>INSTALL</code>: Installation activities typically occur in this build phase.
+        /// Installation activities typically occur in this build phase.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>POST_BUILD</dt> <dd> 
         /// <para>
-        ///  <code>POST_BUILD</code>: Post-build activities typically occur in this build phase.
+        /// Post-build activities typically occur in this build phase.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>PRE_BUILD</dt> <dd> 
         /// <para>
-        ///  <code>PRE_BUILD</code>: Pre-build activities typically occur in this build phase.
+        /// Pre-build activities typically occur in this build phase.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>PROVISIONING</dt> <dd> 
         /// <para>
-        ///  <code>PROVISIONING</code>: The build environment is being set up.
+        /// The build environment is being set up.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>QUEUED</dt> <dd> 
         /// <para>
-        ///  <code>QUEUED</code>: The build has been submitted and is queued behind other submitted
-        /// builds.
+        /// The build has been submitted and is queued behind other submitted builds.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>SUBMITTED</dt> <dd> 
         /// <para>
-        ///  <code>SUBMITTED</code>: The build has been submitted.
+        /// The build has been submitted.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>UPLOAD_ARTIFACTS</dt> <dd> 
         /// <para>
-        ///  <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to the output
-        /// location.
+        /// Build output artifacts are being uploaded to the output location.
         /// </para>
-        ///  </li> </ul>
+        ///  </dd> </dl>
         /// </summary>
         public BuildPhaseType PhaseType
         {
