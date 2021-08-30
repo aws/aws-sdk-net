@@ -30,21 +30,22 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the PutKeyPolicy operation.
-    /// Attaches a key policy to the specified customer master key (CMK). 
+    /// Attaches a key policy to the specified KMS key. 
     /// 
     ///  
     /// <para>
     /// For more information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
-    /// Policies</a> in the <i>AWS Key Management Service Developer Guide</i>. For help writing
+    /// Policies</a> in the <i>Key Management Service Developer Guide</i>. For help writing
     /// and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
-    /// JSON Policy Reference</a> in the <i> <i>IAM User Guide</i> </i>. For examples of adding
-    /// a key policy in multiple programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-key-policies.html#put-policy">Setting
-    /// a key policy</a> in the <i>AWS Key Management Service Developer Guide</i>.
+    /// JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i>
+    /// </i>. For examples of adding a key policy in multiple programming languages, see <a
+    /// href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-key-policies.html#put-policy">Setting
+    /// a key policy</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
-    ///  <b>Cross-account use</b>: No. You cannot perform this operation on a CMK in a different
-    /// AWS account.
+    ///  <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a
+    /// different Amazon Web Services account.
     /// </para>
     ///  
     /// <para>
@@ -70,18 +71,18 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// Setting this value to true increases the risk that the CMK becomes unmanageable. Do
-        /// not set this value to true indiscriminately.
+        /// Setting this value to true increases the risk that the KMS key becomes unmanageable.
+        /// Do not set this value to true indiscriminately.
         /// </para>
         ///  
         /// <para>
         /// For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
-        /// Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.
+        /// Key Policy</a> section in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  </important> 
         /// <para>
         /// Use this parameter only when you intend to prevent the principal that is making the
-        /// request from making a subsequent <code>PutKeyPolicy</code> request on the CMK.
+        /// request from making a subsequent <code>PutKeyPolicy</code> request on the KMS key.
         /// </para>
         ///  
         /// <para>
@@ -103,11 +104,11 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// Sets the key policy on the specified customer master key (CMK).
+        /// Sets the key policy on the specified KMS key.
         /// </para>
         ///  
         /// <para>
-        /// Specify the key ID or key ARN of the CMK.
+        /// Specify the key ID or key ARN of the KMS key.
         /// </para>
         ///  
         /// <para>
@@ -124,7 +125,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+        /// To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -143,7 +144,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// The key policy to attach to the CMK.
+        /// The key policy to attach to the KMS key.
         /// </para>
         ///  
         /// <para>
@@ -153,26 +154,26 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy
         /// must allow the principal that is making the <code>PutKeyPolicy</code> request to make
-        /// a subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the risk that
-        /// the CMK becomes unmanageable. For more information, refer to the scenario in the <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
-        /// Key Policy</a> section of the <i>AWS Key Management Service Developer Guide</i>.
+        /// a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk
+        /// that the KMS key becomes unmanageable. For more information, refer to the scenario
+        /// in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+        /// Key Policy</a> section of the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Each statement in the key policy must contain one or more principals. The principals
-        /// in the key policy must exist and be visible to AWS KMS. When you create a new AWS
-        /// principal (for example, an IAM user or role), you might need to enforce a delay before
-        /// including the new principal in a key policy because the new principal might not be
-        /// immediately visible to AWS KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
-        /// that I make are not always immediately visible</a> in the <i>AWS Identity and Access
-        /// Management User Guide</i>.
+        /// in the key policy must exist and be visible to KMS. When you create a new Amazon Web
+        /// Services principal (for example, an IAM user or role), you might need to enforce a
+        /// delay before including the new principal in a key policy because the new principal
+        /// might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
+        /// that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity
+        /// and Access Management User Guide</i>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The key policy cannot exceed 32 kilobytes (32768 bytes). For more information, see
         /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource
-        /// Quotas</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// Quotas</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=131072)]

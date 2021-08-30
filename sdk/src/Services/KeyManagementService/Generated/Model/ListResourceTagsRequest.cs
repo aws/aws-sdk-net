@@ -30,19 +30,19 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListResourceTags operation.
-    /// Returns all tags on the specified customer master key (CMK).
+    /// Returns all tags on the specified KMS key.
     /// 
     ///  
     /// <para>
     /// For general information about tags, including the format and syntax, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-    /// AWS resources</a> in the <i>Amazon Web Services General Reference</i>. For information
-    /// about using tags in AWS KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
+    /// Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
+    /// For information about using tags in KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
     /// keys</a>.
     /// </para>
     ///  
     /// <para>
-    ///  <b>Cross-account use</b>: No. You cannot perform this operation on a CMK in a different
-    /// AWS account.
+    ///  <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a
+    /// different Amazon Web Services account.
     /// </para>
     ///  
     /// <para>
@@ -80,11 +80,11 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// Gets tags on the specified customer master key (CMK).
+        /// Gets tags on the specified KMS key.
         /// </para>
         ///  
         /// <para>
-        /// Specify the key ID or key ARN of the CMK.
+        /// Specify the key ID or key ARN of the KMS key.
         /// </para>
         ///  
         /// <para>
@@ -101,7 +101,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+        /// To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -121,8 +121,8 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// Use this parameter to specify the maximum number of items to return. When this value
-        /// is present, AWS KMS does not return more than the specified number of items, but it
-        /// might return fewer.
+        /// is present, KMS does not return more than the specified number of items, but it might
+        /// return fewer.
         /// </para>
         ///  
         /// <para>

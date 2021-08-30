@@ -30,7 +30,7 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// The request was rejected because the provided import token is invalid or is associated
-    /// with a different customer master key (CMK).
+    /// with a different KMS key.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

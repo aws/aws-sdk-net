@@ -36,11 +36,11 @@ namespace Amazon.KeyManagementService.Model
     /// 
     ///  
     /// <para>
-    /// AWS KMS applies the grant constraints only to cryptographic operations that support
-    /// an encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric
-    /// CMK</a>. Grant constraints are not applied to operations that do not support an encryption
-    /// context, such as cryptographic operations with asymmetric CMKs and management operations,
-    /// such as <a>DescribeKey</a> or <a>RetireGrant</a>.
+    /// KMS applies the grant constraints only to cryptographic operations that support an
+    /// encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric
+    /// KMS key</a>. Grant constraints are not applied to operations that do not support an
+    /// encryption context, such as cryptographic operations with asymmetric KMS keys and
+    /// management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.
     /// </para>
     ///  <important> 
     /// <para>
@@ -59,7 +59,7 @@ namespace Amazon.KeyManagementService.Model
     /// by case. To require a fully case-sensitive encryption context, use the <code>kms:EncryptionContext:</code>
     /// and <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For
     /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context">kms:EncryptionContext:</a>
-    /// in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
+    /// in the <i> <i>Key Management Service Developer Guide</i> </i>.
     /// </para>
     ///  </important>
     /// </summary>

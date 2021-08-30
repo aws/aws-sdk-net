@@ -31,19 +31,19 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// Container for the parameters to the Sign operation.
     /// Creates a <a href="https://en.wikipedia.org/wiki/Digital_signature">digital signature</a>
-    /// for a message or message digest by using the private key in an asymmetric CMK. To
-    /// verify the signature, use the <a>Verify</a> operation, or use the public key in the
-    /// same asymmetric CMK outside of AWS KMS. For information about symmetric and asymmetric
-    /// CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-    /// Symmetric and Asymmetric CMKs</a> in the <i>AWS Key Management Service Developer Guide</i>.
+    /// for a message or message digest by using the private key in an asymmetric KMS key.
+    /// To verify the signature, use the <a>Verify</a> operation, or use the public key in
+    /// the same asymmetric KMS key outside of KMS. For information about symmetric and asymmetric
+    /// KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+    /// Symmetric and Asymmetric KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
     /// 
     ///  
     /// <para>
     /// Digital signatures are generated and verified by using asymmetric key pair, such as
-    /// an RSA or ECC pair that is represented by an asymmetric customer master key (CMK).
-    /// The key owner (or an authorized user) uses their private key to sign a message. Anyone
-    /// with the public key can verify that the message was signed with that particular private
-    /// key and that the message hasn't changed since it was signed. 
+    /// an RSA or ECC pair that is represented by an asymmetric KMS key. The key owner (or
+    /// an authorized user) uses their private key to sign a message. Anyone with the public
+    /// key can verify that the message was signed with that particular private key and that
+    /// the message hasn't changed since it was signed. 
     /// </para>
     ///  
     /// <para>
@@ -51,10 +51,10 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Use the <code>KeyId</code> parameter to identify an asymmetric CMK with a <code>KeyUsage</code>
-    /// value of <code>SIGN_VERIFY</code>. To get the <code>KeyUsage</code> value of a CMK,
-    /// use the <a>DescribeKey</a> operation. The caller must have <code>kms:Sign</code> permission
-    /// on the CMK.
+    /// Use the <code>KeyId</code> parameter to identify an asymmetric KMS key with a <code>KeyUsage</code>
+    /// value of <code>SIGN_VERIFY</code>. To get the <code>KeyUsage</code> value of a KMS
+    /// key, use the <a>DescribeKey</a> operation. The caller must have <code>kms:Sign</code>
+    /// permission on the KMS key.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -66,30 +66,30 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Choose a signing algorithm that is compatible with the CMK. 
+    /// Choose a signing algorithm that is compatible with the KMS key. 
     /// </para>
     ///  </li> </ul> <important> 
     /// <para>
-    /// When signing a message, be sure to record the CMK and the signing algorithm. This
+    /// When signing a message, be sure to record the KMS key and the signing algorithm. This
     /// information is required to verify the signature.
     /// </para>
     ///  </important> 
     /// <para>
     /// To verify the signature that this operation generates, use the <a>Verify</a> operation.
     /// Or use the <a>GetPublicKey</a> operation to download the public key and then use the
-    /// public key to verify the signature outside of AWS KMS. 
+    /// public key to verify the signature outside of KMS. 
     /// </para>
     ///  
     /// <para>
-    /// The CMK that you use for this operation must be in a compatible key state. For details,
-    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-    /// state: Effect on your CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.
+    /// The KMS key that you use for this operation must be in a compatible key state. For
+    /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+    /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
-    ///  <b>Cross-account use</b>: Yes. To perform this operation with a CMK in a different
-    /// AWS account, specify the key ARN or alias ARN in the value of the <code>KeyId</code>
-    /// parameter.
+    ///  <b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a different
+    /// Amazon Web Services account, specify the key ARN or alias ARN in the value of the
+    /// <code>KeyId</code> parameter.
     /// </para>
     ///  
     /// <para>
@@ -118,8 +118,9 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// Use a grant token when your permission to call this operation comes from a new grant
         /// that has not yet achieved <i>eventual consistency</i>. For more information, see <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-        /// token</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
+        /// token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using
+        /// a grant token</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -138,15 +139,15 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// Identifies an asymmetric CMK. AWS KMS uses the private key in the asymmetric CMK to
-        /// sign the message. The <code>KeyUsage</code> type of the CMK must be <code>SIGN_VERIFY</code>.
-        /// To find the <code>KeyUsage</code> of a CMK, use the <a>DescribeKey</a> operation.
+        /// Identifies an asymmetric KMS key. KMS uses the private key in the asymmetric KMS key
+        /// to sign the message. The <code>KeyUsage</code> type of the KMS key must be <code>SIGN_VERIFY</code>.
+        /// To find the <code>KeyUsage</code> of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
-        /// To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an
-        /// alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different
-        /// AWS account, you must use the key ARN or alias ARN.
+        /// To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using
+        /// an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different
+        /// Amazon Web Services account, you must use the key ARN or alias ARN.
         /// </para>
         ///  
         /// <para>
@@ -171,7 +172,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+        /// To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.
         /// To get the alias name and alias ARN, use <a>ListAliases</a>.
         /// </para>
         /// </summary>
@@ -196,8 +197,8 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you provide a message, AWS KMS generates a hash digest of the message and then
-        /// signs it.
+        /// If you provide a message, KMS generates a hash digest of the message and then signs
+        /// it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=4096)]
@@ -216,8 +217,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property MessageType. 
         /// <para>
-        /// Tells AWS KMS whether the value of the <code>Message</code> parameter is a message
-        /// or message digest. The default value, RAW, indicates a message. To indicate a message
+        /// Tells KMS whether the value of the <code>Message</code> parameter is a message or
+        /// message digest. The default value, RAW, indicates a message. To indicate a message
         /// digest, enter <code>DIGEST</code>.
         /// </para>
         /// </summary>
@@ -241,7 +242,7 @@ namespace Amazon.KeyManagementService.Model
         ///  
         /// <para>
         /// Choose an algorithm that is compatible with the type and size of the specified asymmetric
-        /// CMK.
+        /// KMS key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

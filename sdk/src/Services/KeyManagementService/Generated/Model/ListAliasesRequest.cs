@@ -30,34 +30,35 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAliases operation.
-    /// Gets a list of aliases in the caller's AWS account and region. For more information
-    /// about aliases, see <a>CreateAlias</a>.
+    /// Gets a list of aliases in the caller's Amazon Web Services account and region. For
+    /// more information about aliases, see <a>CreateAlias</a>.
     /// 
     ///  
     /// <para>
     /// By default, the <code>ListAliases</code> operation returns all aliases in the account
-    /// and region. To get only the aliases associated with a particular customer master key
-    /// (CMK), use the <code>KeyId</code> parameter.
+    /// and region. To get only the aliases associated with a particular KMS key, use the
+    /// <code>KeyId</code> parameter.
     /// </para>
     ///  
     /// <para>
     /// The <code>ListAliases</code> response can include aliases that you created and associated
-    /// with your customer managed CMKs, and aliases that AWS created and associated with
-    /// AWS managed CMKs in your account. You can recognize AWS aliases because their names
-    /// have the format <code>aws/&lt;service-name&gt;</code>, such as <code>aws/dynamodb</code>.
+    /// with your customer managed keys, and aliases that Amazon Web Services created and
+    /// associated with Amazon Web Services managed keys in your account. You can recognize
+    /// Amazon Web Services aliases because their names have the format <code>aws/&lt;service-name&gt;</code>,
+    /// such as <code>aws/dynamodb</code>.
     /// </para>
     ///  
     /// <para>
     /// The response might also include aliases that have no <code>TargetKeyId</code> field.
-    /// These are predefined aliases that AWS has created but has not yet associated with
-    /// a CMK. Aliases that AWS creates in your account, including predefined aliases, do
-    /// not count against your <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">AWS
-    /// KMS aliases quota</a>.
+    /// These are predefined aliases that Amazon Web Services has created but has not yet
+    /// associated with a KMS key. Aliases that Amazon Web Services creates in your account,
+    /// including predefined aliases, do not count against your <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">KMS
+    /// aliases quota</a>.
     /// </para>
     ///  
     /// <para>
     ///  <b>Cross-account use</b>: No. <code>ListAliases</code> does not return aliases in
-    /// other AWS accounts.
+    /// other Amazon Web Services accounts.
     /// </para>
     ///  
     /// <para>
@@ -67,7 +68,7 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-alias.html#alias-access">Controlling
-    /// access to aliases</a> in the <i>AWS Key Management Service Developer Guide</i>.
+    /// access to aliases</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -96,8 +97,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// Lists only aliases that are associated with the specified CMK. Enter a CMK in your
-        /// AWS account. 
+        /// Lists only aliases that are associated with the specified KMS key. Enter a KMS key
+        /// in your Amazon Web Services account. 
         /// </para>
         ///  
         /// <para>
@@ -106,7 +107,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify the key ID or key ARN of the CMK.
+        /// Specify the key ID or key ARN of the KMS key.
         /// </para>
         ///  
         /// <para>
@@ -123,7 +124,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+        /// To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -143,8 +144,8 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// Use this parameter to specify the maximum number of items to return. When this value
-        /// is present, AWS KMS does not return more than the specified number of items, but it
-        /// might return fewer.
+        /// is present, KMS does not return more than the specified number of items, but it might
+        /// return fewer.
         /// </para>
         ///  
         /// <para>

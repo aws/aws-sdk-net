@@ -41,7 +41,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property KeyId. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-        /// ARN</a>) of the asymmetric CMK that was used to verify the signature.
+        /// ARN</a>) of the asymmetric KMS key that was used to verify the signature.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

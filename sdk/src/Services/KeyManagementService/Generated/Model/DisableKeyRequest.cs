@@ -30,26 +30,26 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableKey operation.
-    /// Sets the state of a customer master key (CMK) to disabled. This change temporarily
-    /// prevents use of the CMK for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+    /// Sets the state of a KMS key to disabled. This change temporarily prevents use of the
+    /// KMS key for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
     /// operations</a>. 
     /// 
     ///  
     /// <para>
-    /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-    /// state: Effect on your CMK</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
+    /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+    /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
     /// </i>.
     /// </para>
     ///  
     /// <para>
-    /// The CMK that you use for this operation must be in a compatible key state. For details,
-    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-    /// state: Effect on your CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.
+    /// The KMS key that you use for this operation must be in a compatible key state. For
+    /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+    /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
-    ///  <b>Cross-account use</b>: No. You cannot perform this operation on a CMK in a different
-    /// AWS account.
+    ///  <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a
+    /// different Amazon Web Services account.
     /// </para>
     ///  
     /// <para>
@@ -68,11 +68,11 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// Identifies the customer master key (CMK) to disable.
+        /// Identifies the KMS key to disable.
         /// </para>
         ///  
         /// <para>
-        /// Specify the key ID or key ARN of the CMK.
+        /// Specify the key ID or key ARN of the KMS key.
         /// </para>
         ///  
         /// <para>
@@ -89,7 +89,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+        /// To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

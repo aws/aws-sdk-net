@@ -30,31 +30,31 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPublicKey operation.
-    /// Returns the public key of an asymmetric CMK. Unlike the private key of a asymmetric
-    /// CMK, which never leaves AWS KMS unencrypted, callers with <code>kms:GetPublicKey</code>
-    /// permission can download the public key of an asymmetric CMK. You can share the public
-    /// key to allow others to encrypt messages and verify signatures outside of AWS KMS.
-    /// For information about symmetric and asymmetric CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-    /// Symmetric and Asymmetric CMKs</a> in the <i>AWS Key Management Service Developer Guide</i>.
+    /// Returns the public key of an asymmetric KMS key. Unlike the private key of a asymmetric
+    /// KMS key, which never leaves KMS unencrypted, callers with <code>kms:GetPublicKey</code>
+    /// permission can download the public key of an asymmetric KMS key. You can share the
+    /// public key to allow others to encrypt messages and verify signatures outside of KMS.
+    /// For information about symmetric and asymmetric KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+    /// Symmetric and Asymmetric KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
     /// 
     ///  
     /// <para>
     /// You do not need to download the public key. Instead, you can use the public key within
-    /// AWS KMS by calling the <a>Encrypt</a>, <a>ReEncrypt</a>, or <a>Verify</a> operations
-    /// with the identifier of an asymmetric CMK. When you use the public key within AWS KMS,
-    /// you benefit from the authentication, authorization, and logging that are part of every
-    /// AWS KMS operation. You also reduce of risk of encrypting data that cannot be decrypted.
-    /// These features are not effective outside of AWS KMS. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/download-public-key.html#download-public-key-considerations">Special
+    /// KMS by calling the <a>Encrypt</a>, <a>ReEncrypt</a>, or <a>Verify</a> operations with
+    /// the identifier of an asymmetric KMS key. When you use the public key within KMS, you
+    /// benefit from the authentication, authorization, and logging that are part of every
+    /// KMS operation. You also reduce of risk of encrypting data that cannot be decrypted.
+    /// These features are not effective outside of KMS. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/download-public-key.html#download-public-key-considerations">Special
     /// Considerations for Downloading Public Keys</a>.
     /// </para>
     ///  
     /// <para>
-    /// To help you use the public key safely outside of AWS KMS, <code>GetPublicKey</code>
-    /// returns important information about the public key in the response, including:
+    /// To help you use the public key safely outside of KMS, <code>GetPublicKey</code> returns
+    /// important information about the public key in the response, including:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GetPublicKey.html#KMS-GetPublicKey-response-CustomerMasterKeySpec">CustomerMasterKeySpec</a>:
+    ///  <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GetPublicKey.html#KMS-GetPublicKey-response-KeySpec">KeySpec</a>:
     /// The type of key material in the public key, such as <code>RSA_4096</code> or <code>ECC_NIST_P521</code>.
     /// </para>
     ///  </li> <li> 
@@ -70,24 +70,24 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Although AWS KMS cannot enforce these restrictions on external operations, it is crucial
+    /// Although KMS cannot enforce these restrictions on external operations, it is crucial
     /// that you use this information to prevent the public key from being used improperly.
     /// For example, you can prevent a public signing key from being used encrypt data, or
     /// prevent a public key from being used with an encryption algorithm that is not supported
-    /// by AWS KMS. You can also avoid errors, such as using the wrong signing algorithm in
-    /// a verification operation.
+    /// by KMS. You can also avoid errors, such as using the wrong signing algorithm in a
+    /// verification operation.
     /// </para>
     ///  
     /// <para>
-    /// The CMK that you use for this operation must be in a compatible key state. For details,
-    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-    /// state: Effect on your CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.
+    /// The KMS key that you use for this operation must be in a compatible key state. For
+    /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+    /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
-    ///  <b>Cross-account use</b>: Yes. To perform this operation with a CMK in a different
-    /// AWS account, specify the key ARN or alias ARN in the value of the <code>KeyId</code>
-    /// parameter.
+    ///  <b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a different
+    /// Amazon Web Services account, specify the key ARN or alias ARN in the value of the
+    /// <code>KeyId</code> parameter.
     /// </para>
     ///  
     /// <para>
@@ -113,8 +113,9 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// Use a grant token when your permission to call this operation comes from a new grant
         /// that has not yet achieved <i>eventual consistency</i>. For more information, see <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-        /// token</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
+        /// token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using
+        /// a grant token</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -133,13 +134,13 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// Identifies the asymmetric CMK that includes the public key.
+        /// Identifies the asymmetric KMS key that includes the public key.
         /// </para>
         ///  
         /// <para>
-        /// To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an
-        /// alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different
-        /// AWS account, you must use the key ARN or alias ARN.
+        /// To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using
+        /// an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different
+        /// Amazon Web Services account, you must use the key ARN or alias ARN.
         /// </para>
         ///  
         /// <para>
@@ -164,7 +165,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+        /// To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.
         /// To get the alias name and alias ARN, use <a>ListAliases</a>.
         /// </para>
         /// </summary>

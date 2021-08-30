@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// The request was rejected because the specified AWS CloudHSM cluster has a different
-    /// cluster certificate than the original cluster. You cannot use the operation to specify
-    /// an unrelated cluster.
+    /// The request was rejected because the specified CloudHSM cluster has a different cluster
+    /// certificate than the original cluster. You cannot use the operation to specify an
+    /// unrelated cluster.
     /// 
     ///  
     /// <para>

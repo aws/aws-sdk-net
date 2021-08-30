@@ -40,7 +40,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Keys. 
         /// <para>
-        /// A list of customer master keys (CMKs).
+        /// A list of KMS keys.
         /// </para>
         /// </summary>
         public List<KeyListEntry> Keys

@@ -40,8 +40,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property CiphertextBlob. 
         /// <para>
-        /// The encrypted copy of the data key. When you use the HTTP API or the AWS CLI, the
-        /// value is Base64-encoded. Otherwise, it is not Base64-encoded.
+        /// The encrypted copy of the data key. When you use the HTTP API or the Amazon Web Services
+        /// CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6144)]
@@ -61,7 +61,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property KeyId. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-        /// ARN</a>) of the CMK that encrypted the data key.
+        /// ARN</a>) of the KMS key that encrypted the data key.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -80,9 +80,9 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Plaintext. 
         /// <para>
-        /// The plaintext data key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
-        /// Otherwise, it is not Base64-encoded. Use this data key to encrypt your data outside
-        /// of KMS. Then, remove it from memory as soon as possible.
+        /// The plaintext data key. When you use the HTTP API or the Amazon Web Services CLI,
+        /// the value is Base64-encoded. Otherwise, it is not Base64-encoded. Use this data key
+        /// to encrypt your data outside of KMS. Then, remove it from memory as soon as possible.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]

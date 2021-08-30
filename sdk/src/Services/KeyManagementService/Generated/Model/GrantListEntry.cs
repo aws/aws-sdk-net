@@ -89,7 +89,7 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually
         /// contains the user or role designated as the grantee principal in the grant. However,
-        /// when the grantee principal in the grant is an AWS service, the <code>GranteePrincipal</code>
+        /// when the grantee principal in the grant is an Amazon Web Services service, the <code>GranteePrincipal</code>
         /// field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
         /// principal</a>, which might represent several different grantee principals.
         /// </para>
@@ -129,7 +129,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property IssuingAccount. 
         /// <para>
-        /// The AWS account under which the grant was issued.
+        /// The Amazon Web Services account under which the grant was issued.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -148,7 +148,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// The unique identifier for the customer master key (CMK) to which the grant applies.
+        /// The unique identifier for the KMS key to which the grant applies.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

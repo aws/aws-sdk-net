@@ -31,9 +31,8 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// Container for the parameters to the GetParametersForImport operation.
     /// Returns the items you need to import key material into a symmetric, customer managed
-    /// customer master key (CMK). For more information about importing key material into
-    /// AWS KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-    /// Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.
+    /// KMS key. For more information about importing key material into KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+    /// Key Material</a> in the <i>Key Management Service Developer Guide</i>.
     /// 
     ///  
     /// <para>
@@ -43,11 +42,11 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// You must specify the key ID of the symmetric CMK into which you will import key material.
-    /// This CMK's <code>Origin</code> must be <code>EXTERNAL</code>. You must also specify
-    /// the wrapping algorithm and type of wrapping key (public key) that you will use to
-    /// encrypt the key material. You cannot perform this operation on an asymmetric CMK or
-    /// on any CMK in a different AWS account.
+    /// You must specify the key ID of the symmetric KMS key into which you will import key
+    /// material. This KMS key's <code>Origin</code> must be <code>EXTERNAL</code>. You must
+    /// also specify the wrapping algorithm and type of wrapping key (public key) that you
+    /// will use to encrypt the key material. You cannot perform this operation on an asymmetric
+    /// KMS key or on any KMS key in a different Amazon Web Services account.
     /// </para>
     ///  
     /// <para>
@@ -59,14 +58,14 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// The CMK that you use for this operation must be in a compatible key state. For details,
-    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-    /// state: Effect on your CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.
+    /// The KMS key that you use for this operation must be in a compatible key state. For
+    /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+    /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
-    ///  <b>Cross-account use</b>: No. You cannot perform this operation on a CMK in a different
-    /// AWS account.
+    ///  <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a
+    /// different Amazon Web Services account.
     /// </para>
     ///  
     /// <para>
@@ -96,12 +95,12 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// The identifier of the symmetric CMK into which you will import key material. The <code>Origin</code>
-        /// of the CMK must be <code>EXTERNAL</code>.
+        /// The identifier of the symmetric KMS key into which you will import key material. The
+        /// <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.
         /// </para>
         ///  
         /// <para>
-        /// Specify the key ID or key ARN of the CMK.
+        /// Specify the key ID or key ARN of the KMS key.
         /// </para>
         ///  
         /// <para>
@@ -118,7 +117,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+        /// To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -139,7 +138,7 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// The algorithm you will use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>.
         /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt
-        /// the Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// the Key Material</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

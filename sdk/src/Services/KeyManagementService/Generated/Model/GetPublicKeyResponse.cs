@@ -36,6 +36,7 @@ namespace Amazon.KeyManagementService.Model
         private CustomerMasterKeySpec _customerMasterKeySpec;
         private List<string> _encryptionAlgorithms = new List<string>();
         private string _keyId;
+        private KeySpec _keySpec;
         private KeyUsageType _keyUsage;
         private MemoryStream _publicKey;
         private List<string> _signingAlgorithms = new List<string>();
@@ -43,9 +44,16 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property CustomerMasterKeySpec. 
         /// <para>
-        /// The type of the of the public key that was downloaded.
+        /// Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code> response.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same
+        /// value. We recommend that you use the <code>KeySpec</code> field in your code. However,
+        /// to avoid breaking changes, KMS will support both fields.
         /// </para>
         /// </summary>
+        [Obsolete("This field has been deprecated. Instead, use the KeySpec field.")]
         public CustomerMasterKeySpec CustomerMasterKeySpec
         {
             get { return this._customerMasterKeySpec; }
@@ -61,12 +69,12 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property EncryptionAlgorithms. 
         /// <para>
-        /// The encryption algorithms that AWS KMS supports for this key. 
+        /// The encryption algorithms that KMS supports for this key. 
         /// </para>
         ///  
         /// <para>
-        /// This information is critical. If a public key encrypts data outside of AWS KMS by
-        /// using an unsupported encryption algorithm, the ciphertext cannot be decrypted. 
+        /// This information is critical. If a public key encrypts data outside of KMS by using
+        /// an unsupported encryption algorithm, the ciphertext cannot be decrypted. 
         /// </para>
         ///  
         /// <para>
@@ -90,7 +98,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property KeyId. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-        /// ARN</a>) of the asymmetric CMK from which the public key was downloaded.
+        /// ARN</a>) of the asymmetric KMS key from which the public key was downloaded.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -107,6 +115,24 @@ namespace Amazon.KeyManagementService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KeySpec. 
+        /// <para>
+        /// The type of the of the public key that was downloaded.
+        /// </para>
+        /// </summary>
+        public KeySpec KeySpec
+        {
+            get { return this._keySpec; }
+            set { this._keySpec = value; }
+        }
+
+        // Check to see if KeySpec property is set
+        internal bool IsSetKeySpec()
+        {
+            return this._keySpec != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KeyUsage. 
         /// <para>
         /// The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code>
@@ -115,7 +141,7 @@ namespace Amazon.KeyManagementService.Model
         ///  
         /// <para>
         /// This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage
-        /// encrypts data outside of AWS KMS, the ciphertext cannot be decrypted. 
+        /// encrypts data outside of KMS, the ciphertext cannot be decrypted. 
         /// </para>
         /// </summary>
         public KeyUsageType KeyUsage
@@ -139,8 +165,8 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// The value is a DER-encoded X.509 public key, also known as <code>SubjectPublicKeyInfo</code>
         /// (SPKI), as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>.
-        /// When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise,
-        /// it is not Base64-encoded.
+        /// When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded.
+        /// Otherwise, it is not Base64-encoded.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8192)]
@@ -159,7 +185,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property SigningAlgorithms. 
         /// <para>
-        /// The signing algorithms that AWS KMS supports for this key.
+        /// The signing algorithms that KMS supports for this key.
         /// </para>
         ///  
         /// <para>

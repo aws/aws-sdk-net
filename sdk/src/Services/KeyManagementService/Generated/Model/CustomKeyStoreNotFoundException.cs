@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// The request was rejected because AWS KMS cannot find a custom key store with the specified
+    /// The request was rejected because KMS cannot find a custom key store with the specified
     /// key store name or ID.
     /// </summary>
     #if !NETSTANDARD

@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// The request was rejected because the specified AWS CloudHSM cluster is already associated
+    /// The request was rejected because the specified CloudHSM cluster is already associated
     /// with a custom key store or it shares a backup history with a cluster that is associated
     /// with a custom key store. Each custom key store must be associated with a different
-    /// AWS CloudHSM cluster.
+    /// CloudHSM cluster.
     /// 
     ///  
     /// <para>

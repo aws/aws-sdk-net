@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// Contains metadata about a customer master key (CMK).
+    /// Contains metadata about a KMS key.
     /// 
     ///  
     /// <para>
@@ -52,6 +52,7 @@ namespace Amazon.KeyManagementService.Model
         private ExpirationModelType _expirationModel;
         private string _keyId;
         private KeyManagerType _keyManager;
+        private KeySpec _keySpec;
         private KeyState _keyState;
         private KeyUsageType _keyUsage;
         private bool? _multiRegion;
@@ -64,9 +65,9 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the CMK. For examples, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS
-        /// Key Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS General
-        /// Reference</i>.
+        /// The Amazon Resource Name (ARN) of the KMS key. For examples, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Key
+        /// Management Service (KMS)</a> in the Example ARNs section of the <i>Amazon Web Services
+        /// General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -85,7 +86,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property AWSAccountId. 
         /// <para>
-        /// The twelve-digit account ID of the AWS account that owns the CMK.
+        /// The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.
         /// </para>
         /// </summary>
         public string AWSAccountId
@@ -103,11 +104,10 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property CloudHsmClusterId. 
         /// <para>
-        /// The cluster ID of the AWS CloudHSM cluster that contains the key material for the
-        /// CMK. When you create a CMK in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a>, AWS KMS creates the key material for the CMK in the associated AWS
-        /// CloudHSM cluster. This value is present only when the CMK is created in a custom key
-        /// store.
+        /// The cluster ID of the CloudHSM cluster that contains the key material for the KMS
+        /// key. When you create a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM
+        /// cluster. This value is present only when the KMS key is created in a custom key store.
         /// </para>
         /// </summary>
         [AWSProperty(Min=19, Max=24)]
@@ -126,7 +126,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The date and time when the CMK was created.
+        /// The date and time when the KMS key was created.
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -144,9 +144,16 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property CustomerMasterKeySpec. 
         /// <para>
-        /// Describes the type of key material in the CMK.
+        /// Instead, use the <code>KeySpec</code> field.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same
+        /// value. We recommend that you use the <code>KeySpec</code> field in your code. However,
+        /// to avoid breaking changes, KMS will support both fields.
         /// </para>
         /// </summary>
+        [Obsolete("This field has been deprecated. Instead, use the KeySpec field.")]
         public CustomerMasterKeySpec CustomerMasterKeySpec
         {
             get { return this._customerMasterKeySpec; }
@@ -163,8 +170,8 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property CustomKeyStoreId. 
         /// <para>
         /// A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a> that contains the CMK. This value is present only when the CMK is created
-        /// in a custom key store.
+        /// key store</a> that contains the KMS key. This value is present only when the KMS key
+        /// is created in a custom key store.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -183,9 +190,9 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property DeletionDate. 
         /// <para>
-        /// The date and time after which AWS KMS deletes this CMK. This value is present only
-        /// when the CMK is scheduled for deletion, that is, when its <code>KeyState</code> is
-        /// <code>PendingDeletion</code>.
+        /// The date and time after which KMS deletes this KMS key. This value is present only
+        /// when the KMS key is scheduled for deletion, that is, when its <code>KeyState</code>
+        /// is <code>PendingDeletion</code>.
         /// </para>
         ///  
         /// <para>
@@ -210,7 +217,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the CMK.
+        /// The description of the KMS key.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=8192)]
@@ -229,7 +236,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Specifies whether the CMK is enabled. When <code>KeyState</code> is <code>Enabled</code>
+        /// Specifies whether the KMS key is enabled. When <code>KeyState</code> is <code>Enabled</code>
         /// this value is true, otherwise it is false.
         /// </para>
         /// </summary>
@@ -248,12 +255,12 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property EncryptionAlgorithms. 
         /// <para>
-        /// The encryption algorithms that the CMK supports. You cannot use the CMK with other
-        /// encryption algorithms within AWS KMS.
+        /// The encryption algorithms that the KMS key supports. You cannot use the KMS key with
+        /// other encryption algorithms within KMS.
         /// </para>
         ///  
         /// <para>
-        /// This value is present only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
+        /// This value is present only when the <code>KeyUsage</code> of the KMS key is <code>ENCRYPT_DECRYPT</code>.
         /// </para>
         /// </summary>
         public List<string> EncryptionAlgorithms
@@ -271,7 +278,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property ExpirationModel. 
         /// <para>
-        /// Specifies whether the CMK's key material expires. This value is present only when
+        /// Specifies whether the KMS key's key material expires. This value is present only when
         /// <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.
         /// </para>
         /// </summary>
@@ -290,7 +297,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// The globally unique identifier for the CMK.
+        /// The globally unique identifier for the KMS key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -309,9 +316,10 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyManager. 
         /// <para>
-        /// The manager of the CMK. CMKs in your AWS account are either customer managed or AWS
-        /// managed. For more information about the difference, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
-        /// Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// The manager of the KMS key. KMS keys in your Amazon Web Services account are either
+        /// customer managed or Amazon Web Services managed. For more information about the difference,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS
+        /// keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public KeyManagerType KeyManager
@@ -327,14 +335,32 @@ namespace Amazon.KeyManagementService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KeySpec. 
+        /// <para>
+        /// Describes the type of key material in the KMS key.
+        /// </para>
+        /// </summary>
+        public KeySpec KeySpec
+        {
+            get { return this._keySpec; }
+            set { this._keySpec = value; }
+        }
+
+        // Check to see if KeySpec property is set
+        internal bool IsSetKeySpec()
+        {
+            return this._keySpec != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KeyState. 
         /// <para>
-        /// The current status of the CMK.
+        /// The current status of the KMS key.
         /// </para>
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public KeyState KeyState
@@ -353,7 +379,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property KeyUsage. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-        /// operations</a> for which you can use the CMK.
+        /// operations</a> for which you can use the KMS key.
         /// </para>
         /// </summary>
         public KeyUsageType KeyUsage
@@ -371,14 +397,14 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property MultiRegion. 
         /// <para>
-        /// Indicates whether the CMK is a multi-Region (<code>True</code>) or regional (<code>False</code>)
-        /// key. This value is <code>True</code> for multi-Region primary and replica CMKs and
-        /// <code>False</code> for regional CMKs.
+        /// Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>)
+        /// key. This value is <code>True</code> for multi-Region primary and replica keys and
+        /// <code>False</code> for regional KMS keys.
         /// </para>
         ///  
         /// <para>
         /// For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
-        /// multi-Region keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public bool MultiRegion
@@ -396,27 +422,27 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property MultiRegionConfiguration. 
         /// <para>
-        /// Lists the primary and replica CMKs in same multi-Region CMK. This field is present
+        /// Lists the primary and replica keys in same multi-Region key. This field is present
         /// only when the value of the <code>MultiRegion</code> field is <code>True</code>.
         /// </para>
         ///  
         /// <para>
-        /// For more information about any listed CMK, use the <a>DescribeKey</a> operation.
+        /// For more information about any listed KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>MultiRegionKeyType</code> indicates whether the CMK is a <code>PRIMARY</code>
+        ///  <code>MultiRegionKeyType</code> indicates whether the KMS key is a <code>PRIMARY</code>
         /// or <code>REPLICA</code> key.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This
-        /// field displays the current CMK if it is the primary key.
+        /// field displays the current KMS key if it is the primary key.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This
-        /// field includes the current CMK if it is a replica key.
+        /// field includes the current KMS key if it is a replica key.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -435,11 +461,11 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Origin. 
         /// <para>
-        /// The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS
+        /// The source of the key material for the KMS key. When this value is <code>AWS_KMS</code>,
         /// KMS created the key material. When this value is <code>EXTERNAL</code>, the key material
-        /// was imported from your existing key management infrastructure or the CMK lacks key
-        /// material. When this value is <code>AWS_CLOUDHSM</code>, the key material was created
-        /// in the AWS CloudHSM cluster associated with a custom key store.
+        /// was imported or the KMS key doesn't have any key material. When this value is <code>AWS_CLOUDHSM</code>,
+        /// the key material was created in the CloudHSM cluster associated with a custom key
+        /// store.
         /// </para>
         /// </summary>
         public OriginType Origin
@@ -459,13 +485,13 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// The waiting period before the primary key in a multi-Region key is deleted. This waiting
         /// period begins when the last of its replica keys is deleted. This value is present
-        /// only when the <code>KeyState</code> of the CMK is <code>PendingReplicaDeletion</code>.
-        /// That indicates that the CMK is the primary key in a multi-Region key, it is scheduled
+        /// only when the <code>KeyState</code> of the KMS key is <code>PendingReplicaDeletion</code>.
+        /// That indicates that the KMS key is the primary key in a multi-Region key, it is scheduled
         /// for deletion, and it still has existing replica keys.
         /// </para>
         ///  
         /// <para>
-        /// When a regional CMK or a replica key in a multi-Region key is scheduled for deletion,
+        /// When a single-Region KMS key or a multi-Region replica key is scheduled for deletion,
         /// its deletion date is displayed in the <code>DeletionDate</code> field. However, when
         /// the primary key in a multi-Region key is scheduled for deletion, its waiting period
         /// doesn't begin until all of its replica keys are deleted. This value displays that
@@ -491,12 +517,12 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property SigningAlgorithms. 
         /// <para>
-        /// The signing algorithms that the CMK supports. You cannot use the CMK with other signing
-        /// algorithms within AWS KMS.
+        /// The signing algorithms that the KMS key supports. You cannot use the KMS key with
+        /// other signing algorithms within KMS.
         /// </para>
         ///  
         /// <para>
-        /// This field appears only when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.
+        /// This field appears only when the <code>KeyUsage</code> of the KMS key is <code>SIGN_VERIFY</code>.
         /// </para>
         /// </summary>
         public List<string> SigningAlgorithms
@@ -515,8 +541,8 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property ValidTo. 
         /// <para>
         /// The time at which the imported key material expires. When the key material expires,
-        /// AWS KMS deletes the key material and the CMK becomes unusable. This value is present
-        /// only for CMKs whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code>
+        /// KMS deletes the key material and the KMS key becomes unusable. This value is present
+        /// only for KMS keys whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code>
         /// is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.
         /// </para>
         /// </summary>

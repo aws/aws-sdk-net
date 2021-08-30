@@ -30,31 +30,34 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRetirableGrants operation.
-    /// Returns information about all grants in the AWS account and Region that have the specified
-    /// retiring principal. For more information about grants, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a>
-    /// in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
+    /// Returns information about all grants in the Amazon Web Services account and Region
+    /// that have the specified retiring principal. 
     /// 
     ///  
     /// <para>
-    /// You can specify any principal in your AWS account. The grants that are returned include
-    /// grants for CMKs in your AWS account and other AWS accounts.
+    /// You can specify any principal in your Amazon Web Services account. The grants that
+    /// are returned include grants for KMS keys in your Amazon Web Services account and other
+    /// Amazon Web Services accounts. You might use this operation to determine which grants
+    /// you may retire. To retire a grant, use the <a>RetireGrant</a> operation.
     /// </para>
     ///  
     /// <para>
-    /// You might use this operation to determine which grants you may retire. To retire a
-    /// grant, use the <a>RetireGrant</a> operation.
+    /// For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Using
+    /// grants</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
+    /// of working with grants in several programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-grants.html">Programming
+    /// grants</a>. 
     /// </para>
     ///  
     /// <para>
-    ///  <b>Cross-account use</b>: You must specify a principal in your AWS account. However,
-    /// this operation can return grants in any AWS account. You do not need <code>kms:ListRetirableGrants</code>
-    /// permission (or any other additional permission) in any AWS account other than your
-    /// own.
+    ///  <b>Cross-account use</b>: You must specify a principal in your Amazon Web Services
+    /// account. However, this operation can return grants in any Amazon Web Services account.
+    /// You do not need <code>kms:ListRetirableGrants</code> permission (or any other additional
+    /// permission) in any Amazon Web Services account other than your own.
     /// </para>
     ///  
     /// <para>
     ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListRetirableGrants</a>
-    /// (IAM policy) in your AWS account.
+    /// (IAM policy) in your Amazon Web Services account.
     /// </para>
     ///  
     /// <para>
@@ -88,8 +91,8 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// Use this parameter to specify the maximum number of items to return. When this value
-        /// is present, AWS KMS does not return more than the specified number of items, but it
-        /// might return fewer.
+        /// is present, KMS does not return more than the specified number of items, but it might
+        /// return fewer.
         /// </para>
         ///  
         /// <para>
@@ -134,16 +137,18 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property RetiringPrincipal. 
         /// <para>
-        /// The retiring principal for which to list grants. Enter a principal in your AWS account.
+        /// The retiring principal for which to list grants. Enter a principal in your Amazon
+        /// Web Services account.
         /// </para>
         ///  
         /// <para>
         /// To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS accounts
-        /// (root), IAM users, federated users, and assumed role users. For examples of the ARN
-        /// syntax for specifying a principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
-        /// Identity and Access Management (IAM)</a> in the Example ARNs section of the <i>Amazon
-        /// Web Services General Reference</i>.
+        /// Resource Name (ARN)</a> of an Amazon Web Services principal. Valid Amazon Web Services
+        /// principals include Amazon Web Services accounts (root), IAM users, federated users,
+        /// and assumed role users. For examples of the ARN syntax for specifying a principal,
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon
+        /// Web Services Identity and Access Management (IAM)</a> in the Example ARNs section
+        /// of the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

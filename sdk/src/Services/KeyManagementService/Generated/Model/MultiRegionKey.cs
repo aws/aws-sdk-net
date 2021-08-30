@@ -58,7 +58,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// Displays the AWS Region of a primary or replica key in a multi-Region key.
+        /// Displays the Amazon Web Services Region of a primary or replica key in a multi-Region
+        /// key.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]

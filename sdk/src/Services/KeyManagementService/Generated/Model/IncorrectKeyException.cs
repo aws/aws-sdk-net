@@ -29,9 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// The request was rejected because the specified CMK cannot decrypt the data. The <code>KeyId</code>
-    /// in a <a>Decrypt</a> request and the <code>SourceKeyId</code> in a <a>ReEncrypt</a>
-    /// request must identify the same CMK that was used to encrypt the ciphertext.
+    /// The request was rejected because the specified KMS key cannot decrypt the data. The
+    /// <code>KeyId</code> in a <a>Decrypt</a> request and the <code>SourceKeyId</code> in
+    /// a <a>ReEncrypt</a> request must identify the same KMS key that was used to encrypt
+    /// the ciphertext.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

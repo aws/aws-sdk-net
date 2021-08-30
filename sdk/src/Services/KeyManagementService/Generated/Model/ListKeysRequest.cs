@@ -30,12 +30,12 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListKeys operation.
-    /// Gets a list of all customer master keys (CMKs) in the caller's AWS account and Region.
+    /// Gets a list of all KMS keys in the caller's Amazon Web Services account and Region.
     /// 
     ///  
     /// <para>
-    ///  <b>Cross-account use</b>: No. You cannot perform this operation on a CMK in a different
-    /// AWS account.
+    ///  <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a
+    /// different Amazon Web Services account.
     /// </para>
     ///  
     /// <para>
@@ -73,8 +73,8 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// Use this parameter to specify the maximum number of items to return. When this value
-        /// is present, AWS KMS does not return more than the specified number of items, but it
-        /// might return fewer.
+        /// is present, KMS does not return more than the specified number of items, but it might
+        /// return fewer.
         /// </para>
         ///  
         /// <para>

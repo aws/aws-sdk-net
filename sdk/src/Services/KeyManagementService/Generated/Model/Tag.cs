@@ -35,7 +35,8 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
-    /// Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+    /// Tag Restrictions</a> in the <i>Amazon Web Services Billing and Cost Management User
+    /// Guide</i>.
     /// </para>
     /// </summary>
     public partial class Tag

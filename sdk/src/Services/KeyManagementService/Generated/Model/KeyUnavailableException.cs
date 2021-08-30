@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// The request was rejected because the specified CMK was not available. You can retry
-    /// the request.
+    /// The request was rejected because the specified KMS key was not available. You can
+    /// retry the request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

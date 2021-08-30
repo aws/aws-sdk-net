@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// The request was rejected because AWS KMS cannot find the AWS CloudHSM cluster with
-    /// the specified cluster ID. Retry the request with a different cluster ID.
+    /// The request was rejected because KMS cannot find the CloudHSM cluster with the specified
+    /// cluster ID. Retry the request with a different cluster ID.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

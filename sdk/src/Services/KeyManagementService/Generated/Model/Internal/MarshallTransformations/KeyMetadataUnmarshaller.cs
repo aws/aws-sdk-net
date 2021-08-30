@@ -142,6 +142,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     unmarshalledObject.KeyManager = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("KeySpec", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KeySpec = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KeyState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

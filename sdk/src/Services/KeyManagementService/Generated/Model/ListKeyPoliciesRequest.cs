@@ -30,14 +30,14 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListKeyPolicies operation.
-    /// Gets the names of the key policies that are attached to a customer master key (CMK).
-    /// This operation is designed to get policy names that you can use in a <a>GetKeyPolicy</a>
-    /// operation. However, the only valid policy name is <code>default</code>. 
+    /// Gets the names of the key policies that are attached to a KMS key. This operation
+    /// is designed to get policy names that you can use in a <a>GetKeyPolicy</a> operation.
+    /// However, the only valid policy name is <code>default</code>. 
     /// 
     ///  
     /// <para>
-    ///  <b>Cross-account use</b>: No. You cannot perform this operation on a CMK in a different
-    /// AWS account.
+    ///  <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a
+    /// different Amazon Web Services account.
     /// </para>
     ///  
     /// <para>
@@ -67,11 +67,11 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// Gets the names of key policies for the specified customer master key (CMK).
+        /// Gets the names of key policies for the specified KMS key.
         /// </para>
         ///  
         /// <para>
-        /// Specify the key ID or key ARN of the CMK.
+        /// Specify the key ID or key ARN of the KMS key.
         /// </para>
         ///  
         /// <para>
@@ -88,7 +88,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+        /// To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -108,8 +108,8 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// Use this parameter to specify the maximum number of items to return. When this value
-        /// is present, AWS KMS does not return more than the specified number of items, but it
-        /// might return fewer.
+        /// is present, KMS does not return more than the specified number of items, but it might
+        /// return fewer.
         /// </para>
         ///  
         /// <para>

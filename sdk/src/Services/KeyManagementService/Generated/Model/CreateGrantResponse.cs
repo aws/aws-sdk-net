@@ -69,8 +69,9 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// Use a grant token when your permission to call this operation comes from a new grant
         /// that has not yet achieved <i>eventual consistency</i>. For more information, see <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-        /// token</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
+        /// token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using
+        /// a grant token</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8192)]

@@ -30,25 +30,26 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelKeyDeletion operation.
-    /// Cancels the deletion of a customer master key (CMK). When this operation succeeds,
-    /// the key state of the CMK is <code>Disabled</code>. To enable the CMK, use <a>EnableKey</a>.
+    /// Cancels the deletion of a KMS key. When this operation succeeds, the key state of
+    /// the KMS key is <code>Disabled</code>. To enable the KMS key, use <a>EnableKey</a>.
     /// 
     /// 
     ///  
     /// <para>
-    /// For more information about scheduling and canceling deletion of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
-    /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+    /// For more information about scheduling and canceling deletion of a KMS key, see <a
+    /// href="https://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
+    /// KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// The CMK that you use for this operation must be in a compatible key state. For details,
-    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-    /// state: Effect on your CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.
+    /// The KMS key that you use for this operation must be in a compatible key state. For
+    /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+    /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
-    ///  <b>Cross-account use</b>: No. You cannot perform this operation on a CMK in a different
-    /// AWS account.
+    ///  <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a
+    /// different Amazon Web Services account.
     /// </para>
     ///  
     /// <para>
@@ -67,11 +68,11 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// Identifies the customer master key (CMK) whose deletion is being canceled.
+        /// Identifies the KMS key whose deletion is being canceled.
         /// </para>
         ///  
         /// <para>
-        /// Specify the key ID or key ARN of the CMK.
+        /// Specify the key ID or key ARN of the KMS key.
         /// </para>
         ///  
         /// <para>
@@ -88,7 +89,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+        /// To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

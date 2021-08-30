@@ -35,8 +35,8 @@ namespace Amazon.KeyManagementService.Model
     /// 
     ///  
     /// <para>
-    /// From the <a>ImportKeyMaterial</a> operation, the request was rejected because AWS
-    /// KMS could not decrypt the encrypted (wrapped) key material. 
+    /// From the <a>ImportKeyMaterial</a> operation, the request was rejected because KMS
+    /// could not decrypt the encrypted (wrapped) key material. 
     /// </para>
     /// </summary>
     #if !NETSTANDARD

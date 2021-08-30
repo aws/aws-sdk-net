@@ -36,8 +36,8 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-    /// Key Store feature</a> feature in AWS KMS, which combines the convenience and extensive
-    /// integration of AWS KMS with the isolation and control of a single-tenant key store.
+    /// Key Store feature</a> feature in KMS, which combines the convenience and extensive
+    /// integration of KMS with the isolation and control of a single-tenant key store.
     /// </para>
     ///  
     /// <para>
@@ -48,8 +48,8 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// To determine whether the custom key store is connected to its AWS CloudHSM cluster,
-    /// use the <code>ConnectionState</code> element in the response. If an attempt to connect
+    /// To determine whether the custom key store is connected to its CloudHSM cluster, use
+    /// the <code>ConnectionState</code> element in the response. If an attempt to connect
     /// the custom key store failed, the <code>ConnectionState</code> value is <code>FAILED</code>
     /// and the <code>ConnectionErrorCode</code> element in the response indicates the cause
     /// of the failure. For help interpreting the <code>ConnectionErrorCode</code>, see <a>CustomKeyStoresListEntry</a>.
@@ -59,18 +59,18 @@ namespace Amazon.KeyManagementService.Model
     /// Custom key stores have a <code>DISCONNECTED</code> connection state if the key store
     /// has never been connected or you use the <a>DisconnectCustomKeyStore</a> operation
     /// to disconnect it. If your custom key store state is <code>CONNECTED</code> but you
-    /// are having trouble using it, make sure that its associated AWS CloudHSM cluster is
-    /// active and contains the minimum number of HSMs required for the operation, if any.
+    /// are having trouble using it, make sure that its associated CloudHSM cluster is active
+    /// and contains the minimum number of HSMs required for the operation, if any.
     /// </para>
     ///  
     /// <para>
     ///  For help repairing your custom key store, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
-    /// Custom Key Stores</a> topic in the <i>AWS Key Management Service Developer Guide</i>.
+    /// Custom Key Stores</a> topic in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
     ///  <b>Cross-account use</b>: No. You cannot perform this operation on a custom key store
-    /// in a different AWS account.
+    /// in a different Amazon Web Services account.
     /// </para>
     ///  
     /// <para>
@@ -167,8 +167,8 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// Use this parameter to specify the maximum number of items to return. When this value
-        /// is present, AWS KMS does not return more than the specified number of items, but it
-        /// might return fewer.
+        /// is present, KMS does not return more than the specified number of items, but it might
+        /// return fewer.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

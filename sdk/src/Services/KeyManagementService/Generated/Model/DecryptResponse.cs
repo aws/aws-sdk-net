@@ -59,7 +59,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property KeyId. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-        /// ARN</a>) of the CMK that was used to decrypt the ciphertext.
+        /// ARN</a>) of the KMS key that was used to decrypt the ciphertext.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -78,8 +78,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Plaintext. 
         /// <para>
-        /// Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
-        /// Otherwise, it is not Base64-encoded.
+        /// Decrypted plaintext data. When you use the HTTP API or the Amazon Web Services CLI,
+        /// the value is Base64-encoded. Otherwise, it is not Base64-encoded.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]

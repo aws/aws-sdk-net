@@ -41,7 +41,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property KeyId. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-        /// ARN</a>) of the asymmetric CMK that was used to sign the message.
+        /// ARN</a>) of the asymmetric KMS key that was used to sign the message.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -77,8 +77,8 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise,
-        /// it is not Base64-encoded.
+        /// When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded.
+        /// Otherwise, it is not Base64-encoded.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6144)]

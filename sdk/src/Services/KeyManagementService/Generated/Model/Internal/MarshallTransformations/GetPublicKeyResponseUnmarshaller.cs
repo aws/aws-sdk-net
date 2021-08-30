@@ -69,6 +69,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     response.KeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("KeySpec", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.KeySpec = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KeyUsage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

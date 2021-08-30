@@ -40,11 +40,11 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property ReplicaKeyMetadata. 
         /// <para>
-        /// Displays details about the new replica CMK, including its Amazon Resource Name (<a
+        /// Displays details about the new replica key, including its Amazon Resource Name (<a
         /// href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
         /// ARN</a>) and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key
-        /// state</a>. It also includes the ARN and AWS Region of its primary key and other replica
-        /// keys.
+        /// state</a>. It also includes the ARN and Amazon Web Services Region of its primary
+        /// key and other replica keys.
         /// </para>
         /// </summary>
         public KeyMetadata ReplicaKeyMetadata

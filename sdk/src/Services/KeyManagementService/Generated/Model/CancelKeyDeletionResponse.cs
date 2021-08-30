@@ -39,7 +39,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property KeyId. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-        /// ARN</a>) of the CMK whose deletion is canceled.
+        /// ARN</a>) of the KMS key whose deletion is canceled.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

@@ -41,12 +41,13 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property DeletionDate. 
         /// <para>
-        /// The date and time after which AWS KMS deletes the customer master key (CMK).
+        /// The date and time after which KMS deletes the KMS key.
         /// </para>
         ///  
         /// <para>
-        /// If the CMK is a multi-Region primary key with replica keys, this field does not appear.
-        /// The deletion date for the primary key isn't known until its last replica key is deleted.
+        /// If the KMS key is a multi-Region primary key with replica keys, this field does not
+        /// appear. The deletion date for the primary key isn't known until its last replica key
+        /// is deleted.
         /// </para>
         /// </summary>
         public DateTime DeletionDate
@@ -65,7 +66,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property KeyId. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-        /// ARN</a>) of the CMK whose deletion is scheduled.
+        /// ARN</a>) of the KMS key whose deletion is scheduled.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -84,12 +85,12 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyState. 
         /// <para>
-        /// The current status of the CMK.
+        /// The current status of the KMS key.
         /// </para>
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public KeyState KeyState
@@ -107,11 +108,11 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property PendingWindowInDays. 
         /// <para>
-        /// The waiting period before the CMK is deleted. 
+        /// The waiting period before the KMS key is deleted. 
         /// </para>
         ///  
         /// <para>
-        /// If the CMK is a multi-Region primary key with replicas, the waiting period begins
+        /// If the KMS key is a multi-Region primary key with replicas, the waiting period begins
         /// when the last of its replica keys is deleted. Otherwise, the waiting period begins
         /// immediately.
         /// </para>

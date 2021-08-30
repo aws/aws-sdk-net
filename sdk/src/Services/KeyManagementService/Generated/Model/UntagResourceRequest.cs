@@ -31,38 +31,38 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
     /// Deletes tags from a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-    /// managed CMK</a>. To delete a tag, specify the tag key and the CMK.
+    /// managed key</a>. To delete a tag, specify the tag key and the KMS key.
     /// 
     ///  <note> 
     /// <para>
-    /// Tagging or untagging a CMK can allow or deny permission to the CMK. For details, see
-    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC
-    /// in AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
+    /// Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details,
+    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
+    /// ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  </note> 
     /// <para>
     /// When it succeeds, the <code>UntagResource</code> operation doesn't return any output.
-    /// Also, if the specified tag key isn't found on the CMK, it doesn't throw an exception
+    /// Also, if the specified tag key isn't found on the KMS key, it doesn't throw an exception
     /// or return a response. To confirm that the operation worked, use the <a>ListResourceTags</a>
     /// operation.
     /// </para>
     ///  
     /// <para>
-    /// For information about using tags in AWS KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
+    /// For information about using tags in KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
     /// keys</a>. For general information about tags, including the format and syntax, see
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-    /// resources</a> in the <i>Amazon Web Services General Reference</i>. 
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+    /// Web Services resources</a> in the <i>Amazon Web Services General Reference</i>. 
     /// </para>
     ///  
     /// <para>
-    /// The CMK that you use for this operation must be in a compatible key state. For details,
-    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-    /// state: Effect on your CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.
+    /// The KMS key that you use for this operation must be in a compatible key state. For
+    /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+    /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
-    ///  <b>Cross-account use</b>: No. You cannot perform this operation on a CMK in a different
-    /// AWS account.
+    ///  <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a
+    /// different Amazon Web Services account.
     /// </para>
     ///  
     /// <para>
@@ -99,11 +99,11 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// Identifies the CMK from which you are removing tags.
+        /// Identifies the KMS key from which you are removing tags.
         /// </para>
         ///  
         /// <para>
-        /// Specify the key ID or key ARN of the CMK.
+        /// Specify the key ID or key ARN of the KMS key.
         /// </para>
         ///  
         /// <para>
@@ -120,7 +120,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+        /// To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

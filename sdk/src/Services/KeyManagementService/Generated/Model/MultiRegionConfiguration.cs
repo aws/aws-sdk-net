@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// Describes the configuration of this multi-Region CMK. This field appears only when
-    /// the CMK is a primary or replica of a multi-Region CMK.
+    /// Describes the configuration of this multi-Region key. This field appears only when
+    /// the KMS key is a primary or replica of a multi-Region key.
     /// 
     ///  
     /// <para>
-    /// For more information about any listed CMK, use the <a>DescribeKey</a> operation.
+    /// For more information about any listed KMS key, use the <a>DescribeKey</a> operation.
     /// </para>
     /// </summary>
     public partial class MultiRegionConfiguration
@@ -46,7 +46,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property MultiRegionKeyType. 
         /// <para>
-        /// Indicates whether the CMK is a <code>PRIMARY</code> or <code>REPLICA</code> key.
+        /// Indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.
         /// </para>
         /// </summary>
         public MultiRegionKeyType MultiRegionKeyType
@@ -65,7 +65,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property PrimaryKey. 
         /// <para>
         /// Displays the key ARN and Region of the primary key. This field includes the current
-        /// CMK if it is the primary key.
+        /// KMS key if it is the primary key.
         /// </para>
         /// </summary>
         public MultiRegionKey PrimaryKey
@@ -84,7 +84,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property ReplicaKeys. 
         /// <para>
         /// displays the key ARNs and Regions of all replica keys. This field includes the current
-        /// CMK if it is a replica key.
+        /// KMS key if it is a replica key.
         /// </para>
         /// </summary>
         public List<MultiRegionKey> ReplicaKeys

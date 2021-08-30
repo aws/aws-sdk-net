@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// The request was rejected because the specified CMK is not enabled.
+    /// The request was rejected because the specified KMS key is not enabled.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

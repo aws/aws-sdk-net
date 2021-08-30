@@ -665,6 +665,80 @@ namespace Amazon.KeyManagementService
 
 
     /// <summary>
+    /// Constants used for properties of type KeySpec.
+    /// </summary>
+    public class KeySpec : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ECC_NIST_P256 for KeySpec
+        /// </summary>
+        public static readonly KeySpec ECC_NIST_P256 = new KeySpec("ECC_NIST_P256");
+        /// <summary>
+        /// Constant ECC_NIST_P384 for KeySpec
+        /// </summary>
+        public static readonly KeySpec ECC_NIST_P384 = new KeySpec("ECC_NIST_P384");
+        /// <summary>
+        /// Constant ECC_NIST_P521 for KeySpec
+        /// </summary>
+        public static readonly KeySpec ECC_NIST_P521 = new KeySpec("ECC_NIST_P521");
+        /// <summary>
+        /// Constant ECC_SECG_P256K1 for KeySpec
+        /// </summary>
+        public static readonly KeySpec ECC_SECG_P256K1 = new KeySpec("ECC_SECG_P256K1");
+        /// <summary>
+        /// Constant RSA_2048 for KeySpec
+        /// </summary>
+        public static readonly KeySpec RSA_2048 = new KeySpec("RSA_2048");
+        /// <summary>
+        /// Constant RSA_3072 for KeySpec
+        /// </summary>
+        public static readonly KeySpec RSA_3072 = new KeySpec("RSA_3072");
+        /// <summary>
+        /// Constant RSA_4096 for KeySpec
+        /// </summary>
+        public static readonly KeySpec RSA_4096 = new KeySpec("RSA_4096");
+        /// <summary>
+        /// Constant SYMMETRIC_DEFAULT for KeySpec
+        /// </summary>
+        public static readonly KeySpec SYMMETRIC_DEFAULT = new KeySpec("SYMMETRIC_DEFAULT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KeySpec(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KeySpec FindValue(string value)
+        {
+            return FindValue<KeySpec>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KeySpec(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type KeyState.
     /// </summary>
     public class KeyState : ConstantClass

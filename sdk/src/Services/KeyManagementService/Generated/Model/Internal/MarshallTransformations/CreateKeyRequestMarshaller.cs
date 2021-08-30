@@ -91,6 +91,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetKeySpec())
+                {
+                    context.Writer.WritePropertyName("KeySpec");
+                    context.Writer.Write(publicRequest.KeySpec);
+                }
+
                 if(publicRequest.IsSetKeyUsage())
                 {
                     context.Writer.WritePropertyName("KeyUsage");

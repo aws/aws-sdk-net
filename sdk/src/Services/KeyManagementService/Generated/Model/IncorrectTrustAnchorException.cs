@@ -30,7 +30,7 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// The request was rejected because the trust anchor certificate in the request is not
-    /// the trust anchor certificate for the specified AWS CloudHSM cluster.
+    /// the trust anchor certificate for the specified CloudHSM cluster.
     /// 
     ///  
     /// <para>
