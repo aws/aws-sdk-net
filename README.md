@@ -56,6 +56,10 @@ The AWS SDK for .NET uses a 4 part versioning scheme following the pattern of `w
 
 The SDK assemblies are strongly named which requires consumers of the SDK to recompile every time the `AssemblyVersion` attribute is incremented. To avoid forced recompilations the `AssemblyVersion` only contains the `w.x` portion of the version. The full `w.x.y.z` version number is set in the `AssemblyFileVersion` attribute which is not part of the strong name.
 
+### Internal Namespace
+
+Classes and interfaces with `Internal` in the namespace name are logically internal to the SDK but are often marked with a `public` access modifier, generally to allow the service-specific packages to use shared functionality in the Core package. Classes and interfaces in these namespaces are subject to modification or removal outside of versioning scheme described above. If you find yourself relying on `Internal` functionality directly, consider [opening a Feature Request](https://github.com/aws/aws-sdk-net/issues/new/choose) for your use case if one does not already exist.
+
 ## Portable Class Library
 
 This release of the AWS SDK for .NET adds support for Portable Class Library projects, which allow you to target multiple platforms including Windows Store, Windows Phone, and Xamarin on iOS and Android. More information on this can be found [here](http://docs.aws.amazon.com/mobile/sdkforxamarin/developerguide/index.html).
