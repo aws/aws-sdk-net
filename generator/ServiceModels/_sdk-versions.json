@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.106.0",
+    "ProductVersion" : "3.7.107.0",
     "CoreVersion"    : "3.7.2.8",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -30,7 +30,7 @@
             "InPreview"               : false
         },
         "CloudFormation" : {
-            "Version" : "3.7.4.11",
+            "Version" : "3.7.5.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.2.8"
@@ -250,7 +250,7 @@
             "InPreview"               : false
         },
         "KeyManagementService" : {
-            "Version" : "3.7.1.25",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.2.8"
@@ -442,7 +442,7 @@
             "InPreview"               : false
         },
         "KinesisFirehose"           : {
-            "Version" : "3.7.0.56",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.2.8"
@@ -658,7 +658,7 @@
             "InPreview"               : false
         },
         "CodeBuild"                       : {
-            "Version" : "3.7.6.4",
+            "Version" : "3.7.6.5",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.2.8"

@@ -1,3 +1,13 @@
+### 3.7.107.0 (2021-08-30 18:40 UTC)
+* CloudFormation (3.7.5.0)
+	* AWS CloudFormation allows you to iteratively develop your applications when failures are encountered without rolling back successfully provisioned resources. By specifying stack failure options, you can troubleshoot resources in a CREATE_FAILED or UPDATE_FAILED status.
+* CodeBuild (3.7.6.5)
+	* Documentation updates for CodeBuild
+* KeyManagementService (3.7.2.0)
+	* This release has changes to KMS nomenclature to remove the word master from both the "Customer master key" and "CMK" abbreviation and replace those naming conventions with "KMS key".
+* KinesisFirehose (3.7.1.0)
+	* This release adds the Dynamic Partitioning feature to Kinesis Data Firehose service for S3 destinations.
+
 ### 3.7.106.0 (2021-08-27 20:30 UTC)
 * EC2 (3.7.26.0)
 	* This release adds the BootMode flag to the ImportImage API and showing the detected BootMode of an ImportImage task.
