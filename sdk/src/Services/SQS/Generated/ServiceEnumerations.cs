@@ -223,6 +223,10 @@ namespace Amazon.SQS
         /// </summary>
         public static readonly QueueAttributeName ReceiveMessageWaitTimeSeconds = new QueueAttributeName("ReceiveMessageWaitTimeSeconds");
         /// <summary>
+        /// Constant RedriveAllowPolicy for QueueAttributeName
+        /// </summary>
+        public static readonly QueueAttributeName RedriveAllowPolicy = new QueueAttributeName("RedriveAllowPolicy");
+        /// <summary>
         /// Constant RedrivePolicy for QueueAttributeName
         /// </summary>
         public static readonly QueueAttributeName RedrivePolicy = new QueueAttributeName("RedrivePolicy");
