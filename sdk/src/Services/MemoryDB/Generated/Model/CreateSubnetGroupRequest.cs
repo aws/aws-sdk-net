@@ -34,7 +34,7 @@ namespace Amazon.MemoryDB.Model
     /// that you can designate for your clusters running in an Amazon Virtual Private Cloud
     /// (VPC) environment. When you create a cluster in an Amazon VPC, you must specify a
     /// subnet group. MemoryDB uses that subnet group to choose a subnet and IP addresses
-    /// within that subnet to associate with your nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/SubnetGroups.html">Subnets
+    /// within that subnet to associate with your nodes. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/subnetgroups.html">Subnets
     /// and subnet groups</a>.
     /// </summary>
     public partial class CreateSubnetGroupRequest : AmazonMemoryDBRequest

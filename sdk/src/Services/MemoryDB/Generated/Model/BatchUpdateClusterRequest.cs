@@ -31,7 +31,7 @@ namespace Amazon.MemoryDB.Model
     /// <summary>
     /// Container for the parameters to the BatchUpdateCluster operation.
     /// Apply the service update to a list of clusters supplied. For more information on service
-    /// updates and applying them, see <a href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/managing-updates.html#applying-updates">Applying
+    /// updates and applying them, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/managing-updates.html#applying-updates">Applying
     /// the service updates</a>.
     /// </summary>
     public partial class BatchUpdateClusterRequest : AmazonMemoryDBRequest

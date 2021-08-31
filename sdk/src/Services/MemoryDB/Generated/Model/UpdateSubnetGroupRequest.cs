@@ -30,7 +30,7 @@ namespace Amazon.MemoryDB.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSubnetGroup operation.
-    /// Updates a subnet group. For more information, see <a href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/SubnetGroups.Modifying.html">Updating
+    /// Updates a subnet group. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/ubnetGroups.Modifying.html">Updating
     /// a subnet group</a>
     /// </summary>
     public partial class UpdateSubnetGroupRequest : AmazonMemoryDBRequest

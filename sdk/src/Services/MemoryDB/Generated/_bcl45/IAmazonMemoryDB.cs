@@ -31,12 +31,12 @@ namespace Amazon.MemoryDB
     /// <summary>
     /// Interface for accessing MemoryDB
     ///
-    /// Amazon MemoryDB for Redis is a fully managed, Redis-compatible, in-memory database
-    /// that delivers ultra-fast performance and Multi-AZ durability for modern applications
-    /// built using microservices architectures. MemoryDB stores the entire database in-memory,
-    /// enabling low latency and high throughput data access. It is compatible with Redis,
-    /// a popular open source data store, enabling you to leverage Redis’ flexible and friendly
-    /// data structures, APIs, and commands.
+    /// MemoryDB for Redis is a fully managed, Redis-compatible, in-memory database that delivers
+    /// ultra-fast performance and Multi-AZ durability for modern applications built using
+    /// microservices architectures. MemoryDB stores the entire database in-memory, enabling
+    /// low latency and high throughput data access. It is compatible with Redis, a popular
+    /// open source data store, enabling you to leverage Redis’ flexible and friendly data
+    /// structures, APIs, and commands.
     /// </summary>
     public partial interface IAmazonMemoryDB : IAmazonService, IDisposable
     {
@@ -48,7 +48,7 @@ namespace Amazon.MemoryDB
 
         /// <summary>
         /// Apply the service update to a list of clusters supplied. For more information on service
-        /// updates and applying them, see <a href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/managing-updates.html#applying-updates">Applying
+        /// updates and applying them, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/managing-updates.html#applying-updates">Applying
         /// the service updates</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateCluster service method.</param>
@@ -67,7 +67,7 @@ namespace Amazon.MemoryDB
 
         /// <summary>
         /// Apply the service update to a list of clusters supplied. For more information on service
-        /// updates and applying them, see <a href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/managing-updates.html#applying-updates">Applying
+        /// updates and applying them, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/managing-updates.html#applying-updates">Applying
         /// the service updates</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateCluster service method.</param>
@@ -167,7 +167,7 @@ namespace Amazon.MemoryDB
 
 
         /// <summary>
-        /// Creates an Access Control List. For more information, see <a href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Clusters.ACLs.html">Authenticating
+        /// Creates an Access Control List. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/clusters.acls.html">Authenticating
         /// users with Access Contol Lists (ACLs)</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateACL service method.</param>
@@ -200,7 +200,7 @@ namespace Amazon.MemoryDB
 
 
         /// <summary>
-        /// Creates an Access Control List. For more information, see <a href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Clusters.ACLs.html">Authenticating
+        /// Creates an Access Control List. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/clusters.acls.html">Authenticating
         /// users with Access Contol Lists (ACLs)</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateACL service method.</param>
@@ -367,7 +367,7 @@ namespace Amazon.MemoryDB
         /// <summary>
         /// Creates a new MemoryDB parameter group. A parameter group is a collection of parameters
         /// and their values that are applied to all of the nodes in any cluster. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/ParameterGroups.html">Configuring
+        /// see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/parametergroups.html">Configuring
         /// engine parameters using parameter groups</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateParameterGroup service method.</param>
@@ -402,7 +402,7 @@ namespace Amazon.MemoryDB
         /// <summary>
         /// Creates a new MemoryDB parameter group. A parameter group is a collection of parameters
         /// and their values that are applied to all of the nodes in any cluster. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/ParameterGroups.html">Configuring
+        /// see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/parametergroups.html">Configuring
         /// engine parameters using parameter groups</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateParameterGroup service method.</param>
@@ -521,7 +521,7 @@ namespace Amazon.MemoryDB
         /// that you can designate for your clusters running in an Amazon Virtual Private Cloud
         /// (VPC) environment. When you create a cluster in an Amazon VPC, you must specify a
         /// subnet group. MemoryDB uses that subnet group to choose a subnet and IP addresses
-        /// within that subnet to associate with your nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/SubnetGroups.html">Subnets
+        /// within that subnet to associate with your nodes. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/subnetgroups.html">Subnets
         /// and subnet groups</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSubnetGroup service method.</param>
@@ -558,7 +558,7 @@ namespace Amazon.MemoryDB
         /// that you can designate for your clusters running in an Amazon Virtual Private Cloud
         /// (VPC) environment. When you create a cluster in an Amazon VPC, you must specify a
         /// subnet group. MemoryDB uses that subnet group to choose a subnet and IP addresses
-        /// within that subnet to associate with your nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/SubnetGroups.html">Subnets
+        /// within that subnet to associate with your nodes. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/subnetgroups.html">Subnets
         /// and subnet groups</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSubnetGroup service method.</param>
@@ -597,7 +597,7 @@ namespace Amazon.MemoryDB
 
 
         /// <summary>
-        /// Creates a MemoryDB user. For more information, see <a href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Clusters.ACLs.html">Authenticating
+        /// Creates a MemoryDB user. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/clusters.acls.html">Authenticating
         /// users with Access Contol Lists (ACLs)</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
@@ -627,7 +627,7 @@ namespace Amazon.MemoryDB
 
 
         /// <summary>
-        /// Creates a MemoryDB user. For more information, see <a href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Clusters.ACLs.html">Authenticating
+        /// Creates a MemoryDB user. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/clusters.acls.html">Authenticating
         /// users with Access Contol Lists (ACLs)</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
@@ -664,7 +664,7 @@ namespace Amazon.MemoryDB
 
         /// <summary>
         /// Deletes an Access Control List. The ACL must first be disassociated from the cluster
-        /// before it can be deleted. For more information, see <a href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Clusters.ACLs.html">Authenticating
+        /// before it can be deleted. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/clusters.acls.html">Authenticating
         /// users with Access Contol Lists (ACLs)</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteACL service method.</param>
@@ -686,7 +686,7 @@ namespace Amazon.MemoryDB
 
         /// <summary>
         /// Deletes an Access Control List. The ACL must first be disassociated from the cluster
-        /// before it can be deleted. For more information, see <a href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Clusters.ACLs.html">Authenticating
+        /// before it can be deleted. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/clusters.acls.html">Authenticating
         /// users with Access Contol Lists (ACLs)</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteACL service method.</param>
@@ -1609,7 +1609,7 @@ namespace Amazon.MemoryDB
         /// <summary>
         /// Lists all tags currently on a named resource. A tag is a key-value pair where the
         /// key and value are case-sensitive. You can use tags to categorize and track your MemoryDB
-        /// resources. For more information, see <a href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Tagging-Resources.html">Tagging
+        /// resources. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging
         /// your MemoryDB resources</a>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
@@ -1650,7 +1650,7 @@ namespace Amazon.MemoryDB
         /// <summary>
         /// Lists all tags currently on a named resource. A tag is a key-value pair where the
         /// key and value are case-sensitive. You can use tags to categorize and track your MemoryDB
-        /// resources. For more information, see <a href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Tagging-Resources.html">Tagging
+        /// resources. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging
         /// your MemoryDB resources</a>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
@@ -1760,7 +1760,7 @@ namespace Amazon.MemoryDB
         /// A tag is a key-value pair where the key and value are case-sensitive. You can use
         /// tags to categorize and track all your MemoryDB resources. When you add or remove tags
         /// on clusters, those actions will be replicated to all nodes in the cluster. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/IAM.ResourceLevelPermissions.html">Resource-level
+        /// information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/iam.resourcelevelpermissions.html">Resource-level
         /// permissions</a>.
         /// 
         ///  
@@ -1769,7 +1769,7 @@ namespace Amazon.MemoryDB
         /// a cost allocation report as a comma-separated value (CSV) file with your usage and
         /// costs aggregated by your tags. You can apply tags that represent business categories
         /// (such as cost centers, application names, or owners) to organize your costs across
-        /// multiple services. For more information, see <a href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Tagging.html">Using
+        /// multiple services. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/tagging.html">Using
         /// Cost Allocation Tags</a>.
         /// </para>
         /// </summary>
@@ -1815,7 +1815,7 @@ namespace Amazon.MemoryDB
         /// A tag is a key-value pair where the key and value are case-sensitive. You can use
         /// tags to categorize and track all your MemoryDB resources. When you add or remove tags
         /// on clusters, those actions will be replicated to all nodes in the cluster. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/IAM.ResourceLevelPermissions.html">Resource-level
+        /// information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/iam.resourcelevelpermissions.html">Resource-level
         /// permissions</a>.
         /// 
         ///  
@@ -1824,7 +1824,7 @@ namespace Amazon.MemoryDB
         /// a cost allocation report as a comma-separated value (CSV) file with your usage and
         /// costs aggregated by your tags. You can apply tags that represent business categories
         /// (such as cost centers, application names, or owners) to organize your costs across
-        /// multiple services. For more information, see <a href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Tagging.html">Using
+        /// multiple services. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/tagging.html">Using
         /// Cost Allocation Tags</a>.
         /// </para>
         /// </summary>
@@ -2217,7 +2217,7 @@ namespace Amazon.MemoryDB
 
 
         /// <summary>
-        /// Updates a subnet group. For more information, see <a href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/SubnetGroups.Modifying.html">Updating
+        /// Updates a subnet group. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/ubnetGroups.Modifying.html">Updating
         /// a subnet group</a>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSubnetGroup service method.</param>
@@ -2247,7 +2247,7 @@ namespace Amazon.MemoryDB
 
 
         /// <summary>
-        /// Updates a subnet group. For more information, see <a href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/SubnetGroups.Modifying.html">Updating
+        /// Updates a subnet group. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/ubnetGroups.Modifying.html">Updating
         /// a subnet group</a>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSubnetGroup service method.</param>

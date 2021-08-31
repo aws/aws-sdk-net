@@ -30,7 +30,7 @@ namespace Amazon.MemoryDB.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateACL operation.
-    /// Creates an Access Control List. For more information, see <a href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Clusters.ACLs.html">Authenticating
+    /// Creates an Access Control List. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/clusters.acls.html">Authenticating
     /// users with Access Contol Lists (ACLs)</a>.
     /// </summary>
     public partial class CreateACLRequest : AmazonMemoryDBRequest

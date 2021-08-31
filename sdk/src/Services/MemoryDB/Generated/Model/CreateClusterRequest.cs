@@ -211,7 +211,8 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property NumReplicasPerShard. 
         /// <para>
-        /// The number of replicas to apply to each shard. The limit is 5.
+        /// The number of replicas to apply to each shard. The default value is 1. The maximum
+        /// is 5. 
         /// </para>
         /// </summary>
         public int NumReplicasPerShard
@@ -229,16 +230,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property NumShards. 
         /// <para>
-        /// The number of shards the cluster will contain.
-        /// </para>
-        ///  
-        /// <para>
-        /// Clusters can have up to 500 shards, with your data partitioned across the shards.
-        /// For example, you can choose to configure a 500 node cluster that ranges between 83
-        /// shards (one primary and 5 replicas per shard) and 500 shards (single primary and no
-        /// replicas). Make sure there are enough available IP addresses to accommodate the increase.
-        /// Common pitfalls include the subnets in the subnet group have too small a CIDR range
-        /// or the subnets are shared and heavily used by other clusters. 
+        /// The number of shards the cluster will contain. The default value is 1. 
         /// </para>
         /// </summary>
         public int NumShards
