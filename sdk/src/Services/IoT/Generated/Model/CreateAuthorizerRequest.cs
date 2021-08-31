@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the CreateAuthorizer operation.
     /// Creates an authorizer.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateAuthorizer</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class CreateAuthorizerRequest : AmazonIoTRequest
     {
@@ -83,7 +89,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property SigningDisabled. 
         /// <para>
-        /// Specifies whether AWS IoT validates the token signature in an authorization request.
+        /// Specifies whether IoT validates the token signature in an authorization request.
         /// </para>
         /// </summary>
         public bool SigningDisabled

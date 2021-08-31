@@ -65,7 +65,8 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        /// AWS IoT supports up to one digit after the decimal (for example, 1.5, but not 1.55).
+        /// Amazon Web Services IoT Core supports up to one digit after the decimal (for example,
+        /// 1.5, but not 1.55).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]

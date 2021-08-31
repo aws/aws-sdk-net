@@ -33,6 +33,12 @@ namespace Amazon.IoT.Model
     /// Returns the count, average, sum, minimum, maximum, sum of squares, variance, and standard
     /// deviation for the specified aggregated field. If the aggregation field is of type
     /// <code>String</code>, only the count statistic is returned.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetStatistics</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class GetStatisticsRequest : AmazonIoTRequest
     {
@@ -83,7 +89,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property QueryString. 
         /// <para>
         /// The query used to search. You can specify "*" for the query string to get the count
-        /// of all indexed things in your AWS account.
+        /// of all indexed things in your Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

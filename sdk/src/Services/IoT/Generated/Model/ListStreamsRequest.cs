@@ -30,7 +30,13 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the ListStreams operation.
-    /// Lists all of the streams in your AWS account.
+    /// Lists all of the streams in your Amazon Web Services account.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListStreams</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class ListStreamsRequest : AmazonIoTRequest
     {

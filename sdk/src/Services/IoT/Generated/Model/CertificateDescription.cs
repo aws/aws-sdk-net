@@ -217,7 +217,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property OwnedBy. 
         /// <para>
-        /// The ID of the AWS account that owns the certificate.
+        /// The ID of the Amazon Web Services account that owns the certificate.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -236,7 +236,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property PreviousOwnedBy. 
         /// <para>
-        /// The ID of the AWS account of the previous owner of the certificate.
+        /// The ID of the Amazon Web Services account of the previous owner of the certificate.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

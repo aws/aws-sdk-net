@@ -30,9 +30,9 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// The summary of a domain configuration. A domain configuration specifies custom IoT-specific
-    /// information about a domain. A domain configuration can be associated with an AWS-managed
-    /// domain (for example, dbc123defghijk.iot.us-west-2.amazonaws.com), a customer managed
-    /// domain, or a default endpoint.
+    /// information about a domain. A domain configuration can be associated with an Amazon
+    /// Web Services-managed domain (for example, dbc123defghijk.iot.us-west-2.amazonaws.com),
+    /// a customer managed domain, or a default endpoint.
     /// 
     ///  <ul> <li> 
     /// <para>

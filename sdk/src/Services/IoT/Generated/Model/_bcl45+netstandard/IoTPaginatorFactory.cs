@@ -180,6 +180,14 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Paginator for ListFleetMetrics operation
+        ///</summary>
+        public IListFleetMetricsPaginator ListFleetMetrics(ListFleetMetricsRequest request) 
+        {
+            return new ListFleetMetricsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListIndices operation
         ///</summary>
         public IListIndicesPaginator ListIndices(ListIndicesRequest request) 
@@ -209,6 +217,14 @@ namespace Amazon.IoT.Model
         public IListJobsPaginator ListJobs(ListJobsRequest request) 
         {
             return new ListJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListJobTemplates operation
+        ///</summary>
+        public IListJobTemplatesPaginator ListJobTemplates(ListJobTemplatesRequest request) 
+        {
+            return new ListJobTemplatesPaginator(this.client, request);
         }
 
         /// <summary>

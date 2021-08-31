@@ -30,7 +30,13 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBehaviorModelTrainingSummaries operation.
-    /// Returns a Device Defender's ML Detect Security Profile training model's status.
+    /// Returns a Device Defender's ML Detect Security Profile training model's status. 
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetBehaviorModelTrainingSummaries</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class GetBehaviorModelTrainingSummariesRequest : AmazonIoTRequest
     {

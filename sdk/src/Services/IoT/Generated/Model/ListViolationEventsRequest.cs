@@ -33,6 +33,12 @@ namespace Amazon.IoT.Model
     /// Lists the Device Defender security profile violations discovered during the given
     /// time period. You can use filters to limit the results to those alerts issued for a
     /// particular security profile, behavior, or thing (device).
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListViolationEvents</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class ListViolationEventsRequest : AmazonIoTRequest
     {

@@ -37,8 +37,13 @@ namespace Amazon.IoT.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
+    ///  <b>Note</b> This is the only time IoT issues the private key for this certificate,
     /// so it is important to keep it in a secure location.
+    /// </para>
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateKeysAndCertificate</a>
+    /// action.
     /// </para>
     /// </summary>
     public partial class CreateKeysAndCertificateRequest : AmazonIoTRequest

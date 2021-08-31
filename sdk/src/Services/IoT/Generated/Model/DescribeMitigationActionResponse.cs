@@ -137,7 +137,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The date and time when the mitigation action was added to your AWS account.
+        /// The date and time when the mitigation action was added to your Amazon Web Services
+        /// accounts.
         /// </para>
         /// </summary>
         public DateTime CreationDate

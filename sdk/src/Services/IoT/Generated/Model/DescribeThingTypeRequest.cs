@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the DescribeThingType operation.
     /// Gets information about the specified thing type.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThingType</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class DescribeThingTypeRequest : AmazonIoTRequest
     {

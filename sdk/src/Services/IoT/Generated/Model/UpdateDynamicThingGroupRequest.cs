@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the UpdateDynamicThingGroup operation.
     /// Updates a dynamic thing group.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateDynamicThingGroup</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class UpdateDynamicThingGroupRequest : AmazonIoTRequest
     {
@@ -66,7 +72,7 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Currently one index is supported: 'AWS_Things'.
+        /// Currently one index is supported: <code>AWS_Things</code>.
         /// </para>
         ///  </note>
         /// </summary>

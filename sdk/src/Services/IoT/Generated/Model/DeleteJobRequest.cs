@@ -44,6 +44,11 @@ namespace Amazon.IoT.Model
     /// Only 10 jobs may have status "DELETION_IN_PROGRESS" at the same time, or a LimitExceededException
     /// will occur.
     /// </para>
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteJob</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class DeleteJobRequest : AmazonIoTRequest
     {
@@ -111,8 +116,8 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        /// When you specify a value for this parameter, AWS IoT Core sends jobs notifications
-        /// to MQTT topics that contain the value in the following format.
+        /// When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs
+        /// notifications to MQTT topics that contain the value in the following format.
         /// </para>
         ///  
         /// <para>

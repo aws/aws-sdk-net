@@ -42,7 +42,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property AwsIotJobArn. 
         /// <para>
-        /// The AWS IoT job ARN associated with the OTA update.
+        /// The IoT job ARN associated with the OTA update.
         /// </para>
         /// </summary>
         public string AwsIotJobArn
@@ -60,7 +60,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property AwsIotJobId. 
         /// <para>
-        /// The AWS IoT job ID associated with the OTA update.
+        /// The IoT job ID associated with the OTA update.
         /// </para>
         /// </summary>
         public string AwsIotJobId

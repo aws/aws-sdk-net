@@ -139,7 +139,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property SigningDisabled. 
         /// <para>
-        /// Specifies whether AWS IoT validates the token signature in an authorization request.
+        /// Specifies whether IoT validates the token signature in an authorization request.
         /// </para>
         /// </summary>
         public bool SigningDisabled

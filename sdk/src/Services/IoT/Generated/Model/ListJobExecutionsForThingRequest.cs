@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the ListJobExecutionsForThing operation.
     /// Lists the job executions for the specified thing.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListJobExecutionsForThing</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class ListJobExecutionsForThingRequest : AmazonIoTRequest
     {
@@ -66,8 +72,8 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        /// When you specify a value for this parameter, AWS IoT Core sends jobs notifications
-        /// to MQTT topics that contain the value in the following format.
+        /// When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs
+        /// notifications to MQTT topics that contain the value in the following format.
         /// </para>
         ///  
         /// <para>

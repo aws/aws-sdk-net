@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the StartAuditMitigationActionsTask operation.
     /// Starts a task that applies a set of mitigation actions to the specified target.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartAuditMitigationActionsTask</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class StartAuditMitigationActionsTaskRequest : AmazonIoTRequest
     {
@@ -43,7 +49,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property AuditCheckToActionsMapping. 
         /// <para>
         /// For an audit check, specifies which mitigation actions to apply. Those actions must
-        /// be defined in your AWS account.
+        /// be defined in your Amazon Web Services accounts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

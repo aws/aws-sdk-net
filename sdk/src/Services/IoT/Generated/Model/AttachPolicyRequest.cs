@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the AttachPolicy operation.
     /// Attaches the specified policy to the specified principal (certificate or other credential).
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachPolicy</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class AttachPolicyRequest : AmazonIoTRequest
     {

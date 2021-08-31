@@ -38,6 +38,11 @@ namespace Amazon.IoT.Model
     /// to identify the thing group and either a <code>thingArn</code> or a <code>thingName</code>
     /// to identify the thing to remove from the thing group. 
     /// </para>
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RemoveThingFromThingGroup</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class RemoveThingFromThingGroupRequest : AmazonIoTRequest
     {

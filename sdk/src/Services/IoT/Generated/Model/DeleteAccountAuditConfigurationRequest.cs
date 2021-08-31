@@ -31,7 +31,13 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the DeleteAccountAuditConfiguration operation.
     /// Restores the default settings for Device Defender audits for this account. Any configuration
-    /// data you entered is deleted and all audit checks are reset to disabled.
+    /// data you entered is deleted and all audit checks are reset to disabled. 
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteAccountAuditConfiguration</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class DeleteAccountAuditConfigurationRequest : AmazonIoTRequest
     {

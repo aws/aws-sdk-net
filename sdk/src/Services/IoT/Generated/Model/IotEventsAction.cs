@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Sends an input to an AWS IoT Events detector.
+    /// Sends an input to an IoT Events detector.
     /// </summary>
     public partial class IotEventsAction
     {
@@ -52,7 +52,7 @@ namespace Amazon.IoT.Model
         /// <para>
         /// When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates
         /// to an Array, each Array element is treated as a separate message when it's sent to
-        /// AWS IoT Events by calling <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
+        /// IoT Events by calling <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
         /// <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10 messages.
         /// </para>
         /// </summary>
@@ -71,7 +71,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property InputName. 
         /// <para>
-        /// The name of the AWS IoT Events input.
+        /// The name of the IoT Events input.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -100,7 +100,7 @@ namespace Amazon.IoT.Model
         ///  
         /// <para>
         /// Assign a value to this property to ensure that only one input (message) with a given
-        /// <code>messageId</code> will be processed by an AWS IoT Events detector.
+        /// <code>messageId</code> will be processed by an IoT Events detector.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -119,8 +119,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the role that grants AWS IoT permission to send an input to an AWS IoT
-        /// Events detector. ("Action":"iotevents:BatchPutMessage").
+        /// The ARN of the role that grants IoT permission to send an input to an IoT Events detector.
+        /// ("Action":"iotevents:BatchPutMessage").
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

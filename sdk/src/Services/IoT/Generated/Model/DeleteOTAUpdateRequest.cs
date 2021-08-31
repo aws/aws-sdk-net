@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the DeleteOTAUpdate operation.
     /// Delete an OTA update.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteOTAUpdate</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class DeleteOTAUpdateRequest : AmazonIoTRequest
     {
@@ -60,7 +66,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ForceDeleteAWSJob. 
         /// <para>
-        /// When true, deletes the AWS job created by the OTAUpdate process even if it is "IN_PROGRESS".
+        /// When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS".
         /// Otherwise, if the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception
         /// will occur. The default is false.
         /// </para>

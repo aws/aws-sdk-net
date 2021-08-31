@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Data used to transfer a certificate to an AWS account.
+    /// Data used to transfer a certificate to an Amazon Web Services account.
     /// </summary>
     public partial class TransferData
     {

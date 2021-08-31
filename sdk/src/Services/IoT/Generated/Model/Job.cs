@@ -281,8 +281,8 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        /// When you specify a value for this parameter, AWS IoT Core sends jobs notifications
-        /// to MQTT topics that contain the value in the following format.
+        /// When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs
+        /// notifications to MQTT topics that contain the value in the following format.
         /// </para>
         ///  
         /// <para>

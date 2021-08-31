@@ -33,6 +33,11 @@ namespace Amazon.IoT.Model
     /// Lists the Device Defender security profiles you've created. You can filter security
     /// profiles by dimension or custom metric.
     /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSecurityProfiles</a>
+    /// action.
+    /// </para>
     ///  <note> 
     /// <para>
     ///  <code>dimensionName</code> and <code>metricName</code> cannot be used in the same

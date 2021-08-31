@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
     /// Lists the tags (metadata) you have assigned to the resource.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTagsForResource</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonIoTRequest
     {

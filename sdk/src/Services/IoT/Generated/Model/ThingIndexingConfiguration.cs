@@ -84,7 +84,7 @@ namespace Amazon.IoT.Model
         ///  <ul> <li> 
         /// <para>
         /// STATUS – Your thing index contains connectivity status. To enable thing connectivity
-        /// indexing, thingIndexMode must not be set to OFF.
+        /// indexing, <i>thingIndexMode</i> must not be set to OFF.
         /// </para>
         ///  </li> <li> 
         /// <para>

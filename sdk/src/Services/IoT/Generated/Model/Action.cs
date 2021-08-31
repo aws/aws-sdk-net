@@ -203,7 +203,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property IotAnalytics. 
         /// <para>
-        /// Sends message data to an AWS IoT Analytics channel.
+        /// Sends message data to an IoT Analytics channel.
         /// </para>
         /// </summary>
         public IotAnalyticsAction IotAnalytics
@@ -221,7 +221,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property IotEvents. 
         /// <para>
-        /// Sends an input to an AWS IoT Events detector.
+        /// Sends an input to an IoT Events detector.
         /// </para>
         /// </summary>
         public IotEventsAction IotEvents
@@ -239,8 +239,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property IotSiteWise. 
         /// <para>
-        /// Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise asset
-        /// properties.
+        /// Sends data from the MQTT message that triggered the rule to IoT SiteWise asset properties.
         /// </para>
         /// </summary>
         public IotSiteWiseAction IotSiteWise

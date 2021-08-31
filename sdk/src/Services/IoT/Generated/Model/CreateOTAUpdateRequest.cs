@@ -30,7 +30,13 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateOTAUpdate operation.
-    /// Creates an AWS IoT OTAUpdate on a target group of things or groups.
+    /// Creates an IoT OTA update on a target group of things or groups.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateOTAUpdate</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class CreateOTAUpdateRequest : AmazonIoTRequest
     {
@@ -222,8 +228,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The IAM role that grants AWS IoT access to the Amazon S3, AWS IoT jobs and AWS Code
-        /// Signing resources to create an OTA update job.
+        /// The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT
+        /// jobs and Amazon Web Services Code Signing resources to create an OTA update job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

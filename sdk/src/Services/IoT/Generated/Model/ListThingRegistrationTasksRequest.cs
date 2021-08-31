@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the ListThingRegistrationTasks operation.
     /// List bulk thing provisioning tasks.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingRegistrationTasks</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class ListThingRegistrationTasksRequest : AmazonIoTRequest
     {

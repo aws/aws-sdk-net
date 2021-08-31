@@ -39,7 +39,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Certificates. 
         /// <para>
-        /// The CA certificates registered in your AWS account.
+        /// The CA certificates registered in your Amazon Web Services account.
         /// </para>
         /// </summary>
         public List<CACertificate> Certificates

@@ -38,8 +38,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ConfirmationUrl. 
         /// <para>
-        /// The URL AWS IoT uses to confirm ownership of or access to the topic rule destination
-        /// URL.
+        /// The URL IoT uses to confirm ownership of or access to the topic rule destination URL.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=2000)]

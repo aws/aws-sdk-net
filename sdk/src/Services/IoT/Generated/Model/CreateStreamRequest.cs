@@ -33,6 +33,12 @@ namespace Amazon.IoT.Model
     /// Creates a stream for delivering one or more large files in chunks over MQTT. A stream
     /// transports data bytes in chunks or blocks packaged as MQTT messages from a source
     /// like S3. You can have one or more files associated with a stream.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateStream</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class CreateStreamRequest : AmazonIoTRequest
     {

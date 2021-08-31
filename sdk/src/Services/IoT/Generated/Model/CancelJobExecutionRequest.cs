@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the CancelJobExecution operation.
     /// Cancels the execution of a job for a given thing.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelJobExecution</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class CancelJobExecutionRequest : AmazonIoTRequest
     {

@@ -90,8 +90,8 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        /// This lets you better organize your AWS IoT fleet without removing the flexibility
-        /// of the underlying device certificate model or shadows.
+        /// This lets you better organize your IoT fleet without removing the flexibility of the
+        /// underlying device certificate model or shadows.
         /// </para>
         /// </summary>
         public string DefaultClientId

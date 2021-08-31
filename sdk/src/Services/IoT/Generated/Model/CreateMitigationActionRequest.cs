@@ -34,6 +34,12 @@ namespace Amazon.IoT.Model
     /// Only certain types of mitigation actions can be applied to specific check names. For
     /// more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-mitigation-actions.html">Mitigation
     /// actions</a>. Each mitigation action can apply only one type of change.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateMitigationAction</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class CreateMitigationActionRequest : AmazonIoTRequest
     {

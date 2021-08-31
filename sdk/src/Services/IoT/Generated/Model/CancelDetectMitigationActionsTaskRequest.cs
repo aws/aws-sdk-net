@@ -30,7 +30,13 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelDetectMitigationActionsTask operation.
-    /// Cancels a Device Defender ML Detect mitigation action.
+    /// Cancels a Device Defender ML Detect mitigation action. 
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelDetectMitigationActionsTask</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class CancelDetectMitigationActionsTaskRequest : AmazonIoTRequest
     {

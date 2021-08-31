@@ -42,7 +42,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property AssetId. 
         /// <para>
-        /// The ID of the AWS IoT SiteWise asset. You must specify either a <code>propertyAlias</code>
+        /// The ID of the IoT SiteWise asset. You must specify either a <code>propertyAlias</code>
         /// or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution
         /// templates.
         /// </para>

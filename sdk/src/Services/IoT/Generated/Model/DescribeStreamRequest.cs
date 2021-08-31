@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the DescribeStream operation.
     /// Gets information about a stream.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeStream</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class DescribeStreamRequest : AmazonIoTRequest
     {

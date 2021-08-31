@@ -37,6 +37,11 @@ namespace Amazon.IoT.Model
     /// To check for pending certificate transfers, call <a>ListCertificates</a> to enumerate
     /// your certificates.
     /// </para>
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AcceptCertificateTransfer</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class AcceptCertificateTransferRequest : AmazonIoTRequest
     {

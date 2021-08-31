@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the GetCardinality operation.
     /// Returns the approximate count of unique values that match the query.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetCardinality</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class GetCardinalityRequest : AmazonIoTRequest
     {
@@ -80,7 +86,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property QueryString. 
         /// <para>
-        /// The search query.
+        /// The search query string.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

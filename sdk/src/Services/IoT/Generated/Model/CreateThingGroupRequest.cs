@@ -37,7 +37,11 @@ namespace Amazon.IoT.Model
     /// This is a control plane operation. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a>
     /// for information about authorizing control plane actions.
     /// </para>
-    ///  </note>
+    ///  </note> 
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateThingGroup</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class CreateThingGroupRequest : AmazonIoTRequest
     {

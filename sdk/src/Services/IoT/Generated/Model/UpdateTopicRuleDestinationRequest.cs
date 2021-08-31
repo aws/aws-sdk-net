@@ -32,6 +32,12 @@ namespace Amazon.IoT.Model
     /// Container for the parameters to the UpdateTopicRuleDestination operation.
     /// Updates a topic rule destination. You use this to change the status, endpoint URL,
     /// or confirmation URL of the destination.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateTopicRuleDestination</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class UpdateTopicRuleDestinationRequest : AmazonIoTRequest
     {

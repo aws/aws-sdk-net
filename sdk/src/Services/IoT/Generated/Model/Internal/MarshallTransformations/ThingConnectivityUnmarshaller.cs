@@ -70,6 +70,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.Connected = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("disconnectReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DisconnectReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("timestamp", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

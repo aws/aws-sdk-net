@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
     /// Removes the given tags (metadata) from the resource.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UntagResource</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class UntagResourceRequest : AmazonIoTRequest
     {

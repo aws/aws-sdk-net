@@ -40,7 +40,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property AwsSignerJobId. 
         /// <para>
-        /// The ID of the AWSSignerJob which was created to sign the file.
+        /// The ID of the <code>AWSSignerJob</code> which was created to sign the file.
         /// </para>
         /// </summary>
         public string AwsSignerJobId

@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the CreateProvisioningTemplateVersion operation.
     /// Creates a new version of a fleet provisioning template.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateProvisioningTemplateVersion</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class CreateProvisioningTemplateVersionRequest : AmazonIoTRequest
     {

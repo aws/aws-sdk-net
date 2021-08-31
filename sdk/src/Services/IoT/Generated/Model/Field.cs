@@ -57,7 +57,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The datatype of the field.
+        /// The data type of the field.
         /// </para>
         /// </summary>
         public FieldType Type

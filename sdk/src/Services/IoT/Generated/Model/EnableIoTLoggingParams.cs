@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Parameters used when defining a mitigation action that enable AWS IoT logging.
+    /// Parameters used when defining a mitigation action that enable Amazon Web Services
+    /// IoT Core logging.
     /// </summary>
     public partial class EnableIoTLoggingParams
     {

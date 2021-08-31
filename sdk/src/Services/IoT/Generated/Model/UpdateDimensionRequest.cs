@@ -32,6 +32,12 @@ namespace Amazon.IoT.Model
     /// Container for the parameters to the UpdateDimension operation.
     /// Updates the definition for a dimension. You cannot change the type of a dimension
     /// after it is created (you can delete it and recreate it).
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateDimension</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class UpdateDimensionRequest : AmazonIoTRequest
     {

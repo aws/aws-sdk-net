@@ -35,6 +35,12 @@ namespace Amazon.IoT.Model
     /// <a>DeprecateThingType</a>, then remove any associated things by calling <a>UpdateThing</a>
     /// to change the thing type on any associated thing, and finally use <a>DeleteThingType</a>
     /// to delete the thing type.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThingType</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class DeleteThingTypeRequest : AmazonIoTRequest
     {

@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the ListTargetsForPolicy operation.
     /// List targets for the specified policy.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTargetsForPolicy</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class ListTargetsForPolicyRequest : AmazonIoTRequest
     {

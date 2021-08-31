@@ -30,7 +30,13 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDimension operation.
-    /// Provides details about a dimension that is defined in your AWS account.
+    /// Provides details about a dimension that is defined in your Amazon Web Services accounts.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDimension</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class DescribeDimensionRequest : AmazonIoTRequest
     {

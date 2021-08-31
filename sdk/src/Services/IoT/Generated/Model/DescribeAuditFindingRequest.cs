@@ -32,6 +32,12 @@ namespace Amazon.IoT.Model
     /// Container for the parameters to the DescribeAuditFinding operation.
     /// Gets information about a single audit finding. Properties include the reason for noncompliance,
     /// the severity of the issue, and the start time when the audit that returned the finding.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeAuditFinding</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class DescribeAuditFindingRequest : AmazonIoTRequest
     {

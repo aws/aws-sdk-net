@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Sends message data to an AWS IoT Analytics channel.
+    /// Sends message data to an IoT Analytics channel.
     /// </summary>
     public partial class IotAnalyticsAction
     {
@@ -48,8 +48,8 @@ namespace Amazon.IoT.Model
         /// When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates
         /// to an Array, each Array element is delivered as a separate message when passed by
         /// <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
-        /// <code>BatchPutMessage</code> </a> to the AWS IoT Analytics channel. The resulting
-        /// array can't have more than 100 messages.
+        /// <code>BatchPutMessage</code> </a> to the IoT Analytics channel. The resulting array
+        /// can't have more than 100 messages.
         /// </para>
         /// </summary>
         public bool BatchMode

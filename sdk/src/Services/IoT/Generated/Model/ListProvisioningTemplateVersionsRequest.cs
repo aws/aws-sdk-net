@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the ListProvisioningTemplateVersions operation.
     /// A list of fleet provisioning template versions.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListProvisioningTemplateVersions</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class ListProvisioningTemplateVersionsRequest : AmazonIoTRequest
     {

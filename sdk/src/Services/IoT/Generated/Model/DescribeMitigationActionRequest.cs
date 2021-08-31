@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the DescribeMitigationAction operation.
     /// Gets information about a mitigation action.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeMitigationAction</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class DescribeMitigationActionRequest : AmazonIoTRequest
     {

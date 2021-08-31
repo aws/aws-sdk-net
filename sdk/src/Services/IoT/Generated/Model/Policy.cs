@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Describes an AWS IoT policy.
+    /// Describes an IoT policy.
     /// </summary>
     public partial class Policy
     {

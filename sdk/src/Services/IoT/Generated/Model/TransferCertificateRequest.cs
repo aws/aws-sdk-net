@@ -30,8 +30,13 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the TransferCertificate operation.
-    /// Transfers the specified certificate to the specified AWS account.
+    /// Transfers the specified certificate to the specified Amazon Web Services account.
     /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TransferCertificate</a>
+    /// action.
+    /// </para>
     ///  
     /// <para>
     /// You can cancel the transfer until it is acknowledged by the recipient.
@@ -44,12 +49,12 @@ namespace Amazon.IoT.Model
     ///  
     /// <para>
     /// The certificate being transferred must not be in the ACTIVE state. You can use the
-    /// UpdateCertificate API to deactivate it.
+    /// <a>UpdateCertificate</a> action to deactivate it.
     /// </para>
     ///  
     /// <para>
-    /// The certificate must not have any policies attached to it. You can use the DetachPrincipalPolicy
-    /// API to detach them.
+    /// The certificate must not have any policies attached to it. You can use the <a>DetachPolicy</a>
+    /// action to detach them.
     /// </para>
     /// </summary>
     public partial class TransferCertificateRequest : AmazonIoTRequest
@@ -81,7 +86,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property TargetAwsAccount. 
         /// <para>
-        /// The AWS account.
+        /// The Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

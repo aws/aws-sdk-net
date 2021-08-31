@@ -320,6 +320,41 @@
     <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.CreateFleetMetricRequest.AggregationField</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateFleetMetricRequest.Description</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateFleetMetricRequest.IndexName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateFleetMetricRequest.MetricName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_\-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateFleetMetricRequest.Period</property>
+    <min>60</min>
+    <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateFleetMetricRequest.QueryString</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateFleetMetricResponse.MetricName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_\-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.CreateJobRequest.Description</property>
     <max>2028</max>
     <pattern>[^\p{C}]+</pattern>
@@ -715,6 +750,12 @@
     <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.DeleteFleetMetricRequest.MetricName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_\-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.DeleteJobRequest.JobId</property>
     <min>1</min>
     <max>64</max>
@@ -966,6 +1007,41 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.DescribeEndpointRequest.EndpointType</property>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeFleetMetricRequest.MetricName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_\-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeFleetMetricResponse.AggregationField</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeFleetMetricResponse.Description</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeFleetMetricResponse.IndexName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeFleetMetricResponse.MetricName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_\-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeFleetMetricResponse.Period</property>
+    <min>60</min>
+    <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeFleetMetricResponse.QueryString</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.DescribeIndexRequest.IndexName</property>
@@ -1266,6 +1342,20 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.GetBucketsAggregationRequest.AggregationField</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.GetBucketsAggregationRequest.IndexName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.GetBucketsAggregationRequest.QueryString</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.GetCardinalityRequest.AggregationField</property>
@@ -1593,6 +1683,11 @@
     <property>Amazon.IoT.Model.ListDomainConfigurationsResponse.NextMarker</property>
     <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListFleetMetricsRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListIndicesRequest.MaxResults</property>
@@ -2324,6 +2419,35 @@
     <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateFleetMetricRequest.AggregationField</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateFleetMetricRequest.Description</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateFleetMetricRequest.IndexName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateFleetMetricRequest.MetricName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_\-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateFleetMetricRequest.Period</property>
+    <min>60</min>
+    <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateFleetMetricRequest.QueryString</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.UpdateJobRequest.Description</property>
     <max>2028</max>
     <pattern>[^\p{C}]+</pattern>
@@ -2828,6 +2952,12 @@
     <pattern>([\n\t])|(\r\n)|(,)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.FleetMetricNameAndArn.MetricName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_\-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.GroupNameAndArn.GroupName</property>
     <min>1</min>
     <max>128</max>
@@ -3283,6 +3413,11 @@
     <property>Amazon.IoT.Model.Tag.Value</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.TermsAggregation.MaxBuckets</property>
+    <min>1</min>
+    <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ThingAttribute.ThingName</property>

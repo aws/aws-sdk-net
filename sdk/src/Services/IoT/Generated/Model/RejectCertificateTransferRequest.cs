@@ -30,7 +30,7 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the RejectCertificateTransfer operation.
-    /// Rejects a pending certificate transfer. After AWS IoT rejects a certificate transfer,
+    /// Rejects a pending certificate transfer. After IoT rejects a certificate transfer,
     /// the certificate status changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.
     /// 
     ///  
@@ -42,6 +42,11 @@ namespace Amazon.IoT.Model
     /// <para>
     /// This operation can only be called by the transfer destination. After it is called,
     /// the certificate will be returned to the source's account in the INACTIVE state.
+    /// </para>
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RejectCertificateTransfer</a>
+    /// action.
     /// </para>
     /// </summary>
     public partial class RejectCertificateTransferRequest : AmazonIoTRequest

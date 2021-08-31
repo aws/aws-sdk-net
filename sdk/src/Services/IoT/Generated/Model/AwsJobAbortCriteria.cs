@@ -104,8 +104,8 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        /// AWS IoT supports up to two digits after the decimal (for example, 10.9 and 10.99,
-        /// but not 10.999).
+        /// Amazon Web Services IoT Core supports up to two digits after the decimal (for example,
+        /// 10.9 and 10.99, but not 10.999).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=100)]

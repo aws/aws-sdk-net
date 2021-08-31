@@ -76,7 +76,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The IAM role ARN AWS IoT uses to write to your CloudWatch logs.
+        /// The IAM role ARN IoT uses to write to your CloudWatch logs.
         /// </para>
         /// </summary>
         public string RoleArn

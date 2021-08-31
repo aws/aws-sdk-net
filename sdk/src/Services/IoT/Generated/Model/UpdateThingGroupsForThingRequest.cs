@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the UpdateThingGroupsForThing operation.
     /// Updates the groups to which the thing belongs.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateThingGroupsForThing</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class UpdateThingGroupsForThingRequest : AmazonIoTRequest
     {

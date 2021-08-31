@@ -32,6 +32,12 @@ namespace Amazon.IoT.Model
     /// Container for the parameters to the DescribeAccountAuditConfiguration operation.
     /// Gets information about the Device Defender audit settings for this account. Settings
     /// include how audit notifications are sent and which audit checks are enabled or disabled.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeAccountAuditConfiguration</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class DescribeAccountAuditConfigurationRequest : AmazonIoTRequest
     {

@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the DetachSecurityProfile operation.
     /// Disassociates a Device Defender security profile from a thing group or from this account.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachSecurityProfile</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class DetachSecurityProfileRequest : AmazonIoTRequest
     {

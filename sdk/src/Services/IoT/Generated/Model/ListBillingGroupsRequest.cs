@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the ListBillingGroups operation.
     /// Lists the billing groups you have created.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListBillingGroups</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class ListBillingGroupsRequest : AmazonIoTRequest
     {

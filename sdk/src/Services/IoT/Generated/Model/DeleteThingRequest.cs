@@ -32,6 +32,12 @@ namespace Amazon.IoT.Model
     /// Container for the parameters to the DeleteThing operation.
     /// Deletes the specified thing. Returns successfully with no error if the deletion is
     /// successful or you specify a thing that doesn't exist.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThing</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class DeleteThingRequest : AmazonIoTRequest
     {

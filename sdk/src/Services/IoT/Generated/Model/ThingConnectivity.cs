@@ -34,12 +34,14 @@ namespace Amazon.IoT.Model
     public partial class ThingConnectivity
     {
         private bool? _connected;
+        private string _disconnectReason;
         private long? _timestamp;
 
         /// <summary>
         /// Gets and sets the property Connected. 
         /// <para>
-        /// True if the thing is connected to the AWS IoT service; false if it is not connected.
+        /// True if the thing is connected to the Amazon Web Services IoT Core service; false
+        /// if it is not connected.
         /// </para>
         /// </summary>
         public bool Connected
@@ -55,10 +57,28 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DisconnectReason. 
+        /// <para>
+        /// The reason why the client is disconnected.
+        /// </para>
+        /// </summary>
+        public string DisconnectReason
+        {
+            get { return this._disconnectReason; }
+            set { this._disconnectReason = value; }
+        }
+
+        // Check to see if DisconnectReason property is set
+        internal bool IsSetDisconnectReason()
+        {
+            return this._disconnectReason != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
         /// The epoch time (in milliseconds) when the thing last connected or disconnected. If
-        /// the thing has been disconnected for more than a few weeks, the time value might be
+        /// the thing has been disconnected for approximately an hour, the time value might be
         /// missing.
         /// </para>
         /// </summary>

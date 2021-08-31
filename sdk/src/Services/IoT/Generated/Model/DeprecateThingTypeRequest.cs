@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the DeprecateThingType operation.
     /// Deprecates a thing type. You can not associate new things with deprecated thing type.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeprecateThingType</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class DeprecateThingTypeRequest : AmazonIoTRequest
     {

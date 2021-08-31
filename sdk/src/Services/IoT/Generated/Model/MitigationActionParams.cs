@@ -64,8 +64,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property EnableIoTLoggingParams. 
         /// <para>
-        /// Parameters to define a mitigation action that enables AWS IoT logging at a specified
-        /// level of detail.
+        /// Parameters to define a mitigation action that enables Amazon Web Services IoT Core
+        /// logging at a specified level of detail.
         /// </para>
         /// </summary>
         public EnableIoTLoggingParams EnableIoTLoggingParams

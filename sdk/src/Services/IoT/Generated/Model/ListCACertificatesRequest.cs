@@ -30,12 +30,17 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCACertificates operation.
-    /// Lists the CA certificates registered for your AWS account.
+    /// Lists the CA certificates registered for your Amazon Web Services account.
     /// 
     ///  
     /// <para>
     /// The results are paginated with a default page size of 25. You can use the returned
     /// marker to retrieve additional results.
+    /// </para>
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCACertificates</a>
+    /// action.
     /// </para>
     /// </summary>
     public partial class ListCACertificatesRequest : AmazonIoTRequest

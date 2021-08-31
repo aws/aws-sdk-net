@@ -30,7 +30,13 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDimension operation.
-    /// Removes the specified dimension from your AWS account.
+    /// Removes the specified dimension from your Amazon Web Services accounts.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteDimension</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class DeleteDimensionRequest : AmazonIoTRequest
     {

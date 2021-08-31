@@ -32,6 +32,12 @@ namespace Amazon.IoT.Model
     /// Container for the parameters to the SetDefaultAuthorizer operation.
     /// Sets the default authorizer. This will be used if a websocket connection is made without
     /// specifying an authorizer.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetDefaultAuthorizer</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class SetDefaultAuthorizerRequest : AmazonIoTRequest
     {

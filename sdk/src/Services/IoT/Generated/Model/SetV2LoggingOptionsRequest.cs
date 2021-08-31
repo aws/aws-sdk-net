@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the SetV2LoggingOptions operation.
     /// Sets the logging options for the V2 logging service.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetV2LoggingOptions</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class SetV2LoggingOptionsRequest : AmazonIoTRequest
     {

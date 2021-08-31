@@ -31,6 +31,13 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the CreateCustomMetric operation.
     /// Use this API to define a Custom Metric published by your devices to Device Defender.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCustomMetric</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class CreateCustomMetricRequest : AmazonIoTRequest
     {
@@ -45,8 +52,8 @@ namespace Amazon.IoT.Model
         /// <para>
         /// Each custom metric must have a unique client request token. If you try to create a
         /// new custom metric that already exists with a different token, an exception occurs.
-        /// If you omit this value, AWS SDKs will automatically generate a unique client request.
-        /// 
+        /// If you omit this value, Amazon Web Services SDKs will automatically generate a unique
+        /// client request. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

@@ -116,6 +116,11 @@ namespace Amazon.IoT.Model
         IListDomainConfigurationsPaginator ListDomainConfigurations(ListDomainConfigurationsRequest request);
 
         /// <summary>
+        /// Paginator for ListFleetMetrics operation
+        ///</summary>
+        IListFleetMetricsPaginator ListFleetMetrics(ListFleetMetricsRequest request);
+
+        /// <summary>
         /// Paginator for ListIndices operation
         ///</summary>
         IListIndicesPaginator ListIndices(ListIndicesRequest request);
@@ -134,6 +139,11 @@ namespace Amazon.IoT.Model
         /// Paginator for ListJobs operation
         ///</summary>
         IListJobsPaginator ListJobs(ListJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListJobTemplates operation
+        ///</summary>
+        IListJobTemplatesPaginator ListJobTemplates(ListJobTemplatesRequest request);
 
         /// <summary>
         /// Paginator for ListMitigationActions operation

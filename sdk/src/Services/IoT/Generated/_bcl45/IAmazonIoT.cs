@@ -31,35 +31,35 @@ namespace Amazon.IoT
     /// <summary>
     /// Interface for accessing IoT
     ///
-    /// AWS IoT 
+    /// IoT 
     /// <para>
-    /// AWS IoT provides secure, bi-directional communication between Internet-connected devices
-    /// (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud.
-    /// You can discover your custom IoT-Data endpoint to communicate with, configure rules
-    /// for data processing and integration with other services, organize resources associated
-    /// with each device (Registry), configure logging, and create and manage policies and
-    /// credentials to authenticate devices.
+    /// IoT provides secure, bi-directional communication between Internet-connected devices
+    /// (such as sensors, actuators, embedded devices, or smart appliances) and the Amazon
+    /// Web Services cloud. You can discover your custom IoT-Data endpoint to communicate
+    /// with, configure rules for data processing and integration with other services, organize
+    /// resources associated with each device (Registry), configure logging, and create and
+    /// manage policies and credentials to authenticate devices.
     /// </para>
     ///  
     /// <para>
-    /// The service endpoints that expose this API are listed in <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html">AWS
-    /// IoT Core Endpoints and Quotas</a>. You must use the endpoint for the region that has
-    /// the resources you want to access.
+    /// The service endpoints that expose this API are listed in <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html">Amazon
+    /// Web Services IoT Core Endpoints and Quotas</a>. You must use the endpoint for the
+    /// region that has the resources you want to access.
     /// </para>
     ///  
     /// <para>
-    /// The service name used by <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">AWS
-    /// Signature Version 4</a> to sign the request is: <i>execute-api</i>.
+    /// The service name used by <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Amazon
+    /// Web Services Signature Version 4</a> to sign the request is: <i>execute-api</i>.
     /// </para>
     ///  
     /// <para>
-    /// For more information about how AWS IoT works, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html">Developer
+    /// For more information about how IoT works, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html">Developer
     /// Guide</a>.
     /// </para>
     ///  
     /// <para>
-    /// For information about how to use the credentials provider for AWS IoT, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html">Authorizing
-    /// Direct Calls to AWS Services</a>.
+    /// For information about how to use the credentials provider for IoT, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html">Authorizing
+    /// Direct Calls to Amazon Web Services Services</a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonIoT : IAmazonService, IDisposable
@@ -81,6 +81,11 @@ namespace Amazon.IoT
         /// <para>
         /// To check for pending certificate transfers, call <a>ListCertificates</a> to enumerate
         /// your certificates.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AcceptCertificateTransfer</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptCertificateTransfer service method.</param>
@@ -120,6 +125,11 @@ namespace Amazon.IoT
         /// To check for pending certificate transfers, call <a>ListCertificates</a> to enumerate
         /// your certificates.
         /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AcceptCertificateTransfer</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptCertificateTransfer service method.</param>
         /// <param name="cancellationToken">
@@ -158,6 +168,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Adds a thing to a billing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AddThingToBillingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddThingToBillingGroup service method.</param>
         /// 
@@ -181,6 +197,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Adds a thing to a billing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AddThingToBillingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddThingToBillingGroup service method.</param>
         /// <param name="cancellationToken">
@@ -210,6 +232,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Adds a thing to a thing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AddThingToThingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddThingToThingGroup service method.</param>
         /// 
@@ -233,6 +261,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Adds a thing to a thing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AddThingToThingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddThingToThingGroup service method.</param>
         /// <param name="cancellationToken">
@@ -276,7 +310,11 @@ namespace Amazon.IoT
         /// <para>
         /// The total number of targets associated with a job must not exceed 100.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AssociateTargetsWithJob</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateTargetsWithJob service method.</param>
         /// 
@@ -317,7 +355,11 @@ namespace Amazon.IoT
         /// <para>
         /// The total number of targets associated with a job must not exceed 100.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AssociateTargetsWithJob</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateTargetsWithJob service method.</param>
         /// <param name="cancellationToken">
@@ -350,6 +392,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Attaches the specified policy to the specified principal (certificate or other credential).
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachPolicy</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachPolicy service method.</param>
         /// 
@@ -382,6 +430,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Attaches the specified policy to the specified principal (certificate or other credential).
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachPolicy</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -423,7 +477,12 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> This API is deprecated. Please use <a>AttachPolicy</a> instead.
+        ///  <b>Note:</b> This action is deprecated. Please use <a>AttachPolicy</a> instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachPrincipalPolicy</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
@@ -460,7 +519,12 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> This API is deprecated. Please use <a>AttachPolicy</a> instead.
+        ///  <b>Note:</b> This action is deprecated. Please use <a>AttachPolicy</a> instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachPrincipalPolicy</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachPrincipalPolicy service method.</param>
@@ -497,7 +561,12 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> This API is deprecated. Please use <a>AttachPolicy</a> instead.
+        ///  <b>Note:</b> This action is deprecated. Please use <a>AttachPolicy</a> instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachPrincipalPolicy</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
@@ -538,7 +607,12 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> This API is deprecated. Please use <a>AttachPolicy</a> instead.
+        ///  <b>Note:</b> This action is deprecated. Please use <a>AttachPolicy</a> instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachPrincipalPolicy</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachPrincipalPolicy service method.</param>
@@ -581,6 +655,12 @@ namespace Amazon.IoT
         /// Associates a Device Defender security profile with a thing group or this account.
         /// Each thing group or account can have up to five security profiles associated with
         /// it.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachSecurityProfile</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachSecurityProfile service method.</param>
         /// 
@@ -613,6 +693,12 @@ namespace Amazon.IoT
         /// Associates a Device Defender security profile with a thing group or this account.
         /// Each thing group or account can have up to five security profiles associated with
         /// it.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachSecurityProfile</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachSecurityProfile service method.</param>
         /// <param name="cancellationToken">
@@ -651,6 +737,12 @@ namespace Amazon.IoT
         /// Attaches the specified principal to the specified thing. A principal can be X.509
         /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
         /// identities.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachThingPrincipal</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="thingName">The name of the thing.</param>
         /// <param name="principal">The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</param>
@@ -681,6 +773,12 @@ namespace Amazon.IoT
         /// Attaches the specified principal to the specified thing. A principal can be X.509
         /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
         /// identities.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachThingPrincipal</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachThingPrincipal service method.</param>
         /// 
@@ -711,6 +809,12 @@ namespace Amazon.IoT
         /// Attaches the specified principal to the specified thing. A principal can be X.509
         /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
         /// identities.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachThingPrincipal</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="thingName">The name of the thing.</param>
         /// <param name="principal">The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</param>
@@ -745,6 +849,12 @@ namespace Amazon.IoT
         /// Attaches the specified principal to the specified thing. A principal can be X.509
         /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
         /// identities.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachThingPrincipal</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachThingPrincipal service method.</param>
         /// <param name="cancellationToken">
@@ -781,6 +891,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Cancels a mitigation action task that is in progress. If the task is not in progress,
         /// an InvalidRequestException occurs.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelAuditMitigationActionsTask</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelAuditMitigationActionsTask service method.</param>
         /// 
@@ -805,6 +921,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Cancels a mitigation action task that is in progress. If the task is not in progress,
         /// an InvalidRequestException occurs.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelAuditMitigationActionsTask</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelAuditMitigationActionsTask service method.</param>
         /// <param name="cancellationToken">
@@ -835,6 +957,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Cancels an audit that is in progress. The audit can be either scheduled or on demand.
         /// If the audit isn't in progress, an "InvalidRequestException" occurs.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelAuditTask</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelAuditTask service method.</param>
         /// 
@@ -859,6 +987,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Cancels an audit that is in progress. The audit can be either scheduled or on demand.
         /// If the audit isn't in progress, an "InvalidRequestException" occurs.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelAuditTask</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelAuditTask service method.</param>
         /// <param name="cancellationToken">
@@ -893,13 +1027,18 @@ namespace Amazon.IoT
         /// <para>
         ///  <b>Note</b> Only the transfer source account can use this operation to cancel a transfer.
         /// (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After transfer,
-        /// AWS IoT returns the certificate to the source account in the INACTIVE state. After
-        /// the destination account has accepted the transfer, the transfer cannot be cancelled.
+        /// IoT returns the certificate to the source account in the INACTIVE state. After the
+        /// destination account has accepted the transfer, the transfer cannot be cancelled.
         /// </para>
         ///  
         /// <para>
         /// After a certificate transfer is cancelled, the status of the certificate changes from
         /// PENDING_TRANSFER to INACTIVE.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelCertificateTransfer</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
@@ -936,13 +1075,18 @@ namespace Amazon.IoT
         /// <para>
         ///  <b>Note</b> Only the transfer source account can use this operation to cancel a transfer.
         /// (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After transfer,
-        /// AWS IoT returns the certificate to the source account in the INACTIVE state. After
-        /// the destination account has accepted the transfer, the transfer cannot be cancelled.
+        /// IoT returns the certificate to the source account in the INACTIVE state. After the
+        /// destination account has accepted the transfer, the transfer cannot be cancelled.
         /// </para>
         ///  
         /// <para>
         /// After a certificate transfer is cancelled, the status of the certificate changes from
         /// PENDING_TRANSFER to INACTIVE.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelCertificateTransfer</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelCertificateTransfer service method.</param>
@@ -980,13 +1124,18 @@ namespace Amazon.IoT
         /// <para>
         ///  <b>Note</b> Only the transfer source account can use this operation to cancel a transfer.
         /// (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After transfer,
-        /// AWS IoT returns the certificate to the source account in the INACTIVE state. After
-        /// the destination account has accepted the transfer, the transfer cannot be cancelled.
+        /// IoT returns the certificate to the source account in the INACTIVE state. After the
+        /// destination account has accepted the transfer, the transfer cannot be cancelled.
         /// </para>
         ///  
         /// <para>
         /// After a certificate transfer is cancelled, the status of the certificate changes from
         /// PENDING_TRANSFER to INACTIVE.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelCertificateTransfer</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
@@ -1027,13 +1176,18 @@ namespace Amazon.IoT
         /// <para>
         ///  <b>Note</b> Only the transfer source account can use this operation to cancel a transfer.
         /// (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After transfer,
-        /// AWS IoT returns the certificate to the source account in the INACTIVE state. After
-        /// the destination account has accepted the transfer, the transfer cannot be cancelled.
+        /// IoT returns the certificate to the source account in the INACTIVE state. After the
+        /// destination account has accepted the transfer, the transfer cannot be cancelled.
         /// </para>
         ///  
         /// <para>
         /// After a certificate transfer is cancelled, the status of the certificate changes from
         /// PENDING_TRANSFER to INACTIVE.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelCertificateTransfer</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelCertificateTransfer service method.</param>
@@ -1072,7 +1226,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Cancels a Device Defender ML Detect mitigation action.
+        /// Cancels a Device Defender ML Detect mitigation action. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelDetectMitigationActionsTask</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelDetectMitigationActionsTask service method.</param>
         /// 
@@ -1095,7 +1255,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Cancels a Device Defender ML Detect mitigation action.
+        /// Cancels a Device Defender ML Detect mitigation action. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelDetectMitigationActionsTask</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelDetectMitigationActionsTask service method.</param>
         /// <param name="cancellationToken">
@@ -1125,6 +1291,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Cancels a job.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelJob</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelJob service method.</param>
         /// 
@@ -1148,6 +1320,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Cancels a job.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelJob</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelJob service method.</param>
         /// <param name="cancellationToken">
@@ -1177,6 +1355,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Cancels the execution of a job for a given thing.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelJobExecution</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelJobExecution service method.</param>
         /// 
@@ -1208,6 +1392,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Cancels the execution of a job for a given thing.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelJobExecution</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelJobExecution service method.</param>
         /// <param name="cancellationToken">
@@ -1245,6 +1435,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Clears the default authorizer.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ClearDefaultAuthorizer</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ClearDefaultAuthorizer service method.</param>
         /// 
@@ -1274,6 +1470,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Clears the default authorizer.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ClearDefaultAuthorizer</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ClearDefaultAuthorizer service method.</param>
         /// <param name="cancellationToken">
@@ -1309,9 +1511,15 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Confirms a topic rule destination. When you create a rule requiring a destination,
-        /// AWS IoT sends a confirmation message to the endpoint or base address you specify.
-        /// The message includes a token which you pass back when calling <code>ConfirmTopicRuleDestination</code>
+        /// IoT sends a confirmation message to the endpoint or base address you specify. The
+        /// message includes a token which you pass back when calling <code>ConfirmTopicRuleDestination</code>
         /// to confirm that you own or have access to the endpoint.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ConfirmTopicRuleDestination</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConfirmTopicRuleDestination service method.</param>
         /// 
@@ -1339,9 +1547,15 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Confirms a topic rule destination. When you create a rule requiring a destination,
-        /// AWS IoT sends a confirmation message to the endpoint or base address you specify.
-        /// The message includes a token which you pass back when calling <code>ConfirmTopicRuleDestination</code>
+        /// IoT sends a confirmation message to the endpoint or base address you specify. The
+        /// message includes a token which you pass back when calling <code>ConfirmTopicRuleDestination</code>
         /// to confirm that you own or have access to the endpoint.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ConfirmTopicRuleDestination</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConfirmTopicRuleDestination service method.</param>
         /// <param name="cancellationToken">
@@ -1374,7 +1588,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a Device Defender audit suppression.
+        /// Creates a Device Defender audit suppression. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateAuditSuppression</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAuditSuppression service method.</param>
         /// 
@@ -1400,7 +1620,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a Device Defender audit suppression.
+        /// Creates a Device Defender audit suppression. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateAuditSuppression</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAuditSuppression service method.</param>
         /// <param name="cancellationToken">
@@ -1433,6 +1659,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates an authorizer.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateAuthorizer</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAuthorizer service method.</param>
         /// 
@@ -1465,6 +1697,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates an authorizer.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateAuthorizer</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAuthorizer service method.</param>
         /// <param name="cancellationToken">
@@ -1503,6 +1741,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a billing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateBillingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBillingGroup service method.</param>
         /// 
@@ -1526,6 +1770,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a billing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateBillingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBillingGroup service method.</param>
         /// <param name="cancellationToken">
@@ -1568,6 +1818,11 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCertificateFromCsr</a>
+        /// action.
+        /// </para>
+        ///  
+        /// <para>
         /// You can create multiple certificates in a batch by creating a directory, copying multiple
         /// .csr files into that directory, and then specifying that directory on the command
         /// line. The following commands show how to create a batch of certificates given a batch
@@ -1589,8 +1844,8 @@ namespace Amazon.IoT
         ///  
         /// <para>
         /// This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
-        /// to the aws iot create-certificate-from-csr AWS CLI command to create a certificate
-        /// for the corresponding CSR.
+        /// to the aws iot create-certificate-from-csr Amazon Web Services CLI command to create
+        /// a certificate for the corresponding CSR.
         /// </para>
         ///  
         /// <para>
@@ -1659,6 +1914,11 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCertificateFromCsr</a>
+        /// action.
+        /// </para>
+        ///  
+        /// <para>
         /// You can create multiple certificates in a batch by creating a directory, copying multiple
         /// .csr files into that directory, and then specifying that directory on the command
         /// line. The following commands show how to create a batch of certificates given a batch
@@ -1680,8 +1940,8 @@ namespace Amazon.IoT
         ///  
         /// <para>
         /// This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
-        /// to the aws iot create-certificate-from-csr AWS CLI command to create a certificate
-        /// for the corresponding CSR.
+        /// to the aws iot create-certificate-from-csr Amazon Web Services CLI command to create
+        /// a certificate for the corresponding CSR.
         /// </para>
         ///  
         /// <para>
@@ -1751,6 +2011,11 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCertificateFromCsr</a>
+        /// action.
+        /// </para>
+        ///  
+        /// <para>
         /// You can create multiple certificates in a batch by creating a directory, copying multiple
         /// .csr files into that directory, and then specifying that directory on the command
         /// line. The following commands show how to create a batch of certificates given a batch
@@ -1772,8 +2037,8 @@ namespace Amazon.IoT
         ///  
         /// <para>
         /// This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
-        /// to the aws iot create-certificate-from-csr AWS CLI command to create a certificate
-        /// for the corresponding CSR.
+        /// to the aws iot create-certificate-from-csr Amazon Web Services CLI command to create
+        /// a certificate for the corresponding CSR.
         /// </para>
         ///  
         /// <para>
@@ -1843,6 +2108,11 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCertificateFromCsr</a>
+        /// action.
+        /// </para>
+        ///  
+        /// <para>
         /// You can create multiple certificates in a batch by creating a directory, copying multiple
         /// .csr files into that directory, and then specifying that directory on the command
         /// line. The following commands show how to create a batch of certificates given a batch
@@ -1864,8 +2134,8 @@ namespace Amazon.IoT
         ///  
         /// <para>
         /// This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
-        /// to the aws iot create-certificate-from-csr AWS CLI command to create a certificate
-        /// for the corresponding CSR.
+        /// to the aws iot create-certificate-from-csr Amazon Web Services CLI command to create
+        /// a certificate for the corresponding CSR.
         /// </para>
         ///  
         /// <para>
@@ -1937,6 +2207,11 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCertificateFromCsr</a>
+        /// action.
+        /// </para>
+        ///  
+        /// <para>
         /// You can create multiple certificates in a batch by creating a directory, copying multiple
         /// .csr files into that directory, and then specifying that directory on the command
         /// line. The following commands show how to create a batch of certificates given a batch
@@ -1958,8 +2233,8 @@ namespace Amazon.IoT
         ///  
         /// <para>
         /// This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
-        /// to the aws iot create-certificate-from-csr AWS CLI command to create a certificate
-        /// for the corresponding CSR.
+        /// to the aws iot create-certificate-from-csr Amazon Web Services CLI command to create
+        /// a certificate for the corresponding CSR.
         /// </para>
         ///  
         /// <para>
@@ -2033,6 +2308,11 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCertificateFromCsr</a>
+        /// action.
+        /// </para>
+        ///  
+        /// <para>
         /// You can create multiple certificates in a batch by creating a directory, copying multiple
         /// .csr files into that directory, and then specifying that directory on the command
         /// line. The following commands show how to create a batch of certificates given a batch
@@ -2054,8 +2334,8 @@ namespace Amazon.IoT
         ///  
         /// <para>
         /// This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
-        /// to the aws iot create-certificate-from-csr AWS CLI command to create a certificate
-        /// for the corresponding CSR.
+        /// to the aws iot create-certificate-from-csr Amazon Web Services CLI command to create
+        /// a certificate for the corresponding CSR.
         /// </para>
         ///  
         /// <para>
@@ -2119,6 +2399,13 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Use this API to define a Custom Metric published by your devices to Device Defender.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCustomMetric</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCustomMetric service method.</param>
         /// 
@@ -2145,6 +2432,13 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Use this API to define a Custom Metric published by your devices to Device Defender.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCustomMetric</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCustomMetric service method.</param>
         /// <param name="cancellationToken">
@@ -2177,9 +2471,15 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Create a dimension that you can use to limit the scope of a metric used in a security
-        /// profile for AWS IoT Device Defender. For example, using a <code>TOPIC_FILTER</code>
-        /// dimension, you can narrow down the scope of the metric only to MQTT topics whose name
-        /// match the pattern specified in the dimension.
+        /// profile for IoT Device Defender. For example, using a <code>TOPIC_FILTER</code> dimension,
+        /// you can narrow down the scope of the metric only to MQTT topics whose name match the
+        /// pattern specified in the dimension.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateDimension</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDimension service method.</param>
         /// 
@@ -2206,9 +2506,15 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Create a dimension that you can use to limit the scope of a metric used in a security
-        /// profile for AWS IoT Device Defender. For example, using a <code>TOPIC_FILTER</code>
-        /// dimension, you can narrow down the scope of the metric only to MQTT topics whose name
-        /// match the pattern specified in the dimension.
+        /// profile for IoT Device Defender. For example, using a <code>TOPIC_FILTER</code> dimension,
+        /// you can narrow down the scope of the metric only to MQTT topics whose name match the
+        /// pattern specified in the dimension.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateDimension</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDimension service method.</param>
         /// <param name="cancellationToken">
@@ -2241,6 +2547,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a domain configuration.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateDomainConfiguration</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomainConfiguration service method.</param>
         /// 
@@ -2276,6 +2588,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a domain configuration.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateDomainConfiguration</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomainConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -2317,6 +2635,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a dynamic thing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateDynamicThingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDynamicThingGroup service method.</param>
         /// 
@@ -2349,6 +2673,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a dynamic thing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateDynamicThingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDynamicThingGroup service method.</param>
         /// <param name="cancellationToken">
@@ -2382,11 +2712,123 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  CreateFleetMetric
+
+
+        /// <summary>
+        /// Creates a fleet metric.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateFleetMetric</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFleetMetric service method.</param>
+        /// 
+        /// <returns>The response from the CreateFleetMetric service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.IndexNotReadyException">
+        /// The index is not ready.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidAggregationException">
+        /// The aggregation is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidQueryException">
+        /// The query is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateFleetMetric">REST API Reference for CreateFleetMetric Operation</seealso>
+        CreateFleetMetricResponse CreateFleetMetric(CreateFleetMetricRequest request);
+
+
+
+        /// <summary>
+        /// Creates a fleet metric.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateFleetMetric</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFleetMetric service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateFleetMetric service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.IndexNotReadyException">
+        /// The index is not ready.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidAggregationException">
+        /// The aggregation is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidQueryException">
+        /// The query is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateFleetMetric">REST API Reference for CreateFleetMetric Operation</seealso>
+        Task<CreateFleetMetricResponse> CreateFleetMetricAsync(CreateFleetMetricRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateJob
 
 
         /// <summary>
         /// Creates a job.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateJob</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
         /// 
@@ -2416,6 +2858,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a job.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateJob</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
         /// <param name="cancellationToken">
@@ -2451,6 +2899,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a job template.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateJobTemplate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateJobTemplate service method.</param>
         /// 
@@ -2480,6 +2934,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a job template.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateJobTemplate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateJobTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -2521,8 +2981,13 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
+        ///  <b>Note</b> This is the only time IoT issues the private key for this certificate,
         /// so it is important to keep it in a secure location.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateKeysAndCertificate</a>
+        /// action.
         /// </para>
         /// </summary>
         /// 
@@ -2553,8 +3018,13 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
+        ///  <b>Note</b> This is the only time IoT issues the private key for this certificate,
         /// so it is important to keep it in a secure location.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateKeysAndCertificate</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="setAsActive">Specifies whether the certificate is active.</param>
@@ -2586,8 +3056,13 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
+        ///  <b>Note</b> This is the only time IoT issues the private key for this certificate,
         /// so it is important to keep it in a secure location.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateKeysAndCertificate</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateKeysAndCertificate service method.</param>
@@ -2620,8 +3095,13 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
+        ///  <b>Note</b> This is the only time IoT issues the private key for this certificate,
         /// so it is important to keep it in a secure location.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateKeysAndCertificate</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -2655,8 +3135,13 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
+        ///  <b>Note</b> This is the only time IoT issues the private key for this certificate,
         /// so it is important to keep it in a secure location.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateKeysAndCertificate</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="setAsActive">Specifies whether the certificate is active.</param>
@@ -2692,8 +3177,13 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
+        ///  <b>Note</b> This is the only time IoT issues the private key for this certificate,
         /// so it is important to keep it in a secure location.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateKeysAndCertificate</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateKeysAndCertificate service method.</param>
@@ -2730,6 +3220,12 @@ namespace Amazon.IoT
         /// Only certain types of mitigation actions can be applied to specific check names. For
         /// more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-mitigation-actions.html">Mitigation
         /// actions</a>. Each mitigation action can apply only one type of change.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateMitigationAction</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMitigationAction service method.</param>
         /// 
@@ -2759,6 +3255,12 @@ namespace Amazon.IoT
         /// Only certain types of mitigation actions can be applied to specific check names. For
         /// more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-mitigation-actions.html">Mitigation
         /// actions</a>. Each mitigation action can apply only one type of change.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateMitigationAction</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMitigationAction service method.</param>
         /// <param name="cancellationToken">
@@ -2790,7 +3292,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates an AWS IoT OTAUpdate on a target group of things or groups.
+        /// Creates an IoT OTA update on a target group of things or groups.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateOTAUpdate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOTAUpdate service method.</param>
         /// 
@@ -2825,7 +3333,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates an AWS IoT OTAUpdate on a target group of things or groups.
+        /// Creates an IoT OTA update on a target group of things or groups.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateOTAUpdate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOTAUpdate service method.</param>
         /// <param name="cancellationToken">
@@ -2866,13 +3380,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates an AWS IoT policy.
+        /// Creates an IoT policy.
         /// 
         ///  
         /// <para>
         /// The created policy is the default version for the policy. This operation creates a
         /// policy version with a version identifier of <b>1</b> and sets <b>1</b> as the policy's
         /// default version.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePolicy</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
@@ -2904,13 +3423,18 @@ namespace Amazon.IoT
         CreatePolicyResponse CreatePolicy(string policyName, string policyDocument);
 
         /// <summary>
-        /// Creates an AWS IoT policy.
+        /// Creates an IoT policy.
         /// 
         ///  
         /// <para>
         /// The created policy is the default version for the policy. This operation creates a
         /// policy version with a version identifier of <b>1</b> and sets <b>1</b> as the policy's
         /// default version.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePolicy</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePolicy service method.</param>
@@ -2942,13 +3466,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates an AWS IoT policy.
+        /// Creates an IoT policy.
         /// 
         ///  
         /// <para>
         /// The created policy is the default version for the policy. This operation creates a
         /// policy version with a version identifier of <b>1</b> and sets <b>1</b> as the policy's
         /// default version.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePolicy</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
@@ -2984,13 +3513,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates an AWS IoT policy.
+        /// Creates an IoT policy.
         /// 
         ///  
         /// <para>
         /// The created policy is the default version for the policy. This operation creates a
         /// policy version with a version identifier of <b>1</b> and sets <b>1</b> as the policy's
         /// default version.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePolicy</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePolicy service method.</param>
@@ -3029,16 +3563,21 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a new version of the specified AWS IoT policy. To update a policy, create
-        /// a new policy version. A managed policy can have up to five versions. If the policy
-        /// has five versions, you must use <a>DeletePolicyVersion</a> to delete an existing version
-        /// before you create a new one.
+        /// Creates a new version of the specified IoT policy. To update a policy, create a new
+        /// policy version. A managed policy can have up to five versions. If the policy has five
+        /// versions, you must use <a>DeletePolicyVersion</a> to delete an existing version before
+        /// you create a new one.
         /// 
         ///  
         /// <para>
         /// Optionally, you can set the new version as the policy's default version. The default
         /// version is the operative version (that is, the version that is in effect for the certificates
         /// to which the policy is attached).
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePolicyVersion</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
@@ -3073,16 +3612,21 @@ namespace Amazon.IoT
         CreatePolicyVersionResponse CreatePolicyVersion(string policyName, string policyDocument);
 
         /// <summary>
-        /// Creates a new version of the specified AWS IoT policy. To update a policy, create
-        /// a new policy version. A managed policy can have up to five versions. If the policy
-        /// has five versions, you must use <a>DeletePolicyVersion</a> to delete an existing version
-        /// before you create a new one.
+        /// Creates a new version of the specified IoT policy. To update a policy, create a new
+        /// policy version. A managed policy can have up to five versions. If the policy has five
+        /// versions, you must use <a>DeletePolicyVersion</a> to delete an existing version before
+        /// you create a new one.
         /// 
         ///  
         /// <para>
         /// Optionally, you can set the new version as the policy's default version. The default
         /// version is the operative version (that is, the version that is in effect for the certificates
         /// to which the policy is attached).
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePolicyVersion</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
@@ -3118,16 +3662,21 @@ namespace Amazon.IoT
         CreatePolicyVersionResponse CreatePolicyVersion(string policyName, string policyDocument, bool setAsDefault);
 
         /// <summary>
-        /// Creates a new version of the specified AWS IoT policy. To update a policy, create
-        /// a new policy version. A managed policy can have up to five versions. If the policy
-        /// has five versions, you must use <a>DeletePolicyVersion</a> to delete an existing version
-        /// before you create a new one.
+        /// Creates a new version of the specified IoT policy. To update a policy, create a new
+        /// policy version. A managed policy can have up to five versions. If the policy has five
+        /// versions, you must use <a>DeletePolicyVersion</a> to delete an existing version before
+        /// you create a new one.
         /// 
         ///  
         /// <para>
         /// Optionally, you can set the new version as the policy's default version. The default
         /// version is the operative version (that is, the version that is in effect for the certificates
         /// to which the policy is attached).
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePolicyVersion</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePolicyVersion service method.</param>
@@ -3162,16 +3711,21 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a new version of the specified AWS IoT policy. To update a policy, create
-        /// a new policy version. A managed policy can have up to five versions. If the policy
-        /// has five versions, you must use <a>DeletePolicyVersion</a> to delete an existing version
-        /// before you create a new one.
+        /// Creates a new version of the specified IoT policy. To update a policy, create a new
+        /// policy version. A managed policy can have up to five versions. If the policy has five
+        /// versions, you must use <a>DeletePolicyVersion</a> to delete an existing version before
+        /// you create a new one.
         /// 
         ///  
         /// <para>
         /// Optionally, you can set the new version as the policy's default version. The default
         /// version is the operative version (that is, the version that is in effect for the certificates
         /// to which the policy is attached).
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePolicyVersion</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
@@ -3209,16 +3763,21 @@ namespace Amazon.IoT
         Task<CreatePolicyVersionResponse> CreatePolicyVersionAsync(string policyName, string policyDocument, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Creates a new version of the specified AWS IoT policy. To update a policy, create
-        /// a new policy version. A managed policy can have up to five versions. If the policy
-        /// has five versions, you must use <a>DeletePolicyVersion</a> to delete an existing version
-        /// before you create a new one.
+        /// Creates a new version of the specified IoT policy. To update a policy, create a new
+        /// policy version. A managed policy can have up to five versions. If the policy has five
+        /// versions, you must use <a>DeletePolicyVersion</a> to delete an existing version before
+        /// you create a new one.
         /// 
         ///  
         /// <para>
         /// Optionally, you can set the new version as the policy's default version. The default
         /// version is the operative version (that is, the version that is in effect for the certificates
         /// to which the policy is attached).
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePolicyVersion</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
@@ -3258,16 +3817,21 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a new version of the specified AWS IoT policy. To update a policy, create
-        /// a new policy version. A managed policy can have up to five versions. If the policy
-        /// has five versions, you must use <a>DeletePolicyVersion</a> to delete an existing version
-        /// before you create a new one.
+        /// Creates a new version of the specified IoT policy. To update a policy, create a new
+        /// policy version. A managed policy can have up to five versions. If the policy has five
+        /// versions, you must use <a>DeletePolicyVersion</a> to delete an existing version before
+        /// you create a new one.
         /// 
         ///  
         /// <para>
         /// Optionally, you can set the new version as the policy's default version. The default
         /// version is the operative version (that is, the version that is in effect for the certificates
         /// to which the policy is attached).
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePolicyVersion</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePolicyVersion service method.</param>
@@ -3310,6 +3874,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a provisioning claim.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateProvisioningClaim</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProvisioningClaim service method.</param>
         /// 
@@ -3339,6 +3909,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a provisioning claim.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateProvisioningClaim</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProvisioningClaim service method.</param>
         /// <param name="cancellationToken">
@@ -3374,6 +3950,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a fleet provisioning template.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateProvisioningTemplate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProvisioningTemplate service method.</param>
         /// 
@@ -3403,6 +3985,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a fleet provisioning template.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateProvisioningTemplate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProvisioningTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -3438,6 +4026,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a new version of a fleet provisioning template.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateProvisioningTemplateVersion</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProvisioningTemplateVersion service method.</param>
         /// 
@@ -3471,6 +4065,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a new version of a fleet provisioning template.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateProvisioningTemplateVersion</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProvisioningTemplateVersion service method.</param>
         /// <param name="cancellationToken">
@@ -3510,6 +4110,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a role alias.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateRoleAlias</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRoleAlias service method.</param>
         /// 
@@ -3542,6 +4148,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a role alias.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateRoleAlias</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRoleAlias service method.</param>
         /// <param name="cancellationToken">
@@ -3580,6 +4192,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a scheduled audit that is run at a specified time interval.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateScheduledAudit</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateScheduledAudit service method.</param>
         /// 
@@ -3606,6 +4224,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a scheduled audit that is run at a specified time interval.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateScheduledAudit</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateScheduledAudit service method.</param>
         /// <param name="cancellationToken">
@@ -3638,6 +4262,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a Device Defender security profile.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateSecurityProfile</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSecurityProfile service method.</param>
         /// 
@@ -3661,6 +4291,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a Device Defender security profile.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateSecurityProfile</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSecurityProfile service method.</param>
         /// <param name="cancellationToken">
@@ -3692,6 +4328,12 @@ namespace Amazon.IoT
         /// Creates a stream for delivering one or more large files in chunks over MQTT. A stream
         /// transports data bytes in chunks or blocks packaged as MQTT messages from a source
         /// like S3. You can have one or more files associated with a stream.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateStream</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStream service method.</param>
         /// 
@@ -3729,6 +4371,12 @@ namespace Amazon.IoT
         /// Creates a stream for delivering one or more large files in chunks over MQTT. A stream
         /// transports data bytes in chunks or blocks packaged as MQTT messages from a source
         /// like S3. You can have one or more files associated with a stream.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateStream</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStream service method.</param>
         /// <param name="cancellationToken">
@@ -3779,7 +4427,11 @@ namespace Amazon.IoT
         /// This is a control plane operation. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a>
         /// for information about authorizing control plane actions.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateThing</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateThing service method.</param>
         /// 
@@ -3821,7 +4473,11 @@ namespace Amazon.IoT
         /// This is a control plane operation. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a>
         /// for information about authorizing control plane actions.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateThing</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateThing service method.</param>
         /// <param name="cancellationToken">
@@ -3866,7 +4522,11 @@ namespace Amazon.IoT
         /// This is a control plane operation. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a>
         /// for information about authorizing control plane actions.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateThingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateThingGroup service method.</param>
         /// 
@@ -3896,7 +4556,11 @@ namespace Amazon.IoT
         /// This is a control plane operation. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a>
         /// for information about authorizing control plane actions.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateThingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateThingGroup service method.</param>
         /// <param name="cancellationToken">
@@ -3926,6 +4590,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a new thing type.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateThingType</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateThingType service method.</param>
         /// 
@@ -3955,6 +4625,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a new thing type.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateThingType</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateThingType service method.</param>
         /// <param name="cancellationToken">
@@ -3991,6 +4667,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Creates a rule. Creating rules is an administrator-level action. Any user who has
         /// permission to create rules will be able to access data processed by the rule.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateTopicRule</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTopicRule service method.</param>
         /// 
@@ -4022,6 +4704,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Creates a rule. Creating rules is an administrator-level action. Any user who has
         /// permission to create rules will be able to access data processed by the rule.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateTopicRule</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTopicRule service method.</param>
         /// <param name="cancellationToken">
@@ -4058,6 +4746,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a topic rule destination. The destination must be confirmed prior to use.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateTopicRuleDestination</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTopicRuleDestination service method.</param>
         /// 
@@ -4085,6 +4779,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a topic rule destination. The destination must be confirmed prior to use.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateTopicRuleDestination</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTopicRuleDestination service method.</param>
         /// <param name="cancellationToken">
@@ -4118,7 +4818,13 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Restores the default settings for Device Defender audits for this account. Any configuration
-        /// data you entered is deleted and all audit checks are reset to disabled.
+        /// data you entered is deleted and all audit checks are reset to disabled. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteAccountAuditConfiguration</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountAuditConfiguration service method.</param>
         /// 
@@ -4142,7 +4848,13 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Restores the default settings for Device Defender audits for this account. Any configuration
-        /// data you entered is deleted and all audit checks are reset to disabled.
+        /// data you entered is deleted and all audit checks are reset to disabled. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteAccountAuditConfiguration</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountAuditConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -4171,7 +4883,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Deletes a Device Defender audit suppression.
+        /// Deletes a Device Defender audit suppression. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteAuditSuppression</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAuditSuppression service method.</param>
         /// 
@@ -4191,7 +4909,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Deletes a Device Defender audit suppression.
+        /// Deletes a Device Defender audit suppression. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteAuditSuppression</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAuditSuppression service method.</param>
         /// <param name="cancellationToken">
@@ -4218,6 +4942,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes an authorizer.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteAuthorizer</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAuthorizer service method.</param>
         /// 
@@ -4250,6 +4980,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes an authorizer.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteAuthorizer</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAuthorizer service method.</param>
         /// <param name="cancellationToken">
@@ -4288,6 +5024,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes the billing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteBillingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBillingGroup service method.</param>
         /// 
@@ -4312,6 +5054,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes the billing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteBillingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBillingGroup service method.</param>
         /// <param name="cancellationToken">
@@ -4342,6 +5090,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a registered CA certificate.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCACertificate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCACertificate service method.</param>
         /// 
@@ -4374,6 +5128,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a registered CA certificate.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCACertificate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCACertificate service method.</param>
         /// <param name="cancellationToken">
@@ -4416,9 +5176,14 @@ namespace Amazon.IoT
         ///  
         /// <para>
         /// A certificate cannot be deleted if it has a policy or IoT thing attached to it or
-        /// if its status is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a>
-        /// API to detach all policies. Next, use the <a>UpdateCertificate</a> API to set the
-        /// certificate to the INACTIVE status.
+        /// if its status is set to ACTIVE. To delete a certificate, first use the <a>DetachPolicy</a>
+        /// action to detach all policies. Next, use the <a>UpdateCertificate</a> action to set
+        /// the certificate to the INACTIVE status.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCertificate</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
@@ -4457,9 +5222,14 @@ namespace Amazon.IoT
         ///  
         /// <para>
         /// A certificate cannot be deleted if it has a policy or IoT thing attached to it or
-        /// if its status is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a>
-        /// API to detach all policies. Next, use the <a>UpdateCertificate</a> API to set the
-        /// certificate to the INACTIVE status.
+        /// if its status is set to ACTIVE. To delete a certificate, first use the <a>DetachPolicy</a>
+        /// action to detach all policies. Next, use the <a>UpdateCertificate</a> action to set
+        /// the certificate to the INACTIVE status.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCertificate</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCertificate service method.</param>
@@ -4499,9 +5269,14 @@ namespace Amazon.IoT
         ///  
         /// <para>
         /// A certificate cannot be deleted if it has a policy or IoT thing attached to it or
-        /// if its status is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a>
-        /// API to detach all policies. Next, use the <a>UpdateCertificate</a> API to set the
-        /// certificate to the INACTIVE status.
+        /// if its status is set to ACTIVE. To delete a certificate, first use the <a>DetachPolicy</a>
+        /// action to detach all policies. Next, use the <a>UpdateCertificate</a> action to set
+        /// the certificate to the INACTIVE status.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCertificate</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
@@ -4544,9 +5319,14 @@ namespace Amazon.IoT
         ///  
         /// <para>
         /// A certificate cannot be deleted if it has a policy or IoT thing attached to it or
-        /// if its status is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a>
-        /// API to detach all policies. Next, use the <a>UpdateCertificate</a> API to set the
-        /// certificate to the INACTIVE status.
+        /// if its status is set to ACTIVE. To delete a certificate, first use the <a>DetachPolicy</a>
+        /// action to detach all policies. Next, use the <a>UpdateCertificate</a> action to set
+        /// the certificate to the INACTIVE status.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCertificate</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCertificate service method.</param>
@@ -4588,17 +5368,21 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// <note> 
+        /// Deletes a Device Defender detect custom metric. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCustomMetric</a>
+        /// action.
+        /// </para>
+        ///  <note> 
         /// <para>
         /// Before you can delete a custom metric, you must first remove the custom metric from
         /// all security profiles it's a part of. The security profile associated with the custom
         /// metric can be found using the <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_ListSecurityProfiles.html">ListSecurityProfiles</a>
         /// API with <code>metricName</code> set to your custom metric name.
         /// </para>
-        ///  </note> 
-        /// <para>
-        ///  Deletes a Device Defender detect custom metric. 
-        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCustomMetric service method.</param>
         /// 
@@ -4618,17 +5402,21 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// <note> 
+        /// Deletes a Device Defender detect custom metric. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCustomMetric</a>
+        /// action.
+        /// </para>
+        ///  <note> 
         /// <para>
         /// Before you can delete a custom metric, you must first remove the custom metric from
         /// all security profiles it's a part of. The security profile associated with the custom
         /// metric can be found using the <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_ListSecurityProfiles.html">ListSecurityProfiles</a>
         /// API with <code>metricName</code> set to your custom metric name.
         /// </para>
-        ///  </note> 
-        /// <para>
-        ///  Deletes a Device Defender detect custom metric. 
-        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCustomMetric service method.</param>
         /// <param name="cancellationToken">
@@ -4654,7 +5442,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Removes the specified dimension from your AWS account.
+        /// Removes the specified dimension from your Amazon Web Services accounts.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteDimension</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDimension service method.</param>
         /// 
@@ -4674,7 +5468,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Removes the specified dimension from your AWS account.
+        /// Removes the specified dimension from your Amazon Web Services accounts.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteDimension</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDimension service method.</param>
         /// <param name="cancellationToken">
@@ -4701,6 +5501,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes the specified domain configuration.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteDomainConfiguration</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomainConfiguration service method.</param>
         /// 
@@ -4730,6 +5536,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes the specified domain configuration.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteDomainConfiguration</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomainConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -4765,6 +5577,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a dynamic thing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteDynamicThingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDynamicThingGroup service method.</param>
         /// 
@@ -4789,6 +5607,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a dynamic thing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteDynamicThingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDynamicThingGroup service method.</param>
         /// <param name="cancellationToken">
@@ -4814,6 +5638,86 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DeleteFleetMetric
+
+
+        /// <summary>
+        /// Deletes the specified fleet metric. Returns successfully with no error if the deletion
+        /// is successful or you specify a fleet metric that doesn't exist.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteFleetMetric</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFleetMetric service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFleetMetric service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.VersionConflictException">
+        /// An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+        /// parameter does not match the latest version in the system.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteFleetMetric">REST API Reference for DeleteFleetMetric Operation</seealso>
+        DeleteFleetMetricResponse DeleteFleetMetric(DeleteFleetMetricRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the specified fleet metric. Returns successfully with no error if the deletion
+        /// is successful or you specify a fleet metric that doesn't exist.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteFleetMetric</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFleetMetric service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteFleetMetric service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.VersionConflictException">
+        /// An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+        /// parameter does not match the latest version in the system.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteFleetMetric">REST API Reference for DeleteFleetMetric Operation</seealso>
+        Task<DeleteFleetMetricResponse> DeleteFleetMetricAsync(DeleteFleetMetricRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteJob
 
 
@@ -4831,6 +5735,11 @@ namespace Amazon.IoT
         /// <para>
         /// Only 10 jobs may have status "DELETION_IN_PROGRESS" at the same time, or a LimitExceededException
         /// will occur.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteJob</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteJob service method.</param>
@@ -4875,6 +5784,11 @@ namespace Amazon.IoT
         /// Only 10 jobs may have status "DELETION_IN_PROGRESS" at the same time, or a LimitExceededException
         /// will occur.
         /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteJob</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteJob service method.</param>
         /// <param name="cancellationToken">
@@ -4911,6 +5825,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a job execution.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteJobExecution</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteJobExecution service method.</param>
         /// 
@@ -4938,6 +5858,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a job execution.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteJobExecution</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteJobExecution service method.</param>
         /// <param name="cancellationToken">
@@ -5022,7 +5948,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Deletes a defined mitigation action from your AWS account.
+        /// Deletes a defined mitigation action from your Amazon Web Services accounts.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteMitigationAction</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMitigationAction service method.</param>
         /// 
@@ -5042,7 +5974,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Deletes a defined mitigation action from your AWS account.
+        /// Deletes a defined mitigation action from your Amazon Web Services accounts.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteMitigationAction</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMitigationAction service method.</param>
         /// <param name="cancellationToken">
@@ -5069,6 +6007,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Delete an OTA update.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteOTAUpdate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteOTAUpdate service method.</param>
         /// 
@@ -5102,6 +6046,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Delete an OTA update.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteOTAUpdate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteOTAUpdate service method.</param>
         /// <param name="cancellationToken">
@@ -5149,13 +6099,23 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// To delete a policy, use the DeletePolicyVersion API to delete all non-default versions
-        /// of the policy; use the DetachPrincipalPolicy API to detach the policy from any certificate;
-        /// and then use the DeletePolicy API to delete the policy.
+        /// To delete a policy, use the <a>DeletePolicyVersion</a> action to delete all non-default
+        /// versions of the policy; use the <a>DetachPolicy</a> action to detach the policy from
+        /// any certificate; and then use the DeletePolicy action to delete the policy.
         /// </para>
         ///  
         /// <para>
         /// When a policy is deleted using DeletePolicy, its default version is deleted with it.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Because of the distributed nature of Amazon Web Services, it can take up to five minutes
+        /// after a policy is detached before it's ready to be deleted.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeletePolicy</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="policyName">The name of the policy to delete.</param>
@@ -5195,13 +6155,23 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// To delete a policy, use the DeletePolicyVersion API to delete all non-default versions
-        /// of the policy; use the DetachPrincipalPolicy API to detach the policy from any certificate;
-        /// and then use the DeletePolicy API to delete the policy.
+        /// To delete a policy, use the <a>DeletePolicyVersion</a> action to delete all non-default
+        /// versions of the policy; use the <a>DetachPolicy</a> action to detach the policy from
+        /// any certificate; and then use the DeletePolicy action to delete the policy.
         /// </para>
         ///  
         /// <para>
         /// When a policy is deleted using DeletePolicy, its default version is deleted with it.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Because of the distributed nature of Amazon Web Services, it can take up to five minutes
+        /// after a policy is detached before it's ready to be deleted.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeletePolicy</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePolicy service method.</param>
@@ -5242,13 +6212,23 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// To delete a policy, use the DeletePolicyVersion API to delete all non-default versions
-        /// of the policy; use the DetachPrincipalPolicy API to detach the policy from any certificate;
-        /// and then use the DeletePolicy API to delete the policy.
+        /// To delete a policy, use the <a>DeletePolicyVersion</a> action to delete all non-default
+        /// versions of the policy; use the <a>DetachPolicy</a> action to detach the policy from
+        /// any certificate; and then use the DeletePolicy action to delete the policy.
         /// </para>
         ///  
         /// <para>
         /// When a policy is deleted using DeletePolicy, its default version is deleted with it.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Because of the distributed nature of Amazon Web Services, it can take up to five minutes
+        /// after a policy is detached before it's ready to be deleted.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeletePolicy</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="policyName">The name of the policy to delete.</param>
@@ -5292,13 +6272,23 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// To delete a policy, use the DeletePolicyVersion API to delete all non-default versions
-        /// of the policy; use the DetachPrincipalPolicy API to detach the policy from any certificate;
-        /// and then use the DeletePolicy API to delete the policy.
+        /// To delete a policy, use the <a>DeletePolicyVersion</a> action to delete all non-default
+        /// versions of the policy; use the <a>DetachPolicy</a> action to detach the policy from
+        /// any certificate; and then use the DeletePolicy action to delete the policy.
         /// </para>
         ///  
         /// <para>
         /// When a policy is deleted using DeletePolicy, its default version is deleted with it.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Because of the distributed nature of Amazon Web Services, it can take up to five minutes
+        /// after a policy is detached before it's ready to be deleted.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeletePolicy</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePolicy service method.</param>
@@ -5338,9 +6328,15 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes the specified version of the specified policy. You cannot delete the default
-        /// version of a policy using this API. To delete the default version of a policy, use
-        /// <a>DeletePolicy</a>. To find out which version of a policy is marked as the default
+        /// version of a policy using this action. To delete the default version of a policy,
+        /// use <a>DeletePolicy</a>. To find out which version of a policy is marked as the default
         /// version, use ListPolicyVersions.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeletePolicyVersion</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="policyName">The name of the policy.</param>
         /// <param name="policyVersionId">The policy version ID.</param>
@@ -5372,9 +6368,15 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes the specified version of the specified policy. You cannot delete the default
-        /// version of a policy using this API. To delete the default version of a policy, use
-        /// <a>DeletePolicy</a>. To find out which version of a policy is marked as the default
+        /// version of a policy using this action. To delete the default version of a policy,
+        /// use <a>DeletePolicy</a>. To find out which version of a policy is marked as the default
         /// version, use ListPolicyVersions.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeletePolicyVersion</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePolicyVersion service method.</param>
         /// 
@@ -5406,9 +6408,15 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes the specified version of the specified policy. You cannot delete the default
-        /// version of a policy using this API. To delete the default version of a policy, use
-        /// <a>DeletePolicy</a>. To find out which version of a policy is marked as the default
+        /// version of a policy using this action. To delete the default version of a policy,
+        /// use <a>DeletePolicy</a>. To find out which version of a policy is marked as the default
         /// version, use ListPolicyVersions.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeletePolicyVersion</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="policyName">The name of the policy.</param>
         /// <param name="policyVersionId">The policy version ID.</param>
@@ -5444,9 +6452,15 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes the specified version of the specified policy. You cannot delete the default
-        /// version of a policy using this API. To delete the default version of a policy, use
-        /// <a>DeletePolicy</a>. To find out which version of a policy is marked as the default
+        /// version of a policy using this action. To delete the default version of a policy,
+        /// use <a>DeletePolicy</a>. To find out which version of a policy is marked as the default
         /// version, use ListPolicyVersions.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeletePolicyVersion</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePolicyVersion service method.</param>
         /// <param name="cancellationToken">
@@ -5485,6 +6499,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a fleet provisioning template.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteProvisioningTemplate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProvisioningTemplate service method.</param>
         /// 
@@ -5518,6 +6538,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a fleet provisioning template.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteProvisioningTemplate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProvisioningTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -5557,6 +6583,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a fleet provisioning template version.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteProvisioningTemplateVersion</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProvisioningTemplateVersion service method.</param>
         /// 
@@ -5590,6 +6622,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a fleet provisioning template version.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteProvisioningTemplateVersion</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProvisioningTemplateVersion service method.</param>
         /// <param name="cancellationToken">
@@ -5629,6 +6667,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a CA certificate registration code.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteRegistrationCode</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRegistrationCode service method.</param>
         /// 
@@ -5655,6 +6699,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a CA certificate registration code.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteRegistrationCode</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRegistrationCode service method.</param>
         /// <param name="cancellationToken">
@@ -5687,6 +6737,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a role alias
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteRoleAlias</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRoleAlias service method.</param>
         /// 
@@ -5719,6 +6775,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a role alias
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteRoleAlias</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRoleAlias service method.</param>
         /// <param name="cancellationToken">
@@ -5757,6 +6819,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a scheduled audit.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteScheduledAudit</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteScheduledAudit service method.</param>
         /// 
@@ -5780,6 +6848,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a scheduled audit.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteScheduledAudit</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteScheduledAudit service method.</param>
         /// <param name="cancellationToken">
@@ -5809,6 +6883,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a Device Defender security profile.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteSecurityProfile</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityProfile service method.</param>
         /// 
@@ -5833,6 +6913,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a Device Defender security profile.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteSecurityProfile</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityProfile service method.</param>
         /// <param name="cancellationToken">
@@ -5863,6 +6949,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a stream.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteStream</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStream service method.</param>
         /// 
@@ -5895,6 +6987,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a stream.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteStream</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStream service method.</param>
         /// <param name="cancellationToken">
@@ -5934,6 +7032,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Deletes the specified thing. Returns successfully with no error if the deletion is
         /// successful or you specify a thing that doesn't exist.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThing</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="thingName">The name of the thing to delete.</param>
         /// 
@@ -5966,6 +7070,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Deletes the specified thing. Returns successfully with no error if the deletion is
         /// successful or you specify a thing that doesn't exist.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThing</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteThing service method.</param>
         /// 
@@ -5999,6 +7109,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Deletes the specified thing. Returns successfully with no error if the deletion is
         /// successful or you specify a thing that doesn't exist.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThing</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="thingName">The name of the thing to delete.</param>
         /// <param name="cancellationToken">
@@ -6035,6 +7151,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Deletes the specified thing. Returns successfully with no error if the deletion is
         /// successful or you specify a thing that doesn't exist.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThing</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteThing service method.</param>
         /// <param name="cancellationToken">
@@ -6074,6 +7196,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a thing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteThingGroup service method.</param>
         /// 
@@ -6098,6 +7226,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a thing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteThingGroup service method.</param>
         /// <param name="cancellationToken">
@@ -6132,6 +7266,12 @@ namespace Amazon.IoT
         /// <a>DeprecateThingType</a>, then remove any associated things by calling <a>UpdateThing</a>
         /// to change the thing type on any associated thing, and finally use <a>DeleteThingType</a>
         /// to delete the thing type.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThingType</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteThingType service method.</param>
         /// 
@@ -6165,6 +7305,12 @@ namespace Amazon.IoT
         /// <a>DeprecateThingType</a>, then remove any associated things by calling <a>UpdateThing</a>
         /// to change the thing type on any associated thing, and finally use <a>DeleteThingType</a>
         /// to delete the thing type.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThingType</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteThingType service method.</param>
         /// <param name="cancellationToken">
@@ -6200,6 +7346,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes the rule.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteTopicRule</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="ruleName">The name of the rule.</param>
         /// 
@@ -6225,6 +7377,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes the rule.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteTopicRule</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTopicRule service method.</param>
         /// 
@@ -6251,6 +7409,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes the rule.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteTopicRule</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="ruleName">The name of the rule.</param>
         /// <param name="cancellationToken">
@@ -6280,6 +7444,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes the rule.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteTopicRule</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTopicRule service method.</param>
         /// <param name="cancellationToken">
@@ -6313,6 +7483,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a topic rule destination.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteTopicRuleDestination</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTopicRuleDestination service method.</param>
         /// 
@@ -6340,6 +7516,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a topic rule destination.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteTopicRuleDestination</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTopicRuleDestination service method.</param>
         /// <param name="cancellationToken">
@@ -6373,6 +7555,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a logging level.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteV2LoggingLevel</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteV2LoggingLevel service method.</param>
         /// 
@@ -6393,6 +7581,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes a logging level.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteV2LoggingLevel</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteV2LoggingLevel service method.</param>
         /// <param name="cancellationToken">
@@ -6419,6 +7613,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deprecates a thing type. You can not associate new things with deprecated thing type.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeprecateThingType</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeprecateThingType service method.</param>
         /// 
@@ -6448,6 +7648,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deprecates a thing type. You can not associate new things with deprecated thing type.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeprecateThingType</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeprecateThingType service method.</param>
         /// <param name="cancellationToken">
@@ -6484,6 +7690,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Gets information about the Device Defender audit settings for this account. Settings
         /// include how audit notifications are sent and which audit checks are enabled or disabled.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeAccountAuditConfiguration</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAuditConfiguration service method.</param>
         /// 
@@ -6502,6 +7714,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Gets information about the Device Defender audit settings for this account. Settings
         /// include how audit notifications are sent and which audit checks are enabled or disabled.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeAccountAuditConfiguration</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAuditConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -6526,6 +7744,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Gets information about a single audit finding. Properties include the reason for noncompliance,
         /// the severity of the issue, and the start time when the audit that returned the finding.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeAuditFinding</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAuditFinding service method.</param>
         /// 
@@ -6550,6 +7774,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Gets information about a single audit finding. Properties include the reason for noncompliance,
         /// the severity of the issue, and the start time when the audit that returned the finding.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeAuditFinding</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAuditFinding service method.</param>
         /// <param name="cancellationToken">
@@ -6687,6 +7917,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about a Device Defender audit.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeAuditTask</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAuditTask service method.</param>
         /// 
@@ -6710,6 +7946,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about a Device Defender audit.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeAuditTask</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAuditTask service method.</param>
         /// <param name="cancellationToken">
@@ -6739,6 +7981,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Describes an authorizer.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeAuthorizer</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAuthorizer service method.</param>
         /// 
@@ -6768,6 +8016,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Describes an authorizer.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeAuthorizer</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAuthorizer service method.</param>
         /// <param name="cancellationToken">
@@ -6803,6 +8057,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Returns information about a billing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeBillingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeBillingGroup service method.</param>
         /// 
@@ -6826,6 +8086,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Returns information about a billing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeBillingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeBillingGroup service method.</param>
         /// <param name="cancellationToken">
@@ -6855,6 +8121,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Describes a registered CA certificate.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCACertificate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCACertificate service method.</param>
         /// 
@@ -6884,6 +8156,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Describes a registered CA certificate.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCACertificate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCACertificate service method.</param>
         /// <param name="cancellationToken">
@@ -6919,6 +8197,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about the specified certificate.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCertificate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
         /// 
@@ -6946,6 +8230,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about the specified certificate.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCertificate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCertificate service method.</param>
         /// 
@@ -6974,6 +8264,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about the specified certificate.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCertificate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
         /// <param name="cancellationToken">
@@ -7005,6 +8301,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about the specified certificate.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCertificate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCertificate service method.</param>
         /// <param name="cancellationToken">
@@ -7039,7 +8341,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Gets information about a Device Defender detect custom metric.
+        /// Gets information about a Device Defender detect custom metric. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCustomMetric</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCustomMetric service method.</param>
         /// 
@@ -7062,7 +8370,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Gets information about a Device Defender detect custom metric.
+        /// Gets information about a Device Defender detect custom metric. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCustomMetric</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCustomMetric service method.</param>
         /// <param name="cancellationToken">
@@ -7092,6 +8406,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Describes the default authorizer.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDefaultAuthorizer</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDefaultAuthorizer service method.</param>
         /// 
@@ -7121,6 +8441,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Describes the default authorizer.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDefaultAuthorizer</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDefaultAuthorizer service method.</param>
         /// <param name="cancellationToken">
@@ -7155,7 +8481,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Gets information about a Device Defender ML Detect mitigation action.
+        /// Gets information about a Device Defender ML Detect mitigation action. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDetectMitigationActionsTask</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDetectMitigationActionsTask service method.</param>
         /// 
@@ -7178,7 +8510,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Gets information about a Device Defender ML Detect mitigation action.
+        /// Gets information about a Device Defender ML Detect mitigation action. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDetectMitigationActionsTask</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDetectMitigationActionsTask service method.</param>
         /// <param name="cancellationToken">
@@ -7207,7 +8545,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Provides details about a dimension that is defined in your AWS account.
+        /// Provides details about a dimension that is defined in your Amazon Web Services accounts.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDimension</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDimension service method.</param>
         /// 
@@ -7230,7 +8574,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Provides details about a dimension that is defined in your AWS account.
+        /// Provides details about a dimension that is defined in your Amazon Web Services accounts.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDimension</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDimension service method.</param>
         /// <param name="cancellationToken">
@@ -7260,6 +8610,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets summary information about a domain configuration.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDomainConfiguration</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDomainConfiguration service method.</param>
         /// 
@@ -7289,6 +8645,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets summary information about a domain configuration.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDomainConfiguration</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDomainConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -7323,7 +8685,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Returns a unique endpoint specific to the AWS account making the call.
+        /// Returns a unique endpoint specific to the Amazon Web Services account making the call.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeEndpoint</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeEndpoint service method, as returned by IoT.</returns>
@@ -7343,7 +8711,13 @@ namespace Amazon.IoT
         DescribeEndpointResponse DescribeEndpoint();
 
         /// <summary>
-        /// Returns a unique endpoint specific to the AWS account making the call.
+        /// Returns a unique endpoint specific to the Amazon Web Services account making the call.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeEndpoint</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoint service method.</param>
         /// 
@@ -7365,7 +8739,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Returns a unique endpoint specific to the AWS account making the call.
+        /// Returns a unique endpoint specific to the Amazon Web Services account making the call.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeEndpoint</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -7389,7 +8769,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Returns a unique endpoint specific to the AWS account making the call.
+        /// Returns a unique endpoint specific to the Amazon Web Services account making the call.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeEndpoint</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoint service method.</param>
         /// <param name="cancellationToken">
@@ -7419,6 +8805,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Describes event configurations.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeEventConfigurations</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventConfigurations service method.</param>
         /// 
@@ -7436,6 +8828,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Describes event configurations.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeEventConfigurations</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventConfigurations service method.</param>
         /// <param name="cancellationToken">
@@ -7454,11 +8852,93 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DescribeFleetMetric
+
+
+        /// <summary>
+        /// Gets information about the specified fleet metric.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeFleetMetric</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetMetric service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFleetMetric service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeFleetMetric">REST API Reference for DescribeFleetMetric Operation</seealso>
+        DescribeFleetMetricResponse DescribeFleetMetric(DescribeFleetMetricRequest request);
+
+
+
+        /// <summary>
+        /// Gets information about the specified fleet metric.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeFleetMetric</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetMetric service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeFleetMetric service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeFleetMetric">REST API Reference for DescribeFleetMetric Operation</seealso>
+        Task<DescribeFleetMetricResponse> DescribeFleetMetricAsync(DescribeFleetMetricRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeIndex
 
 
         /// <summary>
         /// Describes a search index.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeIndex</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIndex service method.</param>
         /// 
@@ -7488,6 +8968,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Describes a search index.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeIndex</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIndex service method.</param>
         /// <param name="cancellationToken">
@@ -7523,6 +9009,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Describes a job.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeJob</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeJob service method.</param>
         /// 
@@ -7546,6 +9038,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Describes a job.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeJob</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeJob service method.</param>
         /// <param name="cancellationToken">
@@ -7575,6 +9073,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Describes a job execution.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeJobExecution</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeJobExecution service method.</param>
         /// 
@@ -7598,6 +9102,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Describes a job execution.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeJobExecution</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeJobExecution service method.</param>
         /// <param name="cancellationToken">
@@ -7679,6 +9189,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about a mitigation action.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeMitigationAction</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMitigationAction service method.</param>
         /// 
@@ -7702,6 +9218,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about a mitigation action.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeMitigationAction</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMitigationAction service method.</param>
         /// <param name="cancellationToken">
@@ -7731,6 +9253,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Returns information about a fleet provisioning template.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeProvisioningTemplate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProvisioningTemplate service method.</param>
         /// 
@@ -7757,6 +9285,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Returns information about a fleet provisioning template.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeProvisioningTemplate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProvisioningTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -7789,6 +9323,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Returns information about a fleet provisioning template version.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeProvisioningTemplateVersion</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProvisioningTemplateVersion service method.</param>
         /// 
@@ -7815,6 +9355,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Returns information about a fleet provisioning template version.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeProvisioningTemplateVersion</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProvisioningTemplateVersion service method.</param>
         /// <param name="cancellationToken">
@@ -7847,6 +9393,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Describes a role alias.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeRoleAlias</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRoleAlias service method.</param>
         /// 
@@ -7876,6 +9428,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Describes a role alias.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeRoleAlias</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRoleAlias service method.</param>
         /// <param name="cancellationToken">
@@ -7911,6 +9469,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about a scheduled audit.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeScheduledAudit</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledAudit service method.</param>
         /// 
@@ -7934,6 +9498,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about a scheduled audit.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeScheduledAudit</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledAudit service method.</param>
         /// <param name="cancellationToken">
@@ -7963,6 +9533,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about a Device Defender security profile.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeSecurityProfile</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityProfile service method.</param>
         /// 
@@ -7986,6 +9562,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about a Device Defender security profile.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeSecurityProfile</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityProfile service method.</param>
         /// <param name="cancellationToken">
@@ -8015,6 +9597,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about a stream.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeStream</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStream service method.</param>
         /// 
@@ -8044,6 +9632,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about a stream.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeStream</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStream service method.</param>
         /// <param name="cancellationToken">
@@ -8079,6 +9673,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about the specified thing.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThing</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="thingName">The name of the thing.</param>
         /// 
@@ -8106,6 +9706,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about the specified thing.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThing</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeThing service method.</param>
         /// 
@@ -8134,6 +9740,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about the specified thing.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThing</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="thingName">The name of the thing.</param>
         /// <param name="cancellationToken">
@@ -8165,6 +9777,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about the specified thing.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThing</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeThing service method.</param>
         /// <param name="cancellationToken">
@@ -8200,6 +9818,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Describe a thing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeThingGroup service method.</param>
         /// 
@@ -8223,6 +9847,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Describe a thing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeThingGroup service method.</param>
         /// <param name="cancellationToken">
@@ -8252,6 +9882,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Describes a bulk thing provisioning task.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThingRegistrationTask</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeThingRegistrationTask service method.</param>
         /// 
@@ -8278,6 +9914,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Describes a bulk thing provisioning task.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThingRegistrationTask</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeThingRegistrationTask service method.</param>
         /// <param name="cancellationToken">
@@ -8310,6 +9952,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about the specified thing type.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThingType</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeThingType service method.</param>
         /// 
@@ -8339,6 +9987,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about the specified thing type.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThingType</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeThingType service method.</param>
         /// <param name="cancellationToken">
@@ -8374,6 +10028,17 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Detaches a policy from the specified target.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Because of the distributed nature of Amazon Web Services, it can take up to five minutes
+        /// after a policy is detached before it's ready to be deleted.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachPolicy</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachPolicy service method.</param>
         /// 
@@ -8403,6 +10068,17 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Detaches a policy from the specified target.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Because of the distributed nature of Amazon Web Services, it can take up to five minutes
+        /// after a policy is detached before it's ready to be deleted.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachPolicy</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -8439,9 +10115,14 @@ namespace Amazon.IoT
         /// <summary>
         /// Removes the specified policy from the specified certificate.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        ///  <b>Note:</b> This API is deprecated. Please use <a>DetachPolicy</a> instead.
+        /// This action is deprecated. Please use <a>DetachPolicy</a> instead.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachPrincipalPolicy</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="policyName">The name of the policy to detach.</param>
@@ -8473,9 +10154,14 @@ namespace Amazon.IoT
         /// <summary>
         /// Removes the specified policy from the specified certificate.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        ///  <b>Note:</b> This API is deprecated. Please use <a>DetachPolicy</a> instead.
+        /// This action is deprecated. Please use <a>DetachPolicy</a> instead.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachPrincipalPolicy</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachPrincipalPolicy service method.</param>
@@ -8507,9 +10193,14 @@ namespace Amazon.IoT
         /// <summary>
         /// Removes the specified policy from the specified certificate.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        ///  <b>Note:</b> This API is deprecated. Please use <a>DetachPolicy</a> instead.
+        /// This action is deprecated. Please use <a>DetachPolicy</a> instead.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachPrincipalPolicy</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="policyName">The name of the policy to detach.</param>
@@ -8545,9 +10236,14 @@ namespace Amazon.IoT
         /// <summary>
         /// Removes the specified policy from the specified certificate.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        ///  <b>Note:</b> This API is deprecated. Please use <a>DetachPolicy</a> instead.
+        /// This action is deprecated. Please use <a>DetachPolicy</a> instead.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachPrincipalPolicy</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachPrincipalPolicy service method.</param>
@@ -8585,6 +10281,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Disassociates a Device Defender security profile from a thing group or from this account.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachSecurityProfile</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachSecurityProfile service method.</param>
         /// 
@@ -8608,6 +10310,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Disassociates a Device Defender security profile from a thing group or from this account.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachSecurityProfile</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachSecurityProfile service method.</param>
         /// <param name="cancellationToken">
@@ -8644,7 +10352,11 @@ namespace Amazon.IoT
         /// <para>
         /// This call is asynchronous. It might take several seconds for the detachment to propagate.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachThingPrincipal</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="thingName">The name of the thing.</param>
         /// <param name="principal">If the principal is a certificate, this value must be ARN of the certificate. If the principal is an Amazon Cognito identity, this value must be the ID of the Amazon Cognito identity.</param>
@@ -8680,7 +10392,11 @@ namespace Amazon.IoT
         /// <para>
         /// This call is asynchronous. It might take several seconds for the detachment to propagate.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachThingPrincipal</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachThingPrincipal service method.</param>
         /// 
@@ -8716,7 +10432,11 @@ namespace Amazon.IoT
         /// <para>
         /// This call is asynchronous. It might take several seconds for the detachment to propagate.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachThingPrincipal</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="thingName">The name of the thing.</param>
         /// <param name="principal">If the principal is a certificate, this value must be ARN of the certificate. If the principal is an Amazon Cognito identity, this value must be the ID of the Amazon Cognito identity.</param>
@@ -8756,7 +10476,11 @@ namespace Amazon.IoT
         /// <para>
         /// This call is asynchronous. It might take several seconds for the detachment to propagate.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachThingPrincipal</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachThingPrincipal service method.</param>
         /// <param name="cancellationToken">
@@ -8792,6 +10516,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Disables the rule.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DisableTopicRule</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableTopicRule service method.</param>
         /// 
@@ -8819,6 +10549,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Disables the rule.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DisableTopicRule</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableTopicRule service method.</param>
         /// <param name="cancellationToken">
@@ -8852,6 +10588,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Enables the rule.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">EnableTopicRule</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableTopicRule service method.</param>
         /// 
@@ -8879,6 +10621,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Enables the rule.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">EnableTopicRule</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableTopicRule service method.</param>
         /// <param name="cancellationToken">
@@ -8911,7 +10659,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Returns a Device Defender's ML Detect Security Profile training model's status.
+        /// Returns a Device Defender's ML Detect Security Profile training model's status. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetBehaviorModelTrainingSummaries</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBehaviorModelTrainingSummaries service method.</param>
         /// 
@@ -8934,7 +10688,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Returns a Device Defender's ML Detect Security Profile training model's status.
+        /// Returns a Device Defender's ML Detect Security Profile training model's status. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetBehaviorModelTrainingSummaries</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBehaviorModelTrainingSummaries service method.</param>
         /// <param name="cancellationToken">
@@ -8959,11 +10719,111 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  GetBucketsAggregation
+
+
+        /// <summary>
+        /// Aggregates on indexed data with search queries pertaining to particular fields. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetBucketsAggregation</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketsAggregation service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketsAggregation service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.IndexNotReadyException">
+        /// The index is not ready.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidAggregationException">
+        /// The aggregation is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidQueryException">
+        /// The query is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetBucketsAggregation">REST API Reference for GetBucketsAggregation Operation</seealso>
+        GetBucketsAggregationResponse GetBucketsAggregation(GetBucketsAggregationRequest request);
+
+
+
+        /// <summary>
+        /// Aggregates on indexed data with search queries pertaining to particular fields. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetBucketsAggregation</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketsAggregation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBucketsAggregation service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.IndexNotReadyException">
+        /// The index is not ready.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidAggregationException">
+        /// The aggregation is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidQueryException">
+        /// The query is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetBucketsAggregation">REST API Reference for GetBucketsAggregation Operation</seealso>
+        Task<GetBucketsAggregationResponse> GetBucketsAggregationAsync(GetBucketsAggregationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetCardinality
 
 
         /// <summary>
         /// Returns the approximate count of unique values that match the query.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetCardinality</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCardinality service method.</param>
         /// 
@@ -9002,6 +10862,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Returns the approximate count of unique values that match the query.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetCardinality</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCardinality service method.</param>
         /// <param name="cancellationToken">
@@ -9046,7 +10912,13 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets a list of the policies that have an effect on the authorization behavior of the
-        /// specified device when it connects to the AWS IoT device gateway.
+        /// specified device when it connects to the IoT device gateway.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetEffectivePolicies</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEffectivePolicies service method.</param>
         /// 
@@ -9079,7 +10951,13 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets a list of the policies that have an effect on the authorization behavior of the
-        /// specified device when it connects to the AWS IoT device gateway.
+        /// specified device when it connects to the IoT device gateway.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetEffectivePolicies</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEffectivePolicies service method.</param>
         /// <param name="cancellationToken">
@@ -9118,6 +10996,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets the indexing configuration.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetIndexingConfiguration</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIndexingConfiguration service method.</param>
         /// 
@@ -9144,6 +11028,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets the indexing configuration.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetIndexingConfiguration</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIndexingConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -9176,6 +11066,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets a job document.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetJobDocument</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJobDocument service method.</param>
         /// 
@@ -9199,6 +11095,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets a job document.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetJobDocument</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJobDocument service method.</param>
         /// <param name="cancellationToken">
@@ -9234,6 +11136,11 @@ namespace Amazon.IoT
         /// NOTE: use of this command is not recommended. Use <code>GetV2LoggingOptions</code>
         /// instead.
         /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetLoggingOptions</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLoggingOptions service method.</param>
         /// 
@@ -9259,6 +11166,11 @@ namespace Amazon.IoT
         /// <para>
         /// NOTE: use of this command is not recommended. Use <code>GetV2LoggingOptions</code>
         /// instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetLoggingOptions</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLoggingOptions service method.</param>
@@ -9286,6 +11198,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets an OTA update.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetOTAUpdate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOTAUpdate service method.</param>
         /// 
@@ -9315,6 +11233,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets an OTA update.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetOTAUpdate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOTAUpdate service method.</param>
         /// <param name="cancellationToken">
@@ -9358,6 +11282,12 @@ namespace Amazon.IoT
         /// that occurs in approximately five percent of the values that match the query, and
         /// so on. The result is an approximation, the more values that match the query, the more
         /// accurate the percentile values.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPercentiles</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPercentiles service method.</param>
         /// 
@@ -9404,6 +11334,12 @@ namespace Amazon.IoT
         /// that occurs in approximately five percent of the values that match the query, and
         /// so on. The result is an approximation, the more values that match the query, the more
         /// accurate the percentile values.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPercentiles</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPercentiles service method.</param>
         /// <param name="cancellationToken">
@@ -9449,6 +11385,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Gets information about the specified policy with the policy document of the default
         /// version.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPolicy</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="policyName">The name of the policy.</param>
         /// 
@@ -9477,6 +11419,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Gets information about the specified policy with the policy document of the default
         /// version.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPolicy</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPolicy service method.</param>
         /// 
@@ -9506,6 +11454,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Gets information about the specified policy with the policy document of the default
         /// version.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPolicy</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="policyName">The name of the policy.</param>
         /// <param name="cancellationToken">
@@ -9538,6 +11492,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Gets information about the specified policy with the policy document of the default
         /// version.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPolicy</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -9573,6 +11533,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about the specified policy version.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPolicyVersion</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="policyName">The name of the policy.</param>
         /// <param name="policyVersionId">The policy version ID.</param>
@@ -9601,6 +11567,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about the specified policy version.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPolicyVersion</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPolicyVersion service method.</param>
         /// 
@@ -9629,6 +11601,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about the specified policy version.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPolicyVersion</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="policyName">The name of the policy.</param>
         /// <param name="policyVersionId">The policy version ID.</param>
@@ -9661,6 +11639,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about the specified policy version.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPolicyVersion</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPolicyVersion service method.</param>
         /// <param name="cancellationToken">
@@ -9695,7 +11679,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Gets a registration code used to register a CA certificate with AWS IoT.
+        /// Gets a registration code used to register a CA certificate with IoT.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetRegistrationCode</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRegistrationCode service method.</param>
         /// 
@@ -9721,7 +11711,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Gets a registration code used to register a CA certificate with AWS IoT.
+        /// Gets a registration code used to register a CA certificate with IoT.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetRegistrationCode</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRegistrationCode service method.</param>
         /// <param name="cancellationToken">
@@ -9756,6 +11752,12 @@ namespace Amazon.IoT
         /// Returns the count, average, sum, minimum, maximum, sum of squares, variance, and standard
         /// deviation for the specified aggregated field. If the aggregation field is of type
         /// <code>String</code>, only the count statistic is returned.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetStatistics</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStatistics service method.</param>
         /// 
@@ -9796,6 +11798,12 @@ namespace Amazon.IoT
         /// Returns the count, average, sum, minimum, maximum, sum of squares, variance, and standard
         /// deviation for the specified aggregated field. If the aggregation field is of type
         /// <code>String</code>, only the count statistic is returned.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetStatistics</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStatistics service method.</param>
         /// <param name="cancellationToken">
@@ -9840,6 +11848,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about the rule.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetTopicRule</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="ruleName">The name of the rule.</param>
         /// 
@@ -9861,6 +11875,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about the rule.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetTopicRule</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTopicRule service method.</param>
         /// 
@@ -9883,6 +11903,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about the rule.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetTopicRule</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="ruleName">The name of the rule.</param>
         /// <param name="cancellationToken">
@@ -9908,6 +11934,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about the rule.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetTopicRule</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTopicRule service method.</param>
         /// <param name="cancellationToken">
@@ -9937,6 +11969,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about a topic rule destination.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetTopicRuleDestination</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTopicRuleDestination service method.</param>
         /// 
@@ -9960,6 +11998,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about a topic rule destination.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetTopicRuleDestination</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTopicRuleDestination service method.</param>
         /// <param name="cancellationToken">
@@ -9989,6 +12033,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets the fine grained logging options.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetV2LoggingOptions</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetV2LoggingOptions service method.</param>
         /// 
@@ -10009,6 +12059,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets the fine grained logging options.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetV2LoggingOptions</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetV2LoggingOptions service method.</param>
         /// <param name="cancellationToken">
@@ -10035,6 +12091,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the active violations for a given Device Defender security profile.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListActiveViolations</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListActiveViolations service method.</param>
         /// 
@@ -10058,6 +12120,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the active violations for a given Device Defender security profile.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListActiveViolations</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListActiveViolations service method.</param>
         /// <param name="cancellationToken">
@@ -10087,6 +12155,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the policies attached to the specified thing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAttachedPolicies</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAttachedPolicies service method.</param>
         /// 
@@ -10119,6 +12193,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the policies attached to the specified thing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAttachedPolicies</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAttachedPolicies service method.</param>
         /// <param name="cancellationToken">
@@ -10158,6 +12238,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Lists the findings (results) of a Device Defender audit or of the audits performed
         /// during a specified time period. (Findings are retained for 90 days.)
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditFindings</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAuditFindings service method.</param>
         /// 
@@ -10179,6 +12265,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Lists the findings (results) of a Device Defender audit or of the audits performed
         /// during a specified time period. (Findings are retained for 90 days.)
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditFindings</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAuditFindings service method.</param>
         /// <param name="cancellationToken">
@@ -10205,6 +12297,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets the status of audit mitigation action tasks that were executed.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditMitigationActionsExecutions</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAuditMitigationActionsExecutions service method.</param>
         /// 
@@ -10225,6 +12323,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets the status of audit mitigation action tasks that were executed.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditMitigationActionsExecutions</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAuditMitigationActionsExecutions service method.</param>
         /// <param name="cancellationToken">
@@ -10251,6 +12355,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets a list of audit mitigation action tasks that match the specified filters.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditMitigationActionsTasks</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAuditMitigationActionsTasks service method.</param>
         /// 
@@ -10271,6 +12381,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets a list of audit mitigation action tasks that match the specified filters.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditMitigationActionsTasks</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAuditMitigationActionsTasks service method.</param>
         /// <param name="cancellationToken">
@@ -10296,7 +12412,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists your Device Defender audit listings.
+        /// Lists your Device Defender audit listings. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditSuppressions</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAuditSuppressions service method.</param>
         /// 
@@ -10316,7 +12438,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists your Device Defender audit listings.
+        /// Lists your Device Defender audit listings. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditSuppressions</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAuditSuppressions service method.</param>
         /// <param name="cancellationToken">
@@ -10343,6 +12471,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the Device Defender audits that have been performed during a given time period.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditTasks</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAuditTasks service method.</param>
         /// 
@@ -10363,6 +12497,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the Device Defender audits that have been performed during a given time period.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditTasks</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAuditTasks service method.</param>
         /// <param name="cancellationToken">
@@ -10389,6 +12529,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the authorizers registered in your account.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuthorizers</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAuthorizers service method.</param>
         /// 
@@ -10415,6 +12561,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the authorizers registered in your account.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuthorizers</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAuthorizers service method.</param>
         /// <param name="cancellationToken">
@@ -10447,6 +12599,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the billing groups you have created.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListBillingGroups</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBillingGroups service method.</param>
         /// 
@@ -10470,6 +12628,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the billing groups you have created.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListBillingGroups</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBillingGroups service method.</param>
         /// <param name="cancellationToken">
@@ -10498,12 +12662,17 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists the CA certificates registered for your AWS account.
+        /// Lists the CA certificates registered for your Amazon Web Services account.
         /// 
         ///  
         /// <para>
         /// The results are paginated with a default page size of 25. You can use the returned
         /// marker to retrieve additional results.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCACertificates</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCACertificates service method.</param>
@@ -10530,12 +12699,17 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists the CA certificates registered for your AWS account.
+        /// Lists the CA certificates registered for your Amazon Web Services account.
         /// 
         ///  
         /// <para>
         /// The results are paginated with a default page size of 25. You can use the returned
         /// marker to retrieve additional results.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCACertificates</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCACertificates service method.</param>
@@ -10568,12 +12742,17 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists the certificates registered in your AWS account.
+        /// Lists the certificates registered in your Amazon Web Services account.
         /// 
         ///  
         /// <para>
         /// The results are paginated with a default page size of 25. You can use the returned
         /// marker to retrieve additional results.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCertificates</a>
+        /// action.
         /// </para>
         /// </summary>
         /// 
@@ -10597,12 +12776,17 @@ namespace Amazon.IoT
         ListCertificatesResponse ListCertificates();
 
         /// <summary>
-        /// Lists the certificates registered in your AWS account.
+        /// Lists the certificates registered in your Amazon Web Services account.
         /// 
         ///  
         /// <para>
         /// The results are paginated with a default page size of 25. You can use the returned
         /// marker to retrieve additional results.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCertificates</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCertificates service method.</param>
@@ -10628,12 +12812,17 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists the certificates registered in your AWS account.
+        /// Lists the certificates registered in your Amazon Web Services account.
         /// 
         ///  
         /// <para>
         /// The results are paginated with a default page size of 25. You can use the returned
         /// marker to retrieve additional results.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCertificates</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -10661,12 +12850,17 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists the certificates registered in your AWS account.
+        /// Lists the certificates registered in your Amazon Web Services account.
         /// 
         ///  
         /// <para>
         /// The results are paginated with a default page size of 25. You can use the returned
         /// marker to retrieve additional results.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCertificates</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCertificates service method.</param>
@@ -10700,6 +12894,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// List the device certificates signed by the specified CA certificate.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCertificatesByCA</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCertificatesByCA service method.</param>
         /// 
@@ -10726,6 +12926,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// List the device certificates signed by the specified CA certificate.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCertificatesByCA</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCertificatesByCA service method.</param>
         /// <param name="cancellationToken">
@@ -10757,7 +12963,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists your Device Defender detect custom metrics.
+        /// Lists your Device Defender detect custom metrics. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCustomMetrics</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCustomMetrics service method.</param>
         /// 
@@ -10777,7 +12989,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists your Device Defender detect custom metrics.
+        /// Lists your Device Defender detect custom metrics. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCustomMetrics</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCustomMetrics service method.</param>
         /// <param name="cancellationToken">
@@ -10804,6 +13022,13 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists mitigation actions executions for a Device Defender ML Detect Security Profile.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDetectMitigationActionsExecutions</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDetectMitigationActionsExecutions service method.</param>
         /// 
@@ -10824,6 +13049,13 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists mitigation actions executions for a Device Defender ML Detect Security Profile.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDetectMitigationActionsExecutions</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDetectMitigationActionsExecutions service method.</param>
         /// <param name="cancellationToken">
@@ -10849,7 +13081,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// List of Device Defender ML Detect mitigation actions tasks.
+        /// List of Device Defender ML Detect mitigation actions tasks. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDetectMitigationActionsTasks</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDetectMitigationActionsTasks service method.</param>
         /// 
@@ -10869,7 +13107,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// List of Device Defender ML Detect mitigation actions tasks.
+        /// List of Device Defender ML Detect mitigation actions tasks. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDetectMitigationActionsTasks</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDetectMitigationActionsTasks service method.</param>
         /// <param name="cancellationToken">
@@ -10895,7 +13139,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// List the set of dimensions that are defined for your AWS account.
+        /// List the set of dimensions that are defined for your Amazon Web Services accounts.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDimensions</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDimensions service method.</param>
         /// 
@@ -10915,7 +13165,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// List the set of dimensions that are defined for your AWS account.
+        /// List the set of dimensions that are defined for your Amazon Web Services accounts.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDimensions</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDimensions service method.</param>
         /// <param name="cancellationToken">
@@ -10943,6 +13199,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Gets a list of domain configurations for the user. This list is sorted alphabetically
         /// by domain configuration name.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDomainConfigurations</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDomainConfigurations service method.</param>
         /// 
@@ -10970,6 +13232,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Gets a list of domain configurations for the user. This list is sorted alphabetically
         /// by domain configuration name.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDomainConfigurations</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDomainConfigurations service method.</param>
         /// <param name="cancellationToken">
@@ -10997,11 +13265,87 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListFleetMetrics
+
+
+        /// <summary>
+        /// Lists all your fleet metrics. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListFleetMetrics</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFleetMetrics service method.</param>
+        /// 
+        /// <returns>The response from the ListFleetMetrics service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListFleetMetrics">REST API Reference for ListFleetMetrics Operation</seealso>
+        ListFleetMetricsResponse ListFleetMetrics(ListFleetMetricsRequest request);
+
+
+
+        /// <summary>
+        /// Lists all your fleet metrics. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListFleetMetrics</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFleetMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFleetMetrics service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListFleetMetrics">REST API Reference for ListFleetMetrics Operation</seealso>
+        Task<ListFleetMetricsResponse> ListFleetMetricsAsync(ListFleetMetricsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListIndices
 
 
         /// <summary>
         /// Lists the search indices.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListIndices</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIndices service method.</param>
         /// 
@@ -11028,6 +13372,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the search indices.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListIndices</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIndices service method.</param>
         /// <param name="cancellationToken">
@@ -11060,6 +13410,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the job executions for a job.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListJobExecutionsForJob</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobExecutionsForJob service method.</param>
         /// 
@@ -11083,6 +13439,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the job executions for a job.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListJobExecutionsForJob</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobExecutionsForJob service method.</param>
         /// <param name="cancellationToken">
@@ -11112,6 +13474,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the job executions for the specified thing.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListJobExecutionsForThing</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobExecutionsForThing service method.</param>
         /// 
@@ -11135,6 +13503,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the job executions for the specified thing.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListJobExecutionsForThing</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobExecutionsForThing service method.</param>
         /// <param name="cancellationToken">
@@ -11164,6 +13538,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists jobs.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListJobs</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// 
@@ -11187,6 +13567,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists jobs.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListJobs</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// <param name="cancellationToken">
@@ -11216,6 +13602,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Returns a list of job templates.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListJobTemplates</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobTemplates service method.</param>
         /// 
@@ -11236,6 +13628,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Returns a list of job templates.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListJobTemplates</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobTemplates service method.</param>
         /// <param name="cancellationToken">
@@ -11262,6 +13660,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets a list of all mitigation actions that match the specified filter criteria.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListMitigationActions</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMitigationActions service method.</param>
         /// 
@@ -11282,6 +13686,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets a list of all mitigation actions that match the specified filter criteria.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListMitigationActions</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMitigationActions service method.</param>
         /// <param name="cancellationToken">
@@ -11308,6 +13718,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists OTA updates.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListOTAUpdates</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOTAUpdates service method.</param>
         /// 
@@ -11334,6 +13750,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists OTA updates.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListOTAUpdates</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOTAUpdates service method.</param>
         /// <param name="cancellationToken">
@@ -11366,6 +13788,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists certificates that are being transferred but not yet accepted.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListOutgoingCertificates</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOutgoingCertificates service method.</param>
         /// 
@@ -11392,6 +13820,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists certificates that are being transferred but not yet accepted.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListOutgoingCertificates</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOutgoingCertificates service method.</param>
         /// <param name="cancellationToken">
@@ -11424,6 +13858,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists your policies.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPolicies</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the ListPolicies service method, as returned by IoT.</returns>
@@ -11447,6 +13887,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists your policies.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPolicies</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPolicies service method.</param>
         /// 
@@ -11472,6 +13918,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists your policies.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPolicies</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -11499,6 +13951,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists your policies.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPolicies</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPolicies service method.</param>
         /// <param name="cancellationToken">
@@ -11534,7 +13992,12 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> This API is deprecated. Please use <a>ListTargetsForPolicy</a> instead.
+        ///  <b>Note:</b> This action is deprecated. Please use <a>ListTargetsForPolicy</a> instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPolicyPrincipals</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPolicyPrincipals service method.</param>
@@ -11569,7 +14032,12 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> This API is deprecated. Please use <a>ListTargetsForPolicy</a> instead.
+        ///  <b>Note:</b> This action is deprecated. Please use <a>ListTargetsForPolicy</a> instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPolicyPrincipals</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPolicyPrincipals service method.</param>
@@ -11607,6 +14075,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the versions of the specified policy and identifies the default version.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPolicyVersions</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
         /// 
@@ -11634,6 +14108,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the versions of the specified policy and identifies the default version.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPolicyVersions</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPolicyVersions service method.</param>
         /// 
@@ -11662,6 +14142,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the versions of the specified policy and identifies the default version.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPolicyVersions</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
         /// <param name="cancellationToken">
@@ -11693,6 +14179,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the versions of the specified policy and identifies the default version.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPolicyVersions</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPolicyVersions service method.</param>
         /// <param name="cancellationToken">
@@ -11733,7 +14225,12 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> This API is deprecated. Please use <a>ListAttachedPolicies</a> instead.
+        ///  <b>Note:</b> This action is deprecated. Please use <a>ListAttachedPolicies</a> instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPrincipalPolicies</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="principal">The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</param>
@@ -11768,7 +14265,12 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> This API is deprecated. Please use <a>ListAttachedPolicies</a> instead.
+        ///  <b>Note:</b> This action is deprecated. Please use <a>ListAttachedPolicies</a> instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPrincipalPolicies</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPrincipalPolicies service method.</param>
@@ -11804,7 +14306,12 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> This API is deprecated. Please use <a>ListAttachedPolicies</a> instead.
+        ///  <b>Note:</b> This action is deprecated. Please use <a>ListAttachedPolicies</a> instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPrincipalPolicies</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="principal">The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</param>
@@ -11843,7 +14350,12 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> This API is deprecated. Please use <a>ListAttachedPolicies</a> instead.
+        ///  <b>Note:</b> This action is deprecated. Please use <a>ListAttachedPolicies</a> instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPrincipalPolicies</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPrincipalPolicies service method.</param>
@@ -11882,7 +14394,13 @@ namespace Amazon.IoT
         /// <summary>
         /// Lists the things associated with the specified principal. A principal can be X.509
         /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
-        /// identities.
+        /// identities. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPrincipalThings</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="principal">The principal.</param>
         /// 
@@ -11911,7 +14429,13 @@ namespace Amazon.IoT
         /// <summary>
         /// Lists the things associated with the specified principal. A principal can be X.509
         /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
-        /// identities.
+        /// identities. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPrincipalThings</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPrincipalThings service method.</param>
         /// 
@@ -11941,7 +14465,13 @@ namespace Amazon.IoT
         /// <summary>
         /// Lists the things associated with the specified principal. A principal can be X.509
         /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
-        /// identities.
+        /// identities. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPrincipalThings</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="principal">The principal.</param>
         /// <param name="cancellationToken">
@@ -11974,7 +14504,13 @@ namespace Amazon.IoT
         /// <summary>
         /// Lists the things associated with the specified principal. A principal can be X.509
         /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
-        /// identities.
+        /// identities. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPrincipalThings</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPrincipalThings service method.</param>
         /// <param name="cancellationToken">
@@ -12009,7 +14545,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists the fleet provisioning templates in your AWS account.
+        /// Lists the fleet provisioning templates in your Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListProvisioningTemplates</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProvisioningTemplates service method.</param>
         /// 
@@ -12032,7 +14574,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists the fleet provisioning templates in your AWS account.
+        /// Lists the fleet provisioning templates in your Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListProvisioningTemplates</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProvisioningTemplates service method.</param>
         /// <param name="cancellationToken">
@@ -12062,6 +14610,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// A list of fleet provisioning template versions.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListProvisioningTemplateVersions</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProvisioningTemplateVersions service method.</param>
         /// 
@@ -12088,6 +14642,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// A list of fleet provisioning template versions.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListProvisioningTemplateVersions</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProvisioningTemplateVersions service method.</param>
         /// <param name="cancellationToken">
@@ -12120,6 +14680,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the role aliases registered in your account.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListRoleAliases</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRoleAliases service method.</param>
         /// 
@@ -12146,6 +14712,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the role aliases registered in your account.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListRoleAliases</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRoleAliases service method.</param>
         /// <param name="cancellationToken">
@@ -12178,6 +14750,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists all of your scheduled audits.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListScheduledAudits</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListScheduledAudits service method.</param>
         /// 
@@ -12198,6 +14776,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists all of your scheduled audits.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListScheduledAudits</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListScheduledAudits service method.</param>
         /// <param name="cancellationToken">
@@ -12226,6 +14810,11 @@ namespace Amazon.IoT
         /// Lists the Device Defender security profiles you've created. You can filter security
         /// profiles by dimension or custom metric.
         /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSecurityProfiles</a>
+        /// action.
+        /// </para>
         ///  <note> 
         /// <para>
         ///  <code>dimensionName</code> and <code>metricName</code> cannot be used in the same
@@ -12257,6 +14846,11 @@ namespace Amazon.IoT
         /// Lists the Device Defender security profiles you've created. You can filter security
         /// profiles by dimension or custom metric.
         /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSecurityProfiles</a>
+        /// action.
+        /// </para>
         ///  <note> 
         /// <para>
         ///  <code>dimensionName</code> and <code>metricName</code> cannot be used in the same
@@ -12292,6 +14886,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the Device Defender security profiles attached to a target (thing group).
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSecurityProfilesForTarget</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfilesForTarget service method.</param>
         /// 
@@ -12315,6 +14915,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the Device Defender security profiles attached to a target (thing group).
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSecurityProfilesForTarget</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfilesForTarget service method.</param>
         /// <param name="cancellationToken">
@@ -12343,7 +14949,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists all of the streams in your AWS account.
+        /// Lists all of the streams in your Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListStreams</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStreams service method.</param>
         /// 
@@ -12369,7 +14981,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists all of the streams in your AWS account.
+        /// Lists all of the streams in your Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListStreams</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStreams service method.</param>
         /// <param name="cancellationToken">
@@ -12402,6 +15020,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the tags (metadata) you have assigned to the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTagsForResource</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -12425,6 +15049,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the tags (metadata) you have assigned to the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTagsForResource</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -12454,6 +15084,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// List targets for the specified policy.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTargetsForPolicy</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTargetsForPolicy service method.</param>
         /// 
@@ -12486,6 +15122,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// List targets for the specified policy.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTargetsForPolicy</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTargetsForPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -12525,6 +15167,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Lists the targets (thing groups) associated with a given Device Defender security
         /// profile.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTargetsForSecurityProfile</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTargetsForSecurityProfile service method.</param>
         /// 
@@ -12549,6 +15197,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Lists the targets (thing groups) associated with a given Device Defender security
         /// profile.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTargetsForSecurityProfile</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTargetsForSecurityProfile service method.</param>
         /// <param name="cancellationToken">
@@ -12578,6 +15232,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// List the thing groups in your account.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingGroups</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThingGroups service method.</param>
         /// 
@@ -12601,6 +15261,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// List the thing groups in your account.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingGroups</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThingGroups service method.</param>
         /// <param name="cancellationToken">
@@ -12630,6 +15296,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// List the thing groups to which the specified thing belongs.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingGroupsForThing</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThingGroupsForThing service method.</param>
         /// 
@@ -12653,6 +15325,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// List the thing groups to which the specified thing belongs.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingGroupsForThing</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThingGroupsForThing service method.</param>
         /// <param name="cancellationToken">
@@ -12684,6 +15362,12 @@ namespace Amazon.IoT
         /// Lists the principals associated with the specified thing. A principal can be X.509
         /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
         /// identities.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingPrincipals</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="thingName">The name of the thing.</param>
         /// 
@@ -12713,6 +15397,12 @@ namespace Amazon.IoT
         /// Lists the principals associated with the specified thing. A principal can be X.509
         /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
         /// identities.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingPrincipals</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThingPrincipals service method.</param>
         /// 
@@ -12743,6 +15433,12 @@ namespace Amazon.IoT
         /// Lists the principals associated with the specified thing. A principal can be X.509
         /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
         /// identities.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingPrincipals</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="thingName">The name of the thing.</param>
         /// <param name="cancellationToken">
@@ -12776,6 +15472,12 @@ namespace Amazon.IoT
         /// Lists the principals associated with the specified thing. A principal can be X.509
         /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
         /// identities.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingPrincipals</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThingPrincipals service method.</param>
         /// <param name="cancellationToken">
@@ -12863,6 +15565,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// List bulk thing provisioning tasks.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingRegistrationTasks</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThingRegistrationTasks service method.</param>
         /// 
@@ -12886,6 +15594,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// List bulk thing provisioning tasks.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingRegistrationTasks</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThingRegistrationTasks service method.</param>
         /// <param name="cancellationToken">
@@ -12919,6 +15633,11 @@ namespace Amazon.IoT
         /// and attributeValue=Red retrieves all things in the registry that contain an attribute
         /// <b>Color</b> with the value <b>Red</b>. 
         /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThings</a>
+        /// action.
+        /// </para>
         ///  <note> 
         /// <para>
         /// You will not be charged for calling this API if an <code>Access denied</code> error
@@ -12953,6 +15672,11 @@ namespace Amazon.IoT
         /// and attributeValue=Red retrieves all things in the registry that contain an attribute
         /// <b>Color</b> with the value <b>Red</b>. 
         /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThings</a>
+        /// action.
+        /// </para>
         ///  <note> 
         /// <para>
         /// You will not be charged for calling this API if an <code>Access denied</code> error
@@ -12989,6 +15713,11 @@ namespace Amazon.IoT
         /// and attributeValue=Red retrieves all things in the registry that contain an attribute
         /// <b>Color</b> with the value <b>Red</b>. 
         /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThings</a>
+        /// action.
+        /// </para>
         ///  <note> 
         /// <para>
         /// You will not be charged for calling this API if an <code>Access denied</code> error
@@ -13027,6 +15756,11 @@ namespace Amazon.IoT
         /// and attributeValue=Red retrieves all things in the registry that contain an attribute
         /// <b>Color</b> with the value <b>Red</b>. 
         /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThings</a>
+        /// action.
+        /// </para>
         ///  <note> 
         /// <para>
         /// You will not be charged for calling this API if an <code>Access denied</code> error
@@ -13066,6 +15800,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the things you have added to the given billing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingsInBillingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThingsInBillingGroup service method.</param>
         /// 
@@ -13089,6 +15829,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the things you have added to the given billing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingsInBillingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThingsInBillingGroup service method.</param>
         /// <param name="cancellationToken">
@@ -13118,6 +15864,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the things in the specified group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingsInThingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThingsInThingGroup service method.</param>
         /// 
@@ -13141,6 +15893,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the things in the specified group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingsInThingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThingsInThingGroup service method.</param>
         /// <param name="cancellationToken">
@@ -13170,6 +15928,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the existing thing types.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingTypes</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThingTypes service method.</param>
         /// 
@@ -13196,6 +15960,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the existing thing types.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingTypes</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThingTypes service method.</param>
         /// <param name="cancellationToken">
@@ -13227,7 +15997,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists all the topic rule destinations in your AWS account.
+        /// Lists all the topic rule destinations in your Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTopicRuleDestinations</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTopicRuleDestinations service method.</param>
         /// 
@@ -13250,7 +16026,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists all the topic rule destinations in your AWS account.
+        /// Lists all the topic rule destinations in your Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTopicRuleDestinations</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTopicRuleDestinations service method.</param>
         /// <param name="cancellationToken">
@@ -13280,6 +16062,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the rules for the specific topic.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTopicRules</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="topic">The topic.</param>
         /// 
@@ -13298,6 +16086,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the rules for the specific topic.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTopicRules</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTopicRules service method.</param>
         /// 
@@ -13317,6 +16111,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the rules for the specific topic.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTopicRules</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="topic">The topic.</param>
         /// <param name="cancellationToken">
@@ -13339,6 +16139,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the rules for the specific topic.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTopicRules</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTopicRules service method.</param>
         /// <param name="cancellationToken">
@@ -13365,6 +16171,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists logging levels.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListV2LoggingLevels</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListV2LoggingLevels service method.</param>
         /// 
@@ -13388,6 +16200,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists logging levels.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListV2LoggingLevels</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListV2LoggingLevels service method.</param>
         /// <param name="cancellationToken">
@@ -13419,6 +16237,12 @@ namespace Amazon.IoT
         /// Lists the Device Defender security profile violations discovered during the given
         /// time period. You can use filters to limit the results to those alerts issued for a
         /// particular security profile, behavior, or thing (device).
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListViolationEvents</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListViolationEvents service method.</param>
         /// 
@@ -13441,6 +16265,12 @@ namespace Amazon.IoT
         /// Lists the Device Defender security profile violations discovered during the given
         /// time period. You can use filters to limit the results to those alerts issued for a
         /// particular security profile, behavior, or thing (device).
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListViolationEvents</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListViolationEvents service method.</param>
         /// <param name="cancellationToken">
@@ -13466,12 +16296,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Registers a CA certificate with AWS IoT. This CA certificate can then be used to sign
-        /// device certificates, which can be then registered with AWS IoT. You can register up
-        /// to 10 CA certificates per AWS account that have the same subject field. This enables
-        /// you to have up to 10 certificate authorities sign your device certificates. If you
-        /// have more than one CA certificate registered, make sure you pass the CA certificate
-        /// when you register your device certificates with the RegisterCertificate API.
+        /// Registers a CA certificate with IoT. This CA certificate can then be used to sign
+        /// device certificates, which can be then registered with IoT. You can register up to
+        /// 10 CA certificates per Amazon Web Services account that have the same subject field.
+        /// This enables you to have up to 10 certificate authorities sign your device certificates.
+        /// If you have more than one CA certificate registered, make sure you pass the CA certificate
+        /// when you register your device certificates with the <a>RegisterCertificate</a> action.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RegisterCACertificate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterCACertificate service method.</param>
         /// 
@@ -13509,12 +16345,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Registers a CA certificate with AWS IoT. This CA certificate can then be used to sign
-        /// device certificates, which can be then registered with AWS IoT. You can register up
-        /// to 10 CA certificates per AWS account that have the same subject field. This enables
-        /// you to have up to 10 certificate authorities sign your device certificates. If you
-        /// have more than one CA certificate registered, make sure you pass the CA certificate
-        /// when you register your device certificates with the RegisterCertificate API.
+        /// Registers a CA certificate with IoT. This CA certificate can then be used to sign
+        /// device certificates, which can be then registered with IoT. You can register up to
+        /// 10 CA certificates per Amazon Web Services account that have the same subject field.
+        /// This enables you to have up to 10 certificate authorities sign your device certificates.
+        /// If you have more than one CA certificate registered, make sure you pass the CA certificate
+        /// when you register your device certificates with the <a>RegisterCertificate</a> action.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RegisterCACertificate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterCACertificate service method.</param>
         /// <param name="cancellationToken">
@@ -13558,9 +16400,15 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Registers a device certificate with AWS IoT. If you have more than one CA certificate
+        /// Registers a device certificate with IoT. If you have more than one CA certificate
         /// that has the same subject field, you must specify the CA certificate that was used
         /// to sign the device certificate being registered.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RegisterCertificate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterCertificate service method.</param>
         /// 
@@ -13600,9 +16448,15 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Registers a device certificate with AWS IoT. If you have more than one CA certificate
+        /// Registers a device certificate with IoT. If you have more than one CA certificate
         /// that has the same subject field, you must specify the CA certificate that was used
         /// to sign the device certificate being registered.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RegisterCertificate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterCertificate service method.</param>
         /// <param name="cancellationToken">
@@ -13724,10 +16578,16 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Provisions a thing in the device registry. RegisterThing calls other AWS IoT control
-        /// plane APIs. These calls might exceed your account level <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot">
-        /// AWS IoT Throttling Limits</a> and cause throttle errors. Please contact <a href="https://console.aws.amazon.com/support/home">AWS
-        /// Customer Support</a> to raise your throttling limits if necessary.
+        /// Provisions a thing in the device registry. RegisterThing calls other IoT control plane
+        /// APIs. These calls might exceed your account level <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot">
+        /// IoT Throttling Limits</a> and cause throttle errors. Please contact <a href="https://console.aws.amazon.com/support/home">Amazon
+        /// Web Services Customer Support</a> to raise your throttling limits if necessary.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RegisterThing</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterThing service method.</param>
         /// 
@@ -13760,10 +16620,16 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Provisions a thing in the device registry. RegisterThing calls other AWS IoT control
-        /// plane APIs. These calls might exceed your account level <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot">
-        /// AWS IoT Throttling Limits</a> and cause throttle errors. Please contact <a href="https://console.aws.amazon.com/support/home">AWS
-        /// Customer Support</a> to raise your throttling limits if necessary.
+        /// Provisions a thing in the device registry. RegisterThing calls other IoT control plane
+        /// APIs. These calls might exceed your account level <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot">
+        /// IoT Throttling Limits</a> and cause throttle errors. Please contact <a href="https://console.aws.amazon.com/support/home">Amazon
+        /// Web Services Customer Support</a> to raise your throttling limits if necessary.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RegisterThing</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterThing service method.</param>
         /// <param name="cancellationToken">
@@ -13802,7 +16668,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Rejects a pending certificate transfer. After AWS IoT rejects a certificate transfer,
+        /// Rejects a pending certificate transfer. After IoT rejects a certificate transfer,
         /// the certificate status changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.
         /// 
         ///  
@@ -13814,6 +16680,11 @@ namespace Amazon.IoT
         /// <para>
         /// This operation can only be called by the transfer destination. After it is called,
         /// the certificate will be returned to the source's account in the INACTIVE state.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RejectCertificateTransfer</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
@@ -13844,7 +16715,7 @@ namespace Amazon.IoT
         RejectCertificateTransferResponse RejectCertificateTransfer(string certificateId);
 
         /// <summary>
-        /// Rejects a pending certificate transfer. After AWS IoT rejects a certificate transfer,
+        /// Rejects a pending certificate transfer. After IoT rejects a certificate transfer,
         /// the certificate status changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.
         /// 
         ///  
@@ -13856,6 +16727,11 @@ namespace Amazon.IoT
         /// <para>
         /// This operation can only be called by the transfer destination. After it is called,
         /// the certificate will be returned to the source's account in the INACTIVE state.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RejectCertificateTransfer</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectCertificateTransfer service method.</param>
@@ -13887,7 +16763,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Rejects a pending certificate transfer. After AWS IoT rejects a certificate transfer,
+        /// Rejects a pending certificate transfer. After IoT rejects a certificate transfer,
         /// the certificate status changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.
         /// 
         ///  
@@ -13899,6 +16775,11 @@ namespace Amazon.IoT
         /// <para>
         /// This operation can only be called by the transfer destination. After it is called,
         /// the certificate will be returned to the source's account in the INACTIVE state.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RejectCertificateTransfer</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
@@ -13933,7 +16814,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Rejects a pending certificate transfer. After AWS IoT rejects a certificate transfer,
+        /// Rejects a pending certificate transfer. After IoT rejects a certificate transfer,
         /// the certificate status changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.
         /// 
         ///  
@@ -13945,6 +16826,11 @@ namespace Amazon.IoT
         /// <para>
         /// This operation can only be called by the transfer destination. After it is called,
         /// the certificate will be returned to the source's account in the INACTIVE state.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RejectCertificateTransfer</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectCertificateTransfer service method.</param>
@@ -13984,6 +16870,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Removes the given thing from the billing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RemoveThingFromBillingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveThingFromBillingGroup service method.</param>
         /// 
@@ -14007,6 +16899,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Removes the given thing from the billing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RemoveThingFromBillingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveThingFromBillingGroup service method.</param>
         /// <param name="cancellationToken">
@@ -14043,6 +16941,11 @@ namespace Amazon.IoT
         /// to identify the thing group and either a <code>thingArn</code> or a <code>thingName</code>
         /// to identify the thing to remove from the thing group. 
         /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RemoveThingFromThingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveThingFromThingGroup service method.</param>
         /// 
@@ -14072,6 +16975,11 @@ namespace Amazon.IoT
         /// You must specify either a <code>thingGroupArn</code> or a <code>thingGroupName</code>
         /// to identify the thing group and either a <code>thingArn</code> or a <code>thingName</code>
         /// to identify the thing to remove from the thing group. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RemoveThingFromThingGroup</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveThingFromThingGroup service method.</param>
@@ -14104,6 +17012,12 @@ namespace Amazon.IoT
         /// Replaces the rule. You must specify all parameters for the new rule. Creating rules
         /// is an administrator-level action. Any user who has permission to create rules will
         /// be able to access data processed by the rule.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ReplaceTopicRule</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReplaceTopicRule service method.</param>
         /// 
@@ -14136,6 +17050,12 @@ namespace Amazon.IoT
         /// Replaces the rule. You must specify all parameters for the new rule. Creating rules
         /// is an administrator-level action. Any user who has permission to create rules will
         /// be able to access data processed by the rule.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ReplaceTopicRule</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReplaceTopicRule service method.</param>
         /// <param name="cancellationToken">
@@ -14172,6 +17092,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// The query search index.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SearchIndex</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchIndex service method.</param>
         /// 
@@ -14207,6 +17133,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// The query search index.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SearchIndex</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchIndex service method.</param>
         /// <param name="cancellationToken">
@@ -14249,6 +17181,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Sets the default authorizer. This will be used if a websocket connection is made without
         /// specifying an authorizer.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetDefaultAuthorizer</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetDefaultAuthorizer service method.</param>
         /// 
@@ -14282,6 +17220,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Sets the default authorizer. This will be used if a websocket connection is made without
         /// specifying an authorizer.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetDefaultAuthorizer</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetDefaultAuthorizer service method.</param>
         /// <param name="cancellationToken">
@@ -14321,7 +17265,14 @@ namespace Amazon.IoT
         /// <summary>
         /// Sets the specified version of the specified policy as the policy's default (operative)
         /// version. This action affects all certificates to which the policy is attached. To
-        /// list the principals the policy is attached to, use the ListPrincipalPolicy API.
+        /// list the principals the policy is attached to, use the <a>ListPrincipalPolicies</a>
+        /// action.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetDefaultPolicyVersion</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
         /// <param name="policyVersionId">The policy version ID.</param>
@@ -14351,7 +17302,14 @@ namespace Amazon.IoT
         /// <summary>
         /// Sets the specified version of the specified policy as the policy's default (operative)
         /// version. This action affects all certificates to which the policy is attached. To
-        /// list the principals the policy is attached to, use the ListPrincipalPolicy API.
+        /// list the principals the policy is attached to, use the <a>ListPrincipalPolicies</a>
+        /// action.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetDefaultPolicyVersion</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetDefaultPolicyVersion service method.</param>
         /// 
@@ -14381,7 +17339,14 @@ namespace Amazon.IoT
         /// <summary>
         /// Sets the specified version of the specified policy as the policy's default (operative)
         /// version. This action affects all certificates to which the policy is attached. To
-        /// list the principals the policy is attached to, use the ListPrincipalPolicy API.
+        /// list the principals the policy is attached to, use the <a>ListPrincipalPolicies</a>
+        /// action.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetDefaultPolicyVersion</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
         /// <param name="policyVersionId">The policy version ID.</param>
@@ -14415,7 +17380,14 @@ namespace Amazon.IoT
         /// <summary>
         /// Sets the specified version of the specified policy as the policy's default (operative)
         /// version. This action affects all certificates to which the policy is attached. To
-        /// list the principals the policy is attached to, use the ListPrincipalPolicy API.
+        /// list the principals the policy is attached to, use the <a>ListPrincipalPolicies</a>
+        /// action.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetDefaultPolicyVersion</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetDefaultPolicyVersion service method.</param>
         /// <param name="cancellationToken">
@@ -14457,6 +17429,11 @@ namespace Amazon.IoT
         /// NOTE: use of this command is not recommended. Use <code>SetV2LoggingOptions</code>
         /// instead.
         /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetLoggingOptions</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetLoggingOptions service method.</param>
         /// 
@@ -14482,6 +17459,11 @@ namespace Amazon.IoT
         /// <para>
         /// NOTE: use of this command is not recommended. Use <code>SetV2LoggingOptions</code>
         /// instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetLoggingOptions</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetLoggingOptions service method.</param>
@@ -14509,6 +17491,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Sets the logging level.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetV2LoggingLevel</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetV2LoggingLevel service method.</param>
         /// 
@@ -14535,6 +17523,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Sets the logging level.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetV2LoggingLevel</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetV2LoggingLevel service method.</param>
         /// <param name="cancellationToken">
@@ -14567,6 +17561,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Sets the logging options for the V2 logging service.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetV2LoggingOptions</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetV2LoggingOptions service method.</param>
         /// 
@@ -14587,6 +17587,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Sets the logging options for the V2 logging service.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetV2LoggingOptions</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetV2LoggingOptions service method.</param>
         /// <param name="cancellationToken">
@@ -14613,6 +17619,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Starts a task that applies a set of mitigation actions to the specified target.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartAuditMitigationActionsTask</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartAuditMitigationActionsTask service method.</param>
         /// 
@@ -14640,6 +17652,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Starts a task that applies a set of mitigation actions to the specified target.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartAuditMitigationActionsTask</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartAuditMitigationActionsTask service method.</param>
         /// <param name="cancellationToken">
@@ -14672,7 +17690,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Starts a Device Defender ML Detect mitigation actions task.
+        /// Starts a Device Defender ML Detect mitigation actions task. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartDetectMitigationActionsTask</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDetectMitigationActionsTask service method.</param>
         /// 
@@ -14699,7 +17723,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Starts a Device Defender ML Detect mitigation actions task.
+        /// Starts a Device Defender ML Detect mitigation actions task. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartDetectMitigationActionsTask</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDetectMitigationActionsTask service method.</param>
         /// <param name="cancellationToken">
@@ -14733,6 +17763,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Starts an on-demand Device Defender audit.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartOnDemandAuditTask</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartOnDemandAuditTask service method.</param>
         /// 
@@ -14756,6 +17792,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Starts an on-demand Device Defender audit.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartOnDemandAuditTask</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartOnDemandAuditTask service method.</param>
         /// <param name="cancellationToken">
@@ -14785,6 +17827,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a bulk thing provisioning task.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartThingRegistrationTask</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartThingRegistrationTask service method.</param>
         /// 
@@ -14808,6 +17856,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a bulk thing provisioning task.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartThingRegistrationTask</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartThingRegistrationTask service method.</param>
         /// <param name="cancellationToken">
@@ -14837,6 +17891,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Cancels a bulk thing provisioning task.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StopThingRegistrationTask</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopThingRegistrationTask service method.</param>
         /// 
@@ -14863,6 +17923,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Cancels a bulk thing provisioning task.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StopThingRegistrationTask</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopThingRegistrationTask service method.</param>
         /// <param name="cancellationToken">
@@ -14896,6 +17962,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Adds to or modifies the tags of the given resource. Tags are metadata which can be
         /// used to manage a resource.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TagResource</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -14923,6 +17995,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Adds to or modifies the tags of the given resource. Tags are metadata which can be
         /// used to manage a resource.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TagResource</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -14954,9 +18032,15 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Tests if a specified principal is authorized to perform an AWS IoT action on a specified
+        /// Tests if a specified principal is authorized to perform an IoT action on a specified
         /// resource. Use this to test and debug the authorization behavior of devices that connect
-        /// to the AWS IoT device gateway.
+        /// to the IoT device gateway.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TestAuthorization</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestAuthorization service method.</param>
         /// 
@@ -14988,9 +18072,15 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Tests if a specified principal is authorized to perform an AWS IoT action on a specified
+        /// Tests if a specified principal is authorized to perform an IoT action on a specified
         /// resource. Use this to test and debug the authorization behavior of devices that connect
-        /// to the AWS IoT device gateway.
+        /// to the IoT device gateway.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TestAuthorization</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestAuthorization service method.</param>
         /// <param name="cancellationToken">
@@ -15030,7 +18120,13 @@ namespace Amazon.IoT
         /// <summary>
         /// Tests a custom authorization behavior by invoking a specified custom authorizer. Use
         /// this to test and debug the custom authorization behavior of devices that connect to
-        /// the AWS IoT device gateway.
+        /// the IoT device gateway.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TestInvokeAuthorizer</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestInvokeAuthorizer service method.</param>
         /// 
@@ -15064,7 +18160,13 @@ namespace Amazon.IoT
         /// <summary>
         /// Tests a custom authorization behavior by invoking a specified custom authorizer. Use
         /// this to test and debug the custom authorization behavior of devices that connect to
-        /// the AWS IoT device gateway.
+        /// the IoT device gateway.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TestInvokeAuthorizer</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestInvokeAuthorizer service method.</param>
         /// <param name="cancellationToken">
@@ -15102,8 +18204,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Transfers the specified certificate to the specified AWS account.
+        /// Transfers the specified certificate to the specified Amazon Web Services account.
         /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TransferCertificate</a>
+        /// action.
+        /// </para>
         ///  
         /// <para>
         /// You can cancel the transfer until it is acknowledged by the recipient.
@@ -15116,16 +18223,16 @@ namespace Amazon.IoT
         ///  
         /// <para>
         /// The certificate being transferred must not be in the ACTIVE state. You can use the
-        /// UpdateCertificate API to deactivate it.
+        /// <a>UpdateCertificate</a> action to deactivate it.
         /// </para>
         ///  
         /// <para>
-        /// The certificate must not have any policies attached to it. You can use the DetachPrincipalPolicy
-        /// API to detach them.
+        /// The certificate must not have any policies attached to it. You can use the <a>DetachPolicy</a>
+        /// action to detach them.
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
-        /// <param name="targetAwsAccount">The AWS account.</param>
+        /// <param name="targetAwsAccount">The Amazon Web Services account.</param>
         /// 
         /// <returns>The response from the TransferCertificate service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.CertificateStateException">
@@ -15156,8 +18263,13 @@ namespace Amazon.IoT
         TransferCertificateResponse TransferCertificate(string certificateId, string targetAwsAccount);
 
         /// <summary>
-        /// Transfers the specified certificate to the specified AWS account.
+        /// Transfers the specified certificate to the specified Amazon Web Services account.
         /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TransferCertificate</a>
+        /// action.
+        /// </para>
         ///  
         /// <para>
         /// You can cancel the transfer until it is acknowledged by the recipient.
@@ -15170,12 +18282,12 @@ namespace Amazon.IoT
         ///  
         /// <para>
         /// The certificate being transferred must not be in the ACTIVE state. You can use the
-        /// UpdateCertificate API to deactivate it.
+        /// <a>UpdateCertificate</a> action to deactivate it.
         /// </para>
         ///  
         /// <para>
-        /// The certificate must not have any policies attached to it. You can use the DetachPrincipalPolicy
-        /// API to detach them.
+        /// The certificate must not have any policies attached to it. You can use the <a>DetachPolicy</a>
+        /// action to detach them.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TransferCertificate service method.</param>
@@ -15210,8 +18322,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Transfers the specified certificate to the specified AWS account.
+        /// Transfers the specified certificate to the specified Amazon Web Services account.
         /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TransferCertificate</a>
+        /// action.
+        /// </para>
         ///  
         /// <para>
         /// You can cancel the transfer until it is acknowledged by the recipient.
@@ -15224,16 +18341,16 @@ namespace Amazon.IoT
         ///  
         /// <para>
         /// The certificate being transferred must not be in the ACTIVE state. You can use the
-        /// UpdateCertificate API to deactivate it.
+        /// <a>UpdateCertificate</a> action to deactivate it.
         /// </para>
         ///  
         /// <para>
-        /// The certificate must not have any policies attached to it. You can use the DetachPrincipalPolicy
-        /// API to detach them.
+        /// The certificate must not have any policies attached to it. You can use the <a>DetachPolicy</a>
+        /// action to detach them.
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
-        /// <param name="targetAwsAccount">The AWS account.</param>
+        /// <param name="targetAwsAccount">The Amazon Web Services account.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -15268,8 +18385,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Transfers the specified certificate to the specified AWS account.
+        /// Transfers the specified certificate to the specified Amazon Web Services account.
         /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TransferCertificate</a>
+        /// action.
+        /// </para>
         ///  
         /// <para>
         /// You can cancel the transfer until it is acknowledged by the recipient.
@@ -15282,12 +18404,12 @@ namespace Amazon.IoT
         ///  
         /// <para>
         /// The certificate being transferred must not be in the ACTIVE state. You can use the
-        /// UpdateCertificate API to deactivate it.
+        /// <a>UpdateCertificate</a> action to deactivate it.
         /// </para>
         ///  
         /// <para>
-        /// The certificate must not have any policies attached to it. You can use the DetachPrincipalPolicy
-        /// API to detach them.
+        /// The certificate must not have any policies attached to it. You can use the <a>DetachPolicy</a>
+        /// action to detach them.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TransferCertificate service method.</param>
@@ -15330,6 +18452,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Removes the given tags (metadata) from the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UntagResource</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -15353,6 +18481,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Removes the given tags (metadata) from the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UntagResource</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -15383,6 +18517,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Configures or reconfigures the Device Defender audit settings for this account. Settings
         /// include how audit notifications are sent and which audit checks are enabled or disabled.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateAccountAuditConfiguration</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccountAuditConfiguration service method.</param>
         /// 
@@ -15404,6 +18544,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Configures or reconfigures the Device Defender audit settings for this account. Settings
         /// include how audit notifications are sent and which audit checks are enabled or disabled.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateAccountAuditConfiguration</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccountAuditConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -15482,6 +18628,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates an authorizer.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateAuthorizer</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAuthorizer service method.</param>
         /// 
@@ -15514,6 +18666,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates an authorizer.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateAuthorizer</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAuthorizer service method.</param>
         /// <param name="cancellationToken">
@@ -15552,6 +18710,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates information about the billing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateBillingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBillingGroup service method.</param>
         /// 
@@ -15579,6 +18743,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates information about the billing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateBillingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBillingGroup service method.</param>
         /// <param name="cancellationToken">
@@ -15612,6 +18782,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates a registered CA certificate.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCACertificate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCACertificate service method.</param>
         /// 
@@ -15641,6 +18817,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates a registered CA certificate.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCACertificate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCACertificate service method.</param>
         /// <param name="cancellationToken">
@@ -15679,18 +18861,23 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCertificate</a>
+        /// action.
+        /// </para>
+        ///  
+        /// <para>
         /// Certificates must be in the ACTIVE state to authenticate devices that use a certificate
-        /// to connect to AWS IoT.
+        /// to connect to IoT.
         /// </para>
         ///  
         /// <para>
         /// Within a few minutes of updating a certificate from the ACTIVE state to any other
-        /// state, AWS IoT disconnects all devices that used that certificate to connect. Devices
+        /// state, IoT disconnects all devices that used that certificate to connect. Devices
         /// cannot use a certificate that is not in the ACTIVE state to reconnect.
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
-        /// <param name="newStatus">The new status.  <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by AWS IoT. They are not intended for developer use.  <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</param>
+        /// <param name="newStatus">The new status.  <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.  <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</param>
         /// 
         /// <returns>The response from the UpdateCertificate service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.CertificateStateException">
@@ -15722,13 +18909,18 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCertificate</a>
+        /// action.
+        /// </para>
+        ///  
+        /// <para>
         /// Certificates must be in the ACTIVE state to authenticate devices that use a certificate
-        /// to connect to AWS IoT.
+        /// to connect to IoT.
         /// </para>
         ///  
         /// <para>
         /// Within a few minutes of updating a certificate from the ACTIVE state to any other
-        /// state, AWS IoT disconnects all devices that used that certificate to connect. Devices
+        /// state, IoT disconnects all devices that used that certificate to connect. Devices
         /// cannot use a certificate that is not in the ACTIVE state to reconnect.
         /// </para>
         /// </summary>
@@ -15765,18 +18957,23 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCertificate</a>
+        /// action.
+        /// </para>
+        ///  
+        /// <para>
         /// Certificates must be in the ACTIVE state to authenticate devices that use a certificate
-        /// to connect to AWS IoT.
+        /// to connect to IoT.
         /// </para>
         ///  
         /// <para>
         /// Within a few minutes of updating a certificate from the ACTIVE state to any other
-        /// state, AWS IoT disconnects all devices that used that certificate to connect. Devices
+        /// state, IoT disconnects all devices that used that certificate to connect. Devices
         /// cannot use a certificate that is not in the ACTIVE state to reconnect.
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
-        /// <param name="newStatus">The new status.  <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by AWS IoT. They are not intended for developer use.  <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</param>
+        /// <param name="newStatus">The new status.  <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.  <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -15812,13 +19009,18 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCertificate</a>
+        /// action.
+        /// </para>
+        ///  
+        /// <para>
         /// Certificates must be in the ACTIVE state to authenticate devices that use a certificate
-        /// to connect to AWS IoT.
+        /// to connect to IoT.
         /// </para>
         ///  
         /// <para>
         /// Within a few minutes of updating a certificate from the ACTIVE state to any other
-        /// state, AWS IoT disconnects all devices that used that certificate to connect. Devices
+        /// state, IoT disconnects all devices that used that certificate to connect. Devices
         /// cannot use a certificate that is not in the ACTIVE state to reconnect.
         /// </para>
         /// </summary>
@@ -15858,7 +19060,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Updates a Device Defender detect custom metric.
+        /// Updates a Device Defender detect custom metric. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCustomMetric</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCustomMetric service method.</param>
         /// 
@@ -15881,7 +19089,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Updates a Device Defender detect custom metric.
+        /// Updates a Device Defender detect custom metric. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCustomMetric</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCustomMetric service method.</param>
         /// <param name="cancellationToken">
@@ -15912,6 +19126,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Updates the definition for a dimension. You cannot change the type of a dimension
         /// after it is created (you can delete it and recreate it).
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateDimension</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDimension service method.</param>
         /// 
@@ -15936,6 +19156,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Updates the definition for a dimension. You cannot change the type of a dimension
         /// after it is created (you can delete it and recreate it).
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateDimension</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDimension service method.</param>
         /// <param name="cancellationToken">
@@ -15966,6 +19192,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Updates values stored in the domain configuration. Domain configurations for default
         /// endpoints can't be updated.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateDomainConfiguration</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomainConfiguration service method.</param>
         /// 
@@ -15999,6 +19231,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Updates values stored in the domain configuration. Domain configurations for default
         /// endpoints can't be updated.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateDomainConfiguration</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomainConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -16037,6 +19275,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates a dynamic thing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateDynamicThingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDynamicThingGroup service method.</param>
         /// 
@@ -16067,6 +19311,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates a dynamic thing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateDynamicThingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDynamicThingGroup service method.</param>
         /// <param name="cancellationToken">
@@ -16103,6 +19353,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates the event configurations.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateEventConfigurations</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEventConfigurations service method.</param>
         /// 
@@ -16123,6 +19379,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates the event configurations.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateEventConfigurations</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEventConfigurations service method.</param>
         /// <param name="cancellationToken">
@@ -16144,11 +19406,119 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  UpdateFleetMetric
+
+
+        /// <summary>
+        /// Updates the data for a fleet metric.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateFleetMetric</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFleetMetric service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFleetMetric service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.IndexNotReadyException">
+        /// The index is not ready.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidAggregationException">
+        /// The aggregation is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidQueryException">
+        /// The query is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.VersionConflictException">
+        /// An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+        /// parameter does not match the latest version in the system.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateFleetMetric">REST API Reference for UpdateFleetMetric Operation</seealso>
+        UpdateFleetMetricResponse UpdateFleetMetric(UpdateFleetMetricRequest request);
+
+
+
+        /// <summary>
+        /// Updates the data for a fleet metric.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateFleetMetric</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFleetMetric service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateFleetMetric service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.IndexNotReadyException">
+        /// The index is not ready.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidAggregationException">
+        /// The aggregation is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidQueryException">
+        /// The query is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.VersionConflictException">
+        /// An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+        /// parameter does not match the latest version in the system.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateFleetMetric">REST API Reference for UpdateFleetMetric Operation</seealso>
+        Task<UpdateFleetMetricResponse> UpdateFleetMetricAsync(UpdateFleetMetricRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateIndexingConfiguration
 
 
         /// <summary>
         /// Updates the search configuration.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateIndexingConfiguration</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIndexingConfiguration service method.</param>
         /// 
@@ -16175,6 +19545,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates the search configuration.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateIndexingConfiguration</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIndexingConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -16207,6 +19583,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates supported fields of the specified job.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateJob</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateJob service method.</param>
         /// 
@@ -16230,6 +19612,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates supported fields of the specified job.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateJob</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateJob service method.</param>
         /// <param name="cancellationToken">
@@ -16259,6 +19647,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates the definition for the specified mitigation action.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateMitigationAction</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMitigationAction service method.</param>
         /// 
@@ -16282,6 +19676,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates the definition for the specified mitigation action.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateMitigationAction</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMitigationAction service method.</param>
         /// <param name="cancellationToken">
@@ -16311,6 +19711,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates a fleet provisioning template.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateProvisioningTemplate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProvisioningTemplate service method.</param>
         /// 
@@ -16338,6 +19744,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates a fleet provisioning template.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateProvisioningTemplate</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProvisioningTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -16371,6 +19783,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates a role alias.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateRoleAlias</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRoleAlias service method.</param>
         /// 
@@ -16400,6 +19818,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates a role alias.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateRoleAlias</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRoleAlias service method.</param>
         /// <param name="cancellationToken">
@@ -16436,6 +19860,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Updates a scheduled audit, including which checks are performed and how often the
         /// audit takes place.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateScheduledAudit</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateScheduledAudit service method.</param>
         /// 
@@ -16460,6 +19890,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Updates a scheduled audit, including which checks are performed and how often the
         /// audit takes place.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateScheduledAudit</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateScheduledAudit service method.</param>
         /// <param name="cancellationToken">
@@ -16489,6 +19925,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates a Device Defender security profile.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateSecurityProfile</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSecurityProfile service method.</param>
         /// 
@@ -16516,6 +19958,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates a Device Defender security profile.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateSecurityProfile</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSecurityProfile service method.</param>
         /// <param name="cancellationToken">
@@ -16549,6 +19997,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates an existing stream. The stream version will be incremented by one.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateStream</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStream service method.</param>
         /// 
@@ -16578,6 +20032,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates an existing stream. The stream version will be incremented by one.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateStream</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStream service method.</param>
         /// <param name="cancellationToken">
@@ -16613,6 +20073,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates the data for a thing.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateThing</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateThing service method.</param>
         /// 
@@ -16646,6 +20112,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates the data for a thing.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateThing</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateThing service method.</param>
         /// <param name="cancellationToken">
@@ -16685,6 +20157,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Update a thing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateThingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateThingGroup service method.</param>
         /// 
@@ -16712,6 +20190,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Update a thing group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateThingGroup</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateThingGroup service method.</param>
         /// <param name="cancellationToken">
@@ -16745,6 +20229,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates the groups to which the thing belongs.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateThingGroupsForThing</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateThingGroupsForThing service method.</param>
         /// 
@@ -16768,6 +20258,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates the groups to which the thing belongs.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateThingGroupsForThing</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateThingGroupsForThing service method.</param>
         /// <param name="cancellationToken">
@@ -16798,6 +20294,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Updates a topic rule destination. You use this to change the status, endpoint URL,
         /// or confirmation URL of the destination.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateTopicRuleDestination</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTopicRuleDestination service method.</param>
         /// 
@@ -16826,6 +20328,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Updates a topic rule destination. You use this to change the status, endpoint URL,
         /// or confirmation URL of the destination.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateTopicRuleDestination</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTopicRuleDestination service method.</param>
         /// <param name="cancellationToken">
@@ -16859,6 +20367,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Validates a Device Defender security profile behaviors specification.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ValidateSecurityProfileBehaviors</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ValidateSecurityProfileBehaviors service method.</param>
         /// 
@@ -16879,6 +20393,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Validates a Device Defender security profile behaviors specification.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ValidateSecurityProfileBehaviors</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ValidateSecurityProfileBehaviors service method.</param>
         /// <param name="cancellationToken">

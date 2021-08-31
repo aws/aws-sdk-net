@@ -31,9 +31,15 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the CreateDimension operation.
     /// Create a dimension that you can use to limit the scope of a metric used in a security
-    /// profile for AWS IoT Device Defender. For example, using a <code>TOPIC_FILTER</code>
-    /// dimension, you can narrow down the scope of the metric only to MQTT topics whose name
-    /// match the pattern specified in the dimension.
+    /// profile for IoT Device Defender. For example, using a <code>TOPIC_FILTER</code> dimension,
+    /// you can narrow down the scope of the metric only to MQTT topics whose name match the
+    /// pattern specified in the dimension.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateDimension</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class CreateDimensionRequest : AmazonIoTRequest
     {
@@ -48,7 +54,8 @@ namespace Amazon.IoT.Model
         /// <para>
         /// Each dimension must have a unique client request token. If you try to create a new
         /// dimension with the same token as a dimension that already exists, an exception occurs.
-        /// If you omit this value, AWS SDKs will automatically generate a unique client request.
+        /// If you omit this value, Amazon Web Services SDKs will automatically generate a unique
+        /// client request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

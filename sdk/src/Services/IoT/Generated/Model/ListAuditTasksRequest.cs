@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the ListAuditTasks operation.
     /// Lists the Device Defender audits that have been performed during a given time period.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditTasks</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class ListAuditTasksRequest : AmazonIoTRequest
     {

@@ -30,7 +30,13 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the StartDetectMitigationActionsTask operation.
-    /// Starts a Device Defender ML Detect mitigation actions task.
+    /// Starts a Device Defender ML Detect mitigation actions task. 
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartDetectMitigationActionsTask</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class StartDetectMitigationActionsTaskRequest : AmazonIoTRequest
     {
@@ -66,8 +72,8 @@ namespace Amazon.IoT.Model
         /// <para>
         ///  Each mitigation action task must have a unique client request token. If you try to
         /// create a new task with the same token as a task that already exists, an exception
-        /// occurs. If you omit this value, AWS SDKs will automatically generate a unique client
-        /// request. 
+        /// occurs. If you omit this value, Amazon Web Services SDKs will automatically generate
+        /// a unique client request. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

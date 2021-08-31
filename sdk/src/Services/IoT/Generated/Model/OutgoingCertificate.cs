@@ -135,7 +135,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property TransferredTo. 
         /// <para>
-        /// The AWS account to which the transfer was made.
+        /// The Amazon Web Services account to which the transfer was made.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

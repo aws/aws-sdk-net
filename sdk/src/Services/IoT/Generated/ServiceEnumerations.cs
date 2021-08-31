@@ -129,6 +129,60 @@ namespace Amazon.IoT
 
 
     /// <summary>
+    /// Constants used for properties of type AggregationTypeName.
+    /// </summary>
+    public class AggregationTypeName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Cardinality for AggregationTypeName
+        /// </summary>
+        public static readonly AggregationTypeName Cardinality = new AggregationTypeName("Cardinality");
+        /// <summary>
+        /// Constant Percentiles for AggregationTypeName
+        /// </summary>
+        public static readonly AggregationTypeName Percentiles = new AggregationTypeName("Percentiles");
+        /// <summary>
+        /// Constant Statistics for AggregationTypeName
+        /// </summary>
+        public static readonly AggregationTypeName Statistics = new AggregationTypeName("Statistics");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AggregationTypeName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AggregationTypeName FindValue(string value)
+        {
+            return FindValue<AggregationTypeName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AggregationTypeName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AlertTargetType.
     /// </summary>
     public class AlertTargetType : ConstantClass
@@ -2096,6 +2150,156 @@ namespace Amazon.IoT
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FieldType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FleetMetricUnit.
+    /// </summary>
+    public class FleetMetricUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Bits for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit Bits = new FleetMetricUnit("Bits");
+        /// <summary>
+        /// Constant BitsSecond for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit BitsSecond = new FleetMetricUnit("Bits/Second");
+        /// <summary>
+        /// Constant Bytes for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit Bytes = new FleetMetricUnit("Bytes");
+        /// <summary>
+        /// Constant BytesSecond for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit BytesSecond = new FleetMetricUnit("Bytes/Second");
+        /// <summary>
+        /// Constant Count for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit Count = new FleetMetricUnit("Count");
+        /// <summary>
+        /// Constant CountSecond for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit CountSecond = new FleetMetricUnit("Count/Second");
+        /// <summary>
+        /// Constant Gigabits for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit Gigabits = new FleetMetricUnit("Gigabits");
+        /// <summary>
+        /// Constant GigabitsSecond for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit GigabitsSecond = new FleetMetricUnit("Gigabits/Second");
+        /// <summary>
+        /// Constant Gigabytes for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit Gigabytes = new FleetMetricUnit("Gigabytes");
+        /// <summary>
+        /// Constant GigabytesSecond for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit GigabytesSecond = new FleetMetricUnit("Gigabytes/Second");
+        /// <summary>
+        /// Constant Kilobits for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit Kilobits = new FleetMetricUnit("Kilobits");
+        /// <summary>
+        /// Constant KilobitsSecond for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit KilobitsSecond = new FleetMetricUnit("Kilobits/Second");
+        /// <summary>
+        /// Constant Kilobytes for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit Kilobytes = new FleetMetricUnit("Kilobytes");
+        /// <summary>
+        /// Constant KilobytesSecond for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit KilobytesSecond = new FleetMetricUnit("Kilobytes/Second");
+        /// <summary>
+        /// Constant Megabits for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit Megabits = new FleetMetricUnit("Megabits");
+        /// <summary>
+        /// Constant MegabitsSecond for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit MegabitsSecond = new FleetMetricUnit("Megabits/Second");
+        /// <summary>
+        /// Constant Megabytes for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit Megabytes = new FleetMetricUnit("Megabytes");
+        /// <summary>
+        /// Constant MegabytesSecond for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit MegabytesSecond = new FleetMetricUnit("Megabytes/Second");
+        /// <summary>
+        /// Constant Microseconds for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit Microseconds = new FleetMetricUnit("Microseconds");
+        /// <summary>
+        /// Constant Milliseconds for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit Milliseconds = new FleetMetricUnit("Milliseconds");
+        /// <summary>
+        /// Constant None for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit None = new FleetMetricUnit("None");
+        /// <summary>
+        /// Constant Percent for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit Percent = new FleetMetricUnit("Percent");
+        /// <summary>
+        /// Constant Seconds for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit Seconds = new FleetMetricUnit("Seconds");
+        /// <summary>
+        /// Constant Terabits for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit Terabits = new FleetMetricUnit("Terabits");
+        /// <summary>
+        /// Constant TerabitsSecond for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit TerabitsSecond = new FleetMetricUnit("Terabits/Second");
+        /// <summary>
+        /// Constant Terabytes for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit Terabytes = new FleetMetricUnit("Terabytes");
+        /// <summary>
+        /// Constant TerabytesSecond for FleetMetricUnit
+        /// </summary>
+        public static readonly FleetMetricUnit TerabytesSecond = new FleetMetricUnit("Terabytes/Second");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetMetricUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetMetricUnit FindValue(string value)
+        {
+            return FindValue<FleetMetricUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetMetricUnit(string value)
         {
             return FindValue(value);
         }

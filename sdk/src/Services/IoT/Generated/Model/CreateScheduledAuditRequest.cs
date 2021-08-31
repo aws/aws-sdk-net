@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the CreateScheduledAudit operation.
     /// Creates a scheduled audit that is run at a specified time interval.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateScheduledAudit</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class CreateScheduledAuditRequest : AmazonIoTRequest
     {

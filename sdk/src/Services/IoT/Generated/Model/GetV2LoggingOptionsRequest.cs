@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the GetV2LoggingOptions operation.
     /// Gets the fine grained logging options.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetV2LoggingOptions</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class GetV2LoggingOptionsRequest : AmazonIoTRequest
     {

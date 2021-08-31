@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Describes an action to send data from an MQTT message that triggered the rule to AWS
-    /// IoT SiteWise asset properties.
+    /// Describes an action to send data from an MQTT message that triggered the rule to IoT
+    /// SiteWise asset properties.
     /// </summary>
     public partial class IotSiteWiseAction
     {
@@ -59,9 +59,9 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the role that grants AWS IoT permission to send an asset property value
-        /// to AWS IoTSiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>).
-        /// The trust policy can restrict access to specific asset hierarchy paths.
+        /// The ARN of the role that grants IoT permission to send an asset property value to
+        /// IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The
+        /// trust policy can restrict access to specific asset hierarchy paths.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

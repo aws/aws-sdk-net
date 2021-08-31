@@ -30,7 +30,13 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEndpoint operation.
-    /// Returns a unique endpoint specific to the AWS account making the call.
+    /// Returns a unique endpoint specific to the Amazon Web Services account making the call.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeEndpoint</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class DescribeEndpointRequest : AmazonIoTRequest
     {
@@ -51,12 +57,11 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  </li> </ul> <ul> <li> 
         /// <para>
-        ///  <code>iot:CredentialProvider</code> - Returns an AWS IoT credentials provider API
-        /// endpoint.
+        ///  <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API endpoint.
         /// </para>
         ///  </li> </ul> <ul> <li> 
         /// <para>
-        ///  <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API endpoint.
+        ///  <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.
         /// </para>
         ///  </li> </ul> 
         /// <para>

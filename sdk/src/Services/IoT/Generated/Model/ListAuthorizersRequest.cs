@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the ListAuthorizers operation.
     /// Lists the authorizers registered in your account.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuthorizers</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class ListAuthorizersRequest : AmazonIoTRequest
     {

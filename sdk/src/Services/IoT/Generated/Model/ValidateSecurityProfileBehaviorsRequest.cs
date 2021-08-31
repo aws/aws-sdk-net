@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the ValidateSecurityProfileBehaviors operation.
     /// Validates a Device Defender security profile behaviors specification.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ValidateSecurityProfileBehaviors</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class ValidateSecurityProfileBehaviorsRequest : AmazonIoTRequest
     {

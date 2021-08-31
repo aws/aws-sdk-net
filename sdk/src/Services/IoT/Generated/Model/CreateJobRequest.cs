@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the CreateJob operation.
     /// Creates a job.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateJob</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class CreateJobRequest : AmazonIoTRequest
     {
@@ -164,8 +170,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// A job identifier which must be unique for your AWS account. We recommend using a UUID.
-        /// Alpha-numeric characters, "-" and "_" are valid for use here.
+        /// A job identifier which must be unique for your Amazon Web Services account. We recommend
+        /// using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -207,8 +213,8 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        /// When you specify a value for this parameter, AWS IoT Core sends jobs notifications
-        /// to MQTT topics that contain the value in the following format.
+        /// When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs
+        /// notifications to MQTT topics that contain the value in the following format.
         /// </para>
         ///  
         /// <para>

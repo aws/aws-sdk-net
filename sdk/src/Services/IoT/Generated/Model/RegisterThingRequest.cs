@@ -30,10 +30,16 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterThing operation.
-    /// Provisions a thing in the device registry. RegisterThing calls other AWS IoT control
-    /// plane APIs. These calls might exceed your account level <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot">
-    /// AWS IoT Throttling Limits</a> and cause throttle errors. Please contact <a href="https://console.aws.amazon.com/support/home">AWS
-    /// Customer Support</a> to raise your throttling limits if necessary.
+    /// Provisions a thing in the device registry. RegisterThing calls other IoT control plane
+    /// APIs. These calls might exceed your account level <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot">
+    /// IoT Throttling Limits</a> and cause throttle errors. Please contact <a href="https://console.aws.amazon.com/support/home">Amazon
+    /// Web Services Customer Support</a> to raise your throttling limits if necessary.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RegisterThing</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class RegisterThingRequest : AmazonIoTRequest
     {

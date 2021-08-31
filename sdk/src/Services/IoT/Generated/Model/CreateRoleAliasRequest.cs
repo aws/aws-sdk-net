@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the CreateRoleAlias operation.
     /// Creates a role alias.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateRoleAlias</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class CreateRoleAliasRequest : AmazonIoTRequest
     {
@@ -42,7 +48,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property CredentialDurationSeconds. 
         /// <para>
-        /// How long (in seconds) the credentials will be valid.
+        /// How long (in seconds) the credentials will be valid. The default value is 3,600 seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=900, Max=43200)]

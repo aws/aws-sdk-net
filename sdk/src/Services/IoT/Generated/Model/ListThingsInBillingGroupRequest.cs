@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the ListThingsInBillingGroup operation.
     /// Lists the things you have added to the given billing group.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingsInBillingGroup</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class ListThingsInBillingGroupRequest : AmazonIoTRequest
     {

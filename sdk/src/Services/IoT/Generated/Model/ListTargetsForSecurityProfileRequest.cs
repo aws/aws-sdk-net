@@ -32,6 +32,12 @@ namespace Amazon.IoT.Model
     /// Container for the parameters to the ListTargetsForSecurityProfile operation.
     /// Lists the targets (thing groups) associated with a given Device Defender security
     /// profile.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTargetsForSecurityProfile</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class ListTargetsForSecurityProfileRequest : AmazonIoTRequest
     {

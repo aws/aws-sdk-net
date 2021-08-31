@@ -35,6 +35,11 @@ namespace Amazon.IoT.Model
     /// and attributeValue=Red retrieves all things in the registry that contain an attribute
     /// <b>Color</b> with the value <b>Red</b>. 
     /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThings</a>
+    /// action.
+    /// </para>
     ///  <note> 
     /// <para>
     /// You will not be charged for calling this API if an <code>Access denied</code> error

@@ -30,7 +30,13 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDimensions operation.
-    /// List the set of dimensions that are defined for your AWS account.
+    /// List the set of dimensions that are defined for your Amazon Web Services accounts.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDimensions</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class ListDimensionsRequest : AmazonIoTRequest
     {

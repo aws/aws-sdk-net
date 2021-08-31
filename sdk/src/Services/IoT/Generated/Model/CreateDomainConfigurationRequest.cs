@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the CreateDomainConfiguration operation.
     /// Creates a domain configuration.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateDomainConfiguration</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class CreateDomainConfigurationRequest : AmazonIoTRequest
     {
@@ -101,9 +107,9 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ServerCertificateArns. 
         /// <para>
-        /// The ARNs of the certificates that AWS IoT passes to the device during the TLS handshake.
+        /// The ARNs of the certificates that IoT passes to the device during the TLS handshake.
         /// Currently you can specify only one certificate ARN. This value is not required for
-        /// AWS-managed domains.
+        /// Amazon Web Services-managed domains.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -126,7 +132,8 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// AWS IoT Core currently supports only the <code>DATA</code> service type.
+        /// Amazon Web Services IoT Core currently supports only the <code>DATA</code> service
+        /// type.
         /// </para>
         ///  </note>
         /// </summary>
@@ -178,7 +185,7 @@ namespace Amazon.IoT.Model
         /// <para>
         /// The certificate used to validate the server certificate and prove domain name ownership.
         /// This certificate must be signed by a public certificate authority. This value is not
-        /// required for AWS-managed domains.
+        /// required for Amazon Web Services-managed domains.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

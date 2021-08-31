@@ -30,7 +30,13 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDetectMitigationActionsTask operation.
-    /// Gets information about a Device Defender ML Detect mitigation action.
+    /// Gets information about a Device Defender ML Detect mitigation action. 
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDetectMitigationActionsTask</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class DescribeDetectMitigationActionsTaskRequest : AmazonIoTRequest
     {

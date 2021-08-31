@@ -30,7 +30,13 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMitigationAction operation.
-    /// Deletes a defined mitigation action from your AWS account.
+    /// Deletes a defined mitigation action from your Amazon Web Services accounts.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteMitigationAction</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class DeleteMitigationActionRequest : AmazonIoTRequest
     {

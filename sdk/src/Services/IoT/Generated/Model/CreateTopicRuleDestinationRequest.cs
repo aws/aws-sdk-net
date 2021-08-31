@@ -31,6 +31,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the CreateTopicRuleDestination operation.
     /// Creates a topic rule destination. The destination must be confirmed prior to use.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateTopicRuleDestination</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class CreateTopicRuleDestinationRequest : AmazonIoTRequest
     {
