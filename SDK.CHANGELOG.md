@@ -1,3 +1,20 @@
+### 3.7.108.0 (2021-08-31 18:16 UTC)
+* ComputeOptimizer (3.7.3.2)
+	* Documentation updates for Compute Optimizer
+* IoT (3.7.4.0)
+	* Added Create/Update/Delete/Describe/List APIs for a new IoT resource named FleetMetric. Added a new Fleet Indexing query API named GetBucketsAggregation. Added a new field named DisconnectedReason in Fleet Indexing query response. Updated their related documentations.
+* MemoryDB (3.7.0.4)
+	* Documentation updates for MemoryDB
+* Polly (3.7.3.0)
+	* Amazon Polly adds new South African English voice - Ayanda. Ayanda is available as Neural voice only.
+* SQS (3.7.1.0)
+	* Amazon SQS adds a new queue attribute, RedriveAllowPolicy, which includes the dead-letter queue redrive permission parameters. It defines which source queues can specify dead-letter queues as a JSON object.
+* Core 3.7.2.9
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.107.0 (2021-08-30 18:40 UTC)
 * CloudFormation (3.7.5.0)
 	* AWS CloudFormation allows you to iteratively develop your applications when failures are encountered without rolling back successfully provisioned resources. By specifying stack failure options, you can troubleshoot resources in a CREATE_FAILED or UPDATE_FAILED status.
