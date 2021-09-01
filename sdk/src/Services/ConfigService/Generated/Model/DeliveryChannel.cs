@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The channel through which AWS Config delivers notifications and updated configuration
+    /// The channel through which Config delivers notifications and updated configuration
     /// states.
     /// </summary>
     public partial class DeliveryChannel
@@ -44,8 +44,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigSnapshotDeliveryProperties. 
         /// <para>
-        /// The options for how often AWS Config delivers configuration snapshots to the Amazon
-        /// S3 bucket.
+        /// The options for how often Config delivers configuration snapshots to the Amazon S3
+        /// bucket.
         /// </para>
         /// </summary>
         public ConfigSnapshotDeliveryProperties ConfigSnapshotDeliveryProperties
@@ -63,11 +63,11 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the delivery channel. By default, AWS Config assigns the name "default"
-        /// when creating the delivery channel. To change the delivery channel name, you must
-        /// use the DeleteDeliveryChannel action to delete your current delivery channel, and
-        /// then you must use the PutDeliveryChannel command to create a delivery channel that
-        /// has the desired name.
+        /// The name of the delivery channel. By default, Config assigns the name "default" when
+        /// creating the delivery channel. To change the delivery channel name, you must use the
+        /// DeleteDeliveryChannel action to delete your current delivery channel, and then you
+        /// must use the PutDeliveryChannel command to create a delivery channel that has the
+        /// desired name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -86,15 +86,15 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property S3BucketName. 
         /// <para>
-        /// The name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots
+        /// The name of the Amazon S3 bucket to which Config delivers configuration snapshots
         /// and configuration history files.
         /// </para>
         ///  
         /// <para>
-        /// If you specify a bucket that belongs to another AWS account, that bucket must have
-        /// policies that grant access permissions to AWS Config. For more information, see <a
-        /// href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
-        /// for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.
+        /// If you specify a bucket that belongs to another Amazon Web Services account, that
+        /// bucket must have policies that grant access permissions to Config. For more information,
+        /// see <a href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
+        /// for the Amazon S3 Bucket</a> in the Config Developer Guide.
         /// </para>
         /// </summary>
         public string S3BucketName
@@ -130,9 +130,9 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property S3KmsKeyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) customer managed
-        /// key (CMK) used to encrypt objects delivered by AWS Config. Must belong to the same
-        /// Region as the destination S3 bucket.
+        /// The Amazon Resource Name (ARN) of the Key Management Service (KMS ) KMS key (KMS key)
+        /// used to encrypt objects delivered by Config. Must belong to the same Region as the
+        /// destination S3 bucket.
         /// </para>
         /// </summary>
         public string S3KmsKeyArn
@@ -150,14 +150,14 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property SnsTopicARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config sends notifications
+        /// The Amazon Resource Name (ARN) of the Amazon SNS topic to which Config sends notifications
         /// about configuration changes.
         /// </para>
         ///  
         /// <para>
         /// If you choose a topic from another account, the topic must have policies that grant
-        /// access permissions to AWS Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
-        /// for the Amazon SNS Topic</a> in the AWS Config Developer Guide.
+        /// access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
+        /// for the Amazon SNS Topic</a> in the Config Developer Guide.
         /// </para>
         /// </summary>
         public string SnsTopicARN

@@ -55,7 +55,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of OrganizationConformancePackStatuses returned on each page. If
-        /// you do no specify a number, AWS Config uses the default. The default is 100. 
+        /// you do no specify a number, Config uses the default. The default is 100. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -94,8 +94,8 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property OrganizationConformancePackNames. 
         /// <para>
         /// The names of organization conformance packs for which you want status details. If
-        /// you do not specify any names, AWS Config returns details for all your organization
-        /// conformance packs. 
+        /// you do not specify any names, Config returns details for all your organization conformance
+        /// packs. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=25)]

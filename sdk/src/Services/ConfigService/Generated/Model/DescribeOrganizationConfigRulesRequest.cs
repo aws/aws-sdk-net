@@ -50,7 +50,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of organization config rules returned on each page. If you do no
-        /// specify a number, AWS Config uses the default. The default is 100.
+        /// specify a number, Config uses the default. The default is 100.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -89,7 +89,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property OrganizationConfigRuleNames. 
         /// <para>
         /// The names of organization config rules for which you want details. If you do not specify
-        /// any names, AWS Config returns details for all your organization config rules.
+        /// any names, Config returns details for all your organization config rules.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=25)]

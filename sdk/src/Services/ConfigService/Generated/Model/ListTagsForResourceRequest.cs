@@ -30,7 +30,7 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// List the tags for AWS Config resource.
+    /// List the tags for Config resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonConfigServiceRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of tags returned on each page. The limit maximum is 50. You cannot
-        /// specify a number greater than 50. If you specify 0, AWS Config uses the default. 
+        /// specify a number greater than 50. If you specify 0, Config uses the default. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

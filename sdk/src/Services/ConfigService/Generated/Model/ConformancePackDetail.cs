@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Returns details of a conformance pack. A conformance pack is a collection of AWS Config
+    /// Returns details of a conformance pack. A conformance pack is a collection of Config
     /// rules and remediation actions that can be easily deployed in an account and a region.
     /// </summary>
     public partial class ConformancePackDetail
@@ -122,7 +122,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        /// AWS service that created the conformance pack.
+        /// Amazon Web Services service that created the conformance pack.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -141,7 +141,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property DeliveryS3Bucket. 
         /// <para>
-        /// Amazon S3 bucket where AWS Config stores conformance pack templates. 
+        /// The name of the Amazon S3 bucket where Config stores conformance pack templates. 
         /// </para>
         ///  <note> 
         /// <para>

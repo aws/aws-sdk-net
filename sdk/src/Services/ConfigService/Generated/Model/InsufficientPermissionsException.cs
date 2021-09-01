@@ -33,12 +33,12 @@ namespace Amazon.ConfigService.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
-    /// Config lacks permissions to perform the config:Put* action.
+    /// For PutConfigRule, the rule cannot be created because the IAM role assigned to Config
+    /// lacks permissions to perform the config:Put* action.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+    /// For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN,
     /// and check the function's permissions.
     /// </para>
     ///  </li> <li> 

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Specifies the types of AWS resource for which AWS Config records configuration changes.
+    /// Specifies the types of Amazon Web Services resource for which Config records configuration
+    /// changes.
     /// 
     ///  
     /// <para>
@@ -38,31 +39,31 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  
     /// <para>
-    /// By default, AWS Config records configuration changes for all supported types of regional
-    /// resources that AWS Config discovers in the region in which it is running. Regional
-    /// resources are tied to a region and can be used only in that region. Examples of regional
-    /// resources are EC2 instances and EBS volumes.
+    /// By default, Config records configuration changes for all supported types of regional
+    /// resources that Config discovers in the region in which it is running. Regional resources
+    /// are tied to a region and can be used only in that region. Examples of regional resources
+    /// are EC2 instances and EBS volumes.
     /// </para>
     ///  
     /// <para>
-    /// You can also have AWS Config record configuration changes for supported types of global
+    /// You can also have Config record configuration changes for supported types of global
     /// resources (for example, IAM resources). Global resources are not tied to an individual
     /// region and can be used in all regions.
     /// </para>
     ///  <important> 
     /// <para>
     /// The configuration details for any global resource are the same in all regions. If
-    /// you customize AWS Config in multiple regions to record global resources, it will create
+    /// you customize Config in multiple regions to record global resources, it will create
     /// multiple configuration items each time a global resource changes: one configuration
     /// item for each region. These configuration items will contain identical data. To prevent
-    /// duplicate configuration items, you should consider customizing AWS Config in only
-    /// one region to record global resources, unless you want the configuration items to
-    /// be available in multiple regions.
+    /// duplicate configuration items, you should consider customizing Config in only one
+    /// region to record global resources, unless you want the configuration items to be available
+    /// in multiple regions.
     /// </para>
     ///  </important> 
     /// <para>
-    /// If you don't want AWS Config to record all resources, you can specify which types
-    /// of resources it will record with the <code>resourceTypes</code> parameter.
+    /// If you don't want Config to record all resources, you can specify which types of resources
+    /// it will record with the <code>resourceTypes</code> parameter.
     /// </para>
     ///  
     /// <para>
@@ -72,7 +73,7 @@ namespace Amazon.ConfigService.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting
-    /// Which Resources AWS Config Records</a>.
+    /// Which Resources Config Records</a>.
     /// </para>
     /// </summary>
     public partial class RecordingGroup
@@ -84,13 +85,13 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property AllSupported. 
         /// <para>
-        /// Specifies whether AWS Config records configuration changes for every supported type
-        /// of regional resource.
+        /// Specifies whether Config records configuration changes for every supported type of
+        /// regional resource.
         /// </para>
         ///  
         /// <para>
-        /// If you set this option to <code>true</code>, when AWS Config adds support for a new
-        /// type of regional resource, it starts recording resources of that type automatically.
+        /// If you set this option to <code>true</code>, when Config adds support for a new type
+        /// of regional resource, it starts recording resources of that type automatically.
         /// </para>
         ///  
         /// <para>
@@ -112,8 +113,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property IncludeGlobalResourceTypes. 
         /// <para>
-        /// Specifies whether AWS Config includes all supported types of global resources (for
-        /// example, IAM resources) with the resources that it records.
+        /// Specifies whether Config includes all supported types of global resources (for example,
+        /// IAM resources) with the resources that it records.
         /// </para>
         ///  
         /// <para>
@@ -122,14 +123,14 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you set this option to <code>true</code>, when AWS Config adds support for a new
-        /// type of global resource, it starts recording resources of that type automatically.
+        /// If you set this option to <code>true</code>, when Config adds support for a new type
+        /// of global resource, it starts recording resources of that type automatically.
         /// </para>
         ///  
         /// <para>
         /// The configuration details for any global resource are the same in all regions. To
-        /// prevent duplicate configuration items, you should consider customizing AWS Config
-        /// in only one region to record global resources.
+        /// prevent duplicate configuration items, you should consider customizing Config in only
+        /// one region to record global resources.
         /// </para>
         /// </summary>
         public bool IncludeGlobalResourceTypes
@@ -147,8 +148,9 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceTypes. 
         /// <para>
-        /// A comma-separated list that specifies the types of AWS resources for which AWS Config
-        /// records configuration changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).
+        /// A comma-separated list that specifies the types of Amazon Web Services resources for
+        /// which Config records configuration changes (for example, <code>AWS::EC2::Instance</code>
+        /// or <code>AWS::CloudTrail::Trail</code>).
         /// </para>
         ///  
         /// <para>
@@ -157,15 +159,15 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you set this option to <code>false</code>, when AWS Config adds support for a new
-        /// type of resource, it will not record resources of that type unless you manually add
-        /// that type to your recording group.
+        /// If you set this option to <code>false</code>, when Config adds support for a new type
+        /// of resource, it will not record resources of that type unless you manually add that
+        /// type to your recording group.
         /// </para>
         ///  
         /// <para>
         /// For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b>
         /// column in <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
-        /// AWS Resource Types</a>.
+        /// Amazon Web Services resource Types</a>.
         /// </para>
         /// </summary>
         public List<string> ResourceTypes

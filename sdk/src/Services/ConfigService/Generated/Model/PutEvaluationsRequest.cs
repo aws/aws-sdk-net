@@ -30,8 +30,8 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the PutEvaluations operation.
-    /// Used by an AWS Lambda function to deliver evaluation results to AWS Config. This action
-    /// is required in every AWS Lambda function that is invoked by an AWS Config rule.
+    /// Used by an Lambda function to deliver evaluation results to Config. This action is
+    /// required in every Lambda function that is invoked by an Config rule.
     /// </summary>
     public partial class PutEvaluationsRequest : AmazonConfigServiceRequest
     {
@@ -42,9 +42,9 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Evaluations. 
         /// <para>
-        /// The assessments that the AWS Lambda function performs. Each evaluation identifies
-        /// an AWS resource and indicates whether it complies with the AWS Config rule that invokes
-        /// the AWS Lambda function.
+        /// The assessments that the Lambda function performs. Each evaluation identifies an Amazon
+        /// Web Services resource and indicates whether it complies with the Config rule that
+        /// invokes the Lambda function.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -63,8 +63,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResultToken. 
         /// <para>
-        /// An encrypted token that associates an evaluation with an AWS Config rule. Identifies
-        /// the rule and the event that triggered the evaluation.
+        /// An encrypted token that associates an evaluation with an Config rule. Identifies the
+        /// rule and the event that triggered the evaluation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -84,9 +84,9 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property TestMode. 
         /// <para>
         /// Use this parameter to specify a test run for <code>PutEvaluations</code>. You can
-        /// verify whether your AWS Lambda function will deliver evaluation results to AWS Config.
-        /// No updates occur to your existing evaluations, and evaluation results are not sent
-        /// to AWS Config.
+        /// verify whether your Lambda function will deliver evaluation results to Config. No
+        /// updates occur to your existing evaluations, and evaluation results are not sent to
+        /// Config.
         /// </para>
         ///  <note> 
         /// <para>

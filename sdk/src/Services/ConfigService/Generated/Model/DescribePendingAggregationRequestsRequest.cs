@@ -41,7 +41,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of evaluation results returned on each page. The default is maximum.
-        /// If you specify 0, AWS Config uses the default.
+        /// If you specify 0, Config uses the default.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]

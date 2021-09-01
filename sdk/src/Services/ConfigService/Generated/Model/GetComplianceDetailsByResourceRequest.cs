@@ -30,9 +30,9 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetComplianceDetailsByResource operation.
-    /// Returns the evaluation results for the specified AWS resource. The results indicate
-    /// which AWS Config rules were used to evaluate the resource, when each rule was last
-    /// used, and whether the resource complies with each rule.
+    /// Returns the evaluation results for the specified Amazon Web Services resource. The
+    /// results indicate which Config rules were used to evaluate the resource, when each
+    /// rule was last used, and whether the resource complies with each rule.
     /// </summary>
     public partial class GetComplianceDetailsByResourceRequest : AmazonConfigServiceRequest
     {
@@ -86,7 +86,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The ID of the AWS resource for which you want compliance information.
+        /// The ID of the Amazon Web Services resource for which you want compliance information.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=768)]
@@ -105,7 +105,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of the AWS resource for which you want compliance information.
+        /// The type of the Amazon Web Services resource for which you want compliance information.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

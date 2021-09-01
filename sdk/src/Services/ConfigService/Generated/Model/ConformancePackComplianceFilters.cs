@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Filters the conformance pack by compliance types and AWS Config rule names.
+    /// Filters the conformance pack by compliance types and Config rule names.
     /// </summary>
     public partial class ConformancePackComplianceFilters
     {
@@ -62,7 +62,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleNames. 
         /// <para>
-        /// Filters the results by AWS Config rule names.
+        /// Filters the results by Config rule names.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]

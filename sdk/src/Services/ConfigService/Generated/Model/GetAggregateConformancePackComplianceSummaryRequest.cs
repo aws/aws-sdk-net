@@ -30,8 +30,9 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAggregateConformancePackComplianceSummary operation.
-    /// Returns the count of compliant and noncompliant conformance packs across all AWS Accounts
-    /// and AWS Regions in an aggregator. You can filter based on AWS Account ID or AWS Region.
+    /// Returns the count of compliant and noncompliant conformance packs across all Amazon
+    /// Web Services accounts and Amazon Web Services Regions in an aggregator. You can filter
+    /// based on Amazon Web Services account ID or Amazon Web Services Region.
     /// 
     ///  <note> 
     /// <para>
@@ -89,7 +90,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property GroupByKey. 
         /// <para>
-        /// Groups the result based on AWS Account ID or AWS Region.
+        /// Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.
         /// </para>
         /// </summary>
         public AggregateConformancePackComplianceSummaryGroupKey GroupByKey
@@ -108,7 +109,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of results returned on each page. The default is maximum. If you
-        /// specify 0, AWS Config uses the default.
+        /// specify 0, Config uses the default.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

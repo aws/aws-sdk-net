@@ -29,22 +29,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// An AWS Config rule represents an AWS Lambda function that you create for a custom
-    /// rule or a predefined function for an AWS managed rule. The function evaluates configuration
-    /// items to assess whether your AWS resources comply with your desired configurations.
-    /// This function can run when AWS Config detects a configuration change to an AWS resource
-    /// and at a periodic frequency that you choose (for example, every 24 hours).
+    /// An Config rule represents an Lambda function that you create for a custom rule or
+    /// a predefined function for an Config managed rule. The function evaluates configuration
+    /// items to assess whether your Amazon Web Services resources comply with your desired
+    /// configurations. This function can run when Config detects a configuration change to
+    /// an Amazon Web Services resource and at a periodic frequency that you choose (for example,
+    /// every 24 hours).
     /// 
     ///  <note> 
     /// <para>
-    /// You can use the AWS CLI and AWS SDKs if you want to create a rule that triggers evaluations
-    /// for your resources when AWS Config delivers the configuration snapshot. For more information,
-    /// see <a>ConfigSnapshotDeliveryProperties</a>.
+    /// You can use the Amazon Web Services CLI and Amazon Web Services SDKs if you want to
+    /// create a rule that triggers evaluations for your resources when Config delivers the
+    /// configuration snapshot. For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
     /// </para>
     ///  </note> 
     /// <para>
-    /// For more information about developing and using AWS Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
-    /// AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer Guide</i>.
+    /// For more information about developing and using Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
+    /// Amazon Web Services resource Configurations with Config</a> in the <i>Config Developer
+    /// Guide</i>.
     /// </para>
     /// </summary>
     public partial class ConfigRule
@@ -63,7 +65,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Config rule.
+        /// The Amazon Resource Name (ARN) of the Config rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -82,7 +84,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleId. 
         /// <para>
-        /// The ID of the AWS Config rule.
+        /// The ID of the Config rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -101,7 +103,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleName. 
         /// <para>
-        /// The name that you assign to the AWS Config rule. The name is required if you are adding
+        /// The name that you assign to the Config rule. The name is required if you are adding
         /// a new rule.
         /// </para>
         /// </summary>
@@ -121,27 +123,26 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleState. 
         /// <para>
-        /// Indicates whether the AWS Config rule is active or is currently being deleted by AWS
-        /// Config. It can also indicate the evaluation status for the AWS Config rule.
+        /// Indicates whether the Config rule is active or is currently being deleted by Config.
+        /// It can also indicate the evaluation status for the Config rule.
         /// </para>
         ///  
         /// <para>
-        /// AWS Config sets the state of the rule to <code>EVALUATING</code> temporarily after
-        /// you use the <code>StartConfigRulesEvaluation</code> request to evaluate your resources
-        /// against the AWS Config rule.
+        /// Config sets the state of the rule to <code>EVALUATING</code> temporarily after you
+        /// use the <code>StartConfigRulesEvaluation</code> request to evaluate your resources
+        /// against the Config rule.
         /// </para>
         ///  
         /// <para>
-        /// AWS Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily
-        /// after you use the <code>DeleteEvaluationResults</code> request to delete the current
-        /// evaluation results for the AWS Config rule.
+        /// Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after
+        /// you use the <code>DeleteEvaluationResults</code> request to delete the current evaluation
+        /// results for the Config rule.
         /// </para>
         ///  
         /// <para>
-        /// AWS Config temporarily sets the state of a rule to <code>DELETING</code> after you
-        /// use the <code>DeleteConfigRule</code> request to delete the rule. After AWS Config
-        /// deletes the rule, the rule and all of its evaluations are erased and are no longer
-        /// available.
+        /// Config temporarily sets the state of a rule to <code>DELETING</code> after you use
+        /// the <code>DeleteConfigRule</code> request to delete the rule. After Config deletes
+        /// the rule, the rule and all of its evaluations are erased and are no longer available.
         /// </para>
         /// </summary>
         public ConfigRuleState ConfigRuleState
@@ -184,7 +185,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description that you provide for the AWS Config rule.
+        /// The description that you provide for the Config rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -203,7 +204,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property InputParameters. 
         /// <para>
-        /// A string, in JSON format, that is passed to the AWS Config rule Lambda function.
+        /// A string, in JSON format, that is passed to the Config rule Lambda function.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -222,17 +223,17 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property MaximumExecutionFrequency. 
         /// <para>
-        /// The maximum frequency with which AWS Config runs evaluations for a rule. You can specify
+        /// The maximum frequency with which Config runs evaluations for a rule. You can specify
         /// a value for <code>MaximumExecutionFrequency</code> when:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You are using an AWS managed rule that is triggered at a periodic frequency.
+        /// You are using an Config managed rule that is triggered at a periodic frequency.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Your custom rule is triggered when AWS Config delivers the configuration snapshot.
-        /// For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
+        /// Your custom rule is triggered when Config delivers the configuration snapshot. For
+        /// more information, see <a>ConfigSnapshotDeliveryProperties</a>.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -284,8 +285,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// Provides the rule owner (AWS or customer), the rule identifier, and the notifications
-        /// that cause the function to evaluate your AWS resources.
+        /// Provides the rule owner (Amazon Web Services or customer), the rule identifier, and
+        /// the notifications that cause the function to evaluate your Amazon Web Services resources.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

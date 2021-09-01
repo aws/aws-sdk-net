@@ -55,7 +55,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The 12-digit AWS account ID associated with the resource.
+        /// The 12-digit Amazon Web Services account ID associated with the resource.
         /// </para>
         /// </summary>
         public string AccountId
@@ -256,14 +256,13 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// A populated field indicates that the current configuration was initiated by the events
         /// recorded in the CloudTrail log. For more information about CloudTrail, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
-        /// Is AWS CloudTrail</a>.
+        /// Is CloudTrail</a>.
         /// </para>
         ///  
         /// <para>
         /// An empty field indicates that the current configuration was not initiated by any event.
         /// As of Version 1.3, the relatedEvents field is empty. You can access the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents
-        /// API</a> in the <i>AWS CloudTrail API Reference</i> to retrieve the events for the
-        /// resource.
+        /// API</a> in the <i>CloudTrail API Reference</i> to retrieve the events for the resource.
         /// </para>
         /// </summary>
         public List<string> RelatedEvents
@@ -281,7 +280,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Relationships. 
         /// <para>
-        /// A list of related AWS resources.
+        /// A list of related Amazon Web Services resources.
         /// </para>
         /// </summary>
         public List<Relationship> Relationships
@@ -354,7 +353,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of AWS resource.
+        /// The type of Amazon Web Services resource.
         /// </para>
         /// </summary>
         public ResourceType ResourceType
@@ -372,7 +371,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property SupplementaryConfiguration. 
         /// <para>
-        /// Configuration attributes that AWS Config returns for certain resource types to supplement
+        /// Configuration attributes that Config returns for certain resource types to supplement
         /// the information returned for the <code>configuration</code> parameter.
         /// </para>
         /// </summary>

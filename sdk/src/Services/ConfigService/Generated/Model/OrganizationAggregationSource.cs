@@ -41,7 +41,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property AllAwsRegions. 
         /// <para>
-        /// If true, aggregate existing AWS Config regions and future regions.
+        /// If true, aggregate existing Config regions and future regions.
         /// </para>
         /// </summary>
         public bool AllAwsRegions
@@ -78,8 +78,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// ARN of the IAM role used to retrieve AWS Organization details associated with the
-        /// aggregator account.
+        /// ARN of the IAM role used to retrieve Amazon Web Services Organization details associated
+        /// with the aggregator account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

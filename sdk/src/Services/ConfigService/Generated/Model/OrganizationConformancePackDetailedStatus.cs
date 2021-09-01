@@ -149,7 +149,7 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        ///  AWS Config sets the state of the conformance pack to:
+        ///  Config sets the state of the conformance pack to:
         /// </para>
         ///  <ul> <li> 
         /// <para>

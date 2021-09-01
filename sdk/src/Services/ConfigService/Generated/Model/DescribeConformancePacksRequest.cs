@@ -42,8 +42,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property ConformancePackNames. 
         /// <para>
         /// Comma-separated list of conformance pack names for which you want details. If you
-        /// do not specify any names, AWS Config returns details for all your conformance packs.
-        /// 
+        /// do not specify any names, Config returns details for all your conformance packs. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=25)]

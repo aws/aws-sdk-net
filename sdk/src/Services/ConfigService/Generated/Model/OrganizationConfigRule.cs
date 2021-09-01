@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// An organization config rule that has information about config rules that AWS Config
-    /// creates in member accounts.
+    /// An organization config rule that has information about config rules that Config creates
+    /// in member accounts.
     /// </summary>
     public partial class OrganizationConfigRule
     {

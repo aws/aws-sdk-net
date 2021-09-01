@@ -29,36 +29,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Provides options for how often AWS Config delivers configuration snapshots to the
-    /// Amazon S3 bucket in your delivery channel.
+    /// Provides options for how often Config delivers configuration snapshots to the Amazon
+    /// S3 bucket in your delivery channel.
     /// 
     ///  
     /// <para>
-    /// The frequency for a rule that triggers evaluations for your resources when AWS Config
+    /// The frequency for a rule that triggers evaluations for your resources when Config
     /// delivers the configuration snapshot is set by one of two values, depending on which
     /// is less frequent:
     /// </para>
     ///  <ul> <li> 
     /// <para>
     /// The value for the <code>deliveryFrequency</code> parameter within the delivery channel
-    /// configuration, which sets how often AWS Config delivers configuration snapshots. This
-    /// value also sets how often AWS Config invokes evaluations for AWS Config rules.
+    /// configuration, which sets how often Config delivers configuration snapshots. This
+    /// value also sets how often Config invokes evaluations for Config rules.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// The value for the <code>MaximumExecutionFrequency</code> parameter, which sets the
-    /// maximum frequency with which AWS Config invokes evaluations for the rule. For more
-    /// information, see <a>ConfigRule</a>.
+    /// maximum frequency with which Config invokes evaluations for the rule. For more information,
+    /// see <a>ConfigRule</a>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// If the <code>deliveryFrequency</code> value is less frequent than the <code>MaximumExecutionFrequency</code>
-    /// value for a rule, AWS Config invokes the rule only as often as the <code>deliveryFrequency</code>
+    /// value for a rule, Config invokes the rule only as often as the <code>deliveryFrequency</code>
     /// value.
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// For example, you want your rule to run evaluations when AWS Config delivers the configuration
+    /// For example, you want your rule to run evaluations when Config delivers the configuration
     /// snapshot.
     /// </para>
     ///  </li> <li> 
@@ -73,7 +73,7 @@ namespace Amazon.ConfigService.Model
     ///  </li> <li> 
     /// <para>
     /// Because the value for <code>deliveryFrequency</code> is less frequent than <code>MaximumExecutionFrequency</code>,
-    /// AWS Config invokes evaluations for the rule every 24 hours. 
+    /// Config invokes evaluations for the rule every 24 hours. 
     /// </para>
     ///  </li> </ol> 
     /// <para>
@@ -83,7 +83,7 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  
     /// <para>
-    /// To update the <code>deliveryFrequency</code> with which AWS Config delivers your configuration
+    /// To update the <code>deliveryFrequency</code> with which Config delivers your configuration
     /// snapshots, use the <code>PutDeliveryChannel</code> action.
     /// </para>
     /// </summary>
@@ -94,7 +94,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property DeliveryFrequency. 
         /// <para>
-        /// The frequency with which AWS Config delivers configuration snapshots.
+        /// The frequency with which Config delivers configuration snapshots.
         /// </para>
         /// </summary>
         public MaximumExecutionFrequency DeliveryFrequency

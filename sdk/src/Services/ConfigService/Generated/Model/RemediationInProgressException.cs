@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Remediation action is in progress. You can either cancel execution in AWS Systems
-    /// Manager or wait and try again later.
+    /// Remediation action is in progress. You can either cancel execution in Amazon Web Services
+    /// Systems Manager or wait and try again later.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

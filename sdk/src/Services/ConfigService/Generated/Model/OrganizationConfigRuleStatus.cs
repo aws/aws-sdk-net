@@ -127,7 +127,7 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// AWS Config sets the state of the rule to:
+        /// Config sets the state of the rule to:
         /// </para>
         ///  <ul> <li> 
         /// <para>

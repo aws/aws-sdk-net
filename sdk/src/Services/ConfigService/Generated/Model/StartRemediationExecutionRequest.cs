@@ -30,9 +30,9 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the StartRemediationExecution operation.
-    /// Runs an on-demand remediation for the specified AWS Config rules against the last
-    /// known remediation configuration. It runs an execution against the current state of
-    /// your resources. Remediation execution is asynchronous.
+    /// Runs an on-demand remediation for the specified Config rules against the last known
+    /// remediation configuration. It runs an execution against the current state of your
+    /// resources. Remediation execution is asynchronous.
     /// 
     ///  
     /// <para>
@@ -48,7 +48,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleName. 
         /// <para>
-        /// The list of names of AWS Config rules that you want to run remediation execution for.
+        /// The list of names of Config rules that you want to run remediation execution for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

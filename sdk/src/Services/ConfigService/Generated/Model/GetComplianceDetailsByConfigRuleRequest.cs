@@ -30,9 +30,9 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetComplianceDetailsByConfigRule operation.
-    /// Returns the evaluation results for the specified AWS Config rule. The results indicate
-    /// which AWS resources were evaluated by the rule, when each resource was last evaluated,
-    /// and whether each resource complies with the rule.
+    /// Returns the evaluation results for the specified Config rule. The results indicate
+    /// which Amazon Web Services resources were evaluated by the rule, when each resource
+    /// was last evaluated, and whether each resource complies with the rule.
     /// </summary>
     public partial class GetComplianceDetailsByConfigRuleRequest : AmazonConfigServiceRequest
     {
@@ -67,7 +67,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleName. 
         /// <para>
-        /// The name of the AWS Config rule for which you want compliance information.
+        /// The name of the Config rule for which you want compliance information.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -87,8 +87,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of evaluation results returned on each page. The default is 10.
-        /// You cannot specify a number greater than 100. If you specify 0, AWS Config uses the
-        /// default.
+        /// You cannot specify a number greater than 100. If you specify 0, Config uses the default.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// You specified an AWS Config rule without a remediation configuration.
+    /// You specified an Config rule without a remediation configuration.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

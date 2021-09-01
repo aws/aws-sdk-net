@@ -31,20 +31,20 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Container for the parameters to the PutResourceConfig operation.
     /// Records the configuration state for the resource provided in the request. The configuration
-    /// state of a resource is represented in AWS Config as Configuration Items. Once this
-    /// API records the configuration item, you can retrieve the list of configuration items
-    /// for the custom resource type using existing AWS Config APIs. 
+    /// state of a resource is represented in Config as Configuration Items. Once this API
+    /// records the configuration item, you can retrieve the list of configuration items for
+    /// the custom resource type using existing Config APIs. 
     /// 
     ///  <note> 
     /// <para>
-    /// The custom resource type must be registered with AWS CloudFormation. This API accepts
-    /// the configuration item registered with AWS CloudFormation.
+    /// The custom resource type must be registered with CloudFormation. This API accepts
+    /// the configuration item registered with CloudFormation.
     /// </para>
     ///  
     /// <para>
-    /// When you call this API, AWS Config only stores configuration state of the resource
-    /// provided in the request. This API does not change or remediate the configuration of
-    /// the resource. 
+    /// When you call this API, Config only stores configuration state of the resource provided
+    /// in the request. This API does not change or remediate the configuration of the resource.
+    /// 
     /// </para>
     ///  
     /// <para>
@@ -66,7 +66,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property Configuration. 
         /// <para>
         /// The configuration object of the resource in valid JSON format. It must match the schema
-        /// registered with AWS CloudFormation.
+        /// registered with CloudFormation.
         /// </para>
         ///  <note> 
         /// <para>
@@ -127,13 +127,13 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of the resource. The custom resource type must be registered with AWS CloudFormation.
+        /// The type of the resource. The custom resource type must be registered with CloudFormation.
         /// 
         /// </para>
         ///  <note> 
         /// <para>
-        /// You cannot use the organization names “aws”, “amzn”, “amazon”, “alexa”, “custom” with
-        /// custom resource types. It is the first part of the ResourceType up to the first ::.
+        /// You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom
+        /// resource types. It is the first part of the ResourceType up to the first ::.
         /// </para>
         ///  </note>
         /// </summary>
@@ -153,7 +153,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property SchemaVersionId. 
         /// <para>
-        /// Version of the schema registered for the ResourceType in AWS CloudFormation.
+        /// Version of the schema registered for the ResourceType in CloudFormation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

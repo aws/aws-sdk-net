@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Identifies an AWS resource and indicates whether it complies with the AWS Config rule
-    /// that it was evaluated against.
+    /// Identifies an Amazon Web Services resource and indicates whether it complies with
+    /// the Config rule that it was evaluated against.
     /// </summary>
     public partial class Evaluation
     {
@@ -62,7 +62,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ComplianceResourceId. 
         /// <para>
-        /// The ID of the AWS resource that was evaluated.
+        /// The ID of the Amazon Web Services resource that was evaluated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=768)]
@@ -81,7 +81,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ComplianceResourceType. 
         /// <para>
-        /// The type of AWS resource that was evaluated.
+        /// The type of Amazon Web Services resource that was evaluated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -100,21 +100,21 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ComplianceType. 
         /// <para>
-        /// Indicates whether the AWS resource complies with the AWS Config rule that it was evaluated
-        /// against.
+        /// Indicates whether the Amazon Web Services resource complies with the Config rule that
+        /// it was evaluated against.
         /// </para>
         ///  
         /// <para>
-        /// For the <code>Evaluation</code> data type, AWS Config supports only the <code>COMPLIANT</code>,
-        /// <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values. AWS Config does
-        /// not support the <code>INSUFFICIENT_DATA</code> value for this data type.
+        /// For the <code>Evaluation</code> data type, Config supports only the <code>COMPLIANT</code>,
+        /// <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values. Config does not
+        /// support the <code>INSUFFICIENT_DATA</code> value for this data type.
         /// </para>
         ///  
         /// <para>
-        /// Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as the value
-        /// for <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For example,
-        /// an AWS Lambda function for a custom AWS Config rule cannot pass an <code>INSUFFICIENT_DATA</code>
-        /// value to AWS Config.
+        /// Similarly, Config does not accept <code>INSUFFICIENT_DATA</code> as the value for
+        /// <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For example,
+        /// an Lambda function for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code>
+        /// value to Config.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -133,11 +133,10 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property OrderingTimestamp. 
         /// <para>
-        /// The time of the event in AWS Config that triggered the evaluation. For event-based
-        /// evaluations, the time indicates when AWS Config created the configuration item that
-        /// triggered the evaluation. For periodic evaluations, the time indicates when AWS Config
-        /// triggered the evaluation at the frequency that you specified (for example, every 24
-        /// hours).
+        /// The time of the event in Config that triggered the evaluation. For event-based evaluations,
+        /// the time indicates when Config created the configuration item that triggered the evaluation.
+        /// For periodic evaluations, the time indicates when Config triggered the evaluation
+        /// at the frequency that you specified (for example, every 24 hours).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

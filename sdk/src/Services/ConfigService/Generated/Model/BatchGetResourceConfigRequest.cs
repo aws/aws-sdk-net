@@ -30,9 +30,9 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchGetResourceConfig operation.
-    /// Returns the current configuration for one or more requested resources. The operation
-    /// also returns a list of resources that are not processed in the current request. If
-    /// there are no unprocessed resources, the operation returns an empty unprocessedResourceKeys
+    /// Returns the <code>BaseConfigurationItem</code> for one or more requested resources.
+    /// The operation also returns a list of resources that are not processed in the current
+    /// request. If there are no unprocessed resources, the operation returns an empty unprocessedResourceKeys
     /// list. 
     /// 
     ///  <note> <ul> <li> 

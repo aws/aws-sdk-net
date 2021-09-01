@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The details that identify a resource that is collected by AWS Config aggregator, including
+    /// The details that identify a resource that is collected by Config aggregator, including
     /// the resource type, ID, (if available) the custom resource name, the source account,
     /// and source region.
     /// </summary>
@@ -44,7 +44,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The ID of the AWS resource.
+        /// The ID of the Amazon Web Services resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=768)]
@@ -63,7 +63,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceName. 
         /// <para>
-        /// The name of the AWS resource.
+        /// The name of the Amazon Web Services resource.
         /// </para>
         /// </summary>
         public string ResourceName
@@ -81,7 +81,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of the AWS resource.
+        /// The type of the Amazon Web Services resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

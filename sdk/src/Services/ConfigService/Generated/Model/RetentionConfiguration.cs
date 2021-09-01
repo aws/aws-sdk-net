@@ -30,7 +30,7 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// An object with the name of the retention configuration and the retention period in
-    /// days. The object stores the configuration for data retention in AWS Config.
+    /// days. The object stores the configuration for data retention in Config.
     /// </summary>
     public partial class RetentionConfiguration
     {
@@ -59,7 +59,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property RetentionPeriodInDays. 
         /// <para>
-        /// Number of days AWS Config stores your historical information.
+        /// Number of days Config stores your historical information.
         /// </para>
         ///  <note> 
         /// <para>

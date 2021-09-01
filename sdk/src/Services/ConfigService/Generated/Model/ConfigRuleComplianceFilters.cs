@@ -83,9 +83,9 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// For the <code>ConfigRuleComplianceFilters</code> data type, AWS Config supports only
-        /// <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. AWS Config does not support
-        /// the <code>NOT_APPLICABLE</code> and the <code>INSUFFICIENT_DATA</code> values.
+        /// For the <code>ConfigRuleComplianceFilters</code> data type, Config supports only <code>COMPLIANT</code>
+        /// and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code>
+        /// and the <code>INSUFFICIENT_DATA</code> values.
         /// </para>
         /// </summary>
         public ComplianceType ComplianceType
@@ -103,7 +103,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleName. 
         /// <para>
-        /// The name of the AWS Config rule.
+        /// The name of the Config rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

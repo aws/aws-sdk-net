@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The details of an AWS Config evaluation. Provides the AWS resource that was evaluated,
-    /// the compliance of the resource, related time stamps, and supplementary information.
+    /// The details of an Config evaluation. Provides the Amazon Web Services resource that
+    /// was evaluated, the compliance of the resource, related time stamps, and supplementary
+    /// information.
     /// </summary>
     public partial class EvaluationResult
     {
@@ -63,14 +64,14 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ComplianceType. 
         /// <para>
-        /// Indicates whether the AWS resource complies with the AWS Config rule that evaluated
-        /// it.
+        /// Indicates whether the Amazon Web Services resource complies with the Config rule that
+        /// evaluated it.
         /// </para>
         ///  
         /// <para>
-        /// For the <code>EvaluationResult</code> data type, AWS Config supports only the <code>COMPLIANT</code>,
-        /// <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values. AWS Config does
-        /// not support the <code>INSUFFICIENT_DATA</code> value for the <code>EvaluationResult</code>
+        /// For the <code>EvaluationResult</code> data type, Config supports only the <code>COMPLIANT</code>,
+        /// <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values. Config does not
+        /// support the <code>INSUFFICIENT_DATA</code> value for the <code>EvaluationResult</code>
         /// data type.
         /// </para>
         /// </summary>
@@ -89,7 +90,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleInvokedTime. 
         /// <para>
-        /// The time when the AWS Config rule evaluated the AWS resource.
+        /// The time when the Config rule evaluated the Amazon Web Services resource.
         /// </para>
         /// </summary>
         public DateTime ConfigRuleInvokedTime
@@ -125,7 +126,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResultRecordedTime. 
         /// <para>
-        /// The time when AWS Config recorded the evaluation result.
+        /// The time when Config recorded the evaluation result.
         /// </para>
         /// </summary>
         public DateTime ResultRecordedTime
@@ -143,8 +144,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResultToken. 
         /// <para>
-        /// An encrypted token that associates an evaluation with an AWS Config rule. The token
-        /// identifies the rule, the AWS resource being evaluated, and the event that triggered
+        /// An encrypted token that associates an evaluation with an Config rule. The token identifies
+        /// the rule, the Amazon Web Services resource being evaluated, and the event that triggered
         /// the evaluation.
         /// </para>
         /// </summary>

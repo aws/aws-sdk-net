@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// AWS Config rule that you passed in the filter does not exist.
+    /// Config rule that you passed in the filter does not exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

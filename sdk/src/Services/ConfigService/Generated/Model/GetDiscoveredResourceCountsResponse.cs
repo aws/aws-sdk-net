@@ -78,16 +78,16 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property TotalDiscoveredResources. 
         /// <para>
-        /// The total number of resources that AWS Config is recording in the region for your
-        /// account. If you specify resource types in the request, AWS Config returns only the
-        /// total number of resources for those resource types.
+        /// The total number of resources that Config is recording in the region for your account.
+        /// If you specify resource types in the request, Config returns only the total number
+        /// of resources for those resource types.
         /// </para>
         ///  <p class="title"> <b>Example</b> 
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// AWS Config is recording three resource types in the US East (Ohio) Region for your
-        /// account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets, for a total of 60 resources.
+        /// Config is recording three resource types in the US East (Ohio) Region for your account:
+        /// 25 EC2 instances, 20 IAM users, and 15 S3 buckets, for a total of 60 resources.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -96,7 +96,7 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// AWS Config returns 25 for <code>totalDiscoveredResources</code>.
+        /// Config returns 25 for <code>totalDiscoveredResources</code>.
         /// </para>
         ///  </li> </ol>
         /// </summary>

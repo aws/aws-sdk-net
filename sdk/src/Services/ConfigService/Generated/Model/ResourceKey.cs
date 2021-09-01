@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The details that identify a resource within AWS Config, including the resource type
-    /// and resource ID.
+    /// The details that identify a resource within Config, including the resource type and
+    /// resource ID.
     /// </summary>
     public partial class ResourceKey
     {

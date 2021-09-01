@@ -30,8 +30,9 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the PutConformancePack operation.
-    /// Creates or updates a conformance pack. A conformance pack is a collection of AWS Config
-    /// rules that can be easily deployed in an account and a region and across AWS Organization.
+    /// Creates or updates a conformance pack. A conformance pack is a collection of Config
+    /// rules that can be easily deployed in an account and a region and across Amazon Web
+    /// Services Organization.
     /// 
     ///  
     /// <para>
@@ -42,7 +43,7 @@ namespace Amazon.ConfigService.Model
     ///  <note> 
     /// <para>
     /// You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code>
-    /// parameter, but not both. If you provide both AWS Config uses the <code>TemplateS3Uri</code>
+    /// parameter, but not both. If you provide both Config uses the <code>TemplateS3Uri</code>
     /// parameter and ignores the <code>TemplateBody</code> parameter.
     /// </para>
     ///  </note>
@@ -97,7 +98,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property DeliveryS3Bucket. 
         /// <para>
-        /// Amazon S3 bucket where AWS Config stores conformance pack templates.
+        /// The name of the Amazon S3 bucket where Config stores conformance pack templates.
         /// </para>
         ///  <note> 
         /// <para>

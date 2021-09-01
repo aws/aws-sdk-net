@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Indicates whether an AWS resource or AWS Config rule is compliant and provides the
-    /// number of contributors that affect the compliance.
+    /// Indicates whether an Amazon Web Services resource or Config rule is compliant and
+    /// provides the number of contributors that affect the compliance.
     /// </summary>
     public partial class Compliance
     {
@@ -40,8 +40,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ComplianceContributorCount. 
         /// <para>
-        /// The number of AWS resources or AWS Config rules that cause a result of <code>NON_COMPLIANT</code>,
-        /// up to a maximum number.
+        /// The number of Amazon Web Services resources or Config rules that cause a result of
+        /// <code>NON_COMPLIANT</code>, up to a maximum number.
         /// </para>
         /// </summary>
         public ComplianceContributorCount ComplianceContributorCount
@@ -59,11 +59,11 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ComplianceType. 
         /// <para>
-        /// Indicates whether an AWS resource or AWS Config rule is compliant.
+        /// Indicates whether an Amazon Web Services resource or Config rule is compliant.
         /// </para>
         ///  
         /// <para>
-        /// A resource is compliant if it complies with all of the AWS Config rules that evaluate
+        /// A resource is compliant if it complies with all of the Config rules that evaluate
         /// it. A resource is noncompliant if it does not comply with one or more of these rules.
         /// </para>
         ///  
@@ -73,14 +73,14 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// AWS Config returns the <code>INSUFFICIENT_DATA</code> value when no evaluation results
-        /// are available for the AWS resource or AWS Config rule.
+        /// Config returns the <code>INSUFFICIENT_DATA</code> value when no evaluation results
+        /// are available for the Amazon Web Services resource or Config rule.
         /// </para>
         ///  
         /// <para>
-        /// For the <code>Compliance</code> data type, AWS Config supports only <code>COMPLIANT</code>,
-        /// <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code> values. AWS Config
-        /// does not support the <code>NOT_APPLICABLE</code> value for the <code>Compliance</code>
+        /// For the <code>Compliance</code> data type, Config supports only <code>COMPLIANT</code>,
+        /// <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code> values. Config does
+        /// not support the <code>NOT_APPLICABLE</code> value for the <code>Compliance</code>
         /// data type.
         /// </para>
         /// </summary>

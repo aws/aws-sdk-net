@@ -30,9 +30,9 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeConfigRuleEvaluationStatus operation.
-    /// Returns status information for each of your AWS managed Config rules. The status includes
-    /// information such as the last time AWS Config invoked the rule, the last time AWS Config
-    /// failed to invoke the rule, and the related error for the last failure.
+    /// Returns status information for each of your Config managed rules. The status includes
+    /// information such as the last time Config invoked the rule, the last time Config failed
+    /// to invoke the rule, and the related error for the last failure.
     /// </summary>
     public partial class DescribeConfigRuleEvaluationStatusRequest : AmazonConfigServiceRequest
     {
@@ -43,9 +43,9 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleNames. 
         /// <para>
-        /// The name of the AWS managed Config rules for which you want status information. If
-        /// you do not specify any names, AWS Config returns status information for all AWS managed
-        /// Config rules that you use.
+        /// The name of the Config managed rules for which you want status information. If you
+        /// do not specify any names, Config returns status information for all Config managed
+        /// rules that you use.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=25)]
@@ -73,8 +73,8 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
-        /// Config Limits</a> in the <i>AWS General Reference Guide</i>.
+        /// For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config
+        /// Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

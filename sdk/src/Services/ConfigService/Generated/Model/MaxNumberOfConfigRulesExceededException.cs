@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Failed to add the AWS Config rule because the account already contains the maximum
-    /// number of 150 rules. Consider deleting any deactivated rules before you add new rules.
+    /// Failed to add the Config rule because the account already contains the maximum number
+    /// of 150 rules. Consider deleting any deactivated rules before you add new rules.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

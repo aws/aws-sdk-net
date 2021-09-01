@@ -30,8 +30,8 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListStoredQueries operation.
-    /// Lists the stored queries for a single AWS account and a single AWS Region. The default
-    /// is 100.
+    /// Lists the stored queries for a single Amazon Web Services account and a single Amazon
+    /// Web Services Region. The default is 100.
     /// </summary>
     public partial class ListStoredQueriesRequest : AmazonConfigServiceRequest
     {

@@ -58,8 +58,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property FailureMessage. 
         /// <para>
-        /// Returns a failure message for delete remediation exception. For example, AWS Config
-        /// creates an exception due to an internal error.
+        /// Returns a failure message for delete remediation exception. For example, Config creates
+        /// an exception due to an internal error.
         /// </para>
         /// </summary>
         public string FailureMessage

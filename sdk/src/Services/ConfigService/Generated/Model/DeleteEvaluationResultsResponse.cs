@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The output when you delete the evaluation results for the specified AWS Config rule.
+    /// The output when you delete the evaluation results for the specified Config rule.
     /// </summary>
     public partial class DeleteEvaluationResultsResponse : AmazonWebServiceResponse
     {

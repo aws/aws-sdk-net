@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Status information for your AWS managed Config rules. The status includes information
+    /// Status information for your Config managed rules. The status includes information
     /// such as the last time the rule ran, the last time it failed, and the related error
     /// for the last failure.
     /// 
     ///  
     /// <para>
-    /// This action does not return status information about custom AWS Config rules.
+    /// This action does not return status information about custom Config rules.
     /// </para>
     /// </summary>
     public partial class ConfigRuleEvaluationStatus
@@ -56,7 +56,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Config rule.
+        /// The Amazon Resource Name (ARN) of the Config rule.
         /// </para>
         /// </summary>
         public string ConfigRuleArn
@@ -74,7 +74,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleId. 
         /// <para>
-        /// The ID of the AWS Config rule.
+        /// The ID of the Config rule.
         /// </para>
         /// </summary>
         public string ConfigRuleId
@@ -92,7 +92,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleName. 
         /// <para>
-        /// The name of the AWS Config rule.
+        /// The name of the Config rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -111,7 +111,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property FirstActivatedTime. 
         /// <para>
-        /// The time that you first activated the AWS Config rule.
+        /// The time that you first activated the Config rule.
         /// </para>
         /// </summary>
         public DateTime FirstActivatedTime
@@ -129,18 +129,17 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property FirstEvaluationStarted. 
         /// <para>
-        /// Indicates whether AWS Config has evaluated your resources against the rule at least
-        /// once.
+        /// Indicates whether Config has evaluated your resources against the rule at least once.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>true</code> - AWS Config has evaluated your AWS resources against the rule
-        /// at least once.
+        ///  <code>true</code> - Config has evaluated your Amazon Web Services resources against
+        /// the rule at least once.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>false</code> - AWS Config has not once finished evaluating your AWS resources
-        /// against the rule.
+        ///  <code>false</code> - Config has not once finished evaluating your Amazon Web Services
+        /// resources against the rule.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -159,7 +158,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property LastDeactivatedTime. 
         /// <para>
-        /// The time that you last turned off the AWS Config rule.
+        /// The time that you last turned off the Config rule.
         /// </para>
         /// </summary>
         public DateTime LastDeactivatedTime
@@ -177,7 +176,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property LastErrorCode. 
         /// <para>
-        /// The error code that AWS Config returned when the rule last failed.
+        /// The error code that Config returned when the rule last failed.
         /// </para>
         /// </summary>
         public string LastErrorCode
@@ -195,7 +194,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property LastErrorMessage. 
         /// <para>
-        /// The error message that AWS Config returned when the rule last failed.
+        /// The error message that Config returned when the rule last failed.
         /// </para>
         /// </summary>
         public string LastErrorMessage
@@ -213,7 +212,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property LastFailedEvaluationTime. 
         /// <para>
-        /// The time that AWS Config last failed to evaluate your AWS resources against the rule.
+        /// The time that Config last failed to evaluate your Amazon Web Services resources against
+        /// the rule.
         /// </para>
         /// </summary>
         public DateTime LastFailedEvaluationTime
@@ -231,8 +231,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property LastFailedInvocationTime. 
         /// <para>
-        /// The time that AWS Config last failed to invoke the AWS Config rule to evaluate your
-        /// AWS resources.
+        /// The time that Config last failed to invoke the Config rule to evaluate your Amazon
+        /// Web Services resources.
         /// </para>
         /// </summary>
         public DateTime LastFailedInvocationTime
@@ -250,8 +250,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property LastSuccessfulEvaluationTime. 
         /// <para>
-        /// The time that AWS Config last successfully evaluated your AWS resources against the
-        /// rule.
+        /// The time that Config last successfully evaluated your Amazon Web Services resources
+        /// against the rule.
         /// </para>
         /// </summary>
         public DateTime LastSuccessfulEvaluationTime
@@ -269,8 +269,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property LastSuccessfulInvocationTime. 
         /// <para>
-        /// The time that AWS Config last successfully invoked the AWS Config rule to evaluate
-        /// your AWS resources.
+        /// The time that Config last successfully invoked the Config rule to evaluate your Amazon
+        /// Web Services resources.
         /// </para>
         /// </summary>
         public DateTime LastSuccessfulInvocationTime

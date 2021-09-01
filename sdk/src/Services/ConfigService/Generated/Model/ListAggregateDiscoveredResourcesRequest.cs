@@ -92,7 +92,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of resource identifiers returned on each page. You cannot specify
-        /// a number greater than 100. If you specify 0, AWS Config uses the default.
+        /// a number greater than 100. If you specify 0, Config uses the default.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -130,7 +130,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resources that you want AWS Config to list in the response.
+        /// The type of resources that you want Config to list in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

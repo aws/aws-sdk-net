@@ -32,11 +32,11 @@ namespace Amazon.ConfigService.Model
     /// Container for the parameters to the PutRemediationExceptions operation.
     /// A remediation exception is when a specific resource is no longer considered for auto-remediation.
     /// This API adds a new exception or updates an existing exception for a specific resource
-    /// with a specific AWS Config rule. 
+    /// with a specific Config rule. 
     /// 
     ///  <note> 
     /// <para>
-    /// AWS Config generates a remediation exception when a problem occurs executing a remediation
+    /// Config generates a remediation exception when a problem occurs executing a remediation
     /// action to a specific resource. Remediation exceptions blocks auto-remediation until
     /// the exception is cleared.
     /// </para>
@@ -52,7 +52,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleName. 
         /// <para>
-        /// The name of the AWS Config rule for which you want to create remediation exception.
+        /// The name of the Config rule for which you want to create remediation exception.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -109,7 +109,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property ResourceKeys. 
         /// <para>
         /// An exception list of resource exception keys to be processed with the current request.
-        /// AWS Config adds exception for each resource key. For example, AWS Config adds 3 exceptions
+        /// Config adds exception for each resource key. For example, Config adds 3 exceptions
         /// for 3 resource keys. 
         /// </para>
         /// </summary>

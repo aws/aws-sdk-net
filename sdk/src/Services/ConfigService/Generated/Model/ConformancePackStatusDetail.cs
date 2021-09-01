@@ -106,7 +106,7 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// AWS Config sets the state of the conformance pack to:
+        /// Config sets the state of the conformance pack to:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -202,7 +202,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property StackArn. 
         /// <para>
-        /// Amazon Resource Name (ARN) of AWS CloudFormation stack. 
+        /// Amazon Resource Name (ARN) of CloudFormation stack. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

@@ -30,12 +30,12 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteConfigRule operation.
-    /// Deletes the specified AWS Config rule and all of its evaluation results.
+    /// Deletes the specified Config rule and all of its evaluation results.
     /// 
     ///  
     /// <para>
-    /// AWS Config sets the state of a rule to <code>DELETING</code> until the deletion is
-    /// complete. You cannot update a rule while it is in this state. If you make a <code>PutConfigRule</code>
+    /// Config sets the state of a rule to <code>DELETING</code> until the deletion is complete.
+    /// You cannot update a rule while it is in this state. If you make a <code>PutConfigRule</code>
     /// or <code>DeleteConfigRule</code> request for the rule, you will receive a <code>ResourceInUseException</code>.
     /// </para>
     ///  
@@ -50,7 +50,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleName. 
         /// <para>
-        /// The name of the AWS Config rule that you want to delete.
+        /// The name of the Config rule that you want to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

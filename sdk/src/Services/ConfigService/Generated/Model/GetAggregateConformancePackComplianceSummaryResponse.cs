@@ -58,7 +58,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property GroupByKey. 
         /// <para>
-        /// Groups the result based on AWS Account ID or AWS Region.
+        /// Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

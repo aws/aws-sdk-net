@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// An object that represents the recording of configuration changes of an AWS resource.
+    /// An object that represents the recording of configuration changes of an Amazon Web
+    /// Services resource.
     /// </summary>
     public partial class ConfigurationRecorder
     {
@@ -40,7 +41,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the recorder. By default, AWS Config automatically assigns the name "default"
+        /// The name of the recorder. By default, Config automatically assigns the name "default"
         /// when creating the configuration recorder. You cannot change the assigned name.
         /// </para>
         /// </summary>
@@ -60,7 +61,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property RecordingGroup. 
         /// <para>
-        /// Specifies the types of AWS resources for which AWS Config records configuration changes.
+        /// Specifies the types of Amazon Web Services resources for which Config records configuration
+        /// changes.
         /// </para>
         /// </summary>
         public RecordingGroup RecordingGroup
@@ -78,8 +80,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// Amazon Resource Name (ARN) of the IAM role used to describe the AWS resources associated
-        /// with the account.
+        /// Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web Services
+        /// resources associated with the account.
         /// </para>
         /// </summary>
         public string RoleARN

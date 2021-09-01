@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Your Amazon S3 bucket policy does not permit AWS Config to write to it.
+    /// Your Amazon S3 bucket policy does not permit Config to write to it.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

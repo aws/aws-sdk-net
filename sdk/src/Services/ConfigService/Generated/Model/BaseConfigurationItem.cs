@@ -51,7 +51,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The 12-digit AWS account ID associated with the resource.
+        /// The 12-digit Amazon Web Services account ID associated with the resource.
         /// </para>
         /// </summary>
         public string AccountId
@@ -278,7 +278,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of AWS resource.
+        /// The type of Amazon Web Services resource.
         /// </para>
         /// </summary>
         public ResourceType ResourceType
@@ -296,7 +296,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property SupplementaryConfiguration. 
         /// <para>
-        /// Configuration attributes that AWS Config returns for certain resource types to supplement
+        /// Configuration attributes that Config returns for certain resource types to supplement
         /// the information returned for the configuration parameter.
         /// </para>
         /// </summary>

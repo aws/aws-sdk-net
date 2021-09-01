@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// AWS Config throws an exception if the recording group does not contain a valid list
-    /// of resource types. Invalid values might also be incorrectly formatted.
+    /// Config throws an exception if the recording group does not contain a valid list of
+    /// resource types. Invalid values might also be incorrectly formatted.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

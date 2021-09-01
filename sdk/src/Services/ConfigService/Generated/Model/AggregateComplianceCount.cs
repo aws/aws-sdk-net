@@ -40,7 +40,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ComplianceSummary. 
         /// <para>
-        /// The number of compliant and noncompliant AWS Config rules.
+        /// The number of compliant and noncompliant Config rules.
         /// </para>
         /// </summary>
         public ComplianceSummary ComplianceSummary

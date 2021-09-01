@@ -39,7 +39,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRules. 
         /// <para>
-        /// The details about your AWS Config rules.
+        /// The details about your Config rules.
         /// </para>
         /// </summary>
         public List<ConfigRule> ConfigRules

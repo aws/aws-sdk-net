@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Identifies an AWS Config rule that evaluated an AWS resource, and provides the type
-    /// and ID of the resource that the rule evaluated.
+    /// Identifies an Config rule that evaluated an Amazon Web Services resource, and provides
+    /// the type and ID of the resource that the rule evaluated.
     /// </summary>
     public partial class EvaluationResultQualifier
     {
@@ -41,7 +41,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleName. 
         /// <para>
-        /// The name of the AWS Config rule that was used in the evaluation.
+        /// The name of the Config rule that was used in the evaluation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -60,7 +60,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The ID of the evaluated AWS resource.
+        /// The ID of the evaluated Amazon Web Services resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=768)]
@@ -79,7 +79,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of AWS resource that was evaluated.
+        /// The type of Amazon Web Services resource that was evaluated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

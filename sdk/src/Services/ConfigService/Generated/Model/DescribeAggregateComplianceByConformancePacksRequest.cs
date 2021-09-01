@@ -31,7 +31,7 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Container for the parameters to the DescribeAggregateComplianceByConformancePacks operation.
     /// Returns a list of the conformance packs and their associated compliance status with
-    /// the count of compliant and noncompliant AWS Config rules within each conformance pack.
+    /// the count of compliant and noncompliant Config rules within each conformance pack.
     /// Also returns the total rule count which includes compliant rules, noncompliant rules,
     /// and rules that cannot be evaluated due to insufficient data.
     /// 
@@ -90,7 +90,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of conformance packs compliance details returned on each page.
-        /// The default is maximum. If you specify 0, AWS Config uses the default. 
+        /// The default is maximum. If you specify 0, Config uses the default. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

@@ -30,8 +30,8 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetConformancePackComplianceDetails operation.
-    /// Returns compliance details of a conformance pack for all AWS resources that are monitered
-    /// by conformance pack.
+    /// Returns compliance details of a conformance pack for all Amazon Web Services resources
+    /// that are monitered by conformance pack.
     /// </summary>
     public partial class GetConformancePackComplianceDetailsRequest : AmazonConfigServiceRequest
     {
@@ -81,7 +81,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of evaluation results returned on each page. If you do no specify
-        /// a number, AWS Config uses the default. The default is 100.
+        /// a number, Config uses the default. The default is 100.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

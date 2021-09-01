@@ -39,7 +39,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRulesEvaluationStatus. 
         /// <para>
-        /// Status information about your AWS managed Config rules.
+        /// Status information about your Config managed rules.
         /// </para>
         /// </summary>
         public List<ConfigRuleEvaluationStatus> ConfigRulesEvaluationStatus

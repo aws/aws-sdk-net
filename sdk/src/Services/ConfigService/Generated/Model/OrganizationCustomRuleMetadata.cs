@@ -30,10 +30,10 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// An object that specifies organization custom rule metadata such as resource type,
-    /// resource ID of AWS resource, Lamdba function ARN, and organization trigger types that
-    /// trigger AWS Config to evaluate your AWS resources against a rule. It also provides
-    /// the frequency with which you want AWS Config to run evaluations for the rule if the
-    /// trigger type is periodic.
+    /// resource ID of Amazon Web Services resource, Lambda function ARN, and organization
+    /// trigger types that trigger Config to evaluate your Amazon Web Services resources against
+    /// a rule. It also provides the frequency with which you want Config to run evaluations
+    /// for the rule if the trigger type is periodic.
     /// </summary>
     public partial class OrganizationCustomRuleMetadata
     {
@@ -107,8 +107,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property MaximumExecutionFrequency. 
         /// <para>
-        /// The maximum frequency with which AWS Config runs evaluations for a rule. Your custom
-        /// rule is triggered when AWS Config delivers the configuration snapshot. For more information,
+        /// The maximum frequency with which Config runs evaluations for a rule. Your custom rule
+        /// is triggered when Config delivers the configuration snapshot. For more information,
         /// see <a>ConfigSnapshotDeliveryProperties</a>.
         /// </para>
         ///  <note> 
@@ -134,20 +134,20 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property OrganizationConfigRuleTriggerTypes. 
         /// <para>
-        /// The type of notification that triggers AWS Config to run an evaluation for a rule.
-        /// You can specify the following notification types:
+        /// The type of notification that triggers Config to run an evaluation for a rule. You
+        /// can specify the following notification types:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when AWS
-        /// Config delivers a configuration item as a result of a resource change.
+        ///  <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config
+        /// delivers a configuration item as a result of a resource change.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation
-        /// when AWS Config delivers an oversized configuration item. AWS Config may generate
-        /// this notification type when a resource changes and the notification exceeds the maximum
-        /// size allowed by Amazon SNS.
+        /// when Config delivers an oversized configuration item. Config may generate this notification
+        /// type when a resource changes and the notification exceeds the maximum size allowed
+        /// by Amazon SNS.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -172,7 +172,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceIdScope. 
         /// <para>
-        /// The ID of the AWS resource that was evaluated.
+        /// The ID of the Amazon Web Services resource that was evaluated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=768)]
@@ -191,7 +191,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceTypesScope. 
         /// <para>
-        /// The type of the AWS resource that was evaluated.
+        /// The type of the Amazon Web Services resource that was evaluated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

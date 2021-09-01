@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// AWS Config organization conformance pack that you passed in the filter does not exist.
+    /// Config organization conformance pack that you passed in the filter does not exist.
     /// 
     ///  
     /// <para>

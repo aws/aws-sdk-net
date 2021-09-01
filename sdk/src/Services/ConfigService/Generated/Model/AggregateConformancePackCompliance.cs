@@ -72,7 +72,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property CompliantRuleCount. 
         /// <para>
-        /// The number of compliant AWS Config Rules.
+        /// The number of compliant Config Rules.
         /// </para>
         /// </summary>
         public int CompliantRuleCount
@@ -90,7 +90,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property NonCompliantRuleCount. 
         /// <para>
-        /// The number of noncompliant AWS Config Rules.
+        /// The number of noncompliant Config Rules.
         /// </para>
         /// </summary>
         public int NonCompliantRuleCount

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The controls that AWS Config uses for executing remediations.
+    /// The controls that Config uses for executing remediations.
     /// </summary>
     public partial class ExecutionControls
     {

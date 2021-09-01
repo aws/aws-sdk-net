@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Provides the AWS Config rule owner (AWS or customer), the rule identifier, and the
-    /// events that trigger the evaluation of your AWS resources.
+    /// Provides the Config rule owner (Amazon Web Services or customer), the rule identifier,
+    /// and the events that trigger the evaluation of your Amazon Web Services resources.
     /// </summary>
     public partial class Source
     {
@@ -41,7 +41,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// Indicates whether AWS or the customer owns and manages the AWS Config rule.
+        /// Indicates whether Amazon Web Services or the customer owns and manages the Config
+        /// rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,8 +61,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property SourceDetails. 
         /// <para>
-        /// Provides the source and type of the event that causes AWS Config to evaluate your
-        /// AWS resources.
+        /// Provides the source and type of the event that causes Config to evaluate your Amazon
+        /// Web Services resources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=25)]
@@ -80,14 +81,14 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property SourceIdentifier. 
         /// <para>
-        /// For AWS Config managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code>
+        /// For Config managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code>
         /// is a managed rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-        /// AWS Managed Config Rules</a>.
+        /// Config managed rules</a>.
         /// </para>
         ///  
         /// <para>
-        /// For custom rules, the identifier is the Amazon Resource Name (ARN) of the rule's AWS
-        /// Lambda function, such as <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.
+        /// For custom rules, the identifier is the Amazon Resource Name (ARN) of the rule's Lambda
+        /// function, such as <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

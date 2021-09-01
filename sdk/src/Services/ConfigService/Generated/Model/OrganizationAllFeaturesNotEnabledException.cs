@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// AWS Config resource cannot be created because your organization does not have all
-    /// features enabled.
+    /// Config resource cannot be created because your organization does not have all features
+    /// enabled.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

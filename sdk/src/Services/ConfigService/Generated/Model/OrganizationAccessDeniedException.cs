@@ -38,28 +38,28 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The configuration aggregator cannot be updated because your AWS Organization management
-    /// account or the delegated administrator role changed. Delete this aggregator and create
-    /// a new one with the current AWS Organization.
+    /// The configuration aggregator cannot be updated because your Amazon Web Services Organization
+    /// management account or the delegated administrator role changed. Delete this aggregator
+    /// and create a new one with the current Amazon Web Services Organization.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The configuration aggregator is associated with a previous AWS Organization and AWS
-    /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
-    /// and create a new one with the current AWS Organization.
+    /// The configuration aggregator is associated with a previous Amazon Web Services Organization
+    /// and Config cannot aggregate data with current Amazon Web Services Organization. Delete
+    /// this aggregator and create a new one with the current Amazon Web Services Organization.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You are not a registered delegated administrator for AWS Config with permissions to
-    /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
-    /// registers delagated administrator for AWS Config service principle name before the
-    /// delegated administrator creates an aggregator.
+    /// You are not a registered delegated administrator for Config with permissions to call
+    /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+    /// delagated administrator for Config service principle name before the delegated administrator
+    /// creates an aggregator.
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
-    /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
-    /// APIs must be called from organization master account.
+    /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
+    /// must be called from organization master account.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

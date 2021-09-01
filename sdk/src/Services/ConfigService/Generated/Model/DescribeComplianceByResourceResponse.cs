@@ -39,8 +39,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ComplianceByResources. 
         /// <para>
-        /// Indicates whether the specified AWS resource complies with all of the AWS Config rules
-        /// that evaluate it.
+        /// Indicates whether the specified Amazon Web Services resource complies with all of
+        /// the Config rules that evaluate it.
         /// </para>
         /// </summary>
         public List<ComplianceByResource> ComplianceByResources

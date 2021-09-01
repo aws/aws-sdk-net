@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Identifies an AWS resource and indicates whether it complies with the AWS Config rule
-    /// that it was evaluated against.
+    /// Identifies an Amazon Web Services resource and indicates whether it complies with
+    /// the Config rule that it was evaluated against.
     /// </summary>
     public partial class ExternalEvaluation
     {
@@ -63,7 +63,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ComplianceResourceId. 
         /// <para>
-        /// The evaluated compliance resource ID. AWS Config accepts only AWS account ID.
+        /// The evaluated compliance resource ID. Config accepts only Amazon Web Services account
+        /// ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=768)]
@@ -82,7 +83,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ComplianceResourceType. 
         /// <para>
-        /// The evaluated compliance resource type. AWS Config accepts <code>AWS::::Account</code>
+        /// The evaluated compliance resource type. Config accepts <code>AWS::::Account</code>
         /// resource type.
         /// </para>
         /// </summary>
@@ -102,8 +103,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ComplianceType. 
         /// <para>
-        /// The compliance of the AWS resource. The valid values are <code>COMPLIANT, NON_COMPLIANT,
-        /// </code> and <code>NOT_APPLICABLE</code>.
+        /// The compliance of the Amazon Web Services resource. The valid values are <code>COMPLIANT,
+        /// NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -45,7 +45,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleName. 
         /// <para>
-        /// A list of AWS Config rule names.
+        /// A list of Config rule names.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -65,7 +65,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of RemediationExecutionStatuses returned on each page. The default
-        /// is maximum. If you specify 0, AWS Config uses the default. 
+        /// is maximum. If you specify 0, Config uses the default. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

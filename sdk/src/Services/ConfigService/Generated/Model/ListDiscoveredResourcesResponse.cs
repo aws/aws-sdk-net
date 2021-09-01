@@ -58,8 +58,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceIdentifiers. 
         /// <para>
-        /// The details that identify a resource that is discovered by AWS Config, including the
-        /// resource type, ID, and (if available) the custom resource name.
+        /// The details that identify a resource that is discovered by Config, including the resource
+        /// type, ID, and (if available) the custom resource name.
         /// </para>
         /// </summary>
         public List<ResourceIdentifier> ResourceIdentifiers

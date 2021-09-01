@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Defines which resources trigger an evaluation for an AWS Config rule. The scope can
-    /// include one or more resource types, a combination of a tag key and value, or a combination
+    /// Defines which resources trigger an evaluation for an Config rule. The scope can include
+    /// one or more resource types, a combination of a tag key and value, or a combination
     /// of one resource type and one resource ID. Specify a scope to constrain which resources
     /// trigger an evaluation for a rule. Otherwise, evaluations for the rule are triggered
     /// when any resource in your recording group changes in configuration.
@@ -45,8 +45,9 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ComplianceResourceId. 
         /// <para>
-        /// The ID of the only AWS resource that you want to trigger an evaluation for the rule.
-        /// If you specify a resource ID, you must specify one resource type for <code>ComplianceResourceTypes</code>.
+        /// The ID of the only Amazon Web Services resource that you want to trigger an evaluation
+        /// for the rule. If you specify a resource ID, you must specify one resource type for
+        /// <code>ComplianceResourceTypes</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=768)]
@@ -65,9 +66,9 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ComplianceResourceTypes. 
         /// <para>
-        /// The resource types of only those AWS resources that you want to trigger an evaluation
-        /// for the rule. You can only specify one type if you also specify a resource ID for
-        /// <code>ComplianceResourceId</code>.
+        /// The resource types of only those Amazon Web Services resources that you want to trigger
+        /// an evaluation for the rule. You can only specify one type if you also specify a resource
+        /// ID for <code>ComplianceResourceId</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -86,8 +87,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property TagKey. 
         /// <para>
-        /// The tag key that is applied to only those AWS resources that you want to trigger an
-        /// evaluation for the rule.
+        /// The tag key that is applied to only those Amazon Web Services resources that you want
+        /// to trigger an evaluation for the rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -106,9 +107,9 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property TagValue. 
         /// <para>
-        /// The tag value applied to only those AWS resources that you want to trigger an evaluation
-        /// for the rule. If you specify a value for <code>TagValue</code>, you must also specify
-        /// a value for <code>TagKey</code>.
+        /// The tag value applied to only those Amazon Web Services resources that you want to
+        /// trigger an evaluation for the rule. If you specify a value for <code>TagValue</code>,
+        /// you must also specify a value for <code>TagKey</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

@@ -101,7 +101,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        /// AWS service that created the configuration aggregator.
+        /// Amazon Web Services service that created the configuration aggregator.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

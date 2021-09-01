@@ -30,9 +30,9 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// An object that specifies organization managed rule metadata such as resource type
-    /// and ID of AWS resource along with the rule identifier. It also provides the frequency
-    /// with which you want AWS Config to run evaluations for the rule if the trigger type
-    /// is periodic.
+    /// and ID of Amazon Web Services resource along with the rule identifier. It also provides
+    /// the frequency with which you want Config to run evaluations for the rule if the trigger
+    /// type is periodic.
     /// </summary>
     public partial class OrganizationManagedRuleMetadata
     {
@@ -86,8 +86,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property MaximumExecutionFrequency. 
         /// <para>
-        /// The maximum frequency with which AWS Config runs evaluations for a rule. You are using
-        /// an AWS managed rule that is triggered at a periodic frequency.
+        /// The maximum frequency with which Config runs evaluations for a rule. You are using
+        /// an Config managed rule that is triggered at a periodic frequency.
         /// </para>
         ///  <note> 
         /// <para>
@@ -112,7 +112,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceIdScope. 
         /// <para>
-        /// The ID of the AWS resource that was evaluated.
+        /// The ID of the Amazon Web Services resource that was evaluated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=768)]
@@ -131,7 +131,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceTypesScope. 
         /// <para>
-        /// The type of the AWS resource that was evaluated.
+        /// The type of the Amazon Web Services resource that was evaluated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -153,7 +153,7 @@ namespace Amazon.ConfigService.Model
         /// For organization config managed rules, a predefined identifier from a list. For example,
         /// <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see
         /// <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-        /// AWS Managed Config Rules</a>.
+        /// Config managed rules</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

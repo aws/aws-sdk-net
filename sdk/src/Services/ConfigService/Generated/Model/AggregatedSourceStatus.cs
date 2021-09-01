@@ -63,7 +63,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property LastErrorCode. 
         /// <para>
-        /// The error code that AWS Config returned when the source account aggregation last failed.
+        /// The error code that Config returned when the source account aggregation last failed.
         /// </para>
         /// </summary>
         public string LastErrorCode

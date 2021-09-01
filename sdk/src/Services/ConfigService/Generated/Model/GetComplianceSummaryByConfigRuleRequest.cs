@@ -30,8 +30,8 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetComplianceSummaryByConfigRule operation.
-    /// Returns the number of AWS Config rules that are compliant and noncompliant, up to
-    /// a maximum of 25 for each.
+    /// Returns the number of Config rules that are compliant and noncompliant, up to a maximum
+    /// of 25 for each.
     /// </summary>
     public partial class GetComplianceSummaryByConfigRuleRequest : AmazonConfigServiceRequest
     {

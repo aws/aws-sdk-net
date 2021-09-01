@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The number of AWS Config rules or AWS resources that are compliant and noncompliant.
+    /// The number of Config rules or Amazon Web Services resources that are compliant and
+    /// noncompliant.
     /// </summary>
     public partial class ComplianceSummary
     {
@@ -40,7 +41,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ComplianceSummaryTimestamp. 
         /// <para>
-        /// The time that AWS Config created the compliance summary.
+        /// The time that Config created the compliance summary.
         /// </para>
         /// </summary>
         public DateTime ComplianceSummaryTimestamp
@@ -58,8 +59,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property CompliantResourceCount. 
         /// <para>
-        /// The number of AWS Config rules or AWS resources that are compliant, up to a maximum
-        /// of 25 for rules and 100 for resources.
+        /// The number of Config rules or Amazon Web Services resources that are compliant, up
+        /// to a maximum of 25 for rules and 100 for resources.
         /// </para>
         /// </summary>
         public ComplianceContributorCount CompliantResourceCount
@@ -77,8 +78,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property NonCompliantResourceCount. 
         /// <para>
-        /// The number of AWS Config rules or AWS resources that are noncompliant, up to a maximum
-        /// of 25 for rules and 100 for resources.
+        /// The number of Config rules or Amazon Web Services resources that are noncompliant,
+        /// up to a maximum of 25 for rules and 100 for resources.
         /// </para>
         /// </summary>
         public ComplianceContributorCount NonCompliantResourceCount

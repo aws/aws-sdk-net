@@ -39,7 +39,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleNames. 
         /// <para>
-        /// A list of AWS Config rule names of remediation configurations for which you want details.
+        /// A list of Config rule names of remediation configurations for which you want details.
         /// 
         /// </para>
         /// </summary>

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The number of AWS resources of a specific type that are compliant or noncompliant,
-    /// up to a maximum of 100 for each.
+    /// The number of Amazon Web Services resources of a specific type that are compliant
+    /// or noncompliant, up to a maximum of 100 for each.
     /// </summary>
     public partial class ComplianceSummaryByResourceType
     {
@@ -40,8 +40,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ComplianceSummary. 
         /// <para>
-        /// The number of AWS resources that are compliant or noncompliant, up to a maximum of
-        /// 100 for each.
+        /// The number of Amazon Web Services resources that are compliant or noncompliant, up
+        /// to a maximum of 100 for each.
         /// </para>
         /// </summary>
         public ComplianceSummary ComplianceSummary
@@ -59,7 +59,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of AWS resource.
+        /// The type of Amazon Web Services resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

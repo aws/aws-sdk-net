@@ -30,7 +30,7 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeConfigRules operation.
-    /// Returns details about your AWS Config rules.
+    /// Returns details about your Config rules.
     /// </summary>
     public partial class DescribeConfigRulesRequest : AmazonConfigServiceRequest
     {
@@ -40,8 +40,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleNames. 
         /// <para>
-        /// The names of the AWS Config rules for which you want details. If you do not specify
-        /// any names, AWS Config returns details for all your rules.
+        /// The names of the Config rules for which you want details. If you do not specify any
+        /// names, Config returns details for all your rules.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=25)]

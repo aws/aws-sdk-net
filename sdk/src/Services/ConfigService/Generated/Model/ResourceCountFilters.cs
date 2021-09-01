@@ -77,7 +77,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of the AWS resource.
+        /// The type of the Amazon Web Services resource.
         /// </para>
         /// </summary>
         public ResourceType ResourceType

@@ -39,7 +39,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property EvaluationResults. 
         /// <para>
-        /// Indicates whether the specified AWS resource complies each AWS Config rule.
+        /// Indicates whether the specified Amazon Web Services resource complies each Config
+        /// rule.
         /// </para>
         /// </summary>
         public List<EvaluationResult> EvaluationResults

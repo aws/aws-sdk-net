@@ -31,9 +31,9 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Container for the parameters to the DescribeConfigurationAggregatorSourcesStatus operation.
     /// Returns status information for sources within an aggregator. The status includes information
-    /// about the last time AWS Config verified authorization between the source account and
-    /// an aggregator account. In case of a failure, the status contains the related error
-    /// code or message.
+    /// about the last time Config verified authorization between the source account and an
+    /// aggregator account. In case of a failure, the status contains the related error code
+    /// or message.
     /// </summary>
     public partial class DescribeConfigurationAggregatorSourcesStatusRequest : AmazonConfigServiceRequest
     {
@@ -65,7 +65,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of AggregatorSourceStatus returned on each page. The default is
-        /// maximum. If you specify 0, AWS Config uses the default.
+        /// maximum. If you specify 0, Config uses the default.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

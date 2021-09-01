@@ -39,7 +39,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ComplianceByConfigRules. 
         /// <para>
-        /// Indicates whether each of the specified AWS Config rules is compliant.
+        /// Indicates whether each of the specified Config rules is compliant.
         /// </para>
         /// </summary>
         public List<ComplianceByConfigRule> ComplianceByConfigRules

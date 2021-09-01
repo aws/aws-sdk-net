@@ -30,13 +30,13 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteConformancePack operation.
-    /// Deletes the specified conformance pack and all the AWS Config rules, remediation actions,
+    /// Deletes the specified conformance pack and all the Config rules, remediation actions,
     /// and all evaluation results within that conformance pack.
     /// 
     ///  
     /// <para>
-    /// AWS Config sets the conformance pack to <code>DELETE_IN_PROGRESS</code> until the
-    /// deletion is complete. You cannot update a conformance pack while it is in this state.
+    /// Config sets the conformance pack to <code>DELETE_IN_PROGRESS</code> until the deletion
+    /// is complete. You cannot update a conformance pack while it is in this state.
     /// </para>
     /// </summary>
     public partial class DeleteConformancePackRequest : AmazonConfigServiceRequest

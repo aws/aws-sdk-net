@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The details of a conformance pack evaluation. Provides AWS Config rule and AWS resource
-    /// type that was evaluated, the compliance of the conformance pack, related time stamps,
-    /// and supplementary information.
+    /// The details of a conformance pack evaluation. Provides Config rule and Amazon Web
+    /// Services resource type that was evaluated, the compliance of the conformance pack,
+    /// related time stamps, and supplementary information.
     /// </summary>
     public partial class ConformancePackEvaluationResult
     {
@@ -83,7 +83,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleInvokedTime. 
         /// <para>
-        /// The time when AWS Config rule evaluated AWS resource.
+        /// The time when Config rule evaluated Amazon Web Services resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -118,7 +118,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResultRecordedTime. 
         /// <para>
-        /// The time when AWS Config recorded the evaluation result. 
+        /// The time when Config recorded the evaluation result. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

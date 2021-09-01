@@ -87,7 +87,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleName. 
         /// <para>
-        /// The name of the AWS Config rule.
+        /// The name of the Config rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -149,7 +149,7 @@ namespace Amazon.ConfigService.Model
         ///  
         /// <para>
         /// For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds
-        /// as 50 seconds, AWS Config will put a RemediationException on your behalf for the failing
+        /// as 50 seconds, Config will put a RemediationException on your behalf for the failing
         /// resource after the 5th failed attempt within 50 seconds.
         /// </para>
         /// </summary>
@@ -206,13 +206,13 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property RetryAttemptSeconds. 
         /// <para>
-        /// Maximum time in seconds that AWS Config runs auto-remediation. If you do not select
-        /// a number, the default is 60 seconds. 
+        /// Maximum time in seconds that Config runs auto-remediation. If you do not select a
+        /// number, the default is 60 seconds. 
         /// </para>
         ///  
         /// <para>
         /// For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts
-        /// as 5, AWS Config will run auto-remediations 5 times within 50 seconds before throwing
+        /// as 5, Config will run auto-remediations 5 times within 50 seconds before throwing
         /// an exception.
         /// </para>
         /// </summary>

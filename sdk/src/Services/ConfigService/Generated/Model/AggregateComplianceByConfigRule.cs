@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Indicates whether an AWS Config rule is compliant based on account ID, region, compliance,
+    /// Indicates whether an Config rule is compliant based on account ID, region, compliance,
     /// and rule name.
     /// 
     ///  
@@ -85,8 +85,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Compliance. 
         /// <para>
-        /// Indicates whether an AWS resource or AWS Config rule is compliant and provides the
-        /// number of contributors that affect the compliance.
+        /// Indicates whether an Amazon Web Services resource or Config rule is compliant and
+        /// provides the number of contributors that affect the compliance.
         /// </para>
         /// </summary>
         public Compliance Compliance
@@ -104,7 +104,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleName. 
         /// <para>
-        /// The name of the AWS Config rule.
+        /// The name of the Config rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

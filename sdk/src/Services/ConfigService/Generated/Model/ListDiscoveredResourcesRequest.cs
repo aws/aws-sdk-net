@@ -32,8 +32,8 @@ namespace Amazon.ConfigService.Model
     /// Container for the parameters to the ListDiscoveredResources operation.
     /// Accepts a resource type and returns a list of resource identifiers for the resources
     /// of that type. A resource identifier includes the resource type, ID, and (if available)
-    /// the custom resource name. The results consist of resources that AWS Config has discovered,
-    /// including those that AWS Config is not currently recording. You can narrow the results
+    /// the custom resource name. The results consist of resources that Config has discovered,
+    /// including those that Config is not currently recording. You can narrow the results
     /// to include only resources that have specific resource IDs or a resource name.
     /// 
     ///  <note> 
@@ -43,10 +43,10 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// The response is paginated. By default, AWS Config lists 100 resource identifiers on
-    /// each page. You can customize this number with the <code>limit</code> parameter. The
-    /// response includes a <code>nextToken</code> string. To get the next page of results,
-    /// run the request again and specify the string for the <code>nextToken</code> parameter.
+    /// The response is paginated. By default, Config lists 100 resource identifiers on each
+    /// page. You can customize this number with the <code>limit</code> parameter. The response
+    /// includes a <code>nextToken</code> string. To get the next page of results, run the
+    /// request again and specify the string for the <code>nextToken</code> parameter.
     /// </para>
     /// </summary>
     public partial class ListDiscoveredResourcesRequest : AmazonConfigServiceRequest
@@ -61,8 +61,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property IncludeDeletedResources. 
         /// <para>
-        /// Specifies whether AWS Config includes deleted resources in the results. By default,
-        /// deleted resources are not included.
+        /// Specifies whether Config includes deleted resources in the results. By default, deleted
+        /// resources are not included.
         /// </para>
         /// </summary>
         public bool IncludeDeletedResources
@@ -81,8 +81,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of resource identifiers returned on each page. The default is 100.
-        /// You cannot specify a number greater than 100. If you specify 0, AWS Config uses the
-        /// default.
+        /// You cannot specify a number greater than 100. If you specify 0, Config uses the default.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -120,9 +119,9 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceIds. 
         /// <para>
-        /// The IDs of only those resources that you want AWS Config to list in the response.
-        /// If you do not specify this parameter, AWS Config lists all resources of the specified
-        /// type that it has discovered.
+        /// The IDs of only those resources that you want Config to list in the response. If you
+        /// do not specify this parameter, Config lists all resources of the specified type that
+        /// it has discovered.
         /// </para>
         /// </summary>
         public List<string> ResourceIds
@@ -140,8 +139,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceName. 
         /// <para>
-        /// The custom name of only those resources that you want AWS Config to list in the response.
-        /// If you do not specify this parameter, AWS Config lists all resources of the specified
+        /// The custom name of only those resources that you want Config to list in the response.
+        /// If you do not specify this parameter, Config lists all resources of the specified
         /// type that it has discovered.
         /// </para>
         /// </summary>
@@ -160,7 +159,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resources that you want AWS Config to list in the response.
+        /// The type of resources that you want Config to list in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The number of AWS resources or AWS Config rules responsible for the current compliance
-    /// of the item, up to a maximum number.
+    /// The number of Amazon Web Services resources or Config rules responsible for the current
+    /// compliance of the item, up to a maximum number.
     /// </summary>
     public partial class ComplianceContributorCount
     {
@@ -58,8 +58,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property CappedCount. 
         /// <para>
-        /// The number of AWS resources or AWS Config rules responsible for the current compliance
-        /// of the item.
+        /// The number of Amazon Web Services resources or Config rules responsible for the current
+        /// compliance of the item.
         /// </para>
         /// </summary>
         public int CappedCount

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// AWS Systems Manager (SSM) specific remediation controls.
+    /// Amazon Web Services Systems Manager (SSM) specific remediation controls.
     /// </summary>
     public partial class SsmControls
     {

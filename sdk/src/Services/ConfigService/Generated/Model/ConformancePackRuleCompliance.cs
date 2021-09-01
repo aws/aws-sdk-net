@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Compliance information of one or more AWS Config rules within a conformance pack.
-    /// You can filter using AWS Config rule names and compliance types.
+    /// Compliance information of one or more Config rules within a conformance pack. You
+    /// can filter using Config rule names and compliance types.
     /// </summary>
     public partial class ConformancePackRuleCompliance
     {
@@ -41,7 +41,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ComplianceType. 
         /// <para>
-        /// Compliance of the AWS Config rule.
+        /// Compliance of the Config rule.
         /// </para>
         ///  
         /// <para>

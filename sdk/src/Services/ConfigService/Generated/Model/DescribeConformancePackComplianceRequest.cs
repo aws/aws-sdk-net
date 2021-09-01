@@ -85,7 +85,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of AWS Config rules within a conformance pack are returned on each
+        /// The maximum number of Config rules within a conformance pack are returned on each
         /// page.
         /// </para>
         /// </summary>

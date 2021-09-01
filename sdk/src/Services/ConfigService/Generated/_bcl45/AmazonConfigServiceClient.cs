@@ -38,29 +38,29 @@ namespace Amazon.ConfigService
     /// <summary>
     /// Implementation for accessing ConfigService
     ///
-    /// AWS Config 
+    /// Config 
     /// <para>
-    /// AWS Config provides a way to keep track of the configurations of all the AWS resources
-    /// associated with your AWS account. You can use AWS Config to get the current and historical
-    /// configurations of each AWS resource and also to get information about the relationship
-    /// between the resources. An AWS resource can be an Amazon Compute Cloud (Amazon EC2)
-    /// instance, an Elastic Block Store (EBS) volume, an elastic network Interface (ENI),
-    /// or a security group. For a complete list of resources currently supported by AWS Config,
-    /// see <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
-    /// AWS Resources</a>.
+    /// Config provides a way to keep track of the configurations of all the Amazon Web Services
+    /// resources associated with your Amazon Web Services account. You can use Config to
+    /// get the current and historical configurations of each Amazon Web Services resource
+    /// and also to get information about the relationship between the resources. An Amazon
+    /// Web Services resource can be an Amazon Compute Cloud (Amazon EC2) instance, an Elastic
+    /// Block Store (EBS) volume, an elastic network Interface (ENI), or a security group.
+    /// For a complete list of resources currently supported by Config, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
+    /// Amazon Web Services resources</a>.
     /// </para>
     ///  
     /// <para>
-    /// You can access and manage AWS Config through the AWS Management Console, the AWS Command
-    /// Line Interface (AWS CLI), the AWS Config API, or the AWS SDKs for AWS Config. This
-    /// reference guide contains documentation for the AWS Config API and the AWS CLI commands
-    /// that you can use to manage AWS Config. The AWS Config API uses the Signature Version
-    /// 4 protocol for signing requests. For more information about how to sign a request
-    /// with this protocol, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-    /// Version 4 Signing Process</a>. For detailed information about AWS Config features
-    /// and their associated actions or commands, as well as how to work with AWS Management
-    /// Console, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html">What
-    /// Is AWS Config</a> in the <i>AWS Config Developer Guide</i>.
+    /// You can access and manage Config through the Amazon Web Services Management Console,
+    /// the Amazon Web Services Command Line Interface (Amazon Web Services CLI), the Config
+    /// API, or the Amazon Web Services SDKs for Config. This reference guide contains documentation
+    /// for the Config API and the Amazon Web Services CLI commands that you can use to manage
+    /// Config. The Config API uses the Signature Version 4 protocol for signing requests.
+    /// For more information about how to sign a request with this protocol, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// Version 4 Signing Process</a>. For detailed information about Config features and
+    /// their associated actions or commands, as well as how to work with Amazon Web Services
+    /// Management Console, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html">What
+    /// Is Config</a> in the <i>Config Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class AmazonConfigServiceClient : AmazonServiceClient, IAmazonConfigService
@@ -281,8 +281,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns the current configuration items for resources that are present in your AWS
-        /// Config aggregator. The operation also returns a list of resources that are not processed
+        /// Returns the current configuration items for resources that are present in your Config
+        /// aggregator. The operation also returns a list of resources that are not processed
         /// in the current request. If there are no unprocessed resources, the operation returns
         /// an empty <code>unprocessedResourceIdentifiers</code> list. 
         /// 
@@ -329,8 +329,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns the current configuration items for resources that are present in your AWS
-        /// Config aggregator. The operation also returns a list of resources that are not processed
+        /// Returns the current configuration items for resources that are present in your Config
+        /// aggregator. The operation also returns a list of resources that are not processed
         /// in the current request. If there are no unprocessed resources, the operation returns
         /// an empty <code>unprocessedResourceIdentifiers</code> list. 
         /// 
@@ -384,9 +384,9 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns the current configuration for one or more requested resources. The operation
-        /// also returns a list of resources that are not processed in the current request. If
-        /// there are no unprocessed resources, the operation returns an empty unprocessedResourceKeys
+        /// Returns the <code>BaseConfigurationItem</code> for one or more requested resources.
+        /// The operation also returns a list of resources that are not processed in the current
+        /// request. If there are no unprocessed resources, the operation returns an empty unprocessedResourceKeys
         /// list. 
         /// 
         ///  <note> <ul> <li> 
@@ -434,9 +434,9 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns the current configuration for one or more requested resources. The operation
-        /// also returns a list of resources that are not processed in the current request. If
-        /// there are no unprocessed resources, the operation returns an empty unprocessedResourceKeys
+        /// Returns the <code>BaseConfigurationItem</code> for one or more requested resources.
+        /// The operation also returns a list of resources that are not processed in the current
+        /// request. If there are no unprocessed resources, the operation returns an empty unprocessedResourceKeys
         /// list. 
         /// 
         ///  <note> <ul> <li> 
@@ -542,12 +542,12 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Deletes the specified AWS Config rule and all of its evaluation results.
+        /// Deletes the specified Config rule and all of its evaluation results.
         /// 
         ///  
         /// <para>
-        /// AWS Config sets the state of a rule to <code>DELETING</code> until the deletion is
-        /// complete. You cannot update a rule while it is in this state. If you make a <code>PutConfigRule</code>
+        /// Config sets the state of a rule to <code>DELETING</code> until the deletion is complete.
+        /// You cannot update a rule while it is in this state. If you make a <code>PutConfigRule</code>
         /// or <code>DeleteConfigRule</code> request for the rule, you will receive a <code>ResourceInUseException</code>.
         /// </para>
         ///  
@@ -559,15 +559,15 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DeleteConfigRule service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
-        /// are correct and try again.
+        /// One or more Config rules in the request are invalid. Verify that the rule names are
+        /// correct and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
         /// You see this exception in the following cases: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+        /// For DeleteConfigRule, Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -576,7 +576,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// For DeleteConfigRule, a remediation action is associated with the rule and Config
         /// cannot delete this rule. Delete the remediation action associated with the rule before
         /// deleting the rule and try your request again later.
         /// </para>
@@ -614,12 +614,12 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Deletes the specified AWS Config rule and all of its evaluation results.
+        /// Deletes the specified Config rule and all of its evaluation results.
         /// 
         ///  
         /// <para>
-        /// AWS Config sets the state of a rule to <code>DELETING</code> until the deletion is
-        /// complete. You cannot update a rule while it is in this state. If you make a <code>PutConfigRule</code>
+        /// Config sets the state of a rule to <code>DELETING</code> until the deletion is complete.
+        /// You cannot update a rule while it is in this state. If you make a <code>PutConfigRule</code>
         /// or <code>DeleteConfigRule</code> request for the rule, you will receive a <code>ResourceInUseException</code>.
         /// </para>
         ///  
@@ -634,15 +634,15 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DeleteConfigRule service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
-        /// are correct and try again.
+        /// One or more Config rules in the request are invalid. Verify that the rule names are
+        /// correct and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
         /// You see this exception in the following cases: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+        /// For DeleteConfigRule, Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -651,7 +651,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// For DeleteConfigRule, a remediation action is associated with the rule and Config
         /// cannot delete this rule. Delete the remediation action associated with the rule before
         /// deleting the rule and try your request again later.
         /// </para>
@@ -746,14 +746,14 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
-        /// After the configuration recorder is deleted, AWS Config will not record resource configuration
+        /// After the configuration recorder is deleted, Config will not record resource configuration
         /// changes until you create a new configuration recorder.
         /// </para>
         ///  
         /// <para>
         /// This action does not delete the configuration information that was previously recorded.
         /// You will be able to access the previously recorded information by using the <code>GetResourceConfigHistory</code>
-        /// action, but you will not be able to access this information in the AWS Config console
+        /// action, but you will not be able to access this information in the Config console
         /// until you create a new configuration recorder.
         /// </para>
         /// </summary>
@@ -779,14 +779,14 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
-        /// After the configuration recorder is deleted, AWS Config will not record resource configuration
+        /// After the configuration recorder is deleted, Config will not record resource configuration
         /// changes until you create a new configuration recorder.
         /// </para>
         ///  
         /// <para>
         /// This action does not delete the configuration information that was previously recorded.
         /// You will be able to access the previously recorded information by using the <code>GetResourceConfigHistory</code>
-        /// action, but you will not be able to access this information in the AWS Config console
+        /// action, but you will not be able to access this information in the Config console
         /// until you create a new configuration recorder.
         /// </para>
         /// </summary>
@@ -815,13 +815,13 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Deletes the specified conformance pack and all the AWS Config rules, remediation actions,
+        /// Deletes the specified conformance pack and all the Config rules, remediation actions,
         /// and all evaluation results within that conformance pack.
         /// 
         ///  
         /// <para>
-        /// AWS Config sets the conformance pack to <code>DELETE_IN_PROGRESS</code> until the
-        /// deletion is complete. You cannot update a conformance pack while it is in this state.
+        /// Config sets the conformance pack to <code>DELETE_IN_PROGRESS</code> until the deletion
+        /// is complete. You cannot update a conformance pack while it is in this state.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConformancePack service method.</param>
@@ -835,7 +835,7 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+        /// For DeleteConfigRule, Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -844,7 +844,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// For DeleteConfigRule, a remediation action is associated with the rule and Config
         /// cannot delete this rule. Delete the remediation action associated with the rule before
         /// deleting the rule and try your request again later.
         /// </para>
@@ -882,13 +882,13 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Deletes the specified conformance pack and all the AWS Config rules, remediation actions,
+        /// Deletes the specified conformance pack and all the Config rules, remediation actions,
         /// and all evaluation results within that conformance pack.
         /// 
         ///  
         /// <para>
-        /// AWS Config sets the conformance pack to <code>DELETE_IN_PROGRESS</code> until the
-        /// deletion is complete. You cannot update a conformance pack while it is in this state.
+        /// Config sets the conformance pack to <code>DELETE_IN_PROGRESS</code> until the deletion
+        /// is complete. You cannot update a conformance pack while it is in this state.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConformancePack service method.</param>
@@ -905,7 +905,7 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+        /// For DeleteConfigRule, Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -914,7 +914,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// For DeleteConfigRule, a remediation action is associated with the rule and Config
         /// cannot delete this rule. Delete the remediation action associated with the rule before
         /// deleting the rule and try your request again later.
         /// </para>
@@ -1082,24 +1082,24 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Deletes the evaluation results for the specified AWS Config rule. You can specify
-        /// one AWS Config rule per request. After you delete the evaluation results, you can
-        /// call the <a>StartConfigRulesEvaluation</a> API to start evaluating your AWS resources
-        /// against the rule.
+        /// Deletes the evaluation results for the specified Config rule. You can specify one
+        /// Config rule per request. After you delete the evaluation results, you can call the
+        /// <a>StartConfigRulesEvaluation</a> API to start evaluating your Amazon Web Services
+        /// resources against the rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEvaluationResults service method.</param>
         /// 
         /// <returns>The response from the DeleteEvaluationResults service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
-        /// are correct and try again.
+        /// One or more Config rules in the request are invalid. Verify that the rule names are
+        /// correct and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
         /// You see this exception in the following cases: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+        /// For DeleteConfigRule, Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1108,7 +1108,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// For DeleteConfigRule, a remediation action is associated with the rule and Config
         /// cannot delete this rule. Delete the remediation action associated with the rule before
         /// deleting the rule and try your request again later.
         /// </para>
@@ -1146,10 +1146,10 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Deletes the evaluation results for the specified AWS Config rule. You can specify
-        /// one AWS Config rule per request. After you delete the evaluation results, you can
-        /// call the <a>StartConfigRulesEvaluation</a> API to start evaluating your AWS resources
-        /// against the rule.
+        /// Deletes the evaluation results for the specified Config rule. You can specify one
+        /// Config rule per request. After you delete the evaluation results, you can call the
+        /// <a>StartConfigRulesEvaluation</a> API to start evaluating your Amazon Web Services
+        /// resources against the rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEvaluationResults service method.</param>
         /// <param name="cancellationToken">
@@ -1158,15 +1158,15 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DeleteEvaluationResults service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
-        /// are correct and try again.
+        /// One or more Config rules in the request are invalid. Verify that the rule names are
+        /// correct and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
         /// You see this exception in the following cases: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+        /// For DeleteConfigRule, Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1175,7 +1175,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// For DeleteConfigRule, a remediation action is associated with the rule and Config
         /// cannot delete this rule. Delete the remediation action associated with the rule before
         /// deleting the rule and try your request again later.
         /// </para>
@@ -1224,11 +1224,11 @@ namespace Amazon.ConfigService
         /// <para>
         /// Only a master account and a delegated administrator account can delete an organization
         /// config rule. When calling this API with a delegated administrator, you must ensure
-        /// AWS Organizations <code>ListDelegatedAdministrator</code> permissions are added.
+        /// Organizations <code>ListDelegatedAdministrator</code> permissions are added.
         /// </para>
         ///  
         /// <para>
-        /// AWS Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is complete.
+        /// Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is complete.
         /// You cannot update a rule while it is in this state.
         /// </para>
         /// </summary>
@@ -1248,28 +1248,28 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator cannot be updated because your AWS Organization management
-        /// account or the delegated administrator role changed. Delete this aggregator and create
-        /// a new one with the current AWS Organization.
+        /// The configuration aggregator cannot be updated because your Amazon Web Services Organization
+        /// management account or the delegated administrator role changed. Delete this aggregator
+        /// and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator is associated with a previous AWS Organization and AWS
-        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
-        /// and create a new one with the current AWS Organization.
+        /// The configuration aggregator is associated with a previous Amazon Web Services Organization
+        /// and Config cannot aggregate data with current Amazon Web Services Organization. Delete
+        /// this aggregator and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are not a registered delegated administrator for AWS Config with permissions to
-        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
-        /// registers delagated administrator for AWS Config service principle name before the
-        /// delegated administrator creates an aggregator.
+        /// You are not a registered delegated administrator for Config with permissions to call
+        /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+        /// delagated administrator for Config service principle name before the delegated administrator
+        /// creates an aggregator.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
-        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
-        /// APIs must be called from organization master account.
+        /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
+        /// must be called from organization master account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
@@ -1277,7 +1277,7 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+        /// For DeleteConfigRule, Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1286,7 +1286,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// For DeleteConfigRule, a remediation action is associated with the rule and Config
         /// cannot delete this rule. Delete the remediation action associated with the rule before
         /// deleting the rule and try your request again later.
         /// </para>
@@ -1331,11 +1331,11 @@ namespace Amazon.ConfigService
         /// <para>
         /// Only a master account and a delegated administrator account can delete an organization
         /// config rule. When calling this API with a delegated administrator, you must ensure
-        /// AWS Organizations <code>ListDelegatedAdministrator</code> permissions are added.
+        /// Organizations <code>ListDelegatedAdministrator</code> permissions are added.
         /// </para>
         ///  
         /// <para>
-        /// AWS Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is complete.
+        /// Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is complete.
         /// You cannot update a rule while it is in this state.
         /// </para>
         /// </summary>
@@ -1358,28 +1358,28 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator cannot be updated because your AWS Organization management
-        /// account or the delegated administrator role changed. Delete this aggregator and create
-        /// a new one with the current AWS Organization.
+        /// The configuration aggregator cannot be updated because your Amazon Web Services Organization
+        /// management account or the delegated administrator role changed. Delete this aggregator
+        /// and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator is associated with a previous AWS Organization and AWS
-        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
-        /// and create a new one with the current AWS Organization.
+        /// The configuration aggregator is associated with a previous Amazon Web Services Organization
+        /// and Config cannot aggregate data with current Amazon Web Services Organization. Delete
+        /// this aggregator and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are not a registered delegated administrator for AWS Config with permissions to
-        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
-        /// registers delagated administrator for AWS Config service principle name before the
-        /// delegated administrator creates an aggregator.
+        /// You are not a registered delegated administrator for Config with permissions to call
+        /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+        /// delagated administrator for Config service principle name before the delegated administrator
+        /// creates an aggregator.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
-        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
-        /// APIs must be called from organization master account.
+        /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
+        /// must be called from organization master account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
@@ -1387,7 +1387,7 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+        /// For DeleteConfigRule, Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1396,7 +1396,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// For DeleteConfigRule, a remediation action is associated with the rule and Config
         /// cannot delete this rule. Delete the remediation action associated with the rule before
         /// deleting the rule and try your request again later.
         /// </para>
@@ -1445,11 +1445,11 @@ namespace Amazon.ConfigService
         /// <para>
         ///  Only a master account or a delegated administrator account can delete an organization
         /// conformance pack. When calling this API with a delegated administrator, you must ensure
-        /// AWS Organizations <code>ListDelegatedAdministrator</code> permissions are added.
+        /// Organizations <code>ListDelegatedAdministrator</code> permissions are added.
         /// </para>
         ///  
         /// <para>
-        /// AWS Config sets the state of a conformance pack to DELETE_IN_PROGRESS until the deletion
+        /// Config sets the state of a conformance pack to DELETE_IN_PROGRESS until the deletion
         /// is complete. You cannot update a conformance pack while it is in this state. 
         /// </para>
         /// </summary>
@@ -1457,7 +1457,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DeleteOrganizationConformancePack service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConformancePackException">
-        /// AWS Config organization conformance pack that you passed in the filter does not exist.
+        /// Config organization conformance pack that you passed in the filter does not exist.
         /// 
         ///  
         /// <para>
@@ -1475,28 +1475,28 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator cannot be updated because your AWS Organization management
-        /// account or the delegated administrator role changed. Delete this aggregator and create
-        /// a new one with the current AWS Organization.
+        /// The configuration aggregator cannot be updated because your Amazon Web Services Organization
+        /// management account or the delegated administrator role changed. Delete this aggregator
+        /// and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator is associated with a previous AWS Organization and AWS
-        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
-        /// and create a new one with the current AWS Organization.
+        /// The configuration aggregator is associated with a previous Amazon Web Services Organization
+        /// and Config cannot aggregate data with current Amazon Web Services Organization. Delete
+        /// this aggregator and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are not a registered delegated administrator for AWS Config with permissions to
-        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
-        /// registers delagated administrator for AWS Config service principle name before the
-        /// delegated administrator creates an aggregator.
+        /// You are not a registered delegated administrator for Config with permissions to call
+        /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+        /// delagated administrator for Config service principle name before the delegated administrator
+        /// creates an aggregator.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
-        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
-        /// APIs must be called from organization master account.
+        /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
+        /// must be called from organization master account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
@@ -1504,7 +1504,7 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+        /// For DeleteConfigRule, Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1513,7 +1513,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// For DeleteConfigRule, a remediation action is associated with the rule and Config
         /// cannot delete this rule. Delete the remediation action associated with the rule before
         /// deleting the rule and try your request again later.
         /// </para>
@@ -1558,11 +1558,11 @@ namespace Amazon.ConfigService
         /// <para>
         ///  Only a master account or a delegated administrator account can delete an organization
         /// conformance pack. When calling this API with a delegated administrator, you must ensure
-        /// AWS Organizations <code>ListDelegatedAdministrator</code> permissions are added.
+        /// Organizations <code>ListDelegatedAdministrator</code> permissions are added.
         /// </para>
         ///  
         /// <para>
-        /// AWS Config sets the state of a conformance pack to DELETE_IN_PROGRESS until the deletion
+        /// Config sets the state of a conformance pack to DELETE_IN_PROGRESS until the deletion
         /// is complete. You cannot update a conformance pack while it is in this state. 
         /// </para>
         /// </summary>
@@ -1573,7 +1573,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DeleteOrganizationConformancePack service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConformancePackException">
-        /// AWS Config organization conformance pack that you passed in the filter does not exist.
+        /// Config organization conformance pack that you passed in the filter does not exist.
         /// 
         ///  
         /// <para>
@@ -1591,28 +1591,28 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator cannot be updated because your AWS Organization management
-        /// account or the delegated administrator role changed. Delete this aggregator and create
-        /// a new one with the current AWS Organization.
+        /// The configuration aggregator cannot be updated because your Amazon Web Services Organization
+        /// management account or the delegated administrator role changed. Delete this aggregator
+        /// and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator is associated with a previous AWS Organization and AWS
-        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
-        /// and create a new one with the current AWS Organization.
+        /// The configuration aggregator is associated with a previous Amazon Web Services Organization
+        /// and Config cannot aggregate data with current Amazon Web Services Organization. Delete
+        /// this aggregator and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are not a registered delegated administrator for AWS Config with permissions to
-        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
-        /// registers delagated administrator for AWS Config service principle name before the
-        /// delegated administrator creates an aggregator.
+        /// You are not a registered delegated administrator for Config with permissions to call
+        /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+        /// delagated administrator for Config service principle name before the delegated administrator
+        /// creates an aggregator.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
-        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
-        /// APIs must be called from organization master account.
+        /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
+        /// must be called from organization master account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
@@ -1620,7 +1620,7 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+        /// For DeleteConfigRule, Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1629,7 +1629,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// For DeleteConfigRule, a remediation action is associated with the rule and Config
         /// cannot delete this rule. Delete the remediation action associated with the rule before
         /// deleting the rule and try your request again later.
         /// </para>
@@ -1732,12 +1732,12 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
-        /// Config lacks permissions to perform the config:Put* action.
+        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to Config
+        /// lacks permissions to perform the config:Put* action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+        /// For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN,
         /// and check the function's permissions.
         /// </para>
         ///  </li> <li> 
@@ -1766,11 +1766,11 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchRemediationConfigurationException">
-        /// You specified an AWS Config rule without a remediation configuration.
+        /// You specified an Config rule without a remediation configuration.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.RemediationInProgressException">
-        /// Remediation action is in progress. You can either cancel execution in AWS Systems
-        /// Manager or wait and try again later.
+        /// Remediation action is in progress. You can either cancel execution in Amazon Web Services
+        /// Systems Manager or wait and try again later.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRemediationConfiguration">REST API Reference for DeleteRemediationConfiguration Operation</seealso>
         public virtual DeleteRemediationConfigurationResponse DeleteRemediationConfiguration(DeleteRemediationConfigurationRequest request)
@@ -1797,12 +1797,12 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
-        /// Config lacks permissions to perform the config:Put* action.
+        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to Config
+        /// lacks permissions to perform the config:Put* action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+        /// For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN,
         /// and check the function's permissions.
         /// </para>
         ///  </li> <li> 
@@ -1831,11 +1831,11 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchRemediationConfigurationException">
-        /// You specified an AWS Config rule without a remediation configuration.
+        /// You specified an Config rule without a remediation configuration.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.RemediationInProgressException">
-        /// Remediation action is in progress. You can either cancel execution in AWS Systems
-        /// Manager or wait and try again later.
+        /// Remediation action is in progress. You can either cancel execution in Amazon Web Services
+        /// Systems Manager or wait and try again later.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRemediationConfiguration">REST API Reference for DeleteRemediationConfiguration Operation</seealso>
         public virtual Task<DeleteRemediationConfigurationResponse> DeleteRemediationConfigurationAsync(DeleteRemediationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1857,7 +1857,7 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// AWS Config generates a remediation exception when a problem occurs executing a remediation
+        /// Config generates a remediation exception when a problem occurs executing a remediation
         /// action to a specific resource. Remediation exceptions blocks auto-remediation until
         /// the exception is cleared.
         /// </para>
@@ -1885,7 +1885,7 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// AWS Config generates a remediation exception when a problem occurs executing a remediation
+        /// Config generates a remediation exception when a problem occurs executing a remediation
         /// action to a specific resource. Remediation exceptions blocks auto-remediation until
         /// the exception is cleared.
         /// </para>
@@ -1918,7 +1918,7 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Records the configuration state for a custom resource that has been deleted. This
         /// API records a new ConfigurationItem with a ResourceDeleted status. You can retrieve
-        /// the ConfigurationItems recorded for this resource in your AWS Config History.
+        /// the ConfigurationItems recorded for this resource in your Config History.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourceConfig service method.</param>
         /// 
@@ -1955,7 +1955,7 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Records the configuration state for a custom resource that has been deleted. This
         /// API records a new ConfigurationItem with a ResourceDeleted status. You can retrieve
-        /// the ConfigurationItems recorded for this resource in your AWS Config History.
+        /// the ConfigurationItems recorded for this resource in your Config History.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourceConfig service method.</param>
         /// <param name="cancellationToken">
@@ -2052,7 +2052,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Deletes the stored query for a single AWS account and a single AWS Region.
+        /// Deletes the stored query for a single Amazon Web Services account and a single Amazon
+        /// Web Services Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStoredQuery service method.</param>
         /// 
@@ -2087,7 +2088,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Deletes the stored query for a single AWS account and a single AWS Region.
+        /// Deletes the stored query for a single Amazon Web Services account and a single Amazon
+        /// Web Services Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStoredQuery service method.</param>
         /// <param name="cancellationToken">
@@ -2130,7 +2132,7 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified
-        /// delivery channel. After the delivery has started, AWS Config sends the following notifications
+        /// delivery channel. After the delivery has started, Config sends the following notifications
         /// using an Amazon SNS topic that you have specified.
         /// 
         ///  <ul> <li> 
@@ -2171,7 +2173,7 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified
-        /// delivery channel. After the delivery has started, AWS Config sends the following notifications
+        /// delivery channel. After the delivery has started, Config sends the following notifications
         /// using an Amazon SNS topic that you have specified.
         /// 
         ///  <ul> <li> 
@@ -2214,7 +2216,7 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified
-        /// delivery channel. After the delivery has started, AWS Config sends the following notifications
+        /// delivery channel. After the delivery has started, Config sends the following notifications
         /// using an Amazon SNS topic that you have specified.
         /// 
         ///  <ul> <li> 
@@ -2258,7 +2260,7 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified
-        /// delivery channel. After the delivery has started, AWS Config sends the following notifications
+        /// delivery channel. After the delivery has started, Config sends the following notifications
         /// using an Amazon SNS topic that you have specified.
         /// 
         ///  <ul> <li> 
@@ -2308,7 +2310,8 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Returns a list of compliant and noncompliant rules with the number of resources for
-        /// compliant and noncompliant rules. 
+        /// compliant and noncompliant rules. Does not display rules that do not have compliance
+        /// results. 
         /// 
         ///  <note> 
         /// <para>
@@ -2358,7 +2361,8 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Returns a list of compliant and noncompliant rules with the number of resources for
-        /// compliant and noncompliant rules. 
+        /// compliant and noncompliant rules. Does not display rules that do not have compliance
+        /// results. 
         /// 
         ///  <note> 
         /// <para>
@@ -2415,7 +2419,7 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Returns a list of the conformance packs and their associated compliance status with
-        /// the count of compliant and noncompliant AWS Config rules within each conformance pack.
+        /// the count of compliant and noncompliant Config rules within each conformance pack.
         /// Also returns the total rule count which includes compliant rules, noncompliant rules,
         /// and rules that cannot be evaluated due to insufficient data.
         /// 
@@ -2467,7 +2471,7 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Returns a list of the conformance packs and their associated compliance status with
-        /// the count of compliant and noncompliant AWS Config rules within each conformance pack.
+        /// the count of compliant and noncompliant Config rules within each conformance pack.
         /// Also returns the total rule count which includes compliant rules, noncompliant rules,
         /// and rules that cannot be evaluated due to insufficient data.
         /// 
@@ -2588,8 +2592,9 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Indicates whether the specified AWS Config rules are compliant. If a rule is noncompliant,
-        /// this action returns the number of AWS resources that do not comply with the rule.
+        /// Indicates whether the specified Config rules are compliant. If a rule is noncompliant,
+        /// this action returns the number of Amazon Web Services resources that do not comply
+        /// with the rule.
         /// 
         ///  
         /// <para>
@@ -2598,25 +2603,25 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        /// If AWS Config has no current evaluation results for the rule, it returns <code>INSUFFICIENT_DATA</code>.
+        /// If Config has no current evaluation results for the rule, it returns <code>INSUFFICIENT_DATA</code>.
         /// This result might indicate one of the following conditions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// AWS Config has never invoked an evaluation for the rule. To check whether it has,
-        /// use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code>
+        /// Config has never invoked an evaluation for the rule. To check whether it has, use
+        /// the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code>
         /// and <code>LastFailedInvocationTime</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The rule's AWS Lambda function is failing to send evaluation results to AWS Config.
-        /// Verify that the role you assigned to your configuration recorder includes the <code>config:PutEvaluations</code>
-        /// permission. If the rule is a custom rule, verify that the AWS Lambda execution role
-        /// includes the <code>config:PutEvaluations</code> permission.
+        /// The rule's Lambda function is failing to send evaluation results to Config. Verify
+        /// that the role you assigned to your configuration recorder includes the <code>config:PutEvaluations</code>
+        /// permission. If the rule is a custom rule, verify that the Lambda execution role includes
+        /// the <code>config:PutEvaluations</code> permission.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation
+        /// The rule's Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation
         /// results. This can occur if the resources were deleted or removed from the rule's scope.
         /// </para>
         ///  </li> </ul>
@@ -2633,8 +2638,8 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
-        /// are correct and try again.
+        /// One or more Config rules in the request are invalid. Verify that the rule names are
+        /// correct and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule">REST API Reference for DescribeComplianceByConfigRule Operation</seealso>
         public virtual DescribeComplianceByConfigRuleResponse DescribeComplianceByConfigRule(DescribeComplianceByConfigRuleRequest request)
@@ -2648,8 +2653,9 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Indicates whether the specified AWS Config rules are compliant. If a rule is noncompliant,
-        /// this action returns the number of AWS resources that do not comply with the rule.
+        /// Indicates whether the specified Config rules are compliant. If a rule is noncompliant,
+        /// this action returns the number of Amazon Web Services resources that do not comply
+        /// with the rule.
         /// 
         ///  
         /// <para>
@@ -2658,25 +2664,25 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        /// If AWS Config has no current evaluation results for the rule, it returns <code>INSUFFICIENT_DATA</code>.
+        /// If Config has no current evaluation results for the rule, it returns <code>INSUFFICIENT_DATA</code>.
         /// This result might indicate one of the following conditions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// AWS Config has never invoked an evaluation for the rule. To check whether it has,
-        /// use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code>
+        /// Config has never invoked an evaluation for the rule. To check whether it has, use
+        /// the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code>
         /// and <code>LastFailedInvocationTime</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The rule's AWS Lambda function is failing to send evaluation results to AWS Config.
-        /// Verify that the role you assigned to your configuration recorder includes the <code>config:PutEvaluations</code>
-        /// permission. If the rule is a custom rule, verify that the AWS Lambda execution role
-        /// includes the <code>config:PutEvaluations</code> permission.
+        /// The rule's Lambda function is failing to send evaluation results to Config. Verify
+        /// that the role you assigned to your configuration recorder includes the <code>config:PutEvaluations</code>
+        /// permission. If the rule is a custom rule, verify that the Lambda execution role includes
+        /// the <code>config:PutEvaluations</code> permission.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation
+        /// The rule's Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation
         /// results. This can occur if the resources were deleted or removed from the rule's scope.
         /// </para>
         ///  </li> </ul>
@@ -2696,8 +2702,8 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
-        /// are correct and try again.
+        /// One or more Config rules in the request are invalid. Verify that the rule names are
+        /// correct and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule">REST API Reference for DescribeComplianceByConfigRule Operation</seealso>
         public virtual Task<DescribeComplianceByConfigRuleResponse> DescribeComplianceByConfigRuleAsync(DescribeComplianceByConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2715,38 +2721,37 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Indicates whether the specified AWS resources are compliant. If a resource is noncompliant,
-        /// this action returns the number of AWS Config rules that the resource does not comply
-        /// with.
+        /// Indicates whether the specified Amazon Web Services resources are compliant. If a
+        /// resource is noncompliant, this action returns the number of Config rules that the
+        /// resource does not comply with.
         /// 
         ///  
         /// <para>
-        /// A resource is compliant if it complies with all the AWS Config rules that evaluate
-        /// it. It is noncompliant if it does not comply with one or more of these rules.
+        /// A resource is compliant if it complies with all the Config rules that evaluate it.
+        /// It is noncompliant if it does not comply with one or more of these rules.
         /// </para>
         ///  
         /// <para>
-        /// If AWS Config has no current evaluation results for the resource, it returns <code>INSUFFICIENT_DATA</code>.
+        /// If Config has no current evaluation results for the resource, it returns <code>INSUFFICIENT_DATA</code>.
         /// This result might indicate one of the following conditions about the rules that evaluate
         /// the resource:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// AWS Config has never invoked an evaluation for the rule. To check whether it has,
-        /// use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code>
+        /// Config has never invoked an evaluation for the rule. To check whether it has, use
+        /// the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code>
         /// and <code>LastFailedInvocationTime</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The rule's AWS Lambda function is failing to send evaluation results to AWS Config.
-        /// Verify that the role that you assigned to your configuration recorder includes the
-        /// <code>config:PutEvaluations</code> permission. If the rule is a custom rule, verify
-        /// that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
-        /// permission.
+        /// The rule's Lambda function is failing to send evaluation results to Config. Verify
+        /// that the role that you assigned to your configuration recorder includes the <code>config:PutEvaluations</code>
+        /// permission. If the rule is a custom rule, verify that the Lambda execution role includes
+        /// the <code>config:PutEvaluations</code> permission.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation
+        /// The rule's Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation
         /// results. This can occur if the resources were deleted or removed from the rule's scope.
         /// </para>
         ///  </li> </ul>
@@ -2774,38 +2779,37 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Indicates whether the specified AWS resources are compliant. If a resource is noncompliant,
-        /// this action returns the number of AWS Config rules that the resource does not comply
-        /// with.
+        /// Indicates whether the specified Amazon Web Services resources are compliant. If a
+        /// resource is noncompliant, this action returns the number of Config rules that the
+        /// resource does not comply with.
         /// 
         ///  
         /// <para>
-        /// A resource is compliant if it complies with all the AWS Config rules that evaluate
-        /// it. It is noncompliant if it does not comply with one or more of these rules.
+        /// A resource is compliant if it complies with all the Config rules that evaluate it.
+        /// It is noncompliant if it does not comply with one or more of these rules.
         /// </para>
         ///  
         /// <para>
-        /// If AWS Config has no current evaluation results for the resource, it returns <code>INSUFFICIENT_DATA</code>.
+        /// If Config has no current evaluation results for the resource, it returns <code>INSUFFICIENT_DATA</code>.
         /// This result might indicate one of the following conditions about the rules that evaluate
         /// the resource:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// AWS Config has never invoked an evaluation for the rule. To check whether it has,
-        /// use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code>
+        /// Config has never invoked an evaluation for the rule. To check whether it has, use
+        /// the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code>
         /// and <code>LastFailedInvocationTime</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The rule's AWS Lambda function is failing to send evaluation results to AWS Config.
-        /// Verify that the role that you assigned to your configuration recorder includes the
-        /// <code>config:PutEvaluations</code> permission. If the rule is a custom rule, verify
-        /// that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
-        /// permission.
+        /// The rule's Lambda function is failing to send evaluation results to Config. Verify
+        /// that the role that you assigned to your configuration recorder includes the <code>config:PutEvaluations</code>
+        /// permission. If the rule is a custom rule, verify that the Lambda execution role includes
+        /// the <code>config:PutEvaluations</code> permission.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation
+        /// The rule's Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation
         /// results. This can occur if the resources were deleted or removed from the rule's scope.
         /// </para>
         ///  </li> </ul>
@@ -2840,9 +2844,9 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns status information for each of your AWS managed Config rules. The status includes
-        /// information such as the last time AWS Config invoked the rule, the last time AWS Config
-        /// failed to invoke the rule, and the related error for the last failure.
+        /// Returns status information for each of your Config managed rules. The status includes
+        /// information such as the last time Config invoked the rule, the last time Config failed
+        /// to invoke the rule, and the related error for the last failure.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigRuleEvaluationStatus service method.</param>
         /// 
@@ -2856,8 +2860,8 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
-        /// are correct and try again.
+        /// One or more Config rules in the request are invalid. Verify that the rule names are
+        /// correct and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus">REST API Reference for DescribeConfigRuleEvaluationStatus Operation</seealso>
         public virtual DescribeConfigRuleEvaluationStatusResponse DescribeConfigRuleEvaluationStatus(DescribeConfigRuleEvaluationStatusRequest request)
@@ -2871,9 +2875,9 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns status information for each of your AWS managed Config rules. The status includes
-        /// information such as the last time AWS Config invoked the rule, the last time AWS Config
-        /// failed to invoke the rule, and the related error for the last failure.
+        /// Returns status information for each of your Config managed rules. The status includes
+        /// information such as the last time Config invoked the rule, the last time Config failed
+        /// to invoke the rule, and the related error for the last failure.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigRuleEvaluationStatus service method.</param>
         /// <param name="cancellationToken">
@@ -2890,8 +2894,8 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
-        /// are correct and try again.
+        /// One or more Config rules in the request are invalid. Verify that the rule names are
+        /// correct and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus">REST API Reference for DescribeConfigRuleEvaluationStatus Operation</seealso>
         public virtual Task<DescribeConfigRuleEvaluationStatusResponse> DescribeConfigRuleEvaluationStatusAsync(DescribeConfigRuleEvaluationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2909,7 +2913,7 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns details about your AWS Config rules.
+        /// Returns details about your Config rules.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigRules service method.</param>
         /// 
@@ -2919,8 +2923,8 @@ namespace Amazon.ConfigService
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
-        /// are correct and try again.
+        /// One or more Config rules in the request are invalid. Verify that the rule names are
+        /// correct and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules">REST API Reference for DescribeConfigRules Operation</seealso>
         public virtual DescribeConfigRulesResponse DescribeConfigRules(DescribeConfigRulesRequest request)
@@ -2934,7 +2938,7 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns details about your AWS Config rules.
+        /// Returns details about your Config rules.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigRules service method.</param>
         /// <param name="cancellationToken">
@@ -2947,8 +2951,8 @@ namespace Amazon.ConfigService
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
-        /// are correct and try again.
+        /// One or more Config rules in the request are invalid. Verify that the rule names are
+        /// correct and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules">REST API Reference for DescribeConfigRules Operation</seealso>
         public virtual Task<DescribeConfigRulesResponse> DescribeConfigRulesAsync(DescribeConfigRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3040,9 +3044,9 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Returns status information for sources within an aggregator. The status includes information
-        /// about the last time AWS Config verified authorization between the source account and
-        /// an aggregator account. In case of a failure, the status contains the related error
-        /// code or message.
+        /// about the last time Config verified authorization between the source account and an
+        /// aggregator account. In case of a failure, the status contains the related error code
+        /// or message.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationAggregatorSourcesStatus service method.</param>
         /// 
@@ -3074,9 +3078,9 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Returns status information for sources within an aggregator. The status includes information
-        /// about the last time AWS Config verified authorization between the source account and
-        /// an aggregator account. In case of a failure, the status contains the related error
-        /// code or message.
+        /// about the last time Config verified authorization between the source account and an
+        /// aggregator account. In case of a failure, the status contains the related error code
+        /// or message.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationAggregatorSourcesStatus service method.</param>
         /// <param name="cancellationToken">
@@ -3359,7 +3363,7 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleInConformancePackException">
-        /// AWS Config rule that you passed in the filter does not exist.
+        /// Config rule that you passed in the filter does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConformancePackException">
         /// You specified one or more conformance packs that do not exist.
@@ -3402,7 +3406,7 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleInConformancePackException">
-        /// AWS Config rule that you passed in the filter does not exist.
+        /// Config rule that you passed in the filter does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConformancePackException">
         /// You specified one or more conformance packs that do not exist.
@@ -3822,28 +3826,28 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator cannot be updated because your AWS Organization management
-        /// account or the delegated administrator role changed. Delete this aggregator and create
-        /// a new one with the current AWS Organization.
+        /// The configuration aggregator cannot be updated because your Amazon Web Services Organization
+        /// management account or the delegated administrator role changed. Delete this aggregator
+        /// and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator is associated with a previous AWS Organization and AWS
-        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
-        /// and create a new one with the current AWS Organization.
+        /// The configuration aggregator is associated with a previous Amazon Web Services Organization
+        /// and Config cannot aggregate data with current Amazon Web Services Organization. Delete
+        /// this aggregator and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are not a registered delegated administrator for AWS Config with permissions to
-        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
-        /// registers delagated administrator for AWS Config service principle name before the
-        /// delegated administrator creates an aggregator.
+        /// You are not a registered delegated administrator for Config with permissions to call
+        /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+        /// delagated administrator for Config service principle name before the delegated administrator
+        /// creates an aggregator.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
-        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
-        /// APIs must be called from organization master account.
+        /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
+        /// must be called from organization master account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">REST API Reference for DescribeOrganizationConfigRules Operation</seealso>
@@ -3894,28 +3898,28 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator cannot be updated because your AWS Organization management
-        /// account or the delegated administrator role changed. Delete this aggregator and create
-        /// a new one with the current AWS Organization.
+        /// The configuration aggregator cannot be updated because your Amazon Web Services Organization
+        /// management account or the delegated administrator role changed. Delete this aggregator
+        /// and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator is associated with a previous AWS Organization and AWS
-        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
-        /// and create a new one with the current AWS Organization.
+        /// The configuration aggregator is associated with a previous Amazon Web Services Organization
+        /// and Config cannot aggregate data with current Amazon Web Services Organization. Delete
+        /// this aggregator and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are not a registered delegated administrator for AWS Config with permissions to
-        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
-        /// registers delagated administrator for AWS Config service principle name before the
-        /// delegated administrator creates an aggregator.
+        /// You are not a registered delegated administrator for Config with permissions to call
+        /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+        /// delagated administrator for Config service principle name before the delegated administrator
+        /// creates an aggregator.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
-        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
-        /// APIs must be called from organization master account.
+        /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
+        /// must be called from organization master account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">REST API Reference for DescribeOrganizationConfigRules Operation</seealso>
@@ -3972,28 +3976,28 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator cannot be updated because your AWS Organization management
-        /// account or the delegated administrator role changed. Delete this aggregator and create
-        /// a new one with the current AWS Organization.
+        /// The configuration aggregator cannot be updated because your Amazon Web Services Organization
+        /// management account or the delegated administrator role changed. Delete this aggregator
+        /// and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator is associated with a previous AWS Organization and AWS
-        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
-        /// and create a new one with the current AWS Organization.
+        /// The configuration aggregator is associated with a previous Amazon Web Services Organization
+        /// and Config cannot aggregate data with current Amazon Web Services Organization. Delete
+        /// this aggregator and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are not a registered delegated administrator for AWS Config with permissions to
-        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
-        /// registers delagated administrator for AWS Config service principle name before the
-        /// delegated administrator creates an aggregator.
+        /// You are not a registered delegated administrator for Config with permissions to call
+        /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+        /// delagated administrator for Config service principle name before the delegated administrator
+        /// creates an aggregator.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
-        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
-        /// APIs must be called from organization master account.
+        /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
+        /// must be called from organization master account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses">REST API Reference for DescribeOrganizationConfigRuleStatuses Operation</seealso>
@@ -4049,28 +4053,28 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator cannot be updated because your AWS Organization management
-        /// account or the delegated administrator role changed. Delete this aggregator and create
-        /// a new one with the current AWS Organization.
+        /// The configuration aggregator cannot be updated because your Amazon Web Services Organization
+        /// management account or the delegated administrator role changed. Delete this aggregator
+        /// and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator is associated with a previous AWS Organization and AWS
-        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
-        /// and create a new one with the current AWS Organization.
+        /// The configuration aggregator is associated with a previous Amazon Web Services Organization
+        /// and Config cannot aggregate data with current Amazon Web Services Organization. Delete
+        /// this aggregator and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are not a registered delegated administrator for AWS Config with permissions to
-        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
-        /// registers delagated administrator for AWS Config service principle name before the
-        /// delegated administrator creates an aggregator.
+        /// You are not a registered delegated administrator for Config with permissions to call
+        /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+        /// delagated administrator for Config service principle name before the delegated administrator
+        /// creates an aggregator.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
-        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
-        /// APIs must be called from organization master account.
+        /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
+        /// must be called from organization master account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses">REST API Reference for DescribeOrganizationConfigRuleStatuses Operation</seealso>
@@ -4114,7 +4118,7 @@ namespace Amazon.ConfigService
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConformancePackException">
-        /// AWS Config organization conformance pack that you passed in the filter does not exist.
+        /// Config organization conformance pack that you passed in the filter does not exist.
         /// 
         ///  
         /// <para>
@@ -4132,28 +4136,28 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator cannot be updated because your AWS Organization management
-        /// account or the delegated administrator role changed. Delete this aggregator and create
-        /// a new one with the current AWS Organization.
+        /// The configuration aggregator cannot be updated because your Amazon Web Services Organization
+        /// management account or the delegated administrator role changed. Delete this aggregator
+        /// and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator is associated with a previous AWS Organization and AWS
-        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
-        /// and create a new one with the current AWS Organization.
+        /// The configuration aggregator is associated with a previous Amazon Web Services Organization
+        /// and Config cannot aggregate data with current Amazon Web Services Organization. Delete
+        /// this aggregator and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are not a registered delegated administrator for AWS Config with permissions to
-        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
-        /// registers delagated administrator for AWS Config service principle name before the
-        /// delegated administrator creates an aggregator.
+        /// You are not a registered delegated administrator for Config with permissions to call
+        /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+        /// delagated administrator for Config service principle name before the delegated administrator
+        /// creates an aggregator.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
-        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
-        /// APIs must be called from organization master account.
+        /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
+        /// must be called from organization master account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePacks">REST API Reference for DescribeOrganizationConformancePacks Operation</seealso>
@@ -4196,7 +4200,7 @@ namespace Amazon.ConfigService
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConformancePackException">
-        /// AWS Config organization conformance pack that you passed in the filter does not exist.
+        /// Config organization conformance pack that you passed in the filter does not exist.
         /// 
         ///  
         /// <para>
@@ -4214,28 +4218,28 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator cannot be updated because your AWS Organization management
-        /// account or the delegated administrator role changed. Delete this aggregator and create
-        /// a new one with the current AWS Organization.
+        /// The configuration aggregator cannot be updated because your Amazon Web Services Organization
+        /// management account or the delegated administrator role changed. Delete this aggregator
+        /// and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator is associated with a previous AWS Organization and AWS
-        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
-        /// and create a new one with the current AWS Organization.
+        /// The configuration aggregator is associated with a previous Amazon Web Services Organization
+        /// and Config cannot aggregate data with current Amazon Web Services Organization. Delete
+        /// this aggregator and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are not a registered delegated administrator for AWS Config with permissions to
-        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
-        /// registers delagated administrator for AWS Config service principle name before the
-        /// delegated administrator creates an aggregator.
+        /// You are not a registered delegated administrator for Config with permissions to call
+        /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+        /// delagated administrator for Config service principle name before the delegated administrator
+        /// creates an aggregator.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
-        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
-        /// APIs must be called from organization master account.
+        /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
+        /// must be called from organization master account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePacks">REST API Reference for DescribeOrganizationConformancePacks Operation</seealso>
@@ -4280,7 +4284,7 @@ namespace Amazon.ConfigService
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConformancePackException">
-        /// AWS Config organization conformance pack that you passed in the filter does not exist.
+        /// Config organization conformance pack that you passed in the filter does not exist.
         /// 
         ///  
         /// <para>
@@ -4298,28 +4302,28 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator cannot be updated because your AWS Organization management
-        /// account or the delegated administrator role changed. Delete this aggregator and create
-        /// a new one with the current AWS Organization.
+        /// The configuration aggregator cannot be updated because your Amazon Web Services Organization
+        /// management account or the delegated administrator role changed. Delete this aggregator
+        /// and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator is associated with a previous AWS Organization and AWS
-        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
-        /// and create a new one with the current AWS Organization.
+        /// The configuration aggregator is associated with a previous Amazon Web Services Organization
+        /// and Config cannot aggregate data with current Amazon Web Services Organization. Delete
+        /// this aggregator and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are not a registered delegated administrator for AWS Config with permissions to
-        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
-        /// registers delagated administrator for AWS Config service principle name before the
-        /// delegated administrator creates an aggregator.
+        /// You are not a registered delegated administrator for Config with permissions to call
+        /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+        /// delagated administrator for Config service principle name before the delegated administrator
+        /// creates an aggregator.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
-        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
-        /// APIs must be called from organization master account.
+        /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
+        /// must be called from organization master account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePackStatuses">REST API Reference for DescribeOrganizationConformancePackStatuses Operation</seealso>
@@ -4363,7 +4367,7 @@ namespace Amazon.ConfigService
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConformancePackException">
-        /// AWS Config organization conformance pack that you passed in the filter does not exist.
+        /// Config organization conformance pack that you passed in the filter does not exist.
         /// 
         ///  
         /// <para>
@@ -4381,28 +4385,28 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator cannot be updated because your AWS Organization management
-        /// account or the delegated administrator role changed. Delete this aggregator and create
-        /// a new one with the current AWS Organization.
+        /// The configuration aggregator cannot be updated because your Amazon Web Services Organization
+        /// management account or the delegated administrator role changed. Delete this aggregator
+        /// and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator is associated with a previous AWS Organization and AWS
-        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
-        /// and create a new one with the current AWS Organization.
+        /// The configuration aggregator is associated with a previous Amazon Web Services Organization
+        /// and Config cannot aggregate data with current Amazon Web Services Organization. Delete
+        /// this aggregator and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are not a registered delegated administrator for AWS Config with permissions to
-        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
-        /// registers delagated administrator for AWS Config service principle name before the
-        /// delegated administrator creates an aggregator.
+        /// You are not a registered delegated administrator for Config with permissions to call
+        /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+        /// delagated administrator for Config service principle name before the delegated administrator
+        /// creates an aggregator.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
-        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
-        /// APIs must be called from organization master account.
+        /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
+        /// must be called from organization master account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePackStatuses">REST API Reference for DescribeOrganizationConformancePackStatuses Operation</seealso>
@@ -4532,7 +4536,7 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// AWS Config generates a remediation exception when a problem occurs executing a remediation
+        /// Config generates a remediation exception when a problem occurs executing a remediation
         /// action to a specific resource. Remediation exceptions blocks auto-remediation until
         /// the exception is cleared.
         /// </para>
@@ -4577,7 +4581,7 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// AWS Config generates a remediation exception when a problem occurs executing a remediation
+        /// Config generates a remediation exception when a problem occurs executing a remediation
         /// action to a specific resource. Remediation exceptions blocks auto-remediation until
         /// the exception is cleared.
         /// </para>
@@ -4639,7 +4643,7 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchRemediationConfigurationException">
-        /// You specified an AWS Config rule without a remediation configuration.
+        /// You specified an Config rule without a remediation configuration.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRemediationExecutionStatus">REST API Reference for DescribeRemediationExecutionStatus Operation</seealso>
         public virtual DescribeRemediationExecutionStatusResponse DescribeRemediationExecutionStatus(DescribeRemediationExecutionStatusRequest request)
@@ -4673,7 +4677,7 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchRemediationConfigurationException">
-        /// You specified an AWS Config rule without a remediation configuration.
+        /// You specified an Config rule without a remediation configuration.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRemediationExecutionStatus">REST API Reference for DescribeRemediationExecutionStatus Operation</seealso>
         public virtual Task<DescribeRemediationExecutionStatusResponse> DescribeRemediationExecutionStatusAsync(DescribeRemediationExecutionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4697,8 +4701,7 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, AWS Config supports only one retention configuration per region in your
-        /// account.
+        /// Currently, Config supports only one retention configuration per region in your account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4734,8 +4737,7 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, AWS Config supports only one retention configuration per region in your
-        /// account.
+        /// Currently, Config supports only one retention configuration per region in your account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4772,10 +4774,10 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns the evaluation results for the specified AWS Config rule for a specific resource
-        /// in a rule. The results indicate which AWS resources were evaluated by the rule, when
-        /// each resource was last evaluated, and whether each resource complies with the rule.
-        /// 
+        /// Returns the evaluation results for the specified Config rule for a specific resource
+        /// in a rule. The results indicate which Amazon Web Services resources were evaluated
+        /// by the rule, when each resource was last evaluated, and whether each resource complies
+        /// with the rule. 
         /// 
         ///  <note> 
         /// <para>
@@ -4824,10 +4826,10 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns the evaluation results for the specified AWS Config rule for a specific resource
-        /// in a rule. The results indicate which AWS resources were evaluated by the rule, when
-        /// each resource was last evaluated, and whether each resource complies with the rule.
-        /// 
+        /// Returns the evaluation results for the specified Config rule for a specific resource
+        /// in a rule. The results indicate which Amazon Web Services resources were evaluated
+        /// by the rule, when each resource was last evaluated, and whether each resource complies
+        /// with the rule. 
         /// 
         ///  <note> 
         /// <para>
@@ -4990,8 +4992,9 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns the count of compliant and noncompliant conformance packs across all AWS Accounts
-        /// and AWS Regions in an aggregator. You can filter based on AWS Account ID or AWS Region.
+        /// Returns the count of compliant and noncompliant conformance packs across all Amazon
+        /// Web Services accounts and Amazon Web Services Regions in an aggregator. You can filter
+        /// based on Amazon Web Services account ID or Amazon Web Services Region.
         /// 
         ///  <note> 
         /// <para>
@@ -5040,8 +5043,9 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns the count of compliant and noncompliant conformance packs across all AWS Accounts
-        /// and AWS Regions in an aggregator. You can filter based on AWS Account ID or AWS Region.
+        /// Returns the count of compliant and noncompliant conformance packs across all Amazon
+        /// Web Services accounts and Amazon Web Services Regions in an aggregator. You can filter
+        /// based on Amazon Web Services account ID or Amazon Web Services Region.
         /// 
         ///  <note> 
         /// <para>
@@ -5097,8 +5101,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns the resource counts across accounts and regions that are present in your AWS
-        /// Config aggregator. You can request the resource counts by providing filters and GroupByKey.
+        /// Returns the resource counts across accounts and regions that are present in your Config
+        /// aggregator. You can request the resource counts by providing filters and GroupByKey.
         /// 
         ///  
         /// <para>
@@ -5148,8 +5152,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns the resource counts across accounts and regions that are present in your AWS
-        /// Config aggregator. You can request the resource counts by providing filters and GroupByKey.
+        /// Returns the resource counts across accounts and regions that are present in your Config
+        /// aggregator. You can request the resource counts by providing filters and GroupByKey.
         /// 
         ///  
         /// <para>
@@ -5297,9 +5301,9 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns the evaluation results for the specified AWS Config rule. The results indicate
-        /// which AWS resources were evaluated by the rule, when each resource was last evaluated,
-        /// and whether each resource complies with the rule.
+        /// Returns the evaluation results for the specified Config rule. The results indicate
+        /// which Amazon Web Services resources were evaluated by the rule, when each resource
+        /// was last evaluated, and whether each resource complies with the rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComplianceDetailsByConfigRule service method.</param>
         /// 
@@ -5313,8 +5317,8 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
-        /// are correct and try again.
+        /// One or more Config rules in the request are invalid. Verify that the rule names are
+        /// correct and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule">REST API Reference for GetComplianceDetailsByConfigRule Operation</seealso>
         public virtual GetComplianceDetailsByConfigRuleResponse GetComplianceDetailsByConfigRule(GetComplianceDetailsByConfigRuleRequest request)
@@ -5328,9 +5332,9 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns the evaluation results for the specified AWS Config rule. The results indicate
-        /// which AWS resources were evaluated by the rule, when each resource was last evaluated,
-        /// and whether each resource complies with the rule.
+        /// Returns the evaluation results for the specified Config rule. The results indicate
+        /// which Amazon Web Services resources were evaluated by the rule, when each resource
+        /// was last evaluated, and whether each resource complies with the rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComplianceDetailsByConfigRule service method.</param>
         /// <param name="cancellationToken">
@@ -5347,8 +5351,8 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
-        /// are correct and try again.
+        /// One or more Config rules in the request are invalid. Verify that the rule names are
+        /// correct and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule">REST API Reference for GetComplianceDetailsByConfigRule Operation</seealso>
         public virtual Task<GetComplianceDetailsByConfigRuleResponse> GetComplianceDetailsByConfigRuleAsync(GetComplianceDetailsByConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5366,9 +5370,9 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns the evaluation results for the specified AWS resource. The results indicate
-        /// which AWS Config rules were used to evaluate the resource, when each rule was last
-        /// used, and whether the resource complies with each rule.
+        /// Returns the evaluation results for the specified Amazon Web Services resource. The
+        /// results indicate which Config rules were used to evaluate the resource, when each
+        /// rule was last used, and whether the resource complies with each rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComplianceDetailsByResource service method.</param>
         /// 
@@ -5389,9 +5393,9 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns the evaluation results for the specified AWS resource. The results indicate
-        /// which AWS Config rules were used to evaluate the resource, when each rule was last
-        /// used, and whether the resource complies with each rule.
+        /// Returns the evaluation results for the specified Amazon Web Services resource. The
+        /// results indicate which Config rules were used to evaluate the resource, when each
+        /// rule was last used, and whether the resource complies with each rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComplianceDetailsByResource service method.</param>
         /// <param name="cancellationToken">
@@ -5419,8 +5423,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns the number of AWS Config rules that are compliant and noncompliant, up to
-        /// a maximum of 25 for each.
+        /// Returns the number of Config rules that are compliant and noncompliant, up to a maximum
+        /// of 25 for each.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComplianceSummaryByConfigRule service method.</param>
         /// 
@@ -5437,8 +5441,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns the number of AWS Config rules that are compliant and noncompliant, up to
-        /// a maximum of 25 for each.
+        /// Returns the number of Config rules that are compliant and noncompliant, up to a maximum
+        /// of 25 for each.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComplianceSummaryByConfigRule service method.</param>
         /// <param name="cancellationToken">
@@ -5515,8 +5519,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns compliance details of a conformance pack for all AWS resources that are monitered
-        /// by conformance pack.
+        /// Returns compliance details of a conformance pack for all Amazon Web Services resources
+        /// that are monitered by conformance pack.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConformancePackComplianceDetails service method.</param>
         /// 
@@ -5533,7 +5537,7 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleInConformancePackException">
-        /// AWS Config rule that you passed in the filter does not exist.
+        /// Config rule that you passed in the filter does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConformancePackException">
         /// You specified one or more conformance packs that do not exist.
@@ -5550,8 +5554,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns compliance details of a conformance pack for all AWS resources that are monitered
-        /// by conformance pack.
+        /// Returns compliance details of a conformance pack for all Amazon Web Services resources
+        /// that are monitered by conformance pack.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConformancePackComplianceDetails service method.</param>
         /// <param name="cancellationToken">
@@ -5571,7 +5575,7 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleInConformancePackException">
-        /// AWS Config rule that you passed in the filter does not exist.
+        /// Config rule that you passed in the filter does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConformancePackException">
         /// You specified one or more conformance packs that do not exist.
@@ -5656,14 +5660,15 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Returns the resource types, the number of each resource type, and the total number
-        /// of resources that AWS Config is recording in this region for your AWS account. 
+        /// of resources that Config is recording in this region for your Amazon Web Services
+        /// account. 
         /// 
         ///  <p class="title"> <b>Example</b> 
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// AWS Config is recording three resource types in the US East (Ohio) Region for your
-        /// account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets.
+        /// Config is recording three resource types in the US East (Ohio) Region for your account:
+        /// 25 EC2 instances, 20 IAM users, and 15 S3 buckets.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5672,7 +5677,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// AWS Config returns the following:
+        /// Config returns the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5688,7 +5693,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> </ul> </li> </ol> 
         /// <para>
-        /// The response is paginated. By default, AWS Config lists 100 <a>ResourceCount</a> objects
+        /// The response is paginated. By default, Config lists 100 <a>ResourceCount</a> objects
         /// on each page. You can customize this number with the <code>limit</code> parameter.
         /// The response includes a <code>nextToken</code> string. To get the next page of results,
         /// run the request again and specify the string for the <code>nextToken</code> parameter.
@@ -5700,7 +5705,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You are a new AWS Config customer.
+        /// You are a new Config customer.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5708,8 +5713,8 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// It might take a few minutes for AWS Config to record and count your resources. Wait
-        /// a few minutes and then retry the <a>GetDiscoveredResourceCounts</a> action. 
+        /// It might take a few minutes for Config to record and count your resources. Wait a
+        /// few minutes and then retry the <a>GetDiscoveredResourceCounts</a> action. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -5751,14 +5756,15 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Returns the resource types, the number of each resource type, and the total number
-        /// of resources that AWS Config is recording in this region for your AWS account. 
+        /// of resources that Config is recording in this region for your Amazon Web Services
+        /// account. 
         /// 
         ///  <p class="title"> <b>Example</b> 
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// AWS Config is recording three resource types in the US East (Ohio) Region for your
-        /// account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets.
+        /// Config is recording three resource types in the US East (Ohio) Region for your account:
+        /// 25 EC2 instances, 20 IAM users, and 15 S3 buckets.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5767,7 +5773,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// AWS Config returns the following:
+        /// Config returns the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5783,7 +5789,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> </ul> </li> </ol> 
         /// <para>
-        /// The response is paginated. By default, AWS Config lists 100 <a>ResourceCount</a> objects
+        /// The response is paginated. By default, Config lists 100 <a>ResourceCount</a> objects
         /// on each page. You can customize this number with the <code>limit</code> parameter.
         /// The response includes a <code>nextToken</code> string. To get the next page of results,
         /// run the request again and specify the string for the <code>nextToken</code> parameter.
@@ -5795,7 +5801,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You are a new AWS Config customer.
+        /// You are a new Config customer.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5803,8 +5809,8 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// It might take a few minutes for AWS Config to record and count your resources. Wait
-        /// a few minutes and then retry the <a>GetDiscoveredResourceCounts</a> action. 
+        /// It might take a few minutes for Config to record and count your resources. Wait a
+        /// few minutes and then retry the <a>GetDiscoveredResourceCounts</a> action. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -5878,28 +5884,28 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator cannot be updated because your AWS Organization management
-        /// account or the delegated administrator role changed. Delete this aggregator and create
-        /// a new one with the current AWS Organization.
+        /// The configuration aggregator cannot be updated because your Amazon Web Services Organization
+        /// management account or the delegated administrator role changed. Delete this aggregator
+        /// and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator is associated with a previous AWS Organization and AWS
-        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
-        /// and create a new one with the current AWS Organization.
+        /// The configuration aggregator is associated with a previous Amazon Web Services Organization
+        /// and Config cannot aggregate data with current Amazon Web Services Organization. Delete
+        /// this aggregator and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are not a registered delegated administrator for AWS Config with permissions to
-        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
-        /// registers delagated administrator for AWS Config service principle name before the
-        /// delegated administrator creates an aggregator.
+        /// You are not a registered delegated administrator for Config with permissions to call
+        /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+        /// delagated administrator for Config service principle name before the delegated administrator
+        /// creates an aggregator.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
-        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
-        /// APIs must be called from organization master account.
+        /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
+        /// must be called from organization master account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus">REST API Reference for GetOrganizationConfigRuleDetailedStatus Operation</seealso>
@@ -5943,28 +5949,28 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator cannot be updated because your AWS Organization management
-        /// account or the delegated administrator role changed. Delete this aggregator and create
-        /// a new one with the current AWS Organization.
+        /// The configuration aggregator cannot be updated because your Amazon Web Services Organization
+        /// management account or the delegated administrator role changed. Delete this aggregator
+        /// and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator is associated with a previous AWS Organization and AWS
-        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
-        /// and create a new one with the current AWS Organization.
+        /// The configuration aggregator is associated with a previous Amazon Web Services Organization
+        /// and Config cannot aggregate data with current Amazon Web Services Organization. Delete
+        /// this aggregator and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are not a registered delegated administrator for AWS Config with permissions to
-        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
-        /// registers delagated administrator for AWS Config service principle name before the
-        /// delegated administrator creates an aggregator.
+        /// You are not a registered delegated administrator for Config with permissions to call
+        /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+        /// delagated administrator for Config service principle name before the delegated administrator
+        /// creates an aggregator.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
-        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
-        /// APIs must be called from organization master account.
+        /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
+        /// must be called from organization master account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus">REST API Reference for GetOrganizationConfigRuleDetailedStatus Operation</seealso>
@@ -5997,7 +6003,7 @@ namespace Amazon.ConfigService
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConformancePackException">
-        /// AWS Config organization conformance pack that you passed in the filter does not exist.
+        /// Config organization conformance pack that you passed in the filter does not exist.
         /// 
         ///  
         /// <para>
@@ -6015,28 +6021,28 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator cannot be updated because your AWS Organization management
-        /// account or the delegated administrator role changed. Delete this aggregator and create
-        /// a new one with the current AWS Organization.
+        /// The configuration aggregator cannot be updated because your Amazon Web Services Organization
+        /// management account or the delegated administrator role changed. Delete this aggregator
+        /// and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator is associated with a previous AWS Organization and AWS
-        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
-        /// and create a new one with the current AWS Organization.
+        /// The configuration aggregator is associated with a previous Amazon Web Services Organization
+        /// and Config cannot aggregate data with current Amazon Web Services Organization. Delete
+        /// this aggregator and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are not a registered delegated administrator for AWS Config with permissions to
-        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
-        /// registers delagated administrator for AWS Config service principle name before the
-        /// delegated administrator creates an aggregator.
+        /// You are not a registered delegated administrator for Config with permissions to call
+        /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+        /// delagated administrator for Config service principle name before the delegated administrator
+        /// creates an aggregator.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
-        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
-        /// APIs must be called from organization master account.
+        /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
+        /// must be called from organization master account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConformancePackDetailedStatus">REST API Reference for GetOrganizationConformancePackDetailedStatus Operation</seealso>
@@ -6068,7 +6074,7 @@ namespace Amazon.ConfigService
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConformancePackException">
-        /// AWS Config organization conformance pack that you passed in the filter does not exist.
+        /// Config organization conformance pack that you passed in the filter does not exist.
         /// 
         ///  
         /// <para>
@@ -6086,28 +6092,28 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator cannot be updated because your AWS Organization management
-        /// account or the delegated administrator role changed. Delete this aggregator and create
-        /// a new one with the current AWS Organization.
+        /// The configuration aggregator cannot be updated because your Amazon Web Services Organization
+        /// management account or the delegated administrator role changed. Delete this aggregator
+        /// and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator is associated with a previous AWS Organization and AWS
-        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
-        /// and create a new one with the current AWS Organization.
+        /// The configuration aggregator is associated with a previous Amazon Web Services Organization
+        /// and Config cannot aggregate data with current Amazon Web Services Organization. Delete
+        /// this aggregator and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are not a registered delegated administrator for AWS Config with permissions to
-        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
-        /// registers delagated administrator for AWS Config service principle name before the
-        /// delegated administrator creates an aggregator.
+        /// You are not a registered delegated administrator for Config with permissions to call
+        /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+        /// delagated administrator for Config service principle name before the delegated administrator
+        /// creates an aggregator.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
-        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
-        /// APIs must be called from organization master account.
+        /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
+        /// must be called from organization master account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConformancePackDetailedStatus">REST API Reference for GetOrganizationConformancePackDetailedStatus Operation</seealso>
@@ -6126,15 +6132,15 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns a list of configuration items for the specified resource. The list contains
-        /// details about each state of the resource during the specified time interval. If you
-        /// specified a retention period to retain your <code>ConfigurationItems</code> between
-        /// a minimum of 30 days and a maximum of 7 years (2557 days), AWS Config returns the
-        /// <code>ConfigurationItems</code> for the specified retention period. 
+        /// Returns a list of <code>ConfigurationItems</code> for the specified resource. The
+        /// list contains details about each state of the resource during the specified time interval.
+        /// If you specified a retention period to retain your <code>ConfigurationItems</code>
+        /// between a minimum of 30 days and a maximum of 7 years (2557 days), Config returns
+        /// the <code>ConfigurationItems</code> for the specified retention period. 
         /// 
         ///  
         /// <para>
-        /// The response is paginated. By default, AWS Config returns a limit of 10 configuration
+        /// The response is paginated. By default, Config returns a limit of 10 configuration
         /// items per page. You can customize this number with the <code>limit</code> parameter.
         /// The response includes a <code>nextToken</code> string. To get the next page of results,
         /// run the request again and specify the string for the <code>nextToken</code> parameter.
@@ -6195,15 +6201,15 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns a list of configuration items for the specified resource. The list contains
-        /// details about each state of the resource during the specified time interval. If you
-        /// specified a retention period to retain your <code>ConfigurationItems</code> between
-        /// a minimum of 30 days and a maximum of 7 years (2557 days), AWS Config returns the
-        /// <code>ConfigurationItems</code> for the specified retention period. 
+        /// Returns a list of <code>ConfigurationItems</code> for the specified resource. The
+        /// list contains details about each state of the resource during the specified time interval.
+        /// If you specified a retention period to retain your <code>ConfigurationItems</code>
+        /// between a minimum of 30 days and a maximum of 7 years (2557 days), Config returns
+        /// the <code>ConfigurationItems</code> for the specified retention period. 
         /// 
         ///  
         /// <para>
-        /// The response is paginated. By default, AWS Config returns a limit of 10 configuration
+        /// The response is paginated. By default, Config returns a limit of 10 configuration
         /// items per page. You can customize this number with the <code>limit</code> parameter.
         /// The response includes a <code>nextToken</code> string. To get the next page of results,
         /// run the request again and specify the string for the <code>nextToken</code> parameter.
@@ -6463,8 +6469,8 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Accepts a resource type and returns a list of resource identifiers for the resources
         /// of that type. A resource identifier includes the resource type, ID, and (if available)
-        /// the custom resource name. The results consist of resources that AWS Config has discovered,
-        /// including those that AWS Config is not currently recording. You can narrow the results
+        /// the custom resource name. The results consist of resources that Config has discovered,
+        /// including those that Config is not currently recording. You can narrow the results
         /// to include only resources that have specific resource IDs or a resource name.
         /// 
         ///  <note> 
@@ -6474,10 +6480,10 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </note> 
         /// <para>
-        /// The response is paginated. By default, AWS Config lists 100 resource identifiers on
-        /// each page. You can customize this number with the <code>limit</code> parameter. The
-        /// response includes a <code>nextToken</code> string. To get the next page of results,
-        /// run the request again and specify the string for the <code>nextToken</code> parameter.
+        /// The response is paginated. By default, Config lists 100 resource identifiers on each
+        /// page. You can customize this number with the <code>limit</code> parameter. The response
+        /// includes a <code>nextToken</code> string. To get the next page of results, run the
+        /// request again and specify the string for the <code>nextToken</code> parameter.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDiscoveredResources service method.</param>
@@ -6523,8 +6529,8 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Accepts a resource type and returns a list of resource identifiers for the resources
         /// of that type. A resource identifier includes the resource type, ID, and (if available)
-        /// the custom resource name. The results consist of resources that AWS Config has discovered,
-        /// including those that AWS Config is not currently recording. You can narrow the results
+        /// the custom resource name. The results consist of resources that Config has discovered,
+        /// including those that Config is not currently recording. You can narrow the results
         /// to include only resources that have specific resource IDs or a resource name.
         /// 
         ///  <note> 
@@ -6534,10 +6540,10 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </note> 
         /// <para>
-        /// The response is paginated. By default, AWS Config lists 100 resource identifiers on
-        /// each page. You can customize this number with the <code>limit</code> parameter. The
-        /// response includes a <code>nextToken</code> string. To get the next page of results,
-        /// run the request again and specify the string for the <code>nextToken</code> parameter.
+        /// The response is paginated. By default, Config lists 100 resource identifiers on each
+        /// page. You can customize this number with the <code>limit</code> parameter. The response
+        /// includes a <code>nextToken</code> string. To get the next page of results, run the
+        /// request again and specify the string for the <code>nextToken</code> parameter.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDiscoveredResources service method.</param>
@@ -6588,8 +6594,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Lists the stored queries for a single AWS account and a single AWS Region. The default
-        /// is 100.
+        /// Lists the stored queries for a single Amazon Web Services account and a single Amazon
+        /// Web Services Region. The default is 100.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStoredQueries service method.</param>
         /// 
@@ -6625,8 +6631,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Lists the stored queries for a single AWS account and a single AWS Region. The default
-        /// is 100.
+        /// Lists the stored queries for a single Amazon Web Services account and a single Amazon
+        /// Web Services Region. The default is 100.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStoredQueries service method.</param>
         /// <param name="cancellationToken">
@@ -6669,7 +6675,7 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// List the tags for AWS Config resource.
+        /// List the tags for Config resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -6711,7 +6717,7 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// List the tags for AWS Config resource.
+        /// List the tags for Config resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -6811,36 +6817,35 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Adds or updates an AWS Config rule for evaluating whether your AWS resources comply
-        /// with your desired configurations.
+        /// Adds or updates an Config rule for evaluating whether your Amazon Web Services resources
+        /// comply with your desired configurations.
         /// 
         ///  
         /// <para>
-        /// You can use this action for custom AWS Config rules and AWS managed Config rules.
-        /// A custom AWS Config rule is a rule that you develop and maintain. An AWS managed Config
-        /// rule is a customizable, predefined rule that AWS Config provides.
+        /// You can use this action for custom Config rules and Config managed rules. A custom
+        /// Config rule is a rule that you develop and maintain. An Config managed rule is a customizable,
+        /// predefined rule that Config provides.
         /// </para>
         ///  
         /// <para>
-        /// If you are adding a new custom AWS Config rule, you must first create the AWS Lambda
-        /// function that the rule invokes to evaluate your resources. When you use the <code>PutConfigRule</code>
-        /// action to add the rule to AWS Config, you must specify the Amazon Resource Name (ARN)
-        /// that AWS Lambda assigns to the function. Specify the ARN for the <code>SourceIdentifier</code>
+        /// If you are adding a new custom Config rule, you must first create the Lambda function
+        /// that the rule invokes to evaluate your resources. When you use the <code>PutConfigRule</code>
+        /// action to add the rule to Config, you must specify the Amazon Resource Name (ARN)
+        /// that Lambda assigns to the function. Specify the ARN for the <code>SourceIdentifier</code>
         /// key. This key is part of the <code>Source</code> object, which is part of the <code>ConfigRule</code>
         /// object. 
         /// </para>
         ///  
         /// <para>
-        /// If you are adding an AWS managed Config rule, specify the rule's identifier for the
-        /// <code>SourceIdentifier</code> key. To reference AWS managed Config rule identifiers,
-        /// see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About
-        /// AWS Managed Config Rules</a>.
+        /// If you are adding an Config managed rule, specify the rule's identifier for the <code>SourceIdentifier</code>
+        /// key. To reference Config managed rule identifiers, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About
+        /// Config managed rules</a>.
         /// </para>
         ///  
         /// <para>
         /// For any new rule that you add, specify the <code>ConfigRuleName</code> in the <code>ConfigRule</code>
         /// object. Do not specify the <code>ConfigRuleArn</code> or the <code>ConfigRuleId</code>.
-        /// These values are generated by AWS Config for new rules.
+        /// These values are generated by Config for new rules.
         /// </para>
         ///  
         /// <para>
@@ -6850,17 +6855,18 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        /// The maximum number of rules that AWS Config supports is 150.
+        /// The maximum number of rules that Config supports is 150.
         /// </para>
         ///  
         /// <para>
-        /// For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
-        /// Config Limits</a> in the <i>AWS General Reference Guide</i>.
+        /// For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config
+        /// Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For more information about developing and using AWS Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
-        /// AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer Guide</i>.
+        /// For more information about developing and using Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
+        /// Amazon Web Services resource Configurations with Config</a> in the <i>Config Developer
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutConfigRule service method.</param>
@@ -6871,12 +6877,12 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
-        /// Config lacks permissions to perform the config:Put* action.
+        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to Config
+        /// lacks permissions to perform the config:Put* action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+        /// For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN,
         /// and check the function's permissions.
         /// </para>
         ///  </li> <li> 
@@ -6905,8 +6911,8 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConfigRulesExceededException">
-        /// Failed to add the AWS Config rule because the account already contains the maximum
-        /// number of 150 rules. Consider deleting any deactivated rules before you add new rules.
+        /// Failed to add the Config rule because the account already contains the maximum number
+        /// of 150 rules. Consider deleting any deactivated rules before you add new rules.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableConfigurationRecorderException">
         /// There are no configuration recorders available to provide the role needed to describe
@@ -6917,7 +6923,7 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+        /// For DeleteConfigRule, Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6926,7 +6932,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// For DeleteConfigRule, a remediation action is associated with the rule and Config
         /// cannot delete this rule. Delete the remediation action associated with the rule before
         /// deleting the rule and try your request again later.
         /// </para>
@@ -6964,36 +6970,35 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Adds or updates an AWS Config rule for evaluating whether your AWS resources comply
-        /// with your desired configurations.
+        /// Adds or updates an Config rule for evaluating whether your Amazon Web Services resources
+        /// comply with your desired configurations.
         /// 
         ///  
         /// <para>
-        /// You can use this action for custom AWS Config rules and AWS managed Config rules.
-        /// A custom AWS Config rule is a rule that you develop and maintain. An AWS managed Config
-        /// rule is a customizable, predefined rule that AWS Config provides.
+        /// You can use this action for custom Config rules and Config managed rules. A custom
+        /// Config rule is a rule that you develop and maintain. An Config managed rule is a customizable,
+        /// predefined rule that Config provides.
         /// </para>
         ///  
         /// <para>
-        /// If you are adding a new custom AWS Config rule, you must first create the AWS Lambda
-        /// function that the rule invokes to evaluate your resources. When you use the <code>PutConfigRule</code>
-        /// action to add the rule to AWS Config, you must specify the Amazon Resource Name (ARN)
-        /// that AWS Lambda assigns to the function. Specify the ARN for the <code>SourceIdentifier</code>
+        /// If you are adding a new custom Config rule, you must first create the Lambda function
+        /// that the rule invokes to evaluate your resources. When you use the <code>PutConfigRule</code>
+        /// action to add the rule to Config, you must specify the Amazon Resource Name (ARN)
+        /// that Lambda assigns to the function. Specify the ARN for the <code>SourceIdentifier</code>
         /// key. This key is part of the <code>Source</code> object, which is part of the <code>ConfigRule</code>
         /// object. 
         /// </para>
         ///  
         /// <para>
-        /// If you are adding an AWS managed Config rule, specify the rule's identifier for the
-        /// <code>SourceIdentifier</code> key. To reference AWS managed Config rule identifiers,
-        /// see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About
-        /// AWS Managed Config Rules</a>.
+        /// If you are adding an Config managed rule, specify the rule's identifier for the <code>SourceIdentifier</code>
+        /// key. To reference Config managed rule identifiers, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About
+        /// Config managed rules</a>.
         /// </para>
         ///  
         /// <para>
         /// For any new rule that you add, specify the <code>ConfigRuleName</code> in the <code>ConfigRule</code>
         /// object. Do not specify the <code>ConfigRuleArn</code> or the <code>ConfigRuleId</code>.
-        /// These values are generated by AWS Config for new rules.
+        /// These values are generated by Config for new rules.
         /// </para>
         ///  
         /// <para>
@@ -7003,17 +7008,18 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        /// The maximum number of rules that AWS Config supports is 150.
+        /// The maximum number of rules that Config supports is 150.
         /// </para>
         ///  
         /// <para>
-        /// For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
-        /// Config Limits</a> in the <i>AWS General Reference Guide</i>.
+        /// For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config
+        /// Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For more information about developing and using AWS Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
-        /// AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer Guide</i>.
+        /// For more information about developing and using Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
+        /// Amazon Web Services resource Configurations with Config</a> in the <i>Config Developer
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutConfigRule service method.</param>
@@ -7027,12 +7033,12 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
-        /// Config lacks permissions to perform the config:Put* action.
+        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to Config
+        /// lacks permissions to perform the config:Put* action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+        /// For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN,
         /// and check the function's permissions.
         /// </para>
         ///  </li> <li> 
@@ -7061,8 +7067,8 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConfigRulesExceededException">
-        /// Failed to add the AWS Config rule because the account already contains the maximum
-        /// number of 150 rules. Consider deleting any deactivated rules before you add new rules.
+        /// Failed to add the Config rule because the account already contains the maximum number
+        /// of 150 rules. Consider deleting any deactivated rules before you add new rules.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableConfigurationRecorderException">
         /// There are no configuration recorders available to provide the role needed to describe
@@ -7073,7 +7079,7 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+        /// For DeleteConfigRule, Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7082,7 +7088,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// For DeleteConfigRule, a remediation action is associated with the rule and Config
         /// cannot delete this rule. Delete the remediation action associated with the rule before
         /// deleting the rule and try your request again later.
         /// </para>
@@ -7135,21 +7141,21 @@ namespace Amazon.ConfigService
         /// </para>
         ///  <note> 
         /// <para>
-        /// AWS Config should be enabled in source accounts and regions you want to aggregate.
+        /// Config should be enabled in source accounts and regions you want to aggregate.
         /// </para>
         ///  
         /// <para>
         /// If your source type is an organization, you must be signed in to the management account
         /// or a registered delegated administrator and all the features must be enabled in your
-        /// organization. If the caller is a management account, AWS Config calls <code>EnableAwsServiceAccess</code>
-        /// API to enable integration between AWS Config and AWS Organizations. If the caller
-        /// is a registered delegated administrator, AWS Config calls <code>ListDelegatedAdministrators</code>
-        /// API to verify whether the caller is a valid delegated administrator.
+        /// organization. If the caller is a management account, Config calls <code>EnableAwsServiceAccess</code>
+        /// API to enable integration between Config and Organizations. If the caller is a registered
+        /// delegated administrator, Config calls <code>ListDelegatedAdministrators</code> API
+        /// to verify whether the caller is a valid delegated administrator.
         /// </para>
         ///  
         /// <para>
         /// To register a delegated administrator, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli">Register
-        /// a Delegated Administrator</a> in the AWS Config developer guide. 
+        /// a Delegated Administrator</a> in the Config developer guide. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -7187,33 +7193,33 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator cannot be updated because your AWS Organization management
-        /// account or the delegated administrator role changed. Delete this aggregator and create
-        /// a new one with the current AWS Organization.
+        /// The configuration aggregator cannot be updated because your Amazon Web Services Organization
+        /// management account or the delegated administrator role changed. Delete this aggregator
+        /// and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator is associated with a previous AWS Organization and AWS
-        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
-        /// and create a new one with the current AWS Organization.
+        /// The configuration aggregator is associated with a previous Amazon Web Services Organization
+        /// and Config cannot aggregate data with current Amazon Web Services Organization. Delete
+        /// this aggregator and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are not a registered delegated administrator for AWS Config with permissions to
-        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
-        /// registers delagated administrator for AWS Config service principle name before the
-        /// delegated administrator creates an aggregator.
+        /// You are not a registered delegated administrator for Config with permissions to call
+        /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+        /// delagated administrator for Config service principle name before the delegated administrator
+        /// creates an aggregator.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
-        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
-        /// APIs must be called from organization master account.
+        /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
+        /// must be called from organization master account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAllFeaturesNotEnabledException">
-        /// AWS Config resource cannot be created because your organization does not have all
-        /// features enabled.
+        /// Config resource cannot be created because your organization does not have all features
+        /// enabled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">REST API Reference for PutConfigurationAggregator Operation</seealso>
         public virtual PutConfigurationAggregatorResponse PutConfigurationAggregator(PutConfigurationAggregatorRequest request)
@@ -7238,21 +7244,21 @@ namespace Amazon.ConfigService
         /// </para>
         ///  <note> 
         /// <para>
-        /// AWS Config should be enabled in source accounts and regions you want to aggregate.
+        /// Config should be enabled in source accounts and regions you want to aggregate.
         /// </para>
         ///  
         /// <para>
         /// If your source type is an organization, you must be signed in to the management account
         /// or a registered delegated administrator and all the features must be enabled in your
-        /// organization. If the caller is a management account, AWS Config calls <code>EnableAwsServiceAccess</code>
-        /// API to enable integration between AWS Config and AWS Organizations. If the caller
-        /// is a registered delegated administrator, AWS Config calls <code>ListDelegatedAdministrators</code>
-        /// API to verify whether the caller is a valid delegated administrator.
+        /// organization. If the caller is a management account, Config calls <code>EnableAwsServiceAccess</code>
+        /// API to enable integration between Config and Organizations. If the caller is a registered
+        /// delegated administrator, Config calls <code>ListDelegatedAdministrators</code> API
+        /// to verify whether the caller is a valid delegated administrator.
         /// </para>
         ///  
         /// <para>
         /// To register a delegated administrator, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli">Register
-        /// a Delegated Administrator</a> in the AWS Config developer guide. 
+        /// a Delegated Administrator</a> in the Config developer guide. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -7293,33 +7299,33 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator cannot be updated because your AWS Organization management
-        /// account or the delegated administrator role changed. Delete this aggregator and create
-        /// a new one with the current AWS Organization.
+        /// The configuration aggregator cannot be updated because your Amazon Web Services Organization
+        /// management account or the delegated administrator role changed. Delete this aggregator
+        /// and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator is associated with a previous AWS Organization and AWS
-        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
-        /// and create a new one with the current AWS Organization.
+        /// The configuration aggregator is associated with a previous Amazon Web Services Organization
+        /// and Config cannot aggregate data with current Amazon Web Services Organization. Delete
+        /// this aggregator and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are not a registered delegated administrator for AWS Config with permissions to
-        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
-        /// registers delagated administrator for AWS Config service principle name before the
-        /// delegated administrator creates an aggregator.
+        /// You are not a registered delegated administrator for Config with permissions to call
+        /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+        /// delagated administrator for Config service principle name before the delegated administrator
+        /// creates an aggregator.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
-        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
-        /// APIs must be called from organization master account.
+        /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
+        /// must be called from organization master account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAllFeaturesNotEnabledException">
-        /// AWS Config resource cannot be created because your organization does not have all
-        /// features enabled.
+        /// Config resource cannot be created because your organization does not have all features
+        /// enabled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">REST API Reference for PutConfigurationAggregator Operation</seealso>
         public virtual Task<PutConfigurationAggregatorResponse> PutConfigurationAggregatorAsync(PutConfigurationAggregatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7363,8 +7369,8 @@ namespace Amazon.ConfigService
         /// You have provided a configuration recorder name that is not valid.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidRecordingGroupException">
-        /// AWS Config throws an exception if the recording group does not contain a valid list
-        /// of resource types. Invalid values might also be incorrectly formatted.
+        /// Config throws an exception if the recording group does not contain a valid list of
+        /// resource types. Invalid values might also be incorrectly formatted.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidRoleException">
         /// You have provided a null or empty role ARN.
@@ -7413,8 +7419,8 @@ namespace Amazon.ConfigService
         /// You have provided a configuration recorder name that is not valid.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidRecordingGroupException">
-        /// AWS Config throws an exception if the recording group does not contain a valid list
-        /// of resource types. Invalid values might also be incorrectly formatted.
+        /// Config throws an exception if the recording group does not contain a valid list of
+        /// resource types. Invalid values might also be incorrectly formatted.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidRoleException">
         /// You have provided a null or empty role ARN.
@@ -7438,8 +7444,9 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Creates or updates a conformance pack. A conformance pack is a collection of AWS Config
-        /// rules that can be easily deployed in an account and a region and across AWS Organization.
+        /// Creates or updates a conformance pack. A conformance pack is a collection of Config
+        /// rules that can be easily deployed in an account and a region and across Amazon Web
+        /// Services Organization.
         /// 
         ///  
         /// <para>
@@ -7450,7 +7457,7 @@ namespace Amazon.ConfigService
         ///  <note> 
         /// <para>
         /// You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code>
-        /// parameter, but not both. If you provide both AWS Config uses the <code>TemplateS3Uri</code>
+        /// parameter, but not both. If you provide both Config uses the <code>TemplateS3Uri</code>
         /// parameter and ignores the <code>TemplateBody</code> parameter.
         /// </para>
         ///  </note>
@@ -7466,12 +7473,12 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
-        /// Config lacks permissions to perform the config:Put* action.
+        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to Config
+        /// lacks permissions to perform the config:Put* action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+        /// For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN,
         /// and check the function's permissions.
         /// </para>
         ///  </li> <li> 
@@ -7501,14 +7508,14 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConformancePacksExceededException">
         /// You have reached the limit (6) of the number of conformance packs in an account (6
-        /// conformance pack with 25 AWS Config rules per pack).
+        /// conformance pack with 25 Config rules per pack).
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
         /// You see this exception in the following cases: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+        /// For DeleteConfigRule, Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7517,7 +7524,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// For DeleteConfigRule, a remediation action is associated with the rule and Config
         /// cannot delete this rule. Delete the remediation action associated with the rule before
         /// deleting the rule and try your request again later.
         /// </para>
@@ -7555,8 +7562,9 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Creates or updates a conformance pack. A conformance pack is a collection of AWS Config
-        /// rules that can be easily deployed in an account and a region and across AWS Organization.
+        /// Creates or updates a conformance pack. A conformance pack is a collection of Config
+        /// rules that can be easily deployed in an account and a region and across Amazon Web
+        /// Services Organization.
         /// 
         ///  
         /// <para>
@@ -7567,7 +7575,7 @@ namespace Amazon.ConfigService
         ///  <note> 
         /// <para>
         /// You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code>
-        /// parameter, but not both. If you provide both AWS Config uses the <code>TemplateS3Uri</code>
+        /// parameter, but not both. If you provide both Config uses the <code>TemplateS3Uri</code>
         /// parameter and ignores the <code>TemplateBody</code> parameter.
         /// </para>
         ///  </note>
@@ -7586,12 +7594,12 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
-        /// Config lacks permissions to perform the config:Put* action.
+        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to Config
+        /// lacks permissions to perform the config:Put* action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+        /// For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN,
         /// and check the function's permissions.
         /// </para>
         ///  </li> <li> 
@@ -7621,14 +7629,14 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConformancePacksExceededException">
         /// You have reached the limit (6) of the number of conformance packs in an account (6
-        /// conformance pack with 25 AWS Config rules per pack).
+        /// conformance pack with 25 Config rules per pack).
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
         /// You see this exception in the following cases: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+        /// For DeleteConfigRule, Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7637,7 +7645,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// For DeleteConfigRule, a remediation action is associated with the rule and Config
         /// cannot delete this rule. Delete the remediation action associated with the rule before
         /// deleting the rule and try your request again later.
         /// </para>
@@ -7704,7 +7712,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the PutDeliveryChannel service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InsufficientDeliveryPolicyException">
-        /// Your Amazon S3 bucket policy does not permit AWS Config to write to it.
+        /// Your Amazon S3 bucket policy does not permit Config to write to it.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidDeliveryChannelNameException">
         /// The specified delivery channel name is not valid.
@@ -7768,7 +7776,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the PutDeliveryChannel service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InsufficientDeliveryPolicyException">
-        /// Your Amazon S3 bucket policy does not permit AWS Config to write to it.
+        /// Your Amazon S3 bucket policy does not permit Config to write to it.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidDeliveryChannelNameException">
         /// The specified delivery channel name is not valid.
@@ -7808,8 +7816,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Used by an AWS Lambda function to deliver evaluation results to AWS Config. This action
-        /// is required in every AWS Lambda function that is invoked by an AWS Config rule.
+        /// Used by an Lambda function to deliver evaluation results to Config. This action is
+        /// required in every Lambda function that is invoked by an Config rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutEvaluations service method.</param>
         /// 
@@ -7822,8 +7830,8 @@ namespace Amazon.ConfigService
         /// The specified <code>ResultToken</code> is invalid.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
-        /// are correct and try again.
+        /// One or more Config rules in the request are invalid. Verify that the rule names are
+        /// correct and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations">REST API Reference for PutEvaluations Operation</seealso>
         public virtual PutEvaluationsResponse PutEvaluations(PutEvaluationsRequest request)
@@ -7837,8 +7845,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Used by an AWS Lambda function to deliver evaluation results to AWS Config. This action
-        /// is required in every AWS Lambda function that is invoked by an AWS Config rule.
+        /// Used by an Lambda function to deliver evaluation results to Config. This action is
+        /// required in every Lambda function that is invoked by an Config rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutEvaluations service method.</param>
         /// <param name="cancellationToken">
@@ -7854,8 +7862,8 @@ namespace Amazon.ConfigService
         /// The specified <code>ResultToken</code> is invalid.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
-        /// are correct and try again.
+        /// One or more Config rules in the request are invalid. Verify that the rule names are
+        /// correct and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations">REST API Reference for PutEvaluations Operation</seealso>
         public virtual Task<PutEvaluationsResponse> PutEvaluationsAsync(PutEvaluationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7874,7 +7882,7 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Add or updates the evaluations for process checks. This API checks if the rule is
-        /// a process check when the name of the AWS Config rule is provided.
+        /// a process check when the name of the Config rule is provided.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutExternalEvaluation service method.</param>
         /// 
@@ -7884,8 +7892,8 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
-        /// are correct and try again.
+        /// One or more Config rules in the request are invalid. Verify that the rule names are
+        /// correct and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutExternalEvaluation">REST API Reference for PutExternalEvaluation Operation</seealso>
         public virtual PutExternalEvaluationResponse PutExternalEvaluation(PutExternalEvaluationRequest request)
@@ -7900,7 +7908,7 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Add or updates the evaluations for process checks. This API checks if the rule is
-        /// a process check when the name of the AWS Config rule is provided.
+        /// a process check when the name of the Config rule is provided.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutExternalEvaluation service method.</param>
         /// <param name="cancellationToken">
@@ -7913,8 +7921,8 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
-        /// are correct and try again.
+        /// One or more Config rules in the request are invalid. Verify that the rule names are
+        /// correct and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutExternalEvaluation">REST API Reference for PutExternalEvaluation Operation</seealso>
         public virtual Task<PutExternalEvaluationResponse> PutExternalEvaluationAsync(PutExternalEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7933,42 +7941,43 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Adds or updates organization config rule for your entire organization evaluating whether
-        /// your AWS resources comply with your desired configurations.
+        /// your Amazon Web Services resources comply with your desired configurations.
         /// 
         ///  
         /// <para>
         ///  Only a master account and a delegated administrator can create or update an organization
         /// config rule. When calling this API with a delegated administrator, you must ensure
-        /// AWS Organizations <code>ListDelegatedAdministrator</code> permissions are added. 
+        /// Organizations <code>ListDelegatedAdministrator</code> permissions are added. 
         /// </para>
         ///  
         /// <para>
         /// This API enables organization service access through the <code>EnableAWSServiceAccess</code>
         /// action and creates a service linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code>
         /// in the master or delegated administrator account of your organization. The service
-        /// linked role is created only when the role does not exist in the caller account. AWS
-        /// Config verifies the existence of role with <code>GetRole</code> action.
+        /// linked role is created only when the role does not exist in the caller account. Config
+        /// verifies the existence of role with <code>GetRole</code> action.
         /// </para>
         ///  
         /// <para>
         /// To use this API with delegated administrator, register a delegated administrator by
-        /// calling AWS Organization <code>register-delegated-administrator</code> for <code>config-multiaccountsetup.amazonaws.com</code>.
-        /// 
+        /// calling Amazon Web Services Organization <code>register-delegated-administrator</code>
+        /// for <code>config-multiaccountsetup.amazonaws.com</code>. 
         /// </para>
         ///  
         /// <para>
-        /// You can use this action to create both custom AWS Config rules and AWS managed Config
-        /// rules. If you are adding a new custom AWS Config rule, you must first create AWS Lambda
-        /// function in the master account or a delegated administrator that the rule invokes
-        /// to evaluate your resources. When you use the <code>PutOrganizationConfigRule</code>
-        /// action to add the rule to AWS Config, you must specify the Amazon Resource Name (ARN)
-        /// that AWS Lambda assigns to the function. If you are adding an AWS managed Config rule,
-        /// specify the rule's identifier for the <code>RuleIdentifier</code> key.
+        /// You can use this action to create both custom Config rules and Config managed rules.
+        /// If you are adding a new custom Config rule, you must first create Lambda function
+        /// in the master account or a delegated administrator that the rule invokes to evaluate
+        /// your resources. You also need to create an IAM role in the managed-account that can
+        /// be assumed by the Lambda function. When you use the <code>PutOrganizationConfigRule</code>
+        /// action to add the rule to Config, you must specify the Amazon Resource Name (ARN)
+        /// that Lambda assigns to the function. If you are adding an Config managed rule, specify
+        /// the rule's identifier for the <code>RuleIdentifier</code> key.
         /// </para>
         ///  
         /// <para>
-        /// The maximum number of organization config rules that AWS Config supports is 150 and
-        /// 3 delegated administrator per organization. 
+        /// The maximum number of organization config rules that Config supports is 150 and 3
+        /// delegated administrator per organization. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -7989,12 +7998,12 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
-        /// Config lacks permissions to perform the config:Put* action.
+        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to Config
+        /// lacks permissions to perform the config:Put* action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+        /// For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN,
         /// and check the function's permissions.
         /// </para>
         ///  </li> <li> 
@@ -8038,40 +8047,40 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator cannot be updated because your AWS Organization management
-        /// account or the delegated administrator role changed. Delete this aggregator and create
-        /// a new one with the current AWS Organization.
+        /// The configuration aggregator cannot be updated because your Amazon Web Services Organization
+        /// management account or the delegated administrator role changed. Delete this aggregator
+        /// and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator is associated with a previous AWS Organization and AWS
-        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
-        /// and create a new one with the current AWS Organization.
+        /// The configuration aggregator is associated with a previous Amazon Web Services Organization
+        /// and Config cannot aggregate data with current Amazon Web Services Organization. Delete
+        /// this aggregator and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are not a registered delegated administrator for AWS Config with permissions to
-        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
-        /// registers delagated administrator for AWS Config service principle name before the
-        /// delegated administrator creates an aggregator.
+        /// You are not a registered delegated administrator for Config with permissions to call
+        /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+        /// delagated administrator for Config service principle name before the delegated administrator
+        /// creates an aggregator.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
-        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
-        /// APIs must be called from organization master account.
+        /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
+        /// must be called from organization master account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAllFeaturesNotEnabledException">
-        /// AWS Config resource cannot be created because your organization does not have all
-        /// features enabled.
+        /// Config resource cannot be created because your organization does not have all features
+        /// enabled.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
         /// You see this exception in the following cases: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+        /// For DeleteConfigRule, Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8080,7 +8089,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// For DeleteConfigRule, a remediation action is associated with the rule and Config
         /// cannot delete this rule. Delete the remediation action associated with the rule before
         /// deleting the rule and try your request again later.
         /// </para>
@@ -8134,42 +8143,43 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Adds or updates organization config rule for your entire organization evaluating whether
-        /// your AWS resources comply with your desired configurations.
+        /// your Amazon Web Services resources comply with your desired configurations.
         /// 
         ///  
         /// <para>
         ///  Only a master account and a delegated administrator can create or update an organization
         /// config rule. When calling this API with a delegated administrator, you must ensure
-        /// AWS Organizations <code>ListDelegatedAdministrator</code> permissions are added. 
+        /// Organizations <code>ListDelegatedAdministrator</code> permissions are added. 
         /// </para>
         ///  
         /// <para>
         /// This API enables organization service access through the <code>EnableAWSServiceAccess</code>
         /// action and creates a service linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code>
         /// in the master or delegated administrator account of your organization. The service
-        /// linked role is created only when the role does not exist in the caller account. AWS
-        /// Config verifies the existence of role with <code>GetRole</code> action.
+        /// linked role is created only when the role does not exist in the caller account. Config
+        /// verifies the existence of role with <code>GetRole</code> action.
         /// </para>
         ///  
         /// <para>
         /// To use this API with delegated administrator, register a delegated administrator by
-        /// calling AWS Organization <code>register-delegated-administrator</code> for <code>config-multiaccountsetup.amazonaws.com</code>.
-        /// 
+        /// calling Amazon Web Services Organization <code>register-delegated-administrator</code>
+        /// for <code>config-multiaccountsetup.amazonaws.com</code>. 
         /// </para>
         ///  
         /// <para>
-        /// You can use this action to create both custom AWS Config rules and AWS managed Config
-        /// rules. If you are adding a new custom AWS Config rule, you must first create AWS Lambda
-        /// function in the master account or a delegated administrator that the rule invokes
-        /// to evaluate your resources. When you use the <code>PutOrganizationConfigRule</code>
-        /// action to add the rule to AWS Config, you must specify the Amazon Resource Name (ARN)
-        /// that AWS Lambda assigns to the function. If you are adding an AWS managed Config rule,
-        /// specify the rule's identifier for the <code>RuleIdentifier</code> key.
+        /// You can use this action to create both custom Config rules and Config managed rules.
+        /// If you are adding a new custom Config rule, you must first create Lambda function
+        /// in the master account or a delegated administrator that the rule invokes to evaluate
+        /// your resources. You also need to create an IAM role in the managed-account that can
+        /// be assumed by the Lambda function. When you use the <code>PutOrganizationConfigRule</code>
+        /// action to add the rule to Config, you must specify the Amazon Resource Name (ARN)
+        /// that Lambda assigns to the function. If you are adding an Config managed rule, specify
+        /// the rule's identifier for the <code>RuleIdentifier</code> key.
         /// </para>
         ///  
         /// <para>
-        /// The maximum number of organization config rules that AWS Config supports is 150 and
-        /// 3 delegated administrator per organization. 
+        /// The maximum number of organization config rules that Config supports is 150 and 3
+        /// delegated administrator per organization. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -8193,12 +8203,12 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
-        /// Config lacks permissions to perform the config:Put* action.
+        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to Config
+        /// lacks permissions to perform the config:Put* action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+        /// For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN,
         /// and check the function's permissions.
         /// </para>
         ///  </li> <li> 
@@ -8242,40 +8252,40 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator cannot be updated because your AWS Organization management
-        /// account or the delegated administrator role changed. Delete this aggregator and create
-        /// a new one with the current AWS Organization.
+        /// The configuration aggregator cannot be updated because your Amazon Web Services Organization
+        /// management account or the delegated administrator role changed. Delete this aggregator
+        /// and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator is associated with a previous AWS Organization and AWS
-        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
-        /// and create a new one with the current AWS Organization.
+        /// The configuration aggregator is associated with a previous Amazon Web Services Organization
+        /// and Config cannot aggregate data with current Amazon Web Services Organization. Delete
+        /// this aggregator and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are not a registered delegated administrator for AWS Config with permissions to
-        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
-        /// registers delagated administrator for AWS Config service principle name before the
-        /// delegated administrator creates an aggregator.
+        /// You are not a registered delegated administrator for Config with permissions to call
+        /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+        /// delagated administrator for Config service principle name before the delegated administrator
+        /// creates an aggregator.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
-        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
-        /// APIs must be called from organization master account.
+        /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
+        /// must be called from organization master account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAllFeaturesNotEnabledException">
-        /// AWS Config resource cannot be created because your organization does not have all
-        /// features enabled.
+        /// Config resource cannot be created because your organization does not have all features
+        /// enabled.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
         /// You see this exception in the following cases: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+        /// For DeleteConfigRule, Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8284,7 +8294,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// For DeleteConfigRule, a remediation action is associated with the rule and Config
         /// cannot delete this rule. Delete the remediation action associated with the rule before
         /// deleting the rule and try your request again later.
         /// </para>
@@ -8341,12 +8351,12 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Deploys conformance packs across member accounts in an AWS Organization.
+        /// Deploys conformance packs across member accounts in an Amazon Web Services Organization.
         /// 
         ///  
         /// <para>
         /// Only a master account and a delegated administrator can call this API. When calling
-        /// this API with a delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code>
+        /// this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code>
         /// permissions are added.
         /// </para>
         ///  
@@ -8356,8 +8366,8 @@ namespace Amazon.ConfigService
         /// role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated
         /// administrator account of your organization. The service linked role is created only
         /// when the role does not exist in the caller account. To use this API with delegated
-        /// administrator, register a delegated administrator by calling AWS Organization <code>register-delegate-admin</code>
-        /// for <code>config-multiaccountsetup.amazonaws.com</code>.
+        /// administrator, register a delegated administrator by calling Amazon Web Services Organization
+        /// <code>register-delegate-admin</code> for <code>config-multiaccountsetup.amazonaws.com</code>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -8367,18 +8377,18 @@ namespace Amazon.ConfigService
         ///  
         /// <para>
         /// You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code>
-        /// parameter, but not both. If you provide both AWS Config uses the <code>TemplateS3Uri</code>
+        /// parameter, but not both. If you provide both Config uses the <code>TemplateS3Uri</code>
         /// parameter and ignores the <code>TemplateBody</code> parameter.
         /// </para>
         ///  
         /// <para>
-        /// AWS Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS
+        /// Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS
         /// until the conformance pack is created or updated. You cannot update a conformance
         /// pack while it is in this state.
         /// </para>
         ///  
         /// <para>
-        /// You can create 50 conformance packs with 25 AWS Config rules in each pack and 3 delegated
+        /// You can create 50 conformance packs with 25 Config rules in each pack and 3 delegated
         /// administrator per organization. 
         /// </para>
         ///  </note>
@@ -8391,12 +8401,12 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
-        /// Config lacks permissions to perform the config:Put* action.
+        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to Config
+        /// lacks permissions to perform the config:Put* action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+        /// For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN,
         /// and check the function's permissions.
         /// </para>
         ///  </li> <li> 
@@ -8422,7 +8432,7 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfOrganizationConformancePacksExceededException">
         /// You have reached the limit (6) of the number of organization conformance packs in
-        /// an account (6 conformance pack with 25 AWS Config rules per pack per account).
+        /// an account (6 conformance pack with 25 Config rules per pack per account).
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableOrganizationException">
         /// Organization is no longer available.
@@ -8437,33 +8447,33 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator cannot be updated because your AWS Organization management
-        /// account or the delegated administrator role changed. Delete this aggregator and create
-        /// a new one with the current AWS Organization.
+        /// The configuration aggregator cannot be updated because your Amazon Web Services Organization
+        /// management account or the delegated administrator role changed. Delete this aggregator
+        /// and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator is associated with a previous AWS Organization and AWS
-        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
-        /// and create a new one with the current AWS Organization.
+        /// The configuration aggregator is associated with a previous Amazon Web Services Organization
+        /// and Config cannot aggregate data with current Amazon Web Services Organization. Delete
+        /// this aggregator and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are not a registered delegated administrator for AWS Config with permissions to
-        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
-        /// registers delagated administrator for AWS Config service principle name before the
-        /// delegated administrator creates an aggregator.
+        /// You are not a registered delegated administrator for Config with permissions to call
+        /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+        /// delagated administrator for Config service principle name before the delegated administrator
+        /// creates an aggregator.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
-        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
-        /// APIs must be called from organization master account.
+        /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
+        /// must be called from organization master account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAllFeaturesNotEnabledException">
-        /// AWS Config resource cannot be created because your organization does not have all
-        /// features enabled.
+        /// Config resource cannot be created because your organization does not have all features
+        /// enabled.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationConformancePackTemplateValidationException">
         /// You have specified a template that is not valid or supported.
@@ -8473,7 +8483,7 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+        /// For DeleteConfigRule, Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8482,7 +8492,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// For DeleteConfigRule, a remediation action is associated with the rule and Config
         /// cannot delete this rule. Delete the remediation action associated with the rule before
         /// deleting the rule and try your request again later.
         /// </para>
@@ -8535,12 +8545,12 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Deploys conformance packs across member accounts in an AWS Organization.
+        /// Deploys conformance packs across member accounts in an Amazon Web Services Organization.
         /// 
         ///  
         /// <para>
         /// Only a master account and a delegated administrator can call this API. When calling
-        /// this API with a delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code>
+        /// this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code>
         /// permissions are added.
         /// </para>
         ///  
@@ -8550,8 +8560,8 @@ namespace Amazon.ConfigService
         /// role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated
         /// administrator account of your organization. The service linked role is created only
         /// when the role does not exist in the caller account. To use this API with delegated
-        /// administrator, register a delegated administrator by calling AWS Organization <code>register-delegate-admin</code>
-        /// for <code>config-multiaccountsetup.amazonaws.com</code>.
+        /// administrator, register a delegated administrator by calling Amazon Web Services Organization
+        /// <code>register-delegate-admin</code> for <code>config-multiaccountsetup.amazonaws.com</code>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -8561,18 +8571,18 @@ namespace Amazon.ConfigService
         ///  
         /// <para>
         /// You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code>
-        /// parameter, but not both. If you provide both AWS Config uses the <code>TemplateS3Uri</code>
+        /// parameter, but not both. If you provide both Config uses the <code>TemplateS3Uri</code>
         /// parameter and ignores the <code>TemplateBody</code> parameter.
         /// </para>
         ///  
         /// <para>
-        /// AWS Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS
+        /// Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS
         /// until the conformance pack is created or updated. You cannot update a conformance
         /// pack while it is in this state.
         /// </para>
         ///  
         /// <para>
-        /// You can create 50 conformance packs with 25 AWS Config rules in each pack and 3 delegated
+        /// You can create 50 conformance packs with 25 Config rules in each pack and 3 delegated
         /// administrator per organization. 
         /// </para>
         ///  </note>
@@ -8588,12 +8598,12 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
-        /// Config lacks permissions to perform the config:Put* action.
+        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to Config
+        /// lacks permissions to perform the config:Put* action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+        /// For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN,
         /// and check the function's permissions.
         /// </para>
         ///  </li> <li> 
@@ -8619,7 +8629,7 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfOrganizationConformancePacksExceededException">
         /// You have reached the limit (6) of the number of organization conformance packs in
-        /// an account (6 conformance pack with 25 AWS Config rules per pack per account).
+        /// an account (6 conformance pack with 25 Config rules per pack per account).
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableOrganizationException">
         /// Organization is no longer available.
@@ -8634,33 +8644,33 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator cannot be updated because your AWS Organization management
-        /// account or the delegated administrator role changed. Delete this aggregator and create
-        /// a new one with the current AWS Organization.
+        /// The configuration aggregator cannot be updated because your Amazon Web Services Organization
+        /// management account or the delegated administrator role changed. Delete this aggregator
+        /// and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The configuration aggregator is associated with a previous AWS Organization and AWS
-        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
-        /// and create a new one with the current AWS Organization.
+        /// The configuration aggregator is associated with a previous Amazon Web Services Organization
+        /// and Config cannot aggregate data with current Amazon Web Services Organization. Delete
+        /// this aggregator and create a new one with the current Amazon Web Services Organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are not a registered delegated administrator for AWS Config with permissions to
-        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
-        /// registers delagated administrator for AWS Config service principle name before the
-        /// delegated administrator creates an aggregator.
+        /// You are not a registered delegated administrator for Config with permissions to call
+        /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+        /// delagated administrator for Config service principle name before the delegated administrator
+        /// creates an aggregator.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
-        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
-        /// APIs must be called from organization master account.
+        /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
+        /// must be called from organization master account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAllFeaturesNotEnabledException">
-        /// AWS Config resource cannot be created because your organization does not have all
-        /// features enabled.
+        /// Config resource cannot be created because your organization does not have all features
+        /// enabled.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationConformancePackTemplateValidationException">
         /// You have specified a template that is not valid or supported.
@@ -8670,7 +8680,7 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+        /// For DeleteConfigRule, Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8679,7 +8689,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// For DeleteConfigRule, a remediation action is associated with the rule and Config
         /// cannot delete this rule. Delete the remediation action associated with the rule before
         /// deleting the rule and try your request again later.
         /// </para>
@@ -8736,11 +8746,11 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Adds or updates the remediation configuration with a specific AWS Config rule with
-        /// the selected target or action. The API creates the <code>RemediationConfiguration</code>
-        /// object for the AWS Config rule. The AWS Config rule must already exist for you to
-        /// add a remediation configuration. The target (SSM document) must exist and have permissions
-        /// to use the target. 
+        /// Adds or updates the remediation configuration with a specific Config rule with the
+        /// selected target or action. The API creates the <code>RemediationConfiguration</code>
+        /// object for the Config rule. The Config rule must already exist for you to add a remediation
+        /// configuration. The target (SSM document) must exist and have permissions to use the
+        /// target. 
         /// 
         ///  <note> 
         /// <para>
@@ -8749,9 +8759,9 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        /// This API does not support adding remediation configurations for service-linked AWS
-        /// Config Rules such as Organization Config rules, the rules deployed by conformance
-        /// packs, and rules deployed by AWS Security Hub.
+        /// This API does not support adding remediation configurations for service-linked Config
+        /// Rules such as Organization Config rules, the rules deployed by conformance packs,
+        /// and rules deployed by Amazon Web Services Security Hub.
         /// </para>
         ///  </note>
         /// </summary>
@@ -8763,12 +8773,12 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
-        /// Config lacks permissions to perform the config:Put* action.
+        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to Config
+        /// lacks permissions to perform the config:Put* action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+        /// For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN,
         /// and check the function's permissions.
         /// </para>
         ///  </li> <li> 
@@ -8808,11 +8818,11 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Adds or updates the remediation configuration with a specific AWS Config rule with
-        /// the selected target or action. The API creates the <code>RemediationConfiguration</code>
-        /// object for the AWS Config rule. The AWS Config rule must already exist for you to
-        /// add a remediation configuration. The target (SSM document) must exist and have permissions
-        /// to use the target. 
+        /// Adds or updates the remediation configuration with a specific Config rule with the
+        /// selected target or action. The API creates the <code>RemediationConfiguration</code>
+        /// object for the Config rule. The Config rule must already exist for you to add a remediation
+        /// configuration. The target (SSM document) must exist and have permissions to use the
+        /// target. 
         /// 
         ///  <note> 
         /// <para>
@@ -8821,9 +8831,9 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        /// This API does not support adding remediation configurations for service-linked AWS
-        /// Config Rules such as Organization Config rules, the rules deployed by conformance
-        /// packs, and rules deployed by AWS Security Hub.
+        /// This API does not support adding remediation configurations for service-linked Config
+        /// Rules such as Organization Config rules, the rules deployed by conformance packs,
+        /// and rules deployed by Amazon Web Services Security Hub.
         /// </para>
         ///  </note>
         /// </summary>
@@ -8838,12 +8848,12 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
-        /// Config lacks permissions to perform the config:Put* action.
+        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to Config
+        /// lacks permissions to perform the config:Put* action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+        /// For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN,
         /// and check the function's permissions.
         /// </para>
         ///  </li> <li> 
@@ -8889,11 +8899,11 @@ namespace Amazon.ConfigService
         /// <summary>
         /// A remediation exception is when a specific resource is no longer considered for auto-remediation.
         /// This API adds a new exception or updates an existing exception for a specific resource
-        /// with a specific AWS Config rule. 
+        /// with a specific Config rule. 
         /// 
         ///  <note> 
         /// <para>
-        /// AWS Config generates a remediation exception when a problem occurs executing a remediation
+        /// Config generates a remediation exception when a problem occurs executing a remediation
         /// action to a specific resource. Remediation exceptions blocks auto-remediation until
         /// the exception is cleared.
         /// </para>
@@ -8907,12 +8917,12 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
-        /// Config lacks permissions to perform the config:Put* action.
+        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to Config
+        /// lacks permissions to perform the config:Put* action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+        /// For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN,
         /// and check the function's permissions.
         /// </para>
         ///  </li> <li> 
@@ -8954,11 +8964,11 @@ namespace Amazon.ConfigService
         /// <summary>
         /// A remediation exception is when a specific resource is no longer considered for auto-remediation.
         /// This API adds a new exception or updates an existing exception for a specific resource
-        /// with a specific AWS Config rule. 
+        /// with a specific Config rule. 
         /// 
         ///  <note> 
         /// <para>
-        /// AWS Config generates a remediation exception when a problem occurs executing a remediation
+        /// Config generates a remediation exception when a problem occurs executing a remediation
         /// action to a specific resource. Remediation exceptions blocks auto-remediation until
         /// the exception is cleared.
         /// </para>
@@ -8975,12 +8985,12 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
-        /// Config lacks permissions to perform the config:Put* action.
+        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to Config
+        /// lacks permissions to perform the config:Put* action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+        /// For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN,
         /// and check the function's permissions.
         /// </para>
         ///  </li> <li> 
@@ -9025,20 +9035,20 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Records the configuration state for the resource provided in the request. The configuration
-        /// state of a resource is represented in AWS Config as Configuration Items. Once this
-        /// API records the configuration item, you can retrieve the list of configuration items
-        /// for the custom resource type using existing AWS Config APIs. 
+        /// state of a resource is represented in Config as Configuration Items. Once this API
+        /// records the configuration item, you can retrieve the list of configuration items for
+        /// the custom resource type using existing Config APIs. 
         /// 
         ///  <note> 
         /// <para>
-        /// The custom resource type must be registered with AWS CloudFormation. This API accepts
-        /// the configuration item registered with AWS CloudFormation.
+        /// The custom resource type must be registered with CloudFormation. This API accepts
+        /// the configuration item registered with CloudFormation.
         /// </para>
         ///  
         /// <para>
-        /// When you call this API, AWS Config only stores configuration state of the resource
-        /// provided in the request. This API does not change or remediate the configuration of
-        /// the resource. 
+        /// When you call this API, Config only stores configuration state of the resource provided
+        /// in the request. This API does not change or remediate the configuration of the resource.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -9055,12 +9065,12 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
-        /// Config lacks permissions to perform the config:Put* action.
+        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to Config
+        /// lacks permissions to perform the config:Put* action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+        /// For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN,
         /// and check the function's permissions.
         /// </para>
         ///  </li> <li> 
@@ -9119,20 +9129,20 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Records the configuration state for the resource provided in the request. The configuration
-        /// state of a resource is represented in AWS Config as Configuration Items. Once this
-        /// API records the configuration item, you can retrieve the list of configuration items
-        /// for the custom resource type using existing AWS Config APIs. 
+        /// state of a resource is represented in Config as Configuration Items. Once this API
+        /// records the configuration item, you can retrieve the list of configuration items for
+        /// the custom resource type using existing Config APIs. 
         /// 
         ///  <note> 
         /// <para>
-        /// The custom resource type must be registered with AWS CloudFormation. This API accepts
-        /// the configuration item registered with AWS CloudFormation.
+        /// The custom resource type must be registered with CloudFormation. This API accepts
+        /// the configuration item registered with CloudFormation.
         /// </para>
         ///  
         /// <para>
-        /// When you call this API, AWS Config only stores configuration state of the resource
-        /// provided in the request. This API does not change or remediate the configuration of
-        /// the resource. 
+        /// When you call this API, Config only stores configuration state of the resource provided
+        /// in the request. This API does not change or remediate the configuration of the resource.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -9152,12 +9162,12 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
-        /// Config lacks permissions to perform the config:Put* action.
+        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to Config
+        /// lacks permissions to perform the config:Put* action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+        /// For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN,
         /// and check the function's permissions.
         /// </para>
         ///  </li> <li> 
@@ -9220,15 +9230,14 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Creates and updates the retention configuration with details about retention period
-        /// (number of days) that AWS Config stores your historical information. The API creates
-        /// the <code>RetentionConfiguration</code> object and names the object as <b>default</b>.
+        /// (number of days) that Config stores your historical information. The API creates the
+        /// <code>RetentionConfiguration</code> object and names the object as <b>default</b>.
         /// When you have a <code>RetentionConfiguration</code> object named <b>default</b>, calling
         /// the API modifies the default object. 
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, AWS Config supports only one retention configuration per region in your
-        /// account.
+        /// Currently, Config supports only one retention configuration per region in your account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -9256,15 +9265,14 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Creates and updates the retention configuration with details about retention period
-        /// (number of days) that AWS Config stores your historical information. The API creates
-        /// the <code>RetentionConfiguration</code> object and names the object as <b>default</b>.
+        /// (number of days) that Config stores your historical information. The API creates the
+        /// <code>RetentionConfiguration</code> object and names the object as <b>default</b>.
         /// When you have a <code>RetentionConfiguration</code> object named <b>default</b>, calling
         /// the API modifies the default object. 
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, AWS Config supports only one retention configuration per region in your
-        /// account.
+        /// Currently, Config supports only one retention configuration per region in your account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -9299,8 +9307,9 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Saves a new query or updates an existing saved query. The <code>QueryName</code> must
-        /// be unique for a single AWS account and a single AWS Region. You can create upto 300
-        /// queries in a single AWS account and a single AWS Region.
+        /// be unique for a single Amazon Web Services account and a single Amazon Web Services
+        /// Region. You can create upto 300 queries in a single Amazon Web Services account and
+        /// a single Amazon Web Services Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutStoredQuery service method.</param>
         /// 
@@ -9341,8 +9350,9 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Saves a new query or updates an existing saved query. The <code>QueryName</code> must
-        /// be unique for a single AWS account and a single AWS Region. You can create upto 300
-        /// queries in a single AWS account and a single AWS Region.
+        /// be unique for a single Amazon Web Services account and a single Amazon Web Services
+        /// Region. You can create upto 300 queries in a single Amazon Web Services account and
+        /// a single Amazon Web Services Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutStoredQuery service method.</param>
         /// <param name="cancellationToken">
@@ -9390,14 +9400,31 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Accepts a structured query language (SQL) SELECT command and an aggregator to query
-        /// configuration state of AWS resources across multiple accounts and regions, performs
-        /// the corresponding search, and returns resource configurations matching the properties.
+        /// configuration state of Amazon Web Services resources across multiple accounts and
+        /// regions, performs the corresponding search, and returns resource configurations matching
+        /// the properties.
         /// 
         ///  
         /// <para>
         /// For more information about query components, see the <a href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html">
-        /// <b>Query Components</b> </a> section in the AWS Config Developer Guide.
+        /// <b>Query Components</b> </a> section in the Config Developer Guide.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you run an aggregation query (i.e., using <code>GROUP BY</code> or using aggregate
+        /// functions such as <code>COUNT</code>; e.g., <code>SELECT resourceId, COUNT(*) WHERE
+        /// resourceType = 'AWS::IAM::Role' GROUP BY resourceId</code>) and do not specify the
+        /// <code>MaxResults</code> or the <code>Limit</code> query parameters, the default page
+        /// size is set to 500.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you run a non-aggregation query (i.e., not using <code>GROUP BY</code> or aggregate
+        /// function; e.g., <code>SELECT * WHERE resourceType = 'AWS::IAM::Role'</code>) and do
+        /// not specify the <code>MaxResults</code> or the <code>Limit</code> query parameters,
+        /// the default page size is set to 25.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SelectAggregateResourceConfig service method.</param>
         /// 
@@ -9428,14 +9455,31 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Accepts a structured query language (SQL) SELECT command and an aggregator to query
-        /// configuration state of AWS resources across multiple accounts and regions, performs
-        /// the corresponding search, and returns resource configurations matching the properties.
+        /// configuration state of Amazon Web Services resources across multiple accounts and
+        /// regions, performs the corresponding search, and returns resource configurations matching
+        /// the properties.
         /// 
         ///  
         /// <para>
         /// For more information about query components, see the <a href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html">
-        /// <b>Query Components</b> </a> section in the AWS Config Developer Guide.
+        /// <b>Query Components</b> </a> section in the Config Developer Guide.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you run an aggregation query (i.e., using <code>GROUP BY</code> or using aggregate
+        /// functions such as <code>COUNT</code>; e.g., <code>SELECT resourceId, COUNT(*) WHERE
+        /// resourceType = 'AWS::IAM::Role' GROUP BY resourceId</code>) and do not specify the
+        /// <code>MaxResults</code> or the <code>Limit</code> query parameters, the default page
+        /// size is set to 500.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you run a non-aggregation query (i.e., not using <code>GROUP BY</code> or aggregate
+        /// function; e.g., <code>SELECT * WHERE resourceType = 'AWS::IAM::Role'</code>) and do
+        /// not specify the <code>MaxResults</code> or the <code>Limit</code> query parameters,
+        /// the default page size is set to 25.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SelectAggregateResourceConfig service method.</param>
         /// <param name="cancellationToken">
@@ -9478,7 +9522,7 @@ namespace Amazon.ConfigService
         ///  
         /// <para>
         /// For more information about query components, see the <a href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html">
-        /// <b>Query Components</b> </a> section in the AWS Config Developer Guide.
+        /// <b>Query Components</b> </a> section in the Config Developer Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SelectResourceConfig service method.</param>
@@ -9512,7 +9556,7 @@ namespace Amazon.ConfigService
         ///  
         /// <para>
         /// For more information about query components, see the <a href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html">
-        /// <b>Query Components</b> </a> section in the AWS Config Developer Guide.
+        /// <b>Query Components</b> </a> section in the Config Developer Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SelectResourceConfig service method.</param>
@@ -9547,7 +9591,7 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Runs an on-demand evaluation for the specified AWS Config rules against the last known
+        /// Runs an on-demand evaluation for the specified Config rules against the last known
         /// configuration state of the resources. Use <code>StartConfigRulesEvaluation</code>
         /// when you want to test that a rule you updated is working as expected. <code>StartConfigRulesEvaluation</code>
         /// does not re-record the latest configuration state for your resources. It re-runs an
@@ -9555,20 +9599,20 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
-        /// You can specify up to 25 AWS Config rules per request. 
+        /// You can specify up to 25 Config rules per request. 
         /// </para>
         ///  
         /// <para>
         /// An existing <code>StartConfigRulesEvaluation</code> call for the specified rules must
-        /// complete before you can call the API again. If you chose to have AWS Config stream
-        /// to an Amazon SNS topic, you will receive a <code>ConfigRuleEvaluationStarted</code>
-        /// notification when the evaluation starts.
+        /// complete before you can call the API again. If you chose to have Config stream to
+        /// an Amazon SNS topic, you will receive a <code>ConfigRuleEvaluationStarted</code> notification
+        /// when the evaluation starts.
         /// </para>
         ///  <note> 
         /// <para>
         /// You don't need to call the <code>StartConfigRulesEvaluation</code> API to run an evaluation
-        /// for a new rule. When you create a rule, AWS Config evaluates your resources against
-        /// the rule automatically. 
+        /// for a new rule. When you create a rule, Config evaluates your resources against the
+        /// rule automatically. 
         /// </para>
         ///  </note> 
         /// <para>
@@ -9590,7 +9634,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// AWS Config invokes your Lambda function and evaluates your IAM resources.
+        /// Config invokes your Lambda function and evaluates your IAM resources.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9617,15 +9661,15 @@ namespace Amazon.ConfigService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
-        /// are correct and try again.
+        /// One or more Config rules in the request are invalid. Verify that the rule names are
+        /// correct and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
         /// You see this exception in the following cases: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+        /// For DeleteConfigRule, Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9634,7 +9678,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// For DeleteConfigRule, a remediation action is associated with the rule and Config
         /// cannot delete this rule. Delete the remediation action associated with the rule before
         /// deleting the rule and try your request again later.
         /// </para>
@@ -9672,7 +9716,7 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Runs an on-demand evaluation for the specified AWS Config rules against the last known
+        /// Runs an on-demand evaluation for the specified Config rules against the last known
         /// configuration state of the resources. Use <code>StartConfigRulesEvaluation</code>
         /// when you want to test that a rule you updated is working as expected. <code>StartConfigRulesEvaluation</code>
         /// does not re-record the latest configuration state for your resources. It re-runs an
@@ -9680,20 +9724,20 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
-        /// You can specify up to 25 AWS Config rules per request. 
+        /// You can specify up to 25 Config rules per request. 
         /// </para>
         ///  
         /// <para>
         /// An existing <code>StartConfigRulesEvaluation</code> call for the specified rules must
-        /// complete before you can call the API again. If you chose to have AWS Config stream
-        /// to an Amazon SNS topic, you will receive a <code>ConfigRuleEvaluationStarted</code>
-        /// notification when the evaluation starts.
+        /// complete before you can call the API again. If you chose to have Config stream to
+        /// an Amazon SNS topic, you will receive a <code>ConfigRuleEvaluationStarted</code> notification
+        /// when the evaluation starts.
         /// </para>
         ///  <note> 
         /// <para>
         /// You don't need to call the <code>StartConfigRulesEvaluation</code> API to run an evaluation
-        /// for a new rule. When you create a rule, AWS Config evaluates your resources against
-        /// the rule automatically. 
+        /// for a new rule. When you create a rule, Config evaluates your resources against the
+        /// rule automatically. 
         /// </para>
         ///  </note> 
         /// <para>
@@ -9715,7 +9759,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// AWS Config invokes your Lambda function and evaluates your IAM resources.
+        /// Config invokes your Lambda function and evaluates your IAM resources.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9745,15 +9789,15 @@ namespace Amazon.ConfigService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
-        /// are correct and try again.
+        /// One or more Config rules in the request are invalid. Verify that the rule names are
+        /// correct and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
         /// You see this exception in the following cases: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+        /// For DeleteConfigRule, Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9762,7 +9806,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// For DeleteConfigRule, a remediation action is associated with the rule and Config
         /// cannot delete this rule. Delete the remediation action associated with the rule before
         /// deleting the rule and try your request again later.
         /// </para>
@@ -9804,8 +9848,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Starts recording configurations of the AWS resources you have selected to record in
-        /// your AWS account.
+        /// Starts recording configurations of the Amazon Web Services resources you have selected
+        /// to record in your Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -9832,8 +9876,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Starts recording configurations of the AWS resources you have selected to record in
-        /// your AWS account.
+        /// Starts recording configurations of the Amazon Web Services resources you have selected
+        /// to record in your Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -9862,8 +9906,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Starts recording configurations of the AWS resources you have selected to record in
-        /// your AWS account.
+        /// Starts recording configurations of the Amazon Web Services resources you have selected
+        /// to record in your Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -9893,8 +9937,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Starts recording configurations of the AWS resources you have selected to record in
-        /// your AWS account.
+        /// Starts recording configurations of the Amazon Web Services resources you have selected
+        /// to record in your Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -9930,9 +9974,9 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Runs an on-demand remediation for the specified AWS Config rules against the last
-        /// known remediation configuration. It runs an execution against the current state of
-        /// your resources. Remediation execution is asynchronous.
+        /// Runs an on-demand remediation for the specified Config rules against the last known
+        /// remediation configuration. It runs an execution against the current state of your
+        /// resources. Remediation execution is asynchronous.
         /// 
         ///  
         /// <para>
@@ -9948,12 +9992,12 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
-        /// Config lacks permissions to perform the config:Put* action.
+        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to Config
+        /// lacks permissions to perform the config:Put* action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+        /// For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN,
         /// and check the function's permissions.
         /// </para>
         ///  </li> <li> 
@@ -9982,7 +10026,7 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchRemediationConfigurationException">
-        /// You specified an AWS Config rule without a remediation configuration.
+        /// You specified an Config rule without a remediation configuration.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartRemediationExecution">REST API Reference for StartRemediationExecution Operation</seealso>
         public virtual StartRemediationExecutionResponse StartRemediationExecution(StartRemediationExecutionRequest request)
@@ -9996,9 +10040,9 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Runs an on-demand remediation for the specified AWS Config rules against the last
-        /// known remediation configuration. It runs an execution against the current state of
-        /// your resources. Remediation execution is asynchronous.
+        /// Runs an on-demand remediation for the specified Config rules against the last known
+        /// remediation configuration. It runs an execution against the current state of your
+        /// resources. Remediation execution is asynchronous.
         /// 
         ///  
         /// <para>
@@ -10017,12 +10061,12 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
-        /// Config lacks permissions to perform the config:Put* action.
+        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to Config
+        /// lacks permissions to perform the config:Put* action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+        /// For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN,
         /// and check the function's permissions.
         /// </para>
         ///  </li> <li> 
@@ -10051,7 +10095,7 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchRemediationConfigurationException">
-        /// You specified an AWS Config rule without a remediation configuration.
+        /// You specified an Config rule without a remediation configuration.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartRemediationExecution">REST API Reference for StartRemediationExecution Operation</seealso>
         public virtual Task<StartRemediationExecutionResponse> StartRemediationExecutionAsync(StartRemediationExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -10069,8 +10113,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Stops recording configurations of the AWS resources you have selected to record in
-        /// your AWS account.
+        /// Stops recording configurations of the Amazon Web Services resources you have selected
+        /// to record in your Amazon Web Services account.
         /// </summary>
         /// <param name="configurationRecorderName">The name of the recorder object that records each configuration change made to the resources.</param>
         /// 
@@ -10088,8 +10132,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Stops recording configurations of the AWS resources you have selected to record in
-        /// your AWS account.
+        /// Stops recording configurations of the Amazon Web Services resources you have selected
+        /// to record in your Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopConfigurationRecorder service method.</param>
         /// 
@@ -10109,8 +10153,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Stops recording configurations of the AWS resources you have selected to record in
-        /// your AWS account.
+        /// Stops recording configurations of the Amazon Web Services resources you have selected
+        /// to record in your Amazon Web Services account.
         /// </summary>
         /// <param name="configurationRecorderName">The name of the recorder object that records each configuration change made to the resources.</param>
         /// <param name="cancellationToken">
@@ -10131,8 +10175,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Stops recording configurations of the AWS resources you have selected to record in
-        /// your AWS account.
+        /// Stops recording configurations of the Amazon Web Services resources you have selected
+        /// to record in your Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopConfigurationRecorder service method.</param>
         /// <param name="cancellationToken">

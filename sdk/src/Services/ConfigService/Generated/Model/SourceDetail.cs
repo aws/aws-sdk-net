@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Provides the source and the message types that trigger AWS Config to evaluate your
-    /// AWS resources against a rule. It also provides the frequency with which you want AWS
-    /// Config to run evaluations for the rule if the trigger type is periodic. You can specify
-    /// the parameter values for <code>SourceDetail</code> only for custom rules.
+    /// Provides the source and the message types that trigger Config to evaluate your Amazon
+    /// Web Services resources against a rule. It also provides the frequency with which you
+    /// want Config to run evaluations for the rule if the trigger type is periodic. You can
+    /// specify the parameter values for <code>SourceDetail</code> only for custom rules.
     /// </summary>
     public partial class SourceDetail
     {
@@ -43,8 +43,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property EventSource. 
         /// <para>
-        /// The source of the event, such as an AWS service, that triggers AWS Config to evaluate
-        /// your AWS resources.
+        /// The source of the event, such as an Amazon Web Services service, that triggers Config
+        /// to evaluate your Amazon Web Services resources.
         /// </para>
         /// </summary>
         public EventSource EventSource
@@ -62,8 +62,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property MaximumExecutionFrequency. 
         /// <para>
-        /// The frequency at which you want AWS Config to run evaluations for a custom rule with
-        /// a periodic trigger. If you specify a value for <code>MaximumExecutionFrequency</code>,
+        /// The frequency at which you want Config to run evaluations for a custom rule with a
+        /// periodic trigger. If you specify a value for <code>MaximumExecutionFrequency</code>,
         /// then <code>MessageType</code> must use the <code>ScheduledNotification</code> value.
         /// </para>
         ///  <note> 
@@ -74,10 +74,10 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// Based on the valid value you choose, AWS Config runs evaluations once for each valid
-        /// value. For example, if you choose <code>Three_Hours</code>, AWS Config runs evaluations
-        /// once every three hours. In this case, <code>Three_Hours</code> is the frequency of
-        /// this rule. 
+        /// Based on the valid value you choose, Config runs evaluations once for each valid value.
+        /// For example, if you choose <code>Three_Hours</code>, Config runs evaluations once
+        /// every three hours. In this case, <code>Three_Hours</code> is the frequency of this
+        /// rule. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -96,20 +96,20 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property MessageType. 
         /// <para>
-        /// The type of notification that triggers AWS Config to run an evaluation for a rule.
-        /// You can specify the following notification types:
+        /// The type of notification that triggers Config to run an evaluation for a rule. You
+        /// can specify the following notification types:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when AWS
-        /// Config delivers a configuration item as a result of a resource change.
+        ///  <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config
+        /// delivers a configuration item as a result of a resource change.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation
-        /// when AWS Config delivers an oversized configuration item. AWS Config may generate
-        /// this notification type when a resource changes and the notification exceeds the maximum
-        /// size allowed by Amazon SNS.
+        /// when Config delivers an oversized configuration item. Config may generate this notification
+        /// type when a resource changes and the notification exceeds the maximum size allowed
+        /// by Amazon SNS.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -119,7 +119,7 @@ namespace Amazon.ConfigService.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic evaluation
-        /// when AWS Config delivers a configuration snapshot.
+        /// when Config delivers a configuration snapshot.
         /// </para>
         ///  </li> </ul> 
         /// <para>

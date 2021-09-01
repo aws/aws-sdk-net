@@ -30,7 +30,7 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// You have reached the limit (6) of the number of organization conformance packs in
-    /// an account (6 conformance pack with 25 AWS Config rules per pack per account).
+    /// an account (6 conformance pack with 25 Config rules per pack per account).
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

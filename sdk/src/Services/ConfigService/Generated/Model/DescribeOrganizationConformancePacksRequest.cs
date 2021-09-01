@@ -54,7 +54,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of organization config packs returned on each page. If you do no
-        /// specify a number, AWS Config uses the default. The default is 100.
+        /// specify a number, Config uses the default. The default is 100.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

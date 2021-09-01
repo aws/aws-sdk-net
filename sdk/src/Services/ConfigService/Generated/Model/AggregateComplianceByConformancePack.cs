@@ -52,7 +52,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The 12-digit AWS account ID of the source account.
+        /// The 12-digit Amazon Web Services account ID of the source account.
         /// </para>
         /// </summary>
         public string AccountId
@@ -70,7 +70,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property AwsRegion. 
         /// <para>
-        /// The source AWS Region from where the data is aggregated.
+        /// The source Amazon Web Services Region from where the data is aggregated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

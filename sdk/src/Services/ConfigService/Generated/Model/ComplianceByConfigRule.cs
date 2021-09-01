@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Indicates whether an AWS Config rule is compliant. A rule is compliant if all of the
-    /// resources that the rule evaluated comply with it. A rule is noncompliant if any of
-    /// these resources do not comply.
+    /// Indicates whether an Config rule is compliant. A rule is compliant if all of the resources
+    /// that the rule evaluated comply with it. A rule is noncompliant if any of these resources
+    /// do not comply.
     /// </summary>
     public partial class ComplianceByConfigRule
     {
@@ -41,7 +41,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Compliance. 
         /// <para>
-        /// Indicates whether the AWS Config rule is compliant.
+        /// Indicates whether the Config rule is compliant.
         /// </para>
         /// </summary>
         public Compliance Compliance
@@ -59,7 +59,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleName. 
         /// <para>
-        /// The name of the AWS Config rule.
+        /// The name of the Config rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

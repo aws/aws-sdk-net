@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The details of an AWS Config evaluation for an account ID and region in an aggregator.
-    /// Provides the AWS resource that was evaluated, the compliance of the resource, related
-    /// time stamps, and supplementary information.
+    /// The details of an Config evaluation for an account ID and region in an aggregator.
+    /// Provides the Amazon Web Services resource that was evaluated, the compliance of the
+    /// resource, related time stamps, and supplementary information.
     /// </summary>
     public partial class AggregateEvaluationResult
     {
@@ -106,9 +106,9 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// For the <code>AggregationEvaluationResult</code> data type, AWS Config supports only
-        /// the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. AWS Config does not support
-        /// the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> value.
+        /// For the <code>AggregationEvaluationResult</code> data type, Config supports only the
+        /// <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the
+        /// <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> value.
         /// </para>
         /// </summary>
         public ComplianceType ComplianceType
@@ -126,7 +126,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleInvokedTime. 
         /// <para>
-        /// The time when the AWS Config rule evaluated the AWS resource.
+        /// The time when the Config rule evaluated the Amazon Web Services resource.
         /// </para>
         /// </summary>
         public DateTime ConfigRuleInvokedTime
@@ -162,7 +162,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResultRecordedTime. 
         /// <para>
-        /// The time when AWS Config recorded the aggregate evaluation result.
+        /// The time when Config recorded the aggregate evaluation result.
         /// </para>
         /// </summary>
         public DateTime ResultRecordedTime

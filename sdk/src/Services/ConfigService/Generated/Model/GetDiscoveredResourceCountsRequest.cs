@@ -31,14 +31,15 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Container for the parameters to the GetDiscoveredResourceCounts operation.
     /// Returns the resource types, the number of each resource type, and the total number
-    /// of resources that AWS Config is recording in this region for your AWS account. 
+    /// of resources that Config is recording in this region for your Amazon Web Services
+    /// account. 
     /// 
     ///  <p class="title"> <b>Example</b> 
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// AWS Config is recording three resource types in the US East (Ohio) Region for your
-    /// account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets.
+    /// Config is recording three resource types in the US East (Ohio) Region for your account:
+    /// 25 EC2 instances, 20 IAM users, and 15 S3 buckets.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -47,7 +48,7 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// AWS Config returns the following:
+    /// Config returns the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -63,7 +64,7 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  </li> </ul> </li> </ol> 
     /// <para>
-    /// The response is paginated. By default, AWS Config lists 100 <a>ResourceCount</a> objects
+    /// The response is paginated. By default, Config lists 100 <a>ResourceCount</a> objects
     /// on each page. You can customize this number with the <code>limit</code> parameter.
     /// The response includes a <code>nextToken</code> string. To get the next page of results,
     /// run the request again and specify the string for the <code>nextToken</code> parameter.
@@ -75,7 +76,7 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You are a new AWS Config customer.
+    /// You are a new Config customer.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -83,8 +84,8 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// It might take a few minutes for AWS Config to record and count your resources. Wait
-    /// a few minutes and then retry the <a>GetDiscoveredResourceCounts</a> action. 
+    /// It might take a few minutes for Config to record and count your resources. Wait a
+    /// few minutes and then retry the <a>GetDiscoveredResourceCounts</a> action. 
     /// </para>
     ///  </note>
     /// </summary>
@@ -98,8 +99,8 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of <a>ResourceCount</a> objects returned on each page. The default
-        /// is 100. You cannot specify a number greater than 100. If you specify 0, AWS Config
-        /// uses the default.
+        /// is 100. You cannot specify a number greater than 100. If you specify 0, Config uses
+        /// the default.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -137,17 +138,17 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceTypes. 
         /// <para>
-        /// The comma-separated list that specifies the resource types that you want AWS Config
-        /// to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).
+        /// The comma-separated list that specifies the resource types that you want Config to
+        /// return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).
         /// </para>
         ///  
         /// <para>
-        /// If a value for <code>resourceTypes</code> is not specified, AWS Config returns all
-        /// resource types that AWS Config is recording in the region for your account.
+        /// If a value for <code>resourceTypes</code> is not specified, Config returns all resource
+        /// types that Config is recording in the region for your account.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the configuration recorder is turned off, AWS Config returns an empty list of <a>ResourceCount</a>
+        /// If the configuration recorder is turned off, Config returns an empty list of <a>ResourceCount</a>
         /// objects. If the configuration recorder is not recording a specific resource type (for
         /// example, S3 buckets), that resource type is not returned in the list of <a>ResourceCount</a>
         /// objects.

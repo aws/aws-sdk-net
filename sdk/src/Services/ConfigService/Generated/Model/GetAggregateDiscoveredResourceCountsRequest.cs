@@ -30,8 +30,8 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAggregateDiscoveredResourceCounts operation.
-    /// Returns the resource counts across accounts and regions that are present in your AWS
-    /// Config aggregator. You can request the resource counts by providing filters and GroupByKey.
+    /// Returns the resource counts across accounts and regions that are present in your Config
+    /// aggregator. You can request the resource counts by providing filters and GroupByKey.
     /// 
     ///  
     /// <para>
@@ -109,7 +109,7 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// The maximum number of <a>GroupedResourceCount</a> objects returned on each page. The
         /// default is 1000. You cannot specify a number greater than 1000. If you specify 0,
-        /// AWS Config uses the default.
+        /// Config uses the default.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]

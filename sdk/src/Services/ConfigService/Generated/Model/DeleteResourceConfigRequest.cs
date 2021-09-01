@@ -32,7 +32,7 @@ namespace Amazon.ConfigService.Model
     /// Container for the parameters to the DeleteResourceConfig operation.
     /// Records the configuration state for a custom resource that has been deleted. This
     /// API records a new ConfigurationItem with a ResourceDeleted status. You can retrieve
-    /// the ConfigurationItems recorded for this resource in your AWS Config History.
+    /// the ConfigurationItems recorded for this resource in your Config History.
     /// </summary>
     public partial class DeleteResourceConfigRequest : AmazonConfigServiceRequest
     {

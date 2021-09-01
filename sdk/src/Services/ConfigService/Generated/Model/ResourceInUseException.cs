@@ -33,7 +33,7 @@ namespace Amazon.ConfigService.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+    /// For DeleteConfigRule, Config is deleting this rule. Try your request again later.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -42,7 +42,7 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+    /// For DeleteConfigRule, a remediation action is associated with the rule and Config
     /// cannot delete this rule. Delete the remediation action associated with the rule before
     /// deleting the rule and try your request again later.
     /// </para>

@@ -38,7 +38,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ComplianceSummary. 
         /// <para>
-        /// The number of AWS Config rules that are compliant and the number that are noncompliant,
+        /// The number of Config rules that are compliant and the number that are noncompliant,
         /// up to a maximum of 25 for each.
         /// </para>
         /// </summary>

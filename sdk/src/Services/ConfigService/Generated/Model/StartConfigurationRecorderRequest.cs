@@ -30,8 +30,8 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the StartConfigurationRecorder operation.
-    /// Starts recording configurations of the AWS resources you have selected to record in
-    /// your AWS account.
+    /// Starts recording configurations of the Amazon Web Services resources you have selected
+    /// to record in your Amazon Web Services account.
     /// 
     ///  
     /// <para>

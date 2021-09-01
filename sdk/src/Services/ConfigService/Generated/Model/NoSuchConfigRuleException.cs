@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// One or more AWS Config rules in the request are invalid. Verify that the rule names
-    /// are correct and try again.
+    /// One or more Config rules in the request are invalid. Verify that the rule names are
+    /// correct and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

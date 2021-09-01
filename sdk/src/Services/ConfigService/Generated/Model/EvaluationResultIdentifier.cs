@@ -39,8 +39,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property EvaluationResultQualifier. 
         /// <para>
-        /// Identifies an AWS Config rule used to evaluate an AWS resource, and provides the type
-        /// and ID of the evaluated resource.
+        /// Identifies an Config rule used to evaluate an Amazon Web Services resource, and provides
+        /// the type and ID of the evaluated resource.
         /// </para>
         /// </summary>
         public EvaluationResultQualifier EvaluationResultQualifier
@@ -58,9 +58,9 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property OrderingTimestamp. 
         /// <para>
-        /// The time of the event that triggered the evaluation of your AWS resources. The time
-        /// can indicate when AWS Config delivered a configuration item change notification, or
-        /// it can indicate when AWS Config delivered the configuration snapshot, depending on
+        /// The time of the event that triggered the evaluation of your Amazon Web Services resources.
+        /// The time can indicate when Config delivered a configuration item change notification,
+        /// or it can indicate when Config delivered the configuration snapshot, depending on
         /// which event triggered the evaluation.
         /// </para>
         /// </summary>

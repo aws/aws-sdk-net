@@ -31,42 +31,43 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Container for the parameters to the PutOrganizationConfigRule operation.
     /// Adds or updates organization config rule for your entire organization evaluating whether
-    /// your AWS resources comply with your desired configurations.
+    /// your Amazon Web Services resources comply with your desired configurations.
     /// 
     ///  
     /// <para>
     ///  Only a master account and a delegated administrator can create or update an organization
     /// config rule. When calling this API with a delegated administrator, you must ensure
-    /// AWS Organizations <code>ListDelegatedAdministrator</code> permissions are added. 
+    /// Organizations <code>ListDelegatedAdministrator</code> permissions are added. 
     /// </para>
     ///  
     /// <para>
     /// This API enables organization service access through the <code>EnableAWSServiceAccess</code>
     /// action and creates a service linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code>
     /// in the master or delegated administrator account of your organization. The service
-    /// linked role is created only when the role does not exist in the caller account. AWS
-    /// Config verifies the existence of role with <code>GetRole</code> action.
+    /// linked role is created only when the role does not exist in the caller account. Config
+    /// verifies the existence of role with <code>GetRole</code> action.
     /// </para>
     ///  
     /// <para>
     /// To use this API with delegated administrator, register a delegated administrator by
-    /// calling AWS Organization <code>register-delegated-administrator</code> for <code>config-multiaccountsetup.amazonaws.com</code>.
-    /// 
+    /// calling Amazon Web Services Organization <code>register-delegated-administrator</code>
+    /// for <code>config-multiaccountsetup.amazonaws.com</code>. 
     /// </para>
     ///  
     /// <para>
-    /// You can use this action to create both custom AWS Config rules and AWS managed Config
-    /// rules. If you are adding a new custom AWS Config rule, you must first create AWS Lambda
-    /// function in the master account or a delegated administrator that the rule invokes
-    /// to evaluate your resources. When you use the <code>PutOrganizationConfigRule</code>
-    /// action to add the rule to AWS Config, you must specify the Amazon Resource Name (ARN)
-    /// that AWS Lambda assigns to the function. If you are adding an AWS managed Config rule,
-    /// specify the rule's identifier for the <code>RuleIdentifier</code> key.
+    /// You can use this action to create both custom Config rules and Config managed rules.
+    /// If you are adding a new custom Config rule, you must first create Lambda function
+    /// in the master account or a delegated administrator that the rule invokes to evaluate
+    /// your resources. You also need to create an IAM role in the managed-account that can
+    /// be assumed by the Lambda function. When you use the <code>PutOrganizationConfigRule</code>
+    /// action to add the rule to Config, you must specify the Amazon Resource Name (ARN)
+    /// that Lambda assigns to the function. If you are adding an Config managed rule, specify
+    /// the rule's identifier for the <code>RuleIdentifier</code> key.
     /// </para>
     ///  
     /// <para>
-    /// The maximum number of organization config rules that AWS Config supports is 150 and
-    /// 3 delegated administrator per organization. 
+    /// The maximum number of organization config rules that Config supports is 150 and 3
+    /// delegated administrator per organization. 
     /// </para>
     ///  <note> 
     /// <para>

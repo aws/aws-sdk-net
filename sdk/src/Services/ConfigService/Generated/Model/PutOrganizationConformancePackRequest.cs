@@ -30,12 +30,12 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the PutOrganizationConformancePack operation.
-    /// Deploys conformance packs across member accounts in an AWS Organization.
+    /// Deploys conformance packs across member accounts in an Amazon Web Services Organization.
     /// 
     ///  
     /// <para>
     /// Only a master account and a delegated administrator can call this API. When calling
-    /// this API with a delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code>
+    /// this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code>
     /// permissions are added.
     /// </para>
     ///  
@@ -45,8 +45,8 @@ namespace Amazon.ConfigService.Model
     /// role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated
     /// administrator account of your organization. The service linked role is created only
     /// when the role does not exist in the caller account. To use this API with delegated
-    /// administrator, register a delegated administrator by calling AWS Organization <code>register-delegate-admin</code>
-    /// for <code>config-multiaccountsetup.amazonaws.com</code>.
+    /// administrator, register a delegated administrator by calling Amazon Web Services Organization
+    /// <code>register-delegate-admin</code> for <code>config-multiaccountsetup.amazonaws.com</code>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -56,18 +56,18 @@ namespace Amazon.ConfigService.Model
     ///  
     /// <para>
     /// You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code>
-    /// parameter, but not both. If you provide both AWS Config uses the <code>TemplateS3Uri</code>
+    /// parameter, but not both. If you provide both Config uses the <code>TemplateS3Uri</code>
     /// parameter and ignores the <code>TemplateBody</code> parameter.
     /// </para>
     ///  
     /// <para>
-    /// AWS Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS
+    /// Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS
     /// until the conformance pack is created or updated. You cannot update a conformance
     /// pack while it is in this state.
     /// </para>
     ///  
     /// <para>
-    /// You can create 50 conformance packs with 25 AWS Config rules in each pack and 3 delegated
+    /// You can create 50 conformance packs with 25 Config rules in each pack and 3 delegated
     /// administrator per organization. 
     /// </para>
     ///  </note>
@@ -104,7 +104,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property DeliveryS3Bucket. 
         /// <para>
-        /// Amazon S3 bucket where AWS Config stores conformance pack templates.
+        /// The name of the Amazon S3 bucket where Config stores conformance pack templates.
         /// </para>
         ///  <note> 
         /// <para>
@@ -152,8 +152,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ExcludedAccounts. 
         /// <para>
-        /// A list of AWS accounts to be excluded from an organization conformance pack while
-        /// deploying a conformance pack.
+        /// A list of Amazon Web Services accounts to be excluded from an organization conformance
+        /// pack while deploying a conformance pack.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
