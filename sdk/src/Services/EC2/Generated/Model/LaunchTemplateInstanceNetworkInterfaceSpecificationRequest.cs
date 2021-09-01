@@ -199,8 +199,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv4PrefixCount. 
         /// <para>
-        /// The number of IPv4 delegated prefixes to be automatically assigned to the network
-        /// interface. You cannot use this option if you use the <code>Ipv4Prefix</code> option.
+        /// The number of IPv4 prefixes to be automatically assigned to the network interface.
+        /// You cannot use this option if you use the <code>Ipv4Prefix</code> option.
         /// </para>
         /// </summary>
         public int Ipv4PrefixCount
@@ -218,8 +218,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv4Prefixes. 
         /// <para>
-        /// One or more IPv4 delegated prefixes to be assigned to the network interface. You cannot
-        /// use this option if you use the <code>Ipv4PrefixCount</code> option.
+        /// One or more IPv4 prefixes to be assigned to the network interface. You cannot use
+        /// this option if you use the <code>Ipv4PrefixCount</code> option.
         /// </para>
         /// </summary>
         public List<Ipv4PrefixSpecificationRequest> Ipv4Prefixes
@@ -276,8 +276,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6PrefixCount. 
         /// <para>
-        /// The number of IPv6 delegated prefixes to be automatically assigned to the network
-        /// interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option.
+        /// The number of IPv6 prefixes to be automatically assigned to the network interface.
+        /// You cannot use this option if you use the <code>Ipv6Prefix</code> option.
         /// </para>
         /// </summary>
         public int Ipv6PrefixCount
@@ -295,8 +295,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6Prefixes. 
         /// <para>
-        /// One or more IPv6 delegated prefixes to be assigned to the network interface. You cannot
-        /// use this option if you use the <code>Ipv6PrefixCount</code> option.
+        /// One or more IPv6 prefixes to be assigned to the network interface. You cannot use
+        /// this option if you use the <code>Ipv6PrefixCount</code> option.
         /// </para>
         /// </summary>
         public List<Ipv6PrefixSpecificationRequest> Ipv6Prefixes

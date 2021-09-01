@@ -189,8 +189,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv4PrefixCount. 
         /// <para>
-        /// The number of IPv4 delegated prefixes that AWS automatically assigned to the network
-        /// interface.
+        /// The number of IPv4 prefixes that Amazon Web Services automatically assigned to the
+        /// network interface.
         /// </para>
         /// </summary>
         public int Ipv4PrefixCount
@@ -208,7 +208,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv4Prefixes. 
         /// <para>
-        /// One or more IPv4 delegated prefixes assigned to the network interface.
+        /// One or more IPv4 prefixes assigned to the network interface.
         /// </para>
         /// </summary>
         public List<Ipv4PrefixSpecificationResponse> Ipv4Prefixes
@@ -262,8 +262,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6PrefixCount. 
         /// <para>
-        /// The number of IPv6 delegated prefixes that AWS automatically assigned to the network
-        /// interface.
+        /// The number of IPv6 prefixes that Amazon Web Services automatically assigned to the
+        /// network interface.
         /// </para>
         /// </summary>
         public int Ipv6PrefixCount
@@ -281,7 +281,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6Prefixes. 
         /// <para>
-        /// One or more IPv6 delegated prefixes assigned to the network interface.
+        /// One or more IPv6 prefixes assigned to the network interface.
         /// </para>
         /// </summary>
         public List<Ipv6PrefixSpecificationResponse> Ipv6Prefixes

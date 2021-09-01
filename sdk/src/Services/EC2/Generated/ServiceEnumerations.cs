@@ -7893,6 +7893,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type LaunchTemplateInstanceMetadataProtocolIpv6.
+    /// </summary>
+    public class LaunchTemplateInstanceMetadataProtocolIpv6 : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for LaunchTemplateInstanceMetadataProtocolIpv6
+        /// </summary>
+        public static readonly LaunchTemplateInstanceMetadataProtocolIpv6 Disabled = new LaunchTemplateInstanceMetadataProtocolIpv6("disabled");
+        /// <summary>
+        /// Constant Enabled for LaunchTemplateInstanceMetadataProtocolIpv6
+        /// </summary>
+        public static readonly LaunchTemplateInstanceMetadataProtocolIpv6 Enabled = new LaunchTemplateInstanceMetadataProtocolIpv6("enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LaunchTemplateInstanceMetadataProtocolIpv6(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LaunchTemplateInstanceMetadataProtocolIpv6 FindValue(string value)
+        {
+            return FindValue<LaunchTemplateInstanceMetadataProtocolIpv6>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LaunchTemplateInstanceMetadataProtocolIpv6(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ListingState.
     /// </summary>
     public class ListingState : ConstantClass

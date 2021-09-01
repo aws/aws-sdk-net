@@ -284,6 +284,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "MetadataOptions" + "." + "HttpEndpoint", StringUtils.FromString(publicRequest.LaunchTemplateData.MetadataOptions.HttpEndpoint));
                         }
+                        if(publicRequest.LaunchTemplateData.MetadataOptions.IsSetHttpProtocolIpv6())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "MetadataOptions" + "." + "HttpProtocolIpv6", StringUtils.FromString(publicRequest.LaunchTemplateData.MetadataOptions.HttpProtocolIpv6));
+                        }
                         if(publicRequest.LaunchTemplateData.MetadataOptions.IsSetHttpPutResponseHopLimit())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "MetadataOptions" + "." + "HttpPutResponseHopLimit", StringUtils.FromInt(publicRequest.LaunchTemplateData.MetadataOptions.HttpPutResponseHopLimit));

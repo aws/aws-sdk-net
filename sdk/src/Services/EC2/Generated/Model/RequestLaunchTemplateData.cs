@@ -588,10 +588,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserData. 
         /// <para>
-        /// The Base64-encoded user data to make available to the instance. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-        /// Commands on Your Linux Instance at Launch</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
+        /// The user data to make available to the instance. You must provide base64-encoded text.
+        /// User data is limited to 16 KB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
+        /// Commands on Your Linux Instance at Launch</a> (Linux) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
         /// User Data</a> (Windows).
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are creating the launch template for use with Batch, the user data must be
+        /// provided in the <a href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">
+        /// MIME multi-part archive format</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon
+        /// EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
         public string UserData
