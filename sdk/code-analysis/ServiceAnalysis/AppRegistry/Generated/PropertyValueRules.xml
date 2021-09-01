@@ -4,13 +4,13 @@
     <property>Amazon.AppRegistry.Model.AssociateAttributeGroupRequest.Application</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\w+</pattern>
+    <pattern>[-.\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.AssociateAttributeGroupRequest.AttributeGroup</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\w+</pattern>
+    <pattern>[-.\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.AssociateAttributeGroupResponse.ApplicationArn</property>
@@ -24,7 +24,7 @@
     <property>Amazon.AppRegistry.Model.AssociateResourceRequest.Application</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\w+</pattern>
+    <pattern>[-.\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.AssociateResourceRequest.Resource</property>
@@ -56,7 +56,7 @@
     <property>Amazon.AppRegistry.Model.CreateApplicationRequest.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\w+</pattern>
+    <pattern>[-.\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.CreateAttributeGroupRequest.Attributes</property>
@@ -78,31 +78,31 @@
     <property>Amazon.AppRegistry.Model.CreateAttributeGroupRequest.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\w+</pattern>
+    <pattern>[-.\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.DeleteApplicationRequest.Application</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\w+</pattern>
+    <pattern>[-.\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.DeleteAttributeGroupRequest.AttributeGroup</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\w+</pattern>
+    <pattern>[-.\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.DisassociateAttributeGroupRequest.Application</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\w+</pattern>
+    <pattern>[-.\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.DisassociateAttributeGroupRequest.AttributeGroup</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\w+</pattern>
+    <pattern>[-.\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.DisassociateAttributeGroupResponse.ApplicationArn</property>
@@ -116,7 +116,7 @@
     <property>Amazon.AppRegistry.Model.DisassociateResourceRequest.Application</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\w+</pattern>
+    <pattern>[-.\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.DisassociateResourceRequest.Resource</property>
@@ -138,7 +138,7 @@
     <property>Amazon.AppRegistry.Model.GetApplicationRequest.Application</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\w+</pattern>
+    <pattern>[-.\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.GetApplicationResponse.Arn</property>
@@ -154,19 +154,33 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.GetApplicationResponse.Id</property>
-    <pattern>[a-z0-9]{12}</pattern>
+    <min>26</min>
+    <max>26</max>
+    <pattern>[a-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.GetApplicationResponse.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\w+</pattern>
+    <pattern>[-.\w]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRegistry.Model.GetAssociatedResourceRequest.Application</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[-.\w]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRegistry.Model.GetAssociatedResourceRequest.Resource</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.GetAttributeGroupRequest.AttributeGroup</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\w+</pattern>
+    <pattern>[-.\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.GetAttributeGroupResponse.Arn</property>
@@ -184,15 +198,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.GetAttributeGroupResponse.Id</property>
-    <min>1</min>
-    <max>100</max>
-    <pattern>[a-z0-9]{12}</pattern>
+    <min>26</min>
+    <max>26</max>
+    <pattern>[a-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.GetAttributeGroupResponse.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\w+</pattern>
+    <pattern>[-.\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.ListApplicationsRequest.MaxResults</property>
@@ -215,7 +229,7 @@
     <property>Amazon.AppRegistry.Model.ListAssociatedAttributeGroupsRequest.Application</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\w+</pattern>
+    <pattern>[-.\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.ListAssociatedAttributeGroupsRequest.MaxResults</property>
@@ -238,7 +252,7 @@
     <property>Amazon.AppRegistry.Model.ListAssociatedResourcesRequest.Application</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\w+</pattern>
+    <pattern>[-.\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.ListAssociatedResourcesRequest.MaxResults</property>
@@ -312,7 +326,7 @@
     <property>Amazon.AppRegistry.Model.UpdateApplicationRequest.Application</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\w+</pattern>
+    <pattern>[-.\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.UpdateApplicationRequest.Description</property>
@@ -322,13 +336,13 @@
     <property>Amazon.AppRegistry.Model.UpdateApplicationRequest.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\w+</pattern>
+    <pattern>[-.\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.UpdateAttributeGroupRequest.AttributeGroup</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\w+</pattern>
+    <pattern>[-.\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.UpdateAttributeGroupRequest.Attributes</property>
@@ -344,7 +358,7 @@
     <property>Amazon.AppRegistry.Model.UpdateAttributeGroupRequest.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\w+</pattern>
+    <pattern>[-.\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.Application.Arn</property>
@@ -356,13 +370,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.Application.Id</property>
-    <pattern>[a-z0-9]{12}</pattern>
+    <min>26</min>
+    <max>26</max>
+    <pattern>[a-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.Application.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\w+</pattern>
+    <pattern>[-.\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.ApplicationSummary.Arn</property>
@@ -374,13 +390,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.ApplicationSummary.Id</property>
-    <pattern>[a-z0-9]{12}</pattern>
+    <min>26</min>
+    <max>26</max>
+    <pattern>[a-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.ApplicationSummary.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\w+</pattern>
+    <pattern>[-.\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.AttributeGroup.Arn</property>
@@ -392,15 +410,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.AttributeGroup.Id</property>
-    <min>1</min>
-    <max>100</max>
-    <pattern>[a-z0-9]{12}</pattern>
+    <min>26</min>
+    <max>26</max>
+    <pattern>[a-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.AttributeGroup.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\w+</pattern>
+    <pattern>[-.\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.AttributeGroupSummary.Arn</property>
@@ -412,15 +430,31 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.AttributeGroupSummary.Id</property>
-    <min>1</min>
-    <max>100</max>
-    <pattern>[a-z0-9]{12}</pattern>
+    <min>26</min>
+    <max>26</max>
+    <pattern>[a-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.AttributeGroupSummary.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\w+</pattern>
+    <pattern>[-.\w]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRegistry.Model.Resource.Arn</property>
+    <pattern>arn:aws[-a-z]*:cloudformation:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:stack/[a-zA-Z][-A-Za-z0-9]{0,127}/[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRegistry.Model.Resource.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRegistry.Model.ResourceGroup.Arn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRegistry.Model.ResourceInfo.Arn</property>

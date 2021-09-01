@@ -31,15 +31,17 @@ namespace Amazon.AppRegistry.Model
     /// <summary>
     /// The information about the resource.
     /// </summary>
-    public partial class ResourceInfo
+    public partial class Resource
     {
         private string _arn;
+        private DateTime? _associationTime;
+        private ResourceIntegrations _integrations;
         private string _name;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon resource name (ARN) that specifies the resource across services.
+        /// The Amazon resource name (ARN) of the resource.
         /// </para>
         /// </summary>
         public string Arn
@@ -52,6 +54,42 @@ namespace Amazon.AppRegistry.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssociationTime. 
+        /// <para>
+        /// The time the resource was associated with the application.
+        /// </para>
+        /// </summary>
+        public DateTime AssociationTime
+        {
+            get { return this._associationTime.GetValueOrDefault(); }
+            set { this._associationTime = value; }
+        }
+
+        // Check to see if AssociationTime property is set
+        internal bool IsSetAssociationTime()
+        {
+            return this._associationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Integrations. 
+        /// <para>
+        /// The service integration information about the resource. 
+        /// </para>
+        /// </summary>
+        public ResourceIntegrations Integrations
+        {
+            get { return this._integrations; }
+            set { this._integrations = value; }
+        }
+
+        // Check to see if Integrations property is set
+        internal bool IsSetIntegrations()
+        {
+            return this._integrations != null;
         }
 
         /// <summary>

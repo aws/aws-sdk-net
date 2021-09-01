@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetApplication operation
+    /// Response Unmarshaller for GetAssociatedResource operation
     /// </summary>  
-    public class GetApplicationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetAssociatedResourceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,64 +45,16 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetApplicationResponse response = new GetApplicationResponse();
+            GetAssociatedResourceResponse response = new GetAssociatedResourceResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("resource", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("associatedResourceCount", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.AssociatedResourceCount = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("creationTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreationTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("integrations", targetDepth))
-                {
-                    var unmarshaller = IntegrationsUnmarshaller.Instance;
-                    response.Integrations = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lastUpdateTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.LastUpdateTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ResourceUnmarshaller.Instance;
+                    response.Resource = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -144,9 +96,9 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
             return new AmazonAppRegistryException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetApplicationResponseUnmarshaller _instance = new GetApplicationResponseUnmarshaller();        
+        private static GetAssociatedResourceResponseUnmarshaller _instance = new GetAssociatedResourceResponseUnmarshaller();        
 
-        internal static GetApplicationResponseUnmarshaller GetInstance()
+        internal static GetAssociatedResourceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -154,7 +106,7 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetApplicationResponseUnmarshaller Instance
+        public static GetAssociatedResourceResponseUnmarshaller Instance
         {
             get
             {

@@ -25,6 +25,72 @@ namespace Amazon.AppRegistry
 {
 
     /// <summary>
+    /// Constants used for properties of type ResourceGroupState.
+    /// </summary>
+    public class ResourceGroupState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_COMPLETE for ResourceGroupState
+        /// </summary>
+        public static readonly ResourceGroupState CREATE_COMPLETE = new ResourceGroupState("CREATE_COMPLETE");
+        /// <summary>
+        /// Constant CREATE_FAILED for ResourceGroupState
+        /// </summary>
+        public static readonly ResourceGroupState CREATE_FAILED = new ResourceGroupState("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for ResourceGroupState
+        /// </summary>
+        public static readonly ResourceGroupState CREATING = new ResourceGroupState("CREATING");
+        /// <summary>
+        /// Constant UPDATE_COMPLETE for ResourceGroupState
+        /// </summary>
+        public static readonly ResourceGroupState UPDATE_COMPLETE = new ResourceGroupState("UPDATE_COMPLETE");
+        /// <summary>
+        /// Constant UPDATE_FAILED for ResourceGroupState
+        /// </summary>
+        public static readonly ResourceGroupState UPDATE_FAILED = new ResourceGroupState("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for ResourceGroupState
+        /// </summary>
+        public static readonly ResourceGroupState UPDATING = new ResourceGroupState("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceGroupState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceGroupState FindValue(string value)
+        {
+            return FindValue<ResourceGroupState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceGroupState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceType.
     /// </summary>
     public class ResourceType : ConstantClass

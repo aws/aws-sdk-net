@@ -38,9 +38,10 @@ namespace Amazon.AppRegistry
     /// <summary>
     /// Implementation for accessing AppRegistry
     ///
-    /// AWS Service Catalog AppRegistry enables organizations to understand the application
-    /// context of their AWS resources. AppRegistry provides a repository of your applications,
-    /// their resources, and the application metadata that you use within your enterprise.
+    /// Amazon Web Services Service Catalog AppRegistry enables organizations to understand
+    /// the application context of their Amazon Web Services resources. AppRegistry provides
+    /// a repository of your applications, their resources, and the application metadata that
+    /// you use within your enterprise.
     /// </summary>
     public partial class AmazonAppRegistryClient : AmazonServiceClient, IAmazonAppRegistry
     {
@@ -672,6 +673,49 @@ namespace Amazon.AppRegistry
 
         #endregion
         
+        #region  GetAssociatedResource
+
+        internal virtual GetAssociatedResourceResponse GetAssociatedResource(GetAssociatedResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAssociatedResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAssociatedResourceResponseUnmarshaller.Instance;
+
+            return Invoke<GetAssociatedResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the resource associated with the application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAssociatedResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAssociatedResource service method, as returned by AppRegistry.</returns>
+        /// <exception cref="Amazon.AppRegistry.Model.InternalServerException">
+        /// The service is experiencing internal problems.
+        /// </exception>
+        /// <exception cref="Amazon.AppRegistry.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetAssociatedResource">REST API Reference for GetAssociatedResource Operation</seealso>
+        public virtual Task<GetAssociatedResourceResponse> GetAssociatedResourceAsync(GetAssociatedResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAssociatedResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAssociatedResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAssociatedResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetAttributeGroup
 
         internal virtual GetAttributeGroupResponse GetAttributeGroup(GetAttributeGroupRequest request)
@@ -940,10 +984,14 @@ namespace Amazon.AppRegistry
 
 
         /// <summary>
-        /// Syncs the resource with what is currently recorded in App registry. Specifically,
-        /// the resource’s App registry system tags are synced with its associated application.
-        /// The resource is removed if it is not associated with the application. The caller must
-        /// have permissions to read and update the resource.
+        /// Syncs the resource with current AppRegistry records.
+        /// 
+        ///  
+        /// <para>
+        /// Specifically, the resource’s AppRegistry system tags sync with its associated application.
+        /// We remove the resource's AppRegistry system tags if it does not associate with the
+        /// application. The caller must have permissions to read and update the resource.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SyncResource service method.</param>
         /// <param name="cancellationToken">

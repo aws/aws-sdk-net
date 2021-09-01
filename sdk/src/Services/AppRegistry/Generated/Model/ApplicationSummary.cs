@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRegistry.Model
 {
     /// <summary>
-    /// Summary of a Service Catalog AppRegistry application.
+    /// Summary of a Amazon Web Services Service Catalog AppRegistry application.
     /// </summary>
     public partial class ApplicationSummary
     {
@@ -101,6 +101,7 @@ namespace Amazon.AppRegistry.Model
         /// The identifier of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=26, Max=26)]
         public string Id
         {
             get { return this._id; }

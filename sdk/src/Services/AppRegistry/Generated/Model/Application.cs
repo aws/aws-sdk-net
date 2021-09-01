@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRegistry.Model
 {
     /// <summary>
-    /// Represents a Service Catalog AppRegistry application that is the top-level node in
-    /// a hierarchy of related cloud resource abstractions.
+    /// Represents a Amazon Web Services Service Catalog AppRegistry application that is the
+    /// top-level node in a hierarchy of related cloud resource abstractions.
     /// </summary>
     public partial class Application
     {
@@ -103,6 +103,7 @@ namespace Amazon.AppRegistry.Model
         /// The identifier of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=26, Max=26)]
         public string Id
         {
             get { return this._id; }

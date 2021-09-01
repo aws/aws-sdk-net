@@ -29,26 +29,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRegistry.Model
 {
     /// <summary>
-    /// Container for the parameters to the SyncResource operation.
-    /// Syncs the resource with current AppRegistry records.
-    /// 
-    ///  
-    /// <para>
-    /// Specifically, the resource’s AppRegistry system tags sync with its associated application.
-    /// We remove the resource's AppRegistry system tags if it does not associate with the
-    /// application. The caller must have permissions to read and update the resource.
-    /// </para>
+    /// Container for the parameters to the GetAssociatedResource operation.
+    /// Gets the resource associated with the application.
     /// </summary>
-    public partial class SyncResourceRequest : AmazonAppRegistryRequest
+    public partial class GetAssociatedResourceRequest : AmazonAppRegistryRequest
     {
+        private string _application;
         private string _resource;
         private ResourceType _resourceType;
 
         /// <summary>
+        /// Gets and sets the property Application. 
+        /// <para>
+        /// The name or ID of the application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
+        public string Application
+        {
+            get { return this._application; }
+            set { this._application = value; }
+        }
+
+        // Check to see if Application property is set
+        internal bool IsSetApplication()
+        {
+            return this._application != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// An entity you can work with and specify with a name or ID. Examples include an Amazon
-        /// EC2 instance, an Amazon Web Services CloudFormation stack, or an Amazon S3 bucket.
+        /// The name or ID of the resource associated with the application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -67,7 +79,7 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource of which the application will be associated.
+        /// The type of resource associated with the application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

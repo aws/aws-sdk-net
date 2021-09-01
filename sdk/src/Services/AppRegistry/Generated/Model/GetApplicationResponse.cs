@@ -38,6 +38,7 @@ namespace Amazon.AppRegistry.Model
         private DateTime? _creationTime;
         private string _description;
         private string _id;
+        private Integrations _integrations;
         private DateTime? _lastUpdateTime;
         private string _name;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -122,6 +123,7 @@ namespace Amazon.AppRegistry.Model
         /// The identifier of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=26, Max=26)]
         public string Id
         {
             get { return this._id; }
@@ -132,6 +134,25 @@ namespace Amazon.AppRegistry.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Integrations. 
+        /// <para>
+        /// The information about the integration of the application with other services, such
+        /// as Resource Groups.
+        /// </para>
+        /// </summary>
+        public Integrations Integrations
+        {
+            get { return this._integrations; }
+            set { this._integrations = value; }
+        }
+
+        // Check to see if Integrations property is set
+        internal bool IsSetIntegrations()
+        {
+            return this._integrations != null;
         }
 
         /// <summary>

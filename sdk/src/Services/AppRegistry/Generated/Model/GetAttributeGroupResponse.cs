@@ -123,7 +123,7 @@ namespace Amazon.AppRegistry.Model
         /// The identifier of the attribute group.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=26, Max=26)]
         public string Id
         {
             get { return this._id; }

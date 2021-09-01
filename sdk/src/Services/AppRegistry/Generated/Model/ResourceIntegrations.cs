@@ -29,48 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRegistry.Model
 {
     /// <summary>
-    /// The information about the resource.
+    /// The service integration information about the resource.
     /// </summary>
-    public partial class ResourceInfo
+    public partial class ResourceIntegrations
     {
-        private string _arn;
-        private string _name;
+        private ResourceGroup _resourceGroup;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property ResourceGroup. 
         /// <para>
-        /// The Amazon resource name (ARN) that specifies the resource across services.
+        /// The information about the integration of Resource Groups.
         /// </para>
         /// </summary>
-        public string Arn
+        public ResourceGroup ResourceGroup
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._resourceGroup; }
+            set { this._resourceGroup = value; }
         }
 
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
+        // Check to see if ResourceGroup property is set
+        internal bool IsSetResourceGroup()
         {
-            return this._arn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the resource.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=256)]
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
+            return this._resourceGroup != null;
         }
 
     }

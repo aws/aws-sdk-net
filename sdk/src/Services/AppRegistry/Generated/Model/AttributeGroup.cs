@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRegistry.Model
 {
     /// <summary>
-    /// Represents a Service Catalog AppRegistry attribute group that is rich metadata which
-    /// describes an application and its components.
+    /// Represents a Amazon Web Services Service Catalog AppRegistry attribute group that
+    /// is rich metadata which describes an application and its components.
     /// </summary>
     public partial class AttributeGroup
     {
@@ -103,7 +103,7 @@ namespace Amazon.AppRegistry.Model
         /// The globally unique attribute group identifier of the attribute group.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=26, Max=26)]
         public string Id
         {
             get { return this._id; }

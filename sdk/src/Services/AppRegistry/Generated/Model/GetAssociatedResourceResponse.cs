@@ -29,48 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRegistry.Model
 {
     /// <summary>
-    /// The information about the resource.
+    /// This is the response object from the GetAssociatedResource operation.
     /// </summary>
-    public partial class ResourceInfo
+    public partial class GetAssociatedResourceResponse : AmazonWebServiceResponse
     {
-        private string _arn;
-        private string _name;
+        private Resource _resource;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property Resource. 
         /// <para>
-        /// The Amazon resource name (ARN) that specifies the resource across services.
+        /// The resource associated with the application.
         /// </para>
         /// </summary>
-        public string Arn
+        public Resource Resource
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._resource; }
+            set { this._resource = value; }
         }
 
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
+        // Check to see if Resource property is set
+        internal bool IsSetResource()
         {
-            return this._arn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the resource.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=256)]
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
+            return this._resource != null;
         }
 
     }
