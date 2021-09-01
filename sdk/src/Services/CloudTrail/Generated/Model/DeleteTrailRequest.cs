@@ -41,8 +41,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Specifies the name or the CloudTrail ARN of the trail to be deleted. The format of
-        /// a trail ARN is: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+        /// Specifies the name or the CloudTrail ARN of the trail to be deleted. The following
+        /// is the format of a trail ARN. <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
         /// 
         /// </para>
         /// </summary>

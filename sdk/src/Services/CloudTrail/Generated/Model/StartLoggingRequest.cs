@@ -30,10 +30,11 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the StartLogging operation.
-    /// Starts the recording of AWS API calls and log file delivery for a trail. For a trail
-    /// that is enabled in all regions, this operation must be called from the region in which
-    /// the trail was created. This operation cannot be called on the shadow trails (replicated
-    /// trails in other regions) of a trail that is enabled in all regions.
+    /// Starts the recording of Amazon Web Services API calls and log file delivery for a
+    /// trail. For a trail that is enabled in all regions, this operation must be called from
+    /// the region in which the trail was created. This operation cannot be called on the
+    /// shadow trails (replicated trails in other regions) of a trail that is enabled in all
+    /// regions.
     /// </summary>
     public partial class StartLoggingRequest : AmazonCloudTrailRequest
     {
@@ -42,8 +43,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs AWS
-        /// API calls. The format of a trail ARN is:
+        /// Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon
+        /// Web Services API calls. The following is the format of a trail ARN.
         /// </para>
         ///  
         /// <para>

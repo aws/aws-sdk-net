@@ -36,10 +36,10 @@ namespace Amazon.CloudTrail.Model
     /// 
     ///  <note> 
     /// <para>
-    /// CloudTrail uses different private/public key pairs per region. Each digest file is
-    /// signed with a private key unique to its region. Therefore, when you validate a digest
-    /// file from a particular region, you must look in the same region for its corresponding
-    /// public key.
+    /// CloudTrail uses different private and public key pairs per region. Each digest file
+    /// is signed with a private key unique to its region. When you validate a digest file
+    /// from a specific region, you must look in the same region for its corresponding public
+    /// key.
     /// </para>
     ///  </note>
     /// </summary>

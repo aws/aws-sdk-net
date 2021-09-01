@@ -61,7 +61,7 @@ namespace Amazon.CloudTrail.Model
     ///  </li> <li> 
     /// <para>
     /// Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code>
-    /// parameter with a value of <code>read-only</code> is invalid.
+    /// parameter with a value of <code>read-only</code> is not valid.
     /// </para>
     ///  </li> </ul>
     /// </summary>

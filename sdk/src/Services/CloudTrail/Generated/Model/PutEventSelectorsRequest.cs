@@ -40,7 +40,7 @@ namespace Amazon.CloudTrail.Model
     /// When an event occurs in your account, CloudTrail evaluates the event selectors or
     /// advanced event selectors in all trails. For each trail, if the event matches any event
     /// selector, the trail processes and logs the event. If the event doesn't match any event
-    /// selector, the trail doesn't log the event. 
+    /// selector, the trail doesn't log the event.
     /// </para>
     ///  
     /// <para>
@@ -80,7 +80,7 @@ namespace Amazon.CloudTrail.Model
     /// You can configure up to five event selectors for each trail. For more information,
     /// see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
     /// data and management events for trails </a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas
-    /// in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.
+    /// in CloudTrail</a> in the <i>CloudTrail User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -90,7 +90,7 @@ namespace Amazon.CloudTrail.Model
     /// not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing
     /// <code>EventSelectors</code> are overwritten. For more information about advanced event
     /// selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-    /// data events for trails</a> in the <i>AWS CloudTrail User Guide</i>.
+    /// data events for trails</a> in the <i>CloudTrail User Guide</i>.
     /// </para>
     /// </summary>
     public partial class PutEventSelectorsRequest : AmazonCloudTrailRequest
@@ -108,7 +108,7 @@ namespace Amazon.CloudTrail.Model
         /// or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code>
         /// to a trail, any existing <code>EventSelectors</code> are overwritten. For more information
         /// about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-        /// data events for trails</a> in the <i>AWS CloudTrail User Guide</i>. 
+        /// data events for trails</a> in the <i>CloudTrail User Guide</i>. 
         /// </para>
         /// </summary>
         public List<AdvancedEventSelector> AdvancedEventSelectors
@@ -166,7 +166,7 @@ namespace Amazon.CloudTrail.Model
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -174,7 +174,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you specify a trail ARN, it must be in the format:
+        /// If you specify a trail ARN, it must be in the following format.
         /// </para>
         ///  
         /// <para>

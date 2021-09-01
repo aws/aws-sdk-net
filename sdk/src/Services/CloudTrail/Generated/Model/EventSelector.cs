@@ -55,17 +55,17 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property DataResources. 
         /// <para>
-        /// CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions
-        /// with basic event selectors. You can specify up to 250 resources for an individual
-        /// event selector, but the total number of data resources cannot exceed 250 across all
-        /// event selectors in a trail. This limit does not apply if you configure resource logging
-        /// for all data events. 
+        /// CloudTrail supports data event logging for Amazon S3 objects, Lambda functions, and
+        /// Amazon DynamoDB tables with basic event selectors. You can specify up to 250 resources
+        /// for an individual event selector, but the total number of data resources cannot exceed
+        /// 250 across all event selectors in a trail. This limit does not apply if you configure
+        /// resource logging for all data events.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
         /// Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
-        /// in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.
+        /// in CloudTrail</a> in the <i>CloudTrail User Guide</i>.
         /// </para>
         /// </summary>
         public List<DataResource> DataResources
@@ -85,9 +85,10 @@ namespace Amazon.CloudTrail.Model
         /// <para>
         /// An optional list of service event sources from which you do not want management events
         /// to be logged on your trail. In this release, the list can be empty (disables the filter),
-        /// or it can filter out AWS Key Management Service events by containing <code>"kms.amazonaws.com"</code>.
-        /// By default, <code>ExcludeManagementEventSources</code> is empty, and AWS KMS events
-        /// are included in events that are logged to your trail. 
+        /// or it can filter out Key Management Service or Amazon RDS Data API events by containing
+        /// <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default,
+        /// <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API
+        /// events are logged to your trail.
         /// </para>
         /// </summary>
         public List<string> ExcludeManagementEventSources
@@ -110,7 +111,7 @@ namespace Amazon.CloudTrail.Model
         ///  
         /// <para>
         ///  For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
-        /// Events</a> in the <i>AWS CloudTrail User Guide</i>.
+        /// Events</a> in the <i>CloudTrail User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -120,8 +121,8 @@ namespace Amazon.CloudTrail.Model
         /// <para>
         /// The first copy of management events is free. You are charged for additional copies
         /// of management events that you are logging on any subsequent trail in the same region.
-        /// For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">AWS
-        /// CloudTrail Pricing</a>.
+        /// For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail
+        /// Pricing</a>.
         /// </para>
         /// </summary>
         public bool IncludeManagementEvents

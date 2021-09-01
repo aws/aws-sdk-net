@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// This exception is thrown when an operation is called with an invalid trail ARN. The
-    /// format of a trail ARN is:
+    /// This exception is thrown when an operation is called with a trail ARN that is not
+    /// valid. The following is the format of a trail ARN.
     /// 
     ///  
     /// <para>

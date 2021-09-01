@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Returns the objects or data listed below if successful. Otherwise, returns an error.
+    /// Returns the objects or data if successful. Otherwise, returns an error.
     /// </summary>
     public partial class AddTagsResponse : AmazonWebServiceResponse
     {

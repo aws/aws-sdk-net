@@ -31,33 +31,34 @@ namespace Amazon.CloudTrail
     /// <summary>
     /// Interface for accessing CloudTrail
     ///
-    /// AWS CloudTrail 
+    /// CloudTrail 
     /// <para>
     /// This is the CloudTrail API Reference. It provides descriptions of actions, data types,
     /// common parameters, and common errors for CloudTrail.
     /// </para>
     ///  
     /// <para>
-    /// CloudTrail is a web service that records AWS API calls for your AWS account and delivers
-    /// log files to an Amazon S3 bucket. The recorded information includes the identity of
-    /// the user, the start time of the AWS API call, the source IP address, the request parameters,
-    /// and the response elements returned by the service.
+    /// CloudTrail is a web service that records Amazon Web Services API calls for your Amazon
+    /// Web Services account and delivers log files to an Amazon S3 bucket. The recorded information
+    /// includes the identity of the user, the start time of the Amazon Web Services API call,
+    /// the source IP address, the request parameters, and the response elements returned
+    /// by the service.
     /// </para>
     ///  <note> 
     /// <para>
-    /// As an alternative to the API, you can use one of the AWS SDKs, which consist of libraries
-    /// and sample code for various programming languages and platforms (Java, Ruby, .NET,
-    /// iOS, Android, etc.). The SDKs provide a convenient way to create programmatic access
-    /// to AWSCloudTrail. For example, the SDKs take care of cryptographically signing requests,
-    /// managing errors, and retrying requests automatically. For information about the AWS
-    /// SDKs, including how to download and install them, see the <a href="http://aws.amazon.com/tools/">Tools
-    /// for Amazon Web Services page</a>.
+    /// As an alternative to the API, you can use one of the Amazon Web Services SDKs, which
+    /// consist of libraries and sample code for various programming languages and platforms
+    /// (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide programmatic access to CloudTrail.
+    /// For example, the SDKs handle cryptographically signing requests, managing errors,
+    /// and retrying requests automatically. For more information about the Amazon Web Services
+    /// SDKs, including how to download and install them, see <a href="http://aws.amazon.com/tools/">Tools
+    /// to Build on Amazon Web Services</a>.
     /// </para>
     ///  </note> 
     /// <para>
-    /// See the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html">AWS
-    /// CloudTrail User Guide</a> for information about the data that is included with each
-    /// AWS API call listed in the log files.
+    /// See the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html">CloudTrail
+    /// User Guide</a> for information about the data that is included with each Amazon Web
+    /// Services API call listed in the log files.
     /// </para>
     /// </summary>
     public partial interface IAmazonCloudTrail : IAmazonService, IDisposable
@@ -77,15 +78,15 @@ namespace Amazon.CloudTrail
         /// value when a new value is specified for an existing tag key. Tag key names must be
         /// unique for a trail; you cannot have two keys with the same name but different values.
         /// If you specify a key without a value, the tag will be created with the specified key
-        /// and a value of null. You can tag a trail that applies to all AWS Regions only from
-        /// the Region in which the trail was created (also known as its home region).
+        /// and a value of null. You can tag a trail that applies to all Amazon Web Services Regions
+        /// only from the Region in which the trail was created (also known as its home region).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
         /// 
         /// <returns>The response from the AddTags service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
-        /// This exception is thrown when an operation is called with an invalid trail ARN. The
-        /// format of a trail ARN is:
+        /// This exception is thrown when an operation is called with a trail ARN that is not
+        /// valid. The following is the format of a trail ARN.
         /// 
         ///  
         /// <para>
@@ -116,7 +117,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -125,9 +126,9 @@ namespace Amazon.CloudTrail
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
-        /// This exception is thrown when the AWS account making the request to create or update
-        /// an organization trail is not the master account for an organization in AWS Organizations.
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// This exception is thrown when the Amazon Web Services account making the request to
+        /// create or update an organization trail is not the management account for an organization
+        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
@@ -156,8 +157,8 @@ namespace Amazon.CloudTrail
         /// value when a new value is specified for an existing tag key. Tag key names must be
         /// unique for a trail; you cannot have two keys with the same name but different values.
         /// If you specify a key without a value, the tag will be created with the specified key
-        /// and a value of null. You can tag a trail that applies to all AWS Regions only from
-        /// the Region in which the trail was created (also known as its home region).
+        /// and a value of null. You can tag a trail that applies to all Amazon Web Services Regions
+        /// only from the Region in which the trail was created (also known as its home region).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
         /// <param name="cancellationToken">
@@ -166,8 +167,8 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>The response from the AddTags service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
-        /// This exception is thrown when an operation is called with an invalid trail ARN. The
-        /// format of a trail ARN is:
+        /// This exception is thrown when an operation is called with a trail ARN that is not
+        /// valid. The following is the format of a trail ARN.
         /// 
         ///  
         /// <para>
@@ -198,7 +199,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -207,9 +208,9 @@ namespace Amazon.CloudTrail
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
-        /// This exception is thrown when the AWS account making the request to create or update
-        /// an organization trail is not the master account for an organization in AWS Organizations.
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// This exception is thrown when the Amazon Web Services account making the request to
+        /// create or update an organization trail is not the management account for an organization
+        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
@@ -244,15 +245,15 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>The response from the CreateTrail service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.CloudTrailAccessNotEnabledException">
-        /// This exception is thrown when trusted access has not been enabled between AWS CloudTrail
-        /// and AWS Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling
-        /// Trusted Access with Other AWS Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// This exception is thrown when trusted access has not been enabled between CloudTrail
+        /// and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling
+        /// Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.CloudTrailInvalidClientTokenIdException">
         /// This exception is thrown when a call results in the <code>InvalidClientTokenId</code>
         /// error code. This can occur when you are creating or updating a trail to send notifications
-        /// to an Amazon SNS topic that is in a suspended AWS account.
+        /// to an Amazon SNS topic that is in a suspended Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.CloudWatchLogsDeliveryUnavailableException">
         /// Cannot set a CloudWatch Logs delivery for this region.
@@ -270,16 +271,16 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the policy on the S3 bucket is not sufficient.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientSnsTopicPolicyException">
-        /// This exception is thrown when the policy on the SNS topic is not sufficient.
+        /// This exception is thrown when the policy on the Amazon SNS topic is not sufficient.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidCloudWatchLogsLogGroupArnException">
-        /// This exception is thrown when the provided CloudWatch log group is not valid.
+        /// This exception is thrown when the provided CloudWatch Logs log group is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidCloudWatchLogsRoleArnException">
         /// This exception is thrown when the provided role is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidKmsKeyIdException">
-        /// This exception is thrown when the KMS key ARN is invalid.
+        /// This exception is thrown when the KMS key ARN is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterCombinationException">
         /// This exception is thrown when the combination of parameters provided is not valid.
@@ -317,7 +318,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -333,32 +334,32 @@ namespace Amazon.CloudTrail
         /// This exception is no longer in use.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
-        /// This exception is thrown when the AWS KMS key does not exist, when the S3 bucket and
-        /// the AWS KMS key are not in the same region, or when the AWS KMS key associated with
-        /// the SNS topic either does not exist or is not in the same region.
+        /// This exception is thrown when the KMS key does not exist, when the S3 bucket and the
+        /// KMS key are not in the same region, or when the KMS key associated with the Amazon
+        /// SNS topic either does not exist or is not in the same region.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.MaximumNumberOfTrailsExceededException">
         /// This exception is thrown when the maximum number of trails is reached.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
-        /// This exception is thrown when the AWS account making the request to create or update
-        /// an organization trail is not the master account for an organization in AWS Organizations.
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// This exception is thrown when the Amazon Web Services account making the request to
+        /// create or update an organization trail is not the management account for an organization
+        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OrganizationNotInAllFeaturesModeException">
-        /// This exception is thrown when AWS Organizations is not configured to support all features.
-        /// All features must be enabled in AWS Organization to support creating an organization
+        /// This exception is thrown when Organizations is not configured to support all features.
+        /// All features must be enabled in Organizations to support creating an organization
         /// trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OrganizationsNotInUseException">
-        /// This exception is thrown when the request is made from an AWS account that is not
-        /// a member of an organization. To make this request, sign in using the credentials of
-        /// an account that belongs to an organization.
+        /// This exception is thrown when the request is made from an Amazon Web Services account
+        /// that is not a member of an organization. To make this request, sign in using the credentials
+        /// of an account that belongs to an organization.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.S3BucketDoesNotExistException">
         /// This exception is thrown when the specified S3 bucket does not exist.
@@ -388,15 +389,15 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>The response from the CreateTrail service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.CloudTrailAccessNotEnabledException">
-        /// This exception is thrown when trusted access has not been enabled between AWS CloudTrail
-        /// and AWS Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling
-        /// Trusted Access with Other AWS Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// This exception is thrown when trusted access has not been enabled between CloudTrail
+        /// and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling
+        /// Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.CloudTrailInvalidClientTokenIdException">
         /// This exception is thrown when a call results in the <code>InvalidClientTokenId</code>
         /// error code. This can occur when you are creating or updating a trail to send notifications
-        /// to an Amazon SNS topic that is in a suspended AWS account.
+        /// to an Amazon SNS topic that is in a suspended Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.CloudWatchLogsDeliveryUnavailableException">
         /// Cannot set a CloudWatch Logs delivery for this region.
@@ -414,16 +415,16 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the policy on the S3 bucket is not sufficient.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientSnsTopicPolicyException">
-        /// This exception is thrown when the policy on the SNS topic is not sufficient.
+        /// This exception is thrown when the policy on the Amazon SNS topic is not sufficient.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidCloudWatchLogsLogGroupArnException">
-        /// This exception is thrown when the provided CloudWatch log group is not valid.
+        /// This exception is thrown when the provided CloudWatch Logs log group is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidCloudWatchLogsRoleArnException">
         /// This exception is thrown when the provided role is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidKmsKeyIdException">
-        /// This exception is thrown when the KMS key ARN is invalid.
+        /// This exception is thrown when the KMS key ARN is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterCombinationException">
         /// This exception is thrown when the combination of parameters provided is not valid.
@@ -461,7 +462,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -477,32 +478,32 @@ namespace Amazon.CloudTrail
         /// This exception is no longer in use.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
-        /// This exception is thrown when the AWS KMS key does not exist, when the S3 bucket and
-        /// the AWS KMS key are not in the same region, or when the AWS KMS key associated with
-        /// the SNS topic either does not exist or is not in the same region.
+        /// This exception is thrown when the KMS key does not exist, when the S3 bucket and the
+        /// KMS key are not in the same region, or when the KMS key associated with the Amazon
+        /// SNS topic either does not exist or is not in the same region.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.MaximumNumberOfTrailsExceededException">
         /// This exception is thrown when the maximum number of trails is reached.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
-        /// This exception is thrown when the AWS account making the request to create or update
-        /// an organization trail is not the master account for an organization in AWS Organizations.
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// This exception is thrown when the Amazon Web Services account making the request to
+        /// create or update an organization trail is not the management account for an organization
+        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OrganizationNotInAllFeaturesModeException">
-        /// This exception is thrown when AWS Organizations is not configured to support all features.
-        /// All features must be enabled in AWS Organization to support creating an organization
+        /// This exception is thrown when Organizations is not configured to support all features.
+        /// All features must be enabled in Organizations to support creating an organization
         /// trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OrganizationsNotInUseException">
-        /// This exception is thrown when the request is made from an AWS account that is not
-        /// a member of an organization. To make this request, sign in using the credentials of
-        /// an account that belongs to an organization.
+        /// This exception is thrown when the request is made from an Amazon Web Services account
+        /// that is not a member of an organization. To make this request, sign in using the credentials
+        /// of an account that belongs to an organization.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.S3BucketDoesNotExistException">
         /// This exception is thrown when the specified S3 bucket does not exist.
@@ -568,7 +569,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -577,9 +578,9 @@ namespace Amazon.CloudTrail
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
-        /// This exception is thrown when the AWS account making the request to create or update
-        /// an organization trail is not the master account for an organization in AWS Organizations.
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// This exception is thrown when the Amazon Web Services account making the request to
+        /// create or update an organization trail is not the management account for an organization
+        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
@@ -643,7 +644,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -652,9 +653,9 @@ namespace Amazon.CloudTrail
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
-        /// This exception is thrown when the AWS account making the request to create or update
-        /// an organization trail is not the master account for an organization in AWS Organizations.
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// This exception is thrown when the Amazon Web Services account making the request to
+        /// create or update an organization trail is not the management account for an organization
+        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
@@ -700,7 +701,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -745,7 +746,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -792,7 +793,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -841,7 +842,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -884,7 +885,7 @@ namespace Amazon.CloudTrail
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
-        /// Data and Management Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
+        /// Data and Management Events for Trails </a> in the <i>CloudTrail User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEventSelectors service method.</param>
@@ -910,7 +911,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -953,7 +954,7 @@ namespace Amazon.CloudTrail
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
-        /// Data and Management Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
+        /// Data and Management Events for Trails </a> in the <i>CloudTrail User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEventSelectors service method.</param>
@@ -982,7 +983,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1017,7 +1018,7 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
-        /// CloudTrail Insights Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
+        /// CloudTrail Insights Events for Trails </a> in the <i>CloudTrail User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInsightSelectors service method.</param>
@@ -1047,7 +1048,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1079,7 +1080,7 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
-        /// CloudTrail Insights Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
+        /// CloudTrail Insights Events for Trails </a> in the <i>CloudTrail User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInsightSelectors service method.</param>
@@ -1112,7 +1113,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1163,7 +1164,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1214,7 +1215,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1268,7 +1269,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1322,7 +1323,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1354,10 +1355,10 @@ namespace Amazon.CloudTrail
         /// 
         ///  <note> 
         /// <para>
-        /// CloudTrail uses different private/public key pairs per region. Each digest file is
-        /// signed with a private key unique to its region. Therefore, when you validate a digest
-        /// file from a particular region, you must look in the same region for its corresponding
-        /// public key.
+        /// CloudTrail uses different private and public key pairs per region. Each digest file
+        /// is signed with a private key unique to its region. When you validate a digest file
+        /// from a specific region, you must look in the same region for its corresponding public
+        /// key.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1365,8 +1366,8 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>The response from the ListPublicKeys service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTimeRangeException">
-        /// Occurs if the timestamp values are invalid. Either the start time occurs after the
-        /// end time or the time range is outside the range of possible values.
+        /// Occurs if the timestamp values are not valid. Either the start time occurs after the
+        /// end time, or the time range is outside the range of possible values.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTokenException">
         /// Reserved for future use.
@@ -1389,10 +1390,10 @@ namespace Amazon.CloudTrail
         /// 
         ///  <note> 
         /// <para>
-        /// CloudTrail uses different private/public key pairs per region. Each digest file is
-        /// signed with a private key unique to its region. Therefore, when you validate a digest
-        /// file from a particular region, you must look in the same region for its corresponding
-        /// public key.
+        /// CloudTrail uses different private and public key pairs per region. Each digest file
+        /// is signed with a private key unique to its region. When you validate a digest file
+        /// from a specific region, you must look in the same region for its corresponding public
+        /// key.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1403,8 +1404,8 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>The response from the ListPublicKeys service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTimeRangeException">
-        /// Occurs if the timestamp values are invalid. Either the start time occurs after the
-        /// end time or the time range is outside the range of possible values.
+        /// Occurs if the timestamp values are not valid. Either the start time occurs after the
+        /// end time, or the time range is outside the range of possible values.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTokenException">
         /// Reserved for future use.
@@ -1430,8 +1431,8 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>The response from the ListTags service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
-        /// This exception is thrown when an operation is called with an invalid trail ARN. The
-        /// format of a trail ARN is:
+        /// This exception is thrown when an operation is called with a trail ARN that is not
+        /// valid. The following is the format of a trail ARN.
         /// 
         ///  
         /// <para>
@@ -1461,7 +1462,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1496,8 +1497,8 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>The response from the ListTags service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
-        /// This exception is thrown when an operation is called with an invalid trail ARN. The
-        /// format of a trail ARN is:
+        /// This exception is thrown when an operation is called with a trail ARN that is not
+        /// valid. The following is the format of a trail ARN.
         /// 
         ///  
         /// <para>
@@ -1527,7 +1528,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1604,7 +1605,7 @@ namespace Amazon.CloudTrail
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// AWS access key
+        /// Amazon Web Services access key
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1670,18 +1671,18 @@ namespace Amazon.CloudTrail
         /// Occurs if an event category that is not valid is specified as a value of <code>EventCategory</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidLookupAttributesException">
-        /// Occurs when an invalid lookup attribute is specified.
+        /// Occurs when a lookup attribute is specified that is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidMaxResultsException">
-        /// This exception is thrown if the limit specified is invalid.
+        /// This exception is thrown if the limit specified is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidNextTokenException">
-        /// Invalid token or token that was previously used in a request with different parameters.
-        /// This exception is thrown if the token is invalid.
+        /// A token that is not valid, or a token that was previously used in a request with different
+        /// parameters. This exception is thrown if the token is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTimeRangeException">
-        /// Occurs if the timestamp values are invalid. Either the start time occurs after the
-        /// end time or the time range is outside the range of possible values.
+        /// Occurs if the timestamp values are not valid. Either the start time occurs after the
+        /// end time, or the time range is outside the range of possible values.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -1703,7 +1704,7 @@ namespace Amazon.CloudTrail
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// AWS access key
+        /// Amazon Web Services access key
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1772,18 +1773,18 @@ namespace Amazon.CloudTrail
         /// Occurs if an event category that is not valid is specified as a value of <code>EventCategory</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidLookupAttributesException">
-        /// Occurs when an invalid lookup attribute is specified.
+        /// Occurs when a lookup attribute is specified that is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidMaxResultsException">
-        /// This exception is thrown if the limit specified is invalid.
+        /// This exception is thrown if the limit specified is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidNextTokenException">
-        /// Invalid token or token that was previously used in a request with different parameters.
-        /// This exception is thrown if the token is invalid.
+        /// A token that is not valid, or a token that was previously used in a request with different
+        /// parameters. This exception is thrown if the token is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTimeRangeException">
-        /// Occurs if the timestamp values are invalid. Either the start time occurs after the
-        /// end time or the time range is outside the range of possible values.
+        /// Occurs if the timestamp values are not valid. Either the start time occurs after the
+        /// end time, or the time range is outside the range of possible values.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -1810,7 +1811,7 @@ namespace Amazon.CloudTrail
         /// When an event occurs in your account, CloudTrail evaluates the event selectors or
         /// advanced event selectors in all trails. For each trail, if the event matches any event
         /// selector, the trail processes and logs the event. If the event doesn't match any event
-        /// selector, the trail doesn't log the event. 
+        /// selector, the trail doesn't log the event.
         /// </para>
         ///  
         /// <para>
@@ -1850,7 +1851,7 @@ namespace Amazon.CloudTrail
         /// You can configure up to five event selectors for each trail. For more information,
         /// see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
         /// data and management events for trails </a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas
-        /// in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.
+        /// in CloudTrail</a> in the <i>CloudTrail User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1860,7 +1861,7 @@ namespace Amazon.CloudTrail
         /// not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing
         /// <code>EventSelectors</code> are overwritten. For more information about advanced event
         /// selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-        /// data events for trails</a> in the <i>AWS CloudTrail User Guide</i>.
+        /// data events for trails</a> in the <i>CloudTrail User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutEventSelectors service method.</param>
@@ -1905,7 +1906,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code>
-        /// parameter with a value of <code>read-only</code> is invalid.
+        /// parameter with a value of <code>read-only</code> is not valid.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1933,7 +1934,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1942,9 +1943,9 @@ namespace Amazon.CloudTrail
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
-        /// This exception is thrown when the AWS account making the request to create or update
-        /// an organization trail is not the master account for an organization in AWS Organizations.
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// This exception is thrown when the Amazon Web Services account making the request to
+        /// create or update an organization trail is not the management account for an organization
+        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
@@ -1972,7 +1973,7 @@ namespace Amazon.CloudTrail
         /// When an event occurs in your account, CloudTrail evaluates the event selectors or
         /// advanced event selectors in all trails. For each trail, if the event matches any event
         /// selector, the trail processes and logs the event. If the event doesn't match any event
-        /// selector, the trail doesn't log the event. 
+        /// selector, the trail doesn't log the event.
         /// </para>
         ///  
         /// <para>
@@ -2012,7 +2013,7 @@ namespace Amazon.CloudTrail
         /// You can configure up to five event selectors for each trail. For more information,
         /// see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
         /// data and management events for trails </a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas
-        /// in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.
+        /// in CloudTrail</a> in the <i>CloudTrail User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -2022,7 +2023,7 @@ namespace Amazon.CloudTrail
         /// not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing
         /// <code>EventSelectors</code> are overwritten. For more information about advanced event
         /// selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-        /// data events for trails</a> in the <i>AWS CloudTrail User Guide</i>.
+        /// data events for trails</a> in the <i>CloudTrail User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutEventSelectors service method.</param>
@@ -2070,7 +2071,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code>
-        /// parameter with a value of <code>read-only</code> is invalid.
+        /// parameter with a value of <code>read-only</code> is not valid.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -2098,7 +2099,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2107,9 +2108,9 @@ namespace Amazon.CloudTrail
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
-        /// This exception is thrown when the AWS account making the request to create or update
-        /// an organization trail is not the master account for an organization in AWS Organizations.
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// This exception is thrown when the Amazon Web Services account making the request to
+        /// create or update an organization trail is not the management account for an organization
+        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
@@ -2132,8 +2133,8 @@ namespace Amazon.CloudTrail
         /// <summary>
         /// Lets you enable Insights event logging by specifying the Insights selectors that you
         /// want to enable on an existing trail. You also use <code>PutInsightSelectors</code>
-        /// to turn off Insights event logging, by passing an empty list of insight types. In
-        /// this release, only <code>ApiCallRateInsight</code> is supported as an Insights selector.
+        /// to turn off Insights event logging, by passing an empty list of insight types. The
+        /// valid Insights event type in this release is <code>ApiCallRateInsight</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutInsightSelectors service method.</param>
         /// 
@@ -2174,7 +2175,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2187,9 +2188,9 @@ namespace Amazon.CloudTrail
         /// trail can’t be updated.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
-        /// This exception is thrown when the AWS account making the request to create or update
-        /// an organization trail is not the master account for an organization in AWS Organizations.
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// This exception is thrown when the Amazon Web Services account making the request to
+        /// create or update an organization trail is not the management account for an organization
+        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
@@ -2212,8 +2213,8 @@ namespace Amazon.CloudTrail
         /// <summary>
         /// Lets you enable Insights event logging by specifying the Insights selectors that you
         /// want to enable on an existing trail. You also use <code>PutInsightSelectors</code>
-        /// to turn off Insights event logging, by passing an empty list of insight types. In
-        /// this release, only <code>ApiCallRateInsight</code> is supported as an Insights selector.
+        /// to turn off Insights event logging, by passing an empty list of insight types. The
+        /// valid Insights event type in this release is <code>ApiCallRateInsight</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutInsightSelectors service method.</param>
         /// <param name="cancellationToken">
@@ -2257,7 +2258,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2270,9 +2271,9 @@ namespace Amazon.CloudTrail
         /// trail can’t be updated.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
-        /// This exception is thrown when the AWS account making the request to create or update
-        /// an organization trail is not the master account for an organization in AWS Organizations.
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// This exception is thrown when the Amazon Web Services account making the request to
+        /// create or update an organization trail is not the management account for an organization
+        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
@@ -2302,8 +2303,8 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>The response from the RemoveTags service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
-        /// This exception is thrown when an operation is called with an invalid trail ARN. The
-        /// format of a trail ARN is:
+        /// This exception is thrown when an operation is called with a trail ARN that is not
+        /// valid. The following is the format of a trail ARN.
         /// 
         ///  
         /// <para>
@@ -2334,7 +2335,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2343,9 +2344,9 @@ namespace Amazon.CloudTrail
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
-        /// This exception is thrown when the AWS account making the request to create or update
-        /// an organization trail is not the master account for an organization in AWS Organizations.
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// This exception is thrown when the Amazon Web Services account making the request to
+        /// create or update an organization trail is not the management account for an organization
+        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
@@ -2375,8 +2376,8 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>The response from the RemoveTags service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
-        /// This exception is thrown when an operation is called with an invalid trail ARN. The
-        /// format of a trail ARN is:
+        /// This exception is thrown when an operation is called with a trail ARN that is not
+        /// valid. The following is the format of a trail ARN.
         /// 
         ///  
         /// <para>
@@ -2407,7 +2408,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2416,9 +2417,9 @@ namespace Amazon.CloudTrail
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
-        /// This exception is thrown when the AWS account making the request to create or update
-        /// an organization trail is not the master account for an organization in AWS Organizations.
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// This exception is thrown when the Amazon Web Services account making the request to
+        /// create or update an organization trail is not the management account for an organization
+        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
@@ -2442,10 +2443,11 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Starts the recording of AWS API calls and log file delivery for a trail. For a trail
-        /// that is enabled in all regions, this operation must be called from the region in which
-        /// the trail was created. This operation cannot be called on the shadow trails (replicated
-        /// trails in other regions) of a trail that is enabled in all regions.
+        /// Starts the recording of Amazon Web Services API calls and log file delivery for a
+        /// trail. For a trail that is enabled in all regions, this operation must be called from
+        /// the region in which the trail was created. This operation cannot be called on the
+        /// shadow trails (replicated trails in other regions) of a trail that is enabled in all
+        /// regions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartLogging service method.</param>
         /// 
@@ -2480,7 +2482,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2489,9 +2491,9 @@ namespace Amazon.CloudTrail
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
-        /// This exception is thrown when the AWS account making the request to create or update
-        /// an organization trail is not the master account for an organization in AWS Organizations.
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// This exception is thrown when the Amazon Web Services account making the request to
+        /// create or update an organization trail is not the management account for an organization
+        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
@@ -2509,10 +2511,11 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Starts the recording of AWS API calls and log file delivery for a trail. For a trail
-        /// that is enabled in all regions, this operation must be called from the region in which
-        /// the trail was created. This operation cannot be called on the shadow trails (replicated
-        /// trails in other regions) of a trail that is enabled in all regions.
+        /// Starts the recording of Amazon Web Services API calls and log file delivery for a
+        /// trail. For a trail that is enabled in all regions, this operation must be called from
+        /// the region in which the trail was created. This operation cannot be called on the
+        /// shadow trails (replicated trails in other regions) of a trail that is enabled in all
+        /// regions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartLogging service method.</param>
         /// <param name="cancellationToken">
@@ -2550,7 +2553,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2559,9 +2562,9 @@ namespace Amazon.CloudTrail
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
-        /// This exception is thrown when the AWS account making the request to create or update
-        /// an organization trail is not the master account for an organization in AWS Organizations.
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// This exception is thrown when the Amazon Web Services account making the request to
+        /// create or update an organization trail is not the management account for an organization
+        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
@@ -2582,13 +2585,13 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Suspends the recording of AWS API calls and log file delivery for the specified trail.
-        /// Under most circumstances, there is no need to use this action. You can update a trail
-        /// without stopping it first. This action is the only way to stop recording. For a trail
-        /// enabled in all regions, this operation must be called from the region in which the
-        /// trail was created, or an <code>InvalidHomeRegionException</code> will occur. This
-        /// operation cannot be called on the shadow trails (replicated trails in other regions)
-        /// of a trail enabled in all regions.
+        /// Suspends the recording of Amazon Web Services API calls and log file delivery for
+        /// the specified trail. Under most circumstances, there is no need to use this action.
+        /// You can update a trail without stopping it first. This action is the only way to stop
+        /// recording. For a trail enabled in all regions, this operation must be called from
+        /// the region in which the trail was created, or an <code>InvalidHomeRegionException</code>
+        /// will occur. This operation cannot be called on the shadow trails (replicated trails
+        /// in other regions) of a trail enabled in all regions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopLogging service method.</param>
         /// 
@@ -2623,7 +2626,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2632,9 +2635,9 @@ namespace Amazon.CloudTrail
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
-        /// This exception is thrown when the AWS account making the request to create or update
-        /// an organization trail is not the master account for an organization in AWS Organizations.
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// This exception is thrown when the Amazon Web Services account making the request to
+        /// create or update an organization trail is not the management account for an organization
+        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
@@ -2652,13 +2655,13 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Suspends the recording of AWS API calls and log file delivery for the specified trail.
-        /// Under most circumstances, there is no need to use this action. You can update a trail
-        /// without stopping it first. This action is the only way to stop recording. For a trail
-        /// enabled in all regions, this operation must be called from the region in which the
-        /// trail was created, or an <code>InvalidHomeRegionException</code> will occur. This
-        /// operation cannot be called on the shadow trails (replicated trails in other regions)
-        /// of a trail enabled in all regions.
+        /// Suspends the recording of Amazon Web Services API calls and log file delivery for
+        /// the specified trail. Under most circumstances, there is no need to use this action.
+        /// You can update a trail without stopping it first. This action is the only way to stop
+        /// recording. For a trail enabled in all regions, this operation must be called from
+        /// the region in which the trail was created, or an <code>InvalidHomeRegionException</code>
+        /// will occur. This operation cannot be called on the shadow trails (replicated trails
+        /// in other regions) of a trail enabled in all regions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopLogging service method.</param>
         /// <param name="cancellationToken">
@@ -2696,7 +2699,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2705,9 +2708,9 @@ namespace Amazon.CloudTrail
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
-        /// This exception is thrown when the AWS account making the request to create or update
-        /// an organization trail is not the master account for an organization in AWS Organizations.
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// This exception is thrown when the Amazon Web Services account making the request to
+        /// create or update an organization trail is not the management account for an organization
+        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
@@ -2728,26 +2731,26 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Updates the settings that specify delivery of log files. Changes to a trail do not
-        /// require stopping the CloudTrail service. Use this action to designate an existing
-        /// bucket for log delivery. If the existing bucket has previously been a target for CloudTrail
-        /// log files, an IAM policy exists for the bucket. <code>UpdateTrail</code> must be called
-        /// from the region in which the trail was created; otherwise, an <code>InvalidHomeRegionException</code>
-        /// is thrown.
+        /// Updates trail settings that control what events you are logging, and how to handle
+        /// log files. Changes to a trail do not require stopping the CloudTrail service. Use
+        /// this action to designate an existing bucket for log delivery. If the existing bucket
+        /// has previously been a target for CloudTrail log files, an IAM policy exists for the
+        /// bucket. <code>UpdateTrail</code> must be called from the region in which the trail
+        /// was created; otherwise, an <code>InvalidHomeRegionException</code> is thrown.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrail service method.</param>
         /// 
         /// <returns>The response from the UpdateTrail service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.CloudTrailAccessNotEnabledException">
-        /// This exception is thrown when trusted access has not been enabled between AWS CloudTrail
-        /// and AWS Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling
-        /// Trusted Access with Other AWS Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// This exception is thrown when trusted access has not been enabled between CloudTrail
+        /// and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling
+        /// Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.CloudTrailInvalidClientTokenIdException">
         /// This exception is thrown when a call results in the <code>InvalidClientTokenId</code>
         /// error code. This can occur when you are creating or updating a trail to send notifications
-        /// to an Amazon SNS topic that is in a suspended AWS account.
+        /// to an Amazon SNS topic that is in a suspended Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.CloudWatchLogsDeliveryUnavailableException">
         /// Cannot set a CloudWatch Logs delivery for this region.
@@ -2765,10 +2768,10 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the policy on the S3 bucket is not sufficient.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientSnsTopicPolicyException">
-        /// This exception is thrown when the policy on the SNS topic is not sufficient.
+        /// This exception is thrown when the policy on the Amazon SNS topic is not sufficient.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidCloudWatchLogsLogGroupArnException">
-        /// This exception is thrown when the provided CloudWatch log group is not valid.
+        /// This exception is thrown when the provided CloudWatch Logs log group is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidCloudWatchLogsRoleArnException">
         /// This exception is thrown when the provided role is not valid.
@@ -2806,7 +2809,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code>
-        /// parameter with a value of <code>read-only</code> is invalid.
+        /// parameter with a value of <code>read-only</code> is not valid.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -2815,7 +2818,7 @@ namespace Amazon.CloudTrail
         /// than the region in which the trail was created.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidKmsKeyIdException">
-        /// This exception is thrown when the KMS key ARN is invalid.
+        /// This exception is thrown when the KMS key ARN is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterCombinationException">
         /// This exception is thrown when the combination of parameters provided is not valid.
@@ -2849,7 +2852,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2865,29 +2868,29 @@ namespace Amazon.CloudTrail
         /// This exception is no longer in use.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
-        /// This exception is thrown when the AWS KMS key does not exist, when the S3 bucket and
-        /// the AWS KMS key are not in the same region, or when the AWS KMS key associated with
-        /// the SNS topic either does not exist or is not in the same region.
+        /// This exception is thrown when the KMS key does not exist, when the S3 bucket and the
+        /// KMS key are not in the same region, or when the KMS key associated with the Amazon
+        /// SNS topic either does not exist or is not in the same region.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
-        /// This exception is thrown when the AWS account making the request to create or update
-        /// an organization trail is not the master account for an organization in AWS Organizations.
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// This exception is thrown when the Amazon Web Services account making the request to
+        /// create or update an organization trail is not the management account for an organization
+        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OrganizationNotInAllFeaturesModeException">
-        /// This exception is thrown when AWS Organizations is not configured to support all features.
-        /// All features must be enabled in AWS Organization to support creating an organization
+        /// This exception is thrown when Organizations is not configured to support all features.
+        /// All features must be enabled in Organizations to support creating an organization
         /// trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OrganizationsNotInUseException">
-        /// This exception is thrown when the request is made from an AWS account that is not
-        /// a member of an organization. To make this request, sign in using the credentials of
-        /// an account that belongs to an organization.
+        /// This exception is thrown when the request is made from an Amazon Web Services account
+        /// that is not a member of an organization. To make this request, sign in using the credentials
+        /// of an account that belongs to an organization.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.S3BucketDoesNotExistException">
         /// This exception is thrown when the specified S3 bucket does not exist.
@@ -2907,12 +2910,12 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Updates the settings that specify delivery of log files. Changes to a trail do not
-        /// require stopping the CloudTrail service. Use this action to designate an existing
-        /// bucket for log delivery. If the existing bucket has previously been a target for CloudTrail
-        /// log files, an IAM policy exists for the bucket. <code>UpdateTrail</code> must be called
-        /// from the region in which the trail was created; otherwise, an <code>InvalidHomeRegionException</code>
-        /// is thrown.
+        /// Updates trail settings that control what events you are logging, and how to handle
+        /// log files. Changes to a trail do not require stopping the CloudTrail service. Use
+        /// this action to designate an existing bucket for log delivery. If the existing bucket
+        /// has previously been a target for CloudTrail log files, an IAM policy exists for the
+        /// bucket. <code>UpdateTrail</code> must be called from the region in which the trail
+        /// was created; otherwise, an <code>InvalidHomeRegionException</code> is thrown.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrail service method.</param>
         /// <param name="cancellationToken">
@@ -2921,15 +2924,15 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>The response from the UpdateTrail service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.CloudTrailAccessNotEnabledException">
-        /// This exception is thrown when trusted access has not been enabled between AWS CloudTrail
-        /// and AWS Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling
-        /// Trusted Access with Other AWS Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// This exception is thrown when trusted access has not been enabled between CloudTrail
+        /// and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling
+        /// Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.CloudTrailInvalidClientTokenIdException">
         /// This exception is thrown when a call results in the <code>InvalidClientTokenId</code>
         /// error code. This can occur when you are creating or updating a trail to send notifications
-        /// to an Amazon SNS topic that is in a suspended AWS account.
+        /// to an Amazon SNS topic that is in a suspended Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.CloudWatchLogsDeliveryUnavailableException">
         /// Cannot set a CloudWatch Logs delivery for this region.
@@ -2947,10 +2950,10 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the policy on the S3 bucket is not sufficient.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientSnsTopicPolicyException">
-        /// This exception is thrown when the policy on the SNS topic is not sufficient.
+        /// This exception is thrown when the policy on the Amazon SNS topic is not sufficient.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidCloudWatchLogsLogGroupArnException">
-        /// This exception is thrown when the provided CloudWatch log group is not valid.
+        /// This exception is thrown when the provided CloudWatch Logs log group is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidCloudWatchLogsRoleArnException">
         /// This exception is thrown when the provided role is not valid.
@@ -2988,7 +2991,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code>
-        /// parameter with a value of <code>read-only</code> is invalid.
+        /// parameter with a value of <code>read-only</code> is not valid.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -2997,7 +3000,7 @@ namespace Amazon.CloudTrail
         /// than the region in which the trail was created.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidKmsKeyIdException">
-        /// This exception is thrown when the KMS key ARN is invalid.
+        /// This exception is thrown when the KMS key ARN is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterCombinationException">
         /// This exception is thrown when the combination of parameters provided is not valid.
@@ -3031,7 +3034,7 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.
+        /// and <code>my--namespace</code> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3047,29 +3050,29 @@ namespace Amazon.CloudTrail
         /// This exception is no longer in use.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
-        /// This exception is thrown when the AWS KMS key does not exist, when the S3 bucket and
-        /// the AWS KMS key are not in the same region, or when the AWS KMS key associated with
-        /// the SNS topic either does not exist or is not in the same region.
+        /// This exception is thrown when the KMS key does not exist, when the S3 bucket and the
+        /// KMS key are not in the same region, or when the KMS key associated with the Amazon
+        /// SNS topic either does not exist or is not in the same region.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
-        /// This exception is thrown when the AWS account making the request to create or update
-        /// an organization trail is not the master account for an organization in AWS Organizations.
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// This exception is thrown when the Amazon Web Services account making the request to
+        /// create or update an organization trail is not the management account for an organization
+        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OrganizationNotInAllFeaturesModeException">
-        /// This exception is thrown when AWS Organizations is not configured to support all features.
-        /// All features must be enabled in AWS Organization to support creating an organization
+        /// This exception is thrown when Organizations is not configured to support all features.
+        /// All features must be enabled in Organizations to support creating an organization
         /// trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OrganizationsNotInUseException">
-        /// This exception is thrown when the request is made from an AWS account that is not
-        /// a member of an organization. To make this request, sign in using the credentials of
-        /// an account that belongs to an organization.
+        /// This exception is thrown when the request is made from an Amazon Web Services account
+        /// that is not a member of an organization. To make this request, sign in using the credentials
+        /// of an account that belongs to an organization.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.S3BucketDoesNotExistException">
         /// This exception is thrown when the specified S3 bucket does not exist.

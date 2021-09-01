@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// This exception is thrown when the KMS key ARN is invalid.
+    /// This exception is thrown when the KMS key ARN is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

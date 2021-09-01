@@ -34,8 +34,8 @@ namespace Amazon.CloudTrail.Model
     /// value when a new value is specified for an existing tag key. Tag key names must be
     /// unique for a trail; you cannot have two keys with the same name but different values.
     /// If you specify a key without a value, the tag will be created with the specified key
-    /// and a value of null. You can tag a trail that applies to all AWS Regions only from
-    /// the Region in which the trail was created (also known as its home region).
+    /// and a value of null. You can tag a trail that applies to all Amazon Web Services Regions
+    /// only from the Region in which the trail was created (also known as its home region).
     /// </summary>
     public partial class AddTagsRequest : AmazonCloudTrailRequest
     {
@@ -69,7 +69,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property TagsList. 
         /// <para>
-        /// Contains a list of CloudTrail tags, up to a limit of 50
+        /// Contains a list of tags, up to a limit of 50
         /// </para>
         /// </summary>
         public List<Tag> TagsList

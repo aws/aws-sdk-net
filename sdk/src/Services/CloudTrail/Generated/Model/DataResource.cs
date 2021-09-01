@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// The Amazon S3 buckets, AWS Lambda functions, or Amazon DynamoDB tables that you specify
+    /// The Amazon S3 buckets, Lambda functions, or Amazon DynamoDB tables that you specify
     /// in your event selectors for your trail to log data events. Data events provide information
     /// about the resource operations performed on or within a resource itself. These are
     /// also known as data plane operations. You can specify up to 250 data resources for
@@ -75,8 +75,8 @@ namespace Amazon.CloudTrail.Model
     ///  </li> </ol> 
     /// <para>
     /// The following example demonstrates how logging works when you configure logging of
-    /// AWS Lambda data events for a Lambda function named <i>MyLambdaFunction</i>, but not
-    /// for all AWS Lambda functions.
+    /// Lambda data events for a Lambda function named <i>MyLambdaFunction</i>, but not for
+    /// all Lambda functions.
     /// </para>
     ///  <ol> <li> 
     /// <para>
@@ -85,14 +85,14 @@ namespace Amazon.CloudTrail.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The <code>Invoke</code> API operation on <i>MyLambdaFunction</i> is an AWS Lambda
-    /// API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified
+    /// The <code>Invoke</code> API operation on <i>MyLambdaFunction</i> is an Lambda API.
+    /// It is recorded as a data event in CloudTrail. Because the CloudTrail user specified
     /// logging data events for <i>MyLambdaFunction</i>, any invocations of that function
-    /// are logged. The trail processes and logs the event. 
+    /// are logged. The trail processes and logs the event.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The <code>Invoke</code> API operation on <i>MyOtherLambdaFunction</i> is an AWS Lambda
+    /// The <code>Invoke</code> API operation on <i>MyOtherLambdaFunction</i> is an Lambda
     /// API. Because the CloudTrail user did not specify logging data events for all Lambda
     /// functions, the <code>Invoke</code> operation for <i>MyOtherLambdaFunction</i> does
     /// not match the function specified for the trail. The trail doesn’t log the event. 
@@ -113,9 +113,9 @@ namespace Amazon.CloudTrail.Model
         ///  
         /// <para>
         /// The <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-        /// and <code>AWS::S3ObjectLambda::AccessPoint</code> resource types are not valid in
-        /// basic event selectors. To log data events on these resource types, use advanced event
-        /// selectors.
+        /// <code>AWS::S3ObjectLambda::AccessPoint</code>, and <code>AWS::EC2::Snapshot</code>
+        /// resource types are not valid in basic event selectors. To log data events on these
+        /// resource types, use advanced event selectors.
         /// </para>
         /// </summary>
         public string Type
@@ -138,14 +138,14 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To log data events for all objects in all S3 buckets in your AWS account, specify
-        /// the prefix as <code>arn:aws:s3:::</code>. 
+        /// To log data events for all objects in all S3 buckets in your Amazon Web Services account,
+        /// specify the prefix as <code>arn:aws:s3:::</code>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This will also enable logging of data event activity performed by any user or role
-        /// in your AWS account, even if that activity is performed on a bucket that belongs to
-        /// another AWS account. 
+        /// This also enables logging of data event activity performed by any user or role in
+        /// your Amazon Web Services account, even if that activity is performed on a bucket that
+        /// belongs to another Amazon Web Services account.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
@@ -161,14 +161,14 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To log data events for all Lambda functions in your AWS account, specify the prefix
-        /// as <code>arn:aws:lambda</code>.
+        /// To log data events for all Lambda functions in your Amazon Web Services account, specify
+        /// the prefix as <code>arn:aws:lambda</code>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This will also enable logging of <code>Invoke</code> activity performed by any user
-        /// or role in your AWS account, even if that activity is performed on a function that
-        /// belongs to another AWS account. 
+        /// This also enables logging of <code>Invoke</code> activity performed by any user or
+        /// role in your Amazon Web Services account, even if that activity is performed on a
+        /// function that belongs to another Amazon Web Services account. 
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
@@ -182,8 +182,8 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        /// To log data events for all DynamoDB tables in your AWS account, specify the prefix
-        /// as <code>arn:aws:dynamodb</code>.
+        /// To log data events for all DynamoDB tables in your Amazon Web Services account, specify
+        /// the prefix as <code>arn:aws:dynamodb</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

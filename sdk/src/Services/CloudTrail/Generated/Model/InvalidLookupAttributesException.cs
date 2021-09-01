@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Occurs when an invalid lookup attribute is specified.
+    /// Occurs when a lookup attribute is specified that is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

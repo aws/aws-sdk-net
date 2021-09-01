@@ -42,7 +42,7 @@ namespace Amazon.CloudTrail.Model
         /// for the objects exist in a trail's configuration. For example, <code>SNSTopicName</code>
         /// and <code>SNSTopicARN</code> are only returned in results if a trail is configured
         /// to send SNS notifications. Similarly, <code>KMSKeyId</code> only appears in results
-        /// if a trail's log files are encrypted with AWS KMS-managed keys.
+        /// if a trail's log files are encrypted with KMS customer managed keys.
         /// </para>
         /// </summary>
         public List<Trail> TrailList

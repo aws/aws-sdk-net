@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// This exception is thrown if the limit specified is invalid.
+    /// This exception is thrown if the limit specified is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

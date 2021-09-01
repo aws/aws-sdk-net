@@ -76,8 +76,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property TrailARN. 
         /// <para>
-        /// Specifies the ARN of the trail that was updated with event selectors. The format of
-        /// a trail ARN is:
+        /// Specifies the ARN of the trail that was updated with event selectors. The following
+        /// is the format of a trail ARN.
         /// </para>
         ///  
         /// <para>

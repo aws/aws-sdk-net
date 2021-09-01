@@ -44,8 +44,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property EndsWith. 
         /// <para>
-        ///  An operator that includes events that match the last few characters of the event
-        /// record field specified as the value of <code>Field</code>. 
+        /// An operator that includes events that match the last few characters of the event record
+        /// field specified as the value of <code>Field</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -67,7 +67,7 @@ namespace Amazon.CloudTrail.Model
         ///  An operator that includes events that match the exact value of the event record field
         /// specified as the value of <code>Field</code>. This is the only valid operator that
         /// you can use with the <code>readOnly</code>, <code>eventCategory</code>, and <code>resources.type</code>
-        /// fields. 
+        /// fields.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -105,8 +105,9 @@ namespace Amazon.CloudTrail.Model
         ///  </li> <li> 
         /// <para>
         ///  <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in
-        /// or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code>.
-        /// You can have multiple values for this ﬁeld, separated by commas.
+        /// or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code> or
+        /// <code>GetSnapshotBlock</code>. You can have multiple values for this ﬁeld, separated
+        /// by commas.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -117,11 +118,11 @@ namespace Amazon.CloudTrail.Model
         /// <para>
         ///  <b> <code>resources.type</code> </b> - This ﬁeld is required. <code>resources.type</code>
         /// can only use the <code>Equals</code> operator, and the value can be one of the following:
-        /// <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, <code>AWS::DynamoDB::Table</code>,
-        /// <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>, or
-        /// <code>AWS::S3ObjectLambda::AccessPoint</code>. You can have only one <code>resources.type</code>
-        /// ﬁeld per selector. To log data events on more than one resource type, add another
-        /// selector.
+        /// <code>AWS::S3::Object</code>, <code>AWS::S3::AccessPoint</code>, <code>AWS::Lambda::Function</code>,
+        /// <code>AWS::DynamoDB::Table</code>, <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
+        /// <code>AWS::S3ObjectLambda::AccessPoint</code>, or <code>AWS::EC2::Snapshot</code>.
+        /// You can have only one <code>resources.type</code> ﬁeld per selector. To log data events
+        /// on more than one resource type, add another selector.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -135,15 +136,35 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  
         /// <para>
-        /// The trailing slash is intentional; do not exclude it.
+        /// The trailing slash is intentional; do not exclude it. Replace the text between less
+        /// than and greater than symbols (&lt;&gt;) with resource-specific information. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:partition:s3:::bucket_name/</code> 
+        ///  <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:partition:s3:::bucket_name/object_or_file_name/</code> 
+        ///  <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/&lt;object_path&gt;/</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the
+        /// operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be
+        /// in one of the following formats. To log events on all objects in an S3 access point,
+        /// we recommend that you use only the access point ARN, don’t include the object path,
+        /// and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -153,7 +174,8 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:partition:lambda:region:account_ID:function:function_name</code> 
+        ///  <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -163,7 +185,8 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:partition:dynamodb:region:account_ID:table:table_name</code> 
+        ///  <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table:&lt;table_name&gt;</code>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -173,7 +196,8 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:partition:s3-outposts:region:&gt;account_ID:object_path</code> 
+        ///  <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -183,7 +207,8 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:partition:managedblockchain:region:account_ID:nodes/node_ID</code> 
+        ///  <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -193,7 +218,18 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:partition:s3-object-lambda:region:account_ID:accesspoint/access_point_name</code>
+        ///  <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::EC2::Snapshot</code>, and the operator
+        /// is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+        /// format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
         /// 
         /// </para>
         ///  </li> </ul> </li> </ul>
@@ -274,8 +310,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property StartsWith. 
         /// <para>
-        ///  An operator that includes events that match the first few characters of the event
-        /// record field specified as the value of <code>Field</code>. 
+        /// An operator that includes events that match the first few characters of the event
+        /// record field specified as the value of <code>Field</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

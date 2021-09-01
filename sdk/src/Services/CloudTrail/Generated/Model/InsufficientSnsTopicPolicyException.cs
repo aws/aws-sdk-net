@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// This exception is thrown when the policy on the SNS topic is not sufficient.
+    /// This exception is thrown when the policy on the Amazon SNS topic is not sufficient.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

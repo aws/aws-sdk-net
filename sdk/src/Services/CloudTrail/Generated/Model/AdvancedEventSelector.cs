@@ -29,11 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Advanced event selectors let you create fine-grained selectors for the following AWS
-    /// CloudTrail event record ﬁelds. They help you control costs by logging only those events
-    /// that are important to you. For more information about advanced event selectors, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-    /// data events for trails</a> in the <i>AWS CloudTrail User Guide</i>.
+    /// Advanced event selectors let you create fine-grained selectors for the following CloudTrail
+    /// event record ﬁelds. They help you control costs by logging only those events that
+    /// are important to you. For more information about advanced event selectors, see <a
+    /// href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+    /// data events for trails</a> in the <i>CloudTrail User Guide</i>.
     /// 
     ///  <ul> <li> 
     /// <para>

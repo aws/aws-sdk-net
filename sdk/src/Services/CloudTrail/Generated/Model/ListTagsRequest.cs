@@ -59,7 +59,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property ResourceIdList. 
         /// <para>
         /// Specifies a list of trail ARNs whose tags will be listed. The list has a limit of
-        /// 20 ARNs. The format of a trail ARN is:
+        /// 20 ARNs. The following is the format of a trail ARN.
         /// </para>
         ///  
         /// <para>

@@ -47,8 +47,9 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property AccessKeyId. 
         /// <para>
-        /// The AWS access key ID that was used to sign the request. If the request was made with
-        /// temporary security credentials, this is the access key ID of the temporary credentials.
+        /// The Amazon Web Services access key ID that was used to sign the request. If the request
+        /// was made with temporary security credentials, this is the access key ID of the temporary
+        /// credentials.
         /// </para>
         /// </summary>
         public string AccessKeyId
@@ -120,7 +121,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property EventSource. 
         /// <para>
-        /// The AWS service that the request was made to.
+        /// The Amazon Web Services service to which the request was made.
         /// </para>
         /// </summary>
         public string EventSource

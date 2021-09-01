@@ -41,7 +41,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property HomeRegion. 
         /// <para>
-        /// The AWS region in which a trail was created.
+        /// The Amazon Web Services Region in which a trail was created.
         /// </para>
         /// </summary>
         public string HomeRegion

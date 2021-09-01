@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Invalid token or token that was previously used in a request with different parameters.
-    /// This exception is thrown if the token is invalid.
+    /// A token that is not valid, or a token that was previously used in a request with different
+    /// parameters. This exception is thrown if the token is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -54,7 +54,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property IsLogging. 
         /// <para>
-        /// Whether the CloudTrail is currently logging AWS API calls.
+        /// Whether the CloudTrail trail is currently logging Amazon Web Services API calls.
         /// </para>
         /// </summary>
         public bool IsLogging
@@ -147,15 +147,15 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property LatestDeliveryError. 
         /// <para>
         /// Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver
-        /// log files to the designated bucket. For more information see the topic <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+        /// log files to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
         /// Responses</a> in the Amazon S3 API Reference. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// This error occurs only when there is a problem with the destination S3 bucket and
-        /// will not occur for timeouts. To resolve the issue, create a new bucket and call <code>UpdateTrail</code>
-        /// to specify the new bucket, or fix the existing objects so that CloudTrail can again
-        /// write to the bucket.
+        /// This error occurs only when there is a problem with the destination S3 bucket, and
+        /// does not occur for requests that time out. To resolve the issue, create a new bucket,
+        /// and then call <code>UpdateTrail</code> to specify the new bucket; or fix the existing
+        /// objects so that CloudTrail can again write to the bucket.
         /// </para>
         ///  </note>
         /// </summary>
@@ -194,15 +194,15 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property LatestDigestDeliveryError. 
         /// <para>
         /// Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver
-        /// a digest file to the designated bucket. For more information see the topic <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+        /// a digest file to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
         /// Responses</a> in the Amazon S3 API Reference. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// This error occurs only when there is a problem with the destination S3 bucket and
-        /// will not occur for timeouts. To resolve the issue, create a new bucket and call <code>UpdateTrail</code>
-        /// to specify the new bucket, or fix the existing objects so that CloudTrail can again
-        /// write to the bucket.
+        /// This error occurs only when there is a problem with the destination S3 bucket, and
+        /// does not occur for requests that time out. To resolve the issue, create a new bucket,
+        /// and then call <code>UpdateTrail</code> to specify the new bucket; or fix the existing
+        /// objects so that CloudTrail can again write to the bucket.
         /// </para>
         ///  </note>
         /// </summary>
@@ -316,7 +316,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property StartLoggingTime. 
         /// <para>
         /// Specifies the most recent date and time when CloudTrail started recording API calls
-        /// for an AWS account.
+        /// for an Amazon Web Services account.
         /// </para>
         /// </summary>
         public DateTime StartLoggingTime
@@ -335,7 +335,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property StopLoggingTime. 
         /// <para>
         /// Specifies the most recent date and time when CloudTrail stopped recording API calls
-        /// for an AWS account.
+        /// for an Amazon Web Services account.
         /// </para>
         /// </summary>
         public DateTime StopLoggingTime

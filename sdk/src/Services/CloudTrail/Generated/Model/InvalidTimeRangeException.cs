@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Occurs if the timestamp values are invalid. Either the start time occurs after the
-    /// end time or the time range is outside the range of possible values.
+    /// Occurs if the timestamp values are not valid. Either the start time occurs after the
+    /// end time, or the time range is outside the range of possible values.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

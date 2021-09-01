@@ -51,7 +51,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property CloudWatchLogsLogGroupArn. 
         /// <para>
         /// Specifies the Amazon Resource Name (ARN) of the log group to which CloudTrail logs
-        /// will be delivered.
+        /// are delivered.
         /// </para>
         /// </summary>
         public string CloudWatchLogsLogGroupArn
@@ -144,7 +144,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value
-        /// is a fully specified ARN to a KMS key in the format:
+        /// is a fully specified ARN to a KMS key in the following format.
         /// </para>
         ///  
         /// <para>
@@ -223,7 +223,7 @@ namespace Amazon.CloudTrail.Model
         /// <para>
         /// Specifies the Amazon S3 key prefix that comes after the name of the bucket you have
         /// designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
-        /// Your CloudTrail Log Files</a>.
+        /// Your IAM Log Files</a>.
         /// </para>
         /// </summary>
         public string S3KeyPrefix
@@ -242,7 +242,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property SnsTopicARN. 
         /// <para>
         /// Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications
-        /// when log files are delivered. The format of a topic ARN is:
+        /// when log files are delivered. The following is the format of a topic ARN.
         /// </para>
         ///  
         /// <para>
@@ -264,7 +264,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property SnsTopicName. 
         /// <para>
-        /// This field is no longer in use. Use SnsTopicARN.
+        /// This field is no longer in use. Use <a>UpdateTrailResponse$SnsTopicARN</a>.
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated. Use SnsTopicARN.")]
@@ -283,7 +283,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property TrailARN. 
         /// <para>
-        /// Specifies the ARN of the trail that was updated. The format of a trail ARN is:
+        /// Specifies the ARN of the trail that was updated. The following is the format of a
+        /// trail ARN.
         /// </para>
         ///  
         /// <para>

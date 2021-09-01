@@ -50,7 +50,7 @@ namespace Amazon.CloudTrail.Model
     ///  </li> </ul> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
-    /// Data and Management Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
+    /// Data and Management Events for Trails </a> in the <i>CloudTrail User Guide</i>.
     /// </para>
     /// </summary>
     public partial class GetEventSelectorsRequest : AmazonCloudTrailRequest

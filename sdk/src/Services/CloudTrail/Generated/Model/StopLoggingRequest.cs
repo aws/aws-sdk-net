@@ -30,13 +30,13 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the StopLogging operation.
-    /// Suspends the recording of AWS API calls and log file delivery for the specified trail.
-    /// Under most circumstances, there is no need to use this action. You can update a trail
-    /// without stopping it first. This action is the only way to stop recording. For a trail
-    /// enabled in all regions, this operation must be called from the region in which the
-    /// trail was created, or an <code>InvalidHomeRegionException</code> will occur. This
-    /// operation cannot be called on the shadow trails (replicated trails in other regions)
-    /// of a trail enabled in all regions.
+    /// Suspends the recording of Amazon Web Services API calls and log file delivery for
+    /// the specified trail. Under most circumstances, there is no need to use this action.
+    /// You can update a trail without stopping it first. This action is the only way to stop
+    /// recording. For a trail enabled in all regions, this operation must be called from
+    /// the region in which the trail was created, or an <code>InvalidHomeRegionException</code>
+    /// will occur. This operation cannot be called on the shadow trails (replicated trails
+    /// in other regions) of a trail enabled in all regions.
     /// </summary>
     public partial class StopLoggingRequest : AmazonCloudTrailRequest
     {
@@ -46,7 +46,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop
-        /// logging AWS API calls. The format of a trail ARN is:
+        /// logging Amazon Web Services API calls. The following is the format of a trail ARN.
         /// </para>
         ///  
         /// <para>

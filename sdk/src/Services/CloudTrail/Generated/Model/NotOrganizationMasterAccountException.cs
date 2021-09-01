@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// This exception is thrown when the AWS account making the request to create or update
-    /// an organization trail is not the master account for an organization in AWS Organizations.
-    /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+    /// This exception is thrown when the Amazon Web Services account making the request to
+    /// create or update an organization trail is not the management account for an organization
+    /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
     /// For Creating a Trail For Your Organization</a>.
     /// </summary>
     #if !NETSTANDARD

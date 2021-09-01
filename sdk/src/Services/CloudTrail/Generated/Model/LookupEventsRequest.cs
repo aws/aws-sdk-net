@@ -38,7 +38,7 @@ namespace Amazon.CloudTrail.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// AWS access key
+    /// Amazon Web Services access key
     /// </para>
     ///  </li> <li> 
     /// <para>
