@@ -1,3 +1,20 @@
+### 3.7.109.0 (2021-09-01 18:19 UTC)
+* AppRegistry (3.7.1.0)
+	* Introduction of GetAssociatedResource API and GetApplication response extension for Resource Groups support.
+* CloudTrail (3.7.0.59)
+	* Documentation updates for CloudTrail
+* ConfigService (3.7.4.6)
+	* Documentation updates for config
+* EC2 (3.7.27.0)
+	* Added LaunchTemplate support for the IMDS IPv6 endpoint
+* MediaTailor (3.7.4.0)
+	* This release adds support for wall clock programs in LINEAR channels.
+* Core 3.7.2.10
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.108.0 (2021-08-31 18:16 UTC)
 * ComputeOptimizer (3.7.3.2)
 	* Documentation updates for Compute Optimizer
