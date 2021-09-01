@@ -37,6 +37,7 @@ namespace Amazon.MediaTailor.Model
         private string _channelName;
         private string _channelState;
         private DateTime? _creationTime;
+        private SlateSource _fillerSlate;
         private DateTime? _lastModifiedTime;
         private List<ResponseOutputItem> _outputs = new List<ResponseOutputItem>();
         private string _playbackMode;
@@ -118,6 +119,25 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FillerSlate. 
+        /// <para>
+        /// Contains information about the slate used to fill gaps between programs in the schedule.
+        /// You must configure FillerSlate if your channel uses an LINEAR PlaybackMode.
+        /// </para>
+        /// </summary>
+        public SlateSource FillerSlate
+        {
+            get { return this._fillerSlate; }
+            set { this._fillerSlate = value; }
+        }
+
+        // Check to see if FillerSlate property is set
+        internal bool IsSetFillerSlate()
+        {
+            return this._fillerSlate != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
         /// The timestamp of when the channel was last modified.
@@ -157,7 +177,16 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property PlaybackMode. 
         /// <para>
-        /// The type of playback mode for this channel. Possible values: ONCE or LOOP.
+        /// The type of playback mode for this channel.
+        /// </para>
+        ///  
+        /// <para>
+        /// LINEAR - Programs play back-to-back only once.
+        /// </para>
+        ///  
+        /// <para>
+        /// LOOP - Programs play back-to-back in an endless loop. When the last program in the
+        /// schedule plays, playback loops back to the first program in the schedule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

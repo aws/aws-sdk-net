@@ -81,6 +81,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     response.ProgramName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ScheduledStartTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.ScheduledStartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SourceLocationName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

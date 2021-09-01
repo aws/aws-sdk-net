@@ -39,6 +39,7 @@ namespace Amazon.MediaTailor.Model
         private string _channelName;
         private string _programName;
         private List<ScheduleAdBreak> _scheduleAdBreaks = new List<ScheduleAdBreak>();
+        private ScheduleEntryType _scheduleEntryType;
         private string _sourceLocationName;
         private string _vodSourceName;
 
@@ -151,6 +152,28 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetScheduleAdBreaks()
         {
             return this._scheduleAdBreaks != null && this._scheduleAdBreaks.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduleEntryType. 
+        /// <para>
+        /// The type of schedule entry.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: PROGRAM or FILLER_SLATE.
+        /// </para>
+        /// </summary>
+        public ScheduleEntryType ScheduleEntryType
+        {
+            get { return this._scheduleEntryType; }
+            set { this._scheduleEntryType = value; }
+        }
+
+        // Check to see if ScheduleEntryType property is set
+        internal bool IsSetScheduleEntryType()
+        {
+            return this._scheduleEntryType != null;
         }
 
         /// <summary>

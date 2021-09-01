@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// The ouput configuration for this channel.
+    /// The output configuration for this channel.
     /// </summary>
     public partial class RequestOutputItem
     {

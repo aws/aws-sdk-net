@@ -100,6 +100,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     unmarshalledObject.ScheduleAdBreaks = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ScheduleEntryType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ScheduleEntryType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SourceLocationName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

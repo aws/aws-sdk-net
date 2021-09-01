@@ -57,6 +57,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RelativeProgram);
             }
 
+            if(requestObject.IsSetScheduledStartTimeMillis())
+            {
+                context.Writer.WritePropertyName("ScheduledStartTimeMillis");
+                context.Writer.Write(requestObject.ScheduledStartTimeMillis);
+            }
+
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");

@@ -38,6 +38,7 @@ namespace Amazon.MediaTailor.Model
         private string _channelName;
         private DateTime? _creationTime;
         private string _programName;
+        private DateTime? _scheduledStartTime;
         private string _sourceLocationName;
         private string _vodSourceName;
 
@@ -129,6 +130,26 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetProgramName()
         {
             return this._programName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduledStartTime. 
+        /// <para>
+        /// The date and time that the program is scheduled to start in ISO 8601 format and Coordinated
+        /// Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March
+        /// 27, 2021 at 17:48:16.751 UTC.
+        /// </para>
+        /// </summary>
+        public DateTime ScheduledStartTime
+        {
+            get { return this._scheduledStartTime.GetValueOrDefault(); }
+            set { this._scheduledStartTime = value; }
+        }
+
+        // Check to see if ScheduledStartTime property is set
+        internal bool IsSetScheduledStartTime()
+        {
+            return this._scheduledStartTime.HasValue; 
         }
 
         /// <summary>

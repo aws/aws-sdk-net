@@ -35,6 +35,7 @@ namespace Amazon.MediaTailor.Model
     public partial class CreateChannelRequest : AmazonMediaTailorRequest
     {
         private string _channelName;
+        private SlateSource _fillerSlate;
         private List<RequestOutputItem> _outputs = new List<RequestOutputItem>();
         private PlaybackMode _playbackMode;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -59,6 +60,25 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FillerSlate. 
+        /// <para>
+        /// The slate used to fill gaps between programs in the schedule. You must configure filler
+        /// slate if your channel uses an LINEAR PlaybackMode.
+        /// </para>
+        /// </summary>
+        public SlateSource FillerSlate
+        {
+            get { return this._fillerSlate; }
+            set { this._fillerSlate = value; }
+        }
+
+        // Check to see if FillerSlate property is set
+        internal bool IsSetFillerSlate()
+        {
+            return this._fillerSlate != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Outputs. 
         /// <para>
         /// The channel's output properties.
@@ -80,7 +100,17 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property PlaybackMode. 
         /// <para>
-        /// The type of playback mode for this channel. The only supported value is LOOP.
+        /// The type of playback mode to use for this channel.
+        /// </para>
+        ///  
+        /// <para>
+        /// LINEAR - The programs in the schedule play once back-to-back in the schedule.
+        /// </para>
+        ///  
+        /// <para>
+        /// LOOP - The programs in the schedule play back-to-back in an endless loop. When the
+        /// last program in the schedule stops playing, playback loops back to the first program
+        /// in the schedule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
