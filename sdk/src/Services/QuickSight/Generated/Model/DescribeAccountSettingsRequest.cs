@@ -30,8 +30,8 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccountSettings operation.
-    /// Describes the settings that were used when your QuickSight subscription was first
-    /// created in this Amazon Web Services account;.
+    /// Describes the settings that were used when your Amazon QuickSight subscription was
+    /// first created in this Amazon Web Services account.
     /// </summary>
     public partial class DescribeAccountSettingsRequest : AmazonQuickSightRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID for the Amazon Web Services account; that contains the settings that you want
+        /// The ID for the Amazon Web Services account that contains the settings that you want
         /// to list.
         /// </para>
         /// </summary>

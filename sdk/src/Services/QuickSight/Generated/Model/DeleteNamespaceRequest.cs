@@ -43,7 +43,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID for the Amazon Web Services account; that you want to delete the QuickSight
+        /// The ID for the Amazon Web Services account that you want to delete the Amazon QuickSight
         /// namespace from.
         /// </para>
         /// </summary>

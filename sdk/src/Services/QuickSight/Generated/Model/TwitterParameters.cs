@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Twitter parameters.
+    /// The parameters for Twitter.
     /// </summary>
     public partial class TwitterParameters
     {

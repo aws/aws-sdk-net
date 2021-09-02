@@ -35,11 +35,11 @@ namespace Amazon.QuickSight.Model
     /// 
     ///  
     /// <para>
-    /// A dashboard is an entity in QuickSight that identifies QuickSight reports, created
-    /// from analyses. You can share QuickSight dashboards. With the right permissions, you
-    /// can create scheduled email reports from them. If you have the correct permissions,
-    /// you can create a dashboard from a template that exists in a different Amazon Web Services
-    /// account;.
+    /// A dashboard is an entity in Amazon QuickSight that identifies Amazon QuickSight reports,
+    /// created from analyses. You can share Amazon QuickSight dashboards. With the right
+    /// permissions, you can create scheduled email reports from them. If you have the correct
+    /// permissions, you can create a dashboard from a template that exists in a different
+    /// Amazon Web Services account.
     /// </para>
     /// </summary>
     public partial class CreateDashboardRequest : AmazonQuickSightRequest
@@ -58,7 +58,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the Amazon Web Services account; where you want to create the dashboard.
+        /// The ID of the Amazon Web Services account where you want to create the dashboard.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -77,7 +77,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DashboardId. 
         /// <para>
-        /// The ID for the dashboard, also added to the IAM policy.
+        /// The ID for the dashboard, also added to the IAMpolicy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -102,9 +102,9 @@ namespace Amazon.QuickSight.Model
         /// <para>
         ///  <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status
         /// can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>,
-        /// QuickSight disables the left filter pane on the published dashboard, which can be
-        /// used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default.
-        /// 
+        /// Amazon QuickSight disables the left filter pane on the published dashboard, which
+        /// can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by
+        /// default. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -176,7 +176,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property Permissions. 
         /// <para>
         /// A structure that contains the permissions of the dashboard. You can use this structure
-        /// for granting permissions by providing a list of IAM action information for each principal
+        /// for granting permissions by providing a list of IAMaction information for each principal
         /// ARN. 
         /// </para>
         ///  
@@ -206,8 +206,8 @@ namespace Amazon.QuickSight.Model
         /// a dashboard from an analysis, first convert the analysis to a template by using the
         /// <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify the
         /// Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN
-        /// can contain any Amazon Web Services account; and any QuickSight-supported Amazon Web
-        /// Services Region;. 
+        /// can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon
+        /// Web Services Region;. 
         /// </para>
         ///  
         /// <para>
@@ -254,7 +254,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the theme that is being used for this dashboard.
         /// If you add a value for this field, it overrides the value that is used in the source
-        /// entity. The theme ARN must exist in the same Amazon Web Services account; where you
+        /// entity. The theme ARN must exist in the same Amazon Web Services account where you
         /// create the dashboard.
         /// </para>
         /// </summary>

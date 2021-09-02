@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteIAMPolicyAssignment operation.
-    /// Deletes an existing IAM policy assignment.
+    /// Deletes an existing IAMpolicy assignment.
     /// </summary>
     public partial class DeleteIAMPolicyAssignmentRequest : AmazonQuickSightRequest
     {
@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The Amazon Web Services account; ID where you want to delete the IAM policy assignment.
+        /// The Amazon Web Services account ID where you want to delete the IAMpolicy assignment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

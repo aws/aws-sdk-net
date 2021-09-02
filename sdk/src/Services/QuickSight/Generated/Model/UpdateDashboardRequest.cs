@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDashboard operation.
-    /// Updates a dashboard in an Amazon Web Services account;.
+    /// Updates a dashboard in an Amazon Web Services account.
     /// 
     ///  <note> 
     /// <para>
@@ -54,7 +54,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the Amazon Web Services account; that contains the dashboard that you're
+        /// The ID of the Amazon Web Services account that contains the dashboard that you're
         /// updating.
         /// </para>
         /// </summary>
@@ -99,9 +99,9 @@ namespace Amazon.QuickSight.Model
         /// <para>
         ///  <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status
         /// can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>,
-        /// QuickSight disables the left filter pane on the published dashboard, which can be
-        /// used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default.
-        /// 
+        /// Amazon QuickSight disables the left filter pane on the published dashboard, which
+        /// can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by
+        /// default. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -178,8 +178,8 @@ namespace Amazon.QuickSight.Model
         /// a dashboard from an analysis, first convert the analysis to a template by using the
         /// <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify the
         /// Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>
-        /// ARN can contain any Amazon Web Services account; and any QuickSight-supported Amazon
-        /// Web Services Region;. 
+        /// ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported
+        /// Amazon Web Services Region;. 
         /// </para>
         ///  
         /// <para>
@@ -206,7 +206,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the theme that is being used for this dashboard.
         /// If you add a value for this field, it overrides the value that was originally associated
-        /// with the entity. The theme ARN must exist in the same Amazon Web Services account;
+        /// with the entity. The theme ARN must exist in the same Amazon Web Services account
         /// where you create the dashboard.
         /// </para>
         /// </summary>

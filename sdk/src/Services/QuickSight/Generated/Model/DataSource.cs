@@ -113,7 +113,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property DataSourceId. 
         /// <para>
         /// The ID of the data source. This ID is unique per Amazon Web Services Region; for each
-        /// Amazon Web Services account;.
+        /// Amazon Web Services account.
         /// </para>
         /// </summary>
         public string DataSourceId
@@ -206,8 +206,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SslProperties. 
         /// <para>
-        /// Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying
-        /// source.
+        /// Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to
+        /// your underlying source.
         /// </para>
         /// </summary>
         public SslProperties SslProperties
@@ -263,7 +263,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property VpcConnectionProperties. 
         /// <para>
         /// The VPC connection information. You need to use this parameter only when you want
-        /// QuickSight to use a VPC connection when connecting to your underlying source.
+        /// Amazon QuickSight to use a VPC connection when connecting to your underlying source.
         /// </para>
         /// </summary>
         public VpcConnectionProperties VpcConnectionProperties

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// PostgreSQL parameters.
+    /// The parameters for PostgreSQL.
     /// </summary>
     public partial class PostgreSqlParameters
     {

@@ -53,8 +53,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the Amazon Web Services account; where you want to store the new theme.
-        /// 
+        /// The ID of the Amazon Web Services account where you want to store the new theme. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -75,7 +74,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The ID of the theme that a custom theme will inherit from. All themes inherit from
         /// one of the starting themes defined by Amazon QuickSight. For a list of the starting
-        /// themes, use <code>ListThemes</code> or choose <b>Themes</b> from within a QuickSight
+        /// themes, use <code>ListThemes</code> or choose <b>Themes</b> from within a Amazon QuickSight
         /// analysis. 
         /// </para>
         /// </summary>
@@ -173,7 +172,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property ThemeId. 
         /// <para>
         /// An ID for the theme that you want to create. The theme ID is unique per Amazon Web
-        /// Services Region; in each Amazon Web Services account;.
+        /// Services Region in each Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

@@ -62,7 +62,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the Amazon Web Services account; that contains the theme alias to delete.
+        /// The ID of the Amazon Web Services account that contains the theme alias to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

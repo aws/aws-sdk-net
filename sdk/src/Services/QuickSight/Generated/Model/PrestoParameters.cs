@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Presto parameters.
+    /// The parameters for Presto.
     /// </summary>
     public partial class PrestoParameters
     {

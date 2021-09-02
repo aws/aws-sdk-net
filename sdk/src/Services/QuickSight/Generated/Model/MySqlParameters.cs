@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// MySQL parameters.
+    /// The parameters for MySQL.
     /// </summary>
     public partial class MySqlParameters
     {

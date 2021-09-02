@@ -43,8 +43,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AccountCustomization. 
         /// <para>
-        /// The QuickSight customizations you're updating in the current Amazon Web Services Region;.
-        /// 
+        /// The Amazon QuickSight customizations you're updating in the current Amazon Web Services
+        /// Region;. 
         /// </para>
         /// </summary>
         public AccountCustomization AccountCustomization
@@ -63,7 +63,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property Arn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for the updated customization for this Amazon Web Services
-        /// account;.
+        /// account.
         /// </para>
         /// </summary>
         public string Arn
@@ -81,8 +81,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID for the Amazon Web Services account; that you want to update QuickSight customizations
-        /// for.
+        /// The ID for the Amazon Web Services account that you want to update Amazon QuickSight
+        /// customizations for.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

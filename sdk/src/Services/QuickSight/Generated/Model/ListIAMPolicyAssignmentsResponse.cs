@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property IAMPolicyAssignments. 
         /// <para>
-        /// Information describing the IAM policy assignments.
+        /// Information describing the IAMpolicy assignments.
         /// </para>
         /// </summary>
         public List<IAMPolicyAssignmentSummary> IAMPolicyAssignments

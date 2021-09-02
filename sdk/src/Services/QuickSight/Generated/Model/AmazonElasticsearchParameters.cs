@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Amazon Elasticsearch Service parameters.
+    /// The parameters for Elasticsearch.
     /// </summary>
     public partial class AmazonElasticsearchParameters
     {
@@ -38,7 +38,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The Amazon Elasticsearch Service domain.
+        /// The Elasticsearch domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

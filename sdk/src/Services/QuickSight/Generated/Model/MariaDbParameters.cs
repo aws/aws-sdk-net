@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// MariaDB parameters.
+    /// The parameters for MariaDB.
     /// </summary>
     public partial class MariaDbParameters
     {

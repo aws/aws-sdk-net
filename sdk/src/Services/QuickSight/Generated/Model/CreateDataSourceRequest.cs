@@ -48,7 +48,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The Amazon Web Services account; ID.
+        /// The Amazon Web Services account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -67,8 +67,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Credentials. 
         /// <para>
-        /// The credentials QuickSight that uses to connect to your underlying source. Currently,
-        /// only credentials based on user name and password are supported.
+        /// The credentials Amazon QuickSight that uses to connect to your underlying source.
+        /// Currently, only credentials based on user name and password are supported.
         /// </para>
         /// </summary>
         public DataSourceCredentials Credentials
@@ -87,7 +87,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property DataSourceId. 
         /// <para>
         /// An ID for the data source. This ID is unique per Amazon Web Services Region; for each
-        /// Amazon Web Services account;. 
+        /// Amazon Web Services account. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -106,7 +106,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSourceParameters. 
         /// <para>
-        /// The parameters that QuickSight uses to connect to your underlying source.
+        /// The parameters that Amazon QuickSight uses to connect to your underlying source.
         /// </para>
         /// </summary>
         public DataSourceParameters DataSourceParameters
@@ -162,8 +162,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SslProperties. 
         /// <para>
-        /// Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying
-        /// source.
+        /// Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to
+        /// your underlying source.
         /// </para>
         /// </summary>
         public SslProperties SslProperties
@@ -201,14 +201,11 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the data source. Currently, the supported types for this operation are:
-        /// <code>ATHENA, AURORA, AURORA_POSTGRESQL, AMAZON_ELASTICSEARCH, MARIADB, MYSQL, POSTGRESQL,
-        /// PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>. Use <code>ListDataSources</code>
-        /// to return a list of all data sources.
+        /// The type of the data source. To return a list of all data sources, use <code>ListDataSources</code>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>AMAZON_ELASTICSEARCH</code> is for Amazon managed Elasticsearch Service.
+        /// Use <code>AMAZON_ELASTICSEARCH</code> for Amazon Elasticsearch Service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -227,8 +224,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property VpcConnectionProperties. 
         /// <para>
-        /// Use this parameter only when you want QuickSight to use a VPC connection when connecting
-        /// to your underlying source.
+        /// Use this parameter only when you want Amazon QuickSight to use a VPC connection when
+        /// connecting to your underlying source.
         /// </para>
         /// </summary>
         public VpcConnectionProperties VpcConnectionProperties

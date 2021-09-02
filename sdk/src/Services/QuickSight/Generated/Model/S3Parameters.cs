@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// S3 parameters.
+    /// The parameters for S3.
     /// </summary>
     public partial class S3Parameters
     {
@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property ManifestFileLocation. 
         /// <para>
         /// Location of the Amazon S3 manifest file. This is NULL if the manifest file was uploaded
-        /// into QuickSight.
+        /// into Amazon QuickSight.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

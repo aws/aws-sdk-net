@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AssignmentName. 
         /// <para>
-        /// A name for the IAM policy assignment.
+        /// A name for the IAMpolicy assignment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

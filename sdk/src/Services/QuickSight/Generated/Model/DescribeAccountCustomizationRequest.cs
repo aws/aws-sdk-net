@@ -30,10 +30,10 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccountCustomization operation.
-    /// Describes the customizations associated with the provided Amazon Web Services account;
-    /// and Amazon QuickSight namespace in an Amazon Web Services Region;. The QuickSight
-    /// console evaluates which customizations to apply by running this API operation with
-    /// the <code>Resolved</code> flag included. 
+    /// Describes the customizations associated with the provided Amazon Web Services account
+    /// and Amazon Amazon QuickSight namespace in an Amazon Web Services Region;. The Amazon
+    /// QuickSight console evaluates which customizations to apply by running this API operation
+    /// with the <code>Resolved</code> flag included. 
     /// 
     ///  
     /// <para>
@@ -42,19 +42,21 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>Amazon Web Services account;</code> - The Amazon Web Services account; exists
+    ///  <code>Amazon Web Services account</code> - The Amazon Web Services account exists
     /// at the top of the hierarchy. It has the potential to use all of the Amazon Web Services
-    /// Regions; and AWS Services. When you subscribe to QuickSight, you choose one Amazon
-    /// Web Services Region; to use as your home Region. That's where your free SPICE capacity
-    /// is located. You can use QuickSight in any supported Amazon Web Services Region;. 
+    /// Regions; and AWS Services. When you subscribe to Amazon QuickSight, you choose one
+    /// Amazon Web Services Region; to use as your home Region. That's where your free SPICE
+    /// capacity is located. You can use Amazon QuickSight in any supported Amazon Web Services
+    /// Region;. 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <code>Amazon Web Services Region;</code> - In each Amazon Web Services Region; where
-    /// you sign in to QuickSight at least once, QuickSight acts as a separate instance of
-    /// the same service. If you have a user directory, it resides in us-east-1, which is
-    /// the US East (N. Virginia). Generally speaking, these users have access to QuickSight
-    /// in any Amazon Web Services Region;, unless they are constrained to a namespace. 
+    /// you sign in to Amazon QuickSight at least once, Amazon QuickSight acts as a separate
+    /// instance of the same service. If you have a user directory, it resides in us-east-1,
+    /// which is the US East (N. Virginia). Generally speaking, these users have access to
+    /// Amazon QuickSight in any Amazon Web Services Region;, unless they are constrained
+    /// to a namespace. 
     /// </para>
     ///  
     /// <para>
@@ -79,22 +81,22 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  <code>Namespace</code> - A QuickSight namespace is a partition that contains users
-    /// and assets (data sources, datasets, dashboards, and so on). To access assets that
-    /// are in a specific namespace, users and groups must also be part of the same namespace.
+    ///  <code>Namespace</code> - A Amazon QuickSight namespace is a partition that contains
+    /// users and assets (data sources, datasets, dashboards, and so on). To access assets
+    /// that are in a specific namespace, users and groups must also be part of the same namespace.
     /// People who share a namespace are completely isolated from users and assets in other
-    /// namespaces, even if they are in the same Amazon Web Services account; and Amazon Web
+    /// namespaces, even if they are in the same Amazon Web Services account and Amazon Web
     /// Services Region;.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <code>Applied customizations</code> - Within an Amazon Web Services Region;, a set
-    /// of QuickSight customizations can apply to an Amazon Web Services account; or to a
-    /// namespace. Settings that you apply to a namespace override settings that you apply
-    /// to an Amazon Web Services account;. All settings are isolated to a single Amazon Web
-    /// Services Region;. To apply them in other Amazon Web Services Regions;, run the <code>CreateAccountCustomization</code>
-    /// command in each Amazon Web Services Region; where you want to apply the same customizations.
-    /// 
+    /// of Amazon QuickSight customizations can apply to an Amazon Web Services account or
+    /// to a namespace. Settings that you apply to a namespace override settings that you
+    /// apply to an Amazon Web Services account. All settings are isolated to a single Amazon
+    /// Web Services Region;. To apply them in other Amazon Web Services Regions;, run the
+    /// <code>CreateAccountCustomization</code> command in each Amazon Web Services Region;
+    /// where you want to apply the same customizations. 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -107,8 +109,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID for the Amazon Web Services account; that you want to describe QuickSight customizations
-        /// for.
+        /// The ID for the Amazon Web Services account that you want to describe Amazon QuickSight
+        /// customizations for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -127,7 +129,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The QuickSight namespace that you want to describe QuickSight customizations for.
+        /// The Amazon QuickSight namespace that you want to describe Amazon QuickSight customizations
+        /// for.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
@@ -147,10 +150,10 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property Resolved. 
         /// <para>
         /// The <code>Resolved</code> flag works with the other parameters to determine which
-        /// view of QuickSight customizations is returned. You can add this flag to your command
-        /// to use the same view that QuickSight uses to identify which customizations to apply
-        /// to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations
-        /// that are configured at different levels. 
+        /// view of Amazon QuickSight customizations is returned. You can add this flag to your
+        /// command to use the same view that Amazon QuickSight uses to identify which customizations
+        /// to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to
+        /// reveal customizations that are configured at different levels. 
         /// </para>
         /// </summary>
         public bool Resolved

@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The Amazon Web Services account; ID.
+        /// The Amazon Web Services account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property DataSourceId. 
         /// <para>
         /// The ID of the data source. This ID is unique per Amazon Web Services Region; for each
-        /// Amazon Web Services account;.
+        /// Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

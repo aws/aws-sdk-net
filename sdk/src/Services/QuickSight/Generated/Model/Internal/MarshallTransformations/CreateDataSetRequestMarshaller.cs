@@ -106,6 +106,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DataSetId);
                 }
 
+                if(publicRequest.IsSetDataSetUsageConfiguration())
+                {
+                    context.Writer.WritePropertyName("DataSetUsageConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DataSetUsageConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DataSetUsageConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetFieldFolders())
                 {
                     context.Writer.WritePropertyName("FieldFolders");

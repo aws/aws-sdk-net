@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A metadata error structure for an analysis.
+    /// Analysis error.
     /// </summary>
     public partial class AnalysisError
     {

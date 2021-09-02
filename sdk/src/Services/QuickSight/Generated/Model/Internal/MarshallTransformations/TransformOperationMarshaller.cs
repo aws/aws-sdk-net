@@ -111,6 +111,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetUntagColumnOperation())
+            {
+                context.Writer.WritePropertyName("UntagColumnOperation");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = UntagColumnOperationMarshaller.Instance;
+                marshaller.Marshall(requestObject.UntagColumnOperation, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

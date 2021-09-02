@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A template object. A <i>template</i> is an entity in QuickSight that encapsulates
+    /// A template object. A <i>template</i> is an entity in Amazon QuickSight that encapsulates
     /// the metadata required to create an analysis and that you can use to create a dashboard.
     /// A template adds a layer of abstraction by using placeholders to replace the dataset
     /// associated with an analysis. You can use templates to create dashboards by replacing
@@ -129,7 +129,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property TemplateId. 
         /// <para>
         /// The ID for the template. This is unique per Amazon Web Services Region; for each Amazon
-        /// Web Services account;.
+        /// Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

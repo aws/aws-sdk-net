@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Oracle parameters.
+    /// The parameters for Oracle.
     /// </summary>
     public partial class OracleParameters
     {

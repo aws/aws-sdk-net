@@ -35,12 +35,12 @@ namespace Amazon.QuickSight.Model
     /// 
     ///  
     /// <para>
-    /// A <i>template</i> is an entity in QuickSight that encapsulates the metadata required
-    /// to create an analysis and that you can use to create s dashboard. A template adds
-    /// a layer of abstraction by using placeholders to replace the dataset associated with
-    /// the analysis. You can use templates to create dashboards by replacing dataset placeholders
-    /// with datasets that follow the same schema that was used to create the source analysis
-    /// and template.
+    /// A <i>template</i> is an entity in Amazon QuickSight that encapsulates the metadata
+    /// required to create an analysis and that you can use to create s dashboard. A template
+    /// adds a layer of abstraction by using placeholders to replace the dataset associated
+    /// with the analysis. You can use templates to create dashboards by replacing dataset
+    /// placeholders with datasets that follow the same schema that was used to create the
+    /// source analysis and template.
     /// </para>
     /// </summary>
     public partial class CreateTemplateRequest : AmazonQuickSightRequest
@@ -56,8 +56,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID for the Amazon Web Services account; that the group is in. Currently, you use
-        /// the ID for the Amazon Web Services account; that contains your Amazon QuickSight account.
+        /// The ID for the Amazon Web Services account that the group is in. You use the ID for
+        /// the Amazon Web Services account that contains your Amazon QuickSight account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -120,7 +120,7 @@ namespace Amazon.QuickSight.Model
         /// an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of
         /// the source template. For <code>SourceAnalysis</code>, specify the ARN of the source
         /// analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services
-        /// account; and any QuickSight-supported Amazon Web Services Region;. 
+        /// account and any Amazon QuickSight-supported Amazon Web Services Region;. 
         /// </para>
         ///  
         /// <para>
@@ -166,7 +166,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property TemplateId. 
         /// <para>
         /// An ID for the template that you want to create. This template is unique per Amazon
-        /// Web Services Region; in each Amazon Web Services account;.
+        /// Web Services Region; in each Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

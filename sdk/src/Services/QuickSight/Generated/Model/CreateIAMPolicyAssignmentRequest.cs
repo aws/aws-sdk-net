@@ -30,9 +30,9 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateIAMPolicyAssignment operation.
-    /// Creates an assignment with one specified IAM policy, identified by its Amazon Resource
+    /// Creates an assignment with one specified IAMpolicy, identified by its Amazon Resource
     /// Name (ARN). This policy assignment is attached to the specified groups or users of
-    /// Amazon QuickSight. Assignment names are unique per Amazon Web Services account;. To
+    /// Amazon QuickSight. Assignment names are unique per Amazon Web Services account. To
     /// avoid overwriting rules in other namespaces, use assignment names that are unique.
     /// </summary>
     public partial class CreateIAMPolicyAssignmentRequest : AmazonQuickSightRequest
@@ -48,7 +48,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property AssignmentName. 
         /// <para>
         /// The name of the assignment, also called a rule. It must be unique within an Amazon
-        /// Web Services account;.
+        /// Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -101,8 +101,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the Amazon Web Services account; where you want to assign an IAM policy
-        /// to QuickSight users or groups.
+        /// The ID of the Amazon Web Services account where you want to assign an IAMpolicy to
+        /// Amazon QuickSight users or groups.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -121,7 +121,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Identities. 
         /// <para>
-        /// The QuickSight users, groups, or both that you want to assign the policy to.
+        /// The Amazon QuickSight users, groups, or both that you want to assign the policy to.
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Identities
@@ -158,8 +158,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PolicyArn. 
         /// <para>
-        /// The ARN for the IAM policy to apply to the QuickSight users and groups specified in
-        /// this assignment.
+        /// The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups specified
+        /// in this assignment.
         /// </para>
         /// </summary>
         public string PolicyArn

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Amazon Web Services IoT Analytics parameters.
+    /// The parameters for IoT Analytics.
     /// </summary>
     public partial class AwsIotAnalyticsParameters
     {

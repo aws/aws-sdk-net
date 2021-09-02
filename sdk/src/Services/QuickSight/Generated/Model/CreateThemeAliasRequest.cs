@@ -63,7 +63,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the Amazon Web Services account; that contains the theme for the new theme
+        /// The ID of the Amazon Web Services account that contains the theme for the new theme
         /// alias.
         /// </para>
         /// </summary>

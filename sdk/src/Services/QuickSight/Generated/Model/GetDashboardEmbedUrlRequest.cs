@@ -31,8 +31,8 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the GetDashboardEmbedUrl operation.
     /// Generates a session URL and authorization code that you can use to embed an Amazon
-    /// QuickSight read-only dashboard in your web server code. Before you use this command,
-    /// make sure that you have configured the dashboards and permissions. 
+    /// Amazon QuickSight read-only dashboard in your web server code. Before you use this
+    /// command, make sure that you have configured the dashboards and permissions. 
     /// 
     ///  
     /// <para>
@@ -86,9 +86,10 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// A list of one or more dashboard IDs that you want to add to a session that includes
         /// anonymous users. The <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code>
-        /// for this to work, because other identity types authenticate as QuickSight or IAM users.
-        /// For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3
-        /// identity-type ANONYMOUS</code>", the session can access all three dashboards. 
+        /// for this to work, because other identity types authenticate as Amazon QuickSight or
+        /// IAMusers. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2
+        /// dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
@@ -107,7 +108,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID for the Amazon Web Services account; that contains the dashboard that you're
+        /// The ID for the Amazon Web Services account that contains the dashboard that you're
         /// embedding.
         /// </para>
         /// </summary>
@@ -165,8 +166,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The Amazon QuickSight namespace that the user virtually belongs to. If you are not
-        /// using an Amazon QuickSight custom namespace, set this to <code>default</code>.
+        /// The Amazon QuickSight namespace that contains the dashboard IDs in this request. If
+        /// you're not using a custom namespace, set <code>Namespace = default</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
@@ -225,11 +226,11 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// Adds persistence of state for the user session in an embedded dashboard. Persistence
         /// applies to the sheet and the parameter settings. These are control settings that the
-        /// dashboard subscriber (QuickSight reader) chooses while viewing the dashboard. If this
-        /// is set to <code>TRUE</code>, the settings are the same when the subscriber reopens
-        /// the same dashboard URL. The state is stored in QuickSight, not in a browser cookie.
-        /// If this is set to FALSE, the state of the user session is not persisted. The default
-        /// is <code>FALSE</code>.
+        /// dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard.
+        /// If this is set to <code>TRUE</code>, the settings are the same when the subscriber
+        /// reopens the same dashboard URL. The state is stored in Amazon QuickSight, not in a
+        /// browser cookie. If this is set to FALSE, the state of the user session is not persisted.
+        /// The default is <code>FALSE</code>.
         /// </para>
         /// </summary>
         public bool StatePersistenceEnabled
@@ -280,12 +281,12 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// IAM users and IAM role-based sessions authenticated through Federated Single Sign-On
-        /// using SAML, OpenID Connect, or IAM federation.
+        /// IAMusers and IAMrole-based sessions authenticated through Federated Single Sign-On
+        /// using SAML, OpenID Connect, or IAMfederation.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
+        /// Omit this parameter for users in the third group – IAMusers and IAM role-based sessions.
         /// </para>
         /// </summary>
         public string UserArn

@@ -34,8 +34,27 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class LogicalTableSource
     {
+        private string _dataSetArn;
         private JoinInstruction _joinInstruction;
         private string _physicalTableId;
+
+        /// <summary>
+        /// Gets and sets the property DataSetArn. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of the parent dataset.
+        /// </para>
+        /// </summary>
+        public string DataSetArn
+        {
+            get { return this._dataSetArn; }
+            set { this._dataSetArn = value; }
+        }
+
+        // Check to see if DataSetArn property is set
+        internal bool IsSetDataSetArn()
+        {
+            return this._dataSetArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property JoinInstruction. 

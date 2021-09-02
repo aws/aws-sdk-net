@@ -116,7 +116,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PermissionPolicy. 
         /// <para>
-        /// The type of permissions to use when interpretting the permissions for RLS. <code>DENY_ACCESS</code>
+        /// The type of permissions to use when interpreting the permissions for RLS. <code>DENY_ACCESS</code>
         /// is included for backward compatibility only.
         /// </para>
         /// </summary>

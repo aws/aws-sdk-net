@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Amazon Redshift parameters. The <code>ClusterId</code> field can be blank if <code>Host</code>
-    /// and <code>Port</code> are both set. The <code>Host</code> and <code>Port</code> fields
-    /// can be blank if the <code>ClusterId</code> field is set.
+    /// The parameters for Amazon Redshift. The <code>ClusterId</code> field can be blank
+    /// if <code>Host</code> and <code>Port</code> are both set. The <code>Host</code> and
+    /// <code>Port</code> fields can be blank if the <code>ClusterId</code> field is set.
     /// </summary>
     public partial class RedshiftParameters
     {

@@ -124,16 +124,17 @@ namespace Amazon.QuickSight
         /// <summary>
         /// Creates Amazon QuickSight customizations the current Amazon Web Services Region;.
         /// Currently, you can add a custom default theme by using the <code>CreateAccountCustomization</code>
-        /// or <code>UpdateAccountCustomization</code> API operation. To further customize QuickSight
-        /// by removing QuickSight sample assets and videos for all new users, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing
-        /// QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> 
+        /// or <code>UpdateAccountCustomization</code> API operation. To further customize Amazon
+        /// QuickSight by removing Amazon QuickSight sample assets and videos for all new users,
+        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing
+        /// Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> 
         /// 
         ///  
         /// <para>
-        /// You can create customizations for your Amazon Web Services account; or, if you specify
-        /// a namespace, for a QuickSight namespace instead. Customizations that apply to a namespace
-        /// always override customizations that apply to an Amazon Web Services account;. To find
-        /// out which customizations apply, use the <code>DescribeAccountCustomization</code>
+        /// You can create customizations for your Amazon Web Services account or, if you specify
+        /// a namespace, for a Amazon QuickSight namespace instead. Customizations that apply
+        /// to a namespace always override customizations that apply to an Amazon Web Services
+        /// account. To find out which customizations apply, use the <code>DescribeAccountCustomization</code>
         /// API operation.
         /// </para>
         ///  
@@ -182,16 +183,17 @@ namespace Amazon.QuickSight
         /// <summary>
         /// Creates Amazon QuickSight customizations the current Amazon Web Services Region;.
         /// Currently, you can add a custom default theme by using the <code>CreateAccountCustomization</code>
-        /// or <code>UpdateAccountCustomization</code> API operation. To further customize QuickSight
-        /// by removing QuickSight sample assets and videos for all new users, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing
-        /// QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> 
+        /// or <code>UpdateAccountCustomization</code> API operation. To further customize Amazon
+        /// QuickSight by removing Amazon QuickSight sample assets and videos for all new users,
+        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing
+        /// Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> 
         /// 
         ///  
         /// <para>
-        /// You can create customizations for your Amazon Web Services account; or, if you specify
-        /// a namespace, for a QuickSight namespace instead. Customizations that apply to a namespace
-        /// always override customizations that apply to an Amazon Web Services account;. To find
-        /// out which customizations apply, use the <code>DescribeAccountCustomization</code>
+        /// You can create customizations for your Amazon Web Services account or, if you specify
+        /// a namespace, for a Amazon QuickSight namespace instead. Customizations that apply
+        /// to a namespace always override customizations that apply to an Amazon Web Services
+        /// account. To find out which customizations apply, use the <code>DescribeAccountCustomization</code>
         /// API operation.
         /// </para>
         ///  
@@ -269,9 +271,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAnalysis">REST API Reference for CreateAnalysis Operation</seealso>
         CreateAnalysisResponse CreateAnalysis(CreateAnalysisRequest request);
@@ -307,9 +309,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAnalysis">REST API Reference for CreateAnalysis Operation</seealso>
         Task<CreateAnalysisResponse> CreateAnalysisAsync(CreateAnalysisRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -325,11 +327,11 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// A dashboard is an entity in QuickSight that identifies QuickSight reports, created
-        /// from analyses. You can share QuickSight dashboards. With the right permissions, you
-        /// can create scheduled email reports from them. If you have the correct permissions,
-        /// you can create a dashboard from a template that exists in a different Amazon Web Services
-        /// account;.
+        /// A dashboard is an entity in Amazon QuickSight that identifies Amazon QuickSight reports,
+        /// created from analyses. You can share Amazon QuickSight dashboards. With the right
+        /// permissions, you can create scheduled email reports from them. If you have the correct
+        /// permissions, you can create a dashboard from a template that exists in a different
+        /// Amazon Web Services account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDashboard service method.</param>
@@ -355,9 +357,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateDashboard">REST API Reference for CreateDashboard Operation</seealso>
         CreateDashboardResponse CreateDashboard(CreateDashboardRequest request);
@@ -370,11 +372,11 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// A dashboard is an entity in QuickSight that identifies QuickSight reports, created
-        /// from analyses. You can share QuickSight dashboards. With the right permissions, you
-        /// can create scheduled email reports from them. If you have the correct permissions,
-        /// you can create a dashboard from a template that exists in a different Amazon Web Services
-        /// account;.
+        /// A dashboard is an entity in Amazon QuickSight that identifies Amazon QuickSight reports,
+        /// created from analyses. You can share Amazon QuickSight dashboards. With the right
+        /// permissions, you can create scheduled email reports from them. If you have the correct
+        /// permissions, you can create a dashboard from a template that exists in a different
+        /// Amazon Web Services account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDashboard service method.</param>
@@ -403,9 +405,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateDashboard">REST API Reference for CreateDashboard Operation</seealso>
         Task<CreateDashboardResponse> CreateDashboardAsync(CreateDashboardRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -450,9 +452,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateDataSet">REST API Reference for CreateDataSet Operation</seealso>
         CreateDataSetResponse CreateDataSet(CreateDataSetRequest request);
@@ -497,9 +499,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateDataSet">REST API Reference for CreateDataSet Operation</seealso>
         Task<CreateDataSetResponse> CreateDataSetAsync(CreateDataSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -626,9 +628,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateFolder">REST API Reference for CreateFolder Operation</seealso>
         CreateFolderResponse CreateFolder(CreateFolderRequest request);
@@ -673,9 +675,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateFolder">REST API Reference for CreateFolder Operation</seealso>
         Task<CreateFolderResponse> CreateFolderAsync(CreateFolderRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -717,9 +719,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateFolderMembership">REST API Reference for CreateFolderMembership Operation</seealso>
         CreateFolderMembershipResponse CreateFolderMembership(CreateFolderMembershipRequest request);
@@ -761,9 +763,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateFolderMembership">REST API Reference for CreateFolderMembership Operation</seealso>
         Task<CreateFolderMembershipResponse> CreateFolderMembershipAsync(CreateFolderMembershipRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -958,9 +960,9 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Creates an assignment with one specified IAM policy, identified by its Amazon Resource
+        /// Creates an assignment with one specified IAMpolicy, identified by its Amazon Resource
         /// Name (ARN). This policy assignment is attached to the specified groups or users of
-        /// Amazon QuickSight. Assignment names are unique per Amazon Web Services account;. To
+        /// Amazon QuickSight. Assignment names are unique per Amazon Web Services account. To
         /// avoid overwriting rules in other namespaces, use assignment names that are unique.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIAMPolicyAssignment service method.</param>
@@ -997,9 +999,9 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Creates an assignment with one specified IAM policy, identified by its Amazon Resource
+        /// Creates an assignment with one specified IAMpolicy, identified by its Amazon Resource
         /// Name (ARN). This policy assignment is attached to the specified groups or users of
-        /// Amazon QuickSight. Assignment names are unique per Amazon Web Services account;. To
+        /// Amazon QuickSight. Assignment names are unique per Amazon Web Services account. To
         /// avoid overwriting rules in other namespaces, use assignment names that are unique.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIAMPolicyAssignment service method.</param>
@@ -1140,13 +1142,14 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// A namespace allows you to isolate the QuickSight users and groups that are registered
-        /// for that namespace. Users that access the namespace can share assets only with other
-        /// users or groups in the same namespace. They can't see users and groups in other namespaces.
-        /// You can create a namespace after your Amazon Web Services account; is subscribed to
-        /// QuickSight. The namespace must be unique within the Amazon Web Services account;.
-        /// By default, there is a limit of 100 namespaces per Amazon Web Services account;. To
-        /// increase your limit, create a ticket with Amazon Web Services Support. 
+        /// A namespace allows you to isolate the Amazon QuickSight users and groups that are
+        /// registered for that namespace. Users that access the namespace can share assets only
+        /// with other users or groups in the same namespace. They can't see users and groups
+        /// in other namespaces. You can create a namespace after your Amazon Web Services account
+        /// is subscribed to Amazon QuickSight. The namespace must be unique within the Amazon
+        /// Web Services account. By default, there is a limit of 100 namespaces per Amazon Web
+        /// Services account. To increase your limit, create a ticket with Amazon Web Services
+        /// Support. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNamespace service method.</param>
@@ -1195,13 +1198,14 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// A namespace allows you to isolate the QuickSight users and groups that are registered
-        /// for that namespace. Users that access the namespace can share assets only with other
-        /// users or groups in the same namespace. They can't see users and groups in other namespaces.
-        /// You can create a namespace after your Amazon Web Services account; is subscribed to
-        /// QuickSight. The namespace must be unique within the Amazon Web Services account;.
-        /// By default, there is a limit of 100 namespaces per Amazon Web Services account;. To
-        /// increase your limit, create a ticket with Amazon Web Services Support. 
+        /// A namespace allows you to isolate the Amazon QuickSight users and groups that are
+        /// registered for that namespace. Users that access the namespace can share assets only
+        /// with other users or groups in the same namespace. They can't see users and groups
+        /// in other namespaces. You can create a namespace after your Amazon Web Services account
+        /// is subscribed to Amazon QuickSight. The namespace must be unique within the Amazon
+        /// Web Services account. By default, there is a limit of 100 namespaces per Amazon Web
+        /// Services account. To increase your limit, create a ticket with Amazon Web Services
+        /// Support. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNamespace service method.</param>
@@ -1257,12 +1261,12 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// A <i>template</i> is an entity in QuickSight that encapsulates the metadata required
-        /// to create an analysis and that you can use to create s dashboard. A template adds
-        /// a layer of abstraction by using placeholders to replace the dataset associated with
-        /// the analysis. You can use templates to create dashboards by replacing dataset placeholders
-        /// with datasets that follow the same schema that was used to create the source analysis
-        /// and template.
+        /// A <i>template</i> is an entity in Amazon QuickSight that encapsulates the metadata
+        /// required to create an analysis and that you can use to create s dashboard. A template
+        /// adds a layer of abstraction by using placeholders to replace the dataset associated
+        /// with the analysis. You can use templates to create dashboards by replacing dataset
+        /// placeholders with datasets that follow the same schema that was used to create the
+        /// source analysis and template.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTemplate service method.</param>
@@ -1297,9 +1301,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTemplate">REST API Reference for CreateTemplate Operation</seealso>
         CreateTemplateResponse CreateTemplate(CreateTemplateRequest request);
@@ -1312,12 +1316,12 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// A <i>template</i> is an entity in QuickSight that encapsulates the metadata required
-        /// to create an analysis and that you can use to create s dashboard. A template adds
-        /// a layer of abstraction by using placeholders to replace the dataset associated with
-        /// the analysis. You can use templates to create dashboards by replacing dataset placeholders
-        /// with datasets that follow the same schema that was used to create the source analysis
-        /// and template.
+        /// A <i>template</i> is an entity in Amazon QuickSight that encapsulates the metadata
+        /// required to create an analysis and that you can use to create s dashboard. A template
+        /// adds a layer of abstraction by using placeholders to replace the dataset associated
+        /// with the analysis. You can use templates to create dashboards by replacing dataset
+        /// placeholders with datasets that follow the same schema that was used to create the
+        /// source analysis and template.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTemplate service method.</param>
@@ -1355,9 +1359,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTemplate">REST API Reference for CreateTemplate Operation</seealso>
         Task<CreateTemplateResponse> CreateTemplateAsync(CreateTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1393,9 +1397,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTemplateAlias">REST API Reference for CreateTemplateAlias Operation</seealso>
         CreateTemplateAliasResponse CreateTemplateAlias(CreateTemplateAliasRequest request);
@@ -1431,9 +1435,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTemplateAlias">REST API Reference for CreateTemplateAlias Operation</seealso>
         Task<CreateTemplateAliasResponse> CreateTemplateAliasAsync(CreateTemplateAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1482,9 +1486,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTheme">REST API Reference for CreateTheme Operation</seealso>
         CreateThemeResponse CreateTheme(CreateThemeRequest request);
@@ -1533,9 +1537,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTheme">REST API Reference for CreateTheme Operation</seealso>
         Task<CreateThemeResponse> CreateThemeAsync(CreateThemeRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1574,9 +1578,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateThemeAlias">REST API Reference for CreateThemeAlias Operation</seealso>
         CreateThemeAliasResponse CreateThemeAlias(CreateThemeAliasRequest request);
@@ -1615,9 +1619,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateThemeAlias">REST API Reference for CreateThemeAlias Operation</seealso>
         Task<CreateThemeAliasResponse> CreateThemeAliasAsync(CreateThemeAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1629,7 +1633,7 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Deletes all Amazon QuickSight customizations in this Amazon Web Services Region; for
-        /// the specified Amazon Web Services account; and QuickSight namespace.
+        /// the specified Amazon Web Services account and Amazon QuickSight namespace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountCustomization service method.</param>
         /// 
@@ -1662,7 +1666,7 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Deletes all Amazon QuickSight customizations in this Amazon Web Services Region; for
-        /// the specified Amazon Web Services account; and QuickSight namespace.
+        /// the specified Amazon Web Services account and Amazon QuickSight namespace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountCustomization service method.</param>
         /// <param name="cancellationToken">
@@ -1702,9 +1706,9 @@ namespace Amazon.QuickSight
         /// <summary>
         /// Deletes an analysis from Amazon QuickSight. You can optionally include a recovery
         /// window during which you can restore the analysis. If you don't specify a recovery
-        /// window value, the operation defaults to 30 days. QuickSight attaches a <code>DeletionTime</code>
+        /// window value, the operation defaults to 30 days. Amazon QuickSight attaches a <code>DeletionTime</code>
         /// stamp to the response that specifies the end of the recovery window. At the end of
-        /// the recovery window, QuickSight deletes the analysis permanently.
+        /// the recovery window, Amazon QuickSight deletes the analysis permanently.
         /// 
         ///  
         /// <para>
@@ -1715,9 +1719,9 @@ namespace Amazon.QuickSight
         /// </para>
         ///  
         /// <para>
-        /// An analysis that's scheduled for deletion isn't accessible in the QuickSight console.
-        /// To access it in the console, restore it. Deleting an analysis doesn't delete the dashboards
-        /// that you publish from it.
+        /// An analysis that's scheduled for deletion isn't accessible in the Amazon QuickSight
+        /// console. To access it in the console, restore it. Deleting an analysis doesn't delete
+        /// the dashboards that you publish from it.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAnalysis service method.</param>
@@ -1740,9 +1744,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAnalysis">REST API Reference for DeleteAnalysis Operation</seealso>
         DeleteAnalysisResponse DeleteAnalysis(DeleteAnalysisRequest request);
@@ -1752,9 +1756,9 @@ namespace Amazon.QuickSight
         /// <summary>
         /// Deletes an analysis from Amazon QuickSight. You can optionally include a recovery
         /// window during which you can restore the analysis. If you don't specify a recovery
-        /// window value, the operation defaults to 30 days. QuickSight attaches a <code>DeletionTime</code>
+        /// window value, the operation defaults to 30 days. Amazon QuickSight attaches a <code>DeletionTime</code>
         /// stamp to the response that specifies the end of the recovery window. At the end of
-        /// the recovery window, QuickSight deletes the analysis permanently.
+        /// the recovery window, Amazon QuickSight deletes the analysis permanently.
         /// 
         ///  
         /// <para>
@@ -1765,9 +1769,9 @@ namespace Amazon.QuickSight
         /// </para>
         ///  
         /// <para>
-        /// An analysis that's scheduled for deletion isn't accessible in the QuickSight console.
-        /// To access it in the console, restore it. Deleting an analysis doesn't delete the dashboards
-        /// that you publish from it.
+        /// An analysis that's scheduled for deletion isn't accessible in the Amazon QuickSight
+        /// console. To access it in the console, restore it. Deleting an analysis doesn't delete
+        /// the dashboards that you publish from it.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAnalysis service method.</param>
@@ -1793,9 +1797,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAnalysis">REST API Reference for DeleteAnalysis Operation</seealso>
         Task<DeleteAnalysisResponse> DeleteAnalysisAsync(DeleteAnalysisRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1828,9 +1832,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteDashboard">REST API Reference for DeleteDashboard Operation</seealso>
         DeleteDashboardResponse DeleteDashboard(DeleteDashboardRequest request);
@@ -1863,9 +1867,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteDashboard">REST API Reference for DeleteDashboard Operation</seealso>
         Task<DeleteDashboardResponse> DeleteDashboardAsync(DeleteDashboardRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2037,9 +2041,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteFolder">REST API Reference for DeleteFolder Operation</seealso>
         DeleteFolderResponse DeleteFolder(DeleteFolderRequest request);
@@ -2081,9 +2085,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteFolder">REST API Reference for DeleteFolder Operation</seealso>
         Task<DeleteFolderResponse> DeleteFolderAsync(DeleteFolderRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2119,9 +2123,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteFolderMembership">REST API Reference for DeleteFolderMembership Operation</seealso>
         DeleteFolderMembershipResponse DeleteFolderMembership(DeleteFolderMembershipRequest request);
@@ -2157,9 +2161,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteFolderMembership">REST API Reference for DeleteFolderMembership Operation</seealso>
         Task<DeleteFolderMembershipResponse> DeleteFolderMembershipAsync(DeleteFolderMembershipRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2322,7 +2326,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Deletes an existing IAM policy assignment.
+        /// Deletes an existing IAMpolicy assignment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIAMPolicyAssignment service method.</param>
         /// 
@@ -2358,7 +2362,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Deletes an existing IAM policy assignment.
+        /// Deletes an existing IAMpolicy assignment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIAMPolicyAssignment service method.</param>
         /// <param name="cancellationToken">
@@ -2507,9 +2511,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTemplate">REST API Reference for DeleteTemplate Operation</seealso>
         DeleteTemplateResponse DeleteTemplate(DeleteTemplateRequest request);
@@ -2545,9 +2549,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTemplate">REST API Reference for DeleteTemplate Operation</seealso>
         Task<DeleteTemplateResponse> DeleteTemplateAsync(DeleteTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2578,9 +2582,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTemplateAlias">REST API Reference for DeleteTemplateAlias Operation</seealso>
         DeleteTemplateAliasResponse DeleteTemplateAlias(DeleteTemplateAliasRequest request);
@@ -2611,9 +2615,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTemplateAlias">REST API Reference for DeleteTemplateAlias Operation</seealso>
         Task<DeleteTemplateAliasResponse> DeleteTemplateAliasAsync(DeleteTemplateAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2652,9 +2656,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTheme">REST API Reference for DeleteTheme Operation</seealso>
         DeleteThemeResponse DeleteTheme(DeleteThemeRequest request);
@@ -2693,9 +2697,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTheme">REST API Reference for DeleteTheme Operation</seealso>
         Task<DeleteThemeResponse> DeleteThemeAsync(DeleteThemeRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2730,9 +2734,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteThemeAlias">REST API Reference for DeleteThemeAlias Operation</seealso>
         DeleteThemeAliasResponse DeleteThemeAlias(DeleteThemeAliasRequest request);
@@ -2767,9 +2771,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteThemeAlias">REST API Reference for DeleteThemeAlias Operation</seealso>
         Task<DeleteThemeAliasResponse> DeleteThemeAliasAsync(DeleteThemeAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2936,10 +2940,10 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Describes the customizations associated with the provided Amazon Web Services account;
-        /// and Amazon QuickSight namespace in an Amazon Web Services Region;. The QuickSight
-        /// console evaluates which customizations to apply by running this API operation with
-        /// the <code>Resolved</code> flag included. 
+        /// Describes the customizations associated with the provided Amazon Web Services account
+        /// and Amazon Amazon QuickSight namespace in an Amazon Web Services Region;. The Amazon
+        /// QuickSight console evaluates which customizations to apply by running this API operation
+        /// with the <code>Resolved</code> flag included. 
         /// 
         ///  
         /// <para>
@@ -2948,19 +2952,21 @@ namespace Amazon.QuickSight
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Amazon Web Services account;</code> - The Amazon Web Services account; exists
+        ///  <code>Amazon Web Services account</code> - The Amazon Web Services account exists
         /// at the top of the hierarchy. It has the potential to use all of the Amazon Web Services
-        /// Regions; and AWS Services. When you subscribe to QuickSight, you choose one Amazon
-        /// Web Services Region; to use as your home Region. That's where your free SPICE capacity
-        /// is located. You can use QuickSight in any supported Amazon Web Services Region;. 
+        /// Regions; and AWS Services. When you subscribe to Amazon QuickSight, you choose one
+        /// Amazon Web Services Region; to use as your home Region. That's where your free SPICE
+        /// capacity is located. You can use Amazon QuickSight in any supported Amazon Web Services
+        /// Region;. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>Amazon Web Services Region;</code> - In each Amazon Web Services Region; where
-        /// you sign in to QuickSight at least once, QuickSight acts as a separate instance of
-        /// the same service. If you have a user directory, it resides in us-east-1, which is
-        /// the US East (N. Virginia). Generally speaking, these users have access to QuickSight
-        /// in any Amazon Web Services Region;, unless they are constrained to a namespace. 
+        /// you sign in to Amazon QuickSight at least once, Amazon QuickSight acts as a separate
+        /// instance of the same service. If you have a user directory, it resides in us-east-1,
+        /// which is the US East (N. Virginia). Generally speaking, these users have access to
+        /// Amazon QuickSight in any Amazon Web Services Region;, unless they are constrained
+        /// to a namespace. 
         /// </para>
         ///  
         /// <para>
@@ -2985,22 +2991,22 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>Namespace</code> - A QuickSight namespace is a partition that contains users
-        /// and assets (data sources, datasets, dashboards, and so on). To access assets that
-        /// are in a specific namespace, users and groups must also be part of the same namespace.
+        ///  <code>Namespace</code> - A Amazon QuickSight namespace is a partition that contains
+        /// users and assets (data sources, datasets, dashboards, and so on). To access assets
+        /// that are in a specific namespace, users and groups must also be part of the same namespace.
         /// People who share a namespace are completely isolated from users and assets in other
-        /// namespaces, even if they are in the same Amazon Web Services account; and Amazon Web
+        /// namespaces, even if they are in the same Amazon Web Services account and Amazon Web
         /// Services Region;.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>Applied customizations</code> - Within an Amazon Web Services Region;, a set
-        /// of QuickSight customizations can apply to an Amazon Web Services account; or to a
-        /// namespace. Settings that you apply to a namespace override settings that you apply
-        /// to an Amazon Web Services account;. All settings are isolated to a single Amazon Web
-        /// Services Region;. To apply them in other Amazon Web Services Regions;, run the <code>CreateAccountCustomization</code>
-        /// command in each Amazon Web Services Region; where you want to apply the same customizations.
-        /// 
+        /// of Amazon QuickSight customizations can apply to an Amazon Web Services account or
+        /// to a namespace. Settings that you apply to a namespace override settings that you
+        /// apply to an Amazon Web Services account. All settings are isolated to a single Amazon
+        /// Web Services Region;. To apply them in other Amazon Web Services Regions;, run the
+        /// <code>CreateAccountCustomization</code> command in each Amazon Web Services Region;
+        /// where you want to apply the same customizations. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3034,10 +3040,10 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Describes the customizations associated with the provided Amazon Web Services account;
-        /// and Amazon QuickSight namespace in an Amazon Web Services Region;. The QuickSight
-        /// console evaluates which customizations to apply by running this API operation with
-        /// the <code>Resolved</code> flag included. 
+        /// Describes the customizations associated with the provided Amazon Web Services account
+        /// and Amazon Amazon QuickSight namespace in an Amazon Web Services Region;. The Amazon
+        /// QuickSight console evaluates which customizations to apply by running this API operation
+        /// with the <code>Resolved</code> flag included. 
         /// 
         ///  
         /// <para>
@@ -3046,19 +3052,21 @@ namespace Amazon.QuickSight
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Amazon Web Services account;</code> - The Amazon Web Services account; exists
+        ///  <code>Amazon Web Services account</code> - The Amazon Web Services account exists
         /// at the top of the hierarchy. It has the potential to use all of the Amazon Web Services
-        /// Regions; and AWS Services. When you subscribe to QuickSight, you choose one Amazon
-        /// Web Services Region; to use as your home Region. That's where your free SPICE capacity
-        /// is located. You can use QuickSight in any supported Amazon Web Services Region;. 
+        /// Regions; and AWS Services. When you subscribe to Amazon QuickSight, you choose one
+        /// Amazon Web Services Region; to use as your home Region. That's where your free SPICE
+        /// capacity is located. You can use Amazon QuickSight in any supported Amazon Web Services
+        /// Region;. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>Amazon Web Services Region;</code> - In each Amazon Web Services Region; where
-        /// you sign in to QuickSight at least once, QuickSight acts as a separate instance of
-        /// the same service. If you have a user directory, it resides in us-east-1, which is
-        /// the US East (N. Virginia). Generally speaking, these users have access to QuickSight
-        /// in any Amazon Web Services Region;, unless they are constrained to a namespace. 
+        /// you sign in to Amazon QuickSight at least once, Amazon QuickSight acts as a separate
+        /// instance of the same service. If you have a user directory, it resides in us-east-1,
+        /// which is the US East (N. Virginia). Generally speaking, these users have access to
+        /// Amazon QuickSight in any Amazon Web Services Region;, unless they are constrained
+        /// to a namespace. 
         /// </para>
         ///  
         /// <para>
@@ -3083,22 +3091,22 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>Namespace</code> - A QuickSight namespace is a partition that contains users
-        /// and assets (data sources, datasets, dashboards, and so on). To access assets that
-        /// are in a specific namespace, users and groups must also be part of the same namespace.
+        ///  <code>Namespace</code> - A Amazon QuickSight namespace is a partition that contains
+        /// users and assets (data sources, datasets, dashboards, and so on). To access assets
+        /// that are in a specific namespace, users and groups must also be part of the same namespace.
         /// People who share a namespace are completely isolated from users and assets in other
-        /// namespaces, even if they are in the same Amazon Web Services account; and Amazon Web
+        /// namespaces, even if they are in the same Amazon Web Services account and Amazon Web
         /// Services Region;.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>Applied customizations</code> - Within an Amazon Web Services Region;, a set
-        /// of QuickSight customizations can apply to an Amazon Web Services account; or to a
-        /// namespace. Settings that you apply to a namespace override settings that you apply
-        /// to an Amazon Web Services account;. All settings are isolated to a single Amazon Web
-        /// Services Region;. To apply them in other Amazon Web Services Regions;, run the <code>CreateAccountCustomization</code>
-        /// command in each Amazon Web Services Region; where you want to apply the same customizations.
-        /// 
+        /// of Amazon QuickSight customizations can apply to an Amazon Web Services account or
+        /// to a namespace. Settings that you apply to a namespace override settings that you
+        /// apply to an Amazon Web Services account. All settings are isolated to a single Amazon
+        /// Web Services Region;. To apply them in other Amazon Web Services Regions;, run the
+        /// <code>CreateAccountCustomization</code> command in each Amazon Web Services Region;
+        /// where you want to apply the same customizations. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3138,8 +3146,8 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Describes the settings that were used when your QuickSight subscription was first
-        /// created in this Amazon Web Services account;.
+        /// Describes the settings that were used when your Amazon QuickSight subscription was
+        /// first created in this Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountSettings service method.</param>
         /// 
@@ -3171,8 +3179,8 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Describes the settings that were used when your QuickSight subscription was first
-        /// created in this Amazon Web Services account;.
+        /// Describes the settings that were used when your Amazon QuickSight subscription was
+        /// first created in this Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountSettings service method.</param>
         /// <param name="cancellationToken">
@@ -3235,9 +3243,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAnalysis">REST API Reference for DescribeAnalysis Operation</seealso>
         DescribeAnalysisResponse DescribeAnalysis(DescribeAnalysisRequest request);
@@ -3273,9 +3281,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAnalysis">REST API Reference for DescribeAnalysis Operation</seealso>
         Task<DescribeAnalysisResponse> DescribeAnalysisAsync(DescribeAnalysisRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3305,9 +3313,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAnalysisPermissions">REST API Reference for DescribeAnalysisPermissions Operation</seealso>
         DescribeAnalysisPermissionsResponse DescribeAnalysisPermissions(DescribeAnalysisPermissionsRequest request);
@@ -3337,9 +3345,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAnalysisPermissions">REST API Reference for DescribeAnalysisPermissions Operation</seealso>
         Task<DescribeAnalysisPermissionsResponse> DescribeAnalysisPermissionsAsync(DescribeAnalysisPermissionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3375,9 +3383,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboard">REST API Reference for DescribeDashboard Operation</seealso>
         DescribeDashboardResponse DescribeDashboard(DescribeDashboardRequest request);
@@ -3413,9 +3421,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboard">REST API Reference for DescribeDashboard Operation</seealso>
         Task<DescribeDashboardResponse> DescribeDashboardAsync(DescribeDashboardRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3445,9 +3453,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardPermissions">REST API Reference for DescribeDashboardPermissions Operation</seealso>
         DescribeDashboardPermissionsResponse DescribeDashboardPermissions(DescribeDashboardPermissionsRequest request);
@@ -3477,9 +3485,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardPermissions">REST API Reference for DescribeDashboardPermissions Operation</seealso>
         Task<DescribeDashboardPermissionsResponse> DescribeDashboardPermissionsAsync(DescribeDashboardPermissionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3781,9 +3789,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolder">REST API Reference for DescribeFolder Operation</seealso>
         DescribeFolderResponse DescribeFolder(DescribeFolderRequest request);
@@ -3819,9 +3827,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolder">REST API Reference for DescribeFolder Operation</seealso>
         Task<DescribeFolderResponse> DescribeFolderAsync(DescribeFolderRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3857,9 +3865,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolderPermissions">REST API Reference for DescribeFolderPermissions Operation</seealso>
         DescribeFolderPermissionsResponse DescribeFolderPermissions(DescribeFolderPermissionsRequest request);
@@ -3895,9 +3903,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolderPermissions">REST API Reference for DescribeFolderPermissions Operation</seealso>
         Task<DescribeFolderPermissionsResponse> DescribeFolderPermissionsAsync(DescribeFolderPermissionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3934,9 +3942,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolderResolvedPermissions">REST API Reference for DescribeFolderResolvedPermissions Operation</seealso>
         DescribeFolderResolvedPermissionsResponse DescribeFolderResolvedPermissions(DescribeFolderResolvedPermissionsRequest request);
@@ -3973,9 +3981,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolderResolvedPermissions">REST API Reference for DescribeFolderResolvedPermissions Operation</seealso>
         Task<DescribeFolderResolvedPermissionsResponse> DescribeFolderResolvedPermissionsAsync(DescribeFolderResolvedPermissionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4062,7 +4070,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Describes an existing IAM policy assignment, as specified by the assignment name.
+        /// Describes an existing IAMpolicy assignment, as specified by the assignment name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIAMPolicyAssignment service method.</param>
         /// 
@@ -4094,7 +4102,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Describes an existing IAM policy assignment, as specified by the assignment name.
+        /// Describes an existing IAMpolicy assignment, as specified by the assignment name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIAMPolicyAssignment service method.</param>
         /// <param name="cancellationToken">
@@ -4303,9 +4311,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTemplate">REST API Reference for DescribeTemplate Operation</seealso>
         DescribeTemplateResponse DescribeTemplate(DescribeTemplateRequest request);
@@ -4347,9 +4355,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTemplate">REST API Reference for DescribeTemplate Operation</seealso>
         Task<DescribeTemplateResponse> DescribeTemplateAsync(DescribeTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4376,9 +4384,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTemplateAlias">REST API Reference for DescribeTemplateAlias Operation</seealso>
         DescribeTemplateAliasResponse DescribeTemplateAlias(DescribeTemplateAliasRequest request);
@@ -4405,9 +4413,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTemplateAlias">REST API Reference for DescribeTemplateAlias Operation</seealso>
         Task<DescribeTemplateAliasResponse> DescribeTemplateAliasAsync(DescribeTemplateAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4440,9 +4448,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTemplatePermissions">REST API Reference for DescribeTemplatePermissions Operation</seealso>
         DescribeTemplatePermissionsResponse DescribeTemplatePermissions(DescribeTemplatePermissionsRequest request);
@@ -4475,9 +4483,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTemplatePermissions">REST API Reference for DescribeTemplatePermissions Operation</seealso>
         Task<DescribeTemplatePermissionsResponse> DescribeTemplatePermissionsAsync(DescribeTemplatePermissionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4516,9 +4524,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTheme">REST API Reference for DescribeTheme Operation</seealso>
         DescribeThemeResponse DescribeTheme(DescribeThemeRequest request);
@@ -4557,9 +4565,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTheme">REST API Reference for DescribeTheme Operation</seealso>
         Task<DescribeThemeResponse> DescribeThemeAsync(DescribeThemeRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4592,9 +4600,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemeAlias">REST API Reference for DescribeThemeAlias Operation</seealso>
         DescribeThemeAliasResponse DescribeThemeAlias(DescribeThemeAliasRequest request);
@@ -4627,9 +4635,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemeAlias">REST API Reference for DescribeThemeAlias Operation</seealso>
         Task<DescribeThemeAliasResponse> DescribeThemeAliasAsync(DescribeThemeAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4665,9 +4673,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemePermissions">REST API Reference for DescribeThemePermissions Operation</seealso>
         DescribeThemePermissionsResponse DescribeThemePermissions(DescribeThemePermissionsRequest request);
@@ -4703,9 +4711,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemePermissions">REST API Reference for DescribeThemePermissions Operation</seealso>
         Task<DescribeThemePermissionsResponse> DescribeThemePermissionsAsync(DescribeThemePermissionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4858,9 +4866,10 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedPricingPlanException">
         /// This error indicates that you are calling an embedding operation in Amazon QuickSight
-        /// without the required pricing plan on your Amazon Web Services account;. Before you
-        /// can use embedding for anonymous users, a QuickSight administrator needs to add capacity
-        /// pricing to QuickSight. You can do this on the <b>Manage QuickSight</b> page. 
+        /// without the required pricing plan on your Amazon Web Services account. Before you
+        /// can use embedding for anonymous users, a Amazon QuickSight administrator needs to
+        /// add capacity pricing to Amazon QuickSight. You can do this on the <b>Manage Amazon
+        /// QuickSight</b> page. 
         /// 
         ///  
         /// <para>
@@ -4870,9 +4879,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GenerateEmbedUrlForAnonymousUser">REST API Reference for GenerateEmbedUrlForAnonymousUser Operation</seealso>
         GenerateEmbedUrlForAnonymousUserResponse GenerateEmbedUrlForAnonymousUser(GenerateEmbedUrlForAnonymousUserRequest request);
@@ -4949,9 +4958,10 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedPricingPlanException">
         /// This error indicates that you are calling an embedding operation in Amazon QuickSight
-        /// without the required pricing plan on your Amazon Web Services account;. Before you
-        /// can use embedding for anonymous users, a QuickSight administrator needs to add capacity
-        /// pricing to QuickSight. You can do this on the <b>Manage QuickSight</b> page. 
+        /// without the required pricing plan on your Amazon Web Services account. Before you
+        /// can use embedding for anonymous users, a Amazon QuickSight administrator needs to
+        /// add capacity pricing to Amazon QuickSight. You can do this on the <b>Manage Amazon
+        /// QuickSight</b> page. 
         /// 
         ///  
         /// <para>
@@ -4961,9 +4971,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GenerateEmbedUrlForAnonymousUser">REST API Reference for GenerateEmbedUrlForAnonymousUser Operation</seealso>
         Task<GenerateEmbedUrlForAnonymousUserResponse> GenerateEmbedUrlForAnonymousUserAsync(GenerateEmbedUrlForAnonymousUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -5046,9 +5056,10 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedPricingPlanException">
         /// This error indicates that you are calling an embedding operation in Amazon QuickSight
-        /// without the required pricing plan on your Amazon Web Services account;. Before you
-        /// can use embedding for anonymous users, a QuickSight administrator needs to add capacity
-        /// pricing to QuickSight. You can do this on the <b>Manage QuickSight</b> page. 
+        /// without the required pricing plan on your Amazon Web Services account. Before you
+        /// can use embedding for anonymous users, a Amazon QuickSight administrator needs to
+        /// add capacity pricing to Amazon QuickSight. You can do this on the <b>Manage Amazon
+        /// QuickSight</b> page. 
         /// 
         ///  
         /// <para>
@@ -5058,9 +5069,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GenerateEmbedUrlForRegisteredUser">REST API Reference for GenerateEmbedUrlForRegisteredUser Operation</seealso>
         GenerateEmbedUrlForRegisteredUserResponse GenerateEmbedUrlForRegisteredUser(GenerateEmbedUrlForRegisteredUserRequest request);
@@ -5143,9 +5154,10 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedPricingPlanException">
         /// This error indicates that you are calling an embedding operation in Amazon QuickSight
-        /// without the required pricing plan on your Amazon Web Services account;. Before you
-        /// can use embedding for anonymous users, a QuickSight administrator needs to add capacity
-        /// pricing to QuickSight. You can do this on the <b>Manage QuickSight</b> page. 
+        /// without the required pricing plan on your Amazon Web Services account. Before you
+        /// can use embedding for anonymous users, a Amazon QuickSight administrator needs to
+        /// add capacity pricing to Amazon QuickSight. You can do this on the <b>Manage Amazon
+        /// QuickSight</b> page. 
         /// 
         ///  
         /// <para>
@@ -5155,9 +5167,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GenerateEmbedUrlForRegisteredUser">REST API Reference for GenerateEmbedUrlForRegisteredUser Operation</seealso>
         Task<GenerateEmbedUrlForRegisteredUserResponse> GenerateEmbedUrlForRegisteredUserAsync(GenerateEmbedUrlForRegisteredUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -5169,8 +5181,8 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Generates a session URL and authorization code that you can use to embed an Amazon
-        /// QuickSight read-only dashboard in your web server code. Before you use this command,
-        /// make sure that you have configured the dashboards and permissions. 
+        /// Amazon QuickSight read-only dashboard in your web server code. Before you use this
+        /// command, make sure that you have configured the dashboards and permissions. 
         /// 
         ///  
         /// <para>
@@ -5249,9 +5261,10 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedPricingPlanException">
         /// This error indicates that you are calling an embedding operation in Amazon QuickSight
-        /// without the required pricing plan on your Amazon Web Services account;. Before you
-        /// can use embedding for anonymous users, a QuickSight administrator needs to add capacity
-        /// pricing to QuickSight. You can do this on the <b>Manage QuickSight</b> page. 
+        /// without the required pricing plan on your Amazon Web Services account. Before you
+        /// can use embedding for anonymous users, a Amazon QuickSight administrator needs to
+        /// add capacity pricing to Amazon QuickSight. You can do this on the <b>Manage Amazon
+        /// QuickSight</b> page. 
         /// 
         ///  
         /// <para>
@@ -5261,9 +5274,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrl">REST API Reference for GetDashboardEmbedUrl Operation</seealso>
         GetDashboardEmbedUrlResponse GetDashboardEmbedUrl(GetDashboardEmbedUrlRequest request);
@@ -5272,8 +5285,8 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Generates a session URL and authorization code that you can use to embed an Amazon
-        /// QuickSight read-only dashboard in your web server code. Before you use this command,
-        /// make sure that you have configured the dashboards and permissions. 
+        /// Amazon QuickSight read-only dashboard in your web server code. Before you use this
+        /// command, make sure that you have configured the dashboards and permissions. 
         /// 
         ///  
         /// <para>
@@ -5355,9 +5368,10 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedPricingPlanException">
         /// This error indicates that you are calling an embedding operation in Amazon QuickSight
-        /// without the required pricing plan on your Amazon Web Services account;. Before you
-        /// can use embedding for anonymous users, a QuickSight administrator needs to add capacity
-        /// pricing to QuickSight. You can do this on the <b>Manage QuickSight</b> page. 
+        /// without the required pricing plan on your Amazon Web Services account. Before you
+        /// can use embedding for anonymous users, a Amazon QuickSight administrator needs to
+        /// add capacity pricing to Amazon QuickSight. You can do this on the <b>Manage Amazon
+        /// QuickSight</b> page. 
         /// 
         ///  
         /// <para>
@@ -5367,9 +5381,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrl">REST API Reference for GetDashboardEmbedUrl Operation</seealso>
         Task<GetDashboardEmbedUrlResponse> GetDashboardEmbedUrlAsync(GetDashboardEmbedUrlRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -5381,19 +5395,20 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Generates a session URL and authorization code that you can use to embed the Amazon
-        /// QuickSight console in your web server code. Use <code>GetSessionEmbedUrl</code> where
-        /// you want to provide an authoring portal that allows users to create data sources,
-        /// datasets, analyses, and dashboards. The users who access an embedded QuickSight console
-        /// need belong to the author or admin security cohort. If you want to restrict permissions
-        /// to some of these features, add a custom permissions profile to the user with the <code>
-        /// <a>UpdateUser</a> </code> API operation. Use <code> <a>RegisterUser</a> </code> API
-        /// operation to add a new user with a custom permission profile attached. For more information,
-        /// see the following sections in the <i>Amazon QuickSight User Guide</i>:
+        /// Amazon QuickSight console in your web server code. Use <code>GetSessionEmbedUrl</code>
+        /// where you want to provide an authoring portal that allows users to create data sources,
+        /// datasets, analyses, and dashboards. The users who access an embedded Amazon QuickSight
+        /// console need belong to the author or admin security cohort. If you want to restrict
+        /// permissions to some of these features, add a custom permissions profile to the user
+        /// with the <code> <a>UpdateUser</a> </code> API operation. Use <code> <a>RegisterUser</a>
+        /// </code> API operation to add a new user with a custom permission profile attached.
+        /// For more information, see the following sections in the <i>Amazon QuickSight User
+        /// Guide</i>:
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-full-console-for-authenticated-users-get.html">Embedding
-        /// the Amazon QuickSight Console Using GetSessionEmbedUrl</a> 
+        ///  <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedding
+        /// Analytics</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5437,9 +5452,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetSessionEmbedUrl">REST API Reference for GetSessionEmbedUrl Operation</seealso>
         GetSessionEmbedUrlResponse GetSessionEmbedUrl(GetSessionEmbedUrlRequest request);
@@ -5448,19 +5463,20 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Generates a session URL and authorization code that you can use to embed the Amazon
-        /// QuickSight console in your web server code. Use <code>GetSessionEmbedUrl</code> where
-        /// you want to provide an authoring portal that allows users to create data sources,
-        /// datasets, analyses, and dashboards. The users who access an embedded QuickSight console
-        /// need belong to the author or admin security cohort. If you want to restrict permissions
-        /// to some of these features, add a custom permissions profile to the user with the <code>
-        /// <a>UpdateUser</a> </code> API operation. Use <code> <a>RegisterUser</a> </code> API
-        /// operation to add a new user with a custom permission profile attached. For more information,
-        /// see the following sections in the <i>Amazon QuickSight User Guide</i>:
+        /// Amazon QuickSight console in your web server code. Use <code>GetSessionEmbedUrl</code>
+        /// where you want to provide an authoring portal that allows users to create data sources,
+        /// datasets, analyses, and dashboards. The users who access an embedded Amazon QuickSight
+        /// console need belong to the author or admin security cohort. If you want to restrict
+        /// permissions to some of these features, add a custom permissions profile to the user
+        /// with the <code> <a>UpdateUser</a> </code> API operation. Use <code> <a>RegisterUser</a>
+        /// </code> API operation to add a new user with a custom permission profile attached.
+        /// For more information, see the following sections in the <i>Amazon QuickSight User
+        /// Guide</i>:
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-full-console-for-authenticated-users-get.html">Embedding
-        /// the Amazon QuickSight Console Using GetSessionEmbedUrl</a> 
+        ///  <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedding
+        /// Analytics</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5507,9 +5523,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetSessionEmbedUrl">REST API Reference for GetSessionEmbedUrl Operation</seealso>
         Task<GetSessionEmbedUrlResponse> GetSessionEmbedUrlAsync(GetSessionEmbedUrlRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -5520,7 +5536,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Lists Amazon QuickSight analyses that exist in the specified Amazon Web Services account;.
+        /// Lists Amazon QuickSight analyses that exist in the specified Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAnalyses service method.</param>
         /// 
@@ -5536,9 +5552,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAnalyses">REST API Reference for ListAnalyses Operation</seealso>
         ListAnalysesResponse ListAnalyses(ListAnalysesRequest request);
@@ -5546,7 +5562,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Lists Amazon QuickSight analyses that exist in the specified Amazon Web Services account;.
+        /// Lists Amazon QuickSight analyses that exist in the specified Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAnalyses service method.</param>
         /// <param name="cancellationToken">
@@ -5565,9 +5581,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAnalyses">REST API Reference for ListAnalyses Operation</seealso>
         Task<ListAnalysesResponse> ListAnalysesAsync(ListAnalysesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -5578,7 +5594,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Lists dashboards in an Amazon Web Services account;.
+        /// Lists dashboards in an Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDashboards service method.</param>
         /// 
@@ -5594,9 +5610,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDashboards">REST API Reference for ListDashboards Operation</seealso>
         ListDashboardsResponse ListDashboards(ListDashboardsRequest request);
@@ -5604,7 +5620,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Lists dashboards in an Amazon Web Services account;.
+        /// Lists dashboards in an Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDashboards service method.</param>
         /// <param name="cancellationToken">
@@ -5623,9 +5639,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDashboards">REST API Reference for ListDashboards Operation</seealso>
         Task<ListDashboardsResponse> ListDashboardsAsync(ListDashboardsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -5636,7 +5652,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Lists all the versions of the dashboards in the QuickSight subscription.
+        /// Lists all the versions of the dashboards in the Amazon QuickSight subscription.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDashboardVersions service method.</param>
         /// 
@@ -5658,9 +5674,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDashboardVersions">REST API Reference for ListDashboardVersions Operation</seealso>
         ListDashboardVersionsResponse ListDashboardVersions(ListDashboardVersionsRequest request);
@@ -5668,7 +5684,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Lists all the versions of the dashboards in the QuickSight subscription.
+        /// Lists all the versions of the dashboards in the Amazon QuickSight subscription.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDashboardVersions service method.</param>
         /// <param name="cancellationToken">
@@ -5693,9 +5709,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDashboardVersions">REST API Reference for ListDashboardVersions Operation</seealso>
         Task<ListDashboardVersionsResponse> ListDashboardVersionsAsync(ListDashboardVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -5706,7 +5722,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Lists all of the datasets belonging to the current Amazon Web Services account; in
+        /// Lists all of the datasets belonging to the current Amazon Web Services account in
         /// an Amazon Web Services Region;.
         /// 
         ///  
@@ -5741,7 +5757,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Lists all of the datasets belonging to the current Amazon Web Services account; in
+        /// Lists all of the datasets belonging to the current Amazon Web Services account in
         /// an Amazon Web Services Region;.
         /// 
         ///  
@@ -5783,7 +5799,7 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Lists data sources in current Amazon Web Services Region; that belong to this Amazon
-        /// Web Services account;.
+        /// Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataSources service method.</param>
         /// 
@@ -5813,7 +5829,7 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Lists data sources in current Amazon Web Services Region; that belong to this Amazon
-        /// Web Services account;.
+        /// Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataSources service method.</param>
         /// <param name="cancellationToken">
@@ -5877,9 +5893,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListFolderMembers">REST API Reference for ListFolderMembers Operation</seealso>
         ListFolderMembersResponse ListFolderMembers(ListFolderMembersRequest request);
@@ -5919,9 +5935,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListFolderMembers">REST API Reference for ListFolderMembers Operation</seealso>
         Task<ListFolderMembersResponse> ListFolderMembersAsync(ListFolderMembersRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -5960,9 +5976,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListFolders">REST API Reference for ListFolders Operation</seealso>
         ListFoldersResponse ListFolders(ListFoldersRequest request);
@@ -6001,9 +6017,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListFolders">REST API Reference for ListFolders Operation</seealso>
         Task<ListFoldersResponse> ListFoldersAsync(ListFoldersRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -6178,7 +6194,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Lists IAM policy assignments in the current Amazon QuickSight account.
+        /// Lists IAMpolicy assignments in the current Amazon QuickSight account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIAMPolicyAssignments service method.</param>
         /// 
@@ -6210,7 +6226,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Lists IAM policy assignments in the current Amazon QuickSight account.
+        /// Lists IAMpolicy assignments in the current Amazon QuickSight account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIAMPolicyAssignments service method.</param>
         /// <param name="cancellationToken">
@@ -6248,7 +6264,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Lists all the IAM policy assignments, including the Amazon Resource Names (ARNs) for
+        /// Lists all the IAMpolicy assignments, including the Amazon Resource Names (ARNs) for
         /// the IAM policies assigned to the specified user and group or groups that the user
         /// belongs to.
         /// </summary>
@@ -6286,7 +6302,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Lists all the IAM policy assignments, including the Amazon Resource Names (ARNs) for
+        /// Lists all the IAMpolicy assignments, including the Amazon Resource Names (ARNs) for
         /// the IAM policies assigned to the specified user and group or groups that the user
         /// belongs to.
         /// </summary>
@@ -6406,7 +6422,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Lists the namespaces for the specified Amazon Web Services account;.
+        /// Lists the namespaces for the specified Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNamespaces service method.</param>
         /// 
@@ -6444,7 +6460,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Lists the namespaces for the specified Amazon Web Services account;.
+        /// Lists the namespaces for the specified Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNamespaces service method.</param>
         /// <param name="cancellationToken">
@@ -6571,9 +6587,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTemplateAliases">REST API Reference for ListTemplateAliases Operation</seealso>
         ListTemplateAliasesResponse ListTemplateAliases(ListTemplateAliasesRequest request);
@@ -6603,9 +6619,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTemplateAliases">REST API Reference for ListTemplateAliases Operation</seealso>
         Task<ListTemplateAliasesResponse> ListTemplateAliasesAsync(ListTemplateAliasesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -6638,9 +6654,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTemplates">REST API Reference for ListTemplates Operation</seealso>
         ListTemplatesResponse ListTemplates(ListTemplatesRequest request);
@@ -6673,9 +6689,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTemplates">REST API Reference for ListTemplates Operation</seealso>
         Task<ListTemplatesResponse> ListTemplatesAsync(ListTemplatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -6708,9 +6724,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTemplateVersions">REST API Reference for ListTemplateVersions Operation</seealso>
         ListTemplateVersionsResponse ListTemplateVersions(ListTemplateVersionsRequest request);
@@ -6743,9 +6759,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTemplateVersions">REST API Reference for ListTemplateVersions Operation</seealso>
         Task<ListTemplateVersionsResponse> ListTemplateVersionsAsync(ListTemplateVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -6781,9 +6797,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeAliases">REST API Reference for ListThemeAliases Operation</seealso>
         ListThemeAliasesResponse ListThemeAliases(ListThemeAliasesRequest request);
@@ -6819,9 +6835,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeAliases">REST API Reference for ListThemeAliases Operation</seealso>
         Task<ListThemeAliasesResponse> ListThemeAliasesAsync(ListThemeAliasesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -6832,7 +6848,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Lists all the themes in the current Amazon Web Services account;.
+        /// Lists all the themes in the current Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThemes service method.</param>
         /// 
@@ -6860,9 +6876,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemes">REST API Reference for ListThemes Operation</seealso>
         ListThemesResponse ListThemes(ListThemesRequest request);
@@ -6870,7 +6886,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Lists all the themes in the current Amazon Web Services account;.
+        /// Lists all the themes in the current Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThemes service method.</param>
         /// <param name="cancellationToken">
@@ -6901,9 +6917,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemes">REST API Reference for ListThemes Operation</seealso>
         Task<ListThemesResponse> ListThemesAsync(ListThemesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -6914,7 +6930,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Lists all the versions of the themes in the current Amazon Web Services account;.
+        /// Lists all the versions of the themes in the current Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThemeVersions service method.</param>
         /// 
@@ -6942,9 +6958,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeVersions">REST API Reference for ListThemeVersions Operation</seealso>
         ListThemeVersionsResponse ListThemeVersions(ListThemeVersionsRequest request);
@@ -6952,7 +6968,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Lists all the versions of the themes in the current Amazon Web Services account;.
+        /// Lists all the versions of the themes in the current Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThemeVersions service method.</param>
         /// <param name="cancellationToken">
@@ -6983,9 +6999,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeVersions">REST API Reference for ListThemeVersions Operation</seealso>
         Task<ListThemeVersionsResponse> ListThemeVersionsAsync(ListThemeVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -7266,9 +7282,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RestoreAnalysis">REST API Reference for RestoreAnalysis Operation</seealso>
         RestoreAnalysisResponse RestoreAnalysis(RestoreAnalysisRequest request);
@@ -7301,9 +7317,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RestoreAnalysis">REST API Reference for RestoreAnalysis Operation</seealso>
         Task<RestoreAnalysisResponse> RestoreAnalysisAsync(RestoreAnalysisRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -7343,9 +7359,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchAnalyses">REST API Reference for SearchAnalyses Operation</seealso>
         SearchAnalysesResponse SearchAnalyses(SearchAnalysesRequest request);
@@ -7385,9 +7401,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchAnalyses">REST API Reference for SearchAnalyses Operation</seealso>
         Task<SearchAnalysesResponse> SearchAnalysesAsync(SearchAnalysesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -7427,9 +7443,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchDashboards">REST API Reference for SearchDashboards Operation</seealso>
         SearchDashboardsResponse SearchDashboards(SearchDashboardsRequest request);
@@ -7469,9 +7485,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchDashboards">REST API Reference for SearchDashboards Operation</seealso>
         Task<SearchDashboardsResponse> SearchDashboardsAsync(SearchDashboardsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -7510,9 +7526,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchFolders">REST API Reference for SearchFolders Operation</seealso>
         SearchFoldersResponse SearchFolders(SearchFoldersRequest request);
@@ -7551,9 +7567,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchFolders">REST API Reference for SearchFolders Operation</seealso>
         Task<SearchFoldersResponse> SearchFoldersAsync(SearchFoldersRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -7564,7 +7580,8 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Assigns one or more tags (key-value pairs) to the specified QuickSight resource. 
+        /// Assigns one or more tags (key-value pairs) to the specified Amazon QuickSight resource.
+        /// 
         /// 
         ///  
         /// <para>
@@ -7578,22 +7595,23 @@ namespace Amazon.QuickSight
         /// </para>
         ///  
         /// <para>
-        /// You can associate as many as 50 tags with a resource. QuickSight supports tagging
+        /// You can associate as many as 50 tags with a resource. Amazon QuickSight supports tagging
         /// on data set, data source, dashboard, and template. 
         /// </para>
         ///  
         /// <para>
-        /// Tagging for QuickSight works in a similar way to tagging for other AWS services, except
-        /// for the following:
+        /// Tagging for Amazon QuickSight works in a similar way to tagging for other AWS services,
+        /// except for the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You can't use tags to track AWS costs for QuickSight. This restriction is because
-        /// QuickSight costs are based on users and SPICE capacity, which aren't taggable resources.
+        /// You can't use tags to track AWS costs for Amazon QuickSight. This restriction is because
+        /// Amazon QuickSight costs are based on users and SPICE capacity, which aren't taggable
+        /// resources.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// QuickSight doesn't currently support the Tag Editor for Resource Groups.
+        /// Amazon QuickSight doesn't currently support the Tag Editor for Resource Groups.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -7627,7 +7645,8 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Assigns one or more tags (key-value pairs) to the specified QuickSight resource. 
+        /// Assigns one or more tags (key-value pairs) to the specified Amazon QuickSight resource.
+        /// 
         /// 
         ///  
         /// <para>
@@ -7641,22 +7660,23 @@ namespace Amazon.QuickSight
         /// </para>
         ///  
         /// <para>
-        /// You can associate as many as 50 tags with a resource. QuickSight supports tagging
+        /// You can associate as many as 50 tags with a resource. Amazon QuickSight supports tagging
         /// on data set, data source, dashboard, and template. 
         /// </para>
         ///  
         /// <para>
-        /// Tagging for QuickSight works in a similar way to tagging for other AWS services, except
-        /// for the following:
+        /// Tagging for Amazon QuickSight works in a similar way to tagging for other AWS services,
+        /// except for the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You can't use tags to track AWS costs for QuickSight. This restriction is because
-        /// QuickSight costs are based on users and SPICE capacity, which aren't taggable resources.
+        /// You can't use tags to track AWS costs for Amazon QuickSight. This restriction is because
+        /// Amazon QuickSight costs are based on users and SPICE capacity, which aren't taggable
+        /// resources.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// QuickSight doesn't currently support the Tag Editor for Resource Groups.
+        /// Amazon QuickSight doesn't currently support the Tag Editor for Resource Groups.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -7765,11 +7785,11 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// You can use customizations for your Amazon Web Services account; or, if you specify
-        /// a namespace, for a QuickSight namespace instead. Customizations that apply to a namespace
-        /// override customizations that apply to an Amazon Web Services account;. To find out
-        /// which customizations apply, use the <code>DescribeAccountCustomization</code> API
-        /// operation. 
+        /// You can use customizations for your Amazon Web Services account or, if you specify
+        /// a namespace, for a Amazon QuickSight namespace instead. Customizations that apply
+        /// to a namespace override customizations that apply to an Amazon Web Services account.
+        /// To find out which customizations apply, use the <code>DescribeAccountCustomization</code>
+        /// API operation. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccountCustomization service method.</param>
@@ -7807,11 +7827,11 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// You can use customizations for your Amazon Web Services account; or, if you specify
-        /// a namespace, for a QuickSight namespace instead. Customizations that apply to a namespace
-        /// override customizations that apply to an Amazon Web Services account;. To find out
-        /// which customizations apply, use the <code>DescribeAccountCustomization</code> API
-        /// operation. 
+        /// You can use customizations for your Amazon Web Services account or, if you specify
+        /// a namespace, for a Amazon QuickSight namespace instead. Customizations that apply
+        /// to a namespace override customizations that apply to an Amazon Web Services account.
+        /// To find out which customizations apply, use the <code>DescribeAccountCustomization</code>
+        /// API operation. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccountCustomization service method.</param>
@@ -7850,7 +7870,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Updates the Amazon QuickSight settings in your Amazon Web Services account;.
+        /// Updates the Amazon QuickSight settings in your Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccountSettings service method.</param>
         /// 
@@ -7882,7 +7902,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Updates the Amazon QuickSight settings in your Amazon Web Services account;.
+        /// Updates the Amazon QuickSight settings in your Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccountSettings service method.</param>
         /// <param name="cancellationToken">
@@ -7945,9 +7965,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAnalysis">REST API Reference for UpdateAnalysis Operation</seealso>
         UpdateAnalysisResponse UpdateAnalysis(UpdateAnalysisRequest request);
@@ -7983,9 +8003,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAnalysis">REST API Reference for UpdateAnalysis Operation</seealso>
         Task<UpdateAnalysisResponse> UpdateAnalysisAsync(UpdateAnalysisRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -8018,9 +8038,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAnalysisPermissions">REST API Reference for UpdateAnalysisPermissions Operation</seealso>
         UpdateAnalysisPermissionsResponse UpdateAnalysisPermissions(UpdateAnalysisPermissionsRequest request);
@@ -8053,9 +8073,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAnalysisPermissions">REST API Reference for UpdateAnalysisPermissions Operation</seealso>
         Task<UpdateAnalysisPermissionsResponse> UpdateAnalysisPermissionsAsync(UpdateAnalysisPermissionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -8066,7 +8086,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Updates a dashboard in an Amazon Web Services account;.
+        /// Updates a dashboard in an Amazon Web Services account.
         /// 
         ///  <note> 
         /// <para>
@@ -8099,9 +8119,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboard">REST API Reference for UpdateDashboard Operation</seealso>
         UpdateDashboardResponse UpdateDashboard(UpdateDashboardRequest request);
@@ -8109,7 +8129,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Updates a dashboard in an Amazon Web Services account;.
+        /// Updates a dashboard in an Amazon Web Services account.
         /// 
         ///  <note> 
         /// <para>
@@ -8145,9 +8165,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboard">REST API Reference for UpdateDashboard Operation</seealso>
         Task<UpdateDashboardResponse> UpdateDashboardAsync(UpdateDashboardRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -8180,9 +8200,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboardPermissions">REST API Reference for UpdateDashboardPermissions Operation</seealso>
         UpdateDashboardPermissionsResponse UpdateDashboardPermissions(UpdateDashboardPermissionsRequest request);
@@ -8215,9 +8235,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboardPermissions">REST API Reference for UpdateDashboardPermissions Operation</seealso>
         Task<UpdateDashboardPermissionsResponse> UpdateDashboardPermissionsAsync(UpdateDashboardPermissionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -8250,9 +8270,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboardPublishedVersion">REST API Reference for UpdateDashboardPublishedVersion Operation</seealso>
         UpdateDashboardPublishedVersionResponse UpdateDashboardPublishedVersion(UpdateDashboardPublishedVersionRequest request);
@@ -8285,9 +8305,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboardPublishedVersion">REST API Reference for UpdateDashboardPublishedVersion Operation</seealso>
         Task<UpdateDashboardPublishedVersionResponse> UpdateDashboardPublishedVersionAsync(UpdateDashboardPublishedVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -8329,9 +8349,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDataSet">REST API Reference for UpdateDataSet Operation</seealso>
         UpdateDataSetResponse UpdateDataSet(UpdateDataSetRequest request);
@@ -8373,9 +8393,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDataSet">REST API Reference for UpdateDataSet Operation</seealso>
         Task<UpdateDataSetResponse> UpdateDataSetAsync(UpdateDataSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -8637,9 +8657,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateFolder">REST API Reference for UpdateFolder Operation</seealso>
         UpdateFolderResponse UpdateFolder(UpdateFolderRequest request);
@@ -8681,9 +8701,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateFolder">REST API Reference for UpdateFolder Operation</seealso>
         Task<UpdateFolderResponse> UpdateFolderAsync(UpdateFolderRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -8722,9 +8742,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateFolderPermissions">REST API Reference for UpdateFolderPermissions Operation</seealso>
         UpdateFolderPermissionsResponse UpdateFolderPermissions(UpdateFolderPermissionsRequest request);
@@ -8763,9 +8783,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateFolderPermissions">REST API Reference for UpdateFolderPermissions Operation</seealso>
         Task<UpdateFolderPermissionsResponse> UpdateFolderPermissionsAsync(UpdateFolderPermissionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -8852,7 +8872,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Updates an existing IAM policy assignment. This operation updates only the optional
+        /// Updates an existing IAMpolicy assignment. This operation updates only the optional
         /// parameter or parameters that are specified in the request. This overwrites all of
         /// the users included in <code>Identities</code>.
         /// </summary>
@@ -8890,7 +8910,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Updates an existing IAM policy assignment. This operation updates only the optional
+        /// Updates an existing IAMpolicy assignment. This operation updates only the optional
         /// parameter or parameters that are specified in the request. This overwrites all of
         /// the users included in <code>Identities</code>.
         /// </summary>
@@ -8962,9 +8982,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTemplate">REST API Reference for UpdateTemplate Operation</seealso>
         UpdateTemplateResponse UpdateTemplate(UpdateTemplateRequest request);
@@ -9003,9 +9023,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTemplate">REST API Reference for UpdateTemplate Operation</seealso>
         Task<UpdateTemplateResponse> UpdateTemplateAsync(UpdateTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -9035,9 +9055,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTemplateAlias">REST API Reference for UpdateTemplateAlias Operation</seealso>
         UpdateTemplateAliasResponse UpdateTemplateAlias(UpdateTemplateAliasRequest request);
@@ -9067,9 +9087,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTemplateAlias">REST API Reference for UpdateTemplateAlias Operation</seealso>
         Task<UpdateTemplateAliasResponse> UpdateTemplateAliasAsync(UpdateTemplateAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -9102,9 +9122,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTemplatePermissions">REST API Reference for UpdateTemplatePermissions Operation</seealso>
         UpdateTemplatePermissionsResponse UpdateTemplatePermissions(UpdateTemplatePermissionsRequest request);
@@ -9137,9 +9157,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTemplatePermissions">REST API Reference for UpdateTemplatePermissions Operation</seealso>
         Task<UpdateTemplatePermissionsResponse> UpdateTemplatePermissionsAsync(UpdateTemplatePermissionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -9181,9 +9201,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTheme">REST API Reference for UpdateTheme Operation</seealso>
         UpdateThemeResponse UpdateTheme(UpdateThemeRequest request);
@@ -9225,9 +9245,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTheme">REST API Reference for UpdateTheme Operation</seealso>
         Task<UpdateThemeResponse> UpdateThemeAsync(UpdateThemeRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -9263,9 +9283,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemeAlias">REST API Reference for UpdateThemeAlias Operation</seealso>
         UpdateThemeAliasResponse UpdateThemeAlias(UpdateThemeAliasRequest request);
@@ -9301,9 +9321,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemeAlias">REST API Reference for UpdateThemeAlias Operation</seealso>
         Task<UpdateThemeAliasResponse> UpdateThemeAliasAsync(UpdateThemeAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -9419,9 +9439,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemePermissions">REST API Reference for UpdateThemePermissions Operation</seealso>
         UpdateThemePermissionsResponse UpdateThemePermissions(UpdateThemePermissionsRequest request);
@@ -9537,9 +9557,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
-        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
-        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
-        /// available in every edition.
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemePermissions">REST API Reference for UpdateThemePermissions Operation</seealso>
         Task<UpdateThemePermissionsResponse> UpdateThemePermissionsAsync(UpdateThemePermissionsRequest request, CancellationToken cancellationToken = default(CancellationToken));

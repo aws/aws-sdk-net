@@ -40,6 +40,7 @@ namespace Amazon.QuickSight.Model
         private ProjectOperation _projectOperation;
         private RenameColumnOperation _renameColumnOperation;
         private TagColumnOperation _tagColumnOperation;
+        private UntagColumnOperation _untagColumnOperation;
 
         /// <summary>
         /// Gets and sets the property CastColumnTypeOperation. 
@@ -149,6 +150,21 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetTagColumnOperation()
         {
             return this._tagColumnOperation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UntagColumnOperation.
+        /// </summary>
+        public UntagColumnOperation UntagColumnOperation
+        {
+            get { return this._untagColumnOperation; }
+            set { this._untagColumnOperation = value; }
+        }
+
+        // Check to see if UntagColumnOperation property is set
+        internal bool IsSetUntagColumnOperation()
+        {
+            return this._untagColumnOperation != null;
         }
 
     }

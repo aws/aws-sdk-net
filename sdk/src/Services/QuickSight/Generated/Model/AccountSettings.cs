@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The QuickSight settings associated with your Amazon Web Services account;.
+    /// The Amazon QuickSight settings associated with your Amazon Web Services account.
     /// </summary>
     public partial class AccountSettings
     {
@@ -41,9 +41,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AccountName. 
         /// <para>
-        /// The "account name" you provided for the QuickSight subscription in your Amazon Web
-        /// Services account;. You create this name when you sign up for QuickSight. It is unique
-        /// in all of Amazon Web Services and it appears only when users sign in.
+        /// The "account name" you provided for the Amazon QuickSight subscription in your Amazon
+        /// Web Services account. You create this name when you sign up for Amazon QuickSight.
+        /// It is unique in all of Amazon Web Services and it appears only when users sign in.
         /// </para>
         /// </summary>
         public string AccountName
@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DefaultNamespace. 
         /// <para>
-        /// The default QuickSight namespace for your Amazon Web Services account;. 
+        /// The default Amazon QuickSight namespace for your Amazon Web Services account. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
@@ -80,7 +80,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Edition. 
         /// <para>
-        /// The edition of QuickSight that you're currently subscribed to: Enterprise edition
+        /// The edition of Amazon QuickSight that you're currently subscribed to: Enterprise edition
         /// or Standard edition.
         /// </para>
         /// </summary>
@@ -99,7 +99,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property NotificationEmail. 
         /// <para>
-        /// The main notification email for your QuickSight subscription.
+        /// The main notification email for your Amazon QuickSight subscription.
         /// </para>
         /// </summary>
         public string NotificationEmail

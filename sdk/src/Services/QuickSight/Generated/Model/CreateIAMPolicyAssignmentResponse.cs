@@ -63,7 +63,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property AssignmentName. 
         /// <para>
         /// The name of the assignment. This name must be unique within the Amazon Web Services
-        /// account;.
+        /// account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -115,7 +115,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Identities. 
         /// <para>
-        /// The QuickSight users, groups, or both that the IAM policy is assigned to.
+        /// The Amazon QuickSight users, groups, or both that the IAMpolicy is assigned to.
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Identities
@@ -133,8 +133,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PolicyArn. 
         /// <para>
-        /// The ARN for the IAM policy that is applied to the QuickSight users and groups specified
-        /// in this assignment.
+        /// The ARN for the IAMpolicy that is applied to the Amazon QuickSight users and groups
+        /// specified in this assignment.
         /// </para>
         /// </summary>
         public string PolicyArn

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Amazon Athena parameters.
+    /// Parameters for Amazon Athena.
     /// </summary>
     public partial class AthenaParameters
     {

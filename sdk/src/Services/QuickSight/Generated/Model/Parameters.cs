@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A list of QuickSight parameters and the list's override values.
+    /// A list of Amazon QuickSight parameters and the list's override values.
     /// </summary>
     public partial class Parameters
     {
@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DateTimeParameters. 
         /// <para>
-        /// Date-time parameters.
+        /// The parameters that have a data type of date-time.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DecimalParameters. 
         /// <para>
-        /// Decimal parameters.
+        /// The parameters that have a data type of decimal.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -79,7 +79,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property IntegerParameters. 
         /// <para>
-        /// Integer parameters.
+        /// The parameters that have a data type of integer.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -98,7 +98,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property StringParameters. 
         /// <para>
-        /// String parameters.
+        /// The parameters that have a data type of string.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]

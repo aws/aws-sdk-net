@@ -98,7 +98,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The Amazon Web Services account; ID.
+        /// The Amazon Web Services account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -135,7 +135,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PolicyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the IAM policy.
+        /// The Amazon Resource Name (ARN) for the IAMpolicy.
         /// </para>
         /// </summary>
         public string PolicyArn

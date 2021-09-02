@@ -38,6 +38,7 @@ namespace Amazon.QuickSight.Model
         private List<ColumnGroup> _columnGroups = new List<ColumnGroup>();
         private List<ColumnLevelPermissionRule> _columnLevelPermissionRules = new List<ColumnLevelPermissionRule>();
         private string _dataSetId;
+        private DataSetUsageConfiguration _dataSetUsageConfiguration;
         private Dictionary<string, FieldFolder> _fieldFolders = new Dictionary<string, FieldFolder>();
         private DataSetImportMode _importMode;
         private Dictionary<string, LogicalTable> _logicalTableMap = new Dictionary<string, LogicalTable>();
@@ -51,7 +52,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The Amazon Web Services account; ID.
+        /// The Amazon Web Services account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -70,7 +71,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ColumnGroups. 
         /// <para>
-        /// Groupings of columns that work together in certain QuickSight features. Currently,
+        /// Groupings of columns that work together in certain Amazon QuickSight features. Currently,
         /// only geospatial hierarchy is supported.
         /// </para>
         /// </summary>
@@ -110,7 +111,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property DataSetId. 
         /// <para>
         /// An ID for the dataset that you want to create. This ID is unique per Amazon Web Services
-        /// Region; for each Amazon Web Services account;.
+        /// Region; for each Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -124,6 +125,21 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDataSetId()
         {
             return this._dataSetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataSetUsageConfiguration.
+        /// </summary>
+        public DataSetUsageConfiguration DataSetUsageConfiguration
+        {
+            get { return this._dataSetUsageConfiguration; }
+            set { this._dataSetUsageConfiguration = value; }
+        }
+
+        // Check to see if DataSetUsageConfiguration property is set
+        internal bool IsSetDataSetUsageConfiguration()
+        {
+            return this._dataSetUsageConfiguration != null;
         }
 
         /// <summary>
@@ -226,7 +242,7 @@ namespace Amazon.QuickSight.Model
         /// Declares the physical tables that are available in the underlying data sources.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=32)]
+        [AWSProperty(Required=true, Min=0, Max=32)]
         public Dictionary<string, PhysicalTable> PhysicalTableMap
         {
             get { return this._physicalTableMap; }

@@ -100,6 +100,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.TagColumnOperation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UntagColumnOperation", targetDepth))
+                {
+                    var unmarshaller = UntagColumnOperationUnmarshaller.Instance;
+                    unmarshalledObject.UntagColumnOperation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

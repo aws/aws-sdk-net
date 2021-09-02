@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListIAMPolicyAssignmentsForUser operation.
-    /// Lists all the IAM policy assignments, including the Amazon Resource Names (ARNs) for
+    /// Lists all the IAMpolicy assignments, including the Amazon Resource Names (ARNs) for
     /// the IAM policies assigned to the specified user and group or groups that the user
     /// belongs to.
     /// </summary>
@@ -45,7 +45,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the Amazon Web Services account; that contains the assignments.
+        /// The ID of the Amazon Web Services account that contains the assignments.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

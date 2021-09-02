@@ -39,6 +39,7 @@ namespace Amazon.QuickSight.Model
         private long? _consumedSpiceCapacityInBytes;
         private DateTime? _createdTime;
         private string _dataSetId;
+        private DataSetUsageConfiguration _dataSetUsageConfiguration;
         private Dictionary<string, FieldFolder> _fieldFolders = new Dictionary<string, FieldFolder>();
         private DataSetImportMode _importMode;
         private DateTime? _lastUpdatedTime;
@@ -162,6 +163,25 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DataSetUsageConfiguration. 
+        /// <para>
+        /// The usage configuration to apply to child datasets that reference this dataset as
+        /// a source.
+        /// </para>
+        /// </summary>
+        public DataSetUsageConfiguration DataSetUsageConfiguration
+        {
+            get { return this._dataSetUsageConfiguration; }
+            set { this._dataSetUsageConfiguration = value; }
+        }
+
+        // Check to see if DataSetUsageConfiguration property is set
+        internal bool IsSetDataSetUsageConfiguration()
+        {
+            return this._dataSetUsageConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FieldFolders. 
         /// <para>
         /// The folder that contains fields and nested subfolders for your dataset.
@@ -278,7 +298,7 @@ namespace Amazon.QuickSight.Model
         /// Declares the physical tables that are available in the underlying data sources.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=32)]
+        [AWSProperty(Min=0, Max=32)]
         public Dictionary<string, PhysicalTable> PhysicalTableMap
         {
             get { return this._physicalTableMap; }

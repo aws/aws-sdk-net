@@ -59,7 +59,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AmazonElasticsearchParameters. 
         /// <para>
-        /// Amazon Elasticsearch Service parameters.
+        /// The parameters for Elasticsearch.
         /// </para>
         /// </summary>
         public AmazonElasticsearchParameters AmazonElasticsearchParameters
@@ -77,7 +77,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AthenaParameters. 
         /// <para>
-        /// Amazon Athena parameters.
+        /// The parameters for Amazon Athena.
         /// </para>
         /// </summary>
         public AthenaParameters AthenaParameters
@@ -95,7 +95,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AuroraParameters. 
         /// <para>
-        /// Amazon Aurora MySQL parameters.
+        /// The parameters for Amazon Aurora MySQL.
         /// </para>
         /// </summary>
         public AuroraParameters AuroraParameters
@@ -113,7 +113,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AuroraPostgreSqlParameters. 
         /// <para>
-        /// Aurora PostgreSQL parameters.
+        /// The parameters for Amazon Aurora.
         /// </para>
         /// </summary>
         public AuroraPostgreSqlParameters AuroraPostgreSqlParameters
@@ -131,7 +131,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsIotAnalyticsParameters. 
         /// <para>
-        /// Amazon Web Services IoT Analytics parameters.
+        /// The parameters for IoT Analytics.
         /// </para>
         /// </summary>
         public AwsIotAnalyticsParameters AwsIotAnalyticsParameters
@@ -149,7 +149,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property JiraParameters. 
         /// <para>
-        /// Jira parameters.
+        /// The parameters for Jira.
         /// </para>
         /// </summary>
         public JiraParameters JiraParameters
@@ -167,7 +167,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property MariaDbParameters. 
         /// <para>
-        /// MariaDB parameters.
+        /// The parameters for MariaDB.
         /// </para>
         /// </summary>
         public MariaDbParameters MariaDbParameters
@@ -185,7 +185,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property MySqlParameters. 
         /// <para>
-        /// MySQL parameters.
+        /// The parameters for MySQL.
         /// </para>
         /// </summary>
         public MySqlParameters MySqlParameters
@@ -203,7 +203,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property OracleParameters. 
         /// <para>
-        /// Oracle parameters.
+        /// The parameters for Oracle.
         /// </para>
         /// </summary>
         public OracleParameters OracleParameters
@@ -221,7 +221,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PostgreSqlParameters. 
         /// <para>
-        /// PostgreSQL parameters.
+        /// The parameters for PostgreSQL.
         /// </para>
         /// </summary>
         public PostgreSqlParameters PostgreSqlParameters
@@ -239,7 +239,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PrestoParameters. 
         /// <para>
-        /// Presto parameters.
+        /// The parameters for Presto.
         /// </para>
         /// </summary>
         public PrestoParameters PrestoParameters
@@ -257,7 +257,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RdsParameters. 
         /// <para>
-        /// Amazon RDS parameters.
+        /// The parameters for Amazon RDS.
         /// </para>
         /// </summary>
         public RdsParameters RdsParameters
@@ -275,7 +275,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RedshiftParameters. 
         /// <para>
-        /// Amazon Redshift parameters.
+        /// The parameters for Amazon Redshift.
         /// </para>
         /// </summary>
         public RedshiftParameters RedshiftParameters
@@ -293,7 +293,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property S3Parameters. 
         /// <para>
-        /// S3 parameters.
+        /// The parameters for S3.
         /// </para>
         /// </summary>
         public S3Parameters S3Parameters
@@ -311,7 +311,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ServiceNowParameters. 
         /// <para>
-        /// ServiceNow parameters.
+        /// The parameters for ServiceNow.
         /// </para>
         /// </summary>
         public ServiceNowParameters ServiceNowParameters
@@ -329,7 +329,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SnowflakeParameters. 
         /// <para>
-        /// Snowflake parameters.
+        /// The parameters for Snowflake.
         /// </para>
         /// </summary>
         public SnowflakeParameters SnowflakeParameters
@@ -347,7 +347,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SparkParameters. 
         /// <para>
-        /// Spark parameters.
+        /// The parameters for Spark.
         /// </para>
         /// </summary>
         public SparkParameters SparkParameters
@@ -365,7 +365,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SqlServerParameters. 
         /// <para>
-        /// SQL Server parameters.
+        /// The parameters for SQL Server.
         /// </para>
         /// </summary>
         public SqlServerParameters SqlServerParameters
@@ -383,7 +383,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property TeradataParameters. 
         /// <para>
-        /// Teradata parameters.
+        /// The parameters for Teradata.
         /// </para>
         /// </summary>
         public TeradataParameters TeradataParameters
@@ -401,7 +401,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property TwitterParameters. 
         /// <para>
-        /// Twitter parameters.
+        /// The parameters for Twitter.
         /// </para>
         /// </summary>
         public TwitterParameters TwitterParameters

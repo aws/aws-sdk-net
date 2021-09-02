@@ -45,6 +45,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LogicalTableSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDataSetArn())
+            {
+                context.Writer.WritePropertyName("DataSetArn");
+                context.Writer.Write(requestObject.DataSetArn);
+            }
+
             if(requestObject.IsSetJoinInstruction())
             {
                 context.Writer.WritePropertyName("JoinInstruction");

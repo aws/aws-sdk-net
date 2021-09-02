@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Jira parameters.
+    /// The parameters for Jira.
     /// </summary>
     public partial class JiraParameters
     {

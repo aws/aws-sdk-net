@@ -59,7 +59,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the Amazon Web Services account; that contains the analysis.
+        /// The ID of the Amazon Web Services account that contains the analysis.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

@@ -63,8 +63,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the Amazon Web Services account; that contains the analysis that you're
-        /// updating.
+        /// The ID of the Amazon Web Services account that contains the analysis that you're updating.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -84,7 +83,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// A descriptive name for the analysis that you're updating. This name displays for the
-        /// analysis in the QuickSight console.
+        /// analysis in the Amazon QuickSight console.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -143,8 +142,8 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property ThemeArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're
-        /// creating. To see the theme in the QuickSight console, make sure that you have access
-        /// to it.
+        /// creating. To see the theme in the Amazon QuickSight console, make sure that you have
+        /// access to it.
         /// </para>
         /// </summary>
         public string ThemeArn

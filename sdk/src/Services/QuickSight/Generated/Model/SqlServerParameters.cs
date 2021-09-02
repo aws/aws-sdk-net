@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// SQL Server parameters.
+    /// The parameters for SQL Server.
     /// </summary>
     public partial class SqlServerParameters
     {

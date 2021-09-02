@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Actions. 
         /// <para>
-        /// The IAM action to grant or revoke permissions on.
+        /// The IAMaction to grant or revoke permissions on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=16)]
@@ -72,7 +72,7 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The ARN of an Amazon Web Services account; root: This is an IAM ARN rather than a
+        /// The ARN of an Amazon Web Services account root: This is an IAMARN rather than a Amazon
         /// QuickSight ARN. Use this option only to share resources (templates) across Amazon
         /// Web Services accounts. (This is less common.) 
         /// </para>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Snowflake parameters.
+    /// The parameters for Snowflake.
     /// </summary>
     public partial class SnowflakeParameters
     {

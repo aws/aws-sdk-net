@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the Amazon Web Services account; that contains the dashboard that you're
+        /// The ID of the Amazon Web Services account that contains the dashboard that you're
         /// describing permissions for.
         /// </para>
         /// </summary>
@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DashboardId. 
         /// <para>
-        /// The ID for the dashboard, also added to the IAM policy.
+        /// The ID for the dashboard, also added to the IAMpolicy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

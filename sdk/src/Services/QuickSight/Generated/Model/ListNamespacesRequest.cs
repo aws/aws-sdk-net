@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListNamespaces operation.
-    /// Lists the namespaces for the specified Amazon Web Services account;.
+    /// Lists the namespaces for the specified Amazon Web Services account.
     /// </summary>
     public partial class ListNamespacesRequest : AmazonQuickSightRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID for the Amazon Web Services account; that contains the QuickSight namespaces
+        /// The ID for the Amazon Web Services account that contains the Amazon QuickSight namespaces
         /// that you want to list.
         /// </para>
         /// </summary>

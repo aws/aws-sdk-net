@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Teradata parameters.
+    /// The parameters for Teradata.
     /// </summary>
     public partial class TeradataParameters
     {

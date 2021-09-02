@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Amazon Aurora with PostgreSQL compatibility parameters.
+    /// Parameters for Amazon Aurora PostgreSQL-Compatible Edition.
     /// </summary>
     public partial class AuroraPostgreSqlParameters
     {
@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Database. 
         /// <para>
-        /// Database.
+        /// The Amazon Aurora PostgreSQL database to connect to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -59,7 +59,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Host. 
         /// <para>
-        /// Host.
+        /// The Amazon Aurora PostgreSQL-Compatible host to connect to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -78,7 +78,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// Port.
+        /// The port that Amazon Aurora PostgreSQL is listening on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=65535)]

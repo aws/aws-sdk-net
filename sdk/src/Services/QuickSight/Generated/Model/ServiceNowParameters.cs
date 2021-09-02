@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// ServiceNow parameters.
+    /// The parameters for ServiceNow.
     /// </summary>
     public partial class ServiceNowParameters
     {

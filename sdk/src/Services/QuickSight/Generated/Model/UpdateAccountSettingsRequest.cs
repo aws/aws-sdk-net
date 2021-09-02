@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAccountSettings operation.
-    /// Updates the Amazon QuickSight settings in your Amazon Web Services account;.
+    /// Updates the Amazon QuickSight settings in your Amazon Web Services account.
     /// </summary>
     public partial class UpdateAccountSettingsRequest : AmazonQuickSightRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID for the Amazon Web Services account; that contains the QuickSight settings
+        /// The ID for the Amazon Web Services account that contains the Amazon QuickSight settings
         /// that you want to list.
         /// </para>
         /// </summary>
@@ -61,10 +61,10 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DefaultNamespace. 
         /// <para>
-        /// The default namespace for this Amazon Web Services account;. Currently, the default
+        /// The default namespace for this Amazon Web Services account. Currently, the default
         /// is <code>default</code>. Identity and Access Management (IAM) users that register
-        /// for the first time with QuickSight provide an email that becomes associated with the
-        /// default namespace.
+        /// for the first time with Amazon QuickSight provide an email that becomes associated
+        /// with the default namespace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -83,8 +83,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property NotificationEmail. 
         /// <para>
-        /// The email address that you want QuickSight to send notifications to regarding your
-        /// Amazon Web Services account; or QuickSight subscription.
+        /// The email address that you want Amazon QuickSight to send notifications to regarding
+        /// your Amazon Web Services account or Amazon QuickSight subscription.
         /// </para>
         /// </summary>
         public string NotificationEmail

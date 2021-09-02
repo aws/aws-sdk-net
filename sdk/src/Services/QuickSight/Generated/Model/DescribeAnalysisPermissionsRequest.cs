@@ -60,8 +60,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the Amazon Web Services account; that contains the analysis whose permissions
-        /// you're describing. You must be using the Amazon Web Services account; that the analysis
+        /// The ID of the Amazon Web Services account that contains the analysis whose permissions
+        /// you're describing. You must be using the Amazon Web Services account that the analysis
         /// is in.
         /// </para>
         /// </summary>

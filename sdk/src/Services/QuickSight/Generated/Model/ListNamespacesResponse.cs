@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespaces. 
         /// <para>
-        /// The information about the namespaces in this Amazon Web Services account;. The response
+        /// The information about the namespaces in this Amazon Web Services account. The response
         /// includes the namespace ARN, name, Amazon Web Services Region;, notification email
         /// address, creation status, and identity store.
         /// </para>

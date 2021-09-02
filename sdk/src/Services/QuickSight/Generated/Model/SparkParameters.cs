@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Spark parameters.
+    /// The parameters for Spark.
     /// </summary>
     public partial class SparkParameters
     {

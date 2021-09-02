@@ -124,7 +124,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property ExternalLoginFederationProviderType. 
         /// <para>
         /// The type of supported external login provider that provides identity to let the user
-        /// federate into Amazon QuickSight with an associated IAM role. The type can be one of
+        /// federate into Amazon QuickSight with an associated IAMrole. The type can be one of
         /// the following.
         /// </para>
         ///  <ul> <li> 
@@ -237,7 +237,7 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight
+        ///  <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon QuickSight
         /// settings.
         /// </para>
         ///  </li> <li> 
