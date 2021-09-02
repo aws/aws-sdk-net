@@ -254,7 +254,7 @@ namespace Amazon.EBS.Model
         /// <summary>
         /// Gets and sets the property VolumeSize. 
         /// <para>
-        /// The size of the volume, in GiB. The maximum size is <code>16384</code> GiB (16 TiB).
+        /// The size of the volume, in GiB. The maximum size is <code>65536</code> GiB (64 TiB).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
