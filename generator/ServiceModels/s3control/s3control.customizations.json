@@ -208,6 +208,30 @@
     },
     "GetAccessPointConfigurationForObjectLambdaRequest":{
       "containsArnField": false
+    },
+    "CreateMultiRegionAccessPointRequest":{
+      "containsArnField": false
+    },
+    "DeleteMultiRegionAccessPointRequest":{
+      "containsArnField": false
+    },
+    "DescribeMultiRegionAccessPointOperationRequest":{
+      "containsArnField": false
+    },
+    "GetMultiRegionAccessPointRequest":{
+      "containsArnField": false
+    },
+    "GetMultiRegionAccessPointPolicyRequest":{
+      "containsArnField": false
+    },
+    "GetMultiRegionAccessPointPolicyStatusRequest":{
+      "containsArnField": false
+    },
+    "ListMultiRegionAccessPointsRequest":{
+      "containsArnField": false
+    },
+    "PutMultiRegionAccessPointPolicyRequest":{
+      "containsArnField": false
     }
   }
 }

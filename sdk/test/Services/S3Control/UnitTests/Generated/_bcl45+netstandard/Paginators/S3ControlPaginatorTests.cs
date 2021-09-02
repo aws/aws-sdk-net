@@ -159,6 +159,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("S3Control")]
+        public void ListMultiRegionAccessPointsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListMultiRegionAccessPointsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListMultiRegionAccessPointsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListMultiRegionAccessPointsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListMultiRegionAccessPoints(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListMultiRegionAccessPoints(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("S3Control")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListMultiRegionAccessPointsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListMultiRegionAccessPointsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListMultiRegionAccessPointsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListMultiRegionAccessPoints(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListMultiRegionAccessPoints(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("S3Control")]
         public void ListRegionalBucketsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListRegionalBucketsRequest>();

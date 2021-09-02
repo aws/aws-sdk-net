@@ -44,11 +44,11 @@ namespace Amazon.S3Control.Model
     ///  
     /// <para>
     /// Use tags to organize your Amazon Web Services bill to reflect your own cost structure.
-    /// To do this, sign up to get your account bill with tag key values included. Then, to
-    /// see the cost of combined resources, organize your billing information according to
-    /// resources with the same tag key values. For example, you can tag several resources
-    /// with a specific application name, and then organize your billing information to see
-    /// the total cost of that application across several services. For more information,
+    /// To do this, sign up to get your Amazon Web Services account bill with tag key values
+    /// included. Then, to see the cost of combined resources, organize your billing information
+    /// according to resources with the same tag key values. For example, you can tag several
+    /// resources with a specific application name, and then organize your billing information
+    /// to see the total cost of that application across several services. For more information,
     /// see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
     /// allocation and tagging</a>.
     /// </para>
@@ -141,7 +141,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account ID of the Outposts bucket.
+        /// The Amazon Web Services account ID of the Outposts bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

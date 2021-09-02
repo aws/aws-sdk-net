@@ -81,7 +81,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account ID of the Outposts bucket tag set to be removed.
+        /// The Amazon Web Services account ID of the Outposts bucket tag set to be removed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

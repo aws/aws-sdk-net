@@ -77,7 +77,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account ID for owner of the bucket whose access points you want to list.
+        /// The Amazon Web Services account ID for owner of the bucket whose access points you
+        /// want to list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

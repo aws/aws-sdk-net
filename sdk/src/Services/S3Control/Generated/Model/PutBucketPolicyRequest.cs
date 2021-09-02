@@ -44,10 +44,10 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  
     /// <para>
-    /// If you are using an identity other than the root user of the account that owns the
-    /// Outposts bucket, the calling identity must have the <code>PutBucketPolicy</code> permissions
-    /// on the specified Outposts bucket and belong to the bucket owner's account in order
-    /// to use this action.
+    /// If you are using an identity other than the root user of the Amazon Web Services account
+    /// that owns the Outposts bucket, the calling identity must have the <code>PutBucketPolicy</code>
+    /// permissions on the specified Outposts bucket and belong to the bucket owner's account
+    /// in order to use this action.
     /// </para>
     ///  
     /// <para>
@@ -58,9 +58,9 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  <important> 
     /// <para>
-    ///  As a security precaution, the root user of the account that owns a bucket can always
-    /// use this action, even if the policy explicitly denies the root user the ability to
-    /// perform this action. 
+    ///  As a security precaution, the root user of the Amazon Web Services account that owns
+    /// a bucket can always use this action, even if the policy explicitly denies the root
+    /// user the ability to perform this action. 
     /// </para>
     ///  </important> 
     /// <para>
@@ -103,7 +103,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account ID of the Outposts bucket.
+        /// The Amazon Web Services account ID of the Outposts bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

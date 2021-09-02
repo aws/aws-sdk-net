@@ -60,6 +60,14 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
+        /// Paginator for ListMultiRegionAccessPoints operation
+        ///</summary>
+        public IListMultiRegionAccessPointsPaginator ListMultiRegionAccessPoints(ListMultiRegionAccessPointsRequest request) 
+        {
+            return new ListMultiRegionAccessPointsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRegionalBuckets operation
         ///</summary>
         public IListRegionalBucketsPaginator ListRegionalBuckets(ListRegionalBucketsRequest request) 

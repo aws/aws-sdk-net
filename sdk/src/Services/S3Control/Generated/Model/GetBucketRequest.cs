@@ -35,8 +35,8 @@ namespace Amazon.S3Control.Model
     /// 
     ///  
     /// <para>
-    /// If you are using an identity other than the root user of the account that owns the
-    /// Outposts bucket, the calling identity must have the <code>s3-outposts:GetBucket</code>
+    /// If you are using an identity other than the root user of the Amazon Web Services account
+    /// that owns the Outposts bucket, the calling identity must have the <code>s3-outposts:GetBucket</code>
     /// permissions on the specified Outposts bucket and belong to the Outposts bucket owner's
     /// account in order to use this action. Only users from Outposts bucket owner account
     /// with the right permissions can perform actions on an Outposts bucket. 
@@ -86,7 +86,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account ID of the Outposts bucket.
+        /// The Amazon Web Services account ID of the Outposts bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

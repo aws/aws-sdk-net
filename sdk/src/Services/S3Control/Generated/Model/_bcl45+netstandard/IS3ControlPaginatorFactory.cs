@@ -41,6 +41,11 @@ namespace Amazon.S3Control.Model
         IListJobsPaginator ListJobs(ListJobsRequest request);
 
         /// <summary>
+        /// Paginator for ListMultiRegionAccessPoints operation
+        ///</summary>
+        IListMultiRegionAccessPointsPaginator ListMultiRegionAccessPoints(ListMultiRegionAccessPointsRequest request);
+
+        /// <summary>
         /// Paginator for ListRegionalBuckets operation
         ///</summary>
         IListRegionalBucketsPaginator ListRegionalBuckets(ListRegionalBucketsRequest request);

@@ -25,6 +25,60 @@ namespace Amazon.S3Control
 {
 
     /// <summary>
+    /// Constants used for properties of type AsyncOperationName.
+    /// </summary>
+    public class AsyncOperationName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreateMultiRegionAccessPoint for AsyncOperationName
+        /// </summary>
+        public static readonly AsyncOperationName CreateMultiRegionAccessPoint = new AsyncOperationName("CreateMultiRegionAccessPoint");
+        /// <summary>
+        /// Constant DeleteMultiRegionAccessPoint for AsyncOperationName
+        /// </summary>
+        public static readonly AsyncOperationName DeleteMultiRegionAccessPoint = new AsyncOperationName("DeleteMultiRegionAccessPoint");
+        /// <summary>
+        /// Constant PutMultiRegionAccessPointPolicy for AsyncOperationName
+        /// </summary>
+        public static readonly AsyncOperationName PutMultiRegionAccessPointPolicy = new AsyncOperationName("PutMultiRegionAccessPointPolicy");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AsyncOperationName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AsyncOperationName FindValue(string value)
+        {
+            return FindValue<AsyncOperationName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AsyncOperationName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BucketCannedACL.
     /// </summary>
     public class BucketCannedACL : ConstantClass
@@ -560,6 +614,72 @@ namespace Amazon.S3Control
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator JobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MultiRegionAccessPointStatus.
+    /// </summary>
+    public class MultiRegionAccessPointStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATING for MultiRegionAccessPointStatus
+        /// </summary>
+        public static readonly MultiRegionAccessPointStatus CREATING = new MultiRegionAccessPointStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for MultiRegionAccessPointStatus
+        /// </summary>
+        public static readonly MultiRegionAccessPointStatus DELETING = new MultiRegionAccessPointStatus("DELETING");
+        /// <summary>
+        /// Constant INCONSISTENT_ACROSS_REGIONS for MultiRegionAccessPointStatus
+        /// </summary>
+        public static readonly MultiRegionAccessPointStatus INCONSISTENT_ACROSS_REGIONS = new MultiRegionAccessPointStatus("INCONSISTENT_ACROSS_REGIONS");
+        /// <summary>
+        /// Constant PARTIALLY_CREATED for MultiRegionAccessPointStatus
+        /// </summary>
+        public static readonly MultiRegionAccessPointStatus PARTIALLY_CREATED = new MultiRegionAccessPointStatus("PARTIALLY_CREATED");
+        /// <summary>
+        /// Constant PARTIALLY_DELETED for MultiRegionAccessPointStatus
+        /// </summary>
+        public static readonly MultiRegionAccessPointStatus PARTIALLY_DELETED = new MultiRegionAccessPointStatus("PARTIALLY_DELETED");
+        /// <summary>
+        /// Constant READY for MultiRegionAccessPointStatus
+        /// </summary>
+        public static readonly MultiRegionAccessPointStatus READY = new MultiRegionAccessPointStatus("READY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MultiRegionAccessPointStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MultiRegionAccessPointStatus FindValue(string value)
+        {
+            return FindValue<MultiRegionAccessPointStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MultiRegionAccessPointStatus(string value)
         {
             return FindValue(value);
         }

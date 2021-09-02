@@ -86,7 +86,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account ID that creates the job.
+        /// The Amazon Web Services account ID that creates the job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

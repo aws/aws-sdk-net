@@ -659,6 +659,100 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  CreateMultiRegionAccessPoint
+
+        /// <summary>
+        /// Creates a Multi-Region Access Point and associates it with the specified buckets.
+        /// For more information about creating Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html">Creating
+        /// Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// This action will always be routed to the US West (Oregon) Region. For more information
+        /// about the restrictions around managing Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+        /// Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This request is asynchronous, meaning that you might receive a response before the
+        /// command has completed. When this request provides a response, it provides a token
+        /// that you can use to monitor the status of the request with <code>DescribeMultiRegionAccessPointOperation</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following actions are related to <code>CreateMultiRegionAccessPoint</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html">GetMultiRegionAccessPoint</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMultiRegionAccessPoint service method.</param>
+        /// 
+        /// <returns>The response from the CreateMultiRegionAccessPoint service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateMultiRegionAccessPoint">REST API Reference for CreateMultiRegionAccessPoint Operation</seealso>
+        public virtual CreateMultiRegionAccessPointResponse CreateMultiRegionAccessPoint(CreateMultiRegionAccessPointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMultiRegionAccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMultiRegionAccessPointResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMultiRegionAccessPointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMultiRegionAccessPoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMultiRegionAccessPoint operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMultiRegionAccessPoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateMultiRegionAccessPoint">REST API Reference for CreateMultiRegionAccessPoint Operation</seealso>
+        public virtual IAsyncResult BeginCreateMultiRegionAccessPoint(CreateMultiRegionAccessPointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMultiRegionAccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMultiRegionAccessPointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMultiRegionAccessPoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMultiRegionAccessPoint.</param>
+        /// 
+        /// <returns>Returns a  CreateMultiRegionAccessPointResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateMultiRegionAccessPoint">REST API Reference for CreateMultiRegionAccessPoint Operation</seealso>
+        public virtual CreateMultiRegionAccessPointResponse EndCreateMultiRegionAccessPoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateMultiRegionAccessPointResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteAccessPoint
 
         /// <summary>
@@ -1180,10 +1274,10 @@ namespace Amazon.S3Control
         /// <para>
         /// This implementation of the DELETE action uses the policy subresource to delete the
         /// policy of a specified Amazon S3 on Outposts bucket. If you are using an identity other
-        /// than the root user of the account that owns the bucket, the calling identity must
-        /// have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the specified
-        /// Outposts bucket and belong to the bucket owner's account to use this action. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+        /// than the root user of the Amazon Web Services account that owns the bucket, the calling
+        /// identity must have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on
+        /// the specified Outposts bucket and belong to the bucket owner's account to use this
+        /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
         /// Amazon S3 on Outposts</a> in <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
@@ -1195,9 +1289,9 @@ namespace Amazon.S3Control
         /// </para>
         ///  <important> 
         /// <para>
-        /// As a security precaution, the root user of the account that owns a bucket can always
-        /// use this action, even if the policy explicitly denies the root user the ability to
-        /// perform this action.
+        /// As a security precaution, the root user of the Amazon Web Services account that owns
+        /// a bucket can always use this action, even if the policy explicitly denies the root
+        /// user the ability to perform this action.
         /// </para>
         ///  </important> 
         /// <para>
@@ -1461,11 +1555,104 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  DeleteMultiRegionAccessPoint
+
+        /// <summary>
+        /// Deletes a Multi-Region Access Point. This action does not delete the buckets associated
+        /// with the Multi-Region Access Point, only the Multi-Region Access Point itself.
+        /// 
+        ///  
+        /// <para>
+        /// This action will always be routed to the US West (Oregon) Region. For more information
+        /// about the restrictions around managing Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+        /// Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This request is asynchronous, meaning that you might receive a response before the
+        /// command has completed. When this request provides a response, it provides a token
+        /// that you can use to monitor the status of the request with <code>DescribeMultiRegionAccessPointOperation</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following actions are related to <code>DeleteMultiRegionAccessPoint</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html">GetMultiRegionAccessPoint</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMultiRegionAccessPoint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMultiRegionAccessPoint service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteMultiRegionAccessPoint">REST API Reference for DeleteMultiRegionAccessPoint Operation</seealso>
+        public virtual DeleteMultiRegionAccessPointResponse DeleteMultiRegionAccessPoint(DeleteMultiRegionAccessPointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMultiRegionAccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMultiRegionAccessPointResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMultiRegionAccessPointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMultiRegionAccessPoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMultiRegionAccessPoint operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMultiRegionAccessPoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteMultiRegionAccessPoint">REST API Reference for DeleteMultiRegionAccessPoint Operation</seealso>
+        public virtual IAsyncResult BeginDeleteMultiRegionAccessPoint(DeleteMultiRegionAccessPointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMultiRegionAccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMultiRegionAccessPointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMultiRegionAccessPoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMultiRegionAccessPoint.</param>
+        /// 
+        /// <returns>Returns a  DeleteMultiRegionAccessPointResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteMultiRegionAccessPoint">REST API Reference for DeleteMultiRegionAccessPoint Operation</seealso>
+        public virtual DeleteMultiRegionAccessPointResponse EndDeleteMultiRegionAccessPoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteMultiRegionAccessPointResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeletePublicAccessBlock
 
         /// <summary>
-        /// Removes the <code>PublicAccessBlock</code> configuration for an account. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
+        /// Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web Services
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
         /// Using Amazon S3 block public access</a>.
         /// 
         ///  
@@ -1753,6 +1940,89 @@ namespace Amazon.S3Control
         public virtual DescribeJobResponse EndDescribeJob(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeMultiRegionAccessPointOperation
+
+        /// <summary>
+        /// Retrieves the status of an asynchronous request to manage a Multi-Region Access Point.
+        /// For more information about managing Multi-Region Access Points and how asynchronous
+        /// requests work, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+        /// Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// The following actions are related to <code>GetMultiRegionAccessPoint</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html">GetMultiRegionAccessPoint</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMultiRegionAccessPointOperation service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMultiRegionAccessPointOperation service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DescribeMultiRegionAccessPointOperation">REST API Reference for DescribeMultiRegionAccessPointOperation Operation</seealso>
+        public virtual DescribeMultiRegionAccessPointOperationResponse DescribeMultiRegionAccessPointOperation(DescribeMultiRegionAccessPointOperationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMultiRegionAccessPointOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMultiRegionAccessPointOperationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMultiRegionAccessPointOperationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMultiRegionAccessPointOperation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMultiRegionAccessPointOperation operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMultiRegionAccessPointOperation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DescribeMultiRegionAccessPointOperation">REST API Reference for DescribeMultiRegionAccessPointOperation Operation</seealso>
+        public virtual IAsyncResult BeginDescribeMultiRegionAccessPointOperation(DescribeMultiRegionAccessPointOperationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMultiRegionAccessPointOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMultiRegionAccessPointOperationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMultiRegionAccessPointOperation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMultiRegionAccessPointOperation.</param>
+        /// 
+        /// <returns>Returns a  DescribeMultiRegionAccessPointOperationResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DescribeMultiRegionAccessPointOperation">REST API Reference for DescribeMultiRegionAccessPointOperation Operation</seealso>
+        public virtual DescribeMultiRegionAccessPointOperationResponse EndDescribeMultiRegionAccessPointOperation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeMultiRegionAccessPointOperationResponse>(asyncResult);
         }
 
         #endregion
@@ -2241,8 +2511,8 @@ namespace Amazon.S3Control
         /// 
         ///  
         /// <para>
-        /// If you are using an identity other than the root user of the account that owns the
-        /// Outposts bucket, the calling identity must have the <code>s3-outposts:GetBucket</code>
+        /// If you are using an identity other than the root user of the Amazon Web Services account
+        /// that owns the Outposts bucket, the calling identity must have the <code>s3-outposts:GetBucket</code>
         /// permissions on the specified Outposts bucket and belong to the Outposts bucket owner's
         /// account in order to use this action. Only users from Outposts bucket owner account
         /// with the right permissions can perform actions on an Outposts bucket. 
@@ -2470,10 +2740,10 @@ namespace Amazon.S3Control
         /// </para>
         ///  
         /// <para>
-        /// If you are using an identity other than the root user of the account that owns the
-        /// bucket, the calling identity must have the <code>GetBucketPolicy</code> permissions
-        /// on the specified bucket and belong to the bucket owner's account in order to use this
-        /// action.
+        /// If you are using an identity other than the root user of the Amazon Web Services account
+        /// that owns the bucket, the calling identity must have the <code>GetBucketPolicy</code>
+        /// permissions on the specified bucket and belong to the bucket owner's account in order
+        /// to use this action.
         /// </para>
         ///  
         /// <para>
@@ -2484,9 +2754,9 @@ namespace Amazon.S3Control
         /// </para>
         ///  <important> 
         /// <para>
-        /// As a security precaution, the root user of the account that owns a bucket can always
-        /// use this action, even if the policy explicitly denies the root user the ability to
-        /// perform this action.
+        /// As a security precaution, the root user of the Amazon Web Services account that owns
+        /// a bucket can always use this action, even if the policy explicitly denies the root
+        /// user the ability to perform this action.
         /// </para>
         ///  </important> 
         /// <para>
@@ -2768,11 +3038,250 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  GetMultiRegionAccessPoint
+
+        /// <summary>
+        /// Returns configuration information about the specified Multi-Region Access Point.
+        /// 
+        ///  
+        /// <para>
+        /// This action will always be routed to the US West (Oregon) Region. For more information
+        /// about the restrictions around managing Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+        /// Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following actions are related to <code>GetMultiRegionAccessPoint</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMultiRegionAccessPoint service method.</param>
+        /// 
+        /// <returns>The response from the GetMultiRegionAccessPoint service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPoint">REST API Reference for GetMultiRegionAccessPoint Operation</seealso>
+        public virtual GetMultiRegionAccessPointResponse GetMultiRegionAccessPoint(GetMultiRegionAccessPointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMultiRegionAccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMultiRegionAccessPointResponseUnmarshaller.Instance;
+
+            return Invoke<GetMultiRegionAccessPointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMultiRegionAccessPoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMultiRegionAccessPoint operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMultiRegionAccessPoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPoint">REST API Reference for GetMultiRegionAccessPoint Operation</seealso>
+        public virtual IAsyncResult BeginGetMultiRegionAccessPoint(GetMultiRegionAccessPointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMultiRegionAccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMultiRegionAccessPointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMultiRegionAccessPoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMultiRegionAccessPoint.</param>
+        /// 
+        /// <returns>Returns a  GetMultiRegionAccessPointResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPoint">REST API Reference for GetMultiRegionAccessPoint Operation</seealso>
+        public virtual GetMultiRegionAccessPointResponse EndGetMultiRegionAccessPoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMultiRegionAccessPointResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetMultiRegionAccessPointPolicy
+
+        /// <summary>
+        /// Returns the access control policy of the specified Multi-Region Access Point.
+        /// 
+        ///  
+        /// <para>
+        /// This action will always be routed to the US West (Oregon) Region. For more information
+        /// about the restrictions around managing Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+        /// Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following actions are related to <code>GetMultiRegionAccessPointPolicy</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicyStatus.html">GetMultiRegionAccessPointPolicyStatus</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPointPolicy.html">PutMultiRegionAccessPointPolicy</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMultiRegionAccessPointPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetMultiRegionAccessPointPolicy service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointPolicy">REST API Reference for GetMultiRegionAccessPointPolicy Operation</seealso>
+        public virtual GetMultiRegionAccessPointPolicyResponse GetMultiRegionAccessPointPolicy(GetMultiRegionAccessPointPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMultiRegionAccessPointPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMultiRegionAccessPointPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetMultiRegionAccessPointPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMultiRegionAccessPointPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMultiRegionAccessPointPolicy operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMultiRegionAccessPointPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointPolicy">REST API Reference for GetMultiRegionAccessPointPolicy Operation</seealso>
+        public virtual IAsyncResult BeginGetMultiRegionAccessPointPolicy(GetMultiRegionAccessPointPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMultiRegionAccessPointPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMultiRegionAccessPointPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMultiRegionAccessPointPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMultiRegionAccessPointPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetMultiRegionAccessPointPolicyResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointPolicy">REST API Reference for GetMultiRegionAccessPointPolicy Operation</seealso>
+        public virtual GetMultiRegionAccessPointPolicyResponse EndGetMultiRegionAccessPointPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMultiRegionAccessPointPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetMultiRegionAccessPointPolicyStatus
+
+        /// <summary>
+        /// Indicates whether the specified Multi-Region Access Point has an access control policy
+        /// that allows public access.
+        /// 
+        ///  
+        /// <para>
+        /// This action will always be routed to the US West (Oregon) Region. For more information
+        /// about the restrictions around managing Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+        /// Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following actions are related to <code>GetMultiRegionAccessPointPolicyStatus</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicy.html">GetMultiRegionAccessPointPolicy</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPointPolicy.html">PutMultiRegionAccessPointPolicy</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMultiRegionAccessPointPolicyStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetMultiRegionAccessPointPolicyStatus service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointPolicyStatus">REST API Reference for GetMultiRegionAccessPointPolicyStatus Operation</seealso>
+        public virtual GetMultiRegionAccessPointPolicyStatusResponse GetMultiRegionAccessPointPolicyStatus(GetMultiRegionAccessPointPolicyStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMultiRegionAccessPointPolicyStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMultiRegionAccessPointPolicyStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetMultiRegionAccessPointPolicyStatusResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMultiRegionAccessPointPolicyStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMultiRegionAccessPointPolicyStatus operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMultiRegionAccessPointPolicyStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointPolicyStatus">REST API Reference for GetMultiRegionAccessPointPolicyStatus Operation</seealso>
+        public virtual IAsyncResult BeginGetMultiRegionAccessPointPolicyStatus(GetMultiRegionAccessPointPolicyStatusRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMultiRegionAccessPointPolicyStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMultiRegionAccessPointPolicyStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMultiRegionAccessPointPolicyStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMultiRegionAccessPointPolicyStatus.</param>
+        /// 
+        /// <returns>Returns a  GetMultiRegionAccessPointPolicyStatusResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointPolicyStatus">REST API Reference for GetMultiRegionAccessPointPolicyStatus Operation</seealso>
+        public virtual GetMultiRegionAccessPointPolicyStatusResponse EndGetMultiRegionAccessPointPolicyStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMultiRegionAccessPointPolicyStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetPublicAccessBlock
 
         /// <summary>
-        /// Retrieves the <code>PublicAccessBlock</code> configuration for an account. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
+        /// Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web Services
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
         /// Using Amazon S3 block public access</a>.
         /// 
         ///  
@@ -3146,7 +3655,8 @@ namespace Amazon.S3Control
 
         /// <summary>
         /// Lists current S3 Batch Operations jobs and jobs that have ended within the last 30
-        /// days for the account making the request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
+        /// days for the Amazon Web Services account making the request. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
         /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
         /// 
         ///  
@@ -3229,6 +3739,95 @@ namespace Amazon.S3Control
         public virtual ListJobsResponse EndListJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListMultiRegionAccessPoints
+
+        /// <summary>
+        /// Returns a list of the Multi-Region Access Points currently associated with the specified
+        /// Amazon Web Services account. Each call can return up to 100 Multi-Region Access Points,
+        /// the maximum number of Multi-Region Access Points that can be associated with a single
+        /// account.
+        /// 
+        ///  
+        /// <para>
+        /// This action will always be routed to the US West (Oregon) Region. For more information
+        /// about the restrictions around managing Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+        /// Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following actions are related to <code>ListMultiRegionAccessPoint</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html">GetMultiRegionAccessPoint</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMultiRegionAccessPoints service method.</param>
+        /// 
+        /// <returns>The response from the ListMultiRegionAccessPoints service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListMultiRegionAccessPoints">REST API Reference for ListMultiRegionAccessPoints Operation</seealso>
+        public virtual ListMultiRegionAccessPointsResponse ListMultiRegionAccessPoints(ListMultiRegionAccessPointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMultiRegionAccessPointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMultiRegionAccessPointsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMultiRegionAccessPointsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMultiRegionAccessPoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMultiRegionAccessPoints operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMultiRegionAccessPoints
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListMultiRegionAccessPoints">REST API Reference for ListMultiRegionAccessPoints Operation</seealso>
+        public virtual IAsyncResult BeginListMultiRegionAccessPoints(ListMultiRegionAccessPointsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMultiRegionAccessPointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMultiRegionAccessPointsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMultiRegionAccessPoints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMultiRegionAccessPoints.</param>
+        /// 
+        /// <returns>Returns a  ListMultiRegionAccessPointsResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListMultiRegionAccessPoints">REST API Reference for ListMultiRegionAccessPoints Operation</seealso>
+        public virtual ListMultiRegionAccessPointsResponse EndListMultiRegionAccessPoints(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListMultiRegionAccessPointsResponse>(asyncResult);
         }
 
         #endregion
@@ -3689,10 +4288,10 @@ namespace Amazon.S3Control
         /// </para>
         ///  
         /// <para>
-        /// If you are using an identity other than the root user of the account that owns the
-        /// Outposts bucket, the calling identity must have the <code>PutBucketPolicy</code> permissions
-        /// on the specified Outposts bucket and belong to the bucket owner's account in order
-        /// to use this action.
+        /// If you are using an identity other than the root user of the Amazon Web Services account
+        /// that owns the Outposts bucket, the calling identity must have the <code>PutBucketPolicy</code>
+        /// permissions on the specified Outposts bucket and belong to the bucket owner's account
+        /// in order to use this action.
         /// </para>
         ///  
         /// <para>
@@ -3703,9 +4302,9 @@ namespace Amazon.S3Control
         /// </para>
         ///  <important> 
         /// <para>
-        ///  As a security precaution, the root user of the account that owns a bucket can always
-        /// use this action, even if the policy explicitly denies the root user the ability to
-        /// perform this action. 
+        ///  As a security precaution, the root user of the Amazon Web Services account that owns
+        /// a bucket can always use this action, even if the policy explicitly denies the root
+        /// user the ability to perform this action. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -3804,11 +4403,11 @@ namespace Amazon.S3Control
         ///  
         /// <para>
         /// Use tags to organize your Amazon Web Services bill to reflect your own cost structure.
-        /// To do this, sign up to get your account bill with tag key values included. Then, to
-        /// see the cost of combined resources, organize your billing information according to
-        /// resources with the same tag key values. For example, you can tag several resources
-        /// with a specific application name, and then organize your billing information to see
-        /// the total cost of that application across several services. For more information,
+        /// To do this, sign up to get your Amazon Web Services account bill with tag key values
+        /// included. Then, to see the cost of combined resources, organize your billing information
+        /// according to resources with the same tag key values. For example, you can tag several
+        /// resources with a specific application name, and then organize your billing information
+        /// to see the total cost of that application across several services. For more information,
         /// see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
         /// allocation and tagging</a>.
         /// </para>
@@ -4082,11 +4681,90 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  PutMultiRegionAccessPointPolicy
+
+        /// <summary>
+        /// Associates an access control policy with the specified Multi-Region Access Point.
+        /// Each Multi-Region Access Point can have only one policy, so a request made to this
+        /// action replaces any existing policy that is associated with the specified Multi-Region
+        /// Access Point.
+        /// 
+        ///  
+        /// <para>
+        /// This action will always be routed to the US West (Oregon) Region. For more information
+        /// about the restrictions around managing Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+        /// Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following actions are related to <code>PutMultiRegionAccessPointPolicy</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicy.html">GetMultiRegionAccessPointPolicy</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicyStatus.html">GetMultiRegionAccessPointPolicyStatus</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutMultiRegionAccessPointPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutMultiRegionAccessPointPolicy service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutMultiRegionAccessPointPolicy">REST API Reference for PutMultiRegionAccessPointPolicy Operation</seealso>
+        public virtual PutMultiRegionAccessPointPolicyResponse PutMultiRegionAccessPointPolicy(PutMultiRegionAccessPointPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutMultiRegionAccessPointPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutMultiRegionAccessPointPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutMultiRegionAccessPointPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutMultiRegionAccessPointPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutMultiRegionAccessPointPolicy operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutMultiRegionAccessPointPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutMultiRegionAccessPointPolicy">REST API Reference for PutMultiRegionAccessPointPolicy Operation</seealso>
+        public virtual IAsyncResult BeginPutMultiRegionAccessPointPolicy(PutMultiRegionAccessPointPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutMultiRegionAccessPointPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutMultiRegionAccessPointPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutMultiRegionAccessPointPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutMultiRegionAccessPointPolicy.</param>
+        /// 
+        /// <returns>Returns a  PutMultiRegionAccessPointPolicyResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutMultiRegionAccessPointPolicy">REST API Reference for PutMultiRegionAccessPointPolicy Operation</seealso>
+        public virtual PutMultiRegionAccessPointPolicyResponse EndPutMultiRegionAccessPointPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutMultiRegionAccessPointPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutPublicAccessBlock
 
         /// <summary>
-        /// Creates or modifies the <code>PublicAccessBlock</code> configuration for an account.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
+        /// Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon
+        /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
         /// Using Amazon S3 block public access</a>.
         /// 
         ///  

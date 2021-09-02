@@ -86,8 +86,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account ID for the owner of the bucket for which you want to create an access
-        /// point.
+        /// The Amazon Web Services account ID for the owner of the bucket for which you want
+        /// to create an access point.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

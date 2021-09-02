@@ -70,7 +70,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account ID associated with the S3 Batch Operations job.
+        /// The Amazon Web Services account ID associated with the S3 Batch Operations job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
