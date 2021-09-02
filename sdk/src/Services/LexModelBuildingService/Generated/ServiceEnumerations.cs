@@ -502,6 +502,10 @@ namespace Amazon.LexModelBuildingService
         /// Constant JaJP for Locale
         /// </summary>
         public static readonly Locale JaJP = new Locale("ja-JP");
+        /// <summary>
+        /// Constant KoKR for Locale
+        /// </summary>
+        public static readonly Locale KoKR = new Locale("ko-KR");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
