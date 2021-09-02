@@ -100,6 +100,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetVolumeId())
+                {
+                    context.Writer.WritePropertyName("VolumeId");
+                    context.Writer.Write(publicRequest.VolumeId);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

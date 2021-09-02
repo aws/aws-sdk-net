@@ -34,8 +34,8 @@ namespace Amazon.FSx.Model
     /// one or more <code>TaskIds</code> values are provided in the request, or if filters
     /// are used in the request. You can use filters to narrow the response to include just
     /// tasks for specific file systems, or tasks in a specific lifecycle state. Otherwise,
-    /// it returns all data repository tasks owned by your AWS account in the AWS Region of
-    /// the endpoint that you're calling.
+    /// it returns all data repository tasks owned by your Amazon Web Services account in
+    /// the Amazon Web Services Region of the endpoint that you're calling.
     /// 
     ///  
     /// <para>

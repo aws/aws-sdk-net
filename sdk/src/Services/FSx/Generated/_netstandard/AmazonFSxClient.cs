@@ -274,7 +274,7 @@ namespace Amazon.FSx
 
         /// <summary>
         /// Use this action to associate one or more Domain Name Server (DNS) aliases with an
-        /// existing Amazon FSx for Windows File Server file system. A file systen can have a
+        /// existing Amazon FSx for Windows File Server file system. A file system can have a
         /// maximum of 50 DNS aliases associated with it at any one time. If you try to associate
         /// a DNS alias that is already associated with the file system, FSx takes no action on
         /// that alias in the request. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working
@@ -396,16 +396,18 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Copies an existing backup within the same AWS account to another Region (cross-Region
-        /// copy) or within the same Region (in-Region copy). You can have up to five backup copy
-        /// requests in progress to a single destination Region per account.
+        /// Copies an existing backup within the same Amazon Web Services account to another Amazon
+        /// Web Services Region (cross-Region copy) or within the same Amazon Web Services Region
+        /// (in-Region copy). You can have up to five backup copy requests in progress to a single
+        /// destination Region per account.
         /// 
         ///  
         /// <para>
         /// You can use cross-Region backup copies for cross-region disaster recovery. You periodically
         /// take backups and copy them to another Region so that in the event of a disaster in
         /// the primary Region, you can restore from backup and recover availability quickly in
-        /// the other Region. You can make cross-Region copies only within your AWS partition.
+        /// the other Region. You can make cross-Region copies only within your Amazon Web Services
+        /// partition.
         /// </para>
         ///  
         /// <para>
@@ -414,12 +416,12 @@ namespace Amazon.FSx
         /// </para>
         ///  
         /// <para>
-        /// You can use the <code>SourceRegion</code> parameter to specify the AWS Region from
-        /// which the backup will be copied. For example, if you make the call from the <code>us-west-1</code>
-        /// Region and want to copy a backup from the <code>us-east-2</code> Region, you specify
-        /// <code>us-east-2</code> in the <code>SourceRegion</code> parameter to make a cross-Region
-        /// copy. If you don't specify a Region, the backup copy is created in the same Region
-        /// where the request is sent from (in-Region copy).
+        /// You can use the <code>SourceRegion</code> parameter to specify the Amazon Web Services
+        /// Region from which the backup will be copied. For example, if you make the call from
+        /// the <code>us-west-1</code> Region and want to copy a backup from the <code>us-east-2</code>
+        /// Region, you specify <code>us-east-2</code> in the <code>SourceRegion</code> parameter
+        /// to make a cross-Region copy. If you don't specify a Region, the backup copy is created
+        /// in the same Region where the request is sent from (in-Region copy).
         /// </para>
         ///  
         /// <para>
@@ -453,18 +455,18 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.InvalidDestinationKmsKeyException">
-        /// The AWS Key Management Service (AWS KMS) key of the destination backup is invalid.
+        /// The Key Management Service (KMS) key of the destination backup is invalid.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.InvalidRegionException">
         /// The Region provided for <code>Source Region</code> is invalid or is in a different
-        /// AWS partition.
+        /// Amazon Web Services partition.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.InvalidSourceKmsKeyException">
-        /// The AWS Key Management Service (AWS KMS) key of the source backup is invalid.
+        /// The Key Management Service (KMS) key of the source backup is invalid.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting AWS Support.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.SourceBackupUnavailableException">
         /// The request was rejected because the lifecycle status of the source backup is not
@@ -499,9 +501,10 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Creates a backup of an existing Amazon FSx file system. Creating regular backups for
-        /// your file system is a best practice, enabling you to restore a file system from a
-        /// backup if an issue arises with the original file system.
+        /// Creates a backup of an existing Amazon FSx for Windows File Server or Amazon FSx for
+        /// Lustre file system, or of an Amazon FSx for NetApp ONTAP volume. Creating regular
+        /// backups is a best practice, enabling you to restore a file system or volume from a
+        /// backup if an issue arises with the original file system or volume.
         /// 
         ///  
         /// <para>
@@ -514,20 +517,28 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// is <i>not</i> linked to a data respository.
+        /// is <i>not</i> linked to a data repository.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about backing up Amazon FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
+        /// For more information about backups, see the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For Amazon FSx for Lustre, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
         /// with FSx for Lustre backups</a>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// For more information about backing up Amazon FSx for Windows file systems, see <a
-        /// href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
+        /// For Amazon FSx for Windows, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
         /// with FSx for Windows backups</a>.
         /// </para>
-        ///  
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon FSx for NetApp ONTAP, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/using-backups.html">Working
+        /// with FSx for NetApp ONTAP backups</a>.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// If a backup with the specified client request token exists, and the parameters match,
         /// this operation returns the description of the existing backup. If a backup specified
@@ -586,10 +597,13 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting AWS Support.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
+        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
         public virtual Task<CreateBackupResponse> CreateBackupAsync(CreateBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -654,7 +668,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting AWS Support.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
@@ -753,11 +767,7 @@ namespace Amazon.FSx
         /// The path provided for data repository import isn't valid.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.InvalidNetworkSettingsException">
-        /// One or more network settings specified in the request are invalid. <code>InvalidVpcId</code>
-        /// means that the ID passed for the virtual private cloud (VPC) is invalid. <code>InvalidSubnetIds</code>
-        /// returns the list of IDs for subnets that are either invalid or not part of the VPC
-        /// specified. <code>InvalidSecurityGroupIds</code> returns the list of IDs for security
-        /// groups that are either invalid or not part of the VPC specified.
+        /// One or more network settings specified in the request are invalid.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.InvalidPerUnitStorageThroughputException">
         /// An invalid value for <code>PerUnitStorageThroughput</code> was provided. Please create
@@ -768,7 +778,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting AWS Support.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystem">REST API Reference for CreateFileSystem Operation</seealso>
         public virtual Task<CreateFileSystemResponse> CreateFileSystemAsync(CreateFileSystemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -796,7 +806,8 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Creates a new Amazon FSx file system from an existing Amazon FSx backup.
+        /// Creates a new Amazon FSx for Lustre or Amazon FSx for Windows File Server file system
+        /// from an existing Amazon FSx backup.
         /// 
         ///  
         /// <para>
@@ -863,11 +874,7 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.InvalidNetworkSettingsException">
-        /// One or more network settings specified in the request are invalid. <code>InvalidVpcId</code>
-        /// means that the ID passed for the virtual private cloud (VPC) is invalid. <code>InvalidSubnetIds</code>
-        /// returns the list of IDs for subnets that are either invalid or not part of the VPC
-        /// specified. <code>InvalidSecurityGroupIds</code> returns the list of IDs for security
-        /// groups that are either invalid or not part of the VPC specified.
+        /// One or more network settings specified in the request are invalid.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.InvalidPerUnitStorageThroughputException">
         /// An invalid value for <code>PerUnitStorageThroughput</code> was provided. Please create
@@ -878,7 +885,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting AWS Support.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemFromBackup">REST API Reference for CreateFileSystemFromBackup Operation</seealso>
         public virtual Task<CreateFileSystemFromBackupResponse> CreateFileSystemFromBackupAsync(CreateFileSystemFromBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -888,6 +895,187 @@ namespace Amazon.FSx
             options.ResponseUnmarshaller = CreateFileSystemFromBackupResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateFileSystemFromBackupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateStorageVirtualMachine
+
+        internal virtual CreateStorageVirtualMachineResponse CreateStorageVirtualMachine(CreateStorageVirtualMachineRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStorageVirtualMachineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStorageVirtualMachineResponseUnmarshaller.Instance;
+
+            return Invoke<CreateStorageVirtualMachineResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a storage virtual machine (SVM) for an Amazon FSx for ONTAP file system.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStorageVirtualMachine service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateStorageVirtualMachine service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.ActiveDirectoryErrorException">
+        /// An Active Directory error.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
+        /// The requested operation is not supported for this resource or API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateStorageVirtualMachine">REST API Reference for CreateStorageVirtualMachine Operation</seealso>
+        public virtual Task<CreateStorageVirtualMachineResponse> CreateStorageVirtualMachineAsync(CreateStorageVirtualMachineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStorageVirtualMachineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStorageVirtualMachineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateStorageVirtualMachineResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateVolume
+
+        internal virtual CreateVolumeResponse CreateVolume(CreateVolumeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVolumeResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVolumeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an Amazon FSx for NetApp ONTAP storage volume.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVolume service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVolume service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.MissingVolumeConfigurationException">
+        /// A volume configuration is required for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
+        /// No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
+        /// The requested operation is not supported for this resource or API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateVolume">REST API Reference for CreateVolume Operation</seealso>
+        public virtual Task<CreateVolumeResponse> CreateVolumeAsync(CreateVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVolumeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateVolumeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateVolumeFromBackup
+
+        internal virtual CreateVolumeFromBackupResponse CreateVolumeFromBackup(CreateVolumeFromBackupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVolumeFromBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVolumeFromBackupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVolumeFromBackupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new Amazon FSx for NetApp ONTAP volume from an existing Amazon FSx volume
+        /// backup.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVolumeFromBackup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVolumeFromBackup service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BackupNotFoundException">
+        /// No Amazon FSx backups were found based upon the supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.MissingVolumeConfigurationException">
+        /// A volume configuration is required for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
+        /// No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateVolumeFromBackup">REST API Reference for CreateVolumeFromBackup Operation</seealso>
+        public virtual Task<CreateVolumeFromBackupResponse> CreateVolumeFromBackupAsync(CreateVolumeFromBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVolumeFromBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVolumeFromBackupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateVolumeFromBackupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -981,6 +1169,12 @@ namespace Amazon.FSx
         /// 
         ///  
         /// <para>
+        /// To delete an Amazon FSx for NetApp ONTAP file system, first delete all the volumes
+        /// and SVMs on the file system. Then provide a <code>FileSystemId</code> value to the
+        /// <code>DeleFileSystem</code> operation.
+        /// </para>
+        ///  
+        /// <para>
         /// By default, when you delete an Amazon FSx for Windows File Server file system, a final
         /// backup is created upon deletion. This final backup is not subject to the file system's
         /// retention policy, and must be manually deleted.
@@ -1026,7 +1220,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting AWS Support.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteFileSystem">REST API Reference for DeleteFileSystem Operation</seealso>
         public virtual Task<DeleteFileSystemResponse> DeleteFileSystemAsync(DeleteFileSystemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1036,6 +1230,107 @@ namespace Amazon.FSx
             options.ResponseUnmarshaller = DeleteFileSystemResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteFileSystemResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteStorageVirtualMachine
+
+        internal virtual DeleteStorageVirtualMachineResponse DeleteStorageVirtualMachine(DeleteStorageVirtualMachineRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStorageVirtualMachineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStorageVirtualMachineResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteStorageVirtualMachineResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an existing Amazon FSx for ONTAP storage virtual machine (SVM). Prior to deleting
+        /// an SVM, you must delete all non-root volumes in the SVM, otherwise the operation will
+        /// fail.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStorageVirtualMachine service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteStorageVirtualMachine service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
+        /// No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteStorageVirtualMachine">REST API Reference for DeleteStorageVirtualMachine Operation</seealso>
+        public virtual Task<DeleteStorageVirtualMachineResponse> DeleteStorageVirtualMachineAsync(DeleteStorageVirtualMachineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStorageVirtualMachineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStorageVirtualMachineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteStorageVirtualMachineResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteVolume
+
+        internal virtual DeleteVolumeResponse DeleteVolume(DeleteVolumeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVolumeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVolumeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an Amazon FSx for NetApp ONTAP volume. When deleting a volume, you have the
+        /// option of creating a final backup. If you create a final backup, you have the option
+        /// to apply Tags to the backup. You need to have <code>fsx:TagResource</code> permission
+        /// in order to apply tags to the backup.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVolume service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVolume service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
+        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteVolume">REST API Reference for DeleteVolume Operation</seealso>
+        public virtual Task<DeleteVolumeResponse> DeleteVolumeAsync(DeleteVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVolumeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteVolumeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1056,7 +1351,8 @@ namespace Amazon.FSx
         /// <summary>
         /// Returns the description of specific Amazon FSx backups, if a <code>BackupIds</code>
         /// value is provided for that backup. Otherwise, it returns all backups owned by your
-        /// AWS account in the AWS Region of the endpoint that you're calling.
+        /// Amazon Web Services account in the Amazon Web Services Region of the endpoint that
+        /// you're calling.
         /// 
         ///  
         /// <para>
@@ -1079,7 +1375,7 @@ namespace Amazon.FSx
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The implementation might return fewer than <code>MaxResults</code> file system descriptions
+        /// The implementation might return fewer than <code>MaxResults</code> backup descriptions
         /// while still including a <code>NextToken</code> value.
         /// </para>
         ///  </li> <li> 
@@ -1107,6 +1403,9 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
         /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
+        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
         public virtual Task<DescribeBackupsResponse> DescribeBackupsAsync(DescribeBackupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1138,8 +1437,8 @@ namespace Amazon.FSx
         /// one or more <code>TaskIds</code> values are provided in the request, or if filters
         /// are used in the request. You can use filters to narrow the response to include just
         /// tasks for specific file systems, or tasks in a specific lifecycle state. Otherwise,
-        /// it returns all data repository tasks owned by your AWS account in the AWS Region of
-        /// the endpoint that you're calling.
+        /// it returns all data repository tasks owned by your Amazon Web Services account in
+        /// the Amazon Web Services Region of the endpoint that you're calling.
         /// 
         ///  
         /// <para>
@@ -1242,8 +1541,8 @@ namespace Amazon.FSx
         /// <summary>
         /// Returns the description of specific Amazon FSx file systems, if a <code>FileSystemIds</code>
         /// value is provided for that file system. Otherwise, it returns descriptions of all
-        /// file systems owned by your AWS account in the AWS Region of the endpoint that you're
-        /// calling.
+        /// file systems owned by your Amazon Web Services account in the Amazon Web Services
+        /// Region of the endpoint that you're calling.
         /// 
         ///  
         /// <para>
@@ -1300,6 +1599,92 @@ namespace Amazon.FSx
             options.ResponseUnmarshaller = DescribeFileSystemsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeFileSystemsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeStorageVirtualMachines
+
+        internal virtual DescribeStorageVirtualMachinesResponse DescribeStorageVirtualMachines(DescribeStorageVirtualMachinesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStorageVirtualMachinesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStorageVirtualMachinesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStorageVirtualMachinesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes one or more Amazon FSx for NetApp ONTAP storage virtual machines (SVMs).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStorageVirtualMachines service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeStorageVirtualMachines service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
+        /// No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeStorageVirtualMachines">REST API Reference for DescribeStorageVirtualMachines Operation</seealso>
+        public virtual Task<DescribeStorageVirtualMachinesResponse> DescribeStorageVirtualMachinesAsync(DescribeStorageVirtualMachinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStorageVirtualMachinesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStorageVirtualMachinesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeStorageVirtualMachinesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeVolumes
+
+        internal virtual DescribeVolumesResponse DescribeVolumes(DescribeVolumesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVolumesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVolumesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVolumesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes one or more Amazon FSx for NetApp ONTAP volumes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVolumes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVolumes service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
+        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
+        public virtual Task<DescribeVolumesResponse> DescribeVolumesAsync(DescribeVolumesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVolumesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVolumesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeVolumesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1619,6 +2004,26 @@ namespace Amazon.FSx
         /// <para>
         /// WeeklyMaintenanceStartTime
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For Amazon FSx for NetApp ONTAP file systems, you can update the following properties:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// AutomaticBackupRetentionDays
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DailyAutomaticBackupStartTime
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// FsxAdminPassword
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// WeeklyMaintenanceStartTime
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFileSystem service method.</param>
@@ -1646,7 +2051,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting AWS Support.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
@@ -1659,6 +2064,108 @@ namespace Amazon.FSx
             options.ResponseUnmarshaller = UpdateFileSystemResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateFileSystemResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateStorageVirtualMachine
+
+        internal virtual UpdateStorageVirtualMachineResponse UpdateStorageVirtualMachine(UpdateStorageVirtualMachineRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateStorageVirtualMachineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStorageVirtualMachineResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateStorageVirtualMachineResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an Amazon FSx for ONTAP storage virtual machine (SVM).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStorageVirtualMachine service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateStorageVirtualMachine service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
+        /// No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
+        /// The requested operation is not supported for this resource or API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateStorageVirtualMachine">REST API Reference for UpdateStorageVirtualMachine Operation</seealso>
+        public virtual Task<UpdateStorageVirtualMachineResponse> UpdateStorageVirtualMachineAsync(UpdateStorageVirtualMachineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateStorageVirtualMachineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStorageVirtualMachineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateStorageVirtualMachineResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateVolume
+
+        internal virtual UpdateVolumeResponse UpdateVolume(UpdateVolumeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVolumeResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVolumeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an Amazon FSx for NetApp ONTAP volume's configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVolume service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateVolume service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.MissingVolumeConfigurationException">
+        /// A volume configuration is required for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
+        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateVolume">REST API Reference for UpdateVolume Operation</seealso>
+        public virtual Task<UpdateVolumeResponse> UpdateVolumeAsync(UpdateVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVolumeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateVolumeResponse>(request, options, cancellationToken);
         }
 
         #endregion

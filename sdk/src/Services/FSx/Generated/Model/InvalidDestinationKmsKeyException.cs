@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The AWS Key Management Service (AWS KMS) key of the destination backup is invalid.
+    /// The Key Management Service (KMS) key of the destination backup is invalid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

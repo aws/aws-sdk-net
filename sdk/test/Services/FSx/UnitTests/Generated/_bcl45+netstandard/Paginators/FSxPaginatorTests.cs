@@ -194,5 +194,122 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
             paginator.Responses.ToList();
         }
 
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("FSx")]
+        public void DescribeStorageVirtualMachinesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeStorageVirtualMachinesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeStorageVirtualMachinesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeStorageVirtualMachinesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.DescribeStorageVirtualMachines(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeStorageVirtualMachines(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("FSx")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeStorageVirtualMachinesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeStorageVirtualMachinesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeStorageVirtualMachinesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.DescribeStorageVirtualMachines(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeStorageVirtualMachines(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("FSx")]
+        public void DescribeVolumesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeVolumesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeVolumesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeVolumesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.DescribeVolumes(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeVolumes(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("FSx")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeVolumesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeVolumesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeVolumesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.DescribeVolumes(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeVolumes(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("FSx")]
+        public void ListTagsForResourceTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListTagsForResourceResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListTagsForResourceResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListTagsForResource(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListTagsForResource(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("FSx")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListTagsForResourceTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListTagsForResourceResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListTagsForResource(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListTagsForResource(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
     }
 }

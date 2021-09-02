@@ -655,6 +655,56 @@ namespace Amazon.FSx
 
 
     /// <summary>
+    /// Constants used for properties of type DiskIopsConfigurationMode.
+    /// </summary>
+    public class DiskIopsConfigurationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTOMATIC for DiskIopsConfigurationMode
+        /// </summary>
+        public static readonly DiskIopsConfigurationMode AUTOMATIC = new DiskIopsConfigurationMode("AUTOMATIC");
+        /// <summary>
+        /// Constant USER_PROVISIONED for DiskIopsConfigurationMode
+        /// </summary>
+        public static readonly DiskIopsConfigurationMode USER_PROVISIONED = new DiskIopsConfigurationMode("USER_PROVISIONED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DiskIopsConfigurationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DiskIopsConfigurationMode FindValue(string value)
+        {
+            return FindValue<DiskIopsConfigurationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DiskIopsConfigurationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DriveCacheType.
     /// </summary>
     public class DriveCacheType : ConstantClass
@@ -831,6 +881,10 @@ namespace Amazon.FSx
         /// </summary>
         public static readonly FileSystemType LUSTRE = new FileSystemType("LUSTRE");
         /// <summary>
+        /// Constant ONTAP for FileSystemType
+        /// </summary>
+        public static readonly FileSystemType ONTAP = new FileSystemType("ONTAP");
+        /// <summary>
         /// Constant WINDOWS for FileSystemType
         /// </summary>
         public static readonly FileSystemType WINDOWS = new FileSystemType("WINDOWS");
@@ -888,6 +942,10 @@ namespace Amazon.FSx
         /// Constant FileSystemType for FilterName
         /// </summary>
         public static readonly FilterName FileSystemType = new FilterName("file-system-type");
+        /// <summary>
+        /// Constant VolumeId for FilterName
+        /// </summary>
+        public static readonly FilterName VolumeId = new FilterName("volume-id");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -918,6 +976,60 @@ namespace Amazon.FSx
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FlexCacheEndpointType.
+    /// </summary>
+    public class FlexCacheEndpointType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CACHE for FlexCacheEndpointType
+        /// </summary>
+        public static readonly FlexCacheEndpointType CACHE = new FlexCacheEndpointType("CACHE");
+        /// <summary>
+        /// Constant NONE for FlexCacheEndpointType
+        /// </summary>
+        public static readonly FlexCacheEndpointType NONE = new FlexCacheEndpointType("NONE");
+        /// <summary>
+        /// Constant ORIGIN for FlexCacheEndpointType
+        /// </summary>
+        public static readonly FlexCacheEndpointType ORIGIN = new FlexCacheEndpointType("ORIGIN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlexCacheEndpointType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlexCacheEndpointType FindValue(string value)
+        {
+            return FindValue<FlexCacheEndpointType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlexCacheEndpointType(string value)
         {
             return FindValue(value);
         }
@@ -972,6 +1084,106 @@ namespace Amazon.FSx
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LustreDeploymentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OntapDeploymentType.
+    /// </summary>
+    public class OntapDeploymentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MULTI_AZ_1 for OntapDeploymentType
+        /// </summary>
+        public static readonly OntapDeploymentType MULTI_AZ_1 = new OntapDeploymentType("MULTI_AZ_1");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OntapDeploymentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OntapDeploymentType FindValue(string value)
+        {
+            return FindValue<OntapDeploymentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OntapDeploymentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OntapVolumeType.
+    /// </summary>
+    public class OntapVolumeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DP for OntapVolumeType
+        /// </summary>
+        public static readonly OntapVolumeType DP = new OntapVolumeType("DP");
+        /// <summary>
+        /// Constant LS for OntapVolumeType
+        /// </summary>
+        public static readonly OntapVolumeType LS = new OntapVolumeType("LS");
+        /// <summary>
+        /// Constant RW for OntapVolumeType
+        /// </summary>
+        public static readonly OntapVolumeType RW = new OntapVolumeType("RW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OntapVolumeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OntapVolumeType FindValue(string value)
+        {
+            return FindValue<OntapVolumeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OntapVolumeType(string value)
         {
             return FindValue(value);
         }
@@ -1071,6 +1283,110 @@ namespace Amazon.FSx
 
 
     /// <summary>
+    /// Constants used for properties of type ResourceType.
+    /// </summary>
+    public class ResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FILE_SYSTEM for ResourceType
+        /// </summary>
+        public static readonly ResourceType FILE_SYSTEM = new ResourceType("FILE_SYSTEM");
+        /// <summary>
+        /// Constant VOLUME for ResourceType
+        /// </summary>
+        public static readonly ResourceType VOLUME = new ResourceType("VOLUME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceType FindValue(string value)
+        {
+            return FindValue<ResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SecurityStyle.
+    /// </summary>
+    public class SecurityStyle : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MIXED for SecurityStyle
+        /// </summary>
+        public static readonly SecurityStyle MIXED = new SecurityStyle("MIXED");
+        /// <summary>
+        /// Constant NTFS for SecurityStyle
+        /// </summary>
+        public static readonly SecurityStyle NTFS = new SecurityStyle("NTFS");
+        /// <summary>
+        /// Constant UNIX for SecurityStyle
+        /// </summary>
+        public static readonly SecurityStyle UNIX = new SecurityStyle("UNIX");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SecurityStyle(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SecurityStyle FindValue(string value)
+        {
+            return FindValue<SecurityStyle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SecurityStyle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ServiceLimit.
     /// </summary>
     public class ServiceLimit : ConstantClass
@@ -1081,9 +1397,17 @@ namespace Amazon.FSx
         /// </summary>
         public static readonly ServiceLimit FILE_SYSTEM_COUNT = new ServiceLimit("FILE_SYSTEM_COUNT");
         /// <summary>
+        /// Constant STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM for ServiceLimit
+        /// </summary>
+        public static readonly ServiceLimit STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM = new ServiceLimit("STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM");
+        /// <summary>
         /// Constant TOTAL_IN_PROGRESS_COPY_BACKUPS for ServiceLimit
         /// </summary>
         public static readonly ServiceLimit TOTAL_IN_PROGRESS_COPY_BACKUPS = new ServiceLimit("TOTAL_IN_PROGRESS_COPY_BACKUPS");
+        /// <summary>
+        /// Constant TOTAL_SSD_IOPS for ServiceLimit
+        /// </summary>
+        public static readonly ServiceLimit TOTAL_SSD_IOPS = new ServiceLimit("TOTAL_SSD_IOPS");
         /// <summary>
         /// Constant TOTAL_STORAGE for ServiceLimit
         /// </summary>
@@ -1100,6 +1424,10 @@ namespace Amazon.FSx
         /// Constant TOTAL_USER_TAGS for ServiceLimit
         /// </summary>
         public static readonly ServiceLimit TOTAL_USER_TAGS = new ServiceLimit("TOTAL_USER_TAGS");
+        /// <summary>
+        /// Constant VOLUMES_PER_FILE_SYSTEM for ServiceLimit
+        /// </summary>
+        public static readonly ServiceLimit VOLUMES_PER_FILE_SYSTEM = new ServiceLimit("VOLUMES_PER_FILE_SYSTEM");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1242,6 +1570,450 @@ namespace Amazon.FSx
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StorageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StorageVirtualMachineFilterName.
+    /// </summary>
+    public class StorageVirtualMachineFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FileSystemId for StorageVirtualMachineFilterName
+        /// </summary>
+        public static readonly StorageVirtualMachineFilterName FileSystemId = new StorageVirtualMachineFilterName("file-system-id");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StorageVirtualMachineFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageVirtualMachineFilterName FindValue(string value)
+        {
+            return FindValue<StorageVirtualMachineFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageVirtualMachineFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StorageVirtualMachineLifecycle.
+    /// </summary>
+    public class StorageVirtualMachineLifecycle : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATED for StorageVirtualMachineLifecycle
+        /// </summary>
+        public static readonly StorageVirtualMachineLifecycle CREATED = new StorageVirtualMachineLifecycle("CREATED");
+        /// <summary>
+        /// Constant CREATING for StorageVirtualMachineLifecycle
+        /// </summary>
+        public static readonly StorageVirtualMachineLifecycle CREATING = new StorageVirtualMachineLifecycle("CREATING");
+        /// <summary>
+        /// Constant DELETING for StorageVirtualMachineLifecycle
+        /// </summary>
+        public static readonly StorageVirtualMachineLifecycle DELETING = new StorageVirtualMachineLifecycle("DELETING");
+        /// <summary>
+        /// Constant FAILED for StorageVirtualMachineLifecycle
+        /// </summary>
+        public static readonly StorageVirtualMachineLifecycle FAILED = new StorageVirtualMachineLifecycle("FAILED");
+        /// <summary>
+        /// Constant MISCONFIGURED for StorageVirtualMachineLifecycle
+        /// </summary>
+        public static readonly StorageVirtualMachineLifecycle MISCONFIGURED = new StorageVirtualMachineLifecycle("MISCONFIGURED");
+        /// <summary>
+        /// Constant PENDING for StorageVirtualMachineLifecycle
+        /// </summary>
+        public static readonly StorageVirtualMachineLifecycle PENDING = new StorageVirtualMachineLifecycle("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StorageVirtualMachineLifecycle(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageVirtualMachineLifecycle FindValue(string value)
+        {
+            return FindValue<StorageVirtualMachineLifecycle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageVirtualMachineLifecycle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StorageVirtualMachineRootVolumeSecurityStyle.
+    /// </summary>
+    public class StorageVirtualMachineRootVolumeSecurityStyle : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MIXED for StorageVirtualMachineRootVolumeSecurityStyle
+        /// </summary>
+        public static readonly StorageVirtualMachineRootVolumeSecurityStyle MIXED = new StorageVirtualMachineRootVolumeSecurityStyle("MIXED");
+        /// <summary>
+        /// Constant NTFS for StorageVirtualMachineRootVolumeSecurityStyle
+        /// </summary>
+        public static readonly StorageVirtualMachineRootVolumeSecurityStyle NTFS = new StorageVirtualMachineRootVolumeSecurityStyle("NTFS");
+        /// <summary>
+        /// Constant UNIX for StorageVirtualMachineRootVolumeSecurityStyle
+        /// </summary>
+        public static readonly StorageVirtualMachineRootVolumeSecurityStyle UNIX = new StorageVirtualMachineRootVolumeSecurityStyle("UNIX");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StorageVirtualMachineRootVolumeSecurityStyle(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageVirtualMachineRootVolumeSecurityStyle FindValue(string value)
+        {
+            return FindValue<StorageVirtualMachineRootVolumeSecurityStyle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageVirtualMachineRootVolumeSecurityStyle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StorageVirtualMachineSubtype.
+    /// </summary>
+    public class StorageVirtualMachineSubtype : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEFAULT for StorageVirtualMachineSubtype
+        /// </summary>
+        public static readonly StorageVirtualMachineSubtype DEFAULT = new StorageVirtualMachineSubtype("DEFAULT");
+        /// <summary>
+        /// Constant DP_DESTINATION for StorageVirtualMachineSubtype
+        /// </summary>
+        public static readonly StorageVirtualMachineSubtype DP_DESTINATION = new StorageVirtualMachineSubtype("DP_DESTINATION");
+        /// <summary>
+        /// Constant SYNC_DESTINATION for StorageVirtualMachineSubtype
+        /// </summary>
+        public static readonly StorageVirtualMachineSubtype SYNC_DESTINATION = new StorageVirtualMachineSubtype("SYNC_DESTINATION");
+        /// <summary>
+        /// Constant SYNC_SOURCE for StorageVirtualMachineSubtype
+        /// </summary>
+        public static readonly StorageVirtualMachineSubtype SYNC_SOURCE = new StorageVirtualMachineSubtype("SYNC_SOURCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StorageVirtualMachineSubtype(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageVirtualMachineSubtype FindValue(string value)
+        {
+            return FindValue<StorageVirtualMachineSubtype>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageVirtualMachineSubtype(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TieringPolicyName.
+    /// </summary>
+    public class TieringPolicyName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for TieringPolicyName
+        /// </summary>
+        public static readonly TieringPolicyName ALL = new TieringPolicyName("ALL");
+        /// <summary>
+        /// Constant AUTO for TieringPolicyName
+        /// </summary>
+        public static readonly TieringPolicyName AUTO = new TieringPolicyName("AUTO");
+        /// <summary>
+        /// Constant NONE for TieringPolicyName
+        /// </summary>
+        public static readonly TieringPolicyName NONE = new TieringPolicyName("NONE");
+        /// <summary>
+        /// Constant SNAPSHOT_ONLY for TieringPolicyName
+        /// </summary>
+        public static readonly TieringPolicyName SNAPSHOT_ONLY = new TieringPolicyName("SNAPSHOT_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TieringPolicyName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TieringPolicyName FindValue(string value)
+        {
+            return FindValue<TieringPolicyName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TieringPolicyName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VolumeFilterName.
+    /// </summary>
+    public class VolumeFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FileSystemId for VolumeFilterName
+        /// </summary>
+        public static readonly VolumeFilterName FileSystemId = new VolumeFilterName("file-system-id");
+        /// <summary>
+        /// Constant StorageVirtualMachineId for VolumeFilterName
+        /// </summary>
+        public static readonly VolumeFilterName StorageVirtualMachineId = new VolumeFilterName("storage-virtual-machine-id");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VolumeFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VolumeFilterName FindValue(string value)
+        {
+            return FindValue<VolumeFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VolumeFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VolumeLifecycle.
+    /// </summary>
+    public class VolumeLifecycle : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATED for VolumeLifecycle
+        /// </summary>
+        public static readonly VolumeLifecycle CREATED = new VolumeLifecycle("CREATED");
+        /// <summary>
+        /// Constant CREATING for VolumeLifecycle
+        /// </summary>
+        public static readonly VolumeLifecycle CREATING = new VolumeLifecycle("CREATING");
+        /// <summary>
+        /// Constant DELETING for VolumeLifecycle
+        /// </summary>
+        public static readonly VolumeLifecycle DELETING = new VolumeLifecycle("DELETING");
+        /// <summary>
+        /// Constant FAILED for VolumeLifecycle
+        /// </summary>
+        public static readonly VolumeLifecycle FAILED = new VolumeLifecycle("FAILED");
+        /// <summary>
+        /// Constant MISCONFIGURED for VolumeLifecycle
+        /// </summary>
+        public static readonly VolumeLifecycle MISCONFIGURED = new VolumeLifecycle("MISCONFIGURED");
+        /// <summary>
+        /// Constant PENDING for VolumeLifecycle
+        /// </summary>
+        public static readonly VolumeLifecycle PENDING = new VolumeLifecycle("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VolumeLifecycle(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VolumeLifecycle FindValue(string value)
+        {
+            return FindValue<VolumeLifecycle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VolumeLifecycle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VolumeType.
+    /// </summary>
+    public class VolumeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ONTAP for VolumeType
+        /// </summary>
+        public static readonly VolumeType ONTAP = new VolumeType("ONTAP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VolumeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VolumeType FindValue(string value)
+        {
+            return FindValue<VolumeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VolumeType(string value)
         {
             return FindValue(value);
         }

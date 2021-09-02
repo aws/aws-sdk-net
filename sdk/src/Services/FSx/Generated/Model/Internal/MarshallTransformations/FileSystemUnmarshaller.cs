@@ -124,6 +124,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.NetworkInterfaceIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OntapConfiguration", targetDepth))
+                {
+                    var unmarshaller = OntapFileSystemConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.OntapConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OwnerId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

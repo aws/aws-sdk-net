@@ -95,6 +95,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetOntapConfiguration())
+                {
+                    context.Writer.WritePropertyName("OntapConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UpdateFileSystemOntapConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OntapConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetStorageCapacity())
                 {
                     context.Writer.WritePropertyName("StorageCapacity");

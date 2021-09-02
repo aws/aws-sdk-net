@@ -56,8 +56,8 @@ namespace Amazon.FSx.Model
         ///  
         /// <para>
         /// The destination ARN (either CloudWatch Logs log group or Kinesis Data Firehose delivery
-        /// stream) must be in the same AWS partition, AWS region, and AWS account as your Amazon
-        /// FSx file system.
+        /// stream) must be in the same Amazon Web Services partition, Amazon Web Services Region,
+        /// and Amazon Web Services account as your Amazon FSx file system.
         /// </para>
         /// </summary>
         [AWSProperty(Min=8, Max=1024)]

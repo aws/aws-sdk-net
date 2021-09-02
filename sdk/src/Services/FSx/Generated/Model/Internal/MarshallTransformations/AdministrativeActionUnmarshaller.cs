@@ -100,6 +100,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.TargetFileSystemValues = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TargetVolumeValues", targetDepth))
+                {
+                    var unmarshaller = VolumeUnmarshaller.Instance;
+                    unmarshalledObject.TargetVolumeValues = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

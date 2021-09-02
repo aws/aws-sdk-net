@@ -124,6 +124,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResourceARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ResourceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SourceBackupId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -146,6 +152,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Volume", targetDepth))
+                {
+                    var unmarshaller = VolumeUnmarshaller.Instance;
+                    unmarshalledObject.Volume = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

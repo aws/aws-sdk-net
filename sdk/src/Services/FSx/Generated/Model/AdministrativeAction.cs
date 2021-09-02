@@ -40,6 +40,7 @@ namespace Amazon.FSx.Model
         private DateTime? _requestTime;
         private Status _status;
         private FileSystem _targetFileSystemValues;
+        private Volume _targetVolumeValues;
 
         /// <summary>
         /// Gets and sets the property AdministrativeActionType.
@@ -170,6 +171,21 @@ namespace Amazon.FSx.Model
         internal bool IsSetTargetFileSystemValues()
         {
             return this._targetFileSystemValues != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetVolumeValues.
+        /// </summary>
+        public Volume TargetVolumeValues
+        {
+            get { return this._targetVolumeValues; }
+            set { this._targetVolumeValues = value; }
+        }
+
+        // Check to see if TargetVolumeValues property is set
+        internal bool IsSetTargetVolumeValues()
+        {
+            return this._targetVolumeValues != null;
         }
 
     }

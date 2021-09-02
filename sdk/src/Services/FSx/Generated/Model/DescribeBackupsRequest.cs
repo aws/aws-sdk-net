@@ -32,7 +32,8 @@ namespace Amazon.FSx.Model
     /// Container for the parameters to the DescribeBackups operation.
     /// Returns the description of specific Amazon FSx backups, if a <code>BackupIds</code>
     /// value is provided for that backup. Otherwise, it returns all backups owned by your
-    /// AWS account in the AWS Region of the endpoint that you're calling.
+    /// Amazon Web Services account in the Amazon Web Services Region of the endpoint that
+    /// you're calling.
     /// 
     ///  
     /// <para>
@@ -55,7 +56,7 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The implementation might return fewer than <code>MaxResults</code> file system descriptions
+    /// The implementation might return fewer than <code>MaxResults</code> backup descriptions
     /// while still including a <code>NextToken</code> value.
     /// </para>
     ///  </li> <li> 
@@ -96,7 +97,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters structure. Supported names are file-system-id and backup-type.
+        /// Filters structure. Supported names are <code>file-system-id</code>, <code>backup-type</code>,
+        /// <code>file-system-type</code>, and <code>volume-id</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]

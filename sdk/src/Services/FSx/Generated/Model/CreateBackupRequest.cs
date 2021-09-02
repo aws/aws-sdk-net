@@ -30,9 +30,10 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateBackup operation.
-    /// Creates a backup of an existing Amazon FSx file system. Creating regular backups for
-    /// your file system is a best practice, enabling you to restore a file system from a
-    /// backup if an issue arises with the original file system.
+    /// Creates a backup of an existing Amazon FSx for Windows File Server or Amazon FSx for
+    /// Lustre file system, or of an Amazon FSx for NetApp ONTAP volume. Creating regular
+    /// backups is a best practice, enabling you to restore a file system or volume from a
+    /// backup if an issue arises with the original file system or volume.
     /// 
     ///  
     /// <para>
@@ -45,20 +46,28 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// is <i>not</i> linked to a data respository.
+    /// is <i>not</i> linked to a data repository.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information about backing up Amazon FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
+    /// For more information about backups, see the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// For Amazon FSx for Lustre, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
     /// with FSx for Lustre backups</a>.
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// For more information about backing up Amazon FSx for Windows file systems, see <a
-    /// href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
+    /// For Amazon FSx for Windows, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
     /// with FSx for Windows backups</a>.
     /// </para>
-    ///  
+    ///  </li> <li> 
+    /// <para>
+    /// For Amazon FSx for NetApp ONTAP, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/using-backups.html">Working
+    /// with FSx for NetApp ONTAP backups</a>.
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// If a backup with the specified client request token exists, and the parameters match,
     /// this operation returns the description of the existing backup. If a backup specified
@@ -96,13 +105,14 @@ namespace Amazon.FSx.Model
         private string _clientRequestToken;
         private string _fileSystemId;
         private List<Tag> _tags = new List<Tag>();
+        private string _volumeId;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent
-        /// creation. This string is automatically filled on your behalf when you use the AWS
-        /// Command Line Interface (AWS CLI) or an AWS SDK.
+        /// creation. This string is automatically filled on your behalf when you use the Command
+        /// Line Interface (CLI) or an Amazon Web Services SDK.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]
@@ -124,7 +134,7 @@ namespace Amazon.FSx.Model
         /// The ID of the file system to back up.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=11, Max=21)]
+        [AWSProperty(Min=11, Max=21)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }
@@ -157,6 +167,25 @@ namespace Amazon.FSx.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeId. 
+        /// <para>
+        /// The ID of he FSx for NetApp ONTAP volume to back up.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=23, Max=23)]
+        public string VolumeId
+        {
+            get { return this._volumeId; }
+            set { this._volumeId = value; }
+        }
+
+        // Check to see if VolumeId property is set
+        internal bool IsSetVolumeId()
+        {
+            return this._volumeId != null;
         }
 
     }

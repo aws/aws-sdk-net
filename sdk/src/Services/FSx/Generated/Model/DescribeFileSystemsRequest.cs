@@ -32,8 +32,8 @@ namespace Amazon.FSx.Model
     /// Container for the parameters to the DescribeFileSystems operation.
     /// Returns the description of specific Amazon FSx file systems, if a <code>FileSystemIds</code>
     /// value is provided for that file system. Otherwise, it returns descriptions of all
-    /// file systems owned by your AWS account in the AWS Region of the endpoint that you're
-    /// calling.
+    /// file systems owned by your Amazon Web Services account in the Amazon Web Services
+    /// Region of the endpoint that you're calling.
     /// 
     ///  
     /// <para>

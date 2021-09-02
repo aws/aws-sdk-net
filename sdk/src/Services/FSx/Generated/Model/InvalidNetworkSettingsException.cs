@@ -29,17 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// One or more network settings specified in the request are invalid. <code>InvalidVpcId</code>
-    /// means that the ID passed for the virtual private cloud (VPC) is invalid. <code>InvalidSubnetIds</code>
-    /// returns the list of IDs for subnets that are either invalid or not part of the VPC
-    /// specified. <code>InvalidSecurityGroupIds</code> returns the list of IDs for security
-    /// groups that are either invalid or not part of the VPC specified.
+    /// One or more network settings specified in the request are invalid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class InvalidNetworkSettingsException : AmazonFSxException
     {
+        private string _invalidRouteTableId;
         private string _invalidSecurityGroupId;
         private string _invalidSubnetId;
 
@@ -103,6 +100,7 @@ namespace Amazon.FSx.Model
         protected InvalidNetworkSettingsException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.InvalidRouteTableId = (string)info.GetValue("InvalidRouteTableId", typeof(string));
             this.InvalidSecurityGroupId = (string)info.GetValue("InvalidSecurityGroupId", typeof(string));
             this.InvalidSubnetId = (string)info.GetValue("InvalidSubnetId", typeof(string));
         }
@@ -125,13 +123,36 @@ namespace Amazon.FSx.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("InvalidRouteTableId", this.InvalidRouteTableId);
             info.AddValue("InvalidSecurityGroupId", this.InvalidSecurityGroupId);
             info.AddValue("InvalidSubnetId", this.InvalidSubnetId);
         }
 #endif
 
         /// <summary>
-        /// Gets and sets the property InvalidSecurityGroupId.
+        /// Gets and sets the property InvalidRouteTableId. 
+        /// <para>
+        /// The route table ID is either invalid or not part of the VPC specified.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=21)]
+        public string InvalidRouteTableId
+        {
+            get { return this._invalidRouteTableId; }
+            set { this._invalidRouteTableId = value; }
+        }
+
+        // Check to see if InvalidRouteTableId property is set
+        internal bool IsSetInvalidRouteTableId()
+        {
+            return this._invalidRouteTableId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InvalidSecurityGroupId. 
+        /// <para>
+        /// The security group ID is either invalid or not part of the VPC specified.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=11, Max=20)]
         public string InvalidSecurityGroupId
@@ -147,7 +168,10 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InvalidSubnetId.
+        /// Gets and sets the property InvalidSubnetId. 
+        /// <para>
+        /// The subnet ID that is either invalid or not part of the VPC specified.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=15, Max=24)]
         public string InvalidSubnetId

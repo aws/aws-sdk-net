@@ -30,7 +30,8 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFileSystemFromBackup operation.
-    /// Creates a new Amazon FSx file system from an existing Amazon FSx backup.
+    /// Creates a new Amazon FSx for Lustre or Amazon FSx for Windows File Server file system
+    /// from an existing Amazon FSx backup.
     /// 
     ///  
     /// <para>
@@ -105,8 +106,8 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation.
-        /// This string is automatically filled on your behalf when you use the AWS Command Line
-        /// Interface (AWS CLI) or an AWS SDK.
+        /// This string is automatically filled on your behalf when you use the Command Line Interface
+        /// (CLI) or an Amazon Web Services SDK.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]

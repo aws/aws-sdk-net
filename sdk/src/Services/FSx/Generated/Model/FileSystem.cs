@@ -43,6 +43,7 @@ namespace Amazon.FSx.Model
         private FileSystemLifecycle _lifecycle;
         private LustreFileSystemConfiguration _lustreConfiguration;
         private List<string> _networkInterfaceIds = new List<string>();
+        private OntapFileSystemConfiguration _ontapConfiguration;
         private string _ownerId;
         private string _resourceARN;
         private int? _storageCapacity;
@@ -56,8 +57,8 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property AdministrativeActions. 
         /// <para>
         /// A list of administrative actions for the file system that are in process or waiting
-        /// to be processed. Administrative actions describe changes to the Windows file system
-        /// that you have initiated using the <code>UpdateFileSystem</code> action. 
+        /// to be processed. Administrative actions describe changes to the Amazon FSx file system
+        /// that you have initiated using the <code>UpdateFileSystem</code> action.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]
@@ -148,7 +149,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FileSystemType. 
         /// <para>
-        /// The type of Amazon FSx file system, either <code>LUSTRE</code> or <code>WINDOWS</code>.
+        /// The type of Amazon FSx file system, which can be <code>LUSTRE</code>, <code>WINDOWS</code>,
+        /// or <code>ONTAP</code>.
         /// </para>
         /// </summary>
         public FileSystemType FileSystemType
@@ -166,12 +168,13 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's
-        /// data for Amazon FSx for Windows File Server file systems and persistent Amazon FSx
-        /// for Lustre file systems at rest. In either case, if not specified, the Amazon FSx
-        /// managed key is used. The scratch Amazon FSx for Lustre file systems are always encrypted
-        /// at rest using Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-        /// in the <i>AWS Key Management Service API Reference</i>.
+        /// The ID of the Key Management Service (KMS) key used to encrypt the file system's data
+        /// for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file
+        /// systems, and persistent Amazon FSx for Lustre file systems at rest. If not specified,
+        /// the Amazon FSx managed key is used. The scratch Amazon FSx for Lustre file systems
+        /// are always encrypted at rest using Amazon FSx managed keys. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
+        /// in the <i>Key Management Service API Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -278,11 +281,29 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OntapConfiguration. 
+        /// <para>
+        /// The configuration for this FSx for NetApp ONTAP file system.
+        /// </para>
+        /// </summary>
+        public OntapFileSystemConfiguration OntapConfiguration
+        {
+            get { return this._ontapConfiguration; }
+            set { this._ontapConfiguration = value; }
+        }
+
+        // Check to see if OntapConfiguration property is set
+        internal bool IsSetOntapConfiguration()
+        {
+            return this._ontapConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The AWS account that created the file system. If the file system was created by an
-        /// AWS Identity and Access Management (IAM) user, the AWS account to which the IAM user
-        /// belongs is the owner.
+        /// The Amazon Web Services account that created the file system. If the file system was
+        /// created by an Identity and Access Management (IAM) user, the Amazon Web Services account
+        /// to which the IAM user belongs is the owner.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -360,16 +381,17 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property SubnetIds. 
         /// <para>
         /// Specifies the IDs of the subnets that the file system is accessible from. For Windows
-        /// <code>MULTI_AZ_1</code> file system deployment type, there are two subnet IDs, one
-        /// for the preferred file server and one for the standby file server. The preferred file
-        /// server subnet identified in the <code>PreferredSubnetID</code> property. All other
-        /// file systems have only one subnet ID.
+        /// and ONTAP <code>MULTI_AZ_1</code> file system deployment type, there are two subnet
+        /// IDs, one for the preferred file server and one for the standby file server. The preferred
+        /// file server subnet identified in the <code>PreferredSubnetID</code> property. All
+        /// other file systems have only one subnet ID.
         /// </para>
         ///  
         /// <para>
         /// For Lustre file systems, and Single-AZ Windows file systems, this is the ID of the
         /// subnet that contains the endpoint for the file system. For <code>MULTI_AZ_1</code>
-        /// Windows file systems, the endpoint for the file system is available in the <code>PreferredSubnetID</code>.
+        /// Windows and ONTAP file systems, the endpoint for the file system is available in the
+        /// <code>PreferredSubnetID</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]

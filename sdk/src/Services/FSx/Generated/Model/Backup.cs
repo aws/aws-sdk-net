@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// A backup of an Amazon FSx file system.
+    /// A backup of an Amazon FSx for Windows File Server or Amazon FSx for Lustre file system,
+    /// or of an Amazon FSx for NetApp ONTAP volume.
     /// </summary>
     public partial class Backup
     {
@@ -43,10 +44,12 @@ namespace Amazon.FSx.Model
         private string _ownerId;
         private int? _progressPercent;
         private string _resourceARN;
+        private ResourceType _resourceType;
         private string _sourceBackupId;
         private string _sourceBackupRegion;
         private List<Tag> _tags = new List<Tag>();
         private BackupType _type;
+        private Volume _volume;
 
         /// <summary>
         /// Gets and sets the property BackupId. 
@@ -146,8 +149,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the backup
-        /// of the Amazon FSx file system's data at rest. 
+        /// The ID of the Key Management Service (KMS) key used to encrypt the backup of the Amazon
+        /// FSx file system's data at rest. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -265,6 +268,24 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// Specifies the resource type that is backed up.
+        /// </para>
+        /// </summary>
+        public ResourceType ResourceType
+        {
+            get { return this._resourceType; }
+            set { this._resourceType = value; }
+        }
+
+        // Check to see if ResourceType property is set
+        internal bool IsSetResourceType()
+        {
+            return this._resourceType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceBackupId.
         /// </summary>
         [AWSProperty(Min=12, Max=128)]
@@ -335,6 +356,21 @@ namespace Amazon.FSx.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Volume.
+        /// </summary>
+        public Volume Volume
+        {
+            get { return this._volume; }
+            set { this._volume = value; }
+        }
+
+        // Check to see if Volume property is set
+        internal bool IsSetVolume()
+        {
+            return this._volume != null;
         }
 
     }

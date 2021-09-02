@@ -77,6 +77,7 @@ namespace Amazon.FSx.Model
         private FileSystemType _fileSystemType;
         private string _kmsKeyId;
         private CreateFileSystemLustreConfiguration _lustreConfiguration;
+        private CreateFileSystemOntapConfiguration _ontapConfiguration;
         private List<string> _securityGroupIds = new List<string>();
         private int? _storageCapacity;
         private StorageType _storageType;
@@ -88,8 +89,8 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation.
-        /// This string is automatically filled on your behalf when you use the AWS Command Line
-        /// Interface (AWS CLI) or an AWS SDK.
+        /// This string is automatically filled on your behalf when you use the Command Line Interface
+        /// (CLI) or an Amazon Web Services SDK.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]
@@ -108,7 +109,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FileSystemType. 
         /// <para>
-        /// The type of Amazon FSx file system to create, either <code>WINDOWS</code> or <code>LUSTRE</code>.
+        /// The type of Amazon FSx file system to create. Valid values are <code>WINDOWS</code>,
+        /// <code>LUSTRE</code>, and <code>ONTAP</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -153,6 +155,21 @@ namespace Amazon.FSx.Model
         internal bool IsSetLustreConfiguration()
         {
             return this._lustreConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OntapConfiguration.
+        /// </summary>
+        public CreateFileSystemOntapConfiguration OntapConfiguration
+        {
+            get { return this._ontapConfiguration; }
+            set { this._ontapConfiguration = value; }
+        }
+
+        // Check to see if OntapConfiguration property is set
+        internal bool IsSetOntapConfiguration()
+        {
+            return this._ontapConfiguration != null;
         }
 
         /// <summary>
@@ -212,6 +229,14 @@ namespace Amazon.FSx.Model
         /// <para>
         /// If <code>StorageType=HDD</code>, valid values are 2000 GiB - 65,536 GiB (64 TiB).
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For ONTAP file systems:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Valid values are 1024 GiB - 196,608 GiB (192 TiB).
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2147483647)]
@@ -236,7 +261,7 @@ namespace Amazon.FSx.Model
         ///  <ul> <li> 
         /// <para>
         /// Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all
-        /// Windows and Lustre deployment types.
+        /// Windows, Lustre, and ONTAP deployment types.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -267,11 +292,14 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property SubnetIds. 
         /// <para>
         /// Specifies the IDs of the subnets that the file system will be accessible from. For
-        /// Windows <code>MULTI_AZ_1</code> file system deployment types, provide exactly two
-        /// subnet IDs, one for the preferred file server and one for the standby file server.
+        /// Windows and ONTAP <code>MULTI_AZ_1</code> file system deployment types, provide exactly
+        /// two subnet IDs, one for the preferred file server and one for the standby file server.
         /// You specify one of these subnets as the preferred subnet using the <code>WindowsConfiguration
-        /// &gt; PreferredSubnetID</code> property. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
-        /// Availability and durability: Single-AZ and Multi-AZ file systems</a>.
+        /// &gt; PreferredSubnetID</code> or <code>OntapConfiguration &gt; PreferredSubnetID</code>
+        /// properties. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
+        /// Availability and durability: Single-AZ and Multi-AZ file systems</a> in the <i>Amazon
+        /// FSx for Windows User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">
+        /// Availability and durability</a> in the <i>Amazon FSx for ONTAP User Guide</i>.
         /// </para>
         ///  
         /// <para>

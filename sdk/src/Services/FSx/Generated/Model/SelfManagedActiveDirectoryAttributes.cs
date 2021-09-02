@@ -30,7 +30,7 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// The configuration of the self-managed Microsoft Active Directory (AD) directory to
-    /// which the Windows File Server instance is joined.
+    /// which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.
     /// </summary>
     public partial class SelfManagedActiveDirectoryAttributes
     {
@@ -47,7 +47,7 @@ namespace Amazon.FSx.Model
         /// AD directory.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2)]
+        [AWSProperty(Min=1, Max=3)]
         public List<string> DnsIps
         {
             get { return this._dnsIps; }
@@ -103,7 +103,8 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property OrganizationalUnitDistinguishedName. 
         /// <para>
         /// The fully qualified distinguished name of the organizational unit within the self-managed
-        /// AD directory to which the Windows File Server instance is joined.
+        /// AD directory to which the Windows File Server or ONTAP storage virtual machine (SVM)
+        /// instance is joined.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]

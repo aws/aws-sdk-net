@@ -40,8 +40,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ActiveDirectoryId. 
         /// <para>
-        /// The ID of the AWS Managed Microsoft Active Directory instance to which the file system
-        /// is joined.
+        /// The ID of the Amazon Web Services Managed Microsoft Active Directory instance to which
+        /// the file system is joined.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

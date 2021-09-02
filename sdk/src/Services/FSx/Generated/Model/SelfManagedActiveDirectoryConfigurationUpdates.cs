@@ -45,7 +45,7 @@ namespace Amazon.FSx.Model
         /// AD directory.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2)]
+        [AWSProperty(Min=1, Max=3)]
         public List<string> DnsIps
         {
             get { return this._dnsIps; }

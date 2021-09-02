@@ -94,6 +94,26 @@ namespace Amazon.FSx.Model
     /// <para>
     /// WeeklyMaintenanceStartTime
     /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For Amazon FSx for NetApp ONTAP file systems, you can update the following properties:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// AutomaticBackupRetentionDays
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// DailyAutomaticBackupStartTime
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// FsxAdminPassword
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// WeeklyMaintenanceStartTime
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class UpdateFileSystemRequest : AmazonFSxRequest
@@ -101,6 +121,7 @@ namespace Amazon.FSx.Model
         private string _clientRequestToken;
         private string _fileSystemId;
         private UpdateFileSystemLustreConfiguration _lustreConfiguration;
+        private UpdateFileSystemOntapConfiguration _ontapConfiguration;
         private int? _storageCapacity;
         private UpdateFileSystemWindowsConfiguration _windowsConfiguration;
 
@@ -108,8 +129,8 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates.
-        /// This string is automatically filled on your behalf when you use the AWS Command Line
-        /// Interface (AWS CLI) or an AWS SDK.
+        /// This string is automatically filled on your behalf when you use the Command Line Interface
+        /// (CLI) or an Amazon Web Services SDK.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]
@@ -160,12 +181,28 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OntapConfiguration.
+        /// </summary>
+        public UpdateFileSystemOntapConfiguration OntapConfiguration
+        {
+            get { return this._ontapConfiguration; }
+            set { this._ontapConfiguration = value; }
+        }
+
+        // Check to see if OntapConfiguration property is set
+        internal bool IsSetOntapConfiguration()
+        {
+            return this._ontapConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StorageCapacity. 
         /// <para>
-        /// Use this parameter to increase the storage capacity of an Amazon FSx file system.
-        /// Specifies the storage capacity target value, GiB, to increase the storage capacity
-        /// for the file system that you're updating. You cannot make a storage capacity increase
-        /// request if there is an existing storage capacity increase request in progress.
+        /// Use this parameter to increase the storage capacity of an Amazon FSx for Windows File
+        /// Server or Amazon FSx for Lustre file system. Specifies the storage capacity target
+        /// value, GiB, to increase the storage capacity for the file system that you're updating.
+        /// You cannot make a storage capacity increase request if there is an existing storage
+        /// capacity increase request in progress.
         /// </para>
         ///  
         /// <para>

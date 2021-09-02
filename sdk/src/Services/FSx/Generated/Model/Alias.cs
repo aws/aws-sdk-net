@@ -63,7 +63,8 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DELETE_FAILED - Amazon FSx was unable to disassocate the DNS alias from the file system.
+        /// DELETE_FAILED - Amazon FSx was unable to disassociate the DNS alias from the file
+        /// system.
         /// </para>
         ///  </li> </ul>
         /// </summary>

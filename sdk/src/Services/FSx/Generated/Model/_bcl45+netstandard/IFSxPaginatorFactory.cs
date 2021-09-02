@@ -44,5 +44,20 @@ namespace Amazon.FSx.Model
         /// Paginator for DescribeFileSystems operation
         ///</summary>
         IDescribeFileSystemsPaginator DescribeFileSystems(DescribeFileSystemsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeStorageVirtualMachines operation
+        ///</summary>
+        IDescribeStorageVirtualMachinesPaginator DescribeStorageVirtualMachines(DescribeStorageVirtualMachinesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeVolumes operation
+        ///</summary>
+        IDescribeVolumesPaginator DescribeVolumes(DescribeVolumesRequest request);
+
+        /// <summary>
+        /// Paginator for ListTagsForResource operation
+        ///</summary>
+        IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request);
     }
 }

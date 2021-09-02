@@ -101,6 +101,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetOntapConfiguration())
+                {
+                    context.Writer.WritePropertyName("OntapConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CreateFileSystemOntapConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OntapConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSecurityGroupIds())
                 {
                     context.Writer.WritePropertyName("SecurityGroupIds");

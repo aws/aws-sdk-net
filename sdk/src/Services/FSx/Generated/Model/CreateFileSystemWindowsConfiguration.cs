@@ -49,8 +49,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ActiveDirectoryId. 
         /// <para>
-        /// The ID for an existing AWS Managed Microsoft Active Directory (AD) instance that the
-        /// file system should join when it's created.
+        /// The ID for an existing Amazon Web Services Managed Microsoft Active Directory (AD)
+        /// instance that the file system should join when it's created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -218,8 +218,8 @@ namespace Amazon.FSx.Model
         /// <para>
         ///  <code>MULTI_AZ_1</code> - Deploys a high availability file system that is configured
         /// for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability.
-        /// You can only deploy a Multi-AZ file system in AWS Regions that have a minimum of three
-        /// Availability Zones. Also supports HDD storage type
+        /// You can only deploy a Multi-AZ file system in Amazon Web Services Regions that have
+        /// a minimum of three Availability Zones. Also supports HDD storage type
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -255,9 +255,9 @@ namespace Amazon.FSx.Model
         /// <para>
         /// Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This
         /// specifies the subnet in which you want the preferred file server to be located. For
-        /// in-AWS applications, we recommend that you launch your clients in the same Availability
-        /// Zone (AZ) as your preferred file server to reduce cross-AZ data transfer costs and
-        /// minimize latency. 
+        /// in-Amazon Web Services applications, we recommend that you launch your clients in
+        /// the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ data
+        /// transfer costs and minimize latency. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=15, Max=24)]

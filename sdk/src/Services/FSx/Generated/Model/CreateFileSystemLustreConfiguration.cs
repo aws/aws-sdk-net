@@ -209,7 +209,7 @@ namespace Amazon.FSx.Model
         /// <para>
         /// Encryption of data in-transit for <code>SCRATCH_2</code> and <code>PERSISTENT_1</code>
         /// deployment types is supported when accessed from supported instance types in supported
-        /// AWS Regions. To learn more, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting
+        /// Amazon Web Services Regions. To learn more, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting
         /// Data in Transit</a>.
         /// </para>
         /// </summary>

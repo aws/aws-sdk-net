@@ -30,7 +30,7 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// The Region provided for <code>Source Region</code> is invalid or is in a different
-    /// AWS partition.
+    /// Amazon Web Services partition.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

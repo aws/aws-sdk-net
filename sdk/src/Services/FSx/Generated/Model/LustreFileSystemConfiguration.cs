@@ -213,7 +213,7 @@ namespace Amazon.FSx.Model
         /// <para>
         /// For the <code>SCRATCH_1</code> deployment type, this value is always "<code>fsx</code>".
         /// For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, this value
-        /// is a string that is unique within an AWS Region. 
+        /// is a string that is unique within an Amazon Web Services Region. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8)]

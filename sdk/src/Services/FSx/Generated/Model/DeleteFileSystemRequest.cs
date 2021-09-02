@@ -35,6 +35,12 @@ namespace Amazon.FSx.Model
     /// 
     ///  
     /// <para>
+    /// To delete an Amazon FSx for NetApp ONTAP file system, first delete all the volumes
+    /// and SVMs on the file system. Then provide a <code>FileSystemId</code> value to the
+    /// <code>DeleFileSystem</code> operation.
+    /// </para>
+    ///  
+    /// <para>
     /// By default, when you delete an Amazon FSx for Windows File Server file system, a final
     /// backup is created upon deletion. This final backup is not subject to the file system's
     /// retention policy, and must be manually deleted.
@@ -69,7 +75,8 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion.
-        /// This is automatically filled on your behalf when using the AWS CLI or SDK.
+        /// This is automatically filled on your behalf when using the Command Line Interface
+        /// (CLI) or an Amazon Web Services SDK.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]
