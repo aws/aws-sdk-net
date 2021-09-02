@@ -68,6 +68,12 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCrossAccount())
+                {
+                    context.Writer.WritePropertyName("CrossAccount");
+                    context.Writer.Write(publicRequest.CrossAccount);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");

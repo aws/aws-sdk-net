@@ -33,12 +33,31 @@ namespace Amazon.Schemas.Model
     /// </summary>
     public partial class DescribeDiscovererResponse : AmazonWebServiceResponse
     {
+        private bool? _crossAccount;
         private string _description;
         private string _discovererArn;
         private string _discovererId;
         private string _sourceArn;
         private DiscovererState _state;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property CrossAccount. 
+        /// <para>
+        /// The Status if the discoverer will discover schemas from events sent from another account.
+        /// </para>
+        /// </summary>
+        public bool CrossAccount
+        {
+            get { return this._crossAccount.GetValueOrDefault(); }
+            set { this._crossAccount = value; }
+        }
+
+        // Check to see if CrossAccount property is set
+        internal bool IsSetCrossAccount()
+        {
+            return this._crossAccount.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

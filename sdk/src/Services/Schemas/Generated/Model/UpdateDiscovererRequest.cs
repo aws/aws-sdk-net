@@ -34,8 +34,28 @@ namespace Amazon.Schemas.Model
     /// </summary>
     public partial class UpdateDiscovererRequest : AmazonSchemasRequest
     {
+        private bool? _crossAccount;
         private string _description;
         private string _discovererId;
+
+        /// <summary>
+        /// Gets and sets the property CrossAccount. 
+        /// <para>
+        /// Support discovery of schemas in events sent to the bus from another account. (default:
+        /// true)
+        /// </para>
+        /// </summary>
+        public bool CrossAccount
+        {
+            get { return this._crossAccount.GetValueOrDefault(); }
+            set { this._crossAccount = value; }
+        }
+
+        // Check to see if CrossAccount property is set
+        internal bool IsSetCrossAccount()
+        {
+            return this._crossAccount.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

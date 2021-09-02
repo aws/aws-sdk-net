@@ -64,6 +64,12 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CrossAccount", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.CrossAccount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DiscovererArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
