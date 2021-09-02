@@ -257,8 +257,8 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property RevocationConfiguration. 
         /// <para>
-        /// Information about the certificate revocation list (CRL) created and maintained by
-        /// your private CA. 
+        /// Information about the Online Certificate Status Protocol (OCSP) configuration or certificate
+        /// revocation list (CRL) created and maintained by your private CA. 
         /// </para>
         /// </summary>
         public RevocationConfiguration RevocationConfiguration

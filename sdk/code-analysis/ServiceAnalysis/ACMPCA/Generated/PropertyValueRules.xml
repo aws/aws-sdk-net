@@ -447,6 +447,11 @@
     <max>253</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ACMPCA.Model.OcspConfiguration.OcspCustomCname</property>
+    <min>0</min>
+    <max>253</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ACMPCA.Model.OtherName.TypeId</property>
     <min>0</min>
     <max>64</max>

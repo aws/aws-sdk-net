@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RevocationConfiguration Object
+    /// Response Unmarshaller for OcspConfiguration Object
     /// </summary>  
-    public class RevocationConfigurationUnmarshaller : IUnmarshaller<RevocationConfiguration, XmlUnmarshallerContext>, IUnmarshaller<RevocationConfiguration, JsonUnmarshallerContext>
+    public class OcspConfigurationUnmarshaller : IUnmarshaller<OcspConfiguration, XmlUnmarshallerContext>, IUnmarshaller<OcspConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RevocationConfiguration IUnmarshaller<RevocationConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        OcspConfiguration IUnmarshaller<OcspConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RevocationConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public OcspConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RevocationConfiguration unmarshalledObject = new RevocationConfiguration();
+            OcspConfiguration unmarshalledObject = new OcspConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CrlConfiguration", targetDepth))
+                if (context.TestExpression("Enabled", targetDepth))
                 {
-                    var unmarshaller = CrlConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.CrlConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("OcspConfiguration", targetDepth))
+                if (context.TestExpression("OcspCustomCname", targetDepth))
                 {
-                    var unmarshaller = OcspConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.OcspConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OcspCustomCname = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         }
 
 
-        private static RevocationConfigurationUnmarshaller _instance = new RevocationConfigurationUnmarshaller();        
+        private static OcspConfigurationUnmarshaller _instance = new OcspConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RevocationConfigurationUnmarshaller Instance
+        public static OcspConfigurationUnmarshaller Instance
         {
             get
             {

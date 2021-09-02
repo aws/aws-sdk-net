@@ -31,19 +31,27 @@ namespace Amazon.ACMPCA.Model
     /// <summary>
     /// Certificate revocation information used by the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
     /// and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
-    /// actions. Your private certificate authority (CA) can create and maintain a certificate
-    /// revocation list (CRL). A CRL contains information about certificates revoked by your
-    /// CA. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html">RevokeCertificate</a>.
+    /// actions. Your private certificate authority (CA) can configure Online Certificate
+    /// Status Protocol (OCSP) support and/or maintain a certificate revocation list (CRL).
+    /// OCSP returns validation information about certificates as requested by clients, and
+    /// a CRL contains an updated list of certificates revoked by your CA. For more information,
+    /// see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html">RevokeCertificate</a>
+    /// and <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/revocation-setup.html">Setting
+    /// up a certificate revocation method</a> in the <i>AWS Certificate Manager Private Certificate
+    /// Authority (PCA) User Guide</i>.
     /// </summary>
     public partial class RevocationConfiguration
     {
         private CrlConfiguration _crlConfiguration;
+        private OcspConfiguration _ocspConfiguration;
 
         /// <summary>
         /// Gets and sets the property CrlConfiguration. 
         /// <para>
         /// Configuration of the certificate revocation list (CRL), if any, maintained by your
-        /// private CA.
+        /// private CA. A CRL is typically updated approximately 30 minutes after a certificate
+        /// is revoked. If for any reason a CRL update fails, ACM Private CA makes further attempts
+        /// every 15 minutes.
         /// </para>
         /// </summary>
         public CrlConfiguration CrlConfiguration
@@ -56,6 +64,26 @@ namespace Amazon.ACMPCA.Model
         internal bool IsSetCrlConfiguration()
         {
             return this._crlConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OcspConfiguration. 
+        /// <para>
+        /// Configuration of Online Certificate Status Protocol (OCSP) support, if any, maintained
+        /// by your private CA. When you revoke a certificate, OCSP responses may take up to 60
+        /// minutes to reflect the new status.
+        /// </para>
+        /// </summary>
+        public OcspConfiguration OcspConfiguration
+        {
+            get { return this._ocspConfiguration; }
+            set { this._ocspConfiguration = value; }
+        }
+
+        // Check to see if OcspConfiguration property is set
+        internal bool IsSetOcspConfiguration()
+        {
+            return this._ocspConfiguration != null;
         }
 
     }

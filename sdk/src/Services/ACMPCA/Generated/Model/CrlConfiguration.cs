@@ -50,7 +50,13 @@ namespace Amazon.ACMPCA.Model
     /// the <b>nextUpdate</b> field in the CRL. The CRL is refreshed at 1/2 the age of next
     /// update or when a certificate is revoked. When a certificate is revoked, it is recorded
     /// in the next CRL that is generated and in the next audit report. Only time valid certificates
-    /// are listed in the CRL. Expired certificates are not included. 
+    /// are listed in the CRL. Expired certificates are not included.
+    /// </para>
+    ///  
+    /// <para>
+    /// A CRL is typically updated approximately 30 minutes after a certificate is revoked.
+    /// If for any reason a CRL update fails, ACM Private CA makes further attempts every
+    /// 15 minutes.
     /// </para>
     ///  
     /// <para>
@@ -127,6 +133,12 @@ namespace Amazon.ACMPCA.Model
     ///  
     /// <para>
     ///  <code>openssl crl -inform DER -text -in <i>crl_path</i> -noout</code> 
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html">Planning
+    /// a certificate revocation list (CRL)</a> in the <i>AWS Certificate Manager Private
+    /// Certificate Authority (PCA) User Guide</i> 
     /// </para>
     /// </summary>
     public partial class CrlConfiguration
@@ -207,7 +219,7 @@ namespace Amazon.ACMPCA.Model
         /// <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL
         /// Distribution Points</b> extension of the issued certificate. You can change the name
         /// of your bucket by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
-        /// action. You must specify a <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
+        /// operation. You must specify a <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
         /// policy</a> that allows ACM Private CA to write the CRL to your bucket.
         /// </para>
         /// </summary>

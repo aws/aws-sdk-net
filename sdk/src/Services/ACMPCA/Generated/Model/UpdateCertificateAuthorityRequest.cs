@@ -78,7 +78,12 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property RevocationConfiguration. 
         /// <para>
-        /// Revocation information for your private CA.
+        /// Contains information to enable Online Certificate Status Protocol (OCSP) support,
+        /// to enable a certificate revocation list (CRL), to enable both, or to enable neither.
+        /// If this parameter is not supplied, existing capibilites remain unchanged. For more
+        /// information, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
+        /// and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
+        /// types.
         /// </para>
         /// </summary>
         public RevocationConfiguration RevocationConfiguration

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RevocationConfiguration Marshaller
+    /// OcspConfiguration Marshaller
     /// </summary>       
-    public class RevocationConfigurationMarshaller : IRequestMarshaller<RevocationConfiguration, JsonMarshallerContext> 
+    public class OcspConfigurationMarshaller : IRequestMarshaller<OcspConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,18 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RevocationConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(OcspConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCrlConfiguration())
+            if(requestObject.IsSetEnabled())
             {
-                context.Writer.WritePropertyName("CrlConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CrlConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.CrlConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("Enabled");
+                context.Writer.Write(requestObject.Enabled);
             }
 
-            if(requestObject.IsSetOcspConfiguration())
+            if(requestObject.IsSetOcspCustomCname())
             {
-                context.Writer.WritePropertyName("OcspConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = OcspConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.OcspConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("OcspCustomCname");
+                context.Writer.Write(requestObject.OcspCustomCname);
             }
 
         }
@@ -72,7 +62,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static RevocationConfigurationMarshaller Instance = new RevocationConfigurationMarshaller();
+        public readonly static OcspConfigurationMarshaller Instance = new OcspConfigurationMarshaller();
 
     }
 }
