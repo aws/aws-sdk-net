@@ -1,3 +1,32 @@
+### 3.7.110.0 (2021-09-02 18:33 UTC)
+* AccessAnalyzer (3.7.1.51)
+	* Updates service API, documentation, and paginators to support multi-region access points from Amazon S3.
+* ACMPCA (3.7.3.0)
+	* Private Certificate Authority Service now allows customers to enable an online certificate status protocol (OCSP) responder service on their private certificate authorities. Customers can also optionally configure a custom CNAME for their OCSP responder.
+* EBS (3.7.0.60)
+	* Documentation updates for Amazon EBS direct APIs.
+* ElasticFileSystem (3.7.2.0)
+	* Adds support for EFS Intelligent-Tiering, which uses EFS Lifecycle Management to monitor file access patterns and is designed to automatically transition files to and from your corresponding Infrequent Access (IA) storage classes.
+* FSx (3.7.4.0)
+	* Announcing Amazon FSx for NetApp ONTAP, a new service that provides fully managed shared storage in the AWS Cloud with the data access and management capabilities of ONTAP.
+* LexModelBuildingService (3.7.4.0)
+	* Lex now supports Korean (ko-KR) locale.
+* QuickSight (3.7.5.0)
+	* This release adds support for referencing parent datasets as sources in a child dataset.
+* S3Control (3.7.3.0)
+	* S3 Multi-Region Access Points provide a single global endpoint to access a data set that spans multiple S3 buckets in different AWS Regions.
+* Schemas (3.7.1.0)
+	* This update include the support for Schema Discoverer to discover the events sent to the bus from another account. The feature will be enabled by default when discoverer is created or updated but can also be opt-in or opt-out  by specifying the value for crossAccount.
+* SecurityHub (3.7.5.0)
+	* New ASFF Resources: AwsAutoScalingLaunchConfiguration, AwsEc2VpnConnection, AwsEcrContainerImage. Added KeyRotationStatus to AwsKmsKey. Added AccessControlList, BucketLoggingConfiguration,BucketNotificationConfiguration and BucketNotificationConfiguration to AwsS3Bucket.
+* Transfer (3.7.3.0)
+	* AWS Transfer Family introduces Managed Workflows for creating, executing, monitoring, and standardizing post file transfer processing
+* Core 3.7.2.11
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.109.0 (2021-09-01 18:19 UTC)
 * AppRegistry (3.7.1.0)
 	* Introduction of GetAssociatedResource API and GetApplication response extension for Resource Groups support.
