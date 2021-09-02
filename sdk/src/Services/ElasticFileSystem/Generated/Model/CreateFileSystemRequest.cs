@@ -33,8 +33,8 @@ namespace Amazon.ElasticFileSystem.Model
     /// Creates a new, empty file system. The operation requires a creation token in the request
     /// that Amazon EFS uses to ensure idempotent creation (calling the operation with same
     /// creation token has no effect). If a file system does not currently exist that is owned
-    /// by the caller's AWS account with the specified creation token, this operation does
-    /// the following:
+    /// by the caller's Amazon Web Services account with the specified creation token, this
+    /// operation does the following:
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -137,15 +137,15 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property AvailabilityZoneName. 
         /// <para>
         /// Used to create a file system that uses One Zone storage classes. It specifies the
-        /// AWS Availability Zone in which to create the file system. Use the format <code>us-east-1a</code>
-        /// to specify the Availability Zone. For more information about One Zone storage classes,
-        /// see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using
+        /// Amazon Web Services Availability Zone in which to create the file system. Use the
+        /// format <code>us-east-1a</code> to specify the Availability Zone. For more information
+        /// about One Zone storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using
         /// EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// One Zone storage classes are not available in all Availability Zones in AWS Regions
-        /// where Amazon EFS is available.
+        /// One Zone storage classes are not available in all Availability Zones in Amazon Web
+        /// Services Regions where Amazon EFS is available.
         /// </para>
         ///  </note>
         /// </summary>
@@ -178,7 +178,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// AWS Backup is not available in all AWS Regions where Amazon EFS is available.
+        /// Backup is not available in all Amazon Web Services Regionswhere Amazon EFS is available.
         /// </para>
         ///  </note>
         /// </summary>
@@ -218,8 +218,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <para>
         /// A Boolean value that, if true, creates an encrypted file system. When creating an
         /// encrypted file system, you have the option of specifying <a>CreateFileSystemRequest$KmsKeyId</a>
-        /// for an existing AWS Key Management Service (AWS KMS) customer master key (CMK). If
-        /// you don't specify a CMK, then the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>,
+        /// for an existing Key Management Service (KMS customer master key (CMK). If you don't
+        /// specify a CMK, then the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>,
         /// is used to protect the encrypted file system. 
         /// </para>
         /// </summary>
@@ -238,10 +238,10 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ID of the AWS KMS CMK that you want to use to protect the encrypted file system.
-        /// This parameter is only required if you want to use a non-default KMS key. If this
-        /// parameter is not specified, the default CMK for Amazon EFS is used. This ID can be
-        /// in one of the following formats:
+        /// The ID of the KMS CMK that you want to use to protect the encrypted file system. This
+        /// parameter is only required if you want to use a non-default KMS key. If this parameter
+        /// is not specified, the default CMK for Amazon EFS is used. This ID can be in one of
+        /// the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -318,7 +318,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// The throughput, measured in MiB/s, that you want to provision for a file system that
         /// you're creating. Valid values are 1-1024. Required if <code>ThroughputMode</code>
         /// is set to <code>provisioned</code>. The upper limit for throughput is 1024 MiB/s.
-        /// To increase this limit, contact AWS Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
+        /// To increase this limit, contact Amazon Web Services Support. For more information,
+        /// see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
         /// EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.
         /// </para>
         /// </summary>
@@ -338,9 +339,11 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A value that specifies to create one or more tags associated with the file system.
-        /// Each tag is a user-defined key-value pair. Name your file system on creation by including
-        /// a <code>"Key":"Name","Value":"{value}"</code> key-value pair.
+        /// Use to create one or more tags associated with the file system. Each tag is a user-defined
+        /// key-value pair. Name your file system on creation by including a <code>"Key":"Name","Value":"{value}"</code>
+        /// key-value pair. Each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public List<Tag> Tags

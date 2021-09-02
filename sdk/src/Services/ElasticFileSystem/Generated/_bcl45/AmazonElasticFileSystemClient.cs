@@ -41,9 +41,9 @@ namespace Amazon.ElasticFileSystem
     /// Amazon Elastic File System 
     /// <para>
     /// Amazon Elastic File System (Amazon EFS) provides simple, scalable file storage for
-    /// use with Amazon EC2 instances in the AWS Cloud. With Amazon EFS, storage capacity
-    /// is elastic, growing and shrinking automatically as you add and remove files, so your
-    /// applications have the storage they need, when they need it. For more information,
+    /// use with Amazon EC2 instances in the Amazon Web Services Cloud. With Amazon EFS, storage
+    /// capacity is elastic, growing and shrinking automatically as you add and remove files,
+    /// so your applications have the storage they need, when they need it. For more information,
     /// see the <a href="https://docs.aws.amazon.com/efs/latest/ug/api-reference.html">Amazon
     /// Elastic File System API Reference</a> and the <a href="https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html">Amazon
     /// Elastic File System User Guide</a>.
@@ -298,8 +298,8 @@ namespace Amazon.ElasticFileSystem
         /// token you provided in the request.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointLimitExceededException">
-        /// Returned if the AWS account has already created the maximum number of access points
-        /// allowed per file system.
+        /// Returned if the Amazon Web Services account has already created the maximum number
+        /// of access points allowed per file system.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
         /// Returned if the request is malformed or contains an error such as an invalid parameter
@@ -307,7 +307,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.IncorrectFileSystemLifeCycleStateException">
         /// Returned if the file system's lifecycle state is not "available".
@@ -353,8 +353,8 @@ namespace Amazon.ElasticFileSystem
         /// token you provided in the request.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointLimitExceededException">
-        /// Returned if the AWS account has already created the maximum number of access points
-        /// allowed per file system.
+        /// Returned if the Amazon Web Services account has already created the maximum number
+        /// of access points allowed per file system.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
         /// Returned if the request is malformed or contains an error such as an invalid parameter
@@ -362,7 +362,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.IncorrectFileSystemLifeCycleStateException">
         /// Returned if the file system's lifecycle state is not "available".
@@ -389,8 +389,8 @@ namespace Amazon.ElasticFileSystem
         /// Creates a new, empty file system. The operation requires a creation token in the request
         /// that Amazon EFS uses to ensure idempotent creation (calling the operation with same
         /// creation token has no effect). If a file system does not currently exist that is owned
-        /// by the caller's AWS account with the specified creation token, this operation does
-        /// the following:
+        /// by the caller's Amazon Web Services account with the specified creation token, this
+        /// operation does the following:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -475,8 +475,8 @@ namespace Amazon.ElasticFileSystem
         /// token you provided.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemLimitExceededException">
-        /// Returned if the AWS account has already created the maximum number of file systems
-        /// allowed per account.
+        /// Returned if the Amazon Web Services account has already created the maximum number
+        /// of file systems allowed per account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InsufficientThroughputCapacityException">
         /// Returned if there's not enough capacity to provision additional throughput. This value
@@ -509,8 +509,8 @@ namespace Amazon.ElasticFileSystem
         /// Creates a new, empty file system. The operation requires a creation token in the request
         /// that Amazon EFS uses to ensure idempotent creation (calling the operation with same
         /// creation token has no effect). If a file system does not currently exist that is owned
-        /// by the caller's AWS account with the specified creation token, this operation does
-        /// the following:
+        /// by the caller's Amazon Web Services account with the specified creation token, this
+        /// operation does the following:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -595,8 +595,8 @@ namespace Amazon.ElasticFileSystem
         /// token you provided.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemLimitExceededException">
-        /// Returned if the AWS account has already created the maximum number of file systems
-        /// allowed per account.
+        /// Returned if the Amazon Web Services account has already created the maximum number
+        /// of file systems allowed per account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InsufficientThroughputCapacityException">
         /// Returned if there's not enough capacity to provision additional throughput. This value
@@ -631,8 +631,8 @@ namespace Amazon.ElasticFileSystem
         /// Creates a new, empty file system. The operation requires a creation token in the request
         /// that Amazon EFS uses to ensure idempotent creation (calling the operation with same
         /// creation token has no effect). If a file system does not currently exist that is owned
-        /// by the caller's AWS account with the specified creation token, this operation does
-        /// the following:
+        /// by the caller's Amazon Web Services account with the specified creation token, this
+        /// operation does the following:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -720,8 +720,8 @@ namespace Amazon.ElasticFileSystem
         /// token you provided.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemLimitExceededException">
-        /// Returned if the AWS account has already created the maximum number of file systems
-        /// allowed per account.
+        /// Returned if the Amazon Web Services account has already created the maximum number
+        /// of file systems allowed per account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InsufficientThroughputCapacityException">
         /// Returned if there's not enough capacity to provision additional throughput. This value
@@ -754,8 +754,8 @@ namespace Amazon.ElasticFileSystem
         /// Creates a new, empty file system. The operation requires a creation token in the request
         /// that Amazon EFS uses to ensure idempotent creation (calling the operation with same
         /// creation token has no effect). If a file system does not currently exist that is owned
-        /// by the caller's AWS account with the specified creation token, this operation does
-        /// the following:
+        /// by the caller's Amazon Web Services account with the specified creation token, this
+        /// operation does the following:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -843,8 +843,8 @@ namespace Amazon.ElasticFileSystem
         /// token you provided.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemLimitExceededException">
-        /// Returned if the AWS account has already created the maximum number of file systems
-        /// allowed per account.
+        /// Returned if the Amazon Web Services account has already created the maximum number
+        /// of file systems allowed per account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InsufficientThroughputCapacityException">
         /// Returned if there's not enough capacity to provision additional throughput. This value
@@ -1063,7 +1063,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.IncorrectFileSystemLifeCycleStateException">
         /// Returned if the file system's lifecycle state is not "available".
@@ -1081,8 +1081,8 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.NetworkInterfaceLimitExceededException">
         /// The calling account has reached the limit for elastic network interfaces for the specific
-        /// AWS Region. The client should try to delete some elastic network interfaces or get
-        /// the account limit raised. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
+        /// Amazon Web Services Region. The client should try to delete some elastic network interfaces
+        /// or get the account limit raised. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
         /// VPC Limits</a> in the <i>Amazon VPC User Guide </i> (see the Network interfaces per
         /// VPC entry in the table).
         /// </exception>
@@ -1302,7 +1302,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.IncorrectFileSystemLifeCycleStateException">
         /// Returned if the file system's lifecycle state is not "available".
@@ -1320,8 +1320,8 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.NetworkInterfaceLimitExceededException">
         /// The calling account has reached the limit for elastic network interfaces for the specific
-        /// AWS Region. The client should try to delete some elastic network interfaces or get
-        /// the account limit raised. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
+        /// Amazon Web Services Region. The client should try to delete some elastic network interfaces
+        /// or get the account limit raised. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
         /// VPC Limits</a> in the <i>Amazon VPC User Guide </i> (see the Network interfaces per
         /// VPC entry in the table).
         /// </exception>
@@ -1387,7 +1387,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -1436,7 +1436,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -1473,7 +1473,7 @@ namespace Amazon.ElasticFileSystem
         /// <returns>The response from the DeleteAccessPoint service method, as returned by ElasticFileSystem.</returns>
         /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
         /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
         /// Returned if the request is malformed or contains an error such as an invalid parameter
@@ -1512,7 +1512,7 @@ namespace Amazon.ElasticFileSystem
         /// <returns>The response from the DeleteAccessPoint service method, as returned by ElasticFileSystem.</returns>
         /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
         /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
         /// Returned if the request is malformed or contains an error such as an invalid parameter
@@ -1573,7 +1573,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -1624,7 +1624,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -1680,7 +1680,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -1734,7 +1734,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -1771,7 +1771,7 @@ namespace Amazon.ElasticFileSystem
         /// <returns>The response from the DeleteFileSystemPolicy service method, as returned by ElasticFileSystem.</returns>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.IncorrectFileSystemLifeCycleStateException">
         /// Returned if the file system's lifecycle state is not "available".
@@ -1810,7 +1810,7 @@ namespace Amazon.ElasticFileSystem
         /// <returns>The response from the DeleteFileSystemPolicy service method, as returned by ElasticFileSystem.</returns>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.IncorrectFileSystemLifeCycleStateException">
         /// Returned if the file system's lifecycle state is not "available".
@@ -1887,7 +1887,8 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
-        /// Returned if there is no mount target with the specified ID found in the caller's account.
+        /// Returned if there is no mount target with the specified ID found in the caller's Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteMountTarget">REST API Reference for DeleteMountTarget Operation</seealso>
         public virtual DeleteMountTargetResponse DeleteMountTarget(string mountTargetId)
@@ -1952,7 +1953,8 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
-        /// Returned if there is no mount target with the specified ID found in the caller's account.
+        /// Returned if there is no mount target with the specified ID found in the caller's Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteMountTarget">REST API Reference for DeleteMountTarget Operation</seealso>
         public virtual DeleteMountTargetResponse DeleteMountTarget(DeleteMountTargetRequest request)
@@ -2022,7 +2024,8 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
-        /// Returned if there is no mount target with the specified ID found in the caller's account.
+        /// Returned if there is no mount target with the specified ID found in the caller's Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteMountTarget">REST API Reference for DeleteMountTarget Operation</seealso>
         public virtual Task<DeleteMountTargetResponse> DeleteMountTargetAsync(string mountTargetId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2090,7 +2093,8 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
-        /// Returned if there is no mount target with the specified ID found in the caller's account.
+        /// Returned if there is no mount target with the specified ID found in the caller's Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteMountTarget">REST API Reference for DeleteMountTarget Operation</seealso>
         public virtual Task<DeleteMountTargetResponse> DeleteMountTargetAsync(DeleteMountTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2118,7 +2122,7 @@ namespace Amazon.ElasticFileSystem
         /// Deletes the specified tags from a file system. If the <code>DeleteTags</code> request
         /// includes a tag key that doesn't exist, Amazon EFS ignores it and doesn't cause an
         /// error. For more information about tags and related restrictions, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Tag
-        /// Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+        /// restrictions</a> in the <i>Billing and Cost Management User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -2135,7 +2139,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -2163,7 +2167,7 @@ namespace Amazon.ElasticFileSystem
         /// Deletes the specified tags from a file system. If the <code>DeleteTags</code> request
         /// includes a tag key that doesn't exist, Amazon EFS ignores it and doesn't cause an
         /// error. For more information about tags and related restrictions, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Tag
-        /// Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+        /// restrictions</a> in the <i>Billing and Cost Management User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -2183,7 +2187,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -2221,7 +2225,7 @@ namespace Amazon.ElasticFileSystem
         /// <returns>The response from the DescribeAccessPoints service method, as returned by ElasticFileSystem.</returns>
         /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
         /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
         /// Returned if the request is malformed or contains an error such as an invalid parameter
@@ -2229,7 +2233,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -2265,7 +2269,7 @@ namespace Amazon.ElasticFileSystem
         /// <returns>The response from the DescribeAccessPoints service method, as returned by ElasticFileSystem.</returns>
         /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
         /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
         /// Returned if the request is malformed or contains an error such as an invalid parameter
@@ -2273,7 +2277,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -2294,7 +2298,10 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
-        /// 
+        /// Returns the account preferences settings for the Amazon Web Services account associated
+        /// with the user making the request, in the current Amazon Web Services Region. For more
+        /// information, see <a href="efs/latest/ug/manage-efs-resource-ids.html">Managing Amazon
+        /// EFS resource IDs</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountPreferences service method.</param>
         /// 
@@ -2314,7 +2321,10 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
-        /// 
+        /// Returns the account preferences settings for the Amazon Web Services account associated
+        /// with the user making the request, in the current Amazon Web Services Region. For more
+        /// information, see <a href="efs/latest/ug/manage-efs-resource-ids.html">Managing Amazon
+        /// EFS resource IDs</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountPreferences service method.</param>
         /// <param name="cancellationToken">
@@ -2352,7 +2362,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -2361,8 +2371,8 @@ namespace Amazon.ElasticFileSystem
         /// Returned if the default file system policy is in effect for the EFS file system specified.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.ValidationException">
-        /// Returned if the AWS Backup service is not available in the Region in which the request
-        /// was made.
+        /// Returned if the Backup service is not available in the Amazon Web Services Region
+        /// in which the request was made.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeBackupPolicy">REST API Reference for DescribeBackupPolicy Operation</seealso>
         public virtual DescribeBackupPolicyResponse DescribeBackupPolicy(DescribeBackupPolicyRequest request)
@@ -2390,7 +2400,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -2399,8 +2409,8 @@ namespace Amazon.ElasticFileSystem
         /// Returned if the default file system policy is in effect for the EFS file system specified.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.ValidationException">
-        /// Returned if the AWS Backup service is not available in the Region in which the request
-        /// was made.
+        /// Returned if the Backup service is not available in the Amazon Web Services Region
+        /// in which the request was made.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeBackupPolicy">REST API Reference for DescribeBackupPolicy Operation</seealso>
         public virtual Task<DescribeBackupPolicyResponse> DescribeBackupPolicyAsync(DescribeBackupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2431,7 +2441,7 @@ namespace Amazon.ElasticFileSystem
         /// <returns>The response from the DescribeFileSystemPolicy service method, as returned by ElasticFileSystem.</returns>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -2467,7 +2477,7 @@ namespace Amazon.ElasticFileSystem
         /// <returns>The response from the DescribeFileSystemPolicy service method, as returned by ElasticFileSystem.</returns>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -2493,8 +2503,8 @@ namespace Amazon.ElasticFileSystem
         /// <summary>
         /// Returns the description of a specific Amazon EFS file system if either the file system
         /// <code>CreationToken</code> or the <code>FileSystemId</code> is provided. Otherwise,
-        /// it returns descriptions of all file systems owned by the caller's AWS account in the
-        /// AWS Region of the endpoint that you're calling.
+        /// it returns descriptions of all file systems owned by the caller's Amazon Web Services
+        /// account in the Amazon Web Services Region of the endpoint that you're calling.
         /// 
         ///  
         /// <para>
@@ -2534,7 +2544,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -2553,8 +2563,8 @@ namespace Amazon.ElasticFileSystem
         /// <summary>
         /// Returns the description of a specific Amazon EFS file system if either the file system
         /// <code>CreationToken</code> or the <code>FileSystemId</code> is provided. Otherwise,
-        /// it returns descriptions of all file systems owned by the caller's AWS account in the
-        /// AWS Region of the endpoint that you're calling.
+        /// it returns descriptions of all file systems owned by the caller's Amazon Web Services
+        /// account in the Amazon Web Services Region of the endpoint that you're calling.
         /// 
         ///  
         /// <para>
@@ -2597,7 +2607,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -2626,6 +2636,11 @@ namespace Amazon.ElasticFileSystem
         /// 
         ///  
         /// <para>
+        /// When EFS Intelligent Tiering is enabled, <code>TransitionToPrimaryStorageClass</code>
+        /// has a value of <code>AFTER_1_ACCESS</code>.
+        /// </para>
+        ///  
+        /// <para>
         /// This operation requires permissions for the <code>elasticfilesystem:DescribeLifecycleConfiguration</code>
         /// operation.
         /// </para>
@@ -2639,7 +2654,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -2664,6 +2679,11 @@ namespace Amazon.ElasticFileSystem
         /// 
         ///  
         /// <para>
+        /// When EFS Intelligent Tiering is enabled, <code>TransitionToPrimaryStorageClass</code>
+        /// has a value of <code>AFTER_1_ACCESS</code>.
+        /// </para>
+        ///  
+        /// <para>
         /// This operation requires permissions for the <code>elasticfilesystem:DescribeLifecycleConfiguration</code>
         /// operation.
         /// </para>
@@ -2680,7 +2700,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -2717,7 +2737,7 @@ namespace Amazon.ElasticFileSystem
         /// <returns>The response from the DescribeMountTargets service method, as returned by ElasticFileSystem.</returns>
         /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
         /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
         /// Returned if the request is malformed or contains an error such as an invalid parameter
@@ -2725,13 +2745,14 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
-        /// Returned if there is no mount target with the specified ID found in the caller's account.
+        /// Returned if there is no mount target with the specified ID found in the caller's Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargets">REST API Reference for DescribeMountTargets Operation</seealso>
         public virtual DescribeMountTargetsResponse DescribeMountTargets(string fileSystemId)
@@ -2759,7 +2780,7 @@ namespace Amazon.ElasticFileSystem
         /// <returns>The response from the DescribeMountTargets service method, as returned by ElasticFileSystem.</returns>
         /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
         /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
         /// Returned if the request is malformed or contains an error such as an invalid parameter
@@ -2767,13 +2788,14 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
-        /// Returned if there is no mount target with the specified ID found in the caller's account.
+        /// Returned if there is no mount target with the specified ID found in the caller's Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargets">REST API Reference for DescribeMountTargets Operation</seealso>
         public virtual DescribeMountTargetsResponse DescribeMountTargets(DescribeMountTargetsRequest request)
@@ -2806,7 +2828,7 @@ namespace Amazon.ElasticFileSystem
         /// <returns>The response from the DescribeMountTargets service method, as returned by ElasticFileSystem.</returns>
         /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
         /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
         /// Returned if the request is malformed or contains an error such as an invalid parameter
@@ -2814,13 +2836,14 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
-        /// Returned if there is no mount target with the specified ID found in the caller's account.
+        /// Returned if there is no mount target with the specified ID found in the caller's Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargets">REST API Reference for DescribeMountTargets Operation</seealso>
         public virtual Task<DescribeMountTargetsResponse> DescribeMountTargetsAsync(string fileSystemId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2851,7 +2874,7 @@ namespace Amazon.ElasticFileSystem
         /// <returns>The response from the DescribeMountTargets service method, as returned by ElasticFileSystem.</returns>
         /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
         /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
         /// Returned if the request is malformed or contains an error such as an invalid parameter
@@ -2859,13 +2882,14 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
-        /// Returned if there is no mount target with the specified ID found in the caller's account.
+        /// Returned if there is no mount target with the specified ID found in the caller's Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargets">REST API Reference for DescribeMountTargets Operation</seealso>
         public virtual Task<DescribeMountTargetsResponse> DescribeMountTargetsAsync(DescribeMountTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2917,7 +2941,8 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
-        /// Returned if there is no mount target with the specified ID found in the caller's account.
+        /// Returned if there is no mount target with the specified ID found in the caller's Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargetSecurityGroups">REST API Reference for DescribeMountTargetSecurityGroups Operation</seealso>
         public virtual DescribeMountTargetSecurityGroupsResponse DescribeMountTargetSecurityGroups(string mountTargetId)
@@ -2963,7 +2988,8 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
-        /// Returned if there is no mount target with the specified ID found in the caller's account.
+        /// Returned if there is no mount target with the specified ID found in the caller's Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargetSecurityGroups">REST API Reference for DescribeMountTargetSecurityGroups Operation</seealso>
         public virtual DescribeMountTargetSecurityGroupsResponse DescribeMountTargetSecurityGroups(DescribeMountTargetSecurityGroupsRequest request)
@@ -3014,7 +3040,8 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
-        /// Returned if there is no mount target with the specified ID found in the caller's account.
+        /// Returned if there is no mount target with the specified ID found in the caller's Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargetSecurityGroups">REST API Reference for DescribeMountTargetSecurityGroups Operation</seealso>
         public virtual Task<DescribeMountTargetSecurityGroupsResponse> DescribeMountTargetSecurityGroupsAsync(string mountTargetId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3063,7 +3090,8 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
-        /// Returned if there is no mount target with the specified ID found in the caller's account.
+        /// Returned if there is no mount target with the specified ID found in the caller's Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargetSecurityGroups">REST API Reference for DescribeMountTargetSecurityGroups Operation</seealso>
         public virtual Task<DescribeMountTargetSecurityGroupsResponse> DescribeMountTargetSecurityGroupsAsync(DescribeMountTargetSecurityGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3108,7 +3136,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -3151,7 +3179,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -3199,7 +3227,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -3245,7 +3273,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -3281,7 +3309,7 @@ namespace Amazon.ElasticFileSystem
         /// <returns>The response from the ListTagsForResource service method, as returned by ElasticFileSystem.</returns>
         /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
         /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
         /// Returned if the request is malformed or contains an error such as an invalid parameter
@@ -3289,7 +3317,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -3323,7 +3351,7 @@ namespace Amazon.ElasticFileSystem
         /// <returns>The response from the ListTagsForResource service method, as returned by ElasticFileSystem.</returns>
         /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
         /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
         /// Returned if the request is malformed or contains an error such as an invalid parameter
@@ -3331,7 +3359,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -3393,7 +3421,8 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
-        /// Returned if there is no mount target with the specified ID found in the caller's account.
+        /// Returned if there is no mount target with the specified ID found in the caller's Amazon
+        /// Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.SecurityGroupLimitExceededException">
         /// Returned if the size of <code>SecurityGroups</code> specified in the request is greater
@@ -3458,7 +3487,8 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
-        /// Returned if there is no mount target with the specified ID found in the caller's account.
+        /// Returned if there is no mount target with the specified ID found in the caller's Amazon
+        /// Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.SecurityGroupLimitExceededException">
         /// Returned if the size of <code>SecurityGroups</code> specified in the request is greater
@@ -3483,7 +3513,12 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
-        /// 
+        /// Use this operation to set the account preference in the current Amazon Web Services
+        /// Region to use either long 17 character (63 bit) or short 8 character (32 bit) IDs
+        /// for new EFS file systems and mount targets created. All existing resource IDs are
+        /// not affected by any changes you make. You can set the ID preference during the opt-in
+        /// period as EFS transitions to long resource IDs. For more information, see <a href="efs/latest/ug/manage-efs-resource-ids.html">Managing
+        /// Amazon EFS resource IDs</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccountPreferences service method.</param>
         /// 
@@ -3503,7 +3538,12 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
-        /// 
+        /// Use this operation to set the account preference in the current Amazon Web Services
+        /// Region to use either long 17 character (63 bit) or short 8 character (32 bit) IDs
+        /// for new EFS file systems and mount targets created. All existing resource IDs are
+        /// not affected by any changes you make. You can set the ID preference during the opt-in
+        /// period as EFS transitions to long resource IDs. For more information, see <a href="efs/latest/ug/manage-efs-resource-ids.html">Managing
+        /// Amazon EFS resource IDs</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccountPreferences service method.</param>
         /// <param name="cancellationToken">
@@ -3542,7 +3582,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.IncorrectFileSystemLifeCycleStateException">
         /// Returned if the file system's lifecycle state is not "available".
@@ -3551,8 +3591,8 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.ValidationException">
-        /// Returned if the AWS Backup service is not available in the Region in which the request
-        /// was made.
+        /// Returned if the Backup service is not available in the Amazon Web Services Region
+        /// in which the request was made.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutBackupPolicy">REST API Reference for PutBackupPolicy Operation</seealso>
         public virtual PutBackupPolicyResponse PutBackupPolicy(PutBackupPolicyRequest request)
@@ -3581,7 +3621,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.IncorrectFileSystemLifeCycleStateException">
         /// Returned if the file system's lifecycle state is not "available".
@@ -3590,8 +3630,8 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.ValidationException">
-        /// Returned if the AWS Backup service is not available in the Region in which the request
-        /// was made.
+        /// Returned if the Backup service is not available in the Amazon Web Services Region
+        /// in which the request was made.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutBackupPolicy">REST API Reference for PutBackupPolicy Operation</seealso>
         public virtual Task<PutBackupPolicyResponse> PutBackupPolicyAsync(PutBackupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3633,7 +3673,7 @@ namespace Amazon.ElasticFileSystem
         /// <returns>The response from the PutFileSystemPolicy service method, as returned by ElasticFileSystem.</returns>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.IncorrectFileSystemLifeCycleStateException">
         /// Returned if the file system's lifecycle state is not "available".
@@ -3685,7 +3725,7 @@ namespace Amazon.ElasticFileSystem
         /// <returns>The response from the PutFileSystemPolicy service method, as returned by ElasticFileSystem.</returns>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.IncorrectFileSystemLifeCycleStateException">
         /// Returned if the file system's lifecycle state is not "available".
@@ -3717,9 +3757,14 @@ namespace Amazon.ElasticFileSystem
         /// Enables lifecycle management by creating a new <code>LifecycleConfiguration</code>
         /// object. A <code>LifecycleConfiguration</code> object defines when files in an Amazon
         /// EFS file system are automatically transitioned to the lower-cost EFS Infrequent Access
-        /// (IA) storage class. A <code>LifecycleConfiguration</code> applies to all files in
-        /// a file system.
+        /// (IA) storage class. To enable EFS Intelligent Tiering, set the value of <code>TransitionToPrimaryStorageClass</code>
+        /// to <code>AFTER_1_ACCESS</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">EFS
+        /// Lifecycle Management</a>.
         /// 
+        ///  
+        /// <para>
+        /// A <code>LifecycleConfiguration</code> applies to all files in a file system.
+        /// </para>
         ///  
         /// <para>
         /// Each Amazon EFS file system supports one lifecycle configuration, which applies to
@@ -3752,8 +3797,8 @@ namespace Amazon.ElasticFileSystem
         ///  
         /// <para>
         /// To apply a <code>LifecycleConfiguration</code> object to an encrypted file system,
-        /// you need the same AWS Key Management Service (AWS KMS) permissions as when you created
-        /// the encrypted file system. 
+        /// you need the same Key Management Service permissions as when you created the encrypted
+        /// file system. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLifecycleConfiguration service method.</param>
@@ -3765,7 +3810,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.IncorrectFileSystemLifeCycleStateException">
         /// Returned if the file system's lifecycle state is not "available".
@@ -3788,9 +3833,14 @@ namespace Amazon.ElasticFileSystem
         /// Enables lifecycle management by creating a new <code>LifecycleConfiguration</code>
         /// object. A <code>LifecycleConfiguration</code> object defines when files in an Amazon
         /// EFS file system are automatically transitioned to the lower-cost EFS Infrequent Access
-        /// (IA) storage class. A <code>LifecycleConfiguration</code> applies to all files in
-        /// a file system.
+        /// (IA) storage class. To enable EFS Intelligent Tiering, set the value of <code>TransitionToPrimaryStorageClass</code>
+        /// to <code>AFTER_1_ACCESS</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">EFS
+        /// Lifecycle Management</a>.
         /// 
+        ///  
+        /// <para>
+        /// A <code>LifecycleConfiguration</code> applies to all files in a file system.
+        /// </para>
         ///  
         /// <para>
         /// Each Amazon EFS file system supports one lifecycle configuration, which applies to
@@ -3823,8 +3873,8 @@ namespace Amazon.ElasticFileSystem
         ///  
         /// <para>
         /// To apply a <code>LifecycleConfiguration</code> object to an encrypted file system,
-        /// you need the same AWS Key Management Service (AWS KMS) permissions as when you created
-        /// the encrypted file system. 
+        /// you need the same Key Management Service permissions as when you created the encrypted
+        /// file system. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLifecycleConfiguration service method.</param>
@@ -3839,7 +3889,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.IncorrectFileSystemLifeCycleStateException">
         /// Returned if the file system's lifecycle state is not "available".
@@ -3877,7 +3927,7 @@ namespace Amazon.ElasticFileSystem
         /// <returns>The response from the TagResource service method, as returned by ElasticFileSystem.</returns>
         /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
         /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
         /// Returned if the request is malformed or contains an error such as an invalid parameter
@@ -3885,7 +3935,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -3919,7 +3969,7 @@ namespace Amazon.ElasticFileSystem
         /// <returns>The response from the TagResource service method, as returned by ElasticFileSystem.</returns>
         /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
         /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
         /// Returned if the request is malformed or contains an error such as an invalid parameter
@@ -3927,7 +3977,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -3962,7 +4012,7 @@ namespace Amazon.ElasticFileSystem
         /// <returns>The response from the UntagResource service method, as returned by ElasticFileSystem.</returns>
         /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
         /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
         /// Returned if the request is malformed or contains an error such as an invalid parameter
@@ -3970,7 +4020,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -4004,7 +4054,7 @@ namespace Amazon.ElasticFileSystem
         /// <returns>The response from the UntagResource service method, as returned by ElasticFileSystem.</returns>
         /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
         /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
         /// Returned if the request is malformed or contains an error such as an invalid parameter
@@ -4012,7 +4062,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -4045,7 +4095,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.IncorrectFileSystemLifeCycleStateException">
         /// Returned if the file system's lifecycle state is not "available".
@@ -4095,7 +4145,7 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.IncorrectFileSystemLifeCycleStateException">
         /// Returned if the file system's lifecycle state is not "available".

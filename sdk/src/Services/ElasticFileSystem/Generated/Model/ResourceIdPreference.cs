@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// 
+    /// Describes the resource type and its ID preference for the user's Amazon Web Services
+    /// account, in the current Amazon Web Services Region.
     /// </summary>
     public partial class ResourceIdPreference
     {
@@ -37,7 +38,11 @@ namespace Amazon.ElasticFileSystem.Model
         private List<string> _resources = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property ResourceIdType.
+        /// Gets and sets the property ResourceIdType. 
+        /// <para>
+        /// Identifies the EFS resource ID preference, either <code>LONG_ID</code> (17 characters)
+        /// or <code>SHORT_ID</code> (8 characters).
+        /// </para>
         /// </summary>
         public ResourceIdType ResourceIdType
         {
@@ -52,7 +57,11 @@ namespace Amazon.ElasticFileSystem.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Resources.
+        /// Gets and sets the property Resources. 
+        /// <para>
+        /// Identifies the Amazon EFS resources to which the ID preference setting applies, <code>FILE_SYSTEM</code>
+        /// and <code>MOUNT_TARGET</code>.
+        /// </para>
         /// </summary>
         public List<string> Resources
         {

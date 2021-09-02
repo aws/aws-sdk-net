@@ -33,9 +33,14 @@ namespace Amazon.ElasticFileSystem.Model
     /// Enables lifecycle management by creating a new <code>LifecycleConfiguration</code>
     /// object. A <code>LifecycleConfiguration</code> object defines when files in an Amazon
     /// EFS file system are automatically transitioned to the lower-cost EFS Infrequent Access
-    /// (IA) storage class. A <code>LifecycleConfiguration</code> applies to all files in
-    /// a file system.
+    /// (IA) storage class. To enable EFS Intelligent Tiering, set the value of <code>TransitionToPrimaryStorageClass</code>
+    /// to <code>AFTER_1_ACCESS</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">EFS
+    /// Lifecycle Management</a>.
     /// 
+    ///  
+    /// <para>
+    /// A <code>LifecycleConfiguration</code> applies to all files in a file system.
+    /// </para>
     ///  
     /// <para>
     /// Each Amazon EFS file system supports one lifecycle configuration, which applies to
@@ -68,8 +73,8 @@ namespace Amazon.ElasticFileSystem.Model
     ///  
     /// <para>
     /// To apply a <code>LifecycleConfiguration</code> object to an encrypted file system,
-    /// you need the same AWS Key Management Service (AWS KMS) permissions as when you created
-    /// the encrypted file system. 
+    /// you need the same Key Management Service permissions as when you created the encrypted
+    /// file system. 
     /// </para>
     /// </summary>
     public partial class PutLifecycleConfigurationRequest : AmazonElasticFileSystemRequest
@@ -106,7 +111,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// class.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2)]
         public List<LifecyclePolicy> LifecyclePolicies
         {
             get { return this._lifecyclePolicies; }

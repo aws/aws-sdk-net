@@ -87,7 +87,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// An array of up to five VPC security group IDs.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=5)]
+        [AWSProperty(Max=100)]
         public List<string> SecurityGroups
         {
             get { return this._securityGroups; }

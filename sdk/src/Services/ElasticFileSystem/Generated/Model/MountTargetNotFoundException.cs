@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Returned if there is no mount target with the specified ID found in the caller's account.
+    /// Returned if there is no mount target with the specified ID found in the caller's Amazon
+    /// Web Services account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -30,7 +30,7 @@ namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
     /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
-    /// AWS account.
+    /// Amazon Web Services account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

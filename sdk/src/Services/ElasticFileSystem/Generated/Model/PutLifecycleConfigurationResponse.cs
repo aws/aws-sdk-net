@@ -38,10 +38,11 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property LifecyclePolicies. 
         /// <para>
-        /// An array of lifecycle management policies. Currently, EFS supports a maximum of one
-        /// policy per file system.
+        /// An array of lifecycle management policies. EFS supports a maximum of one policy per
+        /// file system.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2)]
         public List<LifecyclePolicy> LifecyclePolicies
         {
             get { return this._lifecyclePolicies; }

@@ -144,7 +144,10 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Creates tags associated with the access point. Each tag is a key-value pair.
+        /// Creates tags associated with the access point. Each tag is a key-value pair, each
+        /// key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public List<Tag> Tags

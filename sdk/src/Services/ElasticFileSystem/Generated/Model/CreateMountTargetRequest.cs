@@ -250,7 +250,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// be for the same VPC as subnet specified.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=5)]
+        [AWSProperty(Max=100)]
         public List<string> SecurityGroups
         {
             get { return this._securityGroups; }

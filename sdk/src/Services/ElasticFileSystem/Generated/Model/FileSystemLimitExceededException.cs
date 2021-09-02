@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Returned if the AWS account has already created the maximum number of file systems
-    /// allowed per account.
+    /// Returned if the Amazon Web Services account has already created the maximum number
+    /// of file systems allowed per account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Returned if the AWS account has already created the maximum number of access points
-    /// allowed per file system.
+    /// Returned if the Amazon Web Services account has already created the maximum number
+    /// of access points allowed per file system.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

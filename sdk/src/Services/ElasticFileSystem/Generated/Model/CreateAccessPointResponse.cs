@@ -159,7 +159,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// Identified the AWS account that owns the access point resource.
+        /// Identified the Amazon Web Services account that owns the access point resource.
         /// </para>
         /// </summary>
         [AWSProperty(Max=14)]

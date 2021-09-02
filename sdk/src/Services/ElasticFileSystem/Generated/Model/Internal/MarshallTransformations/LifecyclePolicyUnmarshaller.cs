@@ -70,6 +70,12 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                     unmarshalledObject.TransitionToIA = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TransitionToPrimaryStorageClass", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TransitionToPrimaryStorageClass = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

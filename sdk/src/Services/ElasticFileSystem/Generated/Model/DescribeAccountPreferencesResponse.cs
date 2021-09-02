@@ -37,7 +37,11 @@ namespace Amazon.ElasticFileSystem.Model
         private ResourceIdPreference _resourceIdPreference;
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// Present if there are more records than returned in the response. You can use the <code>NextToken</code>
+        /// in the subsequent request to fetch the additional descriptions.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
         public string NextToken
@@ -53,7 +57,11 @@ namespace Amazon.ElasticFileSystem.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceIdPreference.
+        /// Gets and sets the property ResourceIdPreference. 
+        /// <para>
+        /// Describes the resource ID preference setting for the Amazon Web Services account associated
+        /// with the user making the request, in the current Amazon Web Services Region.
+        /// </para>
         /// </summary>
         public ResourceIdPreference ResourceIdPreference
         {

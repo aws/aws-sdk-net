@@ -35,13 +35,14 @@ namespace Amazon.ElasticFileSystem.Model
     public partial class LifecyclePolicy
     {
         private TransitionToIARules _transitionToIA;
+        private TransitionToPrimaryStorageClassRules _transitionToPrimaryStorageClass;
 
         /// <summary>
         /// Gets and sets the property TransitionToIA. 
         /// <para>
-        ///  A value that describes the period of time that a file is not accessed, after which
-        /// it transitions to the IA storage class. Metadata operations such as listing the contents
-        /// of a directory don't count as file access events.
+        ///  Describes the period of time that a file is not accessed, after which it transitions
+        /// to the IA storage class. Metadata operations such as listing the contents of a directory
+        /// don't count as file access events.
         /// </para>
         /// </summary>
         public TransitionToIARules TransitionToIA
@@ -54,6 +55,25 @@ namespace Amazon.ElasticFileSystem.Model
         internal bool IsSetTransitionToIA()
         {
             return this._transitionToIA != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitionToPrimaryStorageClass. 
+        /// <para>
+        /// Describes the policy used to transition a file from infequent access storage to primary
+        /// storage.
+        /// </para>
+        /// </summary>
+        public TransitionToPrimaryStorageClassRules TransitionToPrimaryStorageClass
+        {
+            get { return this._transitionToPrimaryStorageClass; }
+            set { this._transitionToPrimaryStorageClass = value; }
+        }
+
+        // Check to see if TransitionToPrimaryStorageClass property is set
+        internal bool IsSetTransitionToPrimaryStorageClass()
+        {
+            return this._transitionToPrimaryStorageClass != null;
         }
 
     }

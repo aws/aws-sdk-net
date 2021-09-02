@@ -41,7 +41,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// An array of security groups.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=5)]
+        [AWSProperty(Required=true, Max=100)]
         public List<string> SecurityGroups
         {
             get { return this._securityGroups; }

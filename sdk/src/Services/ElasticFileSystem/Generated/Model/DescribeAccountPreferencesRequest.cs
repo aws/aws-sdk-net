@@ -30,7 +30,10 @@ namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccountPreferences operation.
-    /// 
+    /// Returns the account preferences settings for the Amazon Web Services account associated
+    /// with the user making the request, in the current Amazon Web Services Region. For more
+    /// information, see <a href="efs/latest/ug/manage-efs-resource-ids.html">Managing Amazon
+    /// EFS resource IDs</a>.
     /// </summary>
     public partial class DescribeAccountPreferencesRequest : AmazonElasticFileSystemRequest
     {
@@ -38,7 +41,12 @@ namespace Amazon.ElasticFileSystem.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// (Optional) When retrieving account preferences, you can optionally specify the <code>MaxItems</code>
+        /// parameter to limit the number of objects returned in a response. The default value
+        /// is 100. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public int MaxResults
@@ -54,7 +62,11 @@ namespace Amazon.ElasticFileSystem.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// (Optional) You can use <code>NextToken</code> in a subsequent request to fetch the
+        /// next page of Amazon Web Services account preferences if the response payload was paginated.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
         public string NextToken

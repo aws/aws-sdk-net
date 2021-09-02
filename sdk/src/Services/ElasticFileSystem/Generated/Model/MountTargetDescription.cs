@@ -49,7 +49,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <para>
         /// The unique and consistent identifier of the Availability Zone that the mount target
         /// resides in. For example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region
-        /// and it has the same location in every AWS account.
+        /// and it has the same location in every Amazon Web Services account.
         /// </para>
         /// </summary>
         public string AvailabilityZoneId
@@ -68,9 +68,10 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property AvailabilityZoneName. 
         /// <para>
         /// The name of the Availability Zone in which the mount target is located. Availability
-        /// Zones are independently mapped to names for each AWS account. For example, the Availability
-        /// Zone <code>us-east-1a</code> for your AWS account might not be the same location as
-        /// <code>us-east-1a</code> for another AWS account.
+        /// Zones are independently mapped to names for each Amazon Web Services account. For
+        /// example, the Availability Zone <code>us-east-1a</code> for your Amazon Web Services
+        /// account might not be the same location as <code>us-east-1a</code> for another Amazon
+        /// Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -184,7 +185,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// AWS account ID that owns the resource.
+        /// Amazon Web Services account ID that owns the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Max=14)]

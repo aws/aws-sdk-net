@@ -56,7 +56,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <para>
         /// The unique and consistent identifier of the Availability Zone in which the file system's
         /// One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability
-        /// Zone ID for the us-east-1 AWS Region, and it has the same location in every AWS account.
+        /// Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location
+        /// in every Amazon Web Services account.
         /// </para>
         /// </summary>
         public string AvailabilityZoneId
@@ -74,10 +75,10 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZoneName. 
         /// <para>
-        /// Describes the AWS Availability Zone in which the file system is located, and is valid
-        /// only for file systems using One Zone storage classes. For more information, see <a
-        /// href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage
-        /// classes</a> in the <i>Amazon EFS User Guide</i>.
+        /// Describes the Amazon Web Services Availability Zone in which the file system is located,
+        /// and is valid only for file systems using One Zone storage classes. For more information,
+        /// see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using
+        /// EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -191,8 +192,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was
-        /// used to protect the encrypted file system.
+        /// The ID of an Key Management Service customer master key (CMK) that was used to protect
+        /// the encrypted file system.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -271,8 +272,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The AWS account that created the file system. If the file system was created by an
-        /// IAM user, the parent account to which the user belongs is the owner.
+        /// The Amazon Web Services account that created the file system. If the file system was
+        /// created by an IAM user, the parent account to which the user belongs is the owner.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=14)]

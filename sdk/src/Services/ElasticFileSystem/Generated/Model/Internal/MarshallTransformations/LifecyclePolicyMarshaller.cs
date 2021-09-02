@@ -51,6 +51,12 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TransitionToIA);
             }
 
+            if(requestObject.IsSetTransitionToPrimaryStorageClass())
+            {
+                context.Writer.WritePropertyName("TransitionToPrimaryStorageClass");
+                context.Writer.Write(requestObject.TransitionToPrimaryStorageClass);
+            }
+
         }
 
         /// <summary>
