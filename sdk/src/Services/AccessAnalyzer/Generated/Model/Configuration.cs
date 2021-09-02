@@ -115,7 +115,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property SqsQueue. 
         /// <para>
-        /// The access control configuration is for an SQS queue. 
+        /// The access control configuration is for an Amazon SQS queue. 
         /// </para>
         /// </summary>
         public SqsQueueConfiguration SqsQueue

@@ -58,7 +58,10 @@ namespace Amazon.AccessAnalyzer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property JobError.
+        /// Gets and sets the property JobError. 
+        /// <para>
+        /// The job error for the policy generation request.
+        /// </para>
         /// </summary>
         public JobError JobError
         {

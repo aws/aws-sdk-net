@@ -41,7 +41,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// Gets and sets the property AllRegions. 
         /// <para>
         /// Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>,
-        /// Access Analyzer retrieves CloudTrail data from all regions to analyze and generate
+        /// IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate
         /// a policy.
         /// </para>
         /// </summary>

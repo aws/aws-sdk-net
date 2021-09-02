@@ -40,7 +40,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The value specified is the canonical user ID of an AWS account.
+        /// The value specified is the canonical user ID of an Amazon Web Services account.
         /// </para>
         /// </summary>
         public string Id

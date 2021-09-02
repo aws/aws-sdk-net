@@ -162,7 +162,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property ResourceOwnerAccount. 
         /// <para>
-        /// The AWS account ID that owns the resource.
+        /// The Amazon Web Services account ID that owns the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

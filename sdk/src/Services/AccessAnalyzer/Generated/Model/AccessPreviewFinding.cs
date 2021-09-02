@@ -72,7 +72,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// Gets and sets the property ChangeType. 
         /// <para>
         /// Provides context on how the access preview finding compares to existing access identified
-        /// in Access Analyzer.
+        /// in IAM Access Analyzer.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -167,7 +167,8 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property ExistingFindingId. 
         /// <para>
-        /// The existing ID of the finding in Access Analyzer, provided only for existing findings.
+        /// The existing ID of the finding in IAM Access Analyzer, provided only for existing
+        /// findings.
         /// </para>
         /// </summary>
         public string ExistingFindingId
@@ -279,8 +280,8 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property ResourceOwnerAccount. 
         /// <para>
-        /// The AWS account ID that owns the resource. For most AWS resources, the owning account
-        /// is the account in which the resource was created.
+        /// The Amazon Web Services account ID that owns the resource. For most Amazon Web Services
+        /// resources, the owning account is the account in which the resource was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

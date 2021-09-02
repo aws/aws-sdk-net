@@ -40,10 +40,11 @@ namespace Amazon.AccessAnalyzer.Model
     /// and you do not specify the policy, the access preview assumes a secret without a policy.
     /// To propose deletion of an existing policy, you can specify an empty string. If the
     /// proposed configuration is for a new secret and you do not specify the KMS key ID,
-    /// the access preview uses the default CMK of the AWS account. If you specify an empty
-    /// string for the KMS key ID, the access preview uses the default CMK of the AWS account.
-    /// For more information about secret policy limits, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_limits.html">Quotas
-    /// for AWS Secrets Manager.</a>.
+    /// the access preview uses the default CMK of the Amazon Web Services account. If you
+    /// specify an empty string for the KMS key ID, the access preview uses the default CMK
+    /// of the Amazon Web Services account. For more information about secret policy limits,
+    /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_limits.html">Quotas
+    /// for Secrets Manager.</a>.
     /// </para>
     /// </summary>
     public partial class SecretsManagerSecretConfiguration
@@ -54,7 +55,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The proposed ARN, key ID, or alias of the AWS KMS customer master key (CMK).
+        /// The proposed ARN, key ID, or alias of the KMS customer master key (CMK).
         /// </para>
         /// </summary>
         public string KmsKeyId

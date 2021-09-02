@@ -40,7 +40,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end of the time range for which Access Analyzer reviews your CloudTrail events.
+        /// The end of the time range for which IAM Access Analyzer reviews your CloudTrail events.
         /// Events with a timestamp after this time are not considered to generate a policy. If
         /// this is not included in the request, the default value is the current time.
         /// </para>
@@ -61,8 +61,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The start of the time range for which Access Analyzer reviews your CloudTrail events.
-        /// Events with a timestamp before this time are not considered to generate a policy.
+        /// The start of the time range for which IAM Access Analyzer reviews your CloudTrail
+        /// events. Events with a timestamp before this time are not considered to generate a
+        /// policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

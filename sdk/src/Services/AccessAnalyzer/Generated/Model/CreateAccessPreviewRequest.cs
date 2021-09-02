@@ -30,8 +30,8 @@ namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAccessPreview operation.
-    /// Creates an access preview that allows you to preview Access Analyzer findings for
-    /// your resource before deploying resource permissions.
+    /// Creates an access preview that allows you to preview IAM Access Analyzer findings
+    /// for your resource before deploying resource permissions.
     /// </summary>
     public partial class CreateAccessPreviewRequest : AmazonAccessAnalyzerRequest
     {

@@ -59,8 +59,8 @@ namespace Amazon.AccessAnalyzer.Model
         /// Gets and sets the property IsComplete. 
         /// <para>
         /// This value is set to <code>true</code> if the generated policy contains all possible
-        /// actions for a service that Access Analyzer identified from the CloudTrail trail that
-        /// you specified, and <code>false</code> otherwise.
+        /// actions for a service that IAM Access Analyzer identified from the CloudTrail trail
+        /// that you specified, and <code>false</code> otherwise.
         /// </para>
         /// </summary>
         public bool IsComplete

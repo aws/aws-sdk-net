@@ -39,8 +39,8 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property Findings. 
         /// <para>
-        /// The list of findings in a policy returned by Access Analyzer based on its suite of
-        /// policy checks.
+        /// The list of findings in a policy returned by IAM Access Analyzer based on its suite
+        /// of policy checks.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -39,7 +39,8 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property AccessPointArn. 
         /// <para>
-        /// The ARN of the access point that generated the finding.
+        /// The ARN of the access point that generated the finding. The ARN format depends on
+        /// whether the ARN represents an access point or a multi-region access point.
         /// </para>
         /// </summary>
         public string AccessPointArn

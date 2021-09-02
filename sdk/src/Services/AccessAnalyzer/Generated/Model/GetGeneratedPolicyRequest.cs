@@ -71,8 +71,8 @@ namespace Amazon.AccessAnalyzer.Model
         /// </para>
         ///  
         /// <para>
-        /// Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that
-        /// have been used recently to create this service-level template.
+        /// IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services
+        /// that have been used recently to create this service-level template.
         /// </para>
         /// </summary>
         public bool IncludeServiceLevelTemplate

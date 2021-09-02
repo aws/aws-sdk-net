@@ -38,8 +38,8 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// An <code>AnalyzedResource</code> object that contains information that Access Analyzer
-        /// found when it analyzed the resource.
+        /// An <code>AnalyzedResource</code> object that contains information that IAM Access
+        /// Analyzer found when it analyzed the resource.
         /// </para>
         /// </summary>
         public AnalyzedResource Resource

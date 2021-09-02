@@ -82,8 +82,8 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property IssuingAccount. 
         /// <para>
-        ///  The AWS account under which the grant was issued. The account is used to propose
-        /// KMS grants issued by accounts other than the owner of the key.
+        ///  The Amazon Web Services account under which the grant was issued. The account is
+        /// used to propose KMS grants issued by accounts other than the owner of the key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

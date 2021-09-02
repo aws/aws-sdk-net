@@ -2,125 +2,125 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.ApplyArchiveRuleRequest.AnalyzerArn</property>
-    <pattern>^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$</pattern>
+    <pattern>[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.ApplyArchiveRuleRequest.RuleName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_.-]*$</pattern>
+    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.CreateAccessPreviewRequest.AnalyzerArn</property>
-    <pattern>^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$</pattern>
+    <pattern>[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.CreateAccessPreviewResponse.Id</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.CreateAnalyzerRequest.AnalyzerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_.-]*$</pattern>
+    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.CreateAnalyzerResponse.Arn</property>
-    <pattern>^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$</pattern>
+    <pattern>[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.CreateArchiveRuleRequest.AnalyzerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_.-]*$</pattern>
+    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.CreateArchiveRuleRequest.RuleName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_.-]*$</pattern>
+    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.DeleteAnalyzerRequest.AnalyzerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_.-]*$</pattern>
+    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.DeleteArchiveRuleRequest.AnalyzerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_.-]*$</pattern>
+    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.DeleteArchiveRuleRequest.RuleName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_.-]*$</pattern>
+    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.GetAccessPreviewRequest.AccessPreviewId</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.GetAccessPreviewRequest.AnalyzerArn</property>
-    <pattern>^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$</pattern>
+    <pattern>[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.GetAnalyzedResourceRequest.AnalyzerArn</property>
-    <pattern>^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$</pattern>
+    <pattern>[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.GetAnalyzedResourceRequest.ResourceArn</property>
-    <pattern>arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$</pattern>
+    <pattern>arn:[^:]*:[^:]*:[^:]*:[^:]*:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.GetAnalyzerRequest.AnalyzerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_.-]*$</pattern>
+    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.GetArchiveRuleRequest.AnalyzerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_.-]*$</pattern>
+    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.GetArchiveRuleRequest.RuleName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_.-]*$</pattern>
+    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.GetFindingRequest.AnalyzerArn</property>
-    <pattern>^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$</pattern>
+    <pattern>[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.ListAccessPreviewFindingsRequest.AccessPreviewId</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.ListAccessPreviewFindingsRequest.AnalyzerArn</property>
-    <pattern>^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$</pattern>
+    <pattern>[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.ListAccessPreviewsRequest.AnalyzerArn</property>
-    <pattern>^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$</pattern>
+    <pattern>[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.ListAnalyzedResourcesRequest.AnalyzerArn</property>
-    <pattern>^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$</pattern>
+    <pattern>[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.ListArchiveRulesRequest.AnalyzerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_.-]*$</pattern>
+    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.ListFindingsRequest.AnalyzerArn</property>
-    <pattern>^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$</pattern>
+    <pattern>[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.ListPolicyGenerationsRequest.MaxResults</property>
@@ -128,108 +128,108 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.ListPolicyGenerationsRequest.PrincipalArn</property>
-    <pattern>arn:[^:]*:iam::[^:]*:(role|user)/.{1,576}$</pattern>
+    <pattern>arn:[^:]*:iam::[^:]*:(role|user)/.{1,576}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.StartResourceScanRequest.AnalyzerArn</property>
-    <pattern>^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$</pattern>
+    <pattern>[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.StartResourceScanRequest.ResourceArn</property>
-    <pattern>arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$</pattern>
+    <pattern>arn:[^:]*:[^:]*:[^:]*:[^:]*:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.UpdateArchiveRuleRequest.AnalyzerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_.-]*$</pattern>
+    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.UpdateArchiveRuleRequest.RuleName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_.-]*$</pattern>
+    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.UpdateFindingsRequest.AnalyzerArn</property>
-    <pattern>^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$</pattern>
+    <pattern>[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.UpdateFindingsRequest.ResourceArn</property>
-    <pattern>arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$</pattern>
+    <pattern>arn:[^:]*:[^:]*:[^:]*:[^:]*:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.AccessPreview.AnalyzerArn</property>
-    <pattern>^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$</pattern>
+    <pattern>[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.AccessPreview.Id</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.AccessPreviewSummary.AnalyzerArn</property>
-    <pattern>^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$</pattern>
+    <pattern>[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.AccessPreviewSummary.Id</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.AnalyzedResource.ResourceArn</property>
-    <pattern>arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$</pattern>
+    <pattern>arn:[^:]*:[^:]*:[^:]*:[^:]*:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.AnalyzedResourceSummary.ResourceArn</property>
-    <pattern>arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$</pattern>
+    <pattern>arn:[^:]*:[^:]*:[^:]*:[^:]*:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.AnalyzerSummary.Arn</property>
-    <pattern>^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$</pattern>
+    <pattern>[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.AnalyzerSummary.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_.-]*$</pattern>
+    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.ArchiveRuleSummary.RuleName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_.-]*$</pattern>
+    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.CloudTrailDetails.AccessRole</property>
-    <pattern>arn:[^:]*:iam::[^:]*:role/.{1,576}$</pattern>
+    <pattern>arn:[^:]*:iam::[^:]*:role/.{1,576}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.GeneratedPolicyProperties.PrincipalArn</property>
-    <pattern>arn:[^:]*:iam::[^:]*:(role|user)/.{1,576}$</pattern>
+    <pattern>arn:[^:]*:iam::[^:]*:(role|user)/.{1,576}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.InlineArchiveRule.RuleName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_.-]*$</pattern>
+    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.PolicyGeneration.PrincipalArn</property>
-    <pattern>arn:[^:]*:iam::[^:]*:(role|user)/.{1,576}$</pattern>
+    <pattern>arn:[^:]*:iam::[^:]*:(role|user)/.{1,576}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.PolicyGenerationDetails.PrincipalArn</property>
-    <pattern>arn:[^:]*:iam::[^:]*:(role|user)/.{1,576}$</pattern>
+    <pattern>arn:[^:]*:iam::[^:]*:(role|user)/.{1,576}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.Trail.CloudTrailArn</property>
-    <pattern>arn:[^:]*:cloudtrail:[^:]*:[^:]*:trail/.{1,576}$</pattern>
+    <pattern>arn:[^:]*:cloudtrail:[^:]*:[^:]*:trail/.{1,576}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.TrailProperties.CloudTrailArn</property>
-    <pattern>arn:[^:]*:cloudtrail:[^:]*:[^:]*:trail/.{1,576}$</pattern>
+    <pattern>arn:[^:]*:cloudtrail:[^:]*:[^:]*:trail/.{1,576}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.VpcConfiguration.VpcId</property>
-    <pattern>^vpc-([0-9a-f]){8}(([0-9a-f]){9})?$</pattern>
+    <pattern>vpc-([0-9a-f]){8}(([0-9a-f]){9})?</pattern>
   </property-value-rule>
 </property-value-rules>
