@@ -31,11 +31,6 @@ namespace Amazon.Transfer.Model
     /// <summary>
     /// Container for the parameters to the DeleteSshPublicKey operation.
     /// Deletes a user's Secure Shell (SSH) public key.
-    /// 
-    ///  
-    /// <para>
-    /// No response is returned from this operation.
-    /// </para>
     /// </summary>
     public partial class DeleteSshPublicKeyRequest : AmazonTransferRequest
     {

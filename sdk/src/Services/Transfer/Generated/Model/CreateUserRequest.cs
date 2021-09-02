@@ -35,8 +35,8 @@ namespace Amazon.Transfer.Model
     /// set to <code>SERVICE_MANAGED</code>. Using parameters for <code>CreateUser</code>,
     /// you can specify the user name, set the home directory, store the user's public key,
     /// and assign the user's Amazon Web Services Identity and Access Management (IAM) role.
-    /// You can also optionally add a scope-down policy, and assign metadata with tags that
-    /// can be used to group and search for users.
+    /// You can also optionally add a session policy, and assign metadata with tags that can
+    /// be used to group and search for users.
     /// </summary>
     public partial class CreateUserRequest : AmazonTransferRequest
     {
@@ -98,9 +98,9 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        /// In most cases, you can use this value instead of the scope-down policy to lock your
-        /// user down to the designated home directory ("<code>chroot</code>"). To do this, you
-        /// can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory
+        /// In most cases, you can use this value instead of the session policy to lock your user
+        /// down to the designated home directory ("<code>chroot</code>"). To do this, you can
+        /// set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory
         /// parameter value.
         /// </para>
         ///  
@@ -142,7 +142,7 @@ namespace Amazon.Transfer.Model
         /// The type of landing directory (folder) you want your users' home directory to be when
         /// they log into the server. If you set it to <code>PATH</code>, the user will see the
         /// absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-        /// If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code>
+        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code>
         /// for how you want to make Amazon S3 or EFS paths visible to your users.
         /// </para>
         /// </summary>
@@ -161,25 +161,26 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// A scope-down policy for your user so that you can use the same IAM role across multiple
+        /// A session policy for your user so that you can use the same IAM role across multiple
         /// users. This policy scopes down user access to portions of their Amazon S3 bucket.
         /// Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
         /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This only applies when domain of ServerId is S3. EFS does not use scope down policy.
+        /// This only applies when the domain of <code>ServerId</code> is S3. EFS does not use
+        /// session policies.
         /// </para>
         ///  
         /// <para>
-        /// For scope-down policies, Amazon Web Services Transfer Family stores the policy as
-        /// a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the
-        /// policy as a JSON blob and pass it in the <code>Policy</code> argument.
+        /// For session policies, Amazon Web Services Transfer Family stores the policy as a JSON
+        /// blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy
+        /// as a JSON blob and pass it in the <code>Policy</code> argument.
         /// </para>
         ///  
         /// <para>
-        /// For an example of a scope-down policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/scope-down-policy.html">Example
-        /// scope-down policy</a>.
+        /// For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example
+        /// session policy</a>.
         /// </para>
         ///  
         /// <para>
@@ -310,11 +311,10 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// A unique string that identifies a user and is associated with a as specified by the
-        /// <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100
-        /// characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_',
-        /// hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen,
-        /// period, or at sign.
+        /// A unique string that identifies a user and is associated with a <code>ServerId</code>.
+        /// This user name must be a minimum of 3 and a maximum of 100 characters long. The following
+        /// are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at
+        /// sign '@'. The user name can't start with a hyphen, period, or at sign.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=100)]

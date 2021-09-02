@@ -44,6 +44,14 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
+        /// Paginator for ListExecutions operation
+        ///</summary>
+        public IListExecutionsPaginator ListExecutions(ListExecutionsRequest request) 
+        {
+            return new ListExecutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSecurityPolicies operation
         ///</summary>
         public IListSecurityPoliciesPaginator ListSecurityPolicies(ListSecurityPoliciesRequest request) 
@@ -73,6 +81,14 @@ namespace Amazon.Transfer.Model
         public IListUsersPaginator ListUsers(ListUsersRequest request) 
         {
             return new ListUsersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListWorkflows operation
+        ///</summary>
+        public IListWorkflowsPaginator ListWorkflows(ListWorkflowsRequest request) 
+        {
+            return new ListWorkflowsPaginator(this.client, request);
         }
     }
 }

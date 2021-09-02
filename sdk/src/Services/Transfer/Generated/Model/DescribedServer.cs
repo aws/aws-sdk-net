@@ -49,6 +49,7 @@ namespace Amazon.Transfer.Model
         private State _state;
         private List<Tag> _tags = new List<Tag>();
         private int? _userCount;
+        private WorkflowDetails _workflowDetails;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -406,6 +407,25 @@ namespace Amazon.Transfer.Model
         internal bool IsSetUserCount()
         {
             return this._userCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowDetails. 
+        /// <para>
+        /// Specifies the workflow ID for the workflow to assign and the execution role used for
+        /// executing the workflow.
+        /// </para>
+        /// </summary>
+        public WorkflowDetails WorkflowDetails
+        {
+            get { return this._workflowDetails; }
+            set { this._workflowDetails = value; }
+        }
+
+        // Check to see if WorkflowDetails property is set
+        internal bool IsSetWorkflowDetails()
+        {
+            return this._workflowDetails != null;
         }
 
     }

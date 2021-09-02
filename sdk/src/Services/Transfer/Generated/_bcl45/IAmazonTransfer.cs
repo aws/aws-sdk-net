@@ -150,6 +150,10 @@ namespace Amazon.Transfer
         /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
         /// The requested resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
         /// The request has failed because the Amazon Web ServicesTransfer Family service is not
         /// available.
@@ -192,6 +196,10 @@ namespace Amazon.Transfer
         /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
         /// The requested resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
         /// The request has failed because the Amazon Web ServicesTransfer Family service is not
         /// available.
@@ -218,8 +226,8 @@ namespace Amazon.Transfer
         /// set to <code>SERVICE_MANAGED</code>. Using parameters for <code>CreateUser</code>,
         /// you can specify the user name, set the home directory, store the user's public key,
         /// and assign the user's Amazon Web Services Identity and Access Management (IAM) role.
-        /// You can also optionally add a scope-down policy, and assign metadata with tags that
-        /// can be used to group and search for users.
+        /// You can also optionally add a session policy, and assign metadata with tags that can
+        /// be used to group and search for users.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
         /// 
@@ -253,8 +261,8 @@ namespace Amazon.Transfer
         /// set to <code>SERVICE_MANAGED</code>. Using parameters for <code>CreateUser</code>,
         /// you can specify the user name, set the home directory, store the user's public key,
         /// and assign the user's Amazon Web Services Identity and Access Management (IAM) role.
-        /// You can also optionally add a scope-down policy, and assign metadata with tags that
-        /// can be used to group and search for users.
+        /// You can also optionally add a session policy, and assign metadata with tags that can
+        /// be used to group and search for users.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
         /// <param name="cancellationToken">
@@ -282,6 +290,90 @@ namespace Amazon.Transfer
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateUser">REST API Reference for CreateUser Operation</seealso>
         Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateWorkflow
+
+
+        /// <summary>
+        /// Allows you to create a workflow with specified steps and step details the workflow
+        /// invokes after file transfer completes. After creating a workflow, you can associate
+        /// the workflow created with any transfer servers by specifying the <code>workflow-details</code>
+        /// field in <code>CreateServer</code> and <code>UpdateServer</code> operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkflow service method.</param>
+        /// 
+        /// <returns>The response from the CreateWorkflow service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        ///  HTTP Status Code: 400
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateWorkflow">REST API Reference for CreateWorkflow Operation</seealso>
+        CreateWorkflowResponse CreateWorkflow(CreateWorkflowRequest request);
+
+
+
+        /// <summary>
+        /// Allows you to create a workflow with specified steps and step details the workflow
+        /// invokes after file transfer completes. After creating a workflow, you can associate
+        /// the workflow created with any transfer servers by specifying the <code>workflow-details</code>
+        /// field in <code>CreateServer</code> and <code>UpdateServer</code> operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkflow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateWorkflow service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        ///  HTTP Status Code: 400
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateWorkflow">REST API Reference for CreateWorkflow Operation</seealso>
+        Task<CreateWorkflowResponse> CreateWorkflowAsync(CreateWorkflowRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -424,11 +516,6 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Deletes a user's Secure Shell (SSH) public key.
-        /// 
-        ///  
-        /// <para>
-        /// No response is returned from this operation.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSshPublicKey service method.</param>
         /// 
@@ -463,11 +550,6 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Deletes a user's Secure Shell (SSH) public key.
-        /// 
-        ///  
-        /// <para>
-        /// No response is returned from this operation.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSshPublicKey service method.</param>
         /// <param name="cancellationToken">
@@ -581,6 +663,70 @@ namespace Amazon.Transfer
 
         #endregion
         
+        #region  DeleteWorkflow
+
+
+        /// <summary>
+        /// Deletes the specified workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkflow service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWorkflow service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteWorkflow">REST API Reference for DeleteWorkflow Operation</seealso>
+        DeleteWorkflowResponse DeleteWorkflow(DeleteWorkflowRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the specified workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkflow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWorkflow service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteWorkflow">REST API Reference for DeleteWorkflow Operation</seealso>
+        Task<DeleteWorkflowResponse> DeleteWorkflowAsync(DeleteWorkflowRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeAccess
 
 
@@ -650,6 +796,66 @@ namespace Amazon.Transfer
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeAccess">REST API Reference for DescribeAccess Operation</seealso>
         Task<DescribeAccessResponse> DescribeAccessAsync(DescribeAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeExecution
+
+
+        /// <summary>
+        /// You can use <code>DescribeExecution</code> to check the details of the execution of
+        /// the specified workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExecution service method.</param>
+        /// 
+        /// <returns>The response from the DescribeExecution service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeExecution">REST API Reference for DescribeExecution Operation</seealso>
+        DescribeExecutionResponse DescribeExecution(DescribeExecutionRequest request);
+
+
+
+        /// <summary>
+        /// You can use <code>DescribeExecution</code> to check the details of the execution of
+        /// the specified workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeExecution service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeExecution">REST API Reference for DescribeExecution Operation</seealso>
+        Task<DescribeExecutionResponse> DescribeExecutionAsync(DescribeExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -861,6 +1067,64 @@ namespace Amazon.Transfer
 
         #endregion
         
+        #region  DescribeWorkflow
+
+
+        /// <summary>
+        /// Describes the specified workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkflow service method.</param>
+        /// 
+        /// <returns>The response from the DescribeWorkflow service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeWorkflow">REST API Reference for DescribeWorkflow Operation</seealso>
+        DescribeWorkflowResponse DescribeWorkflow(DescribeWorkflowRequest request);
+
+
+
+        /// <summary>
+        /// Describes the specified workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkflow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWorkflow service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeWorkflow">REST API Reference for DescribeWorkflow Operation</seealso>
+        Task<DescribeWorkflowResponse> DescribeWorkflowAsync(DescribeWorkflowRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ImportSshPublicKey
 
 
@@ -1018,6 +1282,70 @@ namespace Amazon.Transfer
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListAccesses">REST API Reference for ListAccesses Operation</seealso>
         Task<ListAccessesResponse> ListAccessesAsync(ListAccessesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListExecutions
+
+
+        /// <summary>
+        /// Lists all executions for the specified workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExecutions service method.</param>
+        /// 
+        /// <returns>The response from the ListExecutions service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> parameter that was passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
+        ListExecutionsResponse ListExecutions(ListExecutionsRequest request);
+
+
+
+        /// <summary>
+        /// Lists all executions for the specified workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExecutions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExecutions service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> parameter that was passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
+        Task<ListExecutionsResponse> ListExecutionsAsync(ListExecutionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1258,6 +1586,156 @@ namespace Amazon.Transfer
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListUsers">REST API Reference for ListUsers Operation</seealso>
         Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListWorkflows
+
+
+        /// <summary>
+        /// Lists all of your workflows.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkflows service method.</param>
+        /// 
+        /// <returns>The response from the ListWorkflows service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> parameter that was passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
+        ListWorkflowsResponse ListWorkflows(ListWorkflowsRequest request);
+
+
+
+        /// <summary>
+        /// Lists all of your workflows.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkflows service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWorkflows service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> parameter that was passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
+        Task<ListWorkflowsResponse> ListWorkflowsAsync(ListWorkflowsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SendWorkflowStepState
+
+
+        /// <summary>
+        /// Sends a callback for asynchronous custom steps.
+        /// 
+        ///  
+        /// <para>
+        ///  The <code>ExecutionId</code>, <code>WorkflowId</code>, and <code>Token</code> are
+        /// passed to the target resource during execution of a custom step of a workflow. You
+        /// must include those with their callback as well as providing a status. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendWorkflowStepState service method.</param>
+        /// 
+        /// <returns>The response from the SendWorkflowStepState service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        ///  HTTP Status Code: 400
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/SendWorkflowStepState">REST API Reference for SendWorkflowStepState Operation</seealso>
+        SendWorkflowStepStateResponse SendWorkflowStepState(SendWorkflowStepStateRequest request);
+
+
+
+        /// <summary>
+        /// Sends a callback for asynchronous custom steps.
+        /// 
+        ///  
+        /// <para>
+        ///  The <code>ExecutionId</code>, <code>WorkflowId</code>, and <code>Token</code> are
+        /// passed to the target resource during execution of a custom step of a workflow. You
+        /// must include those with their callback as well as providing a status. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendWorkflowStepState service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendWorkflowStepState service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        ///  HTTP Status Code: 400
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/SendWorkflowStepState">REST API Reference for SendWorkflowStepState Operation</seealso>
+        Task<SendWorkflowStepStateResponse> SendWorkflowStepStateAsync(SendWorkflowStepStateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1553,6 +2031,44 @@ namespace Amazon.Transfer
         /// to test your authentication method as soon as you create your server. By doing so,
         /// you can troubleshoot issues with the identity provider integration to ensure that
         /// your users can successfully use the service.
+        /// 
+        ///  
+        /// <para>
+        ///  The <code>ServerId</code> and <code>UserName</code> parameters are required. The
+        /// <code>ServerProtocol</code>, <code>SourceIp</code>, and <code>UserPassword</code>
+        /// are all optional. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  You cannot use <code>TestIdentityProvider</code> if the <code>IdentityProviderType</code>
+        /// of your server is <code>SERVICE_MANAGED</code>. 
+        /// </para>
+        ///  </note> <ul> <li> 
+        /// <para>
+        ///  If you provide any incorrect values for any parameters, the <code>Response</code>
+        /// field is empty. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  If you provide a server ID for a server that uses service-managed users, you get
+        /// an error: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> An error occurred (InvalidRequestException) when calling the TestIdentityProvider
+        /// operation: s-<i>server-ID</i> not configured for external auth </code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  If you enter a Server ID for the <code>--server-id</code> parameter that does not
+        /// identify an actual Transfer server, you receive the following error: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>An error occurred (ResourceNotFoundException) when calling the TestIdentityProvider
+        /// operation: Unknown server</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestIdentityProvider service method.</param>
         /// 
@@ -1584,6 +2100,44 @@ namespace Amazon.Transfer
         /// to test your authentication method as soon as you create your server. By doing so,
         /// you can troubleshoot issues with the identity provider integration to ensure that
         /// your users can successfully use the service.
+        /// 
+        ///  
+        /// <para>
+        ///  The <code>ServerId</code> and <code>UserName</code> parameters are required. The
+        /// <code>ServerProtocol</code>, <code>SourceIp</code>, and <code>UserPassword</code>
+        /// are all optional. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  You cannot use <code>TestIdentityProvider</code> if the <code>IdentityProviderType</code>
+        /// of your server is <code>SERVICE_MANAGED</code>. 
+        /// </para>
+        ///  </note> <ul> <li> 
+        /// <para>
+        ///  If you provide any incorrect values for any parameters, the <code>Response</code>
+        /// field is empty. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  If you provide a server ID for a server that uses service-managed users, you get
+        /// an error: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> An error occurred (InvalidRequestException) when calling the TestIdentityProvider
+        /// operation: s-<i>server-ID</i> not configured for external auth </code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  If you enter a Server ID for the <code>--server-id</code> parameter that does not
+        /// identify an actual Transfer server, you receive the following error: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>An error occurred (ResourceNotFoundException) when calling the TestIdentityProvider
+        /// operation: Unknown server</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestIdentityProvider service method.</param>
         /// <param name="cancellationToken">
@@ -1767,7 +2321,7 @@ namespace Amazon.Transfer
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ConflictException">
-        /// This exception is thrown when the <code>UpdatServer</code> is called for a file transfer
+        /// This exception is thrown when the <code>UpdateServer</code> is called for a file transfer
         /// protocol-enabled server that has VPC as the endpoint type and the server's <code>VpcEndpointID</code>
         /// is not in the available state.
         /// </exception>
@@ -1822,7 +2376,7 @@ namespace Amazon.Transfer
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ConflictException">
-        /// This exception is thrown when the <code>UpdatServer</code> is called for a file transfer
+        /// This exception is thrown when the <code>UpdateServer</code> is called for a file transfer
         /// protocol-enabled server that has VPC as the endpoint type and the server's <code>VpcEndpointID</code>
         /// is not in the available state.
         /// </exception>

@@ -51,6 +51,7 @@ namespace Amazon.Transfer.Model
         private List<string> _protocols = new List<string>();
         private string _securityPolicyName;
         private string _serverId;
+        private WorkflowDetails _workflowDetails;
 
         /// <summary>
         /// Gets and sets the property Certificate. 
@@ -372,6 +373,25 @@ namespace Amazon.Transfer.Model
         internal bool IsSetServerId()
         {
             return this._serverId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowDetails. 
+        /// <para>
+        /// Specifies the workflow ID for the workflow to assign and the execution role used for
+        /// executing the workflow.
+        /// </para>
+        /// </summary>
+        public WorkflowDetails WorkflowDetails
+        {
+            get { return this._workflowDetails; }
+            set { this._workflowDetails = value; }
+        }
+
+        // Check to see if WorkflowDetails property is set
+        internal bool IsSetWorkflowDetails()
+        {
+            return this._workflowDetails != null;
         }
 
     }

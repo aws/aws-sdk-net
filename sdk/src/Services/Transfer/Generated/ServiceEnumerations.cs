@@ -25,6 +25,56 @@ namespace Amazon.Transfer
 {
 
     /// <summary>
+    /// Constants used for properties of type CustomStepStatus.
+    /// </summary>
+    public class CustomStepStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILURE for CustomStepStatus
+        /// </summary>
+        public static readonly CustomStepStatus FAILURE = new CustomStepStatus("FAILURE");
+        /// <summary>
+        /// Constant SUCCESS for CustomStepStatus
+        /// </summary>
+        public static readonly CustomStepStatus SUCCESS = new CustomStepStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomStepStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomStepStatus FindValue(string value)
+        {
+            return FindValue<CustomStepStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomStepStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Domain.
     /// </summary>
     public class Domain : ConstantClass
@@ -129,6 +179,110 @@ namespace Amazon.Transfer
 
 
     /// <summary>
+    /// Constants used for properties of type ExecutionErrorType.
+    /// </summary>
+    public class ExecutionErrorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PERMISSION_DENIED for ExecutionErrorType
+        /// </summary>
+        public static readonly ExecutionErrorType PERMISSION_DENIED = new ExecutionErrorType("PERMISSION_DENIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionErrorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionErrorType FindValue(string value)
+        {
+            return FindValue<ExecutionErrorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionErrorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExecutionStatus.
+    /// </summary>
+    public class ExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus COMPLETED = new ExecutionStatus("COMPLETED");
+        /// <summary>
+        /// Constant EXCEPTION for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus EXCEPTION = new ExecutionStatus("EXCEPTION");
+        /// <summary>
+        /// Constant HANDLING_EXCEPTION for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus HANDLING_EXCEPTION = new ExecutionStatus("HANDLING_EXCEPTION");
+        /// <summary>
+        /// Constant IN_PROGRESS for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus IN_PROGRESS = new ExecutionStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionStatus FindValue(string value)
+        {
+            return FindValue<ExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HomeDirectoryType.
     /// </summary>
     public class HomeDirectoryType : ConstantClass
@@ -226,6 +380,56 @@ namespace Amazon.Transfer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IdentityProviderType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OverwriteExisting.
+    /// </summary>
+    public class OverwriteExisting : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FALSE for OverwriteExisting
+        /// </summary>
+        public static readonly OverwriteExisting FALSE = new OverwriteExisting("FALSE");
+        /// <summary>
+        /// Constant TRUE for OverwriteExisting
+        /// </summary>
+        public static readonly OverwriteExisting TRUE = new OverwriteExisting("TRUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OverwriteExisting(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OverwriteExisting FindValue(string value)
+        {
+            return FindValue<OverwriteExisting>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OverwriteExisting(string value)
         {
             return FindValue(value);
         }
@@ -346,6 +550,64 @@ namespace Amazon.Transfer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator State(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorkflowStepType.
+    /// </summary>
+    public class WorkflowStepType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COPY for WorkflowStepType
+        /// </summary>
+        public static readonly WorkflowStepType COPY = new WorkflowStepType("COPY");
+        /// <summary>
+        /// Constant CUSTOM for WorkflowStepType
+        /// </summary>
+        public static readonly WorkflowStepType CUSTOM = new WorkflowStepType("CUSTOM");
+        /// <summary>
+        /// Constant DELETE for WorkflowStepType
+        /// </summary>
+        public static readonly WorkflowStepType DELETE = new WorkflowStepType("DELETE");
+        /// <summary>
+        /// Constant TAG for WorkflowStepType
+        /// </summary>
+        public static readonly WorkflowStepType TAG = new WorkflowStepType("TAG");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkflowStepType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkflowStepType FindValue(string value)
+        {
+            return FindValue<WorkflowStepType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkflowStepType(string value)
         {
             return FindValue(value);
         }

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// This exception is thrown when the <code>UpdatServer</code> is called for a file transfer
+    /// This exception is thrown when the <code>UpdateServer</code> is called for a file transfer
     /// protocol-enabled server that has VPC as the endpoint type and the server's <code>VpcEndpointID</code>
     /// is not in the available state.
     /// </summary>

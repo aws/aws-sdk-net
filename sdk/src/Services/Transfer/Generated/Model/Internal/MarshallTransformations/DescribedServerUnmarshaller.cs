@@ -160,6 +160,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     unmarshalledObject.UserCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("WorkflowDetails", targetDepth))
+                {
+                    var unmarshaller = WorkflowDetailsUnmarshaller.Instance;
+                    unmarshalledObject.WorkflowDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

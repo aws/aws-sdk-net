@@ -109,6 +109,17 @@
     <pattern>^[\w][\w@.-]{2,99}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.CreateWorkflowRequest.Description</property>
+    <max>256</max>
+    <pattern>^[\w- ]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.CreateWorkflowResponse.WorkflowId</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^w-([a-z0-9]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.DeleteAccessRequest.ExternalId</property>
     <min>1</min>
     <max>256</max>
@@ -157,6 +168,12 @@
     <pattern>^[\w][\w@.-]{2,99}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.DeleteWorkflowRequest.WorkflowId</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^w-([a-z0-9]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.DescribeAccessRequest.ExternalId</property>
     <min>1</min>
     <max>256</max>
@@ -173,6 +190,24 @@
     <min>19</min>
     <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.DescribeExecutionRequest.ExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.DescribeExecutionRequest.WorkflowId</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^w-([a-z0-9]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.DescribeExecutionResponse.WorkflowId</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^w-([a-z0-9]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribeSecurityPolicyRequest.SecurityPolicyName</property>
@@ -202,6 +237,12 @@
     <min>19</min>
     <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.DescribeWorkflowRequest.WorkflowId</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^w-([a-z0-9]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ImportSshPublicKeyRequest.ServerId</property>
@@ -264,6 +305,33 @@
     <min>19</min>
     <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ListExecutionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ListExecutionsRequest.NextToken</property>
+    <min>1</min>
+    <max>6144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ListExecutionsRequest.WorkflowId</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^w-([a-z0-9]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ListExecutionsResponse.NextToken</property>
+    <min>1</min>
+    <max>6144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ListExecutionsResponse.WorkflowId</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^w-([a-z0-9]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListSecurityPoliciesRequest.MaxResults</property>
@@ -348,6 +416,39 @@
     <min>19</min>
     <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ListWorkflowsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ListWorkflowsRequest.NextToken</property>
+    <min>1</min>
+    <max>6144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ListWorkflowsResponse.NextToken</property>
+    <min>1</min>
+    <max>6144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.SendWorkflowStepStateRequest.ExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.SendWorkflowStepStateRequest.Token</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>\w+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.SendWorkflowStepStateRequest.WorkflowId</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^w-([a-z0-9]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.StartServerRequest.ServerId</property>
@@ -507,6 +608,31 @@
     <pattern>^[\w][\w@.-]{2,99}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.CopyStepDetails.Name</property>
+    <max>30</max>
+    <pattern>^[\w-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.CustomStepDetails.Name</property>
+    <max>30</max>
+    <pattern>^[\w-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.CustomStepDetails.Target</property>
+    <max>170</max>
+    <pattern>arn:[a-z-]+:lambda:.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.CustomStepDetails.TimeoutSeconds</property>
+    <min>1</min>
+    <max>1800</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.DeleteStepDetails.Name</property>
+    <max>30</max>
+    <pattern>^[\w-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedAccess.ExternalId</property>
     <min>1</min>
     <max>256</max>
@@ -523,6 +649,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedAccess.Role</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:.*role/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.DescribedExecution.ExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.DescribedExecution.ExecutionRole</property>
     <min>20</min>
     <max>2048</max>
     <pattern>arn:.*role/.*</pattern>
@@ -587,10 +725,42 @@
     <pattern>^[\w][\w@.-]{2,99}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.DescribedWorkflow.Arn</property>
+    <min>20</min>
+    <max>1600</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.DescribedWorkflow.Description</property>
+    <max>256</max>
+    <pattern>^[\w- ]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.DescribedWorkflow.WorkflowId</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^w-([a-z0-9]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.EfsFileLocation.FileSystemId</property>
+    <max>128</max>
+    <pattern>^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:(access-point/fsap|file-system/fs)-[0-9a-f]{8,40}|fs(ap)?-[0-9a-f]{8,40})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.EfsFileLocation.Path</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^(\/|(\/(?!\.)+[^$#&lt;&gt;;`|&amp;?{}^*/\n]+){1,4})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.EndpointDetails.VpcEndpointId</property>
     <min>22</min>
     <max>22</max>
     <pattern>^vpce-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ExecutionStepResult.Outputs</property>
+    <max>65536</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.HomeDirectoryMapEntry.Entry</property>
@@ -636,6 +806,12 @@
     <pattern>arn:.*role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.ListedExecution.ExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.ListedServer.Arn</property>
     <min>20</min>
     <max>1600</max>
@@ -677,6 +853,35 @@
     <pattern>^[\w][\w@.-]{2,99}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.ListedWorkflow.Arn</property>
+    <min>20</min>
+    <max>1600</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ListedWorkflow.Description</property>
+    <max>256</max>
+    <pattern>^[\w- ]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ListedWorkflow.WorkflowId</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^w-([a-z0-9]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.LoggingConfiguration.LoggingRole</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:.*role/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.LoggingConfiguration.LogGroupName</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\.\-_/#A-Za-z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.PosixProfile.Gid</property>
     <min>0</min>
     <max>4294967295</max>
@@ -689,6 +894,51 @@
   <property-value-rule>
     <property>Amazon.Transfer.Model.ProtocolDetails.PassiveIp</property>
     <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.S3FileLocation.Bucket</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>^[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.S3FileLocation.Etag</property>
+    <min>1</min>
+    <max>65536</max>
+    <pattern>^.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.S3FileLocation.Key</property>
+    <max>1024</max>
+    <pattern>[\P{M}\p{M}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.S3FileLocation.VersionId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.S3InputFileLocation.Bucket</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>^[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.S3InputFileLocation.Key</property>
+    <max>1024</max>
+    <pattern>[\P{M}\p{M}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.S3Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.S3Tag.Value</property>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.SshPublicKey.SshPublicKeyBody</property>
@@ -708,5 +958,40 @@
   <property-value-rule>
     <property>Amazon.Transfer.Model.Tag.Value</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.TagStepDetails.Name</property>
+    <max>30</max>
+    <pattern>^[\w-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.UserDetails.ServerId</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^s-([0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.UserDetails.SessionId</property>
+    <min>3</min>
+    <max>32</max>
+    <pattern>^[\w-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.UserDetails.UserName</property>
+    <min>3</min>
+    <max>100</max>
+    <pattern>^[\w][\w@.-]{2,99}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.WorkflowDetail.ExecutionRole</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:.*role/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.WorkflowDetail.WorkflowId</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^w-([a-z0-9]{17})$</pattern>
   </property-value-rule>
 </property-value-rules>

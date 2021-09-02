@@ -58,6 +58,15 @@ namespace Amazon.Transfer.Model
         /// Replace <code> <i>0.0.0.0</i> </code> in the example above with the actual IP address
         /// you want to use.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  If you change the <code>PassiveIp</code> value, you must stop and then restart your
+        /// Transfer server for the change to take effect. For details on using Passive IP (PASV)
+        /// in a NAT environment, see <a href="http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/">Configuring
+        /// your FTPS server behind a firewall or NAT with Amazon Web Services Transfer Family</a>.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Max=15)]
         public string PassiveIp

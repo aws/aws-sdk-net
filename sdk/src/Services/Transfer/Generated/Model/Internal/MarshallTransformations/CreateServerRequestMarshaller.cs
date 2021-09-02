@@ -158,6 +158,17 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetWorkflowDetails())
+                {
+                    context.Writer.WritePropertyName("WorkflowDetails");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WorkflowDetailsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.WorkflowDetails, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
