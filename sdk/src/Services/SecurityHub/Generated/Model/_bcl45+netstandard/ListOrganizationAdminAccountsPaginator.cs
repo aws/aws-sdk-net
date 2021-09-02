@@ -41,6 +41,12 @@ namespace Amazon.SecurityHub.Model
         /// </summary>
         public IPaginatedEnumerable<ListOrganizationAdminAccountsResponse> Responses => new PaginatedResponse<ListOrganizationAdminAccountsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the AdminAccounts
+        /// </summary>
+        public IPaginatedEnumerable<AdminAccount> AdminAccounts => 
+            new PaginatedResultKeyResponse<ListOrganizationAdminAccountsResponse, AdminAccount>(this, (i) => i.AdminAccounts);
+
         internal ListOrganizationAdminAccountsPaginator(IAmazonSecurityHub client, ListOrganizationAdminAccountsRequest request)
         {
             this._client = client;

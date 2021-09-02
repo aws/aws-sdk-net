@@ -41,6 +41,12 @@ namespace Amazon.SecurityHub.Model
         /// </summary>
         public IPaginatedEnumerable<GetEnabledStandardsResponse> Responses => new PaginatedResponse<GetEnabledStandardsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the StandardsSubscriptions
+        /// </summary>
+        public IPaginatedEnumerable<StandardsSubscription> StandardsSubscriptions => 
+            new PaginatedResultKeyResponse<GetEnabledStandardsResponse, StandardsSubscription>(this, (i) => i.StandardsSubscriptions);
+
         internal GetEnabledStandardsPaginator(IAmazonSecurityHub client, GetEnabledStandardsRequest request)
         {
             this._client = client;

@@ -94,6 +94,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsAutoScalingAutoScalingGroup = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsAutoScalingLaunchConfiguration", targetDepth))
+                {
+                    var unmarshaller = AwsAutoScalingLaunchConfigurationDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsAutoScalingLaunchConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsCertificateManagerCertificate", targetDepth))
                 {
                     var unmarshaller = AwsCertificateManagerCertificateDetailsUnmarshaller.Instance;
@@ -170,6 +176,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AwsEc2VpcDetailsUnmarshaller.Instance;
                     unmarshalledObject.AwsEc2Vpc = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsEc2VpnConnection", targetDepth))
+                {
+                    var unmarshaller = AwsEc2VpnConnectionDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsEc2VpnConnection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsEcrContainerImage", targetDepth))
+                {
+                    var unmarshaller = AwsEcrContainerImageDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsEcrContainerImage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AwsEcsCluster", targetDepth))

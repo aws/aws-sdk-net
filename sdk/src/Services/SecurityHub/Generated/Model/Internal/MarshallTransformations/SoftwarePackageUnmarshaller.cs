@@ -76,10 +76,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.Epoch = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FilePath", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FilePath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PackageManager", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PackageManager = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Release", targetDepth))

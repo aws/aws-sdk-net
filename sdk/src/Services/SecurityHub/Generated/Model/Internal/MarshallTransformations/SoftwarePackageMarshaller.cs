@@ -57,10 +57,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Epoch);
             }
 
+            if(requestObject.IsSetFilePath())
+            {
+                context.Writer.WritePropertyName("FilePath");
+                context.Writer.Write(requestObject.FilePath);
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
                 context.Writer.Write(requestObject.Name);
+            }
+
+            if(requestObject.IsSetPackageManager())
+            {
+                context.Writer.WritePropertyName("PackageManager");
+                context.Writer.Write(requestObject.PackageManager);
             }
 
             if(requestObject.IsSetRelease())

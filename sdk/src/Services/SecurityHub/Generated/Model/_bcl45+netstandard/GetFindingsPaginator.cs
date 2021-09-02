@@ -41,6 +41,12 @@ namespace Amazon.SecurityHub.Model
         /// </summary>
         public IPaginatedEnumerable<GetFindingsResponse> Responses => new PaginatedResponse<GetFindingsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the Findings
+        /// </summary>
+        public IPaginatedEnumerable<AwsSecurityFinding> Findings => 
+            new PaginatedResultKeyResponse<GetFindingsResponse, AwsSecurityFinding>(this, (i) => i.Findings);
+
         internal GetFindingsPaginator(IAmazonSecurityHub client, GetFindingsRequest request)
         {
             this._client = client;

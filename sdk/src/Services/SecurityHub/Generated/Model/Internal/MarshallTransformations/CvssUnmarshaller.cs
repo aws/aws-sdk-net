@@ -64,6 +64,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Adjustments", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Adjustment, AdjustmentUnmarshaller>(AdjustmentUnmarshaller.Instance);
+                    unmarshalledObject.Adjustments = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BaseScore", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;
@@ -74,6 +80,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BaseVector = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Source", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Source = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Version", targetDepth))

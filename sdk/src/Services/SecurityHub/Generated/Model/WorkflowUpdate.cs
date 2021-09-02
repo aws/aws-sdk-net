@@ -38,7 +38,14 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the investigation into the finding. The allowed values are the following.
+        /// The status of the investigation into the finding. The workflow status is specific
+        /// to an individual finding. It does not affect the generation of new findings. For example,
+        /// setting the workflow status to <code>SUPPRESSED</code> or <code>RESOLVED</code> does
+        /// not prevent a new finding for the same issue.
+        /// </para>
+        ///  
+        /// <para>
+        /// The allowed values are the following.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -71,8 +78,8 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUPPRESSED</code> - The finding will not be reviewed again and will not be
-        /// acted upon.
+        ///  <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe
+        /// that any action is needed. The finding is no longer updated.
         /// </para>
         ///  </li> </ul>
         /// </summary>

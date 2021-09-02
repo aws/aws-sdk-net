@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Contains metadata about a customer master key (CMK).
+    /// Contains metadata about an KMS key.
     /// </summary>
     public partial class AwsKmsKeyDetails
     {
@@ -38,13 +38,14 @@ namespace Amazon.SecurityHub.Model
         private string _description;
         private string _keyId;
         private string _keyManager;
+        private bool? _keyRotationStatus;
         private string _keyState;
         private string _origin;
 
         /// <summary>
         /// Gets and sets the property AWSAccountId. 
         /// <para>
-        /// The twelve-digit account ID of the Amazon Web Services account that owns the CMK.
+        /// The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.
         /// </para>
         /// </summary>
         public string AWSAccountId
@@ -62,7 +63,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// Indicates when the CMK was created.
+        /// Indicates when the KMS key was created.
         /// </para>
         ///  
         /// <para>
@@ -104,7 +105,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// The globally unique identifier for the CMK.
+        /// The globally unique identifier for the KMS key.
         /// </para>
         /// </summary>
         public string KeyId
@@ -122,8 +123,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property KeyManager. 
         /// <para>
-        /// The manager of the CMK. CMKs in your Amazon Web Services account are either customer
-        /// managed or Amazon Web Services managed.
+        /// The manager of the KMS key. KMS keys in your Amazon Web Services account are either
+        /// customer managed or Amazon Web Services managed.
         /// </para>
         /// </summary>
         public string KeyManager
@@ -139,9 +140,27 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KeyRotationStatus. 
+        /// <para>
+        /// Whether the key has key rotation enabled.
+        /// </para>
+        /// </summary>
+        public bool KeyRotationStatus
+        {
+            get { return this._keyRotationStatus.GetValueOrDefault(); }
+            set { this._keyRotationStatus = value; }
+        }
+
+        // Check to see if KeyRotationStatus property is set
+        internal bool IsSetKeyRotationStatus()
+        {
+            return this._keyRotationStatus.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property KeyState. 
         /// <para>
-        /// The state of the CMK.
+        /// The state of the KMS key.
         /// </para>
         /// </summary>
         public string KeyState
@@ -159,7 +178,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Origin. 
         /// <para>
-        /// The source of the CMK's key material.
+        /// The source of the KMS key material.
         /// </para>
         ///  
         /// <para>
@@ -168,7 +187,7 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// When this value is <code>EXTERNAL</code>, the key material was imported from your
-        /// existing key management infrastructure or the CMK lacks key material.
+        /// existing key management infrastructure or the KMS key lacks key material.
         /// </para>
         ///  
         /// <para>

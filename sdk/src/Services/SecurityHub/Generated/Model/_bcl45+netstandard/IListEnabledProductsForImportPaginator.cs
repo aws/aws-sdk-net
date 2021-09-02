@@ -29,5 +29,10 @@ namespace Amazon.SecurityHub.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListEnabledProductsForImportResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the ProductSubscriptions
+        /// </summary>
+        IPaginatedEnumerable<string> ProductSubscriptions { get; }
     }
 }

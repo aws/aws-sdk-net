@@ -45,6 +45,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsS3BucketDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAccessControlList())
+            {
+                context.Writer.WritePropertyName("AccessControlList");
+                context.Writer.Write(requestObject.AccessControlList);
+            }
+
             if(requestObject.IsSetBucketLifecycleConfiguration())
             {
                 context.Writer.WritePropertyName("BucketLifecycleConfiguration");
@@ -52,6 +58,39 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsS3BucketBucketLifecycleConfigurationDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.BucketLifecycleConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetBucketLoggingConfiguration())
+            {
+                context.Writer.WritePropertyName("BucketLoggingConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsS3BucketLoggingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.BucketLoggingConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetBucketNotificationConfiguration())
+            {
+                context.Writer.WritePropertyName("BucketNotificationConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsS3BucketNotificationConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.BucketNotificationConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetBucketWebsiteConfiguration())
+            {
+                context.Writer.WritePropertyName("BucketWebsiteConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsS3BucketWebsiteConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.BucketWebsiteConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
             }

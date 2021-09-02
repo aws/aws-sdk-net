@@ -75,6 +75,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.KeyManager);
             }
 
+            if(requestObject.IsSetKeyRotationStatus())
+            {
+                context.Writer.WritePropertyName("KeyRotationStatus");
+                context.Writer.Write(requestObject.KeyRotationStatus);
+            }
+
             if(requestObject.IsSetKeyState())
             {
                 context.Writer.WritePropertyName("KeyState");

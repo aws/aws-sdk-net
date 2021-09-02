@@ -100,6 +100,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsAutoScalingLaunchConfiguration())
+            {
+                context.Writer.WritePropertyName("AwsAutoScalingLaunchConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsAutoScalingLaunchConfigurationDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsAutoScalingLaunchConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsCertificateManagerCertificate())
             {
                 context.Writer.WritePropertyName("AwsCertificateManagerCertificate");
@@ -239,6 +250,28 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsEc2VpcDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsEc2Vpc, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsEc2VpnConnection())
+            {
+                context.Writer.WritePropertyName("AwsEc2VpnConnection");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsEc2VpnConnectionDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsEc2VpnConnection, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsEcrContainerImage())
+            {
+                context.Writer.WritePropertyName("AwsEcrContainerImage");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsEcrContainerImageDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsEcrContainerImage, context);
 
                 context.Writer.WriteObjectEnd();
             }

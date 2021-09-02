@@ -64,10 +64,34 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AccessControlList", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AccessControlList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BucketLifecycleConfiguration", targetDepth))
                 {
                     var unmarshaller = AwsS3BucketBucketLifecycleConfigurationDetailsUnmarshaller.Instance;
                     unmarshalledObject.BucketLifecycleConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("BucketLoggingConfiguration", targetDepth))
+                {
+                    var unmarshaller = AwsS3BucketLoggingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.BucketLoggingConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("BucketNotificationConfiguration", targetDepth))
+                {
+                    var unmarshaller = AwsS3BucketNotificationConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.BucketNotificationConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("BucketWebsiteConfiguration", targetDepth))
+                {
+                    var unmarshaller = AwsS3BucketWebsiteConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.BucketWebsiteConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CreatedAt", targetDepth))

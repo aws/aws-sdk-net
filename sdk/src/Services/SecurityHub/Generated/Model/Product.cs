@@ -159,8 +159,8 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// For integrations with third-party products, the Marketplace URL from which to subscribe
-        /// to or purchase the product.
+        /// For integrations with third-party products, the Amazon Web Services Marketplace URL
+        /// from which to subscribe to or purchase the product.
         /// </para>
         /// </summary>
         public string MarketplaceUrl

@@ -43,12 +43,12 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property EncryptionKey. 
         /// <para>
-        /// The KMS customer master key (CMK) used to encrypt the build output artifacts.
+        /// The KMS key used to encrypt the build output artifacts.
         /// </para>
         ///  
         /// <para>
-        /// You can specify either the ARN of the CMK or, if available, the CMK alias (using the
-        /// format alias/alias-name). 
+        /// You can specify either the ARN of the KMS key or, if available, the KMS key alias
+        /// (using the format alias/alias-name). 
         /// </para>
         /// </summary>
         public string EncryptionKey

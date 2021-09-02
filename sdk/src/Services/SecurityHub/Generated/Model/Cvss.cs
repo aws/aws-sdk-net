@@ -33,9 +33,29 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class Cvss
     {
+        private List<Adjustment> _adjustments = new List<Adjustment>();
         private double? _baseScore;
         private string _baseVector;
+        private string _source;
         private string _version;
+
+        /// <summary>
+        /// Gets and sets the property Adjustments. 
+        /// <para>
+        /// Adjustments to the CVSS metrics.
+        /// </para>
+        /// </summary>
+        public List<Adjustment> Adjustments
+        {
+            get { return this._adjustments; }
+            set { this._adjustments = value; }
+        }
+
+        // Check to see if Adjustments property is set
+        internal bool IsSetAdjustments()
+        {
+            return this._adjustments != null && this._adjustments.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property BaseScore. 
@@ -71,6 +91,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetBaseVector()
         {
             return this._baseVector != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Source. 
+        /// <para>
+        /// The origin of the original CVSS score and vector.
+        /// </para>
+        /// </summary>
+        public string Source
+        {
+            get { return this._source; }
+            set { this._source = value; }
+        }
+
+        // Check to see if Source property is set
+        internal bool IsSetSource()
+        {
+            return this._source != null;
         }
 
         /// <summary>

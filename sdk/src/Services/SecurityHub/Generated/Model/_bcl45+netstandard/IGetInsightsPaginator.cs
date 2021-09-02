@@ -29,5 +29,10 @@ namespace Amazon.SecurityHub.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<GetInsightsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the Insights
+        /// </summary>
+        IPaginatedEnumerable<Insight> Insights { get; }
     }
 }

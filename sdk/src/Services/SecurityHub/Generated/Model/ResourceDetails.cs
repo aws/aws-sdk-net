@@ -55,6 +55,7 @@ namespace Amazon.SecurityHub.Model
         private AwsApiGatewayV2ApiDetails _awsApiGatewayV2Api;
         private AwsApiGatewayV2StageDetails _awsApiGatewayV2Stage;
         private AwsAutoScalingAutoScalingGroupDetails _awsAutoScalingAutoScalingGroup;
+        private AwsAutoScalingLaunchConfigurationDetails _awsAutoScalingLaunchConfiguration;
         private AwsCertificateManagerCertificateDetails _awsCertificateManagerCertificate;
         private AwsCloudFrontDistributionDetails _awsCloudFrontDistribution;
         private AwsCloudTrailTrailDetails _awsCloudTrailTrail;
@@ -68,6 +69,8 @@ namespace Amazon.SecurityHub.Model
         private AwsEc2SubnetDetails _awsEc2Subnet;
         private AwsEc2VolumeDetails _awsEc2Volume;
         private AwsEc2VpcDetails _awsEc2Vpc;
+        private AwsEc2VpnConnectionDetails _awsEc2VpnConnection;
+        private AwsEcrContainerImageDetails _awsEcrContainerImage;
         private AwsEcsClusterDetails _awsEcsCluster;
         private AwsEcsServiceDetails _awsEcsService;
         private AwsEcsTaskDefinitionDetails _awsEcsTaskDefinition;
@@ -188,6 +191,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsAutoScalingAutoScalingGroup()
         {
             return this._awsAutoScalingAutoScalingGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsAutoScalingLaunchConfiguration. 
+        /// <para>
+        /// Provides details about a launch configuration.
+        /// </para>
+        /// </summary>
+        public AwsAutoScalingLaunchConfigurationDetails AwsAutoScalingLaunchConfiguration
+        {
+            get { return this._awsAutoScalingLaunchConfiguration; }
+            set { this._awsAutoScalingLaunchConfiguration = value; }
+        }
+
+        // Check to see if AwsAutoScalingLaunchConfiguration property is set
+        internal bool IsSetAwsAutoScalingLaunchConfiguration()
+        {
+            return this._awsAutoScalingLaunchConfiguration != null;
         }
 
         /// <summary>
@@ -425,6 +446,42 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AwsEc2VpnConnection. 
+        /// <para>
+        /// Details about an EC2 VPN connection.
+        /// </para>
+        /// </summary>
+        public AwsEc2VpnConnectionDetails AwsEc2VpnConnection
+        {
+            get { return this._awsEc2VpnConnection; }
+            set { this._awsEc2VpnConnection = value; }
+        }
+
+        // Check to see if AwsEc2VpnConnection property is set
+        internal bool IsSetAwsEc2VpnConnection()
+        {
+            return this._awsEc2VpnConnection != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsEcrContainerImage. 
+        /// <para>
+        /// information about an Amazon ECR image.
+        /// </para>
+        /// </summary>
+        public AwsEcrContainerImageDetails AwsEcrContainerImage
+        {
+            get { return this._awsEcrContainerImage; }
+            set { this._awsEcrContainerImage = value; }
+        }
+
+        // Check to see if AwsEcrContainerImage property is set
+        internal bool IsSetAwsEcrContainerImage()
+        {
+            return this._awsEcrContainerImage != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AwsEcsCluster. 
         /// <para>
         /// Details about an ECS cluster.
@@ -518,7 +575,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsElbLoadBalancer. 
         /// <para>
-        /// contains details about a Classic Load Balancer.
+        /// Contains details about a Classic Load Balancer.
         /// </para>
         /// </summary>
         public AwsElbLoadBalancerDetails AwsElbLoadBalancer

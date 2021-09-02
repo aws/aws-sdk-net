@@ -33,12 +33,34 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsS3BucketDetails
     {
+        private string _accessControlList;
         private AwsS3BucketBucketLifecycleConfigurationDetails _bucketLifecycleConfiguration;
+        private AwsS3BucketLoggingConfiguration _bucketLoggingConfiguration;
+        private AwsS3BucketNotificationConfiguration _bucketNotificationConfiguration;
+        private AwsS3BucketWebsiteConfiguration _bucketWebsiteConfiguration;
         private string _createdAt;
         private string _ownerId;
         private string _ownerName;
         private AwsS3AccountPublicAccessBlockDetails _publicAccessBlockConfiguration;
         private AwsS3BucketServerSideEncryptionConfiguration _serverSideEncryptionConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property AccessControlList. 
+        /// <para>
+        /// The access control list for the S3 bucket.
+        /// </para>
+        /// </summary>
+        public string AccessControlList
+        {
+            get { return this._accessControlList; }
+            set { this._accessControlList = value; }
+        }
+
+        // Check to see if AccessControlList property is set
+        internal bool IsSetAccessControlList()
+        {
+            return this._accessControlList != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BucketLifecycleConfiguration. 
@@ -56,6 +78,60 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetBucketLifecycleConfiguration()
         {
             return this._bucketLifecycleConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BucketLoggingConfiguration. 
+        /// <para>
+        /// The logging configuration for the S3 bucket.
+        /// </para>
+        /// </summary>
+        public AwsS3BucketLoggingConfiguration BucketLoggingConfiguration
+        {
+            get { return this._bucketLoggingConfiguration; }
+            set { this._bucketLoggingConfiguration = value; }
+        }
+
+        // Check to see if BucketLoggingConfiguration property is set
+        internal bool IsSetBucketLoggingConfiguration()
+        {
+            return this._bucketLoggingConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BucketNotificationConfiguration. 
+        /// <para>
+        /// The notification configuration for the S3 bucket.
+        /// </para>
+        /// </summary>
+        public AwsS3BucketNotificationConfiguration BucketNotificationConfiguration
+        {
+            get { return this._bucketNotificationConfiguration; }
+            set { this._bucketNotificationConfiguration = value; }
+        }
+
+        // Check to see if BucketNotificationConfiguration property is set
+        internal bool IsSetBucketNotificationConfiguration()
+        {
+            return this._bucketNotificationConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BucketWebsiteConfiguration. 
+        /// <para>
+        /// The website configuration parameters for the S3 bucket.
+        /// </para>
+        /// </summary>
+        public AwsS3BucketWebsiteConfiguration BucketWebsiteConfiguration
+        {
+            get { return this._bucketWebsiteConfiguration; }
+            set { this._bucketWebsiteConfiguration = value; }
+        }
+
+        // Check to see if BucketWebsiteConfiguration property is set
+        internal bool IsSetBucketWebsiteConfiguration()
+        {
+            return this._bucketWebsiteConfiguration != null;
         }
 
         /// <summary>

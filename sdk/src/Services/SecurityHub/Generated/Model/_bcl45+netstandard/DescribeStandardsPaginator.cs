@@ -41,6 +41,12 @@ namespace Amazon.SecurityHub.Model
         /// </summary>
         public IPaginatedEnumerable<DescribeStandardsResponse> Responses => new PaginatedResponse<DescribeStandardsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the Standards
+        /// </summary>
+        public IPaginatedEnumerable<Standard> Standards => 
+            new PaginatedResultKeyResponse<DescribeStandardsResponse, Standard>(this, (i) => i.Standards);
+
         internal DescribeStandardsPaginator(IAmazonSecurityHub client, DescribeStandardsRequest request)
         {
             this._client = client;

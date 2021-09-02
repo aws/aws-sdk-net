@@ -66,7 +66,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property KmsMasterKeyArn. 
         /// <para>
-        /// The ARN of the KMS customer master key (CMK) that is used for the KMS encryption.
+        /// The ARN of the KMS key that is used for the KMS encryption.
         /// </para>
         /// </summary>
         public string KmsMasterKeyArn

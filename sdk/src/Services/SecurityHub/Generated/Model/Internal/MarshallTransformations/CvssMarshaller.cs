@@ -45,6 +45,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Cvss requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAdjustments())
+            {
+                context.Writer.WritePropertyName("Adjustments");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAdjustmentsListValue in requestObject.Adjustments)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AdjustmentMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAdjustmentsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetBaseScore())
             {
                 context.Writer.WritePropertyName("BaseScore");
@@ -55,6 +71,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("BaseVector");
                 context.Writer.Write(requestObject.BaseVector);
+            }
+
+            if(requestObject.IsSetSource())
+            {
+                context.Writer.WritePropertyName("Source");
+                context.Writer.Write(requestObject.Source);
             }
 
             if(requestObject.IsSetVersion())

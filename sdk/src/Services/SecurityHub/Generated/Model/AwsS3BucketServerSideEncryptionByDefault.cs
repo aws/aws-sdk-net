@@ -39,7 +39,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property KMSMasterKeyID. 
         /// <para>
-        /// KMS customer master key (CMK) ID to use for the default encryption.
+        /// KMS key ID to use for the default encryption.
         /// </para>
         /// </summary>
         public string KMSMasterKeyID

@@ -35,7 +35,9 @@ namespace Amazon.SecurityHub.Model
     {
         private string _architecture;
         private string _epoch;
+        private string _filePath;
         private string _name;
+        private string _packageManager;
         private string _release;
         private string _version;
 
@@ -76,6 +78,24 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FilePath. 
+        /// <para>
+        /// The file system path to the package manager inventory file.
+        /// </para>
+        /// </summary>
+        public string FilePath
+        {
+            get { return this._filePath; }
+            set { this._filePath = value; }
+        }
+
+        // Check to see if FilePath property is set
+        internal bool IsSetFilePath()
+        {
+            return this._filePath != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the software package.
@@ -91,6 +111,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PackageManager. 
+        /// <para>
+        /// The source of the package.
+        /// </para>
+        /// </summary>
+        public string PackageManager
+        {
+            get { return this._packageManager; }
+            set { this._packageManager = value; }
+        }
+
+        // Check to see if PackageManager property is set
+        internal bool IsSetPackageManager()
+        {
+            return this._packageManager != null;
         }
 
         /// <summary>

@@ -262,6 +262,14 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.Adjustment.Metric</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.Adjustment.Reason</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.AdminAccount.AccountId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -467,6 +475,70 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.AwsAutoScalingAutoScalingGroupDetails.LaunchConfigurationName</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails.DeviceName</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails.VirtualName</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails.SnapshotId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails.VolumeType</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsAutoScalingLaunchConfigurationDetails.ClassicLinkVpcId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsAutoScalingLaunchConfigurationDetails.CreatedTime</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsAutoScalingLaunchConfigurationDetails.IamInstanceProfile</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsAutoScalingLaunchConfigurationDetails.ImageId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsAutoScalingLaunchConfigurationDetails.InstanceType</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsAutoScalingLaunchConfigurationDetails.KernelId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsAutoScalingLaunchConfigurationDetails.KeyName</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsAutoScalingLaunchConfigurationDetails.LaunchConfigurationName</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsAutoScalingLaunchConfigurationDetails.PlacementTenancy</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsAutoScalingLaunchConfigurationDetails.RamdiskId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsAutoScalingLaunchConfigurationDetails.SpotPrice</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsAutoScalingLaunchConfigurationDetails.UserData</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1151,6 +1223,98 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.AwsEc2VpcDetails.State</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2VpnConnectionDetails.Category</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2VpnConnectionDetails.CustomerGatewayConfiguration</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2VpnConnectionDetails.CustomerGatewayId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2VpnConnectionDetails.State</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2VpnConnectionDetails.TransitGatewayId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2VpnConnectionDetails.Type</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2VpnConnectionDetails.VpnConnectionId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2VpnConnectionDetails.VpnGatewayId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2VpnConnectionOptionsTunnelOptionsDetails.OutsideIpAddress</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2VpnConnectionOptionsTunnelOptionsDetails.PreSharedKey</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2VpnConnectionOptionsTunnelOptionsDetails.TunnelInsideCidr</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2VpnConnectionRoutesDetails.DestinationCidrBlock</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2VpnConnectionRoutesDetails.State</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2VpnConnectionVgwTelemetryDetails.CertificateArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2VpnConnectionVgwTelemetryDetails.LastStatusChange</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2VpnConnectionVgwTelemetryDetails.OutsideIpAddress</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2VpnConnectionVgwTelemetryDetails.Status</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEc2VpnConnectionVgwTelemetryDetails.StatusMessage</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEcrContainerImageDetails.Architecture</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEcrContainerImageDetails.ImageDigest</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEcrContainerImageDetails.ImagePublishedAt</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEcrContainerImageDetails.RegistryId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsEcrContainerImageDetails.RepositoryName</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2866,6 +3030,10 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsS3BucketDetails.AccessControlList</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.AwsS3BucketDetails.CreatedAt</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -2878,11 +3046,75 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsS3BucketLoggingConfiguration.DestinationBucketName</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsS3BucketLoggingConfiguration.LogFilePrefix</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsS3BucketNotificationConfigurationDetail.Destination</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsS3BucketNotificationConfigurationDetail.Type</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsS3BucketNotificationConfigurationS3KeyFilterRule.Value</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.AwsS3BucketServerSideEncryptionByDefault.KMSMasterKeyID</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.AwsS3BucketServerSideEncryptionByDefault.SSEAlgorithm</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsS3BucketWebsiteConfiguration.ErrorDocument</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsS3BucketWebsiteConfiguration.IndexDocumentSuffix</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsS3BucketWebsiteConfigurationRedirectTo.Hostname</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsS3BucketWebsiteConfigurationRedirectTo.Protocol</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsS3BucketWebsiteConfigurationRoutingRuleCondition.HttpErrorCodeReturnedEquals</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsS3BucketWebsiteConfigurationRoutingRuleCondition.KeyPrefixEquals</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsS3BucketWebsiteConfigurationRoutingRuleRedirect.Hostname</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsS3BucketWebsiteConfigurationRoutingRuleRedirect.HttpRedirectCode</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsS3BucketWebsiteConfigurationRoutingRuleRedirect.Protocol</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsS3BucketWebsiteConfigurationRoutingRuleRedirect.ReplaceKeyPrefixWith</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsS3BucketWebsiteConfigurationRoutingRuleRedirect.ReplaceKeyWith</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -3147,6 +3379,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.Cvss.BaseVector</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.Cvss.Source</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -3529,7 +3765,15 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SoftwarePackage.FilePath</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.SoftwarePackage.Name</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SoftwarePackage.PackageManager</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>

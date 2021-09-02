@@ -558,7 +558,7 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// When you use the Security Hub API to filter findings by product name, you use the
-        /// <code>aws/securityhub/ProductyName</code> attribute under <code>ProductFields</code>.
+        /// <code>aws/securityhub/ProductName</code> attribute under <code>ProductFields</code>.
         /// </para>
         ///  
         /// <para>

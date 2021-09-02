@@ -41,6 +41,12 @@ namespace Amazon.SecurityHub.Model
         /// </summary>
         public IPaginatedEnumerable<ListInvitationsResponse> Responses => new PaginatedResponse<ListInvitationsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the Invitations
+        /// </summary>
+        public IPaginatedEnumerable<Invitation> Invitations => 
+            new PaginatedResultKeyResponse<ListInvitationsResponse, Invitation>(this, (i) => i.Invitations);
+
         internal ListInvitationsPaginator(IAmazonSecurityHub client, ListInvitationsRequest request)
         {
             this._client = client;

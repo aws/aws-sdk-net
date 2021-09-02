@@ -94,6 +94,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.KeyManager = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("KeyRotationStatus", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.KeyRotationStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KeyState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

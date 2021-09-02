@@ -164,7 +164,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
         /// The KMS key that is used to encrypt the function's environment variables. This key
-        /// is only returned if you've configured a customer managed CMK.
+        /// is only returned if you've configured a customer managed customer managed key.
         /// </para>
         /// </summary>
         public string KmsKeyArn

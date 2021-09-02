@@ -79,8 +79,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property KmsMasterKeyId. 
         /// <para>
-        /// The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS
-        /// or a custom CMK.
+        /// The ID of an Amazon Web Services managed key for Amazon SQS or a custom KMS key.
         /// </para>
         /// </summary>
         public string KmsMasterKeyId
