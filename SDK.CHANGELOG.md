@@ -1,3 +1,20 @@
+### 3.7.112.0 (2021-09-03 18:12 UTC)
+* ChimeSDKIdentity (3.7.0.12)
+	* Documentation updates for Chime
+* ChimeSDKMessaging (3.7.0.12)
+	* Documentation updates for Chime
+* CodeGuruReviewer (3.7.3.0)
+	* Added support for CodeInconsistencies detectors
+* FraudDetector (3.7.4.0)
+	* Enhanced GetEventPrediction API response to include risk scores from imported SageMaker models
+* Outposts (3.7.3.0)
+	* This release adds a new API CreateOrder.
+* Core 3.7.3.1
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.111.0 (2021-09-03 03:46 UTC)
 * RDS (3.7.4.12)
 	* Updated to use new Core, version 3.7.3.0

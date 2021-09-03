@@ -32,7 +32,7 @@ namespace Amazon.IoTWireless
     public partial class AmazonIoTWirelessConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.6.15");
+            InternalSDKUtils.BuildUserAgentString("3.7.6.16");
 
         private string _userAgent = UserAgentString;
 
