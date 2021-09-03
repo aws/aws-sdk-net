@@ -309,6 +309,10 @@ namespace Amazon.CodeGuruReviewer
         /// </summary>
         public static readonly RecommendationCategory AWSCloudFormationIssues = new RecommendationCategory("AWSCloudFormationIssues");
         /// <summary>
+        /// Constant CodeInconsistencies for RecommendationCategory
+        /// </summary>
+        public static readonly RecommendationCategory CodeInconsistencies = new RecommendationCategory("CodeInconsistencies");
+        /// <summary>
         /// Constant CodeMaintenanceIssues for RecommendationCategory
         /// </summary>
         public static readonly RecommendationCategory CodeMaintenanceIssues = new RecommendationCategory("CodeMaintenanceIssues");
