@@ -51,6 +51,12 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("externalModelOutputs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ExternalModelOutputs, ExternalModelOutputsUnmarshaller>(ExternalModelOutputsUnmarshaller.Instance);
+                    response.ExternalModelOutputs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("modelScores", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ModelScores, ModelScoresUnmarshaller>(ModelScoresUnmarshaller.Instance);

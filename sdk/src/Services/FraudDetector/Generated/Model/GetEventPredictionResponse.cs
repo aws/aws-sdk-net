@@ -33,8 +33,27 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class GetEventPredictionResponse : AmazonWebServiceResponse
     {
+        private List<ExternalModelOutputs> _externalModelOutputs = new List<ExternalModelOutputs>();
         private List<ModelScores> _modelScores = new List<ModelScores>();
         private List<RuleResult> _ruleResults = new List<RuleResult>();
+
+        /// <summary>
+        /// Gets and sets the property ExternalModelOutputs. 
+        /// <para>
+        /// The model scores for Amazon SageMaker models.
+        /// </para>
+        /// </summary>
+        public List<ExternalModelOutputs> ExternalModelOutputs
+        {
+            get { return this._externalModelOutputs; }
+            set { this._externalModelOutputs = value; }
+        }
+
+        // Check to see if ExternalModelOutputs property is set
+        internal bool IsSetExternalModelOutputs()
+        {
+            return this._externalModelOutputs != null && this._externalModelOutputs.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ModelScores. 
