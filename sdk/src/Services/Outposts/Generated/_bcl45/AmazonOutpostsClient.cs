@@ -258,6 +258,83 @@ namespace Amazon.Outposts
         #endregion
 
 
+        #region  CreateOrder
+
+
+        /// <summary>
+        /// Creates an order for an Outpost.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOrder service method.</param>
+        /// 
+        /// <returns>The response from the CreateOrder service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ConflictException">
+        /// Updating or deleting this resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ServiceQuotaExceededException">
+        /// You have exceeded a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateOrder">REST API Reference for CreateOrder Operation</seealso>
+        public virtual CreateOrderResponse CreateOrder(CreateOrderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateOrderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOrderResponseUnmarshaller.Instance;
+
+            return Invoke<CreateOrderResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an order for an Outpost.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOrder service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateOrder service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ConflictException">
+        /// Updating or deleting this resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ServiceQuotaExceededException">
+        /// You have exceeded a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateOrder">REST API Reference for CreateOrder Operation</seealso>
+        public virtual Task<CreateOrderResponse> CreateOrderAsync(CreateOrderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateOrderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOrderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateOrderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateOutpost
 
 

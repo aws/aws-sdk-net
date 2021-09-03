@@ -86,7 +86,10 @@ namespace Amazon.Outposts.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutpostId.
+        /// Gets and sets the property OutpostId. 
+        /// <para>
+        ///  The ID of the Outpost. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=180)]
         public string OutpostId

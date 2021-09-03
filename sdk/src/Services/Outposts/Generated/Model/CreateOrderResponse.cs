@@ -29,30 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Outposts.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetOutpost operation.
-    /// Gets information about the specified Outpost.
+    /// This is the response object from the CreateOrder operation.
     /// </summary>
-    public partial class GetOutpostRequest : AmazonOutpostsRequest
+    public partial class CreateOrderResponse : AmazonWebServiceResponse
     {
-        private string _outpostId;
+        private Order _order;
 
         /// <summary>
-        /// Gets and sets the property OutpostId. 
+        /// Gets and sets the property Order. 
         /// <para>
-        ///  The ID of the Outpost. 
+        /// Information about this order.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=180)]
-        public string OutpostId
+        public Order Order
         {
-            get { return this._outpostId; }
-            set { this._outpostId = value; }
+            get { return this._order; }
+            set { this._order = value; }
         }
 
-        // Check to see if OutpostId property is set
-        internal bool IsSetOutpostId()
+        // Check to see if Order property is set
+        internal bool IsSetOrder()
         {
-            return this._outpostId != null;
+            return this._order != null;
         }
 
     }
