@@ -1,3 +1,17 @@
+### 3.7.111.0 (2021-09-03 03:46 UTC)
+* RDS (3.7.4.12)
+	* Updated to use new Core, version 3.7.3.0
+	* Update request signing due to SigV4a addition in Core
+* S3 (3.7.2.0)
+	* Updated to use new Core, version 3.7.3.0
+	* Add Asymmetric Signature V4 (SigV4a) signing via AWS Common Runtime, and S3 Multi-Region Access Points.
+* S3Control (3.7.3.1)
+	* Updated to use new Core, version 3.7.3.0
+	* Update request signing due to SigV4a addition in Core
+* Core 3.7.3.0
+	* Add Asymmetric Signature V4 (SigV4a) signing via AWS Common Runtime, and S3 Multi-Region Access Points.
+	* All services packages updated to require new Core
+
 ### 3.7.110.0 (2021-09-02 18:33 UTC)
 * AccessAnalyzer (3.7.1.51)
 	* Updates service API, documentation, and paginators to support multi-region access points from Amazon S3.
