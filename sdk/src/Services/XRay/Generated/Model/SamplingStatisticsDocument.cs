@@ -31,7 +31,7 @@ namespace Amazon.XRay.Model
     /// <summary>
     /// Request sampling results for a single rule from a service. Results are for the last
     /// 10 seconds unless the service has been assigned a longer reporting interval after
-    /// a previous call to <a>GetSamplingTargets</a>.
+    /// a previous call to <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>.
     /// </summary>
     public partial class SamplingStatisticsDocument
     {

@@ -30,8 +30,8 @@ namespace Amazon.XRay.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes tags from an AWS X-Ray group or sampling rule. You cannot edit or delete system
-    /// tags (those with an <code>aws:</code> prefix).
+    /// Removes tags from an Amazon Web Services X-Ray group or sampling rule. You cannot
+    /// edit or delete system tags (those with an <code>aws:</code> prefix).
     /// </summary>
     public partial class UntagResourceRequest : AmazonXRayRequest
     {

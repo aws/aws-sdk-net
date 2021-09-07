@@ -104,7 +104,7 @@ namespace Amazon.XRay.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The NotifcationsEnabled boolean can be set to true to enable insights notifications
+        /// The NotificationsEnabled boolean can be set to true to enable insights notifications
         /// through Amazon EventBridge for the group.
         /// </para>
         ///  </li> </ul>

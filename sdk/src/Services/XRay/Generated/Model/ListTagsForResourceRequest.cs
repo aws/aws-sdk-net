@@ -30,8 +30,8 @@ namespace Amazon.XRay.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Returns a list of tags that are applied to the specified AWS X-Ray group or sampling
-    /// rule.
+    /// Returns a list of tags that are applied to the specified Amazon Web Services X-Ray
+    /// group or sampling rule.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonXRayRequest
     {

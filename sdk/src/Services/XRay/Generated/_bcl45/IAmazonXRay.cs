@@ -31,8 +31,8 @@ namespace Amazon.XRay
     /// <summary>
     /// Interface for accessing XRay
     ///
-    /// AWS X-Ray provides APIs for managing debug traces and retrieving service maps and
-    /// other data created by processing those traces.
+    /// Amazon Web Services X-Ray provides APIs for managing debug traces and retrieving service
+    /// maps and other data created by processing those traces.
     /// </summary>
     public partial interface IAmazonXRay : IAmazonService, IDisposable
     {
@@ -132,12 +132,12 @@ namespace Amazon.XRay
 
         /// <summary>
         /// Creates a rule to control sampling behavior for instrumented applications. Services
-        /// retrieve rules with <a>GetSamplingRules</a>, and evaluate each rule in ascending order
-        /// of <i>priority</i> for each request. If a rule matches, the service records a trace,
-        /// borrowing it from the reservoir size. After 10 seconds, the service reports back to
-        /// X-Ray with <a>GetSamplingTargets</a> to get updated versions of each in-use rule.
-        /// The updated rule contains a trace quota that the service can use instead of borrowing
-        /// from the reservoir.
+        /// retrieve rules with <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a>,
+        /// and evaluate each rule in ascending order of <i>priority</i> for each request. If
+        /// a rule matches, the service records a trace, borrowing it from the reservoir size.
+        /// After 10 seconds, the service reports back to X-Ray with <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>
+        /// to get updated versions of each in-use rule. The updated rule contains a trace quota
+        /// that the service can use instead of borrowing from the reservoir.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSamplingRule service method.</param>
         /// 
@@ -158,12 +158,12 @@ namespace Amazon.XRay
 
         /// <summary>
         /// Creates a rule to control sampling behavior for instrumented applications. Services
-        /// retrieve rules with <a>GetSamplingRules</a>, and evaluate each rule in ascending order
-        /// of <i>priority</i> for each request. If a rule matches, the service records a trace,
-        /// borrowing it from the reservoir size. After 10 seconds, the service reports back to
-        /// X-Ray with <a>GetSamplingTargets</a> to get updated versions of each in-use rule.
-        /// The updated rule contains a trace quota that the service can use instead of borrowing
-        /// from the reservoir.
+        /// retrieve rules with <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a>,
+        /// and evaluate each rule in ascending order of <i>priority</i> for each request. If
+        /// a rule matches, the service records a trace, borrowing it from the reservoir size.
+        /// After 10 seconds, the service reports back to X-Ray with <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>
+        /// to get updated versions of each in-use rule. The updated rule contains a trace quota
+        /// that the service can use instead of borrowing from the reservoir.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSamplingRule service method.</param>
         /// <param name="cancellationToken">
@@ -685,9 +685,9 @@ namespace Amazon.XRay
         /// <summary>
         /// Retrieves a document that describes services that process incoming requests, and downstream
         /// services that they call as a result. Root services process incoming requests and make
-        /// calls to downstream services. Root services are applications that use the <a href="https://docs.aws.amazon.com/xray/index.html">AWS
-        /// X-Ray SDK</a>. Downstream services can be other applications, AWS resources, HTTP
-        /// web APIs, or SQL databases.
+        /// calls to downstream services. Root services are applications that use the <a href="https://docs.aws.amazon.com/xray/index.html">Amazon
+        /// Web Services X-Ray SDK</a>. Downstream services can be other applications, Amazon
+        /// Web Services resources, HTTP web APIs, or SQL databases.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceGraph service method.</param>
         /// 
@@ -706,9 +706,9 @@ namespace Amazon.XRay
         /// <summary>
         /// Retrieves a document that describes services that process incoming requests, and downstream
         /// services that they call as a result. Root services process incoming requests and make
-        /// calls to downstream services. Root services are applications that use the <a href="https://docs.aws.amazon.com/xray/index.html">AWS
-        /// X-Ray SDK</a>. Downstream services can be other applications, AWS resources, HTTP
-        /// web APIs, or SQL databases.
+        /// calls to downstream services. Root services are applications that use the <a href="https://docs.aws.amazon.com/xray/index.html">Amazon
+        /// Web Services X-Ray SDK</a>. Downstream services can be other applications, Amazon
+        /// Web Services resources, HTTP web APIs, or SQL databases.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceGraph service method.</param>
         /// <param name="cancellationToken">
@@ -837,7 +837,7 @@ namespace Amazon.XRay
         /// <para>
         /// For a full list of indexed fields and keywords that you can use in filter expressions,
         /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using
-        /// Filter Expressions</a> in the <i>AWS X-Ray Developer Guide</i>.
+        /// Filter Expressions</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTraceSummaries service method.</param>
@@ -881,7 +881,7 @@ namespace Amazon.XRay
         /// <para>
         /// For a full list of indexed fields and keywords that you can use in filter expressions,
         /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using
-        /// Filter Expressions</a> in the <i>AWS X-Ray Developer Guide</i>.
+        /// Filter Expressions</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTraceSummaries service method.</param>
@@ -905,8 +905,8 @@ namespace Amazon.XRay
 
 
         /// <summary>
-        /// Returns a list of tags that are applied to the specified AWS X-Ray group or sampling
-        /// rule.
+        /// Returns a list of tags that are applied to the specified Amazon Web Services X-Ray
+        /// group or sampling rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -927,8 +927,8 @@ namespace Amazon.XRay
 
 
         /// <summary>
-        /// Returns a list of tags that are applied to the specified AWS X-Ray group or sampling
-        /// rule.
+        /// Returns a list of tags that are applied to the specified Amazon Web Services X-Ray
+        /// group or sampling rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -995,7 +995,7 @@ namespace Amazon.XRay
 
 
         /// <summary>
-        /// Used by the AWS X-Ray daemon to upload telemetry.
+        /// Used by the Amazon Web Services X-Ray daemon to upload telemetry.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutTelemetryRecords service method.</param>
         /// 
@@ -1012,7 +1012,7 @@ namespace Amazon.XRay
 
 
         /// <summary>
-        /// Used by the AWS X-Ray daemon to upload telemetry.
+        /// Used by the Amazon Web Services X-Ray daemon to upload telemetry.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutTelemetryRecords service method.</param>
         /// <param name="cancellationToken">
@@ -1035,7 +1035,7 @@ namespace Amazon.XRay
 
 
         /// <summary>
-        /// Uploads segment documents to AWS X-Ray. The <a href="https://docs.aws.amazon.com/xray/index.html">X-Ray
+        /// Uploads segment documents to Amazon Web Services X-Ray. The <a href="https://docs.aws.amazon.com/xray/index.html">X-Ray
         /// SDK</a> generates segment documents and sends them to the X-Ray daemon, which uploads
         /// them in batches. A segment document can be a completed segment, an in-progress segment,
         /// or an array of subsegments.
@@ -1043,8 +1043,9 @@ namespace Amazon.XRay
         ///  
         /// <para>
         /// Segments must include the following fields. For the full segment document schema,
-        /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
-        /// X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">Amazon
+        /// Web Services X-Ray Segment Documents</a> in the <i>Amazon Web Services X-Ray Developer
+        /// Guide</i>.
         /// </para>
         ///  <p class="title"> <b>Required segment document fields</b> 
         /// </para>
@@ -1119,7 +1120,7 @@ namespace Amazon.XRay
 
 
         /// <summary>
-        /// Uploads segment documents to AWS X-Ray. The <a href="https://docs.aws.amazon.com/xray/index.html">X-Ray
+        /// Uploads segment documents to Amazon Web Services X-Ray. The <a href="https://docs.aws.amazon.com/xray/index.html">X-Ray
         /// SDK</a> generates segment documents and sends them to the X-Ray daemon, which uploads
         /// them in batches. A segment document can be a completed segment, an in-progress segment,
         /// or an array of subsegments.
@@ -1127,8 +1128,9 @@ namespace Amazon.XRay
         ///  
         /// <para>
         /// Segments must include the following fields. For the full segment document schema,
-        /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
-        /// X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">Amazon
+        /// Web Services X-Ray Segment Documents</a> in the <i>Amazon Web Services X-Ray Developer
+        /// Guide</i>.
         /// </para>
         ///  <p class="title"> <b>Required segment document fields</b> 
         /// </para>
@@ -1209,7 +1211,7 @@ namespace Amazon.XRay
 
 
         /// <summary>
-        /// Applies tags to an existing AWS X-Ray group or sampling rule.
+        /// Applies tags to an existing Amazon Web Services X-Ray group or sampling rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1233,7 +1235,7 @@ namespace Amazon.XRay
 
 
         /// <summary>
-        /// Applies tags to an existing AWS X-Ray group or sampling rule.
+        /// Applies tags to an existing Amazon Web Services X-Ray group or sampling rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1263,8 +1265,8 @@ namespace Amazon.XRay
 
 
         /// <summary>
-        /// Removes tags from an AWS X-Ray group or sampling rule. You cannot edit or delete system
-        /// tags (those with an <code>aws:</code> prefix).
+        /// Removes tags from an Amazon Web Services X-Ray group or sampling rule. You cannot
+        /// edit or delete system tags (those with an <code>aws:</code> prefix).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -1285,8 +1287,8 @@ namespace Amazon.XRay
 
 
         /// <summary>
-        /// Removes tags from an AWS X-Ray group or sampling rule. You cannot edit or delete system
-        /// tags (those with an <code>aws:</code> prefix).
+        /// Removes tags from an Amazon Web Services X-Ray group or sampling rule. You cannot
+        /// edit or delete system tags (those with an <code>aws:</code> prefix).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">

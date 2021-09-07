@@ -30,7 +30,7 @@ namespace Amazon.XRay.Model
 {
     /// <summary>
     /// Container for the parameters to the PutTelemetryRecords operation.
-    /// Used by the AWS X-Ray daemon to upload telemetry.
+    /// Used by the Amazon Web Services X-Ray daemon to upload telemetry.
     /// </summary>
     public partial class PutTelemetryRecordsRequest : AmazonXRayRequest
     {

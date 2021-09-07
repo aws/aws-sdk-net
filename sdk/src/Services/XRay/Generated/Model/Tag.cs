@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.XRay.Model
 {
     /// <summary>
-    /// A map that contains tag keys and tag values to attach to an AWS X-Ray group or sampling
-    /// rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-    /// AWS resources</a> in the <i>AWS General Reference</i>.
+    /// A map that contains tag keys and tag values to attach to an Amazon Web Services X-Ray
+    /// group or sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+    /// Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
     /// 
     ///  
     /// <para>
@@ -47,8 +47,8 @@ namespace Amazon.XRay.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use. You cannot
-    /// edit or delete system tags.
+    /// Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services
+    /// use. You cannot edit or delete system tags.
     /// </para>
     ///  </li> </ul>
     /// </summary>

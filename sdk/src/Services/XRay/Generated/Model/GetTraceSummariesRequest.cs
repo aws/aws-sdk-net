@@ -56,7 +56,7 @@ namespace Amazon.XRay.Model
     /// <para>
     /// For a full list of indexed fields and keywords that you can use in filter expressions,
     /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using
-    /// Filter Expressions</a> in the <i>AWS X-Ray Developer Guide</i>.
+    /// Filter Expressions</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class GetTraceSummariesRequest : AmazonXRayRequest

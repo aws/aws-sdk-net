@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.XRay.Model
 {
     /// <summary>
-    /// A <a>SamplingRule</a> and its metadata.
+    /// A <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingRule.html">SamplingRule</a>
+    /// and its metadata.
     /// </summary>
     public partial class SamplingRuleRecord
     {

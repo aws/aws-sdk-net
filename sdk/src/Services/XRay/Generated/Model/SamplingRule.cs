@@ -168,7 +168,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// Matches the ARN of the AWS resource on which the service runs.
+        /// Matches the ARN of the Amazon Web Services resource on which the service runs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=500)]

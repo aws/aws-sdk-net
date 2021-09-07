@@ -135,7 +135,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property Services. 
         /// <para>
-        /// The AWS instrumented services related to the insight.
+        /// The Amazon Web Services instrumented services related to the insight.
         /// </para>
         /// </summary>
         public List<InsightImpactGraphService> Services

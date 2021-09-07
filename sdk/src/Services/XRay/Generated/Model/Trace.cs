@@ -80,8 +80,8 @@ namespace Amazon.XRay.Model
         /// Gets and sets the property LimitExceeded. 
         /// <para>
         /// LimitExceeded is set to true when the trace has exceeded one of the defined quotas.
-        /// For more information about quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">AWS
-        /// X-Ray endpoints and quotas</a>.
+        /// For more information about quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon
+        /// Web Services X-Ray endpoints and quotas</a>.
         /// </para>
         /// </summary>
         public bool LimitExceeded

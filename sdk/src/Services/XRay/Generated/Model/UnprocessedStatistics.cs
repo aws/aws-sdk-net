@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.XRay.Model
 {
     /// <summary>
-    /// Sampling statistics from a call to <a>GetSamplingTargets</a> that X-Ray could not
-    /// process.
+    /// Sampling statistics from a call to <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>
+    /// that X-Ray could not process.
     /// </summary>
     public partial class UnprocessedStatistics
     {

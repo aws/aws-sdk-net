@@ -40,7 +40,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// An AWS KMS customer master key (CMK) in one of the following formats:
+        /// An Amazon Web Services KMS key in one of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -49,7 +49,7 @@ namespace Amazon.XRay.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.
-        /// AWS X-Ray does not support asymmetric CMKs.
+        /// Amazon Web Services X-Ray does not support asymmetric KMS keys.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -31,12 +31,12 @@ namespace Amazon.XRay.Model
     /// <summary>
     /// Container for the parameters to the CreateSamplingRule operation.
     /// Creates a rule to control sampling behavior for instrumented applications. Services
-    /// retrieve rules with <a>GetSamplingRules</a>, and evaluate each rule in ascending order
-    /// of <i>priority</i> for each request. If a rule matches, the service records a trace,
-    /// borrowing it from the reservoir size. After 10 seconds, the service reports back to
-    /// X-Ray with <a>GetSamplingTargets</a> to get updated versions of each in-use rule.
-    /// The updated rule contains a trace quota that the service can use instead of borrowing
-    /// from the reservoir.
+    /// retrieve rules with <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a>,
+    /// and evaluate each rule in ascending order of <i>priority</i> for each request. If
+    /// a rule matches, the service records a trace, borrowing it from the reservoir size.
+    /// After 10 seconds, the service reports back to X-Ray with <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>
+    /// to get updated versions of each in-use rule. The updated rule contains a trace quota
+    /// that the service can use instead of borrowing from the reservoir.
     /// </summary>
     public partial class CreateSamplingRuleRequest : AmazonXRayRequest
     {
@@ -67,7 +67,7 @@ namespace Amazon.XRay.Model
         /// <para>
         /// A map that contains one or more tag keys and tag values to attach to an X-Ray sampling
         /// rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// AWS resources</a> in the <i>AWS General Reference</i>.
+        /// Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         ///  
         /// <para>
@@ -96,7 +96,8 @@ namespace Amazon.XRay.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+        /// Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services
+        /// use.
         /// </para>
         ///  </li> </ul>
         /// </summary>

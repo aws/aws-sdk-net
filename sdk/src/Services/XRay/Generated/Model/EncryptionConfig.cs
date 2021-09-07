@@ -40,7 +40,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// The ID of the customer master key (CMK) used for encryption, if applicable.
+        /// The ID of the KMS key used for encryption, if applicable.
         /// </para>
         /// </summary>
         public string KeyId
@@ -77,8 +77,8 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of encryption. Set to <code>KMS</code> for encryption with CMKs. Set to <code>NONE</code>
-        /// for default encryption.
+        /// The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set
+        /// to <code>NONE</code> for default encryption.
         /// </para>
         /// </summary>
         public EncryptionType Type

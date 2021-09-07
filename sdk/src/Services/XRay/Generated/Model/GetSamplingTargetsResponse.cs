@@ -42,7 +42,8 @@ namespace Amazon.XRay.Model
         /// <para>
         /// The last time a user changed the sampling rule configuration. If the sampling rule
         /// configuration changed since the service last retrieved it, the service should call
-        /// <a>GetSamplingRules</a> to get the latest version.
+        /// <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a>
+        /// to get the latest version.
         /// </para>
         /// </summary>
         public DateTime LastRuleModification
@@ -78,7 +79,8 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property UnprocessedStatistics. 
         /// <para>
-        /// Information about <a>SamplingStatisticsDocument</a> that X-Ray could not process.
+        /// Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingStatisticsDocument.html">SamplingStatisticsDocument</a>
+        /// that X-Ray could not process.
         /// </para>
         /// </summary>
         public List<UnprocessedStatistics> UnprocessedStatistics

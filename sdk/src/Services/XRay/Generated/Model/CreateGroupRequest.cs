@@ -112,7 +112,7 @@ namespace Amazon.XRay.Model
         /// <para>
         /// A map that contains one or more tag keys and tag values to attach to an X-Ray group.
         /// For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// AWS resources</a> in the <i>AWS General Reference</i>.
+        /// Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         ///  
         /// <para>
@@ -141,7 +141,8 @@ namespace Amazon.XRay.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+        /// Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services
+        /// use.
         /// </para>
         ///  </li> </ul>
         /// </summary>

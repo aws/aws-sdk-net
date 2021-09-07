@@ -44,7 +44,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// Identifier of the AWS account in which the service runs.
+        /// Identifier of the Amazon Web Services account in which the service runs.
         /// </para>
         /// </summary>
         public string AccountId
@@ -138,19 +138,21 @@ namespace Amazon.XRay.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// AWS Resource - The type of an AWS resource. For example, AWS::EC2::Instance for an
-        /// application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table
-        /// that the application used. 
+        /// Amazon Web Services Resource - The type of an Amazon Web Services resource. For example,
+        /// AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table
+        /// for an Amazon DynamoDB table that the application used. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// AWS Service - The type of an AWS service. For example, AWS::DynamoDB for downstream
-        /// calls to Amazon DynamoDB that didn't target a specific table. 
+        /// Amazon Web Services Service - The type of an Amazon Web Services service. For example,
+        /// AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific
+        /// table. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// AWS Service - The type of an AWS service. For example, AWS::DynamoDB for downstream
-        /// calls to Amazon DynamoDB that didn't target a specific table. 
+        /// Amazon Web Services Service - The type of an Amazon Web Services service. For example,
+        /// AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific
+        /// table. 
         /// </para>
         ///  </li> <li> 
         /// <para>
