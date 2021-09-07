@@ -70,6 +70,18 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     unmarshalledObject.ForecastType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MAPE", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.MAPE = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MASE", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.MASE = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RMSE", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;

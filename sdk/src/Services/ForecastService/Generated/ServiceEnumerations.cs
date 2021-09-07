@@ -403,6 +403,68 @@ namespace Amazon.ForecastService
 
 
     /// <summary>
+    /// Constants used for properties of type OptimizationMetric.
+    /// </summary>
+    public class OptimizationMetric : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AverageWeightedQuantileLoss for OptimizationMetric
+        /// </summary>
+        public static readonly OptimizationMetric AverageWeightedQuantileLoss = new OptimizationMetric("AverageWeightedQuantileLoss");
+        /// <summary>
+        /// Constant MAPE for OptimizationMetric
+        /// </summary>
+        public static readonly OptimizationMetric MAPE = new OptimizationMetric("MAPE");
+        /// <summary>
+        /// Constant MASE for OptimizationMetric
+        /// </summary>
+        public static readonly OptimizationMetric MASE = new OptimizationMetric("MASE");
+        /// <summary>
+        /// Constant RMSE for OptimizationMetric
+        /// </summary>
+        public static readonly OptimizationMetric RMSE = new OptimizationMetric("RMSE");
+        /// <summary>
+        /// Constant WAPE for OptimizationMetric
+        /// </summary>
+        public static readonly OptimizationMetric WAPE = new OptimizationMetric("WAPE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OptimizationMetric(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OptimizationMetric FindValue(string value)
+        {
+            return FindValue<OptimizationMetric>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OptimizationMetric(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ScalingType.
     /// </summary>
     public class ScalingType : ConstantClass

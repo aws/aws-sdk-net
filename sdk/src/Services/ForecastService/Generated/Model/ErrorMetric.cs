@@ -35,13 +35,15 @@ namespace Amazon.ForecastService.Model
     public partial class ErrorMetric
     {
         private string _forecastType;
+        private double? _mape;
+        private double? _mase;
         private double? _rmse;
         private double? _wape;
 
         /// <summary>
         /// Gets and sets the property ForecastType. 
         /// <para>
-        ///  The Forecast type used to compute WAPE and RMSE. 
+        ///  The Forecast type used to compute WAPE, MAPE, MASE, and RMSE. 
         /// </para>
         /// </summary>
         public string ForecastType
@@ -54,6 +56,42 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetForecastType()
         {
             return this._forecastType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MAPE. 
+        /// <para>
+        /// The Mean Absolute Percentage Error (MAPE)
+        /// </para>
+        /// </summary>
+        public double MAPE
+        {
+            get { return this._mape.GetValueOrDefault(); }
+            set { this._mape = value; }
+        }
+
+        // Check to see if MAPE property is set
+        internal bool IsSetMAPE()
+        {
+            return this._mape.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MASE. 
+        /// <para>
+        /// The Mean Absolute Scaled Error (MASE)
+        /// </para>
+        /// </summary>
+        public double MASE
+        {
+            get { return this._mase.GetValueOrDefault(); }
+            set { this._mase = value; }
+        }
+
+        // Check to see if MASE property is set
+        internal bool IsSetMASE()
+        {
+            return this._mase.HasValue; 
         }
 
         /// <summary>

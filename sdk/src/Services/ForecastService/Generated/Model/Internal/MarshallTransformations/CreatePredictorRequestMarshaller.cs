@@ -151,6 +151,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetOptimizationMetric())
+                {
+                    context.Writer.WritePropertyName("OptimizationMetric");
+                    context.Writer.Write(publicRequest.OptimizationMetric);
+                }
+
                 if(publicRequest.IsSetPerformAutoML())
                 {
                     context.Writer.WritePropertyName("PerformAutoML");

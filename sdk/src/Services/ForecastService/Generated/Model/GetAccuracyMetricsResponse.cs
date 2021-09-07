@@ -34,10 +34,17 @@ namespace Amazon.ForecastService.Model
     public partial class GetAccuracyMetricsResponse : AmazonWebServiceResponse
     {
         private AutoMLOverrideStrategy _autoMLOverrideStrategy;
+        private OptimizationMetric _optimizationMetric;
         private List<EvaluationResult> _predictorEvaluationResults = new List<EvaluationResult>();
 
         /// <summary>
-        /// Gets and sets the property AutoMLOverrideStrategy. 
+        /// Gets and sets the property AutoMLOverrideStrategy. <note> 
+        /// <para>
+        ///  The <code>LatencyOptimized</code> AutoML override strategy is only available in private
+        /// beta. Contact AWS Support or your account manager to learn more about access privileges.
+        /// 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code>
         /// is specified, the AutoML strategy optimizes predictor accuracy.
@@ -57,6 +64,24 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetAutoMLOverrideStrategy()
         {
             return this._autoMLOverrideStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OptimizationMetric. 
+        /// <para>
+        /// The accuracy metric used to optimize the predictor.
+        /// </para>
+        /// </summary>
+        public OptimizationMetric OptimizationMetric
+        {
+            get { return this._optimizationMetric; }
+            set { this._optimizationMetric = value; }
+        }
+
+        // Check to see if OptimizationMetric property is set
+        internal bool IsSetOptimizationMetric()
+        {
+            return this._optimizationMetric != null;
         }
 
         /// <summary>

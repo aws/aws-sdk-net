@@ -64,6 +64,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AverageWeightedQuantileLoss", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.AverageWeightedQuantileLoss = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ErrorMetrics", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ErrorMetric, ErrorMetricUnmarshaller>(ErrorMetricUnmarshaller.Instance);

@@ -122,6 +122,7 @@ namespace Amazon.ForecastService.Model
         private List<string> _forecastTypes = new List<string>();
         private HyperParameterTuningJobConfig _hpoConfig;
         private InputDataConfig _inputDataConfig;
+        private OptimizationMetric _optimizationMetric;
         private bool? _performAutoML;
         private bool? _performHPO;
         private string _predictorName;
@@ -176,7 +177,13 @@ namespace Amazon.ForecastService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AutoMLOverrideStrategy. 
+        /// Gets and sets the property AutoMLOverrideStrategy. <note> 
+        /// <para>
+        ///  The <code>LatencyOptimized</code> AutoML override strategy is only available in private
+        /// beta. Contact AWS Support or your account manager to learn more about access privileges.
+        /// 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Used to overide the default AutoML strategy, which is to optimize predictor accuracy.
         /// To apply an AutoML strategy that minimizes training time, use <code>LatencyOptimized</code>.
@@ -356,6 +363,24 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetInputDataConfig()
         {
             return this._inputDataConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OptimizationMetric. 
+        /// <para>
+        /// The accuracy metric used to optimize the predictor.
+        /// </para>
+        /// </summary>
+        public OptimizationMetric OptimizationMetric
+        {
+            get { return this._optimizationMetric; }
+            set { this._optimizationMetric = value; }
+        }
+
+        // Check to see if OptimizationMetric property is set
+        internal bool IsSetOptimizationMetric()
+        {
+            return this._optimizationMetric != null;
         }
 
         /// <summary>

@@ -34,15 +34,35 @@ namespace Amazon.ForecastService.Model
     /// </summary>
     public partial class Metrics
     {
+        private double? _averageWeightedQuantileLoss;
         private List<ErrorMetric> _errorMetrics = new List<ErrorMetric>();
         private double? _rmse;
         private List<WeightedQuantileLoss> _weightedQuantileLosses = new List<WeightedQuantileLoss>();
 
         /// <summary>
+        /// Gets and sets the property AverageWeightedQuantileLoss. 
+        /// <para>
+        /// The average value of all weighted quantile losses.
+        /// </para>
+        /// </summary>
+        public double AverageWeightedQuantileLoss
+        {
+            get { return this._averageWeightedQuantileLoss.GetValueOrDefault(); }
+            set { this._averageWeightedQuantileLoss = value; }
+        }
+
+        // Check to see if AverageWeightedQuantileLoss property is set
+        internal bool IsSetAverageWeightedQuantileLoss()
+        {
+            return this._averageWeightedQuantileLoss.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ErrorMetrics. 
         /// <para>
-        ///  Provides detailed error metrics on forecast type, root-mean square-error (RMSE),
-        /// and weighted average percentage error (WAPE). 
+        ///  Provides detailed error metrics for each forecast type. Metrics include root-mean
+        /// square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error
+        /// (MASE), and weighted average percentage error (WAPE). 
         /// </para>
         /// </summary>
         public List<ErrorMetric> ErrorMetrics

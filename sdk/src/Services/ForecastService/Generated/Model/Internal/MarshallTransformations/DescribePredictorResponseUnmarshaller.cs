@@ -141,6 +141,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     response.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OptimizationMetric", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.OptimizationMetric = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PerformAutoML", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
