@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSMContacts.Model
 {
     /// <summary>
-    /// The action failed to due an encryption key error.
+    /// The operation failed to due an encryption key error.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

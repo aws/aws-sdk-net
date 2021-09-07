@@ -35,9 +35,10 @@ namespace Amazon.SSMContacts
     /// <summary>
     /// Implementation for accessing SSMContacts
     ///
-    /// AWS Systems Manager Incident Manager is an incident management console designed to
-    /// help users mitigate and recover from incidents affecting their AWS-hosted applications.
-    /// An incident is any unplanned interruption or reduction in quality of services. 
+    /// Systems Manager Incident Manager is an incident management console designed to help
+    /// users mitigate and recover from incidents affecting their Amazon Web Services-hosted
+    /// applications. An incident is any unplanned interruption or reduction in quality of
+    /// services. 
     /// 
     ///  
     /// <para>
@@ -257,7 +258,7 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the AcceptPage service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -269,7 +270,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/AcceptPage">REST API Reference for AcceptPage Operation</seealso>
         public virtual AcceptPageResponse AcceptPage(AcceptPageRequest request)
@@ -327,7 +328,7 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the ActivateContactChannel service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -339,7 +340,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ActivateContactChannel">REST API Reference for ActivateContactChannel Operation</seealso>
         public virtual ActivateContactChannelResponse ActivateContactChannel(ActivateContactChannelRequest request)
@@ -398,13 +399,13 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the CreateContact service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ConflictException">
         /// Updating or deleting a resource causes an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.DataEncryptionException">
-        /// The action failed to due an encryption key error.
+        /// The operation failed to due an encryption key error.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -416,7 +417,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/CreateContact">REST API Reference for CreateContact Operation</seealso>
         public virtual CreateContactResponse CreateContact(CreateContactRequest request)
@@ -473,13 +474,13 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the CreateContactChannel service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ConflictException">
         /// Updating or deleting a resource causes an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.DataEncryptionException">
-        /// The action failed to due an encryption key error.
+        /// The operation failed to due an encryption key error.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -488,7 +489,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/CreateContactChannel">REST API Reference for CreateContactChannel Operation</seealso>
         public virtual CreateContactChannelResponse CreateContactChannel(CreateContactChannelRequest request)
@@ -546,7 +547,7 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the DeactivateContactChannel service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -558,7 +559,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DeactivateContactChannel">REST API Reference for DeactivateContactChannel Operation</seealso>
         public virtual DeactivateContactChannelResponse DeactivateContactChannel(DeactivateContactChannelRequest request)
@@ -618,7 +619,7 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the DeleteContact service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -630,7 +631,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DeleteContact">REST API Reference for DeleteContact Operation</seealso>
         public virtual DeleteContactResponse DeleteContact(DeleteContactRequest request)
@@ -690,7 +691,7 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the DeleteContactChannel service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -702,7 +703,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DeleteContactChannel">REST API Reference for DeleteContactChannel Operation</seealso>
         public virtual DeleteContactChannelResponse DeleteContactChannel(DeleteContactChannelRequest request)
@@ -760,10 +761,10 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the DescribeEngagement service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.DataEncryptionException">
-        /// The action failed to due an encryption key error.
+        /// The operation failed to due an encryption key error.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -775,7 +776,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DescribeEngagement">REST API Reference for DescribeEngagement Operation</seealso>
         public virtual DescribeEngagementResponse DescribeEngagement(DescribeEngagementRequest request)
@@ -832,10 +833,10 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the DescribePage service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.DataEncryptionException">
-        /// The action failed to due an encryption key error.
+        /// The operation failed to due an encryption key error.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -847,7 +848,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DescribePage">REST API Reference for DescribePage Operation</seealso>
         public virtual DescribePageResponse DescribePage(DescribePageRequest request)
@@ -904,10 +905,10 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the GetContact service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.DataEncryptionException">
-        /// The action failed to due an encryption key error.
+        /// The operation failed to due an encryption key error.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -919,7 +920,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/GetContact">REST API Reference for GetContact Operation</seealso>
         public virtual GetContactResponse GetContact(GetContactRequest request)
@@ -976,10 +977,10 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the GetContactChannel service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.DataEncryptionException">
-        /// The action failed to due an encryption key error.
+        /// The operation failed to due an encryption key error.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -991,7 +992,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/GetContactChannel">REST API Reference for GetContactChannel Operation</seealso>
         public virtual GetContactChannelResponse GetContactChannel(GetContactChannelRequest request)
@@ -1048,7 +1049,7 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the GetContactPolicy service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -1060,7 +1061,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/GetContactPolicy">REST API Reference for GetContactPolicy Operation</seealso>
         public virtual GetContactPolicyResponse GetContactPolicy(GetContactPolicyRequest request)
@@ -1117,10 +1118,10 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the ListContactChannels service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.DataEncryptionException">
-        /// The action failed to due an encryption key error.
+        /// The operation failed to due an encryption key error.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -1132,7 +1133,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListContactChannels">REST API Reference for ListContactChannels Operation</seealso>
         public virtual ListContactChannelsResponse ListContactChannels(ListContactChannelsRequest request)
@@ -1189,7 +1190,7 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the ListContacts service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -1198,7 +1199,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListContacts">REST API Reference for ListContacts Operation</seealso>
         public virtual ListContactsResponse ListContacts(ListContactsRequest request)
@@ -1255,7 +1256,7 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the ListEngagements service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -1264,7 +1265,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListEngagements">REST API Reference for ListEngagements Operation</seealso>
         public virtual ListEngagementsResponse ListEngagements(ListEngagementsRequest request)
@@ -1321,7 +1322,7 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the ListPageReceipts service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -1333,7 +1334,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListPageReceipts">REST API Reference for ListPageReceipts Operation</seealso>
         public virtual ListPageReceiptsResponse ListPageReceipts(ListPageReceiptsRequest request)
@@ -1390,7 +1391,7 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the ListPagesByContact service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -1402,7 +1403,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListPagesByContact">REST API Reference for ListPagesByContact Operation</seealso>
         public virtual ListPagesByContactResponse ListPagesByContact(ListPagesByContactRequest request)
@@ -1459,7 +1460,7 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the ListPagesByEngagement service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -1471,7 +1472,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListPagesByEngagement">REST API Reference for ListPagesByEngagement Operation</seealso>
         public virtual ListPagesByEngagementResponse ListPagesByEngagement(ListPagesByEngagementRequest request)
@@ -1528,7 +1529,7 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -1540,7 +1541,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -1597,7 +1598,7 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the PutContactPolicy service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ConflictException">
         /// Updating or deleting a resource causes an inconsistent state.
@@ -1612,7 +1613,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/PutContactPolicy">REST API Reference for PutContactPolicy Operation</seealso>
         public virtual PutContactPolicyResponse PutContactPolicy(PutContactPolicyRequest request)
@@ -1664,17 +1665,17 @@ namespace Amazon.SSMContacts
 
         /// <summary>
         /// Sends an activation code to a contact channel. The contact can use this code to activate
-        /// the contact channel in the console or with the <code>ActivateChannel</code> action.
+        /// the contact channel in the console or with the <code>ActivateChannel</code> operation.
         /// Incident Manager can't engage a contact channel until it has been activated.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendActivationCode service method.</param>
         /// 
         /// <returns>The response from the SendActivationCode service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.DataEncryptionException">
-        /// The action failed to due an encryption key error.
+        /// The operation failed to due an encryption key error.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -1689,7 +1690,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/SendActivationCode">REST API Reference for SendActivationCode Operation</seealso>
         public virtual SendActivationCodeResponse SendActivationCode(SendActivationCodeRequest request)
@@ -1747,10 +1748,10 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the StartEngagement service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.DataEncryptionException">
-        /// The action failed to due an encryption key error.
+        /// The operation failed to due an encryption key error.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -1762,7 +1763,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/StartEngagement">REST API Reference for StartEngagement Operation</seealso>
         public virtual StartEngagementResponse StartEngagement(StartEngagementRequest request)
@@ -1820,7 +1821,7 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the StopEngagement service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -1832,7 +1833,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/StopEngagement">REST API Reference for StopEngagement Operation</seealso>
         public virtual StopEngagementResponse StopEngagement(StopEngagementRequest request)
@@ -1890,7 +1891,7 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the TagResource service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -1905,7 +1906,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -1962,7 +1963,7 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the UntagResource service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -1974,7 +1975,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -2031,10 +2032,10 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the UpdateContact service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.DataEncryptionException">
-        /// The action failed to due an encryption key error.
+        /// The operation failed to due an encryption key error.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -2049,7 +2050,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
         public virtual UpdateContactResponse UpdateContact(UpdateContactRequest request)
@@ -2106,13 +2107,13 @@ namespace Amazon.SSMContacts
         /// 
         /// <returns>The response from the UpdateContactChannel service method, as returned by SSMContacts.</returns>
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ConflictException">
         /// Updating or deleting a resource causes an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.DataEncryptionException">
-        /// The action failed to due an encryption key error.
+        /// The operation failed to due an encryption key error.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
@@ -2124,7 +2125,7 @@ namespace Amazon.SSMContacts
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/UpdateContactChannel">REST API Reference for UpdateContactChannel Operation</seealso>
         public virtual UpdateContactChannelResponse UpdateContactChannel(UpdateContactChannelRequest request)

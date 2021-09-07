@@ -85,7 +85,7 @@ namespace Amazon.SSMContacts.Model
         /// <summary>
         /// Gets and sets the property IdempotencyToken. 
         /// <para>
-        /// A token ensuring that the action is called only once with the specified details.
+        /// A token ensuring that the operation is called only once with the specified details.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]

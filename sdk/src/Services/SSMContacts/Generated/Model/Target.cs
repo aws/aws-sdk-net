@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSMContacts.Model
 {
     /// <summary>
-    /// The contact or contact channel that is being engaged.
+    /// The contact or contact channel that's being engaged.
     /// </summary>
     public partial class Target
     {

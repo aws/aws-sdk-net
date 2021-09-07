@@ -38,7 +38,7 @@ namespace Amazon.SSMContacts.Model
         /// <summary>
         /// Gets and sets the property ContactChannelArn. 
         /// <para>
-        /// The ARN of the contact channel.
+        /// The Amazon Resource Name (ARN) of the contact channel.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

@@ -79,7 +79,7 @@ namespace Amazon.SSMContacts.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the contact channel
+        /// The name of the contact channel.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
