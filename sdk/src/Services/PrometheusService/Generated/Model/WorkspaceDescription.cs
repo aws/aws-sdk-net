@@ -38,6 +38,7 @@ namespace Amazon.PrometheusService.Model
         private DateTime? _createdAt;
         private string _prometheusEndpoint;
         private WorkspaceStatus _status;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _workspaceId;
 
         /// <summary>
@@ -133,6 +134,25 @@ namespace Amazon.PrometheusService.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags of this workspace.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

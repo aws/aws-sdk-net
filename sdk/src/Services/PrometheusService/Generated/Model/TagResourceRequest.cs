@@ -29,62 +29,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateWorkspace operation.
-    /// Creates a new AMP workspace.
+    /// Container for the parameters to the TagResource operation.
+    /// Creates tags for the specified resource.
     /// </summary>
-    public partial class CreateWorkspaceRequest : AmazonPrometheusServiceRequest
+    public partial class TagResourceRequest : AmazonPrometheusServiceRequest
     {
-        private string _alias;
-        private string _clientToken;
+        private string _resourceArn;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Alias. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// An optional user-assigned alias for this workspace. This alias is for user reference
-        /// and does not need to be unique.
+        /// The ARN of the resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public string Alias
+        [AWSProperty(Required=true)]
+        public string ResourceArn
         {
-            get { return this._alias; }
-            set { this._alias = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if Alias property is set
-        internal bool IsSetAlias()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._alias != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency
-        /// of the request.
-        /// </para>
+        /// Gets and sets the property Tags.
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
-        public string ClientToken
-        {
-            get { return this._clientToken; }
-            set { this._clientToken = value; }
-        }
-
-        // Check to see if ClientToken property is set
-        internal bool IsSetClientToken()
-        {
-            return this._clientToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// Optional, user-provided tags for this workspace.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }
