@@ -32,7 +32,7 @@ namespace Amazon.ElasticLoadBalancingV2
     public partial class AmazonElasticLoadBalancingV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.64");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.65");
 
         private string _userAgent = UserAgentString;
 
