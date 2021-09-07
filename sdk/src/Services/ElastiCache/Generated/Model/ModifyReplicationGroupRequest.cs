@@ -493,7 +493,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property RemoveUserGroups. 
         /// <para>
-        /// Removes the user groups that can access this replication group.
+        /// Removes the user group associated with this replication group.
         /// </para>
         /// </summary>
         public bool RemoveUserGroups
@@ -644,7 +644,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property UserGroupIdsToAdd. 
         /// <para>
-        /// The user group you are associating with the replication group.
+        /// The ID of the user group you are associating with the replication group.
         /// </para>
         /// </summary>
         public List<string> UserGroupIdsToAdd
@@ -662,8 +662,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property UserGroupIdsToRemove. 
         /// <para>
-        /// The user group to remove, meaning the users in the group no longer can access the
-        /// replication group.
+        /// The ID of the user group to disassociate from the replication group, meaning the users
+        /// in the group no longer can access the replication group.
         /// </para>
         /// </summary>
         public List<string> UserGroupIdsToRemove

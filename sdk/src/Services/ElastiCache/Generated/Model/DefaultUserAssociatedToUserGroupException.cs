@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// 
+    /// The default user assigned to the user group.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

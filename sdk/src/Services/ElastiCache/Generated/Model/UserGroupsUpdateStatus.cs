@@ -39,7 +39,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property UserGroupIdsToAdd. 
         /// <para>
-        /// The list of user group IDs to add.
+        /// The ID of the user group to add.
         /// </para>
         /// </summary>
         public List<string> UserGroupIdsToAdd
@@ -57,7 +57,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property UserGroupIdsToRemove. 
         /// <para>
-        /// The list of user group IDs to remove.
+        /// The ID of the user group to remove.
         /// </para>
         /// </summary>
         public List<string> UserGroupIdsToRemove

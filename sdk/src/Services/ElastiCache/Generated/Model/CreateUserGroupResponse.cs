@@ -80,7 +80,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property PendingChanges. 
         /// <para>
-        /// A list of updates being applied to the user groups.
+        /// A list of updates being applied to the user group.
         /// </para>
         /// </summary>
         public UserGroupPendingChanges PendingChanges

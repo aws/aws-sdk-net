@@ -135,7 +135,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property UserGroups. 
         /// <para>
-        /// The user groups being modified.
+        /// The user group being modified.
         /// </para>
         /// </summary>
         public UserGroupsUpdateStatus UserGroups

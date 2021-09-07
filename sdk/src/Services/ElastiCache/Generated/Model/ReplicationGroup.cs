@@ -566,7 +566,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property UserGroupIds. 
         /// <para>
-        /// The list of user group IDs that have access to the replication group.
+        /// The ID of the user group associated to the replication group.
         /// </para>
         /// </summary>
         public List<string> UserGroupIds

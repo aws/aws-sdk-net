@@ -1952,7 +1952,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the DeleteUser service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.DefaultUserAssociatedToUserGroupException">
-        /// 
+        /// The default user assigned to the user group.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
