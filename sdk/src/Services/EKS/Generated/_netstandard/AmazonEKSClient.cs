@@ -977,6 +977,59 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  DeregisterCluster
+
+        internal virtual DeregisterClusterResponse DeregisterCluster(DeregisterClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterClusterResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterClusterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deregisters a connected cluster to remove it from the Amazon EKS control plane.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeregisterCluster service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeregisterCluster">REST API Reference for DeregisterCluster Operation</seealso>
+        public virtual Task<DeregisterClusterResponse> DeregisterClusterAsync(DeregisterClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeregisterClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeAddon
 
         internal virtual DescribeAddonResponse DescribeAddon(DescribeAddonRequest request)
@@ -1765,6 +1818,81 @@ namespace Amazon.EKS
             options.ResponseUnmarshaller = ListUpdatesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListUpdatesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RegisterCluster
+
+        internal virtual RegisterClusterResponse RegisterCluster(RegisterClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterClusterResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterClusterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Connects a Kubernetes cluster to the Amazon EKS control plane. 
+        /// 
+        ///  
+        /// <para>
+        /// Any Kubernetes cluster can be connected to the Amazon EKS control plane to view current
+        /// information about the cluster and its nodes. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cluster connection requires two steps. First, send a <code> <a>RegisterClusterRequest</a>
+        /// </code> to add it to the Amazon EKS control plane.
+        /// </para>
+        ///  
+        /// <para>
+        /// Second, a <a href="https://amazon-eks.s3.us-west-2.amazonaws.com/eks-connector/manifests/eks-connector/latest/eks-connector.yaml">Manifest</a>
+        /// containing the <code>activationID</code> and <code>activationCode</code> must be applied
+        /// to the Kubernetes cluster through it's native provider to provide visibility.
+        /// </para>
+        ///  
+        /// <para>
+        /// After the Manifest is updated and applied, then the connected cluster is visible to
+        /// the Amazon EKS control plane. If the Manifest is not applied within a set amount of
+        /// time, then the connected cluster will no longer be visible and must be deregistered.
+        /// See <a>DeregisterCluster</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterCluster service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceLimitExceededException">
+        /// You have encountered a service limit on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/RegisterCluster">REST API Reference for RegisterCluster Operation</seealso>
+        public virtual Task<RegisterClusterResponse> RegisterClusterAsync(RegisterClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterClusterResponse>(request, options, cancellationToken);
         }
 
         #endregion

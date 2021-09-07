@@ -29,28 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// The full description of your identity configuration.
+    /// Container for the parameters to the DeregisterCluster operation.
+    /// Deregisters a connected cluster to remove it from the Amazon EKS control plane.
     /// </summary>
-    public partial class IdentityProviderConfigResponse
+    public partial class DeregisterClusterRequest : AmazonEKSRequest
     {
-        private OidcIdentityProviderConfig _oidc;
+        private string _name;
 
         /// <summary>
-        /// Gets and sets the property Oidc. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// An object that represents an OpenID Connect (OIDC) identity provider configuration.
+        /// The name of the connected cluster to deregister.
         /// </para>
         /// </summary>
-        public OidcIdentityProviderConfig Oidc
+        [AWSProperty(Required=true)]
+        public string Name
         {
-            get { return this._oidc; }
-            set { this._oidc = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Oidc property is set
-        internal bool IsSetOidc()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._oidc != null;
+            return this._name != null;
         }
 
     }

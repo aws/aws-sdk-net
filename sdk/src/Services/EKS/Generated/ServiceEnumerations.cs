@@ -299,6 +299,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly ClusterStatus FAILED = new ClusterStatus("FAILED");
         /// <summary>
+        /// Constant PENDING for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus PENDING = new ClusterStatus("PENDING");
+        /// <summary>
         /// Constant UPDATING for ClusterStatus
         /// </summary>
         public static readonly ClusterStatus UPDATING = new ClusterStatus("UPDATING");
@@ -386,6 +390,84 @@ namespace Amazon.EKS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConfigStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectorConfigProvider.
+    /// </summary>
+    public class ConnectorConfigProvider : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AKS for ConnectorConfigProvider
+        /// </summary>
+        public static readonly ConnectorConfigProvider AKS = new ConnectorConfigProvider("AKS");
+        /// <summary>
+        /// Constant ANTHOS for ConnectorConfigProvider
+        /// </summary>
+        public static readonly ConnectorConfigProvider ANTHOS = new ConnectorConfigProvider("ANTHOS");
+        /// <summary>
+        /// Constant EC2 for ConnectorConfigProvider
+        /// </summary>
+        public static readonly ConnectorConfigProvider EC2 = new ConnectorConfigProvider("EC2");
+        /// <summary>
+        /// Constant EKS_ANYWHERE for ConnectorConfigProvider
+        /// </summary>
+        public static readonly ConnectorConfigProvider EKS_ANYWHERE = new ConnectorConfigProvider("EKS_ANYWHERE");
+        /// <summary>
+        /// Constant GKE for ConnectorConfigProvider
+        /// </summary>
+        public static readonly ConnectorConfigProvider GKE = new ConnectorConfigProvider("GKE");
+        /// <summary>
+        /// Constant OPENSHIFT for ConnectorConfigProvider
+        /// </summary>
+        public static readonly ConnectorConfigProvider OPENSHIFT = new ConnectorConfigProvider("OPENSHIFT");
+        /// <summary>
+        /// Constant OTHER for ConnectorConfigProvider
+        /// </summary>
+        public static readonly ConnectorConfigProvider OTHER = new ConnectorConfigProvider("OTHER");
+        /// <summary>
+        /// Constant RANCHER for ConnectorConfigProvider
+        /// </summary>
+        public static readonly ConnectorConfigProvider RANCHER = new ConnectorConfigProvider("RANCHER");
+        /// <summary>
+        /// Constant TANZU for ConnectorConfigProvider
+        /// </summary>
+        public static readonly ConnectorConfigProvider TANZU = new ConnectorConfigProvider("TANZU");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectorConfigProvider(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectorConfigProvider FindValue(string value)
+        {
+            return FindValue<ConnectorConfigProvider>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectorConfigProvider(string value)
         {
             return FindValue(value);
         }

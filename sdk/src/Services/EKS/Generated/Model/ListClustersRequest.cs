@@ -35,8 +35,28 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class ListClustersRequest : AmazonEKSRequest
     {
+        private List<string> _include = new List<string>();
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property Include. 
+        /// <para>
+        /// Indicates whether connected clusters are included in the returned list. Default value
+        /// is 'ALL'.
+        /// </para>
+        /// </summary>
+        public List<string> Include
+        {
+            get { return this._include; }
+            set { this._include = value; }
+        }
+
+        // Check to see if Include property is set
+        internal bool IsSetInclude()
+        {
+            return this._include != null && this._include.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

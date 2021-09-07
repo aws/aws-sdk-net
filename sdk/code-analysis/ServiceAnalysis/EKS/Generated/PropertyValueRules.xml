@@ -71,6 +71,12 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EKS.Model.RegisterClusterRequest.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EKS.Model.UpdateAddonRequest.ClusterName</property>
     <min>1</min>
     <max>100</max>

@@ -823,6 +823,65 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  DeregisterCluster
+
+
+        /// <summary>
+        /// Deregisters a connected cluster to remove it from the Amazon EKS control plane.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterCluster service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterCluster service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeregisterCluster">REST API Reference for DeregisterCluster Operation</seealso>
+        DeregisterClusterResponse DeregisterCluster(DeregisterClusterRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterCluster operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeregisterCluster">REST API Reference for DeregisterCluster Operation</seealso>
+        IAsyncResult BeginDeregisterCluster(DeregisterClusterRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeregisterCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterCluster.</param>
+        /// 
+        /// <returns>Returns a  DeregisterClusterResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeregisterCluster">REST API Reference for DeregisterCluster Operation</seealso>
+        DeregisterClusterResponse EndDeregisterCluster(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeAddon
 
 
@@ -1702,6 +1761,87 @@ namespace Amazon.EKS
         /// <returns>Returns a  ListUpdatesResult from EKS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListUpdates">REST API Reference for ListUpdates Operation</seealso>
         ListUpdatesResponse EndListUpdates(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RegisterCluster
+
+
+        /// <summary>
+        /// Connects a Kubernetes cluster to the Amazon EKS control plane. 
+        /// 
+        ///  
+        /// <para>
+        /// Any Kubernetes cluster can be connected to the Amazon EKS control plane to view current
+        /// information about the cluster and its nodes. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cluster connection requires two steps. First, send a <code> <a>RegisterClusterRequest</a>
+        /// </code> to add it to the Amazon EKS control plane.
+        /// </para>
+        ///  
+        /// <para>
+        /// Second, a <a href="https://amazon-eks.s3.us-west-2.amazonaws.com/eks-connector/manifests/eks-connector/latest/eks-connector.yaml">Manifest</a>
+        /// containing the <code>activationID</code> and <code>activationCode</code> must be applied
+        /// to the Kubernetes cluster through it's native provider to provide visibility.
+        /// </para>
+        ///  
+        /// <para>
+        /// After the Manifest is updated and applied, then the connected cluster is visible to
+        /// the Amazon EKS control plane. If the Manifest is not applied within a set amount of
+        /// time, then the connected cluster will no longer be visible and must be deregistered.
+        /// See <a>DeregisterCluster</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterCluster service method.</param>
+        /// 
+        /// <returns>The response from the RegisterCluster service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceLimitExceededException">
+        /// You have encountered a service limit on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/RegisterCluster">REST API Reference for RegisterCluster Operation</seealso>
+        RegisterClusterResponse RegisterCluster(RegisterClusterRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterCluster operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/RegisterCluster">REST API Reference for RegisterCluster Operation</seealso>
+        IAsyncResult BeginRegisterCluster(RegisterClusterRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RegisterCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterCluster.</param>
+        /// 
+        /// <returns>Returns a  RegisterClusterResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/RegisterCluster">REST API Reference for RegisterCluster Operation</seealso>
+        RegisterClusterResponse EndRegisterCluster(IAsyncResult asyncResult);
 
         #endregion
         

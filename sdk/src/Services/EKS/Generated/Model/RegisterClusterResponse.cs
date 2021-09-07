@@ -29,28 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// The full description of your identity configuration.
+    /// This is the response object from the RegisterCluster operation.
     /// </summary>
-    public partial class IdentityProviderConfigResponse
+    public partial class RegisterClusterResponse : AmazonWebServiceResponse
     {
-        private OidcIdentityProviderConfig _oidc;
+        private Cluster _cluster;
 
         /// <summary>
-        /// Gets and sets the property Oidc. 
-        /// <para>
-        /// An object that represents an OpenID Connect (OIDC) identity provider configuration.
-        /// </para>
+        /// Gets and sets the property Cluster.
         /// </summary>
-        public OidcIdentityProviderConfig Oidc
+        public Cluster Cluster
         {
-            get { return this._oidc; }
-            set { this._oidc = value; }
+            get { return this._cluster; }
+            set { this._cluster = value; }
         }
 
-        // Check to see if Oidc property is set
-        internal bool IsSetOidc()
+        // Check to see if Cluster property is set
+        internal bool IsSetCluster()
         {
-            return this._oidc != null;
+            return this._cluster != null;
         }
 
     }

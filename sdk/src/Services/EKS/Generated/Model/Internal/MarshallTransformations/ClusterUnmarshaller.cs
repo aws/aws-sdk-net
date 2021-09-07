@@ -82,6 +82,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClientRequestToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("connectorConfig", targetDepth))
+                {
+                    var unmarshaller = ConnectorConfigResponseUnmarshaller.Instance;
+                    unmarshalledObject.ConnectorConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

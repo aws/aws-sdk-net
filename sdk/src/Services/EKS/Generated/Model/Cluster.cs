@@ -36,6 +36,7 @@ namespace Amazon.EKS.Model
         private string _arn;
         private Certificate _certificateAuthority;
         private string _clientRequestToken;
+        private ConnectorConfigResponse _connectorConfig;
         private DateTime? _createdAt;
         private List<EncryptionConfig> _encryptionConfig = new List<EncryptionConfig>();
         private string _endpoint;
@@ -103,6 +104,24 @@ namespace Amazon.EKS.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectorConfig. 
+        /// <para>
+        /// The configuration used to connect to a cluster for registration.
+        /// </para>
+        /// </summary>
+        public ConnectorConfigResponse ConnectorConfig
+        {
+            get { return this._connectorConfig; }
+            set { this._connectorConfig = value; }
+        }
+
+        // Check to see if ConnectorConfig property is set
+        internal bool IsSetConnectorConfig()
+        {
+            return this._connectorConfig != null;
         }
 
         /// <summary>
@@ -315,7 +334,7 @@ namespace Amazon.EKS.Model
         /// <para>
         /// The metadata that you apply to the cluster to assist with categorization and organization.
         /// Each tag consists of a key and an optional value, both of which you define. Cluster
-        /// tags do not propagate to any other resources associated with the cluster. 
+        /// tags do not propagate to any other resources associated with the cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

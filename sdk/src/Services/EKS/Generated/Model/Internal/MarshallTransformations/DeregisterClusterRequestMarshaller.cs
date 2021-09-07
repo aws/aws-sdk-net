@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListClusters Request Marshaller
+    /// DeregisterCluster Request Marshaller
     /// </summary>       
-    public class ListClustersRequestMarshaller : IMarshaller<IRequest, ListClustersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeregisterClusterRequestMarshaller : IMarshaller<IRequest, DeregisterClusterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListClustersRequest)input);
+            return this.Marshall((DeregisterClusterRequest)input);
         }
 
         /// <summary>
@@ -52,29 +52,22 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListClustersRequest publicRequest)
+        public IRequest Marshall(DeregisterClusterRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EKS");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-01";            
-            request.HttpMethod = "GET";
+            request.HttpMethod = "DELETE";
 
-            
-            if (publicRequest.IsSetInclude())
-                request.ParameterCollection.Add("include", publicRequest.Include);
-            
-            if (publicRequest.IsSetMaxResults())
-                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
-            
-            if (publicRequest.IsSetNextToken())
-                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = "/clusters";
-            request.UseQueryString = true;
+            if (!publicRequest.IsSetName())
+                throw new AmazonEKSException("Request object does not have required field Name set");
+            request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
+            request.ResourcePath = "/cluster-registrations/{name}";
 
             return request;
         }
-        private static ListClustersRequestMarshaller _instance = new ListClustersRequestMarshaller();        
+        private static DeregisterClusterRequestMarshaller _instance = new DeregisterClusterRequestMarshaller();        
 
-        internal static ListClustersRequestMarshaller GetInstance()
+        internal static DeregisterClusterRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -82,7 +75,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListClustersRequestMarshaller Instance
+        public static DeregisterClusterRequestMarshaller Instance
         {
             get
             {
