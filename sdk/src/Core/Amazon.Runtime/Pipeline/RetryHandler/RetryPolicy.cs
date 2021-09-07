@@ -351,6 +351,10 @@ namespace Amazon.Runtime
                     return true;
                 }
             }
+
+            // .NET 5 introduced changes to HttpClient for timed out requests by returning a wrapped TimeoutException.
+            if (exception is TimeoutException)
+                return true;
 #endif
             return false;
         }
