@@ -1,0 +1,77 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the opensearch-2021-01-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.OpenSearchService.Model
+{
+    /// <summary>
+    /// Log Publishing option that is set for a given domain. <br/>Attributes and their details:
+    /// <ul> <li>CloudWatchLogsLogGroupArn: ARN of the Cloudwatch log group to publish logs
+    /// to.</li> <li>Enabled: Whether the log publishing for a given log type is enabled or
+    /// not.</li> </ul>
+    /// </summary>
+    public partial class LogPublishingOption
+    {
+        private string _cloudWatchLogsLogGroupArn;
+        private bool? _enabled;
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchLogsLogGroupArn.
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string CloudWatchLogsLogGroupArn
+        {
+            get { return this._cloudWatchLogsLogGroupArn; }
+            set { this._cloudWatchLogsLogGroupArn = value; }
+        }
+
+        // Check to see if CloudWatchLogsLogGroupArn property is set
+        internal bool IsSetCloudWatchLogsLogGroupArn()
+        {
+            return this._cloudWatchLogsLogGroupArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Whether the given log publishing option is enabled or not.
+        /// </para>
+        /// </summary>
+        public bool Enabled
+        {
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
+        }
+
+        // Check to see if Enabled property is set
+        internal bool IsSetEnabled()
+        {
+            return this._enabled.HasValue; 
+        }
+
+    }
+}

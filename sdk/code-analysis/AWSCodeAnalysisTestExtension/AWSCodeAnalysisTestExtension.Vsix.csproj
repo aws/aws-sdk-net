@@ -820,6 +820,10 @@
       <Project>{D34DF54F-B993-4ADB-8FB0-BE4301ABB80A}</Project>
       <Name>AWSSDK.NimbleStudio.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/OpenSearchService/AWSSDK.OpenSearchService.CodeAnalysis.csproj">
+      <Project>{39DAFECB-BFC3-4D23-BEAA-0C5235CFA02A}</Project>
+      <Name>AWSSDK.OpenSearchService.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/OpsWorks/AWSSDK.OpsWorks.CodeAnalysis.csproj">
       <Project>{A4E9808D-E63F-4A23-AFAB-6F2B892BE800}</Project>
       <Name>AWSSDK.OpsWorks.CodeAnalysis</Name>

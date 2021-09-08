@@ -469,6 +469,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* This is the initial SDK release for AWS Network Manager.
 * [AWSSDK.NimbleStudio](https://www.nuget.org/packages/AWSSDK.NimbleStudio/)
 	* Amazon Nimble Studio is a virtual studio service that empowers visual effects, animation, and interactive content teams to create content securely within a scalable, private cloud service.
+* [AWSSDK.OpenSearchService](https://www.nuget.org/packages/AWSSDK.OpenSearchService/)
+	* Updated Configuration APIs for Amazon OpenSearch Service (successor to Amazon Elasticsearch Service)
 * [AWSSDK.OpsWorks](https://www.nuget.org/packages/AWSSDK.OpsWorks/)
 	* AWS OpsWorks is an application management service that makes it easy to deploy and operate applications of all shapes and sizes. You can define the application's architecture and the specification of each component including package installation, software configuration and resources such as storage.
 * [AWSSDK.OpsWorksCM](https://www.nuget.org/packages/AWSSDK.OpsWorksCM/)
