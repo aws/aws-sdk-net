@@ -35,6 +35,7 @@ namespace Amazon.Kafka.Model
     {
         private Sasl _sasl;
         private Tls _tls;
+        private Unauthenticated _unauthenticated;
 
         /// <summary>
         /// Gets and sets the property Sasl.             
@@ -70,6 +71,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetTls()
         {
             return this._tls != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Unauthenticated.             
+        /// <para>
+        /// Contains information about unauthenticated traffic to the cluster.
+        /// </para>
+        /// </summary>
+        public Unauthenticated Unauthenticated
+        {
+            get { return this._unauthenticated; }
+            set { this._unauthenticated = value; }
+        }
+
+        // Check to see if Unauthenticated property is set
+        internal bool IsSetUnauthenticated()
+        {
+            return this._unauthenticated != null;
         }
 
     }

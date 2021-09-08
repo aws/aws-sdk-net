@@ -70,10 +70,22 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.BrokerEBSVolumeInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("clientAuthentication", targetDepth))
+                {
+                    var unmarshaller = ClientAuthenticationUnmarshaller.Instance;
+                    unmarshalledObject.ClientAuthentication = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("configurationInfo", targetDepth))
                 {
                     var unmarshaller = ConfigurationInfoUnmarshaller.Instance;
                     unmarshalledObject.ConfigurationInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("encryptionInfo", targetDepth))
+                {
+                    var unmarshaller = EncryptionInfoUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("enhancedMonitoring", targetDepth))

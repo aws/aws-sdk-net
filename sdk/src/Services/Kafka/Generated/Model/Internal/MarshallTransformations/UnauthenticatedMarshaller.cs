@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Tls Marshaller
+    /// Unauthenticated Marshaller
     /// </summary>       
-    public class TlsMarshaller : IRequestMarshaller<Tls, JsonMarshallerContext> 
+    public class UnauthenticatedMarshaller : IRequestMarshaller<Unauthenticated, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,19 +43,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Tls requestObject, JsonMarshallerContext context)
+        public void Marshall(Unauthenticated requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCertificateAuthorityArnList())
-            {
-                context.Writer.WritePropertyName("certificateAuthorityArnList");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectCertificateAuthorityArnListListValue in requestObject.CertificateAuthorityArnList)
-                {
-                        context.Writer.Write(requestObjectCertificateAuthorityArnListListValue);
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");
@@ -67,7 +56,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static TlsMarshaller Instance = new TlsMarshaller();
+        public readonly static UnauthenticatedMarshaller Instance = new UnauthenticatedMarshaller();
 
     }
 }

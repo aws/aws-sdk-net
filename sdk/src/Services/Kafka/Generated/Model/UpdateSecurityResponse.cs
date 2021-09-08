@@ -29,47 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kafka.Model
 {
     /// <summary>
-    /// Details for client authentication using TLS.
+    /// This is the response object from the UpdateSecurity operation.
     /// </summary>
-    public partial class Tls
+    public partial class UpdateSecurityResponse : AmazonWebServiceResponse
     {
-        private List<string> _certificateAuthorityArnList = new List<string>();
-        private bool? _enabled;
+        private string _clusterArn;
+        private string _clusterOperationArn;
 
         /// <summary>
-        /// Gets and sets the property CertificateAuthorityArnList.             
+        /// Gets and sets the property ClusterArn.             
         /// <para>
-        /// List of ACM Certificate Authority ARNs.
+        /// The Amazon Resource Name (ARN) of the cluster.
         /// </para>
         /// </summary>
-        public List<string> CertificateAuthorityArnList
+        public string ClusterArn
         {
-            get { return this._certificateAuthorityArnList; }
-            set { this._certificateAuthorityArnList = value; }
+            get { return this._clusterArn; }
+            set { this._clusterArn = value; }
         }
 
-        // Check to see if CertificateAuthorityArnList property is set
-        internal bool IsSetCertificateAuthorityArnList()
+        // Check to see if ClusterArn property is set
+        internal bool IsSetClusterArn()
         {
-            return this._certificateAuthorityArnList != null && this._certificateAuthorityArnList.Count > 0; 
+            return this._clusterArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Enabled.             
+        /// Gets and sets the property ClusterOperationArn.             
         /// <para>
-        /// Specifies whether you want to enable or disable TLS authentication.
+        /// The Amazon Resource Name (ARN) of the cluster operation.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public string ClusterOperationArn
         {
-            get { return this._enabled.GetValueOrDefault(); }
-            set { this._enabled = value; }
+            get { return this._clusterOperationArn; }
+            set { this._clusterOperationArn = value; }
         }
 
-        // Check to see if Enabled property is set
-        internal bool IsSetEnabled()
+        // Check to see if ClusterOperationArn property is set
+        internal bool IsSetClusterOperationArn()
         {
-            return this._enabled.HasValue; 
+            return this._clusterOperationArn != null;
         }
 
     }

@@ -29,35 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kafka.Model
 {
     /// <summary>
-    /// Details for client authentication using TLS.
+    /// 
     /// </summary>
-    public partial class Tls
+    public partial class Unauthenticated
     {
-        private List<string> _certificateAuthorityArnList = new List<string>();
         private bool? _enabled;
-
-        /// <summary>
-        /// Gets and sets the property CertificateAuthorityArnList.             
-        /// <para>
-        /// List of ACM Certificate Authority ARNs.
-        /// </para>
-        /// </summary>
-        public List<string> CertificateAuthorityArnList
-        {
-            get { return this._certificateAuthorityArnList; }
-            set { this._certificateAuthorityArnList = value; }
-        }
-
-        // Check to see if CertificateAuthorityArnList property is set
-        internal bool IsSetCertificateAuthorityArnList()
-        {
-            return this._certificateAuthorityArnList != null && this._certificateAuthorityArnList.Count > 0; 
-        }
 
         /// <summary>
         /// Gets and sets the property Enabled.             
         /// <para>
-        /// Specifies whether you want to enable or disable TLS authentication.
+        /// Specifies whether you want to enable or disable unauthenticated traffic to your cluster.
         /// </para>
         /// </summary>
         public bool Enabled

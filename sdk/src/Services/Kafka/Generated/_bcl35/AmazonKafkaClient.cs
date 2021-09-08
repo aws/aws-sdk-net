@@ -2344,5 +2344,81 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  UpdateSecurity
+
+        /// <summary>
+        /// Updates the security settings for the cluster. You can use this operation to specify
+        /// encryption and authentication on existing clusters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSecurity service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSecurity service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateSecurity">REST API Reference for UpdateSecurity Operation</seealso>
+        public virtual UpdateSecurityResponse UpdateSecurity(UpdateSecurityRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSecurityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSecurityResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSecurityResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSecurity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSecurity operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSecurity
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateSecurity">REST API Reference for UpdateSecurity Operation</seealso>
+        public virtual IAsyncResult BeginUpdateSecurity(UpdateSecurityRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSecurityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSecurityResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSecurity operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSecurity.</param>
+        /// 
+        /// <returns>Returns a  UpdateSecurityResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateSecurity">REST API Reference for UpdateSecurity Operation</seealso>
+        public virtual UpdateSecurityResponse EndUpdateSecurity(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateSecurityResponse>(asyncResult);
+        }
+
+        #endregion
+        
     }
 }

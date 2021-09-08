@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ClientAuthentication Object
+    /// Response Unmarshaller for Unauthenticated Object
     /// </summary>  
-    public class ClientAuthenticationUnmarshaller : IUnmarshaller<ClientAuthentication, XmlUnmarshallerContext>, IUnmarshaller<ClientAuthentication, JsonUnmarshallerContext>
+    public class UnauthenticatedUnmarshaller : IUnmarshaller<Unauthenticated, XmlUnmarshallerContext>, IUnmarshaller<Unauthenticated, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ClientAuthentication IUnmarshaller<ClientAuthentication, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Unauthenticated IUnmarshaller<Unauthenticated, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ClientAuthentication Unmarshall(JsonUnmarshallerContext context)
+        public Unauthenticated Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ClientAuthentication unmarshalledObject = new ClientAuthentication();
+            Unauthenticated unmarshalledObject = new Unauthenticated();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("sasl", targetDepth))
+                if (context.TestExpression("enabled", targetDepth))
                 {
-                    var unmarshaller = SaslUnmarshaller.Instance;
-                    unmarshalledObject.Sasl = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("tls", targetDepth))
-                {
-                    var unmarshaller = TlsUnmarshaller.Instance;
-                    unmarshalledObject.Tls = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("unauthenticated", targetDepth))
-                {
-                    var unmarshaller = UnauthenticatedUnmarshaller.Instance;
-                    unmarshalledObject.Unauthenticated = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         }
 
 
-        private static ClientAuthenticationUnmarshaller _instance = new ClientAuthenticationUnmarshaller();        
+        private static UnauthenticatedUnmarshaller _instance = new UnauthenticatedUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ClientAuthenticationUnmarshaller Instance
+        public static UnauthenticatedUnmarshaller Instance
         {
             get
             {

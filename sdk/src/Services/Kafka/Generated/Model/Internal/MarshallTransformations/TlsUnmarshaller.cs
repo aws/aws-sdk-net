@@ -70,6 +70,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.CertificateAuthorityArnList = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("enabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

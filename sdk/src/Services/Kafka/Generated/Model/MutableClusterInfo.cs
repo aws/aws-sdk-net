@@ -34,7 +34,9 @@ namespace Amazon.Kafka.Model
     public partial class MutableClusterInfo
     {
         private List<BrokerEBSVolumeInfo> _brokerEBSVolumeInfo = new List<BrokerEBSVolumeInfo>();
+        private ClientAuthentication _clientAuthentication;
         private ConfigurationInfo _configurationInfo;
+        private EncryptionInfo _encryptionInfo;
         private EnhancedMonitoring _enhancedMonitoring;
         private string _instanceType;
         private string _kafkaVersion;
@@ -61,6 +63,24 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ClientAuthentication.             
+        /// <para>
+        /// Includes all client authentication information.
+        /// </para>
+        /// </summary>
+        public ClientAuthentication ClientAuthentication
+        {
+            get { return this._clientAuthentication; }
+            set { this._clientAuthentication = value; }
+        }
+
+        // Check to see if ClientAuthentication property is set
+        internal bool IsSetClientAuthentication()
+        {
+            return this._clientAuthentication != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ConfigurationInfo.             
         /// <para>
         /// Information about the changes in the configuration of the brokers.
@@ -76,6 +96,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetConfigurationInfo()
         {
             return this._configurationInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionInfo.             
+        /// <para>
+        /// Includes all encryption-related information.
+        /// </para>
+        /// </summary>
+        public EncryptionInfo EncryptionInfo
+        {
+            get { return this._encryptionInfo; }
+            set { this._encryptionInfo = value; }
+        }
+
+        // Check to see if EncryptionInfo property is set
+        internal bool IsSetEncryptionInfo()
+        {
+            return this._encryptionInfo != null;
         }
 
         /// <summary>
@@ -135,7 +173,11 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LoggingInfo.
+        /// Gets and sets the property LoggingInfo.             
+        /// <para>
+        /// You can configure your MSK cluster to send broker logs to different destination types.
+        /// This is a container for the configuration details related to broker logs.
+        /// </para>
         /// </summary>
         public LoggingInfo LoggingInfo
         {

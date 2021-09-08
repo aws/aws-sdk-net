@@ -67,6 +67,17 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetUnauthenticated())
+            {
+                context.Writer.WritePropertyName("unauthenticated");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = UnauthenticatedMarshaller.Instance;
+                marshaller.Marshall(requestObject.Unauthenticated, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
