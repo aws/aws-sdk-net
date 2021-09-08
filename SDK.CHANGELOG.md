@@ -1,3 +1,11 @@
+### 3.7.114.0 (2021-09-08 18:13 UTC)
+* Kafka (3.7.2.0)
+	* Amazon MSK has added a new API that allows you to update the encrypting and authentication settings for an existing cluster.
+* OpenSearchService (3.7.0.0)
+	* Updated Configuration APIs for Amazon OpenSearch Service (successor to Amazon Elasticsearch Service)
+* RAM (3.7.1.34)
+	* A minor text-only update that fixes several customer issues.
+
 ### 3.7.113.0 (2021-09-07 18:33 UTC)
 * EKS (3.7.8.0)
 	* Adding RegisterCluster and DeregisterCluster operations, to support connecting external clusters to EKS.
