@@ -29,17 +29,28 @@ namespace Amazon.RAM
     /// <summary>
     /// Interface for accessing RAM
     ///
-    /// Use AWS Resource Access Manager to share AWS resources between AWS accounts. To share
-    /// a resource, you create a resource share, associate the resource with the resource
-    /// share, and specify the principals that can access the resources associated with the
-    /// resource share. The following principals are supported: AWS accounts, organizational
-    /// units (OU) from AWS Organizations, and organizations from AWS Organizations.
+    /// This is the <i>Resource Access Manager API Reference</i>. This documentation provides
+    /// descriptions and syntax for each of the actions and data types in RAM. RAM is a service
+    /// that helps you securely share your Amazon Web Services resources across Amazon Web
+    /// Services accounts and within your organization or organizational units (OUs) in Organizations.
+    /// For supported resource types, you can also share resources with IAM roles and IAM
+    /// users. If you have multiple Amazon Web Services accounts, you can use RAM to share
+    /// those resources with other accounts.
     /// 
     ///  
     /// <para>
-    /// For more information, see the <a href="https://docs.aws.amazon.com/ram/latest/userguide/">AWS
-    /// Resource Access Manager User Guide</a>.
+    /// To learn more about RAM, see the following resources:
     /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="http://aws.amazon.com/ram">Resource Access Manager product page</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/ram/latest/userguide/">Resource Access Manager
+    /// User Guide</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonRAM : IAmazonService, IDisposable
     {
@@ -58,7 +69,7 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Accepts an invitation to a resource share from another AWS account.
+        /// Accepts an invitation to a resource share from another Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptResourceShareInvitation service method.</param>
         /// 
@@ -261,7 +272,17 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Creates a resource share.
+        /// Creates a resource share. You must provide a list of the Amazon Resource Names (ARNs)
+        /// for the resources you want to share. You must also specify who you want to share the
+        /// resources with, and the permissions that you grant them.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Sharing a resource makes it available for use by principals outside of the Amazon
+        /// Web Services account that created the resource. Sharing doesn't change any permissions
+        /// or quotas that apply to the resource in the account that created it.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateResourceShare service method.</param>
         /// 
@@ -474,7 +495,7 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Disassociates an AWS RAM permission from a resource share.
+        /// Disassociates an RAM permission from a resource share.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateResourceSharePermission service method.</param>
         /// 
@@ -538,11 +559,11 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Enables resource sharing within your AWS Organization.
+        /// Enables resource sharing within your organization in Organizations.
         /// 
         ///  
         /// <para>
-        /// The caller must be the master account for the AWS Organization.
+        /// The caller must be the master account for the organization.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableSharingWithAwsOrganization service method.</param>
@@ -592,7 +613,7 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Gets the contents of an AWS RAM permission in JSON format.
+        /// Gets the contents of an RAM permission in JSON format.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPermission service method.</param>
         /// 
@@ -960,7 +981,7 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Lists the AWS RAM permissions.
+        /// Lists the RAM permissions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPermissions service method.</param>
         /// 
@@ -1136,7 +1157,7 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Lists the AWS RAM permissions that are associated with a resource share.
+        /// Lists the RAM permissions that are associated with a resource share.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResourceSharePermissions service method.</param>
         /// 
@@ -1197,7 +1218,7 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Lists the shareable resource types supported by AWS RAM.
+        /// Lists the shareable resource types supported by RAM.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResourceTypes service method.</param>
         /// 
@@ -1250,8 +1271,7 @@ namespace Amazon.RAM
 
         /// <summary>
         /// Resource shares that were created by attaching a policy to a resource are visible
-        /// only to the resource share owner, and the resource share cannot be modified in AWS
-        /// RAM.
+        /// only to the resource share owner, and the resource share cannot be modified in RAM.
         /// 
         ///  
         /// <para>
@@ -1264,7 +1284,7 @@ namespace Amazon.RAM
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Modifiable in AWS RAM.
+        /// Modifiable in RAM.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1330,7 +1350,7 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Rejects an invitation to a resource share from another AWS account.
+        /// Rejects an invitation to a resource share from another Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectResourceShareInvitation service method.</param>
         /// 

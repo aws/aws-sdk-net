@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// Information about the shareable resource types and the AWS services to which they
-    /// belong.
+    /// Information about the shareable resource types and the Amazon Web Services services
+    /// to which they belong.
     /// </summary>
     public partial class ServiceNameAndResourceType
     {
@@ -58,7 +58,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The name of the AWS services to which the resources belong.
+        /// The name of the Amazon Web Services services to which the resources belong.
         /// </para>
         /// </summary>
         public string ServiceName

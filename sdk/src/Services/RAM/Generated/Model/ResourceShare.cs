@@ -47,8 +47,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property AllowExternalPrincipals. 
         /// <para>
-        /// Indicates whether principals outside your AWS organization can be associated with
-        /// a resource share.
+        /// Indicates whether principals outside your organization in Organizations can be associated
+        /// with a resource share.
         /// </para>
         /// </summary>
         public bool AllowExternalPrincipals
@@ -89,9 +89,9 @@ namespace Amazon.RAM.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created
-        /// from an AWS Identity and Access Management (AWS IAM) policy attached to a resource.
-        /// These resource shares are visible only to the AWS account that created it. They cannot
-        /// be modified in AWS RAM.
+        /// from an Amazon Web Services Identity and Access Management (Amazon Web Services IAM)
+        /// policy attached to a resource. These resource shares are visible only to the Amazon
+        /// Web Services account that created it. They cannot be modified in RAM.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -100,9 +100,9 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STANDARD</code> - Indicates that the resource share was created in AWS RAM
-        /// using the console or APIs. These resource shares are visible to all principals. They
-        /// can be modified in AWS RAM.
+        ///  <code>STANDARD</code> - Indicates that the resource share was created in RAM using
+        /// the console or APIs. These resource shares are visible to all principals. They can
+        /// be modified in RAM.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -157,7 +157,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property OwningAccountId. 
         /// <para>
-        /// The ID of the AWS account that owns the resource share.
+        /// The ID of the Amazon Web Services account that owns the resource share.
         /// </para>
         /// </summary>
         public string OwningAccountId

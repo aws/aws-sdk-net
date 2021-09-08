@@ -30,7 +30,7 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPermission operation.
-    /// Gets the contents of an AWS RAM permission in JSON format.
+    /// Gets the contents of an RAM permission in JSON format.
     /// </summary>
     public partial class GetPermissionRequest : AmazonRAMRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property PermissionArn. 
         /// <para>
-        /// The ARN of the permission.
+        /// The Amazon Resource Name (ARN) of the permission.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

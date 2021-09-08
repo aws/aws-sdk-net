@@ -31,8 +31,7 @@ namespace Amazon.RAM.Model
     /// <summary>
     /// Container for the parameters to the PromoteResourceShareCreatedFromPolicy operation.
     /// Resource shares that were created by attaching a policy to a resource are visible
-    /// only to the resource share owner, and the resource share cannot be modified in AWS
-    /// RAM.
+    /// only to the resource share owner, and the resource share cannot be modified in RAM.
     /// 
     ///  
     /// <para>
@@ -45,7 +44,7 @@ namespace Amazon.RAM.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Modifiable in AWS RAM.
+    /// Modifiable in RAM.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -56,7 +55,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ResourceShareArn. 
         /// <para>
-        /// The ARN of the resource share to promote.
+        /// The Amazon Resource Name (ARN) of the resource share to promote.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

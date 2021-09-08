@@ -58,7 +58,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ResourceTypes. 
         /// <para>
-        /// The shareable resource types supported by AWS RAM.
+        /// The shareable resource types supported by RAM.
         /// </para>
         /// </summary>
         public List<ServiceNameAndResourceType> ResourceTypes

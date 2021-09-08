@@ -42,8 +42,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property AllowExternalPrincipals. 
         /// <para>
-        /// Indicates whether principals outside your AWS organization can be associated with
-        /// a resource share.
+        /// Indicates whether principals outside your organization in Organizations can be associated
+        /// with a resource share.
         /// </para>
         /// </summary>
         public bool AllowExternalPrincipals

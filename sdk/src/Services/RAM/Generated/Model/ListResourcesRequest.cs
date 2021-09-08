@@ -102,7 +102,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ResourceArns. 
         /// <para>
-        /// The Amazon Resource Names (ARN) of the resources.
+        /// The Amazon Resource Names (ARNs) of the resources.
         /// </para>
         /// </summary>
         public List<string> ResourceArns
@@ -170,8 +170,9 @@ namespace Amazon.RAM.Model
         /// | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code>
         /// | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code>
         /// | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code>
-        /// | <code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code>
-        /// 
+        /// | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code>
+        /// | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code>
+        /// | <code>ssm-incidents:ResponsePlan</code> 
         /// </para>
         /// </summary>
         public string ResourceType

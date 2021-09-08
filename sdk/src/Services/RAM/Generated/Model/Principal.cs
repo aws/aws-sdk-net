@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// Describes a principal for use with AWS Resource Access Manager.
+    /// Describes a principal for use with Resource Access Manager.
     /// </summary>
     public partial class Principal
     {
@@ -60,8 +60,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property External. 
         /// <para>
-        /// Indicates whether the principal belongs to the same AWS organization as the AWS account
-        /// that owns the resource share.
+        /// Indicates whether the principal belongs to the same organization in Organizations
+        /// as the Amazon Web Services account that owns the resource share.
         /// </para>
         /// </summary>
         public bool External

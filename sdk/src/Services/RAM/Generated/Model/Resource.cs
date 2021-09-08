@@ -99,8 +99,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ResourceGroupArn. 
         /// <para>
-        /// The ARN of the resource group. This value is returned only if the resource is a resource
-        /// group.
+        /// The Amazon Resource Name (ARN) of the resource group. This value is returned only
+        /// if the resource is a resource group.
         /// </para>
         /// </summary>
         public string ResourceGroupArn

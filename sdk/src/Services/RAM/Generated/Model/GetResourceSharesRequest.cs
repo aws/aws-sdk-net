@@ -103,8 +103,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property PermissionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS RAM permission that is associated with the
-        /// resource share.
+        /// The Amazon Resource Name (ARN) of the RAM permission that is associated with the resource
+        /// share.
         /// </para>
         /// </summary>
         public string PermissionArn
@@ -141,7 +141,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ResourceShareArns. 
         /// <para>
-        /// The ARNs of the resource shares.
+        /// The Amazon Resource Names (ARNs) of the resource shares.
         /// </para>
         /// </summary>
         public List<string> ResourceShareArns

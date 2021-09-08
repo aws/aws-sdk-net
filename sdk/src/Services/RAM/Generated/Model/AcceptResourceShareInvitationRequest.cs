@@ -30,7 +30,7 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the AcceptResourceShareInvitation operation.
-    /// Accepts an invitation to a resource share from another AWS account.
+    /// Accepts an invitation to a resource share from another Amazon Web Services account.
     /// </summary>
     public partial class AcceptResourceShareInvitationRequest : AmazonRAMRequest
     {

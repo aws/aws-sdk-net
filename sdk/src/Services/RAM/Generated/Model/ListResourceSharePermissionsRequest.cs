@@ -30,7 +30,7 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the ListResourceSharePermissions operation.
-    /// Lists the AWS RAM permissions that are associated with a resource share.
+    /// Lists the RAM permissions that are associated with a resource share.
     /// </summary>
     public partial class ListResourceSharePermissionsRequest : AmazonRAMRequest
     {

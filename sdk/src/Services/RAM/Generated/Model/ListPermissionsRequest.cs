@@ -30,7 +30,7 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPermissions operation.
-    /// Lists the AWS RAM permissions.
+    /// Lists the RAM permissions.
     /// </summary>
     public partial class ListPermissionsRequest : AmazonRAMRequest
     {

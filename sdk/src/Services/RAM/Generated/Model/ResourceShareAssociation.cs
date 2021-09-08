@@ -46,10 +46,30 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property AssociatedEntity. 
         /// <para>
-        /// The associated entity. For resource associations, this is the ARN of the resource.
-        /// For principal associations, this is the ID of an AWS account or the ARN of an OU or
-        /// organization from AWS Organizations.
+        /// The associated entity. For resource associations, this is the Amazon Resource Name
+        /// (ARN) of the resource. For principal associations, this is one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// An Amazon Web Services account ID
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An ARN of an organization in Organizations
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An ARN of an organizational unit (OU) in Organizations
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An ARN of an IAM role
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An ARN of an IAM user
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string AssociatedEntity
         {
@@ -102,8 +122,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property External. 
         /// <para>
-        /// Indicates whether the principal belongs to the same AWS organization as the AWS account
-        /// that owns the resource share.
+        /// Indicates whether the principal belongs to the same organization in Organizations
+        /// as the Amazon Web Services account that owns the resource share.
         /// </para>
         /// </summary>
         public bool External

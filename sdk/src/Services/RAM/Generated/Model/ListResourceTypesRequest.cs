@@ -30,7 +30,7 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the ListResourceTypes operation.
-    /// Lists the shareable resource types supported by AWS RAM.
+    /// Lists the shareable resource types supported by RAM.
     /// </summary>
     public partial class ListResourceTypesRequest : AmazonRAMRequest
     {

@@ -30,7 +30,7 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateResourceSharePermission operation.
-    /// Disassociates an AWS RAM permission from a resource share.
+    /// Disassociates an RAM permission from a resource share.
     /// </summary>
     public partial class DisassociateResourceSharePermissionRequest : AmazonRAMRequest
     {
@@ -60,7 +60,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property PermissionArn. 
         /// <para>
-        /// The ARN of the permission to disassociate from the resource share.
+        /// The Amazon Resource Name (ARN) of the permission to disassociate from the resource
+        /// share.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

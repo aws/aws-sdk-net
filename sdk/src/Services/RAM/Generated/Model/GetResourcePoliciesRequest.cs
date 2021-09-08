@@ -98,7 +98,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ResourceArns. 
         /// <para>
-        /// The Amazon Resource Names (ARN) of the resources.
+        /// The Amazon Resource Names (ARNs) of the resources.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

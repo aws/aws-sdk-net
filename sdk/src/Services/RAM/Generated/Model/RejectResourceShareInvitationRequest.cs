@@ -30,7 +30,7 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the RejectResourceShareInvitation operation.
-    /// Rejects an invitation to a resource share from another AWS account.
+    /// Rejects an invitation to a resource share from another Amazon Web Services account.
     /// </summary>
     public partial class RejectResourceShareInvitationRequest : AmazonRAMRequest
     {

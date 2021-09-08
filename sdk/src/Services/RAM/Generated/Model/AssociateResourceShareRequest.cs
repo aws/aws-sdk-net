@@ -61,10 +61,35 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Principals. 
         /// <para>
-        /// The principals to associate with the resource share. The possible values are IDs of
-        /// AWS accounts, and the ARNs of organizational units (OU) or organizations from AWS
-        /// Organizations.
+        /// The principals to associate with the resource share. The possible values are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// An Amazon Web Services account ID
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An Amazon Resource Name (ARN) of an organization in Organizations
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An ARN of an organizational unit (OU) in Organizations
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An ARN of an IAM role
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An ARN of an IAM user
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Not all resource types can be shared with IAM roles and IAM users. For more information,
+        /// see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing
+        /// with IAM roles and IAM users</a> in the <i>Resource Access Manager User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> Principals
         {
@@ -81,7 +106,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ResourceArns. 
         /// <para>
-        /// The Amazon Resource Names (ARN) of the resources.
+        /// The Amazon Resource Names (ARNs) of the resources.
         /// </para>
         /// </summary>
         public List<string> ResourceArns

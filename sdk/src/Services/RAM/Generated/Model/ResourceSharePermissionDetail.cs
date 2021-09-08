@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// Information about an AWS RAM permission.
+    /// Information about an RAM permission.
     /// </summary>
     public partial class ResourceSharePermissionDetail
     {
@@ -46,7 +46,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the permission.
+        /// The Amazon Resource Name (ARN) of the permission.
         /// </para>
         /// </summary>
         public string Arn

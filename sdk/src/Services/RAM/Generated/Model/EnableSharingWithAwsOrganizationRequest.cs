@@ -30,11 +30,11 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableSharingWithAwsOrganization operation.
-    /// Enables resource sharing within your AWS Organization.
+    /// Enables resource sharing within your organization in Organizations.
     /// 
     ///  
     /// <para>
-    /// The caller must be the master account for the AWS Organization.
+    /// The caller must be the master account for the organization.
     /// </para>
     /// </summary>
     public partial class EnableSharingWithAwsOrganizationRequest : AmazonRAMRequest

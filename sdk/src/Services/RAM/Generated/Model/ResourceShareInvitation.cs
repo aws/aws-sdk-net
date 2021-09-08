@@ -64,7 +64,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ReceiverAccountId. 
         /// <para>
-        /// The ID of the AWS account that received the invitation.
+        /// The ID of the Amazon Web Services account that received the invitation.
         /// </para>
         /// </summary>
         public string ReceiverAccountId
@@ -175,7 +175,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property SenderAccountId. 
         /// <para>
-        /// The ID of the AWS account that sent the invitation.
+        /// The ID of the Amazon Web Services account that sent the invitation.
         /// </para>
         /// </summary>
         public string SenderAccountId
