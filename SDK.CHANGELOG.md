@@ -1,3 +1,16 @@
+### 3.7.115.0 (2021-09-09 18:26 UTC)
+* CodeGuruReviewer (3.7.4.0)
+	* The Amazon CodeGuru Reviewer API now includes the RuleMetadata data object and a Severity attribute on a RecommendationSummary object. A RuleMetadata object contains information about a rule that generates a recommendation. Severity indicates how severe the issue associated with a recommendation is.
+* ElasticMapReduce (3.7.4.0)
+	* This release enables customers to login to EMR Studio using AWS Identity and Access Management (IAM) identities or identities in their Identity Provider (IdP) via IAM.
+* LookoutEquipment (3.7.1.0)
+	* Added OffCondition parameter to CreateModel API
+* Core 3.7.3.3
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.114.0 (2021-09-08 18:13 UTC)
 * Kafka (3.7.2.0)
 	* Amazon MSK has added a new API that allows you to update the encrypting and authentication settings for an existing cluster.
