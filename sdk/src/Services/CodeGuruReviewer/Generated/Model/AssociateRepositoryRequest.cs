@@ -30,30 +30,32 @@ namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateRepository operation.
-    /// Use to associate an AWS CodeCommit repository or a repostory managed by AWS CodeStar
-    /// Connections with Amazon CodeGuru Reviewer. When you associate a repository, CodeGuru
-    /// Reviewer reviews source code changes in the repository's pull requests and provides
-    /// automatic recommendations. You can view recommendations using the CodeGuru Reviewer
-    /// console. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/recommendations.html">Recommendations
+    /// Use to associate an Amazon Web Services CodeCommit repository or a repostory managed
+    /// by Amazon Web Services CodeStar Connections with Amazon CodeGuru Reviewer. When you
+    /// associate a repository, CodeGuru Reviewer reviews source code changes in the repository's
+    /// pull requests and provides automatic recommendations. You can view recommendations
+    /// using the CodeGuru Reviewer console. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/recommendations.html">Recommendations
     /// in Amazon CodeGuru Reviewer</a> in the <i>Amazon CodeGuru Reviewer User Guide.</i>
     /// 
     /// 
     ///  
     /// <para>
-    /// If you associate a CodeCommit or S3 repository, it must be in the same AWS Region
-    /// and AWS account where its CodeGuru Reviewer code reviews are configured.
+    /// If you associate a CodeCommit or S3 repository, it must be in the same Amazon Web
+    /// Services Region and Amazon Web Services account where its CodeGuru Reviewer code reviews
+    /// are configured.
     /// </para>
     ///  
     /// <para>
-    /// Bitbucket and GitHub Enterprise Server repositories are managed by AWS CodeStar Connections
-    /// to connect to CodeGuru Reviewer. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/getting-started-associate-repository.html">Associate
+    /// Bitbucket and GitHub Enterprise Server repositories are managed by Amazon Web Services
+    /// CodeStar Connections to connect to CodeGuru Reviewer. For more information, see <a
+    /// href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/getting-started-associate-repository.html">Associate
     /// a repository</a> in the <i>Amazon CodeGuru Reviewer User Guide.</i> 
     /// </para>
     ///  <note> 
     /// <para>
-    ///  You cannot use the CodeGuru Reviewer SDK or the AWS CLI to associate a GitHub repository
-    /// with Amazon CodeGuru Reviewer. To associate a GitHub repository, use the console.
-    /// For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/getting-started-with-guru.html">Getting
+    ///  You cannot use the CodeGuru Reviewer SDK or the Amazon Web Services CLI to associate
+    /// a GitHub repository with Amazon CodeGuru Reviewer. To associate a GitHub repository,
+    /// use the console. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/getting-started-with-guru.html">Getting
     /// started with CodeGuru Reviewer</a> in the <i>CodeGuru Reviewer User Guide.</i> 
     /// </para>
     ///  </note>
@@ -92,12 +94,14 @@ namespace Amazon.CodeGuruReviewer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The encryption option for this repository association. It is either owned by AWS Key
-        /// Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+        /// The encryption option for this repository association. It is either owned by Amazon
+        /// Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer
+        /// managed (<code>CUSTOMER_MANAGED_CMK</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The ID of the AWS KMS key that is associated with this respository association.
+        /// The ID of the Amazon Web Services KMS key that is associated with this respository
+        /// association.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -38,6 +38,8 @@ namespace Amazon.CodeGuruReviewer.Model
         private string _filePath;
         private RecommendationCategory _recommendationCategory;
         private string _recommendationId;
+        private RuleMetadata _ruleMetadata;
+        private Severity _severity;
         private int? _startLine;
 
         /// <summary>
@@ -134,6 +136,45 @@ namespace Amazon.CodeGuruReviewer.Model
         internal bool IsSetRecommendationId()
         {
             return this._recommendationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleMetadata. 
+        /// <para>
+        /// Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a
+        /// short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's
+        /// recommendation is included in analysis results if code is detected that violates the
+        /// rule.
+        /// </para>
+        /// </summary>
+        public RuleMetadata RuleMetadata
+        {
+            get { return this._ruleMetadata; }
+            set { this._ruleMetadata = value; }
+        }
+
+        // Check to see if RuleMetadata property is set
+        internal bool IsSetRuleMetadata()
+        {
+            return this._ruleMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Severity. 
+        /// <para>
+        /// The severity of the issue in the code that generated this recommendation.
+        /// </para>
+        /// </summary>
+        public Severity Severity
+        {
+            get { return this._severity; }
+            set { this._severity = value; }
+        }
+
+        // Check to see if Severity property is set
+        internal bool IsSetSeverity()
+        {
+            return this._severity != null;
         }
 
         /// <summary>

@@ -33,12 +33,13 @@ namespace Amazon.CodeGuruReviewer.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// The encryption option for a repository association. It is either owned by AWS Key
-    /// Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+    /// The encryption option for a repository association. It is either owned by Amazon Web
+    /// Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed
+    /// (<code>CUSTOMER_MANAGED_CMK</code>).
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The ID of the AWS KMS key that is associated with a respository association.
+    /// The ID of the Amazon Web Services KMS key that is associated with a respository association.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -50,8 +51,9 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property EncryptionOption. 
         /// <para>
-        /// The encryption option for a repository association. It is either owned by AWS Key
-        /// Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+        /// The encryption option for a repository association. It is either owned by Amazon Web
+        /// Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed
+        /// (<code>CUSTOMER_MANAGED_CMK</code>).
         /// </para>
         /// </summary>
         public EncryptionOption EncryptionOption
@@ -69,7 +71,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property KMSKeyId. 
         /// <para>
-        /// The ID of the AWS KMS key that is associated with a respository association.
+        /// The ID of the Amazon Web Services KMS key that is associated with a respository association.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

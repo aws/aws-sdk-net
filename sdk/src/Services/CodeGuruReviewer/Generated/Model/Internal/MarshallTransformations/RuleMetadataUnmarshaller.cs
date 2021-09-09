@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RecommendationSummary Object
+    /// Response Unmarshaller for RuleMetadata Object
     /// </summary>  
-    public class RecommendationSummaryUnmarshaller : IUnmarshaller<RecommendationSummary, XmlUnmarshallerContext>, IUnmarshaller<RecommendationSummary, JsonUnmarshallerContext>
+    public class RuleMetadataUnmarshaller : IUnmarshaller<RuleMetadata, XmlUnmarshallerContext>, IUnmarshaller<RuleMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RecommendationSummary IUnmarshaller<RecommendationSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RuleMetadata IUnmarshaller<RuleMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,63 +53,45 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RecommendationSummary Unmarshall(JsonUnmarshallerContext context)
+        public RuleMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RecommendationSummary unmarshalledObject = new RecommendationSummary();
+            RuleMetadata unmarshalledObject = new RuleMetadata();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("LongDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LongDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EndLine", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.EndLine = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FilePath", targetDepth))
+                if (context.TestExpression("RuleId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FilePath = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RuleId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("RecommendationCategory", targetDepth))
+                if (context.TestExpression("RuleName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecommendationCategory = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RuleName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("RecommendationId", targetDepth))
+                if (context.TestExpression("RuleTags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.RuleTags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ShortDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecommendationId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RuleMetadata", targetDepth))
-                {
-                    var unmarshaller = RuleMetadataUnmarshaller.Instance;
-                    unmarshalledObject.RuleMetadata = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Severity", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Severity = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StartLine", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.StartLine = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ShortDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -118,12 +100,12 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         }
 
 
-        private static RecommendationSummaryUnmarshaller _instance = new RecommendationSummaryUnmarshaller();        
+        private static RuleMetadataUnmarshaller _instance = new RuleMetadataUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RecommendationSummaryUnmarshaller Instance
+        public static RuleMetadataUnmarshaller Instance
         {
             get
             {

@@ -29,9 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
-    /// Information about an associated AWS CodeCommit repository or an associated repository
-    /// that is managed by AWS CodeStar Connections (for example, Bitbucket). This <code>Repository</code>
-    /// object is not used if your source code is in an associated GitHub repository.
+    /// Information about an associated Amazon Web Services CodeCommit repository or an associated
+    /// repository that is managed by Amazon Web Services CodeStar Connections (for example,
+    /// Bitbucket). This <code>Repository</code> object is not used if your source code is
+    /// in an associated GitHub repository.
     /// </summary>
     public partial class Repository
     {
@@ -61,7 +62,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property CodeCommit. 
         /// <para>
-        /// Information about an AWS CodeCommit repository.
+        /// Information about an Amazon Web Services CodeCommit repository.
         /// </para>
         /// </summary>
         public CodeCommitRepository CodeCommit
