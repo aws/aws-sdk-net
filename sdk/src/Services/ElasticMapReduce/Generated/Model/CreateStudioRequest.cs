@@ -38,6 +38,8 @@ namespace Amazon.ElasticMapReduce.Model
         private string _defaultS3Location;
         private string _description;
         private string _engineSecurityGroupId;
+        private string _idpAuthUrl;
+        private string _idpRelayStateParameterName;
         private string _name;
         private string _serviceRole;
         private List<string> _subnetIds = new List<string>();
@@ -49,8 +51,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property AuthMode. 
         /// <para>
-        /// Specifies whether the Studio authenticates users using single sign-on (SSO) or IAM.
-        /// Amazon EMR Studio currently only supports SSO authentication.
+        /// Specifies whether the Studio authenticates users using IAM or Amazon Web Services
+        /// SSO.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -126,6 +128,50 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IdpAuthUrl. 
+        /// <para>
+        /// The authentication endpoint of your identity provider (IdP). Specify this value when
+        /// you use IAM authentication and want to let federated users log in to a Studio with
+        /// the Studio URL and credentials from your IdP. Amazon EMR Studio redirects users to
+        /// this endpoint to enter credentials.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
+        public string IdpAuthUrl
+        {
+            get { return this._idpAuthUrl; }
+            set { this._idpAuthUrl = value; }
+        }
+
+        // Check to see if IdpAuthUrl property is set
+        internal bool IsSetIdpAuthUrl()
+        {
+            return this._idpAuthUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdpRelayStateParameterName. 
+        /// <para>
+        /// The name that your identity provider (IdP) uses for its <code>RelayState</code> parameter.
+        /// For example, <code>RelayState</code> or <code>TargetSource</code>. Specify this value
+        /// when you use IAM authentication and want to let federated users log in to a Studio
+        /// using the Studio URL. The <code>RelayState</code> parameter differs by IdP.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string IdpRelayStateParameterName
+        {
+            get { return this._idpRelayStateParameterName; }
+            set { this._idpRelayStateParameterName = value; }
+        }
+
+        // Check to see if IdpRelayStateParameterName property is set
+        internal bool IsSetIdpRelayStateParameterName()
+        {
+            return this._idpRelayStateParameterName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// A descriptive name for the Amazon EMR Studio.
@@ -147,8 +193,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
-        /// The IAM role that will be assumed by the Amazon EMR Studio. The service role provides
-        /// a way for Amazon EMR Studio to interoperate with other Amazon Web Services services.
+        /// The IAM role that the Amazon EMR Studio assumes. The service role provides a way for
+        /// Amazon EMR Studio to interoperate with other Amazon Web Services services.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10280)]
@@ -208,12 +254,13 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property UserRole. 
         /// <para>
-        /// The IAM user role that will be assumed by users and groups logged in to an Amazon
-        /// EMR Studio. The permissions attached to this IAM role can be scoped down for each
+        /// The IAM user role that users and groups assume when logged in to an Amazon EMR Studio.
+        /// Only specify a <code>UserRole</code> when you use Amazon Web Services SSO authentication.
+        /// The permissions attached to the <code>UserRole</code> can be scoped down for each
         /// user or group using session policies.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=10280)]
+        [AWSProperty(Min=0, Max=10280)]
         public string UserRole
         {
             get { return this._userRole; }

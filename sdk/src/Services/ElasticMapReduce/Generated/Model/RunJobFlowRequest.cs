@@ -613,8 +613,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
-        /// The IAM role that will be assumed by the Amazon EMR service to access Amazon Web Services
-        /// resources on your behalf.
+        /// The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources
+        /// on your behalf.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10280)]

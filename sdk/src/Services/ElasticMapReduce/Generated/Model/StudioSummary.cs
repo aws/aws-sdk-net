@@ -34,12 +34,32 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class StudioSummary
     {
+        private AuthMode _authMode;
         private DateTime? _creationTime;
         private string _description;
         private string _name;
         private string _studioId;
         private string _url;
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property AuthMode. 
+        /// <para>
+        /// Specifies whether the Studio authenticates users using IAM or Amazon Web Services
+        /// SSO.
+        /// </para>
+        /// </summary>
+        public AuthMode AuthMode
+        {
+            get { return this._authMode; }
+            set { this._authMode = value; }
+        }
+
+        // Check to see if AuthMode property is set
+        internal bool IsSetAuthMode()
+        {
+            return this._authMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreationTime. 

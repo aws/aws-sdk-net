@@ -91,6 +91,18 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EngineSecurityGroupId);
                 }
 
+                if(publicRequest.IsSetIdpAuthUrl())
+                {
+                    context.Writer.WritePropertyName("IdpAuthUrl");
+                    context.Writer.Write(publicRequest.IdpAuthUrl);
+                }
+
+                if(publicRequest.IsSetIdpRelayStateParameterName())
+                {
+                    context.Writer.WritePropertyName("IdpRelayStateParameterName");
+                    context.Writer.Write(publicRequest.IdpRelayStateParameterName);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");

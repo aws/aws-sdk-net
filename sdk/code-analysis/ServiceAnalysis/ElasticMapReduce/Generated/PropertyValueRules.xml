@@ -66,6 +66,16 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.CreateStudioRequest.IdpAuthUrl</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.CreateStudioRequest.IdpRelayStateParameterName</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.CreateStudioRequest.Name</property>
     <min>0</min>
     <max>256</max>
@@ -892,6 +902,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.Studio.EngineSecurityGroupId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.Studio.IdpAuthUrl</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.Studio.IdpRelayStateParameterName</property>
     <min>0</min>
     <max>256</max>
   </property-value-rule>

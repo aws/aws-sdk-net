@@ -94,6 +94,18 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.EngineSecurityGroupId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IdpAuthUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IdpAuthUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IdpRelayStateParameterName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IdpRelayStateParameterName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

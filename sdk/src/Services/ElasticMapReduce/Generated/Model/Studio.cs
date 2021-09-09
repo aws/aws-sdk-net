@@ -38,6 +38,8 @@ namespace Amazon.ElasticMapReduce.Model
         private string _defaultS3Location;
         private string _description;
         private string _engineSecurityGroupId;
+        private string _idpAuthUrl;
+        private string _idpRelayStateParameterName;
         private string _name;
         private string _serviceRole;
         private string _studioArn;
@@ -52,8 +54,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property AuthMode. 
         /// <para>
-        /// Specifies whether the Amazon EMR Studio authenticates users using single sign-on (SSO)
-        /// or IAM.
+        /// Specifies whether the Amazon EMR Studio authenticates users using IAM or Amazon Web
+        /// Services SSO.
         /// </para>
         /// </summary>
         public AuthMode AuthMode
@@ -143,6 +145,46 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetEngineSecurityGroupId()
         {
             return this._engineSecurityGroupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdpAuthUrl. 
+        /// <para>
+        /// Your identity provider's authentication endpoint. Amazon EMR Studio redirects federated
+        /// users to this endpoint for authentication when logging in to a Studio with the Studio
+        /// URL.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
+        public string IdpAuthUrl
+        {
+            get { return this._idpAuthUrl; }
+            set { this._idpAuthUrl = value; }
+        }
+
+        // Check to see if IdpAuthUrl property is set
+        internal bool IsSetIdpAuthUrl()
+        {
+            return this._idpAuthUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdpRelayStateParameterName. 
+        /// <para>
+        /// The name of your identity provider's <code>RelayState</code> parameter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string IdpRelayStateParameterName
+        {
+            get { return this._idpRelayStateParameterName; }
+            set { this._idpRelayStateParameterName = value; }
+        }
+
+        // Check to see if IdpRelayStateParameterName property is set
+        internal bool IsSetIdpRelayStateParameterName()
+        {
+            return this._idpRelayStateParameterName != null;
         }
 
         /// <summary>
@@ -279,7 +321,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property UserRole. 
         /// <para>
-        /// The name of the IAM role assumed by users logged in to the Amazon EMR Studio.
+        /// The name of the IAM role assumed by users logged in to the Amazon EMR Studio. A Studio
+        /// only requires a <code>UserRole</code> when you use IAM authentication.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10280)]

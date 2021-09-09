@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// This output indicates the result of removing tags from a resource.
+    /// This output indicates the result of removing tags from the resource.
     /// </summary>
     public partial class RemoveTagsResponse : AmazonWebServiceResponse
     {

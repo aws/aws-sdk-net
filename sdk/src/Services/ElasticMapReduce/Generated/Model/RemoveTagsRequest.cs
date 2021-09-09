@@ -30,9 +30,9 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveTags operation.
-    /// Removes tags from an Amazon EMR resource. Tags make it easier to associate clusters
-    /// in various ways, such as grouping clusters to track your Amazon EMR resource allocation
-    /// costs. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
+    /// Removes tags from an Amazon EMR resource, such as a cluster or Amazon EMR Studio.
+    /// Tags make it easier to associate resources in various ways, such as grouping clusters
+    /// to track your Amazon EMR resource allocation costs. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
     /// Clusters</a>. 
     /// 
     ///  
@@ -53,7 +53,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Instantiates RemoveTagsRequest with the parameterized properties
         /// </summary>
-        /// <param name="resourceId">The Amazon EMR resource identifier from which tags will be removed. This value must be a cluster identifier.</param>
+        /// <param name="resourceId">The Amazon EMR resource identifier from which tags will be removed. For example, a cluster identifier or an Amazon EMR Studio ID.</param>
         public RemoveTagsRequest(string resourceId)
         {
             _resourceId = resourceId;
@@ -62,8 +62,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Instantiates RemoveTagsRequest with the parameterized properties
         /// </summary>
-        /// <param name="resourceId">The Amazon EMR resource identifier from which tags will be removed. This value must be a cluster identifier.</param>
-        /// <param name="tagKeys">A list of tag keys to remove from a resource.</param>
+        /// <param name="resourceId">The Amazon EMR resource identifier from which tags will be removed. For example, a cluster identifier or an Amazon EMR Studio ID.</param>
+        /// <param name="tagKeys">A list of tag keys to remove from the resource.</param>
         public RemoveTagsRequest(string resourceId, List<string> tagKeys)
         {
             _resourceId = resourceId;
@@ -73,8 +73,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The Amazon EMR resource identifier from which tags will be removed. This value must
-        /// be a cluster identifier.
+        /// The Amazon EMR resource identifier from which tags will be removed. For example, a
+        /// cluster identifier or an Amazon EMR Studio ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -93,7 +93,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// A list of tag keys to remove from a resource.
+        /// A list of tag keys to remove from the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
