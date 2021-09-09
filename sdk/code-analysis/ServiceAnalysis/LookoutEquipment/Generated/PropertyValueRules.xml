@@ -93,6 +93,11 @@
     <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.CreateModelRequest.OffCondition</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.CreateModelRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
@@ -272,6 +277,11 @@
     <min>1</min>
     <max>200</max>
     <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.DescribeModelResponse.OffCondition</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeModelResponse.RoleArn</property>

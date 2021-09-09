@@ -72,7 +72,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property DataDelayOffsetInMinutes. 
         /// <para>
-        ///  A period of time (in minutes) by which inference on the data is delayed after the
+        /// A period of time (in minutes) by which inference on the data is delayed after the
         /// data starts. For instance, if you select an offset delay time of five minutes, inference
         /// will not begin on the data until the first data measurement after the five minute
         /// mark. For example, if five minutes is selected, the inference scheduler will wake
@@ -220,8 +220,8 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property ServerSideKmsKeyId. 
         /// <para>
-        /// Provides the identifier of the AWS KMS customer master key (CMK) used to encrypt inference
-        /// scheduler data by Amazon Lookout for Equipment. 
+        /// Provides the identifier of the KMS key used to encrypt inference scheduler data by
+        /// Amazon Lookout for Equipment. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

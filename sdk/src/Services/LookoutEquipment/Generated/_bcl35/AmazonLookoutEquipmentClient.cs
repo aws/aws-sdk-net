@@ -790,8 +790,8 @@ namespace Amazon.LookoutEquipment
         #region  DescribeDataset
 
         /// <summary>
-        /// Provides information on a specified dataset such as the schema location, status, and
-        /// so on.
+        /// Provides a JSON description of the data that is in each time series dataset, including
+        /// names, column names, and data types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataset service method.</param>
         /// 
@@ -934,8 +934,8 @@ namespace Amazon.LookoutEquipment
         #region  DescribeModel
 
         /// <summary>
-        /// Provides overall information about a specific ML model, including model name and ARN,
-        /// dataset, training and evaluation information, status, and so on.
+        /// Provides a JSON containing the overall information about a specific ML model, including
+        /// model name and ARN, dataset, training and evaluation information, status, and so on.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeModel service method.</param>
         /// 

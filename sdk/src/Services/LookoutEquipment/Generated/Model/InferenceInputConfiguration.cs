@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LookoutEquipment.Model
 {
     /// <summary>
-    /// &gt; Specifies configuration information for the input data for the inference, including
+    /// Specifies configuration information for the input data for the inference, including
     /// S3 location of input data..
     /// </summary>
     public partial class InferenceInputConfiguration
@@ -41,7 +41,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property InferenceInputNameConfiguration. 
         /// <para>
-        /// &gt; Specifies configuration information for the input data for the inference, including
+        /// Specifies configuration information for the input data for the inference, including
         /// timestamp format and delimiter. 
         /// </para>
         /// </summary>

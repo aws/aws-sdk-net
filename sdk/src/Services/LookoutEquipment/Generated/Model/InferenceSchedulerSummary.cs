@@ -45,13 +45,13 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property DataDelayOffsetInMinutes. 
         /// <para>
-        /// &gt; A period of time (in minutes) by which inference on the data is delayed after
-        /// the data starts. For instance, if an offset delay time of five minutes was selected,
-        /// inference will not begin on the data until the first data measurement after the five
-        /// minute mark. For example, if five minutes is selected, the inference scheduler will
-        /// wake up at the configured frequency with the additional five minute delay time to
-        /// check the customer S3 bucket. The customer can upload data at the same frequency and
-        /// they don't need to stop and restart the scheduler when uploading new data. 
+        /// A period of time (in minutes) by which inference on the data is delayed after the
+        /// data starts. For instance, if an offset delay time of five minutes was selected, inference
+        /// will not begin on the data until the first data measurement after the five minute
+        /// mark. For example, if five minutes is selected, the inference scheduler will wake
+        /// up at the configured frequency with the additional five minute delay time to check
+        /// the customer S3 bucket. The customer can upload data at the same frequency and they
+        /// don't need to stop and restart the scheduler when uploading new data. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=60)]

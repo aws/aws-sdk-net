@@ -45,6 +45,7 @@ namespace Amazon.LookoutEquipment.Model
         private string _modelArn;
         private string _modelMetrics;
         private string _modelName;
+        private string _offCondition;
         private string _roleArn;
         private string _schema;
         private string _serverSideKmsKeyId;
@@ -296,6 +297,27 @@ namespace Amazon.LookoutEquipment.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OffCondition. 
+        /// <para>
+        /// Indicates that the asset associated with this sensor has been shut off. As long as
+        /// this condition is met, Lookout for Equipment will not use data from this asset for
+        /// training, evaluation, or inference.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string OffCondition
+        {
+            get { return this._offCondition; }
+            set { this._offCondition = value; }
+        }
+
+        // Check to see if OffCondition property is set
+        internal bool IsSetOffCondition()
+        {
+            return this._offCondition != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) of a role with permission to access the data source
@@ -338,8 +360,8 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property ServerSideKmsKeyId. 
         /// <para>
-        /// Provides the identifier of the AWS KMS customer master key (CMK) used to encrypt model
-        /// data by Amazon Lookout for Equipment. 
+        /// Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout
+        /// for Equipment. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

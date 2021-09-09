@@ -30,8 +30,8 @@ namespace Amazon.LookoutEquipment.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeModel operation.
-    /// Provides overall information about a specific ML model, including model name and ARN,
-    /// dataset, training and evaluation information, status, and so on.
+    /// Provides a JSON containing the overall information about a specific ML model, including
+    /// model name and ARN, dataset, training and evaluation information, status, and so on.
     /// </summary>
     public partial class DescribeModelRequest : AmazonLookoutEquipmentRequest
     {

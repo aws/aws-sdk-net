@@ -123,6 +123,12 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                     response.ModelName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OffCondition", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.OffCondition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

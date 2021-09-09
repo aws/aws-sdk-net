@@ -135,6 +135,12 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ModelName);
                 }
 
+                if(publicRequest.IsSetOffCondition())
+                {
+                    context.Writer.WritePropertyName("OffCondition");
+                    context.Writer.Write(publicRequest.OffCondition);
+                }
+
                 if(publicRequest.IsSetRoleArn())
                 {
                     context.Writer.WritePropertyName("RoleArn");
