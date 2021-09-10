@@ -1,3 +1,22 @@
+### 3.7.116.0 (2021-09-10 18:22 UTC)
+* CloudFormation (3.7.5.8)
+	* Doc only update for CloudFormation that fixes several customer-reported issues.
+* ECR (3.7.0.64)
+	* This release updates terminology around KMS keys.
+* QuickSight (3.7.6.0)
+	* Add new data source type for Amazon OpenSearch (successor to Amazon ElasticSearch).
+* RDS (3.7.5.0)
+	* This release adds support for providing a custom timeout value for finding a scaling point during autoscaling in Aurora Serverless v1.
+* SageMaker (3.7.13.0)
+	* This release adds support for "Lifecycle Configurations" to SageMaker Studio
+* TranscribeService (3.7.7.0)
+	* This release adds an API option for startTranscriptionJob and startMedicalTranscriptionJob that allows the user to specify encryption context key value pairs for batch jobs.
+* Core 3.7.3.4
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.115.0 (2021-09-09 18:26 UTC)
 * CodeGuruReviewer (3.7.4.0)
 	* The Amazon CodeGuru Reviewer API now includes the RuleMetadata data object and a Severity attribute on a RecommendationSummary object. A RuleMetadata object contains information about a rule that generates a recommendation. Severity indicates how severe the issue associated with a recommendation is.
