@@ -35,6 +35,7 @@ namespace Amazon.TranscribeService.Model
     public partial class StartMedicalTranscriptionJobRequest : AmazonTranscribeServiceRequest
     {
         private MedicalContentIdentificationType _contentIdentificationType;
+        private Dictionary<string, string> _kmsEncryptionContext = new Dictionary<string, string>();
         private LanguageCode _languageCode;
         private Media _media;
         private MediaFormat _mediaFormat;
@@ -66,6 +67,26 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetContentIdentificationType()
         {
             return this._contentIdentificationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KMSEncryptionContext. 
+        /// <para>
+        /// A map of plain text, non-secret key:value pairs, known as encryption context pairs,
+        /// that provide an added layer of security for your data.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public Dictionary<string, string> KMSEncryptionContext
+        {
+            get { return this._kmsEncryptionContext; }
+            set { this._kmsEncryptionContext = value; }
+        }
+
+        // Check to see if KMSEncryptionContext property is set
+        internal bool IsSetKMSEncryptionContext()
+        {
+            return this._kmsEncryptionContext != null && this._kmsEncryptionContext.Count > 0; 
         }
 
         /// <summary>

@@ -73,6 +73,20 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ContentIdentificationType);
                 }
 
+                if(publicRequest.IsSetKMSEncryptionContext())
+                {
+                    context.Writer.WritePropertyName("KMSEncryptionContext");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestKMSEncryptionContextKvp in publicRequest.KMSEncryptionContext)
+                    {
+                        context.Writer.WritePropertyName(publicRequestKMSEncryptionContextKvp.Key);
+                        var publicRequestKMSEncryptionContextValue = publicRequestKMSEncryptionContextKvp.Value;
+
+                            context.Writer.Write(publicRequestKMSEncryptionContextValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetLanguageCode())
                 {
                     context.Writer.WritePropertyName("LanguageCode");
