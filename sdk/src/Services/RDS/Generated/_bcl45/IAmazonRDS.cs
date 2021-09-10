@@ -6419,7 +6419,7 @@ namespace Amazon.RDS
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// This action only applies to Aurora DB clusters.
+        /// This action only applies to Aurora Serverless DB clusters.
         /// </para>
         ///  </note>
         /// </summary>
@@ -6472,7 +6472,7 @@ namespace Amazon.RDS
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// This action only applies to Aurora DB clusters.
+        /// This action only applies to Aurora Serverless DB clusters.
         /// </para>
         ///  </note>
         /// </summary>

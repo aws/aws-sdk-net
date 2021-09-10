@@ -72,6 +72,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.MinCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SecondsBeforeTimeout", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.SecondsBeforeTimeout = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SecondsUntilAutoPause", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

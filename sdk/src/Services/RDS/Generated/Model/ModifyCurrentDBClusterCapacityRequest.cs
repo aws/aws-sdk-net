@@ -59,7 +59,7 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  </important> <note> 
     /// <para>
-    /// This action only applies to Aurora DB clusters.
+    /// This action only applies to Aurora Serverless DB clusters.
     /// </para>
     ///  </note>
     /// </summary>
@@ -143,11 +143,10 @@ namespace Amazon.RDS.Model
         /// The amount of time, in seconds, that Aurora Serverless tries to find a scaling point
         /// to perform seamless scaling before enforcing the timeout action. The default is 300.
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// Value must be from 10 through 600.
+        /// Specify a value between 10 and 600 seconds.
         /// </para>
-        ///  </li> </ul>
         /// </summary>
         public int SecondsBeforeTimeout
         {

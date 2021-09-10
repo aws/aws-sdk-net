@@ -43,6 +43,7 @@ namespace Amazon.RDS.Model
         private bool? _autoPause;
         private int? _maxCapacity;
         private int? _minCapacity;
+        private int? _secondsBeforeTimeout;
         private int? _secondsUntilAutoPause;
         private string _timeoutAction;
 
@@ -109,6 +110,25 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SecondsBeforeTimeout. 
+        /// <para>
+        /// The number of seconds before scaling times out. What happens when an attempted scaling
+        /// action times out is determined by the <code>TimeoutAction</code> setting.
+        /// </para>
+        /// </summary>
+        public int SecondsBeforeTimeout
+        {
+            get { return this._secondsBeforeTimeout.GetValueOrDefault(); }
+            set { this._secondsBeforeTimeout = value; }
+        }
+
+        // Check to see if SecondsBeforeTimeout property is set
+        internal bool IsSetSecondsBeforeTimeout()
+        {
+            return this._secondsBeforeTimeout.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SecondsUntilAutoPause. 
         /// <para>
         /// The remaining amount of time, in seconds, before the Aurora DB cluster in <code>serverless</code>
@@ -130,8 +150,19 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TimeoutAction. 
         /// <para>
-        /// The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either
-        /// <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.
+        /// The action that occurs when Aurora times out while attempting to change the capacity
+        /// of an Aurora Serverless cluster. The value is either <code>ForceApplyCapacityChange</code>
+        /// or <code>RollbackCapacityChange</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified
+        /// value as soon as possible.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point
+        /// isn't found in the timeout period.
         /// </para>
         /// </summary>
         public string TimeoutAction

@@ -42,6 +42,7 @@ namespace Amazon.RDS.Model
         private bool? _autoPause;
         private int? _maxCapacity;
         private int? _minCapacity;
+        private int? _secondsBeforeTimeout;
         private int? _secondsUntilAutoPause;
         private string _timeoutAction;
 
@@ -138,6 +139,29 @@ namespace Amazon.RDS.Model
         internal bool IsSetMinCapacity()
         {
             return this._minCapacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecondsBeforeTimeout. 
+        /// <para>
+        /// The amount of time, in seconds, that Aurora Serverless tries to find a scaling point
+        /// to perform seamless scaling before enforcing the timeout action. The default is 300.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify a value between 60 and 600 seconds.
+        /// </para>
+        /// </summary>
+        public int SecondsBeforeTimeout
+        {
+            get { return this._secondsBeforeTimeout.GetValueOrDefault(); }
+            set { this._secondsBeforeTimeout = value; }
+        }
+
+        // Check to see if SecondsBeforeTimeout property is set
+        internal bool IsSetSecondsBeforeTimeout()
+        {
+            return this._secondsBeforeTimeout.HasValue; 
         }
 
         /// <summary>

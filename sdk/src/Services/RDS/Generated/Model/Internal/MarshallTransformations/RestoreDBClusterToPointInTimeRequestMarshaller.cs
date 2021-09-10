@@ -141,6 +141,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("ScalingConfiguration" + "." + "MinCapacity", StringUtils.FromInt(publicRequest.ScalingConfiguration.MinCapacity));
                     }
+                    if(publicRequest.ScalingConfiguration.IsSetSecondsBeforeTimeout())
+                    {
+                        request.Parameters.Add("ScalingConfiguration" + "." + "SecondsBeforeTimeout", StringUtils.FromInt(publicRequest.ScalingConfiguration.SecondsBeforeTimeout));
+                    }
                     if(publicRequest.ScalingConfiguration.IsSetSecondsUntilAutoPause())
                     {
                         request.Parameters.Add("ScalingConfiguration" + "." + "SecondsUntilAutoPause", StringUtils.FromInt(publicRequest.ScalingConfiguration.SecondsUntilAutoPause));
