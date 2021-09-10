@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
     public partial class DataSourceParameters
     {
         private AmazonElasticsearchParameters _amazonElasticsearchParameters;
+        private AmazonOpenSearchParameters _amazonOpenSearchParameters;
         private AthenaParameters _athenaParameters;
         private AuroraParameters _auroraParameters;
         private AuroraPostgreSqlParameters _auroraPostgreSqlParameters;
@@ -72,6 +73,21 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetAmazonElasticsearchParameters()
         {
             return this._amazonElasticsearchParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AmazonOpenSearchParameters.
+        /// </summary>
+        public AmazonOpenSearchParameters AmazonOpenSearchParameters
+        {
+            get { return this._amazonOpenSearchParameters; }
+            set { this._amazonOpenSearchParameters = value; }
+        }
+
+        // Check to see if AmazonOpenSearchParameters property is set
+        internal bool IsSetAmazonOpenSearchParameters()
+        {
+            return this._amazonOpenSearchParameters != null;
         }
 
         /// <summary>

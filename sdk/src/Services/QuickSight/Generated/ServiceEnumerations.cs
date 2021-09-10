@@ -681,6 +681,10 @@ namespace Amazon.QuickSight
         /// </summary>
         public static readonly DataSourceType AMAZON_ELASTICSEARCH = new DataSourceType("AMAZON_ELASTICSEARCH");
         /// <summary>
+        /// Constant AMAZON_OPENSEARCH for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType AMAZON_OPENSEARCH = new DataSourceType("AMAZON_OPENSEARCH");
+        /// <summary>
         /// Constant ATHENA for DataSourceType
         /// </summary>
         public static readonly DataSourceType ATHENA = new DataSourceType("ATHENA");

@@ -70,6 +70,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.AmazonElasticsearchParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AmazonOpenSearchParameters", targetDepth))
+                {
+                    var unmarshaller = AmazonOpenSearchParametersUnmarshaller.Instance;
+                    unmarshalledObject.AmazonOpenSearchParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AthenaParameters", targetDepth))
                 {
                     var unmarshaller = AthenaParametersUnmarshaller.Instance;

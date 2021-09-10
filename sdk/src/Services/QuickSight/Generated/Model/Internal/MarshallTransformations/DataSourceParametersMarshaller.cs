@@ -56,6 +56,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAmazonOpenSearchParameters())
+            {
+                context.Writer.WritePropertyName("AmazonOpenSearchParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AmazonOpenSearchParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.AmazonOpenSearchParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAthenaParameters())
             {
                 context.Writer.WritePropertyName("AthenaParameters");

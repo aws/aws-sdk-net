@@ -1913,6 +1913,11 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.AmazonOpenSearchParameters.Domain</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.Analysis.AnalysisId</property>
     <min>1</min>
     <max>2048</max>
