@@ -205,7 +205,8 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The AWS account ID associated with the registry to which this image belongs.
+        /// The Amazon Web Services account ID associated with the registry to which this image
+        /// belongs.
         /// </para>
         /// </summary>
         public string RegistryId

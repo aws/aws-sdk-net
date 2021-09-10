@@ -42,8 +42,8 @@ namespace Amazon.ECR.Model
     ///  
     /// <para>
     /// For more control over the encryption of the contents of your repository, you can use
-    /// server-side encryption with customer master keys (CMKs) stored in AWS Key Management
-    /// Service (AWS KMS) to encrypt your images. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html">Amazon
+    /// server-side encryption with Key Management Service key stored in Key Management Service
+    /// (KMS) to encrypt your images. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html">Amazon
     /// ECR encryption at rest</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
     /// </para>
     /// </summary>
@@ -60,19 +60,19 @@ namespace Amazon.ECR.Model
         ///  
         /// <para>
         /// If you use the <code>KMS</code> encryption type, the contents of the repository will
-        /// be encrypted using server-side encryption with customer master keys (CMKs) stored
-        /// in AWS KMS. When you use AWS KMS to encrypt your data, you can either use the default
-        /// AWS managed CMK for Amazon ECR, or specify your own CMK, which you already created.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-        /// Data Using Server-Side Encryption with CMKs Stored in AWS Key Management Service (SSE-KMS)</a>
-        /// in the <i>Amazon Simple Storage Service Console Developer Guide.</i>.
+        /// be encrypted using server-side encryption with Key Management Service key stored in
+        /// KMS. When you use KMS to encrypt your data, you can either use the default Amazon
+        /// Web Services managed KMS key for Amazon ECR, or specify your own KMS key, which you
+        /// already created. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
+        /// data using server-side encryption with an KMS key stored in Key Management Service
+        /// (SSE-KMS)</a> in the <i>Amazon Simple Storage Service Console Developer Guide.</i>.
         /// </para>
         ///  
         /// <para>
         /// If you use the <code>AES256</code> encryption type, Amazon ECR uses server-side encryption
         /// with Amazon S3-managed encryption keys which encrypts the images in the repository
         /// using an AES-256 encryption algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Protecting
-        /// Data Using Server-Side Encryption with Amazon S3-Managed Encryption Keys (SSE-S3)</a>
+        /// data using server-side encryption with Amazon S3-managed encryption keys (SSE-S3)</a>
         /// in the <i>Amazon Simple Storage Service Console Developer Guide.</i>.
         /// </para>
         /// </summary>
@@ -92,10 +92,10 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property KmsKey. 
         /// <para>
-        /// If you use the <code>KMS</code> encryption type, specify the CMK to use for encryption.
-        /// The alias, key ID, or full ARN of the CMK can be specified. The key must exist in
-        /// the same Region as the repository. If no key is specified, the default AWS managed
-        /// CMK for Amazon ECR will be used.
+        /// If you use the <code>KMS</code> encryption type, specify the KMS key to use for encryption.
+        /// The alias, key ID, or full ARN of the KMS key can be specified. The key must exist
+        /// in the same Region as the repository. If no key is specified, the default Amazon Web
+        /// Services managed KMS key for Amazon ECR will be used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

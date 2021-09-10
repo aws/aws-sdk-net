@@ -31,7 +31,7 @@ namespace Amazon.ECR.Model
     /// <summary>
     /// The operation did not succeed because it would have exceeded a service limit for your
     /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
-    /// ECR Service Quotas</a> in the Amazon Elastic Container Registry User Guide.
+    /// ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

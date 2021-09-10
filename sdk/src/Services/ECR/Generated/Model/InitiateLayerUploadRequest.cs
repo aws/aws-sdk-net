@@ -54,8 +54,8 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The AWS account ID associated with the registry to which you intend to upload layers.
-        /// If you do not specify a registry, the default registry is assumed.
+        /// The Amazon Web Services account ID associated with the registry to which you intend
+        /// to upload layers. If you do not specify a registry, the default registry is assumed.
         /// </para>
         /// </summary>
         public string RegistryId

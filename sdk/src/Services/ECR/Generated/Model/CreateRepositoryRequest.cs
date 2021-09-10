@@ -31,7 +31,7 @@ namespace Amazon.ECR.Model
     /// <summary>
     /// Container for the parameters to the CreateRepository operation.
     /// Creates a repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html">Amazon
-    /// ECR Repositories</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+    /// ECR repositories</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
     /// </summary>
     public partial class CreateRepositoryRequest : AmazonECRRequest
     {

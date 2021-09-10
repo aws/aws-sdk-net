@@ -41,7 +41,8 @@ namespace Amazon.ECR.Model
         /// The setting that determines whether images are scanned after being pushed to a repository.
         /// If set to <code>true</code>, images will be scanned after being pushed. If this parameter
         /// is not specified, it will default to <code>false</code> and images will not be scanned
-        /// unless a scan is manually started with the <a>StartImageScan</a> API.
+        /// unless a scan is manually started with the <a href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartImageScan.html">API_StartImageScan</a>
+        /// API.
         /// </para>
         /// </summary>
         public bool ScanOnPush

@@ -32,7 +32,7 @@ namespace Amazon.ECR.Model
     /// Container for the parameters to the SetRepositoryPolicy operation.
     /// Applies a repository policy to the specified repository to control access permissions.
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policies.html">Amazon
-    /// ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+    /// ECR Repository policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
     /// </summary>
     public partial class SetRepositoryPolicyRequest : AmazonECRRequest
     {
@@ -66,7 +66,7 @@ namespace Amazon.ECR.Model
         /// <para>
         /// The JSON repository policy text to apply to the repository. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon
-        /// ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// ECR repository policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10240)]
@@ -85,8 +85,8 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The AWS account ID associated with the registry that contains the repository. If you
-        /// do not specify a registry, the default registry is assumed.
+        /// The Amazon Web Services account ID associated with the registry that contains the
+        /// repository. If you do not specify a registry, the default registry is assumed.
         /// </para>
         /// </summary>
         public string RegistryId

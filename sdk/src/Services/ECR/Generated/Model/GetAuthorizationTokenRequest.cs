@@ -38,9 +38,9 @@ namespace Amazon.ECR.Model
     /// <para>
     /// The <code>authorizationToken</code> returned is a base64 encoded string that can be
     /// decoded and used in a <code>docker login</code> command to authenticate to a registry.
-    /// The AWS CLI offers an <code>get-login-password</code> command that simplifies the
-    /// login process. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html#registry_auth">Registry
-    /// Authentication</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+    /// The CLI offers an <code>get-login-password</code> command that simplifies the login
+    /// process. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html#registry_auth">Registry
+    /// authentication</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
     /// </para>
     /// </summary>
     public partial class GetAuthorizationTokenRequest : AmazonECRRequest
@@ -50,9 +50,9 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RegistryIds. 
         /// <para>
-        /// A list of AWS account IDs that are associated with the registries for which to get
-        /// AuthorizationData objects. If you do not specify a registry, the default registry
-        /// is assumed.
+        /// A list of Amazon Web Services account IDs that are associated with the registries
+        /// for which to get AuthorizationData objects. If you do not specify a registry, the
+        /// default registry is assumed.
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated. The returned authorization token can be used to access any Amazon ECR registry that the IAM principal has access to, specifying a registry ID doesn't change the permissions scope of the authorization token.")]

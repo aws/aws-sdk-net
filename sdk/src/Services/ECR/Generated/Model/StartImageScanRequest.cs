@@ -30,10 +30,10 @@ namespace Amazon.ECR.Model
 {
     /// <summary>
     /// Container for the parameters to the StartImageScan operation.
-    /// Starts an image vulnerability scan. An image scan can only be started once per day
-    /// on an individual image. This limit includes if an image was scanned on initial push.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html">Image
-    /// Scanning</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+    /// Starts an image vulnerability scan. An image scan can only be started once per 24
+    /// hours on an individual image. This limit includes if an image was scanned on initial
+    /// push. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html">Image
+    /// scanning</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
     /// </summary>
     public partial class StartImageScanRequest : AmazonECRRequest
     {
@@ -60,9 +60,9 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The AWS account ID associated with the registry that contains the repository in which
-        /// to start an image scan request. If you do not specify a registry, the default registry
-        /// is assumed.
+        /// The Amazon Web Services account ID associated with the registry that contains the
+        /// repository in which to start an image scan request. If you do not specify a registry,
+        /// the default registry is assumed.
         /// </para>
         /// </summary>
         public string RegistryId

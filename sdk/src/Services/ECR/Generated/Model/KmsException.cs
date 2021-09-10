@@ -126,7 +126,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property KmsError. 
         /// <para>
-        /// The error code returned by AWS KMS.
+        /// The error code returned by KMS.
         /// </para>
         /// </summary>
         public string KmsError

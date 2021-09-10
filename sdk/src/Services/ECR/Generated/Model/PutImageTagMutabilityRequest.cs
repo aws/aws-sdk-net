@@ -32,7 +32,7 @@ namespace Amazon.ECR.Model
     /// Container for the parameters to the PutImageTagMutability operation.
     /// Updates the image tag mutability settings for the specified repository. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html">Image
-    /// Tag Mutability</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+    /// tag mutability</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
     /// </summary>
     public partial class PutImageTagMutabilityRequest : AmazonECRRequest
     {
@@ -64,9 +64,9 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The AWS account ID associated with the registry that contains the repository in which
-        /// to update the image tag mutability settings. If you do not specify a registry, the
-        /// default registry is assumed.
+        /// The Amazon Web Services account ID associated with the registry that contains the
+        /// repository in which to update the image tag mutability settings. If you do not specify
+        /// a registry, the default registry is assumed.
         /// </para>
         /// </summary>
         public string RegistryId

@@ -49,8 +49,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Services\SQS\AWSSDK.SQS.Net45.csproj"/>
-    <ProjectReference Include="..\..\Services\SimpleNotificationService\AWSSDK.SimpleNotificationService.Net45.csproj"/>
     <ProjectReference Include="..\..\Core\AWSSDK.Core.Net45.csproj"/>
   </ItemGroup>
 
