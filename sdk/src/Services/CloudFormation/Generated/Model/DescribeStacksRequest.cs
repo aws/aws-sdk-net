@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  <note> 
     /// <para>
-    /// If the stack does not exist, an <code>AmazonCloudFormationException</code> is returned.
+    /// If the stack does not exist, an <code>ValidationError</code> is returned.
     /// </para>
     ///  </note>
     /// </summary>

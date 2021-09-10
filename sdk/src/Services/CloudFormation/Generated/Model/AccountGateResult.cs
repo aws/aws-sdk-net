@@ -35,13 +35,13 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  
     /// <para>
-    /// For each account and Region, CloudFormation lets you specify a Lamdba function that
+    /// For each account and Region, CloudFormation lets you specify a Lambda function that
     /// encapsulates any requirements that must be met before CloudFormation can proceed with
     /// a stack set operation in that account and Region. CloudFormation invokes the function
     /// each time a stack set operation is requested for that account and Region; if the function
     /// returns <code>FAILED</code>, CloudFormation cancels the operation in that account
     /// and Region, and sets the stack set operation result status for that account and Region
-    /// to <code>FAILED</code>. 
+    /// to <code>FAILED</code>.
     /// </para>
     ///  
     /// <para>

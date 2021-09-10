@@ -1258,7 +1258,7 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         /// For a given stack, there will be one <code>StackResourceDrift</code> for each stack
-        /// resource that has been checked for drift. Resources that have not yet been checked
+        /// resource that has been checked for drift. Resources that haven't yet been checked
         /// for drift are not included. Resources that do not currently support drift detection
         /// are not checked, and so not included. For a list of resources that support drift detection,
         /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
@@ -1381,7 +1381,7 @@ namespace Amazon.CloudFormation
         /// 
         ///  <note> 
         /// <para>
-        /// If the stack does not exist, an <code>AmazonCloudFormationException</code> is returned.
+        /// If the stack does not exist, an <code>ValidationError</code> is returned.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1396,7 +1396,7 @@ namespace Amazon.CloudFormation
         /// 
         ///  <note> 
         /// <para>
-        /// If the stack does not exist, an <code>AmazonCloudFormationException</code> is returned.
+        /// If the stack does not exist, an <code>ValidationError</code> is returned.
         /// </para>
         ///  </note>
         /// </summary>
