@@ -472,15 +472,6 @@ namespace Amazon.SageMaker
         /// action or activity. For example, a model deployment or an HPO job. Generally, an action
         /// involves at least one input or output artifact. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
         /// SageMaker ML Lineage Tracking</a>.
-        /// 
-        ///  <note> 
-        /// <para>
-        ///  <code>CreateAction</code> can only be invoked from within an SageMaker managed environment.
-        /// This includes SageMaker training jobs, processing jobs, transform jobs, and SageMaker
-        /// notebooks. A call to <code>CreateAction</code> from outside one of these environments
-        /// results in an error.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAction service method.</param>
         /// 
@@ -720,15 +711,6 @@ namespace Amazon.SageMaker
         /// a URI addressable object or data. Some examples are the S3 URI of a dataset and the
         /// ECR registry path of an image. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
         /// SageMaker ML Lineage Tracking</a>.
-        /// 
-        ///  <note> 
-        /// <para>
-        ///  <code>CreateArtifact</code> can only be invoked from within an SageMaker managed
-        /// environment. This includes SageMaker training jobs, processing jobs, transform jobs,
-        /// and SageMaker notebooks. A call to <code>CreateArtifact</code> from outside one of
-        /// these environments results in an error.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateArtifact service method.</param>
         /// 
@@ -1029,15 +1011,6 @@ namespace Amazon.SageMaker
         /// logical grouping of other tracking or experiment entities. Some examples are an endpoint
         /// and a model package. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
         /// SageMaker ML Lineage Tracking</a>.
-        /// 
-        ///  <note> 
-        /// <para>
-        ///  <code>CreateContext</code> can only be invoked from within an SageMaker managed environment.
-        /// This includes SageMaker training jobs, processing jobs, transform jobs, and SageMaker
-        /// notebooks. A call to <code>CreateContext</code> from outside one of these environments
-        /// results in an error.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContext service method.</param>
         /// 
@@ -1590,13 +1563,6 @@ namespace Amazon.SageMaker
         /// that you want to host two models, A and B, and you assign traffic weight 2 for model
         /// A and 1 for model B. Amazon SageMaker distributes two-thirds of the traffic to Model
         /// A, and one-third to model B. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For an example that calls this method when deploying a model to Amazon SageMaker hosting
-        /// services, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
-        /// the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for Python
-        /// (Boto 3)).</a> 
         /// </para>
         ///  <note> 
         /// <para>
@@ -3310,6 +3276,63 @@ namespace Amazon.SageMaker
         public virtual CreateProjectResponse EndCreateProject(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateProjectResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateStudioLifecycleConfig
+
+        /// <summary>
+        /// Creates a new Studio Lifecycle Configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStudioLifecycleConfig service method.</param>
+        /// 
+        /// <returns>The response from the CreateStudioLifecycleConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateStudioLifecycleConfig">REST API Reference for CreateStudioLifecycleConfig Operation</seealso>
+        public virtual CreateStudioLifecycleConfigResponse CreateStudioLifecycleConfig(CreateStudioLifecycleConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStudioLifecycleConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStudioLifecycleConfigResponseUnmarshaller.Instance;
+
+            return Invoke<CreateStudioLifecycleConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateStudioLifecycleConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateStudioLifecycleConfig operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStudioLifecycleConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateStudioLifecycleConfig">REST API Reference for CreateStudioLifecycleConfig Operation</seealso>
+        public virtual IAsyncResult BeginCreateStudioLifecycleConfig(CreateStudioLifecycleConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStudioLifecycleConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStudioLifecycleConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateStudioLifecycleConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStudioLifecycleConfig.</param>
+        /// 
+        /// <returns>Returns a  CreateStudioLifecycleConfigResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateStudioLifecycleConfig">REST API Reference for CreateStudioLifecycleConfig Operation</seealso>
+        public virtual CreateStudioLifecycleConfigResponse EndCreateStudioLifecycleConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateStudioLifecycleConfigResponse>(asyncResult);
         }
 
         #endregion
@@ -5751,6 +5774,68 @@ namespace Amazon.SageMaker
         public virtual DeleteProjectResponse EndDeleteProject(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteProjectResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteStudioLifecycleConfig
+
+        /// <summary>
+        /// Deletes the Studio Lifecycle Configuration. In order to delete the Lifecycle Configuration,
+        /// there must be no running apps using the Lifecycle Configuration. You must also remove
+        /// the Lifecycle Configuration from UserSettings in all Domains and UserProfiles.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStudioLifecycleConfig service method.</param>
+        /// 
+        /// <returns>The response from the DeleteStudioLifecycleConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteStudioLifecycleConfig">REST API Reference for DeleteStudioLifecycleConfig Operation</seealso>
+        public virtual DeleteStudioLifecycleConfigResponse DeleteStudioLifecycleConfig(DeleteStudioLifecycleConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStudioLifecycleConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStudioLifecycleConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteStudioLifecycleConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteStudioLifecycleConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStudioLifecycleConfig operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteStudioLifecycleConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteStudioLifecycleConfig">REST API Reference for DeleteStudioLifecycleConfig Operation</seealso>
+        public virtual IAsyncResult BeginDeleteStudioLifecycleConfig(DeleteStudioLifecycleConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStudioLifecycleConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStudioLifecycleConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteStudioLifecycleConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStudioLifecycleConfig.</param>
+        /// 
+        /// <returns>Returns a  DeleteStudioLifecycleConfigResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteStudioLifecycleConfig">REST API Reference for DeleteStudioLifecycleConfig Operation</seealso>
+        public virtual DeleteStudioLifecycleConfigResponse EndDeleteStudioLifecycleConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteStudioLifecycleConfigResponse>(asyncResult);
         }
 
         #endregion
@@ -8341,6 +8426,63 @@ namespace Amazon.SageMaker
         public virtual DescribeProjectResponse EndDescribeProject(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeProjectResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeStudioLifecycleConfig
+
+        /// <summary>
+        /// Describes the Studio Lifecycle Configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStudioLifecycleConfig service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStudioLifecycleConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeStudioLifecycleConfig">REST API Reference for DescribeStudioLifecycleConfig Operation</seealso>
+        public virtual DescribeStudioLifecycleConfigResponse DescribeStudioLifecycleConfig(DescribeStudioLifecycleConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStudioLifecycleConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStudioLifecycleConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStudioLifecycleConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStudioLifecycleConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStudioLifecycleConfig operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStudioLifecycleConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeStudioLifecycleConfig">REST API Reference for DescribeStudioLifecycleConfig Operation</seealso>
+        public virtual IAsyncResult BeginDescribeStudioLifecycleConfig(DescribeStudioLifecycleConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStudioLifecycleConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStudioLifecycleConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeStudioLifecycleConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStudioLifecycleConfig.</param>
+        /// 
+        /// <returns>Returns a  DescribeStudioLifecycleConfigResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeStudioLifecycleConfig">REST API Reference for DescribeStudioLifecycleConfig Operation</seealso>
+        public virtual DescribeStudioLifecycleConfigResponse EndDescribeStudioLifecycleConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeStudioLifecycleConfigResponse>(asyncResult);
         }
 
         #endregion
@@ -11576,6 +11718,63 @@ namespace Amazon.SageMaker
         public virtual ListProjectsResponse EndListProjects(IAsyncResult asyncResult)
         {
             return EndInvoke<ListProjectsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListStudioLifecycleConfigs
+
+        /// <summary>
+        /// Lists the Studio Lifecycle Configurations in your Amazon Web Services Account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStudioLifecycleConfigs service method.</param>
+        /// 
+        /// <returns>The response from the ListStudioLifecycleConfigs service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListStudioLifecycleConfigs">REST API Reference for ListStudioLifecycleConfigs Operation</seealso>
+        public virtual ListStudioLifecycleConfigsResponse ListStudioLifecycleConfigs(ListStudioLifecycleConfigsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStudioLifecycleConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStudioLifecycleConfigsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStudioLifecycleConfigsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStudioLifecycleConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStudioLifecycleConfigs operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStudioLifecycleConfigs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListStudioLifecycleConfigs">REST API Reference for ListStudioLifecycleConfigs Operation</seealso>
+        public virtual IAsyncResult BeginListStudioLifecycleConfigs(ListStudioLifecycleConfigsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStudioLifecycleConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStudioLifecycleConfigsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListStudioLifecycleConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStudioLifecycleConfigs.</param>
+        /// 
+        /// <returns>Returns a  ListStudioLifecycleConfigsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListStudioLifecycleConfigs">REST API Reference for ListStudioLifecycleConfigs Operation</seealso>
+        public virtual ListStudioLifecycleConfigsResponse EndListStudioLifecycleConfigs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListStudioLifecycleConfigsResponse>(asyncResult);
         }
 
         #endregion

@@ -380,6 +380,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListStudioLifecycleConfigs operation
+        ///</summary>
+        public IListStudioLifecycleConfigsPaginator ListStudioLifecycleConfigs(ListStudioLifecycleConfigsRequest request) 
+        {
+            return new ListStudioLifecycleConfigsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSubscribedWorkteams operation
         ///</summary>
         public IListSubscribedWorkteamsPaginator ListSubscribedWorkteams(ListSubscribedWorkteamsRequest request) 

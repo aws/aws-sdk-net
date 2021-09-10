@@ -34,15 +34,6 @@ namespace Amazon.SageMaker.Model
     /// logical grouping of other tracking or experiment entities. Some examples are an endpoint
     /// and a model package. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
     /// SageMaker ML Lineage Tracking</a>.
-    /// 
-    ///  <note> 
-    /// <para>
-    ///  <code>CreateContext</code> can only be invoked from within an SageMaker managed environment.
-    /// This includes SageMaker training jobs, processing jobs, transform jobs, and SageMaker
-    /// notebooks. A call to <code>CreateContext</code> from outside one of these environments
-    /// results in an error.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class CreateContextRequest : AmazonSageMakerRequest
     {

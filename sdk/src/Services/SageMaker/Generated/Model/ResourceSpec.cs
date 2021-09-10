@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class ResourceSpec
     {
         private AppInstanceType _instanceType;
+        private string _lifecycleConfigArn;
         private string _sageMakerImageArn;
         private string _sageMakerImageVersionArn;
 
@@ -54,6 +55,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LifecycleConfigArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the Resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string LifecycleConfigArn
+        {
+            get { return this._lifecycleConfigArn; }
+            set { this._lifecycleConfigArn = value; }
+        }
+
+        // Check to see if LifecycleConfigArn property is set
+        internal bool IsSetLifecycleConfigArn()
+        {
+            return this._lifecycleConfigArn != null;
         }
 
         /// <summary>

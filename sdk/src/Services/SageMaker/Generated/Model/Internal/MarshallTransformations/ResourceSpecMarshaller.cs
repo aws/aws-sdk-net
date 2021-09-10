@@ -51,6 +51,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InstanceType);
             }
 
+            if(requestObject.IsSetLifecycleConfigArn())
+            {
+                context.Writer.WritePropertyName("LifecycleConfigArn");
+                context.Writer.Write(requestObject.LifecycleConfigArn);
+            }
+
             if(requestObject.IsSetSageMakerImageArn())
             {
                 context.Writer.WritePropertyName("SageMakerImageArn");

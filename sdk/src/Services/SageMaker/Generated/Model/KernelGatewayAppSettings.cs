@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     {
         private List<CustomImage> _customImages = new List<CustomImage>();
         private ResourceSpec _defaultResourceSpec;
+        private List<string> _lifecycleConfigArns = new List<string>();
 
         /// <summary>
         /// Gets and sets the property CustomImages. 
@@ -72,6 +73,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDefaultResourceSpec()
         {
             return this._defaultResourceSpec != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LifecycleConfigArns. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the KernelGatewayApp.
+        /// </para>
+        /// </summary>
+        public List<string> LifecycleConfigArns
+        {
+            get { return this._lifecycleConfigArns; }
+            set { this._lifecycleConfigArns = value; }
+        }
+
+        // Check to see if LifecycleConfigArns property is set
+        internal bool IsSetLifecycleConfigArns()
+        {
+            return this._lifecycleConfigArns != null && this._lifecycleConfigArns.Count > 0; 
         }
 
     }

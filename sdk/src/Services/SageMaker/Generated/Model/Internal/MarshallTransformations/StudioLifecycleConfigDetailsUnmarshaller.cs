@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ResourceSpec Object
+    /// Response Unmarshaller for StudioLifecycleConfigDetails Object
     /// </summary>  
-    public class ResourceSpecUnmarshaller : IUnmarshaller<ResourceSpec, XmlUnmarshallerContext>, IUnmarshaller<ResourceSpec, JsonUnmarshallerContext>
+    public class StudioLifecycleConfigDetailsUnmarshaller : IUnmarshaller<StudioLifecycleConfigDetails, XmlUnmarshallerContext>, IUnmarshaller<StudioLifecycleConfigDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ResourceSpec IUnmarshaller<ResourceSpec, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        StudioLifecycleConfigDetails IUnmarshaller<StudioLifecycleConfigDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,45 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ResourceSpec Unmarshall(JsonUnmarshallerContext context)
+        public StudioLifecycleConfigDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ResourceSpec unmarshalledObject = new ResourceSpec();
+            StudioLifecycleConfigDetails unmarshalledObject = new StudioLifecycleConfigDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("InstanceType", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LifecycleConfigArn", targetDepth))
+                if (context.TestExpression("LastModifiedTime", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LifecycleConfigArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SageMakerImageArn", targetDepth))
+                if (context.TestExpression("StudioLifecycleConfigAppType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SageMakerImageArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StudioLifecycleConfigAppType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SageMakerImageVersionArn", targetDepth))
+                if (context.TestExpression("StudioLifecycleConfigArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SageMakerImageVersionArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StudioLifecycleConfigArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StudioLifecycleConfigName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StudioLifecycleConfigName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +100,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static ResourceSpecUnmarshaller _instance = new ResourceSpecUnmarshaller();        
+        private static StudioLifecycleConfigDetailsUnmarshaller _instance = new StudioLifecycleConfigDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResourceSpecUnmarshaller Instance
+        public static StudioLifecycleConfigDetailsUnmarshaller Instance
         {
             get
             {

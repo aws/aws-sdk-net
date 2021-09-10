@@ -56,6 +56,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetLifecycleConfigArns())
+            {
+                context.Writer.WritePropertyName("LifecycleConfigArns");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectLifecycleConfigArnsListValue in requestObject.LifecycleConfigArns)
+                {
+                        context.Writer.Write(requestObjectLifecycleConfigArnsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

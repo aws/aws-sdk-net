@@ -241,6 +241,11 @@ namespace Amazon.SageMaker.Model
         IListProjectsPaginator ListProjects(ListProjectsRequest request);
 
         /// <summary>
+        /// Paginator for ListStudioLifecycleConfigs operation
+        ///</summary>
+        IListStudioLifecycleConfigsPaginator ListStudioLifecycleConfigs(ListStudioLifecycleConfigsRequest request);
+
+        /// <summary>
         /// Paginator for ListSubscribedWorkteams operation
         ///</summary>
         IListSubscribedWorkteamsPaginator ListSubscribedWorkteams(ListSubscribedWorkteamsRequest request);
