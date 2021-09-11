@@ -183,6 +183,18 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                                     continue;
                                 }
 
+                                // or a Dictionary of recursive properties
+                                var isDictionary = typeof(IDictionary).IsAssignableFrom(property.PropertyType) &&
+                                    property.PropertyType.IsGenericType;
+                                var isKeyRecursive = isDictionary && property.PropertyType.GenericTypeArguments.Length > 0 &&
+                                    tcr.Contains(property.PropertyType.GenericTypeArguments[0]);
+                                var isValueRecursive = isDictionary && property.PropertyType.GenericTypeArguments.Length > 1 &&
+                                    tcr.Contains(property.PropertyType.GenericTypeArguments[1]);
+                                if (isKeyRecursive || isValueRecursive)
+                                {
+                                    continue;
+                                }
+
                                 var childValue = property.GetValue(item);
                                 var childMarshalledData = GetMarshalledProperty(marshalledListData, childMember.MarshallName);
                                 Visit(childValue, childMember, childMarshalledData, tcr);
@@ -239,6 +251,18 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                                 if (typeof(ICollection).IsAssignableFrom(property.PropertyType) &&
                                     property.PropertyType.IsGenericType &&
                                     tcr.Contains(property.PropertyType.GenericTypeArguments[0]))
+                                {
+                                    continue;
+                                }
+
+                                // or a Dictionary of recursive properties
+                                var isDictionary = typeof(IDictionary).IsAssignableFrom(property.PropertyType) && 
+                                    property.PropertyType.IsGenericType;
+                                var isKeyRecursive = isDictionary && property.PropertyType.GenericTypeArguments.Length > 0 &&
+                                    tcr.Contains(property.PropertyType.GenericTypeArguments[0]);
+                                var isValueRecursive = isDictionary && property.PropertyType.GenericTypeArguments.Length > 1 &&
+                                    tcr.Contains(property.PropertyType.GenericTypeArguments[1]);
+                                if (isKeyRecursive || isValueRecursive)
                                 {
                                     continue;
                                 }
