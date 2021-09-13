@@ -32,13 +32,11 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the ModifyImageAttribute operation.
     /// Modifies the specified attribute of the specified AMI. You can specify only one attribute
     /// at a time. You can use the <code>Attribute</code> parameter to specify the attribute
-    /// or one of the following parameters: <code>Description</code>, <code>LaunchPermission</code>,
-    /// or <code>ProductCode</code>.
+    /// or one of the following parameters: <code>Description</code> or <code>LaunchPermission</code>.
     /// 
     ///  
     /// <para>
-    /// AWS Marketplace product codes cannot be modified. Images with an AWS Marketplace product
-    /// code cannot be made public.
+    /// Images with an Amazon Web Services Marketplace product code cannot be made public.
     /// </para>
     ///  
     /// <para>
@@ -67,7 +65,7 @@ namespace Amazon.EC2.Model
         /// Instantiates ModifyImageAttributeRequest with the parameterized properties
         /// </summary>
         /// <param name="imageId">The ID of the AMI.</param>
-        /// <param name="attribute">The name of the attribute to modify. The valid values are <code>description</code>, <code>launchPermission</code>, and <code>productCodes</code>.</param>
+        /// <param name="attribute">The name of the attribute to modify. The valid values are <code>description</code> and <code>launchPermission</code>.</param>
         public ModifyImageAttributeRequest(string imageId, string attribute)
         {
             _imageId = imageId;
@@ -77,8 +75,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Attribute. 
         /// <para>
-        /// The name of the attribute to modify. The valid values are <code>description</code>,
-        /// <code>launchPermission</code>, and <code>productCodes</code>.
+        /// The name of the attribute to modify. The valid values are <code>description</code>
+        /// and <code>launchPermission</code>.
         /// </para>
         /// </summary>
         public string Attribute
@@ -170,7 +168,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ProductCodes. 
         /// <para>
-        /// The DevPay product codes. After you add a product code to an AMI, it can't be removed.
+        /// Not supported.
         /// </para>
         /// </summary>
         public List<string> ProductCodes
@@ -207,7 +205,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserIds. 
         /// <para>
-        /// The AWS account IDs. This parameter can be used only when the <code>Attribute</code>
+        /// The Amazon Web Services account IDs. This parameter can be used only when the <code>Attribute</code>
         /// parameter is <code>launchPermission</code>.
         /// </para>
         /// </summary>
@@ -227,7 +225,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// The value of the attribute being modified. This parameter can be used only when the
-        /// <code>Attribute</code> parameter is <code>description</code> or <code>productCodes</code>.
+        /// <code>Attribute</code> parameter is <code>description</code>.
         /// </para>
         /// </summary>
         public string Value

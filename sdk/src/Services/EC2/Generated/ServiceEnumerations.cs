@@ -578,6 +578,10 @@ namespace Amazon.EC2
         /// Constant X86_64 for ArchitectureValues
         /// </summary>
         public static readonly ArchitectureValues X86_64 = new ArchitectureValues("x86_64");
+        /// <summary>
+        /// Constant X86_64_mac for ArchitectureValues
+        /// </summary>
+        public static readonly ArchitectureValues X86_64_mac = new ArchitectureValues("x86_64_mac");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -10327,6 +10331,14 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant CapacityReservation for ResourceType
+        /// </summary>
+        public static readonly ResourceType CapacityReservation = new ResourceType("capacity-reservation");
+        /// <summary>
+        /// Constant CarrierGateway for ResourceType
+        /// </summary>
+        public static readonly ResourceType CarrierGateway = new ResourceType("carrier-gateway");
+        /// <summary>
         /// Constant ClientVpnEndpoint for ResourceType
         /// </summary>
         public static readonly ResourceType ClientVpnEndpoint = new ResourceType("client-vpn-endpoint");
@@ -10399,6 +10411,14 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType InternetGateway = new ResourceType("internet-gateway");
         /// <summary>
+        /// Constant Ipv4poolEc2 for ResourceType
+        /// </summary>
+        public static readonly ResourceType Ipv4poolEc2 = new ResourceType("ipv4pool-ec2");
+        /// <summary>
+        /// Constant Ipv6poolEc2 for ResourceType
+        /// </summary>
+        public static readonly ResourceType Ipv6poolEc2 = new ResourceType("ipv6pool-ec2");
+        /// <summary>
         /// Constant KeyPair for ResourceType
         /// </summary>
         public static readonly ResourceType KeyPair = new ResourceType("key-pair");
@@ -10407,9 +10427,29 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType LaunchTemplate = new ResourceType("launch-template");
         /// <summary>
+        /// Constant LocalGateway for ResourceType
+        /// </summary>
+        public static readonly ResourceType LocalGateway = new ResourceType("local-gateway");
+        /// <summary>
+        /// Constant LocalGatewayRouteTable for ResourceType
+        /// </summary>
+        public static readonly ResourceType LocalGatewayRouteTable = new ResourceType("local-gateway-route-table");
+        /// <summary>
+        /// Constant LocalGatewayRouteTableVirtualInterfaceGroupAssociation for ResourceType
+        /// </summary>
+        public static readonly ResourceType LocalGatewayRouteTableVirtualInterfaceGroupAssociation = new ResourceType("local-gateway-route-table-virtual-interface-group-association");
+        /// <summary>
         /// Constant LocalGatewayRouteTableVpcAssociation for ResourceType
         /// </summary>
         public static readonly ResourceType LocalGatewayRouteTableVpcAssociation = new ResourceType("local-gateway-route-table-vpc-association");
+        /// <summary>
+        /// Constant LocalGatewayVirtualInterface for ResourceType
+        /// </summary>
+        public static readonly ResourceType LocalGatewayVirtualInterface = new ResourceType("local-gateway-virtual-interface");
+        /// <summary>
+        /// Constant LocalGatewayVirtualInterfaceGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType LocalGatewayVirtualInterfaceGroup = new ResourceType("local-gateway-virtual-interface-group");
         /// <summary>
         /// Constant Natgateway for ResourceType
         /// </summary>
@@ -10434,6 +10474,14 @@ namespace Amazon.EC2
         /// Constant PlacementGroup for ResourceType
         /// </summary>
         public static readonly ResourceType PlacementGroup = new ResourceType("placement-group");
+        /// <summary>
+        /// Constant PrefixList for ResourceType
+        /// </summary>
+        public static readonly ResourceType PrefixList = new ResourceType("prefix-list");
+        /// <summary>
+        /// Constant ReplaceRootVolumeTask for ResourceType
+        /// </summary>
+        public static readonly ResourceType ReplaceRootVolumeTask = new ResourceType("replace-root-volume-task");
         /// <summary>
         /// Constant ReservedInstances for ResourceType
         /// </summary>
@@ -10506,6 +10554,14 @@ namespace Amazon.EC2
         /// Constant Vpc for ResourceType
         /// </summary>
         public static readonly ResourceType Vpc = new ResourceType("vpc");
+        /// <summary>
+        /// Constant VpcEndpoint for ResourceType
+        /// </summary>
+        public static readonly ResourceType VpcEndpoint = new ResourceType("vpc-endpoint");
+        /// <summary>
+        /// Constant VpcEndpointService for ResourceType
+        /// </summary>
+        public static readonly ResourceType VpcEndpointService = new ResourceType("vpc-endpoint-service");
         /// <summary>
         /// Constant VpcFlowLog for ResourceType
         /// </summary>

@@ -3129,8 +3129,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the copy of an AMI. You can copy an AMI from one Region to another, or from
-        /// a Region to an AWS Outpost. You can't copy an AMI from an Outpost to a Region, from
-        /// one Outpost to another, or within the same Outpost. To copy an AMI to another partition,
+        /// a Region to an Outpost. You can't copy an AMI from an Outpost to a Region, from one
+        /// Outpost to another, or within the same Outpost. To copy an AMI to another partition,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html">CreateStoreImageTask</a>.
         /// 
         ///  
@@ -4150,9 +4150,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// If you customized your instance with instance store volumes or EBS volumes in addition
-        /// to the root device volume, the new AMI contains block device mapping information for
-        /// those volumes. When you launch an instance from this new AMI, the instance automatically
+        /// If you customized your instance with instance store volumes or Amazon EBS volumes
+        /// in addition to the root device volume, the new AMI contains block device mapping information
+        /// for those volumes. When you launch an instance from this new AMI, the instance automatically
         /// launches with those additional volumes.
         /// </para>
         ///  
@@ -4755,12 +4755,6 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates a managed prefix list. You can specify one or more entries for the prefix
         /// list. Each entry consists of a CIDR block and an optional description.
-        /// 
-        ///  
-        /// <para>
-        /// You must specify the maximum number of entries for the prefix list. The maximum number
-        /// of entries cannot be changed later.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateManagedPrefixList service method.</param>
         /// 
@@ -5424,20 +5418,21 @@ namespace Amazon.EC2
         #region  CreateRestoreImageTask
 
         /// <summary>
-        /// Starts a task that restores an AMI from an S3 object that was previously created by
-        /// using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html">CreateStoreImageTask</a>.
+        /// Starts a task that restores an AMI from an Amazon S3 object that was previously created
+        /// by using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html">CreateStoreImageTask</a>.
         /// 
         ///  
         /// <para>
         /// To use this API, you must have the required permissions. For more information, see
         /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-        /// for storing and restoring AMIs using S3</a> in the <i>Amazon Elastic Compute Cloud
-        /// User Guide</i>.
+        /// for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store
-        /// and restore an AMI using S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// and restore an AMI using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRestoreImageTask service method.</param>
@@ -5953,19 +5948,20 @@ namespace Amazon.EC2
         #region  CreateStoreImageTask
 
         /// <summary>
-        /// Stores an AMI as a single object in an S3 bucket.
+        /// Stores an AMI as a single object in an Amazon S3 bucket.
         /// 
         ///  
         /// <para>
         /// To use this API, you must have the required permissions. For more information, see
         /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-        /// for storing and restoring AMIs using S3</a> in the <i>Amazon Elastic Compute Cloud
-        /// User Guide</i>.
+        /// for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store
-        /// and restore an AMI using S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// and restore an AMI using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStoreImageTask service method.</param>
@@ -13644,7 +13640,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// The images available to you include public images, private images that you own, and
-        /// private images owned by other AWS accounts for which you have explicit launch permissions.
+        /// private images owned by other Amazon Web Services accounts for which you have explicit
+        /// launch permissions.
         /// </para>
         ///  
         /// <para>
@@ -13669,7 +13666,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// The images available to you include public images, private images that you own, and
-        /// private images owned by other AWS accounts for which you have explicit launch permissions.
+        /// private images owned by other Amazon Web Services accounts for which you have explicit
+        /// launch permissions.
         /// </para>
         ///  
         /// <para>
@@ -17582,13 +17580,14 @@ namespace Amazon.EC2
         /// <para>
         /// To use this API, you must have the required permissions. For more information, see
         /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-        /// for storing and restoring AMIs using S3</a> in the <i>Amazon Elastic Compute Cloud
-        /// User Guide</i>.
+        /// for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store
-        /// and restore an AMI using S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// and restore an AMI using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStoreImageTasks service method.</param>
@@ -24419,13 +24418,11 @@ namespace Amazon.EC2
         /// <summary>
         /// Modifies the specified attribute of the specified AMI. You can specify only one attribute
         /// at a time. You can use the <code>Attribute</code> parameter to specify the attribute
-        /// or one of the following parameters: <code>Description</code>, <code>LaunchPermission</code>,
-        /// or <code>ProductCode</code>.
+        /// or one of the following parameters: <code>Description</code> or <code>LaunchPermission</code>.
         /// 
         ///  
         /// <para>
-        /// AWS Marketplace product codes cannot be modified. Images with an AWS Marketplace product
-        /// code cannot be made public.
+        /// Images with an Amazon Web Services Marketplace product code cannot be made public.
         /// </para>
         ///  
         /// <para>
@@ -27192,22 +27189,24 @@ namespace Amazon.EC2
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html#creating-launching-ami-from-snapshot">Create
         /// a Linux AMI from a snapshot</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Use
-        /// encryption with EBS-backed AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// encryption with Amazon EBS-backed AMIs</a> in the <i>Amazon Elastic Compute Cloud
+        /// User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        ///  <b>AWS Marketplace product codes</b> 
+        ///  <b>Amazon Web Services Marketplace product codes</b> 
         /// </para>
         ///  
         /// <para>
-        /// If any snapshots have AWS Marketplace product codes, they are copied to the new AMI.
+        /// If any snapshots have Amazon Web Services Marketplace product codes, they are copied
+        /// to the new AMI.
         /// </para>
         ///  
         /// <para>
         /// Windows and some Linux distributions, such as Red Hat Enterprise Linux (RHEL) and
-        /// SUSE Linux Enterprise Server (SLES), use the EC2 billing product code associated with
-        /// an AMI to verify the subscription status for package updates. To create a new AMI
-        /// for operating systems that require a billing product code, instead of registering
+        /// SUSE Linux Enterprise Server (SLES), use the Amazon EC2 billing product code associated
+        /// with an AMI to verify the subscription status for package updates. To create a new
+        /// AMI for operating systems that require a billing product code, instead of registering
         /// the AMI, do the following to preserve the billing product code association:
         /// </para>
         ///  <ol> <li> 
@@ -27229,8 +27228,8 @@ namespace Amazon.EC2
         /// the matching billing product code. If you purchase a Reserved Instance without the
         /// matching billing product code, the Reserved Instance will not be applied to the On-Demand
         /// Instance. For information about how to obtain the platform details and billing information
-        /// of an AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
-        /// billing information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// of an AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding
+        /// AMI billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterImage service method.</param>
@@ -28652,12 +28651,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Resets an attribute of an AMI to its default value.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// The productCodes attribute can't be reset.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetImageAttribute service method.</param>
         /// 
@@ -29680,6 +29673,14 @@ namespace Amazon.EC2
         /// <para>
         /// Performing this operation on an instance that uses an instance store as its root device
         /// returns an error.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you attempt to start a T3 instance with <code>host</code> tenancy and the <code>unlimted</code>
+        /// CPU credit option, the request fails. The <code>unlimited</code> CPU credit option
+        /// is not supported on Dedicated Hosts. Before you start the instance, either change
+        /// its CPU credit option to <code>standard</code>, or change its tenancy to <code>default</code>
+        /// or <code>dedicated</code>.
         /// </para>
         ///  
         /// <para>

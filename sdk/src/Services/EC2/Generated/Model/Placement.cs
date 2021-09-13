@@ -229,6 +229,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// This parameter is not supported by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// T3 instances that use the <code>unlimited</code> CPU credit option do not support
+        /// <code>host</code> tenancy.
+        /// </para>
         /// </summary>
         public Tenancy Tenancy
         {

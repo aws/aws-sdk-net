@@ -148,11 +148,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceCount. 
         /// <para>
-        /// The number of instances for which to reserve capacity.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid range: 1 - 1000
+        /// The number of instances for which to reserve capacity. The number of instances can't
+        /// be increased or decreased by more than <code>1000</code> in a single request.
         /// </para>
         /// </summary>
         public int InstanceCount

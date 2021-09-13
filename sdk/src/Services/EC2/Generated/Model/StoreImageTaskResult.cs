@@ -62,7 +62,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// The name of the S3 bucket that contains the stored AMI object.
+        /// The name of the Amazon S3 bucket that contains the stored AMI object.
         /// </para>
         /// </summary>
         public string Bucket

@@ -30,20 +30,21 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRestoreImageTask operation.
-    /// Starts a task that restores an AMI from an S3 object that was previously created by
-    /// using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html">CreateStoreImageTask</a>.
+    /// Starts a task that restores an AMI from an Amazon S3 object that was previously created
+    /// by using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html">CreateStoreImageTask</a>.
     /// 
     ///  
     /// <para>
     /// To use this API, you must have the required permissions. For more information, see
     /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-    /// for storing and restoring AMIs using S3</a> in the <i>Amazon Elastic Compute Cloud
-    /// User Guide</i>.
+    /// for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic Compute
+    /// Cloud User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store
-    /// and restore an AMI using S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// and restore an AMI using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User
+    /// Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateRestoreImageTaskRequest : AmazonEC2Request
@@ -56,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// The name of the S3 bucket that contains the stored AMI object.
+        /// The name of the Amazon S3 bucket that contains the stored AMI object.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

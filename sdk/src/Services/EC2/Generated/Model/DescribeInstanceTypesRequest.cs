@@ -182,7 +182,8 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>network-info.encryption-in-transit-supported</code> - Indicates whether the
-        /// instance type automatically encrypts in-transit traffic between instances.
+        /// instance type automatically encrypts in-transit traffic between instances (<code>true</code>
+        /// | <code>false</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

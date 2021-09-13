@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the storage parameters for S3 and S3 buckets for an instance store-backed
-    /// AMI.
+    /// Describes the storage parameters for Amazon S3 and Amazon S3 buckets for an instance
+    /// store-backed AMI.
     /// </summary>
     public partial class S3Storage
     {
@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The access key ID of the owner of the bucket. Before you specify a value for your
         /// access key ID, review and follow the guidance in <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
-        /// Practices for Managing AWS Access Keys</a>.
+        /// Practices for Managing Amazon Web Services Access Keys</a>.
         /// </para>
         /// </summary>
         public string AWSAccessKeyId

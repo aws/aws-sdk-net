@@ -156,7 +156,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the prefix list.
+        /// The current state of the prefix list.
         /// </para>
         /// </summary>
         public PrefixListState State

@@ -122,11 +122,6 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>price_update</code> - The price for a launch configuration was adjusted because
-        /// it was too high. This change is permanent.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>submitted</code> - The EC2 Fleet or Spot Fleet request is being evaluated and
         /// Amazon EC2 is preparing to launch the target number of Spot Instances.
         /// </para>

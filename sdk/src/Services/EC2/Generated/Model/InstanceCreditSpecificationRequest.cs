@@ -42,6 +42,11 @@ namespace Amazon.EC2.Model
         /// The credit option for CPU usage of the instance. Valid values are <code>standard</code>
         /// and <code>unlimited</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// T3 instances with <code>host</code> tenancy do not support the <code>unlimited</code>
+        /// CPU credit option.
+        /// </para>
         /// </summary>
         public string CpuCredits
         {

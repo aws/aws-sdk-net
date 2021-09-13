@@ -287,6 +287,10 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a instances)
         /// </para>
+        ///  
+        /// <para>
+        /// For T3 instances with <code>host</code> tenancy, only <code>standard</code> is supported.
+        /// </para>
         /// </summary>
         public CreditSpecificationRequest CreditSpecification
         {

@@ -39,8 +39,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceCount. 
         /// <para>
-        /// The number of instances the Covertible Reserved Instance offering can be applied to.
-        /// This parameter is reserved and cannot be specified in a request
+        /// The number of instances the Convertible Reserved Instance offering can be applied
+        /// to. This parameter is reserved and cannot be specified in a request
         /// </para>
         /// </summary>
         public int InstanceCount

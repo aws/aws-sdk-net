@@ -39,7 +39,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Add. 
         /// <para>
-        /// The AWS account ID to add to the list of launch permissions for the AMI.
+        /// The Amazon Web Services account ID to add to the list of launch permissions for the
+        /// AMI.
         /// </para>
         /// </summary>
         public List<LaunchPermission> Add
@@ -57,7 +58,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Remove. 
         /// <para>
-        /// The AWS account ID to remove from the list of launch permissions for the AMI.
+        /// The Amazon Web Services account ID to remove from the list of launch permissions for
+        /// the AMI.
         /// </para>
         /// </summary>
         public List<LaunchPermission> Remove
