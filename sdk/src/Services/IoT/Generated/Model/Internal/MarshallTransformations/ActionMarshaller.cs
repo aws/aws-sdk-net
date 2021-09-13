@@ -199,6 +199,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetOpenSearch())
+            {
+                context.Writer.WritePropertyName("openSearch");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OpenSearchActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.OpenSearch, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRepublish())
             {
                 context.Writer.WritePropertyName("republish");

@@ -3128,6 +3128,10 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.OpenSearchAction.Endpoint</property>
+    <pattern>https?://.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.OTAUpdateFile.FileType</property>
     <min>0</min>
     <max>255</max>

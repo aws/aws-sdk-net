@@ -47,6 +47,7 @@ namespace Amazon.IoT.Model
         private KafkaAction _kafka;
         private KinesisAction _kinesis;
         private LambdaAction _lambda;
+        private OpenSearchAction _openSearch;
         private RepublishAction _republish;
         private S3Action _s3;
         private SalesforceAction _salesforce;
@@ -151,6 +152,12 @@ namespace Amazon.IoT.Model
         /// <para>
         /// Write data to an Amazon Elasticsearch Service domain.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This action is deprecated. Use the <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearch
+        /// action</a> instead.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ElasticsearchAction Elasticsearch
         {
@@ -307,6 +314,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetLambda()
         {
             return this._lambda != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OpenSearch. 
+        /// <para>
+        /// Write data to an Amazon OpenSearch Service domain.
+        /// </para>
+        /// </summary>
+        public OpenSearchAction OpenSearch
+        {
+            get { return this._openSearch; }
+            set { this._openSearch = value; }
+        }
+
+        // Check to see if OpenSearch property is set
+        internal bool IsSetOpenSearch()
+        {
+            return this._openSearch != null;
         }
 
         /// <summary>

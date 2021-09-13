@@ -59,7 +59,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property DisconnectReason. 
         /// <para>
-        /// The reason why the client is disconnected.
+        /// The reason why the client is disconnected. If the thing has been disconnected for
+        /// approximately an hour, the <code>disconnectReason</code> value might be missing.
         /// </para>
         /// </summary>
         public string DisconnectReason
