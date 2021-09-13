@@ -1,3 +1,14 @@
+### 3.7.117.0 (2021-09-13 18:15 UTC)
+* EC2 (3.7.27.7)
+	* Adds support for T3 instances on Amazon EC2 Dedicated Hosts.
+* IoT (3.7.5.0)
+	* AWS IoT Rules Engine adds OpenSearch action. The OpenSearch rule action lets you stream data from IoT sensors and applications to Amazon OpenSearch Service which is a successor to Amazon Elasticsearch Service.
+* Core 3.7.3.5
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.116.0 (2021-09-10 18:22 UTC)
 * CloudFormation (3.7.5.8)
 	* Doc only update for CloudFormation that fixes several customer-reported issues.
