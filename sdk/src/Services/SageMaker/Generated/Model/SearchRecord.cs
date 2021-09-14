@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         private ModelPackageGroup _modelPackageGroup;
         private Pipeline _pipeline;
         private PipelineExecution _pipelineExecution;
+        private Project _project;
         private TrainingJob _trainingJob;
         private Trial _trial;
         private TrialComponent _trialComponent;
@@ -150,6 +151,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetPipelineExecution()
         {
             return this._pipelineExecution != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Project. 
+        /// <para>
+        /// The properties of a project.
+        /// </para>
+        /// </summary>
+        public Project Project
+        {
+            get { return this._project; }
+            set { this._project = value; }
+        }
+
+        // Check to see if Project property is set
+        internal bool IsSetProject()
+        {
+            return this._project != null;
         }
 
         /// <summary>

@@ -50,8 +50,8 @@ namespace Amazon.SageMaker.Model
     /// <para>
     /// SageMaker uses the Amazon Web Services Key Management Service (Amazon Web Services
     /// KMS) to encrypt the EFS volume attached to the domain with an Amazon Web Services
-    /// managed customer master key (CMK) by default. For more control, you can specify a
-    /// customer managed CMK. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/encryption-at-rest.html">Protect
+    /// managed key by default. For more control, you can specify a customer managed key.
+    /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/encryption-at-rest.html">Protect
     /// Data at Rest Using Encryption</a>.
     /// </para>
     ///  
@@ -221,8 +221,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain
-        /// with an Amazon Web Services managed customer master key (CMK) by default. For more
-        /// control, specify a customer managed CMK.
+        /// with an Amazon Web Services managed key by default. For more control, specify a customer
+        /// managed key.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]

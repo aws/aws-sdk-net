@@ -60,7 +60,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LifecycleConfigArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the Resource.
+        ///  The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

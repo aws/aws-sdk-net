@@ -106,6 +106,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.PipelineExecution = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Project", targetDepth))
+                {
+                    var unmarshaller = ProjectUnmarshaller.Instance;
+                    unmarshalledObject.Project = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TrainingJob", targetDepth))
                 {
                     var unmarshaller = TrainingJobUnmarshaller.Instance;

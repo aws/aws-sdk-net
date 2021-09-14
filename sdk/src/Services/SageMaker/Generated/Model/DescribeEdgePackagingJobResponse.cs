@@ -294,7 +294,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ResourceKey. 
         /// <para>
-        /// The CMK to use when encrypting the EBS volume the job run on.
+        /// The Amazon Web Services KMS key to use when encrypting the EBS volume the job run
+        /// on.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]

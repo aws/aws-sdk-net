@@ -7987,6 +7987,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ResourceType PipelineExecution = new ResourceType("PipelineExecution");
         /// <summary>
+        /// Constant Project for ResourceType
+        /// </summary>
+        public static readonly ResourceType Project = new ResourceType("Project");
+        /// <summary>
         /// Constant TrainingJob for ResourceType
         /// </summary>
         public static readonly ResourceType TrainingJob = new ResourceType("TrainingJob");

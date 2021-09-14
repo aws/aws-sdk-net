@@ -98,7 +98,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you use a KMS key ID or an alias of your master key, the Amazon SageMaker execution
+        /// If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution
         /// role must include permissions to call <code>kms:Encrypt</code>. If you don't provide
         /// a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's
         /// account. Amazon SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>.

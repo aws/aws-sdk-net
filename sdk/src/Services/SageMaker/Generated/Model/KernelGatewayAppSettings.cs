@@ -78,7 +78,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LifecycleConfigArns. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the KernelGatewayApp.
+        ///  The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the
+        /// user profile or domain.
         /// </para>
         /// </summary>
         public List<string> LifecycleConfigArns

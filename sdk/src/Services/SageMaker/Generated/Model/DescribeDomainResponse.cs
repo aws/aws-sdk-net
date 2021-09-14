@@ -252,7 +252,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The Amazon Web Services KMS customer managed CMK used to encrypt the EFS volume attached
+        /// The Amazon Web Services KMS customer managed key used to encrypt the EFS volume attached
         /// to the domain.
         /// </para>
         /// </summary>

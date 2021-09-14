@@ -145,7 +145,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ResourceKey. 
         /// <para>
-        /// The CMK to use when encrypting the EBS volume the edge packaging job runs on.
+        /// The Amazon Web Services KMS key to use when encrypting the EBS volume the edge packaging
+        /// job runs on.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]

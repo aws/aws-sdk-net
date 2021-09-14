@@ -101,8 +101,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NameContains. 
         /// <para>
-        /// A string in the training job name. This filter returns only models in the training
-        /// job whose name contains the specified string.
+        /// A string in the model name. This filter returns only models whose name contains the
+        /// specified string.
         /// </para>
         /// </summary>
         [AWSProperty(Max=63)]
