@@ -3406,6 +3406,9 @@ namespace Amazon.Chime
         /// <param name="request">Container for the necessary parameters to execute the CreateSipMediaApplicationCall service method.</param>
         /// 
         /// <returns>The response from the CreateSipMediaApplicationCall service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
@@ -3448,6 +3451,9 @@ namespace Amazon.Chime
         /// </param>
         /// 
         /// <returns>The response from the CreateSipMediaApplicationCall service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
@@ -14760,7 +14766,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Start transcription for the specified <code>meetingId</code>.
+        /// Starts transcription for the specified <code>meetingId</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMeetingTranscription service method.</param>
         /// 
@@ -14804,7 +14810,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Start transcription for the specified <code>meetingId</code>.
+        /// Starts transcription for the specified <code>meetingId</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMeetingTranscription service method.</param>
         /// <param name="cancellationToken">

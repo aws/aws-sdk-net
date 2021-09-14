@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the StartMeetingTranscription operation.
-    /// Start transcription for the specified <code>meetingId</code>.
+    /// Starts transcription for the specified <code>meetingId</code>.
     /// </summary>
     public partial class StartMeetingTranscriptionRequest : AmazonChimeRequest
     {

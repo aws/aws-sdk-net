@@ -74,6 +74,20 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FromPhoneNumber);
                 }
 
+                if(publicRequest.IsSetSipHeaders())
+                {
+                    context.Writer.WritePropertyName("SipHeaders");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestSipHeadersKvp in publicRequest.SipHeaders)
+                    {
+                        context.Writer.WritePropertyName(publicRequestSipHeadersKvp.Key);
+                        var publicRequestSipHeadersValue = publicRequestSipHeadersKvp.Value;
+
+                            context.Writer.Write(publicRequestSipHeadersValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetToPhoneNumber())
                 {
                     context.Writer.WritePropertyName("ToPhoneNumber");

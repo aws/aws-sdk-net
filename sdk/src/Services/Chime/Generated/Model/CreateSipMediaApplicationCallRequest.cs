@@ -36,6 +36,7 @@ namespace Amazon.Chime.Model
     public partial class CreateSipMediaApplicationCallRequest : AmazonChimeRequest
     {
         private string _fromPhoneNumber;
+        private Dictionary<string, string> _sipHeaders = new Dictionary<string, string>();
         private string _sipMediaApplicationId;
         private string _toPhoneNumber;
 
@@ -57,6 +58,25 @@ namespace Amazon.Chime.Model
         internal bool IsSetFromPhoneNumber()
         {
             return this._fromPhoneNumber != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SipHeaders. 
+        /// <para>
+        /// The SIP headers added to an outbound call leg.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public Dictionary<string, string> SipHeaders
+        {
+            get { return this._sipHeaders; }
+            set { this._sipHeaders = value; }
+        }
+
+        // Check to see if SipHeaders property is set
+        internal bool IsSetSipHeaders()
+        {
+            return this._sipHeaders != null && this._sipHeaders.Count > 0; 
         }
 
         /// <summary>

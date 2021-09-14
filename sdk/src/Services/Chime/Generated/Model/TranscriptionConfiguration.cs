@@ -40,7 +40,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property EngineTranscribeMedicalSettings. 
         /// <para>
-        /// The transcription configuration settings passed to Amazon Transcribe.
+        /// The transcription configuration settings passed to Amazon Transcribe Medical.
         /// </para>
         /// </summary>
         public EngineTranscribeMedicalSettings EngineTranscribeMedicalSettings
