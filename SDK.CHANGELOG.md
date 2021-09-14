@@ -1,3 +1,15 @@
+### 3.7.118.0 (2021-09-14 20:56 UTC)
+* Chime (3.7.11.0)
+	* Adds support for SipHeaders parameter for CreateSipMediaApplicationCall.
+* Comprehend (3.7.3.0)
+	* Amazon Comprehend now allows you to train and run PDF and Word documents for custom entity recognition. With PDF and Word formats, you can extract information from documents containing headers, lists and tables.
+* EC2 (3.7.28.0)
+	* This release adds support for vt1 3xlarge, 6xlarge and 24xlarge instances powered by Xilinx Alveo U30 Media Accelerators for video transcoding workloads
+* SageMaker (3.7.14.0)
+	* This release adds support for "Project Search"
+* WAFV2 (3.7.5.0)
+	* This release adds support for including rate based rules in a rule group.
+
 ### 3.7.117.0 (2021-09-13 18:15 UTC)
 * EC2 (3.7.27.7)
 	* Adds support for T3 instances on Amazon EC2 Dedicated Hosts.
