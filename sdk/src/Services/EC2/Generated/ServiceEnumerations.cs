@@ -7299,6 +7299,18 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType U9tb1Metal = new InstanceType("u-9tb1.metal");
         /// <summary>
+        /// Constant Vt124xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Vt124xlarge = new InstanceType("vt1.24xlarge");
+        /// <summary>
+        /// Constant Vt13xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Vt13xlarge = new InstanceType("vt1.3xlarge");
+        /// <summary>
+        /// Constant Vt16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Vt16xlarge = new InstanceType("vt1.6xlarge");
+        /// <summary>
         /// Constant X116xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType X116xlarge = new InstanceType("x1.16xlarge");
