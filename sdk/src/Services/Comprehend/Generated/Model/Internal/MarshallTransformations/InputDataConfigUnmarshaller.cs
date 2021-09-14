@@ -64,6 +64,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("DocumentReaderConfig", targetDepth))
+                {
+                    var unmarshaller = DocumentReaderConfigUnmarshaller.Instance;
+                    unmarshalledObject.DocumentReaderConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InputFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

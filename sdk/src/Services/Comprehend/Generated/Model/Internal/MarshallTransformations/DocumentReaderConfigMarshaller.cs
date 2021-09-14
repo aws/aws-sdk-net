@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// InputDataConfig Marshaller
+    /// DocumentReaderConfig Marshaller
     /// </summary>       
-    public class InputDataConfigMarshaller : IRequestMarshaller<InputDataConfig, JsonMarshallerContext> 
+    public class DocumentReaderConfigMarshaller : IRequestMarshaller<DocumentReaderConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,29 +43,29 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(InputDataConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(DocumentReaderConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDocumentReaderConfig())
+            if(requestObject.IsSetDocumentReadAction())
             {
-                context.Writer.WritePropertyName("DocumentReaderConfig");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = DocumentReaderConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.DocumentReaderConfig, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("DocumentReadAction");
+                context.Writer.Write(requestObject.DocumentReadAction);
             }
 
-            if(requestObject.IsSetInputFormat())
+            if(requestObject.IsSetDocumentReadMode())
             {
-                context.Writer.WritePropertyName("InputFormat");
-                context.Writer.Write(requestObject.InputFormat);
+                context.Writer.WritePropertyName("DocumentReadMode");
+                context.Writer.Write(requestObject.DocumentReadMode);
             }
 
-            if(requestObject.IsSetS3Uri())
+            if(requestObject.IsSetFeatureTypes())
             {
-                context.Writer.WritePropertyName("S3Uri");
-                context.Writer.Write(requestObject.S3Uri);
+                context.Writer.WritePropertyName("FeatureTypes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectFeatureTypesListValue in requestObject.FeatureTypes)
+                {
+                        context.Writer.Write(requestObjectFeatureTypesListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -73,7 +73,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static InputDataConfigMarshaller Instance = new InputDataConfigMarshaller();
+        public readonly static DocumentReaderConfigMarshaller Instance = new DocumentReaderConfigMarshaller();
 
     }
 }

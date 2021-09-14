@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AugmentedManifestsListItem Object
+    /// Response Unmarshaller for DocumentReaderConfig Object
     /// </summary>  
-    public class AugmentedManifestsListItemUnmarshaller : IUnmarshaller<AugmentedManifestsListItem, XmlUnmarshallerContext>, IUnmarshaller<AugmentedManifestsListItem, JsonUnmarshallerContext>
+    public class DocumentReaderConfigUnmarshaller : IUnmarshaller<DocumentReaderConfig, XmlUnmarshallerContext>, IUnmarshaller<DocumentReaderConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AugmentedManifestsListItem IUnmarshaller<AugmentedManifestsListItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DocumentReaderConfig IUnmarshaller<DocumentReaderConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,33 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AugmentedManifestsListItem Unmarshall(JsonUnmarshallerContext context)
+        public DocumentReaderConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AugmentedManifestsListItem unmarshalledObject = new AugmentedManifestsListItem();
+            DocumentReaderConfig unmarshalledObject = new DocumentReaderConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AnnotationDataS3Uri", targetDepth))
+                if (context.TestExpression("DocumentReadAction", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AnnotationDataS3Uri = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DocumentReadAction = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("AttributeNames", targetDepth))
+                if (context.TestExpression("DocumentReadMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DocumentReadMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FeatureTypes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AttributeNames = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DocumentType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DocumentType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("S3Uri", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3Uri = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SourceDocumentsS3Uri", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceDocumentsS3Uri = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FeatureTypes = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +88,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         }
 
 
-        private static AugmentedManifestsListItemUnmarshaller _instance = new AugmentedManifestsListItemUnmarshaller();        
+        private static DocumentReaderConfigUnmarshaller _instance = new DocumentReaderConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AugmentedManifestsListItemUnmarshaller Instance
+        public static DocumentReaderConfigUnmarshaller Instance
         {
             get
             {

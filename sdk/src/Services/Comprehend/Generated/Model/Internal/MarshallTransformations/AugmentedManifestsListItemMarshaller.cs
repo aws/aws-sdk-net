@@ -45,6 +45,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AugmentedManifestsListItem requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAnnotationDataS3Uri())
+            {
+                context.Writer.WritePropertyName("AnnotationDataS3Uri");
+                context.Writer.Write(requestObject.AnnotationDataS3Uri);
+            }
+
             if(requestObject.IsSetAttributeNames())
             {
                 context.Writer.WritePropertyName("AttributeNames");
@@ -56,10 +62,22 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetDocumentType())
+            {
+                context.Writer.WritePropertyName("DocumentType");
+                context.Writer.Write(requestObject.DocumentType);
+            }
+
             if(requestObject.IsSetS3Uri())
             {
                 context.Writer.WritePropertyName("S3Uri");
                 context.Writer.Write(requestObject.S3Uri);
+            }
+
+            if(requestObject.IsSetSourceDocumentsS3Uri())
+            {
+                context.Writer.WritePropertyName("SourceDocumentsS3Uri");
+                context.Writer.Write(requestObject.SourceDocumentsS3Uri);
             }
 
         }

@@ -25,6 +25,56 @@ namespace Amazon.Comprehend
 {
 
     /// <summary>
+    /// Constants used for properties of type AugmentedManifestsDocumentTypeFormat.
+    /// </summary>
+    public class AugmentedManifestsDocumentTypeFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PLAIN_TEXT_DOCUMENT for AugmentedManifestsDocumentTypeFormat
+        /// </summary>
+        public static readonly AugmentedManifestsDocumentTypeFormat PLAIN_TEXT_DOCUMENT = new AugmentedManifestsDocumentTypeFormat("PLAIN_TEXT_DOCUMENT");
+        /// <summary>
+        /// Constant SEMI_STRUCTURED_DOCUMENT for AugmentedManifestsDocumentTypeFormat
+        /// </summary>
+        public static readonly AugmentedManifestsDocumentTypeFormat SEMI_STRUCTURED_DOCUMENT = new AugmentedManifestsDocumentTypeFormat("SEMI_STRUCTURED_DOCUMENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AugmentedManifestsDocumentTypeFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AugmentedManifestsDocumentTypeFormat FindValue(string value)
+        {
+            return FindValue<AugmentedManifestsDocumentTypeFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AugmentedManifestsDocumentTypeFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DocumentClassifierDataFormat.
     /// </summary>
     public class DocumentClassifierDataFormat : ConstantClass
@@ -118,6 +168,156 @@ namespace Amazon.Comprehend
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DocumentClassifierMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DocumentReadAction.
+    /// </summary>
+    public class DocumentReadAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TEXTRACT_ANALYZE_DOCUMENT for DocumentReadAction
+        /// </summary>
+        public static readonly DocumentReadAction TEXTRACT_ANALYZE_DOCUMENT = new DocumentReadAction("TEXTRACT_ANALYZE_DOCUMENT");
+        /// <summary>
+        /// Constant TEXTRACT_DETECT_DOCUMENT_TEXT for DocumentReadAction
+        /// </summary>
+        public static readonly DocumentReadAction TEXTRACT_DETECT_DOCUMENT_TEXT = new DocumentReadAction("TEXTRACT_DETECT_DOCUMENT_TEXT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DocumentReadAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DocumentReadAction FindValue(string value)
+        {
+            return FindValue<DocumentReadAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DocumentReadAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DocumentReadFeatureTypes.
+    /// </summary>
+    public class DocumentReadFeatureTypes : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FORMS for DocumentReadFeatureTypes
+        /// </summary>
+        public static readonly DocumentReadFeatureTypes FORMS = new DocumentReadFeatureTypes("FORMS");
+        /// <summary>
+        /// Constant TABLES for DocumentReadFeatureTypes
+        /// </summary>
+        public static readonly DocumentReadFeatureTypes TABLES = new DocumentReadFeatureTypes("TABLES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DocumentReadFeatureTypes(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DocumentReadFeatureTypes FindValue(string value)
+        {
+            return FindValue<DocumentReadFeatureTypes>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DocumentReadFeatureTypes(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DocumentReadMode.
+    /// </summary>
+    public class DocumentReadMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FORCE_DOCUMENT_READ_ACTION for DocumentReadMode
+        /// </summary>
+        public static readonly DocumentReadMode FORCE_DOCUMENT_READ_ACTION = new DocumentReadMode("FORCE_DOCUMENT_READ_ACTION");
+        /// <summary>
+        /// Constant SERVICE_DEFAULT for DocumentReadMode
+        /// </summary>
+        public static readonly DocumentReadMode SERVICE_DEFAULT = new DocumentReadMode("SERVICE_DEFAULT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DocumentReadMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DocumentReadMode FindValue(string value)
+        {
+            return FindValue<DocumentReadMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DocumentReadMode(string value)
         {
             return FindValue(value);
         }

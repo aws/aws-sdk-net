@@ -34,8 +34,31 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class AugmentedManifestsListItem
     {
+        private string _annotationDataS3Uri;
         private List<string> _attributeNames = new List<string>();
+        private AugmentedManifestsDocumentTypeFormat _documentType;
         private string _s3Uri;
+        private string _sourceDocumentsS3Uri;
+
+        /// <summary>
+        /// Gets and sets the property AnnotationDataS3Uri. 
+        /// <para>
+        /// The S3 prefix to the annotation files that are referred in the augmented manifest
+        /// file.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string AnnotationDataS3Uri
+        {
+            get { return this._annotationDataS3Uri; }
+            set { this._annotationDataS3Uri = value; }
+        }
+
+        // Check to see if AnnotationDataS3Uri property is set
+        internal bool IsSetAnnotationDataS3Uri()
+        {
+            return this._annotationDataS3Uri != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AttributeNames. 
@@ -70,6 +93,37 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DocumentType. 
+        /// <para>
+        /// The type of augmented manifest. PlainTextDocument or SemiStructuredDocument. If you
+        /// don't specify, the default is PlainTextDocument. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text
+        /// that is encoded in UTF-8.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and structural
+        /// context, like a PDF. For training with Amazon Comprehend, only PDFs are supported.
+        /// For inference, Amazon Comprehend support PDFs, DOCX and TXT.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public AugmentedManifestsDocumentTypeFormat DocumentType
+        {
+            get { return this._documentType; }
+            set { this._documentType = value; }
+        }
+
+        // Check to see if DocumentType property is set
+        internal bool IsSetDocumentType()
+        {
+            return this._documentType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
         /// The Amazon S3 location of the augmented manifest file.
@@ -86,6 +140,26 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetS3Uri()
         {
             return this._s3Uri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceDocumentsS3Uri. 
+        /// <para>
+        /// The S3 prefix to the source files (PDFs) that are referred to in the augmented manifest
+        /// file.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string SourceDocumentsS3Uri
+        {
+            get { return this._sourceDocumentsS3Uri; }
+            set { this._sourceDocumentsS3Uri = value; }
+        }
+
+        // Check to see if SourceDocumentsS3Uri property is set
+        internal bool IsSetSourceDocumentsS3Uri()
+        {
+            return this._sourceDocumentsS3Uri != null;
         }
 
     }

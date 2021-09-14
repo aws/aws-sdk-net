@@ -29,12 +29,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// The input properties for a topic detection job.
+    /// The input properties for an inference job.
     /// </summary>
     public partial class InputDataConfig
     {
+        private DocumentReaderConfig _documentReaderConfig;
         private InputFormat _inputFormat;
         private string _s3Uri;
+
+        /// <summary>
+        /// Gets and sets the property DocumentReaderConfig. 
+        /// <para>
+        /// The document reader config field applies only for InputDataConfig of StartEntitiesDetectionJob.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use DocumentReaderConfig to provide specifications about how you want your inference
+        /// documents read. Currently it applies for PDF documents in StartEntitiesDetectionJob
+        /// custom inference.
+        /// </para>
+        /// </summary>
+        public DocumentReaderConfig DocumentReaderConfig
+        {
+            get { return this._documentReaderConfig; }
+            set { this._documentReaderConfig = value; }
+        }
+
+        // Check to see if DocumentReaderConfig property is set
+        internal bool IsSetDocumentReaderConfig()
+        {
+            return this._documentReaderConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InputFormat. 
