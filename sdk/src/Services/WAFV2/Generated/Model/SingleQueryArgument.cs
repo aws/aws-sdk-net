@@ -31,6 +31,12 @@ namespace Amazon.WAFV2.Model
     /// <summary>
     /// One query argument in a web request, identified by name, for example <i>UserName</i>
     /// or <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    /// Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code> 
+    /// </para>
     /// </summary>
     public partial class SingleQueryArgument
     {

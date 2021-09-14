@@ -36,8 +36,8 @@ namespace Amazon.WAFV2.Model
     ///  
     /// <para>
     /// You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside
-    /// a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-    /// as a top-level statement within a rule.
+    /// a <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group
+    /// reference statement at the top level inside a web ACL. 
     /// </para>
     /// </summary>
     public partial class RuleGroupReferenceStatement

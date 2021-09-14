@@ -38,6 +38,10 @@ namespace Amazon.WAFV2.Model
     /// This is used in the context of other settings, for example to specify values for <a>RuleAction</a>
     /// and web ACL <a>DefaultAction</a>. 
     /// </para>
+    ///  
+    /// <para>
+    /// JSON specification: <code>"None": {}</code> 
+    /// </para>
     /// </summary>
     public partial class NoneAction
     {

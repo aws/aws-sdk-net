@@ -30,21 +30,62 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRateBasedStatementManagedKeys operation.
-    /// Retrieves the keys that are currently blocked by a rate-based rule. The maximum number
-    /// of managed keys that can be blocked for a single rate-based rule is 10,000. If more
-    /// than 10,000 addresses exceed the rate limit, those with the highest rates are blocked.
+    /// Retrieves the keys that are currently blocked by a rate-based rule instance. The maximum
+    /// number of managed keys that can be blocked for a single rate-based rule instance is
+    /// 10,000. If more than 10,000 addresses exceed the rate limit, those with the highest
+    /// rates are blocked.
+    /// 
+    ///  
+    /// <para>
+    /// For a rate-based rule that you've defined inside a rule group, provide the name of
+    /// the rule group reference statement in your request, in addition to the rate-based
+    /// rule name and the web ACL name. 
+    /// </para>
+    ///  
+    /// <para>
+    /// WAF monitors web requests and manages keys independently for each unique combination
+    /// of web ACL, optional rule group, and rate-based rule. For example, if you define a
+    /// rate-based rule inside a rule group, and then use the rule group in a web ACL, WAF
+    /// monitors web requests and manages keys for that web ACL, rule group reference statement,
+    /// and rate-based rule instance. If you use the same rule group in a second web ACL,
+    /// WAF monitors web requests and manages keys for this second usage completely independent
+    /// of your first. 
+    /// </para>
     /// </summary>
     public partial class GetRateBasedStatementManagedKeysRequest : AmazonWAFV2Request
     {
+        private string _ruleGroupRuleName;
         private string _ruleName;
         private Scope _scope;
         private string _webACLId;
         private string _webACLName;
 
         /// <summary>
+        /// Gets and sets the property RuleGroupRuleName. 
+        /// <para>
+        /// The name of the rule group reference statement in your web ACL. This is required only
+        /// when you have the rate-based rule nested inside a rule group. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string RuleGroupRuleName
+        {
+            get { return this._ruleGroupRuleName; }
+            set { this._ruleGroupRuleName = value; }
+        }
+
+        // Check to see if RuleGroupRuleName property is set
+        internal bool IsSetRuleGroupRuleName()
+        {
+            return this._ruleGroupRuleName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RuleName. 
         /// <para>
-        /// The name of the rate-based rule to get the keys for.
+        /// The name of the rate-based rule to get the keys for. If you have the rule defined
+        /// inside a rule group that you're using in your web ACL, also provide the name of the
+        /// rule group reference statement in the request parameter <code>RuleGroupRuleName</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

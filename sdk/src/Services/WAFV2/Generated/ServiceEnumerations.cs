@@ -1605,6 +1605,10 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly ParameterExceptionField AND_STATEMENT = new ParameterExceptionField("AND_STATEMENT");
         /// <summary>
+        /// Constant ASSOCIABLE_RESOURCE for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField ASSOCIABLE_RESOURCE = new ParameterExceptionField("ASSOCIABLE_RESOURCE");
+        /// <summary>
         /// Constant BODY_PARSING_FALLBACK_BEHAVIOR for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField BODY_PARSING_FALLBACK_BEHAVIOR = new ParameterExceptionField("BODY_PARSING_FALLBACK_BEHAVIOR");
@@ -1612,6 +1616,10 @@ namespace Amazon.WAFV2
         /// Constant BYTE_MATCH_STATEMENT for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField BYTE_MATCH_STATEMENT = new ParameterExceptionField("BYTE_MATCH_STATEMENT");
+        /// <summary>
+        /// Constant CHANGE_PROPAGATION_STATUS for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField CHANGE_PROPAGATION_STATUS = new ParameterExceptionField("CHANGE_PROPAGATION_STATUS");
         /// <summary>
         /// Constant CUSTOM_REQUEST_HANDLING for ParameterExceptionField
         /// </summary>
@@ -1636,6 +1644,10 @@ namespace Amazon.WAFV2
         /// Constant EXCLUDED_RULE for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField EXCLUDED_RULE = new ParameterExceptionField("EXCLUDED_RULE");
+        /// <summary>
+        /// Constant EXPIRE_TIMESTAMP for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField EXPIRE_TIMESTAMP = new ParameterExceptionField("EXPIRE_TIMESTAMP");
         /// <summary>
         /// Constant FALLBACK_BEHAVIOR for ParameterExceptionField
         /// </summary>

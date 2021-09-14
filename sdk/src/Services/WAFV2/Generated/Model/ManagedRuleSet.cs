@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// A set of rules that is managed by Amazon Web Services and Marketplace sellers to provide
-    /// versioned managed rule groups for customers of WAF.
+    /// A set of rules that is managed by Amazon Web Services and Amazon Web Services Marketplace
+    /// sellers to provide versioned managed rule groups for customers of WAF.
     /// 
     ///  <note> 
     /// <para>
     /// This is intended for use only by vendors of managed rule sets. Vendors are Amazon
-    /// Web Services and Marketplace sellers. 
+    /// Web Services and Amazon Web Services Marketplace sellers. 
     /// </para>
     ///  
     /// <para>

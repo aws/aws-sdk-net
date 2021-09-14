@@ -38,6 +38,11 @@ namespace Amazon.WAFV2.Model
     /// inspect using the rule's inspection criteria. WAF inspects only the parts of the JSON
     /// that result from the matches that you indicate. 
     /// </para>
+    ///  
+    /// <para>
+    /// Example JSON: <code>"JsonBody": { "MatchPattern": { "All": {} }, "MatchScope": "ALL"
+    /// }</code> 
+    /// </para>
     /// </summary>
     public partial class JsonBody
     {

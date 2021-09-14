@@ -36,6 +36,10 @@ namespace Amazon.WAFV2.Model
     /// This is used only to indicate the web request component for WAF to inspect, in the
     /// <a>FieldToMatch</a> specification. 
     /// </para>
+    ///  
+    /// <para>
+    /// JSON specification: <code>"AllQueryArguments": {}</code> 
+    /// </para>
     /// </summary>
     public partial class AllQueryArguments
     {

@@ -34,6 +34,23 @@ namespace Amazon.WAFV2.Model
     /// to the type. You specify a single request component in <code>FieldToMatch</code> for
     /// each rule statement that requires it. To inspect more than one component of a web
     /// request, create a separate rule statement for each component.
+    /// 
+    ///  
+    /// <para>
+    /// JSON specification for a <code>QueryString</code> field to match: 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code> "FieldToMatch": { "QueryString": {} }</code> 
+    /// </para>
+    ///  
+    /// <para>
+    /// Example JSON for a <code>Method</code> field to match specification:
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code> "FieldToMatch": { "Method": { "Name": "DELETE" } }</code> 
+    /// </para>
     /// </summary>
     public partial class FieldToMatch
     {

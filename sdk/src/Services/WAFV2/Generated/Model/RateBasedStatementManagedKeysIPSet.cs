@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// The set of IP addresses that are currently blocked for a rate-based statement.
+    /// The set of IP addresses that are currently blocked for a <a>RateBasedStatement</a>.
     /// </summary>
     public partial class RateBasedStatementManagedKeysIPSet
     {

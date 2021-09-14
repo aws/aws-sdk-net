@@ -35,7 +35,7 @@ namespace Amazon.WAFV2.Model
     ///  <note> 
     /// <para>
     /// This is intended for use only by vendors of managed rule sets. Vendors are Amazon
-    /// Web Services and Marketplace sellers. 
+    /// Web Services and Amazon Web Services Marketplace sellers. 
     /// </para>
     ///  
     /// <para>

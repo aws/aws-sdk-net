@@ -1685,7 +1685,7 @@ namespace Amazon.WAFV2
         ///  <note> 
         /// <para>
         /// This is intended for use only by vendors of managed rule sets. Vendors are Amazon
-        /// Web Services and Marketplace sellers. 
+        /// Web Services and Amazon Web Services Marketplace sellers. 
         /// </para>
         ///  
         /// <para>
@@ -1845,9 +1845,27 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Retrieves the keys that are currently blocked by a rate-based rule. The maximum number
-        /// of managed keys that can be blocked for a single rate-based rule is 10,000. If more
-        /// than 10,000 addresses exceed the rate limit, those with the highest rates are blocked.
+        /// Retrieves the keys that are currently blocked by a rate-based rule instance. The maximum
+        /// number of managed keys that can be blocked for a single rate-based rule instance is
+        /// 10,000. If more than 10,000 addresses exceed the rate limit, those with the highest
+        /// rates are blocked.
+        /// 
+        ///  
+        /// <para>
+        /// For a rate-based rule that you've defined inside a rule group, provide the name of
+        /// the rule group reference statement in your request, in addition to the rate-based
+        /// rule name and the web ACL name. 
+        /// </para>
+        ///  
+        /// <para>
+        /// WAF monitors web requests and manages keys independently for each unique combination
+        /// of web ACL, optional rule group, and rate-based rule. For example, if you define a
+        /// rate-based rule inside a rule group, and then use the rule group in a web ACL, WAF
+        /// monitors web requests and manages keys for that web ACL, rule group reference statement,
+        /// and rate-based rule instance. If you use the same rule group in a second web ACL,
+        /// WAF monitors web requests and manages keys for this second usage completely independent
+        /// of your first. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRateBasedStatementManagedKeys service method.</param>
         /// 
@@ -2310,8 +2328,8 @@ namespace Amazon.WAFV2
 
         /// <summary>
         /// Retrieves an array of managed rule groups that are available for you to use. This
-        /// list includes all Amazon Web Services Managed Rules rule groups and all of the Marketplace
-        /// managed rule groups that you're subscribed to.
+        /// list includes all Amazon Web Services Managed Rules rule groups and all of the Amazon
+        /// Web Services Marketplace managed rule groups that you're subscribed to.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAvailableManagedRuleGroups service method.</param>
         /// 
@@ -2604,7 +2622,7 @@ namespace Amazon.WAFV2
         ///  <note> 
         /// <para>
         /// This is intended for use only by vendors of managed rule sets. Vendors are Amazon
-        /// Web Services and Marketplace sellers. 
+        /// Web Services and Amazon Web Services Marketplace sellers. 
         /// </para>
         ///  
         /// <para>
@@ -3220,7 +3238,7 @@ namespace Amazon.WAFV2
         ///  <note> 
         /// <para>
         /// This is intended for use only by vendors of managed rule sets. Vendors are Amazon
-        /// Web Services and Marketplace sellers. 
+        /// Web Services and Amazon Web Services Marketplace sellers. 
         /// </para>
         ///  
         /// <para>
@@ -3744,7 +3762,7 @@ namespace Amazon.WAFV2
         ///  <note> 
         /// <para>
         /// This is intended for use only by vendors of managed rule sets. Vendors are Amazon
-        /// Web Services and Marketplace sellers. 
+        /// Web Services and Amazon Web Services Marketplace sellers. 
         /// </para>
         ///  
         /// <para>
