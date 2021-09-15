@@ -52,5 +52,24 @@ namespace AWSSDK.UnitTests
             bool isS3Uri = AmazonS3Uri.IsAmazonS3Endpoint("https://s3.amazonaws.com/");
             Assert.IsTrue(isS3Uri);
         }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void S3UriWithPlusForSpaceDecodeTest()
+        {
+            var s3Uri = new AmazonS3Uri("https://testbucket.s3.us-east-2.amazonaws.com/C8624825821_S3+Log", true);
+            Assert.AreEqual(s3Uri.Key, "C8624825821_S3 Log");
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void S3UriWithPlusForSpaceDecodeTryParseTest()
+        {
+            AmazonS3Uri s3Uri;
+            bool result = AmazonS3Uri.TryParseAmazonS3Uri("https://testbucket.s3.us-east-2.amazonaws.com/C8624825821_S3+Log", true, out s3Uri);
+
+            Assert.IsTrue(result);
+            Assert.AreEqual(s3Uri.Key, "C8624825821_S3 Log");
+        }
     }
 }

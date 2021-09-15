@@ -160,6 +160,17 @@ namespace Amazon.S3.Util
         }
 
         /// <summary>
+        /// Constructs a parser for the S3 URI specified as a string.
+        /// An encoded URI is expected.
+        /// </summary>
+        /// <param name="uri">The S3 URI to be parsed.</param>
+        /// <param name="decode">Flag indicating if URI string should be preprocessed to decode certain characters.</param>
+        public AmazonS3Uri(string uri, bool decode)
+            : this(decode ? EscapeSpecialControlCharacters(uri) : uri)
+        {
+        }
+
+        /// <summary>
         /// If the given string is an AmazonS3Endpoint return true and set the AmazonS3Uri out parameter.
         /// </summary>
         /// <param name="uri"></param>
@@ -176,6 +187,21 @@ namespace Amazon.S3.Util
                 amazonS3Uri = null;
                 return false;
             }
+        }
+
+        /// <summary>
+        /// If the given string is an AmazonS3Endpoint return true and set the AmazonS3Uri out parameter.
+        /// </summary>
+        /// <param name="uri"></param>
+        /// <param name="decode">Flag indicating if URI string should be preprocessed to decode certain characters.</param>
+        /// <param name="amazonS3Uri"></param>
+        /// <returns>true if the string is an AmazonS3Endpoint, and the out paramter has been filled in, false otherwise</returns>
+        public static bool TryParseAmazonS3Uri(string uri, bool decode, out AmazonS3Uri amazonS3Uri)
+        {
+            if (decode)
+                uri = EscapeSpecialControlCharacters(uri);
+
+            return TryParseAmazonS3Uri(new Uri(uri), out amazonS3Uri);
         }
 
         /// <summary>
@@ -349,6 +375,14 @@ namespace Amazon.S3.Util
             throw new InvalidOperationException(
                 "Invalid percent-encoded string: bad character '" + c + "' in "
                 + "escape sequence.");
+        }
+
+        private static string EscapeSpecialControlCharacters(string uri)
+        {
+            // Addresses https://github.com/aws/aws-sdk-net/issues/1894. Ports the logic from AmazonS3Uri class in Java V1 SDK.
+            return uri?.Replace("%3A", ":")
+                       .Replace("%2F", "/")
+                       .Replace("+", "%20");
         }
     }
 }
