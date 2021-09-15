@@ -1,5 +1,6 @@
 using Amazon.Runtime;
 using System;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -145,6 +146,15 @@ namespace Amazon.S3
                 AccessPointName = parts[3],
                 Key = parts.Length > 4 ? parts[4] : null
             };
-        }   
+        }
+
+        /// <summary>
+        /// Check if the ARN has a valid Account ID
+        /// </summary>
+        /// <param name="arn">The ARN which is being validated</param>
+        public static bool HasValidAccountId(this Arn arn)
+        {
+            return string.IsNullOrEmpty(arn.AccountId) || (arn.AccountId.Length == 12 && arn.AccountId.ToCharArray().All(x => char.IsDigit(x)));
+        }
     }
 }

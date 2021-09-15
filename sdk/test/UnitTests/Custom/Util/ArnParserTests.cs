@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Amazon;
+using Amazon.Runtime;
 
 namespace AWSSDK.UnitTests
 {
@@ -61,6 +62,30 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual("123412341234", arn.AccountId);
             Assert.AreEqual("resourcetype:resource:qualifier", arn.Resource);
             Assert.AreEqual("arn:partition:service:region:123412341234:resourcetype:resource:qualifier", arn.ToString());
+
+            arn = Arn.Parse("arn:aws:ec2:region:aws:prefix-list/pl-123456abcde123456");
+            Assert.AreEqual("aws", arn.Partition);
+            Assert.AreEqual("ec2", arn.Service);
+            Assert.AreEqual("region", arn.Region);
+            Assert.AreEqual("aws", arn.AccountId);
+            Assert.AreEqual("prefix-list/pl-123456abcde123456", arn.Resource);
+            Assert.AreEqual("arn:aws:ec2:region:aws:prefix-list/pl-123456abcde123456", arn.ToString());
+
+            arn = Arn.Parse("arn:partition:service:region:some-account-id:resourcetype:resource:qualifier");
+            Assert.AreEqual("partition", arn.Partition);
+            Assert.AreEqual("service", arn.Service);
+            Assert.AreEqual("region", arn.Region);
+            Assert.AreEqual("some-account-id", arn.AccountId);
+            Assert.AreEqual("resourcetype:resource:qualifier", arn.Resource);
+            Assert.AreEqual("arn:partition:service:region:some-account-id:resourcetype:resource:qualifier", arn.ToString());
+
+            arn = Arn.Parse("arn:partition:service:region:*:resourcetype:resource:qualifier");
+            Assert.AreEqual("partition", arn.Partition);
+            Assert.AreEqual("service", arn.Service);
+            Assert.AreEqual("region", arn.Region);
+            Assert.AreEqual("*", arn.AccountId);
+            Assert.AreEqual("resourcetype:resource:qualifier", arn.Resource);
+            Assert.AreEqual("arn:partition:service:region:*:resourcetype:resource:qualifier", arn.ToString());
         }
 
 
@@ -83,6 +108,27 @@ namespace AWSSDK.UnitTests
                 Arn.Parse(arn);
             }
             catch(ArgumentException e)
+            {
+                caught = e;
+            }
+
+            Assert.IsNotNull(caught);
+            Assert.AreEqual(message, caught.Message);
+        }
+
+        [DataTestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [DataRow("arn:partition:service:region:account?-id:resource", "AccountId is invalid. The AccountId should be '*' or must only contain alphanumeric characters and dashes.")]
+        [DataRow("arn:partition:service:region:account#-id:resource", "AccountId is invalid. The AccountId should be '*' or must only contain alphanumeric characters and dashes.")]
+        public void InvalidArnAccountIdChecks(string arn, string message)
+        {
+            AmazonAccountIdException caught = null;
+            try
+            {
+                Arn.Parse(arn);
+            }
+            catch (AmazonAccountIdException e)
             {
                 caught = e;
             }

@@ -50,15 +50,15 @@ namespace Amazon
             get { return this._accountId; }
             set
             {
-                if(string.IsNullOrEmpty(value))
+                if (string.IsNullOrEmpty(value))
                 {
                     this._accountId = string.Empty;
                 }
                 else
                 {
-                    if (value.Length != 12 && value.ToCharArray().Any(x => !char.IsDigit(x)))
+                    if (value != "*" && value.ToCharArray().Any(x => !char.IsLetterOrDigit(x) && x != '-'))
                     {
-                        throw new AmazonClientException("AccountId is invalid. The AccountId length should be 12 and only contain numeric characters with no spaces or periods.");
+                        throw new AmazonAccountIdException("AccountId is invalid. The AccountId should be '*' or must only contain alphanumeric characters and dashes.");
                     }
 
                     this._accountId = value;

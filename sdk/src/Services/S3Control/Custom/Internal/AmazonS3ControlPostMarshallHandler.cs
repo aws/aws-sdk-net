@@ -99,6 +99,10 @@ namespace Amazon.S3Control.Internal
             if (S3ArnUtils.RequestContainsArn(request, out s3Arn))
             {
                 IS3Resource s3Resource = null;
+                if (!s3Arn.HasValidAccountId())
+                {
+                    throw new AmazonAccountIdException();
+                }
                 if (s3Arn.IsOutpostArn())
                 {
                     if (!s3Arn.IsValidService())
