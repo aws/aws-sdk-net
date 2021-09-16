@@ -48,6 +48,7 @@ namespace Amazon.TranscribeService.Model
         private string _outputEncryptionKMSKeyId;
         private string _outputKey;
         private Settings _settings;
+        private Subtitles _subtitles;
         private List<Tag> _tags = new List<Tag>();
         private string _transcriptionJobName;
 
@@ -416,6 +417,24 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetSettings()
         {
             return this._settings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Subtitles. 
+        /// <para>
+        /// Add subtitles to your batch transcription job.
+        /// </para>
+        /// </summary>
+        public Subtitles Subtitles
+        {
+            get { return this._subtitles; }
+            set { this._subtitles = value; }
+        }
+
+        // Check to see if Subtitles property is set
+        internal bool IsSetSubtitles()
+        {
+            return this._subtitles != null;
         }
 
         /// <summary>

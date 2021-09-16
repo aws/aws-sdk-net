@@ -49,6 +49,7 @@ namespace Amazon.TranscribeService.Model
         private ModelSettings _modelSettings;
         private Settings _settings;
         private DateTime? _startTime;
+        private SubtitlesOutput _subtitles;
         private List<Tag> _tags = new List<Tag>();
         private Transcript _transcript;
         private string _transcriptionJobName;
@@ -375,6 +376,24 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetStartTime()
         {
             return this._startTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Subtitles. 
+        /// <para>
+        /// Generate subtitles for your batch transcription job.
+        /// </para>
+        /// </summary>
+        public SubtitlesOutput Subtitles
+        {
+            get { return this._subtitles; }
+            set { this._subtitles = value; }
+        }
+
+        // Check to see if Subtitles property is set
+        internal bool IsSetSubtitles()
+        {
+            return this._subtitles != null;
         }
 
         /// <summary>

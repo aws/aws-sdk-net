@@ -189,6 +189,17 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetSubtitles())
+                {
+                    context.Writer.WritePropertyName("Subtitles");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SubtitlesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Subtitles, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");
