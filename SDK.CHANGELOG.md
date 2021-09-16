@@ -1,3 +1,24 @@
+### 3.7.119.0 (2021-09-16 18:18 UTC)
+* KafkaConnect (3.7.0.0)
+	* This is the initial SDK release for Amazon Managed Streaming for Apache Kafka Connect (MSK Connect).
+* Macie2 (3.7.4.0)
+	* This release adds support for specifying which managed data identifiers are used by a classification job, and retrieving a list of managed data identifiers that are available.
+* Pinpoint (3.7.2.0)
+	* This SDK release adds a new feature for Pinpoint campaigns, in-app messaging.
+* RoboMaker (3.7.4.0)
+	* Adding support to create container based Robot and Simulation applications by introducing an environment field
+* S3 (3.7.3.0)
+	* Add support for access point arn filtering in S3 CW Request Metrics
+* SageMaker (3.7.15.0)
+	* Add API for users to retry a failed pipeline execution or resume a stopped one.
+* TranscribeService (3.7.8.0)
+	* This release adds support for subtitling with Amazon Transcribe batch jobs.
+* Core 3.7.3.7
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.118.1 (2021-09-15 23:15 UTC)
 * S3 (3.7.2.6)
 	* Updated to use new Core, version 3.7.3.6
