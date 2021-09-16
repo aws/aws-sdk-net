@@ -39,6 +39,8 @@ namespace Amazon.Macie2.Model
         private string _description;
         private bool? _initialRun;
         private JobType _jobType;
+        private List<string> _managedDataIdentifierIds = new List<string>();
+        private ManagedDataIdentifierSelector _managedDataIdentifierSelector;
         private string _name;
         private S3JobDefinition _s3JobDefinition;
         private int? _samplingPercentage;
@@ -66,7 +68,10 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property CustomDataIdentifierIds. 
         /// <para>
-        /// The custom data identifiers to use for data analysis and classification.
+        /// An array of unique identifiers, one for each custom data identifier for the job to
+        /// use when it analyzes data. To use only managed data identifiers, don't specify a value
+        /// for this property and specify a value other than NONE for the managedDataIdentifierSelector
+        /// property.
         /// </para>
         /// </summary>
         public List<string> CustomDataIdentifierIds
@@ -102,8 +107,14 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property InitialRun. 
         /// <para>
-        /// Specifies whether to analyze all existing, eligible objects immediately after the
-        /// job is created.
+        /// For a recurring job, specifies whether to analyze all existing, eligible objects immediately
+        /// after the job is created (true). To analyze only those objects that are created or
+        /// changed after you create the job and before the job's first scheduled run, set this
+        /// value to false.
+        /// </para>
+        /// 
+        /// <para>
+        /// If you configure the job to run only once, don't specify a value for this property.
         /// </para>
         /// </summary>
         public bool InitialRun
@@ -150,6 +161,77 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManagedDataIdentifierIds. 
+        /// <para>
+        /// An array of unique identifiers, one for each managed data identifier for the job to
+        /// include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends
+        /// on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).
+        /// </para>
+        /// 
+        /// <para>
+        /// To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers
+        /// operation.
+        /// </para>
+        /// </summary>
+        public List<string> ManagedDataIdentifierIds
+        {
+            get { return this._managedDataIdentifierIds; }
+            set { this._managedDataIdentifierIds = value; }
+        }
+
+        // Check to see if ManagedDataIdentifierIds property is set
+        internal bool IsSetManagedDataIdentifierIds()
+        {
+            return this._managedDataIdentifierIds != null && this._managedDataIdentifierIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedDataIdentifierSelector. 
+        /// <para>
+        /// The selection type to apply when determining which managed data identifiers the job
+        /// uses to analyze data. Valid values are:
+        /// </para>
+        ///  <ul><li>
+        /// <para>
+        /// ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify
+        /// this value, don't specify any values for the managedDataIdentifierIds property.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// EXCLUDE - Use all the managed data identifiers that Macie provides except the managed
+        /// data identifiers specified by the managedDataIdentifierIds property.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds
+        /// property.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// NONE - Don't use any managed data identifiers. If you specify this value, specify
+        /// at least one custom data identifier for the job (customDataIdentifierIds) and don't
+        /// specify any values for the managedDataIdentifierIds property.
+        /// </para>
+        /// </li></ul> 
+        /// <para>
+        /// If you don't specify a value for this property, the job uses all managed data identifiers.
+        /// If you don't specify a value for this property or you specify ALL or EXCLUDE for a
+        /// recurring job, the job also uses new managed data identifiers as they are released.
+        /// </para>
+        /// </summary>
+        public ManagedDataIdentifierSelector ManagedDataIdentifierSelector
+        {
+            get { return this._managedDataIdentifierSelector; }
+            set { this._managedDataIdentifierSelector = value; }
+        }
+
+        // Check to see if ManagedDataIdentifierSelector property is set
+        internal bool IsSetManagedDataIdentifierSelector()
+        {
+            return this._managedDataIdentifierSelector != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// A custom name for the job. The name can contain as many as 500 characters.
@@ -190,10 +272,10 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property SamplingPercentage. 
         /// <para>
-        /// The sampling depth, as a percentage, to apply when processing objects. This value
-        /// determines the percentage of eligible objects that the job analyzes. If this value
-        /// is less than 100, Amazon Macie selects the objects to analyze at random, up to the
-        /// specified percentage, and analyzes all the data in those objects.
+        /// The sampling depth, as a percentage, for the job to apply when processing objects.
+        /// This value determines the percentage of eligible objects that the job analyzes. If
+        /// this value is less than 100, Amazon Macie selects the objects to analyze at random,
+        /// up to the specified percentage, and analyzes all the data in those objects.
         /// </para>
         /// </summary>
         public int SamplingPercentage

@@ -156,7 +156,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The display name and Amazon Web Services account ID for the user who owns the bucket.
+        /// The display name and canonical user ID for the Amazon Web Services account that owns
+        /// the bucket.
         /// </para>
         /// </summary>
         public S3BucketOwner Owner

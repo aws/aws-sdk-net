@@ -3577,8 +3577,8 @@ namespace Amazon.Macie2
         #region  ListInvitations
 
         /// <summary>
-        /// Retrieves information about all the Amazon Macie membership invitations that were
-        /// received by an account.
+        /// Retrieves information about the Amazon Macie membership invitations that were received
+        /// by an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInvitations service method.</param>
         /// 
@@ -3652,6 +3652,61 @@ namespace Amazon.Macie2
         public virtual ListInvitationsResponse EndListInvitations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListInvitationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListManagedDataIdentifiers
+
+        /// <summary>
+        /// Retrieves information about all the managed data identifiers that Amazon Macie currently
+        /// provides.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedDataIdentifiers service method.</param>
+        /// 
+        /// <returns>The response from the ListManagedDataIdentifiers service method, as returned by Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListManagedDataIdentifiers">REST API Reference for ListManagedDataIdentifiers Operation</seealso>
+        public virtual ListManagedDataIdentifiersResponse ListManagedDataIdentifiers(ListManagedDataIdentifiersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListManagedDataIdentifiersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListManagedDataIdentifiersResponseUnmarshaller.Instance;
+
+            return Invoke<ListManagedDataIdentifiersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListManagedDataIdentifiers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedDataIdentifiers operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListManagedDataIdentifiers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListManagedDataIdentifiers">REST API Reference for ListManagedDataIdentifiers Operation</seealso>
+        public virtual IAsyncResult BeginListManagedDataIdentifiers(ListManagedDataIdentifiersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListManagedDataIdentifiersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListManagedDataIdentifiersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListManagedDataIdentifiers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListManagedDataIdentifiers.</param>
+        /// 
+        /// <returns>Returns a  ListManagedDataIdentifiersResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListManagedDataIdentifiers">REST API Reference for ListManagedDataIdentifiers Operation</seealso>
+        public virtual ListManagedDataIdentifiersResponse EndListManagedDataIdentifiers(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListManagedDataIdentifiersResponse>(asyncResult);
         }
 
         #endregion

@@ -29,20 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about the category, types, and occurrences of sensitive data
-    /// that produced a sensitive data finding.
+    /// Provides information about a managed data identifier. For additional information,
+    /// see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
+    /// managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.
     /// </summary>
-    public partial class SensitiveDataItem
+    public partial class ManagedDataIdentifierSummary
     {
         private SensitiveDataItemCategory _category;
-        private List<DefaultDetection> _detections = new List<DefaultDetection>();
-        private long? _totalCount;
+        private string _id;
 
         /// <summary>
         /// Gets and sets the property Category. 
         /// <para>
-        /// The category of sensitive data that was detected. For example: CREDENTIALS, for credentials
-        /// data such as private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION,
+        /// The category of sensitive data that the managed data identifier detects: CREDENTIALS,
+        /// for credentials data such as private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION,
         /// for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal
         /// health information, such as health insurance identification numbers, or personally
         /// identifiable information, such as passport numbers.
@@ -61,41 +61,24 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Detections. 
+        /// Gets and sets the property Id. 
         /// <para>
-        /// An array of objects, one for each type of sensitive data that was detected. Each object
-        /// reports the number of occurrences of a specific type of sensitive data that was detected,
-        /// and the location of up to 15 of those occurrences.
+        /// The unique identifier for the managed data identifier. This is a string that describes
+        /// the type of sensitive data that the managed data identifier detects. For example:
+        /// OPENSSH_PRIVATE_KEY for OpenSSH private keys, CREDIT_CARD_NUMBER for credit card numbers,
+        /// or USA_PASSPORT_NUMBER for US passport numbers.
         /// </para>
         /// </summary>
-        public List<DefaultDetection> Detections
+        public string Id
         {
-            get { return this._detections; }
-            set { this._detections = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
-        // Check to see if Detections property is set
-        internal bool IsSetDetections()
+        // Check to see if Id property is set
+        internal bool IsSetId()
         {
-            return this._detections != null && this._detections.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property TotalCount. 
-        /// <para>
-        /// The total number of occurrences of the sensitive data that was detected.
-        /// </para>
-        /// </summary>
-        public long TotalCount
-        {
-            get { return this._totalCount.GetValueOrDefault(); }
-            set { this._totalCount = value; }
-        }
-
-        // Check to see if TotalCount property is set
-        internal bool IsSetTotalCount()
-        {
-            return this._totalCount.HasValue; 
+            return this._id != null;
         }
 
     }

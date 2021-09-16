@@ -29,33 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListInvitations operation.
-    /// Retrieves information about the Amazon Macie membership invitations that were received
-    /// by an account.
+    /// Container for the parameters to the ListManagedDataIdentifiers operation.
+    /// Retrieves information about all the managed data identifiers that Amazon Macie currently
+    /// provides.
     /// </summary>
-    public partial class ListInvitationsRequest : AmazonMacie2Request
+    public partial class ListManagedDataIdentifiersRequest : AmazonMacie2Request
     {
-        private int? _maxResults;
         private string _nextToken;
-
-        /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        /// The maximum number of items to include in each page of a paginated response.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=25)]
-        public int MaxResults
-        {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
-        }
-
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
-        {
-            return this._maxResults.HasValue; 
-        }
 
         /// <summary>
         /// Gets and sets the property NextToken. 

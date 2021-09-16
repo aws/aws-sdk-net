@@ -1908,8 +1908,8 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves information about all the Amazon Macie membership invitations that were
-        /// received by an account.
+        /// Retrieves information about the Amazon Macie membership invitations that were received
+        /// by an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInvitations service method.</param>
         /// <param name="cancellationToken">
@@ -1946,6 +1946,25 @@ namespace Amazon.Macie2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
         Task<ListInvitationsResponse> ListInvitationsAsync(ListInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListManagedDataIdentifiers
+
+
+
+        /// <summary>
+        /// Retrieves information about all the managed data identifiers that Amazon Macie currently
+        /// provides.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedDataIdentifiers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListManagedDataIdentifiers service method, as returned by Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListManagedDataIdentifiers">REST API Reference for ListManagedDataIdentifiers Operation</seealso>
+        Task<ListManagedDataIdentifiersResponse> ListManagedDataIdentifiersAsync(ListManagedDataIdentifiersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

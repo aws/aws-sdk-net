@@ -105,6 +105,23 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.JobType);
                 }
 
+                if(publicRequest.IsSetManagedDataIdentifierIds())
+                {
+                    context.Writer.WritePropertyName("managedDataIdentifierIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestManagedDataIdentifierIdsListValue in publicRequest.ManagedDataIdentifierIds)
+                    {
+                            context.Writer.Write(publicRequestManagedDataIdentifierIdsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetManagedDataIdentifierSelector())
+                {
+                    context.Writer.WritePropertyName("managedDataIdentifierSelector");
+                    context.Writer.Write(publicRequest.ManagedDataIdentifierSelector);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");

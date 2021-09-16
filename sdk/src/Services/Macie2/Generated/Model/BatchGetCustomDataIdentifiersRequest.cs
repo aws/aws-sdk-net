@@ -39,8 +39,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Ids. 
         /// <para>
-        /// An array of strings that lists the unique identifiers for the custom data identifiers
-        /// to retrieve information about.
+        /// An array of custom data identifier IDs, one for each custom data identifier to retrieve
+        /// information about.
         /// </para>
         /// </summary>
         public List<string> Ids

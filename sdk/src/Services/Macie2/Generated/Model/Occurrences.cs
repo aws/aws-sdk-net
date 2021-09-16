@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Specifies the location of 1-15 occurrences of sensitive data that was detected by
-    /// managed data identifiers or a custom data identifier and produced a sensitive data
+    /// a managed data identifier or a custom data identifier and produced a sensitive data
     /// finding.
     /// </summary>
     public partial class Occurrences

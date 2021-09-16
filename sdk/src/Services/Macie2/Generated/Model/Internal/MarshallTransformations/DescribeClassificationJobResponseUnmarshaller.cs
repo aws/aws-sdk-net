@@ -117,6 +117,18 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     response.LastRunTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("managedDataIdentifierIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.ManagedDataIdentifierIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("managedDataIdentifierSelector", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ManagedDataIdentifierSelector = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

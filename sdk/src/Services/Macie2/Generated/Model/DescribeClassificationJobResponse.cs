@@ -44,6 +44,8 @@ namespace Amazon.Macie2.Model
         private JobType _jobType;
         private LastRunErrorStatus _lastRunErrorStatus;
         private DateTime? _lastRunTime;
+        private List<string> _managedDataIdentifierIds = new List<string>();
+        private ManagedDataIdentifierSelector _managedDataIdentifierSelector;
         private string _name;
         private S3JobDefinition _s3JobDefinition;
         private int? _samplingPercentage;
@@ -92,7 +94,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property CustomDataIdentifierIds. 
         /// <para>
-        /// The custom data identifiers that the job uses to analyze data.
+        /// An array of unique identifiers, one for each custom data identifier that the job uses
+        /// to analyze data. This value is null if the job uses only managed data identifiers
+        /// to analyze data.
         /// </para>
         /// </summary>
         public List<string> CustomDataIdentifierIds
@@ -128,8 +132,11 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property InitialRun. 
         /// <para>
-        /// Specifies whether the job is configured to analyze all existing, eligible objects
-        /// immediately after it's created.
+        /// For a recurring job, specifies whether you configured the job to analyze all existing,
+        /// eligible objects immediately after the job was created (true). If you configured the
+        /// job to analyze only those objects that were created or changed after the job was created
+        /// and before the job's first scheduled run, this value is false. This value is also
+        /// false for a one-time job.
         /// </para>
         /// </summary>
         public bool InitialRun
@@ -202,9 +209,9 @@ namespace Amazon.Macie2.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// PAUSED - Amazon Macie started running the job but additional processing would exceed
-        /// the monthly sensitive data discovery quota for your account or one or more member
-        /// accounts that the job analyzes data for.
+        /// PAUSED - Macie started running the job but additional processing would exceed the
+        /// monthly sensitive data discovery quota for your account or one or more member accounts
+        /// that the job analyzes data for.
         /// </para>
         /// </li> <li>
         /// <para>
@@ -300,6 +307,72 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManagedDataIdentifierIds. 
+        /// <para>
+        /// An array of unique identifiers, one for each managed data identifier that the job
+        /// is explicitly configured to include (use) or exclude (not use) when it analyzes data.
+        /// Inclusion or exclusion depends on the managed data identifier selection type specified
+        /// for the job (managedDataIdentifierSelector). This value is null if the job's managed
+        /// data identifier selection type is ALL or the job uses only custom data identifiers
+        /// (customDataIdentifierIds) to analyze data.
+        /// </para>
+        /// </summary>
+        public List<string> ManagedDataIdentifierIds
+        {
+            get { return this._managedDataIdentifierIds; }
+            set { this._managedDataIdentifierIds = value; }
+        }
+
+        // Check to see if ManagedDataIdentifierIds property is set
+        internal bool IsSetManagedDataIdentifierIds()
+        {
+            return this._managedDataIdentifierIds != null && this._managedDataIdentifierIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedDataIdentifierSelector. 
+        /// <para>
+        /// The selection type that determines which managed data identifiers the job uses to
+        /// analyze data. Possible values are:
+        /// </para>
+        ///  <ul><li>
+        /// <para>
+        /// ALL - Use all the managed data identifiers that Amazon Macie provides.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// EXCLUDE - Use all the managed data identifiers that Macie provides except the managed
+        /// data identifiers specified by the managedDataIdentifierIds property.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds
+        /// property.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// NONE - Don't use any managed data identifiers.
+        /// </para>
+        /// </li></ul> 
+        /// <para>
+        /// If this value is null, the job uses all managed data identifiers. If this value is
+        /// null, ALL, or EXCLUDE for a recurring job, the job also uses new managed data identifiers
+        /// as they are released.
+        /// </para>
+        /// </summary>
+        public ManagedDataIdentifierSelector ManagedDataIdentifierSelector
+        {
+            get { return this._managedDataIdentifierSelector; }
+            set { this._managedDataIdentifierSelector = value; }
+        }
+
+        // Check to see if ManagedDataIdentifierSelector property is set
+        internal bool IsSetManagedDataIdentifierSelector()
+        {
+            return this._managedDataIdentifierSelector != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The custom name of the job.
@@ -357,8 +430,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property ScheduleFrequency. 
         /// <para>
-        /// The recurrence pattern for running the job. If the job is configured to run only once,
-        /// this value is null.
+        /// The recurrence pattern for running the job. This value is null if the job is configured
+        /// to run only once.
         /// </para>
         /// </summary>
         public JobScheduleFrequency ScheduleFrequency

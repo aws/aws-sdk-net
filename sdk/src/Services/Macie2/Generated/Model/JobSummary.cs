@@ -144,9 +144,9 @@ namespace Amazon.Macie2.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// PAUSED - Amazon Macie started running the job but additional processing would exceed
-        /// the monthly sensitive data discovery quota for your account or one or more member
-        /// accounts that the job analyzes data for.
+        /// PAUSED - Macie started running the job but additional processing would exceed the
+        /// monthly sensitive data discovery quota for your account or one or more member accounts
+        /// that the job analyzes data for.
         /// </para>
         /// </li> <li>
         /// <para>

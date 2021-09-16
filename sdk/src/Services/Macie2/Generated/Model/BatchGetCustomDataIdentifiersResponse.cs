@@ -58,8 +58,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property NotFoundIdentifierIds. 
         /// <para>
-        /// An array of identifiers, one for each identifier that was specified in the request,
-        /// but doesn't correlate to an existing custom data identifier.
+        /// An array of custom data identifier IDs, one for each custom data identifier that was
+        /// specified in the request but doesn't correlate to an existing custom data identifier.
         /// </para>
         /// </summary>
         public List<string> NotFoundIdentifierIds

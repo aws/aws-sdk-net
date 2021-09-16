@@ -1311,6 +1311,64 @@ namespace Amazon.Macie2
 
 
     /// <summary>
+    /// Constants used for properties of type ManagedDataIdentifierSelector.
+    /// </summary>
+    public class ManagedDataIdentifierSelector : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for ManagedDataIdentifierSelector
+        /// </summary>
+        public static readonly ManagedDataIdentifierSelector ALL = new ManagedDataIdentifierSelector("ALL");
+        /// <summary>
+        /// Constant EXCLUDE for ManagedDataIdentifierSelector
+        /// </summary>
+        public static readonly ManagedDataIdentifierSelector EXCLUDE = new ManagedDataIdentifierSelector("EXCLUDE");
+        /// <summary>
+        /// Constant INCLUDE for ManagedDataIdentifierSelector
+        /// </summary>
+        public static readonly ManagedDataIdentifierSelector INCLUDE = new ManagedDataIdentifierSelector("INCLUDE");
+        /// <summary>
+        /// Constant NONE for ManagedDataIdentifierSelector
+        /// </summary>
+        public static readonly ManagedDataIdentifierSelector NONE = new ManagedDataIdentifierSelector("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ManagedDataIdentifierSelector(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ManagedDataIdentifierSelector FindValue(string value)
+        {
+            return FindValue<ManagedDataIdentifierSelector>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ManagedDataIdentifierSelector(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OrderBy.
     /// </summary>
     public class OrderBy : ConstantClass

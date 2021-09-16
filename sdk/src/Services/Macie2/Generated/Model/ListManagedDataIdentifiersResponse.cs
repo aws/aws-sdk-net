@@ -29,39 +29,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListInvitations operation.
-    /// Retrieves information about the Amazon Macie membership invitations that were received
-    /// by an account.
+    /// This is the response object from the ListManagedDataIdentifiers operation.
     /// </summary>
-    public partial class ListInvitationsRequest : AmazonMacie2Request
+    public partial class ListManagedDataIdentifiersResponse : AmazonWebServiceResponse
     {
-        private int? _maxResults;
+        private List<ManagedDataIdentifierSummary> _items = new List<ManagedDataIdentifierSummary>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property Items. 
         /// <para>
-        /// The maximum number of items to include in each page of a paginated response.
+        /// An array of objects, one for each managed data identifier.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=25)]
-        public int MaxResults
+        public List<ManagedDataIdentifierSummary> Items
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._items; }
+            set { this._items = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if Items property is set
+        internal bool IsSetItems()
         {
-            return this._maxResults.HasValue; 
+            return this._items != null && this._items.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The nextToken string that specifies which page of results to return in a paginated
-        /// response.
+        /// The string to use in a subsequent request to get the next page of results in a paginated
+        /// response. This value is null if there are no additional pages.
         /// </para>
         /// </summary>
         public string NextToken
