@@ -48,6 +48,7 @@ namespace Amazon.Pinpoint.Model
         private CampaignLimits _limits;
         private MessageConfiguration _messageConfiguration;
         private string _name;
+        private int? _priority;
         private Schedule _schedule;
         private string _segmentId;
         private int? _segmentVersion;
@@ -336,6 +337,25 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Priority. 
+        /// <para>
+        /// Defines the priority of the campaign, used to decide the order of messages displayed
+        /// to user if there are multiple messages scheduled to be displayed at the same moment.
+        /// </para>
+        /// </summary>
+        public int Priority
+        {
+            get { return this._priority.GetValueOrDefault(); }
+            set { this._priority = value; }
+        }
+
+        // Check to see if Priority property is set
+        internal bool IsSetPriority()
+        {
+            return this._priority.HasValue; 
         }
 
         /// <summary>

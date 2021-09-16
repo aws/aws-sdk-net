@@ -338,6 +338,61 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  CreateInAppTemplate
+
+
+        /// <summary>
+        /// Creates a new message template for messages using the in-app message channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInAppTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateInAppTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateInAppTemplate">REST API Reference for CreateInAppTemplate Operation</seealso>
+        CreateInAppTemplateResponse CreateInAppTemplate(CreateInAppTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateInAppTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateInAppTemplate operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInAppTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateInAppTemplate">REST API Reference for CreateInAppTemplate Operation</seealso>
+        IAsyncResult BeginCreateInAppTemplate(CreateInAppTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateInAppTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInAppTemplate.</param>
+        /// 
+        /// <returns>Returns a  CreateInAppTemplateResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateInAppTemplate">REST API Reference for CreateInAppTemplate Operation</seealso>
+        CreateInAppTemplateResponse EndCreateInAppTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateJourney
 
 
@@ -1486,6 +1541,67 @@ namespace Amazon.Pinpoint
         /// <returns>Returns a  DeleteGcmChannelResult from Pinpoint.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteGcmChannel">REST API Reference for DeleteGcmChannel Operation</seealso>
         DeleteGcmChannelResponse EndDeleteGcmChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteInAppTemplate
+
+
+        /// <summary>
+        /// Deletes a message template for messages sent using the in-app message channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInAppTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteInAppTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteInAppTemplate">REST API Reference for DeleteInAppTemplate Operation</seealso>
+        DeleteInAppTemplateResponse DeleteInAppTemplate(DeleteInAppTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteInAppTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInAppTemplate operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteInAppTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteInAppTemplate">REST API Reference for DeleteInAppTemplate Operation</seealso>
+        IAsyncResult BeginDeleteInAppTemplate(DeleteInAppTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteInAppTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInAppTemplate.</param>
+        /// 
+        /// <returns>Returns a  DeleteInAppTemplateResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteInAppTemplate">REST API Reference for DeleteInAppTemplate Operation</seealso>
+        DeleteInAppTemplateResponse EndDeleteInAppTemplate(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3637,6 +3753,129 @@ namespace Amazon.Pinpoint
         /// <returns>Returns a  GetImportJobsResult from Pinpoint.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetImportJobs">REST API Reference for GetImportJobs Operation</seealso>
         GetImportJobsResponse EndGetImportJobs(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetInAppMessages
+
+
+        /// <summary>
+        /// Retrieves the in-app messages targeted for the provided endpoint ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInAppMessages service method.</param>
+        /// 
+        /// <returns>The response from the GetInAppMessages service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetInAppMessages">REST API Reference for GetInAppMessages Operation</seealso>
+        GetInAppMessagesResponse GetInAppMessages(GetInAppMessagesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetInAppMessages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetInAppMessages operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInAppMessages
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetInAppMessages">REST API Reference for GetInAppMessages Operation</seealso>
+        IAsyncResult BeginGetInAppMessages(GetInAppMessagesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetInAppMessages operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInAppMessages.</param>
+        /// 
+        /// <returns>Returns a  GetInAppMessagesResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetInAppMessages">REST API Reference for GetInAppMessages Operation</seealso>
+        GetInAppMessagesResponse EndGetInAppMessages(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetInAppTemplate
+
+
+        /// <summary>
+        /// Retrieves the content and settings of a message template for messages sent through
+        /// the in-app channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInAppTemplate service method.</param>
+        /// 
+        /// <returns>The response from the GetInAppTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetInAppTemplate">REST API Reference for GetInAppTemplate Operation</seealso>
+        GetInAppTemplateResponse GetInAppTemplate(GetInAppTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetInAppTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetInAppTemplate operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInAppTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetInAppTemplate">REST API Reference for GetInAppTemplate Operation</seealso>
+        IAsyncResult BeginGetInAppTemplate(GetInAppTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetInAppTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInAppTemplate.</param>
+        /// 
+        /// <returns>Returns a  GetInAppTemplateResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetInAppTemplate">REST API Reference for GetInAppTemplate Operation</seealso>
+        GetInAppTemplateResponse EndGetInAppTemplate(IAsyncResult asyncResult);
 
         #endregion
         
@@ -6228,6 +6467,68 @@ namespace Amazon.Pinpoint
         /// <returns>Returns a  UpdateGcmChannelResult from Pinpoint.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateGcmChannel">REST API Reference for UpdateGcmChannel Operation</seealso>
         UpdateGcmChannelResponse EndUpdateGcmChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateInAppTemplate
+
+
+        /// <summary>
+        /// Updates an existing message template for messages sent through the in-app message
+        /// channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInAppTemplate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateInAppTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateInAppTemplate">REST API Reference for UpdateInAppTemplate Operation</seealso>
+        UpdateInAppTemplateResponse UpdateInAppTemplate(UpdateInAppTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateInAppTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInAppTemplate operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateInAppTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateInAppTemplate">REST API Reference for UpdateInAppTemplate Operation</seealso>
+        IAsyncResult BeginUpdateInAppTemplate(UpdateInAppTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateInAppTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateInAppTemplate.</param>
+        /// 
+        /// <returns>Returns a  UpdateInAppTemplateResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateInAppTemplate">REST API Reference for UpdateInAppTemplate Operation</seealso>
+        UpdateInAppTemplateResponse EndUpdateInAppTemplate(IAsyncResult asyncResult);
 
         #endregion
         

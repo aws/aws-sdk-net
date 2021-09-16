@@ -510,6 +510,55 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  CreateInAppTemplate
+
+        internal virtual CreateInAppTemplateResponse CreateInAppTemplate(CreateInAppTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInAppTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInAppTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateInAppTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new message template for messages using the in-app message channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInAppTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateInAppTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateInAppTemplate">REST API Reference for CreateInAppTemplate Operation</seealso>
+        public virtual Task<CreateInAppTemplateResponse> CreateInAppTemplateAsync(CreateInAppTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInAppTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInAppTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateInAppTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateJourney
 
         internal virtual CreateJourneyResponse CreateJourney(CreateJourneyRequest request)
@@ -1543,6 +1592,61 @@ namespace Amazon.Pinpoint
             options.ResponseUnmarshaller = DeleteGcmChannelResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteGcmChannelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteInAppTemplate
+
+        internal virtual DeleteInAppTemplateResponse DeleteInAppTemplate(DeleteInAppTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInAppTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInAppTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteInAppTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a message template for messages sent using the in-app message channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInAppTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteInAppTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteInAppTemplate">REST API Reference for DeleteInAppTemplate Operation</seealso>
+        public virtual Task<DeleteInAppTemplateResponse> DeleteInAppTemplateAsync(DeleteInAppTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInAppTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInAppTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteInAppTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3484,6 +3588,117 @@ namespace Amazon.Pinpoint
             options.ResponseUnmarshaller = GetImportJobsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetImportJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetInAppMessages
+
+        internal virtual GetInAppMessagesResponse GetInAppMessages(GetInAppMessagesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInAppMessagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInAppMessagesResponseUnmarshaller.Instance;
+
+            return Invoke<GetInAppMessagesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the in-app messages targeted for the provided endpoint ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInAppMessages service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInAppMessages service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetInAppMessages">REST API Reference for GetInAppMessages Operation</seealso>
+        public virtual Task<GetInAppMessagesResponse> GetInAppMessagesAsync(GetInAppMessagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInAppMessagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInAppMessagesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetInAppMessagesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetInAppTemplate
+
+        internal virtual GetInAppTemplateResponse GetInAppTemplate(GetInAppTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInAppTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInAppTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<GetInAppTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the content and settings of a message template for messages sent through
+        /// the in-app channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInAppTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInAppTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetInAppTemplate">REST API Reference for GetInAppTemplate Operation</seealso>
+        public virtual Task<GetInAppTemplateResponse> GetInAppTemplateAsync(GetInAppTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInAppTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInAppTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetInAppTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5817,6 +6032,62 @@ namespace Amazon.Pinpoint
             options.ResponseUnmarshaller = UpdateGcmChannelResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateGcmChannelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateInAppTemplate
+
+        internal virtual UpdateInAppTemplateResponse UpdateInAppTemplate(UpdateInAppTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInAppTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInAppTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateInAppTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing message template for messages sent through the in-app message
+        /// channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInAppTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateInAppTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateInAppTemplate">REST API Reference for UpdateInAppTemplate Operation</seealso>
+        public virtual Task<UpdateInAppTemplateResponse> UpdateInAppTemplateAsync(UpdateInAppTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInAppTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInAppTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateInAppTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion

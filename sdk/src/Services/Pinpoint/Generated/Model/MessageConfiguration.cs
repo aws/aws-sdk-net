@@ -40,6 +40,7 @@ namespace Amazon.Pinpoint.Model
         private Message _defaultMessage;
         private CampaignEmailMessage _emailMessage;
         private Message _gcmMessage;
+        private CampaignInAppMessage _inAppMessage;
         private CampaignSmsMessage _smsMessage;
 
         /// <summary>
@@ -176,6 +177,24 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetGCMMessage()
         {
             return this._gcmMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InAppMessage. 
+        /// <para>
+        /// The in-app message configuration.
+        /// </para>
+        /// </summary>
+        public CampaignInAppMessage InAppMessage
+        {
+            get { return this._inAppMessage; }
+            set { this._inAppMessage = value; }
+        }
+
+        // Check to see if InAppMessage property is set
+        internal bool IsSetInAppMessage()
+        {
+            return this._inAppMessage != null;
         }
 
         /// <summary>

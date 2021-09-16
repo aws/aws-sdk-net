@@ -82,6 +82,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.MessagesPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Session", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Session = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Total", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

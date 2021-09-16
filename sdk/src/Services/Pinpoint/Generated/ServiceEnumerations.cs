@@ -67,6 +67,10 @@ namespace Amazon.Pinpoint
         /// </summary>
         public static readonly __EndpointTypesElement GCM = new __EndpointTypesElement("GCM");
         /// <summary>
+        /// Constant IN_APP for __EndpointTypesElement
+        /// </summary>
+        public static readonly __EndpointTypesElement IN_APP = new __EndpointTypesElement("IN_APP");
+        /// <summary>
         /// Constant PUSH for __EndpointTypesElement
         /// </summary>
         public static readonly __EndpointTypesElement PUSH = new __EndpointTypesElement("PUSH");
@@ -169,6 +173,60 @@ namespace Amazon.Pinpoint
 
 
     /// <summary>
+    /// Constants used for properties of type Alignment.
+    /// </summary>
+    public class Alignment : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CENTER for Alignment
+        /// </summary>
+        public static readonly Alignment CENTER = new Alignment("CENTER");
+        /// <summary>
+        /// Constant LEFT for Alignment
+        /// </summary>
+        public static readonly Alignment LEFT = new Alignment("LEFT");
+        /// <summary>
+        /// Constant RIGHT for Alignment
+        /// </summary>
+        public static readonly Alignment RIGHT = new Alignment("RIGHT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Alignment(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Alignment FindValue(string value)
+        {
+            return FindValue<Alignment>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Alignment(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AttributeType.
     /// </summary>
     public class AttributeType : ConstantClass
@@ -232,6 +290,60 @@ namespace Amazon.Pinpoint
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AttributeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ButtonAction.
+    /// </summary>
+    public class ButtonAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOSE for ButtonAction
+        /// </summary>
+        public static readonly ButtonAction CLOSE = new ButtonAction("CLOSE");
+        /// <summary>
+        /// Constant DEEP_LINK for ButtonAction
+        /// </summary>
+        public static readonly ButtonAction DEEP_LINK = new ButtonAction("DEEP_LINK");
+        /// <summary>
+        /// Constant LINK for ButtonAction
+        /// </summary>
+        public static readonly ButtonAction LINK = new ButtonAction("LINK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ButtonAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ButtonAction FindValue(string value)
+        {
+            return FindValue<ButtonAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ButtonAction(string value)
         {
             return FindValue(value);
         }
@@ -350,6 +462,10 @@ namespace Amazon.Pinpoint
         /// Constant GCM for ChannelType
         /// </summary>
         public static readonly ChannelType GCM = new ChannelType("GCM");
+        /// <summary>
+        /// Constant IN_APP for ChannelType
+        /// </summary>
+        public static readonly ChannelType IN_APP = new ChannelType("IN_APP");
         /// <summary>
         /// Constant PUSH for ChannelType
         /// </summary>
@@ -695,6 +811,10 @@ namespace Amazon.Pinpoint
         /// </summary>
         public static readonly Frequency HOURLY = new Frequency("HOURLY");
         /// <summary>
+        /// Constant IN_APP_EVENT for Frequency
+        /// </summary>
+        public static readonly Frequency IN_APP_EVENT = new Frequency("IN_APP_EVENT");
+        /// <summary>
         /// Constant MONTHLY for Frequency
         /// </summary>
         public static readonly Frequency MONTHLY = new Frequency("MONTHLY");
@@ -868,6 +988,72 @@ namespace Amazon.Pinpoint
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator JobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Layout.
+    /// </summary>
+    public class Layout : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BOTTOM_BANNER for Layout
+        /// </summary>
+        public static readonly Layout BOTTOM_BANNER = new Layout("BOTTOM_BANNER");
+        /// <summary>
+        /// Constant CAROUSEL for Layout
+        /// </summary>
+        public static readonly Layout CAROUSEL = new Layout("CAROUSEL");
+        /// <summary>
+        /// Constant MIDDLE_BANNER for Layout
+        /// </summary>
+        public static readonly Layout MIDDLE_BANNER = new Layout("MIDDLE_BANNER");
+        /// <summary>
+        /// Constant MOBILE_FEED for Layout
+        /// </summary>
+        public static readonly Layout MOBILE_FEED = new Layout("MOBILE_FEED");
+        /// <summary>
+        /// Constant OVERLAYS for Layout
+        /// </summary>
+        public static readonly Layout OVERLAYS = new Layout("OVERLAYS");
+        /// <summary>
+        /// Constant TOP_BANNER for Layout
+        /// </summary>
+        public static readonly Layout TOP_BANNER = new Layout("TOP_BANNER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Layout(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Layout FindValue(string value)
+        {
+            return FindValue<Layout>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Layout(string value)
         {
             return FindValue(value);
         }
@@ -1254,6 +1440,10 @@ namespace Amazon.Pinpoint
         /// Constant EMAIL for TemplateType
         /// </summary>
         public static readonly TemplateType EMAIL = new TemplateType("EMAIL");
+        /// <summary>
+        /// Constant INAPP for TemplateType
+        /// </summary>
+        public static readonly TemplateType INAPP = new TemplateType("INAPP");
         /// <summary>
         /// Constant PUSH for TemplateType
         /// </summary>

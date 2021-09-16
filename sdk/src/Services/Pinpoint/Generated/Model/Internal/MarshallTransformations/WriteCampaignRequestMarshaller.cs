@@ -129,6 +129,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetPriority())
+            {
+                context.Writer.WritePropertyName("Priority");
+                context.Writer.Write(requestObject.Priority);
+            }
+
             if(requestObject.IsSetSchedule())
             {
                 context.Writer.WritePropertyName("Schedule");

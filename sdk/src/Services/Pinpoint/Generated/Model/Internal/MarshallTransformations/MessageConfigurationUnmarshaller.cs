@@ -106,6 +106,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.GCMMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InAppMessage", targetDepth))
+                {
+                    var unmarshaller = CampaignInAppMessageUnmarshaller.Instance;
+                    unmarshalledObject.InAppMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SMSMessage", targetDepth))
                 {
                     var unmarshaller = CampaignSmsMessageUnmarshaller.Instance;

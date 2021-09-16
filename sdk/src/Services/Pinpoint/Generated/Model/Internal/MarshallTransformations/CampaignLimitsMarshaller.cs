@@ -63,6 +63,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MessagesPerSecond);
             }
 
+            if(requestObject.IsSetSession())
+            {
+                context.Writer.WritePropertyName("Session");
+                context.Writer.Write(requestObject.Session);
+            }
+
             if(requestObject.IsSetTotal())
             {
                 context.Writer.WritePropertyName("Total");

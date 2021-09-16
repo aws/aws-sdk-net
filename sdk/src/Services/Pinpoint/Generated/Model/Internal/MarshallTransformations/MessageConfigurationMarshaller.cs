@@ -122,6 +122,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetInAppMessage())
+            {
+                context.Writer.WritePropertyName("InAppMessage");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CampaignInAppMessageMarshaller.Instance;
+                marshaller.Marshall(requestObject.InAppMessage, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSMSMessage())
             {
                 context.Writer.WritePropertyName("SMSMessage");

@@ -38,6 +38,7 @@ namespace Amazon.Pinpoint.Model
         private int? _daily;
         private int? _maximumDuration;
         private int? _messagesPerSecond;
+        private int? _session;
         private int? _total;
 
         /// <summary>
@@ -98,6 +99,24 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetMessagesPerSecond()
         {
             return this._messagesPerSecond.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Session. 
+        /// <para>
+        /// The maximum total number of messages that the campaign can send per user session.
+        /// </para>
+        /// </summary>
+        public int Session
+        {
+            get { return this._session.GetValueOrDefault(); }
+            set { this._session = value; }
+        }
+
+        // Check to see if Session property is set
+        internal bool IsSetSession()
+        {
+            return this._session.HasValue; 
         }
 
         /// <summary>
