@@ -624,6 +624,10 @@
       <Project>{EAAA00EB-81EC-4E9B-9246-D6801277824E}</Project>
       <Name>AWSSDK.Kafka.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/KafkaConnect/AWSSDK.KafkaConnect.CodeAnalysis.csproj">
+      <Project>{0A2D7D61-54EC-4551-95C2-D00F16EEBA4F}</Project>
+      <Name>AWSSDK.KafkaConnect.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Kendra/AWSSDK.Kendra.CodeAnalysis.csproj">
       <Project>{04DE067E-5C75-43C0-88EF-7618FA712B80}</Project>
       <Name>AWSSDK.Kendra.CodeAnalysis</Name>

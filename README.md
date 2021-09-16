@@ -375,6 +375,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Introducing Amazon Interactive Video Service - a managed live streaming solution that is quick and easy to set up, and ideal for creating interactive video experiences.
 * [AWSSDK.Kafka](https://www.nuget.org/packages/AWSSDK.Kafka/)
 	* Amazon Managed Streaming for Kafka (Amazon MSK). Amazon MSK is a service that you can use to easily build, monitor, and manage Apache Kafka clusters in the cloud.
+* [AWSSDK.KafkaConnect](https://www.nuget.org/packages/AWSSDK.KafkaConnect/)
+	* This is the initial SDK release for Amazon Managed Streaming for Apache Kafka Connect (MSK Connect).
 * [AWSSDK.Kendra](https://www.nuget.org/packages/AWSSDK.Kendra/)
 	* It is a preview launch of Amazon Kendra. Amazon Kendra is a managed, highly accurate and easy to use enterprise search service that is powered by machine learning.
 * [AWSSDK.KeyManagementService](https://www.nuget.org/packages/AWSSDK.KeyManagementService/)
