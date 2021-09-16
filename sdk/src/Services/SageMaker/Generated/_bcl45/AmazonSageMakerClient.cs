@@ -11616,6 +11616,69 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  RetryPipelineExecution
+
+
+        /// <summary>
+        /// Retry the execution of the pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RetryPipelineExecution service method.</param>
+        /// 
+        /// <returns>The response from the RetryPipelineExecution service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RetryPipelineExecution">REST API Reference for RetryPipelineExecution Operation</seealso>
+        public virtual RetryPipelineExecutionResponse RetryPipelineExecution(RetryPipelineExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RetryPipelineExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RetryPipelineExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<RetryPipelineExecutionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retry the execution of the pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RetryPipelineExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RetryPipelineExecution service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RetryPipelineExecution">REST API Reference for RetryPipelineExecution Operation</seealso>
+        public virtual Task<RetryPipelineExecutionResponse> RetryPipelineExecutionAsync(RetryPipelineExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RetryPipelineExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RetryPipelineExecutionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RetryPipelineExecutionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  Search
 
 

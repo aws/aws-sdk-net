@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Information about the user who created or modified an experiment, trial, or trial
-    /// component.
+    /// Information about the user who created or modified an experiment, trial, trial component,
+    /// or project.
     /// </summary>
     public partial class UserContext
     {

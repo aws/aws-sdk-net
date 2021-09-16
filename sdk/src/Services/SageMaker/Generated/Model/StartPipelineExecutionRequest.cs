@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// the operation. An idempotent operation completes no more than one time.
+        /// the operation. An idempotent operation completes no more than once.
         /// </para>
         /// </summary>
         [AWSProperty(Min=32, Max=128)]

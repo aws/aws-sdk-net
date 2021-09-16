@@ -49,7 +49,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        /// Who created the component.
+        /// Who created the trial component.
         /// </para>
         /// </summary>
         public UserContext CreatedBy

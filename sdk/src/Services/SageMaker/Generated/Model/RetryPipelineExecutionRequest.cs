@@ -29,46 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Container for the parameters to the StopPipelineExecution operation.
-    /// Stops a pipeline execution.
-    /// 
-    ///  
-    /// <para>
-    ///  <b>Callback Step</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// A pipeline execution won't stop while a callback step is running. When you call <code>StopPipelineExecution</code>
-    /// on a pipeline execution with a running callback step, SageMaker Pipelines sends an
-    /// additional Amazon SQS message to the specified SQS queue. The body of the SQS message
-    /// contains a "Status" field which is set to "Stopping".
-    /// </para>
-    ///  
-    /// <para>
-    /// You should add logic to your Amazon SQS message consumer to take any needed action
-    /// (for example, resource cleanup) upon receipt of the message followed by a call to
-    /// <code>SendPipelineExecutionStepSuccess</code> or <code>SendPipelineExecutionStepFailure</code>.
-    /// </para>
-    ///  
-    /// <para>
-    /// Only when SageMaker Pipelines receives one of these calls will it stop the pipeline
-    /// execution.
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Lambda Step</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// A pipeline execution can't be stopped while a lambda step is running because the Lambda
-    /// function invoked by the lambda step can't be stopped. If you attempt to stop the execution
-    /// while the Lambda function is running, the pipeline waits for the Lambda function to
-    /// finish or until the timeout is hit, whichever occurs first, and then stops. If the
-    /// Lambda function finishes, the pipeline execution status is <code>Stopped</code>. If
-    /// the timeout is hit the pipeline execution status is <code>Failed</code>.
-    /// </para>
+    /// Container for the parameters to the RetryPipelineExecution operation.
+    /// Retry the execution of the pipeline.
     /// </summary>
-    public partial class StopPipelineExecutionRequest : AmazonSageMakerRequest
+    public partial class RetryPipelineExecutionRequest : AmazonSageMakerRequest
     {
         private string _clientRequestToken;
         private string _pipelineExecutionArn;

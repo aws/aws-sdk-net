@@ -45,7 +45,10 @@ namespace Amazon.SageMaker.Model
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property CreatedBy.
+        /// Gets and sets the property CreatedBy. 
+        /// <para>
+        /// Who created the experiment.
+        /// </para>
         /// </summary>
         public UserContext CreatedBy
         {

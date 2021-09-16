@@ -54,7 +54,10 @@ namespace Amazon.SageMaker.Model
         private string _trialComponentName;
 
         /// <summary>
-        /// Gets and sets the property CreatedBy.
+        /// Gets and sets the property CreatedBy. 
+        /// <para>
+        /// Who created the trial component.
+        /// </para>
         /// </summary>
         public UserContext CreatedBy
         {
