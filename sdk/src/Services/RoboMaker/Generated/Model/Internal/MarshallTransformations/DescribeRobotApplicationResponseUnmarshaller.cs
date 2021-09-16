@@ -57,6 +57,18 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     response.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("environment", targetDepth))
+                {
+                    var unmarshaller = EnvironmentUnmarshaller.Instance;
+                    response.Environment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("imageDigest", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ImageDigest = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

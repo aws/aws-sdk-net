@@ -77,6 +77,23 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CurrentRevisionId);
                 }
 
+                if(publicRequest.IsSetImageDigest())
+                {
+                    context.Writer.WritePropertyName("imageDigest");
+                    context.Writer.Write(publicRequest.ImageDigest);
+                }
+
+                if(publicRequest.IsSetS3Etags())
+                {
+                    context.Writer.WritePropertyName("s3Etags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestS3EtagsListValue in publicRequest.S3Etags)
+                    {
+                            context.Writer.Write(publicRequestS3EtagsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

@@ -151,6 +151,12 @@
     <pattern>[a-zA-Z0-9_.\-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RoboMaker.Model.CreateRobotApplicationVersionRequest.ImageDigest</property>
+    <min>0</min>
+    <max>72</max>
+    <pattern>[Ss][Hh][Aa]256:[0-9a-fA-F]{64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RoboMaker.Model.CreateRobotApplicationVersionResponse.Arn</property>
     <min>1</min>
     <max>1224</max>
@@ -215,6 +221,12 @@
     <min>1</min>
     <max>40</max>
     <pattern>[a-zA-Z0-9_.\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.CreateSimulationApplicationVersionRequest.ImageDigest</property>
+    <min>0</min>
+    <max>72</max>
+    <pattern>[Ss][Hh][Aa]256:[0-9a-fA-F]{64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.CreateSimulationApplicationVersionResponse.Arn</property>
@@ -535,6 +547,12 @@
     <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DescribeRobotApplicationResponse.ImageDigest</property>
+    <min>0</min>
+    <max>72</max>
+    <pattern>[Ss][Hh][Aa]256:[0-9a-fA-F]{64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RoboMaker.Model.DescribeRobotApplicationResponse.Name</property>
     <min>1</min>
     <max>255</max>
@@ -569,6 +587,12 @@
     <min>1</min>
     <max>1224</max>
     <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DescribeSimulationApplicationResponse.ImageDigest</property>
+    <min>0</min>
+    <max>72</max>
+    <pattern>[Ss][Hh][Aa]256:[0-9a-fA-F]{64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.DescribeSimulationApplicationResponse.Name</property>
@@ -1231,6 +1255,12 @@
     <min>1</min>
     <max>1024</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.Environment.Uri</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.FailedCreateSimulationJobRequest.FailureReason</property>

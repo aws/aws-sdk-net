@@ -34,10 +34,30 @@ namespace Amazon.RoboMaker.Model
     /// </summary>
     public partial class CreateRobotApplicationRequest : AmazonRoboMakerRequest
     {
+        private Environment _environment;
         private string _name;
         private RobotSoftwareSuite _robotSoftwareSuite;
         private List<SourceConfig> _sources = new List<SourceConfig>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property Environment. 
+        /// <para>
+        /// The object that contains that URI of the Docker image that you use for your robot
+        /// application.
+        /// </para>
+        /// </summary>
+        public Environment Environment
+        {
+            get { return this._environment; }
+            set { this._environment = value; }
+        }
+
+        // Check to see if Environment property is set
+        internal bool IsSetEnvironment()
+        {
+            return this._environment != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -83,7 +103,6 @@ namespace Amazon.RoboMaker.Model
         /// The sources of the robot application.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<SourceConfig> Sources
         {
             get { return this._sources; }

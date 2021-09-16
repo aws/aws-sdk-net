@@ -77,6 +77,17 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CurrentRevisionId);
                 }
 
+                if(publicRequest.IsSetEnvironment())
+                {
+                    context.Writer.WritePropertyName("environment");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EnvironmentMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Environment, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRenderingEngine())
                 {
                     context.Writer.WritePropertyName("renderingEngine");

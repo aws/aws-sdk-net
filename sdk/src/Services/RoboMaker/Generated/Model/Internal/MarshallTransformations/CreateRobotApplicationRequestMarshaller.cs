@@ -65,6 +65,17 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEnvironment())
+                {
+                    context.Writer.WritePropertyName("environment");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EnvironmentMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Environment, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");

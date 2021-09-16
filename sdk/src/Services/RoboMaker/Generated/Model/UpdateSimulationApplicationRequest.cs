@@ -36,6 +36,7 @@ namespace Amazon.RoboMaker.Model
     {
         private string _application;
         private string _currentRevisionId;
+        private Environment _environment;
         private RenderingEngine _renderingEngine;
         private RobotSoftwareSuite _robotSoftwareSuite;
         private SimulationSoftwareSuite _simulationSoftwareSuite;
@@ -77,6 +78,24 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetCurrentRevisionId()
         {
             return this._currentRevisionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Environment. 
+        /// <para>
+        /// The object that contains the Docker image URI for your simulation application.
+        /// </para>
+        /// </summary>
+        public Environment Environment
+        {
+            get { return this._environment; }
+            set { this._environment = value; }
+        }
+
+        // Check to see if Environment property is set
+        internal bool IsSetEnvironment()
+        {
+            return this._environment != null;
         }
 
         /// <summary>
@@ -141,7 +160,6 @@ namespace Amazon.RoboMaker.Model
         /// The sources of the simulation application.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<SourceConfig> Sources
         {
             get { return this._sources; }

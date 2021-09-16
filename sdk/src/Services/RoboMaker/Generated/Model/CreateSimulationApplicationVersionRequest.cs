@@ -36,6 +36,8 @@ namespace Amazon.RoboMaker.Model
     {
         private string _application;
         private string _currentRevisionId;
+        private string _imageDigest;
+        private List<string> _s3Etags = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Application. 
@@ -74,6 +76,45 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetCurrentRevisionId()
         {
             return this._currentRevisionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageDigest. 
+        /// <para>
+        /// The SHA256 digest used to identify the Docker image URI used to created the simulation
+        /// application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=72)]
+        public string ImageDigest
+        {
+            get { return this._imageDigest; }
+            set { this._imageDigest = value; }
+        }
+
+        // Check to see if ImageDigest property is set
+        internal bool IsSetImageDigest()
+        {
+            return this._imageDigest != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3Etags. 
+        /// <para>
+        /// The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation
+        /// application.
+        /// </para>
+        /// </summary>
+        public List<string> S3Etags
+        {
+            get { return this._s3Etags; }
+            set { this._s3Etags = value; }
+        }
+
+        // Check to see if S3Etags property is set
+        internal bool IsSetS3Etags()
+        {
+            return this._s3Etags != null && this._s3Etags.Count > 0; 
         }
 
     }

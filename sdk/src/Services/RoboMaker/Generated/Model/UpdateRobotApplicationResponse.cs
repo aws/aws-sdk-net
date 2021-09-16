@@ -34,6 +34,7 @@ namespace Amazon.RoboMaker.Model
     public partial class UpdateRobotApplicationResponse : AmazonWebServiceResponse
     {
         private string _arn;
+        private Environment _environment;
         private DateTime? _lastUpdatedAt;
         private string _name;
         private string _revisionId;
@@ -58,6 +59,24 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Environment. 
+        /// <para>
+        /// The object that contains the Docker image URI for your robot application.
+        /// </para>
+        /// </summary>
+        public Environment Environment
+        {
+            get { return this._environment; }
+            set { this._environment = value; }
+        }
+
+        // Check to see if Environment property is set
+        internal bool IsSetEnvironment()
+        {
+            return this._environment != null;
         }
 
         /// <summary>

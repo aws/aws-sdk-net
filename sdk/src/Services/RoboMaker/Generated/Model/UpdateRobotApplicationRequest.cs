@@ -36,6 +36,7 @@ namespace Amazon.RoboMaker.Model
     {
         private string _application;
         private string _currentRevisionId;
+        private Environment _environment;
         private RobotSoftwareSuite _robotSoftwareSuite;
         private List<SourceConfig> _sources = new List<SourceConfig>();
 
@@ -78,6 +79,24 @@ namespace Amazon.RoboMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Environment. 
+        /// <para>
+        /// The object that contains the Docker image URI for your robot application.
+        /// </para>
+        /// </summary>
+        public Environment Environment
+        {
+            get { return this._environment; }
+            set { this._environment = value; }
+        }
+
+        // Check to see if Environment property is set
+        internal bool IsSetEnvironment()
+        {
+            return this._environment != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RobotSoftwareSuite. 
         /// <para>
         /// The robot software suite (ROS distribution) used by the robot application.
@@ -102,7 +121,6 @@ namespace Amazon.RoboMaker.Model
         /// The sources of the robot application.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<SourceConfig> Sources
         {
             get { return this._sources; }
